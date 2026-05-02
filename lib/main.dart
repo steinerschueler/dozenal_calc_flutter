@@ -4,6 +4,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import 'app_layout.dart';
 import 'display.dart';
 import 'info_pages.dart';
 import 'keypad.dart';
@@ -177,27 +178,35 @@ class _CalcScaffoldState extends State<_CalcScaffold> {
                           : null,
                     ),
                     const SizedBox(height: 14),
-                    Stack(
-                      children: [
-                        IgnorePointer(
-                          ignoring: _state.overlayOpen,
-                          child: Keypad(
-                            onTap: _state.handleClick,
-                            isArmed: _state.isArmed,
-                          ),
-                        ),
-                        if (_state.overlayOpen)
-                          Positioned.fill(
-                            child: ColoredBox(
-                              color: const Color.fromRGBO(0, 0, 0, 0.7),
-                              child: OverlayKeypad(
-                                onTap: _state.handleClick,
-                                isArmed: _state.isArmed,
-                              ),
+                    Builder(builder: (innerCtx) {
+                      // On tablet the overlay sets are inlined into the
+                      // main keypad, so the popup overlay is suppressed
+                      // even if state.overlayOpen happens to be true
+                      // (e.g. after a window resize).
+                      final overlayVisible = _state.overlayOpen &&
+                          !isTabletScreen(innerCtx);
+                      return Stack(
+                        children: [
+                          IgnorePointer(
+                            ignoring: overlayVisible,
+                            child: Keypad(
+                              onTap: _state.handleClick,
+                              isArmed: _state.isArmed,
                             ),
                           ),
-                      ],
-                    ),
+                          if (overlayVisible)
+                            Positioned.fill(
+                              child: ColoredBox(
+                                color: const Color.fromRGBO(0, 0, 0, 0.7),
+                                child: OverlayKeypad(
+                                  onTap: _state.handleClick,
+                                  isArmed: _state.isArmed,
+                                ),
+                              ),
+                            ),
+                        ],
+                      );
+                    }),
                   ],
                 ),
               ),

@@ -34,9 +34,13 @@ class Keypad extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return isMobileScreen(context)
-        ? _MobileKeypad(onTap: onTap, isArmed: isArmed)
-        : _DesktopKeypad(onTap: onTap, isArmed: isArmed);
+    if (isMobileScreen(context)) {
+      return _MobileKeypad(onTap: onTap, isArmed: isArmed);
+    }
+    if (isTabletScreen(context)) {
+      return _TabletKeypad(onTap: onTap, isArmed: isArmed);
+    }
+    return _DesktopKeypad(onTap: onTap, isArmed: isArmed);
   }
 }
 
@@ -257,6 +261,145 @@ class _DesktopKeypad extends StatelessWidget {
         const SizedBox(height: desktopSetGap),
         SizedBox(
           height: desktopButtonSize,
+          child: _EqualsBar(
+            onTap: () => onTap(const Equals()),
+            normalColor: _kOpNormal,
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Tablet layout: like desktop, but with all 10 sets inline (no overlay) +
+// bigger buttons. The Expand button becomes a borderless arrow indicator
+// that visually points to the freshly inlined sets 6-10. Close is dropped
+// from set 10 since there is no overlay to close.
+// ---------------------------------------------------------------------------
+
+class _TabletKeypad extends StatelessWidget {
+  final TokenTapHandler onTap;
+  final ArmedPredicate? isArmed;
+
+  const _TabletKeypad({required this.onTap, this.isArmed});
+
+  Widget _digitGridWidget() {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        for (var r = 0; r < _digitGrid.length; r++) ...[
+          if (r > 0) const SizedBox(height: tabletDigitGap),
+          Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              for (var col = 0; col < _digitGrid[r].length; col++) ...[
+                if (col > 0) const SizedBox(width: tabletDigitGap),
+                SizedBox(
+                  width: tabletButtonSize,
+                  height: tabletButtonSize,
+                  child: _DigitButton(
+                    digit: _digitGrid[r][col],
+                    onTap: () => onTap(Digit(_digitGrid[r][col])),
+                  ),
+                ),
+              ],
+            ],
+          ),
+        ],
+      ],
+    );
+  }
+
+  Widget _opColumn(List<CalcToken> tokens, {CalcToken? skip}) {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        for (var i = 0; i < tokens.length; i++) ...[
+          if (i > 0) const SizedBox(height: tabletColGap),
+          if (tokens[i] == skip)
+            const SizedBox(
+              width: tabletButtonSize,
+              height: tabletButtonSize,
+            )
+          else
+            SizedBox(
+              width: tabletButtonSize,
+              height: tabletButtonSize,
+              child: _TokenButton(
+                token: tokens[i],
+                onTap: () => onTap(tokens[i]),
+                armed: isArmed?.call(tokens[i]) ?? false,
+              ),
+            ),
+        ],
+      ],
+    );
+  }
+
+  /// System column [Ac, Del, Decimal, _empty]. The Expand-button slot stays
+  /// blank on tablet since sets 6-10 are already inline to the right.
+  Widget _systemColumn() {
+    const tokens = <CalcToken>[Ac(), Del(), Decimal()];
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        for (var i = 0; i < tokens.length; i++) ...[
+          if (i > 0) const SizedBox(height: tabletColGap),
+          SizedBox(
+            width: tabletButtonSize,
+            height: tabletButtonSize,
+            child: _TokenButton(
+              token: tokens[i],
+              onTap: () => onTap(tokens[i]),
+              armed: isArmed?.call(tokens[i]) ?? false,
+            ),
+          ),
+        ],
+        const SizedBox(height: tabletColGap),
+        const SizedBox(
+          width: tabletButtonSize,
+          height: tabletButtonSize,
+        ),
+      ],
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            _digitGridWidget(),
+            const SizedBox(width: tabletSetGap),
+            _opColumn(_set1),
+            const SizedBox(width: tabletSetGap),
+            _opColumn(_set2),
+            const SizedBox(width: tabletSetGap),
+            _opColumn(_set3),
+            const SizedBox(width: tabletSetGap),
+            _opColumn(_set4),
+            const SizedBox(width: tabletSetGap),
+            _systemColumn(),
+            const SizedBox(width: tabletSetGap),
+            _opColumn(_set6),
+            const SizedBox(width: tabletSetGap),
+            _opColumn(_set7),
+            const SizedBox(width: tabletSetGap),
+            _opColumn(_set8),
+            const SizedBox(width: tabletSetGap),
+            _opColumn(_set9),
+            const SizedBox(width: tabletSetGap),
+            _opColumn(_set10, skip: const Close()),
+          ],
+        ),
+        const SizedBox(height: tabletSetGap),
+        SizedBox(
+          height: tabletButtonSize,
           child: _EqualsBar(
             onTap: () => onTap(const Equals()),
             normalColor: _kOpNormal,

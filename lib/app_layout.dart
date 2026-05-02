@@ -23,6 +23,14 @@ const double mobileBreakpointPx = 500.0;
 bool isMobileScreen(BuildContext context) =>
     MediaQuery.of(context).size.width < mobileBreakpointPx;
 
+/// Width threshold above which the tablet layout shows all ten op-sets
+/// inline (no Expand overlay needed). Sized so a Pixel Tablet in portrait
+/// (1067 dp) reaches the threshold while small landscape phones do not.
+const double tabletBreakpointPx = 1050.0;
+
+bool isTabletScreen(BuildContext context) =>
+    MediaQuery.of(context).size.width >= tabletBreakpointPx;
+
 // ---------------------------------------------------------------------------
 // Two-line display
 // ---------------------------------------------------------------------------
@@ -51,6 +59,23 @@ const double desktopDigitGap = 10.0;
 
 /// Vertical gap between two adjacent buttons in a desktop op column.
 const double desktopColGap = 6.0;
+
+// ---------------------------------------------------------------------------
+// Tablet layout — wider screens show all 10 sets inline + larger buttons
+// ---------------------------------------------------------------------------
+
+/// Edge length of every tablet button. 40 % bigger than desktop so the
+/// keys feel finger-friendly without touching the responsive scaling logic.
+const double tabletButtonSize = 70.0;
+
+/// Horizontal gap between two adjacent sets on tablet.
+const double tabletSetGap = 18.0;
+
+/// Spacing inside the tablet digit grid (between rows and columns).
+const double tabletDigitGap = 10.0;
+
+/// Vertical gap between two adjacent buttons in a tablet op column.
+const double tabletColGap = 8.0;
 
 // ---------------------------------------------------------------------------
 // Mobile layout — main keypad
