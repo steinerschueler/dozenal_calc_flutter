@@ -43,3 +43,11 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# Android signing — never commit. Defensive: matches any *.jks/keystore plus
+# the properties file that holds the absolute path and passwords.
+**/android/key.properties
+**/android/app/upload-keystore.jks
+**/*.jks
+**/*.keystore
+key.properties
