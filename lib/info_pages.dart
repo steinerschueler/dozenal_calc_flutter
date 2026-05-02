@@ -5,6 +5,7 @@
 import 'package:flutter/material.dart';
 
 import 'info_content.dart';
+import 'privacy_page.dart';
 
 class InfoListPage extends StatelessWidget {
   const InfoListPage({super.key});
@@ -16,30 +17,56 @@ class InfoListPage extends StatelessWidget {
         title: const Text('Dozenal — Zwölf Kapitel'),
         backgroundColor: const Color(0xFF1A1A1A),
       ),
-      body: ListView.separated(
+      body: ListView(
         padding: const EdgeInsets.symmetric(vertical: 4),
-        itemCount: infoTitles.length,
-        separatorBuilder: (_, _) => const Divider(
-          color: Color(0xFF2C2C2C),
-          height: 1,
-        ),
-        itemBuilder: (ctx, i) {
-          return ListTile(
-            leading: SizedBox(
-              width: 28,
-              child: Text(
-                '${i + 1}.',
-                style: const TextStyle(
-                  color: Color(0xFFA0A0A0),
-                  fontFamily: 'monospace',
-                  fontSize: 13,
+        children: [
+          for (var i = 0; i < infoTitles.length; i++) ...[
+            if (i > 0)
+              const Divider(color: Color(0xFF2C2C2C), height: 1),
+            ListTile(
+              leading: SizedBox(
+                width: 28,
+                child: Text(
+                  '${i + 1}.',
+                  style: const TextStyle(
+                    color: Color(0xFFA0A0A0),
+                    fontFamily: 'monospace',
+                    fontSize: 13,
+                  ),
+                  textAlign: TextAlign.right,
                 ),
-                textAlign: TextAlign.right,
+              ),
+              title: Text(
+                infoTitles[i],
+                style: const TextStyle(fontSize: 14, color: Colors.white),
+              ),
+              trailing: const Icon(
+                Icons.chevron_right,
+                color: Color(0xFF707070),
+                size: 18,
+              ),
+              onTap: () => Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (_) => InfoDetailPage(chapterIndex: i),
+                ),
               ),
             ),
-            title: Text(
-              infoTitles[i],
-              style: const TextStyle(fontSize: 14, color: Colors.white),
+          ],
+          // Spacer + visually-distinct legal-link section.
+          const SizedBox(height: 24),
+          const Divider(color: Color(0xFF2C2C2C), height: 1),
+          ListTile(
+            leading: const SizedBox(
+              width: 28,
+              child: Icon(
+                Icons.shield_outlined,
+                color: Color(0xFFA0A0A0),
+                size: 16,
+              ),
+            ),
+            title: const Text(
+              'Datenschutzerklärung',
+              style: TextStyle(fontSize: 14, color: Color(0xFFD0D0D0)),
             ),
             trailing: const Icon(
               Icons.chevron_right,
@@ -47,12 +74,10 @@ class InfoListPage extends StatelessWidget {
               size: 18,
             ),
             onTap: () => Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (_) => InfoDetailPage(chapterIndex: i),
-              ),
+              MaterialPageRoute(builder: (_) => const PrivacyPage()),
             ),
-          );
-        },
+          ),
+        ],
       ),
     );
   }

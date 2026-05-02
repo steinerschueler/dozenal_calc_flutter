@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <!-- Apple Privacy Manifest for Dozenal Calc.
+       This app collects no user data, performs no tracking, and uses no
+       Apple-defined "required reason" APIs in a way that warrants
+       declaration. See https://developer.apple.com/documentation/bundleresources/privacy_manifest_files
+       for the schema. -->
+
+  <key>NSPrivacyTracking</key>
+  <false/>
+
+  <key>NSPrivacyTrackingDomains</key>
+  <array/>
+
+  <key>NSPrivacyCollectedDataTypes</key>
+  <array/>
+
+  <key>NSPrivacyAccessedAPITypes</key>
+  <array/>
+</dict>
+</plist>

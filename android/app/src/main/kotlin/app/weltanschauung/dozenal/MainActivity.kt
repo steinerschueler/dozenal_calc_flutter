@@ -1,4 +1,4 @@
-package com.example.dozenal_calc_flutter
+package app.weltanschauung.dozenal
 
 import io.flutter.embedding.android.FlutterActivity
 
