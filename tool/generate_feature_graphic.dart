@@ -18,7 +18,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:dozenal_calc_flutter/glyph_painter.dart';
-import 'package:dozenal_calc_flutter/logic/dozenal_digit.dart';
 
 const String _fontFamily = 'FeatureLiberation';
 
