@@ -1,10 +1,5 @@
-// Pilot port of paint_dozenal_digit from the Rust reference (src/painting.rs).
+// Port of paint_dozenal_digit from the Rust reference (src/painting.rs:195-264).
 // Specification: dozenal_calc/GLYPHS.md.
-//
-// This file renders a subset of the twelve glyphs (D1, D5, D8) to validate
-// that the geometric spec ports cleanly to Flutter's Canvas API. If these
-// three look right, the remaining nine should follow the same primitives
-// without surprises.
 
 import 'dart:math';
 import 'package:flutter/material.dart';
@@ -31,41 +26,84 @@ class DozenalGlyphPainter extends CustomPainter {
       ..strokeCap = StrokeCap.round;
 
     final minEdge = min(size.width, size.height);
-    final r = minEdge / 2;
     final q = minEdge / 4;
     final c = Offset(size.width / 2, size.height / 2);
+    final top = c + Offset(0, -q);
+    final bot = c + Offset(0, q);
 
     switch (digit) {
+      // --- Anchor digits: arrow points in cardinal direction ---
       case DozenalDigit.d1:
-        // Anchor: arrow up. Tip at c + (0, -q).
-        final tip = c + Offset(0, -q);
-        canvas.drawLine(tip, c + Offset(-q, q), paint);
-        canvas.drawLine(tip, c + Offset(q, q), paint);
+        _arrow(canvas, paint, c, Offset(0, -q), Offset(-q, q), Offset(q, q));
+        break;
+      case DozenalDigit.d4:
+        _arrow(canvas, paint, c, Offset(-q, 0), Offset(q, -q), Offset(q, q));
+        break;
+      case DozenalDigit.d7:
+        _arrow(canvas, paint, c, Offset(q, 0), Offset(-q, -q), Offset(-q, q));
+        break;
+      case DozenalDigit.d10:
+        _arrow(canvas, paint, c, Offset(0, q), Offset(-q, -q), Offset(q, -q));
         break;
 
+      // --- Composite digits: top + bottom element, each at radius q ---
+      case DozenalDigit.d0:
+        // Sole single-element glyph: one full circle centred on c.
+        canvas.drawCircle(c, q, paint);
+        break;
+      case DozenalDigit.d2:
+        _rightHalf(canvas, paint, top, q);
+        _leftHalf(canvas, paint, bot, q);
+        break;
+      case DozenalDigit.d3:
+        _rightHalf(canvas, paint, top, q);
+        _rightHalf(canvas, paint, bot, q);
+        break;
       case DozenalDigit.d5:
-        // Composite: top = left half-circle, bottom = right half-circle.
-        _arc(canvas, paint, c + Offset(0, -q), q, 90, 270);
-        _arc(canvas, paint, c + Offset(0, q), q, -90, 90);
+        _leftHalf(canvas, paint, top, q);
+        _rightHalf(canvas, paint, bot, q);
         break;
-
+      case DozenalDigit.d6:
+        _leftHalf(canvas, paint, top, q);
+        canvas.drawCircle(bot, q, paint);
+        break;
       case DozenalDigit.d8:
-        // Composite: two stacked full circles.
-        canvas.drawCircle(c + Offset(0, -q), q, paint);
-        canvas.drawCircle(c + Offset(0, q), q, paint);
+        canvas.drawCircle(top, q, paint);
+        canvas.drawCircle(bot, q, paint);
         break;
-
-      // Remaining digits omitted in the pilot. To be ported following GLYPHS.md.
-      default:
-        // Placeholder: a small dot so missing digits are visible, not invisible.
-        final dotPaint = Paint()..color = color.withValues(alpha: 0.3);
-        canvas.drawCircle(c, 4, dotPaint);
+      case DozenalDigit.d9:
+        canvas.drawCircle(top, q, paint);
+        _rightHalf(canvas, paint, bot, q);
+        break;
+      case DozenalDigit.d11:
+        _rightHalf(canvas, paint, top, q);
+        canvas.drawCircle(bot, q, paint);
+        break;
     }
+  }
 
-    // Suppress unused-import warning by referencing r in debug; the variable
-    // is retained for parity with the Rust source where r is used by some
-    // (not-yet-ported) digits.
-    assert(r > 0);
+  /// Two-line V-arrow: tip + two wings, all relative to centre c.
+  void _arrow(
+    Canvas canvas,
+    Paint paint,
+    Offset c,
+    Offset tipOff,
+    Offset wing1Off,
+    Offset wing2Off,
+  ) {
+    final tip = c + tipOff;
+    canvas.drawLine(tip, c + wing1Off, paint);
+    canvas.drawLine(tip, c + wing2Off, paint);
+  }
+
+  /// Right half-circle: arc from -90° (top) to +90° (bottom) going clockwise.
+  void _rightHalf(Canvas canvas, Paint paint, Offset center, double radius) {
+    _arc(canvas, paint, center, radius, -90, 90);
+  }
+
+  /// Left half-circle: arc from +90° (bottom) to +270° (top) going clockwise.
+  void _leftHalf(Canvas canvas, Paint paint, Offset center, double radius) {
+    _arc(canvas, paint, center, radius, 90, 270);
   }
 
   /// Draws an arc using degrees (egui convention: 0° = right, 90° = down,
@@ -86,5 +124,7 @@ class DozenalGlyphPainter extends CustomPainter {
 
   @override
   bool shouldRepaint(covariant DozenalGlyphPainter old) =>
-      old.digit != digit || old.color != color || old.strokeWidth != strokeWidth;
+      old.digit != digit ||
+      old.color != color ||
+      old.strokeWidth != strokeWidth;
 }
