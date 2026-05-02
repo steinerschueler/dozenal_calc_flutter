@@ -283,15 +283,28 @@ class _TwoLineDisplayPainter extends CustomPainter {
     }
 
     if (suffixTp != null) {
-      final double yPos;
       if (isF64Fallback) {
-        // State B: baseline (vertical center)
-        yPos = rect.top + (rect.height - suffixTp.height) / 2;
+        // State B: text-based ellipsis at vertical centre (mid-line).
+        final yPos = rect.top + (rect.height - suffixTp.height) / 2;
+        suffixTp.paint(canvas, Offset(x, yPos));
       } else {
-        // State C: at overline height
-        yPos = overlineY - suffixTp.height / 2;
+        // State C: render three dots manually so their centres land
+        // exactly on overlineY. A glyph-based "…" sits at the font
+        // baseline within its bounding box, which leaves the dots
+        // visibly below the period bar — drawing circles avoids that
+        // font-metric dance and keeps the alignment exact.
+        final r = rect.height * 0.025;
+        final dx = r * 3.6;
+        final centerX = x + suffixTp.width / 2;
+        final paint = Paint()..color = Colors.white;
+        for (var i = -1; i <= 1; i++) {
+          canvas.drawCircle(
+            Offset(centerX + i * dx, overlineY),
+            r,
+            paint,
+          );
+        }
       }
-      suffixTp.paint(canvas, Offset(x, yPos));
     }
 
     if (resultFieldActive) {
