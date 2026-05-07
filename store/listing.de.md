@@ -104,7 +104,7 @@ Kontakt: dozenal@weltanschauung.app
 | Tags | calculator, mathematics, dozenal, base-12, education |
 | Kontakt-E-Mail | `dozenal@weltanschauung.app` |
 | Website (optional) | `https://dozenal.weltanschauung.app` |
-| Privacy-Policy-URL | `https://dozenal.weltanschauung.app/privacy` (oder wo immer du die HTML-Version hostest) |
+| Privacy-Policy-URL | `https://dozenal.weltanschauung.app/privacy.html` |
 | Land/Region | Schweiz (oder weltweit) |
 | Default-Sprache | Deutsch (Deutschland) |
 
@@ -194,6 +194,55 @@ Internal Testing, dann Closed/Open Testing, zuletzt Production).
 
 Die Signatur kommt automatisch aus `android/key.properties` →
 `~/keys/dozenal_calc.jks`.
+
+---
+
+## Technische Play-Anforderungen (Stand Mai 2026)
+
+| Anforderung | Wert | Quelle |
+|---|---|---|
+| `targetSdk` | ≥ 35 (App liefert 36) | Play-Pflicht seit Aug 2025 |
+| `compileSdk` | 36 | aus Flutter-Default |
+| `minSdk` | 24 (Android 7.0) | aus Flutter-Default |
+| 16 KB Page-Size-Kompatibilität | erfüllt (alle 64-bit `.so`-Libraries mit Alignment 0x10000 / 64 KB) | Play-Pflicht seit Nov 2025 für 64-bit-Builds |
+| Signiertes AAB | ja, via `android/key.properties` | Play-Pflicht für Production |
+
+Verifikation des Alignments:
+
+```bash
+unzip -q build/app/outputs/bundle/release/app-release.aab "base/lib/*" -d /tmp/aab
+for f in $(find /tmp/aab/base/lib -name "*.so"); do
+  readelf -lW "$f" | awk '/LOAD/ && $1=="LOAD"{print FILENAME, $NF; exit}' FILENAME=$f
+done
+```
+
+Erwartet: `0x10000` für `arm64-v8a` und `x86_64` (≥ `0x4000` = 16 KB).
+
+---
+
+## Tester-Pflicht für neue Developer-Accounts
+
+Seit Mitte 2024 verlangt Google bei **Personal-Developer-Accounts** (im
+Gegensatz zu Organisations-Accounts) vor dem allerersten Production-
+Release:
+
+- mindestens **12 angemeldete Tester** im Closed Testing
+- **14 zusammenhängende Tage** ohne Unterbrechung mit aktivem Testen
+
+Ohne diesen Nachweis bleibt der Production-Track gesperrt. Die Tester
+sind reale Google-Accounts (Gmail-Adressen oder Google-Workspace-Mails)
+und müssen die App in dem Zeitraum tatsächlich installieren — nur in
+die Liste eintragen reicht nicht.
+
+Praktischer Ablauf:
+1. Internal-Testing-Track aufsetzen, AAB hochladen, mit 1–2 eigenen
+   Geräten den Smoke-Test durchgehen.
+2. Closed-Testing-Track anlegen, 12 Tester einladen, Opt-in-Link
+   verteilen, sicherstellen dass alle die App installiert haben.
+3. 14 Tage abwarten — Play Console zeigt einen Countdown.
+4. Wenn der Countdown grün ist: Promotion auf Production möglich.
+
+Für Organisations-Accounts (eingetragene Firmen) entfällt die Pflicht.
 
 ---
 

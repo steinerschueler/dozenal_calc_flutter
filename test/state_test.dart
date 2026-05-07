@@ -196,6 +196,37 @@ void main() {
       expect(s.memoryRational, equals(Rational.fromInts(5)));
     });
 
+    test('STO/RCL preserves Rational so periodicity survives', () {
+      // Compute 1/7, store it, clear, recall, and re-evaluate. The recalled
+      // value must still trigger the period-detection path (CLAUDE.md:
+      // "Memory stores the exact `Rational` ... so periodicity survives a
+      // STO/RCL roundtrip").
+      final s = DozenalCalcState()
+        ..handleClick(Digit(DozenalDigit.d1))
+        ..handleClick(const Div())
+        ..handleClick(Digit(DozenalDigit.d7))
+        ..handleClick(const Equals());
+      expect(s.lastAns, equals(Rational.fromInts(1, 7)));
+
+      s
+        ..handleClick(const Expand())
+        ..handleClick(const Sto())
+        ..handleClick(const Ac());
+      expect(s.memoryRational, equals(Rational.fromInts(1, 7)));
+
+      s
+        ..handleClick(const Expand())
+        ..handleClick(const Rcl())
+        ..handleClick(const Equals());
+      expect(s.errorMsg, isNull);
+      expect(s.lastAns, equals(Rational.fromInts(1, 7)),
+          reason: 'recalled rational must round-trip exactly');
+      expect(s.resultPeriodLen, greaterThan(0),
+          reason: 'period detection must still fire after RCL → =');
+      expect(s.isF64Fallback, isFalse,
+          reason: 'rational track must not collapse on a recalled value');
+    });
+
     test('Sinh double-tap toggles to ArSinh + closes overlay', () {
       final s = DozenalCalcState();
       s.handleClick(const Expand());

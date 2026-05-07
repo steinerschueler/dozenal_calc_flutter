@@ -22,9 +22,9 @@ Nein. Da nichts erhoben wird, gibt es auch nichts weiterzugeben.
 
 Die App enthält **keine Werbung**, **kein Tracking-SDK** und **keine Analytics-Pakete**. Es findet keinerlei Beobachtung deines Verhaltens statt.
 
-## Kinder
+## Jugendschutz
 
-Die App ist für alle Altersgruppen geeignet. Da sie keinerlei Daten erhebt, gilt das auch für Kinder.
+Die App ist für alle Altersgruppen geeignet.
 
 ## Verwendete Open-Source-Komponenten
 
@@ -32,7 +32,7 @@ Die App ist mit dem Flutter-Framework (Google) gebaut und nutzt unter anderem di
 
 ## Änderungen dieser Erklärung
 
-Sollten zukünftige Versionen der App Funktionen einführen, die eine Datenerhebung erfordern, wird diese Erklärung vorab entsprechend angepasst. Das Datum am Anfang dieser Seite zeigt jeweils die aktuelle Fassung.
+Sollten zukünftige Versionen der App Funktionen einführen, die eine Datenerhebung erfordern, wird diese Erklärung vorab entsprechend angepasst, und in der App wird deutlich vermerkt, dass eine Anpassung stattgefunden hat. Das Datum am Anfang dieser Seite zeigt jeweils die aktuelle Fassung.
 
 ## Kontakt
 

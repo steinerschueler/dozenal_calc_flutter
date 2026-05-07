@@ -56,6 +56,71 @@ void main() {
       expect((evalDouble('5*-3') - (-15.0)).abs(), lessThan(1e-10));
       expect((evalDouble('5-3') - 2.0).abs(), lessThan(1e-10));
     });
+
+    test('hyperbolic_origin_values: sinh(0)=0, cosh(0)=1, tanh(0)=0', () {
+      expect(evalDouble('sinh(0)').abs(), lessThan(1e-12));
+      expect((evalDouble('cosh(0)') - 1.0).abs(), lessThan(1e-12));
+      expect(evalDouble('tanh(0)').abs(), lessThan(1e-12));
+    });
+
+    test('coth_one: coth(1) = cosh(1)/sinh(1)', () {
+      final expected =
+          ((math.e + 1 / math.e) / 2) / ((math.e - 1 / math.e) / 2);
+      expect((evalDouble('coth(1)') - expected).abs(), lessThan(1e-10));
+    });
+
+    test('hyperbolic_inverse_roundtrip: arX(X(v)) = v', () {
+      expect((evalDouble('arsinh(sinh(1))') - 1.0).abs(), lessThan(1e-10));
+      expect((evalDouble('arcosh(cosh(1))') - 1.0).abs(), lessThan(1e-10));
+      expect((evalDouble('artanh(tanh(0.5))') - 0.5).abs(), lessThan(1e-10));
+      expect((evalDouble('arcoth(coth(2))') - 2.0).abs(), lessThan(1e-10));
+    });
+
+    test('hyperbolic_inverse_domain_violations_yield_nan_or_inf', () {
+      // arcosh defined for x >= 1: arcosh(0) → NaN.
+      expect(evalDouble('arcosh(0)').isNaN, isTrue);
+      // artanh defined for |x| < 1: artanh(1) → +Infinity.
+      expect(evalDouble('artanh(1)').isInfinite, isTrue);
+      // arcoth defined for |x| > 1: arcoth(0.5) → NaN (log of negative).
+      expect(evalDouble('arcoth(0.5)').isNaN, isTrue);
+    });
+
+    test('angle_mode_consistency: sin equals 1 at 90°, π/2 rad, 100 grad', () {
+      final degSin = evalF64('sin(90)', AngleMode.deg)!;
+      final radSin = evalF64('sin(pi/2)', AngleMode.rad)!;
+      final gradSin = evalF64('sin(100)', AngleMode.grad)!;
+      expect((degSin - 1.0).abs(), lessThan(1e-10));
+      expect((radSin - 1.0).abs(), lessThan(1e-10));
+      expect((gradSin - 1.0).abs(), lessThan(1e-10));
+    });
+
+    test('angle_mode_inverse: asin(1) returns 90°, π/2, 100 grad', () {
+      expect((evalF64('asin(1)', AngleMode.deg)! - 90.0).abs(),
+          lessThan(1e-10));
+      expect((evalF64('asin(1)', AngleMode.rad)! - math.pi / 2.0).abs(),
+          lessThan(1e-10));
+      expect((evalF64('asin(1)', AngleMode.grad)! - 100.0).abs(),
+          lessThan(1e-10));
+    });
+
+    test('factorial_basic_and_negative: 5! = 120, 0! = 1, (-1)! = NaN', () {
+      expect((evalDouble('fact(5)') - 120.0).abs(), lessThan(1e-10));
+      expect((evalDouble('fact(0)') - 1.0).abs(), lessThan(1e-10));
+      expect(evalDouble('fact(-1)').isNaN, isTrue);
+    });
+
+    test('abs_recip_basic: |-3|=3, recip(4)=0.25', () {
+      expect((evalDouble('abs(-3)') - 3.0).abs(), lessThan(1e-10));
+      expect((evalDouble('abs(3)') - 3.0).abs(), lessThan(1e-10));
+      expect((evalDouble('recip(4)') - 0.25).abs(), lessThan(1e-10));
+    });
+
+    test('mod_basic_and_div_by_zero: 10 mod 3 = 1, 10 mod 0 → NaN/Inf', () {
+      expect((evalDouble('10 % 3') - 1.0).abs(), lessThan(1e-10));
+      // Dart: (10 % 0) returns NaN for doubles.
+      final modZero = evalF64('10 % 0', AngleMode.rad)!;
+      expect(modZero.isNaN || modZero.isInfinite, isTrue);
+    });
   });
 
   // --- resolveCustomOperators ---
