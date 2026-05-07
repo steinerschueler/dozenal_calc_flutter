@@ -42,7 +42,7 @@ class _H extends StatelessWidget {
           text,
           style: const TextStyle(
             fontWeight: FontWeight.bold,
-            fontSize: 15,
+            fontSize: 18,
             color: Colors.white,
           ),
         ),
@@ -59,7 +59,8 @@ class _P extends StatelessWidget {
         child: Text(
           text,
           style: const TextStyle(
-            fontSize: 13.5,
+            fontSize: 16,
+            fontWeight: FontWeight.w300,
             height: 1.45,
             color: Color(0xFFE0E0E0),
           ),
@@ -78,7 +79,7 @@ class _Pre extends StatelessWidget {
           text,
           style: const TextStyle(
             fontFamily: 'monospace',
-            fontSize: 12,
+            fontSize: 14,
             height: 1.5,
             color: Color(0xFFE0E0E0),
           ),
@@ -115,7 +116,7 @@ class _DigitLegend extends StatelessWidget {
                 '= $v',
                 style: const TextStyle(
                   fontFamily: 'monospace',
-                  fontSize: 11,
+                  fontSize: 13,
                   color: Color(0xFFC8C8C8),
                 ),
               ),
@@ -198,7 +199,11 @@ class _Chapter4Illustration extends StatelessWidget {
           const SizedBox(width: 8),
           Text(
             label,
-            style: const TextStyle(fontSize: 11, color: Color(0xFFC8C8C8)),
+            style: const TextStyle(
+              fontSize: 13,
+              fontWeight: FontWeight.w300,
+              color: Color(0xFFC8C8C8),
+            ),
           ),
         ],
       ),
@@ -336,14 +341,18 @@ class _Chapter5Illustration extends StatelessWidget {
               formula,
               style: const TextStyle(
                 fontFamily: 'monospace',
-                fontSize: 11,
+                fontSize: 13,
                 color: Color(0xFFD8D8D8),
               ),
             ),
           ),
           Text(
             approx,
-            style: const TextStyle(fontSize: 10.5, color: Color(0xFF9E9E9E)),
+            style: const TextStyle(
+              fontSize: 12.5,
+              fontWeight: FontWeight.w300,
+              color: Color(0xFF9E9E9E),
+            ),
           ),
         ],
       ),

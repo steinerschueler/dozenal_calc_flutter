@@ -17,7 +17,7 @@ const Color _kDigitNormal = Colors.white;
 const Color _kDigitPressed = Color(0xFFFFD700); // egui GOLD
 const Color _kOpNormal = Color(0xFF98C8FF); // egui LIGHT_BLUE
 const Color _kOpPressed = Color(0xFFFF9090); // egui LIGHT_RED
-const Color _kEqualsMobile = Color(0xFF8CDC8C); // egui LIGHT_GREEN
+const Color _kEquals = Color(0xFF8CDC8C); // egui LIGHT_GREEN
 const Color _kBorder = Color(0xFF505050);
 
 typedef TokenTapHandler = void Function(CalcToken token);
@@ -171,7 +171,7 @@ class _MobileKeypad extends StatelessWidget {
           height: mobileEqualsHeight,
           child: _EqualsBar(
             onTap: () => onTap(const Equals()),
-            normalColor: _kEqualsMobile,
+            normalColor: _kEquals,
           ),
         ),
       ],
@@ -263,7 +263,7 @@ class _DesktopKeypad extends StatelessWidget {
           height: desktopButtonSize,
           child: _EqualsBar(
             onTap: () => onTap(const Equals()),
-            normalColor: _kOpNormal,
+            normalColor: _kEquals,
           ),
         ),
       ],
@@ -402,7 +402,7 @@ class _TabletKeypad extends StatelessWidget {
           height: tabletButtonSize,
           child: _EqualsBar(
             onTap: () => onTap(const Equals()),
-            normalColor: _kOpNormal,
+            normalColor: _kEquals,
           ),
         ),
       ],

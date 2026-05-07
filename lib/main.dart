@@ -75,7 +75,30 @@ final Map<LogicalKeyboardKey, CalcToken> _logicalKeyMap = {
   LogicalKeyboardKey.escape: const Ac(),
   LogicalKeyboardKey.arrowLeft: const TriangleLeft(),
   LogicalKeyboardKey.arrowRight: const TriangleRight(),
-  // Numpad fall-throughs in case the platform doesn't emit `character`.
+  // Digit fall-throughs: on Linux, `character` is sometimes empty for
+  // top-row digits depending on keyboard layout, so we map logical keys
+  // explicitly for every digit, both top-row and numpad.
+  LogicalKeyboardKey.digit0: const Digit(DozenalDigit.d0),
+  LogicalKeyboardKey.digit1: const Digit(DozenalDigit.d1),
+  LogicalKeyboardKey.digit2: const Digit(DozenalDigit.d2),
+  LogicalKeyboardKey.digit3: const Digit(DozenalDigit.d3),
+  LogicalKeyboardKey.digit4: const Digit(DozenalDigit.d4),
+  LogicalKeyboardKey.digit5: const Digit(DozenalDigit.d5),
+  LogicalKeyboardKey.digit6: const Digit(DozenalDigit.d6),
+  LogicalKeyboardKey.digit7: const Digit(DozenalDigit.d7),
+  LogicalKeyboardKey.digit8: const Digit(DozenalDigit.d8),
+  LogicalKeyboardKey.digit9: const Digit(DozenalDigit.d9),
+  LogicalKeyboardKey.numpad0: const Digit(DozenalDigit.d0),
+  LogicalKeyboardKey.numpad1: const Digit(DozenalDigit.d1),
+  LogicalKeyboardKey.numpad2: const Digit(DozenalDigit.d2),
+  LogicalKeyboardKey.numpad3: const Digit(DozenalDigit.d3),
+  LogicalKeyboardKey.numpad4: const Digit(DozenalDigit.d4),
+  LogicalKeyboardKey.numpad5: const Digit(DozenalDigit.d5),
+  LogicalKeyboardKey.numpad6: const Digit(DozenalDigit.d6),
+  LogicalKeyboardKey.numpad7: const Digit(DozenalDigit.d7),
+  LogicalKeyboardKey.numpad8: const Digit(DozenalDigit.d8),
+  LogicalKeyboardKey.numpad9: const Digit(DozenalDigit.d9),
+  // Numpad operator fall-throughs in case the platform doesn't emit `character`.
   LogicalKeyboardKey.numpadAdd: const Add(),
   LogicalKeyboardKey.numpadSubtract: const Sub(),
   LogicalKeyboardKey.numpadMultiply: const Mul(),
