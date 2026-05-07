@@ -65,6 +65,15 @@ flutter run -d chrome         # web
 flutter test                  # all 78 tests
 ```
 
+`flutter pub get` will report six transitive dependencies (`meta`,
+`vector_math`, `cli_util`, `matcher`, `test_api`, `xml`) as having
+newer versions available but incompatible with the current
+constraints. These pins come from the Flutter SDK itself, not from
+this `pubspec.yaml`, so neither `flutter pub upgrade` nor
+`flutter pub upgrade --major-versions` lifts them on the stable
+channel. After each Flutter minor stable release, retry the upgrade
+and re-run analyze + tests; until then the warning is informational.
+
 Release builds:
 
 ```bash
