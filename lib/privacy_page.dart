@@ -1,11 +1,11 @@
-// Renders legal/privacy-policy.de.md inside the app via flutter_markdown.
+// Renders legal/privacy-policy.de.md inside the app via flutter_markdown_plus.
 // The .md file is bundled as a Flutter asset (see pubspec.yaml). When the
 // privacy policy text changes, edit the .md file and rebuild — no Dart
 // changes needed.
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
-import 'package:flutter_markdown/flutter_markdown.dart';
+import 'package:flutter_markdown_plus/flutter_markdown_plus.dart';
 
 class PrivacyPage extends StatefulWidget {
   const PrivacyPage({super.key});
