@@ -93,6 +93,22 @@ const double mobileButtonHeight = 50.0;
 /// The Equals bar is a touch taller for visual prominence.
 const double mobileEqualsHeight = mobileButtonHeight * 1.2;
 
+/// Total height of the 4×4 function-key block (op grid) on mobile.
+const double mobileOpGridHeight =
+    mobileButtonHeight * 4 + mobileSpacing * 3;
+
+/// Y-offset (from the top of the keypad) at which the 4×4 function-key
+/// block begins. Sum of: digit grid (4 rows + 3 row-gaps), the 14-px gap
+/// above the divider, the 1-px divider line, and the 14-px gap below it.
+/// The overlay anchors here so its main grid lines up exactly with the
+/// function keys it floats over; the bottom row of mode buttons extends
+/// downward into the system-row area.
+const double mobileOpGridTopY = mobileButtonHeight * 4 +
+    mobileNumSpacingY * 3 +
+    14 +
+    1 +
+    14;
+
 // ---------------------------------------------------------------------------
 // Overlay (Sets 6-10) — sized to mirror the main keypad area
 // ---------------------------------------------------------------------------
@@ -102,3 +118,11 @@ const double overlayMobileSpacing = 6.0;
 
 /// Extra gap between the Sets 6-9 grid and the Set 10 bottom row on mobile.
 const double overlayMobileExtraGap = 12.0;
+
+/// Total intrinsic height of the mobile overlay: padding + top 4×4 grid +
+/// inter-section gap + bottom mode-button row. Used to size the two scrim
+/// regions in main.dart so that taps anywhere outside the overlay close it.
+const double mobileOverlayHeight = 2 * overlayMobileSpacing +
+    mobileOpGridHeight +
+    mobileSpacing +
+    overlayBtnHeight;

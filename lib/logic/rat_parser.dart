@@ -155,7 +155,15 @@ class _RatParser {
       if (exp == null) return null;
       if (exp.den != BigInt.one) return null; // fractional exponent → collapse
       if (!exp.num.isValidInt) return null;
-      return base.pow(exp.num.toInt());
+      final expInt = exp.num.toInt();
+      // Safety cap: avoid astronomically large BigInt powers that would
+      // freeze the engine (e.g. 9^9^9 = 9^387_420_489 would allocate a
+      // ~150 MB BigInt). Estimated result-bit-length is bits(base) * |exp|;
+      // anything above ~10 M bits (~1.25 MB BigInt) collapses to f64.
+      const int maxResultBits = 10000000;
+      final baseBits = base.num.bitLength + base.den.bitLength;
+      if (baseBits * expInt.abs() > maxResultBits) return null;
+      return base.pow(expInt);
     }
     return base;
   }

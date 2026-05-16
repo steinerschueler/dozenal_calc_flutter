@@ -241,8 +241,12 @@ final class Mod extends CalcToken {
 
 // --- Overlay Set 10 — Modes & Meta ---
 
-final class DozDec extends CalcToken {
-  const DozDec();
+final class Doz extends CalcToken {
+  const Doz();
+}
+
+final class Dez extends CalcToken {
+  const Dez();
 }
 
 final class Drg extends CalcToken {
@@ -256,6 +260,14 @@ final class Info extends CalcToken {
 final class Close extends CalcToken {
   const Close();
 }
+
+// ---------------------------------------------------------------------------
+// NumeralSystem — selects whether digit input/output is interpreted in
+// base 12 (dozenal, the app's default) or base 10 (decimal). Mutually
+// exclusive; exactly one mode is active at any time.
+// ---------------------------------------------------------------------------
+
+enum NumeralSystem { doz, dez }
 
 // ---------------------------------------------------------------------------
 // AngleMode

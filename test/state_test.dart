@@ -138,7 +138,7 @@ void main() {
       s.handleClick(const Drg());
       expect(s.errorMsg, isNotNull,
           reason: 'DRG must not clear errors — only AC or input does');
-      expect(s.angleMode, equals(AngleMode.rad),
+      expect(s.angleMode, equals(AngleMode.deg),
           reason: 'angle mode must not change while error is active');
     });
 
@@ -158,13 +158,13 @@ void main() {
 
     test('Drg cycles through angle modes', () {
       final s = DozenalCalcState();
+      expect(s.angleMode, equals(AngleMode.deg));
+      s.handleClick(const Drg());
       expect(s.angleMode, equals(AngleMode.rad));
       s.handleClick(const Drg());
       expect(s.angleMode, equals(AngleMode.grad));
       s.handleClick(const Drg());
       expect(s.angleMode, equals(AngleMode.deg));
-      s.handleClick(const Drg());
-      expect(s.angleMode, equals(AngleMode.rad));
     });
 
     test('Expand opens overlay; Close closes it', () {
@@ -248,6 +248,109 @@ void main() {
       expect(count, equals(1));
       s.handleClick(const Add());
       expect(count, equals(2));
+    });
+
+    test('= on an empty buffer yields 0, not SYNTAX ERROR', () {
+      final s = DozenalCalcState()
+        ..handleClick(Digit(DozenalDigit.d5))
+        ..handleClick(const Ac())
+        ..handleClick(const Equals());
+      expect(s.errorMsg, isNull,
+          reason: 'AC clears the buffer; = on nothing should not error');
+      expect(s.resultBuffer, equals([Digit(DozenalDigit.d0)]));
+    });
+
+    test('default numeral system is dozenal', () {
+      final s = DozenalCalcState();
+      expect(s.numeralSystem, equals(NumeralSystem.doz));
+      expect(s.activeBase, equals(12));
+    });
+
+    test('Dez switches active base to 10, Doz back to 12', () {
+      final s = DozenalCalcState();
+      s.handleClick(const Dez());
+      expect(s.numeralSystem, equals(NumeralSystem.dez));
+      expect(s.activeBase, equals(10));
+      s.handleClick(const Doz());
+      expect(s.numeralSystem, equals(NumeralSystem.doz));
+      expect(s.activeBase, equals(12));
+    });
+
+    test('Dez mode evaluates 1+2 as decimal 3 (same as doz for small ints)',
+        () {
+      final s = DozenalCalcState()..handleClick(const Dez());
+      s.handleClick(Digit(DozenalDigit.d1));
+      s.handleClick(const Add());
+      s.handleClick(Digit(DozenalDigit.d2));
+      s.handleClick(const Equals());
+      expect(s.errorMsg, isNull);
+      expect(s.resultBuffer, equals([Digit(DozenalDigit.d3)]));
+    });
+
+    test('Dez mode: 9+1 = 10 (rendered as 1,0 in base 10)', () {
+      final s = DozenalCalcState()..handleClick(const Dez());
+      s.handleClick(Digit(DozenalDigit.d9));
+      s.handleClick(const Add());
+      s.handleClick(Digit(DozenalDigit.d1));
+      s.handleClick(const Equals());
+      expect(s.errorMsg, isNull);
+      // In base 10, 10 = [1, 0]; in base 12 it would have been [A].
+      expect(s.resultBuffer,
+          equals([Digit(DozenalDigit.d1), Digit(DozenalDigit.d0)]));
+    });
+
+    test('Doz→Dez switch converts buffer: doz 1,0 (=12) becomes dez 1,2', () {
+      final s = DozenalCalcState();
+      s.handleClick(Digit(DozenalDigit.d1));
+      s.handleClick(Digit(DozenalDigit.d0));
+      s.handleClick(const Dez());
+      expect(
+        s.inputBuffer,
+        equals([Digit(DozenalDigit.d1), Digit(DozenalDigit.d2)]),
+        reason: 'doz "10" (=12 dec) → dez "12"',
+      );
+    });
+
+    test('Dez→Doz switch converts buffer: dez 1,2 (=12) becomes doz 1,0', () {
+      final s = DozenalCalcState()..handleClick(const Dez());
+      s.handleClick(Digit(DozenalDigit.d1));
+      s.handleClick(Digit(DozenalDigit.d2));
+      s.handleClick(const Doz());
+      expect(
+        s.inputBuffer,
+        equals([Digit(DozenalDigit.d1), Digit(DozenalDigit.d0)]),
+        reason: 'dez "12" → doz "10"',
+      );
+    });
+
+    test('round-trip: doz "23" → dez → doz preserves digits', () {
+      final s = DozenalCalcState();
+      s.handleClick(Digit(DozenalDigit.d2));
+      s.handleClick(Digit(DozenalDigit.d3));
+      s.handleClick(const Dez());
+      s.handleClick(const Doz());
+      expect(s.inputBuffer,
+          equals([Digit(DozenalDigit.d2), Digit(DozenalDigit.d3)]));
+    });
+
+    test('mode-switch preserves operators between literals', () {
+      // doz "10 + 11" (= 12 + 13 dec) → dez "12 + 13"
+      final s = DozenalCalcState();
+      s.handleClick(Digit(DozenalDigit.d1));
+      s.handleClick(Digit(DozenalDigit.d0));
+      s.handleClick(const Add());
+      s.handleClick(Digit(DozenalDigit.d1));
+      s.handleClick(Digit(DozenalDigit.d1));
+      s.handleClick(const Dez());
+      expect(
+          s.inputBuffer,
+          equals([
+            Digit(DozenalDigit.d1),
+            Digit(DozenalDigit.d2),
+            const Add(),
+            Digit(DozenalDigit.d1),
+            Digit(DozenalDigit.d3),
+          ]));
     });
   });
 }

@@ -18,61 +18,66 @@ class DozenalConverter {
 
   /// Exact integer conversion via Horner's method. BigInt removes the
   /// overflow path that the Rust version had to guard with `checked_*`.
-  static BigInt toDecimalExact(List<DozenalDigit> digits) {
+  /// [base] defaults to 12 (dozenal); pass 10 for decimal interpretation.
+  static BigInt toDecimalExact(List<DozenalDigit> digits, {int base = 12}) {
     var result = BigInt.zero;
-    final twelve = BigInt.from(12);
+    final b = BigInt.from(base);
     for (final d in digits) {
-      result = result * twelve + BigInt.from(d.value);
+      result = result * b + BigInt.from(d.value);
     }
     return result;
   }
 
-  /// Dozenal digits → f64. Used by the f64 evaluation track.
-  static double toDecimal(List<DozenalDigit> digits) {
+  /// Digit list → f64. Used by the f64 evaluation track.
+  static double toDecimal(List<DozenalDigit> digits, {int base = 12}) {
     var result = 0.0;
+    final b = base.toDouble();
     for (var i = 0; i < digits.length; i++) {
       final d = digits[digits.length - 1 - i];
-      result += d.value * math.pow(12.0, i).toDouble();
+      result += d.value * math.pow(b, i).toDouble();
     }
     return result;
   }
 
-  /// Non-negative BigInt → dozenal digits. Exact at any magnitude.
-  static List<DozenalDigit> fromBigInt(BigInt value) {
+  /// Non-negative BigInt → digits in the given [base]. Exact at any magnitude.
+  static List<DozenalDigit> fromBigInt(BigInt value, {int base = 12}) {
     if (value.isNegative) value = -value;
     if (value == BigInt.zero) return [DozenalDigit.d0];
-    final twelve = BigInt.from(12);
+    final b = BigInt.from(base);
     final digits = <DozenalDigit>[];
     while (value > BigInt.zero) {
-      final rem = (value % twelve).toInt();
+      final rem = (value % b).toInt();
       digits.add(DozenalDigit.values[rem]);
-      value = value ~/ twelve;
+      value = value ~/ b;
     }
     return digits.reversed.toList();
   }
 
-  /// f64 → dozenal digits (integer part). Mirrors the Rust from_decimal
+  /// f64 → digits in [base] (integer part). Mirrors the Rust from_decimal
   /// loop exactly; precision is bounded by the f64 mantissa.
-  static List<DozenalDigit> fromDecimal(double value) {
+  static List<DozenalDigit> fromDecimal(double value, {int base = 12}) {
     var integerPart = value.floorToDouble();
     if (integerPart < 1.0) {
       return [DozenalDigit.d0];
     }
+    final b = base.toDouble();
     final digits = <DozenalDigit>[];
     while (integerPart >= 1.0) {
-      final remainder = (integerPart % 12.0).toInt();
+      final remainder = (integerPart % b).toInt();
       digits.add(DozenalDigit.values[remainder]);
-      integerPart = (integerPart / 12.0).floorToDouble();
+      integerPart = (integerPart / b).floorToDouble();
     }
     return digits.reversed.toList();
   }
 
-  /// f64 fractional part → dozenal digits, capped at `precision` digits.
+  /// f64 fractional part → digits in [base], capped at `precision` digits.
   /// Stops early once the residual drops below fracEpsilon.
-  static List<DozenalDigit> fracToDigits(double frac, int precision) {
+  static List<DozenalDigit> fracToDigits(double frac, int precision,
+      {int base = 12}) {
     final digits = <DozenalDigit>[];
+    final b = base.toDouble();
     for (var i = 0; i < precision; i++) {
-      frac *= 12.0;
+      frac *= b;
       final dVal = (frac + fracEpsilon).floor();
       final d = DozenalDigit.fromValue(dVal);
       if (d != null) digits.add(d);

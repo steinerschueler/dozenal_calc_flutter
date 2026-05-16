@@ -3,8 +3,11 @@
 // content is in info_content.dart.
 
 import 'package:flutter/material.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 
+import 'feedback_dialog.dart';
 import 'info_content.dart';
+import 'license_page.dart';
 import 'privacy_page.dart';
 
 class InfoListPage extends StatelessWidget {
@@ -77,8 +80,86 @@ class InfoListPage extends StatelessWidget {
               MaterialPageRoute(builder: (_) => const PrivacyPage()),
             ),
           ),
+          const Divider(color: Color(0xFF2C2C2C), height: 1),
+          ListTile(
+            leading: const SizedBox(
+              width: 28,
+              child: Icon(
+                Icons.balance,
+                color: Color(0xFFA0A0A0),
+                size: 16,
+              ),
+            ),
+            title: const Text(
+              'Lizenz',
+              style: TextStyle(fontSize: 14, color: Color(0xFFD0D0D0)),
+            ),
+            trailing: const Icon(
+              Icons.chevron_right,
+              color: Color(0xFF707070),
+              size: 18,
+            ),
+            onTap: () => Navigator.of(context).push(
+              MaterialPageRoute(builder: (_) => const AppLicensePage()),
+            ),
+          ),
+          const Divider(color: Color(0xFF2C2C2C), height: 1),
+          ListTile(
+            leading: const SizedBox(
+              width: 28,
+              child: Icon(
+                Icons.mail_outline,
+                color: Color(0xFFA0A0A0),
+                size: 16,
+              ),
+            ),
+            title: const Text(
+              'Feedback geben',
+              style: TextStyle(fontSize: 14, color: Color(0xFFD0D0D0)),
+            ),
+            trailing: const Icon(
+              Icons.chevron_right,
+              color: Color(0xFF707070),
+              size: 18,
+            ),
+            onTap: () => showFeedbackDialog(context),
+          ),
+          const _VersionFooter(),
         ],
       ),
+    );
+  }
+}
+
+/// Footer pinned to the bottom of the info list that shows the running
+/// version and build number. Useful while collecting tester feedback so
+/// the build a report came from is unambiguous. Version is read at
+/// runtime from PackageInfo, so a pubspec bump is the only place that
+/// needs updating.
+class _VersionFooter extends StatelessWidget {
+  const _VersionFooter();
+
+  @override
+  Widget build(BuildContext context) {
+    return FutureBuilder<PackageInfo>(
+      future: PackageInfo.fromPlatform(),
+      builder: (ctx, snap) {
+        final label = snap.hasData
+            ? 'Version ${snap.data!.version} · Build ${snap.data!.buildNumber}'
+            : '';
+        return Padding(
+          padding: const EdgeInsets.fromLTRB(16, 32, 16, 24),
+          child: Text(
+            label,
+            textAlign: TextAlign.center,
+            style: const TextStyle(
+              color: Color(0xFF707070),
+              fontSize: 11,
+              fontFamily: 'monospace',
+            ),
+          ),
+        );
+      },
     );
   }
 }

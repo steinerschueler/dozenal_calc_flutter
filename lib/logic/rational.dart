@@ -106,22 +106,23 @@ class Rational {
   // Period detection — classical school algorithm over remainders.
   // ---------------------------------------------------------------------
 
-  /// Decomposes the fraction into (integer part, pre-period, period).
-  /// `period` is empty iff the expansion is finite. The period is capped
-  /// at 100 digits; beyond that the result is treated as non-periodic.
-  /// Sign is dropped — the magnitude is what's returned.
-  DozenalPeriodic toDozenalPeriodic() {
+  /// Decomposes the fraction into (integer part, pre-period, period) in the
+  /// given [base] (default 12). `period` is empty iff the expansion is
+  /// finite in that base. The period is capped at 100 digits; beyond that
+  /// the result is treated as non-periodic. Sign is dropped — the magnitude
+  /// is what's returned.
+  DozenalPeriodic toDozenalPeriodic({int base = 12}) {
     final absNum = num.abs();
     final d = den; // always positive by invariant
 
     final intPart = absNum ~/ d;
     var rem = absNum % d;
 
-    final intDigits = DozenalConverter.fromBigInt(intPart);
+    final intDigits = DozenalConverter.fromBigInt(intPart, base: base);
 
     final fracDigits = <DozenalDigit>[];
     final seen = <BigInt, int>{};
-    final twelve = BigInt.from(12);
+    final b = BigInt.from(base);
 
     while (true) {
       if (rem == BigInt.zero) {
@@ -145,7 +146,7 @@ class Rational {
         );
       }
       seen[rem] = fracDigits.length;
-      rem = rem * twelve;
+      rem = rem * b;
       final digitVal = (rem ~/ d).toInt();
       rem = rem % d;
       fracDigits.add(DozenalDigit.values[digitVal]);

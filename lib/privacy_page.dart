@@ -7,6 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter_markdown_plus/flutter_markdown_plus.dart';
 
+import 'license_page.dart' show openExternalLink;
+
 class PrivacyPage extends StatefulWidget {
   const PrivacyPage({super.key});
 
@@ -46,6 +48,9 @@ class _PrivacyPageState extends State<PrivacyPage> {
           return Markdown(
             data: snap.data ?? '',
             padding: const EdgeInsets.fromLTRB(16, 12, 16, 24),
+            onTapLink: (text, href, title) {
+              if (href != null) openExternalLink(context, href);
+            },
             styleSheet: MarkdownStyleSheet(
               h1: const TextStyle(
                 color: Colors.white,

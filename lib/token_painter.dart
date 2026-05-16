@@ -201,7 +201,8 @@ String _tokenLabel(CalcToken t) {
   if (t is AbsVal) return '|x|';
   if (t is Reciprocal) return '1/x';
   if (t is Mod) return 'mod';
-  if (t is DozDec) return 'Doz';
+  if (t is Doz) return 'Doz';
+  if (t is Dez) return 'Dez';
   if (t is Drg) return 'DRG';
   if (t is Info) return 'Info';
   if (t is Close) return '…';

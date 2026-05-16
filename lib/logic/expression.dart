@@ -31,7 +31,8 @@ const int f64FracDigits = 4;
 // ---------------------------------------------------------------------------
 
 /// Returns null as soon as a non-rational token is encountered.
-List<RatExpr>? buildRatExpr(List<CalcToken> tokens) {
+/// [base] selects how Digit tokens are interpreted (default 12 / dozenal).
+List<RatExpr>? buildRatExpr(List<CalcToken> tokens, {int base = 12}) {
   final exprs = <RatExpr>[];
   var i = 0;
   while (i < tokens.length) {
@@ -56,14 +57,14 @@ List<RatExpr>? buildRatExpr(List<CalcToken> tokens) {
           break;
         }
       }
-      final intVal = DozenalConverter.toDecimalExact(intD);
+      final intVal = DozenalConverter.toDecimalExact(intD, base: base);
       final intRat = Rational.tryNew(intVal, BigInt.one)!;
       Rational rat;
       if (fracD.isEmpty) {
         rat = intRat;
       } else {
-        final fracNum = DozenalConverter.toDecimalExact(fracD);
-        final fracDen = BigInt.from(12).pow(fracD.length);
+        final fracNum = DozenalConverter.toDecimalExact(fracD, base: base);
+        final fracDen = BigInt.from(base).pow(fracD.length);
         final fracRat = Rational.tryNew(fracNum, fracDen)!;
         rat = intRat.add(fracRat);
       }
@@ -82,8 +83,8 @@ List<RatExpr>? buildRatExpr(List<CalcToken> tokens) {
         }
       }
       if (fracD.isEmpty) return null;
-      final fracNum = DozenalConverter.toDecimalExact(fracD);
-      final fracDen = BigInt.from(12).pow(fracD.length);
+      final fracNum = DozenalConverter.toDecimalExact(fracD, base: base);
+      final fracDen = BigInt.from(base).pow(fracD.length);
       exprs.add(RatNum(Rational.tryNew(fracNum, fracDen)!));
     } else if (t is Add) {
       exprs.add(const RatAdd());
@@ -329,15 +330,17 @@ void _flushNumberLiteral(
   List<DozenalDigit> fracDigits,
   List<bool> inFractionRef, // mutable single-element list as out param
   List<String> out,
+  int base,
 ) {
   if (intDigits.isEmpty && fracDigits.isEmpty) return;
   final intStr = intDigits.isEmpty
       ? '0'
-      : DozenalConverter.toDecimal(intDigits).toString();
+      : DozenalConverter.toDecimal(intDigits, base: base).toString();
   if (inFractionRef[0] && fracDigits.isNotEmpty) {
-    final fracStr = DozenalConverter.toDecimal(fracDigits).toString();
+    final fracStr =
+        DozenalConverter.toDecimal(fracDigits, base: base).toString();
     final len = fracDigits.length;
-    out.add('($intStr+($fracStr/(12^$len)))');
+    out.add('($intStr+($fracStr/($base^$len)))');
   } else {
     out.add(intStr);
   }
@@ -349,7 +352,8 @@ void _flushNumberLiteral(
 /// Builds the final evaluator-ready expression string from an
 /// already-`withImplicitMuls`-expanded token sequence. Resolves ⊕/√/log into
 /// pure infix and balances any unclosed parens at the end.
-String buildMevalString(List<CalcToken> expanded) {
+/// [base] selects how Digit tokens are interpreted (default 12 / dozenal).
+String buildMevalString(List<CalcToken> expanded, {int base = 12}) {
   final intDigits = <DozenalDigit>[];
   final fracDigits = <DozenalDigit>[];
   final inFraction = [false];
@@ -365,7 +369,7 @@ String buildMevalString(List<CalcToken> expanded) {
     } else if (token is Decimal) {
       inFraction[0] = true;
     } else {
-      _flushNumberLiteral(intDigits, fracDigits, inFraction, tokensStr);
+      _flushNumberLiteral(intDigits, fracDigits, inFraction, tokensStr, base);
       if (token is RatLit) {
         tokensStr.add(token.value.toDouble().toString());
       } else {
@@ -379,7 +383,7 @@ String buildMevalString(List<CalcToken> expanded) {
       }
     }
   }
-  _flushNumberLiteral(intDigits, fracDigits, inFraction, tokensStr);
+  _flushNumberLiteral(intDigits, fracDigits, inFraction, tokensStr, base);
 
   resolveCustomOperators(tokensStr);
 
@@ -409,8 +413,9 @@ class PeriodMeta {
   const PeriodMeta({required this.start, required this.len, required this.capped});
 }
 
-({List<CalcToken> buf, PeriodMeta meta}) formatRationalResult(Rational r) {
-  final dec = r.toDozenalPeriodic();
+({List<CalcToken> buf, PeriodMeta meta}) formatRationalResult(Rational r,
+    {int base = 12}) {
+  final dec = r.toDozenalPeriodic(base: base);
   final buf = <CalcToken>[];
   if (r.num.isNegative) {
     buf.add(const Negate());
@@ -452,20 +457,21 @@ String formatDecimalResult(double val) {
   return s;
 }
 
-List<CalcToken> formatF64Result(double value) {
+List<CalcToken> formatF64Result(double value, {int base = 12}) {
   final buf = <CalcToken>[];
   var v = value;
   if (v < 0.0) {
     buf.add(const Negate());
     v = v.abs();
   }
-  for (final d in DozenalConverter.fromDecimal(v)) {
+  for (final d in DozenalConverter.fromDecimal(v, base: base)) {
     buf.add(Digit(d));
   }
   final fracPart = v - v.floorToDouble();
   if (fracPart > fracEpsilon) {
     buf.add(const Decimal());
-    for (final d in DozenalConverter.fracToDigits(fracPart, f64FracDigits)) {
+    for (final d in DozenalConverter.fracToDigits(fracPart, f64FracDigits,
+        base: base)) {
       buf.add(Digit(d));
     }
   }

@@ -43,10 +43,9 @@ class TwoLineDisplay extends StatelessWidget {
   /// Angle-mode label (`DEG`/`RAD`/`GRD`) shown top-right; null hides it.
   final String? angleModeLabel;
 
-  /// Doz↔Dec inspection mode: when non-null, the result line shows this
-  /// pre-formatted decimal string instead of the dozenal token sequence.
-  /// errorMsg still takes precedence.
-  final String? decimalDisplay;
+  /// Active numeral system label (`DOZ` or `DEZ`) shown just below the
+  /// angle-mode label; null hides it.
+  final String? numeralSystemLabel;
 
   const TwoLineDisplay({
     super.key,
@@ -62,7 +61,7 @@ class TwoLineDisplay extends StatelessWidget {
     this.errorMsg,
     this.memoryActive = false,
     this.angleModeLabel,
-    this.decimalDisplay,
+    this.numeralSystemLabel,
   });
 
   @override
@@ -91,7 +90,7 @@ class TwoLineDisplay extends StatelessWidget {
             errorMsg: errorMsg,
             memoryActive: memoryActive,
             angleModeLabel: angleModeLabel,
-            decimalDisplay: decimalDisplay,
+            numeralSystemLabel: numeralSystemLabel,
           ),
         ),
       ),
@@ -112,7 +111,7 @@ class _TwoLineDisplayPainter extends CustomPainter {
   final String? errorMsg;
   final bool memoryActive;
   final String? angleModeLabel;
-  final String? decimalDisplay;
+  final String? numeralSystemLabel;
 
   _TwoLineDisplayPainter({
     required this.inputBuffer,
@@ -127,7 +126,7 @@ class _TwoLineDisplayPainter extends CustomPainter {
     required this.errorMsg,
     required this.memoryActive,
     required this.angleModeLabel,
-    required this.decimalDisplay,
+    required this.numeralSystemLabel,
   });
 
   @override
@@ -138,33 +137,10 @@ class _TwoLineDisplayPainter extends CustomPainter {
     _paintInputLine(canvas, inputRect);
     if (errorMsg != null) {
       _paintError(canvas, resultRect, errorMsg!);
-    } else if (decimalDisplay != null) {
-      _paintDecimal(canvas, resultRect, decimalDisplay!);
     } else {
       _paintResultLine(canvas, resultRect);
     }
     _paintIndicators(canvas, size);
-  }
-
-  void _paintDecimal(Canvas canvas, Rect rect, String text) {
-    final tp = TextPainter(
-      text: TextSpan(
-        text: text,
-        style: TextStyle(
-          color: Colors.white,
-          fontSize: rect.height * 0.36,
-          fontFamily: 'monospace',
-        ),
-      ),
-      textDirection: TextDirection.ltr,
-    )..layout(maxWidth: rect.width - 16);
-    tp.paint(
-      canvas,
-      Offset(
-        rect.right - tp.width - 8,
-        rect.top + (rect.height - tp.height) / 2,
-      ),
-    );
   }
 
   void _paintError(Canvas canvas, Rect rect, String msg) {
@@ -217,11 +193,11 @@ class _TwoLineDisplayPainter extends CustomPainter {
       )..layout();
       tp.paint(canvas, Offset(size.width - tp.width - 2, 2));
     }
-    if (decimalDisplay != null) {
+    if (numeralSystemLabel != null) {
       final tp = TextPainter(
-        text: const TextSpan(
-          text: 'DEC',
-          style: TextStyle(
+        text: TextSpan(
+          text: numeralSystemLabel,
+          style: const TextStyle(
             color: Color(0xFF64C8FF),
             fontSize: 10,
             fontFamily: 'monospace',
@@ -338,7 +314,7 @@ class _TwoLineDisplayPainter extends CustomPainter {
       old.errorMsg != errorMsg ||
       old.memoryActive != memoryActive ||
       old.angleModeLabel != angleModeLabel ||
-      old.decimalDisplay != decimalDisplay;
+      old.numeralSystemLabel != numeralSystemLabel;
 }
 
 // ---------------------------------------------------------------------------
@@ -443,7 +419,7 @@ String _tokenText(CalcToken t) {
   if (t is OplusBotLeft) return '⊕';
   if (t is LogBotRight) return 'log';
   if (t is RatLit) return 'Ans';
-  // App-state tokens (AC, Del, Equals, Expand, Sto, Rcl, Mc, Ans, DozDec,
+  // App-state tokens (AC, Del, Equals, Expand, Sto, Rcl, Mc, Ans, Doz, Dez,
   // Drg, Info, Close, TriangleLeft, TriangleRight) never appear in
   // input_buffer or result_buffer.
   return '';

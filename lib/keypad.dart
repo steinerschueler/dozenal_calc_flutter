@@ -15,10 +15,17 @@ import 'tokens.dart';
 
 const Color _kDigitNormal = Colors.white;
 const Color _kDigitPressed = Color(0xFFFFD700); // egui GOLD
+const Color _kDigitDisabled = Color(0xFF606060); // muted grey when locked out
 const Color _kOpNormal = Color(0xFF98C8FF); // egui LIGHT_BLUE
 const Color _kOpPressed = Color(0xFFFF9090); // egui LIGHT_RED
 const Color _kEquals = Color(0xFF8CDC8C); // egui LIGHT_GREEN
 const Color _kBorder = Color(0xFF505050);
+const Color _kAc = Color(0xFFFF4040); // warning red for the AC clear key
+const Color _kAcPressed = Color(0xFFFF8080);
+const Color _kOverlayBtnBg = Color(0xFF1F1F1F); // solid fill behind overlay
+                                                // buttons so they read as a
+                                                // floating card over the dimly
+                                                // visible main keypad behind.
 
 typedef TokenTapHandler = void Function(CalcToken token);
 
@@ -26,21 +33,63 @@ typedef TokenTapHandler = void Function(CalcToken token);
 /// (yellow corner dot). Wired up in step 9.
 typedef ArmedPredicate = bool Function(CalcToken token);
 
+/// Returns true when [token] represents the currently active mode (e.g. the
+/// selected NumeralSystem or AngleMode) and should be drawn with an
+/// emphasised outline.
+typedef SelectedPredicate = bool Function(CalcToken token);
+
+/// Returns true when [token] must not be tappable (e.g. A/B digit keys
+/// while the calculator is in decimal mode).
+typedef DisabledPredicate = bool Function(CalcToken token);
+
 class Keypad extends StatelessWidget {
   final TokenTapHandler onTap;
   final ArmedPredicate? isArmed;
+  final SelectedPredicate? isSelected;
+  final DisabledPredicate? isDisabled;
+  final VoidCallback? onInfoTap;
+  final VoidCallback? onHelpTap;
 
-  const Keypad({super.key, required this.onTap, this.isArmed});
+  const Keypad({
+    super.key,
+    required this.onTap,
+    this.isArmed,
+    this.isSelected,
+    this.isDisabled,
+    this.onInfoTap,
+    this.onHelpTap,
+  });
 
   @override
   Widget build(BuildContext context) {
     if (isMobileScreen(context)) {
-      return _MobileKeypad(onTap: onTap, isArmed: isArmed);
+      return _MobileKeypad(
+        onTap: onTap,
+        isArmed: isArmed,
+        isSelected: isSelected,
+        isDisabled: isDisabled,
+        onInfoTap: onInfoTap,
+        onHelpTap: onHelpTap,
+      );
     }
     if (isTabletScreen(context)) {
-      return _TabletKeypad(onTap: onTap, isArmed: isArmed);
+      return _TabletKeypad(
+        onTap: onTap,
+        isArmed: isArmed,
+        isSelected: isSelected,
+        isDisabled: isDisabled,
+        onInfoTap: onInfoTap,
+        onHelpTap: onHelpTap,
+      );
     }
-    return _DesktopKeypad(onTap: onTap, isArmed: isArmed);
+    return _DesktopKeypad(
+      onTap: onTap,
+      isArmed: isArmed,
+      isSelected: isSelected,
+      isDisabled: isDisabled,
+      onInfoTap: onInfoTap,
+      onHelpTap: onHelpTap,
+    );
   }
 }
 
@@ -96,7 +145,7 @@ const List<CalcToken> _set9 = [
   Reciprocal(),
   Mod()
 ];
-const List<CalcToken> _set10 = [DozDec(), Drg(), Info(), Close()];
+const List<CalcToken> _set10 = [Doz(), Dez(), Drg(), Close()];
 
 // ---------------------------------------------------------------------------
 // Mobile layout: digit grid stacked above 4×4 op grid + system row + Equals.
@@ -105,20 +154,33 @@ const List<CalcToken> _set10 = [DozDec(), Drg(), Info(), Close()];
 class _MobileKeypad extends StatelessWidget {
   final TokenTapHandler onTap;
   final ArmedPredicate? isArmed;
+  final SelectedPredicate? isSelected;
+  final DisabledPredicate? isDisabled;
+  final VoidCallback? onInfoTap;
+  final VoidCallback? onHelpTap;
 
-  const _MobileKeypad({required this.onTap, this.isArmed});
+  const _MobileKeypad({
+    required this.onTap,
+    this.isArmed,
+    this.isSelected,
+    this.isDisabled,
+    this.onInfoTap,
+    this.onHelpTap,
+  });
 
   Widget _digitRow(List<DozenalDigit> digits) {
     final cells = <Widget>[];
     for (var i = 0; i < digits.length; i++) {
       if (i > 0) cells.add(const SizedBox(width: mobileSpacing));
+      final token = Digit(digits[i]);
       cells.add(
         Expanded(
           child: SizedBox(
             height: mobileButtonHeight,
             child: _DigitButton(
               digit: digits[i],
-              onTap: () => onTap(Digit(digits[i])),
+              onTap: () => onTap(token),
+              disabled: isDisabled?.call(token) ?? false,
             ),
           ),
         ),
@@ -139,6 +201,7 @@ class _MobileKeypad extends StatelessWidget {
               token: tokens[i],
               onTap: () => onTap(tokens[i]),
               armed: isArmed?.call(tokens[i]) ?? false,
+              selected: isSelected?.call(tokens[i]) ?? false,
             ),
           ),
         ),
@@ -167,12 +230,12 @@ class _MobileKeypad extends StatelessWidget {
         const SizedBox(height: 12),
         _tokenRow(_systemRow),
         const SizedBox(height: 12),
-        SizedBox(
+        _EqualsRow(
           height: mobileEqualsHeight,
-          child: _EqualsBar(
-            onTap: () => onTap(const Equals()),
-            normalColor: _kEquals,
-          ),
+          sideGap: mobileSpacing,
+          onEquals: () => onTap(const Equals()),
+          onInfoTap: onInfoTap,
+          onHelpTap: onHelpTap,
         ),
       ],
     );
@@ -186,8 +249,19 @@ class _MobileKeypad extends StatelessWidget {
 class _DesktopKeypad extends StatelessWidget {
   final TokenTapHandler onTap;
   final ArmedPredicate? isArmed;
+  final SelectedPredicate? isSelected;
+  final DisabledPredicate? isDisabled;
+  final VoidCallback? onInfoTap;
+  final VoidCallback? onHelpTap;
 
-  const _DesktopKeypad({required this.onTap, this.isArmed});
+  const _DesktopKeypad({
+    required this.onTap,
+    this.isArmed,
+    this.isSelected,
+    this.isDisabled,
+    this.onInfoTap,
+    this.onHelpTap,
+  });
 
   Widget _digitGridWidget() {
     return Column(
@@ -206,6 +280,8 @@ class _DesktopKeypad extends StatelessWidget {
                   child: _DigitButton(
                     digit: _digitGrid[r][col],
                     onTap: () => onTap(Digit(_digitGrid[r][col])),
+                    disabled:
+                        isDisabled?.call(Digit(_digitGrid[r][col])) ?? false,
                   ),
                 ),
               ],
@@ -229,6 +305,7 @@ class _DesktopKeypad extends StatelessWidget {
               token: tokens[i],
               onTap: () => onTap(tokens[i]),
               armed: isArmed?.call(tokens[i]) ?? false,
+              selected: isSelected?.call(tokens[i]) ?? false,
             ),
           ),
         ],
@@ -259,12 +336,12 @@ class _DesktopKeypad extends StatelessWidget {
           ],
         ),
         const SizedBox(height: desktopSetGap),
-        SizedBox(
+        _EqualsRow(
           height: desktopButtonSize,
-          child: _EqualsBar(
-            onTap: () => onTap(const Equals()),
-            normalColor: _kEquals,
-          ),
+          sideGap: desktopSetGap,
+          onEquals: () => onTap(const Equals()),
+          onInfoTap: onInfoTap,
+          onHelpTap: onHelpTap,
         ),
       ],
     );
@@ -281,8 +358,19 @@ class _DesktopKeypad extends StatelessWidget {
 class _TabletKeypad extends StatelessWidget {
   final TokenTapHandler onTap;
   final ArmedPredicate? isArmed;
+  final SelectedPredicate? isSelected;
+  final DisabledPredicate? isDisabled;
+  final VoidCallback? onInfoTap;
+  final VoidCallback? onHelpTap;
 
-  const _TabletKeypad({required this.onTap, this.isArmed});
+  const _TabletKeypad({
+    required this.onTap,
+    this.isArmed,
+    this.isSelected,
+    this.isDisabled,
+    this.onInfoTap,
+    this.onHelpTap,
+  });
 
   Widget _digitGridWidget() {
     return Column(
@@ -301,6 +389,8 @@ class _TabletKeypad extends StatelessWidget {
                   child: _DigitButton(
                     digit: _digitGrid[r][col],
                     onTap: () => onTap(Digit(_digitGrid[r][col])),
+                    disabled:
+                        isDisabled?.call(Digit(_digitGrid[r][col])) ?? false,
                   ),
                 ),
               ],
@@ -330,6 +420,7 @@ class _TabletKeypad extends StatelessWidget {
                 token: tokens[i],
                 onTap: () => onTap(tokens[i]),
                 armed: isArmed?.call(tokens[i]) ?? false,
+                selected: isSelected?.call(tokens[i]) ?? false,
               ),
             ),
         ],
@@ -353,6 +444,7 @@ class _TabletKeypad extends StatelessWidget {
               token: tokens[i],
               onTap: () => onTap(tokens[i]),
               armed: isArmed?.call(tokens[i]) ?? false,
+              selected: isSelected?.call(tokens[i]) ?? false,
             ),
           ),
         ],
@@ -398,12 +490,12 @@ class _TabletKeypad extends StatelessWidget {
           ],
         ),
         const SizedBox(height: tabletSetGap),
-        SizedBox(
+        _EqualsRow(
           height: tabletButtonSize,
-          child: _EqualsBar(
-            onTap: () => onTap(const Equals()),
-            normalColor: _kEquals,
-          ),
+          sideGap: tabletSetGap,
+          onEquals: () => onTap(const Equals()),
+          onInfoTap: onInfoTap,
+          onHelpTap: onHelpTap,
         ),
       ],
     );
@@ -418,14 +510,22 @@ class _TabletKeypad extends StatelessWidget {
 class OverlayKeypad extends StatelessWidget {
   final TokenTapHandler onTap;
   final ArmedPredicate? isArmed;
+  final SelectedPredicate? isSelected;
 
-  const OverlayKeypad({super.key, required this.onTap, this.isArmed});
+  const OverlayKeypad({
+    super.key,
+    required this.onTap,
+    this.isArmed,
+    this.isSelected,
+  });
 
   @override
   Widget build(BuildContext context) {
     return isMobileScreen(context)
-        ? _MobileOverlay(onTap: onTap, isArmed: isArmed)
-        : _DesktopOverlay(onTap: onTap, isArmed: isArmed);
+        ? _MobileOverlay(
+            onTap: onTap, isArmed: isArmed, isSelected: isSelected)
+        : _DesktopOverlay(
+            onTap: onTap, isArmed: isArmed, isSelected: isSelected);
   }
 }
 
@@ -433,6 +533,7 @@ Widget _overlayTokenButton({
   required CalcToken token,
   required TokenTapHandler onTap,
   required ArmedPredicate? isArmed,
+  required SelectedPredicate? isSelected,
   required double height,
   double? width,
 }) {
@@ -443,6 +544,8 @@ Widget _overlayTokenButton({
       token: token,
       onTap: () => onTap(token),
       armed: isArmed?.call(token) ?? false,
+      selected: isSelected?.call(token) ?? false,
+      backgroundColor: _kOverlayBtnBg,
     ),
   );
   return btn;
@@ -451,8 +554,13 @@ Widget _overlayTokenButton({
 class _MobileOverlay extends StatelessWidget {
   final TokenTapHandler onTap;
   final ArmedPredicate? isArmed;
+  final SelectedPredicate? isSelected;
 
-  const _MobileOverlay({required this.onTap, this.isArmed});
+  const _MobileOverlay({
+    required this.onTap,
+    this.isArmed,
+    this.isSelected,
+  });
 
   Widget _setColumn(List<CalcToken> tokens) {
     final cells = <Widget>[];
@@ -464,6 +572,7 @@ class _MobileOverlay extends StatelessWidget {
             token: tokens[i],
             onTap: onTap,
             isArmed: isArmed,
+            isSelected: isSelected,
             height: overlayBtnHeight,
           ),
         ),
@@ -485,6 +594,7 @@ class _MobileOverlay extends StatelessWidget {
             token: _set10[i],
             onTap: onTap,
             isArmed: isArmed,
+            isSelected: isSelected,
             height: overlayBtnHeight,
           ),
         ),
@@ -495,13 +605,18 @@ class _MobileOverlay extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Each overlay row is mobileButtonHeight tall — same as the function
+    // keys it floats over — so the main 4×4 grid lines up visually with
+    // the op-grid behind it. mainAxisSize.min lets the Column take its
+    // natural height; the parent in main.dart anchors the top to
+    // mobileOpGridTopY so the alignment is exact.
     return Padding(
       padding: const EdgeInsets.all(overlayMobileSpacing),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
           SizedBox(
-            height: overlayBtnHeight * 4 + overlayMobileSpacing * 3,
+            height: mobileButtonHeight * 4 + mobileSpacing * 3,
             child: Row(
               children: [
                 Expanded(child: _setColumn(_set6)),
@@ -514,7 +629,7 @@ class _MobileOverlay extends StatelessWidget {
               ],
             ),
           ),
-          const SizedBox(height: overlayMobileExtraGap),
+          const SizedBox(height: mobileSpacing),
           _bottomRow(),
         ],
       ),
@@ -525,8 +640,13 @@ class _MobileOverlay extends StatelessWidget {
 class _DesktopOverlay extends StatelessWidget {
   final TokenTapHandler onTap;
   final ArmedPredicate? isArmed;
+  final SelectedPredicate? isSelected;
 
-  const _DesktopOverlay({required this.onTap, this.isArmed});
+  const _DesktopOverlay({
+    required this.onTap,
+    this.isArmed,
+    this.isSelected,
+  });
 
   Widget _setColumn(List<CalcToken> tokens) {
     final cells = <Widget>[];
@@ -536,6 +656,7 @@ class _DesktopOverlay extends StatelessWidget {
         token: tokens[i],
         onTap: onTap,
         isArmed: isArmed,
+        isSelected: isSelected,
         height: desktopButtonSize,
         width: desktopButtonSize,
       ));
@@ -575,8 +696,17 @@ class _DesktopOverlay extends StatelessWidget {
 class _PressableShell extends StatefulWidget {
   final VoidCallback onTap;
   final Widget Function(BuildContext, bool pressed) builder;
+  final bool selected;
+  final bool disabled;
+  final Color? backgroundColor;
 
-  const _PressableShell({required this.onTap, required this.builder});
+  const _PressableShell({
+    required this.onTap,
+    required this.builder,
+    this.selected = false,
+    this.disabled = false,
+    this.backgroundColor,
+  });
 
   @override
   State<_PressableShell> createState() => _PressableShellState();
@@ -590,6 +720,7 @@ class _PressableShellState extends State<_PressableShell> {
   }
 
   void _handleTap() {
+    if (widget.disabled) return;
     // Haptic feedback fires the moment the action commits — silent no-op on
     // platforms without a haptic engine (web, desktop). Selection-click is
     // the right intensity for keypad-style UIs.
@@ -601,14 +732,22 @@ class _PressableShellState extends State<_PressableShell> {
   Widget build(BuildContext context) {
     return GestureDetector(
       behavior: HitTestBehavior.opaque,
-      onTapDown: (_) => _setPressed(true),
-      onTapUp: (_) => _setPressed(false),
-      onTapCancel: () => _setPressed(false),
+      onTapDown: widget.disabled ? null : (_) => _setPressed(true),
+      onTapUp: widget.disabled ? null : (_) => _setPressed(false),
+      onTapCancel: widget.disabled ? null : () => _setPressed(false),
       onTap: _handleTap,
       child: Container(
         decoration: BoxDecoration(
+          color: widget.backgroundColor,
           borderRadius: BorderRadius.circular(4),
-          border: Border.all(color: _kBorder, width: 1),
+          border: Border.all(
+            color: widget.selected
+                ? _kOpNormal
+                : (widget.disabled
+                    ? const Color(0xFF303030)
+                    : _kBorder),
+            width: widget.selected ? 2 : 1,
+          ),
         ),
         child: widget.builder(context, _pressed),
       ),
@@ -619,8 +758,13 @@ class _PressableShellState extends State<_PressableShell> {
 class _DigitButton extends StatelessWidget {
   final DozenalDigit digit;
   final VoidCallback onTap;
+  final bool disabled;
 
-  const _DigitButton({required this.digit, required this.onTap});
+  const _DigitButton({
+    required this.digit,
+    required this.onTap,
+    this.disabled = false,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -628,13 +772,17 @@ class _DigitButton extends StatelessWidget {
       button: true,
       label: 'Ziffer ${digit.value}',
       excludeSemantics: true,
+      enabled: !disabled,
       child: _PressableShell(
         onTap: onTap,
+        disabled: disabled,
         builder: (ctx, pressed) => CustomPaint(
           size: Size.infinite,
           painter: _DigitPainter(
             digit: digit,
-            color: pressed ? _kDigitPressed : _kDigitNormal,
+            color: disabled
+                ? _kDigitDisabled
+                : (pressed ? _kDigitPressed : _kDigitNormal),
           ),
         ),
       ),
@@ -671,11 +819,15 @@ class _TokenButton extends StatelessWidget {
   final CalcToken token;
   final VoidCallback onTap;
   final bool armed;
+  final bool selected;
+  final Color? backgroundColor;
 
   const _TokenButton({
     required this.token,
     required this.onTap,
     this.armed = false,
+    this.selected = false,
+    this.backgroundColor,
   });
 
   @override
@@ -686,24 +838,31 @@ class _TokenButton extends StatelessWidget {
       excludeSemantics: true,
       child: _PressableShell(
         onTap: onTap,
-        builder: (ctx, pressed) => Stack(
-          children: [
-            Positioned.fill(
-              child: CustomPaint(
-                painter: _TokenPainter(
-                  token: token,
-                  color: pressed ? _kOpPressed : _kOpNormal,
+        selected: selected,
+        backgroundColor: backgroundColor,
+        builder: (ctx, pressed) {
+          final isAc = token is Ac;
+          final normalColor = isAc ? _kAc : _kOpNormal;
+          final pressedColor = isAc ? _kAcPressed : _kOpPressed;
+          return Stack(
+            children: [
+              Positioned.fill(
+                child: CustomPaint(
+                  painter: _TokenPainter(
+                    token: token,
+                    color: pressed ? pressedColor : normalColor,
+                  ),
                 ),
               ),
-            ),
-            if (armed)
-              const Positioned(
-                right: 4,
-                top: 4,
-                child: _ArmedDot(),
-              ),
-          ],
-        ),
+              if (armed)
+                const Positioned(
+                  right: 4,
+                  top: 4,
+                  child: _ArmedDot(),
+                ),
+            ],
+          );
+        },
       ),
     );
   }
@@ -759,7 +918,8 @@ String _tokenSemanticLabel(CalcToken t) {
   if (t is AbsVal) return 'Betrag';
   if (t is Reciprocal) return 'Kehrwert';
   if (t is Mod) return 'Modulo';
-  if (t is DozDec) return 'Dozenal Dezimal umschalten';
+  if (t is Doz) return 'Dozenal-Modus';
+  if (t is Dez) return 'Dezimal-Modus';
   if (t is Drg) return 'Winkelmodus wechseln';
   if (t is Info) return 'Info';
   return '';
@@ -819,6 +979,100 @@ class _EqualsBar extends StatelessWidget {
           color: pressed ? _kOpPressed : normalColor,
         ),
       ),
+    );
+  }
+}
+
+/// Row containing the wide Equals bar flanked by two round side buttons:
+/// (i) on the left → opens the theory chapters; (?) on the right → opens
+/// the how-to-use intro. Side buttons are hidden (placeholder) when the
+/// corresponding callback is null.
+class _EqualsRow extends StatelessWidget {
+  final double height;
+  final double sideGap;
+  final VoidCallback onEquals;
+  final VoidCallback? onInfoTap;
+  final VoidCallback? onHelpTap;
+
+  const _EqualsRow({
+    required this.height,
+    required this.sideGap,
+    required this.onEquals,
+    this.onInfoTap,
+    this.onHelpTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: height,
+      child: Row(
+        // Stretch so flex children (the EqualsBar) get tight height
+        // constraints; without this CustomPaint inside collapses to zero.
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          _RoundIconButton(
+            size: height,
+            icon: Icons.info_outline,
+            tooltip: 'Theoriekapitel',
+            onPressed: onInfoTap,
+          ),
+          SizedBox(width: sideGap),
+          Expanded(
+            child: _EqualsBar(
+              onTap: onEquals,
+              normalColor: _kEquals,
+            ),
+          ),
+          SizedBox(width: sideGap),
+          _RoundIconButton(
+            size: height,
+            icon: Icons.help_outline,
+            tooltip: 'Intro',
+            onPressed: onHelpTap,
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _RoundIconButton extends StatelessWidget {
+  final double size;
+  final IconData icon;
+  final String? tooltip;
+  final VoidCallback? onPressed;
+
+  const _RoundIconButton({
+    required this.size,
+    required this.icon,
+    this.tooltip,
+    this.onPressed,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final btn = Material(
+      color: const Color(0xFF2A2A2A),
+      shape: const CircleBorder(
+        side: BorderSide(color: Color(0xFF555555)),
+      ),
+      child: InkWell(
+        customBorder: const CircleBorder(),
+        onTap: onPressed,
+        child: Center(
+          child: Icon(
+            icon,
+            size: size * 0.5,
+            color: const Color(0xFF64C8FF),
+          ),
+        ),
+      ),
+    );
+    return SizedBox(
+      width: size,
+      height: size,
+      child: tooltip != null ? Tooltip(message: tooltip!, child: btn) : btn,
     );
   }
 }

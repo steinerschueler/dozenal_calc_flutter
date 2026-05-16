@@ -52,9 +52,10 @@ Dozenal Calc nutzt einen exakten Rational-Track parallel zur normalen Gleitkomma
 • Konstanten π, e, φ, √2
 • Fakultät, Absolutbetrag, Kehrwert, Modulo
 • Speicher (STO/RCL/MC) mit exakter rationaler Round-Trip-Erhaltung
-• Winkelmodi RAD / DEG / GRAD
+• Winkelmodi DEG / RAD / GRAD (Standard: DEG)
 • Doppelklick auf Funktionstasten schaltet zur Umkehrfunktion (sin → sin⁻¹)
-• Anzeige umschaltbar zwischen Dozenal und Dezimal
+• Doz/Dez-Umschaltung: Eingabe UND Ergebnis wahlweise in Basis 12 oder Basis 10, mit automatischer Umrechnung der aktuell sichtbaren Zahl beim Wechsel
+• Bedienungs-Intro beim ersten Start: acht erklärende Bilder mit einer interaktiven Decoder-Seite, die Glyphen und vertraute Zahlen direkt nebeneinanderstellt — jederzeit über den (?)-Knopf erneut aufrufbar
 
 <b>Zwölf Kapitel zur Mathematik der Zwölf</b>
 
@@ -149,17 +150,23 @@ ausgesprochenes Kinder-Zielpublikum).
 
 ## Phone-Screenshots — Empfohlene Auswahl + Reihenfolge
 
-Aus `screenshots/raw/`, in dieser Reihenfolge hochladen:
+Die aktuelle UI seit Mai 2026 (mit (i)/(?)-Tasten neben Equals, AC in
+Warnrot, DOZ/DEZ-Anzeige im Display, Doz/Dez-Modus-Tasten im Overlay)
+ist in `screenshots/raw/new*.png` festgehalten. Die früheren 01-09-PNGs
+zeigen einen veralteten Stand und sollten nicht mehr hochgeladen werden,
+bis sie regeneriert sind. Reihenfolge-Empfehlung:
 
 | # | Datei | Was es zeigt |
 |---|---|---|
-| 1 | `03_periodic.png` | 1÷7 = 0.186A3 mit Periodenstrich + State-C-Punkten |
-| 2 | `02_typing.png` | Mid-Eingabe "1+2" |
-| 3 | `04_complex.png` | Größere Klammer-Rechnung |
-| 4 | `05_overlay.png` | Erweiterungsfeld mit Sets 6-10 |
-| 5 | `07b_chapter4_svg.png` | Kapitel 4 mit Zwölfeck-Illustration |
-| 6 | `06_info_list.png` | 12-Kapitel-Liste |
-| 7 | `09_privacy.png` | Datenschutzerklärung in der App |
+| 1 | `new4.png` | Vollständiger Keypad mit Eingabe und allen Tastengruppen |
+| 2 | `new5.png` | Nach Berechnung — Ergebnis im Result-Feld |
+| 3 | `new3.png` | Overlay offen, Doz-Modus aktiv (Umrandung) |
+| 4 | `new2.png` | Overlay offen, Dez-Modus aktiv — Ziffern in Basis 10 |
+| 5 | `new1.png` | 12-Kapitel-Liste mit Datenschutz- und Lizenz-Einträgen |
+
+Für ein vollständigeres Listing empfehlen sich zwei zusätzliche Aufnahmen
+(noch zu machen): periodischer Bruch (z.B. 1÷7), und eine Seite aus dem
+Bedienungs-Intro mit den roten Highlight-Kreisen / Rechtecken.
 
 Play Store erlaubt 2-8 Screenshots pro Format (Phone, 7"-Tablet,
 10"-Tablet); die Phone-Slots sind die wichtigsten und entscheiden über
@@ -169,14 +176,16 @@ Play Store erlaubt 2-8 Screenshots pro Format (Phone, 7"-Tablet,
 
 ## Tablet-Screenshots
 
-Optional. Falls erwünscht, einen 7"- und/oder 10"-Tablet-Emulator
-einrichten (`flutter emulators --create --name tab_7`,
-`flutter emulators --create --name tablet`) und das Screenshot-Skript
-analog zu Phone laufen lassen. Wegen unserer responsive
-`isMobileScreen()`-Schwelle bei 500 dp wechselt das Layout dort
-automatisch in die Desktop-Variante (Numpad + 5 Op-Spalten
-nebeneinander) — das ist eine eigene Bildsprache, die für Tablet-
-Listings sehr gut wirkt.
+Aktuell vom Tablet (Mai 2026), in `screenshots/tablet/`:
+
+| # | Datei | Was es zeigt |
+|---|---|---|
+| 1 | `new1.png` | Voller Tablet-Keypad mit allen 10 Sets inline (kein Overlay nötig), Equals-Reihe mit (i)/(?), AC in Warnrot, DOZ-Anzeige im Display, Doz im Modus-Block rechts umrandet, periodisches Ergebnis mit Überstrich im Result-Feld |
+| 2 | `new2.png` | Erste Seite des Bedienungs-Intros auf Tablet — rotes Rechteck um den Zahlenblock im Phone-Mockup, Willkommens-Text |
+
+Layout-Schwelle: ab Breite ≥ 1050 dp aktiviert sich das Tablet-Layout
+(alle 10 Sets nebeneinander, kein Erweiterungsfeld). Zwischen 500 dp und
+1050 dp läuft die Desktop-Variante (Numpad + 5 Op-Spalten).
 
 ---
 

@@ -437,9 +437,17 @@ List<Widget> buildChapterContent(int chapter) {
         const _H('Grundbedienung'),
         const _P(
           'Tippe Zahlen und Operatoren wie auf einem gewöhnlichen Taschen'
-          'rechner. Drücke die breite Taste am unteren Rand, um das Ergebnis '
-          'zu berechnen. AC löscht die gesamte Eingabe und das Ergebnis, Del '
-          'entfernt das Zeichen links vom Cursor.',
+          'rechner. Drücke die breite =-Taste am unteren Rand, um das '
+          'Ergebnis zu berechnen. AC (in Warnrot) löscht die gesamte '
+          'Eingabe und das Ergebnis, Del entfernt das Zeichen links vom '
+          'Cursor.',
+        ),
+        const _H('Hilfe und Theorie'),
+        const _P(
+          'Links und rechts der =-Taste sitzen zwei runde Knöpfe: '
+          '(i) öffnet diese zwölf Theorie-Kapitel, (?) zeigt das '
+          'Bedienungs-Intro mit den roten Markierungen erneut. Beim '
+          'allerersten Start öffnet sich das Intro automatisch.',
         ),
         const _H('Cursor und Navigation'),
         const _P(
@@ -479,14 +487,16 @@ List<Widget> buildChapterContent(int chapter) {
           'Die Taste … rechts unten öffnet das Erweiterungsfeld mit weiteren '
           'Funktionen: Speicher, Konstanten (π, e, φ, √2), hyperbolische '
           'Funktionen, erweiterte Operatoren und Einstellungen. Es schliesst '
-          'sich über die Taste rechts unten im Erweiterungsfeld selbst.',
+          'sich über dieselbe Taste, oder durch Antippen ausserhalb des '
+          'Feldes. Auf Tablets sind alle Sets ohnehin nebeneinander '
+          'sichtbar — dort gibt es kein Overlay.',
         ),
         const _Pre(
           '  6 — Speicher:    STO   RCL   MC    Ans\n'
           '  7 — Konstanten:  π     e     φ     √2\n'
           '  8 — Hyperbel:   sinh  cosh  tanh  coth\n'
           '  9 — Erweitert:  n!    |x|   1/x   mod\n'
-          '  10 — Modi:      Doz↔  DRG   Info  ×',
+          '  10 — Modi:      Doz   Dez   DRG   …',
         ),
         const _H('Speicher'),
         const _P(
@@ -504,13 +514,26 @@ List<Widget> buildChapterContent(int chapter) {
           'Bei Perioden mit mehr als fünf Stellen werden nur die ersten '
           'fünf gezeigt, gefolgt von …',
         ),
-        const _H('Anzeige und Winkelmodus'),
+        const _H('Zahlensystem Doz / Dez'),
         const _P(
-          'Doz↔Dec im Erweiterungsfeld schaltet die Anzeige zwischen '
-          'dozenal (Basis 12) und dezimal (Basis 10) um — praktisch, um ein '
-          'Ergebnis in vertrauter Schreibweise zu überprüfen. DRG wechselt '
-          'den Winkelmodus für trigonometrische Funktionen: '
-          'Rad → Grad → Gon → Rad, angezeigt oben rechts im Display.',
+          'Im Erweiterungsfeld stehen zwei Tasten Doz und Dez nebeneinander. '
+          'Genau eine der beiden ist immer aktiv (umrandet) und das aktive '
+          'System steht oben rechts im Display angezeigt. Im Doz-Modus '
+          'rechnet der Rechner in Basis 12 (Standard), im Dez-Modus in '
+          'Basis 10.',
+        ),
+        const _P(
+          'Beim Umschalten wird die aktuell sichtbare Zahl automatisch in '
+          'das andere System umgerechnet. Aus "10" in Doz wird "12" in Dez. '
+          'Im Dez-Modus werden die Symbole für 10 und 11 inaktiv (grau), '
+          'da es sie in Basis 10 nicht als einzelne Ziffer gibt — wer Doz '
+          'braucht, schaltet einfach zurück.',
+        ),
+        const _H('Winkelmodus'),
+        const _P(
+          'DRG wechselt den Winkelmodus für trigonometrische Funktionen: '
+          'DEG → RAD → GRAD → DEG. Der aktuelle Modus steht oben rechts '
+          'im Display, direkt über der Doz/Dez-Anzeige. Standard ist DEG.',
         ),
       ];
     case 1:

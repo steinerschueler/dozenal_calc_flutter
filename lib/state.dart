@@ -11,6 +11,7 @@
 
 import 'package:flutter/foundation.dart';
 
+import 'logic/dozenal_converter.dart';
 import 'logic/dozenal_digit.dart';
 import 'logic/expression.dart';
 import 'logic/rat_parser.dart';
@@ -37,8 +38,8 @@ class DozenalCalcState extends ChangeNotifier {
 
   String? errorMsg;
   bool overlayOpen = false;
-  AngleMode angleMode = AngleMode.rad;
-  bool displayDec = false;
+  AngleMode angleMode = AngleMode.deg;
+  NumeralSystem numeralSystem = NumeralSystem.doz;
   InfoState infoState = const InfoClosed();
 
   /// Convenience: derived "show State-B …-suffix" flag for the display layer.
@@ -207,8 +208,19 @@ class DozenalCalcState extends ChangeNotifier {
       overlayOpen = false;
       return;
     }
-    if (token is DozDec) {
-      displayDec = !displayDec;
+    if (token is Doz) {
+      if (numeralSystem != NumeralSystem.doz) {
+        _convertBufferBase(from: 10, to: 12);
+        numeralSystem = NumeralSystem.doz;
+      }
+      overlayOpen = false;
+      return;
+    }
+    if (token is Dez) {
+      if (numeralSystem != NumeralSystem.dez) {
+        _convertBufferBase(from: 12, to: 10);
+        numeralSystem = NumeralSystem.dez;
+      }
       overlayOpen = false;
       return;
     }
@@ -279,7 +291,8 @@ class DozenalCalcState extends ChangeNotifier {
 
   bool _isErrorBlocked(CalcToken token) =>
       token is Drg ||
-      token is DozDec ||
+      token is Doz ||
+      token is Dez ||
       token is Info ||
       token is TriangleLeft ||
       token is TriangleRight ||
@@ -292,7 +305,8 @@ class DozenalCalcState extends ChangeNotifier {
       token is Ac ||
       token is Equals ||
       token is Drg ||
-      token is DozDec ||
+      token is Doz ||
+      token is Dez ||
       token is Info ||
       token is Expand ||
       token is Close ||
@@ -303,10 +317,28 @@ class DozenalCalcState extends ChangeNotifier {
   // Calculation — 1:1 port of eval.rs::calculate_result.
   // --------------------------------------------------------------------
 
+  /// Numeric base currently active (12 for dozenal, 10 for decimal).
+  int get activeBase => numeralSystem == NumeralSystem.doz ? 12 : 10;
+
   void calculateResult() {
+    final base = activeBase;
+    // Empty buffer — typically after AC — should produce 0, not an
+    // error: pressing = on nothing is a no-op rather than a syntax fault.
+    if (inputBuffer.isEmpty) {
+      errorMsg = null;
+      lastAns = Rational.tryNew(BigInt.zero, BigInt.one);
+      lastResultF64 = 0.0;
+      resultBuffer = const [Digit(DozenalDigit.d0)];
+      resultPeriodStart = null;
+      resultPeriodLen = 0;
+      resultPeriodCapped = false;
+      resultCursorPos = 0;
+      resultFieldActive = true;
+      return;
+    }
     final expanded = withImplicitMuls(inputBuffer);
-    final mathString = buildMevalString(expanded);
-    final ratExprs = buildRatExpr(expanded);
+    final mathString = buildMevalString(expanded, base: base);
+    final ratExprs = buildRatExpr(expanded, base: base);
     final ratResult = ratExprs == null ? null : evalRational(ratExprs);
 
     final f64 = evalF64(mathString, angleMode);
@@ -328,13 +360,13 @@ class DozenalCalcState extends ChangeNotifier {
     lastResultF64 = f64;
 
     if (ratResult != null) {
-      final r = formatRationalResult(ratResult);
+      final r = formatRationalResult(ratResult, base: base);
       resultBuffer = r.buf;
       resultPeriodStart = r.meta.start;
       resultPeriodLen = r.meta.len;
       resultPeriodCapped = r.meta.capped;
     } else {
-      resultBuffer = formatF64Result(f64);
+      resultBuffer = formatF64Result(f64, base: base);
       resultPeriodStart = null;
       resultPeriodLen = 0;
       resultPeriodCapped = false;
@@ -370,6 +402,103 @@ class DozenalCalcState extends ChangeNotifier {
         token is ArCoth;
     if (!invertible || cursorPos == 0) return false;
     return inputBuffer[cursorPos - 1] == token;
+  }
+
+  // --------------------------------------------------------------------
+  // Buffer-base conversion (Doz ↔ Dez switch).
+  //
+  // Walks the input buffer, re-interpreting each contiguous number literal
+  // (Digit/Decimal sequence) from [from]-base to [to]-base. Operators,
+  // functions, parens, and other non-numeric tokens are preserved
+  // unchanged. Periodic fractions that don't terminate in the target base
+  // are truncated to [_bufferFracMaxDigits] fractional digits — exact
+  // round-trip is only guaranteed for values whose fraction is finite in
+  // both bases. cursorPos is moved to the end of the rewritten buffer.
+  // --------------------------------------------------------------------
+
+  static const int _bufferFracMaxDigits = 12;
+
+  void _convertBufferBase({required int from, required int to}) {
+    final out = <CalcToken>[];
+    var i = 0;
+    while (i < inputBuffer.length) {
+      final t = inputBuffer[i];
+      if (t is Digit || t is Decimal) {
+        final intD = <DozenalDigit>[];
+        final fracD = <DozenalDigit>[];
+        var inFrac = false;
+        while (i < inputBuffer.length) {
+          final tt = inputBuffer[i];
+          if (tt is Digit) {
+            if (inFrac) {
+              fracD.add(tt.value);
+            } else {
+              intD.add(tt.value);
+            }
+            i++;
+          } else if (tt is Decimal && !inFrac) {
+            inFrac = true;
+            i++;
+          } else {
+            break;
+          }
+        }
+        out.addAll(_literalAsBase(intD, fracD, from: from, to: to));
+      } else {
+        out.add(t);
+        i++;
+      }
+    }
+    inputBuffer = out;
+    cursorPos = inputBuffer.length;
+  }
+
+  /// Converts one number literal (split into integer + fractional digit
+  /// lists, both in [from]-base) into a fresh CalcToken sequence in
+  /// [to]-base. Non-terminating fractions are truncated.
+  List<CalcToken> _literalAsBase(
+    List<DozenalDigit> intDigits,
+    List<DozenalDigit> fracDigits, {
+    required int from,
+    required int to,
+  }) {
+    if (intDigits.isEmpty && fracDigits.isEmpty) {
+      return const <CalcToken>[];
+    }
+    final intVal = DozenalConverter.toDecimalExact(intDigits, base: from);
+    Rational rat = Rational.tryNew(intVal, BigInt.one)!;
+    if (fracDigits.isNotEmpty) {
+      final fracNum = DozenalConverter.toDecimalExact(fracDigits, base: from);
+      final fracDen = BigInt.from(from).pow(fracDigits.length);
+      final fracRat = Rational.tryNew(fracNum, fracDen)!;
+      rat = rat.add(fracRat);
+    }
+    final dec = rat.toDozenalPeriodic(base: to);
+    final out = <CalcToken>[];
+    if (dec.intDigits.isEmpty) {
+      out.add(const Digit(DozenalDigit.d0));
+    } else {
+      for (final d in dec.intDigits) {
+        out.add(Digit(d));
+      }
+    }
+    if (dec.preDigits.isNotEmpty || dec.period.isNotEmpty) {
+      out.add(const Decimal());
+      for (final d in dec.preDigits) {
+        if (out.length >= intDigits.length + 1 + _bufferFracMaxDigits) break;
+        out.add(Digit(d));
+      }
+      // Period digits get inlined (no overline in the input buffer), capped
+      // at the per-buffer digit budget. This is intentionally lossy.
+      var emitted = dec.preDigits.length;
+      var p = 0;
+      while (emitted < _bufferFracMaxDigits && dec.period.isNotEmpty) {
+        out.add(Digit(dec.period[p % dec.period.length]));
+        p++;
+        emitted++;
+      }
+    }
+    return out;
   }
 }
 
