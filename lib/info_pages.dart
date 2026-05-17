@@ -136,13 +136,23 @@ class InfoListPage extends StatelessWidget {
 /// the build a report came from is unambiguous. Version is read at
 /// runtime from PackageInfo, so a pubspec bump is the only place that
 /// needs updating.
-class _VersionFooter extends StatelessWidget {
+class _VersionFooter extends StatefulWidget {
   const _VersionFooter();
+
+  @override
+  State<_VersionFooter> createState() => _VersionFooterState();
+}
+
+class _VersionFooterState extends State<_VersionFooter> {
+  // Cached: PackageInfo.fromPlatform() returns a fresh Future on every
+  // call, and recreating it in build() makes FutureBuilder rerun the
+  // platform channel and flicker an empty state on each rebuild.
+  late final Future<PackageInfo> _info = PackageInfo.fromPlatform();
 
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<PackageInfo>(
-      future: PackageInfo.fromPlatform(),
+      future: _info,
       builder: (ctx, snap) {
         final label = snap.hasData
             ? 'Version ${snap.data!.version} · Build ${snap.data!.buildNumber}'

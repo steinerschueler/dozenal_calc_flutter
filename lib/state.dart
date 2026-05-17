@@ -171,7 +171,7 @@ class DozenalCalcState extends ChangeNotifier {
     if (token is Rcl) {
       if (memory.isNotEmpty) {
         if (memoryRational != null) {
-          _insertAtCursor(RatLit(memoryRational!));
+          _insertAtCursor(RatLit(memoryRational!, label: 'M'));
         } else {
           for (final m in memory) {
             _insertAtCursor(m);
@@ -300,10 +300,18 @@ class DozenalCalcState extends ChangeNotifier {
 
   /// True when the number literal under the cursor already contains a
   /// decimal point — used to prevent `1.2.3` style double-decimal input.
-  /// Walks backwards through contiguous Digit/Decimal tokens until it hits
-  /// an operator, paren, or function (which ends the current literal).
+  /// Walks both directions through contiguous Digit/Decimal tokens until it
+  /// hits an operator, paren, or function (which ends the current literal).
+  /// Both directions are needed: with the cursor mid-literal a Decimal can
+  /// sit on either side, and a single backward walk misses the case where
+  /// the user navigated past the existing dot.
   bool _hasDecimalInCurrentLiteral() {
     for (var i = cursorPos - 1; i >= 0; i--) {
+      final t = inputBuffer[i];
+      if (t is Decimal) return true;
+      if (t is! Digit) return false;
+    }
+    for (var i = cursorPos; i < inputBuffer.length; i++) {
       final t = inputBuffer[i];
       if (t is Decimal) return true;
       if (t is! Digit) return false;
@@ -366,7 +374,11 @@ class DozenalCalcState extends ChangeNotifier {
       resultFieldActive = true;
       return;
     }
-    final expanded = withImplicitMuls(inputBuffer);
+    // Reorder postfix invocations (n!, |x|, 1/x) into prefix shape so
+    // they evaluate as the button labels suggest. Both tracks see the
+    // normalised form; prefix-style entry is untouched.
+    final normalized = resolvePostfix(inputBuffer);
+    final expanded = withImplicitMuls(normalized);
     final mathString = buildMevalString(expanded, base: base);
     final ratExprs = buildRatExpr(expanded, base: base);
     final ratResult = ratExprs == null ? null : evalRational(ratExprs);
@@ -420,28 +432,14 @@ class DozenalCalcState extends ChangeNotifier {
   // Armed-marker query for the keypad.
   // --------------------------------------------------------------------
 
-  /// True when a second tap on `token` would toggle to its inverse —
-  /// i.e. when the previous buffer token equals `token` and the function
-  /// has an inverse.
+  /// True when a tap on `token` would toggle the previous buffer token to
+  /// its inverse. Delegates to `_inverseSwap` so the armed-dot indicator
+  /// stays consistent with the actual toggle behaviour — including the
+  /// post-toggle state where the buffer holds the inverse (e.g. ArcSin)
+  /// and another tap on Sin would toggle back.
   bool isArmed(CalcToken token) {
-    final invertible = token is Sin ||
-        token is Cos ||
-        token is Tan ||
-        token is Cot ||
-        token is ArcSin ||
-        token is ArcCos ||
-        token is ArcTan ||
-        token is ArcCot ||
-        token is Sinh ||
-        token is Cosh ||
-        token is Tanh ||
-        token is Coth ||
-        token is ArSinh ||
-        token is ArCosh ||
-        token is ArTanh ||
-        token is ArCoth;
-    if (!invertible || cursorPos == 0) return false;
-    return inputBuffer[cursorPos - 1] == token;
+    if (cursorPos == 0) return false;
+    return _inverseSwap(token, inputBuffer[cursorPos - 1]) != null;
   }
 
   // --------------------------------------------------------------------
@@ -515,12 +513,9 @@ class DozenalCalcState extends ChangeNotifier {
     }
     final dec = rat.toDozenalPeriodic(base: to);
     final out = <CalcToken>[];
-    if (dec.intDigits.isEmpty) {
-      out.add(const Digit(DozenalDigit.d0));
-    } else {
-      for (final d in dec.intDigits) {
-        out.add(Digit(d));
-      }
+    // dec.intDigits is non-empty by construction (fromBigInt(0) returns [d0]).
+    for (final d in dec.intDigits) {
+      out.add(Digit(d));
     }
     if (dec.preDigits.isNotEmpty || dec.period.isNotEmpty) {
       out.add(const Decimal());

@@ -18,7 +18,7 @@ flutter pub get
 flutter run                   # aktuelle Plattform
 flutter run -d chrome         # Web
 flutter analyze               # was CI ausführt
-flutter test                  # gesamte Suite (134 Tests)
+flutter test                  # gesamte Suite (144 Tests)
 flutter test test/rational_test.dart           # einzelne Datei
 flutter test --plain-name "parses 1/7"         # einzelner Test per Name
 ```
@@ -65,7 +65,11 @@ Jeder `=`-Druck startet **beide** Auswerter parallel — den exakten
 - `lib/logic/rat_parser.dart` — Parser der Rational-Schiene. Kollabiert
   nur bei nicht-rationalen Tokens (sin, log, …) oder Division durch null.
 - `lib/logic/expression.dart` — f64-Fallback-Auswerter und
-  Ergebnisformatierung.
+  Ergebnisformatierung. Enthält auch `resolvePostfix`, das vor
+  `withImplicitMuls` läuft und postfix-eingegebene Tokens (`n!`, `|x|`,
+  `1/x`) in präfix-Funktionsaufrufe umordnet. Standard-Konvention:
+  Postfix bindet stärker als unäres Minus, also `−3!` = `−(3!)`. Wenn
+  der User `|−3| = 3` will, muss er klammern.
 
 Wenn die Rational-Schiene kollabiert, wird das f64-Resultat als **State B**
 mit `≈`-Suffix angezeigt. Wenn beide funktionieren, gewinnt die

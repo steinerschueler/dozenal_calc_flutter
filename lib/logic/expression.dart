@@ -214,6 +214,132 @@ void resolveCustomOperators(List<String> tokens) {
 }
 
 // ---------------------------------------------------------------------------
+// resolvePostfix — reorder postfix-style invocations (`n!`, `|x|`, `1/x`)
+// into the prefix function-call shape the downstream pipeline expects.
+// ---------------------------------------------------------------------------
+
+bool _isFunctionToken(CalcToken t) {
+  return t is Sin ||
+      t is Cos ||
+      t is Tan ||
+      t is Cot ||
+      t is ArcSin ||
+      t is ArcCos ||
+      t is ArcTan ||
+      t is ArcCot ||
+      t is Sinh ||
+      t is Cosh ||
+      t is Tanh ||
+      t is Coth ||
+      t is ArSinh ||
+      t is ArCosh ||
+      t is ArTanh ||
+      t is ArCoth ||
+      t is Factorial ||
+      t is AbsVal ||
+      t is Reciprocal;
+}
+
+/// Range of the operand immediately to the left of position [opPos] in
+/// [tokens], or null if no valid operand sits there. Handles three shapes:
+/// a parenthesised sub-expression (with its leading function token if any),
+/// a contiguous Digit/Decimal number literal, or a single-token operand
+/// (RatLit, constant). Other token types — operators, function tokens
+/// without their argument — return null.
+({int start, int end})? _leftOperandRangeTokens(
+  List<CalcToken> tokens,
+  int opPos,
+) {
+  if (opPos == 0) return null;
+  final prev = tokens[opPos - 1];
+
+  if (prev is ParenClose) {
+    var depth = 0;
+    var j = opPos - 1;
+    while (j >= 0) {
+      final t = tokens[j];
+      if (t is ParenClose) {
+        depth++;
+      } else if (t is ParenOpen) {
+        depth--;
+        if (depth == 0) {
+          if (j > 0 && _isFunctionToken(tokens[j - 1])) {
+            return (start: j - 1, end: opPos);
+          }
+          return (start: j, end: opPos);
+        }
+      }
+      j--;
+    }
+    return null;
+  }
+
+  if (prev is Digit || prev is Decimal) {
+    var j = opPos - 1;
+    while (j > 0) {
+      final t = tokens[j - 1];
+      if (t is Digit || t is Decimal) {
+        j--;
+      } else {
+        break;
+      }
+    }
+    return (start: j, end: opPos);
+  }
+
+  if (prev is RatLit ||
+      prev is ConstPi ||
+      prev is ConstE ||
+      prev is ConstPhi ||
+      prev is ConstSqrt2) {
+    return (start: opPos - 1, end: opPos);
+  }
+
+  return null;
+}
+
+/// Rewrites postfix invocations of `Factorial`, `AbsVal`, and `Reciprocal`
+/// (whose button labels `n!`, `|x|`, `1/x` suggest the operand precedes the
+/// operator) into the prefix function-call shape the rest of the pipeline
+/// already understands. So `5, Factorial` becomes
+/// `Factorial, (, 5, )`, which `buildMevalString` renders as `fact(5)`.
+///
+/// Postfix tokens that already sit in a valid prefix position (no operand
+/// to their left, or only a non-operand token) are left untouched — that
+/// keeps the prefix-style entry path working too.
+///
+/// Multiple passes resolve nested cases like `5!!` correctly: after the
+/// first rewrite `[Factorial, (, 5, )]` the second pass folds the outer
+/// `!` around that parenthesised result.
+List<CalcToken> resolvePostfix(List<CalcToken> tokens) {
+  var current = List<CalcToken>.from(tokens);
+  while (true) {
+    var changed = false;
+    for (var i = 0; i < current.length; i++) {
+      final t = current[i];
+      final isPostfixCandidate =
+          t is Factorial || t is AbsVal || t is Reciprocal;
+      if (!isPostfixCandidate) continue;
+      final range = _leftOperandRangeTokens(current, i);
+      if (range == null) continue;
+      final operand = current.sublist(range.start, range.end);
+      current = [
+        ...current.sublist(0, range.start),
+        t,
+        const ParenOpen(),
+        ...operand,
+        const ParenClose(),
+        ...current.sublist(i + 1),
+      ];
+      changed = true;
+      break;
+    }
+    if (!changed) break;
+  }
+  return current;
+}
+
+// ---------------------------------------------------------------------------
 // with_implicit_muls — insert Mul tokens where algebra implies multiplication.
 // ---------------------------------------------------------------------------
 

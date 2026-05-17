@@ -139,16 +139,20 @@ final class Negate extends CalcToken {
 
 /// Exact rational literal inserted by Ans / RCL. Carries the value through
 /// the pipeline so periodicity survives a STO→RCL or Ans re-use roundtrip
-/// without precision loss.
+/// without precision loss. The [label] is the display token used on the
+/// input line (default 'Ans'; RCL passes 'M' so the user can tell a
+/// recalled value from the last result).
 final class RatLit extends CalcToken {
   final Rational value;
-  const RatLit(this.value);
+  final String label;
+  const RatLit(this.value, {this.label = 'Ans'});
 
   @override
-  bool operator ==(Object other) => other is RatLit && other.value == value;
+  bool operator ==(Object other) =>
+      other is RatLit && other.value == value && other.label == label;
 
   @override
-  int get hashCode => value.hashCode;
+  int get hashCode => Object.hash(value, label);
 }
 
 // --- Overlay Set 6 — Memory ---

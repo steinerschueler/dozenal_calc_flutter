@@ -160,9 +160,12 @@ class _RatParser {
       // freeze the engine (e.g. 9^9^9 = 9^387_420_489 would allocate a
       // ~150 MB BigInt). Estimated result-bit-length is bits(base) * |exp|;
       // anything above ~10 M bits (~1.25 MB BigInt) collapses to f64.
+      // Compare in BigInt so a near-max_int exponent can't wrap the product
+      // through int64 overflow and slip past the cap.
       const int maxResultBits = 10000000;
       final baseBits = base.num.bitLength + base.den.bitLength;
-      if (baseBits * expInt.abs() > maxResultBits) return null;
+      final product = BigInt.from(baseBits) * BigInt.from(expInt).abs();
+      if (product > BigInt.from(maxResultBits)) return null;
       return base.pow(expInt);
     }
     return base;

@@ -74,7 +74,9 @@ void main() {
 
       s.handleClick(const Sin());
       expect(s.inputBuffer.last, isA<ArcSin>());
-      expect(s.isArmed(const Sin()), isFalse);
+      // isArmed stays true: the *next* Sin tap toggles ArcSin back to Sin,
+      // so the gold dot needs to surface that the function is still armed.
+      expect(s.isArmed(const Sin()), isTrue);
 
       s.handleClick(const Sin());
       expect(s.inputBuffer.last, isA<Sin>(),
@@ -450,6 +452,141 @@ void main() {
             Digit(DozenalDigit.d2),
             Digit(DozenalDigit.d3),
           ]));
+    });
+
+    // B12: postfix-style invocation of n!, |x|, 1/x. Their button labels
+    // suggest the operand precedes the operator, but the tokens render as
+    // prefix function calls (fact(, abs(, recip(). resolvePostfix folds
+    // the operand into the call so both entry orders evaluate the same.
+    test('B12: 5! as postfix yields 120', () {
+      final s = DozenalCalcState()
+        ..handleClick(Digit(DozenalDigit.d5))
+        ..handleClick(const Factorial())
+        ..handleClick(const Equals());
+      expect(s.errorMsg, isNull);
+      expect(s.lastResultF64, equals(120.0));
+    });
+
+    test('B12: prefix-style fact(5) still works', () {
+      final s = DozenalCalcState()
+        ..handleClick(const Factorial())
+        ..handleClick(Digit(DozenalDigit.d5))
+        ..handleClick(const Equals());
+      expect(s.errorMsg, isNull);
+      expect(s.lastResultF64, equals(120.0));
+    });
+
+    test('B12: 5 |x| as postfix yields 5', () {
+      final s = DozenalCalcState()
+        ..handleClick(Digit(DozenalDigit.d5))
+        ..handleClick(const AbsVal())
+        ..handleClick(const Equals());
+      expect(s.errorMsg, isNull);
+      expect(s.lastResultF64, equals(5.0));
+    });
+
+    test('B12: (−3) |x| with explicit parens yields 3', () {
+      // Without parens, -3 |x| reads as -(|3|) because postfix binds tighter
+      // than unary minus — standard math convention. Users who want |-3| can
+      // parenthesise.
+      final s = DozenalCalcState()
+        ..handleClick(const ParenOpen())
+        ..handleClick(const Sub())
+        ..handleClick(Digit(DozenalDigit.d3))
+        ..handleClick(const ParenClose())
+        ..handleClick(const AbsVal())
+        ..handleClick(const Equals());
+      expect(s.errorMsg, isNull);
+      expect(s.lastResultF64, equals(3.0));
+    });
+
+    test('B12: 4 1/x as postfix yields 0.25', () {
+      final s = DozenalCalcState()
+        ..handleClick(Digit(DozenalDigit.d4))
+        ..handleClick(const Reciprocal())
+        ..handleClick(const Equals());
+      expect(s.errorMsg, isNull);
+      expect(s.lastResultF64, equals(0.25));
+    });
+
+    test('B12: (2+3)! as postfix on a parenthesised expression', () {
+      final s = DozenalCalcState()
+        ..handleClick(const ParenOpen())
+        ..handleClick(Digit(DozenalDigit.d2))
+        ..handleClick(const Add())
+        ..handleClick(Digit(DozenalDigit.d3))
+        ..handleClick(const ParenClose())
+        ..handleClick(const Factorial())
+        ..handleClick(const Equals());
+      expect(s.errorMsg, isNull);
+      expect(s.lastResultF64, equals(120.0));
+    });
+
+    test('B12: 5+3! binds factorial tighter than addition', () {
+      final s = DozenalCalcState()
+        ..handleClick(Digit(DozenalDigit.d5))
+        ..handleClick(const Add())
+        ..handleClick(Digit(DozenalDigit.d3))
+        ..handleClick(const Factorial())
+        ..handleClick(const Equals());
+      expect(s.errorMsg, isNull);
+      expect(s.lastResultF64, equals(11.0)); // 5 + 6
+    });
+
+    // B13: cursor-driven double decimal point in the same number literal.
+    // _hasDecimalInCurrentLiteral used to look only backwards; if the user
+    // navigated past an existing decimal with the cursor arrows, a second
+    // Decimal slipped through and the engine silently produced a bogus
+    // f64 result instead of refusing the input.
+    test('B13: Decimal after cursor-jump past existing dot is blocked', () {
+      final s = DozenalCalcState()
+        ..handleClick(Digit(DozenalDigit.d1))
+        ..handleClick(const Decimal())
+        ..handleClick(Digit(DozenalDigit.d2))
+        ..handleClick(const TriangleLeft())
+        ..handleClick(const TriangleLeft())
+        ..handleClick(const TriangleLeft()) // cursor at 0
+        ..handleClick(const Decimal()); // must be ignored
+      // No second dot — the literal stays "1.2" with the cursor leading it.
+      expect(s.inputBuffer.whereType<Decimal>().length, equals(1));
+    });
+
+    // B14: isArmed must stay true across a single toggle cycle so the
+    // gold dot accurately predicts what the next tap does. After 2× Sin
+    // the buffer holds ArcSin and a third Sin tap toggles back — the
+    // indicator has to surface that.
+    test('B14: isArmed(Sin) stays true after toggle to ArcSin', () {
+      final s = DozenalCalcState()..handleClick(const Sin());
+      expect(s.isArmed(const Sin()), isTrue);
+      s.handleClick(const Sin()); // toggle Sin → ArcSin
+      expect(s.isArmed(const Sin()), isTrue,
+          reason:
+              'next Sin tap will toggle ArcSin back, indicator must reflect it');
+      s.handleClick(const Sin()); // toggle ArcSin → Sin
+      expect(s.isArmed(const Sin()), isTrue);
+    });
+
+    // B15: RCL inserts a RatLit labelled 'M' so the input line distinguishes
+    // a recalled memory value from a re-used Ans value.
+    test('B15: Rcl insert carries label "M", Ans carries label "Ans"', () {
+      final s = DozenalCalcState()
+        ..handleClick(Digit(DozenalDigit.d5))
+        ..handleClick(const Equals()) // lastAns = 5
+        ..handleClick(const Sto()) // memoryRational = 5
+        ..handleClick(const Ac()); // clear input buffer before recalling
+
+      s.handleClick(const Rcl());
+      expect(s.inputBuffer.length, equals(1));
+      final rclToken = s.inputBuffer.first;
+      expect(rclToken, isA<RatLit>());
+      expect((rclToken as RatLit).label, equals('M'));
+
+      // Ans path: fresh expression with the same value but the Ans label.
+      s.handleClick(const Ac());
+      s.handleClick(const Ans());
+      final ansToken = s.inputBuffer.first as RatLit;
+      expect(ansToken.label, equals('Ans'));
+      expect(ansToken.value, equals(rclToken.value));
     });
 
     test('B9: Decimal in a fresh literal (after operator) is allowed', () {

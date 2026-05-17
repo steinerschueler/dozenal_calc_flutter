@@ -75,6 +75,7 @@ const Map<String, CalcToken> _charKeyMap = {
   '/': Div(),
   '^': ExpTopRight(),
   '.': Decimal(),
+  ',': Decimal(), // German keyboards use ',' as the decimal separator.
   '=': Equals(),
   '(': ParenOpen(),
   ')': ParenClose(),

@@ -424,7 +424,7 @@ String _tokenText(CalcToken t) {
   if (t is RootTopLeft) return '√';
   if (t is OplusBotLeft) return '⊕';
   if (t is LogBotRight) return 'log';
-  if (t is RatLit) return 'Ans';
+  if (t is RatLit) return t.label;
   // App-state tokens (AC, Del, Equals, Expand, Sto, Rcl, Mc, Ans, Doz, Dez,
   // Drg, Info, Close, TriangleLeft, TriangleRight) never appear in
   // input_buffer or result_buffer.
