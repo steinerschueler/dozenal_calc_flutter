@@ -7,7 +7,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:dozenal_calc_flutter/keypad.dart';
-import 'package:dozenal_calc_flutter/tokens.dart';
 
 Widget _wrap(Size size, {bool overlayOpen = false}) {
   return MaterialApp(
@@ -106,5 +105,18 @@ void main() {
   test('Keypad defaults overlayOpen to false', () {
     final k = Keypad(onTap: (_) {});
     expect(k.overlayOpen, isFalse);
+  });
+
+  // Regression: B8 — Breit mode used to overflow vertically when available
+  // height was less than the natural row stack. Now a vertical scroll
+  // fallback engages.
+  testWidgets('Breit keypad scrolls vertically when height is too small',
+      (tester) async {
+    await tester.binding.setSurfaceSize(const Size(800, 200));
+    await tester.pumpWidget(_wrap(const Size(800, 200)));
+    expect(tester.takeException(), isNull,
+        reason: 'no RenderFlex overflow on tiny landscape');
+    expect(find.byType(SingleChildScrollView), findsWidgets,
+        reason: 'scroll fallback engaged');
   });
 }

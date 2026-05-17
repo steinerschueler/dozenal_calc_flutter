@@ -36,18 +36,20 @@ class DozenalCalcState extends ChangeNotifier {
   Rational? lastAns;
   double lastResultF64 = 0.0;
 
+  /// Set by `calculateResult` when the rational track collapsed and the f64
+  /// path was used instead. Drives the "≈"-suffix on the display. Replaces
+  /// an older buffer-sniff (`resultBuffer.any(Decimal)`) that missed
+  /// whole-number f64 fallbacks like `log(1) = 0`.
+  bool _ratCollapsed = false;
+
   String? errorMsg;
   bool overlayOpen = false;
   AngleMode angleMode = AngleMode.deg;
   NumeralSystem numeralSystem = NumeralSystem.doz;
   InfoState infoState = const InfoClosed();
 
-  /// Convenience: derived "show State-B …-suffix" flag for the display layer.
-  /// Mirrors the Rust `is_state_b` check in layout.rs.
-  bool get isF64Fallback =>
-      errorMsg == null &&
-      lastAns == null &&
-      resultBuffer.any((t) => t is Decimal);
+  /// True when the display should show the State-B "≈"-suffix.
+  bool get isF64Fallback => errorMsg == null && _ratCollapsed;
 
   // --------------------------------------------------------------------
   // Click handling — 1:1 port of input.rs::handle_click.
@@ -66,6 +68,7 @@ class DozenalCalcState extends ChangeNotifier {
       resultPeriodCapped = false;
       cursorPos = 0;
       resultFieldActive = false;
+      _ratCollapsed = false;
     }
 
     final isOperator = token is Add ||
@@ -120,6 +123,7 @@ class DozenalCalcState extends ChangeNotifier {
       resultPeriodCapped = false;
       cursorPos = 0;
       errorMsg = null;
+      _ratCollapsed = false;
       return;
     }
     if (token is Del) {
@@ -289,8 +293,22 @@ class DozenalCalcState extends ChangeNotifier {
   }
 
   void _insertAtCursor(CalcToken token) {
+    if (token is Decimal && _hasDecimalInCurrentLiteral()) return;
     inputBuffer = List.of(inputBuffer)..insert(cursorPos, token);
     cursorPos++;
+  }
+
+  /// True when the number literal under the cursor already contains a
+  /// decimal point — used to prevent `1.2.3` style double-decimal input.
+  /// Walks backwards through contiguous Digit/Decimal tokens until it hits
+  /// an operator, paren, or function (which ends the current literal).
+  bool _hasDecimalInCurrentLiteral() {
+    for (var i = cursorPos - 1; i >= 0; i--) {
+      final t = inputBuffer[i];
+      if (t is Decimal) return true;
+      if (t is! Digit) return false;
+    }
+    return false;
   }
 
   bool _isErrorBlocked(CalcToken token) =>
@@ -301,7 +319,14 @@ class DozenalCalcState extends ChangeNotifier {
       token is TriangleLeft ||
       token is TriangleRight ||
       token is Expand ||
-      token is Close;
+      token is Close ||
+      // Memory ops too: otherwise Sto/Rcl/Mc/Ans after an error would clear
+      // the error and dispatch with stale `lastAns`, mixing pre-error
+      // memory state into the post-error buffer. User must AC first.
+      token is Sto ||
+      token is Rcl ||
+      token is Mc ||
+      token is Ans;
 
   bool _isTransparentAfterEquals(CalcToken token) =>
       token is TriangleLeft ||
@@ -332,6 +357,7 @@ class DozenalCalcState extends ChangeNotifier {
       errorMsg = null;
       lastAns = Rational.tryNew(BigInt.zero, BigInt.one);
       lastResultF64 = 0.0;
+      _ratCollapsed = false;
       resultBuffer = const [Digit(DozenalDigit.d0)];
       resultPeriodStart = null;
       resultPeriodLen = 0;
@@ -347,21 +373,22 @@ class DozenalCalcState extends ChangeNotifier {
 
     final f64 = evalF64(mathString, angleMode);
     if (f64 == null) {
-      errorMsg = 'SYNTAX ERROR';
+      _failWithError('SYNTAX ERROR');
       return;
     }
     if (f64.isNaN) {
-      errorMsg = 'DOMAIN ERROR';
+      _failWithError('DOMAIN ERROR');
       return;
     }
     if (f64.isInfinite) {
-      errorMsg = 'DIV BY ZERO';
+      _failWithError('DIV BY ZERO');
       return;
     }
 
     errorMsg = null;
     lastAns = ratResult;
     lastResultF64 = f64;
+    _ratCollapsed = (ratResult == null);
 
     if (ratResult != null) {
       final r = formatRationalResult(ratResult, base: base);
@@ -378,6 +405,15 @@ class DozenalCalcState extends ChangeNotifier {
 
     resultCursorPos = 0;
     resultFieldActive = true;
+  }
+
+  /// Invariant on error: clear lastAns so subsequent Ans / Rcl don't insert
+  /// stale values from before the failure.
+  void _failWithError(String msg) {
+    errorMsg = msg;
+    lastAns = null;
+    lastResultF64 = 0.0;
+    _ratCollapsed = false;
   }
 
   // --------------------------------------------------------------------
@@ -488,18 +524,24 @@ class DozenalCalcState extends ChangeNotifier {
     }
     if (dec.preDigits.isNotEmpty || dec.period.isNotEmpty) {
       out.add(const Decimal());
+      // Cap is on the *fractional* digit count, computed in the target base
+      // (dec.intDigits). The old check used the source-base intDigits.length
+      // which is the wrong dimension after a base conversion.
+      final fracBudgetEnd =
+          dec.intDigits.length + 1 + _bufferFracMaxDigits;
+      var fracEmitted = 0;
       for (final d in dec.preDigits) {
-        if (out.length >= intDigits.length + 1 + _bufferFracMaxDigits) break;
+        if (out.length >= fracBudgetEnd) break;
         out.add(Digit(d));
+        fracEmitted++;
       }
       // Period digits get inlined (no overline in the input buffer), capped
       // at the per-buffer digit budget. This is intentionally lossy.
-      var emitted = dec.preDigits.length;
       var p = 0;
-      while (emitted < _bufferFracMaxDigits && dec.period.isNotEmpty) {
+      while (fracEmitted < _bufferFracMaxDigits && dec.period.isNotEmpty) {
         out.add(Digit(dec.period[p % dec.period.length]));
         p++;
-        emitted++;
+        fracEmitted++;
       }
     }
     return out;

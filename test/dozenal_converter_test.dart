@@ -28,5 +28,16 @@ void main() {
         equals(BigInt.from(13)),
       );
     });
+
+    // Regression: B11 — frac near 1.0 used to yield dVal == base (= 12),
+    // which DozenalDigit.fromValue rejected as null, silently dropping the
+    // digit and leaving an empty result.
+    test('frac_to_digits_near_one_does_not_drop_silently', () {
+      final out = DozenalConverter.fracToDigits(0.99999, 5, base: 12);
+      // Must produce at least one digit (the leading 'B' / d11) and not be
+      // an empty list.
+      expect(out, isNotEmpty);
+      expect(out.first, equals(DozenalDigit.d11));
+    });
   });
 }

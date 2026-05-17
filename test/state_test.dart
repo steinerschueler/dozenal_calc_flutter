@@ -352,5 +352,126 @@ void main() {
             Digit(DozenalDigit.d3),
           ]));
     });
+
+    // -------------------------------------------------------------------
+    // Build 5 regression tests
+    // -------------------------------------------------------------------
+
+    // B3: isF64Fallback used to be derived from "any Decimal in
+    // resultBuffer", which missed whole-number f64 results.
+    test('B3: f64-fallback flag fires for integer fallback results', () {
+      // 1 + sin(0) = 1 — rational track collapses on sin, f64 yields 1.0
+      // (integer, no Decimal in buffer). State must still flag fallback.
+      final s = DozenalCalcState()
+        ..handleClick(Digit(DozenalDigit.d1))
+        ..handleClick(const Add())
+        ..handleClick(const Sin())
+        ..handleClick(Digit(DozenalDigit.d0))
+        ..handleClick(const ParenClose())
+        ..handleClick(const Equals());
+      expect(s.errorMsg, isNull);
+      expect(s.lastAns, isNull, reason: 'rational track must have collapsed');
+      expect(s.isF64Fallback, isTrue,
+          reason: 'integer f64 results still need the ≈ suffix');
+    });
+
+    // B4: lastAns must be cleared on error so a subsequent Ans (after AC)
+    // does not insert the pre-error value. With lastAns == null Ans falls
+    // back to the just-reset resultBuffer (= [Digit(d0)]), inserting a
+    // harmless zero rather than the stale 5.
+    test('B4: error clears lastAns so Ans after AC does not paste stale 5', () {
+      final s = DozenalCalcState()
+        ..handleClick(Digit(DozenalDigit.d5))
+        ..handleClick(const Equals()); // lastAns = 5
+      expect(s.lastAns, equals(Rational.fromInts(5)));
+
+      s
+        ..handleClick(Digit(DozenalDigit.d1))
+        ..handleClick(const Div())
+        ..handleClick(Digit(DozenalDigit.d0))
+        ..handleClick(const Equals()); // DIV BY ZERO
+      expect(s.errorMsg, equals('DIV BY ZERO'));
+      expect(s.lastAns, isNull,
+          reason: 'error must invalidate the previous lastAns');
+
+      s.handleClick(const Ac());
+      s.handleClick(const Ans());
+      // The pre-error 5 must NOT come back. After AC + Ans the buffer
+      // either is empty or holds the post-AC zero, but never RatLit(5).
+      for (final t in s.inputBuffer) {
+        expect(t, isNot(isA<RatLit>()),
+            reason: 'no stale RatLit from before the error');
+      }
+    });
+
+    // B5: memory operations must be blocked during error state to prevent
+    // mixing pre-error lastAns into the freshly-reset buffer.
+    test('B5: Sto/Rcl/Mc/Ans are blocked during error state', () {
+      final s = DozenalCalcState()
+        ..handleClick(Digit(DozenalDigit.d1))
+        ..handleClick(const Div())
+        ..handleClick(Digit(DozenalDigit.d0))
+        ..handleClick(const Equals());
+      expect(s.errorMsg, isNotNull);
+
+      final memBefore = s.memory;
+      s.handleClick(const Sto());
+      expect(s.errorMsg, isNotNull,
+          reason: 'Sto during error must not clear the error');
+      expect(s.memory, equals(memBefore),
+          reason: 'Sto during error must not mutate memory');
+
+      // The buffer the user typed before the error stays intact too,
+      // because the blocked-token branch returns *before* the buffer reset.
+      final bufBefore = List.of(s.inputBuffer);
+      s.handleClick(const Rcl());
+      expect(s.errorMsg, isNotNull, reason: 'Rcl blocked during error');
+      s.handleClick(const Mc());
+      expect(s.errorMsg, isNotNull, reason: 'Mc blocked during error');
+      s.handleClick(const Ans());
+      expect(s.errorMsg, isNotNull, reason: 'Ans blocked during error');
+      expect(s.inputBuffer, equals(bufBefore),
+          reason: 'no buffer mutation under blocked-token error state');
+    });
+
+    // B9: a second Decimal in the same number literal must be a no-op.
+    test('B9: second Decimal in same literal is ignored', () {
+      final s = DozenalCalcState()
+        ..handleClick(Digit(DozenalDigit.d1))
+        ..handleClick(const Decimal())
+        ..handleClick(Digit(DozenalDigit.d2))
+        ..handleClick(const Decimal()) // <- should be ignored
+        ..handleClick(Digit(DozenalDigit.d3));
+      expect(
+          s.inputBuffer,
+          equals([
+            Digit(DozenalDigit.d1),
+            const Decimal(),
+            Digit(DozenalDigit.d2),
+            Digit(DozenalDigit.d3),
+          ]));
+    });
+
+    test('B9: Decimal in a fresh literal (after operator) is allowed', () {
+      // Operator resets the "current literal" window, so a Decimal there
+      // is a leading dot and must be accepted.
+      final s = DozenalCalcState()
+        ..handleClick(Digit(DozenalDigit.d1))
+        ..handleClick(const Decimal())
+        ..handleClick(Digit(DozenalDigit.d2))
+        ..handleClick(const Add())
+        ..handleClick(const Decimal()) // <- new literal, accepted
+        ..handleClick(Digit(DozenalDigit.d5));
+      expect(
+          s.inputBuffer,
+          equals([
+            Digit(DozenalDigit.d1),
+            const Decimal(),
+            Digit(DozenalDigit.d2),
+            const Add(),
+            const Decimal(),
+            Digit(DozenalDigit.d5),
+          ]));
+    });
   });
 }

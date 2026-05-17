@@ -78,9 +78,13 @@ class DozenalConverter {
     final b = base.toDouble();
     for (var i = 0; i < precision; i++) {
       frac *= b;
-      final dVal = (frac + fracEpsilon).floor();
-      final d = DozenalDigit.fromValue(dVal);
-      if (d != null) digits.add(d);
+      // Clamp dVal to [0, base-1]: floor-with-epsilon can overshoot to `base`
+      // when frac is just under 1.0, which would yield a silently-dropped
+      // digit via DozenalDigit.fromValue returning null.
+      var dVal = (frac + fracEpsilon).floor();
+      if (dVal >= base) dVal = base - 1;
+      if (dVal < 0) dVal = 0;
+      digits.add(DozenalDigit.values[dVal]);
       frac -= dVal;
       if (frac.abs() < fracEpsilon) break;
     }

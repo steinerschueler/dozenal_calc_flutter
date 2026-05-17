@@ -200,19 +200,11 @@ class _HochKeypad extends StatelessWidget {
         final h = constraints.maxHeight;
         if (h.isFinite && h < _kScrollThreshold) {
           return SingleChildScrollView(
-            child: _buildColumn(
-              tight: true,
-              fixedHeights: true,
-              maxHeight: double.infinity,
-            ),
+            child: _buildColumn(tight: true, fixedHeights: true),
           );
         }
         final tight = h.isFinite && h < _kTightThreshold;
-        return _buildColumn(
-          tight: tight,
-          fixedHeights: false,
-          maxHeight: h,
-        );
+        return _buildColumn(tight: tight, fixedHeights: false);
       },
     );
   }
@@ -224,7 +216,6 @@ class _HochKeypad extends StatelessWidget {
   Widget _buildColumn({
     required bool tight,
     required bool fixedHeights,
-    required double maxHeight,
   }) {
     final rowGap = tight ? 6.0 : 10.0;
     final sectionGap = tight ? 8.0 : 14.0;
@@ -541,34 +532,40 @@ class _BreitKeypad extends StatelessWidget {
         // a horizontal scroll keeps every set reachable.
         final content = _buildBreitContent(buttonSize: buttonSize);
 
-        // Center vertically so abundant height (tablet portrait) shows
-        // empty space symmetrically above and below the keypad rather than
-        // pinning everything to the top.
-        return Center(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              // Horizontal scroll keeps every set reachable when the natural
-              // row width exceeds the available width (phone-landscape with
-              // all ten sets visible may trigger this on narrow devices).
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: content,
+        final body = Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            // Horizontal scroll keeps every set reachable when the natural
+            // row width exceeds the available width (phone-landscape with
+            // all ten sets visible may trigger this on narrow devices).
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: content,
+            ),
+            const SizedBox(height: setGap),
+            SizedBox(
+              height: buttonSize,
+              child: _EqualsRow(
+                sideGap: setGap,
+                onEquals: () => onTap(const Equals()),
+                onInfoTap: onInfoTap,
+                onHelpTap: onHelpTap,
               ),
-              const SizedBox(height: setGap),
-              SizedBox(
-                height: buttonSize,
-                child: _EqualsRow(
-                  sideGap: setGap,
-                  onEquals: () => onTap(const Equals()),
-                  onInfoTap: onInfoTap,
-                  onHelpTap: onHelpTap,
-                ),
-              ),
-            ],
-          ),
+            ),
+          ],
         );
+
+        // Vertical safety net: if buttonSize clamped at the 44 dp floor but
+        // the available height still can't fit all rows (split-screen
+        // landscape, foldable cover display), allow vertical scroll so no
+        // row is unreachable. Otherwise center for abundant height (tablet).
+        final naturalHeight =
+            4 * buttonSize + 3 * tabletDigitGap + setGap + buttonSize;
+        if (h.isFinite && h < naturalHeight) {
+          return SingleChildScrollView(child: body);
+        }
+        return Center(child: body);
       },
     );
   }

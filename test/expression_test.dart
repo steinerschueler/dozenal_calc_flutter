@@ -121,6 +121,40 @@ void main() {
       final modZero = evalF64('10 % 0', AngleMode.rad)!;
       expect(modZero.isNaN || modZero.isInfinite, isTrue);
     });
+
+    // Regression: B6 — tanh used to return NaN for |x| > ~709 because
+    // exp(x) overflows to ∞, yielding (∞-0)/(∞+0) = NaN. Should saturate.
+    test('tanh_saturates_for_large_magnitudes', () {
+      expect((evalDouble('tanh(1000)') - 1.0).abs(), lessThan(1e-9));
+      expect((evalDouble('tanh(-1000)') - (-1.0)).abs(), lessThan(1e-9));
+      // Continuity check: tanh(20) is already essentially 1.
+      expect((evalDouble('tanh(20)') - 1.0).abs(), lessThan(1e-9));
+    });
+
+    // Regression: B7 — arsinh used to lose precision for negative x because
+    // x + sqrt(x²+1) catastrophically cancels. Symmetric formula fixes it.
+    test('arsinh_negative_x_does_not_underflow', () {
+      // arsinh(-1000) ≈ -ln(2 * 1000) ≈ -7.6009
+      expect((evalDouble('arsinh(-1000)') - (-7.6009024595420813)).abs(),
+          lessThan(1e-6));
+      // arsinh(-1) = -ln(1 + sqrt(2))
+      expect((evalDouble('arsinh(-1)') - (-math.log(1 + math.sqrt(2)))).abs(),
+          lessThan(1e-10));
+      // Symmetry: arsinh(-x) = -arsinh(x)
+      expect(
+        (evalDouble('arsinh(-3)') + evalDouble('arsinh(3)')).abs(),
+        lessThan(1e-10),
+      );
+    });
+
+    // Regression: B2 — fact(NaN) / fact(±∞) used to throw UnsupportedError
+    // from x.round(), bubbling out of evalF64 uncaught.
+    test('factorial_of_nan_or_infinity_returns_nan_cleanly', () {
+      // asin(2) = NaN; fact(NaN) must not crash.
+      expect(evalDouble('fact(asin(2))').isNaN, isTrue);
+      // Direct large argument that pushes round() through Infinity territory.
+      expect(evalDouble('fact(1/0)').isNaN, isTrue);
+    });
   });
 
   // --- resolveCustomOperators ---
@@ -157,6 +191,22 @@ void main() {
       final out = resolved(['3', '√', '(', '27', ')']);
       expect(out, equals('((27)^(1/3))'));
       expect((evalDouble(out) - 3.0).abs(), lessThan(1e-10));
+    });
+
+    // Regression: B1 — √ after ^ used to mis-parse as binary nth-root with
+    // ^ as left operand, producing a malformed (3^(1/^)) substring.
+    test('sqrt_after_caret_is_unary: 2^√3 = 2^sqrt(3)', () {
+      final out = resolved(['2', '^', '√', '3']);
+      expect(out, equals('2 ^ (3^(1/2))'));
+      expect(
+        (evalDouble(out) - math.pow(2.0, math.sqrt(3.0))).abs(),
+        lessThan(1e-10),
+      );
+    });
+
+    test('sqrt_after_percent_is_unary', () {
+      final out = resolved(['10', '%', '√', '4']);
+      expect(out, equals('10 % (4^(1/2))'));
     });
   });
 

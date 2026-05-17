@@ -184,8 +184,12 @@ void resolveCustomOperators(List<String> tokens) {
     if (i == -1) break;
     final right = _rightOperandRange(tokens, i);
     if (right == null) break;
+    // `^` and `%` count as preceding operators too: after `2^` or `5%` the
+    // √ starts a fresh radicand (unary square root), not a binary nth-root.
+    // Without this, `2^√3` mis-parses with `^` as the n-th-root index and
+    // produces a malformed `(3^(1/^))` substring → SYNTAX ERROR.
     final precededByOp = i == 0 ||
-        const {'+', '-', '*', '/', '('}.contains(tokens[i - 1]);
+        const {'+', '-', '*', '/', '(', '^', '%'}.contains(tokens[i - 1]);
     final x = tokens.sublist(right.start, right.end).join();
     if (precededByOp) {
       tokens.replaceRange(i, right.end, ['($x^(1/2))']);
@@ -731,7 +735,12 @@ class _F64Parser {
       case 'coth':
         return _cosh(x) / _sinh(x);
       case 'arsinh':
-        return math.log(x + math.sqrt(x * x + 1.0));
+        // Symmetric formula via arsinh(-x) = -arsinh(x). The naive form
+        // log(x + sqrt(x²+1)) suffers catastrophic cancellation for negative
+        // x: |x| - sqrt(x²+1) ≈ 0 → log(≈0) → -∞.
+        return x < 0
+            ? -math.log(-x + math.sqrt(x * x + 1.0))
+            : math.log(x + math.sqrt(x * x + 1.0));
       case 'arcosh':
         return math.log(x + math.sqrt(x * x - 1.0));
       case 'artanh':
@@ -753,12 +762,20 @@ class _F64Parser {
   static double _sinh(double x) => (math.exp(x) - math.exp(-x)) / 2.0;
   static double _cosh(double x) => (math.exp(x) + math.exp(-x)) / 2.0;
   static double _tanh(double x) {
+    // Saturate explicitly: beyond |x| ≈ 20 the result rounds to ±1 anyway,
+    // and beyond ~709 math.exp overflows to ∞, yielding (∞-0)/(∞+0) = NaN.
+    if (x > 20.0) return 1.0;
+    if (x < -20.0) return -1.0;
     final ex = math.exp(x);
     final emx = math.exp(-x);
     return (ex - emx) / (ex + emx);
   }
 
   static double _fact(double x) {
+    // double.round() throws UnsupportedError on NaN / ±Infinity, which would
+    // bubble out of evalF64 as an uncaught error. Guard so composition like
+    // fact(asin(2)) returns NaN cleanly rather than crashing.
+    if (x.isNaN || x.isInfinite) return double.nan;
     final n = x.round();
     if (n < 0) return double.nan;
     var r = BigInt.one;
