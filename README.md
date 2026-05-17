@@ -1,135 +1,139 @@
 # Dozenal Calc
 
-A scientific calculator that computes natively in **base 12** (dozenal),
-with custom-designed digit symbols, exact rational arithmetic with
-period-detection, and an embedded didactic chapter set on dozenality.
+Ein wissenschaftlicher Taschenrechner, der nativ in **Basis 12** (dozenal)
+rechnet — mit eigens gezeichneten Ziffernsymbolen, exakter
+Rational-Arithmetik mit Periodenerkennung und einem integrierten
+didaktischen Kapitelwerk zum Dozenalsystem.
 
-Flutter port of the original Rust + egui implementation at
+Flutter-Port der ursprünglichen Rust + egui Implementierung unter
 [Bawdyness/dozenal_calc](https://github.com/Bawdyness/dozenal_calc).
-This repository:
+Dieses Repository:
 [Bawdyness/dozenal_calc_flutter](https://github.com/Bawdyness/dozenal_calc_flutter).
 
-## What it does
+## Funktionsumfang
 
-- **Calculator** — twelve custom digit glyphs, addition / subtraction /
-  multiplication / division / exponent / parallel-addition (⊕) /
-  square and n-th root / logarithm / trigonometric and hyperbolic
-  functions. The expression parser runs two tracks in parallel: an
-  exact `BigInt`-backed `Rational` track that preserves periodicity
-  (e.g. `1/7` displays as `0.186A3` with overline + raised dots), and
-  an `f64` track that catches the irrational cases.
-- **Memory** — single slot, `STO` / `RCL` / `MC`, exact-rational
-  round-trip when possible.
-- **Modes** — angle (`RAD` / `DEG` / `GRD`), display base
-  (dozenal ↔ decimal inspection), inverse-toggle on a second tap of
-  any trig / hyperbolic key.
-- **Info section** — twelve chapters of context: how the symbol system
-  works, why base 12 has nicer fractions than base 10, the regular
-  dodecagon, the Platonic dodecahedron, zodiac astronomy, finger
-  counting, imperial units, TGM. The two geometry chapters include
-  custom-painted illustrations.
+- **Rechner** — zwölf eigene Ziffern-Glyphen, Addition / Subtraktion /
+  Multiplikation / Division / Exponentiation / Paralleladdition (⊕) /
+  Quadrat- und n-te Wurzel / Logarithmus / trigonometrische und
+  hyperbolische Funktionen. Der Ausdrucksparser läuft auf zwei Schienen
+  parallel: eine exakte `Rational`-Schiene auf `BigInt`-Basis, die
+  Periodizität bewahrt (z. B. `1/7` wird als `0.186A3` mit Überstrich +
+  Punktmarker dargestellt), und eine `f64`-Schiene, die die irrationalen
+  Fälle abfängt.
+- **Speicher** — ein Slot, `STO` / `RCL` / `MC`, mit exaktem
+  Rational-Round-Trip wenn möglich.
+- **Modi** — Winkel (`RAD` / `DEG` / `GRD`), Anzeige-Basis (Dozenal ↔
+  Dezimal zur Inspektion), Inversen-Umschaltung beim zweiten Tippen einer
+  beliebigen Trig-/Hyperbolik-Taste.
+- **Info-Bereich** — zwölf Kapitel mit Hintergrund: wie das Symbolsystem
+  funktioniert, warum die Basis 12 schönere Brüche als Basis 10 ergibt,
+  das regelmäßige Zwölfeck, der platonische Dodekaeder, Zodiak-Astronomie,
+  Fingerzählen, imperiale Einheiten, TGM. Die beiden Geometrie-Kapitel
+  enthalten benutzerdefinierte Illustrationen.
 
-## Repo layout
+## Repo-Aufbau
 
 ```
 lib/
   state.dart              — DozenalCalcState (ChangeNotifier)
-  display.dart            — TwoLineDisplay with overline + State A/B/C
-  keypad.dart             — Sets 1–5 + OverlayKeypad for Sets 6–10
-  glyph_painter.dart      — twelve dozenal digit glyphs
-  token_painter.dart      — operator / function key glyphs
-  app_layout.dart         — centralised layout constants
-  info_pages.dart         — Info-modal navigation
-  info_content.dart       — chapter prose + illustrations
-  privacy_page.dart       — bundled privacy-policy renderer
+  display.dart            — TwoLineDisplay (adaptive Höhe, State A/B/C)
+  keypad.dart             — Orientierungs-Dispatch: _HochKeypad (Panel-Swap)
+                            und _BreitKeypad (alle zehn Sets inline)
+  glyph_painter.dart      — zwölf Dozenal-Ziffer-Glyphen
+  token_painter.dart      — Operator-/Funktionstasten-Glyphen
+  app_layout.dart         — Display-Höhen-Formel + Tablet-Proportionen
+  info_pages.dart         — Info-Modal-Navigation
+  info_content.dart       — Kapitelprosa + Illustrationen
+  privacy_page.dart       — gebündelte Datenschutzerklärung
+  intro_pages.dart        — Onboarding-PageView beim ersten Start
   logic/
-    rational.dart         — exact rational + periodic decimal
-    rat_parser.dart       — rational-track expression parser
-    expression.dart       — f64 evaluator + result formatting
+    rational.dart         — exakter Rational + periodische Dezimaldarstellung
+    rat_parser.dart       — Parser der Rational-Schiene
+    expression.dart       — f64-Auswerter + Ergebnisformatierung
     dozenal_converter.dart
     dozenal_digit.dart
-test/                     — 78 tests across logic + state
-tool/                     — icon, compass, feature-graphic generators
-legal/                    — privacy policy (.md + .html)
+test/                     — 134 Tests über Logik, State und Layout
+tool/                     — Icon-, Kompass-, Feature-Graphic-Generatoren
+legal/                    — Datenschutzerklärung (.md + .html)
 assets/                   — icon.png, compass.png, feature_graphic.png
-screenshots/              — Play Store screenshots (phone + tablet)
-.github/workflows/ci.yml  — analyze + test on push / PR
+screenshots/              — Play-Store-Screenshots (Phone + tablet)
+.github/workflows/ci.yml  — analyze + test bei Push / PR
 ```
 
-## Build & run
+## Bauen & Ausführen
 
 ```bash
 flutter pub get
-flutter run                   # current platform
-flutter run -d chrome         # web
-flutter test                  # all 78 tests
+flutter run                   # aktuelle Plattform
+flutter run -d chrome         # Web
+flutter test                  # alle 134 Tests
 ```
 
-`flutter pub get` will report six transitive dependencies (`meta`,
-`vector_math`, `cli_util`, `matcher`, `test_api`, `xml`) as having
-newer versions available but incompatible with the current
-constraints. These pins come from the Flutter SDK itself, not from
-this `pubspec.yaml`, so neither `flutter pub upgrade` nor
-`flutter pub upgrade --major-versions` lifts them on the stable
-channel. After each Flutter minor stable release, retry the upgrade
-and re-run analyze + tests; until then the warning is informational.
+`flutter pub get` meldet sechs transitive Abhängigkeiten (`meta`,
+`vector_math`, `cli_util`, `matcher`, `test_api`, `xml`) mit neueren
+verfügbaren Versionen, die mit den aktuellen Constraints inkompatibel
+sind. Diese Pins kommen vom Flutter-SDK selbst, nicht von diesem
+`pubspec.yaml`, weshalb weder `flutter pub upgrade` noch
+`flutter pub upgrade --major-versions` sie auf dem Stable-Channel
+anhebt. Nach jedem Flutter-Minor-Stable-Release den Upgrade erneut
+versuchen und analyze + Tests laufen lassen; bis dahin ist die Warnung
+nur informativ.
 
-Release builds:
+Release-Builds:
 
 ```bash
-flutter build apk --release       # Android (signs with android/key.properties)
-flutter build appbundle --release # Android Play Store bundle
-flutter build ios --release       # iOS (requires Xcode + Apple developer)
-flutter build web --release       # static site under build/web
+flutter build apk --release       # Android (signiert via android/key.properties)
+flutter build appbundle --release # Android Play-Store-Bundle
+flutter build ios --release       # iOS (benötigt Xcode + Apple Developer)
+flutter build web --release       # statische Seite unter build/web
 ```
 
-The Android release build expects a developer-supplied keystore at the
-path declared in `android/key.properties` — see comments in
-`android/app/build.gradle.kts`. Without that file the build falls back
-to debug-signing, sufficient for local testing but not for store
-distribution.
+Der Android-Release-Build erwartet einen vom Entwickler bereitgestellten
+Keystore unter dem in `android/key.properties` deklarierten Pfad — siehe
+Kommentare in `android/app/build.gradle.kts`. Ohne diese Datei fällt der
+Build auf Debug-Signing zurück, was für lokales Testen reicht, aber nicht
+für die Store-Distribution.
 
-## Regenerating the icon and splash assets
+## Icon- und Splash-Assets regenerieren
 
-The 1024×1024 source PNG at `assets/icon.png` is produced
-programmatically:
+Das 1024×1024-Quell-PNG unter `assets/icon.png` wird programmatisch erzeugt:
 
 ```bash
 flutter test tool/generate_icon.dart       # → assets/icon.png
-dart run flutter_launcher_icons             # → platform icons
-dart run flutter_native_splash:create       # → platform splash screens
+dart run flutter_launcher_icons             # → Plattform-Icons
+dart run flutter_native_splash:create       # → Plattform-Splash-Screens
 ```
 
-The compass image (`assets/compass.png`) is for marketing / hero
-contexts and is generated by `tool/generate_compass.dart` — same
-pattern. The 1024×500 Play Store feature graphic
-(`assets/feature_graphic.png`) is generated by
-`tool/generate_feature_graphic.dart`:
+Das Kompass-Bild (`assets/compass.png`) ist für Marketing-/Hero-Kontexte
+gedacht und wird per `tool/generate_compass.dart` nach demselben Muster
+erzeugt. Das 1024×500 Play-Store-Feature-Graphic
+(`assets/feature_graphic.png`) wird per
+`tool/generate_feature_graphic.dart` erzeugt:
 
 ```bash
 flutter test tool/generate_feature_graphic.dart
 ```
 
-## License
+## Lizenz
 
 Copyright (c) 2026 Eric Naville.
 
-This work — code, prose, glyph designs, illustrations, icons — is
-licensed under the **Creative Commons Attribution-NonCommercial-
-ShareAlike 4.0 International License (CC BY-NC-SA 4.0)**. Full text in
-[`LICENSE`](LICENSE).
+Dieses Werk — Code, Prosa, Glyphen-Designs, Illustrationen, Icons — steht
+unter der **Creative Commons Attribution-NonCommercial-ShareAlike 4.0
+International License (CC BY-NC-SA 4.0)**. Volltext in [`LICENSE`](LICENSE).
 
-In short: you may share and adapt this work for non-commercial purposes,
-must give appropriate credit, and must distribute your derivative works
-under the same license.
+Kurz gesagt: Du darfst dieses Werk für nicht-kommerzielle Zwecke teilen
+und bearbeiten, musst angemessen Autorenschaft zuschreiben und musst
+abgeleitete Werke unter derselben Lizenz weitergeben.
 
-## Privacy
+## Datenschutz
 
-Dozenal Calc collects, stores, and transmits no user data. It runs
-entirely offline and requests no platform permissions. The full
-Datenschutzerklärung is shipped inside the app (Info → Datenschutzerklärung)
-and lives in [`legal/privacy-policy.de.md`](legal/privacy-policy.de.md).
+Dozenal Calc erhebt, speichert und übermittelt keinerlei Nutzerdaten.
+Die App läuft vollständig offline und fordert keine Plattform-Berechtigungen
+an. Die vollständige Datenschutzerklärung ist in der App ausgeliefert
+(Info → Datenschutzerklärung) und liegt unter
+[`legal/privacy-policy.de.md`](legal/privacy-policy.de.md).
 
-## Contact
+## Kontakt
 
 dozenal@weltanschauung.app
