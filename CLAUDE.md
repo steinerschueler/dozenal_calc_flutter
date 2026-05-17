@@ -18,10 +18,19 @@ flutter pub get
 flutter run                   # aktuelle Plattform
 flutter run -d chrome         # Web
 flutter analyze               # was CI ausführt
-flutter test                  # gesamte Suite (144 Tests)
+flutter test                  # gesamte Suite (146 Tests)
 flutter test test/rational_test.dart           # einzelne Datei
 flutter test --plain-name "parses 1/7"         # einzelner Test per Name
 ```
+
+Test-Routing (für gezielte Edits):
+- `state_test.dart` — Orchestrator inkl. Handler-Pfade, mit Abstand die
+  größte Datei.
+- `rational_test.dart` + `rat_parser_test.dart` — exakte Rational-Schiene.
+- `expression_test.dart` — f64-Auswerter inkl. `resolvePostfix`.
+- `dozenal_converter_test.dart` — Doz ↔ Dez-Konvertierung.
+- `keypad_layout_test.dart` — Orientierungs-Dispatch und Repaint-Verhalten.
+- `edge_cases_test.dart` — Grenzfall-Sammler über die Module hinweg.
 
 CI (`.github/workflows/ci.yml`) ist auf Flutter 3.41.8 stable festgenagelt
 und führt `analyze` + `test` aus. Das Flutter-SDK selbst pinnt sechs
@@ -47,9 +56,10 @@ fehlt die Datei, fällt der Build still auf Debug-Signing zurück.
 werden programmatisch über Golden-Style-Tests in `tool/` erzeugt:
 
 ```bash
-flutter test tool/generate_icon.dart           # → assets/icon.png
-flutter test tool/generate_feature_graphic.dart
-dart run flutter_launcher_icons                # → Plattform-Icons
+flutter test tool/generate_icon.dart            # → assets/icon.png
+flutter test tool/generate_compass.dart         # → assets/compass.png
+flutter test tool/generate_feature_graphic.dart # → store/feature-graphic.png
+dart run flutter_launcher_icons                 # → Plattform-Icons
 dart run flutter_native_splash:create
 ```
 
@@ -87,6 +97,15 @@ physische Tastatur-Events laufen beide hierdurch (Tastenmap in
 `CustomPainter.shouldRepaint` per `listEquals` vergleicht; In-Place-Mutation
 bricht die Repaint-Erkennung.
 
+`isArmed(token)` ist die Keypad-Query für den „scharf"-Punkt-Indikator:
+sie gibt `true` zurück, wenn ein Tap auf `token` den vorhergehenden
+Buffer-Token via `_inverseSwap` in seine Inverse umschalten würde
+(z. B. Sin ↔ ArcSin nach erstem Sin-Tap). Anzeige-Logik und Toggle-Logik
+müssen über diese gemeinsame Quelle laufen, sonst desynchronisieren sie.
+Eingabe von `.` wird zusätzlich durch `_hasDecimalInCurrentLiteral`
+gefiltert (beidseitiger Walk durch das aktuelle Zahlen-Literal), damit
+`1.2.3`-Eingaben gar nicht erst entstehen.
+
 ### Tokens (`lib/tokens.dart`)
 
 `sealed class CalcToken` mit const-Singleton-Subklassen für
@@ -109,8 +128,22 @@ Payload-freie Varianten. Spiegelt das Rust-Enum und erlaubt erschöpfende
     Sets 6–10. Drei Gap-Regimes nach verfügbarer Höhe: normal (≥560 dp),
     eng (480–559 dp), Scroll-Fallback (<480 dp).
   - **`_BreitKeypad`** (Landscape / Tablet): Inline-Layout mit allen zehn
-    Sets nebeneinander, Tastengröße aus verfügbarer Höhe berechnet,
-    vertikaler Scroll-Fallback für ungewöhnlich kleine Höhen.
+    Sets nebeneinander, gegliedert in drei visuelle Blöcke: Zahlengitter,
+    Sets 1–5 (Hauptoperationen + System), Sets 6–10 (erweiterte Funktionen).
+    Zwischen den drei Blöcken läuft je eine 1-dp-Divider-Linie (`Color
+    0xFF333333`, gleich wie der horizontale Divider in `_HochKeypad`).
+    Geometrie (Build 7):
+    - `buttonSize = min(rawH, rawW).clamp(44, 70)` — beide Achsen werden
+      berücksichtigt, damit weder vertikal noch horizontal beschnitten wird.
+    - Alle inner-Block-Abstände (im Zifferngitter h+v, in opColumns v,
+      zwischen Sets innerhalb eines Blocks h) sind identisch =
+      `tabletColGap` (8 dp). So „atmet" jeder Block gleichmäßig.
+    - Horizontaler Slack wird in die zwei Gruppen-Lücken gepumpt
+      (`groupGapBase = 18`, Cap `maxGroupGap = 100`). Was über den Cap
+      hinausgeht, landet als symmetrischer Außenrand via `SizedBox(width:
+      max(viewport, contentWidth))` + `MainAxisAlignment.center`.
+    - Vertikaler Scroll-Fallback engaged, wenn `naturalHeight > h` (z. B.
+      Split-Screen, Foldable-Cover-Display).
 - Jede Taste ist in `ConstrainedBox(minHeight: 44)` gewrappt, damit der
   Material-44-dp-Touch-Target-Floor deklarativ erzwungen wird.
 - `app_layout.dart` — `displayHeightFor(h) = (h * 0.20).clamp(60, 170)`
@@ -130,11 +163,11 @@ Listen-/Detail-/Zurück-Übergänge.
 
 ### Intro
 
-Onboarding-PageView beim ersten Start, gesperrt über den
-`SharedPreferences`-Schlüssel `intro_seen_v2` (aktueller Suffix; Build 5
-hat den Crop der Phone-Screenshots auf 576×980 angepasst und das `v1`
-gebumpt, damit Bestandstester das überarbeitete Intro sehen). Bei
-substanziellen Intro-Änderungen den Versions-Suffix erneut erhöhen.
+Onboarding-PageView beim ersten Start, gesperrt über einen
+`SharedPreferences`-Schlüssel der Form `intro_seen_v<N>` (aktuell `v2`,
+definiert als `_kIntroSeenFlag` in `lib/main.dart`). Bei substanziellen
+Intro-Änderungen den Suffix erhöhen, damit Bestandstester das
+überarbeitete Intro erneut sehen.
 
 ### Edge-to-edge (Android 15)
 
@@ -159,6 +192,10 @@ Konvention beibehalten.
   gerendert via `privacy_page.dart`), die App ist deutsch-zuerst.
 - Beim Portieren aus Rust die Rust-Funktions-/Struct-Namen in Kommentaren
   beibehalten — sie sind der Lookup-Schlüssel für Verhaltens-Querverweise.
+- **Lints:** `analysis_options.yaml` aktiviert nur das
+  `package:flutter_lints/flutter.yaml`-Standardset, keine projekt-spezifischen
+  Zusatzregeln. `flutter analyze` muss aber sauber bleiben — CI fängt
+  Verstöße.
 
 ## Umgebungs-Hinweise
 

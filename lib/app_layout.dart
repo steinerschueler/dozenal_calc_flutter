@@ -51,10 +51,13 @@ const double tabletButtonSize = 70.0;
 /// Reference horizontal gap between sets in the Breit layout.
 const double tabletSetGap = 18.0;
 
-/// Reference inter-row gap in the Breit layout.
-const double tabletDigitGap = 10.0;
+/// Inner-block gap (between rows of the digit grid and between rows of an
+/// op column). Same value in both axes so the digit pad and the op columns
+/// breathe identically. Matches the 8 dp gap used throughout _HochKeypad.
+const double tabletDigitGap = 8.0;
 
-/// Reference inter-row gap inside an op column in the Breit layout.
+/// Alias kept for clarity at op-column call sites — same value as
+/// tabletDigitGap so all inner-block spacing stays consistent.
 const double tabletColGap = 8.0;
 
 // ---------------------------------------------------------------------------

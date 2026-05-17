@@ -516,38 +516,77 @@ class _BreitKeypad extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (ctx, constraints) {
-        // Vertical budget: max(digit-grid, set-column) + set-gap + equals row.
-        // Digit grid uses tabletDigitGap (10), set columns use tabletColGap
-        // (8). We solve for the larger to avoid overflow:
-        //   4·b + 3·tabletDigitGap + tabletSetGap + b = h
-        //   5·b = h - 3·tabletDigitGap - tabletSetGap
-        const setGap = tabletSetGap; // 18 dp
+        // The Breit layout has two tightening constraints:
+        //   vertical:   4·b + 3·tabletDigitGap + setGap + b ≤ h
+        //   horizontal: 3·b + 2·tabletDigitGap + 10·b + 10·setGap ≤ w
+        //
+        // We pick buttonSize from the tighter axis so neither dimension is
+        // cut off. When the height is the tighter axis (typical phone-
+        // landscape), horizontal slack remains; we absorb it by growing the
+        // inter-set gap up to a cap so the row fills the viewport instead
+        // of leaving a band of whitespace on the right. Any slack beyond
+        // the cap (very wide tablets) lands as symmetric outer margins
+        // via the SizedBox + MainAxisAlignment.center pair below.
+        // Single inner-block gap used everywhere inside a block (digit grid
+        // h+v, op-column v, between-set h). Keeping these identical means
+        // each block "breathes" consistently in both axes — the user-visible
+        // contract is that within-block spacing reads as one rhythm.
+        const interBlockGap = tabletColGap; // 8 dp
+        const verticalContentGap = 18.0; // gap between top content and equals
+        // Group gap (between digit pad / Sets 1-5 / Sets 6-10) starts at a
+        // comfortable visual baseline and absorbs horizontal slack so the
+        // viewport fills. Capped so wide tablets don't end up with groups
+        // drifting hundreds of dp apart — the remainder lands as symmetric
+        // outer margins via the SizedBox + MainAxisAlignment.center pair.
+        const groupGapBase = interBlockGap + 10.0; // 18 dp
+        const maxGroupGap = 100.0;
+
         final h = constraints.maxHeight;
-        final raw = h.isFinite
-            ? (h - 3 * tabletDigitGap - setGap) / 5
+        final w = constraints.maxWidth;
+        final rawH = h.isFinite
+            ? (h - 3 * interBlockGap - verticalContentGap) / 5
             : tabletButtonSize;
+        final rawW = w.isFinite
+            ? (w - 10 * interBlockGap - 2 * groupGapBase) / 13
+            : tabletButtonSize;
+        final raw = math.min(rawH, rawW);
         final buttonSize = raw.clamp(minTouchTarget, tabletButtonSize);
 
-        // Single content widget; if the natural width would overflow,
-        // a horizontal scroll keeps every set reachable.
-        final content = _buildBreitContent(buttonSize: buttonSize);
+        final baseNaturalWidth =
+            13 * buttonSize + 10 * interBlockGap + 2 * groupGapBase;
+        final hSlack =
+            w.isFinite ? math.max(0.0, w - baseNaturalWidth) : 0.0;
+        final groupGap = (groupGapBase + hSlack / 2)
+            .clamp(groupGapBase, maxGroupGap);
+        final contentWidth =
+            13 * buttonSize + 10 * interBlockGap + 2 * groupGap;
+
+        final content = _buildBreitContent(
+          buttonSize: buttonSize,
+          interBlockGap: interBlockGap,
+          groupGap: groupGap,
+        );
 
         final body = Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            // Horizontal scroll keeps every set reachable when the natural
-            // row width exceeds the available width (phone-landscape with
-            // all ten sets visible may trigger this on narrow devices).
+            // Outer SizedBox: when content fits, we force row width = viewport
+            // width so MainAxisAlignment.center yields symmetric margins.
+            // When content overflows (very narrow devices clamped to 44 dp),
+            // the row stays at its natural width and the scroll-view scrolls.
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
-              child: content,
+              child: SizedBox(
+                width: w.isFinite ? math.max(w, contentWidth) : contentWidth,
+                child: content,
+              ),
             ),
-            const SizedBox(height: setGap),
+            const SizedBox(height: verticalContentGap),
             SizedBox(
               height: buttonSize,
               child: _EqualsRow(
-                sideGap: setGap,
+                sideGap: verticalContentGap,
                 onEquals: () => onTap(const Equals()),
                 onInfoTap: onInfoTap,
                 onHelpTap: onHelpTap,
@@ -560,8 +599,10 @@ class _BreitKeypad extends StatelessWidget {
         // the available height still can't fit all rows (split-screen
         // landscape, foldable cover display), allow vertical scroll so no
         // row is unreachable. Otherwise center for abundant height (tablet).
-        final naturalHeight =
-            4 * buttonSize + 3 * tabletDigitGap + setGap + buttonSize;
+        final naturalHeight = 4 * buttonSize +
+            3 * interBlockGap +
+            verticalContentGap +
+            buttonSize;
         if (h.isFinite && h < naturalHeight) {
           return SingleChildScrollView(child: body);
         }
@@ -570,7 +611,11 @@ class _BreitKeypad extends StatelessWidget {
     );
   }
 
-  Widget _buildBreitContent({required double buttonSize}) {
+  Widget _buildBreitContent({
+    required double buttonSize,
+    required double interBlockGap,
+    required double groupGap,
+  }) {
     Widget digitGrid() {
       return Column(
         mainAxisSize: MainAxisSize.min,
@@ -601,7 +646,8 @@ class _BreitKeypad extends StatelessWidget {
       );
     }
 
-    Widget opColumn(List<CalcToken> tokens) {
+    Widget opColumn(List<CalcToken> tokens, {bool padToFour = false}) {
+      final padCount = padToFour ? math.max(0, 4 - tokens.length) : 0;
       return Column(
         mainAxisSize: MainAxisSize.min,
         children: [
@@ -617,6 +663,13 @@ class _BreitKeypad extends StatelessWidget {
                 selected: isSelected?.call(tokens[i]) ?? false,
               ),
             ),
+          ],
+          // Empty trailing slots so columns shorter than 4 rows stay top-
+          // aligned with the digit grid (otherwise CrossAxisAlignment.center
+          // in the parent Row would float them downward).
+          for (var j = 0; j < padCount; j++) ...[
+            const SizedBox(height: tabletColGap),
+            SizedBox(width: buttonSize, height: buttonSize),
           ],
         ],
       );
@@ -648,30 +701,46 @@ class _BreitKeypad extends StatelessWidget {
       );
     }
 
+    Widget gap() => SizedBox(width: interBlockGap);
+    // Mirror of the horizontal divider in _HochKeypad (between digit grid
+    // and the operator panels): a 1 dp line in the same colour, centred in
+    // each inter-group gap. Height matches the digit grid so the line spans
+    // the full top section but doesn't bleed into the equals row below.
+    final dividerHeight = 4 * buttonSize + 3 * interBlockGap;
+    Widget bigGap() => SizedBox(
+          width: groupGap,
+          child: Center(
+            child: Container(
+              width: 1,
+              height: dividerHeight,
+              color: const Color(0xFF333333),
+            ),
+          ),
+        );
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         digitGrid(),
-        const SizedBox(width: tabletSetGap),
+        bigGap(), // group break: digit pad → Sets 1-5
         opColumn(_set1),
-        const SizedBox(width: tabletSetGap),
+        gap(),
         opColumn(_set2),
-        const SizedBox(width: tabletSetGap),
+        gap(),
         opColumn(_set3),
-        const SizedBox(width: tabletSetGap),
+        gap(),
         opColumn(_set4),
-        const SizedBox(width: tabletSetGap),
+        gap(),
         systemColumn(),
-        const SizedBox(width: tabletSetGap),
+        bigGap(), // group break: Sets 1-5 → Sets 6-10
         opColumn(_set6),
-        const SizedBox(width: tabletSetGap),
+        gap(),
         opColumn(_set7),
-        const SizedBox(width: tabletSetGap),
+        gap(),
         opColumn(_set8),
-        const SizedBox(width: tabletSetGap),
+        gap(),
         opColumn(_set9),
-        const SizedBox(width: tabletSetGap),
-        opColumn(_set10Column),
+        gap(),
+        opColumn(_set10Column, padToFour: true),
       ],
     );
   }

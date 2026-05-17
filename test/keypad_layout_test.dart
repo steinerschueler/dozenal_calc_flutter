@@ -119,4 +119,53 @@ void main() {
     expect(find.byType(SingleChildScrollView), findsWidgets,
         reason: 'scroll fallback engaged');
   });
+
+  // Regression: Build 6 — Breit mode computed buttonSize from height only,
+  // so phone-landscape (e.g. Pixel 7 ≈ 891 × 290 keypad area) produced a
+  // button big enough that the 13-column row overflowed the available
+  // width by ~30 dp. The fix derives buttonSize from min(height, width)
+  // and stretches the inter-set gap (up to a cap) to absorb any remaining
+  // horizontal slack so the row fills the viewport instead of leaving a
+  // band of whitespace on the right.
+  testWidgets('Breit keypad fills width on phone-landscape (Pixel-class)',
+      (tester) async {
+    const Size keypadArea = Size(891, 290);
+    await tester.binding.setSurfaceSize(keypadArea);
+    await tester.pumpWidget(_wrap(keypadArea));
+    expect(tester.takeException(), isNull);
+
+    final rowFinder = find.descendant(
+      of: find.byWidgetPredicate(
+        (w) => w is SingleChildScrollView &&
+            w.scrollDirection == Axis.horizontal,
+      ),
+      matching: find.byType(Row),
+    );
+    expect(rowFinder, findsWidgets);
+    expect(tester.getSize(rowFinder.first).width,
+        closeTo(keypadArea.width, 0.5),
+        reason: 'inter-set gap should stretch so the row fills the viewport, '
+            'no band of whitespace on the right');
+  });
+
+  // Regression: a compact phone (~829 × 274 dp keypad area) is height-limited
+  // and used to show a ~41 dp horizontal gap on the right. Same assertion
+  // covers a different phone-landscape aspect ratio.
+  testWidgets('Breit keypad fills width on compact-phone landscape',
+      (tester) async {
+    const Size keypadArea = Size(829, 274);
+    await tester.binding.setSurfaceSize(keypadArea);
+    await tester.pumpWidget(_wrap(keypadArea));
+    expect(tester.takeException(), isNull);
+
+    final rowFinder = find.descendant(
+      of: find.byWidgetPredicate(
+        (w) => w is SingleChildScrollView &&
+            w.scrollDirection == Axis.horizontal,
+      ),
+      matching: find.byType(Row),
+    );
+    expect(tester.getSize(rowFinder.first).width,
+        closeTo(keypadArea.width, 0.5));
+  });
 }
