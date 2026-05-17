@@ -21,10 +21,9 @@ const String _kIntroSeenFlag = 'intro_seen_v1';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  // Extend the Scaffold body behind the OS navigation bar so taps in that
-  // area (e.g. tap-outside-to-dismiss the overlay) reach the app instead
-  // of being absorbed by the system's blank gutter. SafeArea inside still
-  // keeps the actual content visible above the nav bar.
+  // Edge-to-edge so the app's dark background paints under the nav bar
+  // instead of leaving a bright gutter. SafeArea inside the scaffold keeps
+  // the actual content above the nav bar.
   SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
   runApp(const DozenalCalcApp());
 }

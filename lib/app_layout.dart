@@ -57,15 +57,6 @@ const double tabletDigitGap = 10.0;
 /// Reference inter-row gap inside an op column in the Breit layout.
 const double tabletColGap = 8.0;
 
-/// Reference button edge length on desktop-class screens.
-const double desktopButtonSize = 50.0;
-
-/// Reference horizontal gap between sets in desktop-class screens.
-const double desktopSetGap = 15.0;
-
-const double desktopDigitGap = 10.0;
-const double desktopColGap = 6.0;
-
 // ---------------------------------------------------------------------------
 // Orientation helper
 // ---------------------------------------------------------------------------
