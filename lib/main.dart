@@ -223,103 +223,55 @@ class _CalcScaffoldState extends State<_CalcScaffold> {
       child: Scaffold(
         body: ListenableBuilder(
           listenable: _state,
-          // Outer-most close-on-tap layer: covers the entire body so that
-          // taps on the display, padding, and the empty space below the
-          // keypad all dismiss an open overlay. onTap is null when no
-          // overlay is open, so the detector is inert and inner gesture
-          // recognizers (buttons etc.) work as before.
-          builder: (ctx, _) => GestureDetector(
-            behavior: HitTestBehavior.opaque,
-            onTap: _state.overlayOpen
-                ? () => _state.handleClick(const Close())
-                : null,
-            child: SafeArea(
-              child: Padding(
-                padding: const EdgeInsets.all(12.0),
-                child: SingleChildScrollView(
-                  child: Column(
+          builder: (ctx, _) => SafeArea(
+            child: Padding(
+              padding: const EdgeInsets.all(12.0),
+              child: LayoutBuilder(
+                builder: (innerCtx, constraints) {
+                  // Display sizes itself proportionally (20 % of body height,
+                  // clamped to [60, 170] dp). Keypad fills the rest via
+                  // Expanded — no fixed pixel allocations.
+                  final bodyH = constraints.maxHeight;
+                  final displayH = displayHeightFor(bodyH);
+                  return Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                      TwoLineDisplay(
-                        inputBuffer: _state.inputBuffer,
-                        cursorPos: _state.cursorPos,
-                        resultBuffer: _state.resultBuffer,
-                        resultCursorPos: _state.resultCursorPos,
-                        resultFieldActive: _state.resultFieldActive,
-                        resultPeriodStart: _state.resultPeriodStart,
-                        resultPeriodLen: _state.resultPeriodLen,
-                        resultPeriodCapped: _state.resultPeriodCapped,
-                        isF64Fallback: _state.isF64Fallback,
-                        errorMsg: _state.errorMsg,
-                        memoryActive: _state.memory.isNotEmpty,
-                        angleModeLabel: _state.angleMode.label,
-                        numeralSystemLabel:
-                            _state.numeralSystem == NumeralSystem.doz
-                                ? 'DOZ'
-                                : 'DEZ',
+                      SizedBox(
+                        height: displayH,
+                        child: TwoLineDisplay(
+                          inputBuffer: _state.inputBuffer,
+                          cursorPos: _state.cursorPos,
+                          resultBuffer: _state.resultBuffer,
+                          resultCursorPos: _state.resultCursorPos,
+                          resultFieldActive: _state.resultFieldActive,
+                          resultPeriodStart: _state.resultPeriodStart,
+                          resultPeriodLen: _state.resultPeriodLen,
+                          resultPeriodCapped: _state.resultPeriodCapped,
+                          isF64Fallback: _state.isF64Fallback,
+                          errorMsg: _state.errorMsg,
+                          memoryActive: _state.memory.isNotEmpty,
+                          angleModeLabel: _state.angleMode.label,
+                          numeralSystemLabel:
+                              _state.numeralSystem == NumeralSystem.doz
+                                  ? 'DOZ'
+                                  : 'DEZ',
+                        ),
                       ),
                       const SizedBox(height: 14),
-                      Builder(builder: (innerCtx) {
-                        // On tablet the overlay sets are inlined into the
-                        // main keypad, so the popup overlay is suppressed
-                        // even if state.overlayOpen happens to be true
-                        // (e.g. after a window resize).
-                        final overlayVisible = _state.overlayOpen &&
-                            !isTabletScreen(innerCtx);
-                        return Stack(
-                          children: [
-                            IgnorePointer(
-                              ignoring: overlayVisible,
-                              child: Keypad(
-                                onTap: _state.handleClick,
-                                isArmed: _state.isArmed,
-                                isSelected: _isModeSelected,
-                                isDisabled: _isTokenDisabled,
-                                onInfoTap: () =>
-                                    _state.handleClick(const Info()),
-                                onHelpTap: _openIntro,
-                              ),
-                            ),
-                            // Visual scrim only — the outer GestureDetector
-                            // around the Column handles tap-to-close, so
-                            // we don't need region-specific gestures here.
-                            if (overlayVisible)
-                              Positioned.fill(
-                                child: const IgnorePointer(
-                                  child: ColoredBox(
-                                    color:
-                                        Color.fromRGBO(0, 0, 0, 0.35),
-                                  ),
-                                ),
-                              ),
-                            // The overlay rectangle absorbs taps in its
-                            // own area so taps on the padding between
-                            // buttons don't bubble up to the outer
-                            // close-on-tap detector. Buttons inside
-                            // OverlayKeypad have their own gesture
-                            // handlers and still work normally.
-                            if (overlayVisible)
-                              Positioned(
-                                top: mobileOpGridTopY,
-                                left: 0,
-                                right: 0,
-                                height: mobileOverlayHeight,
-                                child: GestureDetector(
-                                  behavior: HitTestBehavior.opaque,
-                                  onTap: () {},
-                                  child: OverlayKeypad(
-                                    onTap: _state.handleClick,
-                                    isArmed: _state.isArmed,
-                                    isSelected: _isModeSelected,
-                                  ),
-                                ),
-                              ),
-                          ],
-                        );
-                      }),
+                      Expanded(
+                        child: Keypad(
+                          onTap: _state.handleClick,
+                          isArmed: _state.isArmed,
+                          isSelected: _isModeSelected,
+                          isDisabled: _isTokenDisabled,
+                          onInfoTap: () => _state.handleClick(const Info()),
+                          onHelpTap: _openIntro,
+                          overlayOpen: _state.overlayOpen,
+                        ),
+                      ),
                     ],
-                  ),
-                ),
+                  );
+                },
               ),
             ),
           ),

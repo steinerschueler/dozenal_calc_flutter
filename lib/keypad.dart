@@ -1,7 +1,15 @@
-// Step 8 of PORTING.md: keypad widget for Sets 1-5 + Equals bar.
-// Renders the main keypad (no overlay yet — Sets 6-10 land in step 10).
-// Tap handlers feed CalcToken into the supplied onTap callback; state
-// management (handle_click) is wired up in step 9.
+// Orientation-driven keypad layout.
+//
+// Top-level Keypad dispatches to:
+//   - _HochKeypad   (portrait, vertical stack + AnimatedSwitcher panel-swap
+//                    between Sets 1-4 and Sets 6-10)
+//   - _BreitKeypad  (landscape and tablet, inline layout with all ten sets
+//                    visible side-by-side, no overlay)
+//
+// Both modes derive button sizes from LayoutBuilder constraints. Each button
+// is wrapped in a 44 dp minimum-touch-target floor. When the Hoch mode falls
+// below the minimum viable layout, a SingleChildScrollView is used as a
+// safety net so no row is unreachable.
 
 import 'dart:math' as math;
 
@@ -15,32 +23,36 @@ import 'tokens.dart';
 
 const Color _kDigitNormal = Colors.white;
 const Color _kDigitPressed = Color(0xFFFFD700); // egui GOLD
-const Color _kDigitDisabled = Color(0xFF606060); // muted grey when locked out
+const Color _kDigitDisabled = Color(0xFF606060);
 const Color _kOpNormal = Color(0xFF98C8FF); // egui LIGHT_BLUE
 const Color _kOpPressed = Color(0xFFFF9090); // egui LIGHT_RED
 const Color _kEquals = Color(0xFF8CDC8C); // egui LIGHT_GREEN
 const Color _kBorder = Color(0xFF505050);
-const Color _kAc = Color(0xFFFF4040); // warning red for the AC clear key
+const Color _kAc = Color(0xFFFF4040);
 const Color _kAcPressed = Color(0xFFFF8080);
-const Color _kOverlayBtnBg = Color(0xFF1F1F1F); // solid fill behind overlay
-                                                // buttons so they read as a
-                                                // floating card over the dimly
-                                                // visible main keypad behind.
 
 typedef TokenTapHandler = void Function(CalcToken token);
-
-/// Returns true when `token` should display the inverse-armed marker
-/// (yellow corner dot). Wired up in step 9.
 typedef ArmedPredicate = bool Function(CalcToken token);
-
-/// Returns true when [token] represents the currently active mode (e.g. the
-/// selected NumeralSystem or AngleMode) and should be drawn with an
-/// emphasised outline.
 typedef SelectedPredicate = bool Function(CalcToken token);
-
-/// Returns true when [token] must not be tappable (e.g. A/B digit keys
-/// while the calculator is in decimal mode).
 typedef DisabledPredicate = bool Function(CalcToken token);
+
+// ---------------------------------------------------------------------------
+// Hoch-mode thresholds (in dp of available keypad height — i.e. screen height
+// minus SafeArea, minus Padding, minus the display and its gap).
+// ---------------------------------------------------------------------------
+
+/// Below this keypad height the Hoch layout switches to a tight gap regime
+/// to squeeze ~26 dp out of the inter-row spacing.
+const double _kTightThreshold = 560.0;
+
+/// Below this keypad height even the tight layout would push buttons below
+/// the 44 dp touch-target floor. We fall back to a scrollable fixed-height
+/// layout so no row is unreachable.
+const double _kScrollThreshold = 480.0;
+
+// ---------------------------------------------------------------------------
+// Public entry point
+// ---------------------------------------------------------------------------
 
 class Keypad extends StatelessWidget {
   final TokenTapHandler onTap;
@@ -50,6 +62,10 @@ class Keypad extends StatelessWidget {
   final VoidCallback? onInfoTap;
   final VoidCallback? onHelpTap;
 
+  /// Whether the Sets 6-10 overlay panel is currently active. Only meaningful
+  /// in Hoch mode — Breit ignores it (all sets are always visible).
+  final bool overlayOpen;
+
   const Keypad({
     super.key,
     required this.onTap,
@@ -58,195 +74,437 @@ class Keypad extends StatelessWidget {
     this.isDisabled,
     this.onInfoTap,
     this.onHelpTap,
+    this.overlayOpen = false,
   });
 
   @override
   Widget build(BuildContext context) {
-    if (isMobileScreen(context)) {
-      return _MobileKeypad(
-        onTap: onTap,
-        isArmed: isArmed,
-        isSelected: isSelected,
-        isDisabled: isDisabled,
-        onInfoTap: onInfoTap,
-        onHelpTap: onHelpTap,
-      );
-    }
-    if (isTabletScreen(context)) {
-      return _TabletKeypad(
-        onTap: onTap,
-        isArmed: isArmed,
-        isSelected: isSelected,
-        isDisabled: isDisabled,
-        onInfoTap: onInfoTap,
-        onHelpTap: onHelpTap,
-      );
-    }
-    return _DesktopKeypad(
-      onTap: onTap,
-      isArmed: isArmed,
-      isSelected: isSelected,
-      isDisabled: isDisabled,
-      onInfoTap: onInfoTap,
-      onHelpTap: onHelpTap,
+    return LayoutBuilder(
+      builder: (ctx, constraints) {
+        if (isPortraitConstraints(constraints)) {
+          return _HochKeypad(
+            onTap: onTap,
+            isArmed: isArmed,
+            isSelected: isSelected,
+            isDisabled: isDisabled,
+            onInfoTap: onInfoTap,
+            onHelpTap: onHelpTap,
+            overlayOpen: overlayOpen,
+          );
+        }
+        return _BreitKeypad(
+          onTap: onTap,
+          isArmed: isArmed,
+          isSelected: isSelected,
+          isDisabled: isDisabled,
+          onInfoTap: onInfoTap,
+          onHelpTap: onHelpTap,
+        );
+      },
     );
   }
 }
 
 // ---------------------------------------------------------------------------
-// Layout content shared by mobile and desktop.
+// Token catalogue
 // ---------------------------------------------------------------------------
 
-const List<List<DozenalDigit>> _digitGrid = [
+const List<List<DozenalDigit>> _digitGridRows = [
   [DozenalDigit.d10, DozenalDigit.d11, DozenalDigit.d0],
   [DozenalDigit.d7, DozenalDigit.d8, DozenalDigit.d9],
   [DozenalDigit.d4, DozenalDigit.d5, DozenalDigit.d6],
   [DozenalDigit.d1, DozenalDigit.d2, DozenalDigit.d3],
 ];
 
-// Mobile op grid is read row-by-row; each column corresponds to a Set 1-4.
-const List<List<CalcToken>> _mobileOpGrid = [
+/// Op grid for Hoch mode, read row-by-row. Each column corresponds to a
+/// vertical Set 1-4 in the tablet/Breit inline layout.
+const List<List<CalcToken>> _hochOpRows = [
   [Add(), OplusBotLeft(), Sin(), ParenOpen()],
   [Sub(), ExpTopRight(), Cos(), ParenClose()],
   [Mul(), RootTopLeft(), Tan(), TriangleLeft()],
   [Div(), LogBotRight(), Cot(), TriangleRight()],
 ];
 
+/// Sets 6-9 op rows for Hoch mode in their panel-swap layout.
+const List<List<CalcToken>> _hochOverlayRows = [
+  [Sto(), ConstPi(), Sinh(), Factorial()],
+  [Rcl(), ConstE(), Cosh(), AbsVal()],
+  [Mc(), ConstPhi(), Tanh(), Reciprocal()],
+  [Ans(), ConstSqrt2(), Coth(), Mod()],
+];
+
 const List<CalcToken> _systemRow = [Ac(), Del(), Decimal(), Expand()];
 
-// Desktop sets each render as a vertical column of four buttons.
+/// Set 10 lives in the overlay-mode-row position. Close mirrors the Expand
+/// slot from the system-row so the toggle target stays put across the swap.
+const List<CalcToken> _set10Row = [Doz(), Dez(), Drg(), Close()];
+
+// Breit-mode column data (one set per column).
 const List<CalcToken> _set1 = [Add(), Sub(), Mul(), Div()];
 const List<CalcToken> _set2 = [
   OplusBotLeft(),
   ExpTopRight(),
   RootTopLeft(),
-  LogBotRight()
+  LogBotRight(),
 ];
 const List<CalcToken> _set3 = [Sin(), Cos(), Tan(), Cot()];
 const List<CalcToken> _set4 = [
   ParenOpen(),
   ParenClose(),
   TriangleLeft(),
-  TriangleRight()
+  TriangleRight(),
 ];
-
-// Overlay sets 6-10 — same column-per-set structure as the desktop main keypad.
 const List<CalcToken> _set6 = [Sto(), Rcl(), Mc(), Ans()];
 const List<CalcToken> _set7 = [
   ConstPi(),
   ConstE(),
   ConstPhi(),
-  ConstSqrt2()
+  ConstSqrt2(),
 ];
 const List<CalcToken> _set8 = [Sinh(), Cosh(), Tanh(), Coth()];
 const List<CalcToken> _set9 = [
   Factorial(),
   AbsVal(),
   Reciprocal(),
-  Mod()
+  Mod(),
 ];
-const List<CalcToken> _set10 = [Doz(), Dez(), Drg(), Close()];
+const List<CalcToken> _set10Column = [Doz(), Dez(), Drg()]; // Close dropped
 
 // ---------------------------------------------------------------------------
-// Mobile layout: digit grid stacked above 4×4 op grid + system row + Equals.
+// Hoch keypad — portrait. Flex Column with panel-swap.
 // ---------------------------------------------------------------------------
 
-class _MobileKeypad extends StatelessWidget {
+class _HochKeypad extends StatelessWidget {
   final TokenTapHandler onTap;
   final ArmedPredicate? isArmed;
   final SelectedPredicate? isSelected;
   final DisabledPredicate? isDisabled;
   final VoidCallback? onInfoTap;
   final VoidCallback? onHelpTap;
+  final bool overlayOpen;
 
-  const _MobileKeypad({
+  const _HochKeypad({
     required this.onTap,
     this.isArmed,
     this.isSelected,
     this.isDisabled,
     this.onInfoTap,
     this.onHelpTap,
+    required this.overlayOpen,
   });
+
+  @override
+  Widget build(BuildContext context) {
+    return LayoutBuilder(
+      builder: (ctx, constraints) {
+        final h = constraints.maxHeight;
+        if (h.isFinite && h < _kScrollThreshold) {
+          return SingleChildScrollView(
+            child: _buildColumn(
+              tight: true,
+              fixedHeights: true,
+              maxHeight: double.infinity,
+            ),
+          );
+        }
+        final tight = h.isFinite && h < _kTightThreshold;
+        return _buildColumn(
+          tight: tight,
+          fixedHeights: false,
+          maxHeight: h,
+        );
+      },
+    );
+  }
+
+  /// Builds the keypad column. In flex mode the rows are Expanded(flex: N)
+  /// so they share the available height proportionally. In fixed-heights
+  /// mode every row gets `minTouchTarget`-tall sized boxes — used inside
+  /// the scroll fallback where Expanded would be unbounded.
+  Widget _buildColumn({
+    required bool tight,
+    required bool fixedHeights,
+    required double maxHeight,
+  }) {
+    final rowGap = tight ? 6.0 : 10.0;
+    final sectionGap = tight ? 8.0 : 14.0;
+    final equalsGap = tight ? 8.0 : 12.0;
+
+    Widget row(Widget child, {int flex = 8}) =>
+        fixedHeights
+            ? SizedBox(height: minTouchTarget, child: child)
+            : Expanded(flex: flex, child: child);
+
+    final children = <Widget>[
+      for (var r = 0; r < _digitGridRows.length; r++) ...[
+        if (r > 0) SizedBox(height: rowGap),
+        row(_digitRow(_digitGridRows[r])),
+      ],
+      SizedBox(height: sectionGap),
+      const Divider(color: Color(0xFF333333), height: 1, thickness: 1),
+      SizedBox(height: sectionGap),
+      // Middle section: panel-swap between main ops and overlay sets.
+      // Both panels have identical internal flex structure so the
+      // AnimatedSwitcher crossfade lands cleanly.
+      if (fixedHeights)
+        _MiddleSection(
+          overlayOpen: overlayOpen,
+          tight: tight,
+          fixedHeights: true,
+          onTap: onTap,
+          isArmed: isArmed,
+          isSelected: isSelected,
+          isDisabled: isDisabled,
+        )
+      else
+        Expanded(
+          flex: 40, // 5 rows × 8 = 40
+          child: _MiddleSection(
+            overlayOpen: overlayOpen,
+            tight: tight,
+            fixedHeights: false,
+            onTap: onTap,
+            isArmed: isArmed,
+            isSelected: isSelected,
+            isDisabled: isDisabled,
+          ),
+        ),
+      SizedBox(height: equalsGap),
+      // Equals row — slightly taller than a normal button (flex 10 vs 8).
+      if (fixedHeights)
+        SizedBox(
+          height: minTouchTarget * 1.2,
+          child: _EqualsRow(
+            onEquals: () => onTap(const Equals()),
+            sideGap: rowGap,
+            onInfoTap: onInfoTap,
+            onHelpTap: onHelpTap,
+          ),
+        )
+      else
+        Expanded(
+          flex: 10,
+          child: _EqualsRow(
+            onEquals: () => onTap(const Equals()),
+            sideGap: rowGap,
+            onInfoTap: onInfoTap,
+            onHelpTap: onHelpTap,
+          ),
+        ),
+    ];
+
+    return Column(
+      mainAxisSize: fixedHeights ? MainAxisSize.min : MainAxisSize.max,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: children,
+    );
+  }
 
   Widget _digitRow(List<DozenalDigit> digits) {
     final cells = <Widget>[];
     for (var i = 0; i < digits.length; i++) {
-      if (i > 0) cells.add(const SizedBox(width: mobileSpacing));
+      if (i > 0) cells.add(const SizedBox(width: 8));
       final token = Digit(digits[i]);
       cells.add(
         Expanded(
-          child: SizedBox(
-            height: mobileButtonHeight,
-            child: _DigitButton(
-              digit: digits[i],
-              onTap: () => onTap(token),
-              disabled: isDisabled?.call(token) ?? false,
-            ),
+          child: _DigitButton(
+            digit: digits[i],
+            onTap: () => onTap(token),
+            disabled: isDisabled?.call(token) ?? false,
           ),
         ),
       );
     }
     return Row(children: cells);
+  }
+}
+
+/// Middle section of the Hoch keypad — the AnimatedSwitcher between the
+/// main op-grid panel (Sets 1-4 + system row) and the overlay panel
+/// (Sets 6-9 + Set 10 mode row).
+class _MiddleSection extends StatelessWidget {
+  final bool overlayOpen;
+  final bool tight;
+  final bool fixedHeights;
+  final TokenTapHandler onTap;
+  final ArmedPredicate? isArmed;
+  final SelectedPredicate? isSelected;
+  final DisabledPredicate? isDisabled;
+
+  const _MiddleSection({
+    required this.overlayOpen,
+    required this.tight,
+    required this.fixedHeights,
+    required this.onTap,
+    this.isArmed,
+    this.isSelected,
+    this.isDisabled,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final mainPanel = _MainOpsPanel(
+      key: const ValueKey('main'),
+      tight: tight,
+      fixedHeights: fixedHeights,
+      onTap: onTap,
+      isArmed: isArmed,
+      isSelected: isSelected,
+      isDisabled: isDisabled,
+    );
+    final overlayPanel = _OverlayPanel(
+      key: const ValueKey('overlay'),
+      tight: tight,
+      fixedHeights: fixedHeights,
+      onTap: onTap,
+      isArmed: isArmed,
+      isSelected: isSelected,
+    );
+    return AnimatedSwitcher(
+      duration: const Duration(milliseconds: 150),
+      switchInCurve: Curves.easeOut,
+      switchOutCurve: Curves.easeIn,
+      child: overlayOpen ? overlayPanel : mainPanel,
+    );
+  }
+}
+
+class _MainOpsPanel extends StatelessWidget {
+  final bool tight;
+  final bool fixedHeights;
+  final TokenTapHandler onTap;
+  final ArmedPredicate? isArmed;
+  final SelectedPredicate? isSelected;
+  final DisabledPredicate? isDisabled;
+
+  const _MainOpsPanel({
+    super.key,
+    required this.tight,
+    required this.fixedHeights,
+    required this.onTap,
+    this.isArmed,
+    this.isSelected,
+    this.isDisabled,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return _RowsPanel(
+      opRows: _hochOpRows,
+      bottomRow: _systemRow,
+      tight: tight,
+      fixedHeights: fixedHeights,
+      onTap: onTap,
+      isArmed: isArmed,
+      isSelected: isSelected,
+      isDisabled: isDisabled,
+    );
+  }
+}
+
+class _OverlayPanel extends StatelessWidget {
+  final bool tight;
+  final bool fixedHeights;
+  final TokenTapHandler onTap;
+  final ArmedPredicate? isArmed;
+  final SelectedPredicate? isSelected;
+
+  const _OverlayPanel({
+    super.key,
+    required this.tight,
+    required this.fixedHeights,
+    required this.onTap,
+    this.isArmed,
+    this.isSelected,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return _RowsPanel(
+      opRows: _hochOverlayRows,
+      bottomRow: _set10Row,
+      tight: tight,
+      fixedHeights: fixedHeights,
+      onTap: onTap,
+      isArmed: isArmed,
+      isSelected: isSelected,
+    );
+  }
+}
+
+/// Shared 5-row layout used by both _MainOpsPanel and _OverlayPanel so the
+/// AnimatedSwitcher children have identical structure.
+class _RowsPanel extends StatelessWidget {
+  final List<List<CalcToken>> opRows;
+  final List<CalcToken> bottomRow;
+  final bool tight;
+  final bool fixedHeights;
+  final TokenTapHandler onTap;
+  final ArmedPredicate? isArmed;
+  final SelectedPredicate? isSelected;
+  final DisabledPredicate? isDisabled;
+
+  const _RowsPanel({
+    required this.opRows,
+    required this.bottomRow,
+    required this.tight,
+    required this.fixedHeights,
+    required this.onTap,
+    this.isArmed,
+    this.isSelected,
+    this.isDisabled,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final rowGap = tight ? 6.0 : 8.0;
+    final bottomGap = tight ? 8.0 : 12.0;
+
+    Widget rowWrap(Widget child, {int flex = 8}) => fixedHeights
+        ? SizedBox(height: minTouchTarget, child: child)
+        : Expanded(flex: flex, child: child);
+
+    final children = <Widget>[
+      for (var r = 0; r < opRows.length; r++) ...[
+        if (r > 0) SizedBox(height: rowGap),
+        rowWrap(_tokenRow(opRows[r])),
+      ],
+      SizedBox(height: bottomGap),
+      rowWrap(_tokenRow(bottomRow)),
+    ];
+
+    return Column(
+      mainAxisSize: fixedHeights ? MainAxisSize.min : MainAxisSize.max,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: children,
+    );
   }
 
   Widget _tokenRow(List<CalcToken> tokens) {
     final cells = <Widget>[];
     for (var i = 0; i < tokens.length; i++) {
-      if (i > 0) cells.add(const SizedBox(width: mobileSpacing));
+      if (i > 0) cells.add(const SizedBox(width: 8));
       cells.add(
         Expanded(
-          child: SizedBox(
-            height: mobileButtonHeight,
-            child: _TokenButton(
-              token: tokens[i],
-              onTap: () => onTap(tokens[i]),
-              armed: isArmed?.call(tokens[i]) ?? false,
-              selected: isSelected?.call(tokens[i]) ?? false,
-            ),
+          child: _TokenButton(
+            token: tokens[i],
+            onTap: () => onTap(tokens[i]),
+            armed: isArmed?.call(tokens[i]) ?? false,
+            selected: isSelected?.call(tokens[i]) ?? false,
           ),
         ),
       );
     }
     return Row(children: cells);
   }
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        for (var i = 0; i < _digitGrid.length; i++) ...[
-          if (i > 0) const SizedBox(height: mobileNumSpacingY),
-          _digitRow(_digitGrid[i]),
-        ],
-        const SizedBox(height: 14),
-        const Divider(color: Color(0xFF333333), height: 1),
-        const SizedBox(height: 14),
-        for (var i = 0; i < _mobileOpGrid.length; i++) ...[
-          if (i > 0) const SizedBox(height: mobileSpacing),
-          _tokenRow(_mobileOpGrid[i]),
-        ],
-        const SizedBox(height: 12),
-        _tokenRow(_systemRow),
-        const SizedBox(height: 12),
-        _EqualsRow(
-          height: mobileEqualsHeight,
-          sideGap: mobileSpacing,
-          onEquals: () => onTap(const Equals()),
-          onInfoTap: onInfoTap,
-          onHelpTap: onHelpTap,
-        ),
-      ],
-    );
-  }
 }
 
 // ---------------------------------------------------------------------------
-// Desktop layout: numpad + 5 op columns side-by-side, Equals below.
+// Breit keypad — landscape phone and tablet. Inline layout with all ten
+// sets visible. Button size scales with available height.
 // ---------------------------------------------------------------------------
 
-class _DesktopKeypad extends StatelessWidget {
+class _BreitKeypad extends StatelessWidget {
   final TokenTapHandler onTap;
   final ArmedPredicate? isArmed;
   final SelectedPredicate? isSelected;
@@ -254,7 +512,7 @@ class _DesktopKeypad extends StatelessWidget {
   final VoidCallback? onInfoTap;
   final VoidCallback? onHelpTap;
 
-  const _DesktopKeypad({
+  const _BreitKeypad({
     required this.onTap,
     this.isArmed,
     this.isSelected,
@@ -263,159 +521,98 @@ class _DesktopKeypad extends StatelessWidget {
     this.onHelpTap,
   });
 
-  Widget _digitGridWidget() {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        for (var r = 0; r < _digitGrid.length; r++) ...[
-          if (r > 0) const SizedBox(height: desktopDigitGap),
-          Row(
+  @override
+  Widget build(BuildContext context) {
+    return LayoutBuilder(
+      builder: (ctx, constraints) {
+        // Vertical budget: max(digit-grid, set-column) + set-gap + equals row.
+        // Digit grid uses tabletDigitGap (10), set columns use tabletColGap
+        // (8). We solve for the larger to avoid overflow:
+        //   4·b + 3·tabletDigitGap + tabletSetGap + b = h
+        //   5·b = h - 3·tabletDigitGap - tabletSetGap
+        const setGap = tabletSetGap; // 18 dp
+        final h = constraints.maxHeight;
+        final raw = h.isFinite
+            ? (h - 3 * tabletDigitGap - setGap) / 5
+            : tabletButtonSize;
+        final buttonSize = raw.clamp(minTouchTarget, tabletButtonSize);
+
+        // Single content widget; if the natural width would overflow,
+        // a horizontal scroll keeps every set reachable.
+        final content = _buildBreitContent(buttonSize: buttonSize);
+
+        // Center vertically so abundant height (tablet portrait) shows
+        // empty space symmetrically above and below the keypad rather than
+        // pinning everything to the top.
+        return Center(
+          child: Column(
             mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              for (var col = 0; col < _digitGrid[r].length; col++) ...[
-                if (col > 0) const SizedBox(width: desktopDigitGap),
-                SizedBox(
-                  width: desktopButtonSize,
-                  height: desktopButtonSize,
-                  child: _DigitButton(
-                    digit: _digitGrid[r][col],
-                    onTap: () => onTap(Digit(_digitGrid[r][col])),
-                    disabled:
-                        isDisabled?.call(Digit(_digitGrid[r][col])) ?? false,
-                  ),
+              // Horizontal scroll keeps every set reachable when the natural
+              // row width exceeds the available width (phone-landscape with
+              // all ten sets visible may trigger this on narrow devices).
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: content,
+              ),
+              const SizedBox(height: setGap),
+              SizedBox(
+                height: buttonSize,
+                child: _EqualsRow(
+                  sideGap: setGap,
+                  onEquals: () => onTap(const Equals()),
+                  onInfoTap: onInfoTap,
+                  onHelpTap: onHelpTap,
                 ),
-              ],
+              ),
             ],
           ),
-        ],
-      ],
+        );
+      },
     );
   }
 
-  Widget _opColumn(List<CalcToken> tokens) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        for (var i = 0; i < tokens.length; i++) ...[
-          if (i > 0) const SizedBox(height: desktopColGap),
-          SizedBox(
-            width: desktopButtonSize,
-            height: desktopButtonSize,
-            child: _TokenButton(
-              token: tokens[i],
-              onTap: () => onTap(tokens[i]),
-              armed: isArmed?.call(tokens[i]) ?? false,
-              selected: isSelected?.call(tokens[i]) ?? false,
+  Widget _buildBreitContent({required double buttonSize}) {
+    Widget digitGrid() {
+      return Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          for (var r = 0; r < _digitGridRows.length; r++) ...[
+            if (r > 0) const SizedBox(height: tabletDigitGap),
+            Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                for (var col = 0; col < _digitGridRows[r].length; col++) ...[
+                  if (col > 0) const SizedBox(width: tabletDigitGap),
+                  SizedBox(
+                    width: buttonSize,
+                    height: buttonSize,
+                    child: _DigitButton(
+                      digit: _digitGridRows[r][col],
+                      onTap: () => onTap(Digit(_digitGridRows[r][col])),
+                      disabled:
+                          isDisabled?.call(Digit(_digitGridRows[r][col])) ??
+                              false,
+                    ),
+                  ),
+                ],
+              ],
             ),
-          ),
-        ],
-      ],
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            _digitGridWidget(),
-            const SizedBox(width: desktopSetGap),
-            _opColumn(_set1),
-            const SizedBox(width: desktopSetGap),
-            _opColumn(_set2),
-            const SizedBox(width: desktopSetGap),
-            _opColumn(_set3),
-            const SizedBox(width: desktopSetGap),
-            _opColumn(_set4),
-            const SizedBox(width: desktopSetGap),
-            _opColumn(_systemRow),
           ],
-        ),
-        const SizedBox(height: desktopSetGap),
-        _EqualsRow(
-          height: desktopButtonSize,
-          sideGap: desktopSetGap,
-          onEquals: () => onTap(const Equals()),
-          onInfoTap: onInfoTap,
-          onHelpTap: onHelpTap,
-        ),
-      ],
-    );
-  }
-}
-
-// ---------------------------------------------------------------------------
-// Tablet layout: like desktop, but with all 10 sets inline (no overlay) +
-// bigger buttons. The Expand button becomes a borderless arrow indicator
-// that visually points to the freshly inlined sets 6-10. Close is dropped
-// from set 10 since there is no overlay to close.
-// ---------------------------------------------------------------------------
-
-class _TabletKeypad extends StatelessWidget {
-  final TokenTapHandler onTap;
-  final ArmedPredicate? isArmed;
-  final SelectedPredicate? isSelected;
-  final DisabledPredicate? isDisabled;
-  final VoidCallback? onInfoTap;
-  final VoidCallback? onHelpTap;
-
-  const _TabletKeypad({
-    required this.onTap,
-    this.isArmed,
-    this.isSelected,
-    this.isDisabled,
-    this.onInfoTap,
-    this.onHelpTap,
-  });
-
-  Widget _digitGridWidget() {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        for (var r = 0; r < _digitGrid.length; r++) ...[
-          if (r > 0) const SizedBox(height: tabletDigitGap),
-          Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              for (var col = 0; col < _digitGrid[r].length; col++) ...[
-                if (col > 0) const SizedBox(width: tabletDigitGap),
-                SizedBox(
-                  width: tabletButtonSize,
-                  height: tabletButtonSize,
-                  child: _DigitButton(
-                    digit: _digitGrid[r][col],
-                    onTap: () => onTap(Digit(_digitGrid[r][col])),
-                    disabled:
-                        isDisabled?.call(Digit(_digitGrid[r][col])) ?? false,
-                  ),
-                ),
-              ],
-            ],
-          ),
         ],
-      ],
-    );
-  }
+      );
+    }
 
-  Widget _opColumn(List<CalcToken> tokens, {CalcToken? skip}) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        for (var i = 0; i < tokens.length; i++) ...[
-          if (i > 0) const SizedBox(height: tabletColGap),
-          if (tokens[i] == skip)
-            const SizedBox(
-              width: tabletButtonSize,
-              height: tabletButtonSize,
-            )
-          else
+    Widget opColumn(List<CalcToken> tokens) {
+      return Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          for (var i = 0; i < tokens.length; i++) ...[
+            if (i > 0) const SizedBox(height: tabletColGap),
             SizedBox(
-              width: tabletButtonSize,
-              height: tabletButtonSize,
+              width: buttonSize,
+              height: buttonSize,
               child: _TokenButton(
                 token: tokens[i],
                 onTap: () => onTap(tokens[i]),
@@ -423,274 +620,68 @@ class _TabletKeypad extends StatelessWidget {
                 selected: isSelected?.call(tokens[i]) ?? false,
               ),
             ),
-        ],
-      ],
-    );
-  }
-
-  /// System column [Ac, Del, Decimal, _empty]. The Expand-button slot stays
-  /// blank on tablet since sets 6-10 are already inline to the right.
-  Widget _systemColumn() {
-    const tokens = <CalcToken>[Ac(), Del(), Decimal()];
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        for (var i = 0; i < tokens.length; i++) ...[
-          if (i > 0) const SizedBox(height: tabletColGap),
-          SizedBox(
-            width: tabletButtonSize,
-            height: tabletButtonSize,
-            child: _TokenButton(
-              token: tokens[i],
-              onTap: () => onTap(tokens[i]),
-              armed: isArmed?.call(tokens[i]) ?? false,
-              selected: isSelected?.call(tokens[i]) ?? false,
-            ),
-          ),
-        ],
-        const SizedBox(height: tabletColGap),
-        const SizedBox(
-          width: tabletButtonSize,
-          height: tabletButtonSize,
-        ),
-      ],
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            _digitGridWidget(),
-            const SizedBox(width: tabletSetGap),
-            _opColumn(_set1),
-            const SizedBox(width: tabletSetGap),
-            _opColumn(_set2),
-            const SizedBox(width: tabletSetGap),
-            _opColumn(_set3),
-            const SizedBox(width: tabletSetGap),
-            _opColumn(_set4),
-            const SizedBox(width: tabletSetGap),
-            _systemColumn(),
-            const SizedBox(width: tabletSetGap),
-            _opColumn(_set6),
-            const SizedBox(width: tabletSetGap),
-            _opColumn(_set7),
-            const SizedBox(width: tabletSetGap),
-            _opColumn(_set8),
-            const SizedBox(width: tabletSetGap),
-            _opColumn(_set9),
-            const SizedBox(width: tabletSetGap),
-            _opColumn(_set10, skip: const Close()),
           ],
-        ),
-        const SizedBox(height: tabletSetGap),
-        _EqualsRow(
-          height: tabletButtonSize,
-          sideGap: tabletSetGap,
-          onEquals: () => onTap(const Equals()),
-          onInfoTap: onInfoTap,
-          onHelpTap: onHelpTap,
-        ),
-      ],
-    );
-  }
-}
-
-// ---------------------------------------------------------------------------
-// Overlay (Sets 6-10). One-level depth, no = bar; Close lives at 10.4.
-// Same dispatch contract as Keypad — both feed the same handleClick.
-// ---------------------------------------------------------------------------
-
-class OverlayKeypad extends StatelessWidget {
-  final TokenTapHandler onTap;
-  final ArmedPredicate? isArmed;
-  final SelectedPredicate? isSelected;
-
-  const OverlayKeypad({
-    super.key,
-    required this.onTap,
-    this.isArmed,
-    this.isSelected,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return isMobileScreen(context)
-        ? _MobileOverlay(
-            onTap: onTap, isArmed: isArmed, isSelected: isSelected)
-        : _DesktopOverlay(
-            onTap: onTap, isArmed: isArmed, isSelected: isSelected);
-  }
-}
-
-Widget _overlayTokenButton({
-  required CalcToken token,
-  required TokenTapHandler onTap,
-  required ArmedPredicate? isArmed,
-  required SelectedPredicate? isSelected,
-  required double height,
-  double? width,
-}) {
-  final btn = SizedBox(
-    width: width,
-    height: height,
-    child: _TokenButton(
-      token: token,
-      onTap: () => onTap(token),
-      armed: isArmed?.call(token) ?? false,
-      selected: isSelected?.call(token) ?? false,
-      backgroundColor: _kOverlayBtnBg,
-    ),
-  );
-  return btn;
-}
-
-class _MobileOverlay extends StatelessWidget {
-  final TokenTapHandler onTap;
-  final ArmedPredicate? isArmed;
-  final SelectedPredicate? isSelected;
-
-  const _MobileOverlay({
-    required this.onTap,
-    this.isArmed,
-    this.isSelected,
-  });
-
-  Widget _setColumn(List<CalcToken> tokens) {
-    final cells = <Widget>[];
-    for (var i = 0; i < tokens.length; i++) {
-      if (i > 0) cells.add(const SizedBox(height: overlayMobileSpacing));
-      cells.add(
-        Expanded(
-          child: _overlayTokenButton(
-            token: tokens[i],
-            onTap: onTap,
-            isArmed: isArmed,
-            isSelected: isSelected,
-            height: overlayBtnHeight,
-          ),
-        ),
+        ],
       );
     }
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: cells,
-    );
-  }
 
-  Widget _bottomRow() {
-    final cells = <Widget>[];
-    for (var i = 0; i < _set10.length; i++) {
-      if (i > 0) cells.add(const SizedBox(width: overlayMobileSpacing));
-      cells.add(
-        Expanded(
-          child: _overlayTokenButton(
-            token: _set10[i],
-            onTap: onTap,
-            isArmed: isArmed,
-            isSelected: isSelected,
-            height: overlayBtnHeight,
-          ),
-        ),
-      );
-    }
-    return SizedBox(height: overlayBtnHeight, child: Row(children: cells));
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    // Each overlay row is mobileButtonHeight tall — same as the function
-    // keys it floats over — so the main 4×4 grid lines up visually with
-    // the op-grid behind it. mainAxisSize.min lets the Column take its
-    // natural height; the parent in main.dart anchors the top to
-    // mobileOpGridTopY so the alignment is exact.
-    return Padding(
-      padding: const EdgeInsets.all(overlayMobileSpacing),
-      child: Column(
+    // System column: AC/Del/Decimal + empty slot where Expand would be
+    // (no overlay in Breit mode, so the toggle button isn't needed).
+    Widget systemColumn() {
+      const tokens = <CalcToken>[Ac(), Del(), Decimal()];
+      return Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          SizedBox(
-            height: mobileButtonHeight * 4 + mobileSpacing * 3,
-            child: Row(
-              children: [
-                Expanded(child: _setColumn(_set6)),
-                const SizedBox(width: overlayMobileSpacing),
-                Expanded(child: _setColumn(_set7)),
-                const SizedBox(width: overlayMobileSpacing),
-                Expanded(child: _setColumn(_set8)),
-                const SizedBox(width: overlayMobileSpacing),
-                Expanded(child: _setColumn(_set9)),
-              ],
+          for (var i = 0; i < tokens.length; i++) ...[
+            if (i > 0) const SizedBox(height: tabletColGap),
+            SizedBox(
+              width: buttonSize,
+              height: buttonSize,
+              child: _TokenButton(
+                token: tokens[i],
+                onTap: () => onTap(tokens[i]),
+                armed: isArmed?.call(tokens[i]) ?? false,
+                selected: isSelected?.call(tokens[i]) ?? false,
+              ),
             ),
-          ),
-          const SizedBox(height: mobileSpacing),
-          _bottomRow(),
+          ],
+          const SizedBox(height: tabletColGap),
+          SizedBox(width: buttonSize, height: buttonSize),
         ],
-      ),
-    );
-  }
-}
-
-class _DesktopOverlay extends StatelessWidget {
-  final TokenTapHandler onTap;
-  final ArmedPredicate? isArmed;
-  final SelectedPredicate? isSelected;
-
-  const _DesktopOverlay({
-    required this.onTap,
-    this.isArmed,
-    this.isSelected,
-  });
-
-  Widget _setColumn(List<CalcToken> tokens) {
-    final cells = <Widget>[];
-    for (var i = 0; i < tokens.length; i++) {
-      if (i > 0) cells.add(const SizedBox(height: desktopColGap));
-      cells.add(_overlayTokenButton(
-        token: tokens[i],
-        onTap: onTap,
-        isArmed: isArmed,
-        isSelected: isSelected,
-        height: desktopButtonSize,
-        width: desktopButtonSize,
-      ));
+      );
     }
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: cells,
-    );
-  }
 
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(desktopSetGap),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          _setColumn(_set6),
-          const SizedBox(width: desktopSetGap),
-          _setColumn(_set7),
-          const SizedBox(width: desktopSetGap),
-          _setColumn(_set8),
-          const SizedBox(width: desktopSetGap),
-          _setColumn(_set9),
-          const SizedBox(width: desktopSetGap),
-          _setColumn(_set10),
-        ],
-      ),
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        digitGrid(),
+        const SizedBox(width: tabletSetGap),
+        opColumn(_set1),
+        const SizedBox(width: tabletSetGap),
+        opColumn(_set2),
+        const SizedBox(width: tabletSetGap),
+        opColumn(_set3),
+        const SizedBox(width: tabletSetGap),
+        opColumn(_set4),
+        const SizedBox(width: tabletSetGap),
+        systemColumn(),
+        const SizedBox(width: tabletSetGap),
+        opColumn(_set6),
+        const SizedBox(width: tabletSetGap),
+        opColumn(_set7),
+        const SizedBox(width: tabletSetGap),
+        opColumn(_set8),
+        const SizedBox(width: tabletSetGap),
+        opColumn(_set9),
+        const SizedBox(width: tabletSetGap),
+        opColumn(_set10Column),
+      ],
     );
   }
 }
 
 // ---------------------------------------------------------------------------
-// Button building blocks.
+// Button building blocks
 // ---------------------------------------------------------------------------
 
 class _PressableShell extends StatefulWidget {
@@ -698,14 +689,12 @@ class _PressableShell extends StatefulWidget {
   final Widget Function(BuildContext, bool pressed) builder;
   final bool selected;
   final bool disabled;
-  final Color? backgroundColor;
 
   const _PressableShell({
     required this.onTap,
     required this.builder,
     this.selected = false,
     this.disabled = false,
-    this.backgroundColor,
   });
 
   @override
@@ -721,9 +710,6 @@ class _PressableShellState extends State<_PressableShell> {
 
   void _handleTap() {
     if (widget.disabled) return;
-    // Haptic feedback fires the moment the action commits — silent no-op on
-    // platforms without a haptic engine (web, desktop). Selection-click is
-    // the right intensity for keypad-style UIs.
     HapticFeedback.selectionClick();
     widget.onTap();
   }
@@ -738,14 +724,11 @@ class _PressableShellState extends State<_PressableShell> {
       onTap: _handleTap,
       child: Container(
         decoration: BoxDecoration(
-          color: widget.backgroundColor,
           borderRadius: BorderRadius.circular(4),
           border: Border.all(
             color: widget.selected
                 ? _kOpNormal
-                : (widget.disabled
-                    ? const Color(0xFF303030)
-                    : _kBorder),
+                : (widget.disabled ? const Color(0xFF303030) : _kBorder),
             width: widget.selected ? 2 : 1,
           ),
         ),
@@ -768,21 +751,24 @@ class _DigitButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Semantics(
-      button: true,
-      label: 'Ziffer ${digit.value}',
-      excludeSemantics: true,
-      enabled: !disabled,
-      child: _PressableShell(
-        onTap: onTap,
-        disabled: disabled,
-        builder: (ctx, pressed) => CustomPaint(
-          size: Size.infinite,
-          painter: _DigitPainter(
-            digit: digit,
-            color: disabled
-                ? _kDigitDisabled
-                : (pressed ? _kDigitPressed : _kDigitNormal),
+    return ConstrainedBox(
+      constraints: const BoxConstraints(minHeight: minTouchTarget),
+      child: Semantics(
+        button: true,
+        label: 'Ziffer ${digit.value}',
+        excludeSemantics: true,
+        enabled: !disabled,
+        child: _PressableShell(
+          onTap: onTap,
+          disabled: disabled,
+          builder: (ctx, pressed) => CustomPaint(
+            size: Size.infinite,
+            painter: _DigitPainter(
+              digit: digit,
+              color: disabled
+                  ? _kDigitDisabled
+                  : (pressed ? _kDigitPressed : _kDigitNormal),
+            ),
           ),
         ),
       ),
@@ -820,57 +806,54 @@ class _TokenButton extends StatelessWidget {
   final VoidCallback onTap;
   final bool armed;
   final bool selected;
-  final Color? backgroundColor;
 
   const _TokenButton({
     required this.token,
     required this.onTap,
     this.armed = false,
     this.selected = false,
-    this.backgroundColor,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Semantics(
-      button: true,
-      label: _tokenSemanticLabel(token),
-      excludeSemantics: true,
-      child: _PressableShell(
-        onTap: onTap,
-        selected: selected,
-        backgroundColor: backgroundColor,
-        builder: (ctx, pressed) {
-          final isAc = token is Ac;
-          final normalColor = isAc ? _kAc : _kOpNormal;
-          final pressedColor = isAc ? _kAcPressed : _kOpPressed;
-          return Stack(
-            children: [
-              Positioned.fill(
-                child: CustomPaint(
-                  painter: _TokenPainter(
-                    token: token,
-                    color: pressed ? pressedColor : normalColor,
+    return ConstrainedBox(
+      constraints: const BoxConstraints(minHeight: minTouchTarget),
+      child: Semantics(
+        button: true,
+        label: _tokenSemanticLabel(token),
+        excludeSemantics: true,
+        child: _PressableShell(
+          onTap: onTap,
+          selected: selected,
+          builder: (ctx, pressed) {
+            final isAc = token is Ac;
+            final normalColor = isAc ? _kAc : _kOpNormal;
+            final pressedColor = isAc ? _kAcPressed : _kOpPressed;
+            return Stack(
+              children: [
+                Positioned.fill(
+                  child: CustomPaint(
+                    painter: _TokenPainter(
+                      token: token,
+                      color: pressed ? pressedColor : normalColor,
+                    ),
                   ),
                 ),
-              ),
-              if (armed)
-                const Positioned(
-                  right: 4,
-                  top: 4,
-                  child: _ArmedDot(),
-                ),
-            ],
-          );
-        },
+                if (armed)
+                  const Positioned(
+                    right: 4,
+                    top: 4,
+                    child: _ArmedDot(),
+                  ),
+              ],
+            );
+          },
+        ),
       ),
     );
   }
 }
 
-/// German screen-reader label for a non-digit CalcToken. The keypad's visual
-/// glyphs (×, ÷, ⊕, …) don't read well via TTS, so we provide spoken-friendly
-/// names for the icon-style and abbreviated tokens.
 String _tokenSemanticLabel(CalcToken t) {
   if (t is Add) return 'plus';
   if (t is Sub) return 'minus';
@@ -983,19 +966,17 @@ class _EqualsBar extends StatelessWidget {
   }
 }
 
-/// Row containing the wide Equals bar flanked by two round side buttons:
-/// (i) on the left → opens the theory chapters; (?) on the right → opens
-/// the how-to-use intro. Side buttons are hidden (placeholder) when the
-/// corresponding callback is null.
+/// Equals row: the wide Equals bar flanked by two round side buttons —
+/// (i) on the left opens the theory chapters, (?) on the right opens the
+/// intro. Side buttons are hidden (placeholder) when their callback is null.
+/// Sizes itself to the parent's height; no internal SizedBox.
 class _EqualsRow extends StatelessWidget {
-  final double height;
   final double sideGap;
   final VoidCallback onEquals;
   final VoidCallback? onInfoTap;
   final VoidCallback? onHelpTap;
 
   const _EqualsRow({
-    required this.height,
     required this.sideGap,
     required this.onEquals,
     this.onInfoTap,
@@ -1004,35 +985,32 @@ class _EqualsRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: height,
-      child: Row(
-        // Stretch so flex children (the EqualsBar) get tight height
-        // constraints; without this CustomPaint inside collapses to zero.
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          _RoundIconButton(
-            size: height,
-            icon: Icons.info_outline,
-            tooltip: 'Theoriekapitel',
-            onPressed: onInfoTap,
-          ),
-          SizedBox(width: sideGap),
-          Expanded(
-            child: _EqualsBar(
-              onTap: onEquals,
-              normalColor: _kEquals,
+    return LayoutBuilder(
+      builder: (ctx, c) {
+        final h = c.maxHeight.isFinite ? c.maxHeight : minTouchTarget * 1.2;
+        return Row(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            _RoundIconButton(
+              size: h,
+              icon: Icons.info_outline,
+              tooltip: 'Theoriekapitel',
+              onPressed: onInfoTap,
             ),
-          ),
-          SizedBox(width: sideGap),
-          _RoundIconButton(
-            size: height,
-            icon: Icons.help_outline,
-            tooltip: 'Intro',
-            onPressed: onHelpTap,
-          ),
-        ],
-      ),
+            SizedBox(width: sideGap),
+            Expanded(
+              child: _EqualsBar(onTap: onEquals, normalColor: _kEquals),
+            ),
+            SizedBox(width: sideGap),
+            _RoundIconButton(
+              size: h,
+              icon: Icons.help_outline,
+              tooltip: 'Intro',
+              onPressed: onHelpTap,
+            ),
+          ],
+        );
+      },
     );
   }
 }

@@ -11,7 +11,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-import 'app_layout.dart';
 import 'glyph_painter.dart';
 import 'tokens.dart';
 
@@ -66,6 +65,10 @@ class TwoLineDisplay extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Two text lines with a small inter-line gap. We size text and period
+    // bracket relative to the available height inside the painter, so the
+    // display works across the full range from ~60 dp (landscape phone) to
+    // 170 dp (portrait tablet) without orientation-specific code.
     return Container(
       decoration: BoxDecoration(
         color: const Color(0xFF101010),
@@ -74,8 +77,8 @@ class TwoLineDisplay extends StatelessWidget {
       ),
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
       child: SizedBox(
-        height: displayHeight,
         width: double.infinity,
+        height: double.infinity,
         child: CustomPaint(
           painter: _TwoLineDisplayPainter(
             inputBuffer: inputBuffer,
@@ -131,9 +134,12 @@ class _TwoLineDisplayPainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    final inputRect = Rect.fromLTWH(0, 0, size.width, displayLineH);
-    final resultRect = Rect.fromLTWH(
-        0, displayLineH + displayGap, size.width, displayLineH);
+    // Adaptive line layout: gap shrinks proportionally with height so two
+    // lines remain visible from ~60 dp (landscape) to 170 dp (cap).
+    final gap = (size.height * 0.06).clamp(2.0, 10.0);
+    final lineH = (size.height - gap) / 2;
+    final inputRect = Rect.fromLTWH(0, 0, size.width, lineH);
+    final resultRect = Rect.fromLTWH(0, lineH + gap, size.width, lineH);
     _paintInputLine(canvas, inputRect);
     if (errorMsg != null) {
       _paintError(canvas, resultRect, errorMsg!);

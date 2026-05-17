@@ -146,7 +146,11 @@ class DozenalCalcState extends ChangeNotifier {
       return;
     }
     if (token is Expand) {
-      overlayOpen = true;
+      // Toggle: in the panel-swap UX a second Expand press closes the overlay,
+      // since "tap outside to close" no longer applies without the floating
+      // scrim. The Close token still works (Set 10 button) and any Sets 6-9
+      // selection auto-closes via the per-token branches below.
+      overlayOpen = !overlayOpen;
       return;
     }
     if (token is Close) {
