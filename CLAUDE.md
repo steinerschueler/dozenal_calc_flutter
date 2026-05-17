@@ -131,9 +131,24 @@ Listen-/Detail-/Zurück-Übergänge.
 ### Intro
 
 Onboarding-PageView beim ersten Start, gesperrt über den
-`SharedPreferences`-Schlüssel `intro_seen_v1`. Bei substanziellen
-Intro-Änderungen den Versions-Suffix erhöhen, damit Bestandsnutzer das
-Intro erneut sehen.
+`SharedPreferences`-Schlüssel `intro_seen_v2` (aktueller Suffix; Build 5
+hat den Crop der Phone-Screenshots auf 576×980 angepasst und das `v1`
+gebumpt, damit Bestandstester das überarbeitete Intro sehen). Bei
+substanziellen Intro-Änderungen den Versions-Suffix erneut erhöhen.
+
+### Edge-to-edge (Android 15)
+
+Ab `targetSdk 35` ist edge-to-edge der Default. Die alten XML-Attribute
+`windowDrawsSystemBarBackgrounds` und `windowFullscreen` sind deprecated
+und wurden aus allen vier `android/app/src/main/res/values*/styles.xml`
+entfernt — nur `windowLayoutInDisplayCutoutMode=shortEdges` und der
+Material-Light/Black-NoTitleBar-Parent bleiben. `main.dart` setzt
+`SystemUiOverlayStyle` mit transparenten System-Bars + hellen Icons
+(passt zum dunklen App-Hintergrund) und ruft `setEnabledSystemUIMode(
+edgeToEdge)` auf. Jede Scaffold-Page wickelt den Body in `SafeArea(top:
+false, …)` — die AppBar handhabt oben, aber sonst würden Listen unter
+der System-Navigationsleiste verschwinden. Bei neuen Pages diese
+Konvention beibehalten.
 
 ## Konventionen
 

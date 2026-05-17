@@ -20,7 +20,12 @@ class InfoListPage extends StatelessWidget {
         title: const Text('Dozenal — Zwölf Kapitel'),
         backgroundColor: const Color(0xFF1A1A1A),
       ),
-      body: ListView(
+      body: SafeArea(
+        // Top is owned by the AppBar, but the bottom inset matters under
+        // edge-to-edge: without it the last list rows hide behind the
+        // system navigation bar.
+        top: false,
+        child: ListView(
         padding: const EdgeInsets.symmetric(vertical: 4),
         children: [
           for (var i = 0; i < infoTitles.length; i++) ...[
@@ -126,6 +131,7 @@ class InfoListPage extends StatelessWidget {
           ),
           const _VersionFooter(),
         ],
+        ),
       ),
     );
   }
@@ -189,11 +195,14 @@ class InfoDetailPage extends StatelessWidget {
         ),
         backgroundColor: const Color(0xFF1A1A1A),
       ),
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.fromLTRB(16, 8, 16, 24),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: buildChapterContent(chapterIndex),
+      body: SafeArea(
+        top: false,
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.fromLTRB(16, 8, 16, 24),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: buildChapterContent(chapterIndex),
+          ),
         ),
       ),
     );

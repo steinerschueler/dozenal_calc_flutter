@@ -22,9 +22,23 @@ const String _kIntroSeenFlag = 'intro_seen_v2';
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   // Edge-to-edge so the app's dark background paints under the nav bar
-  // instead of leaving a bright gutter. SafeArea inside the scaffold keeps
+  // instead of leaving a bright gutter. SafeArea inside each scaffold keeps
   // the actual content above the nav bar.
   SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
+  // Transparent system bars with light icons — the app is dark throughout,
+  // so white statusbar/navbar glyphs stay readable. Required for Android 15
+  // (SDK 35) edge-to-edge default; the older deprecated XML attributes
+  // (windowDrawsSystemBarBackgrounds, statusBarColor) have been removed.
+  SystemChrome.setSystemUIOverlayStyle(
+    const SystemUiOverlayStyle(
+      statusBarColor: Colors.transparent,
+      statusBarIconBrightness: Brightness.light,
+      statusBarBrightness: Brightness.dark,
+      systemNavigationBarColor: Colors.transparent,
+      systemNavigationBarIconBrightness: Brightness.light,
+      systemNavigationBarContrastEnforced: false,
+    ),
+  );
   runApp(const DozenalCalcApp());
 }
 

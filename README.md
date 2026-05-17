@@ -45,14 +45,18 @@ lib/
   info_pages.dart         — Info-Modal-Navigation
   info_content.dart       — Kapitelprosa + Illustrationen
   privacy_page.dart       — gebündelte Datenschutzerklärung
+  license_page.dart       — gebündelte Lizenz (CC BY-NC-SA 4.0)
+  markdown_page.dart      — geteilte Markdown-Asset-Rendering-Komponente
   intro_pages.dart        — Onboarding-PageView beim ersten Start
+  feedback_dialog.dart    — Tester-Feedback per mailto
   logic/
     rational.dart         — exakter Rational + periodische Dezimaldarstellung
     rat_parser.dart       — Parser der Rational-Schiene
-    expression.dart       — f64-Auswerter + Ergebnisformatierung
+    expression.dart       — f64-Auswerter, resolvePostfix-Pipeline,
+                            Ergebnisformatierung
     dozenal_converter.dart
     dozenal_digit.dart
-test/                     — 134 Tests über Logik, State und Layout
+test/                     — 144 Tests über Logik, State und Layout
 tool/                     — Icon-, Kompass-, Feature-Graphic-Generatoren
 legal/                    — Datenschutzerklärung (.md + .html)
 assets/                   — icon.png, compass.png, feature_graphic.png
@@ -66,7 +70,7 @@ screenshots/              — Play-Store-Screenshots (Phone + tablet)
 flutter pub get
 flutter run                   # aktuelle Plattform
 flutter run -d chrome         # Web
-flutter test                  # alle 134 Tests
+flutter test                  # alle 144 Tests
 ```
 
 `flutter pub get` meldet sechs transitive Abhängigkeiten (`meta`,

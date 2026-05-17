@@ -43,7 +43,11 @@ class _MarkdownAssetPageState extends State<MarkdownAssetPage> {
         ),
         backgroundColor: const Color(0xFF1A1A1A),
       ),
-      body: FutureBuilder<String>(
+      body: SafeArea(
+        // Edge-to-edge: top inset is owned by the AppBar; the bottom matters
+        // so the markdown text doesn't slide under the system nav bar.
+        top: false,
+        child: FutureBuilder<String>(
         future: _markdown,
         builder: (ctx, snap) {
           if (snap.connectionState != ConnectionState.done) {
@@ -100,6 +104,7 @@ class _MarkdownAssetPageState extends State<MarkdownAssetPage> {
             ),
           );
         },
+        ),
       ),
     );
   }
