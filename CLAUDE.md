@@ -50,6 +50,19 @@ Der Play-Store-Appbundle-Build braucht explizit Java 17 (Java 21 auf dieser
 Maschine zerbricht Gradle). Android-Signing liest `android/key.properties` —
 fehlt die Datei, fällt der Build still auf Debug-Signing zurück.
 
+Als abschließenden Schritt nach einem Release-Build deutsche
+Play-Console-Versionshinweise verfassen und im Console-Format ausgeben:
+
+```
+<de-DE>
+…End-User-fokussierter Text, ca. 450 Zeichen (Limit 500 pro Locale)…
+</de-DE>
+```
+
+Inhalt aus den tatsächlichen Build-Änderungen ableiten (nicht aus der
+Commit-Message kopieren) und Ton an Tester richten — was sie sehen werden,
+nicht die Constraint-Math dahinter. Zeichen mit `wc -m` verifizieren.
+
 ### Asset-Regenerierung
 
 `assets/icon.png`, `assets/compass.png` und das Play-Store-Feature-Graphic
