@@ -54,26 +54,31 @@ class _IntroSlide {
 }
 
 // ---------------------------------------------------------------------------
-// Standard coordinates derived from the 576×1280 screenshots in
-// assets/intro/. Adjust here if a future screenshot moves anything.
+// Standard coordinates derived from the 576×980 cropped screenshots in
+// assets/intro/. The original phone screenshots were 576×1280; the
+// statusbar (rows 0-54) and the empty area below the equals row plus the
+// navigation bar (rows 1035-1280) have been trimmed so the calculator
+// fills the frame top to bottom. This both removes irrelevant chrome and
+// gives the image a less extreme aspect ratio, so it stays readable on
+// landscape tablets. Adjust here if a future screenshot moves anything.
 // ---------------------------------------------------------------------------
 
 // Rectangle covering the full 4×3 dozenal digit block on new4.png.
-const Rect _kDigitBlock = Rect.fromLTRB(0.02, 0.225, 0.98, 0.455);
+const Rect _kDigitBlock = Rect.fromLTRB(0.02, 0.2378, 0.98, 0.5382);
 
 // Rectangle covering the two-line display window on new4.png.
-const Rect _kDisplay = Rect.fromLTRB(0.02, 0.045, 0.98, 0.235);
+const Rect _kDisplay = Rect.fromLTRB(0.02, 0.0027, 0.98, 0.2508);
 
 // Rectangle covering the 4×4 function-key (op-grid) block on new4.png.
-const Rect _kOpBlock = Rect.fromLTRB(0.02, 0.475, 0.98, 0.685);
+const Rect _kOpBlock = Rect.fromLTRB(0.02, 0.5643, 0.98, 0.8386);
 
 // Rectangle covering the twelve theory chapters list on new1.png.
-const Rect _kChapterList = Rect.fromLTRB(0.02, 0.10, 0.98, 0.72);
+const Rect _kChapterList = Rect.fromLTRB(0.02, 0.0745, 0.98, 0.8843);
 
 // Digit-glyph cell centres in the 4×3 grid of new4.png. Layout matches
 // keypad.dart::_digitGrid:
 //   row 0: 10, 11,  0   (column x: 0.165, 0.50, 0.835)
-//   row 1:  7,  8,  9   (row     y: 0.282, 0.336, 0.390, 0.443)
+//   row 1:  7,  8,  9   (row     y: 0.2926, 0.3631, 0.4337, 0.5029)
 //   row 2:  4,  5,  6
 //   row 3:  1,  2,  3
 //
@@ -81,21 +86,21 @@ const Rect _kChapterList = Rect.fromLTRB(0.02, 0.10, 0.98, 0.72);
 // pairing glyph ↔ everyday number is visually obvious.
 const List<DigitLabel> _kDecoderLabels = [
   // Row 0
-  DigitLabel(center: Offset(0.25, 0.267), text: '10'),
-  DigitLabel(center: Offset(0.585, 0.267), text: '11'),
-  DigitLabel(center: Offset(0.92, 0.267), text: '0'),
+  DigitLabel(center: Offset(0.25, 0.2926), text: '10'),
+  DigitLabel(center: Offset(0.585, 0.2926), text: '11'),
+  DigitLabel(center: Offset(0.92, 0.2926), text: '0'),
   // Row 1
-  DigitLabel(center: Offset(0.25, 0.321), text: '7'),
-  DigitLabel(center: Offset(0.585, 0.321), text: '8'),
-  DigitLabel(center: Offset(0.92, 0.321), text: '9'),
+  DigitLabel(center: Offset(0.25, 0.3631), text: '7'),
+  DigitLabel(center: Offset(0.585, 0.3631), text: '8'),
+  DigitLabel(center: Offset(0.92, 0.3631), text: '9'),
   // Row 2
-  DigitLabel(center: Offset(0.25, 0.375), text: '4'),
-  DigitLabel(center: Offset(0.585, 0.375), text: '5'),
-  DigitLabel(center: Offset(0.92, 0.375), text: '6'),
+  DigitLabel(center: Offset(0.25, 0.4337), text: '4'),
+  DigitLabel(center: Offset(0.585, 0.4337), text: '5'),
+  DigitLabel(center: Offset(0.92, 0.4337), text: '6'),
   // Row 3
-  DigitLabel(center: Offset(0.25, 0.428), text: '1'),
-  DigitLabel(center: Offset(0.585, 0.428), text: '2'),
-  DigitLabel(center: Offset(0.92, 0.428), text: '3'),
+  DigitLabel(center: Offset(0.25, 0.5029), text: '1'),
+  DigitLabel(center: Offset(0.585, 0.5029), text: '2'),
+  DigitLabel(center: Offset(0.92, 0.5029), text: '3'),
 ];
 
 const List<_IntroSlide> _slides = [
@@ -138,8 +143,8 @@ const List<_IntroSlide> _slides = [
   _IntroSlide(
     image: 'assets/intro/new4.png',
     circles: [
-      HighlightCircle(center: Offset(0.087, 0.772), radius: 0.04),
-      HighlightCircle(center: Offset(0.91, 0.772), radius: 0.04),
+      HighlightCircle(center: Offset(0.087, 0.9522), radius: 0.04),
+      HighlightCircle(center: Offset(0.91, 0.9522), radius: 0.04),
     ],
     text: 'Links unten die (i)-Taste — sie öffnet zwölf Theorie-Kapitel '
         'über das Dozenalsystem. Rechts unten die (?)-Taste, die dieses '
@@ -150,8 +155,8 @@ const List<_IntroSlide> _slides = [
   _IntroSlide(
     image: 'assets/intro/new4.png',
     circles: [
-      HighlightCircle(center: Offset(0.14, 0.71), radius: 0.04),
-      HighlightCircle(center: Offset(0.86, 0.71), radius: 0.04),
+      HighlightCircle(center: Offset(0.14, 0.8712), radius: 0.04),
+      HighlightCircle(center: Offset(0.86, 0.8712), radius: 0.04),
     ],
     text: 'AC (rot) löscht alles. Die »…«-Taste rechts daneben öffnet ein '
         'Overlay mit weiteren Funktionen — Konstanten, hyperbolische '
@@ -162,10 +167,10 @@ const List<_IntroSlide> _slides = [
   _IntroSlide(
     image: 'assets/intro/new3.png',
     circles: [
-      HighlightCircle(center: Offset(0.14, 0.715), radius: 0.045),
-      HighlightCircle(center: Offset(0.38, 0.715), radius: 0.045),
+      HighlightCircle(center: Offset(0.14, 0.8778), radius: 0.045),
+      HighlightCircle(center: Offset(0.38, 0.8778), radius: 0.045),
       // Small DOZ indicator at top-right of the display.
-      HighlightCircle(center: Offset(0.93, 0.085), radius: 0.022),
+      HighlightCircle(center: Offset(0.93, 0.0549), radius: 0.022),
     ],
     text: 'Im Overlay: Doz/Dez schaltet zwischen Dozenal- (Basis 12) und '
         'Dezimal-Eingabe (Basis 10) um. Die aktive Taste ist umrandet, '
@@ -274,7 +279,7 @@ class _SlideView extends StatelessWidget {
         children: [
           Expanded(
             child: AspectRatio(
-              aspectRatio: 576 / 1280,
+              aspectRatio: 576 / 980,
               child: Stack(
                 fit: StackFit.expand,
                 children: [
