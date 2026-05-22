@@ -21,26 +21,16 @@ const String _kIntroSeenFlag = 'intro_seen_v2';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  // Edge-to-edge so the app's dark background paints under the nav bar
-  // instead of leaving a bright gutter. SafeArea inside each scaffold keeps
-  // the actual content above the nav bar. The transparent system-bar
-  // backgrounds themselves are now set natively via enableEdgeToEdge() in
-  // MainActivity.kt — that path uses WindowInsetsControllerCompat instead
-  // of the SDK-35-deprecated Window.setStatusBarColor()/setNavigationBarColor(),
-  // which is what Play Console flagged. We only keep the Dart call here
-  // because it primes Flutter's own SystemChrome state and forwards the
-  // icon-brightness preferences below.
-  SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
-  // Icon-brightness only — no bar-colour settings (those would re-trigger the
-  // deprecated APIs inside Flutter's platform channel). Light icons on dark
-  // app background; the actual transparent bars are handled natively.
-  SystemChrome.setSystemUIOverlayStyle(
-    const SystemUiOverlayStyle(
-      statusBarIconBrightness: Brightness.light,
-      statusBarBrightness: Brightness.dark,
-      systemNavigationBarIconBrightness: Brightness.light,
-    ),
-  );
+  // Edge-to-edge AND icon-brightness are now driven entirely by MainActivity.java
+  // (EdgeToEdge.enable + WindowInsetsControllerCompat). We intentionally do NOT
+  // call SystemChrome.setEnabledSystemUIMode / setSystemUIOverlayStyle here —
+  // both routed through Flutter's PlatformPlugin, whose compiled methods still
+  // statically reference Window.setStatusBarColor / setNavigationBarColor /
+  // setNavigationBarDividerColor. Play Console's pre-launch scanner reads the
+  // DEX statically, so any Dart call into these channels keeps PlatformPlugin
+  // alive and the deprecated-API references with it — even when only brightness
+  // flags are passed at runtime. The native path is purely WindowInsetsController
+  // and leaves no deprecated references behind.
   runApp(const DozenalCalcApp());
 }
 

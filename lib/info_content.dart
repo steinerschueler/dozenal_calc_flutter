@@ -562,6 +562,83 @@ List<Widget> buildChapterContent(int chapter) {
           'Symbolen darstellt (A = zehn, B = elf). Beispiel: 2B (dozenal) '
           '= 2·12 + 11 = 35 (dezimal).',
         ),
+        const _H('Wie spricht man dozenal?'),
+        const _P(
+          'Die Einer 0–9 bleiben wie gewohnt: null, eins, zwei … neun. '
+          'Die neuen Glyphen A und B heissen zehn und elf. Die Zwölf '
+          'selbst — als »10« geschrieben — heisst dutzend. Damit dezimale '
+          'und dozenale Zahlen in diesem Kapitel nicht durcheinander '
+          'geraten, markiert ein kleines vorangestelltes e die dezimale '
+          'Lesart, ein kleines o die dozenale: e144 = o100, beides ist '
+          'derselbe Wert.',
+        ),
+        const _P(
+          'Die Wortstellung folgt der lateinischen Logik: grosse Magnitude '
+          'zuerst, kleinere danach, verbunden durch und. Aus o11 und o12 '
+          '(also e13 und e14) werden so dutzendundeins und dutzendundzwei. '
+          'Die deutsche -zig-Endung wandert zu -dutzend, mit dem vollen '
+          'Einer-Namen als Vorsilbe: zweidutzend (o20 = e24), dreidutzend, '
+          '…, achtdutzend (o80 = e96), neundutzend. Steht A oder B an der '
+          'Dutzendstelle, gilt dasselbe: zehndutzend (oA0 = e120), '
+          'elfdutzend (oB0 = e132).',
+        ),
+        const _Pre(
+          'Dezimal  Dozenal  Aussprache\n'
+          '     10        A  zehn\n'
+          '     11        B  elf\n'
+          '     12       10  dutzend\n'
+          '     13       11  dutzendundeins\n'
+          '     14       12  dutzendundzwei\n'
+          '     20       18  dutzendundacht\n'
+          '     22       1A  dutzendundzehn\n'
+          '     23       1B  dutzendundelf\n'
+          '     24       20  zweidutzend\n'
+          '     36       30  dreidutzend\n'
+          '     48       40  vierdutzend\n'
+          '     60       50  fünfdutzend\n'
+          '     72       60  sechsdutzend\n'
+          '     84       70  siebendutzend\n'
+          '     96       80  achtdutzend\n'
+          '    101       85  achtdutzendundfünf\n'
+          '    108       90  neundutzend\n'
+          '    120       A0  zehndutzend\n'
+          '    132       B0  elfdutzend\n'
+          '    143       BB  elfdutzendundelf\n'
+          '    ...      ...  und so weiter…',
+        ),
+        const _H('Die höheren Magnituden'),
+        const _P(
+          'Über dem Dutzend folgt eine Reihe geometrisch motivierter '
+          'Magnituden — eine pro dozenaler Stelle, eine pro Dimension. '
+          'Quader bezeichnet das 2D-Quadrat (12² = e144), Kuber den '
+          'klassischen Würfel (12³ = e1728), Tesser den vierdimensionalen '
+          'Tesserakt (12⁴), und ab dort folgen die griechisch '
+          'durchnummerierten Hyperkuben: Penter (12⁵), Hexer (12⁶), '
+          'Hepter (12⁷). Jeder Schritt ist eine Dimension höher und genau '
+          'eine dozenale Stelle weiter.',
+        ),
+        const _Pre(
+          ' Dezimal   Dozenal  Aussprache\n'
+          '     144       100  Quader   (12²)\n'
+          '    1728      1000  Kuber    (12³)\n'
+          '   20736     10000  Tesser   (12⁴)\n'
+          '  248832    100000  Penter   (12⁵)\n'
+          ' 2985984   1000000  Hexer    (12⁶)\n'
+          '35831808  10000000  Hepter   (12⁷)\n'
+          '     ...       ...  und so weiter…',
+        ),
+        const _P(
+          'Steht eine Magnitude allein oder bekommt sie nur einen '
+          'Multiplikator vorangestellt (zweihepter = 2 × Hepter), endet '
+          'sie auf -er. Folgt eine kleinere Einheit, wechselt die Endung '
+          'zu -a- als Bindeglied: aus Quader wird quada-, aus Hepter '
+          'hepta-. So heisst o101 quadaundeins, o1001 kubaundeins, '
+          'o10000001 heptaundeins. Stapeln sich Magnituden, gilt die '
+          '-a-Regel jedes Mal, wo noch etwas Kleineres folgt: o1100 = '
+          'kubaquader, o1101 = kubaquadaundeins. Das Wörtchen und steht '
+          'ausschliesslich direkt vor der Einerstelle — zwischen '
+          'Magnituden gibt es keine Konjunktion.',
+        ),
         const _H('Warum gerade zwölf?'),
         const _P(
           'Der Grund ist Teilbarkeit. Zwölf hat sechs Teiler: 1, 2, 3, 4, '

@@ -185,7 +185,15 @@ Payload-freie Varianten. Spiegelt das Rust-Enum und erlaubt erschöpfende
 
 `info_pages.dart` (Navigator-Routen) + `info_content.dart` (zwölf
 Lehr-Kapitel als Prosa + custom-painted Illustrationen für die
-Geometrie-Kapitel). Wenn `handleClick` `state.infoState` auf `InfoList`
+Geometrie-Kapitel). Kapitel 2 (»Was ist das Dozenalsystem?«) hält die
+deutsche Aussprache-Konvention für Dozenal-Zahlen fest: Dutzend (12¹),
+Quader/Kuber/Tesser/Penter/Hexer/Hepter (12² bis 12⁷ — geometrisch
+motiviert), lateinische Wortstellung (»dutzendundeins«),
+-er/-a-Bindungsregel zwischen Magnituden (»quadaundeins«) sowie das
+e/o-Präfix als Theorie-Lese-Hilfe (e = dezimal, o = dozenal). Bei
+Änderungen an Aussprache-Tabellen die Konvention konsistent
+durchziehen — Tabellen und Prosa-Beispiele referenzieren sich
+gegenseitig. Wenn `handleClick` `state.infoState` auf `InfoList`
 setzt, pusht der State-Listener in `main.dart` die Route und resettet
 `infoState` auf `Closed` — der Navigator steuert ab dann alle
 Listen-/Detail-/Zurück-Übergänge.
@@ -212,10 +220,15 @@ Wickelt die vorgenannten Bausteine zusammen — wenn etwas „in main.dart"
 liegt, dann hier:
 
 - **System-UI-Setup** (Details siehe Edge-to-edge-Abschnitt): `main()`
-  ruft `setEnabledSystemUIMode(edgeToEdge)` und setzt nur die
-  Icon-Brightness in `SystemUiOverlayStyle`. Bar-Farben werden bewusst
-  NICHT gesetzt — die transparenten System-Bars kommen nativ aus
-  `MainActivity.java`'s `EdgeToEdge.enable(this)`.
+  ruft **gar keine** `SystemChrome`-APIs — weder
+  `setEnabledSystemUIMode(edgeToEdge)` noch `setSystemUIOverlayStyle(...)`.
+  Beide würden über Flutters `PlatformPlugin` laufen, dessen kompilierte
+  Methoden statisch auf die deprecated `Window.setStatusBarColor /
+  setNavigationBarColor / setNavigationBarDividerColor` referenzieren —
+  Play Console scannt das DEX statisch und flaggt diese Referenzen auch
+  dann, wenn der Laufzeit-Pfad sie nie erreicht. Edge-to-edge UND
+  Icon-Brightness werden ausschließlich nativ in `MainActivity.java`
+  gesetzt (`EdgeToEdge.enable` + `WindowInsetsControllerCompat`).
 - **Physische Tastatur:** `_charKeyMap` (zeichen-basiert, inkl. `,` als
   Dezimaltrenner für deutsche Layouts) und `_logicalKeyMap` (Enter,
   Backspace, Pfeiltasten, kompletter Numpad inkl. Fallback-Digits, weil
@@ -237,21 +250,37 @@ liegt, dann hier:
 ### Edge-to-edge (Android 15) und Native-Activity
 
 Ab `targetSdk 35` ist edge-to-edge der Default. Die alten XML-Attribute
-`windowDrawsSystemBarBackgrounds` und `windowFullscreen` sind deprecated
-und wurden aus allen vier `android/app/src/main/res/values*/styles.xml`
-entfernt — nur `windowLayoutInDisplayCutoutMode=shortEdges` und der
-Material-Light/Black-NoTitleBar-Parent bleiben.
+`windowDrawsSystemBarBackgrounds`, `windowFullscreen` und
+`windowLayoutInDisplayCutoutMode=shortEdges` wurden aus allen vier
+`android/app/src/main/res/values*/styles.xml` entfernt — nur der
+Material-Light/Black-NoTitleBar-Parent (plus die SDK-31-Splash-Items in
+den `-v31`-Varianten) bleibt. `shortEdges` ist mit edge-to-edge-Default
+nicht mehr nötig (Cutout-Handling läuft über `WindowInsets` + die
+`SafeArea`-Wrapper) und wurde von Play Console als „veralteter Parameter
+für randlose Anzeige" geflaggt.
 
-Die Transparenz der System-Bars wird **native gesetzt** über
-`androidx.activity.EdgeToEdge.enable(this)` in `MainActivity.java`
-(Build 9). Das umgeht die deprecated Window-APIs (`setStatusBarColor`,
-`setNavigationBarColor`, `setNavigationBarDividerColor`), die Play
-Console bei SDK 35 als deprecated flaggt. `main.dart` setzt nur noch
-**Icon-Brightness** in `SystemUiOverlayStyle` (hellweiße Icons auf
-dunklem App-Hintergrund) und ruft `setEnabledSystemUIMode(edgeToEdge)`
-für Flutters interne Buchführung. Farben (statusBarColor,
-systemNavigationBarColor) werden in Dart **nicht** mehr gesetzt —
-Flutter würde sie sonst über die deprecated Calls weitergeben.
+Die Transparenz der System-Bars UND die Icon-Brightness werden
+**vollständig nativ** in `MainActivity.java` gesetzt:
+
+1. `androidx.activity.EdgeToEdge.enable(this)` — transparente System-Bars
+   über `WindowInsetsControllerCompat`, mit Backport auf ältere Android-
+   Versionen.
+2. `WindowCompat.getInsetsController(...).setAppearanceLightStatusBars(false)`
+   + `setAppearanceLightNavigationBars(false)` — helle Icons (weiß) auf
+   dunklem Hintergrund. Das ist der nicht-deprecated Ersatz für Flutters
+   `SystemUiOverlayStyle.statusBarIconBrightness`.
+
+**Warum keine `SystemChrome.*`-Calls mehr in `main.dart`:** Build 9
+behielt `setEnabledSystemUIMode(edgeToEdge)` + ein „nur Brightness"-
+`setSystemUIOverlayStyle`. Beide laufen über Flutters `PlatformPlugin`,
+dessen kompilierte Methoden — egal welche Felder zur Laufzeit gesetzt
+sind — statisch auf die deprecated `Window.setStatusBarColor /
+setNavigationBarColor / setNavigationBarDividerColor` verweisen. Play
+Console scannt das DEX statisch, sieht diese Referenzen und flaggt sie.
+Solange Dart-Code in die Platform-Channel-Methode reinruft, hält R8 sie
+lebendig und kann die deprecated Referenzen nicht wegoptimieren. Erst
+mit komplett entfernten Dart-Calls hat Build 10 eine Chance, durch den
+Play-Console-Scan zu kommen.
 
 `MainActivity` extendet bewusst **`FlutterFragmentActivity`**, nicht
 `FlutterActivity`: nur Erstere erbt über `FragmentActivity` von

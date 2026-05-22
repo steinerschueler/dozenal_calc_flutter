@@ -3,17 +3,23 @@ package app.weltanschauung.dozenal;
 import android.os.Bundle;
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
+import androidx.core.view.WindowCompat;
+import androidx.core.view.WindowInsetsControllerCompat;
 import io.flutter.embedding.android.FlutterFragmentActivity;
 import io.flutter.embedding.engine.FlutterEngine;
 import io.flutter.plugins.GeneratedPluginRegistrant;
 
 // SDK-35-officially-blessed edge-to-edge declaration. EdgeToEdge.enable() uses
 // WindowInsetsControllerCompat under the hood (non-deprecated) and backports
-// transparent system bars to older Android versions, replacing the prior
-// Dart-side approach (Colors.transparent on statusBar/systemNavigationBar in
-// SystemUiOverlayStyle) which Flutter internally translated to
-// Window.setStatusBarColor()/setNavigationBarColor() — both deprecated in
-// API 35 and flagged by Play Console's pre-launch scan.
+// transparent system bars to older Android versions. We also drive the icon
+// brightness here via WindowInsetsControllerCompat — NOT via Dart's
+// SystemChrome.setSystemUIOverlayStyle, because that routes through Flutter's
+// PlatformPlugin, whose compiled bytecode still statically references the
+// deprecated Window.setStatusBarColor / setNavigationBarColor /
+// setNavigationBarDividerColor APIs. Play Console's pre-launch scan reads
+// those references out of the DEX even when the runtime path isn't taken,
+// which is what kept flagging Build 9 despite the EdgeToEdge.enable() call.
+// Going fully native here lets R8 dead-code-eliminate those Flutter paths.
 //
 // Why FlutterFragmentActivity (not the more common FlutterActivity)?
 // FlutterActivity inherits from the legacy android.app.Activity and is NOT a
@@ -39,6 +45,13 @@ public class MainActivity extends FlutterFragmentActivity {
     protected void onCreate(Bundle savedInstanceState) {
         EdgeToEdge.enable(this);
         super.onCreate(savedInstanceState);
+        // Light icons on the dark app background. setAppearanceLight*Bars(false)
+        // means "icons are light" (i.e. the bar background is dark). This is the
+        // non-deprecated replacement for SystemUiOverlayStyle's brightness flags.
+        WindowInsetsControllerCompat controller =
+                WindowCompat.getInsetsController(getWindow(), getWindow().getDecorView());
+        controller.setAppearanceLightStatusBars(false);
+        controller.setAppearanceLightNavigationBars(false);
     }
 
     @Override
