@@ -550,7 +550,7 @@ class _BreitKeypad extends StatelessWidget {
             ? (w - 10 * interBlockGap - 2 * groupGapBase) / 13
             : tabletButtonSize;
         final raw = math.min(rawH, rawW);
-        final buttonSize = raw.clamp(minTouchTarget, tabletButtonSize);
+        final buttonSize = raw.clamp(breitMinTouchTarget, tabletButtonSize);
 
         final baseNaturalWidth =
             13 * buttonSize + 10 * interBlockGap + 2 * groupGapBase;

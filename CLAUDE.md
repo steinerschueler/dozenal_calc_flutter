@@ -18,7 +18,7 @@ flutter pub get
 flutter run                   # aktuelle Plattform
 flutter run -d chrome         # Web
 flutter analyze               # was CI ausführt
-flutter test                  # gesamte Suite (146 Tests)
+flutter test                  # gesamte Suite (147 Tests)
 flutter test test/rational_test.dart           # einzelne Datei
 flutter test --plain-name "parses 1/7"         # einzelner Test per Name
 ```
@@ -76,6 +76,12 @@ dart run flutter_launcher_icons                 # → Plattform-Icons
 dart run flutter_native_splash:create
 ```
 
+Die erzeugten PNGs sind versionierte Build-Outputs und gehören mit
+committed — sie werden zur Laufzeit aus `assets/` geladen, nicht im Build
+neu generiert. Nach `flutter_launcher_icons` / `flutter_native_splash`
+auch die jeweils gepatchten Plattform-Resources (`android/app/src/main/res/`,
+`ios/Runner/Assets.xcassets/`, …) prüfen und mitnehmen.
+
 ## Architektur
 
 ### Zwei-Schienen-Auswertung (die Kernidee)
@@ -83,6 +89,9 @@ dart run flutter_native_splash:create
 Jeder `=`-Druck startet **beide** Auswerter parallel — den exakten
 `Rational` (BigInt-basiert) und den `f64`-Auswerter:
 
+- `lib/logic/dozenal_digit.dart` — reine Datenschicht: Enum 0..11 mit
+  `value`/`fromValue` (Port von `DozenalDigit` aus `src/logic.rs`). Keine
+  Flutter-Imports, wird von Parser, State und Tastenmap geteilt.
 - `lib/logic/rational.dart` — exakte Rationals mit Periodenerkennung
   (`1/7` → `0.186A3` mit Überstrich + Punktmarker für den Periodenstart).
 - `lib/logic/rat_parser.dart` — Parser der Rational-Schiene. Kollabiert
@@ -145,9 +154,16 @@ Payload-freie Varianten. Spiegelt das Rust-Enum und erlaubt erschöpfende
     Sets 1–5 (Hauptoperationen + System), Sets 6–10 (erweiterte Funktionen).
     Zwischen den drei Blöcken läuft je eine 1-dp-Divider-Linie (`Color
     0xFF333333`, gleich wie der horizontale Divider in `_HochKeypad`).
-    Geometrie (Build 7):
-    - `buttonSize = min(rawH, rawW).clamp(44, 70)` — beide Achsen werden
-      berücksichtigt, damit weder vertikal noch horizontal beschnitten wird.
+    Geometrie (Build 7, mit Build-8-Floor-Anpassung):
+    - `buttonSize = min(rawH, rawW).clamp(breitMinTouchTarget, 70)` — beide
+      Achsen werden berücksichtigt, damit weder vertikal noch horizontal
+      beschnitten wird. `breitMinTouchTarget = 36 dp` (statt der Hoch-Mode-
+      `minTouchTarget = 44 dp`): Material 48 / iOS 44 sind Empfehlungen,
+      nicht Mauern, und in Landscape wird das Phone zweihändig gehalten —
+      36-dp-Targets bleiben treffbar. Mit 44 als Floor klemmten 360-dp-
+      hohe Phones (kompakte Phones, kompakte Phones) auf beiden Achsen und
+      scrollten redundant; der niedrigere Floor lässt die Tasten der
+      Viewport-Form folgen, statt sie hinauszuschieben.
     - Alle inner-Block-Abstände (im Zifferngitter h+v, in opColumns v,
       zwischen Sets innerhalb eines Blocks h) sind identisch =
       `tabletColGap` (8 dp). So „atmet" jeder Block gleichmäßig.
@@ -174,6 +190,14 @@ setzt, pusht der State-Listener in `main.dart` die Route und resettet
 `infoState` auf `Closed` — der Navigator steuert ab dann alle
 Listen-/Detail-/Zurück-Übergänge.
 
+Sekundärseiten, die aus `info_pages.dart` heraus gepusht werden:
+`privacy_page.dart` (rendert `legal/privacy-policy.de.md` via dem
+generischen `markdown_page.dart`), `license_page.dart` (App-Lizenz +
+delegiert auf das Flutter-eigene `showLicensePage`) und
+`feedback_dialog.dart` (`mailto:`-Composer, kein Netzwerk). Alle vier
+folgen der gleichen Push-Konvention — keine direkten Routen aus
+`main.dart`, alles geht über die Info-Liste.
+
 ### Intro
 
 Onboarding-PageView beim ersten Start, gesperrt über einen
@@ -181,6 +205,31 @@ Onboarding-PageView beim ersten Start, gesperrt über einen
 definiert als `_kIntroSeenFlag` in `lib/main.dart`). Bei substanziellen
 Intro-Änderungen den Suffix erhöhen, damit Bestandstester das
 überarbeitete Intro erneut sehen.
+
+### App-Bootstrap (`lib/main.dart`)
+
+Wickelt die vorgenannten Bausteine zusammen — wenn etwas „in main.dart"
+liegt, dann hier:
+
+- **Edge-to-edge + Overlay-Style** (siehe nächster Abschnitt) wird in
+  `main()` vor `runApp` gesetzt.
+- **Physische Tastatur:** `_charKeyMap` (zeichen-basiert, inkl. `,` als
+  Dezimaltrenner für deutsche Layouts) und `_logicalKeyMap` (Enter,
+  Backspace, Pfeiltasten, kompletter Numpad inkl. Fallback-Digits, weil
+  Linux bei manchen Layouts `event.character` leerlässt). Beides
+  Portierungen aus `src/input.rs::handle_keyboard` und mündet in
+  `_state.handleClick(token)` — derselbe Pfad wie ein Tastendruck.
+- **Intro-Gate:** `_maybeShowIntro` liest `_kIntroSeenFlag` (aktuell
+  `intro_seen_v2`) aus `SharedPreferences` und pusht beim ersten Start
+  `IntroPage`; danach wird das Flag gesetzt.
+- **Info-Routing:** `_onStateChanged` lauscht auf `state.infoState`,
+  resettet es auf `InfoClosed` und pusht `InfoListPage`. Nach
+  Navigator-Pop wird der Keyboard-Focus wieder angefordert.
+- **Layout-Wurzel:** `_CalcScaffold` rendert `TwoLineDisplay` über
+  `Keypad`, mit `displayHeightFor(bodyH)` aus `app_layout.dart` als
+  einzige Größenrechnung. Splash-Feedback ist global via
+  `NoSplash.splashFactory` aus, weil die Tasten ihre eigene
+  Press-Color-Animation haben.
 
 ### Edge-to-edge (Android 15)
 

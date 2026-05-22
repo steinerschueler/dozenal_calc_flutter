@@ -168,4 +168,38 @@ void main() {
     expect(tester.getSize(rowFinder.first).width,
         closeTo(keypadArea.width, 0.5));
   });
+
+  // Regression: a very compact phone (~670 × 240 dp keypad area in landscape)
+  // used to scroll on BOTH axes because the 44 dp touch-target floor pushed
+  // buttonSize uniformly too big — naturalHeight=262>240 AND baseNaturalWidth=688>670.
+  // With breitMinTouchTarget = 36 the button shrinks to ~40 dp and the whole
+  // layout fits both axes without any scroll fallback engaging.
+  testWidgets('Breit keypad fits compact-phone landscape without scrolling',
+      (tester) async {
+    const Size keypadArea = Size(670, 240);
+    await tester.binding.setSurfaceSize(keypadArea);
+    await tester.pumpWidget(_wrap(keypadArea));
+    expect(tester.takeException(), isNull);
+
+    // Outer vertical scroll fallback must NOT engage at this size.
+    final outerVertical = find.byWidgetPredicate(
+      (w) => w is SingleChildScrollView &&
+          w.scrollDirection == Axis.vertical,
+    );
+    expect(outerVertical, findsNothing,
+        reason: 'with the 36 dp Breit floor, height fits — no vertical scroll');
+
+    // Content row should span the viewport (group-gap absorbs slack).
+    final rowFinder = find.descendant(
+      of: find.byWidgetPredicate(
+        (w) => w is SingleChildScrollView &&
+            w.scrollDirection == Axis.horizontal,
+      ),
+      matching: find.byType(Row),
+    );
+    expect(rowFinder, findsWidgets);
+    expect(tester.getSize(rowFinder.first).width,
+        closeTo(keypadArea.width, 1.0),
+        reason: 'row should fill width without horizontal clipping');
+  });
 }

@@ -75,13 +75,22 @@ class _Pre extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Padding(
         padding: const EdgeInsets.symmetric(vertical: 6),
-        child: Text(
-          text,
-          style: const TextStyle(
-            fontFamily: 'monospace',
-            fontSize: 14,
-            height: 1.5,
-            color: Color(0xFFE0E0E0),
+        // FittedBox scales the monospace block uniformly so the column
+        // alignment stays exact — Text with softWrap would re-flow individual
+        // lines and shred the table. scaleDown means no upscaling on tablets;
+        // narrow phones get a proportionally smaller table that still fits.
+        child: FittedBox(
+          fit: BoxFit.scaleDown,
+          alignment: Alignment.centerLeft,
+          child: Text(
+            text,
+            softWrap: false,
+            style: const TextStyle(
+              fontFamily: 'monospace',
+              fontSize: 14,
+              height: 1.5,
+              color: Color(0xFFE0E0E0),
+            ),
           ),
         ),
       );
@@ -746,13 +755,13 @@ List<Widget> buildChapterContent(int chapter) {
           'Seitenlänge s = 1:',
         ),
         const _Pre(
-          '  Typ      Überspringt   Länge (exakt)      Näherung\n'
-          '  s (Seite)  —           1                  1.000\n'
-          '  d₂         1 Ecke      √(2+√3)           1.932\n'
-          '  d₃         2 Ecken     1+√3              2.732\n'
-          '  d₄         3 Ecken     (3√2+√6)/2       3.346\n'
-          '  d₅         4 Ecken     2+√3              3.732\n'
-          '  d₆ (⌀)    5 Ecken     √6+√2             3.864',
+          '  Typ         Überspringt   Länge (exakt)   Näherung\n'
+          '  s (Seite)   —             1                  1.000\n'
+          '  d₂          1 Ecke        √(2+√3)            1.932\n'
+          '  d₃          2 Ecken       1+√3               2.732\n'
+          '  d₄          3 Ecken       (3√2+√6)/2         3.346\n'
+          '  d₅          4 Ecken       2+√3               3.732\n'
+          '  d₆ (⌀)      5 Ecken       √6+√2              3.864',
         ),
         const _H('Verborgene Muster'),
         const _P(
