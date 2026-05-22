@@ -23,20 +23,22 @@ void main() {
   WidgetsFlutterBinding.ensureInitialized();
   // Edge-to-edge so the app's dark background paints under the nav bar
   // instead of leaving a bright gutter. SafeArea inside each scaffold keeps
-  // the actual content above the nav bar.
+  // the actual content above the nav bar. The transparent system-bar
+  // backgrounds themselves are now set natively via enableEdgeToEdge() in
+  // MainActivity.kt — that path uses WindowInsetsControllerCompat instead
+  // of the SDK-35-deprecated Window.setStatusBarColor()/setNavigationBarColor(),
+  // which is what Play Console flagged. We only keep the Dart call here
+  // because it primes Flutter's own SystemChrome state and forwards the
+  // icon-brightness preferences below.
   SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
-  // Transparent system bars with light icons — the app is dark throughout,
-  // so white statusbar/navbar glyphs stay readable. Required for Android 15
-  // (SDK 35) edge-to-edge default; the older deprecated XML attributes
-  // (windowDrawsSystemBarBackgrounds, statusBarColor) have been removed.
+  // Icon-brightness only — no bar-colour settings (those would re-trigger the
+  // deprecated APIs inside Flutter's platform channel). Light icons on dark
+  // app background; the actual transparent bars are handled natively.
   SystemChrome.setSystemUIOverlayStyle(
     const SystemUiOverlayStyle(
-      statusBarColor: Colors.transparent,
       statusBarIconBrightness: Brightness.light,
       statusBarBrightness: Brightness.dark,
-      systemNavigationBarColor: Colors.transparent,
       systemNavigationBarIconBrightness: Brightness.light,
-      systemNavigationBarContrastEnforced: false,
     ),
   );
   runApp(const DozenalCalcApp());

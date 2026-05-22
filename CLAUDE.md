@@ -231,19 +231,70 @@ liegt, dann hier:
   `NoSplash.splashFactory` aus, weil die Tasten ihre eigene
   Press-Color-Animation haben.
 
-### Edge-to-edge (Android 15)
+### Edge-to-edge (Android 15) und Native-Activity
 
 Ab `targetSdk 35` ist edge-to-edge der Default. Die alten XML-Attribute
 `windowDrawsSystemBarBackgrounds` und `windowFullscreen` sind deprecated
 und wurden aus allen vier `android/app/src/main/res/values*/styles.xml`
 entfernt — nur `windowLayoutInDisplayCutoutMode=shortEdges` und der
-Material-Light/Black-NoTitleBar-Parent bleiben. `main.dart` setzt
-`SystemUiOverlayStyle` mit transparenten System-Bars + hellen Icons
-(passt zum dunklen App-Hintergrund) und ruft `setEnabledSystemUIMode(
-edgeToEdge)` auf. Jede Scaffold-Page wickelt den Body in `SafeArea(top:
-false, …)` — die AppBar handhabt oben, aber sonst würden Listen unter
-der System-Navigationsleiste verschwinden. Bei neuen Pages diese
-Konvention beibehalten.
+Material-Light/Black-NoTitleBar-Parent bleiben.
+
+Die Transparenz der System-Bars wird **native gesetzt** über
+`androidx.activity.EdgeToEdge.enable(this)` in `MainActivity.java`
+(Build 9). Das umgeht die deprecated Window-APIs (`setStatusBarColor`,
+`setNavigationBarColor`, `setNavigationBarDividerColor`), die Play
+Console bei SDK 35 als deprecated flaggt. `main.dart` setzt nur noch
+**Icon-Brightness** in `SystemUiOverlayStyle` (hellweiße Icons auf
+dunklem App-Hintergrund) und ruft `setEnabledSystemUIMode(edgeToEdge)`
+für Flutters interne Buchführung. Farben (statusBarColor,
+systemNavigationBarColor) werden in Dart **nicht** mehr gesetzt —
+Flutter würde sie sonst über die deprecated Calls weitergeben.
+
+`MainActivity` extendet bewusst **`FlutterFragmentActivity`**, nicht
+`FlutterActivity`: nur Erstere erbt über `FragmentActivity` von
+`androidx.activity.ComponentActivity`, was `EdgeToEdge.enable()`
+zwingend verlangt. **Wichtiger Nebeneffekt:** FlutterFragmentActivity
+registriert Plugins NICHT automatisch (anders als FlutterActivity).
+Deshalb wird `configureFlutterEngine()` overridden und ruft explizit
+`GeneratedPluginRegistrant.registerWith(flutterEngine)` — ohne diesen
+Override sind `shared_preferences` (Intro-Gate), `url_launcher`
+(Feedback-Mail), `package_info_plus` (Versions-Anzeige) stumm.
+
+Java statt Kotlin in `MainActivity.java`, weil `EdgeToEdge` in
+`activity:1.9.3` als Kotlin-Klasse mit `kotlin_module`-Metadata
+ausgeliefert wird und Flutters Kotlin-Compiler die Klasse über die
+Modulgrenze hinweg nicht auflöst, obwohl `.class` auf dem Klassenpfad
+liegt. Java-Interop ignoriert die Metadata.
+
+Jede Scaffold-Page wickelt den Body in `SafeArea(top: false, …)` — die
+AppBar handhabt oben, aber sonst würden Listen unter der System-
+Navigationsleiste verschwinden. Bei neuen Pages diese Konvention
+beibehalten.
+
+### ABI-Filter (`android/app/build.gradle.kts`)
+
+Flutter ≥ 3.35 setzt automatisch `ndk.abiFilters` für Android-Builds
+(armeabi-v7a, arm64-v8a, **x86_64**). x86_64 ist auf Android praktisch
+ausgestorben — Windows-Subsystem-for-Android wurde März 2025 von
+Microsoft eingestellt, übrig sind nur Chromebooks (winziger Markt) und
+Dev-Emulatoren (von lokalem Build versorgt, nicht Play Store). Build 9
+filtert es raus. Die Restriktion erfolgt in `buildTypes.release` —
+nicht in `defaultConfig.ndk`, weil Flutters Plugin Letzteres
+überschreibt. Die `.clear() + .addAll()`-Reihenfolge ist Pflicht, weil
+Flutters Defaults vor unseren Block laufen:
+
+```kotlin
+buildTypes {
+    release {
+        ndk.abiFilters.clear()
+        ndk.abiFilters.addAll(listOf("armeabi-v7a", "arm64-v8a"))
+    }
+}
+```
+
+RISC-V (`riscv64`) hier ergänzen, sobald Flutter Engine-Binaries
+liefert (kein Datum). Spart ~18 MB im fat-APK und ~14 MB im AAB-Upload
+gegenüber Build 8.
 
 ## Konventionen
 

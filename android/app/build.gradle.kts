@@ -64,10 +64,32 @@ android {
                 // so `flutter run --release` still works for local development.
                 signingConfigs.getByName("debug")
             }
+            // Drop x86_64 from the AAB upload (~12 MB savings). x86_64 Android
+            // was for Windows Subsystem for Android (discontinued March 2025)
+            // and a tiny Chromebook segment; x86 (32-bit Intel) is effectively
+            // extinct on Android. RISC-V (riscv64) will land when Flutter ships
+            // engine binaries — add it here when that happens.
+            //
+            // The .clear() + .addAll() pattern is required because Flutter 3.35+
+            // auto-populates ndk.abiFilters with [armeabi-v7a, arm64-v8a, x86_64]
+            // BEFORE this build.gradle runs. Just setting `ndk.abiFilters =` or
+            // `+=` here doesn't take effect — we have to wipe Flutter's defaults
+            // first, then re-add only what we want.
+            ndk.abiFilters.clear()
+            ndk.abiFilters.addAll(listOf("armeabi-v7a", "arm64-v8a"))
         }
     }
 }
 
 flutter {
     source = "../.."
+}
+
+dependencies {
+    // Pinned for the `enableEdgeToEdge()` extension used in MainActivity. The
+    // Flutter Gradle Plugin pulls in an older androidx.activity transitively
+    // which lacks the post-1.8.0 ComponentActivity receiver signature; the
+    // explicit pin guarantees the right overload is on the classpath so
+    // MainActivity compiles without "receiver type mismatch".
+    implementation("androidx.activity:activity-ktx:1.9.3")
 }
