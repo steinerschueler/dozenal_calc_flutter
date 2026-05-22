@@ -211,8 +211,11 @@ Intro-Änderungen den Suffix erhöhen, damit Bestandstester das
 Wickelt die vorgenannten Bausteine zusammen — wenn etwas „in main.dart"
 liegt, dann hier:
 
-- **Edge-to-edge + Overlay-Style** (siehe nächster Abschnitt) wird in
-  `main()` vor `runApp` gesetzt.
+- **System-UI-Setup** (Details siehe Edge-to-edge-Abschnitt): `main()`
+  ruft `setEnabledSystemUIMode(edgeToEdge)` und setzt nur die
+  Icon-Brightness in `SystemUiOverlayStyle`. Bar-Farben werden bewusst
+  NICHT gesetzt — die transparenten System-Bars kommen nativ aus
+  `MainActivity.java`'s `EdgeToEdge.enable(this)`.
 - **Physische Tastatur:** `_charKeyMap` (zeichen-basiert, inkl. `,` als
   Dezimaltrenner für deutsche Layouts) und `_logicalKeyMap` (Enter,
   Backspace, Pfeiltasten, kompletter Numpad inkl. Fallback-Digits, weil
