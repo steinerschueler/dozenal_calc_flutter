@@ -1,31 +1,27 @@
 # ライセンス — Dozenal Calc
 
-Dozenal Calc — アプリ、ソースコード、グリフ、教育的テキスト — は
-以下の無償ライセンスの下で公開されています：
+Dozenal Calc は **MIT ライセンス**の下で公開されています。これは自由およびオープンソースソフトウェアで最も広く使われているライセンスの一つです。以下の英文が法的拘束力を持つ正本であり、日本語の要約は参考のためにのみ提供されます。
 
-**Creative Commons 表示 — 非営利 — 継承 4.0 国際**
-(CC BY-NC-SA 4.0)。
+## 許可される行為（要約）
 
-## できること
+- ソフトウェアを無料で、あらゆる目的で使用する — 商用利用も含む
+- ソースコードを複製、改変、再配布する
+- 他のプロジェクトに組み込む（オープンソースでも閉源でも）
+- フォークし、別の名前で派生物を公開する
 
-- **共有：** あらゆる媒体・形式で本作品を複製・再配布できます
-- **翻案：** リミックス、変形、本作品を基にした創作ができます
+唯一の要件：以下の著作権表示と MIT ライセンス本文を派生物にも保持しなければなりません。
 
-## 以下の条件下で
+## MIT ライセンス本文（法的拘束力あり）
 
-- **表示：** Eric Naville に適切なクレジットを表示し、ライセンスへの
-  リンクを提供し、変更が加えられた場合はその旨を示す必要があります。
-- **非営利：** 本素材を営利目的で使用してはなりません。
-- **継承：** 本素材をリミックス、変形、または基にした創作を行った
-  場合、元の作品と同じライセンスの下で貢献を配布する必要があります。
+MIT License
 
-## ライセンス全文
+Copyright (c) 2026 Eric Naville
 
-完全な法的テキストは以下で入手できます：
-<https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode>
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
-平易な要約は以下で入手できます：
-<https://creativecommons.org/licenses/by-nc-sa/4.0/>
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ## 著者
 
@@ -34,7 +30,4 @@ Dozenal Calc — アプリ、ソースコード、グリフ、教育的テキス
 
 ## 使用しているサードパーティソフトウェア
 
-Dozenal Calc は Flutter フレームワークと複数のオープンソースパッケージを
-使用しており、それぞれが独自の無償ライセンスの下で公開されています。
-サードパーティライセンスの完全なリストは、Flutter の標準ライセンス
-表示機能から取得できます。
+Dozenal Calc は Flutter フレームワークと複数のオープンソースパッケージを使用しており、それぞれが独自の自由ライセンスの下で公開されています。サードパーティライセンスの完全なリストは、Flutter の標準ライセンス表示機能から取得できます。

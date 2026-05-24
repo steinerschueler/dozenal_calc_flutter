@@ -1,31 +1,27 @@
 # الترخيص — Dozenal Calc
 
-تُنشر Dozenal Calc — التطبيق والشيفرة المصدرية والخطوط والنصوص
-التعليمية — بموجب الترخيص المجاني التالي:
+تُنشر Dozenal Calc تحت **ترخيص MIT**، أحد أكثر التراخيص استخداماً للبرمجيات الحرة والمفتوحة المصدر. النص الإنجليزي أدناه هو النسخة الملزمة قانونياً ؛ الملخص العربي للتوجيه فقط.
 
-**المشاع الإبداعي نسب المُصنَّف — غير تجاري — الترخيص بالمثل ٤٫٠
-دولي** (CC BY-NC-SA 4.0).
+## ما يمكنك فعله (ملخص)
 
-## ما الذي يمكنك فعله
+- استخدام البرمجية مجاناً لأي غرض — بما في ذلك الاستخدام التجاري
+- نسخ الشيفرة المصدرية وتعديلها وإعادة توزيعها
+- تضمينها في مشاريع أخرى، مفتوحة المصدر أو مغلقة المصدر
+- تفريعها وإصدار مشتقات تحت اسم آخر
 
-- **المشاركة:** نسخ المُصنَّف وإعادة توزيعه بأي وسيط أو تنسيق
-- **التكييف:** المزج، التحويل، والبناء على هذا المُصنَّف
+المتطلب الوحيد: يجب الحفاظ على إشعار حقوق النشر ونص ترخيص MIT أدناه في الأعمال المشتقة.
 
-## بموجب الشروط التالية
+## نص ترخيص MIT (ملزم قانونياً)
 
-- **نسب المُصنَّف:** يجب عليك إعطاء النسبة المناسبة لـ Eric Naville،
-  وتوفير رابط للترخيص، وبيان ما إذا كانت قد أُجريت تغييرات.
-- **غير تجاري:** لا يجوز لك استخدام المواد لأغراض تجارية.
-- **الترخيص بالمثل:** إذا قمت بمزج أو تحويل أو بناء على المواد، يجب
-  عليك توزيع مساهماتك بموجب نفس ترخيص المُصنَّف الأصلي.
+MIT License
 
-## النص الكامل للترخيص
+Copyright (c) 2026 Eric Naville
 
-النص القانوني الكامل متاح على:
-<https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode>
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
-ملخص بلغة سهلة متاح على:
-<https://creativecommons.org/licenses/by-nc-sa/4.0/>
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ## المؤلف
 
@@ -34,6 +30,4 @@
 
 ## برمجيات الطرف الثالث المستخدمة
 
-تستخدم Dozenal Calc إطار عمل Flutter وعدة حزم مفتوحة المصدر، كل واحدة
-منها منشورة بموجب ترخيصها المجاني الخاص. القائمة الكاملة لتراخيص
-الطرف الثالث متاحة عبر شاشة عرض التراخيص القياسية في Flutter.
+تستخدم Dozenal Calc إطار عمل Flutter وعدة حزم مفتوحة المصدر، كل واحدة منها منشورة بموجب ترخيصها الحر الخاص. القائمة الكاملة لتراخيص الطرف الثالث متاحة عبر شاشة عرض التراخيص القياسية في Flutter.

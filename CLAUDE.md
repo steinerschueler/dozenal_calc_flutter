@@ -553,8 +553,16 @@ gegenüber Build 8.
 
 ## Konventionen
 
-- **Lizenz-Hinweis:** Dieses Projekt steht unter CC BY-NC-SA 4.0
-  (nicht-kommerziell).
+- **Lizenz-Hinweis:** Dieses Projekt steht unter der **MIT-Lizenz**.
+  Root `LICENSE` enthält den kanonischen MIT-Wortlaut (Expat-Variante,
+  Copyright Eric Naville, 2026). Die vierzehn lokalisierten
+  `legal/license.*.md`-Dateien folgen einem Hybrid-Schema:
+  lokalisierter Header + Rechte-Zusammenfassung → englischer
+  MIT-Volltext als rechtsverbindliche Fassung → lokalisierter
+  Autor/Drittanbieter-Block. So bleibt die Multi-Sprach-UX erhalten,
+  aber juristisch zählt die englische Originalfassung. Vorgängiger
+  CC-BY-NC-SA-Stand wurde bewusst aufgegeben — MIT ist OSI-konform,
+  CC ist nicht für Software empfohlen.
 - **Keine Analytics, kein Netzwerk, keine Plattform-Berechtigungen.** Die
   Datenschutzerklärung ist im App-Bundle (`legal/privacy-policy.de.md`,
   gerendert via `privacy_page.dart`), die App ist deutsch-zuerst.

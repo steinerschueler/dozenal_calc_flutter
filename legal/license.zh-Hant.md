@@ -1,31 +1,27 @@
 # 授權條款 — Dozenal Calc
 
-Dozenal Calc — 應用程式、原始碼、字形與教學文字 —
-以下列免費授權條款發布：
+Dozenal Calc 以 **MIT 授權條款**發布，這是自由及開源軟體最廣泛使用的授權條款之一。下方的英文文字是具法律拘束力的版本；中文摘要僅供參考。
 
-**Creative Commons 姓名標示 — 非商業性 — 相同方式分享 4.0
-國際** (CC BY-NC-SA 4.0)。
+## 你可以做甚麼（摘要）
 
-## 你可以做甚麼
+- 免費使用本軟體，用於任何目的 — 包括商業用途
+- 複製、修改及重新散布原始碼
+- 將其整合至其他專案，無論開源或閉源
+- 分支（fork）並以其他名稱發布衍生作品
 
-- **分享：** 以任何媒介或格式複製及重新散布本作品
-- **改編：** 混合、轉換及以本作品為基礎進行創作
+唯一要求：必須在衍生作品中保留下方的著作權聲明與 MIT 授權條款文字。
 
-## 在下列條件下
+## MIT 授權條款文字（具法律拘束力）
 
-- **姓名標示：** 你必須給予 Eric Naville 適當的標示，提供授權條款連結，
-  並指出是否進行了變更。
-- **非商業性：** 你不得將本素材用於商業目的。
-- **相同方式分享：** 如果你混合、轉換或以本素材為基礎進行創作，你必須以
-  與原作品相同的授權條款散布你的貢獻。
+MIT License
 
-## 完整授權條款文字
+Copyright (c) 2026 Eric Naville
 
-完整法律文字可於下列網址取得：
-<https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode>
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
-通俗易懂的摘要可於下列網址取得：
-<https://creativecommons.org/licenses/by-nc-sa/4.0/>
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ## 作者
 
@@ -34,6 +30,4 @@ Dozenal Calc — 應用程式、原始碼、字形與教學文字 —
 
 ## 使用的第三方軟體
 
-Dozenal Calc 使用 Flutter 框架以及數個開放原始碼套件，每一個都在其
-自己的免費授權條款下發布。第三方授權的完整清單可透過 Flutter 的
-標準授權顯示功能取得。
+Dozenal Calc 使用 Flutter 框架以及數個開放原始碼套件，每一個都在其自己的免費授權條款下發布。第三方授權的完整清單可透過 Flutter 的標準授權顯示功能取得。

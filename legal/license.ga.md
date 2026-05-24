@@ -1,42 +1,33 @@
 # Ceadúnas — Dozenal Calc
 
-Dozenal Calc — an aip, an cód foinse, na glifeanna agus na téacsanna
-múinteoireachta — eisithe faoin gceadúnas saor in aisce
+Eisítear Dozenal Calc faoin **gCeadúnas MIT**, ceann de na ceadúnais is mó a úsáidtear le haghaidh bogearraí saor in aisce agus foinse oscailte. Is é an téacs Béarla thíos an leagan atá ceangailteach go dlíthiúil; níl an achoimre Ghaeilge ach mar threoir.
 
-**Creative Commons Sannadh — Neamhthráchtála — Roinnt mar an gcéanna 4.0
-Idirnáisiúnta** (CC BY-NC-SA 4.0).
+## Cad is féidir leat a dhéanamh (achoimre)
 
-## Cad is féidir leat a dhéanamh
+- An bogearra a úsáid saor in aisce agus chun aon chuspóra — lena n-áirítear úsáid tráchtála
+- An cód foinse a chóipeáil, a leasú agus a athdháileadh
+- É a chuimsiú i dtionscadail eile, foinse oscailte nó foinse dhúnta
+- É a fhorcadh agus díorthaigh a fhoilsiú faoi ainm eile
 
-- **Roinn:** cóipeáil agus athdháilte an saothar in aon mheán nó formáid
-- **Cuir in oiriúint:** athshocrú, claochlú agus tógáil ar an saothar
+Riachtanas amháin: caithfear an fógra cóipchirt agus téacs an Cheadúnais MIT thíos a chaomhnú in obair dhíorthach.
 
-## Faoi na coinníollacha seo a leanas
+## Téacs an Cheadúnais MIT (ceangailteach go dlíthiúil)
 
-- **Sannadh:** Caithfidh tú creidiúint chuí a thabhairt do Eric Naville,
-  nasc a sholáthar leis an gceadúnas agus a léiriú má rinneadh athruithe.
-- **Neamhthráchtála:** Ní féidir leat an t-ábhar a úsáid chun críocha
-  tráchtála.
-- **Roinnt mar an gcéanna:** Má dhéanann tú athshocrú, claochlú nó tógáil
-  ar an ábhar, caithfidh tú do chuid ranníocaíochtaí a dháileadh faoin
-  gceadúnas céanna leis an mbunaidh.
+MIT License
 
-## Téacs iomlán an cheadúnais
+Copyright (c) 2026 Eric Naville
 
-Tá an téacs dlíthiúil iomlán ar fáil ag:
-<https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode>
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
-Achoimre intuigthe ar fáil ag:
-<https://creativecommons.org/licenses/by-nc-sa/4.0/>
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ## Údar
 
-**Eric Naville**, Beirn, an Eilvéis
+**Eric Naville**, Bern, an Eilvéis
 Teagmháil: dozenal@weltanschauung.app
 
 ## Bogearraí tríú páirtí a úsáidtear
 
-Úsáideann Dozenal Calc creatlach Flutter agus roinnt pacáistí foinse
-oscailte, gach ceann acu eisithe faoina cheadúnas saor in aisce féin.
-Tá liosta iomlán de cheadúnais tríú páirtí ar fáil trí thaispeántas
-caighdeánach Flutter de cheadúnais.
+Úsáideann Dozenal Calc creat Flutter agus roinnt pacáistí foinse oscailte, gach ceann acu eisithe faoina cheadúnas saor in aisce féin. Tá liosta iomlán de cheadúnais tríú páirtí ar fáil tríd an taispeáint cheadúnais chaighdeánach Flutter.

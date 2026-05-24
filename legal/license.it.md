@@ -1,43 +1,33 @@
 # Licenza — Dozenal Calc
 
-Dozenal Calc — l'app, il codice sorgente, i glifi e i testi didattici —
-è rilasciata sotto la licenza libera
+Dozenal Calc è pubblicato sotto la **Licenza MIT**, una delle licenze più utilizzate per il software libero e open source. Il testo in inglese qui sotto è la versione legalmente vincolante; il riassunto in italiano è solo a scopo orientativo.
 
-**Creative Commons Attribuzione – Non Commerciale – Condividi allo
-Stesso Modo 4.0 Internazionale** (CC BY-NC-SA 4.0).
+## Cosa puoi fare (riassunto)
 
-## Cosa puoi fare
+- Usare il software gratuitamente e per qualsiasi scopo — anche commerciale
+- Copiare, modificare e ridistribuire il codice sorgente
+- Integrarlo in altri progetti, open source o proprietari
+- Forkarlo e pubblicare derivati con un altro nome
 
-- **Condividere:** copiare e ridistribuire l'opera in qualsiasi mezzo o
-  formato
-- **Adattare:** remixare, trasformare e costruire sull'opera
+Unico requisito: l'avviso di copyright e il testo della Licenza MIT qui sotto devono essere conservati nelle opere derivate.
 
-## Alle seguenti condizioni
+## Testo della Licenza MIT (legalmente vincolante)
 
-- **Attribuzione:** Devi riconoscere il merito a Eric Naville, fornire
-  un link alla licenza e indicare se sono state apportate modifiche.
-- **Non Commerciale:** Non puoi utilizzare il materiale per scopi
-  commerciali.
-- **Condividi allo Stesso Modo:** Se remixi, trasformi o costruisci sul
-  materiale, devi distribuire i tuoi contributi sotto la stessa licenza
-  dell'originale.
+MIT License
 
-## Testo completo della licenza
+Copyright (c) 2026 Eric Naville
 
-Il testo legale completo è disponibile su:
-<https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.it>
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
-Un riepilogo comprensibile è disponibile su:
-<https://creativecommons.org/licenses/by-nc-sa/4.0/deed.it>
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ## Autore
 
 **Eric Naville**, Berna, Svizzera
-Contatti: dozenal@weltanschauung.app
+Contatto: dozenal@weltanschauung.app
 
 ## Software di terze parti utilizzato
 
-Dozenal Calc utilizza il framework Flutter e diversi pacchetti open
-source, ciascuno rilasciato sotto la propria licenza libera. Un elenco
-completo delle licenze di terze parti è disponibile tramite la
-visualizzazione standard delle licenze di Flutter.
+Dozenal Calc utilizza il framework Flutter e diversi pacchetti open source, ciascuno pubblicato sotto la propria licenza libera. Un elenco completo delle licenze di terze parti è disponibile tramite la schermata standard delle licenze di Flutter.

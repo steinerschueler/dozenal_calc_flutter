@@ -1,34 +1,27 @@
 # Trwydded — Dozenal Calc
 
-Cyhoeddir Dozenal Calc — y rhaglen, y cod ffynhonnell, y glyffiau a'r
-testunau addysgol — o dan y drwydded am ddim ganlynol:
+Caiff Dozenal Calc ei ryddhau o dan **Drwydded MIT**, un o'r trwyddedau mwyaf cyffredin ar gyfer meddalwedd rydd ac agored. Y testun Saesneg isod yw'r fersiwn sy'n rhwymo'n gyfreithiol; mae'r crynodeb Cymraeg er cyfeiriad yn unig.
 
-**Creative Commons Priodoliad — Anfasnachol — RhannuYnDebyg 4.0
-Rhyngwladol** (CC BY-NC-SA 4.0).
+## Yr hyn y gallwch ei wneud (crynodeb)
 
-## Beth y gallwch ei wneud
+- Defnyddio'r feddalwedd yn rhad ac am ddim ar gyfer unrhyw bwrpas — gan gynnwys defnydd masnachol
+- Copïo, addasu ac ailddosbarthu'r cod ffynhonnell
+- Ei ymgorffori mewn prosiectau eraill, cod agored neu gaeedig
+- Ei fforchio a chyhoeddi deilliannau o dan enw arall
 
-- **Rhannu:** copïo ac ailddosbarthu'r gwaith hwn mewn unrhyw gyfrwng
-  neu fformat
-- **Addasu:** ailgymysgu, trawsnewid ac adeiladu ar y gwaith hwn
+Unig ofyniad: rhaid cadw'r hysbysiad hawlfraint a thestun y Drwydded MIT isod mewn gweithiau deilliannol.
 
-## O dan yr amodau canlynol
+## Testun y Drwydded MIT (rhwymol yn gyfreithiol)
 
-- **Priodoliad:** Rhaid i chi roi priodoliad priodol i Eric Naville,
-  darparu dolen i'r drwydded, a nodi a wnaethpwyd unrhyw newidiadau.
-- **Anfasnachol:** Ni chewch ddefnyddio'r deunydd hwn at ddibenion
-  masnachol.
-- **RhannuYnDebyg:** Os byddwch yn ailgymysgu, trawsnewid neu adeiladu
-  ar y deunydd, rhaid ichi ddosbarthu eich cyfraniadau o dan yr un
-  drwydded â'r gwaith gwreiddiol.
+MIT License
 
-## Testun llawn y drwydded
+Copyright (c) 2026 Eric Naville
 
-Mae'r testun cyfreithiol llawn ar gael yn:
-<https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode>
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
-Mae crynodeb hawdd ei ddarllen ar gael yn:
-<https://creativecommons.org/licenses/by-nc-sa/4.0/>
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ## Awdur
 
@@ -37,7 +30,4 @@ Cyswllt: dozenal@weltanschauung.app
 
 ## Meddalwedd trydydd-parti a ddefnyddir
 
-Mae Dozenal Calc yn defnyddio fframwaith Flutter a sawl pecyn cod
-agored, pob un wedi'i gyhoeddi o dan ei drwydded am ddim ei hun. Mae
-rhestr lawn o drwyddedau trydydd-parti ar gael drwy ddangosydd
-trwyddedau safonol Flutter.
+Mae Dozenal Calc yn defnyddio fframwaith Flutter a sawl pecyn cod agored, pob un wedi'i ryddhau o dan ei drwydded rydd ei hun. Mae rhestr lawn o drwyddedau trydydd-parti ar gael drwy ddangosydd trwyddedau safonol Flutter.

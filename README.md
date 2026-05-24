@@ -45,7 +45,7 @@ lib/
   info_pages.dart         — Info-Modal-Navigation
   info_content.dart       — Kapitelprosa + Illustrationen
   privacy_page.dart       — gebündelte Datenschutzerklärung
-  license_page.dart       — gebündelte Lizenz (CC BY-NC-SA 4.0)
+  license_page.dart       — gebündelte Lizenz (MIT)
   markdown_page.dart      — geteilte Markdown-Asset-Rendering-Komponente
   intro_pages.dart        — Onboarding-PageView beim ersten Start
   feedback_dialog.dart    — Tester-Feedback per mailto
@@ -122,13 +122,14 @@ flutter test tool/generate_feature_graphic.dart
 
 Copyright (c) 2026 Eric Naville.
 
-Dieses Werk — Code, Prosa, Glyphen-Designs, Illustrationen, Icons — steht
-unter der **Creative Commons Attribution-NonCommercial-ShareAlike 4.0
-International License (CC BY-NC-SA 4.0)**. Volltext in [`LICENSE`](LICENSE).
+Dieses Projekt steht unter der **MIT-Lizenz** — Volltext in
+[`LICENSE`](LICENSE). Kurz gesagt: du darfst das Werk für jeden Zweck
+nutzen, ändern und weitergeben (auch kommerziell); der Copyright-Hinweis
+und der MIT-Lizenztext müssen in abgeleiteten Werken erhalten bleiben.
 
-Kurz gesagt: Du darfst dieses Werk für nicht-kommerzielle Zwecke teilen
-und bearbeiten, musst angemessen Autorenschaft zuschreiben und musst
-abgeleitete Werke unter derselben Lizenz weitergeben.
+Lokalisierte Hybrid-Fassungen mit Kurzzusammenfassung in jeder
+Sprache plus englischem MIT-Volltext liegen unter
+[`legal/license.<code>.md`](legal/) (vierzehn Sprachen).
 
 ## Datenschutz
 

@@ -1,39 +1,33 @@
 # مجوز — Dozenal Calc
 
-Dozenal Calc — برنامه، کد منبع، نمادها و متون آموزشی —
-تحت مجوز آزاد
+Dozenal Calc تحت **مجوز MIT** منتشر شده است، یکی از پرکاربردترین مجوزها برای نرم‌افزار آزاد و متن‌باز. متن انگلیسی در پایین نسخه‌ای است که از نظر قانونی الزام‌آور است؛ خلاصه فارسی فقط برای راهنمایی است.
 
-**Creative Commons انتساب – غیرتجاری – اشتراک‌گذاری مشابه ۴٫۰
-بین‌المللی** (CC BY-NC-SA 4.0) منتشر شده است.
+## آنچه می‌توانید انجام دهید (خلاصه)
 
-## آنچه می‌توانید انجام دهید
+- استفاده رایگان از نرم‌افزار برای هر منظوری — از جمله تجاری
+- کپی، تغییر و توزیع مجدد کد منبع
+- ادغام در پروژه‌های دیگر، متن‌باز یا تجاری
+- فورک کردن و انتشار مشتقات تحت نام دیگر
 
-- **اشتراک‌گذاری:** کپی و توزیع مجدد اثر در هر رسانه یا قالب
-- **اقتباس:** ریمیکس، تغییر و ساختن بر اساس اثر
+تنها الزام: اطلاعیه حق نشر و متن مجوز MIT در پایین باید در آثار مشتق حفظ شوند.
 
-## تحت شرایط زیر
+## متن مجوز MIT (الزام‌آور قانونی)
 
-- **انتساب:** باید به اریک ناویل اعتبار مناسب بدهید، لینک مجوز را
-  ارائه دهید و در صورت اعمال تغییرات آن را ذکر کنید.
-- **غیرتجاری:** نمی‌توانید از این اثر برای اهداف تجاری استفاده کنید.
-- **اشتراک‌گذاری مشابه:** اگر اثر را ریمیکس، تبدیل یا بر اساس آن
-  چیزی بسازید، باید مشارکت‌های خود را تحت همان مجوز اصلی توزیع کنید.
+MIT License
 
-## متن کامل مجوز
+Copyright (c) 2026 Eric Naville
 
-متن قانونی کامل در دسترس است در:
-<https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.fa>
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
-خلاصه قابل‌فهم در دسترس است در:
-<https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fa>
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ## نویسنده
 
 **اریک ناویل**، برن، سوئیس
 تماس: dozenal@weltanschauung.app
 
-## نرم‌افزار شخص ثالث استفاده شده
+## نرم‌افزار شخص ثالث استفاده‌شده
 
-Dozenal Calc از فریم‌ورک Flutter و چندین بسته متن‌باز استفاده می‌کند که
-هر یک تحت مجوز آزاد خود منتشر شده‌اند. لیست کامل مجوزهای شخص ثالث
-از طریق نمایش استاندارد مجوزهای Flutter قابل دسترسی است.
+Dozenal Calc از چارچوب Flutter و چندین بسته متن‌باز استفاده می‌کند، هرکدام تحت مجوز آزاد خود منتشر شده‌اند. فهرست کامل مجوزهای شخص ثالث از طریق نمایشگر مجوز استاندارد Flutter در دسترس است.
