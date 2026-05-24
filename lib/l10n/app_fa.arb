@@ -7,6 +7,16 @@
   "infoListPrivacyEntry": "سیاست حفظ حریم خصوصی",
   "infoListLicenseEntry": "مجوز",
   "infoListFeedbackEntry": "ارسال بازخورد",
+  "infoListConversionsEntry": "تبدیل‌های امپریال-۱۲",
+
+  "conversionsTitle": "تبدیل‌های امپریال-۱۲",
+  "conversionsIntro": "واحدهای امپریال — ۱۲ اینچ در یک فوت، ۱۲ پنی در یک شیلینگ، ۱۲ در یک دوجین، ۱۴۴ در یک گرس — در پایه ۱۲ به اعداد گرد تبدیل می‌شوند. یک مقدار وارد کنید و ببینید چگونه به واحدهای کلاسیک تجزیه می‌شود.",
+  "conversionsInputLabel": "ورودی (تفسیر شده به عنوان)",
+  "conversionsLengthHeading": "طول — اینچ، فوت",
+  "conversionsCountingHeading": "شمارش — دوجین، گرس، گرس بزرگ",
+  "conversionsCurrencyHeading": "ضرابخانه بریتانیا پیش از ۱۹۷۱ — پنی، شیلینگ، پوند",
+  "conversionsTimeHeading": "زمان — ثانیه، دقیقه، ساعت",
+  "conversionsAngleHeading": "زاویه — کسرهای ۳۶۰°",
   "infoListVersionFooter": "نسخه {version} · ساخت {buildNumber}",
 
   "chapterTitle01": "استفاده از ماشین حساب",

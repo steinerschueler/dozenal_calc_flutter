@@ -7,6 +7,16 @@
   "infoListPrivacyEntry": "隐私政策",
   "infoListLicenseEntry": "许可证",
   "infoListFeedbackEntry": "发送反馈",
+  "infoListConversionsEntry": "英制十二进制换算",
+
+  "conversionsTitle": "英制十二进制换算",
+  "conversionsIntro": "英制单位 — 1英尺有12英寸，1先令有12便士，1打有12个，1罗有144个 — 在基数12中成为整数。输入一个值，看看它如何分解为经典单位。",
+  "conversionsInputLabel": "输入（解释为）",
+  "conversionsLengthHeading": "长度 — 英寸、英尺",
+  "conversionsCountingHeading": "计数 — 打、罗、大罗",
+  "conversionsCurrencyHeading": "1971年前的英国货币 — 便士、先令、英镑",
+  "conversionsTimeHeading": "时间 — 秒、分钟、小时",
+  "conversionsAngleHeading": "角度 — 360°的分数",
   "infoListVersionFooter": "版本 {version} · 构建 {buildNumber}",
 
   "chapterTitle01": "使用计算器",

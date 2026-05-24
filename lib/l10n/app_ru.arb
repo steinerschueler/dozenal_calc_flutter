@@ -7,6 +7,16 @@
   "infoListPrivacyEntry": "Политика конфиденциальности",
   "infoListLicenseEntry": "Лицензия",
   "infoListFeedbackEntry": "Отправить отзыв",
+  "infoListConversionsEntry": "Имперские дюжинные преобразования",
+
+  "conversionsTitle": "Имперские дюжинные преобразования",
+  "conversionsIntro": "Имперские единицы — 12 дюймов в футе, 12 пенсов в шиллинге, 12 в дюжине, 144 в гроссе — становятся круглыми числами в основании 12. Введите значение и посмотрите, как оно разлагается на классические единицы.",
+  "conversionsInputLabel": "Ввод (интерпретируется как)",
+  "conversionsLengthHeading": "Длина — дюймы, футы",
+  "conversionsCountingHeading": "Счёт — дюжина, гросс, большой гросс",
+  "conversionsCurrencyHeading": "Британская монета до 1971 г. — пенсы, шиллинг, фунт",
+  "conversionsTimeHeading": "Время — секунды, минуты, часы",
+  "conversionsAngleHeading": "Угол — доли 360°",
   "infoListVersionFooter": "Версия {version} · Сборка {buildNumber}",
 
   "chapterTitle01": "Использование калькулятора",

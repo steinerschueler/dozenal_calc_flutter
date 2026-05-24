@@ -7,6 +7,16 @@
   "infoListPrivacyEntry": "プライバシーポリシー",
   "infoListLicenseEntry": "ライセンス",
   "infoListFeedbackEntry": "フィードバックを送る",
+  "infoListConversionsEntry": "ヤード・ポンド法（12進）変換",
+
+  "conversionsTitle": "ヤード・ポンド法（12進）変換",
+  "conversionsIntro": "ヤード・ポンド法の単位 — 1フィート12インチ、1シリング12ペンス、1ダース12個、1グロス144個 — は12進法で整数になります。値を入力して、古典的な単位にどう分解されるかを見てください。",
+  "conversionsInputLabel": "入力（解釈）",
+  "conversionsLengthHeading": "長さ — インチ、フィート",
+  "conversionsCountingHeading": "カウント — ダース、グロス、グレートグロス",
+  "conversionsCurrencyHeading": "1971年以前の英国通貨 — ペンス、シリング、ポンド",
+  "conversionsTimeHeading": "時間 — 秒、分、時",
+  "conversionsAngleHeading": "角度 — 360°の分数",
   "infoListVersionFooter": "バージョン {version} · ビルド {buildNumber}",
 
   "chapterTitle01": "電卓の使い方",

@@ -7,6 +7,16 @@
   "infoListPrivacyEntry": "Política de privacidad",
   "infoListLicenseEntry": "Licencia",
   "infoListFeedbackEntry": "Enviar comentarios",
+  "infoListConversionsEntry": "Conversiones imperial-12",
+
+  "conversionsTitle": "Conversiones imperial-12",
+  "conversionsIntro": "Las unidades imperiales — 12 pulgadas en un pie, 12 peniques en un chelín, 12 en una docena, 144 en una gruesa — se convierten en números redondos en base 12. Ingresa un valor y mira cómo se descompone en las unidades clásicas.",
+  "conversionsInputLabel": "Entrada (interpretada como)",
+  "conversionsLengthHeading": "Longitud — pulgadas, pies",
+  "conversionsCountingHeading": "Conteo — docena, gruesa, gran gruesa",
+  "conversionsCurrencyHeading": "Moneda británica antes de 1971 — peniques, chelín, libra",
+  "conversionsTimeHeading": "Tiempo — segundos, minutos, horas",
+  "conversionsAngleHeading": "Ángulo — fracciones de 360°",
   "infoListVersionFooter": "Versión {version} · Build {buildNumber}",
 
   "chapterTitle01": "Uso de la calculadora",

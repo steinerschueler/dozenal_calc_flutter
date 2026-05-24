@@ -7,6 +7,16 @@
   "infoListPrivacyEntry": "Politique de confidentialité",
   "infoListLicenseEntry": "Licence",
   "infoListFeedbackEntry": "Donner un retour",
+  "infoListConversionsEntry": "Conversions impériales-12",
+
+  "conversionsTitle": "Conversions impériales-12",
+  "conversionsIntro": "Les unités impériales — 12 pouces dans un pied, 12 pence dans un shilling, 12 dans une douzaine, 144 dans une grosse — deviennent des nombres ronds en base 12. Entrez une valeur et voyez comment elle se décompose dans les unités classiques.",
+  "conversionsInputLabel": "Entrée (interprétée comme)",
+  "conversionsLengthHeading": "Longueur — pouces, pieds",
+  "conversionsCountingHeading": "Comptage — douzaine, grosse, grande grosse",
+  "conversionsCurrencyHeading": "Monnaie britannique avant 1971 — pence, shilling, livre",
+  "conversionsTimeHeading": "Temps — secondes, minutes, heures",
+  "conversionsAngleHeading": "Angle — fractions de 360°",
   "infoListVersionFooter": "Version {version} · Build {buildNumber}",
 
   "chapterTitle01": "Utilisation de la calculatrice",

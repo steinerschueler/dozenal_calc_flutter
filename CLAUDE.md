@@ -318,10 +318,16 @@ State-Listener in `main.dart` die Route und resettet `infoState` auf
 Sekundärseiten, die aus `info_pages.dart` heraus gepusht werden:
 `privacy_page.dart` und `license_page.dart` (laden
 `legal/<typ>.<code>.md` per Locale via dem generischen
-`markdown_page.dart`) sowie `feedback_dialog.dart` (`mailto:`-Composer,
-kein Netzwerk; alle Strings über ARB). Alle folgen der gleichen
-Push-Konvention — keine direkten Routen aus `main.dart`, alles geht über
-die Info-Liste.
+`markdown_page.dart`), `feedback_dialog.dart` (`mailto:`-Composer,
+kein Netzwerk; alle Strings über ARB) sowie `conversions_page.dart`
+(Live-Umrechnung eines Eingabewerts in die klassischen Imperial-12-
+Einheiten — Inches/Fuss, Pence/Schilling/Pfund, Dutzend/Gros/Großgros,
+Sekunden/Minuten/Stunden, Bruchteile von 360° — jeweils in Dez- und
+Doz-Darstellung; eigene Doz/Dez-Toggle und symbolische Notation
+ft/in/sh/d/£/min/h/° statt sprachspezifischer Wörter, damit die
+Sektion-Bodies in allen Locales identisch und kompakt bleiben).
+Alle folgen der gleichen Push-Konvention — keine direkten Routen
+aus `main.dart`, alles geht über die Info-Liste.
 
 ### Intro
 

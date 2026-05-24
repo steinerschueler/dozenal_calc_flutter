@@ -7,6 +7,16 @@
   "infoListPrivacyEntry": "Polisi preifatrwydd",
   "infoListLicenseEntry": "Trwydded",
   "infoListFeedbackEntry": "Anfon adborth",
+  "infoListConversionsEntry": "Trawsnewidiadau imperialaidd-12",
+
+  "conversionsTitle": "Trawsnewidiadau imperialaidd-12",
+  "conversionsIntro": "Daw'r unedau imperialaidd — 12 modfedd mewn troedfedd, 12 ceiniog mewn swllt, 12 mewn dwsin, 144 mewn grôs — yn rhifau crwn ym môn 12. Rhowch werth a gwelwch sut y mae'n datgymalu i'r unedau clasurol.",
+  "conversionsInputLabel": "Mewnbwn (wedi'i ddehongli fel)",
+  "conversionsLengthHeading": "Hyd — modfeddi, troedfeddi",
+  "conversionsCountingHeading": "Cyfri — dwsin, grôs, grôs mawr",
+  "conversionsCurrencyHeading": "Arian Prydeinig cyn 1971 — ceiniog, swllt, punt",
+  "conversionsTimeHeading": "Amser — eiliadau, munudau, oriau",
+  "conversionsAngleHeading": "Ongl — ffracsiynau o 360°",
   "infoListVersionFooter": "Fersiwn {version} · Adeiladaeth {buildNumber}",
 
   "chapterTitle01": "Defnyddio'r cyfrifiannell",

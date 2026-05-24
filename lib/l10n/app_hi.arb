@@ -7,6 +7,16 @@
   "infoListPrivacyEntry": "गोपनीयता नीति",
   "infoListLicenseEntry": "लाइसेंस",
   "infoListFeedbackEntry": "प्रतिक्रिया भेजें",
+  "infoListConversionsEntry": "इम्पीरियल-12 रूपांतरण",
+
+  "conversionsTitle": "इम्पीरियल-12 रूपांतरण",
+  "conversionsIntro": "इम्पीरियल इकाइयाँ — 12 इंच एक फुट में, 12 पेंस एक शिलिंग में, 12 एक दर्जन में, 144 एक ग्रोस में — आधार 12 में पूर्ण संख्याएँ बन जाती हैं। एक मूल्य दर्ज करें और देखें कि यह क्लासिक इकाइयों में कैसे विभाजित होता है।",
+  "conversionsInputLabel": "इनपुट (के रूप में व्याख्या)",
+  "conversionsLengthHeading": "लंबाई — इंच, फुट",
+  "conversionsCountingHeading": "गिनती — दर्जन, ग्रोस, महान ग्रोस",
+  "conversionsCurrencyHeading": "1971 से पहले की ब्रिटिश मुद्रा — पेंस, शिलिंग, पाउंड",
+  "conversionsTimeHeading": "समय — सेकंड, मिनट, घंटे",
+  "conversionsAngleHeading": "कोण — 360° के अंश",
   "infoListVersionFooter": "संस्करण {version} · बिल्ड {buildNumber}",
 
   "chapterTitle01": "कैलकुलेटर का उपयोग",
