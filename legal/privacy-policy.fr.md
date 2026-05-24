@@ -28,7 +28,7 @@ L'application convient à tous les groupes d'âge.
 
 ## Composants open source utilisés
 
-L'application est construite avec le framework Flutter (Google) et utilise, entre autres, les paquets open source `flutter_markdown` et `cupertino_icons`. Tous les composants inclus fonctionnent également en local et ne transmettent aucune donnée.
+L'application est construite avec le framework Flutter (Google) et utilise le paquet open source `flutter_markdown_plus` pour afficher cette page et la page de licence. Tous les composants inclus fonctionnent également en local et ne transmettent aucune donnée.
 
 ## Modifications de cette politique
 

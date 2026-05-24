@@ -28,7 +28,7 @@ Dozenal Calc 不请求任何 Android 权限 — 无访问相机、麦克风、�
 
 ## 使用的开源组件
 
-应用使用 Flutter 框架（Google）构建，并使用包括开源包 `flutter_markdown` 和 `cupertino_icons` 在内的多个组件。所有包含的组件也在本地运行，不传输任何数据。
+应用使用 Flutter 框架（Google）构建，并使用开源包 `flutter_markdown_plus` 来渲染本页面和许可证页面。所有包含的组件也在本地运行，不传输任何数据。
 
 ## 本政策的变更
 

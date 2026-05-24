@@ -28,7 +28,7 @@ Tá an aip oiriúnach do gach aoisghrúpa.
 
 ## Comhpháirteanna foinse oscailte a úsáidtear
 
-Tá an aip tógtha leis an gcreatlach Flutter (Google) agus baineann sí úsáid as, i measc rudaí eile, na pacáistí foinse oscailte `flutter_markdown` agus `cupertino_icons`. Oibríonn na comhpháirteanna san áireamh go háitiúil chomh maith agus ní tharchuireann siad aon sonraí.
+Tá an aip tógtha leis an gcreatlach Flutter (Google) agus baineann sí úsáid as an bpacáiste foinse oscailte `flutter_markdown_plus` chun an leathanach seo agus leathanach an cheadúnais a rindreáil. Oibríonn na comhpháirteanna san áireamh go háitiúil chomh maith agus ní tharchuireann siad aon sonraí.
 
 ## Athruithe ar an bpolasaí seo
 

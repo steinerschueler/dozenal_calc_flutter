@@ -28,7 +28,7 @@ La aplicación es adecuada para todos los grupos de edad.
 
 ## Componentes de código abierto utilizados
 
-La aplicación está construida con el framework Flutter (Google) y utiliza, entre otros, los paquetes de código abierto `flutter_markdown` y `cupertino_icons`. Todos los componentes incluidos funcionan también en local y no transmiten ningún dato.
+La aplicación está construida con el framework Flutter (Google) y utiliza el paquete de código abierto `flutter_markdown_plus` para mostrar esta página y la página de licencia. Todos los componentes incluidos funcionan también en local y no transmiten ningún dato.
 
 ## Cambios en esta política
 

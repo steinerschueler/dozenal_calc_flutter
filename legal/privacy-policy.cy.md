@@ -28,7 +28,7 @@ Mae'r rhaglen yn addas i bob grŵp oedran.
 
 ## Cydrannau cod agored a ddefnyddir
 
-Mae'r rhaglen wedi'i hadeiladu gyda fframwaith Flutter (Google) ac mae'n defnyddio sawl cydran gan gynnwys y pecynnau cod agored `flutter_markdown` a `cupertino_icons`. Mae'r holl gydrannau a gynhwysir hefyd yn gweithio'n lleol, heb drosglwyddo unrhyw ddata.
+Mae'r rhaglen wedi'i hadeiladu gyda fframwaith Flutter (Google) ac mae'n defnyddio'r pecyn cod agored `flutter_markdown_plus` i rendro'r dudalen hon a thudalen y drwydded. Mae'r holl gydrannau a gynhwysir hefyd yn gweithio'n lleol, heb drosglwyddo unrhyw ddata.
 
 ## Newidiadau i'r polisi hwn
 

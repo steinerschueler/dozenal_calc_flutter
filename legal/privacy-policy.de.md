@@ -28,7 +28,7 @@ Die App ist für alle Altersgruppen geeignet.
 
 ## Verwendete Open-Source-Komponenten
 
-Die App ist mit dem Flutter-Framework (Google) gebaut und nutzt unter anderem die offen verfügbaren Pakete `flutter_markdown` und `cupertino_icons`. Alle eingebundenen Komponenten arbeiten ebenfalls lokal und übertragen keine Daten.
+Die App ist mit dem Flutter-Framework (Google) gebaut und nutzt das offen verfügbare Paket `flutter_markdown_plus` für die Anzeige dieser und der Lizenz-Seite. Alle eingebundenen Komponenten arbeiten ebenfalls lokal und übertragen keine Daten.
 
 ## Änderungen dieser Erklärung
 

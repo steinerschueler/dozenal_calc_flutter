@@ -28,7 +28,7 @@ Dozenal Calc 不請求任何 Android 權限 — 無存取相機、麥克風、�
 
 ## 使用的開放原始碼元件
 
-應用程式使用 Flutter 框架（Google）建構，並使用包括開放原始碼套件 `flutter_markdown` 與 `cupertino_icons` 在內的數個元件。所有包含的元件也在本地運作，不傳輸任何資料。
+應用程式使用 Flutter 框架（Google）建構，並使用開放原始碼套件 `flutter_markdown_plus` 來呈現本頁面與授權條款頁面。所有包含的元件也在本地運作，不傳輸任何資料。
 
 ## 本政策的變更
 

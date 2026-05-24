@@ -28,7 +28,7 @@ L'app è adatta a tutte le fasce d'età.
 
 ## Componenti open source utilizzati
 
-L'app è costruita con il framework Flutter (Google) e utilizza, tra gli altri, i pacchetti open source `flutter_markdown` e `cupertino_icons`. Tutti i componenti inclusi funzionano anch'essi in locale e non trasmettono alcun dato.
+L'app è costruita con il framework Flutter (Google) e utilizza il pacchetto open source `flutter_markdown_plus` per mostrare questa pagina e la pagina della licenza. Tutti i componenti inclusi funzionano anch'essi in locale e non trasmettono alcun dato.
 
 ## Modifiche a questa informativa
 
