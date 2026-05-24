@@ -329,6 +329,51 @@ List<Widget> _chapterCy(int chapter, AppLocalizations l) {
           "confensiwn dwsin yma yn drydydd dewis — wedi'i ychwanegu "
           "at y casgliad, nid yn cymryd lle'r hyn sydd eisoes yn bod.",
         ),
+        const _H("Y Gymraeg a'r deuddeg"),
+        const _P(
+          "Mae gan y Gymraeg berthynas gyfeillgar arbennig â'r rhif "
+          "deuddeg, wedi'i hysgrifennu i mewn i strwythur ei geiriau "
+          "rhif. Yn y system draddodiadol, mae'r rhan fwyaf o rifau o "
+          "11 i 19 yn dilyn patrwm rheolaidd: un ar ddeg (1+10), tri "
+          "ar ddeg (3+10), pedwar ar ddeg (4+10) — felly y mae bron i "
+          "bob un. Ond mae deuddeg yn torri'r rheol — gair annibynnol "
+          "ydyw, uned wedi'i hasio yn hytrach na chyfansoddiad o "
+          "« dau ar ddeg ». Yr un statws arbennig sy'n disgyn ar "
+          "pymtheg (15) a deunaw (18, « dau naw »): nid ydynt hwythau "
+          "chwaith wedi'u hadeiladu o'r patrwm rheolaidd.",
+        ),
+        const _P(
+          "Olion ŷnt o arfer cyfrif lle roedd deuddeg, pymtheg a "
+          "deunaw unwaith yn bwyntiau torri naturiol — cyn i'r "
+          "confensiwn degol modern eu llyfn-droi. Daw'r Gymraeg, "
+          "felly, at gyfrif dwsin gyda thir wedi'i baratoi: nid yw "
+          "deuddeg yn estron i'w chof iaith, bu dwsin yn arian "
+          "beunyddiol ers canrifoedd, ac mae'r hen gyfarwydd-deb â "
+          "chyfrif an-degol yn dal yn fyw mewn idiom. I gyfrifiannell "
+          "sy'n meddwl mewn dwsinau, mae'r Gymraeg ymhlith yr "
+          "ieithoedd mwyaf croesawgar.",
+        ),
+        const _P(
+          "(In English: Welsh carries an especially friendly "
+          "relationship with the number twelve, written into the "
+          "structure of its number words. In the traditional system, "
+          "most numbers from 11 to 19 follow a regular pattern: un ar "
+          "ddeg (1+10), tri ar ddeg (3+10), pedwar ar ddeg (4+10) — "
+          "almost all of them do. But deuddeg breaks the rule — it is "
+          "its own independent word, a fused unit rather than a "
+          "compound from « dau ar ddeg ». The same special status "
+          "falls on pymtheg (15) and deunaw (18, « two nines »): "
+          "these are not built from the regular pattern either. They "
+          "are traces of a counting practice where twelve, fifteen, "
+          "and eighteen were once natural break-points — before the "
+          "modern decimal convention smoothed them over. Welsh "
+          "therefore comes to dozenal counting with prepared ground: "
+          "deuddeg is not foreign to its linguistic memory, dwsin has "
+          "been daily currency for centuries, and the old familiarity "
+          "with non-decimal counting still lives in idiom. For a "
+          "calculator that thinks in dozens, Welsh is among the most "
+          "welcoming languages.)",
+        ),
         const _P(
           "Mae Cymdeithas Ddwsin America (sefydlwyd 1944, gyda chwaer-"
           "gymdeithasau heddiw mewn gwledydd eraill) yn gweithio i "
