@@ -273,6 +273,47 @@ List<Widget> _chapterHi(int chapter, AppLocalizations l) {
           "में 2×12 घंटे होते हैं, वर्ष में 12 महीने, पूर्ण वृत्त "
           "360 = 30×12 डिग्री।",
         ),
+        const _H("हिन्दी और लाख-करोड़ की गणना"),
+        const _P(
+          "हिन्दी संख्या प्रणाली की अपनी एक विशेषता है जो भारतीय "
+          "उपमहाद्वीप की संख्या सोच को परिभाषित करती है: हज़ार के बाद "
+          "अगला महत्वपूर्ण मोड़ मिलियन पर नहीं बल्कि लाख (१,००,००० = "
+          "10⁵) पर आता है। फिर करोड़ (१,००,००,००० = 10⁷), अरब (10⁹), "
+          "खरब (10¹¹), नील (10¹³)। पश्चिमी प्रणाली तीन अंकों के "
+          "समूहों (हज़ार, मिलियन, बिलियन = 10³, 10⁶, 10⁹) में सोचती "
+          "है, जबकि भारतीय प्रणाली एक हज़ार के बाद दो अंकों के समूहों "
+          "(लाख, करोड़) में सोचती है।",
+        ),
+        const _P(
+          "इसका अर्थ है कि भारतीय अंक लेखन में अल्पविराम भी अलग होते "
+          "हैं: अंग्रेज़ी में 100,000 लिखा जाता है, हिन्दी में "
+          "1,00,000 — पहला अल्पविराम लाख के स्थान पर, फिर हर दो अंकों "
+          "पर। यह केवल विदेशी जिज्ञासा नहीं है; यह एक जीवित प्रणाली "
+          "है जो प्रतिदिन भारतीय समाचारों, बैंकिंग और दैनिक बातचीत "
+          "में उपयोग होती है। हिन्दी बोलने वाले संख्या समूहों को "
+          "व्यवस्थित करने के विभिन्न तरीकों से पहले से परिचित हैं — "
+          "और यह द्वादशमी अंकगणित को अपनाने के लिए एक मानसिक तैयारी "
+          "है।",
+        ),
+        const _P(
+          "(In English: The Hindi number system has a peculiarity "
+          "that defines the numerical thinking of the Indian "
+          "subcontinent: after one thousand, the next significant "
+          "turning point comes not at a million but at lakh (1,00,000 "
+          "= 10⁵). Then crore (1,00,00,000 = 10⁷), arab (10⁹), kharab "
+          "(10¹¹), nil (10¹³). The Western system thinks in groups "
+          "of three digits (thousand, million, billion = 10³, 10⁶, "
+          "10⁹), while the Indian system thinks in groups of two "
+          "digits after the first thousand (lakh, crore). This means "
+          "Indian number notation also uses different commas: written "
+          "100,000 in English, 1,00,000 in Hindi — the first comma "
+          "at the lakh place, then every two digits. This is not just "
+          "a foreign curiosity; it is a living system used daily in "
+          "Indian news, banking, and everyday conversation. Hindi "
+          "speakers are already familiar with different ways of "
+          "organising number groups — and this is mental preparation "
+          "for adopting dozenal arithmetic.)",
+        ),
         const _P(
           "अमेरिका की द्वादशमी सोसायटी (Dozenal Society of America, "
           "1944 में स्थापित, आज अन्य देशों में शाखाओं के साथ) आधार "

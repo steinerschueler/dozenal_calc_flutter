@@ -306,6 +306,43 @@ List<Widget> _chapterGa(int chapter, AppLocalizations l) {
           "(144 = 12²). Tá 2×12 uair an chloig sa lá, 12 mhí sa "
           "bhliain, an ciorcal iomlán 360 = 30×12 céim.",
         ),
+        const _H("An Ghaeilge agus an cuntas fichidiúil"),
+        const _P(
+          "Mar atá ag an mBreatnais (cy), tá tradisiún an cuntais ag "
+          "an nGaeilge nach mbaineann le bonn a deich. Bhí an córas "
+          "traidisiúnta vigesimal — bonn 20: fiche (20), dhá fhichid "
+          "(40), trí fhichid (60), ceithre fhichid (80), cúig fhichid "
+          "(100). Lean an patrún ar aghaidh le sé fhichid (120), "
+          "seacht fhichid (140), srl. Maireann an córas seo go beo i "
+          "n-idióm, i logainmneacha, agus i bhfilíocht: cluinfear "
+          "fós « dhá fhichid agus a deich » (50) nó « trí fhichid agus "
+          "a deich » (70) i ngnáthchaint.",
+        ),
+        const _P(
+          "D'aistrigh an scolaíocht agus an mhatamaitic chuig córas "
+          "dachúil le linn an fhichiú haois, ach níor ghéill na "
+          "foirmeacha fichidiúla in iomlán. Mar sin, tagann cainteoir "
+          "Gaeilge chuig an gcóras dosaenach le hithir ullmhaithe: "
+          "nuair atá tú in ann cuntas a dhéanamh ar bhonn 20, ní "
+          "haon léim mhór é bonn 12 a smaoineamh. Tá aithne ar an "
+          "gcoincheap — agus is é sin an chéad chéim.",
+        ),
+        const _P(
+          "(In English: As with Welsh (cy), Irish has a counting "
+          "tradition that does not work with base ten. The traditional "
+          "system was vigesimal — base 20: fiche (20), dhá fhichid "
+          "(40), trí fhichid (60), ceithre fhichid (80), cúig fhichid "
+          "(100). The pattern continued with sé fhichid (120), seacht "
+          "fhichid (140), etc. This system lives on in idiom, place "
+          "names, and poetry: « dhá fhichid agus a deich » (50) or "
+          "« trí fhichid agus a deich » (70) can still be heard in "
+          "everyday speech. Schools and mathematics switched to "
+          "decimal during the twentieth century, but the vigesimal "
+          "forms did not fully yield. So an Irish speaker comes to "
+          "the dozenal system with prepared ground: once you can "
+          "count in base 20, thinking in base 12 is not a great leap. "
+          "Recognition of the concept — and that is the first step.)",
+        ),
         const _P(
           "Oibríonn an Cumann Dosaenach Mheiriceá (Dozenal Society of "
           "America, bunaithe i 1944, le craobhacha i dtíortha eile inniu) "

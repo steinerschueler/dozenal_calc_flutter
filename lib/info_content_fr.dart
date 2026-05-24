@@ -303,6 +303,50 @@ List<Widget> _chapterFr(int chapter, AppLocalizations l) {
           "et par grosses (144 = 12²). Le jour a 2×12 heures, "
           "l'année 12 mois, le cercle complet 360 = 30×12 degrés.",
         ),
+        const _H("Le français et la trace vigésimale"),
+        const _P(
+          "Le français standard porte dans ses nombres la trace d'un "
+          "ancien système vigésimal — base 20 — hérité du gaulois et "
+          "de l'usage médiéval européen. Soixante-dix (70) se lit "
+          "littéralement « soixante plus dix », quatre-vingts (80) "
+          "« quatre fois vingt », et quatre-vingt-dix (90) « quatre "
+          "fois vingt plus dix ». Là où l'allemand dit siebzig, "
+          "achtzig, neunzig en suivant simplement la logique décimale, "
+          "le français continue à compter par paquets de vingt "
+          "jusqu'à cent.",
+        ),
+        const _P(
+          "Le français de Belgique et le français de Suisse ont "
+          "simplifié cette particularité : septante (70), nonante "
+          "(90), et — en Suisse romande — huitante (80) suivent le "
+          "modèle décimal régulier. Mais le français standard "
+          "hexagonal a gardé la forme vigésimale. Le résultat : "
+          "chaque enfant français apprend dès l'école élémentaire à "
+          "manipuler une base différente sans s'en rendre compte. "
+          "Cette familiarité avec l'arithmétique vigésimale est un "
+          "terrain favorable pour la base douze — un système qui "
+          "partage avec vingt la propriété d'avoir plus de diviseurs "
+          "que dix.",
+        ),
+        const _P(
+          "(In English: Standard French carries within its numbers "
+          "the trace of an old vigesimal system — base 20 — inherited "
+          "from Gaulish and medieval European usage. Soixante-dix "
+          "(70) reads literally \"sixty plus ten\", quatre-vingts "
+          "(80) \"four times twenty\", and quatre-vingt-dix (90) "
+          "\"four times twenty plus ten\". Where German says siebzig, "
+          "achtzig, neunzig following simple decimal logic, French "
+          "continues to count by groups of twenty up to one hundred. "
+          "Belgian French and Swiss French have simplified this "
+          "peculiarity: septante (70), nonante (90), and — in Suisse "
+          "romande — huitante (80) follow the regular decimal model. "
+          "But standard hexagonal French has kept the vigesimal form. "
+          "The result: every French child learns from primary school "
+          "to handle a different base without realising it. This "
+          "familiarity with vigesimal arithmetic is fertile ground "
+          "for base twelve — a system that shares with twenty the "
+          "property of having more divisors than ten.)",
+        ),
         const _P(
           "La Dozenal Society of America (fondée en 1944, avec "
           "aujourd'hui des branches dans d'autres pays) œuvre à "
