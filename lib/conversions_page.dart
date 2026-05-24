@@ -130,11 +130,16 @@ class _ConversionsPageState extends State<ConversionsPage> {
               const SizedBox(height: 16),
               _inputCard(l),
               const SizedBox(height: 8),
-              _section(l.conversionsLengthHeading, _lengthRows()),
               _section(l.conversionsCountingHeading, _countingRows()),
-              _section(l.conversionsCurrencyHeading, _currencyRows()),
+              _section(l.conversionsLengthHeading, _lengthRows()),
+              _section(l.conversionsWeightHeading, _weightRows()),
               _section(l.conversionsTimeHeading, _timeRows()),
               _section(l.conversionsAngleHeading, _angleRows()),
+              const Padding(
+                padding: EdgeInsets.only(top: 28, bottom: 4),
+                child: Divider(color: Color(0xFF3C3C3C), height: 1),
+              ),
+              _section(l.conversionsCurrencyHeading, _currencyRows()),
             ],
           ),
         ),
@@ -250,81 +255,83 @@ class _ConversionsPageState extends State<ConversionsPage> {
   }
 
   // ─────────────────────────────────────────────────────────────────────
-  // Conversion logic. Each section returns a small list of pre-formatted
-  // monospace rows. Symbolic forms (ft, in, sh, d, h, min, s, °, £) are
-  // kept in international notation across all locales for compactness.
+  // Conversion logic. Each section returns a list of monospace rows in
+  // the multi-magnitude pattern: the input value is interpreted as
+  // successive unit names along the 12-based ladder, each line
+  // decomposing to the next higher unit. The Doz/Dez toggle drives both
+  // input parsing and all output numbers, so flipping to Doz makes the
+  // dozenal cleanness of these units immediately visible. Symbolic forms
+  // (ft, in, sh, d, h, min, s, °, £, ggr, gr, dz, oz tr, lb tr) stay in
+  // international notation across all locales for compactness.
   // ─────────────────────────────────────────────────────────────────────
 
-  List<String> _lengthRows() {
-    final n = _value;
-    final neg = n < 0;
-    final abs = neg ? -n : n;
-    final ft = abs ~/ 12;
-    final inches = abs % 12;
-    final sign = neg ? '-' : '';
-    return [
-      '$sign$abs in  =  $sign$ft ft $inches in',
-      '         in doz: ${_toDoz(n)} in  =  ${_toDoz(neg ? -ft : ft)} ft ${_toDoz(inches)} in',
-    ];
-  }
+  /// Format an int per the current Doz/Dez toggle.
+  String _f(int n) =>
+      _system == _NumSys.dez ? n.toString() : _toDoz(n);
 
   List<String> _countingRows() {
     final n = _value;
-    final neg = n < 0;
-    final abs = neg ? -n : n;
-    final ggr = abs ~/ 1728;
-    final gr = (abs % 1728) ~/ 144;
-    final dz = (abs % 144) ~/ 12;
-    final it = abs % 12;
-    final sign = neg ? '-' : '';
     return [
-      '$sign$abs  =  $sign$ggr ggr · $gr gr · $dz dz · $it',
-      '   in doz: ${_toDoz(n)}  =  ${_toDoz(neg ? -ggr : ggr)} ggr · ${_toDoz(gr)} gr · ${_toDoz(dz)} dz · ${_toDoz(it)}',
-      '   (1 dz = 12 ; 1 gr = 144 ; 1 ggr = 1728)',
+      '${_f(n)} items  =  ${_f(n ~/ 12)} dz ${_f(n % 12)}',
+      '${_f(n)} dz     =  ${_f(n ~/ 12)} gr ${_f(n % 12)} dz',
+      '${_f(n)} gr     =  ${_f(n ~/ 12)} ggr ${_f(n % 12)} gr',
+      '(1 dz = 12 ; 1 gr = 144 ; 1 ggr = 1728)',
     ];
   }
 
-  List<String> _currencyRows() {
+  List<String> _lengthRows() {
     final n = _value;
-    final neg = n < 0;
-    final abs = neg ? -n : n;
-    final pounds = abs ~/ 240;
-    final shillings = (abs % 240) ~/ 12;
-    final pence = abs % 12;
-    final sign = neg ? '-' : '';
     return [
-      '$sign$abs d  =  $sign£$pounds · $shillings sh · $pence d',
-      '       in doz: ${_toDoz(n)} d  =  £${_toDoz(neg ? -pounds : pounds)} · ${_toDoz(shillings)} sh · ${_toDoz(pence)} d',
-      '       (1 sh = 12 d ; 1 £ = 20 sh = 240 d)',
+      '${_f(n)} in  =  ${_f(n ~/ 12)} ft ${_f(n % 12)} in       (× 12  dozenal ✓)',
+      '${_f(n)} ft  =  ${_f(n ~/ 3)} yd ${_f(n % 3)} ft        (× 3)',
+      '${_f(n)} yd  =  ${_f(n ~/ 1760)} mi ${_f(n % 1760)} yd  (× 1760)',
+      '${_f(n)} ft  =  ${_f(n ~/ 6)} fathom ${_f(n % 6)} ft    (× 6 = ½ dz)',
+      '(1 ft = 12 in ; 1 yd = 3 ft ; 1 mi = 1760 yd = 5280 ft ; 1 fathom = 6 ft)',
+    ];
+  }
+
+  List<String> _weightRows() {
+    final n = _value;
+    return [
+      '${_f(n)} oz tr  =  ${_f(n ~/ 12)} lb tr ${_f(n % 12)} oz tr   (× 12  dozenal ✓ ; troy)',
+      '${_f(n)} lb     =  ${_f(n ~/ 14)} st ${_f(n % 14)} lb           (× 14 ; avoirdupois)',
+      '${_f(n)} st     =  ${_f(n ~/ 8)} cwt ${_f(n % 8)} st           (× 8)',
+      '${_f(n)} cwt    =  ${_f(n ~/ 20)} long ton ${_f(n % 20)} cwt    (× 20)',
+      '(1 lb tr = 12 oz tr · troy/precious ; 1 st = 14 lb ; 1 cwt = 8 st = 112 lb ; 1 long ton = 20 cwt = 2240 lb)',
     ];
   }
 
   List<String> _timeRows() {
     final n = _value;
-    final neg = n < 0;
-    final abs = neg ? -n : n;
-    final secMin = abs ~/ 60;
-    final secRem = abs % 60;
-    final hDay = abs ~/ 24;
-    final hRem = abs % 24;
-    final sign = neg ? '-' : '';
     return [
-      '$sign$abs s    =  $sign$secMin min $secRem s',
-      '$sign$abs min  =  $sign$secMin h $secRem min',
-      '$sign$abs h    =  $sign$hDay d $hRem h',
-      '(60 = 5·12 ; 24 = 2·12 ; clock cycles in 12-h)',
+      '${_f(n)} s    =  ${_f(n ~/ 60)} min ${_f(n % 60)} s',
+      '${_f(n)} min  =  ${_f(n ~/ 60)} h ${_f(n % 60)} min',
+      '${_f(n)} h    =  ${_f(n ~/ 24)} d ${_f(n % 24)} h',
+      '(60 = 5·12 ; 24 = 2·12 ; 12-h clock cycle)',
     ];
   }
 
   List<String> _angleRows() {
     final n = _value;
-    final thirtieths = n / 30.0;
+    // Clock position is always read in decimal (universal convention):
+    // each clock-hour = 30°, each clock-minute = 0.5° of arc.
+    final clockH = n ~/ 30;
+    final clockMin = ((n % 30) * 2).toString().padLeft(2, '0');
     return [
-      '$n°  ÷  360°  =  ${(n / 360.0).toStringAsFixed(4)}',
-      '$n°  ÷  30°   =  ${thirtieths.toStringAsFixed(2)}   (1/12 circle units)',
-      '$n°  ÷  12    =  ${(n / 12.0).toStringAsFixed(2)}   (12° steps)',
-      'clock-hand position: ${thirtieths.toStringAsFixed(2)} h',
-      'in doz: ${_toDoz(n)}°',
+      '${_f(n)}°  =  ${_f(n ~/ 12)} × 12°  + ${_f(n % 12)}°',
+      '${_f(n)}°  =  ${_f(n ~/ 30)} × 30°  + ${_f(n % 30)}°   (zodiac/clock-hour units)',
+      '${_f(n)}°  ÷  360°  =  ${(n / 360.0).toStringAsFixed(4)}',
+      'clock-face position: $clockH:$clockMin (1 h = 30°)',
+      '(360 = 30·12)',
+    ];
+  }
+
+  List<String> _currencyRows() {
+    final n = _value;
+    return [
+      '${_f(n)} d   =  ${_f(n ~/ 12)} sh ${_f(n % 12)} d',
+      '${_f(n)} sh  =  £${_f(n ~/ 20)}  ${_f(n % 20)} sh',
+      '(1 sh = 12 d ; 1 £ = 20 sh = 240 d ; £/sh ratio is not 12-based)',
     ];
   }
 }

@@ -935,6 +935,14 @@ List<Widget> _chapterGa(int chapter, AppLocalizations l) {
           "intomhasach, agus déanann an t-áireamhán seo iad "
           "soléirithe.",
         ),
+        const _P(
+          "Leid: tá uirlis «Tiontuithe Impiriúla-12» sa roghchlár "
+          "faisnéise a roinneann aon luach trí na haonaid seo — "
+          "píosaí/dosaeineacha/grós, orlaí/troithe/slata/mílte, unsaí "
+          "troy go tonnaí fada, pingin/scilling/punt, am, agus uillinn. "
+          "Cuir uimhir isteach agus féach conas a roinneann an luach "
+          "céanna trasna gach raon.",
+        ),
       ];
     default:
       return [_P(l.chapterNotFound)];

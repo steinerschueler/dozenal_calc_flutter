@@ -924,6 +924,14 @@ List<Widget> _chapterIt(int chapter, AppLocalizations l) {
           "12 sono oggettivi e misurabili, e questa calcolatrice "
           "li rende percepibili.",
         ),
+        const _P(
+          "Suggerimento: il menu Info offre uno strumento «Conversioni "
+          "imperial-12» che scompone qualsiasi valore in queste scale "
+          "di unità — pezzi/dozzine/grossa, pollici/piedi/iarde/"
+          "miglia, once troy fino alle long ton, penny/scellini/"
+          "sterline, tempo e angolo. Inserisci un numero e vedi come "
+          "lo stesso valore si distribuisce nella scala di ogni dominio.",
+        ),
       ];
     default:
       return [_P(l.chapterNotFound)];

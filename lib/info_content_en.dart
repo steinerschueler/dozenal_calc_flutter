@@ -827,6 +827,14 @@ List<Widget> _chapterEn(int chapter, AppLocalizations l) {
           'mathematical advantages of base 12 are objective and '
           'measurable, and this calculator makes them perceivable.',
         ),
+        const _P(
+          'Tip: the info menu has an «Imperial-12 conversions» tool '
+          'that decomposes any value across these unit ladders — '
+          'items/dozens/gross, inches/feet/yards/miles, troy ounces '
+          'through long tons, pence/shillings/pounds, time, and angle. '
+          'Type a number and watch the same value fall apart into the '
+          'ladder of each domain.',
+        ),
       ];
     default:
       return [_P(l.chapterNotFound)];

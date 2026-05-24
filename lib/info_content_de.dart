@@ -852,6 +852,14 @@ List<Widget> _chapterDe(int chapter, AppLocalizations l) {
           'der Basis 12 sind objektiv und messbar, und dieser '
           'Rechner macht sie erlebbar.',
         ),
+        const _P(
+          "Tipp: Im Info-Menü gibt es unter «Imperial-12 Umrechnungen» "
+          "ein Werkzeug, das genau diese Einheiten — Stück/Dutzend/"
+          "Gros, Inches/Fuss/Yard/Meile, Troy-Unzen bis Long Ton, "
+          "Pence/Schilling/Pfund, Zeit und Winkel — interaktiv "
+          "durchrechnet. Tippe einen Wert ein und sieh, wie sich der "
+          "gleiche Zahlenwert in der jeweiligen Magnitudenkette zerlegt.",
+        ),
       ];
     default:
       return [_P(l.chapterNotFound)];

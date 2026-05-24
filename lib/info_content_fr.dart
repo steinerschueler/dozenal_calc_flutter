@@ -971,6 +971,15 @@ List<Widget> _chapterFr(int chapter, AppLocalizations l) {
           "mesurables, et cette calculatrice les rend "
           "perceptibles.",
         ),
+        const _P(
+          "Astuce : le menu Info propose un outil «Conversions "
+          "impériales-12» qui décompose n'importe quelle valeur dans "
+          "ces échelles d'unités — pièces/douzaines/grosse, pouces/"
+          "pieds/yards/milles, onces troy jusqu'aux long tons, pence/"
+          "shillings/livres, temps et angle. Tapez un nombre et voyez "
+          "comment la même valeur se répartit dans l'échelle de chaque "
+          "domaine.",
+        ),
       ];
     default:
       return [_P(l.chapterNotFound)];

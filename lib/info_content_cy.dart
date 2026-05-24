@@ -943,6 +943,15 @@ List<Widget> _chapterCy(int chapter, AppLocalizations l) {
           "yn fesuradwy, ac mae'r cyfrifiannell hwn yn eu gwneud yn "
           "ganfyddadwy.",
         ),
+        const _P(
+          "Awgrym: mae offeryn «Trawsnewidiadau imperialaidd-12» yn y "
+          "ddewislen wybodaeth sy'n datgymalu unrhyw werth dros yr "
+          "ysgolion uned hyn — eitemau/dwsinau/grôs, modfeddi/"
+          "troedfeddi/llathenni/milltiroedd, ownsiau troy hyd at "
+          "tunelli hir, ceiniogau/sylltau/punnau, amser ac ongl. "
+          "Teipiwch rif a gwelwch sut y mae'r un gwerth yn datgymalu "
+          "ar draws ysgol pob parth.",
+        ),
       ];
     default:
       return [_P(l.chapterNotFound)];

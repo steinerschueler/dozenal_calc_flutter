@@ -899,6 +899,14 @@ List<Widget> _chapterEs(int chapter, AppLocalizations l) {
           "ventajas matemáticas de la base 12 son objetivas y "
           "medibles, y esta calculadora las hace perceptibles.",
         ),
+        const _P(
+          "Consejo: el menú Info incluye una herramienta «Conversiones "
+          "imperial-12» que descompone cualquier valor en estas escalas "
+          "de unidades — piezas/docenas/gruesa, pulgadas/pies/yardas/"
+          "millas, onzas troy hasta long tons, peniques/chelines/libras, "
+          "tiempo y ángulo. Ingresa un número y mira cómo el mismo "
+          "valor se reparte en la escala de cada dominio.",
+        ),
       ];
     default:
       return [_P(l.chapterNotFound)];
