@@ -110,4 +110,10 @@ const List<LanguageOption> kSupportedLanguages = [
     flagPainter: JapaneseFlagPainter(),
     canonicalFlagSize: Size(60, 40),
   ),
+  LanguageOption(
+    locale: Locale('ar'),
+    label: 'العربية',
+    flagPainter: EgyptianFlagPainter(),
+    canonicalFlagSize: Size(60, 40),
+  ),
 ];

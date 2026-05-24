@@ -476,6 +476,99 @@ class HongKongFlagPainter extends CustomPainter {
   bool shouldRepaint(covariant CustomPainter old) => false;
 }
 
+/// Egyptian flag (علم مصر) — red, white, black horizontal tribands
+/// with the Eagle of Saladin (نسر صلاح الدين) centred on the white
+/// band in gold. The real eagle is a heraldic creature with shield,
+/// scroll, talons, and dozens of feather strokes — wholly illegible
+/// at picker scale, so we render a stylised bird silhouette: spread
+/// wings, central body, fanned tail, small head facing the viewer's
+/// left (heraldic right). The gold-on-white-stripe over red/black
+/// uniquely identifies the flag among tricolours; the simplified bird
+/// reads as "raptor" at picker size, which is all the cue that's
+/// needed. Picked here as the visual marker for Arabic, since Egypt
+/// has the largest Arabic-first population (~100 M). Canonical aspect
+/// ratio is 3:2.
+class EgyptianFlagPainter extends CustomPainter {
+  const EgyptianFlagPainter();
+
+  static const _red = Color(0xFFCE1126);
+  static const _white = Color(0xFFFFFFFF);
+  static const _black = Color(0xFF000000);
+  static const _gold = Color(0xFFC09300);
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final w = size.width;
+    final h = size.height;
+    final stripeH = h / 3;
+    canvas.drawRect(
+      Rect.fromLTWH(0, 0, w, stripeH),
+      Paint()..color = _red,
+    );
+    canvas.drawRect(
+      Rect.fromLTWH(0, stripeH, w, stripeH),
+      Paint()..color = _white,
+    );
+    canvas.drawRect(
+      Rect.fromLTWH(0, stripeH * 2, w, stripeH),
+      Paint()..color = _black,
+    );
+
+    // Eagle bounding box: 35 % of flag width, 80 % of white-stripe
+    // height, centred on the white stripe.
+    final eW = w * 0.35;
+    final eH = stripeH * 0.80;
+    final cx = w / 2;
+    final cy = stripeH * 1.5;
+    final left = cx - eW / 2;
+    final top = cy - eH / 2;
+
+    double x(double u) => left + u * eW;
+    double y(double v) => top + v * eH;
+
+    final gold = Paint()..color = _gold;
+
+    // Wings — two thin lozenges flanking the body, drooping outward.
+    final leftWing = Path()
+      ..moveTo(x(0.50), y(0.35))
+      ..quadraticBezierTo(x(0.20), y(0.30), x(0.00), y(0.55))
+      ..quadraticBezierTo(x(0.20), y(0.45), x(0.45), y(0.55))
+      ..close();
+    canvas.drawPath(leftWing, gold);
+
+    final rightWing = Path()
+      ..moveTo(x(0.50), y(0.35))
+      ..quadraticBezierTo(x(0.80), y(0.30), x(1.00), y(0.55))
+      ..quadraticBezierTo(x(0.80), y(0.45), x(0.55), y(0.55))
+      ..close();
+    canvas.drawPath(rightWing, gold);
+
+    // Body — central vertical lozenge from chest down to tail base.
+    final body = Path()
+      ..moveTo(x(0.50), y(0.25))
+      ..quadraticBezierTo(x(0.60), y(0.45), x(0.55), y(0.70))
+      ..lineTo(x(0.45), y(0.70))
+      ..quadraticBezierTo(x(0.40), y(0.45), x(0.50), y(0.25))
+      ..close();
+    canvas.drawPath(body, gold);
+
+    // Head — small disc above the body.
+    canvas.drawCircle(Offset(x(0.50), y(0.20)), eH * 0.08, gold);
+
+    // Tail — fanned trapezoid below the body.
+    final tail = Path()
+      ..moveTo(x(0.42), y(0.70))
+      ..lineTo(x(0.58), y(0.70))
+      ..lineTo(x(0.63), y(1.00))
+      ..lineTo(x(0.37), y(1.00))
+      ..close();
+    canvas.drawPath(tail, gold);
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter old) => false;
+}
+
 /// Japanese flag (Hinomaru, 日の丸) — white field with a centred red
 /// sun disc. The official disc diameter is 3/5 of the flag height and
 /// the disc centre sits exactly at the flag centre (a 1939 spec moved

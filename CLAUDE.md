@@ -290,6 +290,18 @@ sprach-spezifisch und in der jeweiligen Kapitel-2-Prosa dokumentiert:
   schlägt die Brücke zur japanischen Myriaden-Konvention (万 = 10⁴,
   億 = 10⁸, 兆 = 10¹² — Vierergruppierung statt westlicher
   Dreiergruppierung) als ostasiatisches Nicht-Dezimal-Erbe.
+- **Arabisch:** „و"-Konnektor vor Einer-Position (parallel zu „مائة
+  وثلاثة"), Magnituden als arabische Transliteration (`كوادر, كوبر,
+  تسر, بنتر, هكسر, هبتر`); Basis-Einheit `دزينة` (dazīna, Lehnwort
+  aus Französisch/Italienisch). Multiplikator 1 implizit (`دزينة`,
+  `كوادر` — wie Englisch/Irisch). Standard-arabische Numerus-Deklination
+  auf `dazīna`: Dual `دزينتان` für 2 ; Plural `ثلاث/أربع/خمس… دزينات`
+  für 3–10 (Polaritätsregel: maskuline Kardinalzahl vor femininem
+  Plural) ; Singular `إحدى عشرة دزينة` für 11. Fremde Magnituden
+  bleiben invariant (foreign-stem convention, wie GA/CY).
+  Kapitel-1-Prosa schlägt die Brücke zum arabischen Mathematik-Erbe
+  (al-Khwārizmī → Algorithmen, al-jabr → Algebra, indisch-arabische
+  Ziffern).
 
 Das e/o-Präfix als Theorie-Lese-Hilfe (e = dezimal, o = dozenal) bleibt
 in allen Sprachen sprachneutral.
@@ -320,9 +332,9 @@ sprach-neutral in `intro_pages.dart`.
 
 ### Mehrsprachigkeit
 
-Dreizehn Sprachen aktiv: DE, EN, FR, ES, IT, FA, RU, GA, HI, ZH
-(vereinfacht), ZH-Hant (traditionell, post-Build-11), CY (Walisisch)
-und JA (Japanisch). Die Infrastruktur:
+Vierzehn Sprachen aktiv: DE, EN, FR, ES, IT, FA, RU, GA, HI, ZH
+(vereinfacht), ZH-Hant (traditionell, post-Build-11), CY (Walisisch),
+JA (Japanisch) und AR (Arabisch). Die Infrastruktur:
 
 - **ARB + gen_l10n:** `lib/l10n/app_<code>.arb` pro Sprache (DE ist
   Template-arb-file, andere fallen auf DE zurück, falls Key fehlt).
@@ -355,11 +367,11 @@ und JA (Japanisch). Die Infrastruktur:
 - **Kapitel-Prosa:** `info_content_<code>.dart` per `part of`-Mechanik —
   siehe Info-Modal-Abschnitt oben.
 
-### RTL-Behandlung (Persisch)
+### RTL-Behandlung (Persisch + Arabisch)
 
-`Localizations.localeOf(context)` löst persische Locale (`fa`) als RTL
-auf, Flutter spiegelt alle direction-aware Widgets automatisch. Zwei
-Eigenheiten in dieser App:
+`Localizations.localeOf(context)` löst persische (`fa`) und arabische
+(`ar`) Locales als RTL auf, Flutter spiegelt alle direction-aware
+Widgets automatisch. Zwei Eigenheiten in dieser App:
 
 - **Calc-UI bleibt erzwungen LTR.** `_CalcScaffold` in `main.dart`
   wickelt sein Body in `Directionality(textDirection: TextDirection.ltr)`.
