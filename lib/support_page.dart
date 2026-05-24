@@ -15,7 +15,6 @@ class SupportPage extends StatelessWidget {
   const SupportPage({super.key});
 
   static const _kofiUrl = 'https://ko-fi.com/steinerschueler';
-  static const _githubUrl = 'https://github.com/sponsors/steinerschueler';
 
   @override
   Widget build(BuildContext context) {
@@ -45,12 +44,6 @@ class SupportPage extends StatelessWidget {
                 title: 'Ko-fi',
                 subtitle: l.supportKofiNote,
                 url: _kofiUrl,
-              ),
-              const SizedBox(height: 12),
-              _DonationCard(
-                title: 'GitHub Sponsors',
-                subtitle: null,
-                url: _githubUrl,
               ),
             ],
           ),
