@@ -52,9 +52,13 @@ fehlt die Datei, fällt der Build still auf Debug-Signing zurück.
 
 Als abschließenden Schritt nach einem Release-Build mehrsprachige
 Play-Console-Versionshinweise verfassen — ein Block pro aktiv
-unterstützter Listing-Locale. Aktueller Stand seit Build 11: sieben
-Sprachen (Persisch wird in Play Console nur als `fa-AF` gelistet, das ist
-Googles einzige Farsi-Listing-Locale):
+unterstützter Listing-Locale. **Wichtig:** Die App enthält seit dem
+Post-Build-11-Ausbau **vierzehn** Sprachen, aber Play Console listet nur
+**sieben** davon als Release-Notes-Locale (DE, EN, FR, ES, IT, FA, RU).
+Die zusätzlichen Sprachen (GA, HI, ZH-Hans, ZH-Hant, CY, JA, AR) leben
+nur in der App selbst — für sie werden keine Play-Console-Notes
+geschrieben. Persisch wird in Play Console nur als `fa-AF` gelistet, das
+ist Googles einzige Farsi-Listing-Locale:
 
 Jeder Block: Tag-öffnen auf einer Zeile, Prosa als eine einzige lange
 Zeile direkt darunter, Tag-schliessen auf einer Zeile. Leerzeile zwischen
@@ -357,7 +361,8 @@ JA (Japanisch) und AR (Arabisch). Die Infrastruktur:
 - **Sprach-Registry:** `lib/language_options.dart` mit
   `kSupportedLanguages`-Liste — single source of truth für Locale,
   Anzeige-Label (selbstreferentiell: „Deutsch", „English", „Français",
-  „Español", „Italiano", „فارسی", „Русский", „简体中文", „繁體中文"),
+  „Español", „Italiano", „فارسی", „Русский", „Gaeilge", „हिन्दी",
+  „简体中文", „繁體中文", „Cymraeg", „日本語", „العربية"),
   Flag-Painter und kanonisches Flag-Seitenverhältnis. Picker
   (`_LanguagePickerExpansion` in `info_pages.dart`) ist datengetrieben
   aus dieser Liste.
