@@ -6,7 +6,7 @@ Rational-Arithmetik mit Periodenerkennung und einem integrierten
 didaktischen Kapitelwerk zum Dozenalsystem.
 
 Flutter-Port der ursprünglichen Rust + egui Implementierung unter
-[steinerschueler/dozenal_calc](https://github.com/steinerschueler/dozenal_calc).
+[Bawdyness/dozenal_calc](https://github.com/Bawdyness/dozenal_calc).
 Dieses Repository:
 [steinerschueler/dozenal_calc_flutter](https://github.com/steinerschueler/dozenal_calc_flutter).
 
