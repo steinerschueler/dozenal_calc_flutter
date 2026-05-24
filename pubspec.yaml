@@ -16,7 +16,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
 # In Windows, build-name is used as the major, minor, and patch parts
 # of the product and file versions while build-number is used as the build suffix.
-version: 1.0.0+10
+version: 1.0.0+11
 
 environment:
   sdk: ^3.11.5
@@ -29,6 +29,8 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   flutter:
+    sdk: flutter
+  flutter_localizations:
     sdk: flutter
 
   flutter_markdown_plus: ^1.0.7
@@ -87,11 +89,34 @@ flutter:
   # the material Icons class.
   uses-material-design: true
 
+  # Drives flutter gen-l10n from lib/l10n/*.arb on every `flutter pub get`.
+  # Output classes land in lib/l10n/ (non-synthetic — discoverable in IDE,
+  # listed in source control via .gitignore for build artifacts).
+  generate: true
+
   assets:
     - assets/icon.png
     - assets/intro/
     - legal/privacy-policy.de.md
+    - legal/privacy-policy.en.md
+    - legal/privacy-policy.fr.md
+    - legal/privacy-policy.es.md
+    - legal/privacy-policy.it.md
+    - legal/privacy-policy.fa.md
+    - legal/privacy-policy.ru.md
+    - legal/privacy-policy.ga.md
+    - legal/privacy-policy.hi.md
+    - legal/privacy-policy.zh.md
     - legal/license.de.md
+    - legal/license.en.md
+    - legal/license.fr.md
+    - legal/license.es.md
+    - legal/license.it.md
+    - legal/license.fa.md
+    - legal/license.ru.md
+    - legal/license.ga.md
+    - legal/license.hi.md
+    - legal/license.zh.md
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

@@ -6,6 +6,7 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import 'l10n/app_localizations.dart';
 import 'markdown_page.dart';
 
 /// Opens [href] in the user's default browser. On failure, shows a
@@ -14,11 +15,14 @@ import 'markdown_page.dart';
 Future<void> openExternalLink(BuildContext context, String href) async {
   final uri = Uri.tryParse(href);
   if (uri == null) return;
+  // Capture localizations before the async gap so we can still build the
+  // failure message after `launchUrl` returns.
+  final l = AppLocalizations.of(context);
   final ok =
       await launchUrl(uri, mode: LaunchMode.externalApplication);
   if (!ok && context.mounted) {
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text('Link konnte nicht geöffnet werden: $href')),
+      SnackBar(content: Text(l.externalLinkError(href))),
     );
   }
 }
@@ -28,10 +32,12 @@ class AppLicensePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MarkdownAssetPage(
-      title: 'Lizenz',
-      assetPath: 'legal/license.de.md',
-      errorLabel: 'Lizenz konnte nicht geladen werden:',
+    final l = AppLocalizations.of(context);
+    final code = Localizations.localeOf(context).languageCode;
+    return MarkdownAssetPage(
+      title: l.licenseTitle,
+      assetPath: 'legal/license.$code.md',
+      errorLabel: l.licenseError,
     );
   }
 }

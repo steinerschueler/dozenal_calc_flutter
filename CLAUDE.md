@@ -50,18 +50,54 @@ Der Play-Store-Appbundle-Build braucht explizit Java 17 (Java 21 auf dieser
 Maschine zerbricht Gradle). Android-Signing liest `android/key.properties` —
 fehlt die Datei, fällt der Build still auf Debug-Signing zurück.
 
-Als abschließenden Schritt nach einem Release-Build deutsche
-Play-Console-Versionshinweise verfassen und im Console-Format ausgeben:
+Als abschließenden Schritt nach einem Release-Build mehrsprachige
+Play-Console-Versionshinweise verfassen — ein Block pro aktiv
+unterstützter Listing-Locale. Aktueller Stand seit Build 11: sieben
+Sprachen (Persisch wird in Play Console nur als `fa-AF` gelistet, das ist
+Googles einzige Farsi-Listing-Locale):
+
+Jeder Block: Tag-öffnen auf einer Zeile, Prosa als eine einzige lange
+Zeile direkt darunter, Tag-schliessen auf einer Zeile. Leerzeile zwischen
+Blöcken. So vermeidet Copy-Paste in Play Console ungewollte Zeilenumbrüche
+in der Beschreibung.
 
 ```
 <de-DE>
-…End-User-fokussierter Text, ca. 450 Zeichen (Limit 500 pro Locale)…
+…ca. 450 Zeichen (Limit 500 pro Locale)…
 </de-DE>
+
+<en-US>
+…
+</en-US>
+
+<fr-FR>
+…
+</fr-FR>
+
+<es-ES>
+…
+</es-ES>
+
+<it-IT>
+…
+</it-IT>
+
+<fa-AF>
+…
+</fa-AF>
+
+<ru-RU>
+…
+</ru-RU>
 ```
 
 Inhalt aus den tatsächlichen Build-Änderungen ableiten (nicht aus der
 Commit-Message kopieren) und Ton an Tester richten — was sie sehen werden,
-nicht die Constraint-Math dahinter. Zeichen mit `wc -m` verifizieren.
+nicht die Constraint-Math dahinter. Zeichen pro Locale mit `wc -m`
+verifizieren. Bei einem Release, das nur eine Locale betrifft (z. B.
+gezielter Persisch-Fix nach Native-Speaker-Review), nur den entsprechenden
+Block schreiben — Play Console übernimmt für nicht aufgeführte Locales
+automatisch die letzten Notes weiter.
 
 ### Asset-Regenerierung
 
@@ -183,28 +219,72 @@ Payload-freie Varianten. Spiegelt das Rust-Enum und erlaubt erschöpfende
 
 ### Info-Modal
 
-`info_pages.dart` (Navigator-Routen) + `info_content.dart` (zwölf
-Lehr-Kapitel als Prosa + custom-painted Illustrationen für die
-Geometrie-Kapitel). Kapitel 2 (»Was ist das Dozenalsystem?«) hält die
-deutsche Aussprache-Konvention für Dozenal-Zahlen fest: Dutzend (12¹),
-Quader/Kuber/Tesser/Penter/Hexer/Hepter (12² bis 12⁷ — geometrisch
-motiviert), lateinische Wortstellung (»dutzendundeins«),
--er/-a-Bindungsregel zwischen Magnituden (»quadaundeins«) sowie das
-e/o-Präfix als Theorie-Lese-Hilfe (e = dezimal, o = dozenal). Bei
-Änderungen an Aussprache-Tabellen die Konvention konsistent
-durchziehen — Tabellen und Prosa-Beispiele referenzieren sich
-gegenseitig. Wenn `handleClick` `state.infoState` auf `InfoList`
-setzt, pusht der State-Listener in `main.dart` die Route und resettet
-`infoState` auf `Closed` — der Navigator steuert ab dann alle
-Listen-/Detail-/Zurück-Übergänge.
+`info_pages.dart` (Navigator-Routen) + `info_content.dart` (Dispatcher) +
+zehn `info_content_<lang>.dart`-Part-Dateien, eine pro Sprache, mit
+`part of 'info_content.dart'`-Direktive. Jede Part-Datei exportiert eine
+`_chapter<Lang>(int chapter, AppLocalizations l)`-Funktion mit den zwölf
+Lehr-Kapiteln als Prosa + custom-painted Illustrationen für die
+Geometrie-Kapitel.
+
+Der Dispatcher (`buildChapterContent` in `info_content.dart`) wählt über
+eine `const Map<String, _ChapterBuilder> _chapterBuilders` anhand der
+aktiven Locale die passende Sprach-Funktion. Fallback auf Deutsch bei
+unbekannter Locale (sollte nie passieren, weil `resolveLocale` nur
+unterstützte Codes durchlässt).
+
+Kapitel 2 hält die sprach-spezifische Aussprache-Konvention für
+Dozenal-Zahlen fest. Die geometrisch motivierten Magnituden 12²–12⁷
+basieren auf den germanischen Lehnwörtern quader, cuber, tesser, penter,
+hexer, hepter. In den meisten Sprachen bleiben sie invariant und werden
+bei nicht-lateinischer Schrift transliteriert (کوادر, کوبر, تسر … in
+Persisch ; квадер, кубер, тессер … in Russisch ; क्वाडर … in Hindi ; 卡德
+… in Chinesisch). **Ausnahmen für romanische Phonologie:** Spanisch
+adaptiert auf `-ero/-eros` (maskulin, parallel zu cuadrado/cubo),
+Italienisch auf `-era/-ere` (feminin, mit „tessera" als existierendem
+italienischem Wort für Mosaikstein — Glücksfall für 12⁴). Französisch
+behält `-er`, weil französisches stummes r das Lehnwort bereits nativ
+aufnimmt (`papier`-Muster). Der Verbindungsstil zwischen Magnituden ist
+sprach-spezifisch und in der jeweiligen Kapitel-2-Prosa dokumentiert:
+
+- **Deutsch:** `-er/-a`-Bindung (`quadaundeins`, `kubaquader`)
+- **Englisch:** „and" einmal vor letztem Sub-quader-Block (`quader and one`)
+- **Französisch:** pure Juxtaposition mit „et"-Ausnahme nur an Position 21
+  (`quader deux douzaines et un`, parallel zu „cent vingt et un")
+- **Spanisch:** pure Juxtaposition mit „y"-Ausnahme an Einer-Position bei
+  docena-Multiplikator 2–B (`cuadero dos docenas y uno`, parallel zu
+  „treinta y uno"). Magnituden: cuadero, cubero, tesero, pentero,
+  hexero, heptero.
+- **Italienisch:** pure Juxtaposition ohne Konnektor (`quadera due
+  dozzine tre`, parallel zu „centoventitré"). Magnituden: quadera,
+  cubera, tessera, pentera, hexera, heptera.
+- **Persisch:** durchgehender „و"-Konnektor (`quader و دو دوجین و سه`)
+- **Russisch:** pure Juxtaposition + Numerus-Deklination
+  (`две дюжины` Gen.Sg. nach 2–4, `пять дюжин` Gen.Pl. nach 5+)
+- **Irisch:** pure Juxtaposition + „a"-Partikel vor Einer-Position
+  (`quader fiche a trí`, parallel zu „céad fiche a trí"). Lenition/
+  Eklipsis-Regeln auf `dosaen` nach Multiplikator (`dhá dhosaen` lenited
+  bei 2, `seacht ndosaen` eclipsed bei 7+).
+- **Hindi:** pure Juxtaposition ohne Konnektor (Devanagari-Schrift,
+  transliterierte Magnituden)
+- **Chinesisch:** pure Juxtaposition mit `零`-Brücke für eingebettete
+  Nullen (`一卡德零一` = o101, mirror von Mandarin-Dezimal `一百零一`
+  = 101)
+
+Das e/o-Präfix als Theorie-Lese-Hilfe (e = dezimal, o = dozenal) bleibt
+in allen Sprachen sprachneutral.
+
+Wenn `handleClick` `state.infoState` auf `InfoList` setzt, pusht der
+State-Listener in `main.dart` die Route und resettet `infoState` auf
+`Closed` — der Navigator steuert ab dann alle Listen-/Detail-/Zurück-
+Übergänge.
 
 Sekundärseiten, die aus `info_pages.dart` heraus gepusht werden:
-`privacy_page.dart` (rendert `legal/privacy-policy.de.md` via dem
-generischen `markdown_page.dart`), `license_page.dart` (App-Lizenz +
-delegiert auf das Flutter-eigene `showLicensePage`) und
-`feedback_dialog.dart` (`mailto:`-Composer, kein Netzwerk). Alle vier
-folgen der gleichen Push-Konvention — keine direkten Routen aus
-`main.dart`, alles geht über die Info-Liste.
+`privacy_page.dart` und `license_page.dart` (laden
+`legal/<typ>.<code>.md` per Locale via dem generischen
+`markdown_page.dart`) sowie `feedback_dialog.dart` (`mailto:`-Composer,
+kein Netzwerk; alle Strings über ARB). Alle folgen der gleichen
+Push-Konvention — keine direkten Routen aus `main.dart`, alles geht über
+die Info-Liste.
 
 ### Intro
 
@@ -212,7 +292,66 @@ Onboarding-PageView beim ersten Start, gesperrt über einen
 `SharedPreferences`-Schlüssel der Form `intro_seen_v<N>` (aktuell `v2`,
 definiert als `_kIntroSeenFlag` in `lib/main.dart`). Bei substanziellen
 Intro-Änderungen den Suffix erhöhen, damit Bestandstester das
-überarbeitete Intro erneut sehen.
+überarbeitete Intro erneut sehen. Slide-Inhalte (Text) kommen aus dem
+ARB-System (`introSlide1`–`introSlide8`); Slide-Layout-Metadata
+(Bild, Highlight-Rechtecke/Kreise, Ziffer-Labels) bleibt
+sprach-neutral in `intro_pages.dart`.
+
+### Mehrsprachigkeit
+
+Zehn Sprachen aktiv seit Build 11: DE, EN, FR, ES, IT, FA, RU, GA, HI,
+ZH. Die Infrastruktur:
+
+- **ARB + gen_l10n:** `lib/l10n/app_<code>.arb` pro Sprache (DE ist
+  Template-arb-file, andere fallen auf DE zurück, falls Key fehlt).
+  `flutter gen-l10n` läuft automatisch bei `flutter pub get` dank
+  `generate: true` in `pubspec.yaml`. Output unter `lib/l10n/` (per
+  `.gitignore` ignoriert, da Build-Artefakt).
+- **Locale-State:** `lib/locale_notifier.dart` mit `LocaleNotifier`
+  (SharedPreferences-Schlüssel `locale_v1`, null = OS-Locale folgen) +
+  `LocaleScope` (InheritedNotifier, macht Notifier für tiefe Widgets
+  zugänglich ohne Provider-Dependency). `resolveLocale` iteriert
+  generisch über `supportedLocales` — neue Sprachen brauchen hier keine
+  Code-Änderung.
+- **Sprach-Registry:** `lib/language_options.dart` mit
+  `kSupportedLanguages`-Liste — single source of truth für Locale,
+  Anzeige-Label (selbstreferentiell: „Deutsch", „English", „Français",
+  „Español", „Italiano", „فارسی", „Русский"), Flag-Painter und
+  kanonisches Flag-Seitenverhältnis. Picker (`_LanguagePickerExpansion`
+  in `info_pages.dart`) ist datengetrieben aus dieser Liste.
+- **Flag-Painter:** `lib/flag_painter.dart` enthält je einen
+  `CustomPainter` pro Sprache. Iran-Wappen ist eine vereinfachte
+  Tulpen-Silhouette mit weisser Schwert-Aussparung in Rot.
+- **Kapitel-Prosa:** `info_content_<code>.dart` per `part of`-Mechanik —
+  siehe Info-Modal-Abschnitt oben.
+
+### RTL-Behandlung (Persisch)
+
+`Localizations.localeOf(context)` löst persische Locale (`fa`) als RTL
+auf, Flutter spiegelt alle direction-aware Widgets automatisch. Zwei
+Eigenheiten in dieser App:
+
+- **Calc-UI bleibt erzwungen LTR.** `_CalcScaffold` in `main.dart`
+  wickelt sein Body in `Directionality(textDirection: TextDirection.ltr)`.
+  Mathematische Notation ist sprach-übergreifend immer LTR (auch
+  Persisch-Mathematiker schreiben `2 + 3 = 5` von links nach rechts mit
+  westlichen Ziffern), und das Tastenfeld-Layout / Display-Cursor-
+  Richtung müssen konsistent bleiben. Text-Screens (Info-Liste,
+  Kapitel, Intro, Feedback, Privacy/License) folgen der Locale.
+- **`_Pre`-Tabellen werden ebenfalls auf LTR gezwungen.** Monospace-
+  Tabellen mit westlichen Ziffern und sprach-Labels würden sonst vom
+  Bidi-Algorithmus zerlegt. Der Wrap sitzt direkt im `_Pre`-Widget in
+  `info_content.dart`.
+
+Direction-aware Bauteile, die korrekt sein müssen:
+- `_NavChevron` in `info_pages.dart` — wählt `chevron_left` in RTL,
+  `chevron_right` in LTR (ListTile-Trailing zeigt richtig zum Detail).
+- `EdgeInsetsDirectional.fromSTEB` statt `EdgeInsets.fromLTRB` überall,
+  wo asymmetrische horizontale Paddings gemeint sind (z. B.
+  Sprach-Tile-Einrückung).
+- `TextAlign.end` statt `TextAlign.right` für kapitellnummer-Prefixe.
+
+Wenn neue UI hinzukommt, immer diese drei Stellen prüfen.
 
 ### App-Bootstrap (`lib/main.dart`)
 
@@ -278,9 +417,51 @@ sind — statisch auf die deprecated `Window.setStatusBarColor /
 setNavigationBarColor / setNavigationBarDividerColor` verweisen. Play
 Console scannt das DEX statisch, sieht diese Referenzen und flaggt sie.
 Solange Dart-Code in die Platform-Channel-Methode reinruft, hält R8 sie
-lebendig und kann die deprecated Referenzen nicht wegoptimieren. Erst
-mit komplett entfernten Dart-Calls hat Build 10 eine Chance, durch den
-Play-Console-Scan zu kommen.
+lebendig und kann die deprecated Referenzen nicht wegoptimieren. Build
+10 entfernt alle Dart-seitigen Calls — was App-seitig darüber hinaus
+nicht erreichbar ist, dokumentiert der folgende Absatz.
+
+**Was Build 10 NICHT beseitigt (Upstream-Rest):** Die Play-Console-
+Warnungen »randlose Anzeige funktioniert möglicherweise nicht« und
+»nicht mehr unterstützte APIs« bleiben nach Build 10 sichtbar. Die
+geflaggten Stellen verweisen auf zwei Quellen, die außerhalb unseres
+Codes liegen:
+
+1. **`io.flutter.plugin.platform.e.a`** — obfuscated
+   `PlatformPlugin.setSystemChromeSystemUIOverlayStyle`. Die Flutter-
+   Engine registriert den Platform-Channel
+   `SystemChrome.setSystemUIOverlayStyle` beim Start unabhängig davon,
+   ob Dart-Code ihn ansteuert. R8 kann die Methode daher nicht strippen,
+   und die statischen Referenzen auf
+   `Window.setStatusBarColor / setNavigationBarColor / setNavigationBarDividerColor`
+   bleiben im DEX. Tracking: `flutter/flutter#165327` plus Duplikate
+   `#183372`, `#183349`, `#175261`, `#175262`, `#169810` — alle als
+   „r: fixed" markiert, aber nur im Sinne eines Doku-Updates; der
+   `PlatformPlugin`-Code ist Stand Flutter 3.41.8 unverändert.
+2. **`B.b.q`, `b.o.J`, `b.p.J`, `b.r.J`** — die `EdgeToEdgeApi*Impl`-
+   Backport-Klassen aus `androidx.activity:activity`. `EdgeToEdge.enable()`
+   delegiert intern auf versions-spezifische Impls; die Pre-Android-15-
+   Pfade rufen `setStatusBarColor` / `setNavigationBarColor` für
+   Backward-Compat auf. Das ist genau der API-Pfad, den Google im
+   Warntext selbst empfiehlt — Play-Console-DEX-Scanning unterscheidet
+   aber nicht zwischen „wird auf Android 15 ausgeführt" und „Referenz
+   im Bytecode vorhanden". Identisches Muster ist für Material Components
+   (`material-components-android#4732`), .NET MAUI (`dotnet/maui#26788`),
+   React Native (`software-mansion/react-native-screens#2632`) und
+   Corona dokumentiert.
+
+Google stellt im Warntext selbst klar, dass diese Hinweise die
+Endnutzer-Erfahrung NICHT beeinträchtigen; sie bleiben so lange im
+Console-Dashboard, bis Upstream-Libraries die Backport-Pfade entfernen.
+Build 10 ist damit das technisch saubere Maximum, das app-seitig
+erreichbar ist — die übrig bleibenden Warnungen sind als bekannte
+Upstream-Issues zu behandeln, nicht als TODO im Repo. **Aggressive
+R8-Strip-Regeln** gegen `PlatformPlugin.setSystemChromeSystemUIOverlayStyle`
+wurden bewusst NICHT eingebaut: der Engine-Startup-Pfad könnte die
+Methode reflektiv ansteuern, OEM-spezifische Laufzeit-Crashes sind in
+verwandten Issues dokumentiert. Bei jedem neuen Flutter-Stable-Release
+prüfen, ob `PlatformPlugin` die deprecated Referenzen entfernt hat —
+dann diesen Block aktualisieren.
 
 `MainActivity` extendet bewusst **`FlutterFragmentActivity`**, nicht
 `FlutterActivity`: nur Erstere erbt über `FragmentActivity` von

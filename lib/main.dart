@@ -10,6 +10,8 @@ import 'display.dart';
 import 'info_pages.dart';
 import 'intro_pages.dart';
 import 'keypad.dart';
+import 'l10n/app_localizations.dart';
+import 'locale_notifier.dart';
 import 'logic/dozenal_digit.dart';
 import 'state.dart';
 import 'tokens.dart';
@@ -34,22 +36,51 @@ void main() {
   runApp(const DozenalCalcApp());
 }
 
-class DozenalCalcApp extends StatelessWidget {
+class DozenalCalcApp extends StatefulWidget {
   const DozenalCalcApp({super.key});
 
   @override
+  State<DozenalCalcApp> createState() => _DozenalCalcAppState();
+}
+
+class _DozenalCalcAppState extends State<DozenalCalcApp> {
+  final LocaleNotifier _localeNotifier = LocaleNotifier();
+
+  @override
+  void initState() {
+    super.initState();
+    _localeNotifier.load();
+  }
+
+  @override
+  void dispose() {
+    _localeNotifier.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Dozenal Calc',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        brightness: Brightness.dark,
-        scaffoldBackgroundColor: const Color(0xFF1F1F1F),
-        // Custom press-color feedback already covers tap state — disable
-        // the Material splash to avoid double feedback.
-        splashFactory: NoSplash.splashFactory,
+    return LocaleScope(
+      notifier: _localeNotifier,
+      child: ListenableBuilder(
+        listenable: _localeNotifier,
+        builder: (context, _) => MaterialApp(
+          onGenerateTitle: (ctx) => AppLocalizations.of(ctx).appTitle,
+          debugShowCheckedModeBanner: false,
+          locale: _localeNotifier.override,
+          supportedLocales: AppLocalizations.supportedLocales,
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          localeResolutionCallback: resolveLocale,
+          theme: ThemeData(
+            brightness: Brightness.dark,
+            scaffoldBackgroundColor: const Color(0xFF1F1F1F),
+            // Custom press-color feedback already covers tap state — disable
+            // the Material splash to avoid double feedback.
+            splashFactory: NoSplash.splashFactory,
+          ),
+          home: const _CalcScaffold(),
+        ),
       ),
-      home: const _CalcScaffold(),
     );
   }
 }
@@ -230,9 +261,19 @@ class _CalcScaffoldState extends State<_CalcScaffold> {
         body: ListenableBuilder(
           listenable: _state,
           builder: (ctx, _) => SafeArea(
-            child: Padding(
-              padding: const EdgeInsets.all(12.0),
-              child: LayoutBuilder(
+            // Force LTR for the calc UI itself — math notation flows
+            // left-to-right universally (a Persian or Arabic reader
+            // still writes `2 + 3 = 5` left-to-right with Western
+            // digits), and the keypad layout / display cursor
+            // direction must stay consistent regardless of the active
+            // app locale. Text-heavy screens (info list, chapter
+            // pages, intro, feedback, legal pages) keep the locale's
+            // natural direction because they sit outside this wrap.
+            child: Directionality(
+              textDirection: TextDirection.ltr,
+              child: Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: LayoutBuilder(
                 builder: (innerCtx, constraints) {
                   // Display sizes itself proportionally (20 % of body height,
                   // clamped to [60, 170] dp). Keypad fills the rest via
@@ -278,6 +319,7 @@ class _CalcScaffoldState extends State<_CalcScaffold> {
                     ],
                   );
                 },
+              ),
               ),
             ),
           ),

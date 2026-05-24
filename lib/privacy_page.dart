@@ -4,6 +4,7 @@
 
 import 'package:flutter/material.dart';
 
+import 'l10n/app_localizations.dart';
 import 'markdown_page.dart';
 
 class PrivacyPage extends StatelessWidget {
@@ -11,10 +12,12 @@ class PrivacyPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MarkdownAssetPage(
-      title: 'Datenschutzerklärung',
-      assetPath: 'legal/privacy-policy.de.md',
-      errorLabel: 'Datenschutzerklärung konnte nicht geladen werden:',
+    final l = AppLocalizations.of(context);
+    final code = Localizations.localeOf(context).languageCode;
+    return MarkdownAssetPage(
+      title: l.privacyTitle,
+      assetPath: 'legal/privacy-policy.$code.md',
+      errorLabel: l.privacyError,
     );
   }
 }

@@ -1,0 +1,84 @@
+{
+  "@@locale": "de",
+
+  "appTitle": "Dozenal Calc",
+  "@appTitle": {
+    "description": "Brand name shown as the MaterialApp title (task switcher / browser tab). Identical in both locales."
+  },
+
+  "infoListTitle": "Dozenal — Zwölf Kapitel",
+  "infoListPrivacyEntry": "Datenschutzerklärung",
+  "infoListLicenseEntry": "Lizenz",
+  "infoListFeedbackEntry": "Feedback geben",
+  "infoListVersionFooter": "Version {version} · Build {buildNumber}",
+  "@infoListVersionFooter": {
+    "description": "Footer pinned to the bottom of the info list.",
+    "placeholders": {
+      "version": {"type": "String"},
+      "buildNumber": {"type": "String"}
+    }
+  },
+
+  "chapterTitle01": "Bedienung des Rechners",
+  "chapterTitle02": "Was ist das Dozenalsystem?",
+  "chapterTitle03": "Fibonacci, Quadratzahlen und Kuriositäten",
+  "chapterTitle04": "Das Zwölfeck — Grundlagen",
+  "chapterTitle05": "Das Zwölfeck — Winkel und Diagonalen",
+  "chapterTitle06": "Das Zwölfeck — Flächen und Verhältnisse",
+  "chapterTitle07": "Der Dodekaeder — zwölf Fünfecke im Raum",
+  "chapterTitle08": "Der Dodekaeder — φ, Dualität und Symmetrie",
+  "chapterTitle09": "Zwölf Tierkreiszeichen und der Himmel",
+  "chapterTitle10": "Zwölf Flächen in Kristallen und Lebewesen",
+  "chapterTitle11": "Zwölf Glieder an der Hand",
+  "chapterTitle12": "Zoll, Fuss, Pfund — und warum sie dozenal Sinn ergeben",
+
+  "chapterIllustrationTriangle": "Dreieck (jede 4. Ecke)",
+  "chapterIllustrationSquare": "Quadrat (jede 3. Ecke)",
+  "chapterIllustrationHexagon": "Sechseck (jede 2. Ecke)",
+  "chapterNotFound": "Kapitel nicht gefunden.",
+
+  "introTitle": "Bedienungs-Intro",
+  "introSkip": "Überspringen",
+  "introNext": "Weiter",
+  "introDone": "Fertig",
+  "introSlide1": "Willkommen! Im Zahlenblock siehst du die zwölf dozenalen Ziffern in unserem neuen Glyphensystem. Wische weiter, um die Übersetzung zu entdecken.",
+  "introSlide2": "Das hier bedeuten die Glyphen. Wische ein paar Mal vor und zurück, bis du sie sicher liest. Beachte: 10 und 11 sind eigene Ziffern wie A und B im Hexadezimalsystem.",
+  "introSlide3": "Oben das Display: links die Eingabe mit Cursor, rechts unten das Ergebnis nach Drücken von =.",
+  "introSlide4": "Der Funktionstastenblock: Grundrechenarten links, Potenzen und Wurzeln daneben, Winkelfunktionen und Cursor-Pfeile rechts.",
+  "introSlide5": "Links unten die (i)-Taste — sie öffnet zwölf Theorie-Kapitel über das Dozenalsystem. Rechts unten die (?)-Taste, die dieses Intro erneut zeigt.",
+  "introSlide6": "AC (rot) löscht alles. Die »…«-Taste rechts daneben öffnet ein Overlay mit weiteren Funktionen — Konstanten, hyperbolische Funktionen, Speicher und Modus-Auswahl.",
+  "introSlide7": "Im Overlay: Doz/Dez schaltet zwischen Dozenal- (Basis 12) und Dezimal-Eingabe (Basis 10) um. Die aktive Taste ist umrandet, und oben rechts im Display zeigt eine kleine Anzeige den aktuellen Modus. Beim Umschalten wird die aktuelle Zahl automatisch umgerechnet. Im Dez-Modus werden die Symbole für 10 und 11 inaktiv — sie existieren nur im Dozenalsystem.",
+  "introSlide8": "Über die (i)-Taste erreichst du diese Liste mit zwölf didaktischen Kapiteln — von der Bedienung des Rechners bis hin zu Dodekaedern und den zwölf Tierkreiszeichen.",
+
+  "feedbackTitle": "Feedback",
+  "feedbackIntro": "Danke fürs Testen von Dozenal Calc! Deine Antworten landen als E-Mail in deinem Standard-Mail-Programm, das du noch prüfen oder verwerfen kannst, bevor sie verschickt wird.",
+  "feedbackRatingLabel": "Bewertung",
+  "feedbackLikedLabel": "Was hat dir gefallen?",
+  "feedbackChangeLabel": "Was würdest du anders machen?",
+  "feedbackCancel": "Abbrechen",
+  "feedbackSend": "Senden",
+  "feedbackNoAnswer": "(keine Angabe)",
+  "feedbackRatingValue": "{rating} von 5",
+  "@feedbackRatingValue": {
+    "placeholders": {
+      "rating": {"type": "int"}
+    }
+  },
+  "feedbackMailSubject": "Feedback Dozenal Calc",
+  "feedbackMailLikedLabel": "Was hat dir gefallen:",
+  "feedbackMailChangeLabel": "Was würdest du anders machen:",
+  "feedbackMailVersionLabel": "Version",
+  "feedbackMailBuildLabel": "Build",
+
+  "privacyTitle": "Datenschutzerklärung",
+  "privacyError": "Datenschutzerklärung konnte nicht geladen werden:",
+  "licenseTitle": "Lizenz",
+  "licenseError": "Lizenz konnte nicht geladen werden:",
+
+  "externalLinkError": "Link konnte nicht geöffnet werden: {href}",
+  "@externalLinkError": {
+    "placeholders": {
+      "href": {"type": "String"}
+    }
+  }
+}

@@ -6,6 +6,8 @@
 
 import 'package:flutter/material.dart';
 
+import 'l10n/app_localizations.dart';
+
 const Color _kHighlight = Color(0xFFFF3030);
 
 class HighlightCircle {
@@ -103,92 +105,72 @@ const List<DigitLabel> _kDecoderLabels = [
   DigitLabel(center: Offset(0.92, 0.5029), text: '3'),
 ];
 
-const List<_IntroSlide> _slides = [
-  // 1 — Welcome + introduction of the strange glyphs.
-  _IntroSlide(
-    image: 'assets/intro/new4.png',
-    rects: [HighlightRect(rect: _kDigitBlock)],
-    text: 'Willkommen! Im Zahlenblock siehst du die zwölf dozenalen '
-        'Ziffern in unserem neuen Glyphensystem. Wische weiter, um die '
-        'Übersetzung zu entdecken.',
-  ),
-
-  // 2 — Decoder: same screenshot + Arabic numerals overlaid.
-  _IntroSlide(
-    image: 'assets/intro/new4.png',
-    rects: [HighlightRect(rect: _kDigitBlock)],
-    labels: _kDecoderLabels,
-    text: 'Das hier bedeuten die Glyphen. Wische ein paar Mal vor und '
-        'zurück, bis du sie sicher liest. Beachte: 10 und 11 sind '
-        'eigene Ziffern wie A und B im Hexadezimalsystem.',
-  ),
-
-  // 3 — Display area.
-  _IntroSlide(
-    image: 'assets/intro/new4.png',
-    rects: [HighlightRect(rect: _kDisplay)],
-    text: 'Oben das Display: links die Eingabe mit Cursor, rechts unten '
-        'das Ergebnis nach Drücken von =.',
-  ),
-
-  // 4 — Function-key block.
-  _IntroSlide(
-    image: 'assets/intro/new4.png',
-    rects: [HighlightRect(rect: _kOpBlock)],
-    text: 'Der Funktionstastenblock: Grundrechenarten links, Potenzen '
-        'und Wurzeln daneben, Winkelfunktionen und Cursor-Pfeile rechts.',
-  ),
-
-  // 5 — Round (i) and (?) buttons.
-  _IntroSlide(
-    image: 'assets/intro/new4.png',
-    circles: [
-      HighlightCircle(center: Offset(0.087, 0.9522), radius: 0.04),
-      HighlightCircle(center: Offset(0.91, 0.9522), radius: 0.04),
-    ],
-    text: 'Links unten die (i)-Taste — sie öffnet zwölf Theorie-Kapitel '
-        'über das Dozenalsystem. Rechts unten die (?)-Taste, die dieses '
-        'Intro erneut zeigt.',
-  ),
-
-  // 6 — AC and "…".
-  _IntroSlide(
-    image: 'assets/intro/new4.png',
-    circles: [
-      HighlightCircle(center: Offset(0.14, 0.8712), radius: 0.04),
-      HighlightCircle(center: Offset(0.86, 0.8712), radius: 0.04),
-    ],
-    text: 'AC (rot) löscht alles. Die »…«-Taste rechts daneben öffnet ein '
-        'Overlay mit weiteren Funktionen — Konstanten, hyperbolische '
-        'Funktionen, Speicher und Modus-Auswahl.',
-  ),
-
-  // 7 — Doz/Dez mode toggle in the overlay.
-  _IntroSlide(
-    image: 'assets/intro/new3.png',
-    circles: [
-      HighlightCircle(center: Offset(0.14, 0.8778), radius: 0.045),
-      HighlightCircle(center: Offset(0.38, 0.8778), radius: 0.045),
-      // Small DOZ indicator at top-right of the display.
-      HighlightCircle(center: Offset(0.93, 0.0549), radius: 0.022),
-    ],
-    text: 'Im Overlay: Doz/Dez schaltet zwischen Dozenal- (Basis 12) und '
-        'Dezimal-Eingabe (Basis 10) um. Die aktive Taste ist umrandet, '
-        'und oben rechts im Display zeigt eine kleine Anzeige den '
-        'aktuellen Modus. Beim Umschalten wird die aktuelle Zahl '
-        'automatisch umgerechnet. Im Dez-Modus werden die Symbole für '
-        '10 und 11 inaktiv — sie existieren nur im Dozenalsystem.',
-  ),
-
-  // 8 — Theory chapter list reached via (i).
-  _IntroSlide(
-    image: 'assets/intro/new1.png',
-    rects: [HighlightRect(rect: _kChapterList)],
-    text: 'Über die (i)-Taste erreichst du diese Liste mit zwölf '
-        'didaktischen Kapiteln — von der Bedienung des Rechners bis hin '
-        'zu Dodekaedern und den zwölf Tierkreiszeichen.',
-  ),
-];
+/// The slide list depends on AppLocalizations for the per-slide prose, so
+/// it can't be a top-level const list. Layout metadata (image, highlight
+/// rects/circles, decoder labels) stays here as const; only the text
+/// strings come from the current locale.
+List<_IntroSlide> _buildSlides(AppLocalizations l) => [
+      // 1 — Welcome + introduction of the strange glyphs.
+      _IntroSlide(
+        image: 'assets/intro/new4.png',
+        rects: const [HighlightRect(rect: _kDigitBlock)],
+        text: l.introSlide1,
+      ),
+      // 2 — Decoder: same screenshot + Arabic numerals overlaid.
+      _IntroSlide(
+        image: 'assets/intro/new4.png',
+        rects: const [HighlightRect(rect: _kDigitBlock)],
+        labels: _kDecoderLabels,
+        text: l.introSlide2,
+      ),
+      // 3 — Display area.
+      _IntroSlide(
+        image: 'assets/intro/new4.png',
+        rects: const [HighlightRect(rect: _kDisplay)],
+        text: l.introSlide3,
+      ),
+      // 4 — Function-key block.
+      _IntroSlide(
+        image: 'assets/intro/new4.png',
+        rects: const [HighlightRect(rect: _kOpBlock)],
+        text: l.introSlide4,
+      ),
+      // 5 — Round (i) and (?) buttons.
+      _IntroSlide(
+        image: 'assets/intro/new4.png',
+        circles: const [
+          HighlightCircle(center: Offset(0.087, 0.9522), radius: 0.04),
+          HighlightCircle(center: Offset(0.91, 0.9522), radius: 0.04),
+        ],
+        text: l.introSlide5,
+      ),
+      // 6 — AC and "…".
+      _IntroSlide(
+        image: 'assets/intro/new4.png',
+        circles: const [
+          HighlightCircle(center: Offset(0.14, 0.8712), radius: 0.04),
+          HighlightCircle(center: Offset(0.86, 0.8712), radius: 0.04),
+        ],
+        text: l.introSlide6,
+      ),
+      // 7 — Doz/Dez mode toggle in the overlay.
+      _IntroSlide(
+        image: 'assets/intro/new3.png',
+        circles: const [
+          HighlightCircle(center: Offset(0.14, 0.8778), radius: 0.045),
+          HighlightCircle(center: Offset(0.38, 0.8778), radius: 0.045),
+          // Small DOZ indicator at top-right of the display.
+          HighlightCircle(center: Offset(0.93, 0.0549), radius: 0.022),
+        ],
+        text: l.introSlide7,
+      ),
+      // 8 — Theory chapter list reached via (i).
+      _IntroSlide(
+        image: 'assets/intro/new1.png',
+        rects: const [HighlightRect(rect: _kChapterList)],
+        text: l.introSlide8,
+      ),
+    ];
 
 class IntroPage extends StatefulWidget {
   const IntroPage({super.key});
@@ -200,6 +182,13 @@ class IntroPage extends StatefulWidget {
 class _IntroPageState extends State<IntroPage> {
   final PageController _controller = PageController();
   int _page = 0;
+  late List<_IntroSlide> _slides;
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    _slides = _buildSlides(AppLocalizations.of(context));
+  }
 
   @override
   void dispose() {
@@ -220,17 +209,18 @@ class _IntroPageState extends State<IntroPage> {
 
   @override
   Widget build(BuildContext context) {
+    final l = AppLocalizations.of(context);
     return Scaffold(
       backgroundColor: const Color(0xFF1F1F1F),
       appBar: AppBar(
         backgroundColor: const Color(0xFF1F1F1F),
         elevation: 0,
-        title: const Text('Bedienungs-Intro'),
+        title: Text(l.introTitle),
         actions: [
           TextButton(
             onPressed: () => Navigator.of(context).pop(),
-            child: const Text('Überspringen',
-                style: TextStyle(color: Colors.white70)),
+            child: Text(l.introSkip,
+                style: const TextStyle(color: Colors.white70)),
           ),
         ],
       ),
@@ -254,7 +244,7 @@ class _IntroPageState extends State<IntroPage> {
                 child: FilledButton(
                   onPressed: _next,
                   child: Text(
-                    _page == _slides.length - 1 ? 'Fertig' : 'Weiter',
+                    _page == _slides.length - 1 ? l.introDone : l.introNext,
                   ),
                 ),
               ),

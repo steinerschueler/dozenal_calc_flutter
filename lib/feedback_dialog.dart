@@ -7,6 +7,7 @@
 import 'package:flutter/material.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
+import 'l10n/app_localizations.dart';
 import 'license_page.dart' show openExternalLink;
 
 const String _feedbackEmail = 'dozenal@weltanschauung.app';
@@ -38,33 +39,37 @@ class _FeedbackDialogState extends State<_FeedbackDialog> {
   }
 
   Future<void> _send() async {
+    // Capture AppLocalizations before the `await` so the post-await section
+    // doesn't need a fresh BuildContext lookup.
+    final l = AppLocalizations.of(context);
     final pkg = await PackageInfo.fromPlatform();
-    final ratingStr =
-        _rating == 0 ? '(keine Angabe)' : '$_rating von 5';
+    final ratingStr = _rating == 0
+        ? l.feedbackNoAnswer
+        : l.feedbackRatingValue(_rating);
     final liked = _likedCtrl.text.trim().isEmpty
-        ? '(keine Angabe)'
+        ? l.feedbackNoAnswer
         : _likedCtrl.text.trim();
     final change = _changeCtrl.text.trim().isEmpty
-        ? '(keine Angabe)'
+        ? l.feedbackNoAnswer
         : _changeCtrl.text.trim();
-    final body = '''Feedback Dozenal Calc
+    final body = '''${l.feedbackMailSubject}
 
-Bewertung: $ratingStr
+${l.feedbackRatingLabel}: $ratingStr
 
-Was hat dir gefallen:
+${l.feedbackMailLikedLabel}
 $liked
 
-Was würdest du anders machen:
+${l.feedbackMailChangeLabel}
 $change
 
 ---
-Version: ${pkg.version}
-Build: ${pkg.buildNumber}
+${l.feedbackMailVersionLabel}: ${pkg.version}
+${l.feedbackMailBuildLabel}: ${pkg.buildNumber}
 ''';
     final uri = Uri(
       scheme: 'mailto',
       path: _feedbackEmail,
-      query: 'subject=${Uri.encodeComponent('Feedback Dozenal Calc')}'
+      query: 'subject=${Uri.encodeComponent(l.feedbackMailSubject)}'
           '&body=${Uri.encodeComponent(body)}',
     );
     if (!mounted) return;
@@ -104,6 +109,7 @@ Build: ${pkg.buildNumber}
 
   @override
   Widget build(BuildContext context) {
+    final l = AppLocalizations.of(context);
     const labelStyle = TextStyle(
       color: Colors.white,
       fontWeight: FontWeight.bold,
@@ -111,26 +117,24 @@ Build: ${pkg.buildNumber}
     );
     return AlertDialog(
       backgroundColor: const Color(0xFF1A1A1A),
-      title: const Text(
-        'Feedback',
-        style: TextStyle(color: Colors.white),
+      title: Text(
+        l.feedbackTitle,
+        style: const TextStyle(color: Colors.white),
       ),
       content: SingleChildScrollView(
         child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            const Text(
-              'Danke fürs Testen von Dozenal Calc! Deine Antworten landen '
-              'als E-Mail in deinem Standard-Mail-Programm, das du noch '
-              'prüfen oder verwerfen kannst, bevor sie verschickt wird.',
-              style: TextStyle(color: Color(0xFFD0D0D0), fontSize: 12.5),
+            Text(
+              l.feedbackIntro,
+              style: const TextStyle(color: Color(0xFFD0D0D0), fontSize: 12.5),
             ),
             const SizedBox(height: 16),
-            const Text('Bewertung', style: labelStyle),
+            Text(l.feedbackRatingLabel, style: labelStyle),
             _stars(),
             const SizedBox(height: 12),
-            const Text('Was hat dir gefallen?', style: labelStyle),
+            Text(l.feedbackLikedLabel, style: labelStyle),
             const SizedBox(height: 4),
             TextField(
               controller: _likedCtrl,
@@ -139,7 +143,7 @@ Build: ${pkg.buildNumber}
               decoration: _fieldDecoration(),
             ),
             const SizedBox(height: 12),
-            const Text('Was würdest du anders machen?', style: labelStyle),
+            Text(l.feedbackChangeLabel, style: labelStyle),
             const SizedBox(height: 4),
             TextField(
               controller: _changeCtrl,
@@ -153,14 +157,14 @@ Build: ${pkg.buildNumber}
       actions: [
         TextButton(
           onPressed: () => Navigator.of(context).pop(),
-          child: const Text(
-            'Abbrechen',
-            style: TextStyle(color: Color(0xFFA0A0A0)),
+          child: Text(
+            l.feedbackCancel,
+            style: const TextStyle(color: Color(0xFFA0A0A0)),
           ),
         ),
         FilledButton(
           onPressed: _send,
-          child: const Text('Senden'),
+          child: Text(l.feedbackSend),
         ),
       ],
     );
