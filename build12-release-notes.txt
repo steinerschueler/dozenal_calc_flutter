@@ -1,9 +1,5 @@
-Play-Console-Release-Notes für Build 12
-Pro Locale den jeweiligen Block (ohne die <xx-XX>-Klammern) ins Feld
-„Versionshinweise" der entsprechenden Sprache einfügen.
-
 <de-DE>
-Build 12 fügt vier Sprachen hinzu — Walisisch, Japanisch, Arabisch, Traditionelles Chinesisch — und bringt das Sortiment auf vierzehn. Neue Seite «Imperial-12 Umrechnungen» im Info-Menü: Zahl eingeben, Zerlegung in Stück/Dutzend/Gros, Inches/Fuss/Yard/Meile, Troy-Unzen bis Long Ton, Pence/Schilling/Pfund, Zeit und Winkel parallel sehen. Kapitel 1 von Walisisch, Irisch, Französisch und Hindi enthält neu eine Würdigung der jeweiligen nicht-dezimalen Zahlentradition. Lizenz auf MIT umgestellt.
+Build 12 (!) fügt vier Sprachen hinzu — Walisisch, Japanisch, Arabisch, Traditionelles Chinesisch — und bringt das Sortiment auf vierzehn. Neue Seite «Imperial-12 Umrechnungen» im Info-Menü: Zahl eingeben, Zerlegung in Stück/Dutzend/Gros, Inches/Fuss/Yard/Meile, Troy-Unzen bis Long Ton, Pence/Schilling/Pfund, Zeit und Winkel parallel sehen. Kapitel 1 von Walisisch, Irisch, Französisch und Hindi enthält neu eine Würdigung der jeweiligen nicht-dezimalen Zahlentradition. Lizenz auf MIT umgestellt.
 </de-DE>
 
 <en-US>

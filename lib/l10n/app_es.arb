@@ -8,6 +8,12 @@
   "infoListLicenseEntry": "Licencia",
   "infoListFeedbackEntry": "Enviar comentarios",
   "infoListConversionsEntry": "Conversiones imperial-12",
+  "infoListSupportEntry": "Apoyar el desarrollo",
+
+  "supportTitle": "Apoyar el desarrollo",
+  "supportIntro": "Si te gusta Dozenal Calc, una pequeña propina ayuda a cubrir los costos recurrentes — específicamente los 100 USD anuales de la cuenta Apple Developer para que la aplicación también pueda lanzarse en iPhone y iPad.",
+  "supportKofiNote": "Plataforma preferida — Ko-fi no cobra comisión propia, solo el cargo estándar del procesador de pagos. Servicios comparables como Buy Me a Coffee retienen una parte adicional de plataforma.",
+  "supportClose": "Cerrar",
 
   "conversionsTitle": "Conversiones imperial-12",
   "conversionsIntro": "Las unidades imperiales — 12 pulgadas en un pie, 12 peniques en un chelín, 12 en una docena, 144 en una gruesa — se convierten en números redondos en base 12. Ingresa un valor y mira cómo se descompone en las unidades clásicas.",

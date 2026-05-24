@@ -11,6 +11,12 @@
   "infoListLicenseEntry": "Lizenz",
   "infoListFeedbackEntry": "Feedback geben",
   "infoListConversionsEntry": "Imperial-12 Umrechnungen",
+  "infoListSupportEntry": "Entwicklung unterstützen",
+
+  "supportTitle": "Entwicklung unterstützen",
+  "supportIntro": "Wenn dir Dozenal Calc gefällt: ein kleines Trinkgeld hilft die laufenden Kosten zu decken — konkret die jährliche Apple-Developer-Gebühr von 100 USD, damit die App auch auf iPhone und iPad erscheinen kann.",
+  "supportKofiNote": "Bevorzugte Plattform — Ko-fi nimmt selbst keine Plattform-Gebühr, nur die übliche Zahlungs-Provider-Gebühr. Bei vergleichbaren Diensten wie Buy Me a Coffee geht ein zusätzlicher Anteil weg.",
+  "supportClose": "Schliessen",
 
   "conversionsTitle": "Imperial-12 Umrechnungen",
   "conversionsIntro": "Die imperialen Einheiten — 12 Inches im Fuss, 12 Pence im Schilling, 12 Stück im Dutzend, 144 im Gros — werden in Basis 12 zu runden Zahlen. Gib einen Wert ein und sieh, wie er in den klassischen Einheiten zerfällt.",

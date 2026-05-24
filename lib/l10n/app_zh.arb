@@ -8,6 +8,12 @@
   "infoListLicenseEntry": "许可证",
   "infoListFeedbackEntry": "发送反馈",
   "infoListConversionsEntry": "英制十二进制换算",
+  "infoListSupportEntry": "支持开发",
+
+  "supportTitle": "支持开发",
+  "supportIntro": "如果你喜欢 Dozenal Calc，一笔小费有助于支付日常成本 — 具体来说每年 100 美元的 Apple Developer 账户费，让应用也能登陆 iPhone 和 iPad。",
+  "supportKofiNote": "首选平台 — Ko-fi 不收取自己的平台费，只收取标准的支付处理费。类似的服务如 Buy Me a Coffee 会额外抽取平台份额。",
+  "supportClose": "关闭",
 
   "conversionsTitle": "英制十二进制换算",
   "conversionsIntro": "英制单位 — 1英尺有12英寸，1先令有12便士，1打有12个，1罗有144个 — 在基数12中成为整数。输入一个值，看看它如何分解为经典单位。",

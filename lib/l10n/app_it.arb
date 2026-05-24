@@ -8,6 +8,12 @@
   "infoListLicenseEntry": "Licenza",
   "infoListFeedbackEntry": "Invia feedback",
   "infoListConversionsEntry": "Conversioni imperial-12",
+  "infoListSupportEntry": "Sostieni lo sviluppo",
+
+  "supportTitle": "Sostieni lo sviluppo",
+  "supportIntro": "Se Dozenal Calc ti piace, una piccola mancia aiuta a coprire i costi correnti — in particolare i 100 USD annuali dell'account Apple Developer perché l'app possa uscire anche su iPhone e iPad.",
+  "supportKofiNote": "Piattaforma preferita — Ko-fi non trattiene alcuna commissione propria, solo la tariffa standard del processore di pagamento. Servizi simili come Buy Me a Coffee trattengono una quota di piattaforma aggiuntiva.",
+  "supportClose": "Chiudi",
 
   "conversionsTitle": "Conversioni imperial-12",
   "conversionsIntro": "Le unità imperiali — 12 pollici in un piede, 12 penny in uno scellino, 12 in una dozzina, 144 in una grossa — diventano numeri tondi in base 12. Inserisci un valore e vedi come si scompone nelle unità classiche.",

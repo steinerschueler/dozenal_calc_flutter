@@ -8,6 +8,12 @@
   "infoListLicenseEntry": "ライセンス",
   "infoListFeedbackEntry": "フィードバックを送る",
   "infoListConversionsEntry": "ヤード・ポンド法（12進）変換",
+  "infoListSupportEntry": "開発を支援",
+
+  "supportTitle": "開発を支援",
+  "supportIntro": "Dozenal Calcを気に入っていただけたら、わずかなチップが運用コストの補填になります — 特に年間100ドルの Apple Developer 料金で、アプリを iPhone と iPad でも公開できるようにします。",
+  "supportKofiNote": "推奨プラットフォーム — Ko-fi はプラットフォーム手数料を取らず、標準的な決済プロセッサー手数料のみが発生します。Buy Me a Coffee などの同様のサービスは追加のプラットフォーム手数料を取ります。",
+  "supportClose": "閉じる",
 
   "conversionsTitle": "ヤード・ポンド法（12進）変換",
   "conversionsIntro": "ヤード・ポンド法の単位 — 1フィート12インチ、1シリング12ペンス、1ダース12個、1グロス144個 — は12進法で整数になります。値を入力して、古典的な単位にどう分解されるかを見てください。",

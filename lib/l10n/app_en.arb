@@ -8,6 +8,12 @@
   "infoListLicenseEntry": "License",
   "infoListFeedbackEntry": "Give Feedback",
   "infoListConversionsEntry": "Imperial-12 conversions",
+  "infoListSupportEntry": "Support development",
+
+  "supportTitle": "Support development",
+  "supportIntro": "If you enjoy Dozenal Calc, a small tip helps cover the running costs — specifically the annual 100 USD Apple Developer fee so the app can also launch on iPhone and iPad.",
+  "supportKofiNote": "Preferred platform — Ko-fi takes no platform fee of its own, only the standard payment-processor cut. Comparable services like Buy Me a Coffee skim an additional platform share.",
+  "supportClose": "Close",
 
   "conversionsTitle": "Imperial-12 conversions",
   "conversionsIntro": "Imperial units — 12 inches in a foot, 12 pence in a shilling, 12 in a dozen, 144 in a gross — become round numbers in base 12. Enter a value and see how it decomposes into the classic units.",

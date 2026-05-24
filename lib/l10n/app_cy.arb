@@ -8,6 +8,12 @@
   "infoListLicenseEntry": "Trwydded",
   "infoListFeedbackEntry": "Anfon adborth",
   "infoListConversionsEntry": "Trawsnewidiadau imperialaidd-12",
+  "infoListSupportEntry": "Cefnogi'r datblygiad",
+
+  "supportTitle": "Cefnogi'r datblygiad",
+  "supportIntro": "Os ydych chi'n mwynhau Dozenal Calc, mae cildwrn bach yn helpu i dalu'r costau parhaol — yn benodol ffi flynyddol 100 USD cyfrif Apple Developer fel y gall yr ap hefyd lansio ar iPhone ac iPad.",
+  "supportKofiNote": "Llwyfan a ffafrir — nid yw Ko-fi yn cymryd unrhyw ffi llwyfan ei hun, dim ond y ffi safonol prosesydd taliadau. Mae gwasanaethau cymharol fel Buy Me a Coffee yn cipio cyfran llwyfan ychwanegol.",
+  "supportClose": "Cau",
 
   "conversionsTitle": "Trawsnewidiadau imperialaidd-12",
   "conversionsIntro": "Daw'r unedau imperialaidd — 12 modfedd mewn troedfedd, 12 ceiniog mewn swllt, 12 mewn dwsin, 144 mewn grôs — yn rhifau crwn ym môn 12. Rhowch werth a gwelwch sut y mae'n datgymalu i'r unedau clasurol.",
