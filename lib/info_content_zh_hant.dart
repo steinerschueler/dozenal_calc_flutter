@@ -109,7 +109,7 @@ List<Widget> _chapterZhHant(int chapter, AppLocalizations l) {
         const _H("數字系統：Doz / Dez"),
         const _P(
           "在擴充面板中，兩個鍵 Doz 和 Dez 並排。其中正好有一個始終"
-          "激活（有邊框），激活的系統顯示在螢幕右上角。在 Doz 模式"
+          "啟用（有邊框），啟用的系統顯示在螢幕右上角。在 Doz 模式"
           "下，計算機以基數 12 計算（預設）；在 Dez 模式下以基數 10。",
         ),
         const _P(

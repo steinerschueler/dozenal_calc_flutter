@@ -299,26 +299,34 @@ sprach-neutral in `intro_pages.dart`.
 
 ### Mehrsprachigkeit
 
-Zehn Sprachen aktiv seit Build 11: DE, EN, FR, ES, IT, FA, RU, GA, HI,
-ZH. Die Infrastruktur:
+Elf Sprachen aktiv: DE, EN, FR, ES, IT, FA, RU, GA, HI, ZH (vereinfacht)
+und ZH-Hant (traditionell, post-Build-11). Die Infrastruktur:
 
 - **ARB + gen_l10n:** `lib/l10n/app_<code>.arb` pro Sprache (DE ist
   Template-arb-file, andere fallen auf DE zurück, falls Key fehlt).
-  `flutter gen-l10n` läuft automatisch bei `flutter pub get` dank
-  `generate: true` in `pubspec.yaml`. Output unter `lib/l10n/` (per
-  `.gitignore` ignoriert, da Build-Artefakt).
+  Script-Tagged-Locales nutzen Flutters Konvention mit Unterstrich:
+  `app_zh_Hant.arb`. `flutter gen-l10n` läuft automatisch bei
+  `flutter pub get` dank `generate: true` in `pubspec.yaml`. Output unter
+  `lib/l10n/` (per `.gitignore` ignoriert, da Build-Artefakt).
 - **Locale-State:** `lib/locale_notifier.dart` mit `LocaleNotifier`
   (SharedPreferences-Schlüssel `locale_v1`, null = OS-Locale folgen) +
   `LocaleScope` (InheritedNotifier, macht Notifier für tiefe Widgets
-  zugänglich ohne Provider-Dependency). `resolveLocale` iteriert
-  generisch über `supportedLocales` — neue Sprachen brauchen hier keine
-  Code-Änderung.
+  zugänglich ohne Provider-Dependency). Persistiert den vollen
+  BCP-47-Tag (`zh-Hant`, nicht nur `zh`), damit `zh_Hans` und `zh_Hant`
+  koexistieren können; alte einsprachige Einträge (`de`) bleiben
+  rückwärtskompatibel. `resolveLocale` ist script-aware: exakte
+  Sprache+Script gewinnt vor reinem Sprach-Match; `zh-TW/HK/MO` mappt
+  automatisch auf `zh-Hant`. `info_content.dart`, `privacy_page.dart`
+  und `license_page.dart` lookup über `toLanguageTag()` statt nur
+  `languageCode`, sonst würden zh-Hant-Routen auf die vereinfachten
+  Dateien zurückfallen.
 - **Sprach-Registry:** `lib/language_options.dart` mit
   `kSupportedLanguages`-Liste — single source of truth für Locale,
   Anzeige-Label (selbstreferentiell: „Deutsch", „English", „Français",
-  „Español", „Italiano", „فارسی", „Русский"), Flag-Painter und
-  kanonisches Flag-Seitenverhältnis. Picker (`_LanguagePickerExpansion`
-  in `info_pages.dart`) ist datengetrieben aus dieser Liste.
+  „Español", „Italiano", „فارسی", „Русский", „简体中文", „繁體中文"),
+  Flag-Painter und kanonisches Flag-Seitenverhältnis. Picker
+  (`_LanguagePickerExpansion` in `info_pages.dart`) ist datengetrieben
+  aus dieser Liste.
 - **Flag-Painter:** `lib/flag_painter.dart` enthält je einen
   `CustomPainter` pro Sprache. Iran-Wappen ist eine vereinfachte
   Tulpen-Silhouette mit weisser Schwert-Aussparung in Rot.
