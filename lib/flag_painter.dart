@@ -395,6 +395,87 @@ class SpanishFlagPainter extends CustomPainter {
   bool shouldRepaint(covariant CustomPainter old) => false;
 }
 
+/// Hong Kong SAR flag — red field with a stylised white five-petal
+/// Bauhinia blakeana flower centred on the field, each petal carrying
+/// a small red five-pointed star near its tip. The real flower has
+/// elaborate curved petals; at picker scale we approximate each petal
+/// with a single cubic-bezier teardrop, which still reads as a radial
+/// five-fold flower distinct from the PRC red field. Canonical aspect
+/// ratio is 3:2. Picked here as the visual marker for Traditional
+/// Chinese alongside Mainland's Simplified.
+class HongKongFlagPainter extends CustomPainter {
+  const HongKongFlagPainter();
+
+  static const _red = Color(0xFFBA0000);
+  static const _white = Color(0xFFFFFFFF);
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final w = size.width;
+    final h = size.height;
+    canvas.drawRect(Rect.fromLTWH(0, 0, w, h), Paint()..color = _red);
+
+    final cx = w / 2;
+    final cy = h / 2;
+    final r = math.min(w, h) * 0.40;
+    final white = Paint()..color = _white;
+    final red = Paint()..color = _red;
+
+    final petalLen = r;
+    final petalWidth = r * 0.50;
+    for (var i = 0; i < 5; i++) {
+      canvas.save();
+      canvas.translate(cx, cy);
+      canvas.rotate(i * (2 * math.pi / 5) - math.pi / 2);
+
+      final petal = Path()
+        ..moveTo(0, 0)
+        ..cubicTo(
+          petalWidth * 0.75, -petalLen * 0.15,
+          petalWidth * 0.40, -petalLen * 0.75,
+          0, -petalLen,
+        )
+        ..cubicTo(
+          -petalWidth * 0.40, -petalLen * 0.75,
+          -petalWidth * 0.75, -petalLen * 0.15,
+          0, 0,
+        )
+        ..close();
+      canvas.drawPath(petal, white);
+
+      _star(canvas, Offset(0, -petalLen * 0.60), r * 0.13, red);
+
+      canvas.restore();
+    }
+
+    // Centre disc covers the petal-bases meeting point cleanly.
+    canvas.drawCircle(Offset(cx, cy), r * 0.18, white);
+  }
+
+  void _star(Canvas canvas, Offset center, double r, Paint paint) {
+    final innerR = r * 0.382;
+    final path = Path();
+    for (var i = 0; i < 10; i++) {
+      final angle = (i * math.pi / 5) - math.pi / 2;
+      final radius = (i.isEven) ? r : innerR;
+      final p = Offset(
+        center.dx + radius * math.cos(angle),
+        center.dy + radius * math.sin(angle),
+      );
+      if (i == 0) {
+        path.moveTo(p.dx, p.dy);
+      } else {
+        path.lineTo(p.dx, p.dy);
+      }
+    }
+    path.close();
+    canvas.drawPath(path, paint);
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter old) => false;
+}
+
 /// Simplified Union Jack — recognizable at picker size without the
 /// counterchanged St-Patrick offset (too small to see). Canonical aspect
 /// ratio is 2:1. Stroke widths are fractions of flag height so the

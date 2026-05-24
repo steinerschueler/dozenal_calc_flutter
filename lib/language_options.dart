@@ -88,8 +88,14 @@ const List<LanguageOption> kSupportedLanguages = [
   ),
   LanguageOption(
     locale: Locale('zh'),
-    label: '中文',
+    label: '简体中文',
     flagPainter: ChineseFlagPainter(),
+    canonicalFlagSize: Size(60, 40),
+  ),
+  LanguageOption(
+    locale: Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hant'),
+    label: '繁體中文',
+    flagPainter: HongKongFlagPainter(),
     canonicalFlagSize: Size(60, 40),
   ),
 ];

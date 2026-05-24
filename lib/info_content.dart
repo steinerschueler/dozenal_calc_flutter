@@ -26,6 +26,7 @@ part 'info_content_ru.dart';
 part 'info_content_ga.dart';
 part 'info_content_hi.dart';
 part 'info_content_zh.dart';
+part 'info_content_zh_hant.dart';
 
 /// Chapter list titles (12 chapters, fixed). Mirrors Rust `INFO_TITLES`,
 /// now routed through AppLocalizations so the same list serves both
@@ -460,12 +461,15 @@ typedef _ChapterBuilder = List<Widget> Function(
   AppLocalizations l,
 );
 
-/// Per-locale chapter content table. To add a language: create
-/// `info_content_<code>.dart` as a `part of 'info_content.dart'`,
-/// implement `_chapter<Code>`, and register it here. The dispatcher falls
-/// back to German if the active locale's builder is missing — that should
-/// not happen at runtime because locale resolution only yields supported
-/// codes, but the fallback keeps the app debuggable.
+/// Per-locale chapter content table. Keyed by BCP-47 language tag
+/// (e.g. `de`, `zh`, `zh-Hant`) so script-tagged locales like
+/// Traditional Chinese stay distinct from the bare-language variant.
+/// To add a language: create `info_content_<code>.dart` as a
+/// `part of 'info_content.dart'`, implement `_chapter<Code>`, and
+/// register it here. The dispatcher falls back to German if the active
+/// locale's builder is missing — that should not happen at runtime
+/// because locale resolution only yields supported codes, but the
+/// fallback keeps the app debuggable.
 const Map<String, _ChapterBuilder> _chapterBuilders = {
   'de': _chapterDe,
   'en': _chapterEn,
@@ -477,11 +481,12 @@ const Map<String, _ChapterBuilder> _chapterBuilders = {
   'ga': _chapterGa,
   'hi': _chapterHi,
   'zh': _chapterZh,
+  'zh-Hant': _chapterZhHant,
 };
 
 List<Widget> buildChapterContent(int chapter, BuildContext context) {
-  final code = Localizations.localeOf(context).languageCode;
-  final builder = _chapterBuilders[code] ?? _chapterBuilders['de']!;
+  final tag = Localizations.localeOf(context).toLanguageTag();
+  final builder = _chapterBuilders[tag] ?? _chapterBuilders['de']!;
   return builder(chapter, AppLocalizations.of(context));
 }
 

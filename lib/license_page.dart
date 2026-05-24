@@ -33,10 +33,10 @@ class AppLicensePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l = AppLocalizations.of(context);
-    final code = Localizations.localeOf(context).languageCode;
+    final tag = Localizations.localeOf(context).toLanguageTag();
     return MarkdownAssetPage(
       title: l.licenseTitle,
-      assetPath: 'legal/license.$code.md',
+      assetPath: 'legal/license.$tag.md',
       errorLabel: l.licenseError,
     );
   }

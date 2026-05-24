@@ -13,10 +13,10 @@ class PrivacyPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l = AppLocalizations.of(context);
-    final code = Localizations.localeOf(context).languageCode;
+    final tag = Localizations.localeOf(context).toLanguageTag();
     return MarkdownAssetPage(
       title: l.privacyTitle,
-      assetPath: 'legal/privacy-policy.$code.md',
+      assetPath: 'legal/privacy-policy.$tag.md',
       errorLabel: l.privacyError,
     );
   }
