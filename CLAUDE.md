@@ -103,6 +103,10 @@ gezielter Persisch-Fix nach Native-Speaker-Review), nur den entsprechenden
 Block schreiben — Play Console übernimmt für nicht aufgeführte Locales
 automatisch die letzten Notes weiter.
 
+Fertige Release-Notes werden im Projekt-Root als `build<N>-release-notes.txt`
+abgelegt (siehe `build12-release-notes.txt`), damit künftige Builds auf
+das gleiche Format und die gleiche Block-Reihenfolge zurückgreifen können.
+
 ### Asset-Regenerierung
 
 `assets/icon.png`, `assets/compass.png` und das Play-Store-Feature-Graphic
@@ -328,6 +332,26 @@ ft/in/sh/d/£/min/h/° statt sprachspezifischer Wörter, damit die
 Sektion-Bodies in allen Locales identisch und kompakt bleiben).
 Alle folgen der gleichen Push-Konvention — keine direkten Routen
 aus `main.dart`, alles geht über die Info-Liste.
+
+**Datenschutz-Web-Hosting (cPanel):** Parallel zu den in-app
+`legal/privacy-policy.<tag>.md`-Dateien (in App-Bundle, in-app via
+`flutter_markdown_plus` gerendert) leben unter `legal/privacy.<tag>.html`
+vierzehn stand-alone HTML-Versionen für `weltanschauung.app`. Die
+Play-Console-Datenschutz-URL zeigt auf eine davon (in der Regel
+`privacy.de.html` als Default). Jede HTML enthält einen horizontalen
+`<nav class="lang-picker">`-Block direkt nach `<main>` mit allen
+vierzehn Sprachen alphabetisch nach Code (ar, cy, de, en, …, zh-Hant),
+jede als Flag + nativer Name, aktive Sprache via `.current`-Klasse
+visuell hervorgehoben. Picker erzwingt `direction: ltr`, damit
+FA/AR-Dateien die Reihenfolge nicht spiegeln. **Walisische Flagge ist
+Inline-SVG** (Bezier-Pfad portiert aus `WelshFlagPainter` in
+`flag_painter.dart`): die Unicode-Subdivision-Sequenz 🏴󠁧󠁢󠁷󠁬󠁳󠁿
+rendert auf Firefox-Linux und älteren Android-Versionen unzuverlässig,
+deshalb font-unabhängige SVG-Lösung. Andere dreizehn Sprachen nutzen
+Standard-Regional-Indicator-Emojis (universell unterstützt). Die
+Naming-Konvention ist `privacy.<tag>.html` (kürzer als die
+in-app-Variante `privacy-policy.<tag>.md` — Web-URLs sollen kompakt
+sein, in-app-Pfade konsistent mit `license.<tag>.md`).
 
 ### Intro
 
