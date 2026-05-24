@@ -269,6 +269,15 @@ sprach-spezifisch und in der jeweiligen Kapitel-2-Prosa dokumentiert:
 - **Chinesisch:** pure Juxtaposition mit `零`-Brücke für eingebettete
   Nullen (`一卡德零一` = o101, mirror von Mandarin-Dezimal `一百零一`
   = 101)
+- **Walisisch:** pure Juxtaposition mit „a"/„ac"-Partikel vor Einer-
+  Position (`quader dau ddwsin a thri`, parallel zu „cant a thri").
+  „a" löst Aspirate-Mutation auf c/p/t aus (`a thri`, `a phedwar`);
+  „ac" vor Vokalen und Halbvokal w (`ac un`, `ac wyth`). Soft Mutation
+  d → dd auf `dwsin` nach „dau" (`dau ddwsin`); fremde Magnituden
+  (quader/cuber/…) bleiben unverändert. Kapitel-1-Prosa schlägt
+  zusätzlich die Brücke zur walisischen vigesimalen Tradition
+  (deunaw = 18 als „zwei Neuner", ugain = 20, deugain = 40, hanner
+  cant = 50, trigain = 60, pedwar ugain = 80).
 
 Das e/o-Präfix als Theorie-Lese-Hilfe (e = dezimal, o = dozenal) bleibt
 in allen Sprachen sprachneutral.
@@ -299,8 +308,9 @@ sprach-neutral in `intro_pages.dart`.
 
 ### Mehrsprachigkeit
 
-Elf Sprachen aktiv: DE, EN, FR, ES, IT, FA, RU, GA, HI, ZH (vereinfacht)
-und ZH-Hant (traditionell, post-Build-11). Die Infrastruktur:
+Zwölf Sprachen aktiv: DE, EN, FR, ES, IT, FA, RU, GA, HI, ZH
+(vereinfacht), ZH-Hant (traditionell, post-Build-11) und CY (Walisisch,
+post-ZH-Hant). Die Infrastruktur:
 
 - **ARB + gen_l10n:** `lib/l10n/app_<code>.arb` pro Sprache (DE ist
   Template-arb-file, andere fallen auf DE zurück, falls Key fehlt).

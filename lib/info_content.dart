@@ -27,6 +27,7 @@ part 'info_content_ga.dart';
 part 'info_content_hi.dart';
 part 'info_content_zh.dart';
 part 'info_content_zh_hant.dart';
+part 'info_content_cy.dart';
 
 /// Chapter list titles (12 chapters, fixed). Mirrors Rust `INFO_TITLES`,
 /// now routed through AppLocalizations so the same list serves both
@@ -482,6 +483,7 @@ const Map<String, _ChapterBuilder> _chapterBuilders = {
   'hi': _chapterHi,
   'zh': _chapterZh,
   'zh-Hant': _chapterZhHant,
+  'cy': _chapterCy,
 };
 
 List<Widget> buildChapterContent(int chapter, BuildContext context) {

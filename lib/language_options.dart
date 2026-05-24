@@ -98,4 +98,10 @@ const List<LanguageOption> kSupportedLanguages = [
     flagPainter: HongKongFlagPainter(),
     canonicalFlagSize: Size(60, 40),
   ),
+  LanguageOption(
+    locale: Locale('cy'),
+    label: 'Cymraeg',
+    flagPainter: WelshFlagPainter(),
+    canonicalFlagSize: Size(80, 48),
+  ),
 ];

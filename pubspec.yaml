@@ -108,6 +108,7 @@ flutter:
     - legal/privacy-policy.hi.md
     - legal/privacy-policy.zh.md
     - legal/privacy-policy.zh-Hant.md
+    - legal/privacy-policy.cy.md
     - legal/license.de.md
     - legal/license.en.md
     - legal/license.fr.md
@@ -119,6 +120,7 @@ flutter:
     - legal/license.hi.md
     - legal/license.zh.md
     - legal/license.zh-Hant.md
+    - legal/license.cy.md
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

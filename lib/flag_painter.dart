@@ -476,6 +476,88 @@ class HongKongFlagPainter extends CustomPainter {
   bool shouldRepaint(covariant CustomPainter old) => false;
 }
 
+/// Welsh flag (Baner Cymru) — white over green horizontal bands with
+/// the red dragon (Y Ddraig Goch) centred on the boundary. The real
+/// dragon is a heraldic creature with elaborate detail (claws, scales,
+/// tongue, four legs, wings) that at picker scale would render as
+/// noise. We use a single-Path stylised silhouette: long body straddling
+/// the white/green boundary, raised foreleg, curling tail tip. The
+/// red-on-white/green colour scheme is unique among flags, so even an
+/// approximate creature reads as Welsh. Canonical aspect ratio is 5:3
+/// (width:height).
+class WelshFlagPainter extends CustomPainter {
+  const WelshFlagPainter();
+
+  static const _white = Color(0xFFFFFFFF);
+  static const _green = Color(0xFF00603B);
+  static const _red = Color(0xFFD00C27);
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final w = size.width;
+    final h = size.height;
+    final halfH = h / 2;
+    canvas.drawRect(
+      Rect.fromLTWH(0, 0, w, halfH),
+      Paint()..color = _white,
+    );
+    canvas.drawRect(
+      Rect.fromLTWH(0, halfH, w, halfH),
+      Paint()..color = _green,
+    );
+
+    // Dragon bounding box: 70 % of flag width, 55 % of flag height,
+    // centred horizontally, vertically straddling the white/green
+    // boundary so feet sit on green and back arches into white.
+    final dW = w * 0.70;
+    final dH = h * 0.55;
+    final dx = (w - dW) / 2;
+    final dy = (h - dH) / 2;
+
+    // Normalised coordinates (u, v) inside [0,1]² → flag pixels.
+    double x(double u) => dx + u * dW;
+    double y(double v) => dy + v * dH;
+
+    final red = Paint()..color = _red;
+
+    // Single stylised silhouette traced clockwise from the snout tip,
+    // around the back, down the curled tail, along the belly, up the
+    // raised foreleg, and back to the head.
+    final dragon = Path()
+      // Snout (leftmost) and head
+      ..moveTo(x(0.00), y(0.42))
+      ..quadraticBezierTo(x(0.04), y(0.30), x(0.14), y(0.30))
+      // Back of skull, neck rising into the back hump
+      ..cubicTo(x(0.22), y(0.20), x(0.30), y(0.10), x(0.42), y(0.12))
+      // Back / wing hump
+      ..cubicTo(x(0.58), y(0.05), x(0.70), y(0.18), x(0.78), y(0.30))
+      // Upper edge of tail base
+      ..cubicTo(x(0.88), y(0.32), x(0.98), y(0.18), x(1.00), y(0.32))
+      // Tail tip curling back inward
+      ..cubicTo(x(0.96), y(0.48), x(0.82), y(0.46), x(0.78), y(0.50))
+      // Tail underside back toward the body
+      ..cubicTo(x(0.84), y(0.62), x(0.78), y(0.78), x(0.66), y(0.78))
+      // Hind leg dropping down to green
+      ..lineTo(x(0.64), y(0.92))
+      ..lineTo(x(0.56), y(0.92))
+      ..cubicTo(x(0.54), y(0.84), x(0.48), y(0.80), x(0.42), y(0.82))
+      // Belly under to the front foreleg
+      ..cubicTo(x(0.34), y(0.82), x(0.30), y(0.88), x(0.28), y(0.92))
+      ..lineTo(x(0.20), y(0.92))
+      ..cubicTo(x(0.20), y(0.78), x(0.24), y(0.66), x(0.28), y(0.60))
+      // Raised foreleg / paw arching up in front of chest
+      ..cubicTo(x(0.18), y(0.62), x(0.10), y(0.52), x(0.14), y(0.44))
+      ..close();
+    canvas.drawPath(dragon, red);
+
+    // Single small white eye dot to anchor the head against the body.
+    canvas.drawCircle(Offset(x(0.10), y(0.36)), dH * 0.025, Paint()..color = _white);
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter old) => false;
+}
+
 /// Simplified Union Jack — recognizable at picker size without the
 /// counterchanged St-Patrick offset (too small to see). Canonical aspect
 /// ratio is 2:1. Stroke widths are fractions of flag height so the
