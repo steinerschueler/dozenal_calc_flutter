@@ -15,7 +15,7 @@ class SupportPage extends StatelessWidget {
   const SupportPage({super.key});
 
   static const _kofiUrl = 'https://ko-fi.com/steinerschueler';
-  static const _githubUrl = 'https://github.com/sponsors/Bawdyness';
+  static const _githubUrl = 'https://github.com/sponsors/steinerschueler';
 
   @override
   Widget build(BuildContext context) {

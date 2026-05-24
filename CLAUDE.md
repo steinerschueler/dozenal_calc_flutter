@@ -5,7 +5,7 @@ Diese Datei gibt Claude Code (claude.ai/code) Hinweise zur Arbeit mit dem Code i
 ## Projekt
 
 Flutter-Port eines Rust + egui Wissenschafts-Taschenrechners, der nativ in
-**Basis 12** (dozenal) rechnet. Ursprung: https://github.com/Bawdyness/dozenal_calc.
+**Basis 12** (dozenal) rechnet. Ursprung: https://github.com/steinerschueler/dozenal_calc.
 Viele `.dart`-Dateien nennen explizit die Rust-Datei, von der sie portiert
 wurden (z. B. `state.dart` ↔ `src/input.rs` + `src/eval.rs`). Bei
 Logikänderungen den Kopfkommentar auf das Rust-Gegenstück prüfen — der Port
