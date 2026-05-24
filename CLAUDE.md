@@ -277,7 +277,19 @@ sprach-spezifisch und in der jeweiligen Kapitel-2-Prosa dokumentiert:
   (quader/cuber/…) bleiben unverändert. Kapitel-1-Prosa schlägt
   zusätzlich die Brücke zur walisischen vigesimalen Tradition
   (deunaw = 18 als „zwei Neuner", ugain = 20, deugain = 40, hanner
-  cant = 50, trigain = 60, pedwar ugain = 80).
+  cant = 50, trigain = 60, pedwar ugain = 80). Zusätzlicher
+  Spezialabschnitt „Y Gymraeg a'r deuddeg" in Kapitel 1 (nur in CY,
+  nicht in anderen Locales): würdigt deuddeg/pymtheg/deunaw als
+  Unit-Wörter sowie dwsin im Alltagsgebrauch; gefolgt von vollständiger
+  englischer Übersetzung in Klammern für Reviewer ohne Welsh-Kenntnisse.
+- **Japanisch:** pure Juxtaposition ohne Konnektor (parallel zu „百
+  二十三"), Magnituden als Katakana-Transliteration (`クアダー, クー
+  バー, テッサー, ペンター, ヘクサー, ヘプター`); Basis-Einheit `ダー
+  ス` (dāsu, Lehnwort). Multiplikator 1 explizit (`一ダース`, `一クア
+  ダー`), parallel zu japanischem `一百` (ippyaku). Kapitel-1-Prosa
+  schlägt die Brücke zur japanischen Myriaden-Konvention (万 = 10⁴,
+  億 = 10⁸, 兆 = 10¹² — Vierergruppierung statt westlicher
+  Dreiergruppierung) als ostasiatisches Nicht-Dezimal-Erbe.
 
 Das e/o-Präfix als Theorie-Lese-Hilfe (e = dezimal, o = dozenal) bleibt
 in allen Sprachen sprachneutral.
@@ -308,9 +320,9 @@ sprach-neutral in `intro_pages.dart`.
 
 ### Mehrsprachigkeit
 
-Zwölf Sprachen aktiv: DE, EN, FR, ES, IT, FA, RU, GA, HI, ZH
-(vereinfacht), ZH-Hant (traditionell, post-Build-11) und CY (Walisisch,
-post-ZH-Hant). Die Infrastruktur:
+Dreizehn Sprachen aktiv: DE, EN, FR, ES, IT, FA, RU, GA, HI, ZH
+(vereinfacht), ZH-Hant (traditionell, post-Build-11), CY (Walisisch)
+und JA (Japanisch). Die Infrastruktur:
 
 - **ARB + gen_l10n:** `lib/l10n/app_<code>.arb` pro Sprache (DE ist
   Template-arb-file, andere fallen auf DE zurück, falls Key fehlt).

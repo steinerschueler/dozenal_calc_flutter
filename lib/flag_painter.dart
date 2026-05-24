@@ -476,6 +476,36 @@ class HongKongFlagPainter extends CustomPainter {
   bool shouldRepaint(covariant CustomPainter old) => false;
 }
 
+/// Japanese flag (Hinomaru, 日の丸) — white field with a centred red
+/// sun disc. The official disc diameter is 3/5 of the flag height and
+/// the disc centre sits exactly at the flag centre (a 1939 spec moved
+/// it 1% toward the hoist; modern law from 1999 restored exact centre).
+/// Canonical aspect ratio is 3:2.
+class JapaneseFlagPainter extends CustomPainter {
+  const JapaneseFlagPainter();
+
+  static const _white = Color(0xFFFFFFFF);
+  static const _red = Color(0xFFBC002D);
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final w = size.width;
+    final h = size.height;
+    canvas.drawRect(
+      Rect.fromLTWH(0, 0, w, h),
+      Paint()..color = _white,
+    );
+    canvas.drawCircle(
+      Offset(w / 2, h / 2),
+      h * 0.3, // diameter = 3/5 of height → radius = 3/10
+      Paint()..color = _red,
+    );
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter old) => false;
+}
+
 /// Welsh flag (Baner Cymru) — white over green horizontal bands with
 /// the red dragon (Y Ddraig Goch) centred on the boundary. The real
 /// dragon is a heraldic creature with elaborate detail (claws, scales,

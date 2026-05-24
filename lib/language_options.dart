@@ -104,4 +104,10 @@ const List<LanguageOption> kSupportedLanguages = [
     flagPainter: WelshFlagPainter(),
     canonicalFlagSize: Size(80, 48),
   ),
+  LanguageOption(
+    locale: Locale('ja'),
+    label: '日本語',
+    flagPainter: JapaneseFlagPainter(),
+    canonicalFlagSize: Size(60, 40),
+  ),
 ];
