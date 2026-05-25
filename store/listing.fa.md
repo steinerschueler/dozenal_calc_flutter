@@ -11,10 +11,12 @@ identisch.
 
 ## App-Name
 
-`Dozenal Calc`
+`حساب دوجینی`
 
-(Max. 30 Zeichen — verwendet 11. Markenname bleibt in allen Locales
-auf Englisch wie in der App selbst.)
+(Max. 30 Zeichen — verwendet 11. „دوجین" ist im Persischen das
+etablierte Bazar-Wort für Dutzend, entlehnt aus franz. *douzaine*;
+das adjektivische Suffix -ی macht daraus „dutzendlich". „حساب" =
+Rechnung. Marktsprache statt akademisches پایه ۱۲.)
 
 ---
 

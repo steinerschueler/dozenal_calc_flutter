@@ -10,9 +10,12 @@ diese gelten locale-übergreifend identisch.
 
 ## App-Name
 
-`Dozenal Calc`
+`Дюжинный расчёт`
 
-(Max. 30 Zeichen — verwendet 11.)
+(Max. 30 Zeichen — verwendet 15. „Дюжина" ist im Russischen seit ~1696
+das etablierte Wort für Dutzend, entlehnt aus franz. *douzaine* /
+ital. *dozzina*; die adjektivische Form „дюжинный" verbindet es mit
+„расчёт" = Rechnung.)
 
 ---
 

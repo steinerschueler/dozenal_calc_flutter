@@ -10,9 +10,13 @@ diese gelten locale-übergreifend identisch.
 
 ## App-Name
 
-`Dozenal Calc`
+`حساب الدزينة`
 
-(Max. 30 Zeichen — verwendet 11.)
+(Max. 30 Zeichen — verwendet 12. „دزينة" (dazīna) ist das im Arabischen
+etablierte Lehnwort für Dutzend aus dem Mediterran-Romanischen, parallel
+zur Lehnwort-Konvention bei dieser App; نصف دزينة „halbes Dutzend"
+ist im täglichen Sprachgebrauch geläufig. Marktsprache statt
+akademisches اثنا عشري.)
 
 ---
 

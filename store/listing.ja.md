@@ -10,9 +10,12 @@ diese gelten locale-übergreifend identisch.
 
 ## App-Name
 
-`Dozenal Calc`
+`ダース計算`
 
-(Max. 30 Zeichen — verwendet 11.)
+(Max. 30 Zeichen — verwendet 5. „ダース" (dāsu) ist die japanische
+Katakana-Schreibung von engl. *dozen* und der Standard-Zähler für
+Zwölferbündel — klassisch „鉛筆1ダース" = ein Dutzend Bleistifte. „計算"
+= Rechnung. Marktsprache statt akademisches 十二進法.)
 
 ---
 

@@ -40,6 +40,79 @@ transitive Abhängigkeiten (`meta`, `vector_math`, `cli_util`, `matcher`,
 `test_api`, `xml`) auf Versionen, die `pub outdated` flaggt — das ist
 erwartet, kein Bug. Nach jedem Flutter-Minor-Stable-Release erneut prüfen.
 
+### Manuelles Testen auf physischem Gerät
+
+Standard-Loop: bauen → installieren → ansteuern → Screenshot pullen →
+visuell prüfen. Schritte sind deterministisch, nicht zu überdenken.
+
+**1. Gerät finden:**
+
+```bash
+flutter devices
+adb devices
+```
+
+Erscheint `no permissions (missing udev rules?)`, ist fast immer der
+USB-Modus am Telefon auf »Aufladen« statt »Dateiübertragung« — den User
+bitten umzustellen, *bevor* in udev/sudo-Diagnosen abdriften (Memory
+`feedback_redmi_install.md` dokumentiert den Reflex).
+
+**2. Lauf-Variante wählen:**
+
+- **Debug + Hot Reload** für iterative Code-Änderungen:
+  ```bash
+  flutter run -d <serial>
+  ```
+  `r` / `R` für Hot Reload / Restart, `q` zum Beenden. Im Background-
+  Task lohnt ein Monitor auf Errors/„Flutter run key commands".
+
+- **Release-APK** für Build-Verifikation oder reale Performance:
+  ```bash
+  flutter build apk --release
+  adb -s <serial> install build/app/outputs/flutter-apk/app-release.apk
+  ```
+  Kollidiert mit installiertem Debug → `INSTALL_FAILED_UPDATE_INCOMPATIBLE:
+  signatures do not match`. Lösung (verliert App-Daten):
+  ```bash
+  adb -s <serial> uninstall app.weltanschauung.dozenal
+  adb -s <serial> install build/app/outputs/flutter-apk/app-release.apk
+  ```
+
+Verifikation, dass die richtige Version drauf ist:
+
+```bash
+adb -s <serial> shell dumpsys package app.weltanschauung.dozenal \
+  | grep -E "versionName|versionCode|lastUpdateTime"
+```
+
+**3. UI per adb steuern + Screenshot pullen:**
+
+```bash
+adb -s <serial> shell wm size                 # Auflösung für Koordinaten
+adb -s <serial> shell input tap X Y
+adb -s <serial> shell input swipe X1 Y1 X2 Y2 DUR_MS
+adb -s <serial> shell input keyevent KEYCODE_BACK
+adb -s <serial> shell screencap -p /sdcard/s.png && \
+  adb -s <serial> pull /sdcard/s.png /tmp/s.png
+```
+
+Danach `Read /tmp/s.png` (multimodaler Bildkanal liefert das Bild direkt
+zurück). Tap-Koordinaten *immer* aus dem letzten Screenshot ableiten —
+Layouts shiften zwischen Modi (Orientierung, Locale-Wechsel mit
+unterschiedlich langen Labels, Theme-Wechsel).
+
+**4. Vergleichendes Verifizieren — beide Zustände für den User
+capturen, nicht Spot-Check-zurückgeben.** Wenn der User um Prüfung
+eines State-Wechsels bittet (Sprache, Orientierung, Theme, Tastenmodus),
+beide Zustände per `screencap` + `pull` als Datei beschaffen und über
+`SendUserFile` mit beiden Pfaden nebeneinander zeigen. *Nicht* den User
+bitten, sich vor dem Wechsel Zeichen / Pixel zu merken und nachher
+selbst zu vergleichen — wenn der Wechsel nicht greift, sieht er
+dieselbe Anzeige und glaubt fälschlich „keine Änderung", die Methode
+kann den Bug also gar nicht entdecken. Für Claude selbst entfällt das
+Problem ohnehin, weil der `screencap → pull → Read`-Loop jeden Zustand
+implizit cached.
+
 ### Release-Builds
 
 ```bash
@@ -106,8 +179,9 @@ Block schreiben — Play Console übernimmt für nicht aufgeführte Locales
 automatisch die letzten Notes weiter.
 
 Fertige Release-Notes werden im Projekt-Root als `build<N>-release-notes.txt`
-abgelegt (siehe `build12-release-notes.txt`), damit künftige Builds auf
-das gleiche Format und die gleiche Block-Reihenfolge zurückgreifen können.
+abgelegt (jeweils nur die aktuellste; ältere werden mit dem nächsten
+Build verworfen), damit künftige Builds auf das gleiche Format und die
+gleiche Block-Reihenfolge zurückgreifen können.
 
 ### Automatisches Listing-Push (Gradle Play Publisher)
 
@@ -161,6 +235,40 @@ Die `<locale>...</locale>`-Blöcke landen in
 Synchronisiert werden nur die sieben Play-Console-Release-Notes-Locales
 (DE/EN/FR/ES/IT/FA/RU); die übrigen sieben App-Sprachen (GA, HI, ZH-Hans,
 ZH-Hant, CY, JA, AR) haben in Play Console keinen Release-Notes-Slot.
+
+**App-Name-Konvention (Dutzend-Lehnwort statt Mathe-Begriff):** Latein-
+Schrift-Locales (DE/EN/FR/ES/IT/GA/CY) verwenden den Markennamen
+„Dozenal Calc". Die sieben Nicht-Latein-Locales nutzen statt dem
+akademischen Zahlensystem-Begriff (十二进制 / 十二進法 /
+двенадцатеричный / द्वादश पद्धति / دستگاه پایه ۱۲ / نظام اثنا عشري) das
+in der jeweiligen Sprache etablierte Lehnwort für „Dutzend" plus ein
+Rechen-Wort:
+
+| Locale | App-Name | Wortbildung |
+|---|---|---|
+| hi | दर्जन गणक | दर्जन (Dutzend, engl. Lehnwort) + गणक (Rechner) |
+| ru | Дюжинный расчёт | дюжина (franz./ital. Lehnwort) → adjektiv. дюжинный + расчёт |
+| zh-Hans | 打进制计算 | 打 (engl. *dozen* phonetisch) + 进制 (Stellensystem) + 计算 |
+| zh-Hant | 打進制計算 | gleich, in Hant-Glyphen |
+| ja | ダース計算 | ダース (Katakana dāsu, engl. *dozen*) + 計算 |
+| fa | حساب دوجینی | دوجین (franz. *douzaine*) → adjektiv. دوجینی + حساب |
+| ar | حساب الدزينة | الدزينة (mediterran-romanisch) + Idāfa mit حساب |
+
+Begründung: das Dutzend-Lehnwort ist in allen sieben Sprachen
+Markt-Standard (Bazar/Supermarkt-Vokabular), nicht Lehrbuch-Mathe.
+Signalisiert: App spricht die Alltagssprache der Zielgruppe. Quelle für
+neue Sprachen: Wikipedia-Artikel der jeweiligen Lehnwort-Form (oft
+unter eigenem Artikel-Titel: ru.wiki/Дюжина, ja.wiki/ダース, …).
+
+Die App-Namen leben an *zwei* Stellen, die parallel gepflegt werden
+müssen:
+
+1. **Play-Console-Listing-Titel**: `## App-Name`-Block in
+   `store/listing.<code>.md`. Sync via `tool/sync_play_listings.dart`.
+2. **Android-Launcher-Name**: `<string name="app_name">…</string>` in
+   `android/app/src/main/res/values-<XX>/strings.xml` (Default in
+   `values/strings.xml` = „Dozenal Calc"). Manifest referenziert nur
+   `@string/app_name`.
 
 ### Asset-Regenerierung
 

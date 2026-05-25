@@ -10,9 +10,13 @@ diese gelten locale-übergreifend identisch.
 
 ## App-Name
 
-`Dozenal Calc`
+`打进制计算`
 
-(Max. 30 Zeichen — verwendet 11.)
+(Max. 30 Zeichen — verwendet 5. „打" (dá) ist die phonetische
+Entlehnung aus engl. *dozen* und das Standard-Mengen-Wort: 一打鸡蛋 =
+ein Dutzend Eier. „打进制" wird auf zh.wikipedia explizit als
+Alternative zum akademischen 十二进制 genannt; volkstümlicher und
+sofort verständlich.)
 
 ---
 

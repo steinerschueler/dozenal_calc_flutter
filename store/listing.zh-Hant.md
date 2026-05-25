@@ -10,9 +10,12 @@ diese gelten locale-übergreifend identisch.
 
 ## App-Name
 
-`Dozenal Calc`
+`打進制計算`
 
-(Max. 30 Zeichen — verwendet 11.)
+(Max. 30 Zeichen — verwendet 5. „打" (dá) ist die phonetische
+Entlehnung aus engl. *dozen* und in HK/TW dasselbe Marktwort wie in
+Mainland. „打進制" als Dutzend-System-Bezeichnung ist die natürliche
+Hant-Form parallel zum Hans-Listing.)
 
 ---
 

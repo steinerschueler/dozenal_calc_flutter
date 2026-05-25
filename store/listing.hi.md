@@ -10,9 +10,12 @@ diese gelten locale-übergreifend identisch.
 
 ## App-Name
 
-`Dozenal Calc`
+`दर्जन गणक`
 
-(Max. 30 Zeichen — verwendet 11.)
+(Max. 30 Zeichen — verwendet 9. „दर्जन" ist das aus dem Englischen
+entlehnte Standard-Wort für Dutzend im Hindi-Handelsalltag; „गणक" =
+Rechner. Kein Sanskrit-akademisches द्वादशमिक — der Marktbegriff
+spricht die App-Zielgruppe direkter an.)
 
 ---
 

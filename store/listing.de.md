@@ -10,7 +10,10 @@ hier 1:1 in die jeweiligen Felder.
 
 `Dozenal Calc`
 
-(Max. 30 Zeichen — verwendet 11.)
+(Max. 30 Zeichen — verwendet 11. Latein-Schrift-Locales behalten bewusst
+den englischen Markennamen; nur die sieben Nicht-Latein-Listings nutzen
+das in der jeweiligen Sprache etablierte Dutzend-Lehnwort. Siehe
+CLAUDE.md → „App-Name-Konvention".)
 
 ---
 
