@@ -12,6 +12,7 @@ import 'l10n/app_localizations.dart';
 import 'language_options.dart';
 import 'license_page.dart';
 import 'locale_notifier.dart';
+import 'logic/glyph_style.dart';
 import 'privacy_page.dart';
 import 'support_page.dart';
 
@@ -35,36 +36,17 @@ class InfoListPage extends StatelessWidget {
         child: ListView(
         padding: const EdgeInsets.symmetric(vertical: 4),
         children: [
-          for (var i = 0; i < titles.length; i++) ...[
-            if (i > 0)
-              const Divider(color: Color(0xFF2C2C2C), height: 1),
-            ListTile(
-              leading: SizedBox(
-                width: 28,
-                child: Text(
-                  '${i + 1}.',
-                  style: const TextStyle(
-                    color: Color(0xFFA0A0A0),
-                    fontFamily: 'monospace',
-                    fontSize: 13,
-                  ),
-                  textAlign: TextAlign.end,
-                ),
-              ),
-              title: Text(
-                titles[i],
-                style: const TextStyle(fontSize: 14, color: Colors.white),
-              ),
-              trailing: const _NavChevron(),
-              onTap: () => Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (_) => InfoDetailPage(chapterIndex: i),
-                ),
-              ),
-            ),
-          ],
-          // Language picker + visually-distinct legal-link section.
-          const SizedBox(height: 24),
+          // Theorie-Sektion: ausklappbar (Default collapsed), damit das
+          // Info-Menue beim Oeffnen kompakt mit allen Settings sichtbar
+          // ist und der Kapitel-Block einen Tap entfernt bleibt.
+          _TheoryExpansion(titles: titles),
+          const Divider(color: Color(0xFF2C2C2C), height: 1),
+          // Display-Glyph-Style toggle: liegt direkt unter der Theorie,
+          // weil die Wahl zwischen Custom-Glyphen und konventionellen
+          // 0-9/A/B Teil davon ist, wie der Nutzer Dozenal liest — kein
+          // tiefes Settings-Menue dahinter. Tastatur bleibt immer
+          // Custom-Glyphen (Marken-Identitaet).
+          const _GlyphStyleToggle(),
           const Divider(color: Color(0xFF2C2C2C), height: 1),
           const _LanguagePickerExpansion(),
           const Divider(color: Color(0xFF2C2C2C), height: 1),
@@ -209,6 +191,150 @@ class _VersionFooterState extends State<_VersionFooter> {
           ),
         );
       },
+    );
+  }
+}
+
+/// Collapsible theory section that wraps the twelve teaching chapters.
+/// Default collapsed so the Info page opens compact, with all settings
+/// (glyph style, language picker, conversions, legal, support, feedback)
+/// immediately visible; tapping the header unfolds the chapter list.
+class _TheoryExpansion extends StatefulWidget {
+  final List<String> titles;
+
+  const _TheoryExpansion({required this.titles});
+
+  @override
+  State<_TheoryExpansion> createState() => _TheoryExpansionState();
+}
+
+class _TheoryExpansionState extends State<_TheoryExpansion> {
+  bool _expanded = false;
+
+  @override
+  Widget build(BuildContext context) {
+    final l = AppLocalizations.of(context);
+    return Column(
+      children: [
+        ListTile(
+          leading: const SizedBox(
+            width: 28,
+            child: Icon(
+              Icons.menu_book_outlined,
+              color: Color(0xFFA0A0A0),
+              size: 16,
+            ),
+          ),
+          title: Text(
+            l.infoListTheoryExpansion,
+            style: const TextStyle(fontSize: 14, color: Colors.white),
+          ),
+          trailing: AnimatedRotation(
+            turns: _expanded ? 0.5 : 0,
+            duration: const Duration(milliseconds: 200),
+            child: const Icon(
+              Icons.expand_more,
+              color: Color(0xFF707070),
+              size: 20,
+            ),
+          ),
+          onTap: () => setState(() => _expanded = !_expanded),
+        ),
+        AnimatedSize(
+          duration: const Duration(milliseconds: 200),
+          alignment: Alignment.topCenter,
+          child: _expanded
+              ? Column(
+                  children: [
+                    for (var i = 0; i < widget.titles.length; i++) ...[
+                      const Divider(color: Color(0xFF2C2C2C), height: 1),
+                      ListTile(
+                        contentPadding: const EdgeInsetsDirectional.fromSTEB(
+                            32, 0, 16, 0),
+                        leading: SizedBox(
+                          width: 28,
+                          child: Text(
+                            '${i + 1}.',
+                            style: const TextStyle(
+                              color: Color(0xFFA0A0A0),
+                              fontFamily: 'monospace',
+                              fontSize: 13,
+                            ),
+                            textAlign: TextAlign.end,
+                          ),
+                        ),
+                        title: Text(
+                          widget.titles[i],
+                          style: const TextStyle(
+                              fontSize: 14, color: Colors.white),
+                        ),
+                        trailing: const _NavChevron(),
+                        onTap: () => Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (_) => InfoDetailPage(chapterIndex: i),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ],
+                )
+              : const SizedBox.shrink(),
+        ),
+      ],
+    );
+  }
+}
+
+/// Two-segment toggle between custom glyph rendering and conventional
+/// 0-9/A-B rendering in the display. Lives directly under the chapter
+/// list because the choice belongs to the reading experience, not to
+/// settings. Only affects the display — the keypad always uses custom
+/// glyphs as the visual identity.
+class _GlyphStyleToggle extends StatelessWidget {
+  const _GlyphStyleToggle();
+
+  @override
+  Widget build(BuildContext context) {
+    final l = AppLocalizations.of(context);
+    final notifier = GlyphStyleScope.of(context);
+    final isCustom = notifier.style == GlyphStyle.custom;
+    return ListTile(
+      leading: const SizedBox(
+        width: 28,
+        child: Icon(
+          Icons.text_fields,
+          color: Color(0xFFA0A0A0),
+          size: 16,
+        ),
+      ),
+      title: Text(
+        l.infoListGlyphStyleTitle,
+        style: const TextStyle(fontSize: 14, color: Colors.white),
+      ),
+      trailing: ToggleButtons(
+        isSelected: [isCustom, !isCustom],
+        onPressed: (i) => notifier.setStyle(
+          i == 0 ? GlyphStyle.custom : GlyphStyle.conventional,
+        ),
+        constraints: const BoxConstraints(minWidth: 64, minHeight: 32),
+        borderRadius: BorderRadius.circular(6),
+        borderColor: const Color(0xFF3A3A3A),
+        selectedBorderColor: const Color(0xFF5A5A5A),
+        color: const Color(0xFF888888),
+        selectedColor: Colors.white,
+        fillColor: const Color(0xFF2A2A2A),
+        textStyle: const TextStyle(fontSize: 12),
+        children: [
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 8),
+            child: Text(l.infoListGlyphStyleCustom),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 8),
+            child: Text(l.infoListGlyphStyleConventional),
+          ),
+        ],
+      ),
     );
   }
 }

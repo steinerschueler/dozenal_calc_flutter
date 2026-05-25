@@ -12,6 +12,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import 'glyph_painter.dart';
+import 'logic/glyph_style.dart';
 import 'tokens.dart';
 
 class TwoLineDisplay extends StatelessWidget {
@@ -79,21 +80,27 @@ class TwoLineDisplay extends StatelessWidget {
       child: SizedBox(
         width: double.infinity,
         height: double.infinity,
-        child: CustomPaint(
-          painter: _TwoLineDisplayPainter(
-            inputBuffer: inputBuffer,
-            cursorPos: cursorPos,
-            resultBuffer: resultBuffer,
-            resultCursorPos: resultCursorPos,
-            resultFieldActive: resultFieldActive,
-            resultPeriodStart: resultPeriodStart,
-            resultPeriodLen: resultPeriodLen,
-            resultPeriodCapped: resultPeriodCapped,
-            isF64Fallback: isF64Fallback,
-            errorMsg: errorMsg,
-            memoryActive: memoryActive,
-            angleModeLabel: angleModeLabel,
-            numeralSystemLabel: numeralSystemLabel,
+        child: Builder(
+          // Builder so the painter rebuilds when GlyphStyleScope changes —
+          // dependOnInheritedWidgetOfExactType subscribes this widget to
+          // the scope's notifier without rebuilding the surrounding tree.
+          builder: (innerCtx) => CustomPaint(
+            painter: _TwoLineDisplayPainter(
+              inputBuffer: inputBuffer,
+              cursorPos: cursorPos,
+              resultBuffer: resultBuffer,
+              resultCursorPos: resultCursorPos,
+              resultFieldActive: resultFieldActive,
+              resultPeriodStart: resultPeriodStart,
+              resultPeriodLen: resultPeriodLen,
+              resultPeriodCapped: resultPeriodCapped,
+              isF64Fallback: isF64Fallback,
+              errorMsg: errorMsg,
+              memoryActive: memoryActive,
+              angleModeLabel: angleModeLabel,
+              numeralSystemLabel: numeralSystemLabel,
+              glyphStyle: GlyphStyleScope.of(innerCtx).style,
+            ),
           ),
         ),
       ),
@@ -115,6 +122,7 @@ class _TwoLineDisplayPainter extends CustomPainter {
   final bool memoryActive;
   final String? angleModeLabel;
   final String? numeralSystemLabel;
+  final GlyphStyle glyphStyle;
 
   _TwoLineDisplayPainter({
     required this.inputBuffer,
@@ -130,6 +138,7 @@ class _TwoLineDisplayPainter extends CustomPainter {
     required this.memoryActive,
     required this.angleModeLabel,
     required this.numeralSystemLabel,
+    required this.glyphStyle,
   });
 
   @override
@@ -217,7 +226,9 @@ class _TwoLineDisplayPainter extends CustomPainter {
   }
 
   void _paintInputLine(Canvas canvas, Rect rect) {
-    final laid = inputBuffer.map((t) => _layoutToken(t, rect.height)).toList();
+    final laid = inputBuffer
+        .map((t) => _layoutToken(t, rect.height, glyphStyle))
+        .toList();
     var x = rect.left;
     for (var i = 0; i < laid.length; i++) {
       if (i == cursorPos && !resultFieldActive) {
@@ -232,12 +243,54 @@ class _TwoLineDisplayPainter extends CustomPainter {
   }
 
   void _paintResultLine(Canvas canvas, Rect rect) {
-    final laid = resultBuffer.map((t) => _layoutToken(t, rect.height)).toList();
-    final totalW = laid.fold<double>(0.0, (a, t) => a + t.width);
+    final laid = resultBuffer
+        .map((t) => _layoutToken(t, rect.height, glyphStyle))
+        .toList();
+    var totalW = laid.fold<double>(0.0, (a, t) => a + t.width);
 
-    final needsSuffix = isF64Fallback || resultPeriodCapped;
-    final suffixTp = needsSuffix ? _ellipsisPainter(rect.height) : null;
-    final suffixW = suffixTp?.width ?? 0.0;
+    final hasExactSuffix = isF64Fallback || resultPeriodCapped;
+    var suffixTp = hasExactSuffix ? _ellipsisPainter(rect.height) : null;
+    var suffixW = suffixTp?.width ?? 0.0;
+
+    // Width-Truncation: das Ergebnis ist rechts-ausgerichtet, also lägen
+    // überlange Resultate links aus der Anzeige raus. Wir droppen
+    // Tokens vom rechten Ende (am wenigsten signifikante Nachkomma-
+    // Stellen zuerst) bis es passt, und markieren den Schnitt mit dem
+    // Baseline-Ellipsis-Suffix (wie State B). Periode wird mit-clamped.
+    var displayedPeriodLen = resultPeriodLen;
+    int? displayedPeriodStart = resultPeriodStart;
+    var truncated = false;
+    while (totalW + suffixW > rect.width && laid.length > 1) {
+      final dropped = laid.removeLast();
+      totalW -= dropped.width;
+      truncated = true;
+      if (displayedPeriodStart != null) {
+        if (laid.length <= displayedPeriodStart) {
+          displayedPeriodStart = null;
+          displayedPeriodLen = 0;
+        } else if (laid.length < displayedPeriodStart + displayedPeriodLen) {
+          displayedPeriodLen = laid.length - displayedPeriodStart;
+        }
+      }
+    }
+    // Wenn wir geschnitten haben und vorher kein Suffix da war,
+    // Baseline-Ellipsis nachziehen (semantisch: „mehr da, aber abgeschnitten").
+    if (truncated && suffixTp == null) {
+      suffixTp = _ellipsisPainter(rect.height);
+      suffixW = suffixTp.width;
+      while (totalW + suffixW > rect.width && laid.length > 1) {
+        final dropped = laid.removeLast();
+        totalW -= dropped.width;
+        if (displayedPeriodStart != null) {
+          if (laid.length <= displayedPeriodStart) {
+            displayedPeriodStart = null;
+            displayedPeriodLen = 0;
+          } else if (laid.length < displayedPeriodStart + displayedPeriodLen) {
+            displayedPeriodLen = laid.length - displayedPeriodStart;
+          }
+        }
+      }
+    }
 
     var x = rect.right - totalW - suffixW;
     final positions = <double>[];
@@ -248,9 +301,9 @@ class _TwoLineDisplayPainter extends CustomPainter {
     }
 
     final overlineY = rect.top + _overlineYOffset(rect.height);
-    if (resultPeriodStart != null && resultPeriodLen > 0) {
-      final start = resultPeriodStart!;
-      final endIdx = start + resultPeriodLen - 1;
+    if (displayedPeriodStart != null && displayedPeriodLen > 0) {
+      final start = displayedPeriodStart;
+      final endIdx = start + displayedPeriodLen - 1;
       if (start < positions.length && endIdx < positions.length) {
         final x1 = positions[start] + 1.5;
         final x2 = positions[endIdx] + laid[endIdx].width - 1.5;
@@ -263,10 +316,17 @@ class _TwoLineDisplayPainter extends CustomPainter {
         );
       }
     }
-
     if (suffixTp != null) {
-      if (isF64Fallback) {
-        // State B: text-based ellipsis at vertical centre (mid-line).
+      // Suffix-Position-Auswahl:
+      // - isF64Fallback (State B): Baseline-Ellipsis (Mid-Line).
+      // - truncated ohne F64: ebenfalls Baseline — semantisch „mehr
+      //   da, aber abgeschnitten".
+      // - resultPeriodCapped (State C): dot-cluster auf overline height.
+      //   (Wenn beides — Period-Cap UND Truncation — gewinnt der
+      //   visuell auffälligere overline-Cluster, weil die Period-Info
+      //   wichtiger als der reine Width-Schnitt ist.)
+      final useBaseline = isF64Fallback || (truncated && !resultPeriodCapped);
+      if (useBaseline) {
         final yPos = rect.top + (rect.height - suffixTp.height) / 2;
         suffixTp.paint(canvas, Offset(x, yPos));
       } else {
@@ -320,7 +380,8 @@ class _TwoLineDisplayPainter extends CustomPainter {
       old.errorMsg != errorMsg ||
       old.memoryActive != memoryActive ||
       old.angleModeLabel != angleModeLabel ||
-      old.numeralSystemLabel != numeralSystemLabel;
+      old.numeralSystemLabel != numeralSystemLabel ||
+      old.glyphStyle != glyphStyle;
 }
 
 // ---------------------------------------------------------------------------
@@ -349,8 +410,17 @@ double _digitQ(double lineH) => lineH * _digitQRatio;
 double _overlineYOffset(double lineH) =>
     lineH / 2 - 2 * _digitQ(lineH) - _overlineGap;
 
-_LaidToken _layoutToken(CalcToken token, double lineH) {
+_LaidToken _layoutToken(CalcToken token, double lineH, GlyphStyle style) {
   if (token is Digit) {
+    if (style == GlyphStyle.conventional) {
+      // Render as conventional ASCII: '0'..'9' for d0..d9, 'A'/'B' for
+      // d10/d11 (Pitman/Dwiggins extension, standard in academic
+      // dozenal literature).
+      final tp = _textPainter(_conventionalDigitChar(token.value), lineH * 0.42);
+      return _LaidToken(tp.width + 4, (canvas, offset, h) {
+        tp.paint(canvas, Offset(offset.dx + 2, offset.dy + (h - tp.height) / 2));
+      });
+    }
     final q = _digitQ(lineH);
     final cell = q * 2 + 6;
     return _LaidToken(cell, (canvas, offset, h) {
@@ -369,6 +439,12 @@ _LaidToken _layoutToken(CalcToken token, double lineH) {
   return _LaidToken(tp.width + 4, (canvas, offset, h) {
     tp.paint(canvas, Offset(offset.dx + 2, offset.dy + (h - tp.height) / 2));
   });
+}
+
+String _conventionalDigitChar(DozenalDigit d) {
+  if (d.value == 10) return 'A';
+  if (d.value == 11) return 'B';
+  return '${d.value}';
 }
 
 TextPainter _textPainter(String text, double fontSize) => TextPainter(

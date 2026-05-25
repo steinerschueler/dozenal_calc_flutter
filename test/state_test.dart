@@ -116,7 +116,7 @@ void main() {
       expect(s.errorMsg, equals('DIV BY ZERO'));
     });
 
-    test('typing after error clears it and starts a new expression', () {
+    test('typing after error clears it and edits in place', () {
       final s = DozenalCalcState()
         ..handleClick(Digit(DozenalDigit.d1))
         ..handleClick(const Div())
@@ -126,7 +126,51 @@ void main() {
 
       s.handleClick(Digit(DozenalDigit.d5));
       expect(s.errorMsg, isNull);
-      expect(s.inputBuffer, equals([Digit(DozenalDigit.d5)]));
+      expect(
+        s.inputBuffer,
+        equals([
+          Digit(DozenalDigit.d1),
+          const Div(),
+          Digit(DozenalDigit.d0),
+          Digit(DozenalDigit.d5),
+        ]),
+        reason: 'input must be preserved so user can edit the failing '
+            'expression instead of retyping from scratch',
+      );
+    });
+
+    test('arrows in error state move cursor without clearing error', () {
+      final s = DozenalCalcState()
+        ..handleClick(Digit(DozenalDigit.d1))
+        ..handleClick(const Div())
+        ..handleClick(Digit(DozenalDigit.d0))
+        ..handleClick(const Equals());
+      expect(s.errorMsg, isNotNull);
+      final initialCursor = s.cursorPos;
+
+      s.handleClick(const TriangleLeft());
+      expect(s.errorMsg, isNotNull,
+          reason: 'arrow keys preserve error so context stays visible '
+              'while user navigates to the failing token');
+      expect(s.cursorPos, equals(initialCursor - 1));
+    });
+
+    test('Del after error removes char at cursor and clears error', () {
+      final s = DozenalCalcState()
+        ..handleClick(Digit(DozenalDigit.d1))
+        ..handleClick(const Div())
+        ..handleClick(Digit(DozenalDigit.d0))
+        ..handleClick(const Equals());
+      expect(s.errorMsg, isNotNull);
+
+      s.handleClick(const Del());
+      expect(s.errorMsg, isNull);
+      expect(
+        s.inputBuffer,
+        equals([Digit(DozenalDigit.d1), const Div()]),
+        reason: 'the trailing zero — the cause of div-by-zero — is gone, '
+            'ready for the user to type a non-zero divisor',
+      );
     });
 
     test('mode keys stay blocked during error state', () {

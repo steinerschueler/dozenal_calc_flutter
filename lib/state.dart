@@ -56,19 +56,21 @@ class DozenalCalcState extends ChangeNotifier {
   // --------------------------------------------------------------------
 
   void handleClick(CalcToken token) {
-    // Error guard: only AC clears immediately; any input token also clears
-    // and proceeds, but mode/navigation keys stay blocked until AC.
+    // Error guard:
+    //   - AC: full clear (handled by `token is! Ac` skipping this block).
+    //   - Mode/memory/info tokens: blocked until AC (`_isErrorBlocked`).
+    //   - Arrow keys: preserve error display + input + cursor, just move
+    //     the cursor. Lets the user navigate inside the failing input to
+    //     find the issue, with the error message still visible as context.
+    //   - Anything else (Del, Digit, operators, Equals, …): clear the
+    //     error message but keep input + cursor, then dispatch normally
+    //     so the user can fix the syntax in place and re-evaluate.
     if (errorMsg != null && token is! Ac) {
       if (_isErrorBlocked(token)) return;
-      errorMsg = null;
-      inputBuffer = const [];
-      resultBuffer = const [Digit(DozenalDigit.d0)];
-      resultPeriodStart = null;
-      resultPeriodLen = 0;
-      resultPeriodCapped = false;
-      cursorPos = 0;
-      resultFieldActive = false;
-      _ratCollapsed = false;
+      if (token is! TriangleLeft && token is! TriangleRight) {
+        errorMsg = null;
+        _ratCollapsed = false;
+      }
     }
 
     final isOperator = token is Add ||
@@ -324,8 +326,6 @@ class DozenalCalcState extends ChangeNotifier {
       token is Doz ||
       token is Dez ||
       token is Info ||
-      token is TriangleLeft ||
-      token is TriangleRight ||
       token is Expand ||
       token is Close ||
       // Memory ops too: otherwise Sto/Rcl/Mc/Ans after an error would clear

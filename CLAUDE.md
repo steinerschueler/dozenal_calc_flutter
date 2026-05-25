@@ -289,6 +289,35 @@ neu generiert. Nach `flutter_launcher_icons` / `flutter_native_splash`
 auch die jeweils gepatchten Plattform-Resources (`android/app/src/main/res/`,
 `ios/Runner/Assets.xcassets/`, …) prüfen und mitnehmen.
 
+### Play-Store-Screenshots (Status: manueller Capture)
+
+Per-Locale-Screenshots via `tool/generate_screenshots.dart` wurden
+einmal versucht (flutter_test + matchesGoldenFile + System-Font-Loading
+für 14 Sprachen), aber wieder verworfen: das flutter_test-Environment
+lädt `.ttc`-Font-Collections nicht zuverlässig (NotoSansCJK-Regular.ttc
+ergab Tofu-Boxen für Chinesisch/Japanisch, auch mit korrekt registrierter
+fontFamilyFallback-Chain). Ein qualitativ schlechter Screenshot in der
+Muttersprache ist für Play-Store-UX schlimmer als gar kein lokalisierter
+Screenshot — Nutzer:innen würden sonst denken, die App selbst rendere so.
+
+**Aktueller Stand:** keine per-Locale-Screenshots im Repo. Play Console
+fällt auf das Default-Locale-Set zurück (was du dort hochlädst), für alle
+Sprachen identisch.
+
+**Falls per-Locale-Screenshots später gewünscht sind**, ist der
+zuverlässigste Weg adb-Capture vom physischen Gerät:
+
+```bash
+adb -s <serial> shell input tap …          # zur gewünschten Seite navigieren
+adb -s <serial> shell screencap -p /sdcard/s.png
+adb -s <serial> pull /sdcard/s.png store/screenshots/<locale>/N-name.png
+```
+
+Pro Locale: in der App die Sprache umstellen (oder OS-Locale ändern),
+dann durchklicken und capturen. Funktioniert mit echten Android-Fonts
+inkl. CJK, ohne Font-Workarounds — siehe „Manuelles Testen auf
+physischem Gerät" oben für die generelle adb-UI-Driving-Loop.
+
 ## Architektur
 
 ### Zwei-Schienen-Auswertung (die Kernidee)
@@ -314,6 +343,17 @@ Wenn die Rational-Schiene kollabiert, wird das f64-Resultat als **State B**
 mit `≈`-Suffix angezeigt. Wenn beide funktionieren, gewinnt die
 Rational-Schiene. `DozenalCalcState.isF64Fallback` steuert diese Anzeige.
 
+**Width-Truncation auf der Ergebnis-Zeile:** lange exakte Ergebnisse (z. B.
+`AB ⊕ BB` mit Periode-Länge 136 in Basis 12) würden rechts-bündig
+gerendert nach links aus dem Display laufen. `_paintResultLine` in
+`display.dart` läuft deshalb eine Drop-Schleife: solange `totalW +
+suffixW > rect.width`, wird das hinterste Token (= niederwertigste
+Nachkomma-Stelle) verworfen, Periode-Overlay-Indices werden
+mit-geclampt. War vorher kein Suffix gesetzt, wird ein Baseline-`…`
+angehängt (semantisch wie State B: „mehr da, abgeschnitten"). State C
+gewinnt visuell über reine Width-Truncation, weil die Period-Info
+informativer ist als der reine Schnitt-Marker.
+
 ### State (`lib/state.dart`)
 
 `DozenalCalcState extends ChangeNotifier` ist der einzige Orchestrator. Er
@@ -335,6 +375,20 @@ Eingabe von `.` wird zusätzlich durch `_hasDecimalInCurrentLiteral`
 gefiltert (beidseitiger Walk durch das aktuelle Zahlen-Literal), damit
 `1.2.3`-Eingaben gar nicht erst entstehen.
 
+**Error-Guard mit in-place Edit:** der `handleClick`-Error-Guard ist
+dreiteilig:
+- **AC** → kompletter Reset (Buffer, Cursor, Error).
+- **Mode/Memory/Info-Tokens** (`_isErrorBlocked`: Drg/Doz/Dez/Sto/Rcl/
+  Mc/Ans/Info/Expand/Close) → blockiert, User muss AC drücken.
+- **Pfeil-Tasten** → Cursor bewegt sich, Error + Input + Cursor bleiben
+  erhalten. Lässt den User im fehlerhaften Input navigieren, mit
+  Fehlermeldung als Kontext sichtbar.
+- **Alle anderen** (Del, Digit, Operatoren, Klammern, Funktionen,
+  Equals) → Error löscht sich, Input + Cursor bleiben, dann normaler
+  Dispatch. Erlaubt in-place-Editierung des fehlerhaften Ausdrucks
+  + Re-Evaluation per Equals, ohne den ganzen Ausdruck neu tippen
+  zu müssen.
+
 ### Tokens (`lib/tokens.dart`)
 
 `sealed class CalcToken` mit const-Singleton-Subklassen für
@@ -349,7 +403,15 @@ Payload-freie Varianten. Spiegelt das Rust-Enum und erlaubt erschöpfende
 - `display.dart` — Zwei-Zeilen-Display, Überstrich-Rendering,
   Periode-Markierung. `TwoLineDisplay` skaliert sich adaptiv an seinen
   Container, funktioniert also vom Landscape-Phone (~60 dp) bis zum
-  Tablet-Portrait (170 dp).
+  Tablet-Portrait (170 dp). Liest **GlyphStyle** aus dem
+  `GlyphStyleScope`-InheritedNotifier (via `Builder` innerhalb des
+  `CustomPaint`-Wraps): `custom` = Dozenal-Glyphen via
+  `paintDozenalDigitAt` (Default), `conventional` = ASCII `'0'..'9'/'A'/'B'`
+  per TextPainter (Pitman/Dwiggins-Konvention für die Über-9er-Stellen).
+  Affektiert nur das Display — der Keypad-Render-Pfad in `keypad.dart`
+  bleibt bewusst immer auf Custom-Glyphen (Marken-Identität). Quell-
+  Datei `lib/logic/glyph_style.dart`, Persistenz via SharedPreferences-
+  Key `glyph_style_v1`.
 - `keypad.dart` — orientierungsgesteuertes Dispatch. `Keypad.build` liest
   die `LayoutBuilder`-Constraints und wählt:
   - **`_HochKeypad`** (Portrait): vertikale Flex-`Column` mit
@@ -396,6 +458,30 @@ zehn `info_content_<lang>.dart`-Part-Dateien, eine pro Sprache, mit
 `_chapter<Lang>(int chapter, AppLocalizations l)`-Funktion mit den zwölf
 Lehr-Kapiteln als Prosa + custom-painted Illustrationen für die
 Geometrie-Kapitel.
+
+**Layout der Info-Liste** (`InfoListPage`):
+1. `_TheoryExpansion(titles: titles)` — ausklappbarer Container für die
+   zwölf Lehr-Kapitel, Default collapsed, Header „Theorie" mit
+   `Icons.menu_book_outlined` und Chevron. Inside: 12 ListTiles mit
+   monospace-Nummern-Prefix + Navigations-Chevron, eingerückt um 32 dp.
+2. `_GlyphStyleToggle` — zweisegmentiger ToggleButtons-Switch zwischen
+   Glyphen und 0-9/A,B (siehe Rendering-Abschnitt). Liegt direkt unter
+   der Theorie, weil die Darstellungs-Wahl Teil davon ist, wie der
+   Nutzer Dozenal liest — kein tiefes Setting-Menue dahinter.
+3. `_LanguagePickerExpansion` — analoge Ausklapp-Struktur, Default
+   collapsed, listet `kSupportedLanguages`.
+4. Sekundärseiten als Navigations-Items (Imperial-12, Datenschutz,
+   Lizenz, Spenden, Feedback).
+5. `_VersionFooter` (Padding + Versions-Anzeige).
+
+Alle Top-Level-Items sind durch 1-dp-Dividers im Farbton `0xFF2C2C2C`
+getrennt; keine grösseren Gaps mehr (früher 24 dp vor dem Sprach-
+Picker als visueller Sektions-Marker — mit dem Theorie-Expansion-
+Container ist dieser Marker visuell redundant geworden).
+
+AppBar-Titel ist `infoListTitle` und reflektiert die Mischnatur der
+Seite (Theorie + alle anderen Items): DE „Theorie und Weiteres",
+EN „Theory and More", entsprechend lokalisiert in allen 14 Locales.
 
 Der Dispatcher (`buildChapterContent` in `info_content.dart`) wählt über
 eine `const Map<String, _ChapterBuilder> _chapterBuilders` anhand der

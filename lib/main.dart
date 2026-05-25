@@ -13,6 +13,7 @@ import 'keypad.dart';
 import 'l10n/app_localizations.dart';
 import 'locale_notifier.dart';
 import 'logic/dozenal_digit.dart';
+import 'logic/glyph_style.dart';
 import 'state.dart';
 import 'tokens.dart';
 
@@ -45,16 +46,19 @@ class DozenalCalcApp extends StatefulWidget {
 
 class _DozenalCalcAppState extends State<DozenalCalcApp> {
   final LocaleNotifier _localeNotifier = LocaleNotifier();
+  final GlyphStyleNotifier _glyphStyleNotifier = GlyphStyleNotifier();
 
   @override
   void initState() {
     super.initState();
     _localeNotifier.load();
+    _glyphStyleNotifier.load();
   }
 
   @override
   void dispose() {
     _localeNotifier.dispose();
+    _glyphStyleNotifier.dispose();
     super.dispose();
   }
 
@@ -62,23 +66,26 @@ class _DozenalCalcAppState extends State<DozenalCalcApp> {
   Widget build(BuildContext context) {
     return LocaleScope(
       notifier: _localeNotifier,
-      child: ListenableBuilder(
-        listenable: _localeNotifier,
-        builder: (context, _) => MaterialApp(
-          onGenerateTitle: (ctx) => AppLocalizations.of(ctx).appTitle,
-          debugShowCheckedModeBanner: false,
-          locale: _localeNotifier.override,
-          supportedLocales: AppLocalizations.supportedLocales,
-          localizationsDelegates: AppLocalizations.localizationsDelegates,
-          localeResolutionCallback: resolveLocale,
-          theme: ThemeData(
-            brightness: Brightness.dark,
-            scaffoldBackgroundColor: const Color(0xFF1F1F1F),
-            // Custom press-color feedback already covers tap state — disable
-            // the Material splash to avoid double feedback.
-            splashFactory: NoSplash.splashFactory,
+      child: GlyphStyleScope(
+        notifier: _glyphStyleNotifier,
+        child: ListenableBuilder(
+          listenable: _localeNotifier,
+          builder: (context, _) => MaterialApp(
+            onGenerateTitle: (ctx) => AppLocalizations.of(ctx).appTitle,
+            debugShowCheckedModeBanner: false,
+            locale: _localeNotifier.override,
+            supportedLocales: AppLocalizations.supportedLocales,
+            localizationsDelegates: AppLocalizations.localizationsDelegates,
+            localeResolutionCallback: resolveLocale,
+            theme: ThemeData(
+              brightness: Brightness.dark,
+              scaffoldBackgroundColor: const Color(0xFF1F1F1F),
+              // Custom press-color feedback already covers tap state — disable
+              // the Material splash to avoid double feedback.
+              splashFactory: NoSplash.splashFactory,
+            ),
+            home: const _CalcScaffold(),
           ),
-          home: const _CalcScaffold(),
         ),
       ),
     );

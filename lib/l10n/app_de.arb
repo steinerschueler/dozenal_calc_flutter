@@ -6,12 +6,18 @@
     "description": "Brand name shown as the MaterialApp title (task switcher / browser tab). Identical in both locales."
   },
 
-  "infoListTitle": "Dozenal — Zwölf Kapitel",
+  "infoListTitle": "Theorie und Weiteres",
   "infoListPrivacyEntry": "Datenschutzerklärung",
   "infoListLicenseEntry": "Lizenz",
   "infoListFeedbackEntry": "Feedback geben",
   "infoListConversionsEntry": "Imperial-12 Umrechnungen",
   "infoListSupportEntry": "Entwicklung unterstützen",
+
+  "infoListGlyphStyleTitle": "Ziffern im Display",
+  "infoListGlyphStyleCustom": "Glyphen",
+  "infoListGlyphStyleConventional": "0–9, A, B",
+
+  "infoListTheoryExpansion": "Theorie",
 
   "supportTitle": "Entwicklung unterstützen",
   "supportIntro": "Wenn dir Dozenal Calc gefällt: ein kleines Trinkgeld hilft die laufenden Kosten zu decken — konkret die jährliche Apple-Developer-Gebühr von 100 USD, damit die App auch auf iPhone und iPad erscheinen kann.",
