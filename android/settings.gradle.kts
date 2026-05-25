@@ -21,6 +21,10 @@ plugins {
     id("dev.flutter.flutter-plugin-loader") version "1.0.0"
     id("com.android.application") version "8.11.1" apply false
     id("org.jetbrains.kotlin.android") version "2.2.20" apply false
+    // Gradle Play Publisher — pushes listings, release notes and (on demand)
+    // the AAB to Google Play via the Developer API. Configured in
+    // app/build.gradle.kts. See CLAUDE.md → "Automatisches Listing-Push".
+    id("com.github.triplet.play") version "3.12.1" apply false
 }
 
 include(":app")

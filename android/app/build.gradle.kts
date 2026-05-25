@@ -6,6 +6,7 @@ plugins {
     id("kotlin-android")
     // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
     id("dev.flutter.flutter-gradle-plugin")
+    id("com.github.triplet.play")
 }
 
 // Loads release-signing credentials from android/key.properties. The file is
@@ -92,4 +93,29 @@ dependencies {
     // explicit pin guarantees the right overload is on the classpath so
     // MainActivity compiles without "receiver type mismatch".
     implementation("androidx.activity:activity-ktx:1.9.3")
+}
+
+// Gradle Play Publisher (com.github.triplet.play) — pushes listings, release
+// notes and (on demand) the AAB to Google Play via the Developer API. Upload
+// commands live as `./gradlew publishListing`, `publishReleaseNotes`, and
+// `publishBundle`; plain `./gradlew build` does NOT upload anything.
+//
+// Safety rails: default track is `internal` and default release status is
+// DRAFT, so a bundle upload lands as a draft on the internal test track and
+// must be promoted manually in Play Console. Override per-invocation via
+// -Pplay.track=production -Pplay.releaseStatus=COMPLETED when you genuinely
+// want to publish.
+//
+// Credentials live at ~/keys/play-publisher.json, deliberately outside the
+// repo. When the file is missing (fresh checkout), the plugin's publish
+// tasks fail with a clear "no credentials" error — local building still
+// works because no publish task runs by default.
+val playCredsFile = file(System.getProperty("user.home") + "/keys/play-publisher.json")
+play {
+    if (playCredsFile.exists()) {
+        serviceAccountCredentials.set(playCredsFile)
+    }
+    defaultToAppBundles.set(true)
+    track.set("internal")
+    releaseStatus.set(com.github.triplet.gradle.androidpublisher.ReleaseStatus.DRAFT)
 }

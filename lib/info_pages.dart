@@ -233,9 +233,13 @@ class _LanguagePickerExpansionState extends State<_LanguagePickerExpansion> {
   @override
   Widget build(BuildContext context) {
     final notifier = LocaleScope.of(context);
-    final activeCode = Localizations.localeOf(context).languageCode;
+    // Match by full BCP-47 tag, not just languageCode — otherwise `zh` and
+    // `zh-Hant` collide (both have languageCode `'zh'`) and the picker shows
+    // both rows checked while the collapsed header always picks whichever
+    // appears first in kSupportedLanguages.
+    final activeTag = Localizations.localeOf(context).toLanguageTag();
     final active = kSupportedLanguages.firstWhere(
-      (l) => l.locale.languageCode == activeCode,
+      (l) => l.locale.toLanguageTag() == activeTag,
       orElse: () => kSupportedLanguages.first,
     );
 
@@ -278,7 +282,7 @@ class _LanguagePickerExpansionState extends State<_LanguagePickerExpansion> {
                             color: Color(0xFFD0D0D0),
                           ),
                         ),
-                        trailing: lang.locale.languageCode == activeCode
+                        trailing: lang.locale.toLanguageTag() == activeTag
                             ? const Icon(Icons.check,
                                 color: Colors.white, size: 16)
                             : null,

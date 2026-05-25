@@ -109,6 +109,59 @@ Fertige Release-Notes werden im Projekt-Root als `build<N>-release-notes.txt`
 abgelegt (siehe `build12-release-notes.txt`), damit künftige Builds auf
 das gleiche Format und die gleiche Block-Reihenfolge zurückgreifen können.
 
+### Automatisches Listing-Push (Gradle Play Publisher)
+
+Listings (App-Name, Kurz-/Lange Beschreibung) und Release-Notes werden
+direkt aus dem Repo via Google Play Developer API gepusht — keine
+Copy-Paste-Runde durch Play Console. Plugin: `com.github.triplet.play`
+3.12.x, im app-Modul von `android/app/build.gradle.kts` konfiguriert.
+
+**Workflow:**
+
+```bash
+dart run tool/sync_play_listings.dart   # store/listing.*.md + build<N>-release-notes.txt → android/app/src/main/play/
+./gradlew publishListing                # nur Texte/Grafiken
+./gradlew publishBundle                 # AAB + Listings + Release-Notes (Track: internal, Status: DRAFT)
+```
+
+`publishBundle` setzt voraus, dass das AAB bereits gebaut ist
+(`flutter build appbundle --release` zuerst). Es lädt nur hoch, baut nicht
+neu — Gradle Play Publisher findet die fertige `app-release.aab` unter
+`build/app/outputs/bundle/release/`.
+
+Default-Track ist `internal`, Default-Release-Status `DRAFT` — ein
+Bundle-Upload landet als Entwurf auf dem internen Test-Track und muss
+in Play Console manuell promotet werden. Bewusst auf Production einmalig
+überschreiben: `./gradlew publishBundle -Pplay.track=production
+-Pplay.releaseStatus=COMPLETED`.
+
+**Credentials:** Service-Account-JSON unter `~/keys/play-publisher.json`
+(parallel zur `~/keys/dozenal_calc.jks`-Keystore), **nicht** im Repo.
+Einmalige Einrichtung in Google Cloud Console (Service-Account anlegen,
+JSON-Key herunterladen) plus Play Console → Einrichtung → API-Zugriff
+(Service-Account dem App-Account hinzufügen, Rolle „Store-Eintrag
+verwalten" für Listings + „Tests verwalten" für Bundle-Upload auf
+internal/closed-Track). Bei fehlender JSON laufen die `publish*`-Tasks
+mit klarer Fehlermeldung ins Leere — lokales Bauen bleibt unbeeinflusst.
+
+**Quell-Layout:** `store/listing.<code>.md` bleibt menschenlesbar
+autoritativ. Das Sync-Script extrahiert die drei Code-Blöcke (App-Name,
+Kurzbeschreibung, Lange Beschreibung) und schreibt sie in das vom
+Plugin erwartete Layout `android/app/src/main/play/listings/<play-locale>/
+{title,short-description,full-description}.txt`. Locale-Mapping in
+`tool/sync_play_listings.dart` → Konstante `_localeMap` (z. B. `de` →
+`de-DE`, `fa` → `fa-AF`, `zh-Hant` → `zh-TW`). Das `play/`-Verzeichnis
+ist gitignoriert — niemals von Hand editieren, der nächste Sync-Lauf
+würde Änderungen überschreiben.
+
+Release-Notes-Quelle ist die jeweils neueste `build<N>-release-notes.txt`
+(numerisch sortiert, nicht lexikografisch — `build11` vor `build2`).
+Die `<locale>...</locale>`-Blöcke landen in
+`android/app/src/main/play/release-notes/<play-locale>/default.txt`.
+Synchronisiert werden nur die sieben Play-Console-Release-Notes-Locales
+(DE/EN/FR/ES/IT/FA/RU); die übrigen sieben App-Sprachen (GA, HI, ZH-Hans,
+ZH-Hant, CY, JA, AR) haben in Play Console keinen Release-Notes-Slot.
+
 ### Asset-Regenerierung
 
 `assets/icon.png`, `assets/compass.png` und das Play-Store-Feature-Graphic
@@ -325,15 +378,20 @@ Sekundärseiten, die aus `info_pages.dart` heraus gepusht werden:
 `privacy_page.dart` und `license_page.dart` (laden
 `legal/<typ>.<code>.md` per Locale via dem generischen
 `markdown_page.dart`), `feedback_dialog.dart` (`mailto:`-Composer,
-kein Netzwerk; alle Strings über ARB) sowie `conversions_page.dart`
+kein Netzwerk; alle Strings über ARB), `conversions_page.dart`
 (Live-Umrechnung eines Eingabewerts in die klassischen Imperial-12-
 Einheiten — Inches/Fuss, Pence/Schilling/Pfund, Dutzend/Gros/Großgros,
 Sekunden/Minuten/Stunden, Bruchteile von 360° — jeweils in Dez- und
 Doz-Darstellung; eigene Doz/Dez-Toggle und symbolische Notation
 ft/in/sh/d/£/min/h/° statt sprachspezifischer Wörter, damit die
-Sektion-Bodies in allen Locales identisch und kompakt bleiben).
-Alle folgen der gleichen Push-Konvention — keine direkten Routen
-aus `main.dart`, alles geht über die Info-Liste.
+Sektion-Bodies in allen Locales identisch und kompakt bleiben) sowie
+`support_page.dart` („Entwicklung unterstützen" — externer Ko-fi-Link
+via `openExternalLink` aus `license_page.dart`, kein In-App-Payment;
+Intro-Prosa rahmt die Spende konkret gegen die Apple-Developer-
+Program-Gebühr, da der iOS-Veröffentlichungsweg aus der Linux-only-
+Build-Umgebung sonst nicht erreichbar ist). Alle folgen der gleichen
+Push-Konvention — keine direkten Routen aus `main.dart`, alles geht
+über die Info-Liste.
 
 **Datenschutz-Web-Hosting (cPanel):** Parallel zu den in-app
 `legal/privacy-policy.<tag>.md`-Dateien (in App-Bundle, in-app via
@@ -386,10 +444,13 @@ JA (Japanisch) und AR (Arabisch). Die Infrastruktur:
   koexistieren können; alte einsprachige Einträge (`de`) bleiben
   rückwärtskompatibel. `resolveLocale` ist script-aware: exakte
   Sprache+Script gewinnt vor reinem Sprach-Match; `zh-TW/HK/MO` mappt
-  automatisch auf `zh-Hant`. `info_content.dart`, `privacy_page.dart`
-  und `license_page.dart` lookup über `toLanguageTag()` statt nur
-  `languageCode`, sonst würden zh-Hant-Routen auf die vereinfachten
-  Dateien zurückfallen.
+  automatisch auf `zh-Hant`. `info_content.dart`, `privacy_page.dart`,
+  `license_page.dart` und der Sprach-Picker in `info_pages.dart`
+  (`_LanguagePickerExpansion`) vergleichen über `toLanguageTag()` statt
+  nur `languageCode`. Sonst würden zh-Hant-Routen auf die vereinfachten
+  Dateien zurückfallen — und im Picker (`languageCode == 'zh'` für beide
+  Chinesisch-Varianten) markiert der Häkchen-Indikator fälschlich beide
+  Zeilen und der Header zeigt immer die zuerst registrierte Variante.
 - **Sprach-Registry:** `lib/language_options.dart` mit
   `kSupportedLanguages`-Liste — single source of truth für Locale,
   Anzeige-Label (selbstreferentiell: „Deutsch", „English", „Français",
