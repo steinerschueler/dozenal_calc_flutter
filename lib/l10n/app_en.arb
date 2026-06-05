@@ -4,6 +4,10 @@
   "appTitle": "Dozenal Calc",
 
   "infoListTitle": "Theory and More",
+  "infoListGlyphStyleTitle": "Display digits",
+  "infoListGlyphStyleCustom": "Glyphs",
+  "infoListGlyphStyleConventional": "0–9, A, B",
+  "infoListTheoryExpansion": "Theory",
   "infoListPrivacyEntry": "Privacy Policy",
   "infoListLicenseEntry": "License",
   "infoListFeedbackEntry": "Give Feedback",

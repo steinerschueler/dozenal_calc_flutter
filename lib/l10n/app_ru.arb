@@ -4,6 +4,10 @@
   "appTitle": "Dozenal Calc",
 
   "infoListTitle": "Теория и прочее",
+  "infoListGlyphStyleTitle": "Цифры на дисплее",
+  "infoListGlyphStyleCustom": "Глифы",
+  "infoListGlyphStyleConventional": "0–9, A, B",
+  "infoListTheoryExpansion": "Теория",
   "infoListPrivacyEntry": "Политика конфиденциальности",
   "infoListLicenseEntry": "Лицензия",
   "infoListFeedbackEntry": "Отправить отзыв",

@@ -4,6 +4,10 @@
   "appTitle": "Dozenal Calc",
 
   "infoListTitle": "Theori a mwy",
+  "infoListGlyphStyleTitle": "Digidau ar y sgrin",
+  "infoListGlyphStyleCustom": "Glyffau",
+  "infoListGlyphStyleConventional": "0–9, A, B",
+  "infoListTheoryExpansion": "Damcaniaeth",
   "infoListPrivacyEntry": "Polisi preifatrwydd",
   "infoListLicenseEntry": "Trwydded",
   "infoListFeedbackEntry": "Anfon adborth",

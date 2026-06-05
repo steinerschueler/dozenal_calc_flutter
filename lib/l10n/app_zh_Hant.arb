@@ -4,6 +4,10 @@
   "appTitle": "Dozenal Calc",
 
   "infoListTitle": "理論與其他",
+  "infoListGlyphStyleTitle": "顯示數字",
+  "infoListGlyphStyleCustom": "字形",
+  "infoListGlyphStyleConventional": "0–9, A, B",
+  "infoListTheoryExpansion": "理論",
   "infoListPrivacyEntry": "私隱政策",
   "infoListLicenseEntry": "授權條款",
   "infoListFeedbackEntry": "傳送意見",

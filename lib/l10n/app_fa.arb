@@ -4,6 +4,10 @@
   "appTitle": "Dozenal Calc",
 
   "infoListTitle": "نظریه و موارد دیگر",
+  "infoListGlyphStyleTitle": "ارقام در نمایشگر",
+  "infoListGlyphStyleCustom": "نمادها",
+  "infoListGlyphStyleConventional": "0–9, A, B",
+  "infoListTheoryExpansion": "نظریه",
   "infoListPrivacyEntry": "سیاست حفظ حریم خصوصی",
   "infoListLicenseEntry": "مجوز",
   "infoListFeedbackEntry": "ارسال بازخورد",

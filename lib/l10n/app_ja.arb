@@ -4,6 +4,10 @@
   "appTitle": "Dozenal Calc",
 
   "infoListTitle": "理論とその他",
+  "infoListGlyphStyleTitle": "表示の数字",
+  "infoListGlyphStyleCustom": "グリフ",
+  "infoListGlyphStyleConventional": "0–9, A, B",
+  "infoListTheoryExpansion": "理論",
   "infoListPrivacyEntry": "プライバシーポリシー",
   "infoListLicenseEntry": "ライセンス",
   "infoListFeedbackEntry": "フィードバックを送る",

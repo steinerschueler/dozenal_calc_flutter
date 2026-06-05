@@ -4,6 +4,10 @@
   "appTitle": "Dozenal Calc",
 
   "infoListTitle": "Teoiric agus tuilleadh",
+  "infoListGlyphStyleTitle": "Digití ar an scáileán",
+  "infoListGlyphStyleCustom": "Glifeanna",
+  "infoListGlyphStyleConventional": "0–9, A, B",
+  "infoListTheoryExpansion": "Teoiric",
   "infoListPrivacyEntry": "Polasaí Príobháideachta",
   "infoListLicenseEntry": "Ceadúnas",
   "infoListFeedbackEntry": "Seol aiseolas",
