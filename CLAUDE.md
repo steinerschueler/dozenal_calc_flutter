@@ -42,76 +42,13 @@ erwartet, kein Bug. Nach jedem Flutter-Minor-Stable-Release erneut prüfen.
 
 ### Manuelles Testen auf physischem Gerät
 
-Standard-Loop: bauen → installieren → ansteuern → Screenshot pullen →
-visuell prüfen. Schritte sind deterministisch, nicht zu überdenken.
-
-**1. Gerät finden:**
-
-```bash
-flutter devices
-adb devices
-```
-
-Erscheint `no permissions (missing udev rules?)`, ist fast immer der
-USB-Modus am Telefon auf »Aufladen« statt »Dateiübertragung« — den User
-bitten umzustellen, *bevor* in udev/sudo-Diagnosen abdriften (Memory
-`feedback_redmi_install.md` dokumentiert den Reflex).
-
-**2. Lauf-Variante wählen:**
-
-- **Debug + Hot Reload** für iterative Code-Änderungen:
-  ```bash
-  flutter run -d <serial>
-  ```
-  `r` / `R` für Hot Reload / Restart, `q` zum Beenden. Im Background-
-  Task lohnt ein Monitor auf Errors/„Flutter run key commands".
-
-- **Release-APK** für Build-Verifikation oder reale Performance:
-  ```bash
-  flutter build apk --release
-  adb -s <serial> install build/app/outputs/flutter-apk/app-release.apk
-  ```
-  Kollidiert mit installiertem Debug → `INSTALL_FAILED_UPDATE_INCOMPATIBLE:
-  signatures do not match`. Lösung (verliert App-Daten):
-  ```bash
-  adb -s <serial> uninstall app.weltanschauung.dozenal
-  adb -s <serial> install build/app/outputs/flutter-apk/app-release.apk
-  ```
-
-Verifikation, dass die richtige Version drauf ist:
-
-```bash
-adb -s <serial> shell dumpsys package app.weltanschauung.dozenal \
-  | grep -E "versionName|versionCode|lastUpdateTime"
-```
-
-**3. UI per adb steuern + Screenshot pullen:**
-
-```bash
-adb -s <serial> shell wm size                 # Auflösung für Koordinaten
-adb -s <serial> shell input tap X Y
-adb -s <serial> shell input swipe X1 Y1 X2 Y2 DUR_MS
-adb -s <serial> shell input keyevent KEYCODE_BACK
-adb -s <serial> shell screencap -p /sdcard/s.png && \
-  adb -s <serial> pull /sdcard/s.png /tmp/s.png
-```
-
-Danach `Read /tmp/s.png` (multimodaler Bildkanal liefert das Bild direkt
-zurück). Tap-Koordinaten *immer* aus dem letzten Screenshot ableiten —
-Layouts shiften zwischen Modi (Orientierung, Locale-Wechsel mit
-unterschiedlich langen Labels, Theme-Wechsel).
-
-**4. Vergleichendes Verifizieren — beide Zustände für den User
-capturen, nicht Spot-Check-zurückgeben.** Wenn der User um Prüfung
-eines State-Wechsels bittet (Sprache, Orientierung, Theme, Tastenmodus),
-beide Zustände per `screencap` + `pull` als Datei beschaffen und über
-`SendUserFile` mit beiden Pfaden nebeneinander zeigen. *Nicht* den User
-bitten, sich vor dem Wechsel Zeichen / Pixel zu merken und nachher
-selbst zu vergleichen — wenn der Wechsel nicht greift, sieht er
-dieselbe Anzeige und glaubt fälschlich „keine Änderung", die Methode
-kann den Bug also gar nicht entdecken. Für Claude selbst entfällt das
-Problem ohnehin, weil der `screencap → pull → Read`-Loop jeden Zustand
-implizit cached.
+adb-Loop (Gerät finden → bauen/installieren → per `input tap/swipe`
+ansteuern → `screencap`+`pull` → `Read`). Bei State-Wechsel-Prüfungen
+(Sprache/Orientierung/Theme/Tastenmodus) **beide** Zustände als Datei
+capturen und via `SendUserFile` nebeneinander zeigen, nie Spot-Check
+zurückgeben. Vollständige Schritt-für-Schritt-Anleitung inkl.
+Install-Konflikt-Lösung und udev-Reflex:
+[`docs/device-testing.md`](docs/device-testing.md).
 
 ### Release-Builds
 
@@ -125,150 +62,24 @@ Der Play-Store-Appbundle-Build braucht explizit Java 17 (Java 21 auf dieser
 Maschine zerbricht Gradle). Android-Signing liest `android/key.properties` —
 fehlt die Datei, fällt der Build still auf Debug-Signing zurück.
 
-Als abschließenden Schritt nach einem Release-Build mehrsprachige
-Play-Console-Versionshinweise verfassen — ein Block pro aktiv
-unterstützter Listing-Locale. **Wichtig:** Die App enthält seit dem
-Post-Build-11-Ausbau **vierzehn** Sprachen, aber Play Console listet nur
-**sieben** davon als Release-Notes-Locale (DE, EN, FR, ES, IT, FA, RU).
-Die zusätzlichen Sprachen (GA, HI, ZH-Hans, ZH-Hant, CY, JA, AR) leben
-nur in der App selbst — für sie werden keine Play-Console-Notes
-geschrieben. Persisch wird in Play Console nur als `fa-AF` gelistet, das
-ist Googles einzige Farsi-Listing-Locale:
-
-Jeder Block: Tag-öffnen auf einer Zeile, Prosa als eine einzige lange
-Zeile direkt darunter, Tag-schliessen auf einer Zeile. Leerzeile zwischen
-Blöcken. So vermeidet Copy-Paste in Play Console ungewollte Zeilenumbrüche
-in der Beschreibung.
-
-```
-<de-DE>
-…ca. 450 Zeichen (Limit 500 pro Locale)…
-</de-DE>
-
-<en-US>
-…
-</en-US>
-
-<fr-FR>
-…
-</fr-FR>
-
-<es-ES>
-…
-</es-ES>
-
-<it-IT>
-…
-</it-IT>
-
-<fa-AF>
-…
-</fa-AF>
-
-<ru-RU>
-…
-</ru-RU>
-```
-
-Inhalt aus den tatsächlichen Build-Änderungen ableiten (nicht aus der
-Commit-Message kopieren) und Ton an Tester richten — was sie sehen werden,
-nicht die Constraint-Math dahinter. Zeichen pro Locale mit `wc -m`
-verifizieren. Bei einem Release, das nur eine Locale betrifft (z. B.
-gezielter Persisch-Fix nach Native-Speaker-Review), nur den entsprechenden
-Block schreiben — Play Console übernimmt für nicht aufgeführte Locales
-automatisch die letzten Notes weiter.
-
-Fertige Release-Notes werden im Projekt-Root als `build<N>-release-notes.txt`
-abgelegt (jeweils nur die aktuellste; ältere werden mit dem nächsten
-Build verworfen), damit künftige Builds auf das gleiche Format und die
-gleiche Block-Reihenfolge zurückgreifen können.
-
-### Automatisches Listing-Push (Gradle Play Publisher)
-
-Listings (App-Name, Kurz-/Lange Beschreibung) und Release-Notes werden
-direkt aus dem Repo via Google Play Developer API gepusht — keine
-Copy-Paste-Runde durch Play Console. Plugin: `com.github.triplet.play`
-3.12.x, im app-Modul von `android/app/build.gradle.kts` konfiguriert.
-
-**Workflow:**
+**Nach jedem Release-Build** mehrsprachige Play-Console-Versionshinweise
+verfassen — ein ~450-Zeichen-Block pro Listing-Locale für die **sieben**
+Play-Console-Release-Notes-Locales (DE, EN, FR, ES, IT, FA, RU; die übrigen
+sieben App-Sprachen haben dort keinen Slot). Als `build<N>-release-notes.txt`
+im Projekt-Root ablegen, dann via Gradle Play Publisher pushen:
 
 ```bash
-dart run tool/sync_play_listings.dart   # store/listing.*.md + build<N>-release-notes.txt → android/app/src/main/play/
+dart run tool/sync_play_listings.dart   # store/listing.*.md + build<N>-release-notes.txt → play/
 ./gradlew publishListing                # nur Texte/Grafiken
-./gradlew publishBundle                 # AAB + Listings + Release-Notes (Track: internal, Status: DRAFT)
+./gradlew publishBundle                 # AAB-Upload (Track: internal, Status: DRAFT)
 ```
 
-`publishBundle` setzt voraus, dass das AAB bereits gebaut ist
-(`flutter build appbundle --release` zuerst). Es lädt nur hoch, baut nicht
-neu — Gradle Play Publisher findet die fertige `app-release.aab` unter
-`build/app/outputs/bundle/release/`.
-
-Default-Track ist `internal`, Default-Release-Status `DRAFT` — ein
-Bundle-Upload landet als Entwurf auf dem internen Test-Track und muss
-in Play Console manuell promotet werden. Bewusst auf Production einmalig
-überschreiben: `./gradlew publishBundle -Pplay.track=production
--Pplay.releaseStatus=COMPLETED`.
-
-**Credentials:** Service-Account-JSON unter `~/keys/play-publisher.json`
-(parallel zur `~/keys/dozenal_calc.jks`-Keystore), **nicht** im Repo.
-Einmalige Einrichtung in Google Cloud Console (Service-Account anlegen,
-JSON-Key herunterladen) plus Play Console → Einrichtung → API-Zugriff
-(Service-Account dem App-Account hinzufügen, Rolle „Store-Eintrag
-verwalten" für Listings + „Tests verwalten" für Bundle-Upload auf
-internal/closed-Track). Bei fehlender JSON laufen die `publish*`-Tasks
-mit klarer Fehlermeldung ins Leere — lokales Bauen bleibt unbeeinflusst.
-
-**Quell-Layout:** `store/listing.<code>.md` bleibt menschenlesbar
-autoritativ. Das Sync-Script extrahiert die drei Code-Blöcke (App-Name,
-Kurzbeschreibung, Lange Beschreibung) und schreibt sie in das vom
-Plugin erwartete Layout `android/app/src/main/play/listings/<play-locale>/
-{title,short-description,full-description}.txt`. Locale-Mapping in
-`tool/sync_play_listings.dart` → Konstante `_localeMap` (z. B. `de` →
-`de-DE`, `fa` → `fa-AF`, `zh-Hant` → `zh-TW`). Das `play/`-Verzeichnis
-ist gitignoriert — niemals von Hand editieren, der nächste Sync-Lauf
-würde Änderungen überschreiben.
-
-Release-Notes-Quelle ist die jeweils neueste `build<N>-release-notes.txt`
-(numerisch sortiert, nicht lexikografisch — `build11` vor `build2`).
-Die `<locale>...</locale>`-Blöcke landen in
-`android/app/src/main/play/release-notes/<play-locale>/default.txt`.
-Synchronisiert werden nur die sieben Play-Console-Release-Notes-Locales
-(DE/EN/FR/ES/IT/FA/RU); die übrigen sieben App-Sprachen (GA, HI, ZH-Hans,
-ZH-Hant, CY, JA, AR) haben in Play Console keinen Release-Notes-Slot.
-
-**App-Name-Konvention (Dutzend-Lehnwort statt Mathe-Begriff):** Latein-
-Schrift-Locales (DE/EN/FR/ES/IT/GA/CY) verwenden den Markennamen
-„Dozenal Calc". Die sieben Nicht-Latein-Locales nutzen statt dem
-akademischen Zahlensystem-Begriff (十二进制 / 十二進法 /
-двенадцатеричный / द्वादश पद्धति / دستگاه پایه ۱۲ / نظام اثنا عشري) das
-in der jeweiligen Sprache etablierte Lehnwort für „Dutzend" plus ein
-Rechen-Wort:
-
-| Locale | App-Name | Wortbildung |
-|---|---|---|
-| hi | दर्जन गणक | दर्जन (Dutzend, engl. Lehnwort) + गणक (Rechner) |
-| ru | Дюжинный расчёт | дюжина (franz./ital. Lehnwort) → adjektiv. дюжинный + расчёт |
-| zh-Hans | 打进制计算 | 打 (engl. *dozen* phonetisch) + 进制 (Stellensystem) + 计算 |
-| zh-Hant | 打進制計算 | gleich, in Hant-Glyphen |
-| ja | ダース計算 | ダース (Katakana dāsu, engl. *dozen*) + 計算 |
-| fa | حساب دوجینی | دوجین (franz. *douzaine*) → adjektiv. دوجینی + حساب |
-| ar | حساب الدزينة | الدزينة (mediterran-romanisch) + Idāfa mit حساب |
-
-Begründung: das Dutzend-Lehnwort ist in allen sieben Sprachen
-Markt-Standard (Bazar/Supermarkt-Vokabular), nicht Lehrbuch-Mathe.
-Signalisiert: App spricht die Alltagssprache der Zielgruppe. Quelle für
-neue Sprachen: Wikipedia-Artikel der jeweiligen Lehnwort-Form (oft
-unter eigenem Artikel-Titel: ru.wiki/Дюжина, ja.wiki/ダース, …).
-
-Die App-Namen leben an *zwei* Stellen, die parallel gepflegt werden
-müssen:
-
-1. **Play-Console-Listing-Titel**: `## App-Name`-Block in
-   `store/listing.<code>.md`. Sync via `tool/sync_play_listings.dart`.
-2. **Android-Launcher-Name**: `<string name="app_name">…</string>` in
-   `android/app/src/main/res/values-<XX>/strings.xml` (Default in
-   `values/strings.xml` = „Dozenal Calc"). Manifest referenziert nur
-   `@string/app_name`.
+`publishBundle` lädt nur hoch (AAB muss schon gebaut sein), landet als Entwurf
+auf `internal` und muss in Play Console manuell promotet werden. Vollständiger
+Workflow — Notes-Block-Format + Template, `-Pplay.track`-Override, Credentials
+(`~/keys/play-publisher.json`), Sync-Source-Layout:
+[`docs/release-workflow.md`](docs/release-workflow.md). App-Namen-Konvention
+pro Locale: [`docs/store-listings.md`](docs/store-listings.md).
 
 ### Asset-Regenerierung
 
@@ -291,32 +102,12 @@ auch die jeweils gepatchten Plattform-Resources (`android/app/src/main/res/`,
 
 ### Play-Store-Screenshots (Status: manueller Capture)
 
-Per-Locale-Screenshots via `tool/generate_screenshots.dart` wurden
-einmal versucht (flutter_test + matchesGoldenFile + System-Font-Loading
-für 14 Sprachen), aber wieder verworfen: das flutter_test-Environment
-lädt `.ttc`-Font-Collections nicht zuverlässig (NotoSansCJK-Regular.ttc
-ergab Tofu-Boxen für Chinesisch/Japanisch, auch mit korrekt registrierter
-fontFamilyFallback-Chain). Ein qualitativ schlechter Screenshot in der
-Muttersprache ist für Play-Store-UX schlimmer als gar kein lokalisierter
-Screenshot — Nutzer:innen würden sonst denken, die App selbst rendere so.
-
-**Aktueller Stand:** keine per-Locale-Screenshots im Repo. Play Console
-fällt auf das Default-Locale-Set zurück (was du dort hochlädst), für alle
-Sprachen identisch.
-
-**Falls per-Locale-Screenshots später gewünscht sind**, ist der
-zuverlässigste Weg adb-Capture vom physischen Gerät:
-
-```bash
-adb -s <serial> shell input tap …          # zur gewünschten Seite navigieren
-adb -s <serial> shell screencap -p /sdcard/s.png
-adb -s <serial> pull /sdcard/s.png store/screenshots/<locale>/N-name.png
-```
-
-Pro Locale: in der App die Sprache umstellen (oder OS-Locale ändern),
-dann durchklicken und capturen. Funktioniert mit echten Android-Fonts
-inkl. CJK, ohne Font-Workarounds — siehe „Manuelles Testen auf
-physischem Gerät" oben für die generelle adb-UI-Driving-Loop.
+Keine per-Locale-Screenshots im Repo — die `tool/generate_screenshots.dart`-
+Pipeline wurde wegen unzuverlässigem `.ttc`-Font-Loading in flutter_test
+(CJK-Tofu) verworfen. Play Console nutzt das Default-Locale-Set für alle
+Sprachen. Falls per-Locale gewünscht: adb-Capture vom Gerät (siehe
+`docs/device-testing.md`). Details + Begründung:
+[`docs/store-listings.md`](docs/store-listings.md).
 
 ## Architektur
 
@@ -490,122 +281,40 @@ unbekannter Locale (sollte nie passieren, weil `resolveLocale` nur
 unterstützte Codes durchlässt).
 
 Kapitel 2 hält die sprach-spezifische Aussprache-Konvention für
-Dozenal-Zahlen fest. Die geometrisch motivierten Magnituden 12²–12⁷
-basieren auf den germanischen Lehnwörtern quader, cuber, tesser, penter,
-hexer, hepter. In den meisten Sprachen bleiben sie invariant und werden
-bei nicht-lateinischer Schrift transliteriert (کوادر, کوبر, تسر … in
-Persisch ; квадер, кубер, тессер … in Russisch ; क्वाडर … in Hindi ; 卡德
-… in Chinesisch). **Ausnahmen für romanische Phonologie:** Spanisch
-adaptiert auf `-ero/-eros` (maskulin, parallel zu cuadrado/cubo),
-Italienisch auf `-era/-ere` (feminin, mit „tessera" als existierendem
-italienischem Wort für Mosaikstein — Glücksfall für 12⁴). Französisch
-behält `-er`, weil französisches stummes r das Lehnwort bereits nativ
-aufnimmt (`papier`-Muster). Der Verbindungsstil zwischen Magnituden ist
-sprach-spezifisch und in der jeweiligen Kapitel-2-Prosa dokumentiert:
-
-- **Deutsch:** `-er/-a`-Bindung (`quadaundeins`, `kubaquader`)
-- **Englisch:** „and" einmal vor letztem Sub-quader-Block (`quader and one`)
-- **Französisch:** pure Juxtaposition mit „et"-Ausnahme nur an Position 21
-  (`quader deux douzaines et un`, parallel zu „cent vingt et un")
-- **Spanisch:** pure Juxtaposition mit „y"-Ausnahme an Einer-Position bei
-  docena-Multiplikator 2–B (`cuadero dos docenas y uno`, parallel zu
-  „treinta y uno"). Magnituden: cuadero, cubero, tesero, pentero,
-  hexero, heptero.
-- **Italienisch:** pure Juxtaposition ohne Konnektor (`quadera due
-  dozzine tre`, parallel zu „centoventitré"). Magnituden: quadera,
-  cubera, tessera, pentera, hexera, heptera.
-- **Persisch:** durchgehender „و"-Konnektor (`quader و دو دوجین و سه`)
-- **Russisch:** pure Juxtaposition + Numerus-Deklination
-  (`две дюжины` Gen.Sg. nach 2–4, `пять дюжин` Gen.Pl. nach 5+)
-- **Irisch:** pure Juxtaposition + „a"-Partikel vor Einer-Position
-  (`quader fiche a trí`, parallel zu „céad fiche a trí"). Lenition/
-  Eklipsis-Regeln auf `dosaen` nach Multiplikator (`dhá dhosaen` lenited
-  bei 2, `seacht ndosaen` eclipsed bei 7+).
-- **Hindi:** pure Juxtaposition ohne Konnektor (Devanagari-Schrift,
-  transliterierte Magnituden)
-- **Chinesisch:** pure Juxtaposition mit `零`-Brücke für eingebettete
-  Nullen (`一卡德零一` = o101, mirror von Mandarin-Dezimal `一百零一`
-  = 101)
-- **Walisisch:** pure Juxtaposition mit „a"/„ac"-Partikel vor Einer-
-  Position (`quader dau ddwsin a thri`, parallel zu „cant a thri").
-  „a" löst Aspirate-Mutation auf c/p/t aus (`a thri`, `a phedwar`);
-  „ac" vor Vokalen und Halbvokal w (`ac un`, `ac wyth`). Soft Mutation
-  d → dd auf `dwsin` nach „dau" (`dau ddwsin`); fremde Magnituden
-  (quader/cuber/…) bleiben unverändert. Kapitel-1-Prosa schlägt
-  zusätzlich die Brücke zur walisischen vigesimalen Tradition
-  (deunaw = 18 als „zwei Neuner", ugain = 20, deugain = 40, hanner
-  cant = 50, trigain = 60, pedwar ugain = 80). Zusätzlicher
-  Spezialabschnitt „Y Gymraeg a'r deuddeg" in Kapitel 1 (nur in CY,
-  nicht in anderen Locales): würdigt deuddeg/pymtheg/deunaw als
-  Unit-Wörter sowie dwsin im Alltagsgebrauch; gefolgt von vollständiger
-  englischer Übersetzung in Klammern für Reviewer ohne Welsh-Kenntnisse.
-- **Japanisch:** pure Juxtaposition ohne Konnektor (parallel zu „百
-  二十三"), Magnituden als Katakana-Transliteration (`クアダー, クー
-  バー, テッサー, ペンター, ヘクサー, ヘプター`); Basis-Einheit `ダー
-  ス` (dāsu, Lehnwort). Multiplikator 1 explizit (`一ダース`, `一クア
-  ダー`), parallel zu japanischem `一百` (ippyaku). Kapitel-1-Prosa
-  schlägt die Brücke zur japanischen Myriaden-Konvention (万 = 10⁴,
-  億 = 10⁸, 兆 = 10¹² — Vierergruppierung statt westlicher
-  Dreiergruppierung) als ostasiatisches Nicht-Dezimal-Erbe.
-- **Arabisch:** „و"-Konnektor vor Einer-Position (parallel zu „مائة
-  وثلاثة"), Magnituden als arabische Transliteration (`كوادر, كوبر,
-  تسر, بنتر, هكسر, هبتر`); Basis-Einheit `دزينة` (dazīna, Lehnwort
-  aus Französisch/Italienisch). Multiplikator 1 implizit (`دزينة`,
-  `كوادر` — wie Englisch/Irisch). Standard-arabische Numerus-Deklination
-  auf `dazīna`: Dual `دزينتان` für 2 ; Plural `ثلاث/أربع/خمس… دزينات`
-  für 3–10 (Polaritätsregel: maskuline Kardinalzahl vor femininem
-  Plural) ; Singular `إحدى عشرة دزينة` für 11. Fremde Magnituden
-  bleiben invariant (foreign-stem convention, wie GA/CY).
-  Kapitel-1-Prosa schlägt die Brücke zum arabischen Mathematik-Erbe
-  (al-Khwārizmī → Algorithmen, al-jabr → Algebra, indisch-arabische
-  Ziffern).
-
-Das e/o-Präfix als Theorie-Lese-Hilfe (e = dezimal, o = dozenal) bleibt
-in allen Sprachen sprachneutral.
+Dozenal-Zahlen fest (Magnituden quader/cuber/tesser/…, pro Sprache
+unterschiedliche Konnektoren und Mutationsregeln). **Vor jedem Edit an
+Kapitel-2-Prosa in `info_content_<lang>.dart` die vollständige Konvention
+in [`docs/chapter2-conventions.md`](docs/chapter2-conventions.md)
+nachschlagen.** Das e/o-Präfix als Theorie-Lese-Hilfe (e = dezimal,
+o = dozenal) bleibt in allen Sprachen sprachneutral.
 
 Wenn `handleClick` `state.infoState` auf `InfoList` setzt, pusht der
 State-Listener in `main.dart` die Route und resettet `infoState` auf
 `Closed` — der Navigator steuert ab dann alle Listen-/Detail-/Zurück-
 Übergänge.
 
-Sekundärseiten, die aus `info_pages.dart` heraus gepusht werden:
-`privacy_page.dart` und `license_page.dart` (laden
-`legal/<typ>.<code>.md` per Locale via dem generischen
-`markdown_page.dart`), `feedback_dialog.dart` (`mailto:`-Composer,
-kein Netzwerk; alle Strings über ARB), `conversions_page.dart`
-(Live-Umrechnung eines Eingabewerts in die klassischen Imperial-12-
-Einheiten — Inches/Fuss, Pence/Schilling/Pfund, Dutzend/Gros/Großgros,
-Sekunden/Minuten/Stunden, Bruchteile von 360° — jeweils in Dez- und
-Doz-Darstellung; eigene Doz/Dez-Toggle und symbolische Notation
-ft/in/sh/d/£/min/h/° statt sprachspezifischer Wörter, damit die
-Sektion-Bodies in allen Locales identisch und kompakt bleiben) sowie
-`support_page.dart` („Entwicklung unterstützen" — externer Ko-fi-Link
-via `openExternalLink` aus `license_page.dart`, kein In-App-Payment;
-Intro-Prosa rahmt die Spende konkret gegen die Apple-Developer-
-Program-Gebühr, da der iOS-Veröffentlichungsweg aus der Linux-only-
-Build-Umgebung sonst nicht erreichbar ist). Alle folgen der gleichen
-Push-Konvention — keine direkten Routen aus `main.dart`, alles geht
-über die Info-Liste.
+Sekundärseiten (aus `info_pages.dart` gepusht, alle über die Info-Liste —
+keine direkten Routen aus `main.dart`): `privacy_page.dart` +
+`license_page.dart` (laden `legal/<typ>.<code>.md` per Locale via
+`markdown_page.dart`), `feedback_dialog.dart` (`mailto:`-Composer, kein
+Netzwerk, Strings über ARB), `conversions_page.dart` (Live-Umrechnung in die
+Imperial-12-Einheiten — Zoll/Fuss, Pence/Schilling/Pfund, Dutzend/Gros,
+Zeit, 360°-Bruchteile — mit eigener Doz/Dez-Toggle und symbolischer Notation
+`ft/in/sh/d/£/min/h/°` statt Wörtern, damit die Bodies in allen Locales
+identisch bleiben), `support_page.dart` (externer Ko-fi-Link via
+`openExternalLink`, kein In-App-Payment; rahmt die Spende gegen die
+Apple-Developer-Program-Gebühr für den iOS-Weg).
 
 **Datenschutz-Web-Hosting (cPanel):** Parallel zu den in-app
-`legal/privacy-policy.<tag>.md`-Dateien (in App-Bundle, in-app via
-`flutter_markdown_plus` gerendert) leben unter `legal/privacy.<tag>.html`
-vierzehn stand-alone HTML-Versionen für `weltanschauung.app`. Die
-Play-Console-Datenschutz-URL zeigt auf eine davon (in der Regel
-`privacy.de.html` als Default). Jede HTML enthält einen horizontalen
-`<nav class="lang-picker">`-Block direkt nach `<main>` mit allen
-vierzehn Sprachen alphabetisch nach Code (ar, cy, de, en, …, zh-Hant),
-jede als Flag + nativer Name, aktive Sprache via `.current`-Klasse
-visuell hervorgehoben. Picker erzwingt `direction: ltr`, damit
-FA/AR-Dateien die Reihenfolge nicht spiegeln. **Walisische Flagge ist
-Inline-SVG** (Bezier-Pfad portiert aus `WelshFlagPainter` in
-`flag_painter.dart`): die Unicode-Subdivision-Sequenz 🏴󠁧󠁢󠁷󠁬󠁳󠁿
-rendert auf Firefox-Linux und älteren Android-Versionen unzuverlässig,
-deshalb font-unabhängige SVG-Lösung. Andere dreizehn Sprachen nutzen
-Standard-Regional-Indicator-Emojis (universell unterstützt). Die
-Naming-Konvention ist `privacy.<tag>.html` (kürzer als die
-in-app-Variante `privacy-policy.<tag>.md` — Web-URLs sollen kompakt
-sein, in-app-Pfade konsistent mit `license.<tag>.md`).
+`legal/privacy-policy.<tag>.md` (App-Bundle, via `flutter_markdown_plus`)
+leben unter `legal/privacy.<tag>.html` vierzehn stand-alone HTML-Versionen
+für `weltanschauung.app`; die Play-Console-Datenschutz-URL zeigt auf eine
+(Default `privacy.de.html`). Jede enthält einen `<nav class="lang-picker">`
+mit allen 14 Sprachen (Flag + nativer Name, `direction: ltr` erzwungen, damit
+FA/AR nicht spiegeln). **Walisische Flagge ist Inline-SVG** (Pfad aus
+`WelshFlagPainter`), weil die Unicode-Subdivision-Sequenz auf Firefox-Linux
+und älteren Android-Versionen unzuverlässig rendert; die anderen 13 nutzen
+Regional-Indicator-Emojis.
 
 ### Intro
 
@@ -743,59 +452,16 @@ Die Transparenz der System-Bars UND die Icon-Brightness werden
    dunklem Hintergrund. Das ist der nicht-deprecated Ersatz für Flutters
    `SystemUiOverlayStyle.statusBarIconBrightness`.
 
-**Warum keine `SystemChrome.*`-Calls mehr in `main.dart`:** Build 9
-behielt `setEnabledSystemUIMode(edgeToEdge)` + ein „nur Brightness"-
-`setSystemUIOverlayStyle`. Beide laufen über Flutters `PlatformPlugin`,
-dessen kompilierte Methoden — egal welche Felder zur Laufzeit gesetzt
-sind — statisch auf die deprecated `Window.setStatusBarColor /
-setNavigationBarColor / setNavigationBarDividerColor` verweisen. Play
-Console scannt das DEX statisch, sieht diese Referenzen und flaggt sie.
-Solange Dart-Code in die Platform-Channel-Methode reinruft, hält R8 sie
-lebendig und kann die deprecated Referenzen nicht wegoptimieren. Build
-10 entfernt alle Dart-seitigen Calls — was App-seitig darüber hinaus
-nicht erreichbar ist, dokumentiert der folgende Absatz.
-
-**Was Build 10 NICHT beseitigt (Upstream-Rest):** Die Play-Console-
-Warnungen »randlose Anzeige funktioniert möglicherweise nicht« und
-»nicht mehr unterstützte APIs« bleiben nach Build 10 sichtbar. Die
-geflaggten Stellen verweisen auf zwei Quellen, die außerhalb unseres
-Codes liegen:
-
-1. **`io.flutter.plugin.platform.e.a`** — obfuscated
-   `PlatformPlugin.setSystemChromeSystemUIOverlayStyle`. Die Flutter-
-   Engine registriert den Platform-Channel
-   `SystemChrome.setSystemUIOverlayStyle` beim Start unabhängig davon,
-   ob Dart-Code ihn ansteuert. R8 kann die Methode daher nicht strippen,
-   und die statischen Referenzen auf
-   `Window.setStatusBarColor / setNavigationBarColor / setNavigationBarDividerColor`
-   bleiben im DEX. Tracking: `flutter/flutter#165327` plus Duplikate
-   `#183372`, `#183349`, `#175261`, `#175262`, `#169810` — alle als
-   „r: fixed" markiert, aber nur im Sinne eines Doku-Updates; der
-   `PlatformPlugin`-Code ist Stand Flutter 3.41.8 unverändert.
-2. **`B.b.q`, `b.o.J`, `b.p.J`, `b.r.J`** — die `EdgeToEdgeApi*Impl`-
-   Backport-Klassen aus `androidx.activity:activity`. `EdgeToEdge.enable()`
-   delegiert intern auf versions-spezifische Impls; die Pre-Android-15-
-   Pfade rufen `setStatusBarColor` / `setNavigationBarColor` für
-   Backward-Compat auf. Das ist genau der API-Pfad, den Google im
-   Warntext selbst empfiehlt — Play-Console-DEX-Scanning unterscheidet
-   aber nicht zwischen „wird auf Android 15 ausgeführt" und „Referenz
-   im Bytecode vorhanden". Identisches Muster ist für Material Components
-   (`material-components-android#4732`), .NET MAUI (`dotnet/maui#26788`),
-   React Native (`software-mansion/react-native-screens#2632`) und
-   Corona dokumentiert.
-
-Google stellt im Warntext selbst klar, dass diese Hinweise die
-Endnutzer-Erfahrung NICHT beeinträchtigen; sie bleiben so lange im
-Console-Dashboard, bis Upstream-Libraries die Backport-Pfade entfernen.
-Build 10 ist damit das technisch saubere Maximum, das app-seitig
-erreichbar ist — die übrig bleibenden Warnungen sind als bekannte
-Upstream-Issues zu behandeln, nicht als TODO im Repo. **Aggressive
-R8-Strip-Regeln** gegen `PlatformPlugin.setSystemChromeSystemUIOverlayStyle`
-wurden bewusst NICHT eingebaut: der Engine-Startup-Pfad könnte die
-Methode reflektiv ansteuern, OEM-spezifische Laufzeit-Crashes sind in
-verwandten Issues dokumentiert. Bei jedem neuen Flutter-Stable-Release
-prüfen, ob `PlatformPlugin` die deprecated Referenzen entfernt hat —
-dann diesen Block aktualisieren.
+**Keine `SystemChrome.*`-Calls in `main.dart`** (kein
+`setEnabledSystemUIMode`, kein `setSystemUIOverlayStyle`): beide laufen über
+Flutters `PlatformPlugin`, das statisch auf deprecated `Window.setStatusBar/
+NavigationBarColor` verweist, die Play Console beim DEX-Scan flaggt. Alles
+nativ in `MainActivity.java`. Verbleibende Play-Console-Warnungen (»randlose
+Anzeige«, »nicht mehr unterstützte APIs«) stammen aus Flutter-Engine +
+`androidx.activity`-Backports, sind als bekannte **Upstream-Issues** zu
+behandeln (kein TODO im Repo) und keine aggressiven R8-Strip-Regeln einbauen.
+Vollständige Begründung, Issue-Tracking und der Re-Check bei Flutter-Upgrades:
+[`docs/edge-to-edge.md`](docs/edge-to-edge.md).
 
 `MainActivity` extendet bewusst **`FlutterFragmentActivity`**, nicht
 `FlutterActivity`: nur Erstere erbt über `FragmentActivity` von
