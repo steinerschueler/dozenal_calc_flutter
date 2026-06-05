@@ -20,7 +20,7 @@ flutter pub get
 flutter run                   # aktuelle Plattform
 flutter run -d chrome         # Web
 flutter analyze               # was CI ausführt
-flutter test                  # gesamte Suite (147 Tests)
+flutter test                  # gesamte Suite (~149 Tests)
 flutter test test/rational_test.dart           # einzelne Datei
 flutter test --plain-name "parses 1/7"         # einzelner Test per Name
 ```
