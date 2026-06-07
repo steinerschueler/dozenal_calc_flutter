@@ -66,3 +66,6 @@ app.*.map.json
 **/*.jks
 **/*.keystore
 key.properties
+
+# Throwaway converter preview renders
+tool/preview/

@@ -5,6 +5,9 @@ ausgelagert — nur beim Hinzufügen einer Sprache oder bei Listing-/Asset-Arbei
 gebraucht. Der `sync_play_listings` / `publishListing` / `publishBundle`-
 Workflow bleibt in CLAUDE.md (Befehle → Automatisches Listing-Push).
 
+**iOS-Keywords** (App-Store-Connect-only, kein Play-Feld): siehe
+`docs/app-store-keywords.md` — pro-Locale-Keyword-Strings für alle 14 Sprachen.
+
 ## App-Name-Konvention (Dutzend-Lehnwort statt Mathe-Begriff)
 
 Latein-Schrift-Locales (DE/EN/FR/ES/IT/GA/CY) verwenden den Markennamen

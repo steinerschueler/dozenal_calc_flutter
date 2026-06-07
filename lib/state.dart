@@ -52,6 +52,17 @@ class DozenalCalcState extends ChangeNotifier {
   bool get isF64Fallback => errorMsg == null && _ratCollapsed;
 
   // --------------------------------------------------------------------
+  /// Tap-to-position the input cursor (the fine red line). [pos] is a gap
+  /// index into the input buffer. Switches focus to the input line and, like
+  /// the arrow keys, preserves any error message as context.
+  void moveCursorTo(int pos) {
+    final clamped = pos.clamp(0, inputBuffer.length);
+    if (resultFieldActive == false && cursorPos == clamped) return;
+    resultFieldActive = false;
+    cursorPos = clamped;
+    notifyListeners();
+  }
+
   // Click handling — 1:1 port of input.rs::handle_click.
   // --------------------------------------------------------------------
 
