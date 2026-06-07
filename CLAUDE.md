@@ -20,7 +20,7 @@ flutter pub get
 flutter run                   # aktuelle Plattform
 flutter run -d chrome         # Web
 flutter analyze               # was CI ausführt
-flutter test                  # gesamte Suite (~149 Tests)
+flutter test                  # gesamte Suite (~221 Tests)
 flutter test test/rational_test.dart           # einzelne Datei
 flutter test --plain-name "parses 1/7"         # einzelner Test per Name
 ```
@@ -33,6 +33,10 @@ Test-Routing (für gezielte Edits):
 - `dozenal_converter_test.dart` — Doz ↔ Dez-Konvertierung.
 - `keypad_layout_test.dart` — Orientierungs-Dispatch und Repaint-Verhalten.
 - `edge_cases_test.dart` — Grenzfall-Sammler über die Module hinweg.
+- `unit_convert_test.dart` + `converter_state_test.dart` — Einheitenrechner:
+  SI-Drehscheibe/Faktoren/Breakdown bzw. Compound-Eingabe + Cursor.
+- `converter_keypad_layout_test.dart` — Umrechner-Layout über Seitenverhältnisse.
+- `cursor_tap_test.dart` — Tipp-Cursor (Hauptrechner-Hit-Test + `moveCursorTo`).
 
 CI (`.github/workflows/ci.yml`) ist auf Flutter 3.41.8 stable festgenagelt
 und führt `analyze` + `test` aus. Das Flutter-SDK selbst pinnt sechs
@@ -301,7 +305,9 @@ Netzwerk, Strings über ARB), `conversions_page.dart` (Live-Umrechnung in die
 Imperial-12-Einheiten — Zoll/Fuss, Pence/Schilling/Pfund, Dutzend/Gros,
 Zeit, 360°-Bruchteile — mit eigener Doz/Dez-Toggle und symbolischer Notation
 `ft/in/sh/d/£/min/h/°` statt Wörtern, damit die Bodies in allen Locales
-identisch bleiben), `support_page.dart` (externer Ko-fi-Link via
+identisch bleiben), `converter_page.dart` (interaktiver Einheitenrechner —
+zweiter Rechner-Modus, eigener Abschnitt unten), `support_page.dart`
+(externer Ko-fi-Link via
 `openExternalLink`, kein In-App-Payment; rahmt die Spende gegen die
 Apple-Developer-Program-Gebühr für den iOS-Weg).
 
@@ -315,6 +321,45 @@ FA/AR nicht spiegeln). **Walisische Flagge ist Inline-SVG** (Pfad aus
 `WelshFlagPainter`), weil die Unicode-Subdivision-Sequenz auf Firefox-Linux
 und älteren Android-Versionen unzuverlässig rendert; die anderen 13 nutzen
 Regional-Indicator-Emojis.
+
+### Einheitenrechner (zweiter Rechner-Modus)
+
+Vollständiger Umrechner, erreichbar über „Theorie und Weiteres" →
+„Einheitenrechner" (`InfoListPage`, Eintrag `infoListConverterEntry`). Nutzt
+die Bausteine des Hauptrechners wieder, ist aber ein **eigener Screen** — das
+Hauptrechner-Keypad bleibt unangetastet (Store-Screenshots gültig). Vollständige
+Spezifikation + Implementierungs-Fortschritt: [`docs/unit-converter.md`](docs/unit-converter.md).
+
+**Zwei-Welten-Logik (Doz/Dez):** Doz = imperiale/dozenale Einheiten in Basis 12,
+Dez = metrische Einheiten in Basis 10. Die `{ }`-Klammer zeigt jeweils das
+Gegen-System; intern läuft alles über eine **SI-Drehscheibe**.
+
+- `lib/logic/unit_data.dart` — reine Daten: 16 Kategorien (`UnitCategory`),
+  je imperiale + metrische Leiter, SI-Faktoren, `breakdown`-Kaskaden (imperial),
+  `affine`-Flag (temp). Keine Flutter-Imports.
+- `lib/logic/unit_convert.dart` — `convert`, `bracketPartner`/`bracketValue`
+  (Klammer), `breakdown` (mixed-radix), `nextInLadder`.
+- `lib/logic/base_num.dart` — `parseBaseNum`/`formatBaseNum` (Basis 10/12).
+- `lib/converter_state.dart` — `ConverterState extends ChangeNotifier`:
+  Compound-Eingabe als Term-Liste, Operatoren (+ implizit / − explizit),
+  Gesamtwert, `=`-Zyklus (Einheiten + Breakdown), Welt-Wechsel werterhaltend,
+  Edit-Cursor (Caret in der getippten Zahl + Term-Grenzen).
+- `lib/converter_keypad.dart` — Portrait (`_buildColumn`, drei Höhen-Regime
+  wie `_HochKeypad`) + Breit (`_buildBreit`, alle Sets inline). Set 3/4 + 8/9
+  sind Kategorien; Tipp expandiert die Magnituden-Leiter in die Gegenspalte
+  (+ frei werdende Slots). Inaktive Op-Tasten (× ÷, Set 2/6/7, Drg) ausgegraut.
+- `lib/converter_display.dart` — zweizeilig, Ausdruck + `{ }`-Klammer, plus
+  custom-paint **Caret** (rote Linie) mit Tap-Hit-Testing auf der Eingabezeile.
+- Kategorie-Labels lokalisiert (`unitCat*`, 14 Sprachen); Einheiten-Symbole
+  (`ft`, `kg`, …) bleiben international.
+
+Die alte statische `conversions_page.dart` bleibt vorerst parallel bestehen
+(soll später zu einem Theorie-Block werden).
+
+**Tipp-Cursor (beide Rechner):** Tippen auf die Eingabezeile positioniert den
+Bearbeitungs-Cursor (die rote Linie). Hauptrechner: `TwoLineDisplay`
+(`inputCursorPosForTap` + `GestureDetector`) → `DozenalCalcState.moveCursorTo`.
+Umrechner: `converter_display` Caret-Hit-Test → `ConverterState.handleInputTapAtChar`.
 
 ### Intro
 
