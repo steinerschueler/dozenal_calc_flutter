@@ -7,7 +7,7 @@
 		<key>CFBundleDevelopmentRegion</key>
 		<string>$(DEVELOPMENT_LANGUAGE)</string>
 		<key>CFBundleDisplayName</key>
-		<string>Dozenal Calc Flutter</string>
+		<string>Dozenal Calc</string>
 		<key>CFBundleExecutable</key>
 		<string>$(EXECUTABLE_NAME)</string>
 		<key>CFBundleIdentifier</key>
@@ -16,6 +16,23 @@
 		<string>6.0</string>
 		<key>CFBundleName</key>
 		<string>dozenal_calc_flutter</string>
+		<key>CFBundleLocalizations</key>
+		<array>
+			<string>de</string>
+			<string>en</string>
+			<string>fr</string>
+			<string>es</string>
+			<string>it</string>
+			<string>fa</string>
+			<string>ru</string>
+			<string>ga</string>
+			<string>hi</string>
+			<string>zh-Hans</string>
+			<string>zh-Hant</string>
+			<string>cy</string>
+			<string>ja</string>
+			<string>ar</string>
+		</array>
 		<key>CFBundlePackageType</key>
 		<string>APPL</string>
 		<key>CFBundleShortVersionString</key>
@@ -24,6 +41,8 @@
 		<string>????</string>
 		<key>CFBundleVersion</key>
 		<string>$(FLUTTER_BUILD_NUMBER)</string>
+		<key>ITSAppUsesNonExemptEncryption</key>
+		<false/>
 		<key>LSRequiresIPhoneOS</key>
 		<true/>
 		<key>UIApplicationSceneManifest</key>
