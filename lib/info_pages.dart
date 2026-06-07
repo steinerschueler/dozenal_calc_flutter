@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
 import 'conversions_page.dart';
+import 'converter_page.dart';
 import 'feedback_dialog.dart';
 import 'info_content.dart';
 import 'l10n/app_localizations.dart';
@@ -49,6 +50,25 @@ class InfoListPage extends StatelessWidget {
           const _GlyphStyleToggle(),
           const Divider(color: Color(0xFF2C2C2C), height: 1),
           const _LanguagePickerExpansion(),
+          const Divider(color: Color(0xFF2C2C2C), height: 1),
+          ListTile(
+            leading: const SizedBox(
+              width: 28,
+              child: Icon(
+                Icons.swap_horiz,
+                color: Color(0xFFA0A0A0),
+                size: 16,
+              ),
+            ),
+            title: Text(
+              l.infoListConverterEntry,
+              style: const TextStyle(fontSize: 14, color: Color(0xFFD0D0D0)),
+            ),
+            trailing: const _NavChevron(),
+            onTap: () => Navigator.of(context).push(
+              MaterialPageRoute(builder: (_) => const ConverterPage()),
+            ),
+          ),
           const Divider(color: Color(0xFF2C2C2C), height: 1),
           ListTile(
             leading: const SizedBox(

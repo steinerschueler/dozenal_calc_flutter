@@ -309,6 +309,7 @@ class _CalcScaffoldState extends State<_CalcScaffold> {
                               _state.numeralSystem == NumeralSystem.doz
                                   ? 'DOZ'
                                   : 'DEZ',
+                          onInputCursorTap: _state.moveCursorTo,
                         ),
                       ),
                       const SizedBox(height: 14),

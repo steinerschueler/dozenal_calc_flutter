@@ -47,6 +47,10 @@ class TwoLineDisplay extends StatelessWidget {
   /// angle-mode label; null hides it.
   final String? numeralSystemLabel;
 
+  /// Tap-to-position-cursor callback: receives the input-buffer gap index for
+  /// a tap on the input line. Null disables tap positioning.
+  final ValueChanged<int>? onInputCursorTap;
+
   const TwoLineDisplay({
     super.key,
     required this.inputBuffer,
@@ -62,6 +66,7 @@ class TwoLineDisplay extends StatelessWidget {
     this.memoryActive = false,
     this.angleModeLabel,
     this.numeralSystemLabel,
+    this.onInputCursorTap,
   });
 
   @override
@@ -84,28 +89,80 @@ class TwoLineDisplay extends StatelessWidget {
           // Builder so the painter rebuilds when GlyphStyleScope changes —
           // dependOnInheritedWidgetOfExactType subscribes this widget to
           // the scope's notifier without rebuilding the surrounding tree.
-          builder: (innerCtx) => CustomPaint(
-            painter: _TwoLineDisplayPainter(
-              inputBuffer: inputBuffer,
-              cursorPos: cursorPos,
-              resultBuffer: resultBuffer,
-              resultCursorPos: resultCursorPos,
-              resultFieldActive: resultFieldActive,
-              resultPeriodStart: resultPeriodStart,
-              resultPeriodLen: resultPeriodLen,
-              resultPeriodCapped: resultPeriodCapped,
-              isF64Fallback: isF64Fallback,
-              errorMsg: errorMsg,
-              memoryActive: memoryActive,
-              angleModeLabel: angleModeLabel,
-              numeralSystemLabel: numeralSystemLabel,
-              glyphStyle: GlyphStyleScope.of(innerCtx).style,
-            ),
-          ),
+          builder: (innerCtx) {
+            final glyphStyle = GlyphStyleScope.of(innerCtx).style;
+            final paint = CustomPaint(
+              painter: _TwoLineDisplayPainter(
+                inputBuffer: inputBuffer,
+                cursorPos: cursorPos,
+                resultBuffer: resultBuffer,
+                resultCursorPos: resultCursorPos,
+                resultFieldActive: resultFieldActive,
+                resultPeriodStart: resultPeriodStart,
+                resultPeriodLen: resultPeriodLen,
+                resultPeriodCapped: resultPeriodCapped,
+                isF64Fallback: isF64Fallback,
+                errorMsg: errorMsg,
+                memoryActive: memoryActive,
+                angleModeLabel: angleModeLabel,
+                numeralSystemLabel: numeralSystemLabel,
+                glyphStyle: glyphStyle,
+              ),
+            );
+            final tapHandler = onInputCursorTap;
+            if (tapHandler == null) return paint;
+            // Tap the input line → position the cursor at the nearest glyph gap.
+            return LayoutBuilder(
+              builder: (ctx, c) => GestureDetector(
+                behavior: HitTestBehavior.opaque,
+                onTapDown: (d) {
+                  final pos = inputCursorPosForTap(
+                    d.localPosition,
+                    Size(c.maxWidth, c.maxHeight),
+                    inputBuffer,
+                    glyphStyle,
+                  );
+                  if (pos != null) tapHandler(pos);
+                },
+                child: paint,
+              ),
+            );
+          },
         ),
       ),
     );
   }
+}
+
+/// Maps a tap [local] (in painter coordinates) to an input-line cursor gap
+/// index, or null if the tap is not on the input line (result line / gap).
+/// Mirrors _paintInputLine's left-aligned layout so the hit-test and the
+/// rendered cursor agree.
+int? inputCursorPosForTap(
+  Offset local,
+  Size size,
+  List<CalcToken> inputBuffer,
+  GlyphStyle glyphStyle,
+) {
+  final gap = (size.height * 0.06).clamp(2.0, 10.0);
+  final lineH = (size.height - gap) / 2;
+  if (local.dy > lineH) return null; // result line or inter-line gap
+  final laid =
+      inputBuffer.map((t) => _layoutToken(t, lineH, glyphStyle)).toList();
+  // Gap boundaries: x[0]=0 (before token 0), x[i]=Σ widths 0..i-1, x[n]=total.
+  // Pick the boundary nearest the tap.
+  var x = 0.0;
+  var bestIdx = 0;
+  var bestDist = (local.dx - x).abs();
+  for (var i = 0; i < laid.length; i++) {
+    x += laid[i].width;
+    final d = (local.dx - x).abs();
+    if (d < bestDist) {
+      bestDist = d;
+      bestIdx = i + 1;
+    }
+  }
+  return bestIdx;
 }
 
 class _TwoLineDisplayPainter extends CustomPainter {
