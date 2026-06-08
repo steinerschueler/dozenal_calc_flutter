@@ -1,4 +1,4 @@
-# App Store Listing — Dozenal Calc (zh)
+# App Store Listing — Dozenal Calc (zh) vereinfacht
 
 Listing-Daten für **App Store Connect** (简体中文). **Reiner Text** — der App Store unterstützt KEIN HTML/Markdown in den Feldern (anders als der Play Store); Zeilenumbrüche bleiben erhalten.
 
