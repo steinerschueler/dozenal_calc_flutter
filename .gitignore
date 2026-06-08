@@ -69,3 +69,9 @@ key.properties
 
 # Throwaway converter preview renders
 tool/preview/
+
+# Native watchOS companion (watch/) — build outputs and the project that
+# xcodegen regenerates from watch/project.yml. Only Sources/ + project.yml
+# are versioned.
+watch/build/
+watch/DozenalWatch.xcodeproj/

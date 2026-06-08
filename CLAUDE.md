@@ -554,6 +554,36 @@ RISC-V (`riscv64`) hier ergänzen, sobald Flutter Engine-Binaries
 liefert (kein Datum). Spart ~18 MB im fat-APK und ~14 MB im AAB-Upload
 gegenüber Build 8.
 
+## Native Begleit-Apps (macOS, watchOS)
+
+Neben den Flutter-Zielen (Android, iOS/iPadOS, Web) gibt es zwei native
+Apple-Ableger. Beide sind **kein Flutter** — Flutter kann macOS als Desktop,
+aber **nicht** die Apple Watch.
+
+- **macOS (Flutter-Desktop, PoC):** per `flutter create --platforms=macos .`
+  hinzugefügt (Ordner `macos/`). Baut/läuft als Desktop-Fenster
+  (`flutter run -d macos`); das Breit-Keypad greift, physische Tastatur und
+  Custom-Painter funktionieren. **Vor einem Mac-App-Store-Release offen:**
+  Bundle-ID `app.weltanschauung.dozenalCalcFlutter` → `app.weltanschauung.dozenal`
+  angleichen, Brand-Icon (`flutter_launcher_icons` mit `macos: true`),
+  Sandbox-Entitlements und ein macOS-Eintrag in App Store Connect.
+
+- **watchOS (eigenständige SwiftUI-App):** unter `watch/`, **separates
+  Xcode-Projekt**, teilt keinen Code mit Flutter. Bewusst winzig: festes
+  Display oben (links-bündig), darunter drei gewischte Seiten (Lizenz/
+  Datenschutz · Glyphenblock · Funktionsblock), Gleichtaste über die volle
+  Breite. Die zwölf Dozenal-Glyphen sind als SwiftUI-`Shape` 1:1 aus
+  `lib/glyph_painter.dart` portiert (`watch/Sources/Glyph.swift`); die
+  Rechenlogik (Basis-12-Eingabe, rekursiver Auswerter mit `+ − × ÷`, `^`,
+  binärem `√` = n-te Wurzel, `log`, Klammern) in `watch/Sources/Calculator.swift`.
+  Build/Test/Bekannte-Probleme (u. a. der watchOS-`.page`-TabView-Erstrender-
+  Zoom): [`docs/watch.md`](docs/watch.md).
+
+  Projekt wird mit **xcodegen** aus `watch/project.yml` erzeugt
+  (`watch/DozenalWatch.xcodeproj` und `watch/build/` sind regenerierbar und
+  per `.gitignore` ausgeschlossen — committet sind nur `watch/Sources/` +
+  `watch/project.yml`).
+
 ## Konventionen
 
 - **Branch-Trennung (HART):** Arbeit am **Dozenal Calc** (diese App — Rechner,
