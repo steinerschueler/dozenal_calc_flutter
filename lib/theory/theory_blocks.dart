@@ -20,13 +20,18 @@ class TheoryChapterRef {
   final List<ProseSection>? prose;
   final List<Source> sources;
 
+  /// Stable, language-neutral id used to look up a chapter image
+  /// ([theoryImageFor]). Null for chapters without an image slot.
+  final String? imageId;
+
   const TheoryChapterRef.legacy(this.title, int index)
       : legacyIndex = index,
         prose = null,
-        sources = const [];
+        sources = const [],
+        imageId = null;
 
   const TheoryChapterRef.prose(this.title, List<ProseSection> sections,
-      [this.sources = const []])
+      [this.sources = const [], this.imageId])
       : legacyIndex = null,
         prose = sections;
 }
@@ -51,22 +56,25 @@ class TheoryBlock {
 /// (Zoll/Fuss/Pfund, idx 11 → covered by the Einheitentheorie).
 List<TheoryBlock> theoryBlocks(AppLocalizations l, String langTag) {
   final titles = infoTitles(l);
+  final world = worldChapters(langTag);
+  final math = mathChapters(langTag);
+  final society = societyChapters(langTag);
   final welt = <TheoryChapterRef>[
     for (final i in const [1, 2, 3, 4, 5, 6, 7, 8])
       TheoryChapterRef.legacy(titles[i], i),
-    for (final c in worldChapters(langTag))
-      TheoryChapterRef.prose(c.title, c.sections, c.sources),
+    for (final (i, c) in world.indexed)
+      TheoryChapterRef.prose(c.title, c.sections, c.sources, 'world/$i'),
     TheoryChapterRef.legacy(titles[10], 10),
   ];
   return [
     TheoryBlock(l.theoryBlockWelt, welt),
     TheoryBlock(l.theoryBlockMath, [
-      for (final c in mathChapters(langTag))
-        TheoryChapterRef.prose(c.title, c.sections, c.sources),
+      for (final (i, c) in math.indexed)
+        TheoryChapterRef.prose(c.title, c.sections, c.sources, 'math/$i'),
     ]),
     TheoryBlock(l.theoryBlockSociety, [
-      for (final c in societyChapters(langTag))
-        TheoryChapterRef.prose(c.title, c.sections, c.sources),
+      for (final (i, c) in society.indexed)
+        TheoryChapterRef.prose(c.title, c.sections, c.sources, 'society/$i'),
     ]),
   ];
 }

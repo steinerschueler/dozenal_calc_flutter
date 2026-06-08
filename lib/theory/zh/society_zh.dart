@@ -149,4 +149,20 @@ List<ProseChapter> _societyChaptersZh() => const [
     Source('Dozenal Suite (Apps) — dozenal.ca', 'https://dozenal.ca/suite/', 'R2', 'A1'),
     Source('Dozenal RPN Calculator — Eddie\'s Math and Calculator Blog', 'http://edspi31415.blogspot.com/2026/02/dozenal-rpn-calculator-app-for-android.html', 'R3', 'A1'),
   ]),
+  ProseChapter('Dozecal — 一款十二进制计算器', [
+    ProseSection('一款基于十二进制的应用', 'Dozecal 是一款用于 iPhone 的计算器，它以十二进制为底进行原生运算。它于 2020 年由独立开发者 Johan Kovacs 发布，应用本身免费。其明确的目标是推动十二进制在数学和科学中的使用。\n\n运算可在十二进制或十进制模式下任选其一进行。在两种模式之间切换时，所显示的数值会自动换算。三角函数以度作为计量单位。'),
+    ProseSection('逆波兰表示法', 'Dozecal 的一个特色是采用逆波兰表示法（RPN）进行输入。在这里，你不是键入「3 + 4 =」，而是键入「3 4 +」——先输入两个数字，再输入运算符。这一开始会让人感到陌生，但它完全不需要括号，并且长期以来在许多科学计算器（例如惠普 Hewlett-Packard 的产品）上十分常见。'),
+    ProseSection('十二进制工具生态的一部分', 'Dozecal 并非由某个学会打造，而是出自个人之手；在其说明中，它将关于十二进制的更多信息指向美国十二进制学会（Dozenal Society of America）。如此一来，它便归属于那个虽小却充满活力的十二进制工具生态——与这款应用、TGM 相关资料以及其他计算器并列其中。'),
+  ], sources: [
+    Source('Dozecal — App Store (Apple)', 'https://apps.apple.com/app/id1521160089', 'R1', 'A1'),
+  ]),
+  ProseChapter('Paul Rapoport 的 Dozenal Calculator', [
+    ProseSection('浏览器中的计算器', 'Paul Rapoport 的 Dozenal Calculator 是一款直接在网页浏览器中运行的科学计算器——免费且无需安装。它以十二进制进行运算，并可随时切换为十进制显示；数字基底可以自由切换，同时还提供多个相互独立的寄存器。一份详尽的使用说明以 PDF 的形式随附其中。'),
+    ProseSection('数论方面的强大功能', '它在数论方面尤为丰富——这恰好契合了一个正因其可整除性而备受推崇的进制。该计算器能求最大公约数与最小公倍数，列出一个数的所有约数，并将其分解为质因数（可选择是否标注重数）。此外还包括约数之和、约数个数，以及欧拉 φ 函数——即比它小且与它互质的数的个数。'),
+    ProseSection('完整的科学计算工具箱', '在其他方面，这套工具箱同样一应俱全：平方与平方根，任意次幂与方根，指数函数与对数——自然对数以及以二和以十为底的对数，还有以任意底数为底的对数。此外还有三角函数与双曲函数及其反函数，组合学（组合与排列，也支持可重复的情形），简单统计（平均值与标准差），阶乘，一个百分比函数，Gamma 函数，以及虚数单位 i。'),
+    ProseSection('涵盖众多物理量', '除了纯粹的运算之外，该程序还涵盖了数十种物理量，并能在它们之间相互换算：时间与一天中的时刻、频率、速度、长度、面积、干量体积与液量体积、质量、力、压强、能量、功率、温度和角度。其中也包含十二进制的时间单位。'),
+    ProseSection('延伸至电工学', '对于一款十二进制计算器而言，它在应用物理领域所延伸的范围之广颇为罕见：它专门设置了电阻抗、电量（电荷）、电势（电压）以及电流等量值范围。借此，电工学也可以用十二进制来进行计算。'),
+  ], sources: [
+    Source('Dozenal Calculator (Paul Rapoport)', 'https://doz-calc.mx-dev.com', 'R1', 'A1'),
+  ]),
 ];

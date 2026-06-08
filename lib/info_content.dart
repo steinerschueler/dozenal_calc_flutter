@@ -115,7 +115,7 @@ class _Pre extends StatelessWidget {
               text,
               softWrap: false,
               style: const TextStyle(
-                fontFamily: 'monospace',
+                fontFamily: 'JetBrainsMono',
                 fontSize: 14,
                 height: 1.5,
                 color: Color(0xFFE0E0E0),
@@ -154,7 +154,7 @@ class _DigitLegend extends StatelessWidget {
               Text(
                 '= $v',
                 style: const TextStyle(
-                  fontFamily: 'monospace',
+                  fontFamily: 'JetBrainsMono',
                   fontSize: 13,
                   color: Color(0xFFC8C8C8),
                 ),
@@ -380,7 +380,7 @@ class _Chapter5Illustration extends StatelessWidget {
             child: Text(
               formula,
               style: const TextStyle(
-                fontFamily: 'monospace',
+                fontFamily: 'JetBrainsMono',
                 fontSize: 13,
                 color: Color(0xFFD8D8D8),
               ),

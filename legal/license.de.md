@@ -31,3 +31,5 @@ Kontakt: dozenal@weltanschauung.app
 ## Verwendete Drittanbieter-Software
 
 Dozenal Calc verwendet das Flutter-Framework und mehrere Open-Source-Pakete, jedes unter seiner eigenen freien Lizenz veröffentlicht. Eine vollständige Liste der Drittanbieter-Lizenzen ist über die Standard-Lizenzanzeige von Flutter erreichbar.
+
+Die in den Theorie-Tabellen verwendete Schrift **JetBrains Mono** steht unter der SIL Open Font License 1.1 (© 2020 The JetBrains Mono Project Authors); der Lizenztext ist der App beigelegt. Die historischen Illustrationen in der Theorie sind gemeinfrei (Public Domain bzw. CC0); ihre Quellen sind jeweils am Kapitelende verlinkt.

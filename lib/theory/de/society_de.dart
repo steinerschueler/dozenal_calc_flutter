@@ -182,4 +182,90 @@ List<ProseChapter> _societyChaptersDe() => const [
     Source('Dozenal Suite (Apps) — dozenal.ca', 'https://dozenal.ca/suite/', 'R2', 'A1'),
     Source('Dozenal RPN Calculator — Eddie\'s Math and Calculator Blog', 'http://edspi31415.blogspot.com/2026/02/dozenal-rpn-calculator-app-for-android.html', 'R3', 'A1'),
   ]),
+  ProseChapter('Dozecal — ein dozenaler Taschenrechner', [
+    ProseSection(
+      'Eine App für die Basis Zwölf',
+      'Dozecal ist ein Taschenrechner für das iPhone, der nativ in Basis '
+          'Zwölf rechnet. Veröffentlicht wurde er 2020 vom unabhängigen '
+          'Entwickler Johan Kovacs; die App ist kostenlos. Ihr erklärtes Ziel '
+          'ist es, den Gebrauch der Basis Zwölf in Mathematik und Wissenschaft '
+          'zu fördern.\n\n'
+          'Gerechnet wird wahlweise im Duodezimal- oder im Dezimalmodus. Beim '
+          'Umschalten zwischen beiden wird der angezeigte Wert automatisch '
+          'umgerechnet. Die trigonometrischen Funktionen arbeiten mit Grad als '
+          'Maßeinheit.',
+    ),
+    ProseSection(
+      'Umgekehrte polnische Notation',
+      'Eine Besonderheit von Dozecal ist die Eingabe in umgekehrter '
+          'polnischer Notation (UPN, englisch RPN). Statt „3 + 4 =" tippt man '
+          'dort „3 4 +" — erst die beiden Zahlen, dann die Rechenoperation. '
+          'Das wirkt zunächst ungewohnt, kommt aber ganz ohne Klammern aus und '
+          'war auf vielen wissenschaftlichen Taschenrechnern (etwa von '
+          'Hewlett-Packard) lange verbreitet.',
+    ),
+    ProseSection(
+      'Teil der dozenalen Werkzeuglandschaft',
+      'Dozecal ist nicht von einer Gesellschaft gebaut, sondern von einer '
+          'einzelnen Person; in seiner Beschreibung verweist es für weitere '
+          'Informationen zur Basis Zwölf auf die Dozenal Society of America. '
+          'So gehört es zur kleinen, aber lebendigen Landschaft dozenaler '
+          'Werkzeuge — neben dieser App, den TGM-Materialien und weiteren '
+          'Rechnern.',
+    ),
+  ], sources: [
+    Source('Dozecal — App Store (Apple)', 'https://apps.apple.com/app/id1521160089', 'R1', 'A1'),
+  ]),
+  ProseChapter('Paul Rapoports Dozenal Calculator', [
+    ProseSection(
+      'Ein Rechner im Browser',
+      'Der Dozenal Calculator von Paul Rapoport ist ein wissenschaftlicher '
+          'Taschenrechner, der direkt im Webbrowser läuft — kostenlos und ohne '
+          'Installation. Er rechnet in Basis Zwölf und kann jederzeit auch '
+          'dezimal anzeigen; die Zahlenbasis lässt sich frei wechseln, und '
+          'mehrere unabhängige Register stehen bereit. Eine ausführliche '
+          'Anleitung liegt als PDF bei.',
+    ),
+    ProseSection(
+      'Stark in der Zahlentheorie',
+      'Besonders reich ist die Zahlentheorie — was gut zu einer Basis passt, '
+          'die gerade für ihre Teilbarkeit geschätzt wird. Der Rechner findet '
+          'den größten gemeinsamen Teiler und das kleinste gemeinsame '
+          'Vielfache, listet alle Teiler einer Zahl auf und zerlegt sie in '
+          'Primfaktoren (wahlweise mit Vielfachheit). Dazu kommen die '
+          'Teilersumme, die Anzahl der Teiler und die eulersche '
+          'φ-Funktion — die Anzahl der kleineren Zahlen, die zu ihr teilerfremd '
+          'sind.',
+    ),
+    ProseSection(
+      'Der volle wissenschaftliche Werkzeugkasten',
+      'Auch sonst ist der Werkzeugkasten vollständig: Quadrat und '
+          'Quadratwurzel, beliebige Potenzen und Wurzeln, die '
+          'Exponentialfunktion und Logarithmen — der natürliche Logarithmus '
+          'sowie die Basen Zwei und Zehn und ein Logarithmus zu beliebiger '
+          'Basis. Hinzu kommen die Winkel- und Hyperbelfunktionen mit ihren '
+          'Umkehrungen, Kombinatorik (Kombinationen und Permutationen, auch mit '
+          'Wiederholung), einfache Statistik (Mittelwert und '
+          'Standardabweichung), die Fakultät, eine Prozentfunktion, die '
+          'Gamma-Funktion und die imaginäre Einheit i.',
+    ),
+    ProseSection(
+      'Sehr viele Größen',
+      'Über das reine Rechnen hinaus deckt das Programm Dutzende physikalische '
+          'Größen ab und rechnet sie ineinander um: Zeit und Tageszeit, '
+          'Frequenz, Geschwindigkeit, Länge, Fläche, Trocken- und '
+          'Flüssigvolumen, Masse, Kraft, Druck, Energie, Leistung, Temperatur '
+          'und Winkel. Auch dozenale Zeiteinheiten sind dabei.',
+    ),
+    ProseSection(
+      'Bis in die Elektrotechnik',
+      'Ungewöhnlich für einen dozenalen Rechner ist, wie weit er in die '
+          'angewandte Physik reicht: Er kennt eigene Größenbereiche für '
+          'elektrische Impedanz, elektrische Quantität (Ladung), elektrisches '
+          'Potential (Spannung) und elektrischen Strom. Damit lässt sich auch '
+          'die Elektrotechnik in Basis Zwölf durchrechnen.',
+    ),
+  ], sources: [
+    Source('Dozenal Calculator (Paul Rapoport)', 'https://doz-calc.mx-dev.com', 'R1', 'A1'),
+  ]),
 ];

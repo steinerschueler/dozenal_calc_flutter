@@ -179,4 +179,20 @@ List<ProseChapter> _societyChaptersEn() => const [
     Source('Dozenal Suite (Apps) — dozenal.ca', 'https://dozenal.ca/suite/', 'R2', 'A1'),
     Source('Dozenal RPN Calculator — Eddie\'s Math and Calculator Blog', 'http://edspi31415.blogspot.com/2026/02/dozenal-rpn-calculator-app-for-android.html', 'R3', 'A1'),
   ]),
+  ProseChapter('Dozecal — a dozenal calculator', [
+    ProseSection('An app for base twelve', 'Dozecal is a calculator for the iPhone that computes natively in base twelve. It was released in 2020 by the independent developer Johan Kovacs, and the app is free. Its stated aim is to promote the use of base twelve in mathematics and science.\n\nCalculations can be carried out in either duodecimal or decimal mode. When you switch between the two, the displayed value is converted automatically. The trigonometric functions use degrees as their unit of measure.'),
+    ProseSection('Reverse Polish Notation', 'One distinctive feature of Dozecal is that input uses Reverse Polish Notation (RPN). Instead of “3 + 4 =”, you type “3 4 +” — first the two numbers, then the operation. This feels unfamiliar at first, but it dispenses with parentheses entirely and was long common on many scientific calculators (such as those from Hewlett-Packard).'),
+    ProseSection('Part of the dozenal toolset', 'Dozecal was built not by a society but by a single person; for further information on base twelve, its description points to the Dozenal Society of America. It thus belongs to the small but lively landscape of dozenal tools — alongside this app, the TGM materials, and other calculators.'),
+  ], sources: [
+    Source('Dozecal — App Store (Apple)', 'https://apps.apple.com/app/id1521160089', 'R1', 'A1'),
+  ]),
+  ProseChapter('Paul Rapoport\'s Dozenal Calculator', [
+    ProseSection('A Calculator in the Browser', 'Paul Rapoport\'s Dozenal Calculator is a scientific calculator that runs directly in your web browser — free of charge and with no installation. It computes in base twelve and can display decimal at any time as well; the number base can be switched freely, and several independent registers are available. A detailed manual is included as a PDF.'),
+    ProseSection('Strong in Number Theory', 'Its number theory is especially rich — fitting for a base that is prized precisely for its divisibility. The calculator finds the greatest common divisor and the least common multiple, lists all divisors of a number, and breaks it down into its prime factors (optionally with multiplicity). Beyond that come the sum of divisors, the number of divisors, and Euler\'s totient (φ) function — the count of smaller numbers that are coprime to it.'),
+    ProseSection('The Full Scientific Toolkit', 'Elsewhere, too, the toolkit is complete: square and square root, arbitrary powers and roots, the exponential function and logarithms — the natural logarithm as well as base two and base ten, and a logarithm to an arbitrary base. To these are added the trigonometric and hyperbolic functions with their inverses, combinatorics (combinations and permutations, also with repetition), basic statistics (mean and standard deviation), the factorial, a percent function, the Gamma function, and the imaginary unit i.'),
+    ProseSection('A Great Many Quantities', 'Beyond pure calculation, the program covers dozens of physical quantities and converts between them: time and time of day, frequency, velocity, length, area, dry and fluid volume, mass, force, pressure, energy, power, temperature, and angle. Dozenal time units are included as well.'),
+    ProseSection('Reaching into Electrical Engineering', 'Unusual for a dozenal calculator is how far it reaches into applied physics: it has dedicated ranges of quantities for electrical impedance, electrical quantity (charge), electrical potential (voltage), and electric current. This makes it possible to work through electrical engineering in base twelve as well.'),
+  ], sources: [
+    Source('Dozenal Calculator (Paul Rapoport)', 'https://doz-calc.mx-dev.com', 'R1', 'A1'),
+  ]),
 ];

@@ -16,6 +16,8 @@ import 'locale_notifier.dart';
 import 'logic/glyph_style.dart';
 import 'privacy_page.dart';
 import 'support_page.dart';
+import 'theory/chapter_image_view.dart';
+import 'theory/chapter_images.dart';
 import 'theory/prose_chapter.dart';
 import 'theory/theory_blocks.dart';
 
@@ -200,7 +202,7 @@ class _VersionFooterState extends State<_VersionFooter> {
             style: const TextStyle(
               color: Color(0xFF707070),
               fontSize: 11,
-              fontFamily: 'monospace',
+              fontFamily: 'JetBrainsMono',
             ),
           ),
         );
@@ -623,7 +625,7 @@ class TheoryBlockPage extends StatelessWidget {
                           '${i + 1}.',
                           style: const TextStyle(
                             color: Color(0xFFA0A0A0),
-                            fontFamily: 'monospace',
+                            fontFamily: 'JetBrainsMono',
                             fontSize: 13,
                           ),
                           textAlign: TextAlign.end,
@@ -658,6 +660,7 @@ class TheoryChapterPage extends StatelessWidget {
   final int? legacyIndex;
   final List<ProseSection>? prose;
   final List<Source> sources;
+  final String? imageId;
 
   const TheoryChapterPage({
     super.key,
@@ -665,21 +668,28 @@ class TheoryChapterPage extends StatelessWidget {
     this.legacyIndex,
     this.prose,
     this.sources = const [],
+    this.imageId,
   });
 
   TheoryChapterPage.fromRef(TheoryChapterRef ref, {super.key})
       : title = ref.title,
         legacyIndex = ref.legacyIndex,
         prose = ref.prose,
-        sources = ref.sources;
+        sources = ref.sources,
+        imageId = ref.imageId;
 
   @override
   Widget build(BuildContext context) {
-    final children = legacyIndex != null
+    final children = <Widget>[];
+    final image = theoryImageFor(imageId);
+    if (image != null) children.add(ChapterImageView(image));
+    final appRef = theoryAppRefFor(imageId);
+    if (appRef != null) children.add(AppRefCard(appRef));
+    children.addAll(legacyIndex != null
         ? buildChapterContent(legacyIndex!, context)
         : <Widget>[
             for (final s in prose ?? const <ProseSection>[]) _ProseBlock(s),
-          ];
+          ]);
     if (sources.isNotEmpty) children.add(_SourceList(sources: sources));
     return Scaffold(
       appBar: AppBar(

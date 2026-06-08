@@ -97,6 +97,9 @@ flutter:
   assets:
     - assets/icon.png
     - assets/intro/
+    - assets/theory/
+    # Bundled so the SIL OFL 1.1 text ships with the JetBrains Mono font.
+    - assets/fonts/OFL-JetBrainsMono.txt
     - legal/privacy-policy.de.md
     - legal/privacy-policy.en.md
     - legal/privacy-policy.fr.md
@@ -125,6 +128,18 @@ flutter:
     - legal/license.cy.md
     - legal/license.ja.md
     - legal/license.ar.md
+
+  # Bundled true monospace font (JetBrains Mono, SIL OFL 1.1). The logical
+  # 'monospace' family is only a real fixed-width font on Android; on
+  # iOS/macOS/web it falls back to the proportional system font, which made
+  # the monospace theory/conversion tables drift column-to-column. Bundling
+  # guarantees fixed-width alignment on every platform.
+  fonts:
+    - family: JetBrainsMono
+      fonts:
+        - asset: assets/fonts/JetBrainsMono-Regular.ttf
+        - asset: assets/fonts/JetBrainsMono-Bold.ttf
+          weight: 700
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

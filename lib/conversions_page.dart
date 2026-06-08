@@ -8,6 +8,8 @@
 // LTR for the monospace conversion rows so the symbolic notation stays readable
 // in RTL locales. Theory text comes from unit_theory.dart (German first).
 
+import 'dart:math' as math;
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -15,6 +17,8 @@ import 'l10n/app_localizations.dart';
 import 'license_page.dart' show openExternalLink;
 import 'logic/unit_data.dart';
 import 'unit_labels.dart';
+import 'theory/chapter_image_view.dart';
+import 'theory/chapter_images.dart';
 import 'theory/unit_theory.dart';
 
 class ConversionsPage extends StatefulWidget {
@@ -142,6 +146,7 @@ class _ConversionsPageState extends State<ConversionsPage> {
   Widget _areaTab(UnitCategory cat, String langTag) {
     final sections = unitTheory(cat, langTag);
     final sources = unitSources(cat, langTag);
+    final image = theoryImageFor('unit/${cat.name}');
     return SingleChildScrollView(
       padding: const EdgeInsets.fromLTRB(16, 12, 16, 28),
       child: Column(
@@ -152,6 +157,7 @@ class _ConversionsPageState extends State<ConversionsPage> {
             padding: EdgeInsets.symmetric(vertical: 16),
             child: Divider(color: Color(0xFF3C3C3C), height: 1),
           ),
+          if (image != null) ChapterImageView(image),
           if (sections.isEmpty)
             const Text(
               'Theorie folgt in Kürze.',
@@ -205,7 +211,7 @@ class _ConversionsPageState extends State<ConversionsPage> {
               child: Text(
                 row,
                 style: const TextStyle(
-                  fontFamily: 'monospace',
+                  fontFamily: 'JetBrainsMono',
                   fontSize: 13,
                   height: 1.4,
                   color: Color(0xFFD8D8D8),
@@ -247,7 +253,7 @@ class _ConversionsPageState extends State<ConversionsPage> {
                       ),
                     ],
                     style: const TextStyle(
-                      fontFamily: 'monospace',
+                      fontFamily: 'JetBrainsMono',
                       fontSize: 18,
                       color: Colors.white,
                     ),
@@ -369,13 +375,24 @@ class _ConversionsPageState extends State<ConversionsPage> {
     final n = _value;
     final clockH = n ~/ 30;
     final clockMin = ((n % 30) * 2).toString().padLeft(2, '0');
-    return [
+    final rows = [
       '${_f(n)}°  =  ${_f(n ~/ 12)} × 12°  + ${_f(n % 12)}°',
       '${_f(n)}°  =  ${_f(n ~/ 30)} × 30°  + ${_f(n % 30)}°   (zodiac/clock-hour)',
       '${_f(n)}°  ÷  360°  =  ${(n / 360.0).toStringAsFixed(4)}',
       'clock-face position: $clockH:$clockMin (1 h = 30°)',
-      '(360 = 30·12)',
     ];
+    // Slope / grade in percent — only meaningful for 0–90° (tan·100):
+    // 0° = 0 %, 45° = 100 %, 90° = vertical (∞).
+    if (n >= 0 && n <= 90) {
+      final slope = n == 90
+          ? '∞'
+          : '${(math.tan(n * math.pi / 180) * 100).toStringAsFixed(1)} %';
+      rows.add('${_f(n)}°  →  slope  =  $slope   (tan·100; 45° = 100 %)');
+    } else {
+      rows.add('slope (%)  →  for 0–90° only  (45° = 100 %)');
+    }
+    rows.add('(360 = 30·12)');
+    return rows;
   }
 
   List<String> _currencyRows() {
@@ -424,7 +441,7 @@ class _SystemToggle extends StatelessWidget {
           child: Text(
             label,
             style: TextStyle(
-              fontFamily: 'monospace',
+              fontFamily: 'JetBrainsMono',
               fontSize: 13,
               fontWeight: FontWeight.bold,
               color: active ? Colors.white : const Color(0xFF8C8C8C),

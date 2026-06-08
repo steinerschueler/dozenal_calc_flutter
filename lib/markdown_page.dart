@@ -92,7 +92,7 @@ class _MarkdownAssetPageState extends State<MarkdownAssetPage> {
               ),
               code: const TextStyle(
                 color: Color(0xFFC8C8C8),
-                fontFamily: 'monospace',
+                fontFamily: 'JetBrainsMono',
                 fontSize: 12.5,
                 backgroundColor: Color(0xFF2A2A2A),
               ),

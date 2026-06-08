@@ -183,4 +183,20 @@ List<ProseChapter> _societyChaptersCy() => const [
     Source('Dozenal Suite (Apps) — dozenal.ca', 'https://dozenal.ca/suite/', 'R2', 'A1'),
     Source('Dozenal RPN Calculator — Eddie\'s Math and Calculator Blog', 'http://edspi31415.blogspot.com/2026/02/dozenal-rpn-calculator-app-for-android.html', 'R3', 'A1'),
   ]),
+  ProseChapter('Dozecal — cyfrifiannell ddwsinol', [
+    ProseSection('Ap ar gyfer y bôn deuddeg', 'Cyfrifiannell ar gyfer yr iPhone yw Dozecal, un sy\'n cyfrifo\'n frodorol yn y bôn deuddeg. Cafodd ei gyhoeddi yn 2020 gan y datblygwr annibynnol Johan Kovacs; mae\'r ap am ddim. Ei nod datganedig yw hyrwyddo\'r defnydd o\'r bôn deuddeg mewn mathemateg a gwyddoniaeth.\n\nGellir cyfrifo naill ai yn y modd deuddegol neu yn y modd degol. Wrth newid rhwng y ddau, caiff y gwerth a ddangosir ei drosi\'n awtomatig. Mae\'r ffwythiannau trigonometrig yn gweithio gyda graddau fel uned fesur.'),
+    ProseSection('Nodiant Pwylaidd Gwrthdro', 'Un o nodweddion arbennig Dozecal yw\'r mewnbwn mewn nodiant Pwylaidd gwrthdro (RPN). Yn lle „3 + 4 =", rydych yn teipio „3 4 +" yno — y ddau rif yn gyntaf, ac yna\'r gweithrediad rhifyddol. Mae hyn yn ymddangos yn anghyfarwydd i ddechrau, ond mae\'n gwneud heb gromfachau o gwbl ac roedd yn gyffredin am amser hir ar lawer o gyfrifianellau gwyddonol (gan Hewlett-Packard, er enghraifft).'),
+    ProseSection('Rhan o dirwedd offer dwsinol', 'Nid gan gymdeithas y crëwyd Dozecal, ond gan unigolyn; yn ei ddisgrifiad, mae\'n cyfeirio at y Dozenal Society of America am ragor o wybodaeth am y bôn deuddeg. Felly mae\'n perthyn i\'r dirwedd fechan ond bywiog o offer dwsinol — ochr yn ochr â\'r ap hwn, deunyddiau TGM a chyfrifianellau eraill.'),
+  ], sources: [
+    Source('Dozecal — App Store (Apple)', 'https://apps.apple.com/app/id1521160089', 'R1', 'A1'),
+  ]),
+  ProseChapter('Dozenal Calculator Paul Rapoport', [
+    ProseSection('Cyfrifiannell yn y porwr', 'Cyfrifiannell wyddonol yw\'r Dozenal Calculator gan Paul Rapoport sy\'n rhedeg yn uniongyrchol yn y porwr gwe — yn rhad ac am ddim a heb angen ei osod. Mae\'n cyfrifo yn sail deuddeg, a gall ddangos yn ddegol unrhyw bryd hefyd; gellir newid sail y rhifau yn rhydd, ac mae sawl cofrestrydd annibynnol ar gael. Daw canllaw manwl gyda hi ar ffurf PDF.'),
+    ProseSection('Cryf ym maes damcaniaeth rhifau', 'Mae\'n arbennig o gyfoethog ym maes damcaniaeth rhifau — sy\'n gweddu\'n dda i sail a werthfawrogir yn arbennig am ei rhanadwyedd. Mae\'r gyfrifiannell yn canfod y rhannydd cyffredin mwyaf a\'r lluosrif cyffredin lleiaf, yn rhestru holl ffactorau rhif ac yn ei dadelfennu\'n ffactorau cysefin (gyda lluosedd, os dymunir). At hynny daw swm y ffactorau, nifer y ffactorau a swyddogaeth φ Euler — sef nifer y rhifau llai sy\'n gydgysefin â hi.'),
+    ProseSection('Y blwch offer gwyddonol llawn', 'Y tu hwnt i hynny mae\'r blwch offer yn gyflawn: sgwâr ac ail isradd, pwerau ac isradd unrhyw radd, y swyddogaeth esbonyddol a logarithmau — y logarithm naturiol yn ogystal â\'r seiliau dau a deg a logarithm i unrhyw sail. Ychwaneger at hynny y swyddogaethau trigonometrig (onglau) a hyperbolig gyda\'u gwrthdroadau, cyfuniadeg (cyfuniadau a thrynewidiadau, hefyd gydag ailadrodd), ystadegaeth syml (cymedr a gwyriad safonol), y ffactorial, swyddogaeth canran, swyddogaeth Gamma a\'r uned ddychmygol i.'),
+    ProseSection('Llawer iawn o feintiau', 'Y tu hwnt i\'r cyfrifo pur, mae\'r rhaglen yn cwmpasu dwsinau o feintiau ffisegol ac yn eu trosi rhwng ei gilydd: amser ac amser y dydd, amledd, buanedd, hyd, arwynebedd, cyfaint sych a hylif, màs, grym, gwasgedd, egni, pŵer, tymheredd ac ongl. Mae unedau amser deuddegol yn eu plith hefyd.'),
+    ProseSection('Hyd at beirianneg drydanol', 'Yn anarferol i gyfrifiannell ddeuddegol yw pa mor bell y mae\'n ymestyn i ffiseg gymhwysol: mae ganddi feysydd maint penodol ar gyfer rhwystriant trydanol, maint trydanol (gwefr), potensial trydanol (foltedd) a cherrynt trydanol. Â hynny gellir cyfrifo peirianneg drydanol hefyd yn sail deuddeg.'),
+  ], sources: [
+    Source('Dozenal Calculator (Paul Rapoport)', 'https://doz-calc.mx-dev.com', 'R1', 'A1'),
+  ]),
 ];
