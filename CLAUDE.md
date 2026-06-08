@@ -556,6 +556,15 @@ gegenüber Build 8.
 
 ## Konventionen
 
+- **Branch-Trennung (HART):** Arbeit am **Dozenal Calc** (diese App — Rechner,
+  Theorie, Einheitenrechner, l10n, Store) wird **ausschließlich auf `master`**
+  committet und gepusht, **niemals** auf `bidozenal-foundation`. Die Branch
+  `bidozenal-foundation` gehört allein der separaten **Basis-24-„Bidozenal"-App**
+  (Fundament in `docs/bidozenal.md`) und darf keinen Dozenal-Calc-Code
+  aufnehmen. Vor jedem `commit`/`push` den aktiven Branch prüfen
+  (`git branch --show-current`); steht HEAD versehentlich auf
+  `bidozenal-foundation`, zuerst `git checkout master`. Umgekehrt gilt das
+  Gleiche: Bidozenal-Basis-24-Arbeit nie auf `master`.
 - **Lizenz-Hinweis:** Dieses Projekt steht unter der **MIT-Lizenz**.
   Root `LICENSE` enthält den kanonischen MIT-Wortlaut (Expat-Variante,
   Copyright Eric Naville, 2026). Die vierzehn lokalisierten
