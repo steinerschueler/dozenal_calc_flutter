@@ -13,6 +13,7 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 
+import 'package:dozenal_calc_flutter/conversions_page.dart';
 import 'package:dozenal_calc_flutter/converter_display.dart';
 import 'package:dozenal_calc_flutter/converter_page.dart';
 import 'package:dozenal_calc_flutter/l10n/app_localizations.dart';
@@ -107,6 +108,30 @@ void main() {
     await b.tap(find.text('in'));
     await _shoot(b.key, 'subtraction');
     b.handle.dispose();
+  });
+
+  testWidgets('unit theory page — Länge tab', (tester) async {
+    tester.view.physicalSize = const Size(430, 1000);
+    tester.view.devicePixelRatio = 1.0;
+    addTearDown(tester.view.resetPhysicalSize);
+    addTearDown(tester.view.resetDevicePixelRatio);
+    final handle = tester.ensureSemantics();
+    final key = GlobalKey();
+    await tester.pumpWidget(RepaintBoundary(
+      key: key,
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(brightness: Brightness.dark, fontFamily: 'PreviewFont'),
+        locale: const Locale('de'),
+        localizationsDelegates: AppLocalizations.localizationsDelegates,
+        supportedLocales: AppLocalizations.supportedLocales,
+        home: const ConversionsPage(),
+      ),
+    ));
+    await tester.pump(const Duration(milliseconds: 300));
+    // default tab = Anzahl (count) → shows the new title + count theory
+    await _shoot(key, 'theory_count');
+    handle.dispose();
   });
 
   testWidgets('breit (tablet landscape) dist active', (tester) async {

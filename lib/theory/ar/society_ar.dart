@@ -1,0 +1,182 @@
+part of '../society_theory.dart';
+
+// Arabic prose for the "Dozenale Gesellschaft" chapters. part of
+// ../society_theory.dart. Simple sentences (easier to translate). Facts and
+// attributed views; honest about uncertain attributions (citation cascades),
+// no narrator verdicts. Distilled from docs/research/society_*.md.
+
+List<ProseChapter> _societyChaptersAr() => const [
+  ProseChapter('حركة من أجل الاثني عشر', [
+    ProseSection(
+      'مفكّرون منفردون',
+      'إنّ فكرة الحساب بالاثني عشر بدلاً من العشرة فكرة قديمة. لكن لمدّة طويلة '
+          'لم يكن هناك سوى دعاة منفردين، لا حركة. ففي القرن الثامن عشر يُذكر '
+          'الباحث الطبيعي بوفون — غير أنّ المصدر الدقيق لذلك غير مؤكّد ويتنقّل '
+          'من مرجع إلى مرجع.\n\n'
+          'ويصبح الأمر أكثر وضوحاً في القرن التاسع عشر. فمخترع الاختزال '
+          'إسحاق بيتمان دعا منذ عام 1857 إلى الاثني عشر واقترح رموزاً خاصة '
+          'للعشرة والأحد عشر. والفيلسوف هربرت سبنسر ناصر الفكرة عام 1896، '
+          'وذلك صراحةً ضدّ النظام المتري.',
+    ),
+    ProseSection(
+      'أندروز و«New Numbers»',
+      'لقد جعلها قضيةً جدّيةً رجلٌ أمريكي: فرانك إيمرسون أندروز. ففي عام 1934 '
+          'صدر مقاله «An Excursion in Numbers» في مجلة Atlantic '
+          'Monthly — وهي مجلة قالت عن نفسها إنّها لم تطبع رياضيات من قبل '
+          'قطّ، وأرفقت النص في وسطه بتنبيهٍ للقرّاء النافرين من '
+          'الرياضيات.\n\n'
+          'وفي عام 1935 تبعه كتابه «New Numbers»، وهو الأول من نوعه في '
+          'الولايات المتحدة. وكانت حجّته بسيطة: الاثنا عشر يقبل القسمة على 2 و3 و4 و6، '
+          'أمّا العشرة فعلى 2 و5 فقط. وكان أندروز واقعياً في الوقت ذاته — إذ رأى أنّ '
+          'التحوّل الفعلي أمرٌ غير مرجّح في وجه «سطوة العادة العنيدة».',
+    ),
+    ProseSection(
+      'نشوء الجمعيات',
+      'من الرسائل التي وردت تعقيباً على مقال أندروز نشأت حلقةُ مراسلة، ومنها '
+          'في عام 1944 «Duodecimal Society of America». وقد منحها هذا الاسم '
+          'مازحاً رالف «ويسكرز» بيرد؛ أمّا رأس المال الابتدائي فقد تبرّع به جورج '
+          'تيري. ثم أُعيدت تسميتها لاحقاً إلى «Dozenal Society of America» '
+          '— لأنّ كلمة «duodecimal» تحمل في طيّاتها كلمة «decimal» العشرية.\n\n'
+          'وفي عام 1959 انضمّت إليها الشقيقة البريطانية، Dozenal Society of Great '
+          'Britain، وكان عالم الرياضيات A. C. Aitken عضواً بارزاً '
+          'فيها. ولا تزال الجمعية الأمريكية تصدر حتى اليوم '
+          '«Duodecimal Bulletin»؛ ومن بين أعضائها الفخريين كان '
+          'كاتب الخيال العلمي إسحاق أزيموف.',
+    ),
+  ], sources: [
+    Source('F. Emerson Andrews — Wikipedia', 'https://en.wikipedia.org/wiki/F._Emerson_Andrews', 'R2', 'A1'),
+    Source('Duodecimal — Wikipedia', 'https://en.wikipedia.org/wiki/Duodecimal', 'R2', 'A1'),
+    Source('Dozenal Society of America', 'https://dozenal.org/', 'R2', 'A1'),
+    Source('New Numbers (F. E. Andrews) — Internet Archive', 'https://archive.org/details/newnumbershowacc0000fran', 'R2', 'A1'),
+    Source('Honorary Members and Fellows — DSA', 'https://dozenal.org/about-us-honorary-members-and-fellows-society', 'R1', 'A1'),
+    Source('Summer Reading: New Numbers — Charles Petzold', 'http://www.charlespetzold.com/blog/2006/08/250954.html', 'R3', 'A1'),
+  ]),
+  ProseChapter('أرقام جديدة للعشرة والأحد عشر', [
+    ProseSection(
+      'مشكلة الرموز',
+      'مَن يحسب بالاثني عشر يحتاج إلى رقمين إضافيين — واحدٌ للعشرة وآخر '
+          'للأحد عشر. وأيُّ رمزين يكونان لم يُحسم حتى اليوم على نحوٍ موحّد؛ '
+          'حتى الجمعية الأمريكية لا تفرض تدويناً ثابتاً.\n\n'
+          'وهناك عدّة صيغ: ثنائية بيتمان والثلاثية المقلوبتان (↊ و'
+          '↋)، والـX المائلة من أندروز والـE المدوّرة، ورمز السكستيل '
+          'والصليب المزدوج (المستوحيان من أزرار الهاتف)، وحروف مصمّم '
+          'الخطوط دويغينز — وببساطةٍ الحرفان A وB '
+          'من عالم الحواسيب.',
+    ),
+    ProseSection(
+      'بيتمان ويونيكود والتحوّل في 2026',
+      'لقد غيّرت الجمعية الأمريكية رموزها مراراً: '
+          'السكستيل والصليب المزدوج حتى نحو عام 2008، ثم حروف دويغينز، '
+          'ومنذ 2015 أرقام بيتمان. وفي عام 2015 أدرج معيار يونيكود أيضاً '
+          'رموز بيتمان رسمياً.\n\n'
+          'وفي مطلع 2026 حوّلت الجمعية صفحاتها على الويب إلى '
+          'الحرفين A وB — لا لأنّها تخلّت عن بيتمان، بل '
+          'لأنّ الرموز الخاصة لا تُعرض بعدُ على نحوٍ موثوق على كثير من المتصفّحات والهواتف. '
+          'أمّا في النشرة المطبوعة فتبقى '
+          'أرقام بيتمان هي المعيار. (هذا التطبيق يعرض في الشاشة اختيارياً '
+          'إمّا رموزاً خاصة أو 0–9 / A، B.)',
+    ),
+    ProseSection(
+      'Little Twelvetoes',
+      'إنّ أشهر قطعةٍ دوزينالية في الثقافة الشعبية أغنية: «Little '
+          'Twelvetoes» من السلسلة التعليمية الأمريكية Schoolhouse Rock، كتبها '
+          'وغنّاها بوب دوروه، وبُثّت لأول مرة عام 1973.\n\n'
+          'وفيها يُظهر كائنٌ فضائيّ ودودٌ له اثنا عشر إصبع قدم كيف '
+          'كان لِمَن يملك اثني عشر «إصبعاً» أن يخترع رقمين جديدين — '
+          'يُنطقان «دِك» للعشرة و«إل» للأحد عشر. وقد عُدّت صعبةً جداً '
+          'على أطفال المرحلة الابتدائية فبُثّت أقلّ من بقية الحلقات، '
+          'لكنّها بقيت في ذاكرة كثيرين.',
+    ),
+  ], sources: [
+    Source('Unicode-Proposal L2/15-116: Pitman-Ziffern (PDF)', 'https://www.unicode.org/L2/L2015/15116-pitman.pdf', 'R1', 'A1'),
+    Source('Symbols, Symbols … Symbols — DSA', 'https://dozenal.org/drupal/content/symbols-symbols-%C2%A2-symbols.html', 'R1', 'A1'),
+    Source('The DSA Symbology Synopsis', 'https://dozenal.org/drupal/content/dsa-symbology-synopsis.html', 'R2', 'A1'),
+    Source('The Dozenal Society of America — Wikipedia', 'https://en.wikipedia.org/wiki/The_Dozenal_Society_of_America', 'R2', 'A1'),
+    Source('Little Twelvetoes — Schoolhouse Rock Wiki', 'https://schoolhouserock.fandom.com/wiki/Little_Twelvetoes', 'R3', 'A1'),
+  ]),
+  ProseChapter('دو، غرو، مو — التحدّث بالدوزينالية', [
+    ProseSection(
+      'الدزينة والغروس والغروس الكبير',
+      'يصبح الاثنا عشر في الأساس الاثني عشري «10». ولمراتبه توجد '
+          'منذ زمنٍ طويل كلماتٌ دارجة: اثنتا عشرة قطعةً تشكّل دزينة، واثنتا عشرة '
+          'دزينة (144) غروساً، واثنا عشر غروساً (1728) غروساً كبيراً.\n\n'
+          'وهذا أمرٌ لافت: فهذه الكلمات التجارية المألوفة هي في '
+          'الحقيقة قِيَمٌ مرتبية دوزينالية بالفعل — فالدزينة هي «10»، '
+          'والغروس هو «100»، والغروس الكبير هو «1000» في عالم الاثني عشر.',
+    ),
+    ProseSection(
+      'دِك، إل، والتسمية المنهجية',
+      'يُنطَق الرقمان الجديدان غالباً «دِك» (العشرة) و«إل» (الأحد عشر). '
+          'وللمراتب تُستعمل اختصاراً do وgro وmo (من dozen وgross وgreat '
+          'gross).\n\n'
+          'وإلى جانب ذلك توجد تسميةٌ منهجية، طُوّرت في المجتمع '
+          'الإلكتروني: جذورُ كلماتٍ ثابتة للأرقام (un و'
+          'bi وtri … dec وlev) مع لواحقَ لقوى الاثني عشر — «-qua» '
+          'صعوداً و«-cia» نزولاً. والجميل في ذلك: أنّ «uncia» تساوي بالضبط '
+          'جزءاً من اثني عشر — وهي ذاتها الكلمة اللاتينية التي اشتُقّت منها «البوصة» (inch) و'
+          '«الأوقية» (ounce).',
+    ),
+  ], sources: [
+    Source('Systematic Dozenal Nomenclature (Kurzfassung) — gorpub', 'https://gorpub.freeshell.org/dozenal/sdnbrief.html', 'R2', 'A1'),
+    Source('Duodecimal — Wikipedia', 'https://en.wikipedia.org/wiki/Duodecimal', 'R2', 'A1'),
+    Source('Base 12 — Numberphile (James Grime)', 'https://www.numberphile.com/videos/base-12', 'R3', 'A1'),
+    Source('Engines of Our Ingenuity Nr. 3172: „Dozenels"', 'https://engines.egr.uh.edu/episode/3172', 'R3', 'A1'),
+  ]),
+  ProseChapter('TGM والجمعيات والأدوات اليوم', [
+    ProseSection(
+      'TGM — نظام قياسٍ دوزينالي',
+      'لقد صمّم توم بندلبري من الجمعية البريطانية نظام قياسٍ '
+          'دوزينالي متكامل: TGM، المسمّى نسبةً إلى وحداته الثلاث '
+          'الأساسية Tim وGrafut وMaz.\n\n'
+          'وخلافاً للنظام المتري، لا يبدأ من الطول، '
+          'بل من الزمن، ويشتقّ كل شيء عبر جاذبية الأرض. فالـ'
+          '«Grafut» (قدم الجاذبية) يقلّ قليلاً عن القدم. ومنه '
+          'تتبع بانسجامٍ وحداتٌ للمساحة والحجم والسرعة '
+          'والقوة — نظيرٌ متماسكٌ في ذاته للنظام المتري، كلّه '
+          'بالاثني عشر.',
+    ),
+    ProseSection(
+      'الجمعيات اليوم',
+      'لا تزال الجمعيتان قائمتين، غير أنّهما صغيرتان وتطوّعيتان؛ '
+          'ولا تتوافر أرقامٌ موثوقة عن الأعضاء. فالأمريكية '
+          'تواصل إصدار Duodecimal Bulletin وتوفّر أدوات للتعلّم '
+          'والتحويل، أمّا البريطانية فتعتني قبل كل شيء '
+          'بمادّة TGM.\n\n'
+          'وأكثر المواضع حيويةً هو منتدى الإنترنت «Dozensonline». فهناك '
+          'نشأت التسمية المنهجية للأرقام والنقاش الذي لم '
+          'يُحسم قطّ حول الأرقام الصحيحة. والمجتمع '
+          'صغير لكنّه نشِط.',
+    ),
+    ProseSection(
+      'الحاسبات والتطبيقات — وهذا التطبيق',
+      'لقد نشأت حول الاثني عشر ساحةُ أدواتٍ نشطةٌ على نحوٍ مفاجئ: '
+          'حاسبات دوزينالية، ومحوّلات قياس، بل حتى ساعةٌ '
+          'دوزينالية وتقويم، وكثيرٌ منها مفتوح المصدر ومن صنع '
+          'أعضاء الجمعيات.\n\n'
+          'وهذا التطبيق يندرج في هذا السياق تماماً — حاسبةٌ تحسب أصلاً في '
+          'الأساس الاثني عشري، برموزٍ خاصة وكسورٍ دقيقة '
+          'وجزءٍ للوحدات. إنّه إسهامٌ صغير في تقليدٍ نِيشيٍّ طويلٍ '
+          'ومحبوب.',
+    ),
+    ProseSection(
+      'لماذا يبقى العالم عشرياً رغم كل ذلك',
+      'إنّ عدم انتشار الاثني عشر لا يكاد يعود إلى الرياضيات — '
+          'فهي إلى جانبه. بل يعود إلى العادة: فالنظام '
+          'العشري مغروسٌ في اللغة والمدرسة والقانون والتقنية، '
+          'والتحوّل سيكون باهظ الكلفة على نحوٍ هائل. حتى تحوّل '
+          'الولايات المتحدة الأصغر بكثير إلى النظام المتري أخفق لهذا السبب.\n\n'
+          'وتبعاً لذلك يفهم أكثر المعنيين اليوم الأمر باعتباره '
+          'تجربةً فكريةً مغريةً أكثر منه خطّةَ تحوّلٍ جدّية. '
+          'فهو يبيّن أنّ اختيار أساس الأعداد ليس أمراً بديهياً '
+          '— ويشحذ النظر في الأعداد التي نتعامل معها '
+          'يومياً.',
+    ),
+  ], sources: [
+    Source('TGM: A Coherent Dozenal Metrology (Pendlebury/Goodman) — DSA (PDF)', 'http://www.dozenal.org/drupal/sites_bck/default/files/tgm_0.pdf', 'R1', 'A1'),
+    Source('TGM — fergusoncreations.co.uk', 'http://www.fergusoncreations.co.uk/home/shaun/metrology/tgm.htm', 'R2', 'A1'),
+    Source('The Dozenal Society of America — Wikipedia', 'https://en.wikipedia.org/wiki/The_Dozenal_Society_of_America', 'R2', 'A1'),
+    Source('Dozenal Society of America', 'https://dozenal.org/', 'R2', 'A1'),
+    Source('Dozenal Suite (Apps) — dozenal.ca', 'https://dozenal.ca/suite/', 'R2', 'A1'),
+    Source('Dozenal RPN Calculator — Eddie\'s Math and Calculator Blog', 'http://edspi31415.blogspot.com/2026/02/dozenal-rpn-calculator-app-for-android.html', 'R3', 'A1'),
+  ]),
+];

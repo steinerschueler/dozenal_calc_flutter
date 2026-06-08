@@ -333,3 +333,20 @@ statt eigener `CalcToken`-Varianten.
 
 Vorschau-Tool: `tool/preview_converter_keypad.dart` (Wegwerf, rendert nach
 `tool/preview/`).
+
+## 10. Offene Ideen (TODO)
+
+Gesammelte Verbesserungswünsche, noch nicht umgesetzt:
+
+- [ ] **`=`-Zyklus über beide Welten.** Die Gleichtaste soll die Ausgabe
+      nicht nur durch die Einheiten der aktiven Welt (+ Breakdown) schicken,
+      sondern welt-übergreifend durch die **imperialen UND metrischen**
+      Einheiten zyklen. **Wichtig: unabhängig davon, ob gerade Doz oder Dez
+      ausgewählt ist** — die Welt-Auswahl (Doz/Dez) beeinflusst den
+      `=`-Zyklus nicht; in beiden Fällen werden beide Einheitenleitern
+      durchlaufen. (Aktuell: nur aktive Welt + Breakdown; vgl. Abschnitt
+      „Eingabe-Einheit & `=`".)
+- [ ] **Sanftere Einzel-Einheit-Umrandung.** Die goldene Umrandung um den
+      ganzen Einheiten-**Block** bleibt wie sie ist (gefällt). Aber die
+      Umrandung um eine **einzelne** aktive Einheit soll dezenter werden —
+      ein **blasseres, weniger auffälliges Gelb**, das nicht so heraussticht.

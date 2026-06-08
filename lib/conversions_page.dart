@@ -1,18 +1,21 @@
-// Tool page: shows how a numeric input decomposes into the classic
-// imperial-12 unit systems (length, counting, currency, time, angle).
-// Accessible from the Info list. The pedagogical pitch: these units are
-// historical fossils of a culture that counted in dozens — and they
-// become round numbers when written in base 12.
+// Unit-theory page (upgraded from the old Imperial-12 conversions page).
+// One scrollable tab per area (count, dist, area, space, weight, time, angle,
+// price, temp): the live conversion as before, plus long-form theory prose
+// (history, usage, decimal incompatibility, religious/cultural, worldwide …).
 //
-// Independent of the main calculator state: the page has its own input
-// field with a Doz/Dez toggle, default value 144 (= 12² = 1 gross).
-// Forces LTR for the section bodies so the symbolic unit notation
-// (ft, in, sh, d, …) stays readable in RTL locales like Persian/Arabic.
+// Reached from the Info list. Independent of the main calculator state: shared
+// number input + Doz/Dez toggle at the top, the tab selects the area. Forced
+// LTR for the monospace conversion rows so the symbolic notation stays readable
+// in RTL locales. Theory text comes from unit_theory.dart (German first).
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'l10n/app_localizations.dart';
+import 'license_page.dart' show openExternalLink;
+import 'logic/unit_data.dart';
+import 'unit_labels.dart';
+import 'theory/unit_theory.dart';
 
 class ConversionsPage extends StatefulWidget {
   const ConversionsPage({super.key});
@@ -35,34 +38,26 @@ class _ConversionsPageState extends State<ConversionsPage> {
     super.dispose();
   }
 
-  static String _format(int n, _NumSys sys) {
-    if (sys == _NumSys.dez) return n.toString();
-    return _toDoz(n);
-  }
+  static String _format(int n, _NumSys sys) =>
+      sys == _NumSys.dez ? n.toString() : _toDoz(n);
 
   /// Decimal int → dozenal string with A/B for 10/11. Handles negatives.
   static String _toDoz(int n) {
     if (n == 0) return '0';
     final neg = n < 0;
     var x = neg ? -n : n;
-    final buf = StringBuffer();
     final digits = <String>[];
     while (x > 0) {
       final r = x % 12;
       digits.add(r < 10 ? '$r' : (r == 10 ? 'A' : 'B'));
       x ~/= 12;
     }
-    if (neg) buf.write('-');
-    for (final d in digits.reversed) {
-      buf.write(d);
-    }
-    return buf.toString();
+    return (neg ? '-' : '') + digits.reversed.join();
   }
 
   static int? _parse(String s, _NumSys sys) {
     if (s.isEmpty) return null;
     if (sys == _NumSys.dez) return int.tryParse(s);
-    // Dozenal: 0-9, A, B (case-insensitive)
     var i = 0;
     var neg = false;
     if (s.startsWith('-')) {
@@ -83,16 +78,14 @@ class _ConversionsPageState extends State<ConversionsPage> {
       }
       if (digit == null) return null;
       v = v * 12 + digit;
-      if (v > 1 << 30) return null; // soft overflow guard
+      if (v > 1 << 30) return null;
     }
     return neg ? -v : v;
   }
 
   void _onInputChanged(String text) {
     final parsed = _parse(text, _system);
-    if (parsed != null) {
-      setState(() => _value = parsed);
-    }
+    if (parsed != null) setState(() => _value = parsed);
   }
 
   void _switchSystem(_NumSys s) {
@@ -103,46 +96,123 @@ class _ConversionsPageState extends State<ConversionsPage> {
     });
   }
 
+  String _f(int n) => _system == _NumSys.dez ? n.toString() : _toDoz(n);
+
   @override
   Widget build(BuildContext context) {
     final l = AppLocalizations.of(context);
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(l.conversionsTitle,
-            style: const TextStyle(fontSize: 14)),
-        backgroundColor: const Color(0xFF1A1A1A),
-      ),
-      body: SafeArea(
-        top: false,
-        child: SingleChildScrollView(
-          padding: const EdgeInsets.fromLTRB(16, 12, 16, 24),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                l.conversionsIntro,
-                style: const TextStyle(
-                  fontSize: 13.5,
-                  height: 1.45,
-                  color: Color(0xFFC8C8C8),
-                ),
-              ),
-              const SizedBox(height: 16),
-              _inputCard(l),
-              const SizedBox(height: 8),
-              _section(l.conversionsCountingHeading, _countingRows()),
-              _section(l.conversionsLengthHeading, _lengthRows()),
-              _section(l.conversionsWeightHeading, _weightRows()),
-              _section(l.conversionsTimeHeading, _timeRows()),
-              _section(l.conversionsAngleHeading, _angleRows()),
-              const Padding(
-                padding: EdgeInsets.only(top: 28, bottom: 4),
-                child: Divider(color: Color(0xFF3C3C3C), height: 1),
-              ),
-              _section(l.conversionsCurrencyHeading, _currencyRows()),
+    final langTag = Localizations.localeOf(context).toLanguageTag();
+    return DefaultTabController(
+      length: kTheoryAreas.length,
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text(l.conversionsTitle, style: const TextStyle(fontSize: 14)),
+          backgroundColor: const Color(0xFF1A1A1A),
+          bottom: TabBar(
+            isScrollable: true,
+            tabAlignment: TabAlignment.start,
+            tabs: [
+              for (final cat in kTheoryAreas)
+                Tab(text: converterCategoryLabel(cat, l)),
             ],
           ),
         ),
+        body: SafeArea(
+          top: false,
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.fromLTRB(16, 12, 16, 4),
+                child: _inputCard(l),
+              ),
+              Expanded(
+                child: TabBarView(
+                  children: [
+                    for (final cat in kTheoryAreas) _areaTab(cat, langTag),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _areaTab(UnitCategory cat, String langTag) {
+    final sections = unitTheory(cat, langTag);
+    final sources = unitSources(cat, langTag);
+    return SingleChildScrollView(
+      padding: const EdgeInsets.fromLTRB(16, 12, 16, 28),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          _conversionRows(_rowsFor(cat)),
+          const Padding(
+            padding: EdgeInsets.symmetric(vertical: 16),
+            child: Divider(color: Color(0xFF3C3C3C), height: 1),
+          ),
+          if (sections.isEmpty)
+            const Text(
+              'Theorie folgt in Kürze.',
+              style: TextStyle(color: Color(0xFF808080), fontSize: 13),
+            )
+          else
+            for (final s in sections) _theorySection(s),
+          if (sources.isNotEmpty) _UnitSourceList(sources: sources),
+        ],
+      ),
+    );
+  }
+
+  Widget _theorySection(UnitTheorySection s) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 16),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            s.heading,
+            style: const TextStyle(
+              color: Colors.white,
+              fontSize: 15,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          const SizedBox(height: 4),
+          Text(
+            s.body,
+            style: const TextStyle(
+              color: Color(0xFFC8C8C8),
+              fontSize: 13.5,
+              height: 1.45,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _conversionRows(List<String> rows) {
+    return Directionality(
+      textDirection: TextDirection.ltr,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          for (final row in rows)
+            Padding(
+              padding: const EdgeInsets.only(bottom: 3),
+              child: Text(
+                row,
+                style: const TextStyle(
+                  fontFamily: 'monospace',
+                  fontSize: 13,
+                  height: 1.4,
+                  color: Color(0xFFD8D8D8),
+                ),
+              ),
+            ),
+        ],
       ),
     );
   }
@@ -157,13 +227,9 @@ class _ConversionsPageState extends State<ConversionsPage> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            l.conversionsInputLabel,
-            style: const TextStyle(color: Color(0xFFA0A0A0), fontSize: 12),
-          ),
+          Text(l.conversionsInputLabel,
+              style: const TextStyle(color: Color(0xFFA0A0A0), fontSize: 12)),
           const SizedBox(height: 8),
-          // Force LTR so the digits and toggle stay in their expected
-          // visual order even in RTL locales.
           Directionality(
             textDirection: TextDirection.ltr,
             child: Row(
@@ -189,8 +255,8 @@ class _ConversionsPageState extends State<ConversionsPage> {
                       isDense: true,
                       filled: true,
                       fillColor: Color(0xFF1F1F1F),
-                      contentPadding: EdgeInsets.symmetric(
-                          horizontal: 10, vertical: 10),
+                      contentPadding:
+                          EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                       border: OutlineInputBorder(
                         borderSide: BorderSide(color: Color(0xFF3C3C3C)),
                       ),
@@ -201,51 +267,7 @@ class _ConversionsPageState extends State<ConversionsPage> {
                   ),
                 ),
                 const SizedBox(width: 10),
-                _SystemToggle(
-                  selected: _system,
-                  onChanged: _switchSystem,
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _section(String title, List<String> rows) {
-    return Padding(
-      padding: const EdgeInsets.only(top: 16),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            title,
-            style: const TextStyle(
-              color: Colors.white,
-              fontSize: 15,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          const SizedBox(height: 6),
-          Directionality(
-            textDirection: TextDirection.ltr,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                for (final row in rows)
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 3),
-                    child: Text(
-                      row,
-                      style: const TextStyle(
-                        fontFamily: 'monospace',
-                        fontSize: 13,
-                        height: 1.4,
-                        color: Color(0xFFD8D8D8),
-                      ),
-                    ),
-                  ),
+                _SystemToggle(selected: _system, onChanged: _switchSystem),
               ],
             ),
           ),
@@ -255,19 +277,33 @@ class _ConversionsPageState extends State<ConversionsPage> {
   }
 
   // ─────────────────────────────────────────────────────────────────────
-  // Conversion logic. Each section returns a list of monospace rows in
-  // the multi-magnitude pattern: the input value is interpreted as
-  // successive unit names along the 12-based ladder, each line
-  // decomposing to the next higher unit. The Doz/Dez toggle drives both
-  // input parsing and all output numbers, so flipping to Doz makes the
-  // dozenal cleanness of these units immediately visible. Symbolic forms
-  // (ft, in, sh, d, h, min, s, °, £, ggr, gr, dz, oz tr, lb tr) stay in
-  // international notation across all locales for compactness.
+  // Conversion rows per area (symbolic notation stays international).
   // ─────────────────────────────────────────────────────────────────────
 
-  /// Format an int per the current Doz/Dez toggle.
-  String _f(int n) =>
-      _system == _NumSys.dez ? n.toString() : _toDoz(n);
+  List<String> _rowsFor(UnitCategory cat) {
+    switch (cat) {
+      case UnitCategory.count:
+        return _countingRows();
+      case UnitCategory.dist:
+        return _lengthRows();
+      case UnitCategory.area:
+        return _areaRows();
+      case UnitCategory.space:
+        return _spaceRows();
+      case UnitCategory.weight:
+        return _weightRows();
+      case UnitCategory.time:
+        return _timeRows();
+      case UnitCategory.angle:
+        return _angleRows();
+      case UnitCategory.price:
+        return _currencyRows();
+      case UnitCategory.temp:
+        return _tempRows();
+      default:
+        return const [];
+    }
+  }
 
   List<String> _countingRows() {
     final n = _value;
@@ -286,7 +322,26 @@ class _ConversionsPageState extends State<ConversionsPage> {
       '${_f(n)} ft  =  ${_f(n ~/ 3)} yd ${_f(n % 3)} ft        (× 3)',
       '${_f(n)} yd  =  ${_f(n ~/ 1760)} mi ${_f(n % 1760)} yd  (× 1760)',
       '${_f(n)} ft  =  ${_f(n ~/ 6)} fathom ${_f(n % 6)} ft    (× 6 = ½ dz)',
-      '(1 ft = 12 in ; 1 yd = 3 ft ; 1 mi = 1760 yd = 5280 ft ; 1 fathom = 6 ft)',
+      '(1 ft = 12 in ; 1 yd = 3 ft ; 1 mi = 1760 yd = 5280 ft)',
+    ];
+  }
+
+  List<String> _areaRows() {
+    final n = _value;
+    return [
+      '${_f(n)} sq ft   =  ${_f(n * 144)} sq in       (× 144)',
+      '${_f(n)} sq yd   =  ${_f(n * 9)} sq ft         (× 9)',
+      '${_f(n)} acre    =  ${_f(n * 43560)} sq ft     (× 43560)',
+      '(1 sq ft = 144 sq in ; 1 sq yd = 9 sq ft ; 1 acre = 4840 sq yd)',
+    ];
+  }
+
+  List<String> _spaceRows() {
+    final n = _value;
+    return [
+      '${_f(n)} cu yd  =  ${_f(n * 27)} cu ft         (× 27)',
+      '${_f(n)} cu ft  =  ${_f(n * 1728)} cu in       (× 1728 = 12³)',
+      '(1 cu yd = 27 cu ft ; 1 cu ft = 1728 cu in)',
     ];
   }
 
@@ -294,10 +349,9 @@ class _ConversionsPageState extends State<ConversionsPage> {
     final n = _value;
     return [
       '${_f(n)} oz tr  =  ${_f(n ~/ 12)} lb tr ${_f(n % 12)} oz tr   (× 12  dozenal ✓ ; troy)',
-      '${_f(n)} lb     =  ${_f(n ~/ 14)} st ${_f(n % 14)} lb           (× 14 ; avoirdupois)',
+      '${_f(n)} lb     =  ${_f(n ~/ 14)} st ${_f(n % 14)} lb           (× 14)',
       '${_f(n)} st     =  ${_f(n ~/ 8)} cwt ${_f(n % 8)} st           (× 8)',
-      '${_f(n)} cwt    =  ${_f(n ~/ 20)} long ton ${_f(n % 20)} cwt    (× 20)',
-      '(1 lb tr = 12 oz tr · troy/precious ; 1 st = 14 lb ; 1 cwt = 8 st = 112 lb ; 1 long ton = 20 cwt = 2240 lb)',
+      '(1 lb tr = 12 oz tr · troy ; 1 st = 14 lb ; 1 cwt = 8 st = 112 lb)',
     ];
   }
 
@@ -313,13 +367,11 @@ class _ConversionsPageState extends State<ConversionsPage> {
 
   List<String> _angleRows() {
     final n = _value;
-    // Clock position is always read in decimal (universal convention):
-    // each clock-hour = 30°, each clock-minute = 0.5° of arc.
     final clockH = n ~/ 30;
     final clockMin = ((n % 30) * 2).toString().padLeft(2, '0');
     return [
       '${_f(n)}°  =  ${_f(n ~/ 12)} × 12°  + ${_f(n % 12)}°',
-      '${_f(n)}°  =  ${_f(n ~/ 30)} × 30°  + ${_f(n % 30)}°   (zodiac/clock-hour units)',
+      '${_f(n)}°  =  ${_f(n ~/ 30)} × 30°  + ${_f(n % 30)}°   (zodiac/clock-hour)',
       '${_f(n)}°  ÷  360°  =  ${(n / 360.0).toStringAsFixed(4)}',
       'clock-face position: $clockH:$clockMin (1 h = 30°)',
       '(360 = 30·12)',
@@ -331,14 +383,22 @@ class _ConversionsPageState extends State<ConversionsPage> {
     return [
       '${_f(n)} d   =  ${_f(n ~/ 12)} sh ${_f(n % 12)} d',
       '${_f(n)} sh  =  £${_f(n ~/ 20)}  ${_f(n % 20)} sh',
-      '(1 sh = 12 d ; 1 £ = 20 sh = 240 d ; £/sh ratio is not 12-based)',
+      '(1 sh = 12 d ; 1 £ = 20 sh = 240 d)',
+    ];
+  }
+
+  List<String> _tempRows() {
+    final c = _value.toDouble();
+    return [
+      '$_value °C  =  ${(c * 9 / 5 + 32).toStringAsFixed(1)} °F',
+      '$_value °C  =  ${(c + 273.15).toStringAsFixed(2)} K',
+      '(°F = °C · 9/5 + 32 ; K = °C + 273.15)',
     ];
   }
 }
 
-/// Tight Doz/Dez toggle for the input row. Material's SegmentedButton is
-/// heavyweight here; this is a 2-pill custom row that matches the dark
-/// theme better.
+/// Tight Doz/Dez toggle for the input row — a 2-pill custom row matching the
+/// dark theme better than Material's SegmentedButton.
 class _SystemToggle extends StatelessWidget {
   final _NumSys selected;
   final ValueChanged<_NumSys> onChanged;
@@ -356,9 +416,8 @@ class _SystemToggle extends StatelessWidget {
           decoration: BoxDecoration(
             color: active ? const Color(0xFF3C3C3C) : Colors.transparent,
             border: Border.all(
-              color: active
-                  ? const Color(0xFF8C8C8C)
-                  : const Color(0xFF3C3C3C),
+              color:
+                  active ? const Color(0xFF8C8C8C) : const Color(0xFF3C3C3C),
             ),
             borderRadius: BorderRadius.circular(6),
           ),
@@ -382,6 +441,67 @@ class _SystemToggle extends StatelessWidget {
         const SizedBox(width: 4),
         pill(_NumSys.doz, 'Doz'),
       ],
+    );
+  }
+}
+
+/// The "Quellen" block at the foot of a unit-theory tab. Mirrors the chapter
+/// source list: tappable title (opens in browser) + the two-axis rating in
+/// words. Sources come from unitSources() / the dossiers in docs/research/.
+class _UnitSourceList extends StatelessWidget {
+  final List<Source> sources;
+  const _UnitSourceList({required this.sources});
+
+  @override
+  Widget build(BuildContext context) {
+    final l = AppLocalizations.of(context);
+    return Padding(
+      padding: const EdgeInsets.only(top: 8),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Divider(color: Color(0xFF3C3C3C), height: 24),
+          Text(
+            l.sourcesSectionTitle,
+            style: const TextStyle(
+              color: Colors.white,
+              fontSize: 15,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          const SizedBox(height: 8),
+          for (final s in sources)
+            Padding(
+              padding: const EdgeInsets.only(bottom: 12),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  InkWell(
+                    onTap: () => openExternalLink(context, s.url),
+                    child: Text(
+                      s.title,
+                      style: const TextStyle(
+                        color: Color(0xFF6BA8E0),
+                        fontSize: 13.5,
+                        height: 1.35,
+                        decoration: TextDecoration.underline,
+                        decorationColor: Color(0xFF6BA8E0),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 2),
+                  Text(
+                    '${reliabilityLabel(l, s.reliability)} · ${accessLabel(l, s.access)}',
+                    style: const TextStyle(
+                      color: Color(0xFF808080),
+                      fontSize: 11,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+        ],
+      ),
     );
   }
 }
