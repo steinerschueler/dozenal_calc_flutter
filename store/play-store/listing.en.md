@@ -92,7 +92,7 @@ A built-in reader explains why twelve in particular is a special number:
 
 The app works completely offline. What you type stays on your device.
 
-<b>Who is it for?</b>
+<b>Whom is it for?</b>
 
 For teachers who want to show how a different number system would change everyday fraction arithmetic. For students who want to see their mathematics from an unfamiliar perspective.
 
