@@ -9,10 +9,10 @@
 import 'package:flutter/material.dart';
 
 import 'app_layout.dart';
-import 'conversions_page.dart';
 import 'converter_display.dart';
 import 'converter_keypad.dart';
 import 'converter_state.dart';
+import 'info_pages.dart';
 import 'l10n/app_localizations.dart';
 import 'logic/unit_data.dart';
 import 'unit_labels.dart';
@@ -73,7 +73,7 @@ class _ConverterPageState extends State<ConverterPage> {
                           onBack: () => Navigator.of(context).pop(),
                           onInfo: () => Navigator.of(context).push(
                             MaterialPageRoute(
-                              builder: (_) => const ConversionsPage(),
+                              builder: (_) => const InfoListPage(),
                             ),
                           ),
                           categoryLabelOf: (c) => converterCategoryLabel(c, l),

@@ -35,6 +35,9 @@ const Color _kBorder = Color(0xFF505050);
 const Color _kAc = Color(0xFFFF4040);
 const Color _kAcPressed = Color(0xFFFF8080);
 const Color _kGold = Color(0xFFFFD700);
+// Same gold hue, fainter — for the selected sub-unit (magnitude) border, so it
+// reads as subordinate to its category's full-strength gold frame.
+const Color _kGoldSoft = Color(0x66FFD700);
 const Color _kDisabled = Color(0xFF555555); // inert (not-yet-wired) op keys
 const Color _kCategory = Color(0xFF98C8FF); // categories read like operators
 const Color _kMagnitude = Color(0xFFE6C77A); // magnitudes read like values
@@ -317,6 +320,11 @@ class ConverterKeypad extends StatelessWidget {
     final isAc = token is Ac;
     final active = _isActiveOp(token);
     final armed = token is Sub && state.subtractArmed;
+    // The world toggle: the currently-active world (Doz/imperial or
+    // Dez/metric) always carries the blue mode frame — like the main
+    // calculator — exactly one, never both, never none.
+    final worldActive = (token is Doz && state.world == UnitWorld.imperial) ||
+        (token is Dez && state.world == UnitWorld.metric);
     return Semantics(
       button: active,
       enabled: active,
@@ -325,6 +333,7 @@ class ConverterKeypad extends StatelessWidget {
       child: _Shell(
         onTap: active ? () => _handleToken(token) : null,
         gold: armed,
+        selected: worldActive,
         pressedBuilder: (pressed) => CustomPaint(
           size: Size.infinite,
           painter: _OpPainter(
@@ -368,7 +377,7 @@ class ConverterKeypad extends StatelessWidget {
     return _LabelButton(
       label: unit.symbol,
       color: selected ? _kGold : _kMagnitude,
-      gold: selected,
+      softGold: selected,
       onTap: () => state.tapMagnitude(unit),
     );
   }
@@ -611,8 +620,14 @@ class _Shell extends StatefulWidget {
   final VoidCallback? onTap;
   final Widget Function(bool pressed) pressedBuilder;
   final bool gold; // gold border, e.g. armed − operator
+  final bool selected; // blue border for the active mode, like the main calc
 
-  const _Shell({this.onTap, required this.pressedBuilder, this.gold = false});
+  const _Shell({
+    this.onTap,
+    required this.pressedBuilder,
+    this.gold = false,
+    this.selected = false,
+  });
 
   @override
   State<_Shell> createState() => _ShellState();
@@ -647,8 +662,10 @@ class _ShellState extends State<_Shell> {
             border: Border.all(
               color: widget.gold
                   ? _kGold
-                  : (disabled ? const Color(0xFF303030) : _kBorder),
-              width: widget.gold ? 2 : 1,
+                  : widget.selected
+                      ? _kOp
+                      : (disabled ? const Color(0xFF303030) : _kBorder),
+              width: widget.gold || widget.selected ? 2 : 1,
             ),
           ),
           child: widget.pressedBuilder(_pressed),
@@ -661,13 +678,20 @@ class _ShellState extends State<_Shell> {
 class _LabelButton extends StatefulWidget {
   final String label;
   final Color color;
+
+  /// Full-strength gold frame (active category — the Überbegriff).
   final bool gold;
+
+  /// Fainter gold frame, same hue (selected sub-unit / magnitude). Subordinate
+  /// to a category's [gold] frame.
+  final bool softGold;
   final VoidCallback onTap;
 
   const _LabelButton({
     required this.label,
     required this.color,
-    required this.gold,
+    this.gold = false,
+    this.softGold = false,
     required this.onTap,
   });
 
@@ -699,8 +723,10 @@ class _LabelButtonState extends State<_LabelButton> {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(4),
             border: Border.all(
-              color: widget.gold ? _kGold : _kBorder,
-              width: widget.gold ? 2 : 1,
+              color: widget.gold
+                  ? _kGold
+                  : (widget.softGold ? _kGoldSoft : _kBorder),
+              width: widget.gold ? 2 : (widget.softGold ? 1.5 : 1),
             ),
           ),
           alignment: Alignment.center,

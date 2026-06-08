@@ -346,7 +346,8 @@ Gesammelte Verbesserungswünsche, noch nicht umgesetzt:
       `=`-Zyklus nicht; in beiden Fällen werden beide Einheitenleitern
       durchlaufen. (Aktuell: nur aktive Welt + Breakdown; vgl. Abschnitt
       „Eingabe-Einheit & `=`".)
-- [ ] **Sanftere Einzel-Einheit-Umrandung.** Die goldene Umrandung um den
-      ganzen Einheiten-**Block** bleibt wie sie ist (gefällt). Aber die
-      Umrandung um eine **einzelne** aktive Einheit soll dezenter werden —
-      ein **blasseres, weniger auffälliges Gelb**, das nicht so heraussticht.
+- [x] **Sanftere Einzel-Einheit-Umrandung.** Die volle Gold-Umrandung der
+      aktiven **Kategorie** (Überbegriff) bleibt; die ausgewählte **Einzel-
+      Einheit** (Magnitude) bekommt jetzt einen schwächeren Rahmen — gleiches
+      Gold, geringere Deckkraft (`_kGoldSoft = 0x66FFD700`) und 1.5 statt 2 px.
+      Umgesetzt in `converter_keypad.dart` (`_magnitudeCell` → `softGold`).
