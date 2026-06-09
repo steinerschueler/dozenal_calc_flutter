@@ -111,3 +111,45 @@ Synchronisiert werden nur die sieben Play-Console-Release-Notes-Locales
 ZH-Hant, CY, JA, AR) haben in Play Console keinen Release-Notes-Slot.
 
 App-Namen-Konvention pro Locale: siehe [`store-listings.md`](store-listings.md).
+
+## App Store: Listing-Push via fastlane deliver
+
+Das Pendant zum Play-Listing-Push für den **App Store** (iOS **und** macOS, ein
+Eintrag, Universal Purchase). Quelle bleibt `store/app-store/*.md`
+(menschenlesbar autoritativ); ein Sync-Skript erzeugt die von `deliver`
+erwartete Ordnerstruktur.
+
+```bash
+dart run tool/sync_appstore_metadata.dart        # store/app-store/*.md → fastlane/metadata/<locale>/
+fastlane deliver --api_key_path ~/keys/appstore_api_key.json \
+  --platform ios --screenshots_path fastlane/screenshots/ios
+fastlane deliver --api_key_path ~/keys/appstore_api_key.json \
+  --platform osx --screenshots_path fastlane/screenshots/osx
+```
+
+- **Sync-Skript** (`tool/sync_appstore_metadata.dart`): liest pro Locale
+  `listing.<code>.md` (Name/Untertitel inline-Backtick, Werbetext/Keywords/
+  Beschreibung Fenced-Block — positions-/header-basiert, sprachneutral) und
+  `whats-new-<version>.md` (Version aus `pubspec.yaml` oder als Argument),
+  schreibt `fastlane/metadata/<asc-locale>/{name,subtitle,promotional_text,
+  keywords,description,release_notes}.txt`. Locale-Map (11 App-Store-Sprachen,
+  fa/ga/cy sind keine): `de→de-DE, en→en-US, fr→fr-FR, es→es-ES, ar→ar-SA`,
+  Rest bare (`it, ru, hi, ja, zh-Hans, zh-Hant`).
+- **`fastlane/metadata/` + `fastlane/screenshots/` sind gitignored** — niemals
+  von Hand editieren; nur `fastlane/Appfile` + `fastlane/Deliverfile` sind
+  versioniert. Kategorie/Altersfreigabe/Preis/App-Datenschutz werden in App
+  Store Connect verwaltet (keine App-Level-Metadaten-Dateien → deliver lässt
+  sie unangetastet).
+- **Derselbe Text** geht an iOS und macOS; nur **Screenshots** unterscheiden
+  sich (`fastlane/screenshots/ios/<locale>/` mit Apple-Watch-Shots, da die
+  Watch-App in der iOS-App steckt; `…/osx/<locale>/` mit Mac-Shots). deliver
+  ordnet Screenshots per Pixelmaß dem Display-Typ zu. macOS-Größen: 1280×800 /
+  1440×900 / 2560×1600 / 2880×1800. Watch (Series-Größen): u. a. 416×496.
+- **Credentials:** `~/keys/appstore_api_key.json` (aus `AuthKey_RMAP26R27U.p8`
+  + Key-ID/Issuer gebaut), **nicht** im Repo — parallel zu den anderen Secrets.
+- `submit_for_review` ist im Deliverfile **aus** (DRAFT-Verhalten analog zum
+  Play-`internal`-Track) — Einreichung im Browser oder per Flag.
+
+Binaries werden **nicht** über deliver geladen (`skip_binary_upload`), sondern
+über den geräte-losen `altool`-Upload (siehe [`watch.md`](watch.md) /
+[[apple-multiplatform-release]] im Memory).

@@ -5,10 +5,13 @@
 // 'flutter create' template.
 
 // The application's name. By default this is also the title of the Flutter window.
+// Keep the executable/product name ASCII (the .xcodeproj references
+// dozenal_calc_flutter.app by path); the user-facing name is set via
+// CFBundleName / CFBundleDisplayName in Info.plist, mirroring the iOS Runner.
 PRODUCT_NAME = dozenal_calc_flutter
 
 // The application's bundle identifier
-PRODUCT_BUNDLE_IDENTIFIER = app.weltanschauung.dozenalCalcFlutter
+PRODUCT_BUNDLE_IDENTIFIER = app.weltanschauung.dozenal
 
 // The copyright displayed in application information
-PRODUCT_COPYRIGHT = Copyright © 2026 app.weltanschauung. All rights reserved.
+PRODUCT_COPYRIGHT = Copyright © 2026 Eric Naville. All rights reserved.

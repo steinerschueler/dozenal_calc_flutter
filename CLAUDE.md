@@ -560,29 +560,47 @@ Neben den Flutter-Zielen (Android, iOS/iPadOS, Web) gibt es zwei native
 Apple-Ableger. Beide sind **kein Flutter** — Flutter kann macOS als Desktop,
 aber **nicht** die Apple Watch.
 
-- **macOS (Flutter-Desktop, PoC):** per `flutter create --platforms=macos .`
+- **macOS (Flutter-Desktop):** per `flutter create --platforms=macos .`
   hinzugefügt (Ordner `macos/`). Baut/läuft als Desktop-Fenster
   (`flutter run -d macos`); das Breit-Keypad greift, physische Tastatur und
-  Custom-Painter funktionieren. **Vor einem Mac-App-Store-Release offen:**
-  Bundle-ID `app.weltanschauung.dozenalCalcFlutter` → `app.weltanschauung.dozenal`
-  angleichen, Brand-Icon (`flutter_launcher_icons` mit `macos: true`),
-  Sandbox-Entitlements und ein macOS-Eintrag in App Store Connect.
+  Custom-Painter funktionieren. App-Store-fertig (ab Build 16): Bundle-ID
+  `app.weltanschauung.dozenal` (in `macos/Runner/Configs/AppInfo.xcconfig`,
+  identisch zu iOS/Android → **gleicher** App-Store-Connect-Eintrag,
+  macOS als zusätzliche Plattform), Anzeigename „Dozenal Calc" via
+  `CFBundleName`/`CFBundleDisplayName` in `macos/Runner/Info.plist` (der
+  ASCII-`PRODUCT_NAME = dozenal_calc_flutter` bleibt, weil das `.xcodeproj`
+  `dozenal_calc_flutter.app` per Pfad referenziert), Marken-Icon via
+  `flutter_launcher_icons` (`macos:`-Block in `pubspec.yaml`),
+  Release-Entitlements nur `com.apple.security.app-sandbox` (kein Netzwerk).
 
-- **watchOS (eigenständige SwiftUI-App):** unter `watch/`, **separates
-  Xcode-Projekt**, teilt keinen Code mit Flutter. Bewusst winzig: festes
-  Display oben (links-bündig), darunter drei gewischte Seiten (Lizenz/
-  Datenschutz · Glyphenblock · Funktionsblock), Gleichtaste über die volle
-  Breite. Die zwölf Dozenal-Glyphen sind als SwiftUI-`Shape` 1:1 aus
+- **watchOS (SwiftUI, in die iOS-App eingebettet — ab Build 16):** Quellen in
+  `watch/Sources/` (`App.swift`/`Calculator.swift`/`Glyph.swift`). Bewusst
+  winzig: festes Display oben (links-bündig), darunter drei gewischte Seiten
+  (Lizenz/Datenschutz · Glyphenblock · Funktionsblock), Gleichtaste über die
+  volle Breite. Die zwölf Dozenal-Glyphen sind als SwiftUI-`Shape` 1:1 aus
   `lib/glyph_painter.dart` portiert (`watch/Sources/Glyph.swift`); die
   Rechenlogik (Basis-12-Eingabe, rekursiver Auswerter mit `+ − × ÷`, `^`,
   binärem `√` = n-te Wurzel, `log`, Klammern) in `watch/Sources/Calculator.swift`.
   Build/Test/Bekannte-Probleme (u. a. der watchOS-`.page`-TabView-Erstrender-
   Zoom): [`docs/watch.md`](docs/watch.md).
 
-  Projekt wird mit **xcodegen** aus `watch/project.yml` erzeugt
-  (`watch/DozenalWatch.xcodeproj` und `watch/build/` sind regenerierbar und
-  per `.gitignore` ausgeschlossen — committet sind nur `watch/Sources/` +
-  `watch/project.yml`).
+  **Auslieferung:** Das `DozenalWatch`-Target lebt in `ios/Runner.xcodeproj`
+  und wird beim Archivieren der iOS-App in `…app/Watch/` eingebettet (ein
+  IPA, ein App-Store-Eintrag). Verdrahtet per `tool/embed_watch_target.rb`
+  (idempotent, `xcodeproj`-Gem) — referenziert dieselben `watch/Sources/`-
+  Swift-Dateien (single source of truth), nutzt aber eine eigene Companion-
+  `Info.plist` (`ios/watch/Info.plist`: `WKApplication` + `WKCompanionApp-
+  BundleIdentifier = app.weltanschauung.dozenal`, **kein** `WKWatchOnly`) und
+  einen eigenen Icon-Katalog (`ios/watch/Assets.xcassets`, alpha-freies 1024er
+  aus dem iOS-Icon). Bundle-ID `app.weltanschauung.dozenal.watch`,
+  `MARKETING_VERSION`/`CURRENT_PROJECT_VERSION` im Target müssen mit der
+  Flutter-Version synchron gehalten werden (aktuell `1.3.0`/`16`).
+
+  Das eigenständige **xcodegen**-Projekt (`watch/project.yml`, daraus
+  `watch/DozenalWatch.xcodeproj` + `watch/build/`, beide gitignored) bleibt
+  parallel für schnelles Simulator-Testen bestehen — es nutzt `WKWatchOnly`
+  statt Companion. Bei Glyphen-/Logik-Änderungen genügt das Editieren der
+  geteilten `watch/Sources/`-Dateien; beide Projekte ziehen sie automatisch.
 
 ## Konventionen
 

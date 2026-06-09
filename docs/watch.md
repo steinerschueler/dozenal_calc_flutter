@@ -98,9 +98,50 @@ voll ausfüllenden Variante. Referenzen:
 - https://developer.apple.com/forums/thread/711572
 - https://www.hackingwithswift.com/forums/swiftui/tabview-with-tabviewstyle-page-not-behaving-as-expected-when-app-loads/18636
 
-## Vor einem Release
+## Auslieferung: eingebettet in die iOS-App (ab Build 16)
 
-Noch zu tun, falls die Watch-App veröffentlicht wird: als Watch-Target in die
-iOS-App einbetten (oder als unabhängige Watch-App signieren), Watch-App-Icon,
-Watch-Screenshots, und Signing/Provisioning (der vorhandene Apple-Distribution-
-Cert deckt watchOS mit ab).
+Die Watch-App wird **in die Flutter-iOS-App eingebettet** und in einem IPA
+ausgeliefert (ein App-Store-Eintrag, ein Review). Das `DozenalWatch`-Target
+lebt in `ios/Runner.xcodeproj`, verdrahtet per `tool/embed_watch_target.rb`:
+
+```bash
+/opt/homebrew/opt/ruby/bin/ruby tool/embed_watch_target.rb   # idempotent
+```
+
+Das Skript (nutzt das `xcodeproj`-Gem — bei Bedarf
+`/opt/homebrew/opt/ruby/bin/gem install xcodeproj`) legt das watchOS-
+Application-Target an, referenziert dieselben `watch/Sources/*.swift` (single
+source of truth, geteilt mit dem xcodegen-Projekt), hängt es als Dependency an
+`Runner` und ergänzt eine `Embed Watch Content`-Copy-Phase
+(`$(CONTENTS_FOLDER_PATH)/Watch`, dst-spec 16). Es ist idempotent: ist das
+Target schon da, passiert nichts. Re-run nach einem `flutter create`/Projekt-
+Reset.
+
+Eigene Dateien des eingebetteten Targets (nicht die des Standalone-Projekts):
+- `ios/watch/Info.plist` — Companion-Variante: `WKApplication` +
+  `WKCompanionAppBundleIdentifier = app.weltanschauung.dozenal`, **kein**
+  `WKWatchOnly`. Version über `$(MARKETING_VERSION)`/`$(CURRENT_PROJECT_VERSION)`.
+- `ios/watch/Assets.xcassets` — Watch-App-Icon, ein alpha-freies 1024er
+  (kopiert aus `ios/Runner/.../Icon-App-1024x1024@1x.png`; App Store lehnt
+  Alpha bei App-Icons ab).
+
+Bundle-ID `app.weltanschauung.dozenal.watch` (Präfix der iOS-ID — Pflicht).
+`MARKETING_VERSION`/`CURRENT_PROJECT_VERSION` im Target **synchron zur
+Flutter-Version halten** (aktuell `1.3.0`/`16`; sie sind im pbxproj
+hartcodiert, nicht aus `pubspec.yaml` abgeleitet).
+
+Signing/Provisioning: der vorhandene Apple-Distribution-Cert deckt watchOS ab;
+beim geräte-losen Export erzeugt `-allowProvisioningUpdates` das Profil für die
+Watch-Bundle-ID automatisch mit. Schnell-Verifikation der Kompilierung ohne
+Signing:
+
+```bash
+xcodebuild -project ios/Runner.xcodeproj -target DozenalWatch \
+  -sdk watchsimulator -configuration Release \
+  CONFIGURATION_BUILD_DIR=/tmp/w-out OBJROOT=/tmp/w-obj SYMROOT=/tmp/w-sym \
+  CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO build
+```
+
+Noch zu tun in App Store Connect: Watch-App-Icon (1024, im Asset-Katalog ✓),
+**Watch-Screenshots** (eigener Slot), und die Watch-App taucht nach dem Upload
+automatisch unter der iOS-App auf (keine separate Plattform).

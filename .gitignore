@@ -75,3 +75,12 @@ tool/preview/
 # are versioned.
 watch/build/
 watch/DozenalWatch.xcodeproj/
+
+# fastlane: generated App Store metadata (source of truth is store/app-store/*.md
+# via tool/sync_appstore_metadata.dart) + captured screenshots + run artifacts.
+# Committed: fastlane/Appfile, fastlane/Deliverfile only.
+fastlane/metadata/
+fastlane/screenshots/
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/test_output/
