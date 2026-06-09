@@ -1,0 +1,222 @@
+{
+  "de": {
+    "intro": "Zwölf eigene Ziffern",
+    "calc": "Exakt rechnen in Basis Zwölf",
+    "conv": "Einheiten dozenal & metrisch",
+    "bullets": [
+      "Exakte Brüche, keine Rundung",
+      "Periodenerkennung mit Überstrich",
+      "Exakte Rational- & Gleitkomma-Schiene",
+      "Beliebig große Zahlen (BigInt)",
+      "Trigonometrie, Hyperbel & Umkehrungen",
+      "Potenzen, Quadrat- und n-te Wurzel",
+      "Logarithmus zu beliebiger Basis",
+      "Fakultät, Betrag, Kehrwert, Modulo",
+      "Parallel-Addition  a⊕b",
+      "Konstanten  π · e · φ · √2",
+      "Speicher exakt rational (STO/RCL)",
+      "Winkelmodi  DEG / RAD / GRAD",
+      "Doz/Dez für Eingabe und Ergebnis"
+    ]
+  },
+  "en": {
+    "intro": "Twelve digits of its own",
+    "calc": "Exact math in base twelve",
+    "conv": "Units, dozenal & metric",
+    "bullets": [
+      "Exact fractions, no rounding",
+      "Repetend detection with overline",
+      "Exact rational & floating-point tracks",
+      "Arbitrary-precision integers (BigInt)",
+      "Trigonometry, hyperbolic & inverses",
+      "Powers, square & n-th roots",
+      "Logarithm to any base",
+      "Factorial, absolute value, reciprocal, modulo",
+      "Parallel addition  a⊕b",
+      "Constants  π · e · φ · √2",
+      "Exact rational memory (STO/RCL)",
+      "Angle modes  DEG / RAD / GRAD",
+      "Dozenal/decimal for input and result"
+    ]
+  },
+  "fr": {
+    "intro": "Douze chiffres bien à elle",
+    "calc": "Calcul exact en base douze",
+    "conv": "Unités, douzénal & métrique",
+    "bullets": [
+      "Fractions exactes, sans arrondi",
+      "Détection de période avec barre",
+      "Voies rationnelle exacte & flottante",
+      "Entiers de taille arbitraire (BigInt)",
+      "Trigonométrie, hyperboliques & inverses",
+      "Puissances, racines carrée et n-ième",
+      "Logarithme en base quelconque",
+      "Factorielle, valeur absolue, inverse, modulo",
+      "Addition parallèle  a⊕b",
+      "Constantes  π · e · φ · √2",
+      "Mémoire exacte rationnelle (STO/RCL)",
+      "Modes d'angle  DEG / RAD / GRAD",
+      "Douzénal/décimal en entrée et résultat"
+    ]
+  },
+  "es": {
+    "intro": "Doce cifras propias",
+    "calc": "Cálculo exacto en base doce",
+    "conv": "Unidades, docenal y métrico",
+    "bullets": [
+      "Fracciones exactas, sin redondeo",
+      "Detección de periodo con barra",
+      "Vías racional exacta y de coma flotante",
+      "Enteros de precisión arbitraria (BigInt)",
+      "Trigonometría, hiperbólicas e inversas",
+      "Potencias, raíz cuadrada y n-ésima",
+      "Logaritmo en cualquier base",
+      "Factorial, valor absoluto, recíproco, módulo",
+      "Suma en paralelo  a⊕b",
+      "Constantes  π · e · φ · √2",
+      "Memoria exacta racional (STO/RCL)",
+      "Modos de ángulo  DEG / RAD / GRAD",
+      "Docenal/decimal para entrada y resultado"
+    ]
+  },
+  "it": {
+    "intro": "Dodici cifre proprie",
+    "calc": "Calcolo esatto in base dodici",
+    "conv": "Unità, dozzinale e metrico",
+    "bullets": [
+      "Frazioni esatte, senza arrotondamento",
+      "Rilevamento del periodo con barra",
+      "Binari razionale esatto e a virgola mobile",
+      "Interi a precisione arbitraria (BigInt)",
+      "Trigonometria, iperboliche e inverse",
+      "Potenze, radice quadrata e n-esima",
+      "Logaritmo in base qualsiasi",
+      "Fattoriale, valore assoluto, reciproco, modulo",
+      "Addizione in parallelo  a⊕b",
+      "Costanti  π · e · φ · √2",
+      "Memoria esatta razionale (STO/RCL)",
+      "Modalità angolo  DEG / RAD / GRAD",
+      "Dozzinale/decimale per input e risultato"
+    ]
+  },
+  "ru": {
+    "intro": "Двенадцать своих цифр",
+    "calc": "Точный счёт в двенадцатеричной",
+    "conv": "Единицы: дюжинные и метрические",
+    "bullets": [
+      "Точные дроби без округления",
+      "Распознавание периода с чертой",
+      "Точная рациональная и плавающая ветви",
+      "Числа произвольной длины (BigInt)",
+      "Тригонометрия, гиперболика и обратные",
+      "Степени, квадратный и n-й корень",
+      "Логарифм по любому основанию",
+      "Факториал, модуль, обратное, остаток",
+      "Параллельное сложение  a⊕b",
+      "Константы  π · e · φ · √2",
+      "Точная рациональная память (STO/RCL)",
+      "Режимы угла  DEG / RAD / GRAD",
+      "Дюжинная/десятичная: ввод и результат"
+    ]
+  },
+  "hi": {
+    "intro": "बारह अपने अंक",
+    "calc": "बारह आधार में सटीक गणना",
+    "conv": "इकाइयाँ — डज़नल और मीट्रिक",
+    "bullets": [
+      "सटीक भिन्न, कोई पूर्णांकन नहीं",
+      "आवर्त पहचान, ऊपर रेखा के साथ",
+      "सटीक परिमेय और फ़्लोट दोनों पथ",
+      "मनमाने अंकों वाली बड़ी संख्याएँ (BigInt)",
+      "त्रिकोणमिति, हाइपरबोलिक और प्रतिलोम",
+      "घात, वर्गमूल और n-वाँ मूल",
+      "किसी भी आधार का लघुगणक",
+      "क्रमगुणित, निरपेक्ष मान, व्युत्क्रम, मॉड्यूलो",
+      "समानांतर योग  a⊕b",
+      "अचर  π · e · φ · √2",
+      "सटीक परिमेय स्मृति (STO/RCL)",
+      "कोण मोड  DEG / RAD / GRAD",
+      "डज़नल/दशमलव — इनपुट और परिणाम"
+    ]
+  },
+  "ja": {
+    "intro": "十二進法の独自の数字",
+    "calc": "十二進法で正確に計算",
+    "conv": "単位：十二進法とメートル法",
+    "bullets": [
+      "正確な分数、丸めなし",
+      "循環節を上線で検出",
+      "厳密な有理数と浮動小数点の二系統",
+      "任意精度の整数（BigInt）",
+      "三角・双曲線関数と逆関数",
+      "べき乗、平方根・n乗根",
+      "任意の底の対数",
+      "階乗・絶対値・逆数・剰余",
+      "並列加算  a⊕b",
+      "定数  π · e · φ · √2",
+      "厳密な有理数メモリ（STO/RCL）",
+      "角度モード  DEG / RAD / GRAD",
+      "十二進/十進の入力と結果"
+    ]
+  },
+  "zh-Hans": {
+    "intro": "十二进制专属数字",
+    "calc": "十二进制精确计算",
+    "conv": "单位：十二进制与公制",
+    "bullets": [
+      "精确分数，不取整",
+      "循环节检测，带上划线",
+      "精确有理数与浮点双轨",
+      "任意精度整数（大整数）",
+      "三角、双曲函数及反函数",
+      "幂、平方根与 n 次根",
+      "任意底数的对数",
+      "阶乘、绝对值、倒数、取模",
+      "并联加法  a⊕b",
+      "常数  π · e · φ · √2",
+      "精确有理数存储（STO/RCL）",
+      "角度模式  DEG / RAD / GRAD",
+      "十二进制/十进制的输入与结果"
+    ]
+  },
+  "zh-Hant": {
+    "intro": "十二進位專屬數字",
+    "calc": "十二進位精確計算",
+    "conv": "單位：十二進位與公制",
+    "bullets": [
+      "精確分數，不取整",
+      "循環節偵測，帶上劃線",
+      "精確有理數與浮點雙軌",
+      "任意精度整數（大整數）",
+      "三角、雙曲函數及反函數",
+      "冪、平方根與 n 次根",
+      "任意底數的對數",
+      "階乘、絕對值、倒數、取模",
+      "並聯加法  a⊕b",
+      "常數  π · e · φ · √2",
+      "精確有理數記憶（STO/RCL）",
+      "角度模式  DEG / RAD / GRAD",
+      "十二進位/十進位的輸入與結果"
+    ]
+  },
+  "ar": {
+    "intro": "اثنتا عشرة خانة خاصة بها",
+    "calc": "حساب دقيق بالنظام الاثني عشري",
+    "conv": "وحدات: اثني عشرية ومترية",
+    "bullets": [
+      "كسور دقيقة بلا تقريب",
+      "كشف الدور مع خط علوي",
+      "مساران: نسبي دقيق وعائم",
+      "أعداد كبيرة بدقة عشوائية (BigInt)",
+      "مثلثات ودوال زائدية وعكوسها",
+      "القوى والجذر التربيعي والجذر النوني",
+      "لوغاريتم لأي أساس",
+      "المضروب، القيمة المطلقة، المقلوب، الباقي",
+      "الجمع التوازي  a⊕b",
+      "الثوابت  π · e · φ · √2",
+      "ذاكرة نسبية دقيقة (STO/RCL)",
+      "أوضاع الزاوية  DEG / RAD / GRAD",
+      "اثني عشري/عشري للإدخال والنتيجة"
+    ]
+  }
+}
