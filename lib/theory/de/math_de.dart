@@ -269,6 +269,180 @@ List<ProseChapter> _mathChaptersDe() => const [
     ],
   ),
   ProseChapter(
+    'Teilbarkeit und die Elfer-Probe',
+    [
+      ProseSection(
+        'Die letzte Ziffer verrät viel',
+        'In Basis Zwölf ist die letzte Ziffer einer Zahl nichts anderes als ihr '
+            'Rest beim Teilen durch zwölf. Darum sieht man der Endziffer sofort an, '
+            'ob die Zahl durch einen Teiler der Zwölf glatt aufgeht. Gerade '
+            'Endziffern (0, 2, 4, 6, 8, A) bedeuten teilbar durch zwei. Endet die '
+            'Zahl auf 0, 3, 6 oder 9, ist sie durch drei teilbar; auf 0, 4 oder 8, '
+            'durch vier; auf 0 oder 6, durch sechs; auf 0 allein, durch zwölf. '
+            '(A steht hier für zehn.)\n\n'
+            'Das ist ein handfester Vorteil der Zwölf. Im Zehnersystem verrät die '
+            'Endziffer nur die Teilbarkeit durch zwei, fünf und zehn — für drei, '
+            'vier oder sechs muss man rechnen. Die Zwölf legt gerade die häufigen '
+            'kleinen Teiler offen.',
+      ),
+      ProseSection(
+        'Die Elfer-Probe: die Quersumme zählt',
+        'Für die Elf (B) hilft die Endziffer nicht, aber ein ebenso einfacher '
+            'Griff: die Quersumme, also die Summe aller Ziffern. Eine Zahl ist in '
+            'Basis Zwölf genau dann durch elf teilbar, wenn ihre Quersumme durch '
+            'elf teilbar ist. Der Grund ist hübsch: Zwölf lässt beim Teilen durch '
+            'elf den Rest eins, und ebenso jede höhere Stelle — darum zählt nur, '
+            'was die Ziffern zusammen ergeben.\n\n'
+            'Das ist das genaue Gegenstück zur bekannten Neunerprobe im '
+            'Zehnersystem, wo die Quersumme die Neun prüft. In Basis Zwölf prüft '
+            'sie die Elf — daher der Name Elfer-Probe. Ein Beispiel: Die Zahl 4B7 '
+            'hat die Quersumme 4 + B + 7, also vierzehn plus acht, das ist '
+            'zweiundzwanzig — und zweiundzwanzig ist zweimal elf, somit ist 4B7 '
+            'durch elf teilbar. Wie die Neunerprobe dient die Elfer-Probe als '
+            'schnelle Rechenkontrolle: Geht die Probe nicht auf, steckt im Ergebnis '
+            'ein Fehler.',
+      ),
+      ProseSection(
+        'Die Dreizehn an der alternierenden Quersumme',
+        'Eine zweite Probe fängt die Dreizehn. Hier zählt man die Ziffern '
+            'abwechselnd plus und minus, von rechts beginnend — die alternierende '
+            'Quersumme. Geht diese durch dreizehn auf, dann auch die Zahl selbst. '
+            'Der Grund ist das Spiegelbild der Elfer-Probe: Zwölf liegt um eins '
+            'unter dreizehn, darum wechseln die Stellen beim Teilen durch dreizehn '
+            'das Vorzeichen.\n\n'
+            'Ein kleiner Stolperstein für alle, die das Zehnersystem gewohnt sind: '
+            'Dort heißt „Elferprobe" gerade die alternierende Variante, weil die '
+            'Elf dort um eins über zehn liegt. In Basis Zwölf sind die Rollen '
+            'vertauscht — die einfache Quersumme gehört der Elf, die alternierende '
+            'der Dreizehn. (Die Dreizehn selbst schreibt sich in Basis Zwölf '
+            'übrigens als 11, ein Zwölfer und ein Einer; gemeint ist immer ihr '
+            'Wert.)',
+      ),
+      ProseSection(
+        'Wo die Zwölf sich schwertut',
+        'Kein Vorteil ist umsonst. Die Fünf und die Sieben teilen sich mit der '
+            'Zwölf keinen Faktor und passen auch nicht zur Elf oder Dreizehn — für '
+            'sie gibt es in Basis Zwölf keine bequeme Endziffer- oder '
+            'Quersummenregel. Ausgerechnet die Fünf, die im Zehnersystem die '
+            'allereinfachste Probe hat (Endziffer null oder fünf), wird hier '
+            'umständlich.\n\n'
+            'Das ist der ehrliche Tausch: Die Zwölf schenkt uns die leichten '
+            'Proben für drei, vier und sechs und nimmt dafür die leichte Fünf-Probe. '
+            'Welche Seite mehr wiegt, hängt davon ab, welche Teiler im Alltag '
+            'öfter gebraucht werden — und das sind meist die kleinen.',
+      ),
+    ],
+    sources: [
+      Source(
+        'Divisibility rule — Wikipedia',
+        'https://en.wikipedia.org/wiki/Divisibility_rule',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Duodecimal — Wikipedia',
+        'https://en.wikipedia.org/wiki/Duodecimal',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Casting out nines — Wikipedia',
+        'https://en.wikipedia.org/wiki/Casting_out_nines',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Modular arithmetic — Wikipedia',
+        'https://en.wikipedia.org/wiki/Modular_arithmetic',
+        'R2',
+        'A2',
+      ),
+    ],
+  ),
+  ProseChapter(
+    'Tricks im Einmaleins',
+    [
+      ProseSection(
+        'Reihen mit kurzem Schwanz',
+        'Das Einmaleins der Zwölf hat zwölf Reihen, und einige davon prägen sich '
+            'fast von allein ein — nämlich die der Teiler. Ihre Vielfachen enden in '
+            'kurzen, sich wiederholenden Mustern. Die Sechserreihe endet abwechselnd '
+            'auf 6 und 0 (6, 10, 16, 20, 26, 30 …). Die Viererreihe läuft 4, 8, 0, 4, '
+            '8, 0; die Dreierreihe 3, 6, 9, 0 und wieder von vorn; die Zweierreihe '
+            'bleibt stets gerade.\n\n'
+            'Zwei Handgriffe sind besonders bequem. Mal Zwölf heißt einfach eine '
+            'Null anhängen: sieben mal zwölf ist 70. Und die Sechserreihe ist die '
+            'halbe Zwölferreihe — sechs mal eine gerade Zahl endet auf 0, sechs mal '
+            'eine ungerade auf 6.',
+      ),
+      ProseSection(
+        'Die Elfer-Reihe als Spiegel',
+        'Die hübscheste Reihe gehört der Elf (B): B, 1A, 29, 38, 47, 56, 65, 74, '
+            '83, 92, A1, B0. In ihr stecken gleich zwei Muster. Die vordere Ziffer '
+            'klettert Schritt für Schritt nach oben — 0, 1, 2, 3 und so fort —, '
+            'während die hintere im Gleichschritt nach unten fällt. Und in jedem '
+            'Ergebnis ergeben die beiden Ziffern zusammen elf: eins und zehn, zwei '
+            'und neun, drei und acht.\n\n'
+            'Das ist genau das Spiegelbild der Neunerreihe aus dem Zehnersystem, wo '
+            'die Ziffern sich zu neun ergänzen. Daraus folgt ein bequemer Trick: '
+            'Statt mal elf zu rechnen, nimmt man mal zwölf und zieht die Zahl '
+            'einmal ab. Elf mal sieben ist also siebzig minus sieben, das ergibt 65 '
+            'in Basis Zwölf — und tatsächlich steht in der Tabelle bei elf mal '
+            'sieben die 65.',
+      ),
+      ProseSection(
+        'Die störrischen Reihen: Fünf und Sieben',
+        'Nicht alle Reihen sind so gefällig. Die Fünf und die Sieben teilen sich '
+            'mit der Zwölf keinen Faktor, und ihre Reihen laufen darum durch alle '
+            'zwölf möglichen Endziffern, ehe sich etwas wiederholt — kein kurzer '
+            'Zyklus, der das Merken trägt. Die Fünferreihe endet der Reihe nach auf '
+            '5, A, 3, 8, 1, 6, B, 4, 9, 2, 7, 0; bei der Sieben ist es ähnlich '
+            'sprunghaft.\n\n'
+            'Hier kehrt ein altes Quartett wieder: Genau die Reihen der Eins, Fünf, '
+            'Sieben und Elf durchlaufen alle Endziffern vollständig — dieselben '
+            'vier Zahlen, die auf der Stundenuhr den ganzen Kreis erzeugen und auf '
+            'die Primzahlen enden. Und genau deshalb haben ein Fünftel und ein '
+            'Siebtel jene langen, vollen Perioden aus dem Kapitel über zyklische '
+            'Zahlen. Im Zehnersystem ist die Siebenerreihe die berüchtigt sperrige; '
+            'in Basis Zwölf sind es die Fünf und die Sieben gemeinsam.',
+      ),
+      ProseSection(
+        'Quadrate und das Gross',
+        'Geht man die Tabelle schräg von oben links nach unten rechts, stehen dort '
+            'die Quadratzahlen: 1, 4, 9, 14, 21, 30, 41, 54, 69, 84, A1 — und '
+            'schließlich 100. Diese letzte ist zwölf mal zwölf, also '
+            'hundertvierundvierzig, die in Basis Zwölf glatt „100" heißt und seit '
+            'alters ein Gross genannt wird. Die Zwölf schreibt ihre eigene '
+            'Quadratzahl so rund wie das Zehnersystem die Hundert.\n\n'
+            'Auch das Verdoppeln und Halbieren fällt in Basis Zwölf leicht, weil '
+            'zwölf gerade und durch vier teilbar ist: die Hälfte von 10 ist 6, die '
+            'Hälfte von 6 ist 3, die Hälfte von 3 ist 1,6. So lässt sich vieles im '
+            'Kopf in kleine, saubere Schritte zerlegen — der eigentliche Grund, '
+            'warum Freunde der Zwölf das Rechnen mit ihr als angenehm empfinden.',
+      ),
+    ],
+    sources: [
+      Source(
+        'Duodecimal — Wikipedia',
+        'https://en.wikipedia.org/wiki/Duodecimal',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Multiplication table — Wikipedia',
+        'https://en.wikipedia.org/wiki/Multiplication_table',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Multiplicative group of integers modulo n — Wikipedia',
+        'https://en.wikipedia.org/wiki/Multiplicative_group_of_integers_modulo_n',
+        'R2',
+        'A2',
+      ),
+    ],
+  ),
+  ProseChapter(
     'Die Zahlenbasen im Vergleich',
     [
       ProseSection(
