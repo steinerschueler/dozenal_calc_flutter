@@ -4,7 +4,6 @@
 // (worldChapters) under named blocks. This keeps info_content.dart and the 14
 // language part-files untouched — chapters are only re-grouped at this layer.
 
-import '../info_content.dart';
 import '../l10n/app_localizations.dart';
 import 'grundlagen_theory.dart';
 import 'math_theory.dart';
@@ -61,7 +60,6 @@ class TheoryBlock {
 /// app-help entry, deliberately not theory) and chapter 12 (Zoll/Fuss/Pfund,
 /// idx 11 → covered by the Einheitentheorie).
 List<TheoryBlock> theoryBlocks(AppLocalizations l, String langTag) {
-  final titles = infoTitles(l);
   final world = worldChapters(langTag);
   final math = mathChapters(langTag);
   final society = societyChapters(langTag);
@@ -74,11 +72,12 @@ List<TheoryBlock> theoryBlocks(AppLocalizations l, String langTag) {
       TheoryChapterRef.prose(c.title, c.sections, c.sources, 'grundlagen/$i'),
   ];
 
-  // Zwölf und die Welt: Natur/Kultur-Prosa, dann Tierkreis (Legacy).
+  // Zwölf und die Welt: durchgehend bequellte Natur/Kultur-Prosa (inkl. des
+  // gehobenen Tierkreis-Kapitels). Keine Legacy mehr.
   final welt = <TheoryChapterRef>[
     for (final (i, c) in world.indexed)
-      TheoryChapterRef.prose(c.title, c.sections, c.sources, 'world/$i'),
-    TheoryChapterRef.legacy(titles[8], 8),
+      TheoryChapterRef.prose(
+          c.title, c.sections, c.sources, c.imageId ?? 'world/$i'),
   ];
 
   // Dozenale Mathematik: komplett bequellte Prosa (Zahlen/Basen, Fibonacci,
