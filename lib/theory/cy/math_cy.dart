@@ -102,6 +102,338 @@ List<ProseChapter> _mathChaptersCy() => const [
     ],
   ),
   ProseChapter(
+    'Rhifau cylchol',
+    [
+      ProseSection(
+        'Y seithfed a’i berthnasau',
+        'Nid yw seithfed yn dod allan yn lân ym môn Deuddeg, ond yn ailadrodd: '
+            'seithfed = 0,186A35, yna 186A35 eto, yn ddiddiwedd. (Mae A yn sefyll '
+            'am Ddeg, B am Un ar ddeg.) Y grŵp sy’n ailadrodd yw’r cyfnod; mae’n '
+            'chwe digid o hyd yma.\n\n'
+            'Gwelir yr hyn sy’n syfrdanol wrth osod y seithfedau eraill yn '
+            'eu hymyl. Dau seithfed = 0,35186A, tri seithfed = 0,5186A3, pedwar '
+            'seithfed = 0,6A3518, pump seithfed = 0,86A351, chwe seithfed = '
+            '0,A35186. Yr un chwe digid yn yr un drefn sydd ym mhob un — dim '
+            'ond bod y dilyniant yn dechrau mewn lle gwahanol. Gellir eu dychmygu '
+            'wedi eu rhestru ar gylch sy’n cael ei droi ychydig ymhellach gyda '
+            'phob ffracsiwn.',
+      ),
+      ProseSection(
+        'Pan fo’r lluosrifau’n cylchdroi',
+        'Mae’r un tro yn llechu yn nhabl lluosi’r cyfnod ei hun. Os cymryd y '
+            'dilyniant digidau 186A35 fel rhif cyfan a’i luosi yn eu trefn, nid '
+            'ond cylchdroeon a geir: 186A35 × 2 = 35186A, × 3 = 5186A3, × 4 = '
+            '6A3518, × 5 = 86A351, × 6 = A35186. Gelwir rhif sydd â’r priodwedd '
+            'hon yn rhif cylchol.\n\n'
+            'Mae’r seithfed cam yn cau’r cylch: 186A35 × 7 = BBBBBB. Un ar ddeg '
+            'ym mhobman — y digid uchaf ym môn Deuddeg, chwe gwaith yn olynol. '
+            'Nid damwain yw hyn: mae BBBBBB union un yn llai na’r safle crwn '
+            'nesaf. Ym môn Deg adwaenir yr un gamp gyda’r rhif enwog 142857 '
+            '(cyfnod seithfed yn y system ddegol): yno hefyd mae’r lluosrifau’n '
+            'rhoi cylchdroeon, a 142857 × 7 = 999999. Mae’r digidau’n wahanol, '
+            'ond mae’r strwythur yr un fath.',
+      ),
+      ProseSection(
+        'Pam union chwe digid',
+        'Mae rheswm eglur pam y mae’r cyfnod yn union chwe digid o hyd — ac nid '
+            'yn llai. Wrth rannu ysgrifenedig, mae gweddill yn aros ar ôl pob cam, '
+            'a’r cyfnod yn terfynu cyn gynted ag y mae gweddill yn ailadrodd. Gyda '
+            'seithfed, mae’r chwe gweddill posibl 1 i 6 i gyd yn ymddangos yn eu '
+            'tro cyn i’r cyntaf ailadrodd. Ni all fod mwy na chwe gweddill gwahanol '
+            'gyda’r Saith, felly chwe yw’r hyd mwyaf posibl.\n\n'
+            'Gelwir rhif cysefin y mae cyfnod ei gilydd yn cyrraedd yr hyd mwyaf '
+            'posibl hwn yn rif cyfnod llawn. Dim ond ganddo ef y mae’r lluosrifau’n '
+            'mynd trwy bob cylchdro, a dim ond yna y ffurfir rhif cylchol. Mae a yw '
+            'rhif cysefin yn llawn yn dibynnu ar sut y mae pwerau’r bôn — Deuddeg '
+            'yma — yn ymddwyn wrth eu rhannu â’r rhif cysefin.',
+      ),
+      ProseSection(
+        'Y cyflenwad at y digid uchaf',
+        'Mae ail batrwm yn y cyfnod 186A35 hefyd. Os ei rannu yn ei hanner a '
+            'chael swm y ddwy hanner, ceir 186 + A35 = BBB — un ar ddeg ym '
+            'mhobman eto, tair gwaith y tro hwn. Mae’r ddwy hanner yn cyflenwi’r '
+            'digid uchaf yn union.\n\n'
+            'Theorem gyffredinol yw hon (ar ôl Étienne Midy, 1836) ac mae’n wir '
+            'ym mhob bôn: ym môn Deg mae 142 + 857 = 999. Mae’r effaith yn dangos '
+            'nad yw ail hanner y cyfnod yn ddeunydd newydd, ond adlewyrchiad o’r '
+            'hanner cyntaf.',
+      ),
+      ProseSection(
+        'Nid pob rhif cysefin sy’n cymryd rhan',
+        'Mae’r cylchdro prydferth yn eithriad, nid y norm. Nid yw unfed rhan ar '
+            'ddeg ym môn Deuddeg ond â’r cyfnod 0,1 — un Uned yn ailadrodd yn unig, '
+            'am fod Deuddeg un yn fwy nag Un ar ddeg (cyfatebol i nawfed = 0,1 yn '
+            'y system ddegol). Mae drydedd rhan ar ddeg yn rhoi 0,0B gyda’r cyfnod '
+            'byr 0B. Nid yw rhifau cysefin o’r fath yn cynhyrchu rhif cylchol.\n\n'
+            'Ymhlith y rhifau cysefin bach, mae 5, 7, 17, 31, 41 a 43 (wedi eu '
+            'cyfrif yn ddegol) yn rhifau cyfnod llawn ym môn Deuddeg — yn '
+            'nodedig, pob un â’r digid olaf 5 neu 7 ym môn Deuddeg. Mae hynny’n '
+            'amod angenrheidiol, ond nid yn ddigonol: mae Un ar bymtheg hefyd yn '
+            'terfynu ar 7, ond dim ond cyfnod chwe-digid sydd ganddo. Mae newid '
+            'y bôn hefyd yn effeithio: mae Pump yn llawn ym môn Deuddeg (pumed = '
+            '0,2497, cyfnod 2497), ond ym môn Deg mae pumed yn dod allan yn lân. '
+            'Mae pa rifau cysefin sy’n cymryd rhan felly’n perthyn i’r pâr o fôn '
+            'a rhif cysefin, nid i’r rhif cysefin ar ei ben ei hun.',
+      ),
+      ProseSection(
+        'Faint sydd — cwestiwn agored',
+        'Gallai rhywun feddwl bod priodwedd mor eglur eisoes wedi ei chyfrif i '
+            'gyd. Nid felly y mae. Ni phrofwyd hyd heddiw faint o rifau cyfnod '
+            'llawn sydd ym môn Deuddeg — na ph’un a oes ddiddiwedd ohonynt ai '
+            'peidio.\n\n'
+            'Mae dyfaliad gan Emil Artin o 1927 yn rhagfynegi y dylai tua '
+            'saith ar hugain o bob cant o rifau cysefin fod yn llawn, ym môn '
+            'Deuddeg fel ym mhob bôn addas arall. Mae’r arsylwad ar rifau bach '
+            'yn cyfateb i’r maint hwn. Ond dyfaliad yw’r dyfaliad: Er gwaethaf '
+            'ymdrechion mawr, ni phrofwyd mohono ar gyfer unrhyw fôn unigol. '
+            'Mae hynny’n rhan o’r darlun gonest — patrwm sy’n swnio’n syml, '
+            'y tu ôl iddo broblem heb ei datrys hyd heddiw.',
+      ),
+      ProseSection(
+        'Rhoi cynnig arni yn y cyfrifiannell',
+        'Gellir gweld y cwbl hwn yma. Wrth deipio seithfed a Hafal, mae’r '
+            'arddangosfa’n dangos 0, gyda llinell uwchben 186A35 — chwe digid y '
+            'cyfnod. Gyda dau seithfed ymddengys yr un dilyniant fel 35186A, '
+            'wedi ei gylchdroi; nid talgrynnu yw hynny, ond yr un patrwm union. '
+            'Mae pumed yn dangos y llinell uwchben 2497, ac unfed rhan ar ddeg '
+            'dim ond uwchben y digid sengl 1.\n\n'
+            'Mae enghreifftiau mwy yn gwneud y cyfyngiadau’n weladwy: mae gan '
+            'ffracsiwn ag enwadur Un ar ddeg ar hugain (degol) gyfnod o ddeg ar '
+            'hugain digid — mae’r arddangosfa yma’n talfyrru â thri phwynt, am '
+            'nad yw’r cwbl yn ffitio ar un llinell. Sut y mae’r cyfrifiannell yn '
+            'pennu ffracsiynau union a’u cyfnodau, mae hynny’n cael ei esbonio '
+            'yn y bennod „Sut mae’r cyfrifiannell hwn yn cyfrifo".',
+      ),
+    ],
+    sources: [
+      Source(
+        'Cyclic number — Wikipedia',
+        'https://en.wikipedia.org/wiki/Cyclic_number',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Full reptend prime — Wikipedia',
+        'https://en.wikipedia.org/wiki/Full_reptend_prime',
+        'R2',
+        'A1',
+      ),
+      Source(
+        '142857 — Wikipedia',
+        'https://en.wikipedia.org/wiki/142857',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Midy’s theorem — Wikipedia',
+        'https://en.wikipedia.org/wiki/Midy%27s_theorem',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Multiplicative order — Wikipedia',
+        'https://en.wikipedia.org/wiki/Multiplicative_order',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Artin’s conjecture on primitive roots — Wikipedia',
+        'https://en.wikipedia.org/wiki/Artin%27s_conjecture_on_primitive_roots',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Orders of Units in Modular Arithmetic (Keith Conrad, UConn)',
+        'https://kconrad.math.uconn.edu/blurbs/ugradnumthy/ordersmodm.pdf',
+        'R1',
+        'A2',
+      ),
+      Source(
+        'OEIS A019340 — Primes with primitive root 12',
+        'https://oeis.org/A019340',
+        'R2',
+        'A2',
+      ),
+    ],
+  ),
+  ProseChapter(
+    'Rhanadwyedd a’r prawf un-ar-ddeg',
+    [
+      ProseSection(
+        'Mae’r digid olaf yn datgelu llawer',
+        'Ym môn Deuddeg, nid yw digid olaf rhif yn ddim mwy na’i weddill wrth '
+            'ei rannu â deuddeg. Felly gellir gweld ar unwaith o’r digid terfynol '
+            'a yw’r rhif yn rhanadwy’n lân ag unrhyw ranydd o Ddeuddeg. Mae '
+            'digidau olaf eilrif (0, 2, 4, 6, 8, A) yn golygu rhanadwy â dau. '
+            'Os yw’r rhif yn terfynu ar 0, 3, 6 neu 9, mae’n rhanadwy â thri; '
+            'ar 0, 4 neu 8, â phedwar; ar 0 neu 6, â chwe; ar 0 yn unig, â '
+            'deuddeg. (Mae A yn sefyll am ddeg yma.)\n\n'
+            'Dyma fantais gadarn Deuddeg. Yn y system ddegol nid yw’r digid olaf '
+            'ond yn datgelu rhanadwyedd â dau, pump a deg — ar gyfer tri, pedwar '
+            'neu chwe mae’n rhaid cyfrifo. Mae Deuddeg yn amlygu’r rhanyddion '
+            'bach, cyffredin yn union.',
+      ),
+      ProseSection(
+        'Y prawf un-ar-ddeg: mae’r swm digidau’n bwysig',
+        'Nid yw’r digid olaf yn helpu ar gyfer Un ar ddeg (B), ond mae '
+            'dull yr un mor syml: y swm digidau, sef swm pob digid. Mae rhif ym '
+            'môn Deuddeg yn rhanadwy ag un ar ddeg yn union pan fo’i swm digidau '
+            'yn rhanadwy ag un ar ddeg. Y rheswm yw hardd: mae Deuddeg yn gadael '
+            'gweddill un wrth ei rannu ag un ar ddeg, a’r un modd pob safle uwch '
+            '— felly dim ond yr hyn y mae’r digidau’n ei roi gyda’i gilydd '
+            'sy’n cyfrif.\n\n'
+            'Dyma union wrthbwynt y prawf naw cyfarwydd yn y system ddegol, '
+            'lle mae’r swm digidau’n profi’r Naw. Ym môn Deuddeg mae’n profi’r '
+            'Un ar ddeg — dyna darddiad yr enw prawf un-ar-ddeg. Enghraifft: '
+            'Mae’r rhif 4B7 â swm digidau 4 + B + 7, sef pedwar plws un ar ddeg '
+            'plws saith, sy’n bump ar hugain — ac mae pump ar hugain yn ddau '
+            'waith un ar ddeg, felly mae 4B7 yn rhanadwy ag un ar ddeg. Fel y '
+            'prawf naw, mae’r prawf un-ar-ddeg yn gwasanaethu fel gwiriad cyflym: '
+            'os nad yw’r prawf yn gweithio, mae gwall yn y canlyniad.',
+      ),
+      ProseSection(
+        'Y Deuddegfed ar ôl y swm eiledol',
+        'Mae prawf arall yn dal y Tri ar ddeg. Yma caiff y digidau eu hadio '
+            'bob yn ail yn bositif a negatif, gan ddechrau o’r dde — y swm '
+            'digidau eiledol. Os yw hwn yn rhanadwy â thri ar ddeg, yna mae’r '
+            'rhif ei hun hefyd. Y rheswm yw adlewyrchiad y prawf un-ar-ddeg: '
+            'mae Deuddeg un yn llai na thri ar ddeg, felly mae’r safleoedd yn '
+            'newid arwydd wrth eu rhannu â thri ar ddeg.\n\n'
+            'Un rhwystr bach i bawb sy’n gyfarwydd â’r system ddegol: yno y '
+            'gair „prawf un ar ddeg" yw’r fersiwn eiledol, am fod Un ar ddeg '
+            'yno un yn fwy na Deg. Ym môn Deuddeg mae’r rolau wedi eu cyfnewid '
+            '— mae’r swm syml yn perthyn i’r Un ar ddeg, a’r swm eiledol i’r '
+            'Tri ar ddeg. (Mae’r Tri ar ddeg ei hun, gyda llaw, yn ysgrifennu '
+            'fel 11 ym môn Deuddeg, un Deuddeg ac un Uned; ei werth a olygir '
+            'bob amser.)',
+      ),
+      ProseSection(
+        'Ble y mae Deuddeg yn cael anhawster',
+        'Nid yw unrhyw fantais yn rhad ac am ddim. Nid yw’r Pump na’r Saith yn '
+            'rhannu ffactor â Deuddeg, ac nid ydynt yn cyfateb i’r Un ar ddeg '
+            'na’r Tri ar ddeg ychwaith — ar eu cyfer hwy nid oes rheol digid-olaf '
+            'na swm-digidau hwylus ym môn Deuddeg. Y Pump yn enwedig, sydd â’r '
+            'prawf hawddaf o ddigon yn y system ddegol (digid olaf sero neu bump), '
+            'a ddaw yn drafferthus yma.\n\n'
+            'Dyna’r cyfnewid gonest: mae Deuddeg yn rhoi inni’r profion hawdd ar '
+            'gyfer tri, pedwar a chwe ac yn cymryd oddi arnom brawf hawdd y Pump. '
+            'Pa ochr sy’n bwysicach yn y fantol yn dibynnu ar ba ranyddion a '
+            'ddefnyddir amlaf yn y bywyd bob dydd — a’r rhai bach yw’r rheini '
+            'fel arfer.',
+      ),
+    ],
+    sources: [
+      Source(
+        'Divisibility rule — Wikipedia',
+        'https://en.wikipedia.org/wiki/Divisibility_rule',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Duodecimal — Wikipedia',
+        'https://en.wikipedia.org/wiki/Duodecimal',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Casting out nines — Wikipedia',
+        'https://en.wikipedia.org/wiki/Casting_out_nines',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Modular arithmetic — Wikipedia',
+        'https://en.wikipedia.org/wiki/Modular_arithmetic',
+        'R2',
+        'A2',
+      ),
+    ],
+  ),
+  ProseChapter(
+    'Triciau yn y tabl lluosi',
+    [
+      ProseSection(
+        'Rhesi â chynffon fyr',
+        'Mae gan dabl lluosi Deuddeg ddeuddeg rhes, ac mae rhai ohonynt bron '
+            'yn dysgu eu hunain — sef y rhesi rhanyddion. Mae eu lluosrifau’n '
+            'terfynu mewn patrymau byr sy’n ailadrodd. Mae’r rhes chwechau’n '
+            'terfynu bob yn ail ar 6 ac 0 (6, 10, 16, 20, 26, 30 …). Mae’r '
+            'rhes pedwarau’n rhedeg 4, 8, 0, 4, 8, 0; mae’r rhes trioedd yn '
+            'rhedeg 3, 6, 9, 0 ac yna’n ail-gychwyn; mae’r rhes dauoedd bob '
+            'amser yn eilrif.\n\n'
+            'Mae dau dric yn arbennig o hwylus. Lluosi â Deuddeg yn syml yw '
+            'ychwanegu sero: mae saith llwaith deuddeg yn 70. Ac mae’r rhes '
+            'chwechau’n hanner y rhes deuddegau — mae chwe llwaith rhif eilrif '
+            'yn terfynu ar 0, a chwe llwaith rhif odrif ar 6.',
+      ),
+      ProseSection(
+        'Rhes Un ar ddeg fel drych',
+        'Y rhes brydferttaf yw un Un ar ddeg (B): B, 1A, 29, 38, 47, 56, '
+            '65, 74, 83, 92, A1, B0. Mae dau batrwm yn llechu ynddi. Mae’r digid '
+            'blaen yn dringo gam wrth gam — 0, 1, 2, 3 ac yn y blaen — tra '
+            'bo’r digid ôl yn disgyn yr un cam. Ac ym mhob canlyniad mae’r ddau '
+            'ddigid gyda’i gilydd yn rhoi un ar ddeg: un a deg, dau a naw, tri '
+            'ac wyth.\n\n'
+            'Dyma union adlewyrchiad rhes y Naw o’r system ddegol, lle mae’r '
+            'digidau’n cyflenwi naw. O hynny daw tric hwylus: yn lle lluosi ag '
+            'un ar ddeg, cymryd lluoswm deuddeg a thynnu’r rhif unwaith. Felly '
+            'un ar ddeg llwaith saith yw saith deg llai saith, sef 65 ym môn '
+            'Deuddeg — ac yn wir mae 65 yn y tabl ar gyfer un ar ddeg llwaith '
+            'saith.',
+      ),
+      ProseSection(
+        'Y rhesi ystyfnig: Pump a Saith',
+        'Nid yw pob rhes mor rwydd. Nid yw Pump na Saith yn rhannu ffactor â '
+            'Deuddeg, a’u rhesi felly’n mynd trwy bob un o’r deuddeg digid '
+            'terfynol posibl cyn i unrhyw beth ailadrodd — dim cylch byr i gynnal '
+            'y cof. Mae rhes y pumau’n terfynu yn eu trefn ar 5, A, 3, 8, 1, '
+            '6, B, 4, 9, 2, 7, 0; mae rhes y sauoedd yr un mor neidiol.\n\n'
+            'Dyma bedwarawd cyfarwydd yn dychwelyd: yn union y rhesi Un, Pump, '
+            'Saith ac Un ar ddeg sy’n mynd trwy bob digid terfynol yn llawn '
+            '— yr un pedwar rhif sy’n creu’r cylch cyfan ar gloc yr oriau ac '
+            'yn terfynu ar rifau cysefin. A dyna union pam y mae gan bumed a '
+            'seithfed y cyfnodau hir a llawn hynny o’r bennod ar rifau cylchol. '
+            'Yn y system ddegol rhes y Sauoedd yw’r un enwog am fod yn '
+            'ystyfnig; ym môn Deuddeg Pump a Saith gyda’i gilydd sydd felly.',
+      ),
+      ProseSection(
+        'Sgwariau a’r Gros',
+        'Wrth fynd ar draws y tabl o’r gornel chwith uchaf i’r gornel dde '
+            'isaf, mae’r rhifau sgwâr yno: 1, 4, 9, 14, 21, 30, 41, 54, 69, '
+            '84, A1 — ac yn olaf 100. Deuddeg llwaith deuddeg yw’r olaf hwn, '
+            'sef cant a phedwar a deugain, sy’n ysgrifennu fel „100" yn lân ym '
+            'môn Deuddeg ac a elwir ers amser maith yn Ros. Mae Deuddeg yn '
+            'ysgrifennu ei sgwâr ei hun mor grwn â’r system ddegol yn ysgrifennu '
+            'Cant.\n\n'
+            'Mae dyblu a haneru hefyd yn rhwydd ym môn Deuddeg, am fod deuddeg '
+            'yn eilrif ac yn rhanadwy â phedwar: hanner 10 yw 6, hanner 6 yw 3, '
+            'hanner 3 yw 1,6. Felly gellir torri llawer o broblemau pen yn '
+            'gamau bach taclus — dyna’r gwir reswm pam y mae cyfeillion Deuddeg '
+            'yn ei chael yn bleserus cyfrifo â hi.',
+      ),
+    ],
+    sources: [
+      Source(
+        'Duodecimal — Wikipedia',
+        'https://en.wikipedia.org/wiki/Duodecimal',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Multiplication table — Wikipedia',
+        'https://en.wikipedia.org/wiki/Multiplication_table',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Multiplicative group of integers modulo n — Wikipedia',
+        'https://en.wikipedia.org/wiki/Multiplicative_group_of_integers_modulo_n',
+        'R2',
+        'A2',
+      ),
+    ],
+  ),
+  ProseChapter(
     'Y bonau rhif o\'u cymharu',
     [
       ProseSection(
@@ -530,6 +862,417 @@ List<ProseChapter> _mathChaptersCy() => const [
     ],
   ),
   ProseChapter(
+    'Y cloc fel grŵp (ℤ/12ℤ)',
+    [
+      ProseSection(
+        'Cyfrifo fel ar wyneb y cloc',
+        'Ar y cloc, nid yw un ar ddeg o’r gloch plws dwy awr yn dair ar ddeg, '
+            'ond yn un o’r gloch. Mae rhywun yn cyfrifo’n normal ac yna’n cymryd '
+            'y gweddill wrth rannu â deuddeg. Yn weledol, mae’r llinell rifau '
+            'ddiddiwedd yn cael ei dirwyn ar gylch â deuddeg marc; mae pob rhif '
+            'yn glanio ar un o’r marciau 0 i 11.\n\n'
+            'Mae’r deuddeg marc hyn gydag adio oriau’n ffurfio system fathemategol '
+            'fechan daclus. Mae’n aros yn gaeëdig bob amser (mae pob swm yn un '
+            'o’r deuddeg marc eto), mae’r sero yno fel „yn newid dim", ac i '
+            'bob cam mae llwybr yn ôl: mae pump ymlaen yn cael ei wneud yn '
+            'iawn gan saith yn ôl, oherwydd 5 + 7 = 12 = 0. Gelwir system '
+            'gyfrifo â’r priodweddau hyn yn grŵp mewn mathemateg. Cloc yr '
+            'oriau yw’r enghraifft fwyaf gweladwy o ddigon; ei enw yw ℤ/12ℤ, '
+            'ynganir „Z modwlws deuddeg".',
+      ),
+      ProseSection(
+        'Pa gamau sy’n cyrraedd pob maes',
+        'Wrth fynd mewn camau o un o amgylch y cylch, cyrhaeddir pob un o’r '
+            'deuddeg marc yn ei dro cyn dychwelyd i’r dechrau. Ond nid pob '
+            'hyd cam sy’n llwyddo. Os neidio bob tro o dri, dim ond ar 0, 3, '
+            '6, 9 y glenir, a’r dychwelyd ar ôl pedwar naid — mae wyth maes '
+            'heb eu cyffwrdd. Os neidio o bedwar, ni thir ond 0, 4, 8.\n\n'
+            'Cyrhaeddir pob un o’r deuddeg maes gan hyd cam yn union pan '
+            'nad oes ganddo ranydd cyffredin â Deuddeg. Mae hynny’n wir am bedwar '
+            'cam: 1, 5, 7 a B (= un ar ddeg). Pedwar yn union — nid damwain '
+            'yw hynny, ond mesur cyfrif Deuddeg y down ar ei draws ddwywaith '
+            'eto. Y pedwar hyn yw’r camau „da" sy’n creu’r cylch cyfan.',
+      ),
+      ProseSection(
+        'Y is-grwpiau ar wyneb y cloc',
+        'Mae’r camau sy’n cyffwrdd dim ond rhan o’r marciau yn lluniadu '
+            'ffigurau rheolaidd ar wyneb y cloc. Mae’r cam chwech yn cysylltu 0 '
+            'a 6 yn llinell ar draws y canol. Mae’r cam pedwar yn lluniadu’r '
+            'triongl 0–4–8, y cam tri y sgwâr 0–3–6–9, y cam dau hecsagon '
+            'yr oriau eilrif. Mae pob un o’r ffigurau hyn ei hun yn gloc '
+            'bach caeëdig — yn is-grŵp.\n\n'
+            'Yn nodedig: i bob rhanydd o Ddeuddeg — 1, 2, 3, 4, 6, 12 — '
+            'mae union un ffigur o’r fath, dim mwy a dim llai. Mae gan '
+            'Deuddeg gynifer o ranyddion ag unrhyw rif llai, dyna pam y mae '
+            'ei wyneb cloc yn cario cynifer o ffigurau taclus. Dim ond ar y '
+            'rhanyddion 1, 2, 5, 10 y byddai cloc deg-awr dychmygol — dim '
+            'triongl, dim sgwâr. Yr un rhanadwyedd sy’n nodi Deuddeg fel '
+            'sylfaen gyfrif hefyd sy’n gwneud ei wyneb cloc mor gyfoethog.',
+      ),
+      ProseSection(
+        'Yr un cloc mewn cerddoriaeth',
+        'Mae deuddeg hanner-tôn octif yn ffurfio’r un cylch: ar ôl deuddeg '
+            'cam hanner-tôn, dychwelir i’r tôn gwreiddiol, octif yn uwch. Mae '
+            'symud alaw i gyweirnod arall yn golygu troi pob tôn yr un cam '
+            'ymhellach — adio ar y cylch tonau.\n\n'
+            'Nid yw cylch y pumed, y mae cerddorion yn ei ddysgu ar eu cof, '
+            'ond yn gam saith ar y cylch hwn: mae pumed perffaith yn saith '
+            'hanner-tôn, a chan fod Saith yn un o’r pedwar cam da, mae’r cylch '
+            'yn rhedeg trwy’r deuddeg tôn i gyd cyn cau. Mae’r bedwaredd (pum '
+            'hanner-tôn) yn troi’r un cylch yn ôl. Mae camau â rhanydd cyffredin, '
+            'ar y llaw arall, yn aros mewn ffigur ac yn rhoi union y cordiau '
+            'cymesur cyfarwydd: mae’r drydedd fawr yn rhoi’r triongl, a’r '
+            'triton y llinell. Mae’r rheswm pam yn union deuddeg hanner-tôn a '
+            'sut y maent yn swnio i’w gael yn y bennod am y Deuddeg mewn '
+            'cerddoriaeth; yr hyn sy’n bwysig yma yn unig yw mai’r un cylch yw.',
+      ),
+      ProseSection(
+        'Ac yn y rhifau cysefin',
+        'Mae ail leoliad yn dangos yr un grŵp o bedwar. Os ysgrifennu rhifau '
+            'cysefin ym môn Deuddeg, mae pob rhif cysefin uwchlaw Tri yn '
+            'terfynu ar un o’r digidau 1, 5, 7 neu B. Mae digidau terfynol '
+            'eraill yn amhosibl: mae rhif sy’n terfynu ar 0, 2, 4, 6, 8 neu '
+            'A yn eilrif; mae un sy’n terfynu ar 3, 6, 9 yn rhanadwy â thri. '
+            'Yr hyn sy’n weddill yw union y pedwar digid nad oes ganddynt '
+            'ranydd cyffredin â Deuddeg — eto 1, 5, 7, B.\n\n'
+            'Yr un pedwar â’r camau da a’r cyfyngau sy’n creu’r cylch yw’r rhain. '
+            'Fodd bynnag, nid yw digid terfynol o’r grŵp pedwar hwn ond yn '
+            'amod angenrheidiol, nid yn brawf: mae 25 yn terfynu ym môn '
+            'Deuddeg ar 1, ond pump llwaith pump yw. Mae’r digid yn diystyru '
+            'llawer o rifau fel rhifau cysefin, ond nid yw’n coronni neb.',
+      ),
+      ProseSection(
+        'Adio bob amser, rhannu ddim bob amser',
+        'Ar gloc yr oriau gellir lluosi hefyd — a dyna lle y mae’r caeëdrwydd '
+            'prydferth yn dod i ben. Wrth adio mae llwybr yn ôl i bob cam; wrth '
+            'luosi, nac oes. Nid oes awr y gellid lluosi’r Ddau â hi i gael '
+            'Uned yn lân, oherwydd mae’r dwbl bob amser yn eilrif. Nid oes gan '
+            'y Ddau werth cilyddol ar gloc deuddeg.\n\n'
+            'Dim ond y pedwar rhif da 1, 5, 7, B sydd â gwerth cilyddol — a '
+            'phob un ohonynt yw ei gilydd ei hun: mae pump llwaith pump yn 25, '
+            'sef 1 ar gloc deuddeg; yr un modd saith llwaith saith a B llwaith '
+            'B. Pe bai gan y cloc nifer cysefin o oriau fel un ar ddeg neu dri '
+            'ar ddeg, byddai gan bob awr werth cilyddol. Mae Deuddeg yn rhy '
+            'ranadwy ar gyfer hynny — yr un cyfoeth o ranyddion sy’n addurno’i '
+            'wyneb cloc sy’n ei amddifadu o’r rhaniad llyfn. Nid diffyg yw '
+            'hwnnw, ond natur rhifau cyfansawdd; byddai cloc degol yr un fath.',
+      ),
+      ProseSection(
+        'Modwlws deuddeg nid yw’n fôn deuddeg',
+        'Un gwahaniaeth olaf, pwysig, y mae’n hawdd ei gymysgu. Mae’r cloc yn '
+            'cyfrifo „modwlws deuddeg" — dim ond y gweddill wrth rannu â deuddeg '
+            'a gedwir. Mae hynny’n wahanol i „bôn Deuddeg", y nodiant y '
+            'mae’r cyfrifiannell hwn yn ei ddefnyddio, lle mae’r safleoedd yn '
+            'cynrychioli Unedau, Deuddegau, Rosau ac ati. Mae modwlws yn dweud '
+            'i ba ddosbarth gweddill y mae rhif yn perthyn; mae bôn yn dweud '
+            'sut yr ysgrifennir ef.\n\n'
+            'Mae’r ddau yn troi o amgylch y rhif deuddeg, ond o’r un rheswm '
+            'dyfnach — ei lawer o ranyddion — nid am eu bod yr un peth. Mae '
+            'rhywun yn cyfrifo modwlws deuddeg bob dydd ar y cloc ac eto’n '
+            'ysgrifennu’r amser yn y system ddegol. Cyflwynodd Carl Friedrich '
+            'Gauss y math hwn o gyfrifo gweddillion fel nodiant ei hun yn 1801; '
+            'heddiw mae’n llechu’n anweledig mewn digidau gwiriad rhifau llyfrau '
+            'a chyfrifon ac ym mhob fformwla diwrnod-o’r-wythnos.',
+      ),
+    ],
+    sources: [
+      Source(
+        'Modular arithmetic — Wikipedia',
+        'https://en.wikipedia.org/wiki/Modular_arithmetic',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Cyclic group — Wikipedia',
+        'https://en.wikipedia.org/wiki/Cyclic_group',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Subgroups of cyclic groups — Wikipedia',
+        'https://en.wikipedia.org/wiki/Subgroups_of_cyclic_groups',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Multiplicative group of integers modulo n — Wikipedia',
+        'https://en.wikipedia.org/wiki/Multiplicative_group_of_integers_modulo_n',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Circle of fifths — Wikipedia',
+        'https://en.wikipedia.org/wiki/Circle_of_fifths',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Pitch class — Wikipedia',
+        'https://en.wikipedia.org/wiki/Pitch_class',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Highly composite number — Wikipedia',
+        'https://en.wikipedia.org/wiki/Highly_composite_number',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Disquisitiones Arithmeticae — Wikipedia',
+        'https://en.wikipedia.org/wiki/Disquisitiones_Arithmeticae',
+        'R1',
+        'A2',
+      ),
+    ],
+  ),
+  ProseChapter(
+    '12! a’r trefniadau',
+    [
+      ProseSection(
+        'Faint o drefniadau?',
+        'Faint o ffyrdd sydd o osod dwsin o bethau mewn rhes — deuddeg gwestai '
+            'wrth fwrdd, y deuddeg mis ar restr, deuddeg llyfr ar silff? Ar gyfer '
+            'y lle cyntaf mae deuddeg ymgeisydd, ar gyfer yr ail un ar ddeg, yna '
+            'deg, ac yn y blaen hyd at yr olaf, lle nad oes ond un ar ôl. Lluosir '
+            'pob posibilrwydd â’i gilydd: 12 · 11 · 10 · … · 2 · 1.\n\n'
+            'Ysgrifennir y lluoswm hwn o bob rhif o 1 i ddeuddeg yn fyr fel „12!" '
+            'a’i alw’n Ffactorial Deuddeg. Yn gyffredinol, n! yw lluoswm pob '
+            'rhif o 1 i n ac mae’n cyfrif trefniadau n peth. Chwilfrydedd ar yr '
+            'ymyl: diffinnir 0! fel 1 — mae union un ffordd o drefnu dim byd, '
+            'sef y ffordd wag.',
+      ),
+      ProseSection(
+        'Y rhif 12!',
+        'Mae 12! = 479001600 yn y system ddegol — bron hanner biliwn o '
+            'drefniadau ar gyfer deuddeg peth yn unig. Ym môn Deuddeg ysgrifennir '
+            'yr un rhif fel 114500000, â phum sero ar y diwedd. Mae’r seroau '
+            'hyn yn hawdd eu deall o safbwynt Deuddeg: am fod 12! yn cynnwys '
+            'ffactorau Dau a Thri mor aml, ac am fod pob un o’r seroau terfynol '
+            'hyn yn wahanu union un Deuddeg, mae pump ohonynt yn dod allan yn '
+            'lân. Yn y system ddegol nid yw 12! ond yn terfynu ar ddau sero.\n\n'
+            'Mor fawr yw hanner biliwn o drefniadau? Pe dangosid un newydd bob '
+            'eiliad, ni fyddai’r gwaith drosodd tan ar ôl pymtheg mlynedd. Os '
+            'eistedd y dwsin wrth fwrdd crwn, lle dim ond y cymdogaeth sy’n '
+            'bwysig nid y lle cychwyn, mae’r rhif yn crebachu i ffactorial un '
+            'ar ddeg — tua deugain miliwn. Gellir gofyn i’r cyfrifiannell: mae’r '
+            'fysell ffactorial yn rhoi 12! ar unwaith ym môn Deuddeg.',
+      ),
+      ProseSection(
+        'Dewis gyda threfn a heb drefn',
+        'Yn aml nid yw rhywun am drefnu’r deuddeg i gyd, ond dim ond dewis '
+            'rhai — ac yna mae’n wahaniaeth a yw’r drefn yn cyfrif. Tri rhedwr '
+            'ar y podiwm (aur, arian, efydd) allan o ddeuddeg: 12 · 11 · 10 = '
+            '1320 o bosibilrwydd wedi eu trefnu. Mae’r drefn yn cyfrif yma, '
+            'oherwydd nid yr un peth yw’r cyntaf a’r ail.\n\n'
+            'Os dewis chwe pherson allan o ddeuddeg yn unig fel grŵp, heb '
+            'raddio — er enghraifft chwe gwirfoddolwr — mae 924 o bosibilrwydd; '
+            'dau allan o ddeuddeg fel pâr yw 66. Mae’r ddwy ffordd gyfrif yn '
+            'seilio ar y ffactorial. Yn yr iaith bob dydd cyfysgir y ddwy’n aml: '
+            'mae „clo cyfuniad" mewn gwirionedd yn gofyn am drefn benodol — '
+            'dylid ei alw’n glo trefn.',
+      ),
+      ProseSection(
+        'Clychau sy’n canu pob trefn',
+        'Mewn tyrau eglwysi yn Lloegr mae hen gelfyddyd sy’n gwneud yn union '
+            'hyn: canu newidiadau. Yn lle alawon, mae clochyddion yn canu eu '
+            'clychau mewn trefniadau newydd o hyd, pob trefn union unwaith. Ar '
+            'bob newid dim ond un safle y caniateir i bob cloch symud — ffordd '
+            'gorfforol o gyfnewid elfennau cyfagos, yr oedd clochyddion yn ei '
+            'meistroli erbyn tua 1621, ymhell cyn i fathemategwyr ddisgrifio’r '
+            'un tric.\n\n'
+            'Ar gyfer pob nifer o glychau mae enw; gelwir deuddeg cloch yn '
+            'Maximus. Canu pob trefn o ddeuddeg cloch fyddai mynd trwy 12! = '
+            'tua 479 miliwn o newidiadau — ar ddwy eiliad y newid, byddai hynny’n '
+            'ddegawdau o ganu di-baid. Ni wnaeth neb hynny erioed a bernir ei '
+            'fod yn amhosibl; mae’r darnau a ganwyd hiraf go iawn ar ddeuddeg '
+            'cloch yn cyrraedd dim ond rhai degau o filoedd o newidiadau. Dim '
+            'ond ar wyth cloch y canwyd cyfaint cyflawn erioed: 40320 o '
+            'newidiadau, bron ddeunaw awr, ym 1963 yn Loughborough.',
+      ),
+      ProseSection(
+        'O’r rhif i grŵp',
+        'Os casglu pob un o’r 12! ailadrefniad o ddwsin a deall „y naill yn '
+            'gyntaf, yna’r llall" fel rheol gyfrifo, ffurfir grŵp eto — grŵp '
+            'ailadrefnu llawn y deuddeg peth. Yn wahanol i gloc yr oriau, mae’r '
+            'drefn y cymrir y camau ynddi yn bwysig yma: cyfnewid ac yna '
+            'llithro yn rhoi rhywbeth gwahanol i lithro ac yna cyfnewid. Mae’r '
+            'grŵp hwn yn enfawr ac nid yw’n gymeradwy.\n\n'
+            'Yn llechu ynddo mae rhyfeddod olaf. Ymhlith y bron hanner biliwn '
+            'o ailadrefniadau mae detholiad bach, arbennig o reolaidd o union '
+            '95040 sy’n symud unrhyw bum pwynt o’r deuddeg i unrhyw bum '
+            'targed mewn union un ffordd. Y ffaith fod hyn yn bosibl o gwbl ar '
+            'ddeuddeg pwynt yn union yw un o’r ymddangosiadau prinnaf mewn '
+            'mathemateg — a theitl y bennod nesaf.',
+      ),
+    ],
+    sources: [
+      Source(
+        'Factorial — Wikipedia',
+        'https://en.wikipedia.org/wiki/Factorial',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Permutation — Wikipedia',
+        'https://en.wikipedia.org/wiki/Permutation',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Combination — Wikipedia',
+        'https://en.wikipedia.org/wiki/Combination',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Change ringing — Wikipedia',
+        'https://en.wikipedia.org/wiki/Change_ringing',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Extent (change ringing) — Wikipedia',
+        'https://en.wikipedia.org/wiki/Extent_(change_ringing)',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Symmetric group — Wikipedia',
+        'https://en.wikipedia.org/wiki/Symmetric_group',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Steinhaus–Johnson–Trotter algorithm — Wikipedia',
+        'https://en.wikipedia.org/wiki/Steinhaus%E2%80%93Johnson%E2%80%93Trotter_algorithm',
+        'R2',
+        'A2',
+      ),
+    ],
+  ),
+  ProseChapter(
+    'Y Grŵp Mathieu M₁₂',
+    [
+      ProseSection(
+        'Detholiad ymhlith bron hanner biliwn',
+        'Terfynodd y bennod flaenorol â’r addewid hwn: ymhlith bron hanner '
+            'biliwn o ailadrefniadau dwsin mae detholiad bach o union 95040 sy’n '
+            'gallu gwneud rhywbeth bron yn anghredadwy. Dewis pum pwynt o’r '
+            'deuddeg a dweud i ble y dylai pob un fynd — yna mae union un o’r '
+            '95040 ailadrefniad yn gwneud hynny. Nid dau, nid dim: union un.\n\n'
+            'O’r un priodwedd hon y deillia’r cyfanswm cyfan eisoes. Ar gyfer '
+            'cyrchfan y pwynt cyntaf mae deuddeg dewis, ar gyfer yr ail un ar '
+            'ddeg, yna deg, naw, wyth — ac mae’r gweddill yn benodol. Mae deuddeg '
+            'llwaith un ar ddeg llwaith deg llwaith naw llwaith wyth yn rhoi '
+            '95040. Enw’r casgliad prin hwn o ailadrefniadau yw Grŵp Mathieu M₁₂.',
+      ),
+      ProseSection(
+        'System Steiner S(5,6,12)',
+        'Beth y mae’r 95040 ailadrefniad hyn yn ei gadw’n ddigyfnewid? Ffigur '
+            'cyfuniadol cain. Gellir dewis grwpiau o chwech o ddeuddeg pwynt fel '
+            'hyn: mae pob dewis o bum pwynt wedi ei gynnwys mewn union un o’r '
+            'grwpiau chwech. Mae union 132 grŵp o chwech, a’r trefniad hwn yw’r '
+            'unig un posibl ac eithrio ail-enwi’r pwyntiau.\n\n'
+            'Gelwir yr adeiledd cain hwn yn System Steiner S(5,6,12). Y Grŵp '
+            'Mathieu yw union y set o ailadrefniadau sy’n mapio’r 132 grŵp-chwech '
+            'i grwpiau-chwech — cymesureddau’r ffigur hwn. Mae’r ddau rif, 132 '
+            'grŵp-chwech a 95040 cymesuredd, ym môn Deuddeg gyda llaw yn B0 a '
+            '47000.',
+      ),
+      ProseSection(
+        'Pam yn union ddeuddeg',
+        'Yr hyn sy’n wirioneddol ryfeddol nid yw’r ffaith fod M₁₂ mor reolaidd, '
+            'ond pa mor anaml y daw rheoleidd-dra o’r fath i fodolaeth o gwbl. '
+            'Profodd Camille Jordan yn 1872: Os eithrio’r achosion cyffredin '
+            'amlwg, mae set ailadrefniad sy’n gallu gosod pum pwynt yn rhydd '
+            'mewn union un ffordd yn bosibl ar un nifer o bwyntiau yn unig — ar '
+            'ddeuddeg. Mae’r peth cyfatebol ar gyfer pedwar pwynt yn bodoli fel '
+            'eithriad dim ond ar un ar ddeg pwynt.\n\n'
+            'Ar union un ar ddeg a deuddeg pwynt — a dim arall y tu hwnt i’r '
+            'achosion cyffredin — mae’r cymesureddau rhyfeddol berffaith hyn yn '
+            'bodoli. Felly mae Deuddeg yn un o ddim ond llond llaw o rifau sy’n '
+            'cynnal peth o’r fath. Canlyniad mathemategol eglur yw hwn, nid '
+            'cyfrineg rhifau — ond mae’n rheswm dros ryfeddu.',
+      ),
+      ProseSection(
+        'Y cyntaf o’i bath',
+        'Mae gan grwpiau meidraidd flociau adeiladu na ellir eu dadelfennu '
+            'ymhellach — y grwpiau syml, atomau theori grwpiau. Mae „syml" yma’n '
+            'golygu heb ei ddadelfennu, nid hawdd. Mae’r rhan fwyaf o’r atomau '
+            'hyn yn perthyn i ychydig deuluoedd diderfyn; wrth eu hymyl mae '
+            'union chwe grŵp ar hugain yn unigolion, y grwpiau ysbeidiol. '
+            'Un ohonynt yw M₁₂.\n\n'
+            'Disgrifiodd Émile Mathieu M₁₂ eisoes yn 1861 — dyma’r grŵp ysbeidiol '
+            'cyntaf a ganfuwyd erioed, bron ganrif cyn y gweddill. Bu ei '
+            'fodolaeth yn ddadleuol am amser hir, gyda rhai arbenigwyr yn ei '
+            'amau; ni osodwyd ef ar dir diogel tan Ernst Witt yn 1938. Mae’r '
+            'rhes o grwpiau ysbeidiol a ddechreuodd gyda M₁₂ yn terfynu ar '
+            'y „Bwystfil" enfawr enwog, a’u rhestriad cyflawn yn un o '
+            'gampweithiau cydweithredol mwyaf mathemateg erioed.',
+      ),
+      ProseSection(
+        'I’w gyffwrdd: cardiau a gêm',
+        'Mor haniaethol â’r hyn a swnio — mae ffyrdd diriaethol at ei ddeall. '
+            'Yn ôl ffynonellau a adroddir, os cymysgu deuddeg cerdyn chwarae '
+            'mewn dwy ffordd benodol, gyson, drosodd a throsodd, cynhyrchir yn '
+            'union ailadrefniadau Grŵp Mathieu. A dyfeisiodd y mathemategydd '
+            'John Conway „Blackjack mathemategol" â’r deuddeg rhif Sero i B, '
+            'y mae ei strategaeth ennill yn seilio’n uniongyrchol ar y 132 '
+            'grŵp-chwech.\n\n'
+            'Yn onest rhaid nodi: nid oes bron unrhyw fysell yn y cyfrifiannell '
+            'yn cyfateb i’r bennod hon — theori bur, hardd yw hi, nid offeryn. '
+            'Ond weithiau dyna’n union yw’r atyniad: mai Deuddeg, sy’n rhoi ei '
+            'rhythm i’r cyfrifiannell hwn, yw un o’r ychydig rifau lle y '
+            'mae mathemateg wedi cuddio cymesuredd mor brin a pherffaith.',
+      ),
+    ],
+    sources: [
+      Source(
+        'Mathieu group M12 — Wikipedia',
+        'https://en.wikipedia.org/wiki/Mathieu_group_M12',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Mathieu group — Wikipedia',
+        'https://en.wikipedia.org/wiki/Mathieu_group',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Steiner system — Wikipedia',
+        'https://en.wikipedia.org/wiki/Steiner_system',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Sporadic group — Wikipedia',
+        'https://en.wikipedia.org/wiki/Sporadic_group',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Multiply transitive group — Wikipedia',
+        'https://en.wikipedia.org/wiki/Multiply_transitive_group',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Classification of finite simple groups — Wikipedia',
+        'https://en.wikipedia.org/wiki/Classification_of_finite_simple_groups',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Émile Léonard Mathieu — Wikipedia',
+        'https://en.wikipedia.org/wiki/%C3%89mile_L%C3%A9onard_Mathieu',
+        'R2',
+        'A1',
+      ),
+    ],
+  ),
+  ProseChapter(
     'Y Deuddegoch (Dodecagon)',
     [
       ProseSection(
@@ -729,6 +1472,110 @@ List<ProseChapter> _mathChaptersCy() => const [
       ),
     ],
     imageId: 'math/dodekagon',
+  ),
+  ProseChapter(
+    'Teiliadu Archimedes',
+    [
+      ProseSection(
+        'Nid yw’r deuddegoch yn llenwi’r plân ar ei ben ei hun',
+        'Mae deuddegoch rheolaidd yn ffigur hardd a chrwn — ond ni all orchuddio '
+            'llawr ar ei ben ei hun heb fylchau. Y rheswm yw ei ongl fewnol o '
+            '150 gradd. O amgylch cornel, rhaid i’r ffigurau cyfagos gyflenwi’n '
+            'union i 360 gradd, ond mae 360 wedi ei rannu â 150 yn rhoi dau '
+            'goma pedwar — nid cyfanrif. Mae dau ddeuddegoch yn gadael bwlch '
+            'wrth gornel, mae tri yn gorgyffwrdd.\n\n'
+            'Mae angen partneriaid ar y deuddegoch felly. Os gosod y ffigurau '
+            'iawn rhyngddynt, crëir patrymau di-fwlch, hynod reolaidd — '
+            'teiliadu Archimedes. Felly y gelwir gorchuddo’r plân â pholygonau '
+            'rheolaidd yn unig, â’r un golwg ym mhob cornel. Dim ond un ar ddeg '
+            'patrwm o’r fath sy’n bodoli i gyd.',
+      ),
+      ProseSection(
+        'Dau batrwm â deuddegoch',
+        'O’r un ar ddeg patrwm hyn, mae union ddau yn cynnwys deuddegoch '
+            'rheolaidd. Yn y cyntaf, mae trionglau hafalochrog bach yn llenwi’r '
+            'bylchau rhwng y deuddegochau — wrth bob cornel mae triongl a dau '
+            'ddeuddegoch yn cyfarfod, a’u honcglau’n rhoi 60 plws 150 plws 150, '
+            'sef union 360 gradd.\n\n'
+            'Yr ail yw’r un mwy cyfoethog a ddangosir yn y darlun: o amgylch '
+            'pob deuddegoch mae torch o sgwariau a hecsagonau yn eu tro. Wrth '
+            'bob cornel mae sgwâr, hecsagon a deuddegoch yn cyfarfod — 90 plws '
+            '120 plws 150 gradd, eto union 360. Am fod y swm yn cydio, mae’r '
+            'dorch yn cau heb unrhyw fwlch, a’r patrwm yn parhau i bob '
+            'cyfeiriad.',
+      ),
+      ProseSection(
+        'Pam mai dim ond Tri, Pedwar, Chwe sy’n ffitio',
+        'Wrth ymyl deuddegoch dim ond tair math o gymydog sy’n ffitio: '
+            'trionglau, sgwariau a hecsagonau. Nid damwain yw hynny. Mae eu '
+            'honcglau mewnol yn 60, 90 a 120 gradd — a dyna union 360 wedi ei '
+            'rannu â chwe, â phedwar, ac â thri. Felly union y rhanyddion tri, '
+            'pedwar a chwe o Ddeuddeg sy’n ymddangos.\n\n'
+            'Yr un tri rhanydd yw sy’n gwneud y ffracsiynau traean, chwarter '
+            'a chweched yn dod allan yn lân ym môn Deuddeg. Mae’r teiliad '
+            'prydferth a’r ffracsiwn hwylus yn tarddu o’r un gwreiddyn: '
+            'rhanadwyedd cyfoethog Deuddeg. Perthynas wirioneddol yw honno, '
+            'ond nid gorfodaeth — mae’r onglau’n dod o geometreg, y '
+            'ffracsiynau llyfn o’r nodiant; mae’r ddau ond yn dibynnu ar '
+            'yr un rhif.',
+      ),
+      ProseSection(
+        'Kepler, mosgiau a chrisialau',
+        'Johannes Kepler oedd y cyntaf i restru’r patrymau hyn yn gyflawn '
+            'ym 1619, mewn gwaith ar gytgord y byd. Nid yw’r enw „Archimedes" '
+            'ond yn gyfeiriad at y cyrff Archimedeaidd; ni chadwyd unrhyw '
+            'ysgrifen hynafol lle y byddai Archimedes ei hun wedi trafod '
+            'teiliadu.\n\n'
+            'Ond ymhell cyn Kepler roedd y deuddegoch eisoes yn byw mewn '
+            'celfyddyd: mae sêr deuddeg-blaenig ymhlith y cymhellion mwyaf '
+            'ysblennydd mewn addurnwaith geometregol Islamaidd, wedi eu '
+            'hadeiladu â chwmpawd a phren mesur o bur geometreg — yn gynnar '
+            'er enghraifft yn Mosg Konya (1220). Ac yn y byd naturiol mae’r '
+            'un drefn ddeuddegol yn dychwelyd mewn cwasigrisialau, y mae '
+            'pennod ar wahân yn eu hadrodd. Mae’r deuddegoch, na all lenwi '
+            'llawr ar ei ben ei hun, yn un o ffurfiau mwyaf ffrwythlon y plân '
+            'mewn partneriaeth.',
+      ),
+    ],
+    sources: [
+      Source(
+        'Euclidean tilings by convex regular polygons — Wikipedia',
+        'https://en.wikipedia.org/wiki/Euclidean_tilings_by_convex_regular_polygons',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Truncated hexagonal tiling — Wikipedia',
+        'https://en.wikipedia.org/wiki/Truncated_hexagonal_tiling',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Truncated trihexagonal tiling — Wikipedia',
+        'https://en.wikipedia.org/wiki/Truncated_trihexagonal_tiling',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Archimedean Tilings and Egyptian Fractions (John Baez)',
+        'https://math.ucr.edu/home/baez/egyptian.html',
+        'R3',
+        'A1',
+      ),
+      Source(
+        'Islamic geometric patterns — Wikipedia',
+        'https://en.wikipedia.org/wiki/Islamic_geometric_patterns',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Harmonices Mundi — Wikipedia',
+        'https://en.wikipedia.org/wiki/Harmonices_Mundi',
+        'R2',
+        'A2',
+      ),
+    ],
+    imageId: 'math/parkettierung',
   ),
   ProseChapter(
     'Y Dodecahedron',
