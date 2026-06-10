@@ -39,133 +39,131 @@ class InfoListPage extends StatelessWidget {
         // system navigation bar.
         top: false,
         child: ListView(
-        padding: const EdgeInsets.symmetric(vertical: 4),
-        children: [
-          // "Bedienung des Rechners" ist App-Hilfe, kein Theorie-Stoff —
-          // darum eigenstaendiger Eintrag ganz oben, ausserhalb der Bloecke.
-          ListTile(
-            leading: const SizedBox(
-              width: 28,
-              child: Icon(
-                Icons.touch_app_outlined,
-                color: Color(0xFFA0A0A0),
-                size: 16,
+          padding: const EdgeInsets.symmetric(vertical: 4),
+          children: [
+            // "Bedienung des Rechners" ist App-Hilfe, kein Theorie-Stoff —
+            // darum eigenstaendiger Eintrag ganz oben, ausserhalb der Bloecke.
+            ListTile(
+              leading: const SizedBox(
+                width: 28,
+                child: Icon(
+                  Icons.touch_app_outlined,
+                  color: Color(0xFFA0A0A0),
+                  size: 16,
+                ),
+              ),
+              title: Text(
+                l.chapterTitle01,
+                style: const TextStyle(fontSize: 14, color: Color(0xFFD0D0D0)),
+              ),
+              trailing: const _NavChevron(),
+              onTap: () => Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (_) => TheoryChapterPage(
+                    title: l.chapterTitle01,
+                    legacyIndex: 0,
+                  ),
+                ),
               ),
             ),
-            title: Text(
-              l.chapterTitle01,
-              style: const TextStyle(fontSize: 14, color: Color(0xFFD0D0D0)),
-            ),
-            trailing: const _NavChevron(),
-            onTap: () => Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (_) =>
-                    TheoryChapterPage(title: l.chapterTitle01, legacyIndex: 0),
+            const Divider(color: Color(0xFF2C2C2C), height: 1),
+            // Theorie-Sektion: ausklappbar (Default collapsed) zu den drei
+            // Bloecken (Zwoelf und die Welt, Dozenale Mathematik, Dozenale
+            // Gesellschaft); jeder Block fuehrt zu seinen Kapiteln.
+            const _TheoryExpansion(),
+            const Divider(color: Color(0xFF2C2C2C), height: 1),
+            // Einheiten-Sektion: ausklappbar, buendelt Einheitenrechner +
+            // Einheitentheorie. Liegt als Geschwister direkt unter "Theorie",
+            // weil beides Inhalt ist — die Einheitentheorie gehoert bewusst
+            // NICHT in den Theorie-Tab (der traegt nur die Bloecke Zwoelf und
+            // die Welt, Dozenale Mathematik, Dozenale Gesellschaft).
+            const _UnitsExpansion(),
+            const Divider(color: Color(0xFF2C2C2C), height: 1),
+            // Display-Glyph-Style toggle: liegt direkt unter der Theorie,
+            // weil die Wahl zwischen Custom-Glyphen und konventionellen
+            // 0-9/A/B Teil davon ist, wie der Nutzer Dozenal liest — kein
+            // tiefes Settings-Menue dahinter. Tastatur bleibt immer
+            // Custom-Glyphen (Marken-Identitaet).
+            const _GlyphStyleToggle(),
+            const Divider(color: Color(0xFF2C2C2C), height: 1),
+            // Haptic-feedback on/off for keypad taps. A quick feedback
+            // preference, so it sits beside the glyph-style switch rather than
+            // in a deeper settings screen.
+            const _HapticsToggle(),
+            const Divider(color: Color(0xFF2C2C2C), height: 1),
+            const _LanguagePickerExpansion(),
+            const Divider(color: Color(0xFF2C2C2C), height: 1),
+            ListTile(
+              leading: const SizedBox(
+                width: 28,
+                child: Icon(
+                  Icons.shield_outlined,
+                  color: Color(0xFFA0A0A0),
+                  size: 16,
+                ),
               ),
-            ),
-          ),
-          const Divider(color: Color(0xFF2C2C2C), height: 1),
-          // Theorie-Sektion: ausklappbar (Default collapsed) zu den drei
-          // Bloecken (Zwoelf und die Welt, Dozenale Mathematik, Dozenale
-          // Gesellschaft); jeder Block fuehrt zu seinen Kapiteln.
-          const _TheoryExpansion(),
-          const Divider(color: Color(0xFF2C2C2C), height: 1),
-          // Einheiten-Sektion: ausklappbar, buendelt Einheitenrechner +
-          // Einheitentheorie. Liegt als Geschwister direkt unter "Theorie",
-          // weil beides Inhalt ist — die Einheitentheorie gehoert bewusst
-          // NICHT in den Theorie-Tab (der traegt nur die Bloecke Zwoelf und
-          // die Welt, Dozenale Mathematik, Dozenale Gesellschaft).
-          const _UnitsExpansion(),
-          const Divider(color: Color(0xFF2C2C2C), height: 1),
-          // Display-Glyph-Style toggle: liegt direkt unter der Theorie,
-          // weil die Wahl zwischen Custom-Glyphen und konventionellen
-          // 0-9/A/B Teil davon ist, wie der Nutzer Dozenal liest — kein
-          // tiefes Settings-Menue dahinter. Tastatur bleibt immer
-          // Custom-Glyphen (Marken-Identitaet).
-          const _GlyphStyleToggle(),
-          const Divider(color: Color(0xFF2C2C2C), height: 1),
-          // Haptic-feedback on/off for keypad taps. A quick feedback
-          // preference, so it sits beside the glyph-style switch rather than
-          // in a deeper settings screen.
-          const _HapticsToggle(),
-          const Divider(color: Color(0xFF2C2C2C), height: 1),
-          const _LanguagePickerExpansion(),
-          const Divider(color: Color(0xFF2C2C2C), height: 1),
-          ListTile(
-            leading: const SizedBox(
-              width: 28,
-              child: Icon(
-                Icons.shield_outlined,
-                color: Color(0xFFA0A0A0),
-                size: 16,
+              title: Text(
+                l.infoListPrivacyEntry,
+                style: const TextStyle(fontSize: 14, color: Color(0xFFD0D0D0)),
               ),
+              trailing: const _NavChevron(),
+              onTap: () => Navigator.of(
+                context,
+              ).push(MaterialPageRoute(builder: (_) => const PrivacyPage())),
             ),
-            title: Text(
-              l.infoListPrivacyEntry,
-              style: const TextStyle(fontSize: 14, color: Color(0xFFD0D0D0)),
-            ),
-            trailing: const _NavChevron(),
-            onTap: () => Navigator.of(context).push(
-              MaterialPageRoute(builder: (_) => const PrivacyPage()),
-            ),
-          ),
-          const Divider(color: Color(0xFF2C2C2C), height: 1),
-          ListTile(
-            leading: const SizedBox(
-              width: 28,
-              child: Icon(
-                Icons.balance,
-                color: Color(0xFFA0A0A0),
-                size: 16,
+            const Divider(color: Color(0xFF2C2C2C), height: 1),
+            ListTile(
+              leading: const SizedBox(
+                width: 28,
+                child: Icon(Icons.balance, color: Color(0xFFA0A0A0), size: 16),
               ),
-            ),
-            title: Text(
-              l.infoListLicenseEntry,
-              style: const TextStyle(fontSize: 14, color: Color(0xFFD0D0D0)),
-            ),
-            trailing: const _NavChevron(),
-            onTap: () => Navigator.of(context).push(
-              MaterialPageRoute(builder: (_) => const AppLicensePage()),
-            ),
-          ),
-          const Divider(color: Color(0xFF2C2C2C), height: 1),
-          ListTile(
-            leading: const SizedBox(
-              width: 28,
-              child: Icon(
-                Icons.favorite_outline,
-                color: Color(0xFFA0A0A0),
-                size: 16,
+              title: Text(
+                l.infoListLicenseEntry,
+                style: const TextStyle(fontSize: 14, color: Color(0xFFD0D0D0)),
               ),
+              trailing: const _NavChevron(),
+              onTap: () => Navigator.of(
+                context,
+              ).push(MaterialPageRoute(builder: (_) => const AppLicensePage())),
             ),
-            title: Text(
-              l.infoListSupportEntry,
-              style: const TextStyle(fontSize: 14, color: Color(0xFFD0D0D0)),
-            ),
-            trailing: const _NavChevron(),
-            onTap: () => Navigator.of(context).push(
-              MaterialPageRoute(builder: (_) => const SupportPage()),
-            ),
-          ),
-          const Divider(color: Color(0xFF2C2C2C), height: 1),
-          ListTile(
-            leading: const SizedBox(
-              width: 28,
-              child: Icon(
-                Icons.mail_outline,
-                color: Color(0xFFA0A0A0),
-                size: 16,
+            const Divider(color: Color(0xFF2C2C2C), height: 1),
+            ListTile(
+              leading: const SizedBox(
+                width: 28,
+                child: Icon(
+                  Icons.favorite_outline,
+                  color: Color(0xFFA0A0A0),
+                  size: 16,
+                ),
               ),
+              title: Text(
+                l.infoListSupportEntry,
+                style: const TextStyle(fontSize: 14, color: Color(0xFFD0D0D0)),
+              ),
+              trailing: const _NavChevron(),
+              onTap: () => Navigator.of(
+                context,
+              ).push(MaterialPageRoute(builder: (_) => const SupportPage())),
             ),
-            title: Text(
-              l.infoListFeedbackEntry,
-              style: const TextStyle(fontSize: 14, color: Color(0xFFD0D0D0)),
+            const Divider(color: Color(0xFF2C2C2C), height: 1),
+            ListTile(
+              leading: const SizedBox(
+                width: 28,
+                child: Icon(
+                  Icons.mail_outline,
+                  color: Color(0xFFA0A0A0),
+                  size: 16,
+                ),
+              ),
+              title: Text(
+                l.infoListFeedbackEntry,
+                style: const TextStyle(fontSize: 14, color: Color(0xFFD0D0D0)),
+              ),
+              trailing: const _NavChevron(),
+              onTap: () => showFeedbackDialog(context),
             ),
-            trailing: const _NavChevron(),
-            onTap: () => showFeedbackDialog(context),
-          ),
-          const _VersionFooter(),
-        ],
+            const _VersionFooter(),
+          ],
         ),
       ),
     );
@@ -198,7 +196,9 @@ class _VersionFooterState extends State<_VersionFooter> {
       builder: (ctx, snap) {
         final label = snap.hasData
             ? l.infoListVersionFooter(
-                snap.data!.version, snap.data!.buildNumber)
+                snap.data!.version,
+                snap.data!.buildNumber,
+              )
             : '';
         return Padding(
           padding: const EdgeInsets.fromLTRB(16, 32, 16, 24),
@@ -272,17 +272,25 @@ class _TheoryExpansionState extends State<_TheoryExpansion> {
                       const Divider(color: Color(0xFF2C2C2C), height: 1),
                       ListTile(
                         contentPadding: const EdgeInsetsDirectional.fromSTEB(
-                            32, 0, 16, 0),
+                          32,
+                          0,
+                          16,
+                          0,
+                        ),
                         title: Text(
                           block.title,
                           style: const TextStyle(
-                              fontSize: 14, color: Colors.white),
+                            fontSize: 14,
+                            color: Colors.white,
+                          ),
                         ),
                         subtitle: block.inProgress
                             ? Text(
                                 l.theoryInProgress,
                                 style: const TextStyle(
-                                    fontSize: 11, color: Color(0xFF707070)),
+                                  fontSize: 11,
+                                  color: Color(0xFF707070),
+                                ),
                               )
                             : null,
                         trailing: const _NavChevron(),
@@ -326,11 +334,7 @@ class _UnitsExpansionState extends State<_UnitsExpansion> {
         ListTile(
           leading: const SizedBox(
             width: 28,
-            child: Icon(
-              Icons.square_foot,
-              color: Color(0xFFA0A0A0),
-              size: 16,
-            ),
+            child: Icon(Icons.square_foot, color: Color(0xFFA0A0A0), size: 16),
           ),
           title: Text(
             l.infoListUnitsExpansion,
@@ -356,7 +360,11 @@ class _UnitsExpansionState extends State<_UnitsExpansion> {
                     const Divider(color: Color(0xFF2C2C2C), height: 1),
                     ListTile(
                       contentPadding: const EdgeInsetsDirectional.fromSTEB(
-                          32, 0, 16, 0),
+                        32,
+                        0,
+                        16,
+                        0,
+                      ),
                       leading: const SizedBox(
                         width: 28,
                         child: Icon(
@@ -368,17 +376,25 @@ class _UnitsExpansionState extends State<_UnitsExpansion> {
                       title: Text(
                         l.infoListConverterEntry,
                         style: const TextStyle(
-                            fontSize: 14, color: Color(0xFFD0D0D0)),
+                          fontSize: 14,
+                          color: Color(0xFFD0D0D0),
+                        ),
                       ),
                       trailing: const _NavChevron(),
                       onTap: () => Navigator.of(context).push(
-                        MaterialPageRoute(builder: (_) => const ConverterPage()),
+                        MaterialPageRoute(
+                          builder: (_) => const ConverterPage(),
+                        ),
                       ),
                     ),
                     const Divider(color: Color(0xFF2C2C2C), height: 1),
                     ListTile(
                       contentPadding: const EdgeInsetsDirectional.fromSTEB(
-                          32, 0, 16, 0),
+                        32,
+                        0,
+                        16,
+                        0,
+                      ),
                       leading: const SizedBox(
                         width: 28,
                         child: Icon(
@@ -390,12 +406,15 @@ class _UnitsExpansionState extends State<_UnitsExpansion> {
                       title: Text(
                         l.infoListConversionsEntry,
                         style: const TextStyle(
-                            fontSize: 14, color: Color(0xFFD0D0D0)),
+                          fontSize: 14,
+                          color: Color(0xFFD0D0D0),
+                        ),
                       ),
                       trailing: const _NavChevron(),
                       onTap: () => Navigator.of(context).push(
                         MaterialPageRoute(
-                            builder: (_) => const ConversionsPage()),
+                          builder: (_) => const ConversionsPage(),
+                        ),
                       ),
                     ),
                   ],
@@ -423,11 +442,7 @@ class _GlyphStyleToggle extends StatelessWidget {
     return ListTile(
       leading: const SizedBox(
         width: 28,
-        child: Icon(
-          Icons.text_fields,
-          color: Color(0xFFA0A0A0),
-          size: 16,
-        ),
+        child: Icon(Icons.text_fields, color: Color(0xFFA0A0A0), size: 16),
       ),
       title: Text(
         l.infoListGlyphStyleTitle,
@@ -474,20 +489,13 @@ class _HapticsToggle extends StatelessWidget {
     return ListTile(
       leading: const SizedBox(
         width: 28,
-        child: Icon(
-          Icons.vibration,
-          color: Color(0xFFA0A0A0),
-          size: 16,
-        ),
+        child: Icon(Icons.vibration, color: Color(0xFFA0A0A0), size: 16),
       ),
       title: Text(
         l.infoListHapticsTitle,
         style: const TextStyle(fontSize: 14, color: Colors.white),
       ),
-      trailing: Switch(
-        value: notifier.enabled,
-        onChanged: notifier.setEnabled,
-      ),
+      trailing: Switch(value: notifier.enabled, onChanged: notifier.setEnabled),
     );
   }
 }
@@ -550,9 +558,12 @@ class _LanguagePickerExpansionState extends State<_LanguagePickerExpansion> {
                     const Divider(color: Color(0xFF2C2C2C), height: 1),
                     for (final lang in kSupportedLanguages)
                       ListTile(
-                        contentPadding:
-                            const EdgeInsetsDirectional.fromSTEB(
-                                32, 0, 16, 0),
+                        contentPadding: const EdgeInsetsDirectional.fromSTEB(
+                          32,
+                          0,
+                          16,
+                          0,
+                        ),
                         leading: _FlagThumb(option: lang),
                         title: Text(
                           lang.label,
@@ -562,8 +573,11 @@ class _LanguagePickerExpansionState extends State<_LanguagePickerExpansion> {
                           ),
                         ),
                         trailing: lang.locale.toLanguageTag() == activeTag
-                            ? const Icon(Icons.check,
-                                color: Colors.white, size: 16)
+                            ? const Icon(
+                                Icons.check,
+                                color: Colors.white,
+                                size: 16,
+                              )
                             : null,
                         onTap: () {
                           notifier.setOverride(lang.locale);
@@ -612,10 +626,7 @@ class _FlagThumb extends StatelessWidget {
     return SizedBox(
       width: w,
       height: h,
-      child: CustomPaint(
-        size: Size(w, h),
-        painter: option.flagPainter,
-      ),
+      child: CustomPaint(size: Size(w, h), painter: option.flagPainter),
     );
   }
 }
@@ -645,7 +656,9 @@ class TheoryBlockPage extends StatelessWidget {
                   child: Text(
                     l.theoryInProgress,
                     style: const TextStyle(
-                        fontSize: 14, color: Color(0xFF808080)),
+                      fontSize: 14,
+                      color: Color(0xFF808080),
+                    ),
                   ),
                 ),
               )
@@ -671,7 +684,9 @@ class TheoryBlockPage extends StatelessWidget {
                       title: Text(
                         block.chapters[i].title,
                         style: const TextStyle(
-                            fontSize: 14, color: Colors.white),
+                          fontSize: 14,
+                          color: Colors.white,
+                        ),
                       ),
                       trailing: const _NavChevron(),
                       onTap: () => Navigator.of(context).push(
@@ -709,11 +724,11 @@ class TheoryChapterPage extends StatelessWidget {
   });
 
   TheoryChapterPage.fromRef(TheoryChapterRef ref, {super.key})
-      : title = ref.title,
-        legacyIndex = ref.legacyIndex,
-        prose = ref.prose,
-        sources = ref.sources,
-        imageId = ref.imageId;
+    : title = ref.title,
+      legacyIndex = ref.legacyIndex,
+      prose = ref.prose,
+      sources = ref.sources,
+      imageId = ref.imageId;
 
   @override
   Widget build(BuildContext context) {
@@ -724,11 +739,13 @@ class TheoryChapterPage extends StatelessWidget {
     if (appRef != null) children.add(AppRefCard(appRef));
     final customIllu = _customChapterIllustration(imageId);
     if (customIllu != null) children.add(customIllu);
-    children.addAll(legacyIndex != null
-        ? buildChapterContent(legacyIndex!, context)
-        : <Widget>[
-            for (final s in prose ?? const <ProseSection>[]) _ProseBlock(s),
-          ]);
+    children.addAll(
+      legacyIndex != null
+          ? buildChapterContent(legacyIndex!, context)
+          : <Widget>[
+              for (final s in prose ?? const <ProseSection>[]) _ProseBlock(s),
+            ],
+    );
     if (sources.isNotEmpty) children.add(_SourceList(sources: sources));
     return Scaffold(
       appBar: AppBar(
@@ -764,6 +781,11 @@ Widget? _customChapterIllustration(String? id) {
             Chapter5Illustration(),
           ],
         ),
+      );
+    case 'math/parkettierung':
+      return const Padding(
+        padding: EdgeInsets.symmetric(vertical: 4),
+        child: ParkettierungIllustration(),
       );
   }
   return null;

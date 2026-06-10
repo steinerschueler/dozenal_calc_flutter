@@ -35,19 +35,19 @@ part 'info_content_ar.dart';
 /// now routed through AppLocalizations so the same list serves both
 /// locales. Callers pass `AppLocalizations.of(context)`.
 List<String> infoTitles(AppLocalizations l) => [
-      l.chapterTitle01,
-      l.chapterTitle02,
-      l.chapterTitle03,
-      l.chapterTitle04,
-      l.chapterTitle05,
-      l.chapterTitle06,
-      l.chapterTitle07,
-      l.chapterTitle08,
-      l.chapterTitle09,
-      l.chapterTitle10,
-      l.chapterTitle11,
-      l.chapterTitle12,
-    ];
+  l.chapterTitle01,
+  l.chapterTitle02,
+  l.chapterTitle03,
+  l.chapterTitle04,
+  l.chapterTitle05,
+  l.chapterTitle06,
+  l.chapterTitle07,
+  l.chapterTitle08,
+  l.chapterTitle09,
+  l.chapterTitle10,
+  l.chapterTitle11,
+  l.chapterTitle12,
+];
 
 // ---------------------------------------------------------------------------
 // Helper widgets (port of info_h, info_p, info_pre).
@@ -59,16 +59,16 @@ class _H extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Padding(
-        padding: const EdgeInsets.only(top: 14, bottom: 4),
-        child: Text(
-          text,
-          style: const TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 18,
-            color: Colors.white,
-          ),
-        ),
-      );
+    padding: const EdgeInsets.only(top: 14, bottom: 4),
+    child: Text(
+      text,
+      style: const TextStyle(
+        fontWeight: FontWeight.bold,
+        fontSize: 18,
+        color: Colors.white,
+      ),
+    ),
+  );
 }
 
 class _P extends StatelessWidget {
@@ -77,17 +77,17 @@ class _P extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Padding(
-        padding: const EdgeInsets.only(bottom: 6),
-        child: Text(
-          text,
-          style: const TextStyle(
-            fontSize: 16,
-            fontWeight: FontWeight.w300,
-            height: 1.45,
-            color: Color(0xFFE0E0E0),
-          ),
-        ),
-      );
+    padding: const EdgeInsets.only(bottom: 6),
+    child: Text(
+      text,
+      style: const TextStyle(
+        fontSize: 16,
+        fontWeight: FontWeight.w300,
+        height: 1.45,
+        color: Color(0xFFE0E0E0),
+      ),
+    ),
+  );
 }
 
 class _Pre extends StatelessWidget {
@@ -96,34 +96,34 @@ class _Pre extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Padding(
-        padding: const EdgeInsets.symmetric(vertical: 6),
-        // Force LTR for monospace tables in every locale — column
-        // alignment relies on left-to-right flow even in RTL locales
-        // like Persian. Without this, the bidi algorithm reorders
-        // mixed-direction rows (numbers + RTL labels) and shreds the
-        // table layout. FittedBox scales the monospace block uniformly
-        // so the column alignment stays exact — Text with softWrap
-        // would re-flow individual lines and shred the table. scaleDown
-        // means no upscaling on tablets; narrow phones get a
-        // proportionally smaller table that still fits.
-        child: Directionality(
-          textDirection: TextDirection.ltr,
-          child: FittedBox(
-            fit: BoxFit.scaleDown,
-            alignment: Alignment.centerLeft,
-            child: Text(
-              text,
-              softWrap: false,
-              style: const TextStyle(
-                fontFamily: 'JetBrainsMono',
-                fontSize: 14,
-                height: 1.5,
-                color: Color(0xFFE0E0E0),
-              ),
-            ),
+    padding: const EdgeInsets.symmetric(vertical: 6),
+    // Force LTR for monospace tables in every locale — column
+    // alignment relies on left-to-right flow even in RTL locales
+    // like Persian. Without this, the bidi algorithm reorders
+    // mixed-direction rows (numbers + RTL labels) and shreds the
+    // table layout. FittedBox scales the monospace block uniformly
+    // so the column alignment stays exact — Text with softWrap
+    // would re-flow individual lines and shred the table. scaleDown
+    // means no upscaling on tablets; narrow phones get a
+    // proportionally smaller table that still fits.
+    child: Directionality(
+      textDirection: TextDirection.ltr,
+      child: FittedBox(
+        fit: BoxFit.scaleDown,
+        alignment: Alignment.centerLeft,
+        child: Text(
+          text,
+          softWrap: false,
+          style: const TextStyle(
+            fontFamily: 'JetBrainsMono',
+            fontSize: 14,
+            height: 1.5,
+            color: Color(0xFFE0E0E0),
           ),
         ),
-      );
+      ),
+    ),
+  );
 }
 
 // ---------------------------------------------------------------------------
@@ -136,37 +136,37 @@ class _DigitLegend extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Widget row(int v) => Padding(
-          padding: const EdgeInsets.symmetric(vertical: 2),
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              SizedBox(
-                width: 24,
-                height: 24,
-                child: CustomPaint(
-                  painter: DozenalGlyphPainter(
-                    digit: DozenalDigit.values[v],
-                    strokeWidth: 1.4,
-                  ),
-                ),
+      padding: const EdgeInsets.symmetric(vertical: 2),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          SizedBox(
+            width: 24,
+            height: 24,
+            child: CustomPaint(
+              painter: DozenalGlyphPainter(
+                digit: DozenalDigit.values[v],
+                strokeWidth: 1.4,
               ),
-              const SizedBox(width: 8),
-              Text(
-                '= $v',
-                style: const TextStyle(
-                  fontFamily: 'JetBrainsMono',
-                  fontSize: 13,
-                  color: Color(0xFFC8C8C8),
-                ),
-              ),
-            ],
+            ),
           ),
-        );
+          const SizedBox(width: 8),
+          Text(
+            '= $v',
+            style: const TextStyle(
+              fontFamily: 'JetBrainsMono',
+              fontSize: 13,
+              color: Color(0xFFC8C8C8),
+            ),
+          ),
+        ],
+      ),
+    );
     Widget col(Iterable<int> values) => Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: values.map(row).toList(),
-        );
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: values.map(row).toList(),
+    );
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8),
       child: Row(
@@ -285,17 +285,9 @@ class Chapter4Painter extends CustomPainter {
       const Color(0xFF534AB7),
     );
     // Square (blue)
-    fillPolygon(
-      [0, 3, 6, 9],
-      const Color(0x2085B7EB),
-      const Color(0xFF185FA5),
-    );
+    fillPolygon([0, 3, 6, 9], const Color(0x2085B7EB), const Color(0xFF185FA5));
     // Triangle (teal)
-    fillPolygon(
-      [0, 4, 8],
-      const Color(0x209FE1CB),
-      const Color(0xFF0F6E56),
-    );
+    fillPolygon([0, 4, 8], const Color(0x209FE1CB), const Color(0xFF0F6E56));
 
     // Dodecagon outline
     final outline = Path()..moveTo(verts.first.dx, verts.first.dy);
@@ -317,10 +309,7 @@ class Chapter4Painter extends CustomPainter {
       canvas.drawCircle(
         verts[i],
         isPrimary ? 3.5 : 2.5,
-        Paint()
-          ..color = isPrimary
-              ? Colors.white
-              : const Color(0xFF8C8C8C),
+        Paint()..color = isPrimary ? Colors.white : const Color(0xFF8C8C8C),
       );
     }
   }
@@ -369,11 +358,7 @@ class Chapter5Illustration extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: 4),
       child: Row(
         children: [
-          Container(
-            width: 24,
-            height: 3,
-            color: color,
-          ),
+          Container(width: 24, height: 3, color: color),
           const SizedBox(width: 10),
           SizedBox(
             width: 160,
@@ -453,16 +438,126 @@ class Chapter5Painter extends CustomPainter {
 }
 
 // ---------------------------------------------------------------------------
+// Tiling illustration: a patch of the 4.6.12 Archimedean tiling — a central
+// regular dodecagon ringed by six squares and six hexagons on alternating
+// edges. Each vertex carries 90° + 120° + 150° = 360°, so the ring closes
+// without gaps. Used by the "Archimedische Parkettierungen" prose chapter
+// via imageId 'math/parkettierung'. Construction per docs/research/park_b.md:
+// outward unit normal at an edge is the radial direction through its midpoint.
+// ---------------------------------------------------------------------------
+
+class ParkettierungIllustration extends StatelessWidget {
+  const ParkettierungIllustration({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Padding(
+      padding: EdgeInsets.symmetric(vertical: 12),
+      child: AspectRatio(
+        aspectRatio: 1.0,
+        child: CustomPaint(painter: ParkettierungPainter()),
+      ),
+    );
+  }
+}
+
+class ParkettierungPainter extends CustomPainter {
+  const ParkettierungPainter();
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final center = Offset(size.width / 2, size.height / 2);
+    final r = math.min(size.width, size.height) * 0.23;
+    final verts = List<Offset>.generate(12, (i) {
+      final a = (i * 30 - 90) * math.pi / 180;
+      return center + Offset(r * math.cos(a), r * math.sin(a));
+    });
+
+    final squareFill = Paint()..color = const Color(0x2085B7EB);
+    final squareStroke = Paint()
+      ..color = const Color(0xFF185FA5)
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = 1.5;
+    final hexFill = Paint()..color = const Color(0x20AFA9EC);
+    final hexStroke = Paint()
+      ..color = const Color(0xFF534AB7)
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = 1.5;
+
+    void drawPoly(List<Offset> p, Paint fill, Paint stroke) {
+      final path = Path()..moveTo(p[0].dx, p[0].dy);
+      for (var i = 1; i < p.length; i++) {
+        path.lineTo(p[i].dx, p[i].dy);
+      }
+      path.close();
+      canvas.drawPath(path, fill);
+      canvas.drawPath(path, stroke);
+    }
+
+    // Ring: squares on even edges, hexagons on odd edges (6 of each).
+    for (var k = 0; k < 12; k++) {
+      final a = verts[k];
+      final b = verts[(k + 1) % 12];
+      final s = (b - a).distance;
+      final mid = (a + b) / 2;
+      final radial = mid - center;
+      final u = radial / radial.distance; // outward unit normal
+      if (k.isEven) {
+        drawPoly([a, b, b + u * s, a + u * s], squareFill, squareStroke);
+      } else {
+        final hc = mid + u * (s * math.sqrt(3) / 2);
+        final th0 = math.atan2(a.dy - hc.dy, a.dx - hc.dx);
+        final th1 = math.atan2(b.dy - hc.dy, b.dx - hc.dx);
+        var diff = th1 - th0;
+        while (diff <= -math.pi) {
+          diff += 2 * math.pi;
+        }
+        while (diff > math.pi) {
+          diff -= 2 * math.pi;
+        }
+        final dir = diff > 0 ? 1.0 : -1.0;
+        final hex = List<Offset>.generate(6, (i) {
+          final th = th0 + dir * i * math.pi / 3;
+          return hc + Offset(s * math.cos(th), s * math.sin(th));
+        });
+        drawPoly(hex, hexFill, hexStroke);
+      }
+    }
+
+    // Central dodecagon: subtle fill + bright outline.
+    final dod = Path()..moveTo(verts[0].dx, verts[0].dy);
+    for (var i = 1; i < 12; i++) {
+      dod.lineTo(verts[i].dx, verts[i].dy);
+    }
+    dod.close();
+    canvas.drawPath(dod, Paint()..color = const Color(0x14D0D0D0));
+    canvas.drawPath(
+      dod,
+      Paint()
+        ..color = const Color(0xFFD0D0D0)
+        ..style = PaintingStyle.stroke
+        ..strokeWidth = 2.0,
+    );
+
+    // Vertex dots where the 4.6.12 configuration meets.
+    for (final v in verts) {
+      canvas.drawCircle(v, 2.5, Paint()..color = Colors.white);
+    }
+  }
+
+  @override
+  bool shouldRepaint(covariant ParkettierungPainter old) => false;
+}
+
+// ---------------------------------------------------------------------------
 // Chapter content. Each entry returns the body widgets for that chapter.
 // One-to-one port of src/info_content.rs::draw_info_chapter. The actual
 // switches live in info_content_<code>.dart files registered above; this
 // file holds only the dispatch table.
 // ---------------------------------------------------------------------------
 
-typedef _ChapterBuilder = List<Widget> Function(
-  int chapter,
-  AppLocalizations l,
-);
+typedef _ChapterBuilder =
+    List<Widget> Function(int chapter, AppLocalizations l);
 
 /// Per-locale chapter content table. Keyed by BCP-47 language tag
 /// (e.g. `de`, `zh`, `zh-Hant`) so script-tagged locales like
@@ -495,4 +590,3 @@ List<Widget> buildChapterContent(int chapter, BuildContext context) {
   final builder = _chapterBuilders[tag] ?? _chapterBuilders['de']!;
   return builder(chapter, AppLocalizations.of(context));
 }
-

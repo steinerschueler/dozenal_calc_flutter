@@ -1483,6 +1483,108 @@ List<ProseChapter> _mathChaptersDe() => const [
     imageId: 'math/dodekagon',
   ),
   ProseChapter(
+    'Archimedische Parkettierungen',
+    [
+      ProseSection(
+        'Das Zwölfeck füllt die Ebene nicht allein',
+        'Ein regelmäßiges Zwölfeck ist eine schöne, runde Figur — aber es kann '
+            'einen Boden nicht für sich allein lückenlos auslegen. Der Grund ist '
+            'sein Innenwinkel von 150 Grad. Um eine Ecke herum müssen sich die '
+            'anliegenden Figuren genau zu 360 Grad ergänzen, doch 360 geteilt '
+            'durch 150 ergibt zwei Komma vier — keine ganze Zahl. Zwei Zwölfecke '
+            'lassen an einer Ecke eine Lücke, drei überlappen sich.\n\n'
+            'Das Zwölfeck braucht also Partner. Setzt man die richtigen Figuren '
+            'dazwischen, entstehen lückenlose, hochregelmäßige Muster — '
+            'archimedische Parkettierungen. So heißen die Pflasterungen der Ebene, '
+            'die nur aus regelmäßigen Vielecken bestehen und an jeder Ecke gleich '
+            'aussehen. Es gibt im Ganzen nur elf solche Muster.',
+      ),
+      ProseSection(
+        'Zwei Muster mit Zwölfeck',
+        'Von diesen elf Mustern enthalten genau zwei ein regelmäßiges Zwölfeck. Im '
+            'ersten füllen kleine gleichseitige Dreiecke die Zwickel zwischen den '
+            'Zwölfecken — an jeder Ecke treffen ein Dreieck und zwei Zwölfecke '
+            'zusammen, und ihre Winkel ergeben 60 plus 150 plus 150, also genau '
+            '360 Grad.\n\n'
+            'Das zweite ist das reichere und in der Abbildung gezeigte: Um jedes '
+            'Zwölfeck legt sich ein Kranz aus abwechselnd Quadraten und Sechsecken. '
+            'An jeder Ecke treffen ein Quadrat, ein Sechseck und ein Zwölfeck '
+            'zusammen — 90 plus 120 plus 150 Grad, wieder genau 360. Weil die Summe '
+            'aufgeht, schließt der Kranz ohne jede Lücke, und das Muster setzt sich '
+            'in alle Richtungen fort.',
+      ),
+      ProseSection(
+        'Warum nur Drei, Vier, Sechs passen',
+        'Neben ein Zwölfeck passen nur drei Sorten von Nachbarn: Dreiecke, '
+            'Quadrate und Sechsecke. Das ist kein Zufall. Ihre Innenwinkel sind 60, '
+            '90 und 120 Grad — und das sind gerade 360 geteilt durch sechs, durch '
+            'vier und durch drei. Es treten also genau die Teiler drei, vier und '
+            'sechs der Zwölf auf.\n\n'
+            'Dieselben drei Teiler sind es, die in Basis Zwölf die Brüche ein '
+            'Drittel, ein Viertel und ein Sechstel glatt aufgehen lassen. Die '
+            'schöne Pflasterung und der bequeme Bruch entspringen derselben '
+            'Wurzel: der reichen Teilbarkeit der Zwölf. Das ist eine echte '
+            'Verwandtschaft, aber kein Zwang — die Winkel kommen aus der Geometrie, '
+            'die glatten Brüche aus der Schreibweise; beide hängen nur an '
+            'derselben Zahl.',
+      ),
+      ProseSection(
+        'Kepler, Moscheen und Kristalle',
+        'Vollständig aufgezählt hat diese Muster zuerst Johannes Kepler im Jahr '
+            '1619, in einem Werk über die Harmonie der Welt. Der Name '
+            '„archimedisch" ist dabei nur eine Anlehnung an die archimedischen '
+            'Körper; eine antike Schrift, in der Archimedes selbst Parkettierungen '
+            'behandelt hätte, ist nicht überliefert.\n\n'
+            'Lange vor Kepler aber lebte das Zwölfeck schon in der Kunst: '
+            'Zwölfzackige Sterne gehören zu den prächtigsten Motiven der '
+            'islamischen Ornamentik, mit Zirkel und Lineal aus reiner Geometrie '
+            'gebaut — früh etwa an der Moschee von Konya (1220). Und in der Natur '
+            'kehrt dieselbe zwölfzählige Ordnung in den Quasikristallen wieder, von '
+            'denen ein eigenes Kapitel erzählt. Das Zwölfeck, das allein keinen '
+            'Boden füllt, ist im Verbund eine der fruchtbarsten Formen der Fläche.',
+      ),
+    ],
+    sources: [
+      Source(
+        'Euclidean tilings by convex regular polygons — Wikipedia',
+        'https://en.wikipedia.org/wiki/Euclidean_tilings_by_convex_regular_polygons',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Truncated hexagonal tiling — Wikipedia',
+        'https://en.wikipedia.org/wiki/Truncated_hexagonal_tiling',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Truncated trihexagonal tiling — Wikipedia',
+        'https://en.wikipedia.org/wiki/Truncated_trihexagonal_tiling',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Archimedean Tilings and Egyptian Fractions (John Baez)',
+        'https://math.ucr.edu/home/baez/egyptian.html',
+        'R3',
+        'A1',
+      ),
+      Source(
+        'Islamic geometric patterns — Wikipedia',
+        'https://en.wikipedia.org/wiki/Islamic_geometric_patterns',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Harmonices Mundi — Wikipedia',
+        'https://en.wikipedia.org/wiki/Harmonices_Mundi',
+        'R2',
+        'A2',
+      ),
+    ],
+    imageId: 'math/parkettierung',
+  ),
+  ProseChapter(
     'Der Dodekaeder',
     [
       ProseSection(
