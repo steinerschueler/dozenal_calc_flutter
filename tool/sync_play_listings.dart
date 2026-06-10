@@ -1,4 +1,4 @@
-// Extracts Play Store listing content from `store/listing.<tag>.md` and
+// Extracts Play Store listing content from `store/play-store/listing.<tag>.md` and
 // the most recent `build<N>-release-notes.txt` at the repo root, and writes
 // the per-locale text files that Gradle Play Publisher consumes:
 //
@@ -7,7 +7,7 @@
 //   android/app/src/main/play/listings/<play-locale>/full-description.txt
 //   android/app/src/main/play/release-notes/<play-locale>/default.txt
 //
-// The play/ tree is gitignored — store/listing.*.md and the build-notes
+// The play/ tree is gitignored — store/play-store/listing.*.md and the build-notes
 // file are the only sources of truth. Run before `./gradlew publishListing`
 // or `./gradlew publishBundle`.
 //
@@ -35,13 +35,33 @@ const Map<String, String> _localeMap = {
   'ar': 'ar',
 };
 
-const String _listingDir = 'store';
+const String _listingDir = 'store/play-store';
 const String _playListingsDir = 'android/app/src/main/play/listings';
 const String _playReleaseNotesDir = 'android/app/src/main/play/release-notes';
+
+// Framed marketing screenshots live under store/screenshots/play/<key>/ where
+// <key> is the i18n.json/tool key (note: Simplified Chinese is "zh-Hans" here,
+// unlike the bare "zh" used for listing text). Mapped to Play Console graphics
+// locale dirs. Locales without a folder (fa/ga/cy) keep their Play screenshots.
+const String _screenshotSrcDir = 'store/screenshots/play';
+const Map<String, String> _screenshotLocaleMap = {
+  'de': 'de-DE',
+  'en': 'en-US',
+  'fr': 'fr-FR',
+  'es': 'es-ES',
+  'it': 'it-IT',
+  'ru': 'ru-RU',
+  'hi': 'hi-IN',
+  'ja': 'ja-JP',
+  'zh-Hans': 'zh-CN',
+  'zh-Hant': 'zh-TW',
+  'ar': 'ar',
+};
 
 void main() {
   _syncListings();
   _syncReleaseNotes();
+  _syncScreenshots();
 }
 
 void _syncListings() {
@@ -121,6 +141,33 @@ void _syncReleaseNotes() {
     stderr.writeln('WARN: no <locale>...</locale> blocks in ${notesFile.path}');
   }
   stdout.writeln('synced $n release-notes blocks');
+}
+
+void _syncScreenshots() {
+  var n = 0;
+  for (final entry in _screenshotLocaleMap.entries) {
+    final srcDir = Directory('$_screenshotSrcDir/${entry.key}');
+    if (!srcDir.existsSync()) {
+      stderr.writeln('WARN: missing screenshots ${srcDir.path}, skipping ${entry.key}');
+      continue;
+    }
+    final outDir =
+        Directory('$_playListingsDir/${entry.value}/graphics/phone-screenshots');
+    if (outDir.existsSync()) outDir.deleteSync(recursive: true);
+    outDir.createSync(recursive: true);
+    final pngs = srcDir
+        .listSync()
+        .whereType<File>()
+        .where((f) => f.path.endsWith('.png'))
+        .toList()
+      ..sort((a, b) => a.path.compareTo(b.path));
+    for (final f in pngs) {
+      f.copySync('${outDir.path}/${f.uri.pathSegments.last}');
+    }
+    stdout.writeln('shots   → ${entry.value.padRight(6)}  ${pngs.length} png');
+    n++;
+  }
+  stdout.writeln('synced $n screenshot locales');
 }
 
 int _buildNumber(String path) {
