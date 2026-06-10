@@ -739,4 +739,192 @@ List<ProseChapter> _mathChaptersDe() => const [
     ],
     imageId: 'math/dodekagon',
   ),
+  ProseChapter(
+    'Der Dodekaeder',
+    [
+      ProseSection(
+        'Zwölf Fünfecke im Raum',
+        'Der Dodekaeder (griechisch dōdeka = zwölf, hédra = Fläche) ist ein '
+            'Körper aus zwölf gleichen, regelmäßigen Fünfecken. Alle Flächen '
+            'sind identisch, alle Kanten gleich lang, und an jeder Ecke treffen '
+            'genau drei Fünfecke zusammen. Gezählt ergibt das zwölf Flächen, '
+            'dreißig Kanten und zwanzig Ecken.\n\n'
+            'Er ist einer der fünf platonischen Körper — der konvexen Körper, '
+            'deren Flächen ausschließlich aus gleichen, regelmäßigen Vielecken '
+            'bestehen und an deren Ecken überall gleich viele Flächen '
+            'zusammenstoßen. Die anderen vier sind der Tetraeder (vier '
+            'Dreiecke), der Würfel (sechs Quadrate), der Oktaeder (acht '
+            'Dreiecke) und der Ikosaeder (zwanzig Dreiecke). Unter diesen fünf '
+            'ist der Dodekaeder der einzige mit fünfeckigen Flächen.\n\n'
+            'Knapp beschrieben heißt der Dodekaeder {5, 3}: Fünfecke als '
+            'Flächen, drei davon an jeder Ecke. Der Winkel zwischen zwei '
+            'benachbarten Flächen beträgt etwa 116,57° (dezimal). Zum '
+            'Vergleich: beim Würfel sind es 90°.',
+      ),
+      ProseSection(
+        'Warum es genau fünf gibt',
+        'Dass es nur fünf solcher Körper geben kann — nicht mehr und nicht '
+            'weniger —, ist ein bewiesenes Ergebnis. Zwei Wege führen zu ihm, '
+            'und beide laufen auf dasselbe hinaus.\n\n'
+            'Der erste Weg ist eine schlichte Abzählung, der Eulersche '
+            'Polyedersatz: Für jeden konvexen Körper gilt Ecken minus Kanten '
+            'plus Flächen gleich zwei. Beim Dodekaeder: 20 − 30 + 12 = 2. '
+            'Leonhard Euler hielt diese Beziehung um 1750 fest; den ersten '
+            'lückenlosen Beweis lieferte Cauchy 1811. Die Formel gilt für jeden '
+            'löcherfreien konvexen Körper, für jede Pyramide, jedes Prisma. '
+            'Setzt man sie mit der Forderung zusammen, dass die Flächen gleiche '
+            'regelmäßige Vielecke sind, bleiben genau fünf Lösungen übrig.\n\n'
+            'Der zweite Weg ist anschaulicher und betrachtet eine einzelne '
+            'Ecke. Der Innenwinkel eines regelmäßigen Fünfecks ist 108°. '
+            'Treffen an einer Ecke drei Fünfecke zusammen, summieren sich ihre '
+            'Winkel zu 324°. Die fehlenden 36° bis zum vollen Kreis sind genau '
+            'die Lücke, die sich zum Raum hin faltet — so entsteht eine Ecke '
+            'des Dodekaeders. Vier Fünfecke ergäben schon 432° und passten '
+            'nicht mehr in eine Ecke. Darum sind drei Fünfecke die einzige '
+            'Möglichkeit, und der Dodekaeder der einzige Körper mit fünfeckigen '
+            'Flächen.',
+      ),
+      ProseSection(
+        'Der Goldene Schnitt im Fünfeck und im Körper',
+        'Jede Fläche des Dodekaeders ist ein regelmäßiges Fünfeck — und das '
+            'Fünfeck ist der einfachste ebene Ort, an dem der Goldene Schnitt '
+            'φ = (1+√5)/2 ≈ 1,618 als Streckenverhältnis auftritt. Die '
+            'Diagonale eines regelmäßigen Fünfecks ist genau φ-mal so lang wie '
+            'seine Seite. Wer im Rechner φ² = tippt, erhält φ+1 — das ist die '
+            'definierende Gleichung des Goldenen Schnitts.\n\n'
+            'Weil jede Fläche dieses Verhältnis trägt, durchzieht φ den ganzen '
+            'Körper. Legt man den Dodekaeder in ein Koordinatensystem, '
+            'erscheint φ buchstäblich in den Zahlen seiner zwanzig Ecken. Acht '
+            'dieser Ecken bilden für sich einen Würfel; insgesamt lassen sich '
+            'fünf verschiedene Würfel in den Dodekaeder einschreiben. Andere '
+            'Eckpunkte spannen drei goldene Rechtecke auf — Rechtecke mit dem '
+            'Seitenverhältnis φ zu eins —, die paarweise senkrecht aufeinander '
+            'stehen.\n\n'
+            'φ erscheint hier nicht aus Zauberei, sondern aus Notwendigkeit: '
+            'Wo regelmäßige Fünfecke sind, ist φ. Die weitergehenden Deutungen '
+            'des Goldenen Schnitts als „göttliche Proportion" sind menschliche '
+            'Zuschreibungen, keine Eigenschaft der Geometrie selbst.',
+      ),
+      ProseSection(
+        'Dualität und die reichste Symmetrie',
+        'Zu jedem platonischen Körper gibt es einen dualen Körper: Man setzt '
+            'in die Mitte jeder Fläche eine neue Ecke und verbindet die Ecken '
+            'benachbarter Flächen. Beim Dodekaeder entsteht so das Ikosaeder — '
+            'und umgekehrt. Dabei tauschen Flächen und Ecken die Plätze: Der '
+            'Dodekaeder hat 12 Flächen und 20 Ecken, der Ikosaeder 20 Flächen '
+            'und 12 Ecken. Die Kantenzahl 30 bleibt bei beiden gleich. Die '
+            'Zwölf taucht in beiden auf — einmal als Flächenzahl, einmal als '
+            'Eckenzahl.\n\n'
+            'Weil beide dieselbe Bauart teilen, haben sie auch dieselbe '
+            'Symmetrie — und es ist die reichste unter allen platonischen '
+            'Körpern: 120 Symmetrien, also 60 Drehungen und 60 '
+            'Dreh-Spiegelungen. Der Würfel hat nur 48, der Tetraeder 24. Die '
+            '60 Drehungen verteilen sich auf sechs fünfzählige Achsen durch '
+            'gegenüberliegende Flächenmitten, zehn dreizählige durch '
+            'gegenüberliegende Ecken und fünfzehn zweizählige durch '
+            'gegenüberliegende Kantenmitten.\n\n'
+            'Die Zahl 120 lässt sich als 5! schreiben (5 × 4 × 3 × 2 × 1) und '
+            'in die Primfaktoren 2, 3 und 5 zerlegen — dieselben drei Zahlen, '
+            'die in den Achsen und in der fünfeckigen Flächenform '
+            'wiederkehren. Diese fünfzähligen Achsen sind zugleich der Grund, '
+            'warum kein gewöhnlicher Kristall ein echtes Dodekaeder bilden '
+            'kann: Ein periodisches Gitter verträgt keine Fünf-Symmetrie '
+            '(siehe das Kapitel über Pyrit).',
+      ),
+      ProseSection(
+        'Die Euler-Zwölf: warum immer zwölf Fünfecke',
+        'Ein letztes Ergebnis verbindet den Dodekaeder mit Dingen, die zunächst '
+            'nichts mit ihm zu tun zu haben scheinen. Die Frage lautet: Kann '
+            'man eine geschlossene, kugelartige Hülle allein aus regelmäßigen '
+            'Sechsecken bauen? Die Antwort ist nein. Reine Sechsecke ergeben '
+            'eine flache Fläche; um sie zur Kugel zu krümmen, müssen genau '
+            'zwölf Fünfecke eingebaut werden — gleichgültig, wie viele '
+            'Sechsecke man sonst verwendet.\n\n'
+            'Das folgt wieder aus dem Eulerschen Satz. Mit null Sechsecken '
+            'entsteht das reguläre Dodekaeder. Mit zwölf Fünfecken und zwanzig '
+            'Sechsecken entsteht der klassische Fußball — und genau hier liegt '
+            'ein häufiger Irrtum: Der Fußball ist kein Dodekaeder. Er ist ein '
+            'abgestumpftes Ikosaeder mit 32 Flächen, also zwölf Fünfecken plus '
+            'zwanzig Sechsecken. Beide teilen nur die zwölf Fünfecke; der '
+            'Dodekaeder hat aber gar keine Sechsecke.\n\n'
+            'Das reguläre Dodekaeder ist damit der reinste Fall dieser '
+            'Zwölfheit: zwölf Fünfecke und sonst nichts.',
+      ),
+      ProseSection(
+        'Würfel, Zwölfeck und Pyritoeder — was er nicht ist',
+        'In Rollenspielen ist der Dodekaeder als D12 bekannt, der '
+            'zwölfseitige Würfel. Weil er von allen fünf Körpern der Kugel am '
+            'nächsten kommt, rollt er angenehm und kommt zuverlässig auf einer '
+            'Fläche zur Ruhe; seine zwölf gleichen Flächen machen ihn fair.\n\n'
+            'Drei Verwechslungen lohnen die Klarstellung. Erstens: Das '
+            'Dodekagon ist nicht der Dodekaeder. Beide Wörter tragen „dodeka-" '
+            '(zwölf), doch das Dodekagon ist ein flaches Zwölfeck mit zwölf '
+            'Seiten, der Dodekaeder ein räumlicher Körper mit zwölf Flächen. '
+            'Zweitens: Der Pyritoeder des Minerals Pyrit hat ebenfalls zwölf '
+            'fünfeckige Flächen, ist aber kein regelmäßiger Dodekaeder — seine '
+            'Fünfecke sind verzogen, und er hat keine echte fünfzählige '
+            'Symmetrie (ausführlich im Kapitel über Pyrit). Drittens schließlich '
+            'ordnete Platon den Dodekaeder dem Kosmos als Ganzem zu; das ist '
+            'eine alte philosophische Deutung, kein mathematisches Ergebnis. '
+            'Die Geometrie des Körpers steht für sich, ganz unabhängig davon, '
+            'welche Bedeutung Menschen ihr gegeben haben.',
+      ),
+    ],
+    sources: [
+      Source(
+        'Regular dodecahedron — Wikipedia',
+        'https://en.wikipedia.org/wiki/Regular_dodecahedron',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Dodekaeder — Wikipedia (de)',
+        'https://de.wikipedia.org/wiki/Dodekaeder',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Platonic solid — Wikipedia',
+        'https://en.wikipedia.org/wiki/Platonic_solid',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Eulers Polyederformel — Plus Maths (Cambridge)',
+        'https://plus.maths.org/content/eulers-polyhedron-formula',
+        'R1',
+        'A1',
+      ),
+      Source(
+        'Platonic Solids: Why Five? — MathsIsFun',
+        'https://www.mathsisfun.com/geometry/platonic-solids-why-five.html',
+        'R1',
+        'A1',
+      ),
+      Source(
+        'Golden ratio — Wikipedia',
+        'https://en.wikipedia.org/wiki/Golden_ratio',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Phi in 3D Geometry (Ron Knott) — University of Surrey',
+        'https://r-knott.surrey.ac.uk/Fibonacci/phi3DGeom.html',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Icosahedral symmetry — Wikipedia',
+        'https://en.wikipedia.org/wiki/Icosahedral_symmetry',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Truncated icosahedron — Wikipedia',
+        'https://en.wikipedia.org/wiki/Truncated_icosahedron',
+        'R2',
+        'A1',
+      ),
+    ],
+  ),
 ];
