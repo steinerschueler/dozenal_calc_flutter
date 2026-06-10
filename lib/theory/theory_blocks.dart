@@ -46,32 +46,50 @@ class TheoryBlock {
   const TheoryBlock(this.title, this.chapters, {this.inProgress = false});
 }
 
-/// The theory blocks shown under the "Theorie" expansion, in display order.
+/// The theory blocks shown under the "Theorie" expansion, in display order:
+/// Grundlagen, Zwölf und die Welt, Dozenale Mathematik, Dozenale Gesellschaft.
 ///
-/// "Zwölf und die Welt" keeps the existing teaching chapters (Dozenalsystem,
-/// Fibonacci, Zwölfeck, Dodekaeder, Tierkreis, Zwölf Glieder an der Hand) and
-/// replaces the old collective chapter 10 ("Zwölf Flächen in Kristallen und
-/// Lebewesen", idx 9) with the detailed nature chapters. Excluded from the
-/// blocks: chapter 1 (Bedienung, idx 0 → standalone entry) and chapter 12
-/// (Zoll/Fuss/Pfund, idx 11 → covered by the Einheitentheorie).
+/// The legacy teaching chapters are sorted by genre (see
+/// docs/research/README.md — the single source of truth for the taxonomy):
+///   - Grundlagen: Dozenalsystem (idx 1) + Zwölf Glieder an der Hand (idx 10).
+///   - Welt: the nature/culture prose chapters + Tierkreis (idx 8).
+///   - Mathematik: Fibonacci (idx 2), Zwölfeck (idx 3-5), Dodekaeder (idx 6-7)
+///     + the existing math prose chapters.
+/// The old collective chapter 10 ("Zwölf Flächen…", idx 9) is replaced by the
+/// nature chapters. Excluded from the blocks: Bedienung (idx 0 → standalone
+/// app-help entry, deliberately not theory) and chapter 12 (Zoll/Fuss/Pfund,
+/// idx 11 → covered by the Einheitentheorie).
 List<TheoryBlock> theoryBlocks(AppLocalizations l, String langTag) {
   final titles = infoTitles(l);
   final world = worldChapters(langTag);
   final math = mathChapters(langTag);
   final society = societyChapters(langTag);
-  final welt = <TheoryChapterRef>[
-    for (final i in const [1, 2, 3, 4, 5, 6, 7, 8])
-      TheoryChapterRef.legacy(titles[i], i),
-    for (final (i, c) in world.indexed)
-      TheoryChapterRef.prose(c.title, c.sections, c.sources, 'world/$i'),
+
+  // Grundlagen (Einstieg). Bedienung (idx 0) bleibt bewusst draussen.
+  final grundlagen = <TheoryChapterRef>[
+    TheoryChapterRef.legacy(titles[1], 1),
     TheoryChapterRef.legacy(titles[10], 10),
   ];
+
+  // Zwölf und die Welt: Natur/Kultur-Prosa, dann Tierkreis (Legacy).
+  final welt = <TheoryChapterRef>[
+    for (final (i, c) in world.indexed)
+      TheoryChapterRef.prose(c.title, c.sections, c.sources, 'world/$i'),
+    TheoryChapterRef.legacy(titles[8], 8),
+  ];
+
+  // Dozenale Mathematik: Geometrie/Zahlen-Legacy + bestehende Math-Prosa.
+  final mathematik = <TheoryChapterRef>[
+    for (final i in const [2, 3, 4, 5, 6, 7])
+      TheoryChapterRef.legacy(titles[i], i),
+    for (final (i, c) in math.indexed)
+      TheoryChapterRef.prose(c.title, c.sections, c.sources, 'math/$i'),
+  ];
+
   return [
+    TheoryBlock(l.theoryBlockGrundlagen, grundlagen),
     TheoryBlock(l.theoryBlockWelt, welt),
-    TheoryBlock(l.theoryBlockMath, [
-      for (final (i, c) in math.indexed)
-        TheoryChapterRef.prose(c.title, c.sections, c.sources, 'math/$i'),
-    ]),
+    TheoryBlock(l.theoryBlockMath, mathematik),
     TheoryBlock(l.theoryBlockSociety, [
       for (final (i, c) in society.indexed)
         TheoryChapterRef.prose(c.title, c.sections, c.sources, 'society/$i'),
