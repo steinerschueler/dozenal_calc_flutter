@@ -109,6 +109,343 @@ List<ProseChapter> _mathChaptersGa() => const [
     ],
   ),
   ProseChapter(
+    'Uimhreacha Timthriallach',
+    [
+      ProseSection(
+        'An seachtú agus a ghaolta',
+        'Ní thagann seachtú amach go glan i mBonn a Dó Dhéag, ach athraítear é: '
+            'seachtú = 0,186A35, ansin 186A35 arís, gan stad. (Seasann A do Dheich, '
+            'B d\'Aon Déag.) Is í an ghrúpa a athraítear an tréimhse; tá sí sé dhigit '
+            'ar fhad anseo.\n\n'
+            'Feictear an rud iontach nuair a leagtar na seachtaí eile taobh le taobh. '
+            'Dhá sheachtú = 0,35186A, trí sheachtú = 0,5186A3, ceithre sheachtú = '
+            '0,6A3518, cúig sheachtú = 0,86A351, sé sheachtú = 0,A35186. Na sé dhigit '
+            'céanna sa tseicheamh céanna gach uair — ach tosaíonn an tsraith ag pointe '
+            'difriúil. Is féidir iad a shamhlú ar fháinne, an fáinne á chasadh '
+            'beagáinín ar gach codán.',
+      ),
+      ProseSection(
+        'Nuair a rothaíonn na hiolruithe',
+        'Tá an rothlú céanna i dtábla iolraithe na tréimhse í féin. Más glactar le '
+            'seicheamh na ndigití 186A35 mar shlánuimhir agus iolraítear de réir a '
+            'chéile í, ní thagann amach ach rothluithe: 186A35 × 2 = 35186A, × 3 = '
+            '5186A3, × 4 = 6A3518, × 5 = 86A351, × 6 = A35186. Tugtar uimhir '
+            'thimthriallach ar uimhir a bhfuil an t-airíonna seo aici.\n\n'
+            'Dúnann an seachtú céim an ciorcal: 186A35 × 7 = BBBBBB. Aon Déag amháin '
+            'ar fad — an digit is airde i mBonn a Dó Dhéag, sé huaire as a chéile. '
+            'Ní coinchidéans é sin: is ionann BBBBBB agus an ionad cruinn eile lúide '
+            'a haon. I mBonn a Deich aithníonn daoine an cleas céanna ón uimhir '
+            'cháiliúil 142857 (tréimhse seachtú i gcóras an Deich): tugann na '
+            'hiolruithe rothluithe ann freisin, agus 142857 × 7 = 999999. '
+            'Na digití difriúil, an struchtúr mar a chéile.',
+      ),
+      ProseSection(
+        'Cén fáth go díreach sé shuíomh',
+        'Go bhfuil an tréimhse go díreach sé shuíomh ar fhad — agus níos lú — tá '
+            'cúis shoiléir leis. Le linn roinnt scríofa fanann fuíoll tar éis gach '
+            'céime, agus críochnaíonn an tréimhse chomh luath is a athraítear fuíoll. '
+            'I gcás seachtú tagann na sé fhuíoll féideartha 1 go 6 go léir chun cinn '
+            'as a chéile sula n-athraítear an chéad cheann. Níl níos mó ná sé '
+            'fhuíoll éagsúla ag an tSeacht, mar sin is é sé an fad is faide '
+            'is féidir.\n\n'
+            'Tugtar uimhir lán-tréimhsiúil ar phríomhuimhir a shroicheann an '
+            'tréimhse is faide féideartha seo lena cuid comhléimneach. Is iad sin '
+            'amháin a ritheann trí gach rothlú, agus is iad amháin a chruthaíonn '
+            'uimhir thimthriallach. Cé acu príomhuimhreacha atá lán-tréimhsiúil '
+            'braitheann ar conas a iompar cumhachtaí an bhoinn — anseo a Dó Dhéag — '
+            'agus iad á roinnt ar an bpríomhuimhir.',
+      ),
+      ProseSection(
+        'An comhlánú go dtí an digit is airde',
+        'Iompaíonn an tréimhse 186A35 patrún dara freisin. Má roinntear í ina lár '
+            'agus suimítear na dhá leath, tagann 186 + A35 = BBB amach — Aon Déag '
+            'arís, trí cinn an iarraidh seo. Comhlánaíonn an dá leath a chéile '
+            'go dtí an digit is airde.\n\n'
+            'Is tairiscint ghinearálta é sin (de réir Étienne Midy, 1836) agus '
+            'bailíonn sé i ngach bonn: i mBonn a Deich is é 142 + 857 = 999. '
+            'Léiríonn an éifeacht nach ábhar nua an dara leath den tréimhse, '
+            'ach scáthán na chéad leath.',
+      ),
+      ProseSection(
+        'Ní ghlacann gach príomhuimhir páirt',
+        'Is eisceacht í an rothlú álainn, ní riail. I mBonn a Dó Dhéag ní '
+            'thaispeánann aon chuid déag ach an tréimhse 0,1 — aon a haon amháin '
+            'ag athrá, toisc go bhfuil a Dó Dhéag aon thar Aon Déag (an malairt '
+            'ar naontú = 0,1 i gcóras an Deich). Tugann tríú cuid déag 0,0B '
+            'leis an tréimhse ghearr 0B. Ní chruthaíonn príomhuimhreacha den sórt '
+            'sin uimhir thimthriallach.\n\n'
+            'I measc na bpríomhuimhreacha beaga is iad 5, 7, 17, 31, 41 agus '
+            '43 (comhairte go deachúlach) na huimhreacha lán-tréimhsiúla i mBonn '
+            'a Dó Dhéag — iad go léir, is suntasach sin, le críochdigit 5 nó 7 i '
+            'mBonn a Dó Dhéag. Is riachtanas ach ní dóthain sin: críochnaíonn '
+            'naoi déag ar 7 freisin, ach níl ach tréimhse sé shuíomh aige. '
+            'Imríonn an t-athrú boinn ról freisin: tá an Cúig lán-tréimhsiúil '
+            'i mBonn a Dó Dhéag (cúigiú = 0,2497, tréimhse 2497), agus sa '
+            'Deich tagann cúigiú amach go glan. Mar sin baineann na príomhuimhreacha '
+            'a ghlacann páirt leis an mbeirte bonn agus príomhuimhir, ní leis an '
+            'bpríomhuimhir amháin.',
+      ),
+      ProseSection(
+        'Cé mhéad a bhfuil ann — ceist oscailte',
+        'D\'fhéadfaí ceapadh go mbeadh airíonna chomh soiléir sin comhairte le '
+            'fada. Níl. Cé mhéad uimhir lán-tréimhsiúil atá ann i mBonn a Dó Dhéag '
+            '— cé acu an bhfuil a líon éigríochta — níl sé cruthaithe go dtí seo.\n\n'
+            'Tuar ó Emil Artin ón mbliain 1927 deir go bhfuil thart ar '
+            'tríocha is seacht as céad príomhuimhreacha lán-tréimhsiúil, i mBonn '
+            'a Dó Dhéag chomh maith le haon bhonn oiriúnach eile. Oireann an '
+            'breathnóireacht ar uimhreacha beaga don mhéid seo. Ach is tuar é '
+            'an tuar: d\'ainneoin dua mhór ní cruthaithe é d\'aon bhonn amháin. '
+            'Baineann sé seo leis an gcur i láthair macánta — patrún simplí ar '
+            'chosúlacht, ach fadhb oscailte ina bhun go dtí an lá inniu.',
+      ),
+      ProseSection(
+        'A thriail san áireamhán',
+        'Is féidir é seo go léir a sheiceáil anseo. Nuair a chlóscríobhtar '
+            'seachtú agus Comhionann, taispeánann an scáileán 0, le stríoc os '
+            'cionn 186A35 — sé shuíomh na tréimhse. Le dhá sheachtú feictear an '
+            'tsraith chéanna mar 35186A, rothlaithe; ní slánadh é sin, ach an '
+            'patrún céanna go díreach. Taispeánann cúigiú an stríoc os cionn 2497, '
+            'aon chuid déag os cionn an aon digit 1.\n\n'
+            'Déanann samplaí níos mó na teorainneacha soiléir: tá tréimhse tríocha '
+            'shuíomh ar codán le hainmneoir aon is tríocha (deachúlach) — giorrann '
+            'an taispeáint le trí phointe, toisc nach oireann an méid go léir ar '
+            'líne amháin. Conas a dhéanann an t-áireamhán amach codáin bheachta agus '
+            'a dtréimhsí, tá sin sa chaibidil "Conas a ríomhann an t-áireamhán seo".',
+      ),
+    ],
+    sources: [
+      Source(
+        'Cyclic number — Wikipedia',
+        'https://en.wikipedia.org/wiki/Cyclic_number',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Full reptend prime — Wikipedia',
+        'https://en.wikipedia.org/wiki/Full_reptend_prime',
+        'R2',
+        'A1',
+      ),
+      Source(
+        '142857 — Wikipedia',
+        'https://en.wikipedia.org/wiki/142857',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Midy’s theorem — Wikipedia',
+        'https://en.wikipedia.org/wiki/Midy%27s_theorem',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Multiplicative order — Wikipedia',
+        'https://en.wikipedia.org/wiki/Multiplicative_order',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Artin’s conjecture on primitive roots — Wikipedia',
+        'https://en.wikipedia.org/wiki/Artin%27s_conjecture_on_primitive_roots',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Orders of Units in Modular Arithmetic (Keith Conrad, UConn)',
+        'https://kconrad.math.uconn.edu/blurbs/ugradnumthy/ordersmodm.pdf',
+        'R1',
+        'A2',
+      ),
+      Source(
+        'OEIS A019340 — Primes with primitive root 12',
+        'https://oeis.org/A019340',
+        'R2',
+        'A2',
+      ),
+    ],
+  ),
+  ProseChapter(
+    'Inroinnteacht agus Tástáil an Aon Déag',
+    [
+      ProseSection(
+        'Nochtann an digit deiridh mórán',
+        'I mBonn a Dó Dhéag níl sa digit deiridh d\'uimhir ach a fuíoll á roinnt '
+            'ar a dó dhéag. Mar sin feictear láithreach ón gcríochdigit an bhfuil '
+            'uimhir inroinnte ar roinnteoirí an Dó Dhéag. Ciallaíonn críochdigití '
+            'cothroim (0, 2, 4, 6, 8, A) inroinnteacht ar a dó. Más é an críochdigit '
+            '0, 3, 6 nó 9, tá sé inroinnte ar a trí; ar 0, 4 nó 8, ar a ceathair; '
+            'ar 0 nó 6, ar a sé; ar 0 amháin, ar a dó dhéag. '
+            '(Seasann A anseo do dheich.)\n\n'
+            'Is buntáiste láidir é sin don Dó Dhéag. I gcóras an Deich ní '
+            'nochtann an críochdigit ach inroinnteacht ar a dó, a cúig agus a deich '
+            '— le haghaidh a trí, a ceathair nó a sé caithfear ríomh. Leagann an '
+            'Dó Dhéag na roinnteoirí beaga coitianta nochta go díreach.',
+      ),
+      ProseSection(
+        'Tástáil an Aon Déag: comhairíonn an tsuim-dhigití',
+        'Ní cabhraíonn an críochdigit don Aon Déag (B), ach tá greim chomh '
+            'héasca céanna: an tsuim-dhigití, is é sin suim na ndigití go léir. '
+            'I mBonn a Dó Dhéag tá uimhir inroinnte ar aon déag go díreach nuair '
+            'is inroinnte a suim-dhigití ar aon déag. Tá an chúis álainn: fágann '
+            'a Dó Dhéag fuíoll a haon agus é á roinnt ar aon déag, agus mar an '
+            'gcéanna gach ionad níos airde — mar sin is cuma ach cad a thugann '
+            'na digití le chéile.\n\n'
+            'Sin comhpháirt chruinn na tástála aitheanta ar a naoi i gcóras an '
+            'Deich, inar seiceálann an tsuim-dhigití an Naoi. I mBonn a Dó Dhéag '
+            'seiceálann sí Aon Déag — agus sin an fáth ar tugadh Tástáil an Aon '
+            'Déag uirthi. Sampla: tá an tsuim-dhigití ag 4B7 ná 4 + B + 7, sin '
+            'ceathair déag móide ocht, is é sin dhá is fiche — agus dhá oiread '
+            'aon déag é dhá is fiche, mar sin tá 4B7 inroinnte ar aon déag. '
+            'Mar an tástáil ar a naoi, feidhmíonn Tástáil an Aon Déag mar '
+            'sheiceáil ríomha thapa: mura n-éiríonn leis an tástáil, tá earráid '
+            'sa toradh.',
+      ),
+      ProseSection(
+        'An tríú déag ag an tsuim-dhigití mhalartach',
+        'Glacann tástáil eile leis an tríú déag. Comhairíonn na digití '
+            'malartach móide agus lúide, ag tosú ar dheis — an tsuim-dhigití '
+            'mhalartach. Más inroinnte é sin ar tríú déag, tá an uimhir féin '
+            'inroinnte. Is scáthán é sin ar thástáil an Aon Déag: luíonn a Dó '
+            'Dhéag aon faoi bhun an tríú déag, mar sin athraíonn na hionaid '
+            'comhartha agus iad á roinnt ar an tríú déag.\n\n'
+            'Seans go meabhraítear d\'daoine atá cleachta le córas an Deich: ann '
+            'sin is ionann "Tástáil an Aon Déag" agus an leagan malartach, toisc '
+            'go bhfuil an Aon Déag aon os cionn a deich. I mBonn a Dó Dhéag '
+            'tá na róil iompaithe — is leis an Aon Déag an tsuim-dhigití shimplí, '
+            'agus leis an tríú déag an ceann malartach. (Scríobhtar an tríú déag '
+            'féin i mBonn a Dó Dhéag mar 11, dosaen amháin agus aon amháin; is '
+            'é a luach i gcónaí atá i gceist.)',
+      ),
+      ProseSection(
+        'Cá mbíonn an Dó Dhéag i gcruachás',
+        'Ní ganntanas saor in aisce aon bhuntáiste. Ní roinneann an Cúig ná '
+            'an tSeacht aon fhachtóir leis an Dó Dhéag agus ní oireann siad don '
+            'Aon Déag ná don tríú déag ach an oiread — níl riail áisiúil '
+            'críochdigite nó suim-dhigití ann dóibh i mBonn a Dó Dhéag. Go '
+            'díreach an Cúig, ar a bhfuil an tástáil is simplí i gcóras an Deich '
+            '(críochdigit náid nó cúig), éiríonn achrannach anseo.\n\n'
+            'Sin an malartú macánta: bronann an Dó Dhéag orainn na tástálacha '
+            'éasca le haghaidh a trí, a ceathair agus a sé agus baineann uainn '
+            'tástáil éasca an Cúig. Cé acu taobh is troime braitheann ar cé na '
+            'roinnteoirí is minice a theastaíonn sa ghnáthshaol — agus is gnách '
+            'gurb iad sin na cinn bheaga.',
+      ),
+    ],
+    sources: [
+      Source(
+        'Divisibility rule — Wikipedia',
+        'https://en.wikipedia.org/wiki/Divisibility_rule',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Duodecimal — Wikipedia',
+        'https://en.wikipedia.org/wiki/Duodecimal',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Casting out nines — Wikipedia',
+        'https://en.wikipedia.org/wiki/Casting_out_nines',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Modular arithmetic — Wikipedia',
+        'https://en.wikipedia.org/wiki/Modular_arithmetic',
+        'R2',
+        'A2',
+      ),
+    ],
+  ),
+  ProseChapter(
+    'Cleasanna sa Tábla Iolraithe',
+    [
+      ProseSection(
+        'Sraitheanna le heireaball gearr',
+        'Tá dhá shraith déag i dtábla iolraithe an Dó Dhéag, agus foghlaimítear '
+            'cuid acu beagnach leo féin — is iad sin sraitheanna na roinnteoirí. '
+            'Críochnaíonn a n-iolruithe ar phatrúin ghearr a athraítear. '
+            'Críochnaíonn an tsraith sé malartach ar 6 agus 0 (6, 10, 16, 20, '
+            '26, 30 …). Ritheann an tsraith ceathair mar 4, 8, 0, 4, 8, 0; '
+            'ritheann an tsraith trí mar 3, 6, 9, 0 agus ar ais; fanann an '
+            'tsraith dhó i gcónaí cothrom.\n\n'
+            'Tá dhá bheart go háirithe áisiúil. Is ionann iolrú le Dó Dhéag '
+            'agus náid a chur leis: is é seacht uair a dó dhéag 70. Agus is '
+            'leath na sraithe Dó Dhéag an tsraith sé — críochnaíonn sé uair '
+            'uimhir chothrom ar 0, sé uair uimhir neamhchothrom ar 6.',
+      ),
+      ProseSection(
+        'Sraith an Aon Déag mar scáthán',
+        'Is le sraith an Aon Déag (B) an patrún is gleoite: B, 1A, 29, 38, 47, '
+            '56, 65, 74, 83, 92, A1, B0. Tá dhá phatrún inti. Dreapann an digit '
+            'tosaigh céim ar chéim in airde — 0, 1, 2, 3 agus mar sin de —, '
+            'agus ag an gcomhchéim titim siar an ceann deiridh. Agus i ngach '
+            'toradh suimíonn an dá dhigit go dtí aon déag: a haon agus a deich, '
+            'a dhó agus a naoi, a trí agus a hocht.\n\n'
+            'Sin go díreach scáthán shraith na naoi ó chóras an Deich, inar '
+            'gcomhlánaíonn na digití go naoi. As sin leanas cleas áisiúil: '
+            'in ionad iolrú le haon déag, glactar le dó dhéag agus déantar '
+            'an uimhir a bhaint uair amháin. Mar sin is é aon déag uair a seacht '
+            'seachtó lúide seacht, sin 65 i mBonn a Dó Dhéag — agus go deimhin '
+            'tá 65 sa tábla ar aon déag uair a seacht.',
+      ),
+      ProseSection(
+        'Na sraitheanna stuacánta: Cúig agus Seacht',
+        'Níl gach sraith chomh caoithiúil sin. Ní roinneann an Cúig ná an '
+            'tSeacht aon fhachtóir leis an Dó Dhéag, agus ritheann a sraitheanna '
+            'mar sin trí na dhá chríochdigit déag go léir sula n-athraíonn '
+            'aon rud — gan timthriall gearr a chuideodh le foghlaim. '
+            'Críochnaíonn sraith na cúig as a chéile ar 5, A, 3, 8, 1, 6, B, '
+            '4, 9, 2, 7, 0; tá an tSeacht cosúil le preabadh.\n\n'
+            'Filleann seanchiathairim annseo: go díreach sraitheanna a haon, '
+            'a cúig, a seacht agus Aon Déag ritheann na críochdigití go léir '
+            'go hiomlán — an ceathairréad céanna a ghineann an timthriall iomlán '
+            'ar chloc na n-uaireanta agus a chríochnaíonn ar phríomhuimhreacha. '
+            'Agus go díreach dá bharr tá tréimhsí fada, iomlána ag cúigiú agus '
+            'seachtú ón gcaibidil ar uimhreacha timthriallach. I gcóras an Deich '
+            'is í sraith na seacht an cheann is achrannach go hiomráiteach; '
+            'i mBonn a Dó Dhéag is iad an Cúig agus an tSeacht le chéile.',
+      ),
+      ProseSection(
+        'Cearnóga agus an Grós',
+        'Ag dul ar aghaidh ar fiar ó uachtar ar chlé go bun ar dheis, tá na '
+            'huimhreacha cearnógacha ann: 1, 4, 9, 14, 21, 30, 41, 54, 69, 84, '
+            'A1 — agus ar deireadh 100. Is ionann an ceann deireanach agus a dó '
+            'dhéag uair a dó dhéag, sin céad is daichead a ceathair, a scríobhtar '
+            'go néata mar "100" i mBonn a Dó Dhéag agus a thugtar an Grós air le '
+            'fada. Scríobhann an Dó Dhéag a huimhir chearnóige féin chomh cruinn '
+            'leis an gcéad i gcóras an Deich.\n\n'
+            'Titeann dúbailt agus leathú go héasca freisin i mBonn a Dó Dhéag, '
+            'toisc go bhfuil a dó dhéag cothrom agus inroinnte ar a ceathair: '
+            'is é leath 10 ná 6, leath 6 ná 3, leath 3 ná 1,6. Ar an gcaoi sin '
+            'is féidir mórán a bhriseadh i gceann ina gcéimeanna beaga, glanmhara '
+            'sa cheann — sin an fáth fíor inar aimsíonn cairde an Dó Dhéag '
+            'an ríomh léi taitneamhach.',
+      ),
+    ],
+    sources: [
+      Source(
+        'Duodecimal — Wikipedia',
+        'https://en.wikipedia.org/wiki/Duodecimal',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Multiplication table — Wikipedia',
+        'https://en.wikipedia.org/wiki/Multiplication_table',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Multiplicative group of integers modulo n — Wikipedia',
+        'https://en.wikipedia.org/wiki/Multiplicative_group_of_integers_modulo_n',
+        'R2',
+        'A2',
+      ),
+    ],
+  ),
+  ProseChapter(
     'Na boinn uimhreacha i gcomparáid',
     [
       ProseSection(
@@ -553,6 +890,462 @@ List<ProseChapter> _mathChaptersGa() => const [
     ],
   ),
   ProseChapter(
+    'An Clog mar Ghrúpa (ℤ/12ℤ)',
+    [
+      ProseSection(
+        'Ríomh mar a dhéanann an aghaidh cloig',
+        'Ar an gclog ní thugann a haon déag a chlog móide dhá uair an chloig '
+            'trí déag, ach a haon a chlog. Ríomhtar go gnách agus glactar ar '
+            'deireadh leis an bhfuíoll á roinnt ar a dó dhéag. Íomhánach, '
+            'caitear an líne uimhreacha gan teorainn ar chiorcal le dhá mharc '
+            'dhéag; tuirlingíonn gach uimhir ar cheann amháin de na marcanna '
+            '0 go 11.\n\n'
+            'Cruthaíonn na dhá mharc dhéag seo lena suimíocht uaireanta '
+            'córas ríomha beag néata. Fanann sé dúnta i gcónaí (tá gach suim '
+            'ina marc den dó dhéag arís), tá an náid ann mar "ní athraíonn '
+            'aon rud", agus tá cosán ar ais do gach céim: cuireann cúig ar '
+            'aghaidh seacht ar ais ina chothromaíocht, mar is ionann 5 + 7 = '
+            '12 = 0. Tugtar grúpa ar chóras ríomha leis na hairíonna seo sa '
+            'mhatamaitic. Is é aghaidh an chloig an sampla is soiléire dá '
+            'bhfuil ann; is é a ainm ℤ/12ℤ, ráite "Z modulo a dó dhéag".',
+      ),
+      ProseSection(
+        'Cé na coiscéimeanna a bhuaileann na páirceanna go léir',
+        'Ag dul i gcéimeanna a haon timpeall an chiorcail, buailtear gach '
+            'ceann de na dhá mharc dhéag as a chéile sula bhfilltear ar '
+            'dtús. Ach ní éiríonn le gach coiscéim é sin. Ag léim trí '
+            'chuid cúig i gcónaí, tuirlingítear ar 0, 3, 6, 9 amháin agus '
+            'tar éis ceithre léim táthar ar ais — fágtar ocht bpáirc gan '
+            'bhaint leo. Ag léim trí cheithre cinn, buailtear 0, 4, 8 '
+            'amháin.\n\n'
+            'Baineann coiscéim le dhá mharc dhéag go léir go díreach nuair '
+            'nach bhfuil roinnteoirí coiteanna aige leis an Dó Dhéag. '
+            'Baineann sin le ceithre choiscéim: 1, 5, 7 agus B (= aon '
+            'déag). Go díreach ceithre cinn — ní coinchidéans é sin, ach '
+            'tomhas comhairthe den Dó Dhéag a chasfar linn arís dhá uair '
+            'eile. Is iad sin na ceithre "choiscéim mhaithe" a ghineann '
+            'an ciorcal iomlán.',
+      ),
+      ProseSection(
+        'Na fohghrúpaí ar an aghaidh cloig',
+        'Tarraingíonn na coiscéimeanna a bhuaileann cuid de na marcanna '
+            'amháin figiúirí rialta ar an aghaidh cloig. Ceanglaíonn '
+            'coiscéim sé 0 agus 6 le líne trasna an láir. Tarraingíonn '
+            'coiscéim ceathair an triantán 0–4–8, coiscéim trí an '
+            'cearnóg 0–3–6–9, coiscéim dhó heicsigean na n-uaireanta '
+            'cothroim. Is clog beag dúnta i gcónaí gach ceann de na '
+            'figiúirí seo — fohghrúpa.\n\n'
+            'Rud suntasach: is ionann roinnteoirí an Dó Dhéag — 1, 2, 3, '
+            '4, 6, 12 — agus a líon figiúirí, ní níos mó agus ní níos lú. '
+            'Tá an oiread roinnteoirí ag an Dó Dhéag agus nach bhfuil ag '
+            'aon uimhir níos lú, agus dá bhrí sin iompraíonn a haghaidh '
+            'cloig an líon sin figiúirí glanmhara. Ní bheadh ag clog '
+            'deich n-uaire ach roinnteoirí 1, 2, 5, 10 — gan triantán, '
+            'gan cearnóg. Déanann an inroinnteacht chéanna a shainíonn an '
+            'Dó Dhéag mar bhonn comhairimh a haghaidh cloig saibhir freisin.',
+      ),
+      ProseSection(
+        'An clog céanna sa cheol',
+        'Cruthaíonn na dhá leathton déag d\'ochtach an ciorcal céanna: '
+            'tar éis dhá chéim leathtoin déag, táthar ar ais ag an ton '
+            'tosaigh, ochtach níos airde. Is ionann ceoil a aistriú go '
+            'gléas eile agus na tonanna go léir a chasadh an méid céanna '
+            'ar aghaidh — suimiú ar chiorcal na dton.\n\n'
+            'An ciorcal cúigiú a fhoghlaimíonn ceoltóirí de ghlanmheabhair '
+            'níl ann ach coiscéim a seacht ar an gciorcal sin: is seacht '
+            'leathton cúirt chúige bhreá, agus toisc go bhfuil an tSeacht '
+            'ar cheann de na ceithre choiscéimeanna maithe, ritheann an '
+            'ciorcal trí na tonanna go léir sula ndúnann sé. Casann an '
+            'ceathrú (cúig leathton) an ciorcal céanna ar gcúl. Fanann '
+            'coiscéimeanna le roinnteoirí coiteanna i bhfigiúir agus '
+            'tugann go díreach na cóird shiméadracha aitheanta: an '
+            'triatán mór an triantán, an trítean an líne. Cén fáth go '
+            'díreach dhá leathton dhéag agus conas a fhuaimníonn siad, '
+            'tá sin sa chaibidil ar an Dó Dhéag sa cheol; anseo is '
+            'cuma ach go bhfuil sé an ciorcal céanna.',
+      ),
+      ProseSection(
+        'Agus sna príomhdhigití',
+        'Léiríonn tríú ionad an ceathairréad céanna. Agus príomhuimhreacha '
+            'á scríobh i mBonn a Dó Dhéag, críochnaíonn gach príomhuimhir '
+            'os cionn a Trí ar cheann de na digití 1, 5, 7 nó B. Tá '
+            'críochdigití eile dodhéanta: tá uimhir a chríochnaíonn ar '
+            '0, 2, 4, 6, 8 nó A cothrom; tá uimhir a chríochnaíonn ar '
+            '3, 6, 9 inroinnte ar a trí. Fágtar go díreach na ceithre '
+            'dhigit nach bhfuil roinnteoirí coiteanna acu leis an Dó '
+            'Dhéag — arís 1, 5, 7, B.\n\n'
+            'Is iad sin na ceithre cinn chéanna leis na coiscéimeanna '
+            'maithe agus na heatraimh a ghineann an ciorcal. Ach ní '
+            'hionann críochdigit ón gceathairréad sin agus cruthúnas: '
+            'críochnaíonn 25 ar 1 i mBonn a Dó Dhéag, ach is í cúig '
+            'uair a cúig í. Fágann an digit go leor uimhreacha as '
+            'áireamh mar phríomhuimhreacha, ach ní corónann sí ceann ar bith.',
+      ),
+      ProseSection(
+        'Suimiú i gcónaí, roinnt ní i gcónaí',
+        'Is féidir iolrú ar an gclog uaireanta freisin — agus is ansin '
+            'a stopann an dúnadh álainn. Le suimiú tá cosán ar ais ag '
+            'gach céim; le hiolrú níl. Níl aon uair ann ar féidir an Dó '
+            'a iolrú léi agus tuirlingt go glan ar a haon, toisc go '
+            'bhfuil dúbailt i gcónaí cothrom. Níl comhléimneach ag an '
+            'Dó ar chloc an Dó Dhéag.\n\n'
+            'Níl comhléimneach ach ag na ceithre uimhir mhaithe 1, 5, 7, '
+            'B — agus is é gach ceann acu a chomhléimneach féin: is é '
+            'cúig uair a cúig 25, is ionann sin agus 1 ar chloc an Dó '
+            'Dhéag; mar an gcéanna seacht uair a seacht agus B uair a B. '
+            'Dá mbeadh príomhuimhir-uaire ag an gclog — aon déag nó trí '
+            'déag mar shampla — bheadh comhléimneach ag gach uair. Tá an '
+            'Dó Dhéag róchumhda chuige sin — an saibhreas roinnteoirí '
+            'céanna a mhaisiíonn a haghaidh cloig, baineann sé an '
+            'roinnt réidh di. Ní mímhaith é sin, ach cineál uimhreacha '
+            'comhdhéanta; gheobhadh clog deich n-uaire an scéal céanna.',
+      ),
+      ProseSection(
+        'Modulo a dó dhéag ní hionann agus Bonn a Dó Dhéag',
+        'Idirdhealú deireanach tábhachtach atá éasca a mheascadh. '
+            'Ríomhann an clog "modulo a dó dhéag" — ní choinníonn sé '
+            'ach an fuíoll á roinnt ar a dó dhéag. Is rud difriúil é '
+            'sin le "Bonn a Dó Dhéag", nodaireacht an áireamháin seo, '
+            'ina seasann na hionaid d\'aonaid, dosaen, grós agus mar '
+            'sin de. Insíonn modulo cén rang fuíll a bhfuil uimhir ann; '
+            'insíonn bonn conas í a scríobh.\n\n'
+            'Druidann an dá cheann thart ar an uimhir dó dhéag, ach ón '
+            'gcúis bhunúsach chéanna — a roinnteoirí iomadúla — ní '
+            'toisc go bhfuil siad mar a chéile. Ríomhtar modulo a dó '
+            'dhéag ar an gclog gach lá agus scríobhtar an t-am i gcóras '
+            'an Deich mar sin féin. Thug Carl Friedrich Gauss an '
+            'cineál ríomha fuíll seo isteach mar nodaireacht féin in '
+            '1801; inniu tá sé i bhfolach i ndigití seiceála uimhreacha '
+            'leabhair agus cuntais agus i ngach foirmle lae seachtaine.',
+      ),
+    ],
+    sources: [
+      Source(
+        'Modular arithmetic — Wikipedia',
+        'https://en.wikipedia.org/wiki/Modular_arithmetic',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Cyclic group — Wikipedia',
+        'https://en.wikipedia.org/wiki/Cyclic_group',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Subgroups of cyclic groups — Wikipedia',
+        'https://en.wikipedia.org/wiki/Subgroups_of_cyclic_groups',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Multiplicative group of integers modulo n — Wikipedia',
+        'https://en.wikipedia.org/wiki/Multiplicative_group_of_integers_modulo_n',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Circle of fifths — Wikipedia',
+        'https://en.wikipedia.org/wiki/Circle_of_fifths',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Pitch class — Wikipedia',
+        'https://en.wikipedia.org/wiki/Pitch_class',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Highly composite number — Wikipedia',
+        'https://en.wikipedia.org/wiki/Highly_composite_number',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Disquisitiones Arithmeticae — Wikipedia',
+        'https://en.wikipedia.org/wiki/Disquisitiones_Arithmeticae',
+        'R1',
+        'A2',
+      ),
+    ],
+  ),
+  ProseChapter(
+    '12! agus na hOrduithe',
+    [
+      ProseSection(
+        'Cé mhéad ordú?',
+        'Cé mhéad bealach ann chun dosaen rud a chur in ord — dhá '
+            'chuairteoir déag ag bord, na dhá mhí dhéag ar liosta, dhá '
+            'leabhar dhéag ar sheilf? Don chéad ionad tá dhá iarrthóir '
+            'dhéag agat, don dara ceann aon déag fós, ansin deich, '
+            'agus mar sin go dtí an ceann deireanach a bhfuil duine '
+            'amháin fágtha dó. Iolraítear na féidearthachtaí go léir: '
+            '12 · 11 · 10 · … · 2 · 1.\n\n'
+            'Scríobhtar an táirgeadh seo na n-uimhreacha go léir ó 1 '
+            'go dtí a dó dhéag go gearr mar "12!" agus tugtar Fachtóir '
+            'Dhó Dhéag air. Go ginearálta is é n! táirgeadh na n-uimhreacha '
+            'go léir ó 1 go n agus comhairíonn sé orduithe n rud. Rud '
+            'curios cois: is ionann 0! agus 1 de réir coinbhinsiúin — '
+            'níl ach bealach amháin ann chun faic a ordú, is é sin an '
+            'leagan folamh.',
+      ),
+      ProseSection(
+        'An uimhir 12!',
+        'Go hoibrithe is é 12! = 479001600 i gcóras an Deich — beagnach '
+            'leath billiún ordú do dhá rud dhéag amháin. I mBonn a Dó '
+            'Dhéag scríobhtar an uimhir chéanna mar 114500000, le cúig '
+            'náid ag an deireadh. Is baile don Dó Dhéag na náid sin: '
+            'toisc go bhfuil na fachtóirí Dhó agus Trí chomh fairsing '
+            'i 12! agus go ngearrann gach ceann de na náid deiridh '
+            'díreach Dó Dhéag amháin, tagann cúig cinn amach go glan. '
+            'I gcóras an Deich ní chríochnaíonn 12! ach ar dhá náid.\n\n'
+            'Cé chomh mór leath billiún ordú? Dá dtaispeánfaí ceann nua '
+            'gach soicind, bheifí críochnaithe tar éis thart ar cúig '
+            'bliana déag. Má shuíonn an dosaen ag bord cruinn, áfach, '
+            'ina gcomharsanacht amháin is cúis agus gan ionad tosaigh '
+            'ann, srionadh an líon go fachtóir a haon déag — beagnach '
+            'daichead milliún. Is féidir ceist a chur ar an áireamhán: '
+            'tugann eochair an fhachtóra 12! láithreach i mBonn a Dó Dhéag.',
+      ),
+      ProseSection(
+        'Roghnú le hordú agus gan ordú',
+        'Go minic ní iarrtar gach dosaen a ordú ach cuid a roghnú — '
+            'agus ansin is difriúil é cé acu a chomhairíonn an t-ordú. '
+            'Trí reathaí ar chéim na n-onóracha (ór, airgead, cré-umha) '
+            'as dosaen: 12 · 11 · 10 = 1320 féidearthacht ordaithe. '
+            'Comhairíonn ordú anseo, óir ní hionann an chéad agus an '
+            'dara háit.\n\n'
+            'Más é sé cinn as dosaen a roghnaítear mar ghrúpa amháin — '
+            'sé oibrí deonacha cuir i gcás —, tá 924 féidearthacht; '
+            'péire as dosaen tá 66. Braitheann an dá chóir chomhairimh '
+            'ar an bhfachtóir. Sa chaint cumastar iad go minic: éilíonn '
+            '"glas uimhreach" ar ndóigh ord faoi leith — ba chóir '
+            '"glas ordaithe" a thabhairt air.',
+      ),
+      ProseSection(
+        'Cloig a bhuaileann na horduithe go léir',
+        'I dtúir eaglaise in Sasana tá seanealáin a dhéanann go díreach '
+            'é seo: an cloigíneacht athraí. In ionad foinn buaileann na '
+            'cloigirí a gcloig in orduithe nua i gcónaí, gach ordú díreach '
+            'uair amháin. Ag gach athrú ní cheadaítear d\'aon chlog ach '
+            'aon ionad amháin a bhogadh — leagan coirp de shuíomhanna '
+            'comharsanacha a mhalartú, maistir ag cloigirí ó 1621, '
+            'i bhfad sula gcur síos na matamaiticeoirí ar an gcleas '
+            'céanna.\n\n'
+            'Tá ainm ar gach méid cloig; tugtar Maximus ar dhá chlog '
+            'dhéag. Gach ordú de dhá chlog dhéag a bhualadh chiallódh '
+            '12! = thart ar 479 milliún athrú a rith — ar dhá shoicind '
+            'in aghaidh an athraithe, bheadh sin blianta fada d\'fhuaimniú '
+            'gan stad. Níor éirigh le haon duine é sin riamh agus '
+            'meastar nach féidir; ní shroicheann na píosaí is faide '
+            'a buaileadh ar dhá chlog dhéag ach roinnt deichna míle '
+            'athrú. Níor buaileadh leathnú iomlán ach ar ocht gcloig: '
+            '40320 athrú, beagnach ocht n-uaire déag, i 1963 i '
+            'Loughborough.',
+      ),
+      ProseSection(
+        'Éiríonn uimhir ina grúpa',
+        'Má bhailítear na 12! athoiriúnú go léir ar dhosaen agus '
+            'glactar le "an ceann seo ar dtús, ansin an ceann eile" '
+            'mar riail ríomha, tagann grúpa chun cinn arís — grúpa '
+            'iomlán athoiriúnaithe na dó dhéag rud. Murab ionann agus '
+            'ar chloc na n-uaireanta, tá tábhacht ag ord na gcéimeanna '
+            'anseo: is rud difriúil é malartú ar dtús, ansin brú, ó '
+            'inbhéartú an oird sin. Tá an grúpa seo ollmhór agus '
+            'neamh-mhalartach.\n\n'
+            'Folaithe ann tá iontas deireanach. I measc na beagnach '
+            'leath billiún athoiriúnú tá roghnú beag an-rialta de '
+            '95040 ceann amháin a bhrúnn aon cúig cinn as na dhá '
+            'phointe dhéag go dtí cúig spriocanna ar dhóigh amháin '
+            'díreach. Gur féidir a leithéid a bheith ar go díreach '
+            'dhá phointe dhéag ar chor ar bith, baineann sin le '
+            'feiniméan de na cinn is annamha sa mhatamaitic — '
+            'agus is é ábhar na caibidile seo chugainn.',
+      ),
+    ],
+    sources: [
+      Source(
+        'Factorial — Wikipedia',
+        'https://en.wikipedia.org/wiki/Factorial',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Permutation — Wikipedia',
+        'https://en.wikipedia.org/wiki/Permutation',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Combination — Wikipedia',
+        'https://en.wikipedia.org/wiki/Combination',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Change ringing — Wikipedia',
+        'https://en.wikipedia.org/wiki/Change_ringing',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Extent (change ringing) — Wikipedia',
+        'https://en.wikipedia.org/wiki/Extent_(change_ringing)',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Symmetric group — Wikipedia',
+        'https://en.wikipedia.org/wiki/Symmetric_group',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Steinhaus–Johnson–Trotter algorithm — Wikipedia',
+        'https://en.wikipedia.org/wiki/Steinhaus%E2%80%93Johnson%E2%80%93Trotter_algorithm',
+        'R2',
+        'A2',
+      ),
+    ],
+  ),
+  ProseChapter(
+    'An Grúpa Mathieu M₁₂',
+    [
+      ProseSection(
+        'Roghnú as beagnach leath billiún',
+        'Chríochnaigh an chaibidil roimhe seo le gealltanas: i measc na '
+            'beagnach leath billiún athoiriúnú ar dhosaen, tá roghnú beag '
+            'de go díreach 95040 a bhfuil cumhacht ann nach mór docreidte. '
+            'Roghnaigh cúig cinn de na dhá phointe dhéag agus abair cá '
+            'rachaidh gach ceann acu ar leith — ansin tá go díreach '
+            'athoiriúnú amháin sa 95040 sin a dhéanann é sin. Ní dhá '
+            'cheann, ní ceann ar bith: go díreach ceann amháin.\n\n'
+            'As an airíonna amháin sin leanas an líon iomlán cheana. '
+            'Don sprioc ar an gcéad phointe tá dhá rogha dhéag ann, '
+            'don dara ceann aon déag, ansin deich, naoi, ocht — agus '
+            'leagtar síos an chuid eile. Dhá oiread a haon déag uair '
+            'a deich uair a naoi uair a hocht tugann 95040. Tugtar '
+            'grúpa Mathieu M₁₂ ar an mbailiúchán annamh athoiriúnaithe seo.',
+      ),
+      ProseSection(
+        'An córas Steiner S(5,6,12)',
+        'Cad a choinníonn na 95040 athoiriúnú seo daingean? Figiúr '
+            'comhcheangailteach mín. Is féidir grúpaí de shé cinn a '
+            'roghnú as dhá phointe dhéag ar bhealach go bhfuil gach '
+            'roghnú féideartha d\'aon cúig phointe i gcónaí i díreach '
+            'ceann amháin de na grúpaí sé chinn sin. Tá go díreach '
+            '132 grúpa den sórt sin, agus is é an socrú seo an ceann '
+            'amháin is féidir — cé is moite de athainmniú na bpointí.\n\n'
+            'Tugtar córas Steiner S(5,6,12) ar an struchtúr mín-chothromaithe '
+            'seo. Is é grúpa Mathieu go díreach an tacar athoiriúnaithe '
+            'a mhapálann na 132 grúpa sé chinn ar ais ar ghrúpaí sé '
+            'chinn — siméadrachtaí an fhigiúra seo. Tá na dhá uimhir, '
+            '132 grúpa sé chinn agus 95040 siméadracht, i mBonn a Dó '
+            'Dhéag B0 agus 47000 faoi seach.',
+      ),
+      ProseSection(
+        'Cén fáth go díreach an Dó Dhéag',
+        'An rud is iontaí ní hea chomh rialta is atá M₁₂, ach chomh '
+            'hannamh a tharlaíonn a leithéid de rialtacht ar chor ar '
+            'bith. Chruthaigh Camille Jordan in 1872: más fágtar as '
+            'áireamh na cásanna soiléire coitianta, níl tacar '
+            'athoiriúnaithe a bhfuil cúig phointe in ann a shocrú ar '
+            'dhóigh dhíreach amháin aige indéanta ach ar líon pointí '
+            'amháin — ar a dó dhéag. Tá an mhalairt le haghaidh '
+            'ceithre phointe ann mar eisceacht ar aon déag pointe '
+            'amháin.\n\n'
+            'Ar go díreach aon déag agus dhá phointe dhéag — agus '
+            'in áit ar bith eile taobh amuigh de na cásanna coitianta '
+            '— maireann na siméadrachtaí thar a bheith foirfe seo. '
+            'Is ionann sin agus a rá gur ceann de mhuirear beag '
+            'uimhreacha amháin an Dó Dhéag a bhfuil a leithéid d\'airíonna '
+            'acu. Is toradh matamaiticiúil soiléir é sin, ní '
+            'neiméadáil — ach cúis iontas i ndáiríre.',
+      ),
+      ProseSection(
+        'An chéad cheann dá saghas',
+        'Tá bunchlocha ag grúpaí teoranta nach féidir a bhriseadh níos '
+            'faide — na grúpaí simplí, adamh na teoirice grúpaí. '
+            'Ciallaíonn "simplí" anseo dobhriste, ní éasca. Baineann '
+            'formhór na n-adamh seo le roinnt teaghlach éigríochta; '
+            'ina dteannta sin tá go díreach sé ghrúpa is fiche aonair, '
+            'na grúpaí eisceachtúla. Is ceann de na grúpaí sin M₁₂.\n\n'
+            'Chuir Émile Mathieu síos ar M₁₂ chomh luath le 1861 — ba '
+            'é an chéad ghrúpa eisceachtúil riamh a aimsíodh, beagnach '
+            'céad bliain roimh an gcuid eile. D\'fhan a bhith ann '
+            'conspóideach ar feadh i bhfad, agus rinne roinnt saineolaí '
+            'amhras faoi; níor cuireadh ar bhonn daingean é ach in 1938 '
+            'ag Ernst Witt. Tosaíonn an tsraith grúpaí eisceachtúla le '
+            'M₁₂ agus críochnaíonn sí ag an "Ollphéist" ollmhór '
+            'iomráiteach, agus is ceann de na saothair comhoibríocha '
+            'is mó sa mhatamaitic ar fad a n-aithris iomlán.',
+      ),
+      ProseSection(
+        'Le sonrú: cártaí agus cluiche',
+        'Chomh teibí agus is cosúil é — tá bealaí inláimhsithe ann. '
+            'De réir foinsí tuairiscithe, má mheasctar dhá chárta '
+            'dhéag ar dhá bhealach shonracha comhsheasmhacha arís '
+            'agus arís eile, gintear go díreach athoiriúnú ghrúpa '
+            'Mathieu. Agus chum an matamaiticeoir John Conway "blackjack '
+            'matamaiticiúil" leis na dhá uimhir dhéag Náid go dtí B, '
+            'arb ionann a straitéis bhuach agus na 132 grúpa sé chinn '
+            'go díreach.\n\n'
+            'Fan macánta: níl mórán eochair sa áireamhán sa chaibidil '
+            'seo a fhreagraíonn dó — is áilleacht theoirice ghlan é, '
+            'ní uirlis. Ach is minic gur é sin díreach an mealladh: gur '
+            'é go díreach an Dó Dhéag, a thugann a rithim don áireamhán '
+            'seo, ceann de na huimhreacha beaga ar a bhfuil siméadracht '
+            'chomh hannamh, chomh foirfe sin i bhfolach ag an '
+            'mhatamaitic.',
+      ),
+    ],
+    sources: [
+      Source(
+        'Mathieu group M12 — Wikipedia',
+        'https://en.wikipedia.org/wiki/Mathieu_group_M12',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Mathieu group — Wikipedia',
+        'https://en.wikipedia.org/wiki/Mathieu_group',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Steiner system — Wikipedia',
+        'https://en.wikipedia.org/wiki/Steiner_system',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Sporadic group — Wikipedia',
+        'https://en.wikipedia.org/wiki/Sporadic_group',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Multiply transitive group — Wikipedia',
+        'https://en.wikipedia.org/wiki/Multiply_transitive_group',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Classification of finite simple groups — Wikipedia',
+        'https://en.wikipedia.org/wiki/Classification_of_finite_simple_groups',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Émile Léonard Mathieu — Wikipedia',
+        'https://en.wikipedia.org/wiki/%C3%89mile_L%C3%A9onard_Mathieu',
+        'R2',
+        'A1',
+      ),
+    ],
+  ),
+  ProseChapter(
     'An Dóideacagán (Dódhéagán)',
     [
       ProseSection(
@@ -763,6 +1556,116 @@ List<ProseChapter> _mathChaptersGa() => const [
       ),
     ],
     imageId: 'math/dodekagon',
+  ),
+  ProseChapter(
+    'Tíleálacha Archimédacha',
+    [
+      ProseSection(
+        'Ní líonann an dóideacagán an plána leis féin',
+        'Is figiúr álainn cruinn é an dóideacagán rialta — ach ní féidir '
+            'leis urlár a chlúdach leis féin gan bearnaí. Is í an chúis a '
+            'uillinn inmheánach de 150 céim. Timpeall coirnéil caithfidh '
+            'na figiúirí comharsanacha comhlánú go díreach go 360 céim, '
+            'ach tugann 360 roinnte ar 150 dhá phointe a ceathair — ní '
+            'slánuimhir é sin. Fágann dhá dhóideacagán bearna ag coirnéal, '
+            'forluíonn trí cinn.\n\n'
+            'Teastaíonn páirtithe ón dóideacagán mar sin. Agus na figiúirí '
+            'cearta á gcur eatarthu, tagann patrúin dlútha an-rialta chun '
+            'cinn — tíleálacha Archimédacha. Sin na tíleálacha den phlána '
+            'nach bhfuil iontu ach polagáin rialta agus a bhfuil an '
+            'chosúlacht chéanna ag gach coirnéal acu. Ní ann ach aon '
+            'phatrún déag den sórt sin ar fad.',
+      ),
+      ProseSection(
+        'Dhá phatrún leis an dóideacagán',
+        'As na haon phatrún déag sin ní bhfuil dóideacagán rialta ach i '
+            'ndó acu. Sa chéad cheann líonann triantáin chomhchosúla beaga '
+            'na cúinní idir na dóideacagáin — ag gach coirnéal tagann '
+            'triantán amháin agus dhá dhóideacagán le chéile, agus '
+            'suimíonn a n-uillinn 60 móide 150 móide 150, sin go '
+            'díreach 360 céim.\n\n'
+            'Is é an dara ceann an ceann níos saibhre agus an ceann atá '
+            'léirithe san íomhá: timpeall gach dóideacagáin feistítear '
+            'fleasc de chearnóga agus heicsigean malartach. Ag gach '
+            'coirnéal tagann cearnóg amháin, heicsigean amháin agus '
+            'dóideacagán amháin le chéile — 90 móide 120 móide 150 '
+            'céim, arís go díreach 360. Toisc go gcomhshuimíonn, '
+            'dúnann an fleasc gan bhearna ar bith, agus leanann an '
+            'patrún ar aghaidh i ngach treo.',
+      ),
+      ProseSection(
+        'Cén fáth nach n-oireann ach Trí, Ceathair, Sé',
+        'Taobh le dóideacagán, ní oireann ach trí chineál comharsan: '
+            'triantáin, cearnóga agus heicsigean. Ní coinchidéans é sin. '
+            'Is iad a n-uillinn inmheánacha 60, 90 agus 120 céim — agus '
+            'sin go díreach 360 roinnte ar sé, ar cheathair agus ar thrí. '
+            'Is iad mar sin go díreach roinnteoirí trí, ceathair agus sé '
+            'den Dó Dhéag a thagann chun cinn.\n\n'
+            'Is iad na trí roinnteoirí céanna sin a fhágann go dtagann '
+            'trian, ceathrú agus séú amach go glan i mBonn a Dó Dhéag. '
+            'Tá an tíleáil álainn agus an codán áisiúil ag eascairt ón '
+            'bhfréamh chéanna: inroinnteacht shaibhir an Dó Dhéag. Is '
+            'gaol fíor é sin, ach ní éigean — tagann na huillinn ón '
+            'gcéimseata, tagann na codáin ghlanmhara ón nodaireacht; '
+            'braitheann an dá cheann ar an uimhir chéanna amháin.',
+      ),
+      ProseSection(
+        'Kepler, moscanna agus criostal',
+        'Ba é Johannes Kepler an chéad duine a rinne liosta iomlán de '
+            'na patrúin seo, in 1619, i saothar ar chomhchuíbheas an '
+            'domhain. Is tagairt do na coirp Archimédacha amháin an '
+            't-ainm "Archimédach" san; níl scríbhinn ársa ann inar '
+            'phléigh Archimedes féin tíleálacha.\n\n'
+            'I bhfad roimh Kepler bhí an dóideacagán ina chónaí sa '
+            'chealaíon cheana: baineann réaltaí dhá dhéag pointeach '
+            'de na móitíf is glórmhaire d\'ornáideachas céimseata '
+            'Ioslamach, tógtha le compás agus rialóir ó ghéimseata '
+            'ghlan — go luath mar shampla ar mhoscanna Konya (1220). '
+            'Agus sa dúlra filleann an t-ord céanna dhá dhéag-chuíosach '
+            'sna quasachriostail, a bhfuil caibidil féin faoi. An '
+            'dóideacagán nach líonann urlár leis féin, is í ar an gcomhpháirtíocht '
+            'ceann de na foirmeacha is torthúla i gcéimseata an phlána.',
+      ),
+    ],
+    sources: [
+      Source(
+        'Euclidean tilings by convex regular polygons — Wikipedia',
+        'https://en.wikipedia.org/wiki/Euclidean_tilings_by_convex_regular_polygons',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Truncated hexagonal tiling — Wikipedia',
+        'https://en.wikipedia.org/wiki/Truncated_hexagonal_tiling',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Truncated trihexagonal tiling — Wikipedia',
+        'https://en.wikipedia.org/wiki/Truncated_trihexagonal_tiling',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Archimedean Tilings and Egyptian Fractions (John Baez)',
+        'https://math.ucr.edu/home/baez/egyptian.html',
+        'R3',
+        'A1',
+      ),
+      Source(
+        'Islamic geometric patterns — Wikipedia',
+        'https://en.wikipedia.org/wiki/Islamic_geometric_patterns',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Harmonices Mundi — Wikipedia',
+        'https://en.wikipedia.org/wiki/Harmonices_Mundi',
+        'R2',
+        'A2',
+      ),
+    ],
+    imageId: 'math/parkettierung',
   ),
   ProseChapter(
     'An Dóideacaeadrón',
