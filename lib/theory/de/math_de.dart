@@ -861,6 +861,256 @@ List<ProseChapter> _mathChaptersDe() => const [
     ],
   ),
   ProseChapter(
+    '12! und die Reihenfolgen',
+    [
+      ProseSection(
+        'Wie viele Reihenfolgen?',
+        'Wie viele Möglichkeiten gibt es, ein Dutzend Dinge in eine Reihe zu '
+            'legen — zwölf Gäste an eine Tafel, die zwölf Monate auf eine Liste, '
+            'zwölf Bücher ins Regal? Für den ersten Platz hat man zwölf Kandidaten, '
+            'für den zweiten noch elf, dann zehn, und so fort bis zum letzten, für '
+            'den nur noch einer übrig ist. Man multipliziert alle Möglichkeiten: '
+            '12 · 11 · 10 · … · 2 · 1.\n\n'
+            'Dieses Produkt aller Zahlen von 1 bis zwölf schreibt man kurz „12!" '
+            'und nennt es Zwölf-Fakultät. Allgemein ist n! das Produkt aller Zahlen '
+            'von 1 bis n und zählt die Reihenfolgen von n Dingen. Eine Kuriosität '
+            'am Rand: 0! ist als 1 festgelegt — es gibt genau eine Art, gar nichts '
+            'anzuordnen, nämlich die leere.',
+      ),
+      ProseSection(
+        'Die Zahl 12!',
+        'Ausgerechnet ist 12! = 479001600 im Zehnersystem — knapp eine halbe '
+            'Milliarde Reihenfolgen für nur zwölf Dinge. In Basis Zwölf schreibt '
+            'sich dieselbe Zahl als 114500000, mit fünf Nullen am Ende. Diese '
+            'Nullen sind ein Heimspiel der Zwölf: weil 12! die Faktoren Zwei und '
+            'Drei so oft enthält und jede dieser Endnullen genau eine Zwölf '
+            'abspaltet, gehen fünf davon glatt auf. Im Zehnersystem endet 12! nur '
+            'auf zwei Nullen.\n\n'
+            'Wie groß ist eine halbe Milliarde Reihenfolgen? Zeigte man jede '
+            'Sekunde eine neue, wäre man erst nach gut fünfzehn Jahren durch. Sitzt '
+            'die Dutzendrunde dagegen an einem runden Tisch, bei dem nur die '
+            'Nachbarschaft zählt und nicht der Startplatz, schrumpft die Zahl auf '
+            'elf Fakultät — knapp vierzig Millionen. Den Rechner kann man fragen: '
+            'Die Fakultäts-Taste liefert 12! sofort in Basis Zwölf.',
+      ),
+      ProseSection(
+        'Auswahl mit und ohne Reihenfolge',
+        'Oft will man nicht alle zwölf ordnen, sondern nur einige auswählen — und '
+            'dann macht es einen Unterschied, ob die Reihenfolge zählt. Drei Läufer '
+            'aufs Treppchen (Gold, Silber, Bronze) aus zwölf: 12 · 11 · 10 = 1320 '
+            'geordnete Möglichkeiten. Eine Reihenfolge zählt hier, denn Erster und '
+            'Zweiter sind nicht dasselbe.\n\n'
+            'Wählt man dagegen sechs aus zwölf nur als Gruppe, ohne Rangfolge — '
+            'etwa sechs Freiwillige —, sind es 924 Möglichkeiten; zwei aus zwölf '
+            'als Paar sind 66. Beide Zählweisen ruhen auf der Fakultät. Im '
+            'Sprachgebrauch werden sie gern verwechselt: Ein „Zahlenschloss" '
+            'verlangt in Wahrheit eine bestimmte Reihenfolge — es müsste '
+            'Reihenfolge-Schloss heißen.',
+      ),
+      ProseSection(
+        'Glocken, die alle Reihenfolgen läuten',
+        'In englischen Kirchtürmen gibt es eine alte Kunst, die genau dies tut: '
+            'das Wechselläuten. Statt Melodien läuten die Glöckner ihre Glocken in '
+            'immer neuen Reihenfolgen, jede Reihenfolge genau einmal. Bei jedem '
+            'Wechsel darf jede Glocke nur um eine Position rücken — eine '
+            'körperliche Fassung des Vertauschens benachbarter Elemente, die '
+            'Glöckner schon um 1621 beherrschten, lange bevor Mathematiker '
+            'denselben Trick beschrieben.\n\n'
+            'Für jede Glockenzahl gibt es einen Namen; zwölf Glocken heißen '
+            'Maximus. Alle Reihenfolgen von zwölf Glocken zu läuten hieße, 12! = '
+            'rund 479 Millionen Wechsel zu durchlaufen — bei zwei Sekunden je '
+            'Wechsel wären das Jahrzehnte ununterbrochenen Läutens. Das hat nie '
+            'jemand vollbracht und gilt als unmöglich; die längsten wirklich '
+            'geläuteten Stücke auf zwölf Glocken erreichen nur einige Zehntausend '
+            'Wechsel. Vollständig durchgeläutet wurde ein Extent nur auf acht '
+            'Glocken: 40320 Wechsel, knapp achtzehn Stunden, 1963 in Loughborough.',
+      ),
+      ProseSection(
+        'Aus der Zahl wird eine Gruppe',
+        'Sammelt man alle 12! Umordnungen eines Dutzends und versteht „erst die '
+            'eine, dann die andere" als Rechenregel, entsteht wieder eine Gruppe — '
+            'die volle Umordnungsgruppe der zwölf Dinge. Anders als auf der '
+            'Stundenuhr kommt es hier auf die Reihenfolge der Schritte an: zuerst '
+            'tauschen, dann schieben ergibt etwas anderes als umgekehrt. Diese '
+            'Gruppe ist riesig und nicht vertauschbar.\n\n'
+            'In ihr versteckt sich ein letztes Staunen. Unter den fast '
+            'fünfhundert Millionen Umordnungen gibt es eine winzige, '
+            'außergewöhnlich regelmäßige Auswahl von nur 95040 Stück, die fünf '
+            'beliebige der zwölf Punkte auf fünf beliebige Ziele genau auf eine '
+            'einzige Weise schiebt. Dass auf gerade zwölf Punkten so etwas '
+            'überhaupt möglich ist, gehört zu den seltensten Erscheinungen der '
+            'Mathematik — und ist das Thema des nächsten Kapitels.',
+      ),
+    ],
+    sources: [
+      Source(
+        'Factorial — Wikipedia',
+        'https://en.wikipedia.org/wiki/Factorial',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Permutation — Wikipedia',
+        'https://en.wikipedia.org/wiki/Permutation',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Combination — Wikipedia',
+        'https://en.wikipedia.org/wiki/Combination',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Change ringing — Wikipedia',
+        'https://en.wikipedia.org/wiki/Change_ringing',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Extent (change ringing) — Wikipedia',
+        'https://en.wikipedia.org/wiki/Extent_(change_ringing)',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Symmetric group — Wikipedia',
+        'https://en.wikipedia.org/wiki/Symmetric_group',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Steinhaus–Johnson–Trotter algorithm — Wikipedia',
+        'https://en.wikipedia.org/wiki/Steinhaus%E2%80%93Johnson%E2%80%93Trotter_algorithm',
+        'R2',
+        'A2',
+      ),
+    ],
+  ),
+  ProseChapter(
+    'Die Mathieu-Gruppe M₁₂',
+    [
+      ProseSection(
+        'Eine Auswahl unter fast einer halben Milliarde',
+        'Das vorige Kapitel endete mit einem Versprechen: Unter den fast '
+            'fünfhundert Millionen Umordnungen eines Dutzends gibt es eine winzige '
+            'Auswahl von genau 95040, die etwas fast Unglaubliches kann. Wähle '
+            'fünf der zwölf Punkte und sage, wohin jeder einzelne soll — dann gibt '
+            'es unter diesen 95040 Umordnungen genau eine, die das tut. Nicht '
+            'zwei, nicht keine: genau eine.\n\n'
+            'Aus dieser einen Eigenschaft folgt schon die ganze Anzahl. Für das '
+            'Ziel des ersten Punktes hat man zwölf Wahlmöglichkeiten, für den '
+            'zweiten elf, dann zehn, neun, acht — und damit liegt der Rest fest. '
+            'Zwölf mal elf mal zehn mal neun mal acht ergibt 95040. Diese seltene '
+            'Sammlung von Umordnungen trägt einen Namen: die Mathieu-Gruppe M₁₂.',
+      ),
+      ProseSection(
+        'Das Steiner-System S(5,6,12)',
+        'Was halten diese 95040 Umordnungen unverrückbar fest? Eine zierliche '
+            'kombinatorische Figur. Man kann aus zwölf Punkten gewisse '
+            'Sechsergruppen so auswählen, dass jede beliebige Auswahl von fünf '
+            'Punkten in genau einer dieser Sechsergruppen enthalten ist. Es gibt '
+            'davon genau 132 Sechsergruppen, und diese Anordnung ist bis auf '
+            'Umbenennung der Punkte die einzig mögliche.\n\n'
+            'Dieses fein austarierte Gebilde heißt das Steiner-System S(5,6,12). '
+            'Die Mathieu-Gruppe ist genau die Menge der Umordnungen, die alle 132 '
+            'Sechsergruppen wieder auf Sechsergruppen abbilden — die Symmetrien '
+            'dieser Figur. Die zwei Zahlen, 132 Sechsergruppen und 95040 '
+            'Symmetrien, sind in Basis Zwölf übrigens B0 und 47000.',
+      ),
+      ProseSection(
+        'Warum gerade die Zwölf',
+        'Das eigentlich Erstaunliche ist nicht, dass M₁₂ so regelmäßig ist, '
+            'sondern wie selten solche Regelmäßigkeit überhaupt vorkommt. Camille '
+            'Jordan bewies 1872: Sieht man von den naheliegenden, gewöhnlichen '
+            'Fällen ab, so ist eine Umordnungsmenge, die fünf Punkte auf genau '
+            'eine Weise frei platzieren kann, nur auf einer einzigen Punktzahl '
+            'möglich — auf zwölf. Die entsprechende Sache für vier Punkte gibt es '
+            'als Ausnahme nur auf elf Punkten.\n\n'
+            'Auf gerade elf und zwölf Punkten — und sonst nirgends jenseits der '
+            'gewöhnlichen Fälle — existieren diese außergewöhnlich vollkommenen '
+            'Symmetrien. Die Zwölf ist damit eine von nur einer Handvoll Zahlen, '
+            'die so etwas tragen. Das ist ein klares mathematisches Ergebnis, '
+            'keine Zahlenmystik — aber ein Grund zum Staunen.',
+      ),
+      ProseSection(
+        'Die erste ihrer Art',
+        'Endliche Gruppen haben Bausteine, die sich nicht weiter zerlegen lassen — '
+            'die einfachen Gruppen, die Atome der Gruppentheorie. „Einfach" meint '
+            'hier unzerlegbar, nicht leicht. Die meisten dieser Atome gehören zu '
+            'wenigen unendlichen Familien; daneben stehen genau sechsundzwanzig '
+            'Einzelgänger, die sporadischen Gruppen. M₁₂ ist einer von ihnen.\n\n'
+            'Émile Mathieu beschrieb M₁₂ schon 1861 — es war die allererste '
+            'sporadische Gruppe, die je gefunden wurde, fast hundert Jahre vor dem '
+            'Rest. Ihre Existenz blieb lange umstritten, manche Fachleute '
+            'bezweifelten sie; erst Ernst Witt stellte sie 1938 auf sicheren '
+            'Boden. Die Reihe der sporadischen Gruppen, die mit M₁₂ begann, endet '
+            'beim sagenhaft großen „Monster", und ihre vollständige Auflistung '
+            'gehört zu den größten Gemeinschaftswerken der Mathematik überhaupt.',
+      ),
+      ProseSection(
+        'Zum Anfassen: Karten und ein Spiel',
+        'So abstrakt das klingt — es gibt greifbare Zugänge. Mischt man zwölf '
+            'Spielkarten auf zwei bestimmte, immer gleiche Weisen wieder und '
+            'wieder, so erzeugt man berichteten Quellen zufolge genau die '
+            'Umordnungen der Mathieu-Gruppe. Und der Mathematiker John Conway '
+            'erfand ein „mathematisches Blackjack" mit den zwölf Zahlen Null bis '
+            'B, dessen Gewinnstrategie unmittelbar auf den 132 Sechsergruppen '
+            'beruht.\n\n'
+            'Ehrlich bleibt: Dieses Kapitel hat kaum eine Taste im Rechner, die '
+            'ihm entspricht — es ist reine Theorie-Schönheit, kein Werkzeug. Aber '
+            'manchmal ist genau das der Reiz: dass ausgerechnet die Zwölf, die '
+            'diesem Rechner ihren Takt gibt, eine der wenigen Zahlen ist, auf '
+            'denen die Mathematik eine derart seltene, vollkommene Symmetrie '
+            'versteckt hat.',
+      ),
+    ],
+    sources: [
+      Source(
+        'Mathieu group M12 — Wikipedia',
+        'https://en.wikipedia.org/wiki/Mathieu_group_M12',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Mathieu group — Wikipedia',
+        'https://en.wikipedia.org/wiki/Mathieu_group',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Steiner system — Wikipedia',
+        'https://en.wikipedia.org/wiki/Steiner_system',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Sporadic group — Wikipedia',
+        'https://en.wikipedia.org/wiki/Sporadic_group',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Multiply transitive group — Wikipedia',
+        'https://en.wikipedia.org/wiki/Multiply_transitive_group',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Classification of finite simple groups — Wikipedia',
+        'https://en.wikipedia.org/wiki/Classification_of_finite_simple_groups',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Émile Léonard Mathieu — Wikipedia',
+        'https://en.wikipedia.org/wiki/%C3%89mile_L%C3%A9onard_Mathieu',
+        'R2',
+        'A1',
+      ),
+    ],
+  ),
+  ProseChapter(
     'Das Zwölfeck (Dodekagon)',
     [
       ProseSection(
