@@ -118,4 +118,12 @@ play {
     defaultToAppBundles.set(true)
     track.set("internal")
     releaseStatus.set(com.github.triplet.gradle.androidpublisher.ReleaseStatus.DRAFT)
+    // Upload the pre-built AAB from `flutter build appbundle --release` instead
+    // of letting publishBundle rebuild via Gradle: a gradle-direct release build
+    // fails compiling GeneratedPluginRegistrant.java (references the
+    // flutter_native_splash dev-dependency plugin, which `flutter build` puts on
+    // the classpath but a raw `./gradlew bundleRelease` does not). Pointing at the
+    // already-built artifact matches the documented "AAB muss schon gebaut sein".
+    artifactDir.fileValue(
+        rootProject.projectDir.parentFile.resolve("build/app/outputs/bundle/release"))
 }
