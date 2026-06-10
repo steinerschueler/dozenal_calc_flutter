@@ -118,6 +118,192 @@ List<ProseChapter> _mathChaptersIt() => const [
     ],
   ),
   ProseChapter(
+    'Numeri ciclici',
+    [
+      ProseSection(
+        'Il settimo e i suoi parenti',
+        'Un settimo in base dodici non viene netto, ma si ripete: un settimo = 0,186A35, poi di nuovo 186A35, senza fine. (A sta per dieci, B per undici.) Il gruppo che si ripete è il periodo; qui è lungo sei cifre.\n\n'
+            'La cosa stupefacente appare quando si affiancano gli altri settimi. Due settimi = 0,35186A, tre settimi = 0,5186A3, quattro settimi = 0,6A3518, cinque settimi = 0,86A351, sei settimi = 0,A35186. Ogni volta sono le stesse sei cifre nella stessa sequenza — ma la sequenza inizia in un punto diverso. Le si può immaginare disposte su un anello che ruota di un passo ad ogni frazione.',
+      ),
+      ProseSection(
+        'Quando i multipli ruotano',
+        'La stessa rotazione si nasconde nella tavola pitagorica del periodo stesso. Se si prende la sequenza di cifre 186A35 come numero intero e la si moltiplica in ordine, si ottengono di nuovo solo rotazioni: 186A35 × 2 = 35186A, × 3 = 5186A3, × 4 = 6A3518, × 5 = 86A351, × 6 = A35186. Un numero con questa proprietà si chiama numero ciclico.\n\n'
+            'Il settimo passo chiude il cerchio: 186A35 × 7 = BBBBBB. Solo undici — la cifra più alta della base dodici, sei volte di seguito. Non è un caso: BBBBBB è esattamente uno in meno della posizione tonda successiva. In base dieci si conosce lo stesso trucco con il famoso numero 142857 (il periodo di un settimo nel sistema decimale): anche lì i multipli danno rotazioni, e 142857 × 7 = 999999. Le cifre sono diverse, la struttura è la stessa.',
+      ),
+      ProseSection(
+        'Perché esattamente sei cifre',
+        'Che il periodo sia lungo esattamente sei cifre — e non di meno — ha una ragione chiara. Nella divisione scritta rimane un resto ad ogni passo, e il periodo finisce non appena si ripete un resto. Per un settimo compaiono in sequenza tutti e sei i possibili resti da 1 a 6, prima che il primo si ripeta. Non ci possono essere più di sei resti diversi per il sette, quindi sei è la lunghezza massima possibile.\n\n'
+            'Un numero primo il cui reciproco raggiunge questo periodo di massima lunghezza si chiama numero primo a periodo completo. Solo in quel caso i multipli attraversano tutte le rotazioni, e solo allora nasce un numero ciclico. Se un numero primo è a periodo completo dipende da come le potenze della base — qui dodici — si comportano divise per quel numero primo.',
+      ),
+      ProseSection(
+        'Il complemento alla cifra più alta',
+        'Il periodo 186A35 porta in sé anche un secondo schema. Se lo si divide a metà e si sommano le due metà, si ottiene 186 + A35 = BBB — di nuovo solo undici, questa volta tre. Le due metà si completano esattamente fino alla cifra più alta.\n\n'
+            'È un teorema generale (di Étienne Midy, 1836) e vale in qualsiasi base: in base dieci è 142 + 857 = 999. L\'effetto mostra che la seconda metà del periodo non è materiale nuovo, ma il riflesso della prima.',
+      ),
+      ProseSection(
+        'Non ogni numero primo partecipa',
+        'La bella rotazione è l\'eccezione, non la regola. Un undicesimo mostra in base dodici solo il periodo 0,1 — un unico uno che si ripete, perché dodici sta uno sopra undici (il corrispettivo di un nono = 0,1 nel sistema decimale). Un tredicesimo dà 0,0B con il breve periodo 0B. Tali numeri primi non generano un numero ciclico.\n\n'
+            'Tra i numeri primi piccoli, in base dodici 5, 7, 17, 31, 41 e 43 (contati in decimale) sono numeri primi a periodo completo — notevolmente tutti con la cifra finale 5 o 7 in base dodici. Questa è una condizione necessaria, ma non sufficiente: il diciannove termina anch\'esso con 7, ma ha solo un periodo di sei cifre. Anche il cambiamento di base conta: il cinque è a periodo completo in base dodici (un quinto = 0,2497, periodo 2497), mentre nel sistema decimale un quinto è netto. Quali numeri primi partecipano appartiene quindi alla coppia formata da base e numero primo, non al numero primo da solo.',
+      ),
+      ProseSection(
+        'Quanti ce ne sono — una questione aperta',
+        'Si potrebbe pensare che una proprietà così netta sia già stata contata da tempo. Non è così. Quanti numeri primi a periodo completo esistono in base dodici — se siano infiniti — non è ancora dimostrato.\n\n'
+            'Una congettura di Emil Artin del 1927 prevede che circa trentasette primi su cento debbano essere a periodo completo, in base dodici come in ogni altra base adatta. Le osservazioni sui numeri piccoli si accordano con questo ordine di grandezza. Ma la congettura è appunto una congettura: nonostante grandi sforzi, non è dimostrata per nessuna singola base. Questo fa parte di una presentazione onesta — uno schema dall\'apparenza semplice, dietro cui si cela un problema ancora aperto oggi.',
+      ),
+      ProseSection(
+        'Da provare nella calcolatrice',
+        'Tutto ciò si può verificare qui. Se si digita un settimo e si preme uguale, il display mostra 0, con una linea sopra 186A35 — le sei cifre del periodo. Per due settimi appare la stessa sequenza come 35186A, ruotata; non è un arrotondamento, ma esattamente lo stesso schema. Un quinto mostra la linea sopra 2497, un undicesimo solo sopra la singola cifra 1.\n\n'
+            'Gli esempi più grandi rendono visibili i limiti: una frazione con denominatore trentuno (in decimale) ha un periodo lungo trenta cifre — qui il display accorcia con tre puntini, perché non tutto entra in una riga. Come la calcolatrice calcoli le frazioni esatte e i loro periodi è spiegato nel capitolo «Come calcola questa calcolatrice».',
+      ),
+    ],
+    sources: [
+      Source(
+        'Cyclic number — Wikipedia',
+        'https://en.wikipedia.org/wiki/Cyclic_number',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Full reptend prime — Wikipedia',
+        'https://en.wikipedia.org/wiki/Full_reptend_prime',
+        'R2',
+        'A1',
+      ),
+      Source(
+        '142857 — Wikipedia',
+        'https://en.wikipedia.org/wiki/142857',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Midy’s theorem — Wikipedia',
+        'https://en.wikipedia.org/wiki/Midy%27s_theorem',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Multiplicative order — Wikipedia',
+        'https://en.wikipedia.org/wiki/Multiplicative_order',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Artin’s conjecture on primitive roots — Wikipedia',
+        'https://en.wikipedia.org/wiki/Artin%27s_conjecture_on_primitive_roots',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Orders of Units in Modular Arithmetic (Keith Conrad, UConn)',
+        'https://kconrad.math.uconn.edu/blurbs/ugradnumthy/ordersmodm.pdf',
+        'R1',
+        'A2',
+      ),
+      Source(
+        'OEIS A019340 — Primes with primitive root 12',
+        'https://oeis.org/A019340',
+        'R2',
+        'A2',
+      ),
+    ],
+  ),
+  ProseChapter(
+    'Divisibilità e la prova dell’undici',
+    [
+      ProseSection(
+        'L’ultima cifra rivela molto',
+        'In base dodici l’ultima cifra di un numero non è altro che il suo resto nella divisione per dodici. Per questo si vede subito dall’ultima cifra se il numero è divisibile per uno dei divisori del dodici. Le cifre finali pari (0, 2, 4, 6, 8, A) significano divisibilità per due. Se il numero termina con 0, 3, 6 o 9, è divisibile per tre; con 0, 4 o 8, per quattro; con 0 o 6, per sei; con il solo 0, per dodici. (A sta qui per dieci.)\n\n'
+            'Questo è un vantaggio concreto del dodici. Nel sistema decimale l’ultima cifra rivela solo la divisibilità per due, cinque e dieci — per tre, quattro o sei bisogna calcolare. Il dodici mette in evidenza esattamente i piccoli divisori frequenti.',
+      ),
+      ProseSection(
+        'La prova dell’undici: conta la somma delle cifre',
+        'Per l’undici (B) l’ultima cifra non aiuta, ma c’è un’operazione altrettanto semplice: la somma delle cifre. Un numero è divisibile per undici in base dodici esattamente quando la sua somma delle cifre è divisibile per undici. Il motivo è elegante: dodici lascia il resto uno nella divisione per undici, e così fa ogni posizione superiore — quindi conta solo il totale delle cifre.\n\n'
+            'È l’esatto corrispettivo della nota prova del nove nel sistema decimale, dove la somma delle cifre verifica il nove. In base dodici verifica l’undici — da qui il nome prova dell’undici. Un esempio: il numero 4B7 ha la somma delle cifre 4 + B + 7, cioè quattordici più otto, che fa ventidue — e ventidue è due volte undici, quindi 4B7 è divisibile per undici. Come la prova del nove, la prova dell’undici serve come rapido controllo del calcolo: se la prova non torna, nel risultato c’è un errore.',
+      ),
+      ProseSection(
+        'Il tredici alla somma alternata',
+        'Una seconda prova cattura il tredici. Qui si sommano le cifre alternatamente più e meno, cominciando da destra — la somma alternata. Se questa è divisibile per tredici, lo è anche il numero. Il motivo è lo specchio della prova dell’undici: dodici si trova uno sotto tredici, perciò le posizioni cambiano segno nella divisione per tredici.\n\n'
+            'Un piccolo ostacolo per chi è abituato al sistema decimale: lì la «prova dell’undici» è proprio la variante alternata, perché l’undici si trova uno sopra dieci. In base dodici i ruoli sono scambiati — la semplice somma appartiene all’undici, quella alternata al tredici. (Il tredici stesso si scrive in base dodici come 11, un dodici e un’unità; si intende sempre il suo valore.)',
+      ),
+      ProseSection(
+        'Dove il dodici fa fatica',
+        'Nessun vantaggio è gratuito. Il cinque e il sette non condividono alcun fattore con il dodici e non si adattano nemmeno all’undici o al tredici — per loro non esiste in base dodici una comoda regola sull’ultima cifra o sulla somma. Proprio il cinque, che nel sistema decimale ha la prova più semplice di tutte (ultima cifra zero o cinque), diventa qui scomodo.\n\n'
+            'È lo scambio onesto: il dodici ci regala le prove facili per tre, quattro e sei, e in cambio ci toglie la facile prova del cinque. Quale lato pesa di più dipende da quali divisori si usano più spesso nella vita quotidiana — e di solito sono quelli piccoli.',
+      ),
+    ],
+    sources: [
+      Source(
+        'Divisibility rule — Wikipedia',
+        'https://en.wikipedia.org/wiki/Divisibility_rule',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Duodecimal — Wikipedia',
+        'https://en.wikipedia.org/wiki/Duodecimal',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Casting out nines — Wikipedia',
+        'https://en.wikipedia.org/wiki/Casting_out_nines',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Modular arithmetic — Wikipedia',
+        'https://en.wikipedia.org/wiki/Modular_arithmetic',
+        'R2',
+        'A2',
+      ),
+    ],
+  ),
+  ProseChapter(
+    'Trucchi nella tavola pitagorica',
+    [
+      ProseSection(
+        'Serie con una coda corta',
+        'La tavola pitagorica del dodici ha dodici serie, e alcune si imparano quasi da sole — quelle dei divisori. I loro multipli terminano con schemi brevi e ricorrenti. La serie del sei termina alternativamente con 6 e 0 (6, 10, 16, 20, 26, 30 …). La serie del quattro va 4, 8, 0, 4, 8, 0; quella del tre 3, 6, 9, 0 e di nuovo dall’inizio; quella del due rimane sempre pari.\n\n'
+            'Due operazioni sono particolarmente comode. Moltiplicare per dodici significa semplicemente aggiungere uno zero: sette per dodici è 70. E la serie del sei è la metà della serie del dodici — sei per un numero pari termina con 0, sei per un numero dispari con 6.',
+      ),
+      ProseSection(
+        'La serie dell’undici come specchio',
+        'La serie più bella appartiene all’undici (B): B, 1A, 29, 38, 47, 56, 65, 74, 83, 92, A1, B0. Contiene due schemi insieme. La cifra anteriore sale passo dopo passo — 0, 1, 2, 3 e così via —, mentre quella posteriore scende al medesimo ritmo. E in ogni risultato le due cifre sommano a undici: uno e dieci, due e nove, tre e otto.\n\n'
+            'È esattamente lo specchio della serie del nove nel sistema decimale, dove le cifre si completano a nove. Ne deriva un trucco comodo: invece di moltiplicare per undici, si prende per dodici e si sottrae il numero una volta. Undici per sette fa quindi settanta meno sette, cioè 65 in base dodici — e in effetti nella tabella undici per sette appare 65.',
+      ),
+      ProseSection(
+        'Le serie ostinate: cinque e sette',
+        'Non tutte le serie sono così accomodanti. Il cinque e il sette non condividono alcun fattore con il dodici, e le loro serie percorrono perciò tutte e dodici le possibili ultime cifre prima che qualcosa si ripeta — nessun ciclo breve che aiuti a memorizzare. La serie del cinque termina in ordine con 5, A, 3, 8, 1, 6, B, 4, 9, 2, 7, 0; quella del sette è ugualmente discontinua.\n\n'
+            'Qui ritorna un antico quartetto: proprio le serie dell’uno, del cinque, del sette e dell’undici percorrono per intero tutte le ultime cifre — gli stessi quattro numeri che sull’orologio generano l’intero cerchio e corrispondono alle terminazioni dei numeri primi. Ed è esattamente per questo che un quinto e un settimo hanno quei periodi lunghi e completi del capitolo sui numeri ciclici. Nel sistema decimale la serie del sette è la famosa ostica; in base dodici sono il cinque e il sette insieme.',
+      ),
+      ProseSection(
+        'Quadrati e la grossa',
+        'Percorrendo la tabella in diagonale da sinistra in alto verso destra in basso, si trovano i numeri quadrati: 1, 4, 9, 14, 21, 30, 41, 54, 69, 84, A1 — e infine 100. Quest’ultimo è dodici per dodici, cioè centoquarantaquattro, che in base dodici si chiama semplicemente «100» ed è noto da sempre come la grossa. Il dodici scrive il proprio numero quadrato in modo tanto tondo quanto il sistema decimale scrive il cento.\n\n'
+            'Anche raddoppiare e dimezzare è facile in base dodici, perché dodici è pari e divisibile per quattro: la metà di 10 è 6, la metà di 6 è 3, la metà di 3 è 1,6. Così molte operazioni si scompongono nella testa in passi piccoli e puliti — il vero motivo per cui gli amici del dodici trovano piacevole calcolare con esso.',
+      ),
+    ],
+    sources: [
+      Source(
+        'Duodecimal — Wikipedia',
+        'https://en.wikipedia.org/wiki/Duodecimal',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Multiplication table — Wikipedia',
+        'https://en.wikipedia.org/wiki/Multiplication_table',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Multiplicative group of integers modulo n — Wikipedia',
+        'https://en.wikipedia.org/wiki/Multiplicative_group_of_integers_modulo_n',
+        'R2',
+        'A2',
+      ),
+    ],
+  ),
+  ProseChapter(
     'Le basi numeriche a confronto',
     [
       ProseSection(
@@ -549,6 +735,244 @@ List<ProseChapter> _mathChaptersIt() => const [
     ],
   ),
   ProseChapter(
+    'L’orologio come gruppo (ℤ/12ℤ)',
+    [
+      ProseSection(
+        'Calcolare come sul quadrante',
+        'Sull’orologio le undici più due ore non fanno tredici, ma l’una. Si calcola normalmente e alla fine si prende il resto nella divisione per dodici. In modo figurato, la retta dei numeri infinita viene avvolta su un cerchio con dodici tacche; ogni numero atterra su una delle tacche da 0 a 11.\n\n'
+            'Queste dodici tacche con l’addizione delle ore formano un piccolo sistema di calcolo ben definito. Rimane sempre chiuso in sé (ogni somma è di nuovo una delle dodici tacche), esiste lo zero come «non cambia nulla», e per ogni passo esiste una via di ritorno: cinque in avanti è compensato da sette indietro, perché 5 + 7 = 12 = 0. Un sistema di calcolo con queste proprietà si chiama in matematica un gruppo. L’orologio delle ore è l’esempio più intuitivo in assoluto; il suo nome è ℤ/12ℤ, pronunciato «Z modulo dodici».',
+      ),
+      ProseSection(
+        'Quali passi raggiungono tutti i campi',
+        'Muovendosi a passi di uno attorno al cerchio, si raggiunge una dopo l’altra ogni tacca prima di tornare al punto di partenza. Ma non con qualsiasi ampiezza di passo. Saltando sempre di tre, si atterra solo su 0, 3, 6, 9 e dopo quattro salti si è di ritorno — otto campi restano intatti. Saltando di quattro, si raggiunge solo 0, 4, 8.\n\n'
+            'Tutte e dodici le tacche vengono raggiunte da un’ampiezza di passo esattamente quando essa non ha alcun divisore comune con il dodici. Questo vale per quattro passi: 1, 5, 7 e B (= undici). Esattamente quattro — non è un caso, ma un valore caratteristico del dodici che incontreremo ancora due volte. Questi quattro sono i passi «buoni» che generano l’intero cerchio.',
+      ),
+      ProseSection(
+        'I sottogruppi sul quadrante',
+        'Le ampiezze di passo che raggiungono solo una parte delle tacche disegnano sul quadrante figure regolari. Il passo di sei collega 0 e 6 in una linea attraverso il centro. Il passo di quattro disegna il triangolo 0–4–8, il passo di tre il quadrato 0–3–6–9, il passo di due l’esagono delle ore pari. Ognuna di queste figure è a sua volta un piccolo orologio chiuso in sé — un sottogruppo.\n\n'
+            'È notevole: ad ogni divisore del dodici — 1, 2, 3, 4, 6, 12 — corrisponde esattamente una tale figura, né più né meno. Il dodici ha tanti divisori quanti nessun numero più piccolo, perciò il suo quadrante porta così tante figure ordinate. Un ipotetico orologio a dieci ore avrebbe solo i divisori 1, 2, 5, 10 — nessun triangolo, nessun quadrato. La stessa divisibilità che caratterizza il dodici come base di conteggio rende il suo quadrante così ricco.',
+      ),
+      ProseSection(
+        'Lo stesso orologio in musica',
+        'I dodici semitoni di un’ottava formano lo stesso cerchio: dopo dodici passi di semitono si è di ritorno alla nota di partenza, un’ottava più in alto. Trasportare una melodia in un’altra tonalità significa ruotare tutti i suoni dello stesso passo — addizione sul cerchio dei suoni.\n\n'
+            'Il circolo delle quinte, che i musicisti imparano a memoria, non è altro che il passo di sette su questo cerchio: una quinta pura misura sette semitoni, e poiché il sette è uno dei quattro passi buoni, il circolo percorre tutti e dodici i suoni prima di chiudersi. La quarta (cinque semitoni) ruota lo stesso circolo al contrario. I passi con un divisore comune, invece, rimangono intrappolati in una figura e danno esattamente gli accordi simmetrici noti: la terza maggiore il triangolo, il tritono la linea. Perché ci siano esattamente dodici semitoni e come suonino è trattato nel capitolo sul dodici in musica; qui conta solo che sia lo stesso cerchio.',
+      ),
+      ProseSection(
+        'E nei numeri primi',
+        'Un terzo luogo mostra lo stesso quartetto. Se si scrivono i numeri primi in base dodici, ogni numero primo superiore al tre termina con una delle cifre 1, 5, 7 o B. Altre ultime cifre sono impossibili: un numero che termina con 0, 2, 4, 6, 8 o A è pari; uno che termina con 3, 6, 9 è divisibile per tre. Restano esattamente le quattro cifre che non condividono alcun divisore con il dodici — di nuovo 1, 5, 7, B.\n\n'
+            'Sono le stesse quattro dei passi buoni e degli intervalli che generano il circolo. Un’ultima cifra di questo quartetto è però solo una condizione necessaria, non una prova: 25 termina in base dodici con 1, ma è cinque per cinque. La cifra esclude molti numeri come primi, ma non ne incorona nessuno.',
+      ),
+      ProseSection(
+        'Addizionare sempre, dividere non sempre',
+        'Sull’orologio delle ore si può anche moltiplicare — e qui finisce la bella chiusura. Nell’addizione ogni passo ha una via di ritorno; nella moltiplicazione no. Non esiste un’ora per cui si possa moltiplicare il due e arrivare netto all’uno, perché il doppio è sempre pari. Il due non ha un inverso sull’orologio del dodici.\n\n'
+            'Un inverso ce l’hanno solo i quattro buoni numeri 1, 5, 7, B — e ognuno è l’inverso di sé stesso: cinque per cinque è 25, cioè 1 sull’orologio del dodici; ugualmente sette per sette e B per B. Se l’orologio avesse un numero di ore primo come undici o tredici, allora ogni ora avrebbe un inverso. Il dodici è per questo troppo divisibile — la stessa ricchezza di divisori che orna il suo quadrante gli sottrae la divisione netta. Non è un difetto, ma la natura dei numeri composti; un orologio a dieci ore andrebbe allo stesso modo.',
+      ),
+      ProseSection(
+        'Modulo dodici non è base dodici',
+        'Un’ultima differenza importante, che si confonde facilmente. L’orologio calcola «modulo dodici» — conserva solo il resto nella divisione per dodici. Questo è diverso dalla «base dodici», la notazione di questa calcolatrice, in cui le posizioni valgono unità, dodici, grossa e così via. Modulo dice in quale classe di resto cade un numero; la base dice come lo si scrive.\n\n'
+            'Entrambi ruotano attorno al numero dodici, ma per la stessa ragione più profonda — i suoi molti divisori —, non perché siano la stessa cosa. Si calcola ogni giorno modulo dodici sull’orologio e si scrive l’ora ugualmente nel sistema decimale. Questo tipo di calcolo con i resti fu introdotto da Carl Friedrich Gauss nel 1801 come notazione propria; oggi è invisibilmente presente nelle cifre di controllo dei codici ISBN e dei conti correnti e in ogni formula per il giorno della settimana.',
+      ),
+    ],
+    sources: [
+      Source(
+        'Modular arithmetic — Wikipedia',
+        'https://en.wikipedia.org/wiki/Modular_arithmetic',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Cyclic group — Wikipedia',
+        'https://en.wikipedia.org/wiki/Cyclic_group',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Subgroups of cyclic groups — Wikipedia',
+        'https://en.wikipedia.org/wiki/Subgroups_of_cyclic_groups',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Multiplicative group of integers modulo n — Wikipedia',
+        'https://en.wikipedia.org/wiki/Multiplicative_group_of_integers_modulo_n',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Circle of fifths — Wikipedia',
+        'https://en.wikipedia.org/wiki/Circle_of_fifths',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Pitch class — Wikipedia',
+        'https://en.wikipedia.org/wiki/Pitch_class',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Highly composite number — Wikipedia',
+        'https://en.wikipedia.org/wiki/Highly_composite_number',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Disquisitiones Arithmeticae — Wikipedia',
+        'https://en.wikipedia.org/wiki/Disquisitiones_Arithmeticae',
+        'R1',
+        'A2',
+      ),
+    ],
+  ),
+  ProseChapter(
+    '12! e le sequenze',
+    [
+      ProseSection(
+        'Quante sequenze?',
+        'Quante possibilità ci sono di mettere in fila una dozzina di cose — dodici ospiti a una tavola, i dodici mesi su una lista, dodici libri su uno scaffale? Per il primo posto si hanno dodici candidati, per il secondo undici, poi dieci, e così via fino all’ultimo, per cui rimane solo uno. Si moltiplicano tutte le possibilità: 12 · 11 · 10 · … · 2 · 1.\n\n'
+            'Questo prodotto di tutti i numeri da 1 a dodici si scrive in breve «12!» e si chiama fattoriale di dodici. In generale n! è il prodotto di tutti i numeri da 1 a n e conta le sequenze di n elementi. Una curiosità marginale: 0! è definito come 1 — c’è esattamente un modo di non disporre nulla, cioè quello vuoto.',
+      ),
+      ProseSection(
+        'Il numero 12!',
+        'Calcolato, 12! = 479001600 nel sistema decimale — quasi mezzo miliardo di sequenze per soli dodici elementi. In base dodici lo stesso numero si scrive come 114500000, con cinque zeri in fondo. Questi zeri sono un terreno di gioco del dodici: poiché 12! contiene così tante volte i fattori due e tre, e ogni zero finale stacca esattamente un dodici, cinque di essi vengono netti. Nel sistema decimale 12! termina con soli due zeri.\n\n'
+            'Quanto è grande mezzo miliardo di sequenze? Se se ne mostrasse una al secondo, ci vorrebbero più di quindici anni per esaurirle tutte. Se invece la dozzina siede a un tavolo rotondo, dove conta solo la vicinanza e non il posto di partenza, il numero si riduce a undici fattoriale — quasi quaranta milioni. Si può chiedere alla calcolatrice: il tasto del fattoriale fornisce 12! subito in base dodici.',
+      ),
+      ProseSection(
+        'Selezione con e senza ordine',
+        'Spesso non si vuole disporre tutti e dodici, ma solo sceglierne alcuni — e in quel caso fa differenza se l’ordine conta. Tre atleti sul podio (oro, argento, bronzo) su dodici: 12 · 11 · 10 = 1320 possibilità ordinate. L’ordine conta qui, perché primo e secondo non sono la stessa cosa.\n\n'
+            'Se invece si scelgono sei dei dodici come semplice gruppo, senza classifica — ad esempio sei volontari —, sono 924 le possibilità; due dei dodici come coppia sono 66. Entrambi i metodi di conteggio si fondano sul fattoriale. Nel linguaggio comune vengono spesso confusi: una «combinazione» di numeri richiede in realtà una sequenza precisa — dovrebbe chiamarsi serratura a permutazione.',
+      ),
+      ProseSection(
+        'Campane che suonano tutte le sequenze',
+        'Nei campanili inglesi esiste un’antica arte che fa esattamente questo: il change ringing, il suono a variazione. Invece di melodie, i suonatori fanno risuonare le loro campane in sequenze sempre nuove, ognuna esattamente una volta. Ad ogni cambio ogni campana può avanzare solo di una posizione — una versione fisica dello scambio di elementi adiacenti, che i campanari padroneggiavano già intorno al 1621, molto prima che i matematici descrivessero lo stesso trucco.\n\n'
+            'Per ogni numero di campane esiste un nome; dodici campane si chiamano Maximus. Suonare tutte le sequenze di dodici campane significherebbe percorrere 12! = circa 479 milioni di cambi — a due secondi per cambio sarebbero decenni di suono ininterrotto. Nessuno lo ha mai compiuto e si ritiene impossibile; i pezzi più lunghi effettivamente suonati su dodici campane raggiungono solo alcune decine di migliaia di cambi. Un extent completo è stato suonato solo su otto campane: 40320 cambi, quasi diciotto ore, nel 1963 a Loughborough.',
+      ),
+      ProseSection(
+        'Dal numero nasce un gruppo',
+        'Raccogliendo tutte le 12! riorganizzazioni di una dozzina e intendendo «prima l’una, poi l’altra» come regola di calcolo, nasce di nuovo un gruppo — il gruppo completo delle permutazioni dei dodici elementi. A differenza dell’orologio, qui l’ordine dei passi conta: scambiare prima e poi spostare dà qualcosa di diverso che fare il contrario. Questo gruppo è enorme e non commutativo.\n\n'
+            'Al suo interno si nasconde una meraviglia finale. Tra le quasi cinquecento milioni di permutazioni esiste una minuscola selezione straordinariamente regolare di soli 95040 elementi, che sposta cinque qualsiasi dei dodici punti verso cinque destinazioni qualsiasi esattamente in un’unica maniera. Che su dodici punti sia possibile qualcosa di simile appartiene alle rarità più rare della matematica — ed è il tema del prossimo capitolo.',
+      ),
+    ],
+    sources: [
+      Source(
+        'Factorial — Wikipedia',
+        'https://en.wikipedia.org/wiki/Factorial',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Permutation — Wikipedia',
+        'https://en.wikipedia.org/wiki/Permutation',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Combination — Wikipedia',
+        'https://en.wikipedia.org/wiki/Combination',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Change ringing — Wikipedia',
+        'https://en.wikipedia.org/wiki/Change_ringing',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Extent (change ringing) — Wikipedia',
+        'https://en.wikipedia.org/wiki/Extent_(change_ringing)',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Symmetric group — Wikipedia',
+        'https://en.wikipedia.org/wiki/Symmetric_group',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Steinhaus–Johnson–Trotter algorithm — Wikipedia',
+        'https://en.wikipedia.org/wiki/Steinhaus%E2%80%93Johnson%E2%80%93Trotter_algorithm',
+        'R2',
+        'A2',
+      ),
+    ],
+  ),
+  ProseChapter(
+    'Il gruppo di Mathieu M₁₂',
+    [
+      ProseSection(
+        'Una selezione tra quasi mezzo miliardo',
+        'Il capitolo precedente si è concluso con una promessa: tra le quasi cinquecento milioni di permutazioni di una dozzina esiste una minuscola selezione di esattamente 95040, capace di qualcosa di quasi incredibile. Scegli cinque dei dodici punti e indica dove deve andare ognuno — tra queste 95040 permutazioni ce n’è esattamente una che lo fa. Non due, non nessuna: esattamente una.\n\n'
+            'Da questa sola proprietà segue già l’intero numero. Per la destinazione del primo punto si hanno dodici scelte, per il secondo undici, poi dieci, nove, otto — e il resto è determinato. Dodici per undici per dieci per nove per otto fa 95040. Questa rara raccolta di permutazioni porta un nome: il gruppo di Mathieu M₁₂.',
+      ),
+      ProseSection(
+        'Il sistema di Steiner S(5,6,12)',
+        'Cosa tengono fermo queste 95040 permutazioni in modo inamovibile? Una figura combinatoria elegante. Tra dodici punti si possono scegliere certi gruppi di sei in modo tale che ogni scelta qualsiasi di cinque punti sia contenuta in esattamente uno di questi gruppi di sei. Ce ne sono esattamente 132, e questa disposizione è l’unica possibile a meno di rinominare i punti.\n\n'
+            'Questa costruzione finemente bilanciata si chiama il sistema di Steiner S(5,6,12). Il gruppo di Mathieu è esattamente l’insieme delle permutazioni che mappano tutti i 132 gruppi di sei su altri gruppi di sei — le simmetrie di questa figura. I due numeri, 132 gruppi di sei e 95040 simmetrie, si scrivono in base dodici come B0 e 47000.',
+      ),
+      ProseSection(
+        'Perché proprio il dodici',
+        'La cosa davvero sorprendente non è che M₁₂ sia così regolare, ma quanto raramente si presenti una tale regolarità. Camille Jordan dimostrò nel 1872: se si escludono i casi ovvi e ordinari, un insieme di permutazioni capace di posizionare liberamente cinque punti in esattamente un modo è possibile su un’unica quantità di punti — dodici. La cosa analoga per quattro punti esiste come eccezione solo su undici punti.\n\n'
+            'Su esattamente undici e dodici punti — e in nessun altro luogo al di là dei casi ordinari — esistono queste simmetrie straordinariamente perfette. Il dodici è quindi uno dei pochissimi numeri capaci di portare qualcosa di simile. È un risultato matematico chiaro, non misticismo numerico — ma una ragione di meraviglia.',
+      ),
+      ProseSection(
+        'La prima della sua specie',
+        'I gruppi finiti hanno elementi costitutivi che non si possono scomporre ulteriormente — i gruppi semplici, gli atomi della teoria dei gruppi. «Semplice» significa qui indecomponibile, non facile. La maggior parte di questi atomi appartiene a poche famiglie infinite; accanto a esse si trovano esattamente ventisei solitari, i gruppi sporadici. M₁₂ è uno di loro.\n\n'
+            'Émile Mathieu descrisse M₁₂ già nel 1861 — fu il primissimo gruppo sporadico mai scoperto, quasi cento anni prima degli altri. La sua esistenza rimase a lungo controversa, alcuni esperti la mettevano in dubbio; solo Ernst Witt la pose su basi solide nel 1938. La serie dei gruppi sporadici, iniziata con M₁₂, si conclude con il leggendario «Mostro», e la loro classificazione completa è una delle più grandi imprese collettive della matematica in assoluto.',
+      ),
+      ProseSection(
+        'Da toccare con mano: carte e un gioco',
+        'Per quanto astratto possa sembrare — esistono accessi concreti. Mescolando dodici carte da gioco in due modi specifici e sempre uguali più e più volte, si generano, secondo le fonti riportate, esattamente le permutazioni del gruppo di Mathieu. E il matematico John Conway inventò un «blackjack matematico» con i dodici numeri da zero a B, la cui strategia vincente si fonda direttamente sui 132 gruppi di sei.\n\n'
+            'Va detto onestamente: questo capitolo ha quasi nessun tasto nella calcolatrice che gli corrisponda — è pura bellezza teorica, non uno strumento. Ma a volte è proprio questo il fascino: che proprio il dodici, che dà il ritmo a questa calcolatrice, sia uno dei pochissimi numeri in cui la matematica ha nascosto una simmetria così rara e perfetta.',
+      ),
+    ],
+    sources: [
+      Source(
+        'Mathieu group M12 — Wikipedia',
+        'https://en.wikipedia.org/wiki/Mathieu_group_M12',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Mathieu group — Wikipedia',
+        'https://en.wikipedia.org/wiki/Mathieu_group',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Steiner system — Wikipedia',
+        'https://en.wikipedia.org/wiki/Steiner_system',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Sporadic group — Wikipedia',
+        'https://en.wikipedia.org/wiki/Sporadic_group',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Multiply transitive group — Wikipedia',
+        'https://en.wikipedia.org/wiki/Multiply_transitive_group',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Classification of finite simple groups — Wikipedia',
+        'https://en.wikipedia.org/wiki/Classification_of_finite_simple_groups',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Émile Léonard Mathieu — Wikipedia',
+        'https://en.wikipedia.org/wiki/%C3%89mile_L%C3%A9onard_Mathieu',
+        'R2',
+        'A1',
+      ),
+    ],
+  ),
+  ProseChapter(
     'Il dodecagono (poligono di dodici lati)',
     [
       ProseSection(
@@ -743,6 +1167,70 @@ List<ProseChapter> _mathChaptersIt() => const [
       ),
     ],
     imageId: 'math/dodekagon',
+  ),
+  ProseChapter(
+    'Pavimentazioni archimedee',
+    [
+      ProseSection(
+        'Il dodecagono non riempie il piano da solo',
+        'Un dodecagono regolare è una figura bella e rotonda — ma non riesce a ricoprire da solo un pavimento senza lasciare spazi vuoti. Il motivo è il suo angolo interno di 150 gradi. Attorno a ogni vertice le figure adiacenti devono completarsi esattamente a 360 gradi, ma 360 diviso 150 fa due virgola quattro — non un numero intero. Due dodecagoni lasciano uno spazio a un vertice, tre si sovrappongono.\n\n'
+            'Il dodecagono ha bisogno di partner. Se si inseriscono le figure giuste tra di essi, nascono motivi regolari e privi di lacune — le pavimentazioni archimedee. Così si chiamano le tassellature del piano composte solo da poligoni regolari che hanno lo stesso aspetto ad ogni vertice. In totale esistono solo undici tali motivi.',
+      ),
+      ProseSection(
+        'Due motivi con il dodecagono',
+        'Di questi undici motivi, esattamente due contengono un dodecagono regolare. Nel primo, piccoli triangoli equilateri riempiono gli spigoli tra i dodecagoni — a ogni vertice si incontrano un triangolo e due dodecagoni, e i loro angoli danno 60 più 150 più 150, cioè esattamente 360 gradi.\n\n'
+            'Il secondo è il più ricco ed è quello mostrato nella figura: attorno a ogni dodecagono si dispone una corona alternata di quadrati ed esagoni. A ogni vertice si incontrano un quadrato, un esagono e un dodecagono — 90 più 120 più 150 gradi, di nuovo esattamente 360. Poiché la somma torna, la corona si chiude senza alcuna lacuna e il motivo si estende in tutte le direzioni.',
+      ),
+      ProseSection(
+        'Perché si adattano solo tre, quattro, sei',
+        'Accanto a un dodecagono si adattano solo tre tipi di vicini: triangoli, quadrati ed esagoni. Non è un caso. I loro angoli interni sono 60, 90 e 120 gradi — e questi sono esattamente 360 diviso sei, diviso quattro e diviso tre. Compaiono quindi esattamente i divisori tre, quattro e sei del dodici.\n\n'
+            'Sono gli stessi tre divisori che in base dodici fanno venire nette le frazioni un terzo, un quarto e un sesto. La bella pavimentazione e la comoda frazione nascono dalla stessa radice: la ricca divisibilità del dodici. È una vera parentela, ma non una costrizione — gli angoli vengono dalla geometria, le frazioni nette dalla notazione; entrambi dipendono solo dallo stesso numero.',
+      ),
+      ProseSection(
+        'Keplero, moschee e cristalli',
+        'A enumerarli per la prima volta fu Johannes Kepler nel 1619, in un’opera sull’armonia del mondo. Il nome «archimedeo» è solo un riferimento ai solidi archimedei; non è nota alcuna opera antica in cui Archimede stesso avesse trattato le pavimentazioni.\n\n'
+            'Ben prima di Keplero il dodecagono viveva già nell’arte: le stelle a dodici punte sono tra i motivi più splendidi dell’ornamentazione geometrica islamica, costruiti con compasso e riga dalla pura geometria — già in tempi antichi, ad esempio nella moschea di Konya (1220). E in natura la stessa struttura a dodici appaiono nei quasicristalli, cui è dedicato un capitolo a parte. Il dodecagono, che da solo non riesce a riempire un piano, è in associazione una delle forme più feconde della superficie.',
+      ),
+    ],
+    sources: [
+      Source(
+        'Euclidean tilings by convex regular polygons — Wikipedia',
+        'https://en.wikipedia.org/wiki/Euclidean_tilings_by_convex_regular_polygons',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Truncated hexagonal tiling — Wikipedia',
+        'https://en.wikipedia.org/wiki/Truncated_hexagonal_tiling',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Truncated trihexagonal tiling — Wikipedia',
+        'https://en.wikipedia.org/wiki/Truncated_trihexagonal_tiling',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Archimedean Tilings and Egyptian Fractions (John Baez)',
+        'https://math.ucr.edu/home/baez/egyptian.html',
+        'R3',
+        'A1',
+      ),
+      Source(
+        'Islamic geometric patterns — Wikipedia',
+        'https://en.wikipedia.org/wiki/Islamic_geometric_patterns',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Harmonices Mundi — Wikipedia',
+        'https://en.wikipedia.org/wiki/Harmonices_Mundi',
+        'R2',
+        'A2',
+      ),
+    ],
+    imageId: 'math/parkettierung',
   ),
   ProseChapter(
     'Il dodecaedro',

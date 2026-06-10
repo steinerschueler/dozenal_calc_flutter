@@ -118,6 +118,334 @@ List<ProseChapter> _mathChaptersEs() => const [
     ],
   ),
   ProseChapter(
+    'Números cíclicos',
+    [
+      ProseSection(
+        'El séptimo y sus parientes',
+        'Un séptimo no sale exacto en base doce, sino que se repite: '
+            'un séptimo = 0,186A35, luego otra vez 186A35, sin fin. (A '
+            'representa diez, B representa once.) El grupo que se repite es el '
+            'periodo; aquí tiene seis cifras de longitud.\n\n'
+            'Lo sorprendente se ve al colocar los demás séptimos uno al lado del '
+            'otro. Dos séptimos = 0,35186A; tres séptimos = 0,5186A3; cuatro '
+            'séptimos = 0,6A3518; cinco séptimos = 0,86A351; seis séptimos = '
+            '0,A35186. Son siempre las mismas seis cifras en el mismo orden — solo '
+            'que la secuencia comienza en un lugar distinto. Se pueden imaginar '
+            'dispuestas en un anillo que gira un poco con cada fracción.',
+      ),
+      ProseSection(
+        'Cuando los múltiplos rotan',
+        'La misma rotación está en la tabla de multiplicar del propio periodo. '
+            'Si se toma la secuencia de cifras 186A35 como número entero y se '
+            'multiplica sucesivamente, solo aparecen rotaciones: 186A35 × 2 = '
+            '35186A; × 3 = 5186A3; × 4 = 6A3518; × 5 = 86A351; × 6 = A35186. '
+            'Un número con esta propiedad se llama número cíclico.\n\n'
+            'El séptimo paso cierra el círculo: 186A35 × 7 = BBBBBB. Solo onces '
+            '— la cifra más alta de la base doce, seis veces seguidas. No es '
+            'casualidad: BBBBBB es exactamente uno menos que la siguiente posición '
+            'redonda. En base diez se conoce el mismo truco con el famoso número '
+            '142857 (el periodo de un séptimo en el sistema decimal): también allí '
+            'los múltiplos dan rotaciones, y 142857 × 7 = 999999. Las cifras son '
+            'distintas; la estructura, la misma.',
+      ),
+      ProseSection(
+        'Por qué exactamente seis cifras',
+        'Que el periodo tenga exactamente seis cifras — y no menos — tiene una '
+            'razón clara. Al dividir por escrito, después de cada paso queda un '
+            'resto, y el periodo termina en cuanto se repite alguno. Con un séptimo '
+            'aparecen sucesivamente todos los seis restos posibles, del 1 al 6, '
+            'antes de que se repita el primero. Con el siete no puede haber más de '
+            'seis restos distintos, así que seis es la longitud máxima posible.\n\n'
+            'Un número primo cuyo inverso alcanza este periodo máximo se llama '
+            'número primo de periodo completo. Solo en ese caso los múltiplos '
+            'recorren todas las rotaciones, y solo entonces surge un número cíclico. '
+            'Que un primo sea de periodo completo depende de cómo se comportan las '
+            'potencias de la base — aquí doce — al dividirlas por ese primo.',
+      ),
+      ProseSection(
+        'El complemento a la cifra más alta',
+        'El periodo 186A35 encierra aún un segundo patrón. Si se divide por la '
+            'mitad y se suman las dos mitades, sale 186 + A35 = BBB — de nuevo solo '
+            'onces, esta vez tres. Las dos mitades se complementan exactamente '
+            'hasta la cifra más alta.\n\n'
+            'Este es un teorema general (de Étienne Midy, 1836) y vale en cualquier '
+            'base: en base diez es 142 + 857 = 999. El efecto muestra que la segunda '
+            'mitad del periodo no es material nuevo, sino el reflejo especular de la '
+            'primera.',
+      ),
+      ProseSection(
+        'No todos los primos participan',
+        'La hermosa rotación es la excepción, no la regla. Un onceavo muestra en '
+            'base doce solo el periodo 0,1 — un único uno que se repite, porque el '
+            'doce está uno por encima del once (el equivalente al noveno = 0,1 en el '
+            'sistema decimal). Un treceavo da 0,0B con el periodo corto 0B. Tales '
+            'números primos no generan ningún número cíclico.\n\n'
+            'Entre los primos pequeños, en base doce son números de periodo completo '
+            'el 5, el 7, el 17, el 31, el 41 y el 43 (contados en decimal) — '
+            'curiosamente todos con dígito final 5 o 7 en base doce. Esa es una '
+            'condición necesaria, pero no suficiente: el diecinueve también termina '
+            'en 7, pero solo tiene un periodo de seis cifras. El cambio de base '
+            'también influye: el cinco es de periodo completo en base doce (un quinto '
+            '= 0,2497, periodo 2497), mientras que en base diez un quinto sale exacto. '
+            'Qué primos participan pertenece, pues, al par formado por la base y el '
+            'primo, no al primo solo.',
+      ),
+      ProseSection(
+        'Cuántos hay — una pregunta abierta',
+        'Podría pensarse que una propiedad tan clara ya estaría contada. No es así. '
+            'Cuántos números de periodo completo existen en base doce — si infinitos '
+            '— no está demostrado hasta hoy.\n\n'
+            'Una conjetura de Emil Artin del año 1927 predice que aproximadamente '
+            'treinta y siete de cada cien números primos deberían ser de periodo '
+            'completo, en base doce como en cualquier otra base válida. La '
+            'observación con números pequeños es compatible con ese orden de '
+            'magnitud. Pero la conjetura es justamente eso, una conjetura: a pesar '
+            'de grandes esfuerzos, no ha sido demostrada para ninguna base '
+            'individual. Eso forma parte de la presentación honesta — un patrón que '
+            'parece sencillo, detrás del cual se esconde un problema aún abierto.',
+      ),
+      ProseSection(
+        'Probarlo en la calculadora',
+        'Todo esto puede comprobarse aquí. Si se teclea un séptimo y el signo '
+            'igual, la pantalla muestra 0, con una raya sobre 186A35 — las seis '
+            'cifras del periodo. Con dos séptimos aparece la misma secuencia como '
+            '35186A, rotada; no es redondeo, sino exactamente el mismo patrón. '
+            'Un quinto muestra la raya sobre 2497; un onceavo, solo sobre el único '
+            'dígito 1.\n\n'
+            'Ejemplos más grandes hacen visibles los límites: una fracción con '
+            'denominador treinta y uno (en decimal) tiene un periodo de treinta '
+            'cifras — aquí la pantalla trunca con tres puntos, porque no todo cabe '
+            'en una línea. Cómo calcula la calculadora fracciones exactas y sus '
+            'periodos se explica en el capítulo «Cómo calcula esta calculadora».',
+      ),
+    ],
+    sources: [
+      Source(
+        'Cyclic number — Wikipedia',
+        'https://en.wikipedia.org/wiki/Cyclic_number',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Full reptend prime — Wikipedia',
+        'https://en.wikipedia.org/wiki/Full_reptend_prime',
+        'R2',
+        'A1',
+      ),
+      Source(
+        '142857 — Wikipedia',
+        'https://en.wikipedia.org/wiki/142857',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Midy\'s theorem — Wikipedia',
+        'https://en.wikipedia.org/wiki/Midy%27s_theorem',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Multiplicative order — Wikipedia',
+        'https://en.wikipedia.org/wiki/Multiplicative_order',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Artin\'s conjecture on primitive roots — Wikipedia',
+        'https://en.wikipedia.org/wiki/Artin%27s_conjecture_on_primitive_roots',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Orders of Units in Modular Arithmetic (Keith Conrad, UConn)',
+        'https://kconrad.math.uconn.edu/blurbs/ugradnumthy/ordersmodm.pdf',
+        'R1',
+        'A2',
+      ),
+      Source(
+        'OEIS A019340 — Primes with primitive root 12',
+        'https://oeis.org/A019340',
+        'R2',
+        'A2',
+      ),
+    ],
+  ),
+  ProseChapter(
+    'Divisibilidad y la prueba del once',
+    [
+      ProseSection(
+        'El último dígito revela mucho',
+        'En base doce, el último dígito de un número no es más que su resto al '
+            'dividirlo entre doce. Por eso, con solo mirar la cifra final se sabe '
+            'inmediatamente si el número es divisible entre alguno de los divisores '
+            'del doce. Las cifras finales pares (0, 2, 4, 6, 8, A) indican '
+            'divisibilidad entre dos. Si el número termina en 0, 3, 6 o 9, es '
+            'divisible entre tres; en 0, 4 u 8, entre cuatro; en 0 o 6, entre '
+            'seis; solo en 0, entre doce. (A representa aquí diez.)\n\n'
+            'Esta es una ventaja concreta del doce. En el sistema decimal, el '
+            'último dígito solo revela la divisibilidad entre dos, cinco y diez '
+            '— para tres, cuatro o seis hay que calcular. El doce expone '
+            'precisamente los divisores pequeños más frecuentes.',
+      ),
+      ProseSection(
+        'La prueba del once: la suma de cifras cuenta',
+        'Para el once (B) el último dígito no ayuda, pero existe un procedimiento '
+            'igualmente sencillo: la suma de cifras, es decir, la suma de todos los '
+            'dígitos. Un número es divisible entre once en base doce exactamente '
+            'cuando su suma de cifras es divisible entre once. La razón es elegante: '
+            'el doce deja resto uno al dividirlo entre once, y lo mismo ocurre con '
+            'cada posición superior — por eso solo importa lo que suman las cifras '
+            'juntas.\n\n'
+            'Esto es el equivalente exacto de la conocida prueba del nueve en el '
+            'sistema decimal, donde la suma de cifras verifica el nueve. En base '
+            'doce verifica el once — de ahí el nombre «prueba del once». Un '
+            'ejemplo: el número 4B7 tiene la suma de cifras 4 + B + 7, es decir, '
+            'catorce más ocho, que es veintidós — y veintidós es dos veces once, '
+            'así que 4B7 es divisible entre once. Como la prueba del nueve, la '
+            'prueba del once sirve como comprobación rápida: si la prueba falla, '
+            'hay un error en el resultado.',
+      ),
+      ProseSection(
+        'El trece mediante la suma alternada',
+        'Una segunda prueba detecta el trece. Aquí se suman las cifras '
+            'alternando signo positivo y negativo, comenzando por la derecha: '
+            'la suma alternada. Si esta es divisible entre trece, también lo es '
+            'el número entero. La razón es el espejo de la prueba del once: el '
+            'doce está uno por debajo del trece, por lo que las posiciones '
+            'alternan de signo al dividir entre trece.\n\n'
+            'Un pequeño tropiezo para quienes están acostumbrados al sistema '
+            'decimal: allí la «prueba del once» es precisamente la variante '
+            'alternada, porque el once está uno por encima del diez. En base doce '
+            'los papeles están intercambiados — la suma simple pertenece al once '
+            'y la alternada al trece. (El trece mismo se escribe en base doce, '
+            'por cierto, como 11, un doce y un uno; siempre se habla de su valor.)',
+      ),
+      ProseSection(
+        'Donde el doce tiene dificultades',
+        'Ninguna ventaja es gratis. El cinco y el siete no comparten ningún factor '
+            'con el doce, y tampoco encajan con el once o el trece — para ellos no '
+            'existe en base doce ninguna regla cómoda de cifra final o suma de '
+            'cifras. Precisamente el cinco, que en el sistema decimal tiene la '
+            'prueba más sencilla de todas (cifra final cero o cinco), se vuelve aquí '
+            'engorroso.\n\n'
+            'Este es el intercambio honesto: el doce nos regala las pruebas fáciles '
+            'para el tres, el cuatro y el seis, y a cambio nos quita la prueba '
+            'sencilla del cinco. Qué lado pesa más depende de qué divisores se '
+            'necesitan con más frecuencia en la vida cotidiana — y suelen ser los '
+            'pequeños.',
+      ),
+    ],
+    sources: [
+      Source(
+        'Divisibility rule — Wikipedia',
+        'https://en.wikipedia.org/wiki/Divisibility_rule',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Duodecimal — Wikipedia',
+        'https://en.wikipedia.org/wiki/Duodecimal',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Casting out nines — Wikipedia',
+        'https://en.wikipedia.org/wiki/Casting_out_nines',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Modular arithmetic — Wikipedia',
+        'https://en.wikipedia.org/wiki/Modular_arithmetic',
+        'R2',
+        'A2',
+      ),
+    ],
+  ),
+  ProseChapter(
+    'Trucos en la tabla de multiplicar',
+    [
+      ProseSection(
+        'Series con cola corta',
+        'La tabla de multiplicar del doce tiene doce series, y algunas casi se '
+            'aprenden solas — las de sus divisores. Sus múltiplos terminan en '
+            'patrones cortos y repetitivos. La serie del seis termina '
+            'alternativamente en 6 y 0 (6, 10, 16, 20, 26, 30, …). La serie del '
+            'cuatro sigue 4, 8, 0, 4, 8, 0; la del tres, 3, 6, 9, 0 y de nuevo '
+            'desde el principio; la del dos siempre termina en cifra par.\n\n'
+            'Dos operaciones resultan especialmente cómodas. Multiplicar por doce '
+            'equivale simplemente a añadir un cero: siete por doce es 70. Y la '
+            'serie del seis es la mitad de la del doce — seis por un número par '
+            'termina en 0; seis por un número impar, en 6.',
+      ),
+      ProseSection(
+        'La serie del once como espejo',
+        'La serie más elegante pertenece al once (B): B, 1A, 29, 38, 47, 56, 65, '
+            '74, 83, 92, A1, B0. Encierra dos patrones a la vez. La cifra delantera '
+            'sube paso a paso — 0, 1, 2, 3, … —, mientras la trasera baja al mismo '
+            'ritmo. Y en cada resultado las dos cifras suman once: uno y diez, dos '
+            'y nueve, tres y ocho.\n\n'
+            'Es exactamente el reflejo de la serie del nueve en el sistema decimal, '
+            'donde las cifras se complementan hasta nueve. De ello se deriva un '
+            'truco cómodo: en lugar de multiplicar por once, se multiplica por doce '
+            'y se resta el número una vez. Once por siete es, pues, setenta menos '
+            'siete, lo que da 65 en base doce — y efectivamente, en la tabla, once '
+            'por siete aparece como 65.',
+      ),
+      ProseSection(
+        'Las series rebeldes: cinco y siete',
+        'No todas las series son tan dóciles. El cinco y el siete no comparten '
+            'ningún factor con el doce, y sus series recorren por eso las doce '
+            'cifras finales posibles antes de que algo se repita — sin ciclo corto '
+            'que ayude a memorizar. La serie del cinco termina sucesivamente en '
+            '5, A, 3, 8, 1, 6, B, 4, 9, 2, 7, 0; la del siete es igualmente '
+            'saltarina.\n\n'
+            'Aquí reaparece un antiguo cuarteto: precisamente las series del uno, '
+            'el cinco, el siete y el once recorren todas las cifras finales '
+            'completamente — los mismos cuatro números que en el reloj de horas '
+            'generan todo el círculo y que terminan en números primos. Y por eso '
+            'exactamente un quinto y un séptimo tienen esos periodos largos y '
+            'completos del capítulo sobre números cíclicos. En el sistema decimal '
+            'es la serie del siete la famosamente engorrosa; en base doce lo son el '
+            'cinco y el siete conjuntamente.',
+      ),
+      ProseSection(
+        'Cuadrados y la gruesa',
+        'Si se recorre la tabla en diagonal de arriba izquierda a abajo derecha, '
+            'aparecen los cuadrados perfectos: 1, 4, 9, 14, 21, 30, 41, 54, 69, '
+            '84, A1 — y finalmente 100. Este último es doce por doce, es decir, '
+            'ciento cuarenta y cuatro, que en base doce se escribe sencillamente '
+            '«100» y desde antiguo se llama una gruesa. El doce escribe su propio '
+            'cuadrado tan redondo como el sistema decimal escribe el cien.\n\n'
+            'También doblar y halver resulta fácil en base doce, porque el doce es '
+            'par y divisible entre cuatro: la mitad de 10 es 6, la mitad de 6 es 3, '
+            'la mitad de 3 es 1,6. Así muchas operaciones pueden descomponerse '
+            'mentalmente en pasos pequeños y limpios — la razón real por la que '
+            'los aficionados al doce encuentran agradable calcular con él.',
+      ),
+    ],
+    sources: [
+      Source(
+        'Duodecimal — Wikipedia',
+        'https://en.wikipedia.org/wiki/Duodecimal',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Multiplication table — Wikipedia',
+        'https://en.wikipedia.org/wiki/Multiplication_table',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Multiplicative group of integers modulo n — Wikipedia',
+        'https://en.wikipedia.org/wiki/Multiplicative_group_of_integers_modulo_n',
+        'R2',
+        'A2',
+      ),
+    ],
+  ),
+  ProseChapter(
     'Las bases numéricas en comparación',
     [
       ProseSection(
@@ -543,6 +871,420 @@ List<ProseChapter> _mathChaptersEs() => const [
     ],
   ),
   ProseChapter(
+    'El reloj como grupo (ℤ/12ℤ)',
+    [
+      ProseSection(
+        'Calcular como en la esfera del reloj',
+        'En el reloj, las once más dos horas no dan trece, sino la una. Se calcula '
+            'normalmente y al final se toma el resto al dividir entre doce. '
+            'Visualmente, la recta numérica infinita se enrolla sobre un círculo '
+            'con doce marcas; cada número cae en una de las marcas del 0 al 11.\n\n'
+            'Estas doce marcas con la suma de horas forman un pequeño sistema de '
+            'cálculo bien definido. Siempre permanece cerrado sobre sí mismo (toda '
+            'suma es de nuevo una de las doce marcas), existe el cero como «no '
+            'cambia nada», y para cada paso hay un camino de vuelta: cinco adelante '
+            'queda compensado por siete atrás, pues 5 + 7 = 12 = 0. Un sistema de '
+            'cálculo con estas propiedades se llama en matemáticas un grupo. El '
+            'reloj de horas es el ejemplo más intuitivo que existe; su nombre es '
+            'ℤ/12ℤ, que se lee «Z módulo doce».',
+      ),
+      ProseSection(
+        'Qué pasos alcanzan todas las posiciones',
+        'Si se avanza de uno en uno alrededor del círculo, se alcanza '
+            'sucesivamente cada una de las doce marcas antes de volver al inicio. '
+            'Pero esto no funciona con cualquier longitud de paso. Si se salta '
+            'siempre de tres en tres, se aterriza solo en 0, 3, 6, 9 y al cabo de '
+            'cuatro saltos se está de vuelta — ocho posiciones quedan sin tocar. '
+            'Si se salta de cuatro en cuatro, solo se alcanzan 0, 4, 8.\n\n'
+            'Un paso alcanza las doce posiciones exactamente cuando no tiene ningún '
+            'divisor común con el doce. Eso se cumple para cuatro pasos: 1, 5, 7 y '
+            'B (= once). Exactamente cuatro — no es casualidad, sino una cantidad '
+            'característica del doce que reaparece dos veces más. Estos cuatro son '
+            'los pasos «buenos» que generan todo el círculo.',
+      ),
+      ProseSection(
+        'Los subgrupos en la esfera del reloj',
+        'Los pasos que solo alcanzan una parte de las marcas dibujan en la esfera '
+            'figuras geométricas regulares. El paso de seis conecta el 0 y el 6 '
+            'en una línea cruzando el centro. El paso de cuatro dibuja el triángulo '
+            '0–4–8; el de tres, el cuadrado 0–3–6–9; el de dos, el hexágono de '
+            'las horas pares. Cada una de estas figuras es a su vez un pequeño '
+            'reloj cerrado sobre sí mismo — un subgrupo.\n\n'
+            'Lo notable: a cada divisor del doce — 1, 2, 3, 4, 6, 12 — le '
+            'corresponde exactamente una de esas figuras, ni más ni menos. El doce '
+            'tiene más divisores que cualquier número menor, por eso su esfera '
+            'alberga tantas figuras limpias. Un imaginario reloj de diez horas '
+            'solo tendría los divisores 1, 2, 5, 10 — ningún triángulo, ningún '
+            'cuadrado. La misma divisibilidad que distingue al doce como base de '
+            'numeración hace también tan rica su esfera.',
+      ),
+      ProseSection(
+        'El mismo reloj en la música',
+        'Los doce semitonos de una octava forman el mismo círculo: tras doce pasos '
+            'de semitono se regresa al tono inicial, una octava más arriba. '
+            'Transportar una melodía a otra tonalidad significa girar todos los '
+            'tonos el mismo número de pasos — suma en el círculo de tonos.\n\n'
+            'El círculo de quintas, que los músicos aprenden de memoria, no es más '
+            'que el paso de siete en ese círculo: una quinta justa son siete '
+            'semitonos, y como el siete es uno de los cuatro pasos buenos, el '
+            'círculo recorre los doce tonos antes de cerrarse. La cuarta (cinco '
+            'semitonos) gira el mismo círculo en sentido inverso. Los pasos con '
+            'divisor común, en cambio, quedan atrapados en una figura y producen '
+            'exactamente los conocidos acordes simétricos: la tercera mayor el '
+            'triángulo, el tritono la línea. Por qué precisamente doce semitonos '
+            'y cómo suenan se trata en el capítulo sobre el doce en la música; '
+            'aquí solo importa que es el mismo círculo.',
+      ),
+      ProseSection(
+        'Y en los dígitos primos',
+        'Un tercer lugar muestra el mismo cuarteto. Si se escriben los números '
+            'primos en base doce, cada primo mayor que tres termina en uno de los '
+            'dígitos 1, 5, 7 o B. Otros dígitos finales son imposibles: un número '
+            'que termina en 0, 2, 4, 6, 8 o A es par; uno que termina en 3, 6, 9 '
+            'es divisible entre tres. Quedan exactamente los cuatro dígitos que no '
+            'comparten ningún divisor con el doce — de nuevo 1, 5, 7, B.\n\n'
+            'Son los mismos cuatro que los pasos buenos y los intervalos que '
+            'generan el círculo. Sin embargo, un dígito final de ese cuarteto es '
+            'solo una condición necesaria, no una prueba: el 25 termina en base '
+            'doce en 1, pero es cinco por cinco. El dígito excluye muchos números '
+            'como primos, pero no corona ninguno.',
+      ),
+      ProseSection(
+        'Sumar siempre, dividir no siempre',
+        'En el reloj de horas también se puede multiplicar — y aquí termina la '
+            'hermosa completitud. Al sumar, cada paso tiene un camino de vuelta; '
+            'al multiplicar, no. No existe ninguna hora por la que se pueda '
+            'multiplicar el dos para llegar exactamente al uno, porque el doble '
+            'siempre es par. El dos no tiene inverso en el reloj de doce.\n\n'
+            'Solo tienen inverso los cuatro números buenos 1, 5, 7, B — y cada '
+            'uno es el suyo propio: cinco por cinco es 25, que es 1 en el reloj '
+            'de doce; lo mismo con siete por siete y B por B. Si el reloj tuviera '
+            'un número primo de horas, como once o trece, cada hora tendría un '
+            'inverso. El doce es demasiado divisible para eso — la misma riqueza '
+            'de divisores que adorna su esfera le quita la división limpia. Eso no '
+            'es una deficiencia, sino la naturaleza de los números compuestos; un '
+            'reloj de diez estaría igual.',
+      ),
+      ProseSection(
+        'Módulo doce no es base doce',
+        'Una última distinción importante que se confunde con facilidad. El reloj '
+            'calcula «módulo doce» — conserva solo el resto al dividir entre doce. '
+            'Eso es distinto de «base doce», la escritura de esta calculadora, en '
+            'la que las posiciones representan unidades, docenas, gruesas, etc. '
+            'Módulo indica en qué clase de resto cae un número; la base indica '
+            'cómo se escribe.\n\n'
+            'Ambas giran en torno al número doce, pero por la misma razón más '
+            'profunda — sus muchos divisores —, no porque sean lo mismo. Cada día '
+            'se calcula módulo doce en el reloj y sin embargo se escribe la hora '
+            'en el sistema decimal. Este tipo de cálculo de restos lo introdujo '
+            'Carl Friedrich Gauss en 1801 como notación propia; hoy está '
+            'invisiblemente integrado en los dígitos de control de números de libro '
+            'y de cuentas bancarias, y en toda fórmula para calcular el día de '
+            'la semana.',
+      ),
+    ],
+    sources: [
+      Source(
+        'Modular arithmetic — Wikipedia',
+        'https://en.wikipedia.org/wiki/Modular_arithmetic',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Cyclic group — Wikipedia',
+        'https://en.wikipedia.org/wiki/Cyclic_group',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Subgroups of cyclic groups — Wikipedia',
+        'https://en.wikipedia.org/wiki/Subgroups_of_cyclic_groups',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Multiplicative group of integers modulo n — Wikipedia',
+        'https://en.wikipedia.org/wiki/Multiplicative_group_of_integers_modulo_n',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Circle of fifths — Wikipedia',
+        'https://en.wikipedia.org/wiki/Circle_of_fifths',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Pitch class — Wikipedia',
+        'https://en.wikipedia.org/wiki/Pitch_class',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Highly composite number — Wikipedia',
+        'https://en.wikipedia.org/wiki/Highly_composite_number',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Disquisitiones Arithmeticae — Wikipedia',
+        'https://en.wikipedia.org/wiki/Disquisitiones_Arithmeticae',
+        'R1',
+        'A2',
+      ),
+    ],
+  ),
+  ProseChapter(
+    '12! y los órdenes',
+    [
+      ProseSection(
+        '¿Cuántos órdenes posibles?',
+        '¿Cuántas posibilidades hay de colocar una docena de cosas en fila — '
+            'doce invitados alrededor de una mesa, los doce meses en una lista, '
+            'doce libros en una estantería? Para la primera posición hay doce '
+            'candidatos, para la segunda quedan once, luego diez, y así hasta '
+            'la última, para la que solo queda uno. Se multiplican todas las '
+            'posibilidades: 12 · 11 · 10 · … · 2 · 1.\n\n'
+            'Este producto de todos los números del 1 al doce se escribe abreviado '
+            '«12!» y se llama factorial de doce. En general, n! es el producto de '
+            'todos los números del 1 al n y cuenta los órdenes posibles de n cosas. '
+            'Una curiosidad al margen: 0! se define como 1 — existe exactamente '
+            'una forma de ordenar nada, la vacía.',
+      ),
+      ProseSection(
+        'El número 12!',
+        'Calculado, 12! = 479001600 en el sistema decimal — casi quinientos '
+            'millones de órdenes posibles para solo doce cosas. En base doce ese '
+            'mismo número se escribe como 114500000, con cinco ceros al final. '
+            'Estos ceros son terreno familiar del doce: como 12! contiene los '
+            'factores dos y tres tantas veces, y cada uno de estos ceros finales '
+            'separa exactamente un doce, cinco de ellos salen exactos. En el '
+            'sistema decimal, 12! solo termina en dos ceros.\n\n'
+            'Qué grande es medio millardo de órdenes? Si se mostrara una nueva '
+            'cada segundo, se tardaría más de quince años en agotarlas. Si la '
+            'docena se sienta en cambio alrededor de una mesa redonda, donde solo '
+            'importa quién está al lado y no el asiento de partida, la cifra se '
+            'reduce al factorial de once — casi cuarenta millones. La calculadora '
+            'puede responder: la tecla de factorial devuelve 12! al instante en '
+            'base doce.',
+      ),
+      ProseSection(
+        'Selección con y sin orden',
+        'A menudo no se quiere ordenar los doce, sino solo elegir algunos — y '
+            'entonces importa si el orden cuenta. Tres corredores en el podio '
+            '(oro, plata, bronce) de entre doce: 12 · 11 · 10 = 1320 posibilidades '
+            'ordenadas. El orden importa aquí, pues el primero y el segundo no son '
+            'lo mismo.\n\n'
+            'Si en cambio se elige un grupo de seis entre doce sin clasificación '
+            '— por ejemplo seis voluntarios —, hay 924 posibilidades; dos de doce '
+            'como pareja son 66. Ambos conteos se apoyan en el factorial. En el '
+            'lenguaje cotidiano se confunden con facilidad: una «combinación de '
+            'una cerradura» exige en realidad un orden determinado — debería '
+            'llamarse «permutación de una cerradura».',
+      ),
+      ProseSection(
+        'Campanas que repican todos los órdenes',
+        'En los campanarios ingleses existe un arte antiguo que hace exactamente '
+            'esto: el repique por cambios. En lugar de melodías, los campaneros '
+            'repican sus campanas en órdenes siempre nuevos, cada orden exactamente '
+            'una vez. En cada cambio, cada campana solo puede desplazarse una '
+            'posición — una realización física de la transposición de elementos '
+            'adyacentes, que los campaneros dominaban ya hacia 1621, mucho antes '
+            'de que los matemáticos describieran el mismo truco.\n\n'
+            'Para cada número de campanas existe un nombre; doce campanas se llaman '
+            'Maximus. Repicar todos los órdenes de doce campanas significaría '
+            'recorrer 12! = unos 479 millones de cambios — a dos segundos por '
+            'cambio, serían décadas de repique ininterrumpido. Nadie lo ha logrado '
+            'jamás y se considera imposible; las piezas más largas realmente '
+            'repicadas con doce campanas alcanzan solo unas decenas de miles de '
+            'cambios. Una extensión completa solo se ha repicado con ocho campanas: '
+            '40320 cambios, casi dieciocho horas, en 1963 en Loughborough.',
+      ),
+      ProseSection(
+        'Del número a un grupo',
+        'Si se reúnen las 12! reordenaciones de una docena y se entiende «primero '
+            'una, luego la otra» como regla de cálculo, surge de nuevo un grupo — '
+            'el grupo completo de reordenaciones de doce cosas. A diferencia del '
+            'reloj de horas, aquí importa el orden de los pasos: primero '
+            'intercambiar y luego desplazar da un resultado distinto que a la '
+            'inversa. Este grupo es enorme y no conmutativo.\n\n'
+            'En él se esconde un último asombro. Entre los casi quinientos millones '
+            'de reordenaciones hay una minúscula selección de solo 95040 que hace '
+            'algo casi increíble: dada la asignación de cinco puntos cualesquiera '
+            'de los doce a cinco destinos cualesquiera, existe entre esas 95040 '
+            'reordenaciones exactamente una que lo realiza. Que algo así sea '
+            'posible precisamente con doce puntos pertenece a las apariciones más '
+            'raras de las matemáticas — y es el tema del siguiente capítulo.',
+      ),
+    ],
+    sources: [
+      Source(
+        'Factorial — Wikipedia',
+        'https://en.wikipedia.org/wiki/Factorial',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Permutation — Wikipedia',
+        'https://en.wikipedia.org/wiki/Permutation',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Combination — Wikipedia',
+        'https://en.wikipedia.org/wiki/Combination',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Change ringing — Wikipedia',
+        'https://en.wikipedia.org/wiki/Change_ringing',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Extent (change ringing) — Wikipedia',
+        'https://en.wikipedia.org/wiki/Extent_(change_ringing)',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Symmetric group — Wikipedia',
+        'https://en.wikipedia.org/wiki/Symmetric_group',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Steinhaus–Johnson–Trotter algorithm — Wikipedia',
+        'https://en.wikipedia.org/wiki/Steinhaus%E2%80%93Johnson%E2%80%93Trotter_algorithm',
+        'R2',
+        'A2',
+      ),
+    ],
+  ),
+  ProseChapter(
+    'El grupo de Mathieu M₁₂',
+    [
+      ProseSection(
+        'Una selección entre casi quinientos millones',
+        'El capítulo anterior terminó con una promesa: entre los casi '
+            'quinientos millones de reordenaciones de una docena hay una '
+            'minúscula selección de exactamente 95040 que puede hacer algo '
+            'casi increíble. Elige cinco de los doce puntos e indica adónde '
+            'debe ir cada uno — entonces entre esas 95040 reordenaciones hay '
+            'exactamente una que lo hace. No dos, no ninguna: exactamente una.\n\n'
+            'De esa única propiedad se deduce ya el total. Para el destino del '
+            'primer punto hay doce opciones, para el segundo once, luego diez, '
+            'nueve, ocho — y con eso el resto queda determinado. Doce por once '
+            'por diez por nueve por ocho da 95040. Esta rara colección de '
+            'reordenaciones lleva un nombre: el grupo de Mathieu M₁₂.',
+      ),
+      ProseSection(
+        'El sistema de Steiner S(5,6,12)',
+        '¿Qué mantiene inamovible ese conjunto de 95040 reordenaciones? Una '
+            'figura combinatoria delicada. Entre doce puntos pueden elegirse '
+            'ciertos grupos de seis de tal forma que cualquier selección de '
+            'cinco puntos esté contenida en exactamente uno de esos grupos. '
+            'Existen exactamente 132 de esos grupos de seis, y este '
+            'arreglo es el único posible salvo renombrar los puntos.\n\n'
+            'Esta estructura finamente equilibrada se llama el sistema de Steiner '
+            'S(5,6,12). El grupo de Mathieu es exactamente el conjunto de '
+            'reordenaciones que envía cada uno de los 132 grupos de seis a otro '
+            'grupo de seis — las simetrías de esa figura. Los dos números, 132 '
+            'grupos de seis y 95040 simetrías, se escriben en base doce, por '
+            'cierto, como B0 y 47000.',
+      ),
+      ProseSection(
+        'Por qué precisamente el doce',
+        'Lo verdaderamente asombroso no es que M₁₂ sea tan regular, sino cuán '
+            'rara es esa regularidad en general. Camille Jordan demostró en 1872: '
+            'dejando de lado los casos ordinarios y evidentes, un conjunto de '
+            'reordenaciones que puede colocar cinco puntos libremente de exactamente '
+            'una manera solo es posible con una única cantidad de puntos — doce. '
+            'La cosa correspondiente para cuatro puntos existe como excepción solo '
+            'con once puntos.\n\n'
+            'Precisamente con once y doce puntos — y en ningún otro sitio más allá '
+            'de los casos ordinarios — existen estas simetrías extraordinariamente '
+            'perfectas. El doce es así uno de solo un puñado de números que pueden '
+            'albergar algo así. Es un resultado matemático claro, no misticismo '
+            'numérico — pero una razón para el asombro.',
+      ),
+      ProseSection(
+        'La primera de su clase',
+        'Los grupos finitos tienen bloques constructivos que no pueden descomponerse '
+            'más — los grupos simples, los átomos de la teoría de grupos. «Simple» '
+            'significa aquí indescomponible, no sencillo. La mayoría de esos átomos '
+            'pertenece a unas pocas familias infinitas; junto a ellas hay exactamente '
+            'veintiséis solitarios: los grupos esporádicos. M₁₂ es uno de ellos.\n\n'
+            'Émile Mathieu describió M₁₂ ya en 1861 — fue el primer grupo esporádico '
+            'descubierto jamás, casi cien años antes que los demás. Su existencia '
+            'estuvo durante mucho tiempo en disputa; algunos especialistas la '
+            'pusieron en duda, y no fue hasta 1938 cuando Ernst Witt la situó sobre '
+            'base firme. La serie de grupos esporádicos que comenzó con M₁₂ termina '
+            'con el fabulosamente grande «Monstruo», y su catalogación completa es '
+            'una de las mayores obras colectivas de las matemáticas.',
+      ),
+      ProseSection(
+        'Para tocar: cartas y un juego',
+        'Por abstracto que parezca, existen accesos tangibles. Según fuentes '
+            'citadas, si se barajan doce cartas de dos maneras determinadas, siempre '
+            'las mismas, una y otra vez, se generan exactamente las reordenaciones '
+            'del grupo de Mathieu. Y el matemático John Conway inventó un '
+            '«blackjack matemático» con los doce números del cero al B, cuya '
+            'estrategia ganadora se basa directamente en los 132 grupos de seis.\n\n'
+            'Siendo honestos: este capítulo apenas tiene una tecla en la calculadora '
+            'que le corresponda — es pura belleza teórica, no una herramienta. Pero '
+            'a veces eso es precisamente el atractivo: que el propio doce, que marca '
+            'el ritmo de esta calculadora, sea uno de los pocos números en los que '
+            'las matemáticas han escondido una simetría tan rara y perfecta.',
+      ),
+    ],
+    sources: [
+      Source(
+        'Mathieu group M12 — Wikipedia',
+        'https://en.wikipedia.org/wiki/Mathieu_group_M12',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Mathieu group — Wikipedia',
+        'https://en.wikipedia.org/wiki/Mathieu_group',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Steiner system — Wikipedia',
+        'https://en.wikipedia.org/wiki/Steiner_system',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Sporadic group — Wikipedia',
+        'https://en.wikipedia.org/wiki/Sporadic_group',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Multiply transitive group — Wikipedia',
+        'https://en.wikipedia.org/wiki/Multiply_transitive_group',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Classification of finite simple groups — Wikipedia',
+        'https://en.wikipedia.org/wiki/Classification_of_finite_simple_groups',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Émile Léonard Mathieu — Wikipedia',
+        'https://en.wikipedia.org/wiki/%C3%89mile_L%C3%A9onard_Mathieu',
+        'R2',
+        'A1',
+      ),
+    ],
+  ),
+  ProseChapter(
     'El dodecágono',
     [
       ProseSection(
@@ -736,6 +1478,108 @@ List<ProseChapter> _mathChaptersEs() => const [
       ),
     ],
     imageId: 'math/dodekagon',
+  ),
+  ProseChapter(
+    'Teselaciones arquimedianas',
+    [
+      ProseSection(
+        'El dodecágono no cubre el plano solo',
+        'Un dodecágono regular es una figura hermosa y redonda — pero no puede '
+            'cubrir un suelo por sí solo sin dejar huecos. La razón es su ángulo '
+            'interior de 150 grados. Alrededor de un vértice, las figuras '
+            'adyacentes deben completar exactamente 360 grados, pero 360 dividido '
+            'entre 150 da dos coma cuatro — no es un número entero. Dos dodecágonos '
+            'dejan un hueco en un vértice; tres se solapan.\n\n'
+            'El dodecágono necesita, pues, compañeros. Si se colocan las figuras '
+            'adecuadas en los huecos, surgen patrones sin fisuras y muy regulares: '
+            'las teselaciones arquimedianas. Así se llaman los embaldosados del '
+            'plano formados únicamente por polígonos regulares que tienen el mismo '
+            'aspecto en cada vértice. En total solo existen once de esos patrones.',
+      ),
+      ProseSection(
+        'Dos patrones con dodecágono',
+        'De esos once patrones, exactamente dos contienen un dodecágono regular. '
+            'En el primero, pequeños triángulos equiláteros rellenan los huecos '
+            'entre los dodecágonos — en cada vértice se encuentran un triángulo '
+            'y dos dodecágonos, y sus ángulos suman 60 más 150 más 150, es decir, '
+            'exactamente 360 grados.\n\n'
+            'El segundo es el más rico y el que aparece en la ilustración: alrededor '
+            'de cada dodecágono se dispone una corona de cuadrados y hexágonos '
+            'alternados. En cada vértice se encuentran un cuadrado, un hexágono y '
+            'un dodecágono — 90 más 120 más 150 grados, de nuevo exactamente 360. '
+            'Como la suma es exacta, la corona cierra sin ningún hueco y el patrón '
+            'se extiende en todas direcciones.',
+      ),
+      ProseSection(
+        'Por qué solo caben tres, cuatro y seis',
+        'Junto a un dodecágono solo encajan tres tipos de vecinos: triángulos, '
+            'cuadrados y hexágonos. No es casualidad. Sus ángulos interiores son '
+            '60, 90 y 120 grados — que son exactamente 360 dividido entre seis, '
+            'entre cuatro y entre tres. Es decir, aparecen precisamente los '
+            'divisores tres, cuatro y seis del doce.\n\n'
+            'Esos mismos tres divisores son los que en base doce hacen que las '
+            'fracciones un tercio, un cuarto y un sexto salgan exactas. El hermoso '
+            'embaldosado y la fracción cómoda brotan de la misma raíz: la rica '
+            'divisibilidad del doce. Es un parentesco genuino, pero no una '
+            'obligación — los ángulos vienen de la geometría, las fracciones exactas '
+            'de la escritura; ambos solo dependen del mismo número.',
+      ),
+      ProseSection(
+        'Kepler, mezquitas y cristales',
+        'El primero en enumerar completamente estos patrones fue Johannes Kepler '
+            'en 1619, en una obra sobre la armonía del mundo. El nombre '
+            '«arquimediano» es solo una alusión a los cuerpos arquimedianos; no '
+            'se conserva ningún escrito antiguo en el que el propio Arquímedes '
+            'tratara teselaciones.\n\n'
+            'Mucho antes de Kepler, sin embargo, el dodecágono ya vivía en el arte: '
+            'las estrellas de doce puntas pertenecen a los motivos más espléndidos '
+            'de la ornamentación geométrica islámica, construidas con compás y '
+            'regla a partir de pura geometría — ya en la mezquita de Konya '
+            '(1220). Y en la naturaleza reaparece el mismo orden duodecimal en '
+            'los cuasicristales, de los que trata un capítulo propio. El dodecágono, '
+            'que solo no cubre ningún suelo, es en compañía una de las formas '
+            'más fecundas del plano.',
+      ),
+    ],
+    sources: [
+      Source(
+        'Euclidean tilings by convex regular polygons — Wikipedia',
+        'https://en.wikipedia.org/wiki/Euclidean_tilings_by_convex_regular_polygons',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Truncated hexagonal tiling — Wikipedia',
+        'https://en.wikipedia.org/wiki/Truncated_hexagonal_tiling',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Truncated trihexagonal tiling — Wikipedia',
+        'https://en.wikipedia.org/wiki/Truncated_trihexagonal_tiling',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Archimedean Tilings and Egyptian Fractions (John Baez)',
+        'https://math.ucr.edu/home/baez/egyptian.html',
+        'R3',
+        'A1',
+      ),
+      Source(
+        'Islamic geometric patterns — Wikipedia',
+        'https://en.wikipedia.org/wiki/Islamic_geometric_patterns',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Harmonices Mundi — Wikipedia',
+        'https://en.wikipedia.org/wiki/Harmonices_Mundi',
+        'R2',
+        'A2',
+      ),
+    ],
+    imageId: 'math/parkettierung',
   ),
   ProseChapter(
     'El dodecaedro',

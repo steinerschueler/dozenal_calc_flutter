@@ -112,6 +112,329 @@ List<ProseChapter> _mathChaptersEn() => const [
     ],
   ),
   ProseChapter(
+    'Cyclic Numbers',
+    [
+      ProseSection(
+        'The Seventh and Its Relatives',
+        'One seventh does not come out evenly in base twelve but repeats: '
+            'one seventh = 0;186A35, then 186A35 again, endlessly. (A stands '
+            'for ten, B for eleven.) The repeating group is the period; it is '
+            'six digits long here.\n\n'
+            'The surprising part shows up when you place the other sevenths '
+            'alongside it. Two sevenths = 0;35186A, three sevenths = 0;5186A3, '
+            'four sevenths = 0;6A3518, five sevenths = 0;86A351, six sevenths = '
+            '0;A35186. Each time it is the same six digits in the same order — '
+            'only the starting point shifts. You can picture them strung around '
+            'a ring that rotates one step further for each fraction.',
+      ),
+      ProseSection(
+        'When the Multiples Rotate',
+        'The same rotation is hidden in the multiplication table of the period '
+            'itself. Take the digit string 186A35 as a whole number and multiply '
+            'it in turn: 186A35 × 2 = 35186A, × 3 = 5186A3, × 4 = 6A3518, '
+            '× 5 = 86A351, × 6 = A35186. The results are nothing but rotations. '
+            'A number with this property is called a cyclic number.\n\n'
+            'The seventh step closes the circle: 186A35 × 7 = BBBBBB. All '
+            'elevens — the highest digit of base twelve, six times in a row. '
+            'This is no coincidence: BBBBBB is exactly one less than the next '
+            'round place. In base ten the same trick is known from the famous '
+            'number 142857 (the period of one seventh in the decimal system): '
+            'there too the multiples give rotations, and 142857 × 7 = 999999. '
+            'The digits differ; the structure is the same.',
+      ),
+      ProseSection(
+        'Why Exactly Six Places',
+        'That the period is exactly six digits long — and not shorter — has a '
+            'clear reason. In long division a remainder is left at each step, '
+            'and the period ends as soon as a remainder repeats. For one seventh '
+            'all six possible remainders 1 through 6 appear in succession before '
+            'the first one repeats. Seven cannot yield more than six different '
+            'remainders, so six is the maximum possible length.\n\n'
+            'A prime whose reciprocal achieves this longest possible period is '
+            'called a full-reptend prime. Only then do the multiples cycle '
+            'through all rotations, and only then is a cyclic number produced. '
+            'Whether a prime is full-reptend depends on how the powers of the '
+            'base — here twelve — behave when divided by that prime.',
+      ),
+      ProseSection(
+        'The Complement to the Highest Digit',
+        'The period 186A35 carries a second pattern. Split it in the middle and '
+            'add the halves: 186 + A35 = BBB — all elevens again, three of them '
+            'this time. The two halves complement each other exactly to the '
+            'highest digit.\n\n'
+            'This is a general theorem (due to Étienne Midy, 1836) and holds in '
+            'every base: in base ten it is 142 + 857 = 999. The effect shows that '
+            'the second half of the period is no new material but the mirror image '
+            'of the first.',
+      ),
+      ProseSection(
+        'Not Every Prime Joins In',
+        'The beautiful rotation is the exception, not the rule. One eleventh '
+            'yields in base twelve only the period 0;1 — a single repeating one, '
+            'because twelve is one above eleven (the counterpart to one ninth = '
+            '0;1 in the decimal system). One thirteenth gives 0;0B with the short '
+            'period 0B. Such primes do not produce a cyclic number.\n\n'
+            'Among the small primes, 5, 7, 17, 31, 41, and 43 (counted in '
+            'decimal) are full-reptend primes in base twelve — remarkably, all '
+            'ending in 5 or 7 in base twelve. That is a necessary but not '
+            'sufficient condition: nineteen also ends in 7 but has only a '
+            'six-digit period. The change of base also plays a role: five is '
+            'full-reptend in base twelve (one fifth = 0;2497, period 2497), yet '
+            'in the decimal system one fifth terminates. Which primes join in '
+            'therefore belongs to the pair of base and prime, not to the prime '
+            'alone.',
+      ),
+      ProseSection(
+        'How Many There Are — An Open Question',
+        'One might suppose that so clear a property would long have been counted '
+            'up. That is not so. How many full-reptend primes there are in base '
+            'twelve — whether infinitely many — has not been proved to this day.\n\n'
+            'A conjecture by Emil Artin from 1927 predicts that roughly '
+            'thirty-seven out of a hundred primes should be full-reptend, in base '
+            'twelve as in any other eligible base. Observations on small numbers '
+            'are consistent with this order of magnitude. But the conjecture '
+            'remains exactly that: despite great effort it has not been proved '
+            'for any single base. That belongs to an honest account — a '
+            'seemingly simple pattern concealing a problem still open today.',
+      ),
+      ProseSection(
+        'Try It in the Calculator',
+        'All of this can be verified right here. Type one seventh and press '
+            'equals and the display shows 0; with a bar over 186A35 — the six '
+            'digits of the period. For two sevenths the same sequence appears as '
+            '35186A, rotated; that is no rounding, but exactly the same pattern. '
+            'One fifth shows the bar over 2497; one eleventh over just the '
+            'single digit 1.\n\n'
+            'Larger examples reveal the limits: a fraction with denominator '
+            'thirty-one (decimal) has a thirty-digit period — here the display '
+            'abbreviates with an ellipsis because not everything fits on one '
+            'line. How the calculator determines exact fractions and their '
+            'periods at all is explained in the chapter "How This Calculator '
+            'Computes".',
+      ),
+    ],
+    sources: [
+      Source(
+        'Cyclic number — Wikipedia',
+        'https://en.wikipedia.org/wiki/Cyclic_number',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Full reptend prime — Wikipedia',
+        'https://en.wikipedia.org/wiki/Full_reptend_prime',
+        'R2',
+        'A1',
+      ),
+      Source(
+        '142857 — Wikipedia',
+        'https://en.wikipedia.org/wiki/142857',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Midy’s theorem — Wikipedia',
+        'https://en.wikipedia.org/wiki/Midy%27s_theorem',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Multiplicative order — Wikipedia',
+        'https://en.wikipedia.org/wiki/Multiplicative_order',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Artin’s conjecture on primitive roots — Wikipedia',
+        'https://en.wikipedia.org/wiki/Artin%27s_conjecture_on_primitive_roots',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Orders of Units in Modular Arithmetic (Keith Conrad, UConn)',
+        'https://kconrad.math.uconn.edu/blurbs/ugradnumthy/ordersmodm.pdf',
+        'R1',
+        'A2',
+      ),
+      Source(
+        'OEIS A019340 — Primes with primitive root 12',
+        'https://oeis.org/A019340',
+        'R2',
+        'A2',
+      ),
+    ],
+  ),
+  ProseChapter(
+    'Divisibility and the Eleven-Test',
+    [
+      ProseSection(
+        'The Last Digit Tells a Lot',
+        'In base twelve the last digit of a number is nothing other than its '
+            'remainder on division by twelve. So the final digit immediately '
+            'reveals whether the number divides evenly by any divisor of twelve. '
+            'Even final digits (0, 2, 4, 6, 8, A) mean divisible by two. A '
+            'number ending in 0, 3, 6, or 9 is divisible by three; ending in '
+            '0, 4, or 8, by four; in 0 or 6, by six; in 0 alone, by twelve. '
+            '(A stands here for ten.)\n\n'
+            'That is a concrete advantage of twelve. In the decimal system the '
+            'final digit reveals divisibility only by two, five, and ten — for '
+            'three, four, or six you have to calculate. Twelve exposes precisely '
+            'the common small divisors.',
+      ),
+      ProseSection(
+        'The Eleven-Test: the Digit Sum Counts',
+        'For eleven (B) the final digit is no help, but an equally simple trick '
+            'works: the digit sum, that is, the sum of all the digits. A number '
+            'in base twelve is divisible by eleven if and only if its digit sum '
+            'is divisible by eleven. The reason is elegant: twelve leaves a '
+            'remainder of one on division by eleven, and so does every higher '
+            'place — so only what the digits add up to matters together.\n\n'
+            'This is the exact counterpart to the familiar casting-out-nines in '
+            'the decimal system, where the digit sum tests the nine. In base '
+            'twelve it tests eleven — hence the name eleven-test. An example: '
+            'the number 4B7 has the digit sum 4 + B + 7, that is fourteen plus '
+            'eight, which is twenty-two — and twenty-two is twice eleven, so 4B7 '
+            'is divisible by eleven. Like casting out nines, the eleven-test '
+            'serves as a quick arithmetic check: if the test fails, there is an '
+            'error in the result.',
+      ),
+      ProseSection(
+        'Thirteen via the Alternating Digit Sum',
+        'A second test catches thirteen. Here you add and subtract the digits '
+            'alternately, starting from the right — the alternating digit sum. '
+            'If this is divisible by thirteen, so is the number. The reason is '
+            'the mirror image of the eleven-test: twelve lies one below thirteen, '
+            'so the places alternate in sign on division by thirteen.\n\n'
+            'A small stumbling block for anyone used to the decimal system: '
+            'there the "eleven-test" refers precisely to the alternating version, '
+            'because eleven is one above ten. In base twelve the roles are '
+            'swapped — the plain digit sum belongs to eleven, the alternating '
+            'one to thirteen. (Thirteen itself is written as 11 in base twelve, '
+            'one twelve and one unit; it is always the value that is meant.)',
+      ),
+      ProseSection(
+        'Where Twelve Struggles',
+        'No advantage comes for free. Five and seven share no factor with '
+            'twelve and do not fit the eleven or thirteen tests either — for '
+            'them there is no convenient final-digit or digit-sum rule in base '
+            'twelve. Of all numbers, five, which in the decimal system has the '
+            'very simplest test (final digit zero or five), becomes awkward here.\n\n'
+            'That is the honest trade: twelve gives us the easy tests for three, '
+            'four, and six, and takes away the easy test for five in return. '
+            'Which side weighs more depends on which divisors are needed most '
+            'often in daily life — and those are usually the small ones.',
+      ),
+    ],
+    sources: [
+      Source(
+        'Divisibility rule — Wikipedia',
+        'https://en.wikipedia.org/wiki/Divisibility_rule',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Duodecimal — Wikipedia',
+        'https://en.wikipedia.org/wiki/Duodecimal',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Casting out nines — Wikipedia',
+        'https://en.wikipedia.org/wiki/Casting_out_nines',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Modular arithmetic — Wikipedia',
+        'https://en.wikipedia.org/wiki/Modular_arithmetic',
+        'R2',
+        'A2',
+      ),
+    ],
+  ),
+  ProseChapter(
+    'Tricks in the Multiplication Table',
+    [
+      ProseSection(
+        'Rows with Short Tails',
+        'The base-twelve multiplication table has twelve rows, and some of them '
+            'are almost self-memorising — namely those of the divisors. Their '
+            'multiples end in short, repeating patterns. The six-row alternates '
+            'between 6 and 0 (6, 10, 16, 20, 26, 30 …). The four-row runs '
+            '4, 8, 0, 4, 8, 0; the three-row 3, 6, 9, 0 and back to the '
+            'beginning; the two-row stays even throughout.\n\n'
+            'Two shortcuts are especially handy. Times twelve simply means '
+            'appending a zero: seven times twelve is 70. And the six-row is '
+            'half the twelve-row — six times an even number ends in 0, six '
+            'times an odd number ends in 6.',
+      ),
+      ProseSection(
+        'The Eleven-Row as a Mirror',
+        'The most elegant row belongs to eleven (B): B, 1A, 29, 38, 47, 56, '
+            '65, 74, 83, 92, A1, B0. It contains two patterns at once. The '
+            'leading digit climbs one step at a time — 0, 1, 2, 3, and so on '
+            '— while the trailing digit falls in step. And in every result the '
+            'two digits add up to eleven: one and ten, two and nine, three and '
+            'eight.\n\n'
+            'This is exactly the mirror image of the nine-row in the decimal '
+            'system, where the digits add up to nine. A handy trick follows: '
+            'instead of multiplying by eleven, take times twelve and subtract '
+            'the number once. Eleven times seven is therefore seventy minus '
+            'seven, which gives 65 in base twelve — and indeed the table shows '
+            '65 at eleven times seven.',
+      ),
+      ProseSection(
+        'The Stubborn Rows: Five and Seven',
+        'Not all rows are this accommodating. Five and seven share no factor '
+            'with twelve, and so their rows run through all twelve possible '
+            'final digits before anything repeats — no short cycle to aid '
+            'memorisation. The five-row ends in turn on 5, A, 3, 8, 1, 6, B, '
+            '4, 9, 2, 7, 0; the seven-row is similarly erratic.\n\n'
+            'Here an old quartet recurs: precisely the rows of one, five, seven, '
+            'and eleven cycle through every final digit completely — the same '
+            'four numbers that generate the full circle on the clock face and '
+            'that end in prime digits. And that is exactly why one fifth and one '
+            'seventh have those long, full periods from the chapter on cyclic '
+            'numbers. In the decimal system the seven-row is the notoriously '
+            'awkward one; in base twelve it is five and seven together.',
+      ),
+      ProseSection(
+        'Squares and the Gross',
+        'Running diagonally from top left to bottom right through the table '
+            'gives the square numbers: 1, 4, 9, 14, 21, 30, 41, 54, 69, 84, '
+            'A1 — and finally 100. That last one is twelve times twelve, that '
+            'is one hundred and forty-four, which in base twelve is simply "100" '
+            'and has long been called a gross. Twelve writes its own square '
+            'number as neatly as the decimal system writes one hundred.\n\n'
+            'Doubling and halving are also easy in base twelve because twelve '
+            'is even and divisible by four: half of 10 is 6, half of 6 is 3, '
+            'half of 3 is 1;6. Much can be broken into small, clean steps in '
+            'the head — the real reason why enthusiasts of twelve find arithmetic '
+            'in it pleasant.',
+      ),
+    ],
+    sources: [
+      Source(
+        'Duodecimal — Wikipedia',
+        'https://en.wikipedia.org/wiki/Duodecimal',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Multiplication table — Wikipedia',
+        'https://en.wikipedia.org/wiki/Multiplication_table',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Multiplicative group of integers modulo n — Wikipedia',
+        'https://en.wikipedia.org/wiki/Multiplicative_group_of_integers_modulo_n',
+        'R2',
+        'A2',
+      ),
+    ],
+  ),
+  ProseChapter(
     'The Number Bases Compared',
     [
       ProseSection(
@@ -529,6 +852,418 @@ List<ProseChapter> _mathChaptersEn() => const [
     ],
   ),
   ProseChapter(
+    'The Clock as a Group (ℤ/12ℤ)',
+    [
+      ProseSection(
+        'Arithmetic on the Clock Face',
+        'On a clock, eleven o’clock plus two hours is not thirteen but one '
+            'o’clock. You compute normally and take the remainder on division '
+            'by twelve at the end. Pictorially, the endless number line is wound '
+            'onto a circle with twelve marks; every number lands on one of the '
+            'marks 0 through 11.\n\n'
+            'These twelve marks with clock-face addition form a neat little '
+            'arithmetic system. It always stays closed (every sum is again one '
+            'of the twelve marks), there is zero as the "changes nothing" element, '
+            'and every step has a way back: five forward and seven backward cancel '
+            'out, because 5 + 7 = 12 = 0. An arithmetic system with these '
+            'properties is called a group in mathematics. The clock face is the '
+            'most tangible example of all; its name is ℤ/12ℤ, read "Z modulo '
+            'twelve".',
+      ),
+      ProseSection(
+        'Which Step Sizes Reach Every Position',
+        'Walking in steps of one around the circle, you visit each of the '
+            'twelve marks in turn before returning to the start. But not every '
+            'step size manages this. Jump always by three and you land only on '
+            '0, 3, 6, 9 and are back after four jumps — eight positions left '
+            'untouched. Jump by four and you hit only 0, 4, 8.\n\n'
+            'A step size reaches all twelve positions if and only if it shares '
+            'no common factor with twelve. That applies to exactly four steps: '
+            '1, 5, 7, and B (= eleven). Exactly four — that is no coincidence '
+            'but a counting quantity of twelve that will appear twice more. '
+            'These four are the "good" step sizes that generate the full circle.',
+      ),
+      ProseSection(
+        'The Subgroups on the Clock Face',
+        'The step sizes that only reach part of the marks trace regular '
+            'figures on the clock face. The step of six connects 0 and 6 with '
+            'a line across the centre. The step of four draws the triangle '
+            '0–4–8, the step of three the square 0–3–6–9, the step of two the '
+            'hexagon of even hours. Each of these figures is itself a small, '
+            'self-contained clock — a subgroup.\n\n'
+            'Remarkably, to every divisor of twelve — 1, 2, 3, 4, 6, 12 — there '
+            'belongs exactly one such figure, no more and no fewer. Twelve has '
+            'more divisors than any smaller number, which is why its clock face '
+            'carries so many clean figures. An imaginary ten-hour clock would '
+            'offer only the divisors 1, 2, 5, 10 — no triangle, no square. The '
+            'same divisibility that distinguishes twelve as a counting base makes '
+            'its clock face so rich.',
+      ),
+      ProseSection(
+        'The Same Clock in Music',
+        'The twelve semitones of an octave form the same circle: after twelve '
+            'semitone steps you are back at the starting note, one octave higher. '
+            'Transposing a melody to another key means rotating all notes by the '
+            'same step — addition on the pitch circle.\n\n'
+            'The circle of fifths, which musicians learn by heart, is nothing '
+            'other than the step of seven on this circle: a perfect fifth is '
+            'seven semitones, and because seven is one of the four good step '
+            'sizes, the circle of fifths runs through all twelve notes before '
+            'closing. The fourth (five semitones) turns the same circle '
+            'backwards. Steps with a common factor instead get stuck in a '
+            'figure and produce exactly the familiar symmetric chords: the major '
+            'third the triangle, the tritone the line. Why there are twelve '
+            'semitones in particular and how they sound is the subject of the '
+            'chapter on twelve in music; what matters here is only that it is '
+            'the same circle.',
+      ),
+      ProseSection(
+        'And in the Prime Digits',
+        'A third place shows the same group of four. Write the prime numbers in '
+            'base twelve: every prime above three ends in one of the digits 1, '
+            '5, 7, or B. Other final digits are impossible: a number ending in '
+            '0, 2, 4, 6, 8, or A is even; one ending in 3, 6, or 9 is divisible '
+            'by three. What remains is exactly the four digits that share no '
+            'divisor with twelve — again 1, 5, 7, B.\n\n'
+            'They are the same four as the good step sizes and the '
+            'circle-generating intervals. A final digit from this group of four '
+            'is, however, only a necessary condition, not a proof of primality: '
+            '25 ends in 1 in base twelve, but is five times five. The digit '
+            'rules out many numbers as primes; it does not crown any.',
+      ),
+      ProseSection(
+        'Addition Always, Division Not Always',
+        'On the clock face you can also multiply — and here the nice '
+            'self-containment breaks down. With addition every step has a way '
+            'back; with multiplication that is not so. There is no hour you '
+            'could multiply by two to land cleanly on one, because any double '
+            'is always even. Two has no inverse on the twelve-hour clock.\n\n'
+            'Only the four good numbers 1, 5, 7, B have inverses — and each '
+            'is its own: five times five is 25, which is 1 on the twelve-hour '
+            'clock; likewise seven times seven and B times B. If the clock had '
+            'a prime number of hours like eleven or thirteen, every hour would '
+            'have an inverse. Twelve is too divisible for that — the same '
+            'richness of divisors that adorns its clock face takes away clean '
+            'division. That is not a defect but the nature of composite numbers; '
+            'a ten-hour clock would fare exactly the same way.',
+      ),
+      ProseSection(
+        'Modulo Twelve Is Not Base Twelve',
+        'One last, important distinction that is easily confused. The clock '
+            'computes "modulo twelve" — it keeps only the remainder on division '
+            'by twelve. That is different from "base twelve", the notation used '
+            'by this calculator, where the places stand for units, twelves, '
+            'grosses, and so on. Modulo tells you which residue class a number '
+            'falls into; base tells you how to write it down.\n\n'
+            'Both revolve around the number twelve, but for the same deeper '
+            'reason — its many divisors — not because they are the same thing. '
+            'We compute modulo twelve on the clock every day while writing the '
+            'time in the decimal system all the same. This kind of remainder '
+            'arithmetic was introduced by Carl Friedrich Gauss in 1801 as its '
+            'own notation; today it sits invisibly in the check digits of book '
+            'numbers and bank accounts and in every day-of-the-week formula.',
+      ),
+    ],
+    sources: [
+      Source(
+        'Modular arithmetic — Wikipedia',
+        'https://en.wikipedia.org/wiki/Modular_arithmetic',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Cyclic group — Wikipedia',
+        'https://en.wikipedia.org/wiki/Cyclic_group',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Subgroups of cyclic groups — Wikipedia',
+        'https://en.wikipedia.org/wiki/Subgroups_of_cyclic_groups',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Multiplicative group of integers modulo n — Wikipedia',
+        'https://en.wikipedia.org/wiki/Multiplicative_group_of_integers_modulo_n',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Circle of fifths — Wikipedia',
+        'https://en.wikipedia.org/wiki/Circle_of_fifths',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Pitch class — Wikipedia',
+        'https://en.wikipedia.org/wiki/Pitch_class',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Highly composite number — Wikipedia',
+        'https://en.wikipedia.org/wiki/Highly_composite_number',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Disquisitiones Arithmeticae — Wikipedia',
+        'https://en.wikipedia.org/wiki/Disquisitiones_Arithmeticae',
+        'R1',
+        'A2',
+      ),
+    ],
+  ),
+  ProseChapter(
+    '12! and the Orderings',
+    [
+      ProseSection(
+        'How Many Orderings?',
+        'How many ways are there to arrange a dozen things in a row — twelve '
+            'guests at a table, the twelve months on a list, twelve books on a '
+            'shelf? For the first place you have twelve candidates, for the '
+            'second eleven, then ten, and so on down to the last, for which only '
+            'one remains. Multiply all the possibilities: '
+            '12 · 11 · 10 · … · 2 · 1.\n\n'
+            'This product of all numbers from 1 to twelve is written briefly as '
+            '"12!" and called twelve factorial. In general, n! is the product of '
+            'all numbers from 1 to n and counts the orderings of n things. A '
+            'curiosity on the side: 0! is defined as 1 — there is exactly one '
+            'way to arrange nothing at all, namely the empty one.',
+      ),
+      ProseSection(
+        'The Number 12!',
+        'Calculated out, 12! = 479001600 in the decimal system — just under half '
+            'a billion orderings for only twelve things. In base twelve the same '
+            'number is written as 114500000, with five trailing zeros. Those '
+            'zeros are home territory for twelve: because 12! contains the '
+            'factors two and three so many times and each trailing zero '
+            'corresponds to exactly one twelve, five of them divide out evenly. '
+            'In the decimal system 12! ends in only two zeros.\n\n'
+            'How large is half a billion orderings? Showing one new ordering per '
+            'second would take over fifteen years to get through them all. If '
+            'the dozen sit around a round table, where only the neighbourhood '
+            'matters and not the starting seat, the count shrinks to eleven '
+            'factorial — about forty million. You can ask the calculator: the '
+            'factorial key delivers 12! immediately in base twelve.',
+      ),
+      ProseSection(
+        'Selection With and Without Order',
+        'Often you do not want to order all twelve but only choose some — and '
+            'then it makes a difference whether the order counts. Three runners '
+            'on the podium (gold, silver, bronze) from twelve: '
+            '12 · 11 · 10 = 1320 ordered possibilities. Order matters here, '
+            'because first and second are not the same.\n\n'
+            'If instead you choose six from twelve purely as a group, with no '
+            'ranking — say six volunteers — there are 924 possibilities; two '
+            'from twelve as a pair gives 66. Both counting methods rest on the '
+            'factorial. In everyday language the two are often confused: a '
+            '"combination lock" actually requires a specific order — it should '
+            'really be called a permutation lock.',
+      ),
+      ProseSection(
+        'Bells That Ring Every Ordering',
+        'In English church towers there is an old art that does exactly this: '
+            'change ringing. Instead of melodies, the ringers ring their bells '
+            'in ever-new orderings, each ordering exactly once. At each change '
+            'every bell may move only one position — a physical embodiment of '
+            'swapping adjacent elements, which ringers had mastered by around '
+            '1621, long before mathematicians described the same trick.\n\n'
+            'Each bell count has a name; twelve bells are called Maximus. To '
+            'ring all orderings of twelve bells would mean working through '
+            '12! = about 479 million changes — at two seconds per change that '
+            'would take decades of uninterrupted ringing. No one has ever '
+            'achieved this and it is considered impossible; the longest pieces '
+            'actually rung on twelve bells reach only some tens of thousands '
+            'of changes. A full extent has been completed only on eight bells: '
+            '40320 changes, just under eighteen hours, in Loughborough in 1963.',
+      ),
+      ProseSection(
+        'From Number to Group',
+        'Collect all 12! rearrangements of a dozen and understand "first this '
+            'one, then that one" as a rule of composition, and again a group '
+            'arises — the full permutation group of twelve objects. Unlike on '
+            'the clock face, the order of the steps matters here: swap first '
+            'then shift gives something different from the reverse. This group '
+            'is enormous and non-commutative.\n\n'
+            'Hidden within it is one final marvel. Among the nearly five hundred '
+            'million rearrangements there is a tiny, extraordinarily regular '
+            'selection of only 95040 that sends any five of the twelve points '
+            'to any five chosen targets in exactly one way. That something like '
+            'this is possible at all on exactly twelve points is among the '
+            'rarest phenomena in mathematics — and is the subject of the '
+            'next chapter.',
+      ),
+    ],
+    sources: [
+      Source(
+        'Factorial — Wikipedia',
+        'https://en.wikipedia.org/wiki/Factorial',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Permutation — Wikipedia',
+        'https://en.wikipedia.org/wiki/Permutation',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Combination — Wikipedia',
+        'https://en.wikipedia.org/wiki/Combination',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Change ringing — Wikipedia',
+        'https://en.wikipedia.org/wiki/Change_ringing',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Extent (change ringing) — Wikipedia',
+        'https://en.wikipedia.org/wiki/Extent_(change_ringing)',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Symmetric group — Wikipedia',
+        'https://en.wikipedia.org/wiki/Symmetric_group',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Steinhaus–Johnson–Trotter algorithm — Wikipedia',
+        'https://en.wikipedia.org/wiki/Steinhaus%E2%80%93Johnson%E2%80%93Trotter_algorithm',
+        'R2',
+        'A2',
+      ),
+    ],
+  ),
+  ProseChapter(
+    'The Mathieu Group M₁₂',
+    [
+      ProseSection(
+        'A Selection Among Nearly Half a Billion',
+        'The previous chapter ended with a promise: among the nearly five '
+            'hundred million rearrangements of a dozen there is a tiny selection '
+            'of exactly 95040 that can do something almost unbelievable. Choose '
+            'five of the twelve points and say where each one should go — among '
+            'these 95040 rearrangements there is exactly one that does it. Not '
+            'two, not none: exactly one.\n\n'
+            'From this single property the total count already follows. For the '
+            'destination of the first point you have twelve choices, for the '
+            'second eleven, then ten, nine, eight — and with that the rest is '
+            'determined. Twelve times eleven times ten times nine times eight '
+            'equals 95040. This rare collection of rearrangements has a name: '
+            'the Mathieu group M₁₂.',
+      ),
+      ProseSection(
+        'The Steiner System S(5,6,12)',
+        'What do these 95040 rearrangements hold fixed? A delicate combinatorial '
+            'structure. From twelve points one can choose certain groups of six '
+            'in such a way that every possible choice of five points is contained '
+            'in exactly one of these six-element groups. There are exactly 132 '
+            'such six-element groups, and this arrangement is, up to relabelling '
+            'the points, the only one possible.\n\n'
+            'This finely balanced structure is called the Steiner system S(5,6,12). '
+            'The Mathieu group is precisely the set of rearrangements that map '
+            'all 132 six-element groups back to six-element groups — the '
+            'symmetries of this structure. The two numbers, 132 six-element groups '
+            'and 95040 symmetries, are written in base twelve as B0 and 47000.',
+      ),
+      ProseSection(
+        'Why Twelve in Particular',
+        'What is truly astonishing is not that M₁₂ is so regular, but how '
+            'rarely such regularity occurs at all. Camille Jordan proved in 1872: '
+            'setting aside the obvious ordinary cases, a set of rearrangements '
+            'that can place five points freely in exactly one way is possible on '
+            'only a single number of points — twelve. The analogous thing for '
+            'four points exists as an exception only on eleven points.\n\n'
+            'On exactly eleven and twelve points — and nowhere else beyond the '
+            'ordinary cases — do these extraordinarily perfect symmetries exist. '
+            'Twelve is therefore one of only a handful of numbers that can carry '
+            'something like this. That is a clear mathematical result, not '
+            'numerology — but a genuine reason for wonder.',
+      ),
+      ProseSection(
+        'The First of Its Kind',
+        'Finite groups have building blocks that cannot be broken down further '
+            '— the simple groups, the atoms of group theory. "Simple" here means '
+            'indecomposable, not easy. Most of these atoms belong to a few '
+            'infinite families; alongside them stand exactly twenty-six '
+            'singletons, the sporadic groups. M₁₂ is one of them.\n\n'
+            'Émile Mathieu described M₁₂ as early as 1861 — it was the very '
+            'first sporadic group ever found, almost a hundred years before the '
+            'rest. Its existence long remained disputed; some experts doubted it; '
+            'only Ernst Witt put it on firm ground in 1938. The series of '
+            'sporadic groups that began with M₁₂ ends with the legendarily large '
+            '"Monster," and their complete enumeration is one of the greatest '
+            'collective achievements in all of mathematics.',
+      ),
+      ProseSection(
+        'Something Tangible: Cards and a Game',
+        'Abstract as it all sounds, there are hands-on approaches. Shuffle '
+            'twelve playing cards in two specific, always identical ways, over '
+            'and over, and according to reported sources you generate exactly '
+            'the rearrangements of the Mathieu group. And the mathematician '
+            'John Conway invented a "mathematical blackjack" with the twelve '
+            'numbers zero through B, whose winning strategy rests directly on '
+            'the 132 six-element groups.\n\n'
+            'To be honest: this chapter has barely a key on the calculator that '
+            'corresponds to it — it is pure theoretical beauty, not a tool. But '
+            'sometimes that is precisely the appeal: that twelve, which gives '
+            'this calculator its rhythm, is one of the few numbers on which '
+            'mathematics has hidden a symmetry this rare and this perfect.',
+      ),
+    ],
+    sources: [
+      Source(
+        'Mathieu group M12 — Wikipedia',
+        'https://en.wikipedia.org/wiki/Mathieu_group_M12',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Mathieu group — Wikipedia',
+        'https://en.wikipedia.org/wiki/Mathieu_group',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Steiner system — Wikipedia',
+        'https://en.wikipedia.org/wiki/Steiner_system',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Sporadic group — Wikipedia',
+        'https://en.wikipedia.org/wiki/Sporadic_group',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Multiply transitive group — Wikipedia',
+        'https://en.wikipedia.org/wiki/Multiply_transitive_group',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Classification of finite simple groups — Wikipedia',
+        'https://en.wikipedia.org/wiki/Classification_of_finite_simple_groups',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Émile Léonard Mathieu — Wikipedia',
+        'https://en.wikipedia.org/wiki/%C3%89mile_L%C3%A9onard_Mathieu',
+        'R2',
+        'A1',
+      ),
+    ],
+  ),
+  ProseChapter(
     'The dodecagon (twelve-sided polygon)',
     [
       ProseSection(
@@ -722,6 +1457,108 @@ List<ProseChapter> _mathChaptersEn() => const [
       ),
     ],
     imageId: 'math/dodekagon',
+  ),
+  ProseChapter(
+    'Archimedean Tilings',
+    [
+      ProseSection(
+        'The Dodecagon Cannot Tile the Plane Alone',
+        'A regular dodecagon is a beautiful, rounded shape — but it cannot '
+            'cover a floor by itself without gaps. The reason is its interior '
+            'angle of 150 degrees. Around every vertex the adjacent shapes must '
+            'add up to exactly 360 degrees, but 360 divided by 150 gives two '
+            'point four — not a whole number. Two dodecagons leave a gap at a '
+            'vertex; three overlap.\n\n'
+            'The dodecagon therefore needs partners. Place the right shapes in '
+            'the gaps and gapless, highly regular patterns arise — Archimedean '
+            'tilings. That is the name for tilings of the plane consisting '
+            'solely of regular polygons and looking identical at every vertex. '
+            'There are exactly eleven such patterns in all.',
+      ),
+      ProseSection(
+        'Two Patterns Containing the Dodecagon',
+        'Of these eleven patterns, exactly two contain a regular dodecagon. In '
+            'the first, small equilateral triangles fill the gaps between the '
+            'dodecagons — at every vertex one triangle and two dodecagons meet, '
+            'and their angles add up to 60 plus 150 plus 150, exactly 360 '
+            'degrees.\n\n'
+            'The second is the richer one and is the pattern shown in the '
+            'illustration: around every dodecagon lies a ring of alternating '
+            'squares and hexagons. At every vertex one square, one hexagon, and '
+            'one dodecagon meet — 90 plus 120 plus 150 degrees, again exactly '
+            '360. Because the sum works out, the ring closes without any gap '
+            'and the pattern continues in all directions.',
+      ),
+      ProseSection(
+        'Why Only Three, Four, Six Fit',
+        'Beside a dodecagon only three kinds of neighbour fit: triangles, '
+            'squares, and hexagons. That is no coincidence. Their interior '
+            'angles are 60, 90, and 120 degrees — which are precisely 360 '
+            'divided by six, by four, and by three. So exactly the divisors '
+            'three, four, and six of twelve appear here.\n\n'
+            'Those same three divisors are the ones that make the fractions one '
+            'third, one quarter, and one sixth come out evenly in base twelve. '
+            'The beautiful tiling and the clean fraction share the same root: '
+            'the rich divisibility of twelve. That is a genuine connection, '
+            'but not a compulsion — the angles come from geometry, the clean '
+            'fractions from notation; both depend only on the same number.',
+      ),
+      ProseSection(
+        'Kepler, Mosques, and Crystals',
+        'The first to enumerate these patterns completely was Johannes Kepler '
+            'in 1619, in a work on the harmony of the world. The name '
+            '"Archimedean" is merely a reference to the Archimedean solids; '
+            'no ancient text in which Archimedes himself treated tilings has '
+            'been handed down.\n\n'
+            'Long before Kepler, however, the dodecagon already lived in art: '
+            'twelve-pointed stars are among the most magnificent motifs of '
+            'Islamic geometric ornament, constructed with compass and '
+            'straightedge from pure geometry — appearing early, for instance, '
+            'at the mosque in Konya (1220). And in nature the same twelvefold '
+            'order recurs in quasicrystals, which are the subject of a separate '
+            'chapter. The dodecagon, which cannot tile a floor alone, is in '
+            'partnership one of the most fruitful shapes in the plane.',
+      ),
+    ],
+    sources: [
+      Source(
+        'Euclidean tilings by convex regular polygons — Wikipedia',
+        'https://en.wikipedia.org/wiki/Euclidean_tilings_by_convex_regular_polygons',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Truncated hexagonal tiling — Wikipedia',
+        'https://en.wikipedia.org/wiki/Truncated_hexagonal_tiling',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Truncated trihexagonal tiling — Wikipedia',
+        'https://en.wikipedia.org/wiki/Truncated_trihexagonal_tiling',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Archimedean Tilings and Egyptian Fractions (John Baez)',
+        'https://math.ucr.edu/home/baez/egyptian.html',
+        'R3',
+        'A1',
+      ),
+      Source(
+        'Islamic geometric patterns — Wikipedia',
+        'https://en.wikipedia.org/wiki/Islamic_geometric_patterns',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Harmonices Mundi — Wikipedia',
+        'https://en.wikipedia.org/wiki/Harmonices_Mundi',
+        'R2',
+        'A2',
+      ),
+    ],
+    imageId: 'math/parkettierung',
   ),
   ProseChapter(
     'The dodecahedron',
