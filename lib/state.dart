@@ -16,6 +16,7 @@ import 'logic/dozenal_digit.dart';
 import 'logic/expression.dart';
 import 'logic/rat_parser.dart';
 import 'logic/rational.dart';
+import 'logic/result_format.dart';
 import 'tokens.dart';
 
 class DozenalCalcState extends ChangeNotifier {
@@ -57,24 +58,10 @@ class DozenalCalcState extends ChangeNotifier {
   /// True when the display should show the State-B "≈"-suffix.
   bool get isF64Fallback => errorMsg == null && _ratCollapsed;
 
-  /// The current result rendered as a plain 0-9/A/B string for the clipboard:
-  /// digits, a decimal point, and a leading minus. The period overline and the
-  /// ≈/… display markers are intentionally dropped — only the shown digits are
-  /// emitted, matching what's on screen.
-  String get resultText {
-    final sb = StringBuffer();
-    for (final t in resultBuffer) {
-      if (t is Digit) {
-        final v = t.value.value;
-        sb.write(v < 10 ? '$v' : (v == 10 ? 'A' : 'B'));
-      } else if (t is Decimal) {
-        sb.write('.');
-      } else if (t is Negate) {
-        sb.write('-');
-      }
-    }
-    return sb.toString();
-  }
+  /// The current result as a plain 0-9/A/B string — digits, decimal point,
+  /// leading minus — for the clipboard copy and the cross-base comparison.
+  /// See [resultBufferToString].
+  String get resultText => resultBufferToString(resultBuffer);
 
   /// The current result expressed in the *other* numeral system, as a compact
   /// 0-9AB string for the small "{…}" reference on the result line — a dozenal
@@ -87,71 +74,9 @@ class DozenalCalcState extends ChangeNotifier {
     if (!_resultLive || errorMsg != null) return null;
     final otherBase = numeralSystem == NumeralSystem.doz ? 10 : 12;
     final cross = lastAns != null
-        ? _compactRationalString(lastAns!, otherBase)
-        : _compactF64String(lastResultF64, otherBase);
+        ? compactRationalString(lastAns!, otherBase)
+        : compactF64String(lastResultF64, otherBase);
     return cross == resultText ? null : cross;
-  }
-
-  /// Fractional-digit budget for the cross-base reference string.
-  static const int _crossFracDigits = 6;
-
-  static String _digitsToAscii(List<DozenalDigit> ds) {
-    final sb = StringBuffer();
-    for (final d in ds) {
-      final v = d.value;
-      sb.write(v < 10 ? '$v' : (v == 10 ? 'A' : 'B'));
-    }
-    return sb.toString();
-  }
-
-  /// Exact rational → compact base-[base] string (0-9AB), fractional part
-  /// capped at [_crossFracDigits] with a trailing "…" when more digits or a
-  /// period follow.
-  String _compactRationalString(Rational r, int base) {
-    final dec = r.toDozenalPeriodic(base: base);
-    final sb = StringBuffer();
-    if (r.num.isNegative) sb.write('-');
-    sb.write(_digitsToAscii(dec.intDigits));
-    if (dec.preDigits.isNotEmpty || dec.period.isNotEmpty) {
-      sb.write('.');
-      final shown = <DozenalDigit>[];
-      for (final d in dec.preDigits) {
-        if (shown.length >= _crossFracDigits) break;
-        shown.add(d);
-      }
-      var i = 0;
-      while (shown.length < _crossFracDigits && dec.period.isNotEmpty) {
-        shown.add(dec.period[i % dec.period.length]);
-        i++;
-      }
-      sb.write(_digitsToAscii(shown));
-      if (dec.preDigits.length > _crossFracDigits || dec.period.isNotEmpty) {
-        sb.write('…');
-      }
-    }
-    return sb.toString();
-  }
-
-  /// f64 → compact base-[base] string. Always approximate, so a fractional
-  /// part always ends in "…".
-  String _compactF64String(double v, int base) {
-    if (v.isNaN) return 'NaN';
-    if (v.isInfinite) return '∞';
-    final sb = StringBuffer();
-    var x = v;
-    if (x < 0) {
-      sb.write('-');
-      x = x.abs();
-    }
-    sb.write(_digitsToAscii(DozenalConverter.fromDecimal(x, base: base)));
-    final frac = x - x.floorToDouble();
-    if (frac > fracEpsilon) {
-      sb.write('.');
-      sb.write(_digitsToAscii(
-          DozenalConverter.fracToDigits(frac, _crossFracDigits, base: base)));
-      sb.write('…');
-    }
-    return sb.toString();
   }
 
   // --------------------------------------------------------------------
