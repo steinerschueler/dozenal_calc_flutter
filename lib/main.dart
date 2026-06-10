@@ -7,6 +7,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import 'app_layout.dart';
 import 'display.dart';
+import 'haptics.dart';
 import 'info_pages.dart';
 import 'intro_pages.dart';
 import 'keypad.dart';
@@ -47,18 +48,21 @@ class DozenalCalcApp extends StatefulWidget {
 class _DozenalCalcAppState extends State<DozenalCalcApp> {
   final LocaleNotifier _localeNotifier = LocaleNotifier();
   final GlyphStyleNotifier _glyphStyleNotifier = GlyphStyleNotifier();
+  final HapticsNotifier _hapticsNotifier = HapticsNotifier();
 
   @override
   void initState() {
     super.initState();
     _localeNotifier.load();
     _glyphStyleNotifier.load();
+    _hapticsNotifier.load();
   }
 
   @override
   void dispose() {
     _localeNotifier.dispose();
     _glyphStyleNotifier.dispose();
+    _hapticsNotifier.dispose();
     super.dispose();
   }
 
@@ -68,23 +72,26 @@ class _DozenalCalcAppState extends State<DozenalCalcApp> {
       notifier: _localeNotifier,
       child: GlyphStyleScope(
         notifier: _glyphStyleNotifier,
-        child: ListenableBuilder(
-          listenable: _localeNotifier,
-          builder: (context, _) => MaterialApp(
-            onGenerateTitle: (ctx) => AppLocalizations.of(ctx).appTitle,
-            debugShowCheckedModeBanner: false,
-            locale: _localeNotifier.override,
-            supportedLocales: AppLocalizations.supportedLocales,
-            localizationsDelegates: AppLocalizations.localizationsDelegates,
-            localeResolutionCallback: resolveLocale,
-            theme: ThemeData(
-              brightness: Brightness.dark,
-              scaffoldBackgroundColor: const Color(0xFF1F1F1F),
-              // Custom press-color feedback already covers tap state — disable
-              // the Material splash to avoid double feedback.
-              splashFactory: NoSplash.splashFactory,
+        child: HapticsScope(
+          notifier: _hapticsNotifier,
+          child: ListenableBuilder(
+            listenable: _localeNotifier,
+            builder: (context, _) => MaterialApp(
+              onGenerateTitle: (ctx) => AppLocalizations.of(ctx).appTitle,
+              debugShowCheckedModeBanner: false,
+              locale: _localeNotifier.override,
+              supportedLocales: AppLocalizations.supportedLocales,
+              localizationsDelegates: AppLocalizations.localizationsDelegates,
+              localeResolutionCallback: resolveLocale,
+              theme: ThemeData(
+                brightness: Brightness.dark,
+                scaffoldBackgroundColor: const Color(0xFF1F1F1F),
+                // Custom press-color feedback already covers tap state —
+                // disable the Material splash to avoid double feedback.
+                splashFactory: NoSplash.splashFactory,
+              ),
+              home: const _CalcScaffold(),
             ),
-            home: const _CalcScaffold(),
           ),
         ),
       ),
@@ -225,6 +232,25 @@ class _CalcScaffoldState extends State<_CalcScaffold> {
     return false;
   }
 
+  /// Long-press on the display copies the current result (as a plain 0-9/A/B
+  /// string) to the clipboard and confirms with a brief SnackBar. No-op while
+  /// an error is shown, since the result line then displays the error message
+  /// rather than a value.
+  void _copyResult() {
+    if (_state.errorMsg != null) return;
+    final text = _state.resultText;
+    Clipboard.setData(ClipboardData(text: text));
+    ScaffoldMessenger.of(context)
+      ..hideCurrentSnackBar()
+      ..showSnackBar(
+        SnackBar(
+          content: Text(AppLocalizations.of(context).resultCopied(text)),
+          duration: const Duration(seconds: 2),
+          behavior: SnackBarBehavior.floating,
+        ),
+      );
+  }
+
   void _openIntro() {
     Navigator.of(context).push(
       MaterialPageRoute(builder: (_) => const IntroPage()),
@@ -254,6 +280,11 @@ class _CalcScaffoldState extends State<_CalcScaffold> {
     }
     final token = _tokenForKey(event);
     if (token == null) return KeyEventResult.ignored;
+    // Respect the same disable rule as the on-screen keypad: in Dez mode the
+    // physical keys 'a'/'b' would otherwise inject base-12 digits (A/B) into a
+    // base-10 literal, producing a silently malformed value. Swallow them so
+    // the hardware keyboard and the (greyed-out) touch buttons behave alike.
+    if (_isTokenDisabled(token)) return KeyEventResult.handled;
     _state.handleClick(token);
     return KeyEventResult.handled;
   }
@@ -310,6 +341,7 @@ class _CalcScaffoldState extends State<_CalcScaffold> {
                                   ? 'DOZ'
                                   : 'DEZ',
                           onInputCursorTap: _state.moveCursorTo,
+                          onLongPress: _copyResult,
                         ),
                       ),
                       const SizedBox(height: 14),

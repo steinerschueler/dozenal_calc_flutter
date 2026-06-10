@@ -42,6 +42,12 @@ class DozenalCalcState extends ChangeNotifier {
   /// whole-number f64 fallbacks like `log(1) = 0`.
   bool _ratCollapsed = false;
 
+  /// True when [resultBuffer] holds a live computed result (set by
+  /// [calculateResult]) rather than the cleared "0" sentinel (set by AC).
+  /// Gates [_reformatResultInBase] so a Doz↔Dez switch after AC doesn't
+  /// resurrect the last computed value onto a screen that already reads 0.
+  bool _resultLive = false;
+
   String? errorMsg;
   bool overlayOpen = false;
   AngleMode angleMode = AngleMode.deg;
@@ -50,6 +56,25 @@ class DozenalCalcState extends ChangeNotifier {
 
   /// True when the display should show the State-B "≈"-suffix.
   bool get isF64Fallback => errorMsg == null && _ratCollapsed;
+
+  /// The current result rendered as a plain 0-9/A/B string for the clipboard:
+  /// digits, a decimal point, and a leading minus. The period overline and the
+  /// ≈/… display markers are intentionally dropped — only the shown digits are
+  /// emitted, matching what's on screen.
+  String get resultText {
+    final sb = StringBuffer();
+    for (final t in resultBuffer) {
+      if (t is Digit) {
+        final v = t.value.value;
+        sb.write(v < 10 ? '$v' : (v == 10 ? 'A' : 'B'));
+      } else if (t is Decimal) {
+        sb.write('.');
+      } else if (t is Negate) {
+        sb.write('-');
+      }
+    }
+    return sb.toString();
+  }
 
   // --------------------------------------------------------------------
   /// Tap-to-position the input cursor (the fine red line). [pos] is a gap
@@ -137,6 +162,7 @@ class DozenalCalcState extends ChangeNotifier {
       cursorPos = 0;
       errorMsg = null;
       _ratCollapsed = false;
+      _resultLive = false;
       return;
     }
     if (token is Del) {
@@ -212,7 +238,7 @@ class DozenalCalcState extends ChangeNotifier {
       return;
     }
     // Set 7 — Constants (overlay)
-    if (token is ConstPi || token is ConstE || token is ConstPhi || token is ConstSqrt2) {
+    if (token.isIrrationalConstant) {
       _insertAtCursor(token);
       overlayOpen = false;
       return;
@@ -233,6 +259,7 @@ class DozenalCalcState extends ChangeNotifier {
       if (numeralSystem != NumeralSystem.doz) {
         _convertBufferBase(from: 10, to: 12);
         numeralSystem = NumeralSystem.doz;
+        _reformatResultInBase(12);
       }
       overlayOpen = false;
       return;
@@ -241,6 +268,7 @@ class DozenalCalcState extends ChangeNotifier {
       if (numeralSystem != NumeralSystem.dez) {
         _convertBufferBase(from: 12, to: 10);
         numeralSystem = NumeralSystem.dez;
+        _reformatResultInBase(10);
       }
       overlayOpen = false;
       return;
@@ -383,6 +411,7 @@ class DozenalCalcState extends ChangeNotifier {
       resultPeriodCapped = false;
       resultCursorPos = 0;
       resultFieldActive = true;
+      _resultLive = true;
       return;
     }
     // Reorder postfix invocations (n!, |x|, 1/x) into prefix shape so
@@ -428,6 +457,7 @@ class DozenalCalcState extends ChangeNotifier {
 
     resultCursorPos = 0;
     resultFieldActive = true;
+    _resultLive = true;
   }
 
   /// Invariant on error: clear lastAns so subsequent Ans / Rcl don't insert
@@ -437,6 +467,33 @@ class DozenalCalcState extends ChangeNotifier {
     lastAns = null;
     lastResultF64 = 0.0;
     _ratCollapsed = false;
+    _resultLive = false;
+  }
+
+  /// Re-renders the result line from the stored result value in [base].
+  /// Called after a Doz↔Dez switch so the displayed result follows the active
+  /// numeral system instead of lingering in the old base's glyphs (e.g. the
+  /// dozenal `A` would otherwise still show under a `DEZ` badge until the next
+  /// `=`). Prefers the exact `lastAns`; falls back to the f64 result when the
+  /// rational track had collapsed. Periodicity is recomputed for the new base,
+  /// so an exact value can gain or lose its overline across the switch.
+  void _reformatResultInBase(int base) {
+    // Nothing to reformat when the screen shows the cleared "0" sentinel
+    // (post-AC) rather than a live result — otherwise the stale lastAns /
+    // lastResultF64 would be resurrected onto a display that reads 0.
+    if (!_resultLive) return;
+    if (lastAns != null) {
+      final r = formatRationalResult(lastAns!, base: base);
+      resultBuffer = r.buf;
+      resultPeriodStart = r.meta.start;
+      resultPeriodLen = r.meta.len;
+      resultPeriodCapped = r.meta.capped;
+    } else {
+      resultBuffer = formatF64Result(lastResultF64, base: base);
+      resultPeriodStart = null;
+      resultPeriodLen = 0;
+      resultPeriodCapped = false;
+    }
   }
 
   // --------------------------------------------------------------------

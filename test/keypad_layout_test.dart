@@ -7,9 +7,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:dozenal_calc_flutter/keypad.dart';
+import 'package:dozenal_calc_flutter/l10n/app_localizations.dart';
 
 Widget _wrap(Size size, {bool overlayOpen = false}) {
   return MaterialApp(
+    localizationsDelegates: AppLocalizations.localizationsDelegates,
+    supportedLocales: AppLocalizations.supportedLocales,
     home: Scaffold(
       body: Center(
         child: SizedBox(

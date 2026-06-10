@@ -139,5 +139,74 @@
     "placeholders": {
       "href": {"type": "String"}
     }
-  }
+  },
+
+  "a11yDigit": "Ziffer {value}",
+  "@a11yDigit": {
+    "description": "Accessibility (screen-reader) label for a dozenal digit key; {value} is its decimal value 0-11.",
+    "placeholders": {
+      "value": {"type": "int"}
+    }
+  },
+  "a11yPlus": "plus",
+  "a11yMinus": "minus",
+  "a11yTimes": "mal",
+  "a11yDividedBy": "geteilt durch",
+  "a11yPower": "hoch",
+  "a11yRoot": "Wurzel",
+  "a11yParallelAdd": "Paralleladdition",
+  "a11yLogarithm": "Logarithmus",
+  "a11ySine": "Sinus",
+  "a11yCosine": "Kosinus",
+  "a11yTangent": "Tangens",
+  "a11yCotangent": "Kotangens",
+  "a11yArcsine": "Arkussinus",
+  "a11yArccosine": "Arkuskosinus",
+  "a11yArctangent": "Arkustangens",
+  "a11yArccotangent": "Arkuskotangens",
+  "a11ySinh": "Sinus hyperbolicus",
+  "a11yCosh": "Kosinus hyperbolicus",
+  "a11yTanh": "Tangens hyperbolicus",
+  "a11yCoth": "Kotangens hyperbolicus",
+  "a11yArsinh": "Areasinus hyperbolicus",
+  "a11yArcosh": "Areakosinus hyperbolicus",
+  "a11yArtanh": "Areatangens hyperbolicus",
+  "a11yArcoth": "Areakotangens hyperbolicus",
+  "a11yParenOpen": "Klammer auf",
+  "a11yParenClose": "Klammer zu",
+  "a11yCursorLeft": "Cursor nach links",
+  "a11yCursorRight": "Cursor nach rechts",
+  "a11yAllClear": "Alles löschen",
+  "a11yDelete": "Zeichen löschen",
+  "a11yDecimalPoint": "Komma",
+  "a11yEquals": "Gleich",
+  "a11yExpandPanel": "Erweiterungsfeld öffnen",
+  "a11yClosePanel": "Erweiterungsfeld schließen",
+  "a11yMemoryStore": "In Speicher",
+  "a11yMemoryRecall": "Aus Speicher",
+  "a11yMemoryClear": "Speicher löschen",
+  "a11yLastAnswer": "Letztes Ergebnis",
+  "a11yPi": "Pi",
+  "a11yEuler": "Eulersche Zahl",
+  "a11yGoldenRatio": "Goldener Schnitt",
+  "a11ySqrt2": "Wurzel zwei",
+  "a11yFactorial": "Fakultät",
+  "a11yAbsolute": "Betrag",
+  "a11yReciprocal": "Kehrwert",
+  "a11yModulo": "Modulo",
+  "a11yDozenalMode": "Dozenal-Modus",
+  "a11yDecimalMode": "Dezimal-Modus",
+  "a11yAngleMode": "Winkelmodus wechseln",
+  "a11yInfo": "Info",
+  "a11yTheoryChapters": "Theoriekapitel",
+  "a11yIntro": "Intro",
+
+  "resultCopied": "Kopiert: {value}",
+  "@resultCopied": {
+    "description": "SnackBar confirmation after the result is copied to the clipboard; {value} is the copied result string.",
+    "placeholders": {
+      "value": {"type": "String"}
+    }
+  },
+  "infoListHapticsTitle": "Haptisches Feedback"
 }

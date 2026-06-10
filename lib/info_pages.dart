@@ -8,6 +8,7 @@ import 'package:package_info_plus/package_info_plus.dart';
 import 'conversions_page.dart';
 import 'converter_page.dart';
 import 'feedback_dialog.dart';
+import 'haptics.dart';
 import 'info_content.dart';
 import 'l10n/app_localizations.dart';
 import 'language_options.dart';
@@ -82,6 +83,11 @@ class InfoListPage extends StatelessWidget {
           // tiefes Settings-Menue dahinter. Tastatur bleibt immer
           // Custom-Glyphen (Marken-Identitaet).
           const _GlyphStyleToggle(),
+          const Divider(color: Color(0xFF2C2C2C), height: 1),
+          // Haptic-feedback on/off for keypad taps. A quick feedback
+          // preference, so it sits beside the glyph-style switch rather than
+          // in a deeper settings screen.
+          const _HapticsToggle(),
           const Divider(color: Color(0xFF2C2C2C), height: 1),
           const _LanguagePickerExpansion(),
           const Divider(color: Color(0xFF2C2C2C), height: 1),
@@ -450,6 +456,37 @@ class _GlyphStyleToggle extends StatelessWidget {
             child: Text(l.infoListGlyphStyleConventional),
           ),
         ],
+      ),
+    );
+  }
+}
+
+/// On/off switch for keypad tap haptics. Sits next to the glyph-style toggle
+/// because both are quick feedback/reading preferences, not buried settings.
+/// Persisted via [HapticsNotifier] and consulted by every keypad button tap.
+class _HapticsToggle extends StatelessWidget {
+  const _HapticsToggle();
+
+  @override
+  Widget build(BuildContext context) {
+    final l = AppLocalizations.of(context);
+    final notifier = HapticsScope.of(context);
+    return ListTile(
+      leading: const SizedBox(
+        width: 28,
+        child: Icon(
+          Icons.vibration,
+          color: Color(0xFFA0A0A0),
+          size: 16,
+        ),
+      ),
+      title: Text(
+        l.infoListHapticsTitle,
+        style: const TextStyle(fontSize: 14, color: Colors.white),
+      ),
+      trailing: Switch(
+        value: notifier.enabled,
+        onChanged: notifier.setEnabled,
       ),
     );
   }

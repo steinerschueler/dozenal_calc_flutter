@@ -18,6 +18,8 @@ import 'package:flutter/services.dart';
 
 import 'app_layout.dart';
 import 'glyph_painter.dart';
+import 'haptics.dart';
+import 'l10n/app_localizations.dart';
 import 'token_painter.dart';
 import 'tokens.dart';
 
@@ -776,7 +778,7 @@ class _PressableShellState extends State<_PressableShell> {
 
   void _handleTap() {
     if (widget.disabled) return;
-    HapticFeedback.selectionClick();
+    if (HapticsScope.enabledOf(context)) HapticFeedback.selectionClick();
     widget.onTap();
   }
 
@@ -817,11 +819,12 @@ class _DigitButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l = AppLocalizations.of(context);
     return ConstrainedBox(
       constraints: const BoxConstraints(minHeight: minTouchTarget),
       child: Semantics(
         button: true,
-        label: 'Ziffer ${digit.value}',
+        label: l.a11yDigit(digit.value),
         excludeSemantics: true,
         enabled: !disabled,
         child: _PressableShell(
@@ -882,11 +885,12 @@ class _TokenButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l = AppLocalizations.of(context);
     return ConstrainedBox(
       constraints: const BoxConstraints(minHeight: minTouchTarget),
       child: Semantics(
         button: true,
-        label: _tokenSemanticLabel(token),
+        label: _tokenSemanticLabel(token, l),
         excludeSemantics: true,
         child: _PressableShell(
           onTap: onTap,
@@ -920,59 +924,65 @@ class _TokenButton extends StatelessWidget {
   }
 }
 
-String _tokenSemanticLabel(CalcToken t) {
-  if (t is Add) return 'plus';
-  if (t is Sub) return 'minus';
-  if (t is Mul) return 'mal';
-  if (t is Div) return 'geteilt durch';
-  if (t is ExpTopRight) return 'hoch';
-  if (t is RootTopLeft) return 'Wurzel';
-  if (t is OplusBotLeft) return 'Paralleladdition';
-  if (t is LogBotRight) return 'Logarithmus';
-  if (t is Sin) return 'Sinus';
-  if (t is Cos) return 'Kosinus';
-  if (t is Tan) return 'Tangens';
-  if (t is Cot) return 'Kotangens';
-  if (t is ArcSin) return 'Arkussinus';
-  if (t is ArcCos) return 'Arkuskosinus';
-  if (t is ArcTan) return 'Arkustangens';
-  if (t is ArcCot) return 'Arkuskotangens';
-  if (t is Sinh) return 'Sinus hyperbolicus';
-  if (t is Cosh) return 'Kosinus hyperbolicus';
-  if (t is Tanh) return 'Tangens hyperbolicus';
-  if (t is Coth) return 'Kotangens hyperbolicus';
-  if (t is ArSinh) return 'Areasinus hyperbolicus';
-  if (t is ArCosh) return 'Areakosinus hyperbolicus';
-  if (t is ArTanh) return 'Areatangens hyperbolicus';
-  if (t is ArCoth) return 'Areakotangens hyperbolicus';
-  if (t is ParenOpen) return 'Klammer auf';
-  if (t is ParenClose) return 'Klammer zu';
-  if (t is TriangleLeft) return 'Cursor nach links';
-  if (t is TriangleRight) return 'Cursor nach rechts';
-  if (t is Ac) return 'Alles löschen';
-  if (t is Del) return 'Zeichen löschen';
-  if (t is Decimal) return 'Komma';
-  if (t is Equals) return 'Gleich';
-  if (t is Expand) return 'Erweiterungsfeld öffnen';
-  if (t is Close) return 'Erweiterungsfeld schließen';
-  if (t is Sto) return 'In Speicher';
-  if (t is Rcl) return 'Aus Speicher';
-  if (t is Mc) return 'Speicher löschen';
-  if (t is Ans) return 'Letztes Ergebnis';
-  if (t is ConstPi) return 'Pi';
-  if (t is ConstE) return 'Eulersche Zahl';
-  if (t is ConstPhi) return 'Goldener Schnitt';
-  if (t is ConstSqrt2) return 'Wurzel zwei';
-  if (t is Factorial) return 'Fakultät';
-  if (t is AbsVal) return 'Betrag';
-  if (t is Reciprocal) return 'Kehrwert';
-  if (t is Mod) return 'Modulo';
-  if (t is Doz) return 'Dozenal-Modus';
-  if (t is Dez) return 'Dezimal-Modus';
-  if (t is Drg) return 'Winkelmodus wechseln';
-  if (t is Info) return 'Info';
-  return '';
-}
+/// Localized accessibility (screen-reader) label for a keypad token.
+/// Exhaustive over the sealed CalcToken (no default) so a new keypad token
+/// can't ship without a spoken label. Strings come from the ARB so the label
+/// follows the active app language instead of being hard-coded German.
+String _tokenSemanticLabel(CalcToken t, AppLocalizations l) => switch (t) {
+      Add() => l.a11yPlus,
+      Sub() => l.a11yMinus,
+      Mul() => l.a11yTimes,
+      Div() => l.a11yDividedBy,
+      ExpTopRight() => l.a11yPower,
+      RootTopLeft() => l.a11yRoot,
+      OplusBotLeft() => l.a11yParallelAdd,
+      LogBotRight() => l.a11yLogarithm,
+      Sin() => l.a11ySine,
+      Cos() => l.a11yCosine,
+      Tan() => l.a11yTangent,
+      Cot() => l.a11yCotangent,
+      ArcSin() => l.a11yArcsine,
+      ArcCos() => l.a11yArccosine,
+      ArcTan() => l.a11yArctangent,
+      ArcCot() => l.a11yArccotangent,
+      Sinh() => l.a11ySinh,
+      Cosh() => l.a11yCosh,
+      Tanh() => l.a11yTanh,
+      Coth() => l.a11yCoth,
+      ArSinh() => l.a11yArsinh,
+      ArCosh() => l.a11yArcosh,
+      ArTanh() => l.a11yArtanh,
+      ArCoth() => l.a11yArcoth,
+      ParenOpen() => l.a11yParenOpen,
+      ParenClose() => l.a11yParenClose,
+      TriangleLeft() => l.a11yCursorLeft,
+      TriangleRight() => l.a11yCursorRight,
+      Ac() => l.a11yAllClear,
+      Del() => l.a11yDelete,
+      Decimal() => l.a11yDecimalPoint,
+      Equals() => l.a11yEquals,
+      Expand() => l.a11yExpandPanel,
+      Close() => l.a11yClosePanel,
+      Sto() => l.a11yMemoryStore,
+      Rcl() => l.a11yMemoryRecall,
+      Mc() => l.a11yMemoryClear,
+      Ans() => l.a11yLastAnswer,
+      ConstPi() => l.a11yPi,
+      ConstE() => l.a11yEuler,
+      ConstPhi() => l.a11yGoldenRatio,
+      ConstSqrt2() => l.a11ySqrt2,
+      Factorial() => l.a11yFactorial,
+      AbsVal() => l.a11yAbsolute,
+      Reciprocal() => l.a11yReciprocal,
+      Mod() => l.a11yModulo,
+      Doz() => l.a11yDozenalMode,
+      Dez() => l.a11yDecimalMode,
+      Drg() => l.a11yAngleMode,
+      Info() => l.a11yInfo,
+      // Never rendered as a keypad button (digits use _DigitButton; Negate and
+      // RatLit only ever live in buffers).
+      Digit() || Negate() || RatLit() => '',
+    };
 
 class _TokenPainter extends CustomPainter {
   final CalcToken token;
@@ -1051,6 +1061,7 @@ class _EqualsRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l = AppLocalizations.of(context);
     return LayoutBuilder(
       builder: (ctx, c) {
         final h = c.maxHeight.isFinite ? c.maxHeight : minTouchTarget * 1.2;
@@ -1060,7 +1071,7 @@ class _EqualsRow extends StatelessWidget {
             _RoundIconButton(
               size: h,
               icon: Icons.info_outline,
-              tooltip: 'Theoriekapitel',
+              tooltip: l.a11yTheoryChapters,
               onPressed: onInfoTap,
             ),
             SizedBox(width: sideGap),
@@ -1071,7 +1082,7 @@ class _EqualsRow extends StatelessWidget {
             _RoundIconButton(
               size: h,
               icon: Icons.help_outline,
-              tooltip: 'Intro',
+              tooltip: l.a11yIntro,
               onPressed: onHelpTap,
             ),
           ],

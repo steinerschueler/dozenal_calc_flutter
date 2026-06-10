@@ -336,3 +336,19 @@ final class InfoChapter extends InfoState {
   @override
   int get hashCode => index.hashCode;
 }
+
+// ---------------------------------------------------------------------------
+// Token classification helpers
+// ---------------------------------------------------------------------------
+
+extension CalcTokenClassification on CalcToken {
+  /// True for the four irrational-constant tokens (π, e, φ, √2). They act as
+  /// atomic, value-producing operands in both evaluation tracks and carry a
+  /// fixed f64 value. Single source of truth for the "is one of the four
+  /// constants" check used by the implicit-mul and operand-range logic.
+  bool get isIrrationalConstant =>
+      this is ConstPi ||
+      this is ConstE ||
+      this is ConstPhi ||
+      this is ConstSqrt2;
+}

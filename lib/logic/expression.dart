@@ -4,8 +4,8 @@
 //      build_meval_string, resolve_custom_operators, format_*_result) —
 //      structurally 1:1 with Rust.
 //   2. An in-house f64 expression evaluator that replaces the `meval` crate.
-//      Lexer + recursive-descent parser + interpreter, following the grammar
-//      in EXPRESSION_GRAMMAR.md.
+//      Lexer + recursive-descent parser + interpreter; operator precedence
+//      mirrors the rational track (see rat_parser.dart).
 //
 // `calculate_result` (the orchestrating method on DozenalCalcApp) is not
 // ported here — it lives with the state class in step 9.
@@ -287,11 +287,7 @@ bool _isFunctionToken(CalcToken t) {
     return (start: j, end: opPos);
   }
 
-  if (prev is RatLit ||
-      prev is ConstPi ||
-      prev is ConstE ||
-      prev is ConstPhi ||
-      prev is ConstSqrt2) {
+  if (prev is RatLit || prev.isIrrationalConstant) {
     return (start: opPos - 1, end: opPos);
   }
 
@@ -349,22 +345,14 @@ bool _producesValue(CalcToken curr, CalcToken next) {
     // number literal.
     return next is! Digit && next is! Decimal;
   }
-  return curr is ParenClose ||
-      curr is RatLit ||
-      curr is ConstPi ||
-      curr is ConstE ||
-      curr is ConstPhi ||
-      curr is ConstSqrt2;
+  return curr is ParenClose || curr is RatLit || curr.isIrrationalConstant;
 }
 
 bool _startsSubexpression(CalcToken next) {
   return next is Digit ||
       next is ParenOpen ||
       next is RatLit ||
-      next is ConstPi ||
-      next is ConstE ||
-      next is ConstPhi ||
-      next is ConstSqrt2 ||
+      next.isIrrationalConstant ||
       next is Sin ||
       next is Cos ||
       next is Tan ||
@@ -412,39 +400,66 @@ List<CalcToken> withImplicitMuls(List<CalcToken> tokens) {
 
 /// Maps a non-digit, non-decimal CalcToken to its evaluator-string form.
 /// Returns the empty string for tokens that emit nothing on their own.
-String tokenMevalStr(CalcToken t) {
-  if (t is Add) return '+';
-  if (t is Sub || t is Negate) return '-';
-  if (t is Mul) return '*';
-  if (t is Div) return '/';
-  if (t is Mod) return '%';
-  if (t is ParenOpen) return '(';
-  if (t is ParenClose) return ')';
-  if (t is Sin) return 'sin(';
-  if (t is Cos) return 'cos(';
-  if (t is Tan) return 'tan(';
-  if (t is Cot) return 'cot(';
-  if (t is ExpTopRight) return '^';
-  if (t is RootTopLeft) return '√';
-  if (t is OplusBotLeft) return '⊕';
-  if (t is LogBotRight) return 'log';
-  if (t is ArcSin) return 'asin(';
-  if (t is ArcCos) return 'acos(';
-  if (t is ArcTan) return 'atan(';
-  if (t is ArcCot) return 'acot(';
-  if (t is Sinh) return 'sinh(';
-  if (t is Cosh) return 'cosh(';
-  if (t is Tanh) return 'tanh(';
-  if (t is Coth) return 'coth(';
-  if (t is ArSinh) return 'arsinh(';
-  if (t is ArCosh) return 'arcosh(';
-  if (t is ArTanh) return 'artanh(';
-  if (t is ArCoth) return 'arcoth(';
-  if (t is Factorial) return 'fact(';
-  if (t is AbsVal) return 'abs(';
-  if (t is Reciprocal) return 'recip(';
-  return '';
-}
+/// Exhaustive over the sealed CalcToken (no default): a new variant is a
+/// compile error here rather than a silently-dropped operator.
+String tokenMevalStr(CalcToken t) => switch (t) {
+      Add() => '+',
+      Sub() || Negate() => '-',
+      Mul() => '*',
+      Div() => '/',
+      Mod() => '%',
+      ParenOpen() => '(',
+      ParenClose() => ')',
+      Sin() => 'sin(',
+      Cos() => 'cos(',
+      Tan() => 'tan(',
+      Cot() => 'cot(',
+      ExpTopRight() => '^',
+      RootTopLeft() => '√',
+      OplusBotLeft() => '⊕',
+      LogBotRight() => 'log',
+      ArcSin() => 'asin(',
+      ArcCos() => 'acos(',
+      ArcTan() => 'atan(',
+      ArcCot() => 'acot(',
+      Sinh() => 'sinh(',
+      Cosh() => 'cosh(',
+      Tanh() => 'tanh(',
+      Coth() => 'coth(',
+      ArSinh() => 'arsinh(',
+      ArCosh() => 'arcosh(',
+      ArTanh() => 'artanh(',
+      ArCoth() => 'arcoth(',
+      Factorial() => 'fact(',
+      AbsVal() => 'abs(',
+      Reciprocal() => 'recip(',
+      // Emit nothing: Digit/Decimal are consumed by buildMevalString before it
+      // calls here; RatLit and the constants are substituted with their numeric
+      // value upstream; mode/memory/app-state tokens never reach the evaluator.
+      Digit() ||
+      Decimal() ||
+      RatLit() ||
+      ConstPi() ||
+      ConstE() ||
+      ConstPhi() ||
+      ConstSqrt2() ||
+      Ac() ||
+      Del() ||
+      Equals() ||
+      Expand() ||
+      Close() ||
+      Sto() ||
+      Rcl() ||
+      Mc() ||
+      Ans() ||
+      Doz() ||
+      Dez() ||
+      Drg() ||
+      Info() ||
+      TriangleLeft() ||
+      TriangleRight() =>
+        '',
+    };
 
 /// f64 value for irrational-constant tokens; null for everything else.
 double? constValue(CalcToken t) {
@@ -568,25 +583,6 @@ class PeriodMeta {
   return (buf: buf, meta: PeriodMeta(start: start, len: len, capped: capped));
 }
 
-/// Renders an f64 value as a base-10 string with up to 10 fractional digits,
-/// trailing zeros stripped. Used by the Doz↔Dec mode (Set 10.1) to show the
-/// current result in the familiar decimal notation. Mirrors layout.rs::
-/// format_decimal_result.
-String formatDecimalResult(double val) {
-  if (val.isNaN) return 'NaN';
-  if (val.isInfinite) return '∞';
-  var s = val.toStringAsFixed(10);
-  if (s.contains('.')) {
-    while (s.endsWith('0')) {
-      s = s.substring(0, s.length - 1);
-    }
-    if (s.endsWith('.')) {
-      s = s.substring(0, s.length - 1);
-    }
-  }
-  return s;
-}
-
 List<CalcToken> formatF64Result(double value, {int base = 12}) {
   final buf = <CalcToken>[];
   var v = value;
@@ -611,7 +607,7 @@ List<CalcToken> formatF64Result(double value, {int base = 12}) {
 // ===========================================================================
 // In-house f64 evaluator (replaces the `meval` crate).
 // Lexer + recursive-descent parser + interpreter.
-// Grammar: see EXPRESSION_GRAMMAR.md "Rational-Track-Grammatik" (the f64
+// Grammar/precedence mirrors the rational track in rat_parser.dart (the f64
 // track follows the same shape).
 // ===========================================================================
 

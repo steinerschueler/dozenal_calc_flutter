@@ -399,6 +399,91 @@ void main() {
           ]));
     });
 
+    test('Doz→Dez reformats the result line into the new base', () {
+      // 5 + 5 = A (ten) in dozenal. Switching to decimal must re-render the
+      // result as "10" — not leave the dozenal A-glyph under the DEZ badge
+      // until the next "=".
+      final s = DozenalCalcState();
+      s.handleClick(Digit(DozenalDigit.d5));
+      s.handleClick(const Add());
+      s.handleClick(Digit(DozenalDigit.d5));
+      s.handleClick(const Equals());
+      expect(s.resultBuffer, equals([Digit(DozenalDigit.d10)]),
+          reason: 'doz 5+5 = A (ten)');
+      s.handleClick(const Dez());
+      expect(
+        s.resultBuffer,
+        equals([Digit(DozenalDigit.d1), Digit(DozenalDigit.d0)]),
+        reason: 'A (ten) re-rendered in base 10 is "10"',
+      );
+    });
+
+    test('Dez→Doz reformats the result line back', () {
+      final s = DozenalCalcState()..handleClick(const Dez());
+      s.handleClick(Digit(DozenalDigit.d5));
+      s.handleClick(const Add());
+      s.handleClick(Digit(DozenalDigit.d5));
+      s.handleClick(const Equals());
+      expect(
+        s.resultBuffer,
+        equals([Digit(DozenalDigit.d1), Digit(DozenalDigit.d0)]),
+        reason: 'dez 5+5 = 10',
+      );
+      s.handleClick(const Doz());
+      expect(s.resultBuffer, equals([Digit(DozenalDigit.d10)]),
+          reason: '10 (ten) re-rendered in base 12 is A');
+    });
+
+    test('base switch recomputes periodicity (doz 1/3 finite → dez periodic)',
+        () {
+      final s = DozenalCalcState();
+      s.handleClick(Digit(DozenalDigit.d1));
+      s.handleClick(const Div());
+      s.handleClick(Digit(DozenalDigit.d3));
+      s.handleClick(const Equals());
+      // doz: 1/3 = 0.4 exactly (3 divides twelve) — no period.
+      expect(s.resultPeriodStart, isNull);
+      expect(
+        s.resultBuffer,
+        equals([
+          Digit(DozenalDigit.d0),
+          const Decimal(),
+          Digit(DozenalDigit.d4),
+        ]),
+      );
+      s.handleClick(const Dez());
+      // dez: 1/3 = 0.333… — now periodic, recomputed for the new base.
+      expect(
+        s.resultBuffer,
+        equals([
+          Digit(DozenalDigit.d0),
+          const Decimal(),
+          Digit(DozenalDigit.d3),
+        ]),
+      );
+      expect(s.resultPeriodStart, equals(2));
+      expect(s.resultPeriodLen, equals(1));
+    });
+
+    test('AC then base switch does not resurrect a stale f64 result', () {
+      // sin collapses the rational track → f64 fallback with a non-zero value
+      // stashed in lastResultF64. AC clears the screen to 0, but the reformat
+      // on a base switch must not pull that stale f64 back onto the display.
+      final s = DozenalCalcState();
+      s.handleClick(const Sin());
+      s.handleClick(Digit(DozenalDigit.d3));
+      s.handleClick(const Equals());
+      expect(s.isF64Fallback, isTrue, reason: 'sin collapses the rational track');
+      s.handleClick(const Ac());
+      expect(s.resultBuffer, equals([Digit(DozenalDigit.d0)]));
+      s.handleClick(const Dez());
+      expect(
+        s.resultBuffer,
+        equals([Digit(DozenalDigit.d0)]),
+        reason: 'after AC there is no live result to reformat',
+      );
+    });
+
     // -------------------------------------------------------------------
     // Build 5 regression tests
     // -------------------------------------------------------------------

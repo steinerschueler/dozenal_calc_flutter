@@ -317,23 +317,4 @@ void main() {
           reason: 'no Mul should be inserted within a number');
     });
   });
-
-  group('formatDecimalResult', () {
-    test('integers are shown without trailing zeros or dot', () {
-      expect(formatDecimalResult(3.0), equals('3'));
-      expect(formatDecimalResult(-7.0), equals('-7'));
-      expect(formatDecimalResult(0.0), equals('0'));
-    });
-
-    test('finite fractions trim trailing zeros', () {
-      expect(formatDecimalResult(0.5), equals('0.5'));
-      expect(formatDecimalResult(0.25), equals('0.25'));
-    });
-
-    test('NaN and Infinity surface as glyphs', () {
-      expect(formatDecimalResult(double.nan), equals('NaN'));
-      expect(formatDecimalResult(double.infinity), equals('∞'));
-      expect(formatDecimalResult(double.negativeInfinity), equals('∞'));
-    });
-  });
 }

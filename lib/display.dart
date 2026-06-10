@@ -51,6 +51,10 @@ class TwoLineDisplay extends StatelessWidget {
   /// a tap on the input line. Null disables tap positioning.
   final ValueChanged<int>? onInputCursorTap;
 
+  /// Long-press anywhere on the display → copy the result string. Wired by the
+  /// scaffold to clipboard copy; null disables it.
+  final VoidCallback? onLongPress;
+
   const TwoLineDisplay({
     super.key,
     required this.inputBuffer,
@@ -67,6 +71,7 @@ class TwoLineDisplay extends StatelessWidget {
     this.angleModeLabel,
     this.numeralSystemLabel,
     this.onInputCursorTap,
+    this.onLongPress,
   });
 
   @override
@@ -110,20 +115,25 @@ class TwoLineDisplay extends StatelessWidget {
               ),
             );
             final tapHandler = onInputCursorTap;
-            if (tapHandler == null) return paint;
-            // Tap the input line → position the cursor at the nearest glyph gap.
+            final longPress = onLongPress;
+            if (tapHandler == null && longPress == null) return paint;
+            // Tap the input line → position the cursor at the nearest glyph
+            // gap; long-press anywhere → copy the result.
             return LayoutBuilder(
               builder: (ctx, c) => GestureDetector(
                 behavior: HitTestBehavior.opaque,
-                onTapDown: (d) {
-                  final pos = inputCursorPosForTap(
-                    d.localPosition,
-                    Size(c.maxWidth, c.maxHeight),
-                    inputBuffer,
-                    glyphStyle,
-                  );
-                  if (pos != null) tapHandler(pos);
-                },
+                onTapDown: tapHandler == null
+                    ? null
+                    : (d) {
+                        final pos = inputCursorPosForTap(
+                          d.localPosition,
+                          Size(c.maxWidth, c.maxHeight),
+                          inputBuffer,
+                          glyphStyle,
+                        );
+                        if (pos != null) tapHandler(pos);
+                      },
+                onLongPress: longPress,
                 child: paint,
               ),
             );
@@ -305,50 +315,60 @@ class _TwoLineDisplayPainter extends CustomPainter {
         .toList();
     var totalW = laid.fold<double>(0.0, (a, t) => a + t.width);
 
-    final hasExactSuffix = isF64Fallback || resultPeriodCapped;
-    var suffixTp = hasExactSuffix ? _ellipsisPainter(rect.height) : null;
+    // Leading "≈" when the rational track collapsed and we're showing a
+    // rounded f64 value (State B). Deliberately distinct from the
+    // width-truncation "…": "≈" means *approximate*, "…" means *exact but
+    // clipped to fit*. An f64 fallback never carries a period
+    // (formatF64Result clears it), so the prefix and the period/State-C
+    // suffix never collide.
+    final approxTp = isF64Fallback ? _approxPainter(rect.height) : null;
+    final approxW =
+        approxTp == null ? 0.0 : approxTp.width + _approxGap(rect.height);
+
+    // State-C dot cluster (period longer than maxPeriodDisplay) reserves a
+    // suffix slot up front; a width-truncation "…" may still be added below
+    // once we know digits had to be dropped.
+    var suffixTp = resultPeriodCapped ? _ellipsisPainter(rect.height) : null;
     var suffixW = suffixTp?.width ?? 0.0;
 
     // Width-Truncation: das Ergebnis ist rechts-ausgerichtet, also lägen
-    // überlange Resultate links aus der Anzeige raus. Wir droppen
-    // Tokens vom rechten Ende (am wenigsten signifikante Nachkomma-
-    // Stellen zuerst) bis es passt, und markieren den Schnitt mit dem
-    // Baseline-Ellipsis-Suffix (wie State B). Periode wird mit-clamped.
+    // überlange Resultate links aus der Anzeige raus. Wir droppen Tokens vom
+    // rechten Ende (am wenigsten signifikante Nachkomma-Stellen zuerst) bis es
+    // passt — inklusive reserviertem Platz für „≈"-Präfix und Suffix. Die
+    // Periode wird mit-geclamped.
     var displayedPeriodLen = resultPeriodLen;
     int? displayedPeriodStart = resultPeriodStart;
     var truncated = false;
-    while (totalW + suffixW > rect.width && laid.length > 1) {
+    void dropTrailing() {
       final dropped = laid.removeLast();
       totalW -= dropped.width;
       truncated = true;
-      if (displayedPeriodStart != null) {
-        if (laid.length <= displayedPeriodStart) {
+      final ps = displayedPeriodStart;
+      if (ps != null) {
+        if (laid.length <= ps) {
           displayedPeriodStart = null;
           displayedPeriodLen = 0;
-        } else if (laid.length < displayedPeriodStart + displayedPeriodLen) {
-          displayedPeriodLen = laid.length - displayedPeriodStart;
+        } else if (laid.length < ps + displayedPeriodLen) {
+          displayedPeriodLen = laid.length - ps;
         }
       }
     }
-    // Wenn wir geschnitten haben und vorher kein Suffix da war,
+
+    while (totalW + suffixW + approxW > rect.width && laid.length > 1) {
+      dropTrailing();
+    }
+    // Wenn wir geschnitten haben und (noch) kein State-C-Suffix da war,
     // Baseline-Ellipsis nachziehen (semantisch: „mehr da, aber abgeschnitten").
     if (truncated && suffixTp == null) {
       suffixTp = _ellipsisPainter(rect.height);
       suffixW = suffixTp.width;
-      while (totalW + suffixW > rect.width && laid.length > 1) {
-        final dropped = laid.removeLast();
-        totalW -= dropped.width;
-        if (displayedPeriodStart != null) {
-          if (laid.length <= displayedPeriodStart) {
-            displayedPeriodStart = null;
-            displayedPeriodLen = 0;
-          } else if (laid.length < displayedPeriodStart + displayedPeriodLen) {
-            displayedPeriodLen = laid.length - displayedPeriodStart;
-          }
-        }
+      while (totalW + suffixW + approxW > rect.width && laid.length > 1) {
+        dropTrailing();
       }
     }
 
+    // Right-aligned block: [≈] · [tokens…] · [suffix]. The tokens still end at
+    // rect.right − suffixW; the "≈" prefix sits to their left.
     var x = rect.right - totalW - suffixW;
     final positions = <double>[];
     for (var i = 0; i < laid.length; i++) {
@@ -358,11 +378,11 @@ class _TwoLineDisplayPainter extends CustomPainter {
     }
 
     final overlineY = rect.top + _overlineYOffset(rect.height);
-    if (displayedPeriodStart != null && displayedPeriodLen > 0) {
-      final start = displayedPeriodStart;
-      final endIdx = start + displayedPeriodLen - 1;
-      if (start < positions.length && endIdx < positions.length) {
-        final x1 = positions[start] + 1.5;
+    final periodStart = displayedPeriodStart;
+    if (periodStart != null && displayedPeriodLen > 0) {
+      final endIdx = periodStart + displayedPeriodLen - 1;
+      if (periodStart < positions.length && endIdx < positions.length) {
+        final x1 = positions[periodStart] + 1.5;
         final x2 = positions[endIdx] + laid[endIdx].width - 1.5;
         canvas.drawLine(
           Offset(x1, overlineY),
@@ -374,36 +394,32 @@ class _TwoLineDisplayPainter extends CustomPainter {
       }
     }
     if (suffixTp != null) {
-      // Suffix-Position-Auswahl:
-      // - isF64Fallback (State B): Baseline-Ellipsis (Mid-Line).
-      // - truncated ohne F64: ebenfalls Baseline — semantisch „mehr
-      //   da, aber abgeschnitten".
-      // - resultPeriodCapped (State C): dot-cluster auf overline height.
-      //   (Wenn beides — Period-Cap UND Truncation — gewinnt der
-      //   visuell auffälligere overline-Cluster, weil die Period-Info
-      //   wichtiger als der reine Width-Schnitt ist.)
-      final useBaseline = isF64Fallback || (truncated && !resultPeriodCapped);
-      if (useBaseline) {
-        final yPos = rect.top + (rect.height - suffixTp.height) / 2;
-        suffixTp.paint(canvas, Offset(x, yPos));
-      } else {
-        // State C: render three dots manually so their centres land
-        // exactly on overlineY. A glyph-based "…" sits at the font
-        // baseline within its bounding box, which leaves the dots
-        // visibly below the period bar — drawing circles avoids that
-        // font-metric dance and keeps the alignment exact.
+      if (resultPeriodCapped) {
+        // State C: drei Punkte manuell, damit ihre Zentren exakt auf overlineY
+        // sitzen. Ein Glyph-„…" läge auf der Font-Baseline und damit sichtbar
+        // unter dem Periodenstrich. Bei gleichzeitigem Width-Schnitt gewinnt
+        // State C, weil die Period-Info informativer ist als der reine Schnitt.
         final r = rect.height * 0.025;
         final dx = r * 3.6;
         final centerX = x + suffixTp.width / 2;
         final paint = Paint()..color = Colors.white;
         for (var i = -1; i <= 1; i++) {
-          canvas.drawCircle(
-            Offset(centerX + i * dx, overlineY),
-            r,
-            paint,
-          );
+          canvas.drawCircle(Offset(centerX + i * dx, overlineY), r, paint);
         }
+      } else {
+        // Width-Truncation: Baseline-„…".
+        final yPos = rect.top + (rect.height - suffixTp.height) / 2;
+        suffixTp.paint(canvas, Offset(x, yPos));
       }
+    }
+
+    // „≈"-Präfix links vom ersten Token.
+    if (approxTp != null) {
+      final yPos = rect.top + (rect.height - approxTp.height) / 2;
+      approxTp.paint(
+        canvas,
+        Offset(rect.right - totalW - suffixW - approxW, yPos),
+      );
     }
 
     if (resultFieldActive) {
@@ -518,48 +534,70 @@ TextPainter _textPainter(String text, double fontSize) => TextPainter(
 
 TextPainter _ellipsisPainter(double lineH) => _textPainter('…', lineH * 0.42);
 
+/// "≈" marker drawn ahead of a rounded f64-fallback result (State B).
+TextPainter _approxPainter(double lineH) => _textPainter('≈', lineH * 0.42);
+
+/// Gap between the "≈" marker and the first result digit.
+double _approxGap(double lineH) => lineH * 0.08;
+
 /// Text label for a non-digit token in display context. Mirrors the Rust
 /// `paint_token` text branches but without the button border treatment.
-String _tokenText(CalcToken t) {
-  if (t is Decimal) return '.';
-  if (t is Negate) return '−';
-  if (t is Add) return '+';
-  if (t is Sub) return '−';
-  if (t is Mul) return '×';
-  if (t is Div) return '÷';
-  if (t is Mod) return 'mod';
-  if (t is ParenOpen) return '(';
-  if (t is ParenClose) return ')';
-  if (t is Sin) return 'sin';
-  if (t is Cos) return 'cos';
-  if (t is Tan) return 'tan';
-  if (t is Cot) return 'cot';
-  if (t is ArcSin) return 'sin⁻¹';
-  if (t is ArcCos) return 'cos⁻¹';
-  if (t is ArcTan) return 'tan⁻¹';
-  if (t is ArcCot) return 'cot⁻¹';
-  if (t is Sinh) return 'sinh';
-  if (t is Cosh) return 'cosh';
-  if (t is Tanh) return 'tanh';
-  if (t is Coth) return 'coth';
-  if (t is ArSinh) return 'sinh⁻¹';
-  if (t is ArCosh) return 'cosh⁻¹';
-  if (t is ArTanh) return 'tanh⁻¹';
-  if (t is ArCoth) return 'coth⁻¹';
-  if (t is ConstPi) return 'π';
-  if (t is ConstE) return 'e';
-  if (t is ConstPhi) return 'φ';
-  if (t is ConstSqrt2) return '√2';
-  if (t is Factorial) return 'n!';
-  if (t is AbsVal) return '|x|';
-  if (t is Reciprocal) return '1/x';
-  if (t is ExpTopRight) return '^';
-  if (t is RootTopLeft) return '√';
-  if (t is OplusBotLeft) return '⊕';
-  if (t is LogBotRight) return 'log';
-  if (t is RatLit) return t.label;
-  // App-state tokens (AC, Del, Equals, Expand, Sto, Rcl, Mc, Ans, Doz, Dez,
-  // Drg, Info, Close, TriangleLeft, TriangleRight) never appear in
-  // input_buffer or result_buffer.
-  return '';
-}
+String _tokenText(CalcToken t) => switch (t) {
+      Decimal() => '.',
+      Negate() => '−',
+      Add() => '+',
+      Sub() => '−',
+      Mul() => '×',
+      Div() => '÷',
+      Mod() => 'mod',
+      ParenOpen() => '(',
+      ParenClose() => ')',
+      Sin() => 'sin',
+      Cos() => 'cos',
+      Tan() => 'tan',
+      Cot() => 'cot',
+      ArcSin() => 'sin⁻¹',
+      ArcCos() => 'cos⁻¹',
+      ArcTan() => 'tan⁻¹',
+      ArcCot() => 'cot⁻¹',
+      Sinh() => 'sinh',
+      Cosh() => 'cosh',
+      Tanh() => 'tanh',
+      Coth() => 'coth',
+      ArSinh() => 'sinh⁻¹',
+      ArCosh() => 'cosh⁻¹',
+      ArTanh() => 'tanh⁻¹',
+      ArCoth() => 'coth⁻¹',
+      ConstPi() => 'π',
+      ConstE() => 'e',
+      ConstPhi() => 'φ',
+      ConstSqrt2() => '√2',
+      Factorial() => 'n!',
+      AbsVal() => '|x|',
+      Reciprocal() => '1/x',
+      ExpTopRight() => '^',
+      RootTopLeft() => '√',
+      OplusBotLeft() => '⊕',
+      LogBotRight() => 'log',
+      RatLit(:final label) => label,
+      // No display string: real Digit tokens are laid out via the glyph path,
+      // never here; app-state/mode tokens (AC, Del, Equals, Expand, Close, Sto,
+      // Rcl, Mc, Ans, Doz, Dez, Drg, Info, cursor arrows) never enter a buffer.
+      Digit() ||
+      Ac() ||
+      Del() ||
+      Equals() ||
+      Expand() ||
+      Close() ||
+      Sto() ||
+      Rcl() ||
+      Mc() ||
+      Ans() ||
+      Doz() ||
+      Dez() ||
+      Drg() ||
+      Info() ||
+      TriangleLeft() ||
+      TriangleRight() =>
+        '',
+    };
