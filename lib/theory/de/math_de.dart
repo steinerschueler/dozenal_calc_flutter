@@ -114,6 +114,161 @@ List<ProseChapter> _mathChaptersDe() => const [
     ],
   ),
   ProseChapter(
+    'Zyklische Zahlen',
+    [
+      ProseSection(
+        'Das Siebtel und seine Verwandten',
+        'Ein Siebtel geht in Basis Zwölf nicht glatt auf, sondern wiederholt '
+            'sich: ein Siebtel = 0,186A35, danach wieder 186A35, endlos. (A '
+            'steht für Zehn, B für Elf.) Die sich wiederholende Gruppe ist die '
+            'Periode; sie ist hier sechs Stellen lang.\n\n'
+            'Das Verblüffende zeigt sich, wenn man die anderen Siebtel danebenlegt. '
+            'Zwei Siebtel = 0,35186A, drei Siebtel = 0,5186A3, vier Siebtel = '
+            '0,6A3518, fünf Siebtel = 0,86A351, sechs Siebtel = 0,A35186. Es sind '
+            'jedes Mal dieselben sechs Ziffern in derselben Reihenfolge — nur '
+            'beginnt die Folge an einer anderen Stelle. Man kann sie sich auf '
+            'einem Ring aufgereiht denken, der bei jedem Bruch ein Stück '
+            'weitergedreht wird.',
+      ),
+      ProseSection(
+        'Wenn die Vielfachen rotieren',
+        'Dieselbe Drehung steckt im Einmaleins der Periode selbst. Nimmt man die '
+            'Ziffernfolge 186A35 als ganze Zahl und multipliziert sie der Reihe '
+            'nach, entstehen wieder nur Drehungen: 186A35 × 2 = 35186A, × 3 = '
+            '5186A3, × 4 = 6A3518, × 5 = 86A351, × 6 = A35186. Eine Zahl mit '
+            'dieser Eigenschaft heißt eine zyklische Zahl.\n\n'
+            'Der siebte Schritt schließt den Kreis: 186A35 × 7 = BBBBBB. Lauter '
+            'Elfen — die höchste Ziffer der Basis Zwölf, sechsmal hintereinander. '
+            'Das ist kein Zufall: BBBBBB ist gerade um eins kleiner als die nächste '
+            'runde Stelle. In Basis Zehn kennt man dasselbe Kunststück von der '
+            'berühmten Zahl 142857 (der Periode von einem Siebtel im Zehnersystem): '
+            'Auch dort ergeben die Vielfachen Drehungen, und 142857 × 7 = 999999. '
+            'Die Ziffern sind andere, die Struktur ist dieselbe.',
+      ),
+      ProseSection(
+        'Warum gerade sechs Stellen',
+        'Dass die Periode genau sechs Stellen lang ist — und nicht weniger —, hat '
+            'einen klaren Grund. Beim schriftlichen Teilen bleibt nach jedem '
+            'Schritt ein Rest, und die Periode endet, sobald sich ein Rest '
+            'wiederholt. Bei einem Siebtel treten nacheinander alle sechs '
+            'möglichen Reste 1 bis 6 auf, bevor sich der erste wiederholt. Mehr '
+            'als sechs verschiedene Reste kann es bei der Sieben nicht geben, also '
+            'ist sechs die größtmögliche Länge.\n\n'
+            'Eine Primzahl, deren Kehrwert diese längstmögliche Periode erreicht, '
+            'nennt man eine volle Periodenzahl. Nur bei ihr durchlaufen die '
+            'Vielfachen alle Drehungen, und nur dann entsteht eine zyklische Zahl. '
+            'Ob eine Primzahl voll ist, hängt davon ab, wie sich die Potenzen der '
+            'Basis — hier Zwölf — beim Teilen durch die Primzahl verhalten.',
+      ),
+      ProseSection(
+        'Die Ergänzung zur höchsten Ziffer',
+        'Die Periode 186A35 trägt noch ein zweites Muster in sich. Teilt man sie '
+            'in der Mitte und addiert die Hälften, kommt 186 + A35 = BBB heraus — '
+            'wieder lauter Elfen, diesmal drei. Die beiden Hälften ergänzen sich '
+            'genau zur höchsten Ziffer.\n\n'
+            'Das ist ein allgemeiner Satz (nach Étienne Midy, 1836) und gilt in '
+            'jeder Basis: In Basis Zehn ist es 142 + 857 = 999. Der Effekt zeigt, '
+            'dass die zweite Hälfte der Periode kein neues Material ist, sondern '
+            'das Spiegelbild der ersten.',
+      ),
+      ProseSection(
+        'Nicht jede Primzahl macht mit',
+        'Die schöne Drehung ist die Ausnahme, nicht die Regel. Ein Elftel zeigt '
+            'in Basis Zwölf nur die Periode 0,1 — eine einzige sich wiederholende '
+            'Eins, weil Zwölf um eins über Elf liegt (das Gegenstück zu einem '
+            'Neuntel = 0,1 im Zehnersystem). Ein Dreizehntel ergibt 0,0B mit der '
+            'kurzen Periode 0B. Solche Primzahlen erzeugen keine zyklische Zahl.\n\n'
+            'Unter den kleinen Primzahlen sind in Basis Zwölf 5, 7, 17, 31, 41 und '
+            '43 (dezimal gezählt) volle Periodenzahlen — bemerkenswerterweise alle '
+            'mit der Endziffer 5 oder 7 in Basis Zwölf. Das ist eine notwendige, '
+            'aber keine hinreichende Bedingung: Die Neunzehn endet ebenfalls auf '
+            '7, hat aber nur eine sechsstellige Periode. Auch der Wechsel der Basis '
+            'spielt mit: Die Fünf ist in Basis Zwölf voll (ein Fünftel = 0,2497, '
+            'Periode 2497), im Zehnersystem dagegen geht ein Fünftel glatt auf. '
+            'Welche Primzahlen mitmachen, gehört also zum Paar aus Basis und '
+            'Primzahl, nicht zur Primzahl allein.',
+      ),
+      ProseSection(
+        'Wie viele es gibt — eine offene Frage',
+        'Man könnte meinen, eine so klare Eigenschaft sei längst ausgezählt. Das '
+            'ist nicht so. Wie viele volle Periodenzahlen es in Basis Zwölf gibt — '
+            'ob unendlich viele —, ist bis heute nicht bewiesen.\n\n'
+            'Eine Vermutung von Emil Artin aus dem Jahr 1927 sagt voraus, dass '
+            'ungefähr siebenunddreißig von hundert Primzahlen voll sein sollten, '
+            'in Basis Zwölf wie in jeder anderen tauglichen Basis. Die Beobachtung '
+            'an kleinen Zahlen passt zu dieser Größenordnung. Aber die Vermutung '
+            'ist eben eine Vermutung: Trotz großer Anstrengungen ist sie für keine '
+            'einzelne Basis bewiesen. Das gehört zur ehrlichen Darstellung dazu — '
+            'ein einfach klingendes Muster, hinter dem ein bis heute offenes '
+            'Problem steht.',
+      ),
+      ProseSection(
+        'Im Rechner ausprobieren',
+        'All das lässt sich hier nachsehen. Tippt man ein Siebtel und Gleich, '
+            'zeigt die Anzeige 0, mit einem Überstrich über 186A35 — die sechs '
+            'Stellen der Periode. Bei zwei Siebteln erscheint dieselbe Folge als '
+            '35186A, gedreht; das ist keine Rundung, sondern exakt dasselbe Muster. '
+            'Ein Fünftel zeigt den Überstrich über 2497, ein Elftel nur über der '
+            'einen Ziffer 1.\n\n'
+            'Größere Beispiele machen die Grenzen sichtbar: Ein Bruch mit Nenner '
+            'Einundreißig (dezimal) hat eine dreißig Stellen lange Periode — hier '
+            'kürzt die Anzeige mit drei Punkten, weil nicht alles in eine Zeile '
+            'passt. Wie der Rechner exakte Brüche und ihre Perioden überhaupt '
+            'ermittelt, steht im Kapitel „Wie dieser Rechner rechnet".',
+      ),
+    ],
+    sources: [
+      Source(
+        'Cyclic number — Wikipedia',
+        'https://en.wikipedia.org/wiki/Cyclic_number',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Full reptend prime — Wikipedia',
+        'https://en.wikipedia.org/wiki/Full_reptend_prime',
+        'R2',
+        'A1',
+      ),
+      Source(
+        '142857 — Wikipedia',
+        'https://en.wikipedia.org/wiki/142857',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Midy’s theorem — Wikipedia',
+        'https://en.wikipedia.org/wiki/Midy%27s_theorem',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Multiplicative order — Wikipedia',
+        'https://en.wikipedia.org/wiki/Multiplicative_order',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Artin’s conjecture on primitive roots — Wikipedia',
+        'https://en.wikipedia.org/wiki/Artin%27s_conjecture_on_primitive_roots',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Orders of Units in Modular Arithmetic (Keith Conrad, UConn)',
+        'https://kconrad.math.uconn.edu/blurbs/ugradnumthy/ordersmodm.pdf',
+        'R1',
+        'A2',
+      ),
+      Source(
+        'OEIS A019340 — Primes with primitive root 12',
+        'https://oeis.org/A019340',
+        'R2',
+        'A2',
+      ),
+    ],
+  ),
+  ProseChapter(
     'Die Zahlenbasen im Vergleich',
     [
       ProseSection(
