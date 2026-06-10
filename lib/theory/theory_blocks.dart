@@ -6,6 +6,7 @@
 
 import '../info_content.dart';
 import '../l10n/app_localizations.dart';
+import 'grundlagen_theory.dart';
 import 'math_theory.dart';
 import 'prose_chapter.dart';
 import 'society_theory.dart';
@@ -65,9 +66,12 @@ List<TheoryBlock> theoryBlocks(AppLocalizations l, String langTag) {
   final math = mathChapters(langTag);
   final society = societyChapters(langTag);
 
-  // Grundlagen (Einstieg). Bedienung (idx 0) bleibt bewusst draussen.
+  // Grundlagen (Einstieg): Prosa-Dozenalsystem (neuer Standard, bequellt) +
+  // Legacy-Glieder (noch nicht gehoben). Bedienung (idx 0) bleibt draussen.
+  final grund = grundlagenChapters(langTag);
   final grundlagen = <TheoryChapterRef>[
-    TheoryChapterRef.legacy(titles[1], 1),
+    for (final (i, c) in grund.indexed)
+      TheoryChapterRef.prose(c.title, c.sections, c.sources, 'grundlagen/$i'),
     TheoryChapterRef.legacy(titles[10], 10),
   ];
 
