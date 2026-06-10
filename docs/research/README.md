@@ -101,8 +101,15 @@ verdrahtet (`lib/theory/<lang>/<block>_<lang>.dart`).
 |---|---|---|
 | Teiler/Brüche/Perioden, Zahlenbasen, Geschichte der Stellenwertsysteme, „Wie dieser Rechner rechnet" | teils (math_*) | ✅ |
 | Dodekagon (mit Diagrammen), Dodekaeder, Fibonacci | ✅ (math_*) | ✅ (14 Sprachen) |
+| Zyklische Zahlen (186A35) | ✅ (math_zyklische_zahlen) | ✅ (14 Sprachen) |
+| Teilbarkeit & Elfer-Probe | ✅ (math_teilbarkeit) | ✅ (14 Sprachen) |
+| Tricks im Einmaleins | ✅ (math_einmaleins) | ✅ (14 Sprachen) |
+| Die Uhr als Gruppe (ℤ/12ℤ) | ✅ (math_z12) | ✅ (14 Sprachen) |
+| 12! und die Reihenfolgen | ✅ (math_permutationen) | ✅ (14 Sprachen) |
+| Die Mathieu-Gruppe M₁₂ | ✅ (math_m12) | ✅ (14 Sprachen) |
+| Archimedische Parkettierungen (mit Diagramm, `imageId 'math/parkettierung'`) | ✅ (math_parkettierung) | ✅ (14 Sprachen) |
 | Goldener Schnitt, Pi, Einheitskreis & 360° | ❌ | ❌ |
-| *Ideen:* weniger bekannte Zwölf-Mathematik (highly composite numbers, 12 als 3-glatt, …) | ❌ | ❌ |
+| *Ideen:* siehe `math_chapter_ideas.md` (Reguläre/3-glatte Zahlen + Babylon, Pentominoes, Kuboktaeder, Gruppen der Ordnung 12 …) | ❌ | ❌ |
 
 ### Dozenale Gesellschaft
 | Thema | Dossier | Prosa |
