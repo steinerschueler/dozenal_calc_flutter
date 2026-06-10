@@ -396,7 +396,7 @@ List<Widget> _chapterAr(int chapter, AppLocalizations l) {
           "الزمرة الثنائية السطح D₁₂. لكل مضلع منتظم ذي n من الأضلاع "
           "2n تناظراً بالضبط.",
         ),
-        const _Chapter4Illustration(),
+        const Chapter4Illustration(),
       ];
     case 4:
       return [
@@ -442,7 +442,7 @@ List<Widget> _chapterAr(int chapter, AppLocalizations l) {
           "و30° = 26°doz. يمكن كتابة جميع الزوايا الظاهرة بالاثنا‌عشري "
           "كمضاعفات صحيحة لـ 13°.",
         ),
-        const _Chapter5Illustration(),
+        const Chapter5Illustration(),
       ];
     case 5:
       return [

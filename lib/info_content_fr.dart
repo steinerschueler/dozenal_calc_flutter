@@ -482,7 +482,7 @@ List<Widget> _chapterFr(int chapter, AppLocalizations l) {
           "groupe dièdre D₁₂. Tout n-gone régulier a exactement "
           "2n symétries.",
         ),
-        const _Chapter4Illustration(),
+        const Chapter4Illustration(),
       ];
     case 4:
       return [
@@ -537,7 +537,7 @@ List<Widget> _chapterFr(int chapter, AppLocalizations l) {
           "apparaissant peuvent s'écrire en duodécimal comme des "
           "multiples entiers de 13°.",
         ),
-        const _Chapter5Illustration(),
+        const Chapter5Illustration(),
       ];
     case 5:
       return [

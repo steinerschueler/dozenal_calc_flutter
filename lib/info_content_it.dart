@@ -446,7 +446,7 @@ List<Widget> _chapterIt(int chapter, AppLocalizations l) {
           "24 simmetrie formano il gruppo diedrico D₁₂. Ogni "
           "n-agono regolare ha esattamente 2n simmetrie.",
         ),
-        const _Chapter4Illustration(),
+        const Chapter4Illustration(),
       ];
     case 4:
       return [
@@ -499,7 +499,7 @@ List<Widget> _chapterIt(int chapter, AppLocalizations l) {
           "angoli che appaiono possono essere scritti in "
           "duodecimale come multipli interi di 13°.",
         ),
-        const _Chapter5Illustration(),
+        const Chapter5Illustration(),
       ];
     case 5:
       return [

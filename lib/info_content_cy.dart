@@ -496,7 +496,7 @@ List<Widget> _chapterCy(int chapter, AppLocalizations l) {
           "grŵp deuocheddrol D₁₂. Mae gan bob n-ongl rheolaidd union "
           "2n o gymesureddau.",
         ),
-        const _Chapter4Illustration(),
+        const Chapter4Illustration(),
       ];
     case 4:
       return [
@@ -546,7 +546,7 @@ List<Widget> _chapterCy(int chapter, AppLocalizations l) {
           "13°doz, a 30° = 26°doz. Gellir ysgrifennu pob ongl sy'n "
           "digwydd yn ddwsin fel lluoswm cyfanrif o 13°.",
         ),
-        const _Chapter5Illustration(),
+        const Chapter5Illustration(),
       ];
     case 5:
       return [

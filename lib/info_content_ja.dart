@@ -391,7 +391,7 @@ List<Widget> _chapterJa(int chapter, AppLocalizations l) {
           "D₁₂ をなします。すべての正 n 角形は正確に 2n の対称性を"
           "持ちます。",
         ),
-        const _Chapter4Illustration(),
+        const Chapter4Illustration(),
       ];
     case 4:
       return [
@@ -437,7 +437,7 @@ List<Widget> _chapterJa(int chapter, AppLocalizations l) {
           "では：15° = 13°doz、30° = 26°doz。現れるすべての角度を"
           "十二進で 13° の整数倍として書けます。",
         ),
-        const _Chapter5Illustration(),
+        const Chapter5Illustration(),
       ];
     case 5:
       return [

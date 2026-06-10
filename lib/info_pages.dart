@@ -685,6 +685,8 @@ class TheoryChapterPage extends StatelessWidget {
     if (image != null) children.add(ChapterImageView(image));
     final appRef = theoryAppRefFor(imageId);
     if (appRef != null) children.add(AppRefCard(appRef));
+    final customIllu = _customChapterIllustration(imageId);
+    if (customIllu != null) children.add(customIllu);
     children.addAll(legacyIndex != null
         ? buildChapterContent(legacyIndex!, context)
         : <Widget>[
@@ -708,6 +710,26 @@ class TheoryChapterPage extends StatelessWidget {
       ),
     );
   }
+}
+
+/// Custom-painted illustration shown at the head of a prose chapter, keyed by a
+/// stable [ProseChapter.imageId]. Currently the two dodecagon diagrams
+/// (inscribed polygons + diagonal types) for the consolidated Zwölfeck chapter.
+Widget? _customChapterIllustration(String? id) {
+  switch (id) {
+    case 'math/dodekagon':
+      return const Padding(
+        padding: EdgeInsets.symmetric(vertical: 4),
+        child: Column(
+          children: [
+            Chapter4Illustration(),
+            SizedBox(height: 12),
+            Chapter5Illustration(),
+          ],
+        ),
+      );
+  }
+  return null;
 }
 
 /// One prose section (bold heading + body), styled like the unit-theory page.

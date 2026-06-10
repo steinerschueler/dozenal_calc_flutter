@@ -81,13 +81,14 @@ List<TheoryBlock> theoryBlocks(AppLocalizations l, String langTag) {
     TheoryChapterRef.legacy(titles[8], 8),
   ];
 
-  // Dozenale Mathematik: Geometrie-Legacy (Zwölfeck idx 3-5, Dodekaeder idx 6-7;
-  // noch nicht gehoben) + Math-Prosa (inkl. des gehobenen Fibonacci-Kapitels).
+  // Dozenale Mathematik: Dodekaeder-Legacy (idx 6-7, noch nicht gehoben) +
+  // Math-Prosa (Fibonacci + das konsolidierte Zwölfeck mit Diagramm-imageId).
   final mathematik = <TheoryChapterRef>[
-    for (final i in const [3, 4, 5, 6, 7])
+    for (final i in const [6, 7])
       TheoryChapterRef.legacy(titles[i], i),
     for (final (i, c) in math.indexed)
-      TheoryChapterRef.prose(c.title, c.sections, c.sources, 'math/$i'),
+      TheoryChapterRef.prose(
+          c.title, c.sections, c.sources, c.imageId ?? 'math/$i'),
   ];
 
   return [

@@ -398,7 +398,7 @@ List<Widget> _chapterFa(int chapter, AppLocalizations l) {
           "تقارن گروه دو‌رویه D₁₂ را تشکیل می‌دهند. هر n-ضلعی منتظم "
           "دقیقاً 2n تقارن دارد.",
         ),
-        const _Chapter4Illustration(),
+        const Chapter4Illustration(),
       ];
     case 4:
       return [
@@ -447,7 +447,7 @@ List<Widget> _chapterFa(int chapter, AppLocalizations l) {
           "موجود را می‌توان در دوازده‌دهی به‌عنوان مضرب‌های صحیح "
           "13° نوشت.",
         ),
-        const _Chapter5Illustration(),
+        const Chapter5Illustration(),
       ];
     case 5:
       return [

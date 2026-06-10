@@ -335,7 +335,7 @@ List<Widget> _chapterZh(int chapter, AppLocalizations l) {
           "用代数语言，这 24 种对称构成二面体群 D₁₂。每个正 n 边形"
           "恰好有 2n 种对称。",
         ),
-        const _Chapter4Illustration(),
+        const Chapter4Illustration(),
       ];
     case 4:
       return [
@@ -379,7 +379,7 @@ List<Widget> _chapterZh(int chapter, AppLocalizations l) {
           "30° = 26°doz。所有出现的角度都可以在十二进制中表示为 "
           "13° 的整数倍。",
         ),
-        const _Chapter5Illustration(),
+        const Chapter5Illustration(),
       ];
     case 5:
       return [

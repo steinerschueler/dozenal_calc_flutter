@@ -472,7 +472,7 @@ List<Widget> _chapterGa(int chapter, AppLocalizations l) {
           "siméadracht seo an grúpa dé-dromchla D₁₂. Tá 2n siméadracht "
           "go díreach ag gach n-uillíoch rialta.",
         ),
-        const _Chapter4Illustration(),
+        const Chapter4Illustration(),
       ];
     case 4:
       return [
@@ -522,7 +522,7 @@ List<Widget> _chapterGa(int chapter, AppLocalizations l) {
           "26°doz. Is féidir gach uillinn a thagann i láthair a "
           "scríobh in dosaenach mar iolraí slán de 13°.",
         ),
-        const _Chapter5Illustration(),
+        const Chapter5Illustration(),
       ];
     case 5:
       return [

@@ -434,7 +434,7 @@ List<Widget> _chapterEs(int chapter, AppLocalizations l) {
           "forman el grupo diédrico D₁₂. Cada n-ágono regular tiene "
           "exactamente 2n simetrías.",
         ),
-        const _Chapter4Illustration(),
+        const Chapter4Illustration(),
       ];
     case 4:
       return [
@@ -486,7 +486,7 @@ List<Widget> _chapterEs(int chapter, AppLocalizations l) {
           "ángulos que aparecen pueden escribirse en duodecimal como "
           "múltiplos enteros de 13°.",
         ),
-        const _Chapter5Illustration(),
+        const Chapter5Illustration(),
       ];
     case 5:
       return [

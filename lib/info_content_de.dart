@@ -385,7 +385,7 @@ List<Widget> _chapterDe(int chapter, AppLocalizations l) {
           'Symmetrien die Diedergruppe D₁₂. Jedes reguläre n-Eck hat '
           'genau 2n Symmetrien.',
         ),
-        const _Chapter4Illustration(),
+        const Chapter4Illustration(),
       ];
     case 4:
       return [
@@ -437,7 +437,7 @@ List<Widget> _chapterDe(int chapter, AppLocalizations l) {
           'Winkel lassen sich dozenal als ganzzahlige Vielfache von '
           '13° schreiben.',
         ),
-        const _Chapter5Illustration(),
+        const Chapter5Illustration(),
       ];
     case 5:
       return [

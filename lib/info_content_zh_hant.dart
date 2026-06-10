@@ -343,7 +343,7 @@ List<Widget> _chapterZhHant(int chapter, AppLocalizations l) {
           "用代數語言，這 24 種對稱構成二面體群 D₁₂。每個正 n 邊形"
           "恰好有 2n 種對稱。",
         ),
-        const _Chapter4Illustration(),
+        const Chapter4Illustration(),
       ];
     case 4:
       return [
@@ -387,7 +387,7 @@ List<Widget> _chapterZhHant(int chapter, AppLocalizations l) {
           "30° = 26°doz。所有出現的角度都可以在十二進制中表示為 "
           "13° 的整數倍。",
         ),
-        const _Chapter5Illustration(),
+        const Chapter5Illustration(),
       ];
     case 5:
       return [

@@ -46,5 +46,12 @@ class ProseChapter {
   final String title;
   final List<ProseSection> sections;
   final List<Source> sources;
-  const ProseChapter(this.title, this.sections, {this.sources = const []});
+
+  /// Optional stable image/illustration id, overriding the index-based default
+  /// (`<block>/<i>`). Used for chapters that carry a specific custom-painted
+  /// illustration (e.g. the dodecagon diagrams) so the id stays correct
+  /// regardless of the chapter's position in its block.
+  final String? imageId;
+  const ProseChapter(this.title, this.sections,
+      {this.sources = const [], this.imageId});
 }

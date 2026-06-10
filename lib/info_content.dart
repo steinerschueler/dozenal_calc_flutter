@@ -186,8 +186,8 @@ class _DigitLegend extends StatelessWidget {
 // Port of painting.rs::draw_chapter4_svg.
 // ---------------------------------------------------------------------------
 
-class _Chapter4Illustration extends StatelessWidget {
-  const _Chapter4Illustration();
+class Chapter4Illustration extends StatelessWidget {
+  const Chapter4Illustration({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -199,7 +199,7 @@ class _Chapter4Illustration extends StatelessWidget {
         children: [
           AspectRatio(
             aspectRatio: 1.0,
-            child: CustomPaint(painter: _Chapter4Painter()),
+            child: CustomPaint(painter: Chapter4Painter()),
           ),
           const SizedBox(height: 8),
           _legendRow(
@@ -251,7 +251,7 @@ class _Chapter4Illustration extends StatelessWidget {
   }
 }
 
-class _Chapter4Painter extends CustomPainter {
+class Chapter4Painter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final cx = size.width / 2;
@@ -326,7 +326,7 @@ class _Chapter4Painter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(covariant _Chapter4Painter old) => false;
+  bool shouldRepaint(covariant Chapter4Painter old) => false;
 }
 
 // ---------------------------------------------------------------------------
@@ -334,8 +334,8 @@ class _Chapter4Painter extends CustomPainter {
 // Port of painting.rs::draw_chapter5_svg.
 // ---------------------------------------------------------------------------
 
-class _Chapter5Illustration extends StatelessWidget {
-  const _Chapter5Illustration();
+class Chapter5Illustration extends StatelessWidget {
+  const Chapter5Illustration({super.key});
 
   static const _diagonals = <(List<int>, Color, String, String)>[
     ([0, 1], Color(0xFF5F5E5A), 's = 1', '≈ 1.000'),
@@ -355,7 +355,7 @@ class _Chapter5Illustration extends StatelessWidget {
         children: [
           AspectRatio(
             aspectRatio: 1.0,
-            child: CustomPaint(painter: _Chapter5Painter()),
+            child: CustomPaint(painter: Chapter5Painter()),
           ),
           const SizedBox(height: 8),
           for (final d in _diagonals) _legendRow(d.$2, d.$3, d.$4),
@@ -400,7 +400,7 @@ class _Chapter5Illustration extends StatelessWidget {
   }
 }
 
-class _Chapter5Painter extends CustomPainter {
+class Chapter5Painter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final cx = size.width / 2;
@@ -431,7 +431,7 @@ class _Chapter5Painter extends CustomPainter {
     }
 
     // 6 diagonal types
-    for (final d in _Chapter5Illustration._diagonals) {
+    for (final d in Chapter5Illustration._diagonals) {
       canvas.drawLine(
         verts[d.$1[0]],
         verts[d.$1[1]],
@@ -449,7 +449,7 @@ class _Chapter5Painter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(covariant _Chapter5Painter old) => false;
+  bool shouldRepaint(covariant Chapter5Painter old) => false;
 }
 
 // ---------------------------------------------------------------------------

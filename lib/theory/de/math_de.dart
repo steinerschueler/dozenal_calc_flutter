@@ -541,4 +541,202 @@ List<ProseChapter> _mathChaptersDe() => const [
       ),
     ],
   ),
+  ProseChapter(
+    'Das Zwölfeck (Dodekagon)',
+    [
+      ProseSection(
+        'Was ein regelmäßiges Zwölfeck ist',
+        'Ein regelmäßiges Zwölfeck (griechisch Dodekagon: dōdeka = zwölf, '
+            'gōnía = Winkel) ist ein Vieleck mit zwölf gleich langen Seiten und '
+            'zwölf gleich großen Innenwinkeln. Alle zwölf Ecken liegen gleich '
+            'verteilt auf einem Kreis, dem Umkreis, je 30° voneinander '
+            'entfernt.\n\n'
+            'Jeder Innenwinkel misst genau 150°. Das folgt aus einer einfachen '
+            'Überlegung: Geht man die Figur einmal ganz herum ab, dreht man sich '
+            'an den zwölf Ecken zusammen um volle 360°, also 30° je Ecke. Dieser '
+            'Außenwinkel und der Innenwinkel ergänzen sich zu 180°, somit bleibt '
+            '180° − 30° = 150°. Im Dozenalsystem schreibt sich 150° als 106°, '
+            'der Außenwinkel 30° als 26°. Alle Winkel, die im Zwölfeck '
+            'vorkommen, sind Vielfache von 15° — dozenal 13°.\n\n'
+            'Das Zwölfeck zählt zu den Formen, die sich mit Zirkel und Lineal '
+            'exakt zeichnen lassen. Der Weg ist kurz: einen Kreis schlagen, ihn '
+            'in sechs gleiche Teile teilen (das gelingt mit dem Zirkel allein, '
+            'weil beim Sechseck die Seite genau dem Radius gleicht), dann jeden '
+            'der sechs Bögen halbieren — fertig sind zwölf gleichmäßig verteilte '
+            'Punkte. Dass das geht, ist kein Zufall: Ein regelmäßiges n-Eck ist '
+            'genau dann konstruierbar, wenn n aus einer Zweierpotenz und '
+            'verschiedenen sogenannten Fermat-Primzahlen besteht (Satz von Gauß '
+            'und Wantzel). Für 12 = 2² × 3 ist das erfüllt, weil 3 eine solche '
+            'Primzahl ist.',
+      ),
+      ProseSection(
+        'Drei Vielecke teilen sich die Ecken',
+        'Das Bemerkenswerte am Zwölfeck ist weniger seine Form als das, was in '
+            'ihm steckt. Verbindet man nur jede zweite seiner Ecken, entsteht '
+            'ein regelmäßiges Sechseck. Jede dritte Ecke ergibt ein Quadrat, '
+            'jede vierte ein gleichseitiges Dreieck — alle drei exakt, nicht '
+            'angenähert, und alle auf demselben Umkreis wie das Zwölfeck '
+            'selbst.\n\n'
+            'Dahinter steht eine allgemeine Regel: Ein regelmäßiges m-Eck passt '
+            'genau dann mit denselben Eckpunkten in ein n-Eck, wenn m die Zahl n '
+            'teilt; man verbindet dann jede (n/m)-te Ecke. Sechseck, Quadrat und '
+            'Dreieck stecken im Zwölfeck, weil 12 durch 6, 4 und 3 teilbar ist. '
+            'Und 12 ist die kleinste Zahl, die durch 3, 4 und 6 zugleich teilbar '
+            'ist — ihr kleinstes gemeinsames Vielfaches. Darum ist das Zwölfeck '
+            'das kleinste reguläre Vieleck, das diese drei Grundfiguren '
+            'gemeinsam enthält; ein Fünf-, Acht- oder Zehneck kann das nicht.\n\n'
+            'Es ist genau dieselbe Teilbarkeit, die das Dozenalsystem so '
+            'angenehm macht. Dass 12 durch 2, 3, 4 und 6 aufgeht, lässt '
+            'geometrisch die drei Vielecks in einem Zwölfeck zusammenfallen — '
+            'und macht arithmetisch die Brüche ein Halb, ein Drittel, ein '
+            'Viertel und ein Sechstel zu kurzen, glatten Zwölferbrüchen. Form '
+            'und Bruchrechnung haben dieselbe Wurzel.',
+      ),
+      ProseSection(
+        'Vierundfünfzig Diagonalen, sechs Längen',
+        'Eine Diagonale verbindet zwei Ecken, die nicht benachbart sind. Die '
+            'Formel n(n−3)/2 liefert für das Zwölfeck 12 × 9 / 2 = 54 '
+            'Diagonalen. Das wirkt unübersichtlich, ist aber streng geordnet: '
+            'Weil das Zwölfeck so symmetrisch ist, sind alle Diagonalen, die '
+            'gleich viele Ecken überspringen, gleich lang. Es gibt fünf solche '
+            'Sprungweiten und dazu den Durchmesser — also nur sechs '
+            'verschiedene Längen. Bei Seitenlänge 1:\n\n'
+            'd₂ überspringt eine Ecke und misst √(2+√3) ≈ 1,932. d₃ überspringt '
+            'zwei Ecken, 1+√3 ≈ 2,732. d₄ überspringt drei Ecken, (3√2+√6)/2 ≈ '
+            '3,346. d₅ überspringt vier Ecken, 2+√3 ≈ 3,732. d₆ schließlich '
+            'verbindet gegenüberliegende Ecken — das ist der Durchmesser, √6+√2 '
+            '≈ 3,864.\n\n'
+            'In diesen Werten verstecken sich saubere Muster. Die fünfte und die '
+            'dritte Diagonale unterscheiden sich um genau die Seitenlänge: '
+            '(2+√3) − (1+√3) = 1. Und der Durchmesser ist exakt doppelt so lang '
+            'wie die kürzeste Diagonale, d₆ = 2 · d₂ — dasselbe Verhältnis 2:1 '
+            'wie die Oktave in der Musik. Alle Winkel zwischen den Diagonalen '
+            'sind dabei wieder Vielfache von 15°, denn die zwölf Ecken zerlegen '
+            'den Vollkreis in Schritte von 30°.',
+      ),
+      ProseSection(
+        'Die Fläche und die „runde Drei"',
+        'Um die Fläche zu finden, zerlegt man das Zwölfeck vom Mittelpunkt aus '
+            'in zwölf gleiche, schmale Dreiecke. Jedes hat zwei Schenkel der '
+            'Länge R — das ist der Umkreisradius, der Abstand vom Mittelpunkt zu '
+            'einer Ecke — und an der Spitze den Winkel 30°. Rechnet man die '
+            'zwölf Dreiecke zusammen, fällt etwas Schönes heraus:\n\n'
+            'A = 3 · R².\n\n'
+            'Der Faktor ist eine glatte, ganze Drei, ganz ohne Wurzel. Das '
+            'gelingt, weil in der Rechnung sin(30°) = ein Halb auftritt, und 30° '
+            'ist gerade der Eckenwinkel des Zwölfecks. Unter den mit Zirkel und '
+            'Lineal zeichenbaren Vielecken ist es das einzige größere, bei dem '
+            'die Flächenformel so glatt aufgeht; beim Sechseck etwa bleibt eine '
+            'Wurzel stehen. Rechnet man lieber mit der Seitenlänge s, lautet die '
+            'Fläche A = 3(2+√3)·s² ≈ 11,196·s².\n\n'
+            'Setzt man die Fläche ins Verhältnis zum Umkreis, dessen Fläche π·R² '
+            'beträgt, kürzt sich R² heraus und es bleibt genau 3/π ≈ 0,9549. Das '
+            'Zwölfeck füllt seinen Umkreis also zu rund 95,5 % aus — viel mehr '
+            'als ein Sechseck (etwa 83 %), ein Quadrat (rund 64 %) oder ein '
+            'Dreieck (rund 41 %). Statt der krummen Kreiszahl π steht hier die '
+            'runde Drei: Bei R = 1 ist die Zwölfeckfläche exakt 3 und liegt damit '
+            'knapp unter π ≈ 3,1416.\n\n'
+            'Diese Nähe nutzte schon Archimedes. Er näherte π über Vielecke an, '
+            'begann beim leicht zu zeichnenden Sechseck und verdoppelte die '
+            'Eckenzahl: 6, 12, 24, 48, 96. Das Zwölfeck war sein erster Schritt. '
+            'Das 96-Eck — dozenal gesehen 12 × 8 — füllt den Kreis schon zu '
+            '99,93 % und lieferte ihm 3 + 10/71 < π < 3 + 1/7.',
+      ),
+      ProseSection(
+        'Wo das Zwölfeck als Form auftaucht',
+        'Die zwölf Stundenmarken einer Analoguhr bilden ein regelmäßiges '
+            'Zwölfeck: zwölf Punkte im Abstand von 30° auf dem Kreis. Dass der '
+            'Vollkreis 360° = 12 × 30° umfasst und der Tag zweimal zwölf Stunden '
+            'hat, ist derselbe 30°-Raster, den auch Kompassrosen für zwölf '
+            'Richtungen nutzen.\n\n'
+            'Mehrere Länder prägten zwölfseitige Münzen — vor allem, damit sie '
+            'sich durch ihre Form von runden Münzen ertasten lassen. Der '
+            'britische „Threepence" aus Messing (ab 1937) war das erste '
+            'nicht-runde Umlaufstück Großbritanniens; das zwölfseitige '
+            'Pfundstück (ab 2017) wurde gegen Fälschungen eingeführt und bewusst '
+            'nach diesem Vorbild gestaltet. Anders als manchmal behauptet haben '
+            'solche Münzen keine gleichmäßige Breite — diese Eigenschaft tragen '
+            'die siebenseitigen britischen 20- und 50-Pence-Stücke, die keine '
+            'Zwölfecke sind.\n\n'
+            'Allein parkettiert das Zwölfeck die Ebene nicht: 150° geht nicht '
+            'glatt in 360° auf. Zusammen mit anderen Vielecken aber schon — etwa '
+            'mit Dreiecken oder mit Quadraten und Sechsecken, deren Winkel sich '
+            'an jeder Ecke zu 360° ergänzen. Solche zwölfzähligen Muster bilden '
+            'eine Grundlage der islamischen Geometrie-Ornamentik. Wie die Zwölf '
+            'darüber hinaus ins Bauen und in die Kunst gelangt ist, behandelt '
+            'das Kapitel „Die Zwölf im Bauen".',
+      ),
+      ProseSection(
+        'Geometrie, nicht Zahlenmystik',
+        'Die Eigenschaften des Zwölfecks sind echte mathematische Tatsachen, '
+            'keine Geheimnisse. Dass die Fläche im Verhältnis 3/π zum Umkreis '
+            'steht, folgt zwingend aus sin(30°) = ein Halb; es zeigt nur, dass '
+            'das Zwölfeck den Kreis gut annähert, und stiftet keine geheime '
+            'Verbindung zwischen der Drei und π. Ebenso ist die einfache Drei in '
+            '„Fläche = 3·R²" eine Folge des Eckenwinkels, kein Wunder.\n\n'
+            'Auch der Satz „A = 3·R²" verlangt die richtige Lesart: Die glatte '
+            'Drei gilt für den Umkreisradius. Bei Seitenlänge 1 ist die Fläche '
+            'rund 11,2, nicht 3. Und bei den Diagonalen lohnt Genauigkeit — die '
+            'vierte ist (3√2+√6)/2 ≈ 3,346, kein einfacherer Wurzelausdruck; '
+            'hier kursieren in manchen Quellen falsche Werte.\n\n'
+            'Schließlich sagt die leichte Konstruierbarkeit nur, dass die Form '
+            'mit einfachem Werkzeug entsteht. Sie erklärt gut, warum Zwölfecke '
+            'im Handwerk, auf Münzen und im Ornament so häufig sind. Warum aber '
+            'die Uhr zwölf Stunden hat, ist eine Frage der Tradition, nicht der '
+            'Geometrie. Das Zwölfeck ist ein schönes geometrisches Werkzeug — '
+            'und nichts weiter sollte man ihm andichten.',
+      ),
+    ],
+    sources: [
+      Source(
+        'Dodecagon — Wikipedia',
+        'https://en.wikipedia.org/wiki/Dodecagon',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Constructible polygon — Wikipedia',
+        'https://en.wikipedia.org/wiki/Constructible_polygon',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Dodecagon (12-gon) calculator and formulas — RedCrab Software',
+        'https://www.redcrab-software.com/en/Calculator/Geometry/Dodecagon',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Area of a Dodecagon — Alison Kiddle',
+        'https://alisonkiddle.co.uk/area-of-a-dodecagon/',
+        'R3',
+        'A1',
+      ),
+      Source(
+        'Getting Closer to π: Inscribing and Circumscribing Polygons — Univ. Alberta',
+        'https://sites.ualberta.ca/~esimmt/think/main/richMathTasks/evan/files/InscribingAndCircumscribingPolygons.pdf',
+        'R3',
+        'A1',
+      ),
+      Source(
+        'Archimedes on the Circumference and Area of a Circle — AMS Feature Column',
+        'https://www.ams.org/publicoutreach/feature-column/fc-2012-02',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Brass threepence — Wikipedia',
+        'https://en.wikipedia.org/wiki/Brass_threepence',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Dodecagonal coin — Wikipedia',
+        'https://en.wikipedia.org/wiki/Dodecagonal_coin',
+        'R2',
+        'A1',
+      ),
+    ],
+    imageId: 'math/dodekagon',
+  ),
 ];

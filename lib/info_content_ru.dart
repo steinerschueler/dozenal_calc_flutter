@@ -432,7 +432,7 @@ List<Widget> _chapterRu(int chapter, AppLocalizations l) {
           '24 симметрии образуют диэдральную группу D₁₂. Каждый '
           'правильный n-угольник имеет ровно 2n симметрий.',
         ),
-        const _Chapter4Illustration(),
+        const Chapter4Illustration(),
       ];
     case 4:
       return [
@@ -484,7 +484,7 @@ List<Widget> _chapterRu(int chapter, AppLocalizations l) {
           '26°доз. Все появляющиеся углы можно записать в '
           'двенадцатеричной системе как целые кратные 13°.',
         ),
-        const _Chapter5Illustration(),
+        const Chapter5Illustration(),
       ];
     case 5:
       return [

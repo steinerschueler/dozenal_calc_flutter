@@ -433,7 +433,7 @@ List<Widget> _chapterHi(int chapter, AppLocalizations l) {
           "सममिति द्विफलक समूह D₁₂ बनाते हैं। हर नियमित n-भुज में "
           "ठीक 2n सममिति होती हैं।",
         ),
-        const _Chapter4Illustration(),
+        const Chapter4Illustration(),
       ];
     case 4:
       return [
@@ -481,7 +481,7 @@ List<Widget> _chapterHi(int chapter, AppLocalizations l) {
           "30° = 26°doz। आने वाले सभी कोणों को द्वादशमी में 13° के "
           "पूर्णांक गुणकों के रूप में लिखा जा सकता है।",
         ),
-        const _Chapter5Illustration(),
+        const Chapter5Illustration(),
       ];
     case 5:
       return [

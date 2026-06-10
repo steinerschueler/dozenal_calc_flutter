@@ -382,7 +382,7 @@ List<Widget> _chapterEn(int chapter, AppLocalizations l) {
           'language of algebra these 24 symmetries form the dihedral '
           'group D₁₂. Every regular n-gon has exactly 2n symmetries.',
         ),
-        const _Chapter4Illustration(),
+        const Chapter4Illustration(),
       ];
     case 4:
       return [
@@ -433,7 +433,7 @@ List<Widget> _chapterEn(int chapter, AppLocalizations l) {
           'angles can be written in dozenal as integer multiples of '
           '13°.',
         ),
-        const _Chapter5Illustration(),
+        const Chapter5Illustration(),
       ];
     case 5:
       return [
