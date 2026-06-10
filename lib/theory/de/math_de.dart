@@ -697,6 +697,170 @@ List<ProseChapter> _mathChaptersDe() => const [
     ],
   ),
   ProseChapter(
+    'Die Uhr als Gruppe (ℤ/12ℤ)',
+    [
+      ProseSection(
+        'Rechnen wie auf dem Zifferblatt',
+        'Auf der Uhr ergibt elf Uhr plus zwei Stunden nicht dreizehn, sondern ein '
+            'Uhr. Man rechnet ganz normal und nimmt am Ende den Rest beim Teilen '
+            'durch zwölf. Bildlich wird die endlose Zahlengerade auf einen Kreis '
+            'mit zwölf Marken aufgewickelt; jede Zahl landet auf einer der Marken '
+            '0 bis 11.\n\n'
+            'Diese zwölf Marken mit der Stundenaddition bilden ein sauberes '
+            'kleines Rechensystem. Es bleibt immer in sich geschlossen (jede Summe '
+            'ist wieder eine der zwölf Marken), es gibt die Null als „ändert '
+            'nichts", und zu jedem Schritt gibt es einen Rückweg: fünf vorwärts '
+            'macht sieben rückwärts wieder wett, denn 5 + 7 = 12 = 0. Ein '
+            'Rechenbereich mit diesen Eigenschaften heißt in der Mathematik eine '
+            'Gruppe. Die Stundenuhr ist das anschaulichste Beispiel überhaupt; '
+            'ihr Name ist ℤ/12ℤ, gesprochen „Z modulo zwölf".',
+      ),
+      ProseSection(
+        'Welche Schritte alle Felder treffen',
+        'Geht man in Einerschritten um den Kreis, trifft man der Reihe nach jede '
+            'der zwölf Marken, bevor man wieder am Anfang ist. Das gelingt aber '
+            'nicht mit jeder Schrittweite. Springt man immer um drei, landet man '
+            'nur auf 0, 3, 6, 9 und ist nach vier Sprüngen zurück — acht Felder '
+            'bleiben unberührt. Springt man um vier, trifft man nur 0, 4, 8.\n\n'
+            'Alle zwölf Felder erreicht eine Schrittweite genau dann, wenn sie mit '
+            'der Zwölf keinen gemeinsamen Teiler hat. Das trifft auf vier Schritte '
+            'zu: 1, 5, 7 und B (= elf). Genau vier — das ist kein Zufall, sondern '
+            'eine Zählgröße der Zwölf, die uns gleich noch zweimal begegnet. Diese '
+            'vier sind die „guten" Schrittweiten, die den ganzen Kreis erzeugen.',
+      ),
+      ProseSection(
+        'Die Untergruppen am Zifferblatt',
+        'Die Schrittweiten, die nur einen Teil der Marken treffen, zeichnen aufs '
+            'Zifferblatt lauter regelmäßige Figuren. Der Sechserschritt verbindet 0 '
+            'und 6 zu einer Linie quer durch die Mitte. Der Viererschritt zeichnet '
+            'das Dreieck 0–4–8, der Dreierschritt das Quadrat 0–3–6–9, der '
+            'Zweierschritt das Sechseck der geraden Stunden. Jede dieser Figuren '
+            'ist selbst wieder eine kleine, in sich geschlossene Uhr — eine '
+            'Untergruppe.\n\n'
+            'Bemerkenswert: Zu jedem Teiler der Zwölf — 1, 2, 3, 4, 6, 12 — gehört '
+            'genau eine solche Figur, nicht mehr und nicht weniger. Die Zwölf hat '
+            'so viele Teiler wie keine kleinere Zahl, darum trägt ihr Zifferblatt '
+            'so viele saubere Figuren. Eine gedachte Zehn-Stunden-Uhr käme nur auf '
+            'die Teiler 1, 2, 5, 10 — kein Dreieck, kein Quadrat. Dieselbe '
+            'Teilbarkeit, die die Zwölf als Zählbasis auszeichnet, macht auch ihr '
+            'Zifferblatt so reich.',
+      ),
+      ProseSection(
+        'Dieselbe Uhr in der Musik',
+        'Die zwölf Halbtöne einer Oktave bilden denselben Kreis: nach zwölf '
+            'Halbtonschritten ist man wieder beim Ausgangston, eine Oktave höher. '
+            'Eine Melodie in eine andere Tonart zu rücken heißt, alle Töne um '
+            'denselben Schritt weiterzudrehen — Addition auf dem Tonkreis.\n\n'
+            'Der Quintenzirkel, den Musiker auswendig lernen, ist nichts anderes '
+            'als der Siebenerschritt auf diesem Kreis: Eine reine Quinte sind '
+            'sieben Halbtöne, und weil die Sieben eine der vier guten Schrittweiten '
+            'ist, läuft der Zirkel durch alle zwölf Töne, ehe er sich schließt. Die '
+            'Quarte (fünf Halbtöne) dreht denselben Zirkel rückwärts. Schritte mit '
+            'gemeinsamem Teiler bleiben dagegen in einer Figur hängen und ergeben '
+            'genau die bekannten symmetrischen Akkorde: die große Terz das '
+            'Dreieck, der Tritonus die Linie. Warum gerade zwölf Halbtöne und wie '
+            'sie klingen, steht im Kapitel über die Zwölf in der Musik; hier zählt '
+            'allein, dass es derselbe Kreis ist.',
+      ),
+      ProseSection(
+        'Und in den Primziffern',
+        'Noch ein dritter Ort zeigt dieselbe Vierergruppe. Schreibt man Primzahlen '
+            'in Basis Zwölf, so endet jede Primzahl über der Drei auf eine der '
+            'Ziffern 1, 5, 7 oder B. Andere Endziffern sind unmöglich: Eine Zahl, '
+            'die auf 0, 2, 4, 6, 8 oder A endet, ist gerade; eine, die auf 3, 6, 9 '
+            'endet, ist durch drei teilbar. Übrig bleiben genau die vier Ziffern, '
+            'die mit der Zwölf keinen Teiler gemein haben — wieder 1, 5, 7, B.\n\n'
+            'Es sind dieselben vier wie die guten Schrittweiten und die '
+            'Zirkel-erzeugenden Intervalle. Eine Endziffer aus dieser Vierergruppe '
+            'ist allerdings nur eine notwendige Bedingung, kein Beweis: 25 endet in '
+            'Basis Zwölf auf 1, ist aber fünf mal fünf. Die Ziffer schließt viele '
+            'Zahlen als Primzahl aus, sie krönt aber keine.',
+      ),
+      ProseSection(
+        'Addieren immer, teilen nicht immer',
+        'Auf der Stundenuhr kann man auch multiplizieren — und hier hört die schöne '
+            'Geschlossenheit auf. Beim Addieren hat jeder Schritt einen Rückweg; '
+            'beim Multiplizieren nicht. Es gibt keine Stunde, mit der man die Zwei '
+            'multiplizieren könnte, um glatt bei der Eins zu landen, denn das '
+            'Doppelte ist immer gerade. Die Zwei hat auf der Zwölferuhr keinen '
+            'Kehrwert.\n\n'
+            'Einen Kehrwert haben nur die vier guten Zahlen 1, 5, 7, B — und jede '
+            'ist ihr eigener: fünf mal fünf ist 25, das ist 1 auf der Zwölferuhr; '
+            'ebenso sieben mal sieben und B mal B. Hätte die Uhr eine '
+            'Primzahl-Stundenzahl wie elf oder dreizehn, dann hätte jede Stunde '
+            'einen Kehrwert. Die Zwölf ist dafür zu teilbar — derselbe Reichtum an '
+            'Teilern, der ihr Zifferblatt schmückt, nimmt ihr die glatte Division. '
+            'Das ist kein Mangel, sondern das Wesen zusammengesetzter Zahlen; einer '
+            'Zehneruhr ginge es genauso.',
+      ),
+      ProseSection(
+        'Modulo zwölf ist nicht Basis zwölf',
+        'Ein letzter, wichtiger Unterschied, der leicht durcheinandergerät. Die '
+            'Uhr rechnet „modulo zwölf" — sie behält nur den Rest beim Teilen durch '
+            'zwölf. Das ist etwas anderes als „Basis Zwölf", die Schreibweise '
+            'dieses Rechners, bei der die Stellen für Einer, Zwölfer, Gross und so '
+            'weiter stehen. Modulo sagt, in welche Restklasse eine Zahl fällt; '
+            'Basis sagt, wie man sie aufschreibt.\n\n'
+            'Beide drehen sich um die Zahl zwölf, aber aus demselben tieferen Grund '
+            '— ihren vielen Teilern —, nicht weil sie dasselbe wären. Man rechnet '
+            'jeden Tag modulo zwölf auf der Uhr und schreibt die Zeit trotzdem im '
+            'Zehnersystem. Diese Art Rest-Rechnung führte Carl Friedrich Gauss 1801 '
+            'als eigene Schreibweise ein; heute steckt sie unsichtbar in '
+            'Prüfziffern von Buchnummern und Konten und in jeder Wochentagsformel.',
+      ),
+    ],
+    sources: [
+      Source(
+        'Modular arithmetic — Wikipedia',
+        'https://en.wikipedia.org/wiki/Modular_arithmetic',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Cyclic group — Wikipedia',
+        'https://en.wikipedia.org/wiki/Cyclic_group',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Subgroups of cyclic groups — Wikipedia',
+        'https://en.wikipedia.org/wiki/Subgroups_of_cyclic_groups',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Multiplicative group of integers modulo n — Wikipedia',
+        'https://en.wikipedia.org/wiki/Multiplicative_group_of_integers_modulo_n',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Circle of fifths — Wikipedia',
+        'https://en.wikipedia.org/wiki/Circle_of_fifths',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Pitch class — Wikipedia',
+        'https://en.wikipedia.org/wiki/Pitch_class',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Highly composite number — Wikipedia',
+        'https://en.wikipedia.org/wiki/Highly_composite_number',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Disquisitiones Arithmeticae — Wikipedia',
+        'https://en.wikipedia.org/wiki/Disquisitiones_Arithmeticae',
+        'R1',
+        'A2',
+      ),
+    ],
+  ),
+  ProseChapter(
     'Das Zwölfeck (Dodekagon)',
     [
       ProseSection(
