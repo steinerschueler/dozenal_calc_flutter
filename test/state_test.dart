@@ -484,6 +484,52 @@ void main() {
       );
     });
 
+    test('resultCrossBracket shows the decimal of a dozenal result', () {
+      final s = DozenalCalcState();
+      s.handleClick(Digit(DozenalDigit.d5));
+      s.handleClick(const Add());
+      s.handleClick(Digit(DozenalDigit.d5));
+      s.handleClick(const Equals()); // A (ten)
+      expect(s.resultCrossBracket, equals('10'));
+    });
+
+    test('resultCrossBracket shows the dozenal of a decimal result', () {
+      final s = DozenalCalcState()..handleClick(const Dez());
+      s.handleClick(Digit(DozenalDigit.d9));
+      s.handleClick(const Add());
+      s.handleClick(Digit(DozenalDigit.d1));
+      s.handleClick(const Equals()); // 10 decimal = A dozenal
+      expect(s.resultCrossBracket, equals('A'));
+    });
+
+    test('resultCrossBracket is null when both systems render alike', () {
+      final s = DozenalCalcState();
+      s.handleClick(Digit(DozenalDigit.d2));
+      s.handleClick(const Add());
+      s.handleClick(Digit(DozenalDigit.d3));
+      s.handleClick(const Equals()); // 5 in both bases
+      expect(s.resultCrossBracket, isNull);
+    });
+
+    test('resultCrossBracket gives the periodic decimal of doz 1/3', () {
+      final s = DozenalCalcState();
+      s.handleClick(Digit(DozenalDigit.d1));
+      s.handleClick(const Div());
+      s.handleClick(Digit(DozenalDigit.d3));
+      s.handleClick(const Equals()); // 0.4 doz = 1/3
+      expect(s.resultCrossBracket, equals('0.333333…'));
+    });
+
+    test('resultCrossBracket is null after AC (no live result)', () {
+      final s = DozenalCalcState();
+      s.handleClick(Digit(DozenalDigit.d5));
+      s.handleClick(const Add());
+      s.handleClick(Digit(DozenalDigit.d5));
+      s.handleClick(const Equals());
+      s.handleClick(const Ac());
+      expect(s.resultCrossBracket, isNull);
+    });
+
     // -------------------------------------------------------------------
     // Build 5 regression tests
     // -------------------------------------------------------------------

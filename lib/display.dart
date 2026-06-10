@@ -47,6 +47,10 @@ class TwoLineDisplay extends StatelessWidget {
   /// angle-mode label; null hides it.
   final String? numeralSystemLabel;
 
+  /// Cross-base reference for the current result (e.g. "10" for a dozenal
+  /// `A`), rendered as a dim "{…}" on the result line. Null hides it.
+  final String? crossBaseBracket;
+
   /// Tap-to-position-cursor callback: receives the input-buffer gap index for
   /// a tap on the input line. Null disables tap positioning.
   final ValueChanged<int>? onInputCursorTap;
@@ -70,6 +74,7 @@ class TwoLineDisplay extends StatelessWidget {
     this.memoryActive = false,
     this.angleModeLabel,
     this.numeralSystemLabel,
+    this.crossBaseBracket,
     this.onInputCursorTap,
     this.onLongPress,
   });
@@ -111,6 +116,7 @@ class TwoLineDisplay extends StatelessWidget {
                 memoryActive: memoryActive,
                 angleModeLabel: angleModeLabel,
                 numeralSystemLabel: numeralSystemLabel,
+                crossBaseBracket: crossBaseBracket,
                 glyphStyle: glyphStyle,
               ),
             );
@@ -189,6 +195,7 @@ class _TwoLineDisplayPainter extends CustomPainter {
   final bool memoryActive;
   final String? angleModeLabel;
   final String? numeralSystemLabel;
+  final String? crossBaseBracket;
   final GlyphStyle glyphStyle;
 
   _TwoLineDisplayPainter({
@@ -205,6 +212,7 @@ class _TwoLineDisplayPainter extends CustomPainter {
     required this.memoryActive,
     required this.angleModeLabel,
     required this.numeralSystemLabel,
+    required this.crossBaseBracket,
     required this.glyphStyle,
   });
 
@@ -422,6 +430,21 @@ class _TwoLineDisplayPainter extends CustomPainter {
       );
     }
 
+    // Cross-base reference „{…}" on the far left — only when it fits left of
+    // the result block. It's secondary: the result keeps width priority and is
+    // never pushed for it; the bracket simply hides if there's no room.
+    final cross = crossBaseBracket;
+    if (cross != null) {
+      final bracketTp = _bracketPainter('{$cross}', rect.height);
+      final blockLeft = rect.right - totalW - suffixW - approxW;
+      if (rect.left + bracketTp.width + 8 <= blockLeft) {
+        bracketTp.paint(
+          canvas,
+          Offset(rect.left, rect.top + (rect.height - bracketTp.height) / 2),
+        );
+      }
+    }
+
     if (resultFieldActive) {
       final cx = resultCursorPos <= 0
           ? (positions.isNotEmpty ? positions.first : rect.right - suffixW)
@@ -454,6 +477,7 @@ class _TwoLineDisplayPainter extends CustomPainter {
       old.memoryActive != memoryActive ||
       old.angleModeLabel != angleModeLabel ||
       old.numeralSystemLabel != numeralSystemLabel ||
+      old.crossBaseBracket != crossBaseBracket ||
       old.glyphStyle != glyphStyle;
 }
 
@@ -539,6 +563,19 @@ TextPainter _approxPainter(double lineH) => _textPainter('≈', lineH * 0.42);
 
 /// Gap between the "≈" marker and the first result digit.
 double _approxGap(double lineH) => lineH * 0.08;
+
+/// Dim "{…}" cross-base reference painter for the result line.
+TextPainter _bracketPainter(String text, double lineH) => TextPainter(
+      text: TextSpan(
+        text: text,
+        style: TextStyle(
+          color: const Color(0xFF8A8A8A),
+          fontSize: lineH * 0.30,
+          fontFamily: 'monospace',
+        ),
+      ),
+      textDirection: TextDirection.ltr,
+    )..layout();
 
 /// Text label for a non-digit token in display context. Mirrors the Rust
 /// `paint_token` text branches but without the button border treatment.

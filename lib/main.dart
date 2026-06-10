@@ -340,6 +340,7 @@ class _CalcScaffoldState extends State<_CalcScaffold> {
                               _state.numeralSystem == NumeralSystem.doz
                                   ? 'DOZ'
                                   : 'DEZ',
+                          crossBaseBracket: _state.resultCrossBracket,
                           onInputCursorTap: _state.moveCursorTo,
                           onLongPress: _copyResult,
                         ),

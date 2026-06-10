@@ -76,6 +76,84 @@ class DozenalCalcState extends ChangeNotifier {
     return sb.toString();
   }
 
+  /// The current result expressed in the *other* numeral system, as a compact
+  /// 0-9AB string for the small "{…}" reference on the result line — a dozenal
+  /// `A` reads `10`, a dozenal `10` reads `12`. Null when there's no live
+  /// result, on error, or when both systems render the value identically
+  /// (integers below ten / zero), so the bracket only shows when it adds
+  /// information. Lets a learner read a dozenal value in decimal — and vice
+  /// versa — without switching modes.
+  String? get resultCrossBracket {
+    if (!_resultLive || errorMsg != null) return null;
+    final otherBase = numeralSystem == NumeralSystem.doz ? 10 : 12;
+    final cross = lastAns != null
+        ? _compactRationalString(lastAns!, otherBase)
+        : _compactF64String(lastResultF64, otherBase);
+    return cross == resultText ? null : cross;
+  }
+
+  /// Fractional-digit budget for the cross-base reference string.
+  static const int _crossFracDigits = 6;
+
+  static String _digitsToAscii(List<DozenalDigit> ds) {
+    final sb = StringBuffer();
+    for (final d in ds) {
+      final v = d.value;
+      sb.write(v < 10 ? '$v' : (v == 10 ? 'A' : 'B'));
+    }
+    return sb.toString();
+  }
+
+  /// Exact rational → compact base-[base] string (0-9AB), fractional part
+  /// capped at [_crossFracDigits] with a trailing "…" when more digits or a
+  /// period follow.
+  String _compactRationalString(Rational r, int base) {
+    final dec = r.toDozenalPeriodic(base: base);
+    final sb = StringBuffer();
+    if (r.num.isNegative) sb.write('-');
+    sb.write(_digitsToAscii(dec.intDigits));
+    if (dec.preDigits.isNotEmpty || dec.period.isNotEmpty) {
+      sb.write('.');
+      final shown = <DozenalDigit>[];
+      for (final d in dec.preDigits) {
+        if (shown.length >= _crossFracDigits) break;
+        shown.add(d);
+      }
+      var i = 0;
+      while (shown.length < _crossFracDigits && dec.period.isNotEmpty) {
+        shown.add(dec.period[i % dec.period.length]);
+        i++;
+      }
+      sb.write(_digitsToAscii(shown));
+      if (dec.preDigits.length > _crossFracDigits || dec.period.isNotEmpty) {
+        sb.write('…');
+      }
+    }
+    return sb.toString();
+  }
+
+  /// f64 → compact base-[base] string. Always approximate, so a fractional
+  /// part always ends in "…".
+  String _compactF64String(double v, int base) {
+    if (v.isNaN) return 'NaN';
+    if (v.isInfinite) return '∞';
+    final sb = StringBuffer();
+    var x = v;
+    if (x < 0) {
+      sb.write('-');
+      x = x.abs();
+    }
+    sb.write(_digitsToAscii(DozenalConverter.fromDecimal(x, base: base)));
+    final frac = x - x.floorToDouble();
+    if (frac > fracEpsilon) {
+      sb.write('.');
+      sb.write(_digitsToAscii(
+          DozenalConverter.fracToDigits(frac, _crossFracDigits, base: base)));
+      sb.write('…');
+    }
+    return sb.toString();
+  }
+
   // --------------------------------------------------------------------
   /// Tap-to-position the input cursor (the fine red line). [pos] is a gap
   /// index into the input buffer. Switches focus to the input line and, like
