@@ -66,13 +66,12 @@ List<TheoryBlock> theoryBlocks(AppLocalizations l, String langTag) {
   final math = mathChapters(langTag);
   final society = societyChapters(langTag);
 
-  // Grundlagen (Einstieg): Prosa-Dozenalsystem (neuer Standard, bequellt) +
-  // Legacy-Glieder (noch nicht gehoben). Bedienung (idx 0) bleibt draussen.
+  // Grundlagen (Einstieg): Dozenalsystem + Glieder an der Hand, beide als
+  // bequellte Prosa. Bedienung (idx 0) bleibt draussen (App-Hilfe).
   final grund = grundlagenChapters(langTag);
   final grundlagen = <TheoryChapterRef>[
     for (final (i, c) in grund.indexed)
       TheoryChapterRef.prose(c.title, c.sections, c.sources, 'grundlagen/$i'),
-    TheoryChapterRef.legacy(titles[10], 10),
   ];
 
   // Zwölf und die Welt: Natur/Kultur-Prosa, dann Tierkreis (Legacy).
