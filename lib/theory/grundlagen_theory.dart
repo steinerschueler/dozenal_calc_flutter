@@ -15,6 +15,11 @@ part 'fr/grundlagen_fr.dart';
 part 'es/grundlagen_es.dart';
 part 'it/grundlagen_it.dart';
 part 'ru/grundlagen_ru.dart';
+part 'hi/grundlagen_hi.dart';
+part 'ja/grundlagen_ja.dart';
+part 'ar/grundlagen_ar.dart';
+part 'zh/grundlagen_zh.dart';
+part 'zh_Hant/grundlagen_zh_Hant.dart';
 
 /// "Grundlagen" chapters in [langTag] (BCP-47). Falls back to German for
 /// locales not yet authored. Add a `part` above and a branch here as each
@@ -26,5 +31,10 @@ List<ProseChapter> grundlagenChapters(String langTag) {
   if (c.startsWith('es')) return _grundlagenChaptersEs();
   if (c.startsWith('it')) return _grundlagenChaptersIt();
   if (c.startsWith('ru')) return _grundlagenChaptersRu();
+  if (c.startsWith('hi')) return _grundlagenChaptersHi();
+  if (c.startsWith('ja')) return _grundlagenChaptersJa();
+  if (c.startsWith('ar')) return _grundlagenChaptersAr();
+  if (c.startsWith('zh') && c.contains('hant')) return _grundlagenChaptersZhHant();
+  if (c.startsWith('zh')) return _grundlagenChaptersZh();
   return _grundlagenChaptersDe();
 }
