@@ -77,6 +77,13 @@ umgeschaltet werden. Dieses Kapitel verwendet A (= zehn) und B (= elf). Beispiel
 (dozenal) = 2 × 12 + 11 = 35 (dezimal). Das Zählen geht: 0, 1, …, 9, A, B, 10, 11, …,
 1B (= 23 dezimal), dann 20 (= 24 dezimal, zwei Dutzend).
 
+**Wichtige Lese-Hürde (für Algebra-Gewohnte):** A und B sind hier vollwertige
+*Ziffern*, keine Variablen. „2B" ist also die zweistellige Zahl (2 an der Zwölfer-,
+B an der Einerstelle, = 35), NICHT das Produkt „2 mal B" (das wäre 22 = dozenal „1A").
+Nebeneinanderstehende Ziffern bilden eine Zahl, sie werden nicht multipliziert; der
+Rechner weiß das, weil A und B für ihn feste Ziffern sind. Diese Klarstellung gehört
+überdeutlich in den Kapiteltext.
+
 ---
 
 ## Der Rechenvorteil: Teiler und abbrechende Brüche

@@ -65,15 +65,16 @@ Themen müssen von „Welt" nach „Mathematik" wandern**:
 
 Zuordnungen sind entschieden **und in `theory_blocks.dart` umgesetzt** (4 Blöcke:
 Grundlagen · Zwölf und die Welt · Dozenale Mathematik · Dozenale Gesellschaft).
-Offen ist nur noch das **Bequellen** der verschobenen Legacy-Kapitel (siehe Backlog).
+**Erledigt:** Alle verschobenen Legacy-Kapitel sind inzwischen bequellt (eigenes
+Dossier + `sources:` + Vorbehalte) und in **allen 14 Sprachen** als Prosa verdrahtet.
 
-**Wichtig:** Diese alten Kapitel sind **Legacy** (`info_content_<lang>.dart`, wörtlich
-aus dem Rust-Original portiert) und haben **noch keine Quellen / kein Dossier / keinen
-Vorbehalte-Abschnitt**. Beim Verschieben gehören sie auf den neuen Standard gehoben
-(Dossier schreiben, `sources:` ergänzen). Der Detail-View rendert den Quellen-Block
-bereits für *jedes* Kapitel (`info_pages.dart` — `if (sources.isNotEmpty) …`); nur
-`TheoryChapterRef.legacy` setzt `sources` derzeit hart auf `[]`. Angleichung ist also
-v. a. Inhalts- + minimale Modell-Arbeit, die Illustrationen/Tabellen bleiben erhalten.
+**Historie:** Diese Kapitel waren ursprünglich **Legacy** (`info_content_<lang>.dart`,
+wörtlich aus dem Rust-Original portiert, ohne Quellen). Sie wurden per Multi-Agenten-
+Recherche → Merge auf den neuen Standard gehoben und als Prosa neu verdrahtet. Die
+alten `info_content`-Cases 1–10 sind dadurch **verwaist** (nur noch `case 0` =
+„Bedienung des Rechners" wird verwendet) und können bei Gelegenheit entfernt werden.
+Die Zwölfeck-Diagramme blieben erhalten (öffentliche `Chapter4/5Illustration` +
+Render-Hook in `info_pages.dart` für `imageId 'math/dodekagon'`).
 
 ## Backlog (Stand pflegen!)
 
@@ -84,22 +85,22 @@ verdrahtet (`lib/theory/<lang>/<block>_<lang>.dart`).
 | Thema | Dossier | Prosa |
 |---|---|---|
 | Bedienung des Rechners (standalone App-Hilfe, NICHT im Grundlagen-Block) | — | (Legacy; *geplant:* Verweis auf Grundlagen + Erklärung der schwierigeren Rechner-Fähigkeiten) |
-| Was ist das Dozenalsystem? (aus Legacy heben + bequellen) | ❌ | (Legacy) |
-| Zwölf Glieder an der Hand (aus Legacy heben + bequellen) | ❌ | (Legacy) |
+| Was ist das Dozenalsystem? | ✅ (grundlagen_dozenalsystem) | ✅ (14 Sprachen) |
+| Zwölf Glieder an der Hand | ✅ (grundlagen_glieder) | ✅ (14 Sprachen) |
 
 ### Zwölf und die Welt
 | Thema | Dossier | Prosa |
 |---|---|---|
 | Pyrit, Granat, Kugelpackung, Quasikristalle, Viren/Radiolarien, Zellen/Schäume | ✅ (nature_*) | ✅ |
 | Musik, Kunst, Sprache, Bauen, Kalender | ✅ (culture_*) | ✅ |
-| Tierkreis (aus Legacy übernehmen + bequellen) | ❌ | (Legacy) |
+| Tierkreis | ✅ (culture_tierkreis) | ✅ (14 Sprachen) |
 | *Ideen:* Uhr/Zeitmessung, Monate/Jahr, Theologie der Zwölf (12 Apostel/Stämme), … | ❌ | ❌ |
 
 ### Dozenale Mathematik
 | Thema | Dossier | Prosa |
 |---|---|---|
 | Teiler/Brüche/Perioden, Zahlenbasen, Geschichte der Stellenwertsysteme, „Wie dieser Rechner rechnet" | teils (math_*) | ✅ |
-| Dodekagon, Dodekaeder, Fibonacci (aus Legacy heben + bequellen) | ❌ | (Legacy) |
+| Dodekagon (mit Diagrammen), Dodekaeder, Fibonacci | ✅ (math_*) | ✅ (14 Sprachen) |
 | Goldener Schnitt, Pi, Einheitskreis & 360° | ❌ | ❌ |
 | *Ideen:* weniger bekannte Zwölf-Mathematik (highly composite numbers, 12 als 3-glatt, …) | ❌ | ❌ |
 
