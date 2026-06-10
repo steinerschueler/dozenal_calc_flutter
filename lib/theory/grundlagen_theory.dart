@@ -10,12 +10,21 @@
 import 'prose_chapter.dart';
 
 part 'de/grundlagen_de.dart';
+part 'en/grundlagen_en.dart';
+part 'fr/grundlagen_fr.dart';
+part 'es/grundlagen_es.dart';
+part 'it/grundlagen_it.dart';
+part 'ru/grundlagen_ru.dart';
 
 /// "Grundlagen" chapters in [langTag] (BCP-47). Falls back to German for
-/// locales not yet authored. Add `if (c.startsWith('xx')) return _…Xx();`
-/// branches here as each `lib/theory/<lang>/grundlagen_<lang>.dart` lands.
+/// locales not yet authored. Add a `part` above and a branch here as each
+/// `lib/theory/<lang>/grundlagen_<lang>.dart` lands.
 List<ProseChapter> grundlagenChapters(String langTag) {
-  // ignore: unused_local_variable
   final c = langTag.toLowerCase();
+  if (c.startsWith('en')) return _grundlagenChaptersEn();
+  if (c.startsWith('fr')) return _grundlagenChaptersFr();
+  if (c.startsWith('es')) return _grundlagenChaptersEs();
+  if (c.startsWith('it')) return _grundlagenChaptersIt();
+  if (c.startsWith('ru')) return _grundlagenChaptersRu();
   return _grundlagenChaptersDe();
 }
