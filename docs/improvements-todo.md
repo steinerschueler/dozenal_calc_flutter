@@ -71,8 +71,13 @@ Exponent ab einer Stellen-Schwelle.
 
 ## UI / UX
 
-### 5. „Expand"-Affordance schärfen
-**Problem:** Der „…"-Button (System-Reihe) toggelt das Overlay-Panel; im
+### 5. „Expand"-Affordance schärfen — ✅ erledigt (Build-Folge, committet)
+**Umgesetzt:** Dezenter, zentrierter „Erweiterungsfeld"-Header (···-Icon +
+lokalisierter Titel, ARB-Key `keypadOverlayTitle`, 14 Sprachen) über den
+erweiterten Sets im **offenen** Overlay. Nur im offenen Zustand gerendert →
+geschlossenes Haupt-Keypad (Store-Screenshot) unverändert.
+
+**Problem (Ausgangslage):** Der „…"-Button (System-Reihe) toggelt das Overlay-Panel; im
 **geschlossenen** Zustand ist nicht offensichtlich, dass dahinter erweiterte
 Funktionen liegen.
 
@@ -83,8 +88,14 @@ Eine Glyphen-Änderung am geschlossenen Button würde den Screenshot ändern.
 
 **Constraint:** Klein. Achtung Screenshot-Falle (s. o.).
 
-### 6. Operator-Discoverability (√, log)
-**Problem:** `n √ x` (n-te Wurzel) und `x log n` (Logarithmus zur Basis n) —
+### 6. Operator-Discoverability (√, log) — ✅ erledigt (Variante c, committet)
+**Umgesetzt:** „Spezialoperatoren"-Sektion in „Bedienung des Rechners"
+geschärft (14 Sprachen) — inkl. klarer Operandenreihenfolge mit Beispielen
+(`3√8 = 2`, `8 log 2 = 3`). **Dabei einen echten Doku-Bug gefunden und behoben:**
+log war als „Basis = vorangehende Zahl" beschrieben; korrekt ist
+`x log n = ln(x)/ln(n)`, also linke Zahl = Argument, rechte Zahl = Basis.
+
+**Problem (Ausgangslage):** `n √ x` (n-te Wurzel) und `x log n` (Logarithmus zur Basis n) —
 die Operanden-Reihenfolge ist nicht offensichtlich.
 
 **Lösung:** Optionen — (a) einmaliger, wegklickbarer Hinweis (SnackBar) beim
@@ -145,3 +156,8 @@ bündeln. Nur bei Bedarf — keine Refactor-Schuld auf Vorrat.
 - A11y-Screenreader-Labels in allen 14 Sprachen (statt hartcodiertem Deutsch)
 - Basis-10-Klammer (`{…}`-Gegensystem-Referenz) auf der Hauptanzeige
 - Ergebnis-Formatierung nach `logic/result_format.dart` ausgelagert
+- #5 Open-State-„Erweiterungsfeld"-Header (screenshot-sicher, 14 Sprachen)
+- #6 √/log-Operandenreihenfolge in „Bedienung des Rechners" (14 Sprachen);
+  dabei log-Doku-Bug korrigiert (Basis = rechte Zahl, nicht linke)
+- Glyphen-Doku-Fix: B (elf) ist Halbkreis über Vollkreis, kein gefüllter Kreis
+- „Was ist das Dozenalsystem?": Apfel-Satz entzweideutigt (15 = dutzendunddrei)
