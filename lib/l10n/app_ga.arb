@@ -148,6 +148,8 @@
   "a11yDecimalPoint": "pointe deachúlach",
   "a11yEquals": "cothrom le",
   "a11yExpandPanel": "oscail an painéal breise",
+  "historyTitle": "Stair",
+  "historyEmpty": "Gan ríomh fós",
   "keypadOverlayTitle": "Painéal breisithe",
   "a11yClosePanel": "dún an painéal breise",
   "a11yMemoryStore": "stóráil sa chuimhne",

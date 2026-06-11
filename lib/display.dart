@@ -59,6 +59,13 @@ class TwoLineDisplay extends StatelessWidget {
   /// scaffold to clipboard copy; null disables it.
   final VoidCallback? onLongPress;
 
+  /// Swipe down on the display → open the history tape (#1). Null disables it.
+  final VoidCallback? onSwipeDown;
+
+  /// Whether to paint the input/result cursor. False for read-only renders
+  /// (e.g. history tiles) where a caret would wrongly imply editability.
+  final bool showCursor;
+
   const TwoLineDisplay({
     super.key,
     required this.inputBuffer,
@@ -77,6 +84,8 @@ class TwoLineDisplay extends StatelessWidget {
     this.crossBaseBracket,
     this.onInputCursorTap,
     this.onLongPress,
+    this.onSwipeDown,
+    this.showCursor = true,
   });
 
   @override
@@ -118,11 +127,15 @@ class TwoLineDisplay extends StatelessWidget {
                 numeralSystemLabel: numeralSystemLabel,
                 crossBaseBracket: crossBaseBracket,
                 glyphStyle: glyphStyle,
+                showCursor: showCursor,
               ),
             );
             final tapHandler = onInputCursorTap;
             final longPress = onLongPress;
-            if (tapHandler == null && longPress == null) return paint;
+            final swipeDown = onSwipeDown;
+            if (tapHandler == null && longPress == null && swipeDown == null) {
+              return paint;
+            }
             // Tap the input line → position the cursor at the nearest glyph
             // gap; long-press anywhere → copy the result.
             return LayoutBuilder(
@@ -140,6 +153,12 @@ class TwoLineDisplay extends StatelessWidget {
                         if (pos != null) tapHandler(pos);
                       },
                 onLongPress: longPress,
+                onVerticalDragEnd: swipeDown == null
+                    ? null
+                    : (d) {
+                        // Downward fling (primaryVelocity > 0, y grows down).
+                        if ((d.primaryVelocity ?? 0) > 0) swipeDown();
+                      },
                 child: paint,
               ),
             );
@@ -163,8 +182,9 @@ int? inputCursorPosForTap(
   final gap = (size.height * 0.06).clamp(2.0, 10.0);
   final lineH = (size.height - gap) / 2;
   if (local.dy > lineH) return null; // result line or inter-line gap
-  final laid =
-      inputBuffer.map((t) => _layoutToken(t, lineH, glyphStyle)).toList();
+  final laid = inputBuffer
+      .map((t) => _layoutToken(t, lineH, glyphStyle))
+      .toList();
   // Gap boundaries: x[0]=0 (before token 0), x[i]=Σ widths 0..i-1, x[n]=total.
   // Pick the boundary nearest the tap.
   var x = 0.0;
@@ -197,6 +217,7 @@ class _TwoLineDisplayPainter extends CustomPainter {
   final String? numeralSystemLabel;
   final String? crossBaseBracket;
   final GlyphStyle glyphStyle;
+  final bool showCursor;
 
   _TwoLineDisplayPainter({
     required this.inputBuffer,
@@ -214,6 +235,7 @@ class _TwoLineDisplayPainter extends CustomPainter {
     required this.numeralSystemLabel,
     required this.crossBaseBracket,
     required this.glyphStyle,
+    required this.showCursor,
   });
 
   @override
@@ -248,7 +270,10 @@ class _TwoLineDisplayPainter extends CustomPainter {
     )..layout();
     tp.paint(
       canvas,
-      Offset(rect.right - tp.width - 8, rect.top + (rect.height - tp.height) / 2),
+      Offset(
+        rect.right - tp.width - 8,
+        rect.top + (rect.height - tp.height) / 2,
+      ),
     );
   }
 
@@ -306,13 +331,13 @@ class _TwoLineDisplayPainter extends CustomPainter {
         .toList();
     var x = rect.left;
     for (var i = 0; i < laid.length; i++) {
-      if (i == cursorPos && !resultFieldActive) {
+      if (showCursor && i == cursorPos && !resultFieldActive) {
         _drawCursor(canvas, x, rect.top, rect.height);
       }
       laid[i].paint(canvas, Offset(x, rect.top), rect.height);
       x += laid[i].width;
     }
-    if (cursorPos >= laid.length && !resultFieldActive) {
+    if (showCursor && cursorPos >= laid.length && !resultFieldActive) {
       _drawCursor(canvas, x, rect.top, rect.height);
     }
   }
@@ -330,8 +355,9 @@ class _TwoLineDisplayPainter extends CustomPainter {
     // (formatF64Result clears it), so the prefix and the period/State-C
     // suffix never collide.
     final approxTp = isF64Fallback ? _approxPainter(rect.height) : null;
-    final approxW =
-        approxTp == null ? 0.0 : approxTp.width + _approxGap(rect.height);
+    final approxW = approxTp == null
+        ? 0.0
+        : approxTp.width + _approxGap(rect.height);
 
     // State-C dot cluster (period longer than maxPeriodDisplay) reserves a
     // suffix slot up front; a width-truncation "…" may still be added below
@@ -449,9 +475,9 @@ class _TwoLineDisplayPainter extends CustomPainter {
       final cx = resultCursorPos <= 0
           ? (positions.isNotEmpty ? positions.first : rect.right - suffixW)
           : (resultCursorPos >= positions.length
-              ? rect.right - suffixW
-              : positions[resultCursorPos]);
-      _drawCursor(canvas, cx, rect.top, rect.height);
+                ? rect.right - suffixW
+                : positions[resultCursorPos]);
+      if (showCursor) _drawCursor(canvas, cx, rect.top, rect.height);
     }
   }
 
@@ -478,7 +504,8 @@ class _TwoLineDisplayPainter extends CustomPainter {
       old.angleModeLabel != angleModeLabel ||
       old.numeralSystemLabel != numeralSystemLabel ||
       old.crossBaseBracket != crossBaseBracket ||
-      old.glyphStyle != glyphStyle;
+      old.glyphStyle != glyphStyle ||
+      old.showCursor != showCursor;
 }
 
 // ---------------------------------------------------------------------------
@@ -513,9 +540,15 @@ _LaidToken _layoutToken(CalcToken token, double lineH, GlyphStyle style) {
       // Render as conventional ASCII: '0'..'9' for d0..d9, 'A'/'B' for
       // d10/d11 (Pitman/Dwiggins extension, standard in academic
       // dozenal literature).
-      final tp = _textPainter(_conventionalDigitChar(token.value), lineH * 0.42);
+      final tp = _textPainter(
+        _conventionalDigitChar(token.value),
+        lineH * 0.42,
+      );
       return _LaidToken(tp.width + 4, (canvas, offset, h) {
-        tp.paint(canvas, Offset(offset.dx + 2, offset.dy + (h - tp.height) / 2));
+        tp.paint(
+          canvas,
+          Offset(offset.dx + 2, offset.dy + (h - tp.height) / 2),
+        );
       });
     }
     final q = _digitQ(lineH);
@@ -545,16 +578,16 @@ String _conventionalDigitChar(DozenalDigit d) {
 }
 
 TextPainter _textPainter(String text, double fontSize) => TextPainter(
-      text: TextSpan(
-        text: text,
-        style: TextStyle(
-          color: Colors.white,
-          fontSize: fontSize,
-          fontFamily: 'monospace',
-        ),
-      ),
-      textDirection: TextDirection.ltr,
-    )..layout();
+  text: TextSpan(
+    text: text,
+    style: TextStyle(
+      color: Colors.white,
+      fontSize: fontSize,
+      fontFamily: 'monospace',
+    ),
+  ),
+  textDirection: TextDirection.ltr,
+)..layout();
 
 TextPainter _ellipsisPainter(double lineH) => _textPainter('…', lineH * 0.42);
 
@@ -566,75 +599,74 @@ double _approxGap(double lineH) => lineH * 0.08;
 
 /// Dim "{…}" cross-base reference painter for the result line.
 TextPainter _bracketPainter(String text, double lineH) => TextPainter(
-      text: TextSpan(
-        text: text,
-        style: TextStyle(
-          color: const Color(0xFF8A8A8A),
-          fontSize: lineH * 0.30,
-          fontFamily: 'monospace',
-        ),
-      ),
-      textDirection: TextDirection.ltr,
-    )..layout();
+  text: TextSpan(
+    text: text,
+    style: TextStyle(
+      color: const Color(0xFF8A8A8A),
+      fontSize: lineH * 0.30,
+      fontFamily: 'monospace',
+    ),
+  ),
+  textDirection: TextDirection.ltr,
+)..layout();
 
 /// Text label for a non-digit token in display context. Mirrors the Rust
 /// `paint_token` text branches but without the button border treatment.
 String _tokenText(CalcToken t) => switch (t) {
-      Decimal() => '.',
-      Negate() => '−',
-      Add() => '+',
-      Sub() => '−',
-      Mul() => '×',
-      Div() => '÷',
-      Mod() => 'mod',
-      ParenOpen() => '(',
-      ParenClose() => ')',
-      Sin() => 'sin',
-      Cos() => 'cos',
-      Tan() => 'tan',
-      Cot() => 'cot',
-      ArcSin() => 'sin⁻¹',
-      ArcCos() => 'cos⁻¹',
-      ArcTan() => 'tan⁻¹',
-      ArcCot() => 'cot⁻¹',
-      Sinh() => 'sinh',
-      Cosh() => 'cosh',
-      Tanh() => 'tanh',
-      Coth() => 'coth',
-      ArSinh() => 'sinh⁻¹',
-      ArCosh() => 'cosh⁻¹',
-      ArTanh() => 'tanh⁻¹',
-      ArCoth() => 'coth⁻¹',
-      ConstPi() => 'π',
-      ConstE() => 'e',
-      ConstPhi() => 'φ',
-      ConstSqrt2() => '√2',
-      Factorial() => 'n!',
-      AbsVal() => '|x|',
-      Reciprocal() => '1/x',
-      ExpTopRight() => '^',
-      RootTopLeft() => '√',
-      OplusBotLeft() => '⊕',
-      LogBotRight() => 'log',
-      RatLit(:final label) => label,
-      // No display string: real Digit tokens are laid out via the glyph path,
-      // never here; app-state/mode tokens (AC, Del, Equals, Expand, Close, Sto,
-      // Rcl, Mc, Ans, Doz, Dez, Drg, Info, cursor arrows) never enter a buffer.
-      Digit() ||
-      Ac() ||
-      Del() ||
-      Equals() ||
-      Expand() ||
-      Close() ||
-      Sto() ||
-      Rcl() ||
-      Mc() ||
-      Ans() ||
-      Doz() ||
-      Dez() ||
-      Drg() ||
-      Info() ||
-      TriangleLeft() ||
-      TriangleRight() =>
-        '',
-    };
+  Decimal() => '.',
+  Negate() => '−',
+  Add() => '+',
+  Sub() => '−',
+  Mul() => '×',
+  Div() => '÷',
+  Mod() => 'mod',
+  ParenOpen() => '(',
+  ParenClose() => ')',
+  Sin() => 'sin',
+  Cos() => 'cos',
+  Tan() => 'tan',
+  Cot() => 'cot',
+  ArcSin() => 'sin⁻¹',
+  ArcCos() => 'cos⁻¹',
+  ArcTan() => 'tan⁻¹',
+  ArcCot() => 'cot⁻¹',
+  Sinh() => 'sinh',
+  Cosh() => 'cosh',
+  Tanh() => 'tanh',
+  Coth() => 'coth',
+  ArSinh() => 'sinh⁻¹',
+  ArCosh() => 'cosh⁻¹',
+  ArTanh() => 'tanh⁻¹',
+  ArCoth() => 'coth⁻¹',
+  ConstPi() => 'π',
+  ConstE() => 'e',
+  ConstPhi() => 'φ',
+  ConstSqrt2() => '√2',
+  Factorial() => 'n!',
+  AbsVal() => '|x|',
+  Reciprocal() => '1/x',
+  ExpTopRight() => '^',
+  RootTopLeft() => '√',
+  OplusBotLeft() => '⊕',
+  LogBotRight() => 'log',
+  RatLit(:final label) => label,
+  // No display string: real Digit tokens are laid out via the glyph path,
+  // never here; app-state/mode tokens (AC, Del, Equals, Expand, Close, Sto,
+  // Rcl, Mc, Ans, Doz, Dez, Drg, Info, cursor arrows) never enter a buffer.
+  Digit() ||
+  Ac() ||
+  Del() ||
+  Equals() ||
+  Expand() ||
+  Close() ||
+  Sto() ||
+  Rcl() ||
+  Mc() ||
+  Ans() ||
+  Doz() ||
+  Dez() ||
+  Drg() ||
+  Info() ||
+  TriangleLeft() ||
+  TriangleRight() => '',
+};

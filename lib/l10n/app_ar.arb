@@ -148,6 +148,8 @@
   "a11yDecimalPoint": "الفاصلة العشرية",
   "a11yEquals": "يساوي",
   "a11yExpandPanel": "فتح لوحة التوسيع",
+  "historyTitle": "السجل",
+  "historyEmpty": "لا توجد حسابات بعد",
   "keypadOverlayTitle": "لوحة موسّعة",
   "a11yClosePanel": "إغلاق لوحة التوسيع",
   "a11yMemoryStore": "حفظ في الذاكرة",

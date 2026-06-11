@@ -149,6 +149,8 @@
   "a11yDecimalPoint": "decimal point",
   "a11yEquals": "equals",
   "a11yExpandPanel": "open extension panel",
+  "historyTitle": "History",
+  "historyEmpty": "No calculations yet",
   "keypadOverlayTitle": "Extension panel",
   "a11yClosePanel": "close extension panel",
   "a11yMemoryStore": "store in memory",

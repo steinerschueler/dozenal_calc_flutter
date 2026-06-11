@@ -148,6 +148,8 @@
   "a11yDecimalPoint": "virgule décimale",
   "a11yEquals": "égale",
   "a11yExpandPanel": "ouvrir le panneau d'extension",
+  "historyTitle": "Historique",
+  "historyEmpty": "Aucun calcul pour l’instant",
   "keypadOverlayTitle": "Panneau d’extension",
   "a11yClosePanel": "fermer le panneau d'extension",
   "a11yMemoryStore": "mémoriser",

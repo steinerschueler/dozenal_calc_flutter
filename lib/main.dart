@@ -202,9 +202,9 @@ class _CalcScaffoldState extends State<_CalcScaffold> {
     final prefs = await SharedPreferences.getInstance();
     if (prefs.getBool(_kIntroSeenFlag) ?? false) return;
     if (!mounted) return;
-    await Navigator.of(context).push(
-      MaterialPageRoute(builder: (_) => const IntroPage()),
-    );
+    await Navigator.of(
+      context,
+    ).push(MaterialPageRoute(builder: (_) => const IntroPage()));
     await prefs.setBool(_kIntroSeenFlag, true);
     if (mounted) _focusNode.requestFocus();
   }
@@ -226,8 +226,7 @@ class _CalcScaffoldState extends State<_CalcScaffold> {
   bool _isTokenDisabled(CalcToken token) {
     if (_state.numeralSystem != NumeralSystem.dez) return false;
     if (token is Digit) {
-      return token.value == DozenalDigit.d10 ||
-          token.value == DozenalDigit.d11;
+      return token.value == DozenalDigit.d10 || token.value == DozenalDigit.d11;
     }
     return false;
   }
@@ -252,11 +251,97 @@ class _CalcScaffoldState extends State<_CalcScaffold> {
   }
 
   void _openIntro() {
-    Navigator.of(context).push(
-      MaterialPageRoute(builder: (_) => const IntroPage()),
-    ).then((_) {
+    Navigator.of(
+      context,
+    ).push(MaterialPageRoute(builder: (_) => const IntroPage())).then((_) {
       if (mounted) _focusNode.requestFocus();
     });
+  }
+
+  /// Result-history tape (#1), opened by swiping down on the display. Lists the
+  /// session's past calculations (newest first), each rendered with the same
+  /// TwoLineDisplay as the main screen; tapping one recalls its value into the
+  /// input (exact when available) and closes the sheet.
+  void _showHistory() {
+    final l = AppLocalizations.of(context);
+    final entries = _state.history.reversed.toList();
+    showModalBottomSheet<void>(
+      context: context,
+      backgroundColor: const Color(0xFF1A1A1A),
+      showDragHandle: true,
+      builder: (sheetCtx) => SafeArea(
+        top: false,
+        child: ConstrainedBox(
+          constraints: BoxConstraints(
+            maxHeight: MediaQuery.of(sheetCtx).size.height * 0.6,
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Padding(
+                padding: const EdgeInsets.fromLTRB(20, 0, 20, 8),
+                child: Align(
+                  alignment: AlignmentDirectional.centerStart,
+                  child: Text(
+                    l.historyTitle,
+                    style: const TextStyle(
+                      fontSize: 13,
+                      fontWeight: FontWeight.w600,
+                      color: Color(0xFFB0B0B0),
+                    ),
+                  ),
+                ),
+              ),
+              if (entries.isEmpty)
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(20, 12, 20, 28),
+                  child: Text(
+                    l.historyEmpty,
+                    style: const TextStyle(
+                      fontSize: 14,
+                      color: Color(0xFF808080),
+                    ),
+                  ),
+                )
+              else
+                Flexible(
+                  child: ListView.separated(
+                    shrinkWrap: true,
+                    padding: const EdgeInsets.fromLTRB(12, 0, 12, 16),
+                    itemCount: entries.length,
+                    separatorBuilder: (_, _) => const SizedBox(height: 8),
+                    itemBuilder: (c, i) {
+                      final e = entries[i];
+                      return GestureDetector(
+                        behavior: HitTestBehavior.opaque,
+                        onTap: () {
+                          _state.recallHistory(e);
+                          Navigator.of(sheetCtx).pop();
+                        },
+                        child: SizedBox(
+                          height: 70,
+                          child: Directionality(
+                            textDirection: TextDirection.ltr,
+                            child: TwoLineDisplay(
+                              inputBuffer: e.input,
+                              resultBuffer: e.result,
+                              resultPeriodStart: e.periodStart,
+                              resultPeriodLen: e.periodLen,
+                              resultPeriodCapped: e.periodCapped,
+                              isF64Fallback: e.isF64,
+                              showCursor: false,
+                            ),
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+                ),
+            ],
+          ),
+        ),
+      ),
+    );
   }
 
   /// When handle_click sets `infoState` to InfoList, reset it locally and
@@ -265,9 +350,9 @@ class _CalcScaffoldState extends State<_CalcScaffold> {
   void _onStateChanged() {
     if (_state.infoState is! InfoClosed) {
       _state.infoState = const InfoClosed();
-      Navigator.of(context).push(
-        MaterialPageRoute(builder: (_) => const InfoListPage()),
-      ).then((_) {
+      Navigator.of(
+        context,
+      ).push(MaterialPageRoute(builder: (_) => const InfoListPage())).then((_) {
         // After returning from Info, refocus so the keyboard listener is live again.
         if (mounted) _focusNode.requestFocus();
       });
@@ -312,55 +397,56 @@ class _CalcScaffoldState extends State<_CalcScaffold> {
               child: Padding(
                 padding: const EdgeInsets.all(12.0),
                 child: LayoutBuilder(
-                builder: (innerCtx, constraints) {
-                  // Display sizes itself proportionally (20 % of body height,
-                  // clamped to [60, 170] dp). Keypad fills the rest via
-                  // Expanded — no fixed pixel allocations.
-                  final bodyH = constraints.maxHeight;
-                  final displayH = displayHeightFor(bodyH);
-                  return Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      SizedBox(
-                        height: displayH,
-                        child: TwoLineDisplay(
-                          inputBuffer: _state.inputBuffer,
-                          cursorPos: _state.cursorPos,
-                          resultBuffer: _state.resultBuffer,
-                          resultCursorPos: _state.resultCursorPos,
-                          resultFieldActive: _state.resultFieldActive,
-                          resultPeriodStart: _state.resultPeriodStart,
-                          resultPeriodLen: _state.resultPeriodLen,
-                          resultPeriodCapped: _state.resultPeriodCapped,
-                          isF64Fallback: _state.isF64Fallback,
-                          errorMsg: _state.errorMsg,
-                          memoryActive: _state.memory.isNotEmpty,
-                          angleModeLabel: _state.angleMode.label,
-                          numeralSystemLabel:
-                              _state.numeralSystem == NumeralSystem.doz
-                                  ? 'DOZ'
-                                  : 'DEZ',
-                          crossBaseBracket: _state.resultCrossBracket,
-                          onInputCursorTap: _state.moveCursorTo,
-                          onLongPress: _copyResult,
+                  builder: (innerCtx, constraints) {
+                    // Display sizes itself proportionally (20 % of body height,
+                    // clamped to [60, 170] dp). Keypad fills the rest via
+                    // Expanded — no fixed pixel allocations.
+                    final bodyH = constraints.maxHeight;
+                    final displayH = displayHeightFor(bodyH);
+                    return Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        SizedBox(
+                          height: displayH,
+                          child: TwoLineDisplay(
+                            inputBuffer: _state.inputBuffer,
+                            cursorPos: _state.cursorPos,
+                            resultBuffer: _state.resultBuffer,
+                            resultCursorPos: _state.resultCursorPos,
+                            resultFieldActive: _state.resultFieldActive,
+                            resultPeriodStart: _state.resultPeriodStart,
+                            resultPeriodLen: _state.resultPeriodLen,
+                            resultPeriodCapped: _state.resultPeriodCapped,
+                            isF64Fallback: _state.isF64Fallback,
+                            errorMsg: _state.errorMsg,
+                            memoryActive: _state.memory.isNotEmpty,
+                            angleModeLabel: _state.angleMode.label,
+                            numeralSystemLabel:
+                                _state.numeralSystem == NumeralSystem.doz
+                                ? 'DOZ'
+                                : 'DEZ',
+                            crossBaseBracket: _state.resultCrossBracket,
+                            onInputCursorTap: _state.moveCursorTo,
+                            onLongPress: _copyResult,
+                            onSwipeDown: _showHistory,
+                          ),
                         ),
-                      ),
-                      const SizedBox(height: 14),
-                      Expanded(
-                        child: Keypad(
-                          onTap: _state.handleClick,
-                          isArmed: _state.isArmed,
-                          isSelected: _isModeSelected,
-                          isDisabled: _isTokenDisabled,
-                          onInfoTap: () => _state.handleClick(const Info()),
-                          onHelpTap: _openIntro,
-                          overlayOpen: _state.overlayOpen,
+                        const SizedBox(height: 14),
+                        Expanded(
+                          child: Keypad(
+                            onTap: _state.handleClick,
+                            isArmed: _state.isArmed,
+                            isSelected: _isModeSelected,
+                            isDisabled: _isTokenDisabled,
+                            onInfoTap: () => _state.handleClick(const Info()),
+                            onHelpTap: _openIntro,
+                            overlayOpen: _state.overlayOpen,
+                          ),
                         ),
-                      ),
-                    ],
-                  );
-                },
-              ),
+                      ],
+                    );
+                  },
+                ),
               ),
             ),
           ),
@@ -369,4 +455,3 @@ class _CalcScaffoldState extends State<_CalcScaffold> {
     );
   }
 }
-

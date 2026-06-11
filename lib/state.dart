@@ -19,6 +19,31 @@ import 'logic/rational.dart';
 import 'logic/result_format.dart';
 import 'tokens.dart';
 
+/// One past calculation kept on the session history tape (#1). Stores enough
+/// to re-render the expression + result faithfully (via [TwoLineDisplay]) and
+/// to recall the value like `Ans` — the exact [ans] when the rational track
+/// held, else the formatted [result] tokens.
+class HistoryEntry {
+  final List<CalcToken> input;
+  final List<CalcToken> result;
+  final int? periodStart;
+  final int periodLen;
+  final bool periodCapped;
+  final Rational? ans;
+  final double f64;
+  final bool isF64;
+  const HistoryEntry({
+    required this.input,
+    required this.result,
+    required this.periodStart,
+    required this.periodLen,
+    required this.periodCapped,
+    required this.ans,
+    required this.f64,
+    required this.isF64,
+  });
+}
+
 class DozenalCalcState extends ChangeNotifier {
   List<CalcToken> inputBuffer = const [];
   List<CalcToken> resultBuffer = const [Digit(DozenalDigit.d0)];
@@ -36,6 +61,10 @@ class DozenalCalcState extends ChangeNotifier {
 
   Rational? lastAns;
   double lastResultF64 = 0.0;
+
+  /// Session history tape (#1): past calculations, newest last, capped at 30.
+  /// Survives AC (tape character); not persisted across app restarts.
+  final List<HistoryEntry> history = [];
 
   /// Set by `calculateResult` when the rational track collapsed and the f64
   /// path was used instead. Drives the "≈"-suffix on the display. Replaces
@@ -112,7 +141,8 @@ class DozenalCalcState extends ChangeNotifier {
       }
     }
 
-    final isOperator = token is Add ||
+    final isOperator =
+        token is Add ||
         token is Sub ||
         token is Mul ||
         token is Div ||
@@ -123,7 +153,8 @@ class DozenalCalcState extends ChangeNotifier {
 
     // After =, a new expression starts when most tokens arrive. Mode/overlay
     // controls and = itself are transparent.
-    final startsNewExpr = resultFieldActive && !_isTransparentAfterEquals(token);
+    final startsNewExpr =
+        resultFieldActive && !_isTransparentAfterEquals(token);
 
     if (startsNewExpr) {
       inputBuffer = const [];
@@ -461,6 +492,48 @@ class DozenalCalcState extends ChangeNotifier {
     resultCursorPos = 0;
     resultFieldActive = true;
     _resultLive = true;
+
+    // History tape (#1): record newest-last, cap 30, dedup a repeated `=`
+    // on identical input so re-pressing equals doesn't spam the tape.
+    if (history.isEmpty || !listEquals(history.last.input, inputBuffer)) {
+      history.add(
+        HistoryEntry(
+          input: List.of(inputBuffer),
+          result: List.of(resultBuffer),
+          periodStart: resultPeriodStart,
+          periodLen: resultPeriodLen,
+          periodCapped: resultPeriodCapped,
+          ans: lastAns,
+          f64: lastResultF64,
+          isF64: _ratCollapsed,
+        ),
+      );
+      if (history.length > 30) history.removeAt(0);
+    }
+  }
+
+  /// Recall a value from the history tape into the input — like `Ans`, but for
+  /// a specific past result. Exact values return as an exact `RatLit`; f64
+  /// fallbacks return as their formatted digits. Clears any error and, when a
+  /// result is on screen, starts a fresh expression (same as typing a number).
+  void recallHistory(HistoryEntry e) {
+    if (errorMsg != null) {
+      errorMsg = null;
+      _ratCollapsed = false;
+    }
+    if (resultFieldActive) {
+      inputBuffer = const [];
+      cursorPos = 0;
+    }
+    resultFieldActive = false;
+    if (e.ans != null) {
+      _insertAtCursor(RatLit(e.ans!));
+    } else {
+      for (final m in e.result) {
+        _insertAtCursor(m);
+      }
+    }
+    notifyListeners();
   }
 
   /// Invariant on error: clear lastAns so subsequent Ans / Rcl don't insert
@@ -593,8 +666,7 @@ class DozenalCalcState extends ChangeNotifier {
       // Cap is on the *fractional* digit count, computed in the target base
       // (dec.intDigits). The old check used the source-base intDigits.length
       // which is the wrong dimension after a base conversion.
-      final fracBudgetEnd =
-          dec.intDigits.length + 1 + _bufferFracMaxDigits;
+      final fracBudgetEnd = dec.intDigits.length + 1 + _bufferFracMaxDigits;
       var fracEmitted = 0;
       for (final d in dec.preDigits) {
         if (out.length >= fracBudgetEnd) break;
@@ -613,4 +685,3 @@ class DozenalCalcState extends ChangeNotifier {
     return out;
   }
 }
-

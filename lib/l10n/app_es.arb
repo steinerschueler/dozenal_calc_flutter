@@ -148,6 +148,8 @@
   "a11yDecimalPoint": "coma decimal",
   "a11yEquals": "igual",
   "a11yExpandPanel": "abrir panel de extensión",
+  "historyTitle": "Historial",
+  "historyEmpty": "Aún no hay cálculos",
   "keypadOverlayTitle": "Panel ampliado",
   "a11yClosePanel": "cerrar panel de extensión",
   "a11yMemoryStore": "guardar en memoria",

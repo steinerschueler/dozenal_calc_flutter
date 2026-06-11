@@ -148,6 +148,8 @@
   "a11yDecimalPoint": "小數點",
   "a11yEquals": "等於",
   "a11yExpandPanel": "開啟擴充面板",
+  "historyTitle": "歷史記錄",
+  "historyEmpty": "尚無計算記錄",
   "keypadOverlayTitle": "擴充面板",
   "a11yClosePanel": "關閉擴充面板",
   "a11yMemoryStore": "存入記憶體",

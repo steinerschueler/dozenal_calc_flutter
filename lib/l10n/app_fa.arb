@@ -148,6 +148,8 @@
   "a11yDecimalPoint": "ممیز",
   "a11yEquals": "مساوی",
   "a11yExpandPanel": "باز کردن پنل گسترش",
+  "historyTitle": "تاریخچه",
+  "historyEmpty": "هنوز محاسبه‌ای نیست",
   "keypadOverlayTitle": "پنل گسترده",
   "a11yClosePanel": "بستن پنل گسترش",
   "a11yMemoryStore": "ذخیره در حافظه",

@@ -148,6 +148,8 @@
   "a11yDecimalPoint": "десятичная запятая",
   "a11yEquals": "равно",
   "a11yExpandPanel": "открыть панель расширения",
+  "historyTitle": "История",
+  "historyEmpty": "Пока нет вычислений",
   "keypadOverlayTitle": "Расширенная панель",
   "a11yClosePanel": "закрыть панель расширения",
   "a11yMemoryStore": "сохранить в память",

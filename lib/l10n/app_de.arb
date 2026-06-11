@@ -181,6 +181,8 @@
   "a11yDecimalPoint": "Komma",
   "a11yEquals": "Gleich",
   "a11yExpandPanel": "Erweiterungsfeld öffnen",
+  "historyTitle": "Verlauf",
+  "historyEmpty": "Noch keine Rechnungen",
   "keypadOverlayTitle": "Erweiterungsfeld",
   "a11yClosePanel": "Erweiterungsfeld schließen",
   "a11yMemoryStore": "In Speicher",
