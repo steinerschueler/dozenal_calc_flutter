@@ -18,8 +18,10 @@ List<ProseChapter> _grundlagenChaptersFr() => const [
             'pas ici cent, mais douze fois douze, soit 144 en décimal. Et « 10 » '
             'signifie exactement une douzaine.\n\n'
             'Important : la quantité elle-même ne change jamais, seulement '
-            'l\'écriture. Quinze pommes restent quinze pommes, qu\'on les note '
-            '« 15 » (décimal) ou « 13 » (duodécimal). Un nombre ne devient ni '
+            'l\'écriture. « Quinze » et « une douzaine et trois » désignent la '
+            'même quantité de pommes — écrite « 15 » en décimal et « 13 » en '
+            'duodécimal. Le « 13 » duodécimal signifie une douzaine et trois, '
+            'pas treize. Un nombre ne devient ni '
             'plus grand ni plus petit en changeant de base.',
       ),
       ProseSection(

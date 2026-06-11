@@ -17,8 +17,10 @@ List<ProseChapter> _grundlagenChaptersIt() => const [
             'ma dodici per dodici, cioè 144 in decimale. E «10» significa '
             'esattamente una dozzina.\n\n'
             'Importante: la quantità stessa non cambia mai, solo la '
-            'rappresentazione. Quindici mele restano quindici mele, che le si '
-            'scriva «15» (decimale) o «13» (dozenale). Un numero non diventa '
+            'rappresentazione. «Quindici» e «una dozzina e tre» indicano la '
+            'stessa quantità di mele — scritta «15» in decimale e «13» in '
+            'dozenale. Il «13» dozenale significa una dozzina e tre, non '
+            'tredici. Un numero non diventa '
             'più grande né più piccolo cambiando base.',
       ),
       ProseSection(

@@ -23,8 +23,10 @@ List<ProseChapter> _grundlagenChaptersDe() => const [
             'sondern zwölf mal zwölf, also 144 im Dezimalen. Und „10" bedeutet '
             'genau ein Dutzend.\n\n'
             'Wichtig dabei: Die Menge selbst ändert sich nie, nur die '
-            'Schreibweise. Fünfzehn Äpfel bleiben fünfzehn Äpfel, ob man sie '
-            '„15" (dezimal) oder „13" (dozenal) aufschreibt. Eine Zahl wird '
+            'Schreibweise. „Fünfzehn" und „dutzendunddrei" beschreiben dieselbe '
+            'Menge Äpfel — dezimal als „15", dozenal als „13" geschrieben. Die '
+            'dozenale „13" meint ja ein Dutzend und drei, nicht dreizehn. Eine '
+            'Zahl wird '
             'durch einen Basiswechsel weder größer noch kleiner.',
       ),
       ProseSection(

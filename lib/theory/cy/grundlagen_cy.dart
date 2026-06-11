@@ -17,8 +17,10 @@ List<ProseChapter> _grundlagenChaptersCy() => const [
             'ond deuddeg tro deuddeg, sef 144 yn y system ddegol. Ac mae „10“ '
             'yn golygu union ddwsin.\n\n'
             'Yr hyn sy’n bwysig: nid yw’r maint ei hun byth yn newid, dim ond '
-            'y dull ysgrifennu. Mae pymtheg afal yn parhau’n bymtheg afal, boed '
-            'y rhif wedi ei ysgrifennu’n „15“ (degol) neu „13“ (deuddegol). '
+            'y dull ysgrifennu. Mae „pymtheg“ a „dwsin a thri“ yn enwi’r un '
+            'nifer o afalau — wedi ei ysgrifennu’n „15“ yn ddegol ac „13“ yn '
+            'ddeuddegol. Mae’r „13“ deuddegol yn golygu dwsin a thri, nid tri '
+            'ar ddeg. '
             'Nid yw newid sail yn gwneud rhif yn fwy nac yn llai.',
       ),
       ProseSection(

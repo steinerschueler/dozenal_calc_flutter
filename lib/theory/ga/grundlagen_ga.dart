@@ -17,9 +17,10 @@ List<ProseChapter> _grundlagenChaptersGa() => const [
             'anseo ní céad, ach dhá dhéag faoi dhá dhéag, .i. 144 sa '
             'deachúlach. Agus ciallaíonn "10" díreach dosaen amháin.\n\n'
             'Tá rud tábhachtach le tuiscint: ní athraíonn an méid féin riamh, '
-            'ach an litriú amháin. Fanann cúig úll déag ina gcúig úll déag, '
-            'cibé an scríobhann tú "15" (deachúlach) nó "13" (dóidéagach) '
-            'iad. Ní dhéanann athrú boinn uimhir níos mó ná níos lú.',
+            'ach an litriú amháin. Ainmníonn "cúig déag" agus "dosaen agus a '
+            'trí" an méid céanna úll — scríofa "15" go deachúlach agus "13" go '
+            'dóidéagach. Ciallaíonn an "13" dóidéagach dosaen agus a trí, ní a '
+            'trí déag. Ní dhéanann athrú boinn uimhir níos mó ná níos lú.',
       ),
       ProseSection(
         'Cén fáth a dteastaíonn dhá dhigit nua',

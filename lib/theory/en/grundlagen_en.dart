@@ -17,8 +17,9 @@ List<ProseChapter> _grundlagenChaptersEn() => const [
             'hundred, but twelve times twelve, i.e. 144 in decimal. And "10" '
             'means exactly one dozen.\n\n'
             'One important point: the quantity itself never changes, only the '
-            'notation. Fifteen apples remain fifteen apples, whether you write '
-            'them as "15" (decimal) or "13" (dozenal). A number becomes neither '
+            'notation. "Fifteen" and "a dozen and three" name the same number '
+            'of apples — written "15" in decimal and "13" in dozenal. The '
+            'dozenal "13" means a dozen and three, not thirteen. A number becomes neither '
             'larger nor smaller by a change of base.',
       ),
       ProseSection(

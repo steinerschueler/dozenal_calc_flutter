@@ -15,8 +15,9 @@ List<ProseChapter> _grundlagenChaptersEs() => const [
             'El número «100» aquí no significa cien, sino doce por doce, es decir, '
             '144 en decimal. Y «10» significa exactamente una docena.\n\n'
             'Lo importante: la cantidad en sí nunca cambia, solo la escritura. '
-            'Quince manzanas siguen siendo quince manzanas, tanto si las escribimos '
-            '«15» (decimal) como «13» (docenal). Un número no se hace ni mayor ni '
+            '«Quince» y «una docena y tres» nombran la misma cantidad de '
+            'manzanas — escrita «15» en decimal y «13» en docenal. El «13» '
+            'docenal significa una docena y tres, no trece. Un número no se hace ni mayor ni '
             'menor al cambiar de base.',
       ),
       ProseSection(
