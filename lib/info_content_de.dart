@@ -58,10 +58,11 @@ List<Widget> _chapterDe(int chapter, AppLocalizations l) {
         ),
         const _H('Spezialoperatoren'),
         const _P(
-          'x² quadriert die vorangehende Zahl. √ berechnet die Quadratwurzel '
-          '— steht links davon eine Zahl, wird diese als Wurzelgrad '
-          'verwendet: 3√27 ergibt die dritte Wurzel von 27. log berechnet '
-          'den Logarithmus zur Basis der vorangehenden Zahl. ⊕ berechnet '
+          'x² quadriert die vorangehende Zahl. √ berechnet die Quadratwurzel; '
+          'steht links davon eine Zahl, dient diese als Wurzelgrad: 3√8 ergibt '
+          'die dritte Wurzel von 8, also 2. log berechnet einen Logarithmus, '
+          'wobei die Zahl links das Argument und die Zahl rechts die Basis ist: '
+          '8 log 2 ist der Logarithmus von 8 zur Basis 2, also 3. ⊕ berechnet '
           'die Paralleladdition: a ⊕ b = (a·b)/(a+b), nützlich für '
           'Parallelschaltungen von Widerständen.',
         ),

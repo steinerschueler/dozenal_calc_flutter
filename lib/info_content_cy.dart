@@ -98,9 +98,11 @@ List<Widget> _chapterCy(int chapter, AppLocalizations l) {
         const _H("Gweithredwyr arbennig"),
         const _P(
           "Mae x² yn sgwario'r rhif blaenorol. Mae √ yn cyfrifo'r gwraidd "
-          "sgwâr — os yw rhif yn sefyll i'w chwith, defnyddir y rhif "
-          "hwnnw fel gradd y gwraidd: mae 3√27 yn rhoi gwraidd ciwbig 27. "
-          "Mae log yn cyfrifo'r logarithm i fôn y rhif blaenorol. Mae ⊕ "
+          "sgwâr; os yw rhif yn sefyll i'w chwith, hwnnw yw gradd y "
+          "gwraidd: mae 3√8 yn rhoi gwraidd ciwbig 8, hynny yw 2. Mae log "
+          "yn cyfrifo logarithm lle mae'r rhif ar y chwith yn fewnbwn a'r "
+          "rhif ar y dde yn fôn: 8 log 2 yw logarithm 8 i fôn 2, hynny yw "
+          "3. Mae ⊕ "
           "yn cyfrifo'r swm cyfochrog: a ⊕ b = (a·b)/(a+b), defnyddiol "
           "ar gyfer gwrthyddion cyfochrog.",
         ),

@@ -72,10 +72,11 @@ List<Widget> _chapterFr(int chapter, AppLocalizations l) {
         const _H("Opérateurs spéciaux"),
         const _P(
           "x² élève le nombre précédent au carré. √ calcule la racine "
-          "carrée — si un nombre se trouve à sa gauche, ce nombre est "
-          "utilisé comme degré de la racine : 3√27 donne la racine "
-          "cubique de 27. log calcule le logarithme à la base du "
-          "nombre précédent. ⊕ calcule la somme parallèle : "
+          "carrée ; si un nombre se trouve à sa gauche, ce nombre sert de "
+          "degré de la racine : 3√8 donne la racine cubique de 8, soit 2. "
+          "log calcule un logarithme où le nombre de gauche est l'argument "
+          "et celui de droite la base : 8 log 2 est le logarithme de 8 en "
+          "base 2, soit 3. ⊕ calcule la somme parallèle : "
           "a ⊕ b = (a·b)/(a+b), utile pour les résistances en "
           "parallèle.",
         ),

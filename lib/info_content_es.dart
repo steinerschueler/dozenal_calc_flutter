@@ -83,9 +83,11 @@ List<Widget> _chapterEs(int chapter, AppLocalizations l) {
         const _H("Operadores especiales"),
         const _P(
           "x² eleva al cuadrado el número anterior. √ calcula la raíz "
-          "cuadrada — si hay un número a su izquierda, ese número se "
-          "usa como grado de la raíz: 3√27 da la raíz cúbica de 27. "
-          "log calcula el logaritmo con la base del número anterior. "
+          "cuadrada; si hay un número a su izquierda, ese número se usa "
+          "como grado de la raíz: 3√8 da la raíz cúbica de 8, es decir 2. "
+          "log calcula un logaritmo donde el número de la izquierda es el "
+          "argumento y el de la derecha es la base: 8 log 2 es el logaritmo "
+          "de 8 en base 2, es decir 3. "
           "⊕ calcula la suma paralela: a ⊕ b = (a·b)/(a+b), útil "
           "para resistencias en paralelo.",
         ),

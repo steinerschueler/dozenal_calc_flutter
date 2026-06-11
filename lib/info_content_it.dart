@@ -81,10 +81,11 @@ List<Widget> _chapterIt(int chapter, AppLocalizations l) {
         const _H("Operatori speciali"),
         const _P(
           "x² eleva al quadrato il numero precedente. √ calcola la "
-          "radice quadrata — se c'è un numero alla sua sinistra, "
-          "quel numero è usato come grado della radice: 3√27 dà la "
-          "radice cubica di 27. log calcola il logaritmo con la "
-          "base del numero precedente. ⊕ calcola la somma "
+          "radice quadrata; se c'è un numero alla sua sinistra, quel "
+          "numero è il grado della radice: 3√8 dà la radice cubica di 8, "
+          "cioè 2. log calcola un logaritmo dove il numero a sinistra è "
+          "l'argomento e quello a destra è la base: 8 log 2 è il logaritmo "
+          "di 8 in base 2, cioè 3. ⊕ calcola la somma "
           "parallela: a ⊕ b = (a·b)/(a+b), utile per resistenze in "
           "parallelo.",
         ),

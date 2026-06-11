@@ -83,10 +83,12 @@ List<Widget> _chapterGa(int chapter, AppLocalizations l) {
         ),
         const _H("Oibreoirí speisialta"),
         const _P(
-          "Cearnaíonn x² an uimhir roimhe. Ríomhann √ an fhréamh chearnach "
-          "— má sheasann uimhir ar a chlé, úsáidtear an uimhir sin mar "
-          "céim na fréimhe: tugann 3√27 fréamh chiúbach 27. Ríomhann log "
-          "an logartam le bonn na huimhreach roimhe. Ríomhann ⊕ an "
+          "Cearnaíonn x² an uimhir roimhe. Ríomhann √ an fhréamh chearnach; "
+          "má sheasann uimhir ar a chlé, úsáidtear an uimhir sin mar céim "
+          "na fréimhe: tugann 3√8 fréamh chiúbach 8, is é sin 2. Ríomhann "
+          "log logartam ina bhfuil an uimhir ar chlé mar argóint agus an "
+          "uimhir ar dheis mar bhonn: is é 8 log 2 logartam 8 le bonn 2, is "
+          "é sin 3. Ríomhann ⊕ an "
           "suim chomhthreomhar: a ⊕ b = (a·b)/(a+b), úsáideach do "
           "fhriotaí comhthreomhara.",
         ),

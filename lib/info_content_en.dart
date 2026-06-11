@@ -57,11 +57,12 @@ List<Widget> _chapterEn(int chapter, AppLocalizations l) {
         ),
         const _H('Special operators'),
         const _P(
-          'x² squares the preceding number. √ computes the square '
-          'root — if a number stands to the left of it, that number '
-          'is used as the root degree: 3√27 yields the cube root of '
-          '27. log computes the logarithm to the base of the preceding '
-          'number. ⊕ computes the parallel sum: a ⊕ b = (a·b)/(a+b), '
+          'x² squares the preceding number. √ computes the square root; '
+          'if a number stands to its left, that number is the root degree: '
+          '3√8 yields the cube root of 8, i.e. 2. log computes a logarithm '
+          'where the number on the left is the argument and the one on the '
+          'right is the base: 8 log 2 is the logarithm of 8 to base 2, i.e. '
+          '3. ⊕ computes the parallel sum: a ⊕ b = (a·b)/(a+b), '
           'useful for resistors in parallel.',
         ),
         const _H('Extension panel'),
