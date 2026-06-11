@@ -11,8 +11,18 @@ Lokalisierung? braucht es eine Produkt-/Design-Entscheidung?).
 
 ## Rechner-Funktionen
 
-### 1. Ergebnis-Historie / Tape
-**Problem:** Es gibt nur `lastAns` (genau einen Wert) + einen Speicher. Kein
+### 1. Ergebnis-Historie / Tape — ✅ erledigt (committet)
+**Umgesetzt:** `List<HistoryEntry>` in `DozenalCalcState` (gecappt 30, überlebt
+AC, dedup bei wiederholtem `=`), Push am Ende von `calculateResult`,
+`recallHistory` wie `Ans` (exakt via `RatLit`, sonst Ziffern). **Einstieg
+(Produktentscheidung): Abwärts-Wisch auf dem Display** (`TwoLineDisplay.onSwipeDown`)
+→ Bottom-Sheet mit den Rechnungen (neueste zuerst, je read-only `TwoLineDisplay`
+mit neuem `showCursor`-Flag), Tap = Recall + schließen. ARB
+`historyTitle`/`historyEmpty` (14 Sprachen). Ohne Persistenz (MVP).
+*Hinweis: Wisch-Geste ist bewusst undiscoverable — optionaler Folgeschritt:
+Erwähnung in „Bedienung des Rechners".*
+
+**Problem (Ausgangslage):** Es gibt nur `lastAns` (genau einen Wert) + einen Speicher. Kein
 scrollbarer Verlauf vergangener Rechnungen.
 
 **Lösung:** Session-Tape in `DozenalCalcState`: `List<HistoryEntry>` (gecappt
@@ -161,3 +171,4 @@ bündeln. Nur bei Bedarf — keine Refactor-Schuld auf Vorrat.
   dabei log-Doku-Bug korrigiert (Basis = rechte Zahl, nicht linke)
 - Glyphen-Doku-Fix: B (elf) ist Halbkreis über Vollkreis, kein gefüllter Kreis
 - „Was ist das Dozenalsystem?": Apfel-Satz entzweideutigt (15 = dutzendunddrei)
+- #1 Ergebnis-Historie / Tape (Wisch-Geste, Bottom-Sheet, recall, 14 Sprachen)
