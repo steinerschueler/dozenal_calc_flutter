@@ -441,6 +441,8 @@ class _CalcScaffoldState extends State<_CalcScaffold> {
                             onInfoTap: () => _state.handleClick(const Info()),
                             onHelpTap: _openIntro,
                             overlayOpen: _state.overlayOpen,
+                            overlayPage: _state.overlayPage,
+                            onOverlayPageChanged: _state.setOverlayPage,
                           ),
                         ),
                       ],

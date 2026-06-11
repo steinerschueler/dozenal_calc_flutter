@@ -80,6 +80,12 @@ class DozenalCalcState extends ChangeNotifier {
 
   String? errorMsg;
   bool overlayOpen = false;
+
+  /// Which overlay page is showing in Hoch mode: 0 = Sets 6–10 (memory,
+  /// constants, hyperbolic, extended), 1 = function keys (#2–#4). Swipe
+  /// left/right on the open overlay flips it; opening always resets to 0.
+  int overlayPage = 0;
+
   AngleMode angleMode = AngleMode.deg;
   NumeralSystem numeralSystem = NumeralSystem.doz;
   InfoState infoState = const InfoClosed();
@@ -117,6 +123,14 @@ class DozenalCalcState extends ChangeNotifier {
     if (resultFieldActive == false && cursorPos == clamped) return;
     resultFieldActive = false;
     cursorPos = clamped;
+    notifyListeners();
+  }
+
+  /// Flip the open overlay between its two pages (swipe left/right on the
+  /// overlay). No-op when the overlay is closed or already on page [p].
+  void setOverlayPage(int p) {
+    if (!overlayOpen || overlayPage == p) return;
+    overlayPage = p;
     notifyListeners();
   }
 
@@ -228,6 +242,7 @@ class DozenalCalcState extends ChangeNotifier {
       // scrim. The Close token still works (Set 10 button) and any Sets 6-9
       // selection auto-closes via the per-token branches below.
       overlayOpen = !overlayOpen;
+      if (overlayOpen) overlayPage = 0; // always open on the first page
       return;
     }
     if (token is Close) {

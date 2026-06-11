@@ -68,6 +68,12 @@ class Keypad extends StatelessWidget {
   /// in Hoch mode — Breit ignores it (all sets are always visible).
   final bool overlayOpen;
 
+  /// Which overlay page is showing (Hoch only): 0 = Sets 6–10, 1 = function
+  /// keys. [onOverlayPageChanged] is fired by the left/right swipe and the
+  /// edge arrows to flip between the two pages.
+  final int overlayPage;
+  final ValueChanged<int>? onOverlayPageChanged;
+
   const Keypad({
     super.key,
     required this.onTap,
@@ -77,6 +83,8 @@ class Keypad extends StatelessWidget {
     this.onInfoTap,
     this.onHelpTap,
     this.overlayOpen = false,
+    this.overlayPage = 0,
+    this.onOverlayPageChanged,
   });
 
   @override
@@ -92,6 +100,8 @@ class Keypad extends StatelessWidget {
             onInfoTap: onInfoTap,
             onHelpTap: onHelpTap,
             overlayOpen: overlayOpen,
+            overlayPage: overlayPage,
+            onOverlayPageChanged: onOverlayPageChanged,
           );
         }
         return _BreitKeypad(
@@ -135,6 +145,15 @@ const List<List<CalcToken>> _hochOverlayRows = [
   [Ans(), ConstSqrt2(), Coth(), Mod()],
 ];
 
+/// Function-key page (overlay page 1, #2–#4): memory accumulator, powers,
+/// sign, logs, combinatorics, scientific notation. Nullable cells pad the
+/// last (short) row so the columns stay aligned with the 4-wide grid.
+const List<List<CalcToken?>> _hochFuncRows = [
+  [MemPlus(), MemMinus(), Square(), PlusMinus()],
+  [Ln(), ExpE(), Log12(), Sci()],
+  [NCr(), NPr(), null, null],
+];
+
 const List<CalcToken> _systemRow = [Ac(), Del(), Decimal(), Expand()];
 
 /// Set 10 lives in the overlay-mode-row position. Close mirrors the Expand
@@ -174,6 +193,8 @@ class _HochKeypad extends StatelessWidget {
   final VoidCallback? onInfoTap;
   final VoidCallback? onHelpTap;
   final bool overlayOpen;
+  final int overlayPage;
+  final ValueChanged<int>? onOverlayPageChanged;
 
   const _HochKeypad({
     required this.onTap,
@@ -183,6 +204,8 @@ class _HochKeypad extends StatelessWidget {
     this.onInfoTap,
     this.onHelpTap,
     required this.overlayOpen,
+    required this.overlayPage,
+    required this.onOverlayPageChanged,
   });
 
   @override
@@ -228,6 +251,8 @@ class _HochKeypad extends StatelessWidget {
       if (fixedHeights)
         _MiddleSection(
           overlayOpen: overlayOpen,
+          overlayPage: overlayPage,
+          onOverlayPageChanged: onOverlayPageChanged,
           tight: tight,
           fixedHeights: true,
           onTap: onTap,
@@ -240,6 +265,8 @@ class _HochKeypad extends StatelessWidget {
           flex: 40, // 5 rows × 8 = 40
           child: _MiddleSection(
             overlayOpen: overlayOpen,
+            overlayPage: overlayPage,
+            onOverlayPageChanged: onOverlayPageChanged,
             tight: tight,
             fixedHeights: false,
             onTap: onTap,
@@ -303,6 +330,8 @@ class _HochKeypad extends StatelessWidget {
 /// (Sets 6-9 + Set 10 mode row).
 class _MiddleSection extends StatelessWidget {
   final bool overlayOpen;
+  final int overlayPage;
+  final ValueChanged<int>? onOverlayPageChanged;
   final bool tight;
   final bool fixedHeights;
   final TokenTapHandler onTap;
@@ -312,6 +341,8 @@ class _MiddleSection extends StatelessWidget {
 
   const _MiddleSection({
     required this.overlayOpen,
+    required this.overlayPage,
+    required this.onOverlayPageChanged,
     required this.tight,
     required this.fixedHeights,
     required this.onTap,
@@ -335,6 +366,8 @@ class _MiddleSection extends StatelessWidget {
       key: const ValueKey('overlay'),
       tight: tight,
       fixedHeights: fixedHeights,
+      page: overlayPage,
+      onPageChanged: onOverlayPageChanged,
       onTap: onTap,
       isArmed: isArmed,
       isSelected: isSelected,
@@ -384,6 +417,8 @@ class _MainOpsPanel extends StatelessWidget {
 class _OverlayPanel extends StatelessWidget {
   final bool tight;
   final bool fixedHeights;
+  final int page;
+  final ValueChanged<int>? onPageChanged;
   final TokenTapHandler onTap;
   final ArmedPredicate? isArmed;
   final SelectedPredicate? isSelected;
@@ -392,15 +427,20 @@ class _OverlayPanel extends StatelessWidget {
     super.key,
     required this.tight,
     required this.fixedHeights,
+    required this.page,
+    required this.onPageChanged,
     required this.onTap,
     this.isArmed,
     this.isSelected,
   });
 
+  void _go(int p) => onPageChanged?.call(p);
+
   @override
   Widget build(BuildContext context) {
+    final isFunc = page == 1;
     final panel = _RowsPanel(
-      opRows: _hochOverlayRows,
+      opRows: isFunc ? _hochFuncRows : _hochOverlayRows,
       bottomRow: _set10Row,
       tight: tight,
       fixedHeights: fixedHeights,
@@ -408,9 +448,31 @@ class _OverlayPanel extends StatelessWidget {
       isArmed: isArmed,
       isSelected: isSelected,
     );
+    // Two overlay pages: OLL (page 0, Sets 6–10) shows a right-edge arrow to
+    // OLR (page 1, function keys), which shows a left-edge arrow back. The
+    // arrows make the second page discoverable; a horizontal swipe also flips.
+    final gridRow = Row(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        if (isFunc) _PageArrow(pointLeft: true, onTap: () => _go(0)),
+        Expanded(child: panel),
+        if (!isFunc) _PageArrow(pointLeft: false, onTap: () => _go(1)),
+      ],
+    );
+    final swipeable = GestureDetector(
+      onHorizontalDragEnd: (d) {
+        final v = d.primaryVelocity ?? 0;
+        if (v < -80) {
+          _go(1); // swipe left → function page
+        } else if (v > 80) {
+          _go(0); // swipe right → first page
+        }
+      },
+      child: gridRow,
+    );
     // Open-state affordance: a dezent "Erweiterungsfeld" header above the
-    // extended sets, confirming the overlay is open. Only shown here — the
-    // closed main panel is untouched, so the Store screenshot is identical.
+    // extended sets. Only shown here — the closed main panel is untouched, so
+    // the Store screenshot is identical.
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       mainAxisSize: fixedHeights ? MainAxisSize.min : MainAxisSize.max,
@@ -419,8 +481,41 @@ class _OverlayPanel extends StatelessWidget {
           title: AppLocalizations.of(context).keypadOverlayTitle,
           tight: tight,
         ),
-        if (fixedHeights) panel else Expanded(child: panel),
+        if (fixedHeights) swipeable else Expanded(child: swipeable),
       ],
+    );
+  }
+}
+
+/// Tall, slim, tappable edge arrow that flips between the two overlay pages
+/// and signals that a second page exists next to the current one.
+class _PageArrow extends StatelessWidget {
+  final bool pointLeft;
+  final VoidCallback onTap;
+  const _PageArrow({required this.pointLeft, required this.onTap});
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      behavior: HitTestBehavior.opaque,
+      onTap: onTap,
+      child: Container(
+        width: 22,
+        margin: EdgeInsets.only(
+          left: pointLeft ? 0 : 6,
+          right: pointLeft ? 6 : 0,
+        ),
+        decoration: BoxDecoration(
+          color: const Color(0x14FFFFFF),
+          borderRadius: BorderRadius.circular(6),
+          border: Border.all(color: const Color(0xFF333333)),
+        ),
+        child: Icon(
+          pointLeft ? Icons.chevron_left : Icons.chevron_right,
+          size: 20,
+          color: const Color(0xFFB0B0B0),
+        ),
+      ),
     );
   }
 }
@@ -459,8 +554,10 @@ class _OverlayHeader extends StatelessWidget {
 
 /// AnimatedSwitcher children have identical structure.
 class _RowsPanel extends StatelessWidget {
-  final List<List<CalcToken>> opRows;
-  final List<CalcToken> bottomRow;
+  // Nullable cells: a null slot renders as an empty gap (used to pad the
+  // function-key page where the last row isn't full).
+  final List<List<CalcToken?>> opRows;
+  final List<CalcToken?> bottomRow;
   final bool tight;
   final bool fixedHeights;
   final TokenTapHandler onTap;
@@ -504,18 +601,21 @@ class _RowsPanel extends StatelessWidget {
     );
   }
 
-  Widget _tokenRow(List<CalcToken> tokens) {
+  Widget _tokenRow(List<CalcToken?> tokens) {
     final cells = <Widget>[];
     for (var i = 0; i < tokens.length; i++) {
       if (i > 0) cells.add(const SizedBox(width: 8));
+      final tok = tokens[i];
       cells.add(
         Expanded(
-          child: _TokenButton(
-            token: tokens[i],
-            onTap: () => onTap(tokens[i]),
-            armed: isArmed?.call(tokens[i]) ?? false,
-            selected: isSelected?.call(tokens[i]) ?? false,
-          ),
+          child: tok == null
+              ? const SizedBox.shrink()
+              : _TokenButton(
+                  token: tok,
+                  onTap: () => onTap(tok),
+                  armed: isArmed?.call(tok) ?? false,
+                  selected: isSelected?.call(tok) ?? false,
+                ),
         ),
       );
     }
