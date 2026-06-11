@@ -194,5 +194,9 @@
   "settingsScopeFull": "Uile",
   "settingsScopeSimple": "Bunúsach",
   "settingsNumeralSystemTitle": "Córas uimhreacha",
-  "settingsAngleModeTitle": "Aonad uillinne"
+  "settingsAngleModeTitle": "Aonad uillinne",
+  "settingsThemeTitle": "Cuma",
+  "settingsThemeDark": "Dorcha",
+  "settingsThemeLight": "Geal",
+  "settingsThemeSystem": "Córas"
 }

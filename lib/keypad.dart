@@ -27,6 +27,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'app_layout.dart';
+import 'app_theme.dart';
 import 'calc_prefs.dart' show KeypadMode, KeypadProfile;
 import 'glyph_painter.dart';
 import 'haptics.dart';
@@ -34,15 +35,11 @@ import 'l10n/app_localizations.dart';
 import 'token_painter.dart';
 import 'tokens.dart';
 
-const Color _kDigitNormal = Colors.white;
-const Color _kDigitPressed = Color(0xFFFFD700); // egui GOLD
-const Color _kDigitDisabled = Color(0xFF606060);
-const Color _kOpNormal = Color(0xFF98C8FF); // egui LIGHT_BLUE
-const Color _kOpPressed = Color(0xFFFF9090); // egui LIGHT_RED
-const Color _kEquals = Color(0xFF8CDC8C); // egui LIGHT_GREEN
-const Color _kBorder = Color(0xFF505050);
-const Color _kAc = Color(0xFFFF4040);
-const Color _kAcPressed = Color(0xFFFF8080);
+// Button colors (formerly file-level egui consts) live in AppColors
+// (lib/app_theme.dart): digit/digitPressed/digitDisabled, op/opPressed,
+// equals, keyBorder/keyBorderDisabled, ac/acPressed. Widgets read them via
+// AppColors.of(context) — dark fallback without a ThemeScope keeps tests
+// and golden tools on the historical palette.
 
 typedef TokenTapHandler = void Function(CalcToken token);
 typedef ArmedPredicate = bool Function(CalcToken token);
@@ -285,11 +282,11 @@ class _HochKeypad extends StatelessWidget {
         final h = constraints.maxHeight;
         if (h.isFinite && h < _kScrollThreshold) {
           return SingleChildScrollView(
-            child: _buildColumn(tight: true, fixedHeights: true),
+            child: _buildColumn(ctx, tight: true, fixedHeights: true),
           );
         }
         final tight = h.isFinite && h < _kTightThreshold;
-        return _buildColumn(tight: tight, fixedHeights: false);
+        return _buildColumn(ctx, tight: tight, fixedHeights: false);
       },
     );
   }
@@ -300,6 +297,7 @@ class _HochKeypad extends StatelessWidget {
   /// so `=` never has to be scrolled to.
   Widget _buildScrollMode(BuildContext context) {
     final l = AppLocalizations.of(context);
+    final t = AppColors.of(context);
     const sectionGap = 10.0;
 
     final scrollContent = Column(
@@ -311,7 +309,7 @@ class _HochKeypad extends StatelessWidget {
           SizedBox(height: minTouchTarget, child: _digitRow(_digitGridRows[r])),
         ],
         const SizedBox(height: sectionGap),
-        const Divider(color: Color(0xFF333333), height: 1, thickness: 1),
+        Divider(color: t.hairline, height: 1, thickness: 1),
         const SizedBox(height: sectionGap),
         _RowsPanel(
           opRows: _hochOpRows,
@@ -324,7 +322,7 @@ class _HochKeypad extends StatelessWidget {
           isDisabled: isDisabled,
         ),
         const SizedBox(height: sectionGap),
-        const Divider(color: Color(0xFF333333), height: 1, thickness: 1),
+        Divider(color: t.hairline, height: 1, thickness: 1),
         const SizedBox(height: sectionGap),
         _OverlayHeader(title: l.keypadOverlayTitle, tight: false),
         _RowsPanel(
@@ -361,7 +359,12 @@ class _HochKeypad extends StatelessWidget {
   /// so they share the available height proportionally. In fixed-heights
   /// mode every row gets `minTouchTarget`-tall sized boxes — used inside
   /// the scroll fallback where Expanded would be unbounded.
-  Widget _buildColumn({required bool tight, required bool fixedHeights}) {
+  Widget _buildColumn(
+    BuildContext context, {
+    required bool tight,
+    required bool fixedHeights,
+  }) {
+    final t = AppColors.of(context);
     final rowGap = tight ? 6.0 : 10.0;
     final sectionGap = tight ? 8.0 : 14.0;
     final equalsGap = tight ? 8.0 : 12.0;
@@ -376,7 +379,7 @@ class _HochKeypad extends StatelessWidget {
         row(_digitRow(_digitGridRows[r])),
       ],
       SizedBox(height: sectionGap),
-      const Divider(color: Color(0xFF333333), height: 1, thickness: 1),
+      Divider(color: t.hairline, height: 1, thickness: 1),
       SizedBox(height: sectionGap),
       // Middle section: panel-swap between main ops and overlay sets.
       // Both panels have identical internal flex structure so the
@@ -667,14 +670,14 @@ class _PageArrow extends StatelessWidget {
             right: pointLeft ? _kPageArrowMargin : 0,
           ),
           decoration: BoxDecoration(
-            color: const Color(0x14FFFFFF),
+            color: AppColors.of(context).expandHintBg,
             borderRadius: BorderRadius.circular(6),
-            border: Border.all(color: const Color(0xFF333333)),
+            border: Border.all(color: AppColors.of(context).hairline),
           ),
           child: Icon(
             pointLeft ? Icons.chevron_left : Icons.chevron_right,
             size: 20,
-            color: const Color(0xFFB0B0B0),
+            color: AppColors.of(context).textTertiary,
           ),
         ),
       ),
@@ -693,19 +696,20 @@ class _OverlayHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final t = AppColors.of(context);
     return Padding(
       padding: EdgeInsets.only(bottom: tight ? 4 : 6),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Icon(Icons.more_horiz, size: 13, color: Color(0xFF6E6E6E)),
+          Icon(Icons.more_horiz, size: 13, color: t.dotsIcon),
           const SizedBox(width: 6),
           Text(
             title,
-            style: const TextStyle(
+            style: TextStyle(
               fontSize: 11,
               fontWeight: FontWeight.w500,
-              color: Color(0xFF8C8C8C),
+              color: t.textFaint,
             ),
           ),
         ],
@@ -908,6 +912,7 @@ class _BreitKeypad extends StatelessWidget {
           interBlockGap: interBlockGap,
           groupGap: groupGap,
           l: AppLocalizations.of(ctx),
+          t: AppColors.of(ctx),
         );
 
         final body = Column(
@@ -960,6 +965,7 @@ class _BreitKeypad extends StatelessWidget {
     required double interBlockGap,
     required double groupGap,
     required AppLocalizations l,
+    required AppColors t,
   }) {
     Widget digitGrid() {
       return Column(
@@ -1055,11 +1061,7 @@ class _BreitKeypad extends StatelessWidget {
     Widget bigGap() => SizedBox(
       width: groupGap,
       child: Center(
-        child: Container(
-          width: 1,
-          height: dividerHeight,
-          color: const Color(0xFF333333),
-        ),
+        child: Container(width: 1, height: dividerHeight, color: t.hairline),
       ),
     );
     // Tall edge arrow flipping the third group between its two pages.
@@ -1189,6 +1191,7 @@ class _PressableShellState extends State<_PressableShell> {
 
   @override
   Widget build(BuildContext context) {
+    final t = AppColors.of(context);
     return GestureDetector(
       behavior: HitTestBehavior.opaque,
       onTapDown: widget.disabled ? null : (_) => _setPressed(true),
@@ -1200,8 +1203,8 @@ class _PressableShellState extends State<_PressableShell> {
           borderRadius: BorderRadius.circular(4),
           border: Border.all(
             color: widget.selected
-                ? _kOpNormal
-                : (widget.disabled ? const Color(0xFF303030) : _kBorder),
+                ? t.op
+                : (widget.disabled ? t.keyBorderDisabled : t.keyBorder),
             width: widget.selected ? 2 : 1,
           ),
         ),
@@ -1235,15 +1238,18 @@ class _DigitButton extends StatelessWidget {
         child: _PressableShell(
           onTap: onTap,
           disabled: disabled,
-          builder: (ctx, pressed) => CustomPaint(
-            size: Size.infinite,
-            painter: _DigitPainter(
-              digit: digit,
-              color: disabled
-                  ? _kDigitDisabled
-                  : (pressed ? _kDigitPressed : _kDigitNormal),
-            ),
-          ),
+          builder: (ctx, pressed) {
+            final t = AppColors.of(ctx);
+            return CustomPaint(
+              size: Size.infinite,
+              painter: _DigitPainter(
+                digit: digit,
+                color: disabled
+                    ? t.digitDisabled
+                    : (pressed ? t.digitPressed : t.digit),
+              ),
+            );
+          },
         ),
       ),
     );
@@ -1301,9 +1307,10 @@ class _TokenButton extends StatelessWidget {
           onTap: onTap,
           selected: selected,
           builder: (ctx, pressed) {
+            final t = AppColors.of(ctx);
             final isAc = token is Ac;
-            final normalColor = isAc ? _kAc : _kOpNormal;
-            final pressedColor = isAc ? _kAcPressed : _kOpPressed;
+            final normalColor = isAc ? t.ac : t.op;
+            final pressedColor = isAc ? t.acPressed : t.opPressed;
             return Stack(
               children: [
                 Positioned.fill(
@@ -1425,8 +1432,8 @@ class _ArmedDot extends StatelessWidget {
     return Container(
       width: 6,
       height: 6,
-      decoration: const BoxDecoration(
-        color: Color(0xFFFFD700), // GOLD
+      decoration: BoxDecoration(
+        color: AppColors.of(context).accentGold,
         shape: BoxShape.circle,
       ),
     );
@@ -1446,7 +1453,7 @@ class _EqualsBar extends StatelessWidget {
       builder: (ctx, pressed) => CustomPaint(
         painter: _TokenPainter(
           token: const Equals(),
-          color: pressed ? _kOpPressed : normalColor,
+          color: pressed ? AppColors.of(ctx).opPressed : normalColor,
         ),
       ),
     );
@@ -1487,7 +1494,10 @@ class _EqualsRow extends StatelessWidget {
             ),
             SizedBox(width: sideGap),
             Expanded(
-              child: _EqualsBar(onTap: onEquals, normalColor: _kEquals),
+              child: _EqualsBar(
+                onTap: onEquals,
+                normalColor: AppColors.of(context).equals,
+              ),
             ),
             SizedBox(width: sideGap),
             _RoundIconButton(
@@ -1518,15 +1528,14 @@ class _RoundIconButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final t = AppColors.of(context);
     final btn = Material(
-      color: const Color(0xFF2A2A2A),
-      shape: const CircleBorder(side: BorderSide(color: Color(0xFF555555))),
+      color: t.pagerFill,
+      shape: CircleBorder(side: BorderSide(color: t.pagerBorder)),
       child: InkWell(
         customBorder: const CircleBorder(),
         onTap: onPressed,
-        child: Center(
-          child: Icon(icon, size: size * 0.5, color: const Color(0xFF64C8FF)),
-        ),
+        child: Center(child: Icon(icon, size: size * 0.5, color: t.link)),
       ),
     );
     return SizedBox(

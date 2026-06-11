@@ -7,6 +7,7 @@
 import 'package:flutter/material.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
+import 'app_theme.dart';
 import 'l10n/app_localizations.dart';
 import 'license_page.dart' show openExternalLink;
 
@@ -77,7 +78,7 @@ ${l.feedbackMailBuildLabel}: ${pkg.buildNumber}
     await openExternalLink(context, uri.toString());
   }
 
-  Widget _stars() {
+  Widget _stars(AppColors t) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -89,37 +90,36 @@ ${l.feedbackMailBuildLabel}: ${pkg.buildNumber}
             onPressed: () => setState(() => _rating = i),
             icon: Icon(
               i <= _rating ? Icons.star : Icons.star_border,
-              color: i <= _rating
-                  ? const Color(0xFFFFD700)
-                  : const Color(0xFFA0A0A0),
+              color: i <= _rating ? t.accentGold : t.textMuted,
             ),
           ),
       ],
     );
   }
 
-  InputDecoration _fieldDecoration() => const InputDecoration(
+  InputDecoration _fieldDecoration(AppColors t) => InputDecoration(
         filled: true,
-        fillColor: Color(0xFF2A2A2A),
+        fillColor: t.cardFill,
         border: OutlineInputBorder(
-          borderSide: BorderSide(color: Color(0xFF404040)),
+          borderSide: BorderSide(color: t.cardBorder),
         ),
-        contentPadding: EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+        contentPadding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
       );
 
   @override
   Widget build(BuildContext context) {
     final l = AppLocalizations.of(context);
-    const labelStyle = TextStyle(
-      color: Colors.white,
+    final t = AppColors.of(context);
+    final labelStyle = TextStyle(
+      color: t.textPrimary,
       fontWeight: FontWeight.bold,
       fontSize: 14,
     );
     return AlertDialog(
-      backgroundColor: const Color(0xFF1A1A1A),
+      backgroundColor: t.appBarBg,
       title: Text(
         l.feedbackTitle,
-        style: const TextStyle(color: Colors.white),
+        style: TextStyle(color: t.textPrimary),
       ),
       content: SingleChildScrollView(
         child: Column(
@@ -128,19 +128,19 @@ ${l.feedbackMailBuildLabel}: ${pkg.buildNumber}
           children: [
             Text(
               l.feedbackIntro,
-              style: const TextStyle(color: Color(0xFFD0D0D0), fontSize: 12.5),
+              style: TextStyle(color: t.textSecondary, fontSize: 12.5),
             ),
             const SizedBox(height: 16),
             Text(l.feedbackRatingLabel, style: labelStyle),
-            _stars(),
+            _stars(t),
             const SizedBox(height: 12),
             Text(l.feedbackLikedLabel, style: labelStyle),
             const SizedBox(height: 4),
             TextField(
               controller: _likedCtrl,
               maxLines: 3,
-              style: const TextStyle(color: Colors.white, fontSize: 13),
-              decoration: _fieldDecoration(),
+              style: TextStyle(color: t.textPrimary, fontSize: 13),
+              decoration: _fieldDecoration(t),
             ),
             const SizedBox(height: 12),
             Text(l.feedbackChangeLabel, style: labelStyle),
@@ -148,8 +148,8 @@ ${l.feedbackMailBuildLabel}: ${pkg.buildNumber}
             TextField(
               controller: _changeCtrl,
               maxLines: 3,
-              style: const TextStyle(color: Colors.white, fontSize: 13),
-              decoration: _fieldDecoration(),
+              style: TextStyle(color: t.textPrimary, fontSize: 13),
+              decoration: _fieldDecoration(t),
             ),
           ],
         ),
@@ -159,7 +159,7 @@ ${l.feedbackMailBuildLabel}: ${pkg.buildNumber}
           onPressed: () => Navigator.of(context).pop(),
           child: Text(
             l.feedbackCancel,
-            style: const TextStyle(color: Color(0xFFA0A0A0)),
+            style: TextStyle(color: t.textMuted),
           ),
         ),
         FilledButton(

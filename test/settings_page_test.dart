@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'package:dozenal_calc_flutter/app_theme.dart';
 import 'package:dozenal_calc_flutter/calc_prefs.dart';
 import 'package:dozenal_calc_flutter/calc_scope.dart';
 import 'package:dozenal_calc_flutter/haptics.dart';
@@ -20,12 +21,13 @@ Widget _wrap({
   required GlyphStyleNotifier glyphs,
   required HapticsNotifier haptics,
   DozenalCalcState? calcState,
+  ThemeNotifier? theme,
 }) {
   Widget page = const SettingsPage();
   if (calcState != null) {
     page = CalcStateScope(notifier: calcState, child: page);
   }
-  return GlyphStyleScope(
+  Widget tree = GlyphStyleScope(
     notifier: glyphs,
     child: HapticsScope(
       notifier: haptics,
@@ -39,6 +41,10 @@ Widget _wrap({
       ),
     ),
   );
+  if (theme != null) {
+    tree = ThemeScope(notifier: theme, child: tree);
+  }
+  return tree;
 }
 
 void main() {
@@ -79,6 +85,32 @@ void main() {
     expect(find.text('Function keys'), findsOneWidget);
     expect(find.text('Number base'), findsNothing);
     expect(find.text('Angle mode'), findsNothing);
+    // No ThemeScope in this wrap either → theme row hidden too.
+    expect(find.text('Appearance'), findsNothing);
+  });
+
+  testWidgets('theme segment renders and drives ThemeNotifier', (
+    tester,
+  ) async {
+    final theme = ThemeNotifier();
+    await tester.pumpWidget(
+      _wrap(
+        prefs: CalcPrefsNotifier(),
+        glyphs: GlyphStyleNotifier(),
+        haptics: HapticsNotifier(),
+        theme: theme,
+      ),
+    );
+    expect(find.text('Appearance'), findsOneWidget);
+    expect(theme.setting, ThemeSetting.dark);
+
+    await tester.tap(find.text('Light'));
+    await tester.pump();
+    expect(theme.setting, ThemeSetting.light);
+
+    await tester.tap(find.text('System'));
+    await tester.pump();
+    expect(theme.setting, ThemeSetting.system);
   });
 
   testWidgets('keypad-mode segment drives CalcPrefsNotifier', (tester) async {

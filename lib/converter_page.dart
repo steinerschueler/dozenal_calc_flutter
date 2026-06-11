@@ -36,8 +36,9 @@ class _ConverterPageState extends State<ConverterPage> {
   @override
   Widget build(BuildContext context) {
     final l = AppLocalizations.of(context);
+    // Background comes from the MaterialApp's scaffoldBackgroundColor
+    // (palette-derived) — same convention as the themed info pages.
     return Scaffold(
-      backgroundColor: const Color(0xFF1A1A1A),
       body: SafeArea(
         // No AppBar here (it's a full-screen calculator), so the top inset
         // must be respected or the display slides under the status bar /

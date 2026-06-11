@@ -11,6 +11,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
+import 'app_theme.dart';
 import 'glyph_painter.dart';
 import 'logic/glyph_style.dart';
 import 'tokens.dart';
@@ -94,11 +95,12 @@ class TwoLineDisplay extends StatelessWidget {
     // bracket relative to the available height inside the painter, so the
     // display works across the full range from ~60 dp (landscape phone) to
     // 170 dp (portrait tablet) without orientation-specific code.
+    final t = AppColors.of(context);
     return Container(
       decoration: BoxDecoration(
-        color: const Color(0xFF101010),
+        color: t.displayBg,
         borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: const Color(0xFF333333)),
+        border: Border.all(color: t.displayBorder),
       ),
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
       child: SizedBox(
@@ -110,6 +112,7 @@ class TwoLineDisplay extends StatelessWidget {
           // the scope's notifier without rebuilding the surrounding tree.
           builder: (innerCtx) {
             final glyphStyle = GlyphStyleScope.of(innerCtx).style;
+            final colors = AppColors.of(innerCtx);
             final paint = CustomPaint(
               painter: _TwoLineDisplayPainter(
                 inputBuffer: inputBuffer,
@@ -128,6 +131,7 @@ class TwoLineDisplay extends StatelessWidget {
                 crossBaseBracket: crossBaseBracket,
                 glyphStyle: glyphStyle,
                 showCursor: showCursor,
+                colors: colors,
               ),
             );
             final tapHandler = onInputCursorTap;
@@ -182,8 +186,9 @@ int? inputCursorPosForTap(
   final gap = (size.height * 0.06).clamp(2.0, 10.0);
   final lineH = (size.height - gap) / 2;
   if (local.dy > lineH) return null; // result line or inter-line gap
+  // Color is irrelevant for hit-testing — only the widths matter.
   final laid = inputBuffer
-      .map((t) => _layoutToken(t, lineH, glyphStyle))
+      .map((t) => _layoutToken(t, lineH, glyphStyle, Colors.white))
       .toList();
   // Gap boundaries: x[0]=0 (before token 0), x[i]=Σ widths 0..i-1, x[n]=total.
   // Pick the boundary nearest the tap.
@@ -218,6 +223,7 @@ class _TwoLineDisplayPainter extends CustomPainter {
   final String? crossBaseBracket;
   final GlyphStyle glyphStyle;
   final bool showCursor;
+  final AppColors colors;
 
   _TwoLineDisplayPainter({
     required this.inputBuffer,
@@ -236,6 +242,7 @@ class _TwoLineDisplayPainter extends CustomPainter {
     required this.crossBaseBracket,
     required this.glyphStyle,
     required this.showCursor,
+    required this.colors,
   });
 
   @override
@@ -260,7 +267,7 @@ class _TwoLineDisplayPainter extends CustomPainter {
       text: TextSpan(
         text: msg,
         style: TextStyle(
-          color: Colors.redAccent.shade100,
+          color: colors.displayError,
           fontSize: rect.height * 0.42,
           fontFamily: 'monospace',
           fontWeight: FontWeight.bold,
@@ -280,10 +287,10 @@ class _TwoLineDisplayPainter extends CustomPainter {
   void _paintIndicators(Canvas canvas, Size size) {
     if (memoryActive) {
       final tp = TextPainter(
-        text: const TextSpan(
+        text: TextSpan(
           text: 'M',
           style: TextStyle(
-            color: Color(0xFFFFD700), // GOLD
+            color: colors.accentGold,
             fontSize: 12,
             fontFamily: 'monospace',
             fontWeight: FontWeight.bold,
@@ -298,8 +305,8 @@ class _TwoLineDisplayPainter extends CustomPainter {
       final tp = TextPainter(
         text: TextSpan(
           text: label,
-          style: const TextStyle(
-            color: Color(0xFFB4B4B4),
+          style: TextStyle(
+            color: colors.displayDim,
             fontSize: 10,
             fontFamily: 'monospace',
           ),
@@ -312,8 +319,8 @@ class _TwoLineDisplayPainter extends CustomPainter {
       final tp = TextPainter(
         text: TextSpan(
           text: numeralSystemLabel,
-          style: const TextStyle(
-            color: Color(0xFF64C8FF),
+          style: TextStyle(
+            color: colors.link,
             fontSize: 10,
             fontFamily: 'monospace',
             fontWeight: FontWeight.bold,
@@ -327,7 +334,7 @@ class _TwoLineDisplayPainter extends CustomPainter {
 
   void _paintInputLine(Canvas canvas, Rect rect) {
     final laid = inputBuffer
-        .map((t) => _layoutToken(t, rect.height, glyphStyle))
+        .map((t) => _layoutToken(t, rect.height, glyphStyle, colors.displayText))
         .toList();
     var x = rect.left;
     for (var i = 0; i < laid.length; i++) {
@@ -344,7 +351,7 @@ class _TwoLineDisplayPainter extends CustomPainter {
 
   void _paintResultLine(Canvas canvas, Rect rect) {
     final laid = resultBuffer
-        .map((t) => _layoutToken(t, rect.height, glyphStyle))
+        .map((t) => _layoutToken(t, rect.height, glyphStyle, colors.displayText))
         .toList();
     var totalW = laid.fold<double>(0.0, (a, t) => a + t.width);
 
@@ -354,7 +361,8 @@ class _TwoLineDisplayPainter extends CustomPainter {
     // clipped to fit*. An f64 fallback never carries a period
     // (formatF64Result clears it), so the prefix and the period/State-C
     // suffix never collide.
-    final approxTp = isF64Fallback ? _approxPainter(rect.height) : null;
+    final approxTp =
+        isF64Fallback ? _approxPainter(rect.height, colors.displayText) : null;
     final approxW = approxTp == null
         ? 0.0
         : approxTp.width + _approxGap(rect.height);
@@ -362,7 +370,9 @@ class _TwoLineDisplayPainter extends CustomPainter {
     // State-C dot cluster (period longer than maxPeriodDisplay) reserves a
     // suffix slot up front; a width-truncation "…" may still be added below
     // once we know digits had to be dropped.
-    var suffixTp = resultPeriodCapped ? _ellipsisPainter(rect.height) : null;
+    var suffixTp = resultPeriodCapped
+        ? _ellipsisPainter(rect.height, colors.displayText)
+        : null;
     var suffixW = suffixTp?.width ?? 0.0;
 
     // Width-Truncation: das Ergebnis ist rechts-ausgerichtet, also lägen
@@ -394,7 +404,7 @@ class _TwoLineDisplayPainter extends CustomPainter {
     // Wenn wir geschnitten haben und (noch) kein State-C-Suffix da war,
     // Baseline-Ellipsis nachziehen (semantisch: „mehr da, aber abgeschnitten").
     if (truncated && suffixTp == null) {
-      suffixTp = _ellipsisPainter(rect.height);
+      suffixTp = _ellipsisPainter(rect.height, colors.displayText);
       suffixW = suffixTp.width;
       while (totalW + suffixW + approxW > rect.width && laid.length > 1) {
         dropTrailing();
@@ -422,7 +432,7 @@ class _TwoLineDisplayPainter extends CustomPainter {
           Offset(x1, overlineY),
           Offset(x2, overlineY),
           Paint()
-            ..color = Colors.white
+            ..color = colors.displayText
             ..strokeWidth = 1.2,
         );
       }
@@ -436,7 +446,7 @@ class _TwoLineDisplayPainter extends CustomPainter {
         final r = rect.height * 0.025;
         final dx = r * 3.6;
         final centerX = x + suffixTp.width / 2;
-        final paint = Paint()..color = Colors.white;
+        final paint = Paint()..color = colors.displayText;
         for (var i = -1; i <= 1; i++) {
           canvas.drawCircle(Offset(centerX + i * dx, overlineY), r, paint);
         }
@@ -461,7 +471,8 @@ class _TwoLineDisplayPainter extends CustomPainter {
     // never pushed for it; the bracket simply hides if there's no room.
     final cross = crossBaseBracket;
     if (cross != null) {
-      final bracketTp = _bracketPainter('{$cross}', rect.height);
+      final bracketTp =
+          _bracketPainter('{$cross}', rect.height, colors.displaySub);
       final blockLeft = rect.right - totalW - suffixW - approxW;
       if (rect.left + bracketTp.width + 8 <= blockLeft) {
         bracketTp.paint(
@@ -505,7 +516,8 @@ class _TwoLineDisplayPainter extends CustomPainter {
       old.numeralSystemLabel != numeralSystemLabel ||
       old.crossBaseBracket != crossBaseBracket ||
       old.glyphStyle != glyphStyle ||
-      old.showCursor != showCursor;
+      old.showCursor != showCursor ||
+      old.colors != colors;
 }
 
 // ---------------------------------------------------------------------------
@@ -534,7 +546,12 @@ double _digitQ(double lineH) => lineH * _digitQRatio;
 double _overlineYOffset(double lineH) =>
     lineH / 2 - 2 * _digitQ(lineH) - _overlineGap;
 
-_LaidToken _layoutToken(CalcToken token, double lineH, GlyphStyle style) {
+_LaidToken _layoutToken(
+  CalcToken token,
+  double lineH,
+  GlyphStyle style,
+  Color color,
+) {
   if (token is Digit) {
     if (style == GlyphStyle.conventional) {
       // Render as conventional ASCII: '0'..'9' for d0..d9, 'A'/'B' for
@@ -543,6 +560,7 @@ _LaidToken _layoutToken(CalcToken token, double lineH, GlyphStyle style) {
       final tp = _textPainter(
         _conventionalDigitChar(token.value),
         lineH * 0.42,
+        color,
       );
       return _LaidToken(tp.width + 4, (canvas, offset, h) {
         tp.paint(
@@ -559,13 +577,14 @@ _LaidToken _layoutToken(CalcToken token, double lineH, GlyphStyle style) {
         token.value,
         center: Offset(offset.dx + cell / 2, offset.dy + h / 2),
         q: q,
+        color: color,
         strokeWidth: 1.6,
       );
     });
   }
   final text = _tokenText(token);
   if (text.isEmpty) return _LaidToken(0, (_, _, _) {});
-  final tp = _textPainter(text, lineH * 0.42);
+  final tp = _textPainter(text, lineH * 0.42, color);
   return _LaidToken(tp.width + 4, (canvas, offset, h) {
     tp.paint(canvas, Offset(offset.dx + 2, offset.dy + (h - tp.height) / 2));
   });
@@ -577,38 +596,42 @@ String _conventionalDigitChar(DozenalDigit d) {
   return '${d.value}';
 }
 
-TextPainter _textPainter(String text, double fontSize) => TextPainter(
-  text: TextSpan(
-    text: text,
-    style: TextStyle(
-      color: Colors.white,
-      fontSize: fontSize,
-      fontFamily: 'monospace',
-    ),
-  ),
-  textDirection: TextDirection.ltr,
-)..layout();
+TextPainter _textPainter(String text, double fontSize, Color color) =>
+    TextPainter(
+      text: TextSpan(
+        text: text,
+        style: TextStyle(
+          color: color,
+          fontSize: fontSize,
+          fontFamily: 'monospace',
+        ),
+      ),
+      textDirection: TextDirection.ltr,
+    )..layout();
 
-TextPainter _ellipsisPainter(double lineH) => _textPainter('…', lineH * 0.42);
+TextPainter _ellipsisPainter(double lineH, Color color) =>
+    _textPainter('…', lineH * 0.42, color);
 
 /// "≈" marker drawn ahead of a rounded f64-fallback result (State B).
-TextPainter _approxPainter(double lineH) => _textPainter('≈', lineH * 0.42);
+TextPainter _approxPainter(double lineH, Color color) =>
+    _textPainter('≈', lineH * 0.42, color);
 
 /// Gap between the "≈" marker and the first result digit.
 double _approxGap(double lineH) => lineH * 0.08;
 
 /// Dim "{…}" cross-base reference painter for the result line.
-TextPainter _bracketPainter(String text, double lineH) => TextPainter(
-  text: TextSpan(
-    text: text,
-    style: TextStyle(
-      color: const Color(0xFF8A8A8A),
-      fontSize: lineH * 0.30,
-      fontFamily: 'monospace',
-    ),
-  ),
-  textDirection: TextDirection.ltr,
-)..layout();
+TextPainter _bracketPainter(String text, double lineH, Color color) =>
+    TextPainter(
+      text: TextSpan(
+        text: text,
+        style: TextStyle(
+          color: color,
+          fontSize: lineH * 0.30,
+          fontFamily: 'monospace',
+        ),
+      ),
+      textDirection: TextDirection.ltr,
+    )..layout();
 
 /// Text label for a non-digit token in display context. Mirrors the Rust
 /// `paint_token` text branches but without the button border treatment.

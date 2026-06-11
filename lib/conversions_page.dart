@@ -13,6 +13,7 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import 'app_theme.dart';
 import 'l10n/app_localizations.dart';
 import 'license_page.dart' show openExternalLink;
 import 'logic/unit_data.dart';
@@ -106,12 +107,12 @@ class _ConversionsPageState extends State<ConversionsPage> {
   Widget build(BuildContext context) {
     final l = AppLocalizations.of(context);
     final langTag = Localizations.localeOf(context).toLanguageTag();
+    final t = AppColors.of(context);
     return DefaultTabController(
       length: kTheoryAreas.length,
       child: Scaffold(
         appBar: AppBar(
           title: Text(l.conversionsTitle, style: const TextStyle(fontSize: 14)),
-          backgroundColor: const Color(0xFF1A1A1A),
           bottom: TabBar(
             isScrollable: true,
             tabAlignment: TabAlignment.start,
@@ -127,12 +128,12 @@ class _ConversionsPageState extends State<ConversionsPage> {
             children: [
               Padding(
                 padding: const EdgeInsets.fromLTRB(16, 12, 16, 4),
-                child: _inputCard(l),
+                child: _inputCard(l, t),
               ),
               Expanded(
                 child: TabBarView(
                   children: [
-                    for (final cat in kTheoryAreas) _areaTab(cat, langTag),
+                    for (final cat in kTheoryAreas) _areaTab(cat, langTag, t),
                   ],
                 ),
               ),
@@ -143,7 +144,7 @@ class _ConversionsPageState extends State<ConversionsPage> {
     );
   }
 
-  Widget _areaTab(UnitCategory cat, String langTag) {
+  Widget _areaTab(UnitCategory cat, String langTag, AppColors t) {
     final sections = unitTheory(cat, langTag);
     final sources = unitSources(cat, langTag);
     final image = theoryImageFor('unit/${cat.name}');
@@ -152,26 +153,26 @@ class _ConversionsPageState extends State<ConversionsPage> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          _conversionRows(_rowsFor(cat)),
-          const Padding(
-            padding: EdgeInsets.symmetric(vertical: 16),
-            child: Divider(color: Color(0xFF3C3C3C), height: 1),
+          _conversionRows(_rowsFor(cat), t),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 16),
+            child: Divider(color: t.cardBorder, height: 1),
           ),
           if (image != null) ChapterImageView(image),
           if (sections.isEmpty)
-            const Text(
+            Text(
               'Theorie folgt in Kürze.',
-              style: TextStyle(color: Color(0xFF808080), fontSize: 13),
+              style: TextStyle(color: t.textFaint, fontSize: 13),
             )
           else
-            for (final s in sections) _theorySection(s),
+            for (final s in sections) _theorySection(s, t),
           if (sources.isNotEmpty) _UnitSourceList(sources: sources),
         ],
       ),
     );
   }
 
-  Widget _theorySection(UnitTheorySection s) {
+  Widget _theorySection(UnitTheorySection s, AppColors t) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 16),
       child: Column(
@@ -179,8 +180,8 @@ class _ConversionsPageState extends State<ConversionsPage> {
         children: [
           Text(
             s.heading,
-            style: const TextStyle(
-              color: Colors.white,
+            style: TextStyle(
+              color: t.textPrimary,
               fontSize: 15,
               fontWeight: FontWeight.bold,
             ),
@@ -188,8 +189,8 @@ class _ConversionsPageState extends State<ConversionsPage> {
           const SizedBox(height: 4),
           Text(
             s.body,
-            style: const TextStyle(
-              color: Color(0xFFC8C8C8),
+            style: TextStyle(
+              color: t.textTertiary,
               fontSize: 13.5,
               height: 1.45,
             ),
@@ -199,7 +200,7 @@ class _ConversionsPageState extends State<ConversionsPage> {
     );
   }
 
-  Widget _conversionRows(List<String> rows) {
+  Widget _conversionRows(List<String> rows, AppColors t) {
     return Directionality(
       textDirection: TextDirection.ltr,
       child: Column(
@@ -210,11 +211,11 @@ class _ConversionsPageState extends State<ConversionsPage> {
               padding: const EdgeInsets.only(bottom: 3),
               child: Text(
                 row,
-                style: const TextStyle(
+                style: TextStyle(
                   fontFamily: 'JetBrainsMono',
                   fontSize: 13,
                   height: 1.4,
-                  color: Color(0xFFD8D8D8),
+                  color: t.textSecondary,
                 ),
               ),
             ),
@@ -223,10 +224,10 @@ class _ConversionsPageState extends State<ConversionsPage> {
     );
   }
 
-  Widget _inputCard(AppLocalizations l) {
+  Widget _inputCard(AppLocalizations l, AppColors t) {
     return Container(
       decoration: BoxDecoration(
-        color: const Color(0xFF2A2A2A),
+        color: t.cardFill,
         borderRadius: BorderRadius.circular(8),
       ),
       padding: const EdgeInsets.all(12),
@@ -234,7 +235,7 @@ class _ConversionsPageState extends State<ConversionsPage> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(l.conversionsInputLabel,
-              style: const TextStyle(color: Color(0xFFA0A0A0), fontSize: 12)),
+              style: TextStyle(color: t.textMuted, fontSize: 12)),
           const SizedBox(height: 8),
           Directionality(
             textDirection: TextDirection.ltr,
@@ -252,22 +253,22 @@ class _ConversionsPageState extends State<ConversionsPage> {
                             : RegExp(r'[0-9aAbB\-]'),
                       ),
                     ],
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontFamily: 'JetBrainsMono',
                       fontSize: 18,
-                      color: Colors.white,
+                      color: t.textPrimary,
                     ),
-                    decoration: const InputDecoration(
+                    decoration: InputDecoration(
                       isDense: true,
                       filled: true,
-                      fillColor: Color(0xFF1F1F1F),
-                      contentPadding:
-                          EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                      fillColor: t.inputFill,
+                      contentPadding: const EdgeInsets.symmetric(
+                          horizontal: 10, vertical: 10),
                       border: OutlineInputBorder(
-                        borderSide: BorderSide(color: Color(0xFF3C3C3C)),
+                        borderSide: BorderSide(color: t.cardBorder),
                       ),
                       enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Color(0xFF3C3C3C)),
+                        borderSide: BorderSide(color: t.cardBorder),
                       ),
                     ),
                   ),
@@ -424,6 +425,7 @@ class _SystemToggle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final t = AppColors.of(context);
     Widget pill(_NumSys s, String label) {
       final active = s == selected;
       return GestureDetector(
@@ -431,10 +433,9 @@ class _SystemToggle extends StatelessWidget {
         child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
           decoration: BoxDecoration(
-            color: active ? const Color(0xFF3C3C3C) : Colors.transparent,
+            color: active ? t.cardBorder : Colors.transparent,
             border: Border.all(
-              color:
-                  active ? const Color(0xFF8C8C8C) : const Color(0xFF3C3C3C),
+              color: active ? t.textFaint : t.cardBorder,
             ),
             borderRadius: BorderRadius.circular(6),
           ),
@@ -444,7 +445,7 @@ class _SystemToggle extends StatelessWidget {
               fontFamily: 'JetBrainsMono',
               fontSize: 13,
               fontWeight: FontWeight.bold,
-              color: active ? Colors.white : const Color(0xFF8C8C8C),
+              color: active ? t.textPrimary : t.textFaint,
             ),
           ),
         ),
@@ -472,16 +473,17 @@ class _UnitSourceList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l = AppLocalizations.of(context);
+    final t = AppColors.of(context);
     return Padding(
       padding: const EdgeInsets.only(top: 8),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Divider(color: Color(0xFF3C3C3C), height: 24),
+          Divider(color: t.cardBorder, height: 24),
           Text(
             l.sourcesSectionTitle,
-            style: const TextStyle(
-              color: Colors.white,
+            style: TextStyle(
+              color: t.textPrimary,
               fontSize: 15,
               fontWeight: FontWeight.bold,
             ),
@@ -497,20 +499,20 @@ class _UnitSourceList extends StatelessWidget {
                     onTap: () => openExternalLink(context, s.url),
                     child: Text(
                       s.title,
-                      style: const TextStyle(
-                        color: Color(0xFF6BA8E0),
+                      style: TextStyle(
+                        color: t.link,
                         fontSize: 13.5,
                         height: 1.35,
                         decoration: TextDecoration.underline,
-                        decorationColor: Color(0xFF6BA8E0),
+                        decorationColor: t.link,
                       ),
                     ),
                   ),
                   const SizedBox(height: 2),
                   Text(
                     '${reliabilityLabel(l, s.reliability)} · ${accessLabel(l, s.access)}',
-                    style: const TextStyle(
-                      color: Color(0xFF808080),
+                    style: TextStyle(
+                      color: t.textFaint,
                       fontSize: 11,
                     ),
                   ),

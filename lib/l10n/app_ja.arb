@@ -194,5 +194,9 @@
   "settingsScopeFull": "すべて",
   "settingsScopeSimple": "基本",
   "settingsNumeralSystemTitle": "記数法",
-  "settingsAngleModeTitle": "角度単位"
+  "settingsAngleModeTitle": "角度単位",
+  "settingsThemeTitle": "外観",
+  "settingsThemeDark": "ダーク",
+  "settingsThemeLight": "ライト",
+  "settingsThemeSystem": "システム"
 }

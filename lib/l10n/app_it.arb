@@ -194,5 +194,9 @@
   "settingsScopeFull": "Tutte",
   "settingsScopeSimple": "Di base",
   "settingsNumeralSystemTitle": "Sistema numerico",
-  "settingsAngleModeTitle": "Unità angolare"
+  "settingsAngleModeTitle": "Unità angolare",
+  "settingsThemeTitle": "Aspetto",
+  "settingsThemeDark": "Scuro",
+  "settingsThemeLight": "Chiaro",
+  "settingsThemeSystem": "Sistema"
 }

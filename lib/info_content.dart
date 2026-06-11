@@ -9,6 +9,7 @@ import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 
+import 'app_theme.dart';
 import 'glyph_painter.dart';
 import 'l10n/app_localizations.dart';
 
@@ -62,10 +63,10 @@ class _H extends StatelessWidget {
     padding: const EdgeInsets.only(top: 14, bottom: 4),
     child: Text(
       text,
-      style: const TextStyle(
+      style: TextStyle(
         fontWeight: FontWeight.bold,
         fontSize: 18,
-        color: Colors.white,
+        color: AppColors.of(context).textPrimary,
       ),
     ),
   );
@@ -80,11 +81,11 @@ class _P extends StatelessWidget {
     padding: const EdgeInsets.only(bottom: 6),
     child: Text(
       text,
-      style: const TextStyle(
+      style: TextStyle(
         fontSize: 16,
         fontWeight: FontWeight.w300,
         height: 1.45,
-        color: Color(0xFFE0E0E0),
+        color: AppColors.of(context).textSecondary,
       ),
     ),
   );
@@ -114,11 +115,11 @@ class _Pre extends StatelessWidget {
         child: Text(
           text,
           softWrap: false,
-          style: const TextStyle(
+          style: TextStyle(
             fontFamily: 'JetBrainsMono',
             fontSize: 14,
             height: 1.5,
-            color: Color(0xFFE0E0E0),
+            color: AppColors.of(context).textSecondary,
           ),
         ),
       ),
@@ -135,6 +136,7 @@ class _DigitLegend extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final t = AppColors.of(context);
     Widget row(int v) => Padding(
       padding: const EdgeInsets.symmetric(vertical: 2),
       child: Row(
@@ -146,6 +148,7 @@ class _DigitLegend extends StatelessWidget {
             child: CustomPaint(
               painter: DozenalGlyphPainter(
                 digit: DozenalDigit.values[v],
+                color: t.textPrimary,
                 strokeWidth: 1.4,
               ),
             ),
@@ -153,10 +156,10 @@ class _DigitLegend extends StatelessWidget {
           const SizedBox(width: 8),
           Text(
             '= $v',
-            style: const TextStyle(
+            style: TextStyle(
               fontFamily: 'JetBrainsMono',
               fontSize: 13,
-              color: Color(0xFFC8C8C8),
+              color: t.textTertiary,
             ),
           ),
         ],
@@ -192,6 +195,7 @@ class Chapter4Illustration extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l = AppLocalizations.of(context);
+    final t = AppColors.of(context);
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 12),
       child: Column(
@@ -199,30 +203,36 @@ class Chapter4Illustration extends StatelessWidget {
         children: [
           AspectRatio(
             aspectRatio: 1.0,
-            child: CustomPaint(painter: Chapter4Painter()),
+            child: CustomPaint(painter: Chapter4Painter(colors: t)),
           ),
           const SizedBox(height: 8),
+          // The polygon accent colors (teal/blue/purple fills + strokes)
+          // are deliberately theme-independent — they read fine on both
+          // surfaces and keep the legend ↔ drawing match exact.
           _legendRow(
             const Color(0x509FE1CB),
             const Color(0xFF0F6E56),
             l.chapterIllustrationTriangle,
+            t,
           ),
           _legendRow(
             const Color(0x5085B7EB),
             const Color(0xFF185FA5),
             l.chapterIllustrationSquare,
+            t,
           ),
           _legendRow(
             const Color(0x50AFA9EC),
             const Color(0xFF534AB7),
             l.chapterIllustrationHexagon,
+            t,
           ),
         ],
       ),
     );
   }
 
-  Widget _legendRow(Color fill, Color border, String label) {
+  Widget _legendRow(Color fill, Color border, String label, AppColors t) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 4),
       child: Row(
@@ -239,10 +249,10 @@ class Chapter4Illustration extends StatelessWidget {
           const SizedBox(width: 8),
           Text(
             label,
-            style: const TextStyle(
+            style: TextStyle(
               fontSize: 13,
               fontWeight: FontWeight.w300,
-              color: Color(0xFFC8C8C8),
+              color: t.textTertiary,
             ),
           ),
         ],
@@ -252,6 +262,9 @@ class Chapter4Illustration extends StatelessWidget {
 }
 
 class Chapter4Painter extends CustomPainter {
+  final AppColors colors;
+  Chapter4Painter({this.colors = AppColors.dark});
+
   @override
   void paint(Canvas canvas, Size size) {
     final cx = size.width / 2;
@@ -298,7 +311,7 @@ class Chapter4Painter extends CustomPainter {
     canvas.drawPath(
       outline,
       Paint()
-        ..color = const Color(0xFFD0D0D0)
+        ..color = colors.illusLine
         ..style = PaintingStyle.stroke
         ..strokeWidth = 2.0,
     );
@@ -309,13 +322,13 @@ class Chapter4Painter extends CustomPainter {
       canvas.drawCircle(
         verts[i],
         isPrimary ? 3.5 : 2.5,
-        Paint()..color = isPrimary ? Colors.white : const Color(0xFF8C8C8C),
+        Paint()..color = isPrimary ? colors.textPrimary : colors.textFaint,
       );
     }
   }
 
   @override
-  bool shouldRepaint(covariant Chapter4Painter old) => false;
+  bool shouldRepaint(covariant Chapter4Painter old) => old.colors != colors;
 }
 
 // ---------------------------------------------------------------------------
@@ -337,6 +350,7 @@ class Chapter5Illustration extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final t = AppColors.of(context);
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 12),
       child: Column(
@@ -344,16 +358,18 @@ class Chapter5Illustration extends StatelessWidget {
         children: [
           AspectRatio(
             aspectRatio: 1.0,
-            child: CustomPaint(painter: Chapter5Painter()),
+            child: CustomPaint(painter: Chapter5Painter(colors: t)),
           ),
           const SizedBox(height: 8),
-          for (final d in _diagonals) _legendRow(d.$2, d.$3, d.$4),
+          // Diagonal accent colors stay theme-independent (see _diagonals);
+          // only the label/approx greys follow the palette.
+          for (final d in _diagonals) _legendRow(d.$2, d.$3, d.$4, t),
         ],
       ),
     );
   }
 
-  Widget _legendRow(Color color, String formula, String approx) {
+  Widget _legendRow(Color color, String formula, String approx, AppColors t) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 4),
       child: Row(
@@ -364,19 +380,19 @@ class Chapter5Illustration extends StatelessWidget {
             width: 160,
             child: Text(
               formula,
-              style: const TextStyle(
+              style: TextStyle(
                 fontFamily: 'JetBrainsMono',
                 fontSize: 13,
-                color: Color(0xFFD8D8D8),
+                color: t.textSecondary,
               ),
             ),
           ),
           Text(
             approx,
-            style: const TextStyle(
+            style: TextStyle(
               fontSize: 12.5,
               fontWeight: FontWeight.w300,
-              color: Color(0xFF9E9E9E),
+              color: t.textMuted,
             ),
           ),
         ],
@@ -386,6 +402,9 @@ class Chapter5Illustration extends StatelessWidget {
 }
 
 class Chapter5Painter extends CustomPainter {
+  final AppColors colors;
+  Chapter5Painter({this.colors = AppColors.dark});
+
   @override
   void paint(Canvas canvas, Size size) {
     final cx = size.width / 2;
@@ -405,14 +424,14 @@ class Chapter5Painter extends CustomPainter {
     canvas.drawPath(
       outline,
       Paint()
-        ..color = const Color(0xFF6E6E6E)
+        ..color = colors.illusFaint
         ..style = PaintingStyle.stroke
         ..strokeWidth = 1.0,
     );
 
     // All vertex dots (subtle)
     for (final v in verts) {
-      canvas.drawCircle(v, 2.0, Paint()..color = const Color(0xFF646464));
+      canvas.drawCircle(v, 2.0, Paint()..color = colors.illusDot);
     }
 
     // 6 diagonal types
@@ -429,12 +448,12 @@ class Chapter5Painter extends CustomPainter {
 
     // Highlight involved vertices
     for (final i in [0, 1, 3, 5, 6]) {
-      canvas.drawCircle(verts[i], 4.0, Paint()..color = Colors.white);
+      canvas.drawCircle(verts[i], 4.0, Paint()..color = colors.textPrimary);
     }
   }
 
   @override
-  bool shouldRepaint(covariant Chapter5Painter old) => false;
+  bool shouldRepaint(covariant Chapter5Painter old) => old.colors != colors;
 }
 
 // ---------------------------------------------------------------------------
@@ -451,18 +470,21 @@ class ParkettierungIllustration extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.symmetric(vertical: 12),
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 12),
       child: AspectRatio(
         aspectRatio: 1.0,
-        child: CustomPaint(painter: ParkettierungPainter()),
+        child: CustomPaint(
+          painter: ParkettierungPainter(colors: AppColors.of(context)),
+        ),
       ),
     );
   }
 }
 
 class ParkettierungPainter extends CustomPainter {
-  const ParkettierungPainter();
+  final AppColors colors;
+  const ParkettierungPainter({this.colors = AppColors.dark});
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -530,23 +552,24 @@ class ParkettierungPainter extends CustomPainter {
       dod.lineTo(verts[i].dx, verts[i].dy);
     }
     dod.close();
-    canvas.drawPath(dod, Paint()..color = const Color(0x14D0D0D0));
+    canvas.drawPath(dod, Paint()..color = colors.illusLine.withAlpha(0x14));
     canvas.drawPath(
       dod,
       Paint()
-        ..color = const Color(0xFFD0D0D0)
+        ..color = colors.illusLine
         ..style = PaintingStyle.stroke
         ..strokeWidth = 2.0,
     );
 
     // Vertex dots where the 4.6.12 configuration meets.
     for (final v in verts) {
-      canvas.drawCircle(v, 2.5, Paint()..color = Colors.white);
+      canvas.drawCircle(v, 2.5, Paint()..color = colors.textPrimary);
     }
   }
 
   @override
-  bool shouldRepaint(covariant ParkettierungPainter old) => false;
+  bool shouldRepaint(covariant ParkettierungPainter old) =>
+      old.colors != colors;
 }
 
 // ---------------------------------------------------------------------------

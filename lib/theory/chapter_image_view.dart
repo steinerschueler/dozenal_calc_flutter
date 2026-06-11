@@ -4,6 +4,7 @@
 // asset collapses to nothing rather than throwing.
 import 'package:flutter/material.dart';
 
+import '../app_theme.dart';
 import '../license_page.dart' show openExternalLink;
 import 'chapter_images.dart';
 
@@ -13,6 +14,7 @@ class ChapterImageView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final t = AppColors.of(context);
     return Padding(
       padding: const EdgeInsets.only(bottom: 16),
       child: Column(
@@ -41,14 +43,13 @@ class ChapterImageView extends StatelessWidget {
               child: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  const Icon(Icons.image_outlined,
-                      size: 12, color: Color(0xFF808080)),
+                  Icon(Icons.image_outlined, size: 12, color: t.textFaint),
                   const SizedBox(width: 4),
                   Flexible(
                     child: Text(
                       '${image.author} · ${image.license}',
-                      style: const TextStyle(
-                        color: Color(0xFF808080),
+                      style: TextStyle(
+                        color: t.textFaint,
                         fontSize: 11,
                         height: 1.3,
                       ),
@@ -74,13 +75,14 @@ class AppRefCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final host = Uri.tryParse(app.url)?.host ?? '';
+    final t = AppColors.of(context);
     return Container(
       margin: const EdgeInsets.only(bottom: 16),
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
-        color: const Color(0xFF242424),
+        color: t.cardFill,
         borderRadius: BorderRadius.circular(10),
-        border: Border.all(color: const Color(0xFF333333)),
+        border: Border.all(color: t.hairline),
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -91,15 +93,17 @@ class AppRefCard extends StatelessWidget {
               width: 60,
               height: 60,
               // White backing for transparent icons (e.g. a dark-glyph
-              // favicon) so they stay visible on the dark card.
+              // favicon) so they stay visible on the dark card. Stays
+              // literal white in both themes — it backs the artwork, not
+              // the UI chrome.
               color: app.iconNeedsBacking ? Colors.white : null,
               child: Image.asset(
                 app.icon,
                 width: 60,
                 height: 60,
                 fit: BoxFit.contain,
-                errorBuilder: (context, error, stack) => const Icon(
-                    Icons.apps, color: Color(0xFF808080)),
+                errorBuilder: (context, error, stack) =>
+                    Icon(Icons.apps, color: t.textFaint),
               ),
             ),
           ),
@@ -111,8 +115,8 @@ class AppRefCard extends StatelessWidget {
               children: [
                 Text(
                   app.name,
-                  style: const TextStyle(
-                    color: Colors.white,
+                  style: TextStyle(
+                    color: t.textPrimary,
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
                   ),
@@ -120,8 +124,8 @@ class AppRefCard extends StatelessWidget {
                 const SizedBox(height: 2),
                 Text(
                   '${app.maker} · ${app.genre}',
-                  style: const TextStyle(
-                    color: Color(0xFF9A9A9A),
+                  style: TextStyle(
+                    color: t.textMuted,
                     fontSize: 12,
                   ),
                 ),

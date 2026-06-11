@@ -7,11 +7,12 @@
 //
 // The two calc-state rows read the orchestrator through CalcStateScope and
 // are hidden when no scope is present (e.g. widget tests pumping the page
-// standalone). A light/dark theme switch will join this page once a theme
-// system exists (user decision: deferred).
+// standalone); the theme row reads ThemeScope the same way (Dunkel/Hell/
+// System, persisted via ThemeNotifier).
 
 import 'package:flutter/material.dart';
 
+import 'app_theme.dart';
 import 'calc_prefs.dart';
 import 'calc_scope.dart';
 import 'haptics.dart';
@@ -30,20 +31,37 @@ class SettingsPage extends StatelessWidget {
     // calc state notifies, keeping the Doz/Dez and DEG/RAD/GRD segments in
     // sync with keypad-driven changes too.
     final calc = CalcStateScope.maybeOf(context);
+    final t = AppColors.of(context);
+    // maybeOf: widget tests pumping the page standalone have no ThemeScope —
+    // the row is hidden then, same convention as the calc-state rows below.
+    final theme = ThemeScope.maybeOf(context);
     return Scaffold(
-      appBar: AppBar(
-        title: Text(l.settingsTitle),
-        backgroundColor: const Color(0xFF1A1A1A),
-      ),
+      appBar: AppBar(title: Text(l.settingsTitle)),
       body: SafeArea(
         top: false,
         child: ListView(
           padding: const EdgeInsets.symmetric(vertical: 4),
           children: [
+            if (theme != null) ...[
+              _SegmentRow(
+                icon: Icons.brightness_6_outlined,
+                title: l.settingsThemeTitle,
+                labels: [
+                  // Label order mirrors ThemeSetting.values (dark/light/system).
+                  l.settingsThemeDark,
+                  l.settingsThemeLight,
+                  l.settingsThemeSystem,
+                ],
+                segmentMinWidth: 56,
+                selectedIndex: ThemeSetting.values.indexOf(theme.setting),
+                onSelected: (i) => theme.setSetting(ThemeSetting.values[i]),
+              ),
+              Divider(color: t.divider, height: 1),
+            ],
             const _GlyphStyleRow(),
-            const Divider(color: Color(0xFF2C2C2C), height: 1),
+            Divider(color: t.divider, height: 1),
             const _HapticsRow(),
-            const Divider(color: Color(0xFF2C2C2C), height: 1),
+            Divider(color: t.divider, height: 1),
             _SegmentRow(
               icon: Icons.layers_outlined,
               title: l.settingsKeypadModeTitle,
@@ -53,7 +71,7 @@ class SettingsPage extends StatelessWidget {
                 i == 0 ? KeypadMode.overlay : KeypadMode.scroll,
               ),
             ),
-            const Divider(color: Color(0xFF2C2C2C), height: 1),
+            Divider(color: t.divider, height: 1),
             _SegmentRow(
               icon: Icons.functions,
               title: l.settingsScopeTitle,
@@ -64,7 +82,7 @@ class SettingsPage extends StatelessWidget {
               ),
             ),
             if (calc != null) ...[
-              const Divider(color: Color(0xFF2C2C2C), height: 1),
+              Divider(color: t.divider, height: 1),
               _SegmentRow(
                 // Literal "Doz"/"Dez" — matches the painted keypad captions
                 // and is language-neutral, so no ARB entries.
@@ -77,7 +95,7 @@ class SettingsPage extends StatelessWidget {
                 onSelected: (i) =>
                     calc.handleClick(i == 0 ? const Doz() : const Dez()),
               ),
-              const Divider(color: Color(0xFF2C2C2C), height: 1),
+              Divider(color: t.divider, height: 1),
               _SegmentRow(
                 icon: Icons.architecture,
                 title: l.settingsAngleModeTitle,
@@ -127,14 +145,15 @@ class _HapticsRow extends StatelessWidget {
   Widget build(BuildContext context) {
     final l = AppLocalizations.of(context);
     final notifier = HapticsScope.of(context);
+    final t = AppColors.of(context);
     return ListTile(
-      leading: const SizedBox(
+      leading: SizedBox(
         width: 28,
-        child: Icon(Icons.vibration, color: Color(0xFFA0A0A0), size: 16),
+        child: Icon(Icons.vibration, color: t.textMuted, size: 16),
       ),
       title: Text(
         l.infoListHapticsTitle,
-        style: const TextStyle(fontSize: 14, color: Colors.white),
+        style: TextStyle(fontSize: 14, color: t.textPrimary),
       ),
       trailing: Switch(value: notifier.enabled, onChanged: notifier.setEnabled),
     );
@@ -163,14 +182,15 @@ class _SegmentRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final t = AppColors.of(context);
     return ListTile(
       leading: SizedBox(
         width: 28,
-        child: Icon(icon, color: const Color(0xFFA0A0A0), size: 16),
+        child: Icon(icon, color: t.textMuted, size: 16),
       ),
       title: Text(
         title,
-        style: const TextStyle(fontSize: 14, color: Colors.white),
+        style: TextStyle(fontSize: 14, color: t.textPrimary),
       ),
       trailing: ToggleButtons(
         isSelected: [
@@ -179,11 +199,11 @@ class _SegmentRow extends StatelessWidget {
         onPressed: onSelected,
         constraints: BoxConstraints(minWidth: segmentMinWidth, minHeight: 32),
         borderRadius: BorderRadius.circular(6),
-        borderColor: const Color(0xFF3A3A3A),
-        selectedBorderColor: const Color(0xFF5A5A5A),
-        color: const Color(0xFF888888),
-        selectedColor: Colors.white,
-        fillColor: const Color(0xFF2A2A2A),
+        borderColor: t.cardBorder,
+        selectedBorderColor: t.pagerBorder,
+        color: t.textFaint,
+        selectedColor: t.textPrimary,
+        fillColor: t.cardFill,
         textStyle: const TextStyle(fontSize: 12),
         children: [
           for (final label in labels)

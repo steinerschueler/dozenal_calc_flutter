@@ -19,29 +19,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'app_layout.dart';
+import 'app_theme.dart';
 import 'converter_state.dart';
 import 'glyph_painter.dart';
 import 'logic/unit_data.dart';
 import 'token_painter.dart';
 import 'tokens.dart';
 
-const Color _kDigit = Colors.white;
-const Color _kDigitPressed = Color(0xFFFFD700);
-const Color _kDigitDisabled = Color(0xFF606060);
-const Color _kOp = Color(0xFF98C8FF);
-const Color _kOpPressed = Color(0xFFFF9090);
-const Color _kEquals = Color(0xFF8CDC8C);
-const Color _kBorder = Color(0xFF505050);
-const Color _kAc = Color(0xFFFF4040);
-const Color _kAcPressed = Color(0xFFFF8080);
-const Color _kGold = Color(0xFFFFD700);
-// Same gold hue, fainter — for the selected sub-unit (magnitude) border, so it
-// reads as subordinate to its category's full-strength gold frame.
-const Color _kGoldSoft = Color(0x66FFD700);
-const Color _kDisabled = Color(0xFF555555); // inert (not-yet-wired) op keys
-const Color _kCategory = Color(0xFF98C8FF); // categories read like operators
-const Color _kMagnitude = Color(0xFFE6C77A); // magnitudes read like values
-const Color _kLabelPressed = Color(0xFFFF9090);
+// Colors live in AppColors (lib/app_theme.dart). Converter-specific slots:
+// magnitude (value-like gold-tinted labels) and inertKey (not-yet-wired op
+// keys). Categories read like operators → t.op; the selected sub-unit border
+// uses t.accentGoldSoft, subordinate to a category's full-strength
+// t.accentGold frame.
 
 // Height regimes — mirror of keypad.dart's _kTightThreshold / _kScrollThreshold
 // so the converter survives the same extreme Android aspect ratios as the main
@@ -117,29 +106,36 @@ class ConverterKeypad extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (ctx, constraints) {
-        if (isPortraitConstraints(constraints)) return _buildPortrait(constraints);
-        return _buildBreit(constraints);
+        if (isPortraitConstraints(constraints)) {
+          return _buildPortrait(ctx, constraints);
+        }
+        return _buildBreit(ctx, constraints);
       },
     );
   }
 
   // ── Hoch (portrait) ───────────────────────────────────────────────────────
 
-  Widget _buildPortrait(BoxConstraints constraints) {
+  Widget _buildPortrait(BuildContext context, BoxConstraints constraints) {
     final h = constraints.maxHeight;
     // Three height regimes, identical to _HochKeypad: scroll fallback below the
     // floor (fixed 44 dp rows so nothing is unreachable), tight gaps in the mid
     // band, flex layout above.
     if (h.isFinite && h < _kScrollThreshold) {
       return SingleChildScrollView(
-        child: _buildColumn(tight: true, fixedHeights: true),
+        child: _buildColumn(context, tight: true, fixedHeights: true),
       );
     }
     final tight = h.isFinite && h < _kTightThreshold;
-    return _buildColumn(tight: tight, fixedHeights: false);
+    return _buildColumn(context, tight: tight, fixedHeights: false);
   }
 
-  Widget _buildColumn({required bool tight, required bool fixedHeights}) {
+  Widget _buildColumn(
+    BuildContext context, {
+    required bool tight,
+    required bool fixedHeights,
+  }) {
+    final t = AppColors.of(context);
     final rowGap = tight ? 6.0 : 10.0;
     final sectionGap = tight ? 8.0 : 14.0;
     final equalsGap = tight ? 8.0 : 12.0;
@@ -157,7 +153,7 @@ class ConverterKeypad extends StatelessWidget {
           row(_digitRow(_digitGridRows[r])),
         ],
         SizedBox(height: sectionGap),
-        const Divider(color: Color(0xFF333333), height: 1, thickness: 1),
+        Divider(color: t.hairline, height: 1, thickness: 1),
         SizedBox(height: sectionGap),
         if (fixedHeights)
           _middleSection(tight: tight, fixedHeights: true)
@@ -303,15 +299,18 @@ class ConverterKeypad extends StatelessWidget {
       excludeSemantics: true,
       child: _Shell(
         onTap: enabled ? () => state.inputDigit(digit.value) : null,
-        pressedBuilder: (pressed) => CustomPaint(
-          size: Size.infinite,
-          painter: _DigitPainter(
-            digit: digit,
-            color: !enabled
-                ? _kDigitDisabled
-                : (pressed ? _kDigitPressed : _kDigit),
-          ),
-        ),
+        pressedBuilder: (ctx, pressed) {
+          final t = AppColors.of(ctx);
+          return CustomPaint(
+            size: Size.infinite,
+            painter: _DigitPainter(
+              digit: digit,
+              color: !enabled
+                  ? t.digitDisabled
+                  : (pressed ? t.digitPressed : t.digit),
+            ),
+          );
+        },
       ),
     );
   }
@@ -334,17 +333,20 @@ class ConverterKeypad extends StatelessWidget {
         onTap: active ? () => _handleToken(token) : null,
         gold: armed,
         selected: worldActive,
-        pressedBuilder: (pressed) => CustomPaint(
-          size: Size.infinite,
-          painter: _OpPainter(
-            token: token,
-            color: !active
-                ? _kDisabled
-                : (pressed
-                    ? (isAc ? _kAcPressed : _kOpPressed)
-                    : (isAc ? _kAc : _kOp)),
-          ),
-        ),
+        pressedBuilder: (ctx, pressed) {
+          final t = AppColors.of(ctx);
+          return CustomPaint(
+            size: Size.infinite,
+            painter: _OpPainter(
+              token: token,
+              color: !active
+                  ? t.inertKey
+                  : (pressed
+                      ? (isAc ? t.acPressed : t.opPressed)
+                      : (isAc ? t.ac : t.op)),
+            ),
+          );
+        },
       ),
     );
   }
@@ -366,7 +368,7 @@ class ConverterKeypad extends StatelessWidget {
     final active = forceActive || state.isCategoryActive(cat);
     return _LabelButton(
       label: categoryLabelOf?.call(cat) ?? kUnitCatalogue[cat]!.label,
-      color: active ? _kGold : _kCategory,
+      colorOf: (t) => active ? t.accentGold : t.op,
       gold: active,
       onTap: () => state.tapCategory(cat),
     );
@@ -376,7 +378,7 @@ class ConverterKeypad extends StatelessWidget {
     final selected = state.inputUnit?.symbol == unit.symbol;
     return _LabelButton(
       label: unit.symbol,
-      color: selected ? _kGold : _kMagnitude,
+      colorOf: (t) => selected ? t.accentGold : t.magnitude,
       softGold: selected,
       onTap: () => state.tapMagnitude(unit),
     );
@@ -407,12 +409,15 @@ class ConverterKeypad extends StatelessWidget {
                 excludeSemantics: true,
                 child: _Shell(
                   onTap: state.equals,
-                  pressedBuilder: (pressed) => CustomPaint(
-                    painter: _OpPainter(
-                      token: const Equals(),
-                      color: pressed ? _kOpPressed : _kEquals,
-                    ),
-                  ),
+                  pressedBuilder: (ctx, pressed) {
+                    final t = AppColors.of(ctx);
+                    return CustomPaint(
+                      painter: _OpPainter(
+                        token: const Equals(),
+                        color: pressed ? t.opPressed : t.equals,
+                      ),
+                    );
+                  },
                 ),
               ),
             ),
@@ -431,7 +436,7 @@ class ConverterKeypad extends StatelessWidget {
 
   // ── Breit (landscape / tablet) — all sets inline, no overlay ──────────────
 
-  Widget _buildBreit(BoxConstraints constraints) {
+  Widget _buildBreit(BuildContext context, BoxConstraints constraints) {
     const interBlockGap = tabletColGap; // 8
     const verticalContentGap = 18.0;
     const groupGapBase = interBlockGap + 10.0; // 18
@@ -461,6 +466,7 @@ class ConverterKeypad extends StatelessWidget {
       buttonSize: buttonSize,
       interBlockGap: interBlockGap,
       groupGap: groupGap,
+      t: AppColors.of(context),
     );
 
     final body = Column(
@@ -491,6 +497,7 @@ class ConverterKeypad extends StatelessWidget {
     required double buttonSize,
     required double interBlockGap,
     required double groupGap,
+    required AppColors t,
   }) {
     Widget cell(Widget child) =>
         SizedBox(width: buttonSize, height: buttonSize, child: child);
@@ -538,7 +545,7 @@ class ConverterKeypad extends StatelessWidget {
             child: Container(
               width: 1,
               height: dividerHeight,
-              color: const Color(0xFF333333),
+              color: t.hairline,
             ),
           ),
         );
@@ -618,7 +625,7 @@ bool _isActiveOp(CalcToken t) =>
 
 class _Shell extends StatefulWidget {
   final VoidCallback? onTap;
-  final Widget Function(bool pressed) pressedBuilder;
+  final Widget Function(BuildContext ctx, bool pressed) pressedBuilder;
   final bool gold; // gold border, e.g. armed − operator
   final bool selected; // blue border for the active mode, like the main calc
 
@@ -642,6 +649,7 @@ class _ShellState extends State<_Shell> {
 
   @override
   Widget build(BuildContext context) {
+    final t = AppColors.of(context);
     final disabled = widget.onTap == null;
     return GestureDetector(
       behavior: HitTestBehavior.opaque,
@@ -661,14 +669,14 @@ class _ShellState extends State<_Shell> {
             borderRadius: BorderRadius.circular(4),
             border: Border.all(
               color: widget.gold
-                  ? _kGold
+                  ? t.accentGold
                   : widget.selected
-                      ? _kOp
-                      : (disabled ? const Color(0xFF303030) : _kBorder),
+                      ? t.op
+                      : (disabled ? t.keyBorderDisabled : t.keyBorder),
               width: widget.gold || widget.selected ? 2 : 1,
             ),
           ),
-          child: widget.pressedBuilder(_pressed),
+          child: widget.pressedBuilder(context, _pressed),
         ),
       ),
     );
@@ -677,7 +685,10 @@ class _ShellState extends State<_Shell> {
 
 class _LabelButton extends StatefulWidget {
   final String label;
-  final Color color;
+
+  /// Resolves the label color from the active palette (called in build, so
+  /// the button follows theme switches without rebuilding the call sites).
+  final Color Function(AppColors) colorOf;
 
   /// Full-strength gold frame (active category — the Überbegriff).
   final bool gold;
@@ -689,7 +700,7 @@ class _LabelButton extends StatefulWidget {
 
   const _LabelButton({
     required this.label,
-    required this.color,
+    required this.colorOf,
     this.gold = false,
     this.softGold = false,
     required this.onTap,
@@ -708,6 +719,7 @@ class _LabelButtonState extends State<_LabelButton> {
 
   @override
   Widget build(BuildContext context) {
+    final t = AppColors.of(context);
     return GestureDetector(
       behavior: HitTestBehavior.opaque,
       onTapDown: (_) => _set(true),
@@ -724,8 +736,8 @@ class _LabelButtonState extends State<_LabelButton> {
             borderRadius: BorderRadius.circular(4),
             border: Border.all(
               color: widget.gold
-                  ? _kGold
-                  : (widget.softGold ? _kGoldSoft : _kBorder),
+                  ? t.accentGold
+                  : (widget.softGold ? t.accentGoldSoft : t.keyBorder),
               width: widget.gold ? 2 : (widget.softGold ? 1.5 : 1),
             ),
           ),
@@ -737,7 +749,7 @@ class _LabelButtonState extends State<_LabelButton> {
               widget.label,
               maxLines: 1,
               style: TextStyle(
-                color: _pressed ? _kLabelPressed : widget.color,
+                color: _pressed ? t.opPressed : widget.colorOf(t),
                 fontSize: 15,
                 fontWeight: FontWeight.w600,
               ),
@@ -764,14 +776,15 @@ class _RoundIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final t = AppColors.of(context);
     final btn = Material(
-      color: const Color(0xFF2A2A2A),
-      shape: const CircleBorder(side: BorderSide(color: Color(0xFF555555))),
+      color: t.pagerFill,
+      shape: CircleBorder(side: BorderSide(color: t.pagerBorder)),
       child: InkWell(
         customBorder: const CircleBorder(),
         onTap: onPressed,
         child: Center(
-          child: Icon(icon, size: size * 0.5, color: const Color(0xFF64C8FF)),
+          child: Icon(icon, size: size * 0.5, color: t.link),
         ),
       ),
     );

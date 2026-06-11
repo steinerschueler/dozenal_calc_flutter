@@ -5,6 +5,7 @@
 import 'package:flutter/material.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
+import 'app_theme.dart';
 import 'conversions_page.dart';
 import 'converter_page.dart';
 import 'feedback_dialog.dart';
@@ -27,11 +28,11 @@ class InfoListPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l = AppLocalizations.of(context);
+    final t = AppColors.of(context);
     return Scaffold(
-      appBar: AppBar(
-        title: Text(l.infoListTitle),
-        backgroundColor: const Color(0xFF1A1A1A),
-      ),
+      // AppBar background comes from the MaterialApp's appBarTheme (palette-
+      // derived), so no explicit color here — same on all themed pages.
+      appBar: AppBar(title: Text(l.infoListTitle)),
       body: SafeArea(
         // Top is owned by the AppBar, but the bottom inset matters under
         // edge-to-edge: without it the last list rows hide behind the
@@ -43,17 +44,17 @@ class InfoListPage extends StatelessWidget {
             // "Bedienung des Rechners" ist App-Hilfe, kein Theorie-Stoff —
             // darum eigenstaendiger Eintrag ganz oben, ausserhalb der Bloecke.
             ListTile(
-              leading: const SizedBox(
+              leading: SizedBox(
                 width: 28,
                 child: Icon(
                   Icons.touch_app_outlined,
-                  color: Color(0xFFA0A0A0),
+                  color: t.textMuted,
                   size: 16,
                 ),
               ),
               title: Text(
                 l.chapterTitle01,
-                style: const TextStyle(fontSize: 14, color: Color(0xFFD0D0D0)),
+                style: TextStyle(fontSize: 14, color: t.textSecondary),
               ),
               trailing: const _NavChevron(),
               onTap: () => Navigator.of(context).push(
@@ -65,109 +66,109 @@ class InfoListPage extends StatelessWidget {
                 ),
               ),
             ),
-            const Divider(color: Color(0xFF2C2C2C), height: 1),
+            Divider(color: t.divider, height: 1),
             // Theorie-Sektion: ausklappbar (Default collapsed) zu den drei
             // Bloecken (Zwoelf und die Welt, Dozenale Mathematik, Dozenale
             // Gesellschaft); jeder Block fuehrt zu seinen Kapiteln.
             const _TheoryExpansion(),
-            const Divider(color: Color(0xFF2C2C2C), height: 1),
+            Divider(color: t.divider, height: 1),
             // Einheiten-Sektion: ausklappbar, buendelt Einheitenrechner +
             // Einheitentheorie. Liegt als Geschwister direkt unter "Theorie",
             // weil beides Inhalt ist — die Einheitentheorie gehoert bewusst
             // NICHT in den Theorie-Tab (der traegt nur die Bloecke Zwoelf und
             // die Welt, Dozenale Mathematik, Dozenale Gesellschaft).
             const _UnitsExpansion(),
-            const Divider(color: Color(0xFF2C2C2C), height: 1),
+            Divider(color: t.divider, height: 1),
             // Einstellungen: buendelt die frueher hier liegenden Quick-Toggles
             // (Glyphen-Stil, Haptik) mit den Keypad-Praeferenzen (Overlay/
             // Scrollen, Alle/Einfach) und Zahlensystem/Winkelmodus auf einer
             // eigenen Seite (settings_page.dart).
             ListTile(
-              leading: const SizedBox(
+              leading: SizedBox(
                 width: 28,
                 child: Icon(
                   Icons.settings_outlined,
-                  color: Color(0xFFA0A0A0),
+                  color: t.textMuted,
                   size: 16,
                 ),
               ),
               title: Text(
                 l.settingsTitle,
-                style: const TextStyle(fontSize: 14, color: Color(0xFFD0D0D0)),
+                style: TextStyle(fontSize: 14, color: t.textSecondary),
               ),
               trailing: const _NavChevron(),
               onTap: () => Navigator.of(
                 context,
               ).push(MaterialPageRoute(builder: (_) => const SettingsPage())),
             ),
-            const Divider(color: Color(0xFF2C2C2C), height: 1),
+            Divider(color: t.divider, height: 1),
             const _LanguagePickerExpansion(),
-            const Divider(color: Color(0xFF2C2C2C), height: 1),
+            Divider(color: t.divider, height: 1),
             ListTile(
-              leading: const SizedBox(
+              leading: SizedBox(
                 width: 28,
                 child: Icon(
                   Icons.shield_outlined,
-                  color: Color(0xFFA0A0A0),
+                  color: t.textMuted,
                   size: 16,
                 ),
               ),
               title: Text(
                 l.infoListPrivacyEntry,
-                style: const TextStyle(fontSize: 14, color: Color(0xFFD0D0D0)),
+                style: TextStyle(fontSize: 14, color: t.textSecondary),
               ),
               trailing: const _NavChevron(),
               onTap: () => Navigator.of(
                 context,
               ).push(MaterialPageRoute(builder: (_) => const PrivacyPage())),
             ),
-            const Divider(color: Color(0xFF2C2C2C), height: 1),
+            Divider(color: t.divider, height: 1),
             ListTile(
-              leading: const SizedBox(
+              leading: SizedBox(
                 width: 28,
-                child: Icon(Icons.balance, color: Color(0xFFA0A0A0), size: 16),
+                child: Icon(Icons.balance, color: t.textMuted, size: 16),
               ),
               title: Text(
                 l.infoListLicenseEntry,
-                style: const TextStyle(fontSize: 14, color: Color(0xFFD0D0D0)),
+                style: TextStyle(fontSize: 14, color: t.textSecondary),
               ),
               trailing: const _NavChevron(),
               onTap: () => Navigator.of(
                 context,
               ).push(MaterialPageRoute(builder: (_) => const AppLicensePage())),
             ),
-            const Divider(color: Color(0xFF2C2C2C), height: 1),
+            Divider(color: t.divider, height: 1),
             ListTile(
-              leading: const SizedBox(
+              leading: SizedBox(
                 width: 28,
                 child: Icon(
                   Icons.favorite_outline,
-                  color: Color(0xFFA0A0A0),
+                  color: t.textMuted,
                   size: 16,
                 ),
               ),
               title: Text(
                 l.infoListSupportEntry,
-                style: const TextStyle(fontSize: 14, color: Color(0xFFD0D0D0)),
+                style: TextStyle(fontSize: 14, color: t.textSecondary),
               ),
               trailing: const _NavChevron(),
               onTap: () => Navigator.of(
                 context,
               ).push(MaterialPageRoute(builder: (_) => const SupportPage())),
             ),
-            const Divider(color: Color(0xFF2C2C2C), height: 1),
+            Divider(color: t.divider, height: 1),
             ListTile(
-              leading: const SizedBox(
+              leading: SizedBox(
                 width: 28,
                 child: Icon(
                   Icons.mail_outline,
-                  color: Color(0xFFA0A0A0),
+                  color: t.textMuted,
                   size: 16,
                 ),
               ),
               title: Text(
                 l.infoListFeedbackEntry,
-                style: const TextStyle(fontSize: 14, color: Color(0xFFD0D0D0)),
+                style: TextStyle(fontSize: 14, color: t.textSecondary),
               ),
               trailing: const _NavChevron(),
               onTap: () => showFeedbackDialog(context),
@@ -215,8 +216,8 @@ class _VersionFooterState extends State<_VersionFooter> {
           child: Text(
             label,
             textAlign: TextAlign.center,
-            style: const TextStyle(
-              color: Color(0xFF707070),
+            style: TextStyle(
+              color: AppColors.of(ctx).textFaint,
               fontSize: 11,
               fontFamily: 'JetBrainsMono',
             ),
@@ -244,29 +245,30 @@ class _TheoryExpansionState extends State<_TheoryExpansion> {
   @override
   Widget build(BuildContext context) {
     final l = AppLocalizations.of(context);
+    final t = AppColors.of(context);
     final langTag = Localizations.localeOf(context).toLanguageTag();
     final blocks = theoryBlocks(l, langTag);
     return Column(
       children: [
         ListTile(
-          leading: const SizedBox(
+          leading: SizedBox(
             width: 28,
             child: Icon(
               Icons.menu_book_outlined,
-              color: Color(0xFFA0A0A0),
+              color: t.textMuted,
               size: 16,
             ),
           ),
           title: Text(
             l.infoListTheoryExpansion,
-            style: const TextStyle(fontSize: 14, color: Colors.white),
+            style: TextStyle(fontSize: 14, color: t.textPrimary),
           ),
           trailing: AnimatedRotation(
             turns: _expanded ? 0.5 : 0,
             duration: const Duration(milliseconds: 200),
-            child: const Icon(
+            child: Icon(
               Icons.expand_more,
-              color: Color(0xFF707070),
+              color: t.textFaint,
               size: 20,
             ),
           ),
@@ -279,7 +281,7 @@ class _TheoryExpansionState extends State<_TheoryExpansion> {
               ? Column(
                   children: [
                     for (final block in blocks) ...[
-                      const Divider(color: Color(0xFF2C2C2C), height: 1),
+                      Divider(color: t.divider, height: 1),
                       ListTile(
                         contentPadding: const EdgeInsetsDirectional.fromSTEB(
                           32,
@@ -289,17 +291,17 @@ class _TheoryExpansionState extends State<_TheoryExpansion> {
                         ),
                         title: Text(
                           block.title,
-                          style: const TextStyle(
+                          style: TextStyle(
                             fontSize: 14,
-                            color: Colors.white,
+                            color: t.textPrimary,
                           ),
                         ),
                         subtitle: block.inProgress
                             ? Text(
                                 l.theoryInProgress,
-                                style: const TextStyle(
+                                style: TextStyle(
                                   fontSize: 11,
-                                  color: Color(0xFF707070),
+                                  color: t.textFaint,
                                 ),
                               )
                             : null,
@@ -339,23 +341,24 @@ class _UnitsExpansionState extends State<_UnitsExpansion> {
   @override
   Widget build(BuildContext context) {
     final l = AppLocalizations.of(context);
+    final t = AppColors.of(context);
     return Column(
       children: [
         ListTile(
-          leading: const SizedBox(
+          leading: SizedBox(
             width: 28,
-            child: Icon(Icons.square_foot, color: Color(0xFFA0A0A0), size: 16),
+            child: Icon(Icons.square_foot, color: t.textMuted, size: 16),
           ),
           title: Text(
             l.infoListUnitsExpansion,
-            style: const TextStyle(fontSize: 14, color: Colors.white),
+            style: TextStyle(fontSize: 14, color: t.textPrimary),
           ),
           trailing: AnimatedRotation(
             turns: _expanded ? 0.5 : 0,
             duration: const Duration(milliseconds: 200),
-            child: const Icon(
+            child: Icon(
               Icons.expand_more,
-              color: Color(0xFF707070),
+              color: t.textFaint,
               size: 20,
             ),
           ),
@@ -367,7 +370,7 @@ class _UnitsExpansionState extends State<_UnitsExpansion> {
           child: _expanded
               ? Column(
                   children: [
-                    const Divider(color: Color(0xFF2C2C2C), height: 1),
+                    Divider(color: t.divider, height: 1),
                     ListTile(
                       contentPadding: const EdgeInsetsDirectional.fromSTEB(
                         32,
@@ -375,19 +378,19 @@ class _UnitsExpansionState extends State<_UnitsExpansion> {
                         16,
                         0,
                       ),
-                      leading: const SizedBox(
+                      leading: SizedBox(
                         width: 28,
                         child: Icon(
                           Icons.swap_horiz,
-                          color: Color(0xFFA0A0A0),
+                          color: t.textMuted,
                           size: 16,
                         ),
                       ),
                       title: Text(
                         l.infoListConverterEntry,
-                        style: const TextStyle(
+                        style: TextStyle(
                           fontSize: 14,
-                          color: Color(0xFFD0D0D0),
+                          color: t.textSecondary,
                         ),
                       ),
                       trailing: const _NavChevron(),
@@ -397,7 +400,7 @@ class _UnitsExpansionState extends State<_UnitsExpansion> {
                         ),
                       ),
                     ),
-                    const Divider(color: Color(0xFF2C2C2C), height: 1),
+                    Divider(color: t.divider, height: 1),
                     ListTile(
                       contentPadding: const EdgeInsetsDirectional.fromSTEB(
                         32,
@@ -405,19 +408,19 @@ class _UnitsExpansionState extends State<_UnitsExpansion> {
                         16,
                         0,
                       ),
-                      leading: const SizedBox(
+                      leading: SizedBox(
                         width: 28,
                         child: Icon(
                           Icons.straighten,
-                          color: Color(0xFFA0A0A0),
+                          color: t.textMuted,
                           size: 16,
                         ),
                       ),
                       title: Text(
                         l.infoListConversionsEntry,
-                        style: const TextStyle(
+                        style: TextStyle(
                           fontSize: 14,
-                          color: Color(0xFFD0D0D0),
+                          color: t.textSecondary,
                         ),
                       ),
                       trailing: const _NavChevron(),
@@ -456,6 +459,7 @@ class _LanguagePickerExpansionState extends State<_LanguagePickerExpansion> {
   @override
   Widget build(BuildContext context) {
     final notifier = LocaleScope.of(context);
+    final t = AppColors.of(context);
     // Match by full BCP-47 tag, not just languageCode — otherwise `zh` and
     // `zh-Hant` collide (both have languageCode `'zh'`) and the picker shows
     // both rows checked while the collapsed header always picks whichever
@@ -472,14 +476,14 @@ class _LanguagePickerExpansionState extends State<_LanguagePickerExpansion> {
           leading: _FlagThumb(option: active),
           title: Text(
             active.label,
-            style: const TextStyle(fontSize: 14, color: Color(0xFFD0D0D0)),
+            style: TextStyle(fontSize: 14, color: t.textSecondary),
           ),
           trailing: AnimatedRotation(
             turns: _expanded ? 0.5 : 0,
             duration: const Duration(milliseconds: 200),
-            child: const Icon(
+            child: Icon(
               Icons.expand_more,
-              color: Color(0xFF707070),
+              color: t.textFaint,
               size: 20,
             ),
           ),
@@ -491,7 +495,7 @@ class _LanguagePickerExpansionState extends State<_LanguagePickerExpansion> {
           child: _expanded
               ? Column(
                   children: [
-                    const Divider(color: Color(0xFF2C2C2C), height: 1),
+                    Divider(color: t.divider, height: 1),
                     for (final lang in kSupportedLanguages)
                       ListTile(
                         contentPadding: const EdgeInsetsDirectional.fromSTEB(
@@ -503,15 +507,15 @@ class _LanguagePickerExpansionState extends State<_LanguagePickerExpansion> {
                         leading: _FlagThumb(option: lang),
                         title: Text(
                           lang.label,
-                          style: const TextStyle(
+                          style: TextStyle(
                             fontSize: 14,
-                            color: Color(0xFFD0D0D0),
+                            color: t.textSecondary,
                           ),
                         ),
                         trailing: lang.locale.toLanguageTag() == activeTag
-                            ? const Icon(
+                            ? Icon(
                                 Icons.check,
-                                color: Colors.white,
+                                color: t.textPrimary,
                                 size: 16,
                               )
                             : null,
@@ -542,7 +546,7 @@ class _NavChevron extends StatelessWidget {
     final rtl = Directionality.of(context) == TextDirection.rtl;
     return Icon(
       rtl ? Icons.chevron_left : Icons.chevron_right,
-      color: const Color(0xFF707070),
+      color: AppColors.of(context).textFaint,
       size: 18,
     );
   }
@@ -578,10 +582,10 @@ class TheoryBlockPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l = AppLocalizations.of(context);
+    final t = AppColors.of(context);
     return Scaffold(
       appBar: AppBar(
         title: Text(block.title, style: const TextStyle(fontSize: 14)),
-        backgroundColor: const Color(0xFF1A1A1A),
       ),
       body: SafeArea(
         top: false,
@@ -591,9 +595,9 @@ class TheoryBlockPage extends StatelessWidget {
                   padding: const EdgeInsets.all(32),
                   child: Text(
                     l.theoryInProgress,
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontSize: 14,
-                      color: Color(0xFF808080),
+                      color: t.textFaint,
                     ),
                   ),
                 ),
@@ -603,14 +607,14 @@ class TheoryBlockPage extends StatelessWidget {
                 children: [
                   for (var i = 0; i < block.chapters.length; i++) ...[
                     if (i > 0)
-                      const Divider(color: Color(0xFF2C2C2C), height: 1),
+                      Divider(color: t.divider, height: 1),
                     ListTile(
                       leading: SizedBox(
                         width: 28,
                         child: Text(
                           '${i + 1}.',
-                          style: const TextStyle(
-                            color: Color(0xFFA0A0A0),
+                          style: TextStyle(
+                            color: t.textMuted,
                             fontFamily: 'JetBrainsMono',
                             fontSize: 13,
                           ),
@@ -619,9 +623,9 @@ class TheoryBlockPage extends StatelessWidget {
                       ),
                       title: Text(
                         block.chapters[i].title,
-                        style: const TextStyle(
+                        style: TextStyle(
                           fontSize: 14,
-                          color: Colors.white,
+                          color: t.textPrimary,
                         ),
                       ),
                       trailing: const _NavChevron(),
@@ -686,7 +690,6 @@ class TheoryChapterPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(title, style: const TextStyle(fontSize: 14)),
-        backgroundColor: const Color(0xFF1A1A1A),
       ),
       body: SafeArea(
         top: false,
@@ -734,6 +737,7 @@ class _ProseBlock extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final t = AppColors.of(context);
     return Padding(
       padding: const EdgeInsets.only(bottom: 16),
       child: Column(
@@ -741,8 +745,8 @@ class _ProseBlock extends StatelessWidget {
         children: [
           Text(
             section.heading,
-            style: const TextStyle(
-              color: Colors.white,
+            style: TextStyle(
+              color: t.textPrimary,
               fontSize: 15,
               fontWeight: FontWeight.bold,
             ),
@@ -750,8 +754,8 @@ class _ProseBlock extends StatelessWidget {
           const SizedBox(height: 4),
           Text(
             section.body,
-            style: const TextStyle(
-              color: Color(0xFFC8C8C8),
+            style: TextStyle(
+              color: t.textTertiary,
               fontSize: 13.5,
               height: 1.45,
             ),
@@ -772,16 +776,17 @@ class _SourceList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l = AppLocalizations.of(context);
+    final t = AppColors.of(context);
     return Padding(
       padding: const EdgeInsets.only(top: 8, bottom: 8),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Divider(color: Color(0xFF2C2C2C), height: 24),
+          Divider(color: t.divider, height: 24),
           Text(
             l.sourcesSectionTitle,
-            style: const TextStyle(
-              color: Colors.white,
+            style: TextStyle(
+              color: t.textPrimary,
               fontSize: 15,
               fontWeight: FontWeight.bold,
             ),
@@ -797,20 +802,20 @@ class _SourceList extends StatelessWidget {
                     onTap: () => openExternalLink(context, s.url),
                     child: Text(
                       s.title,
-                      style: const TextStyle(
-                        color: Color(0xFF6BA8E0),
+                      style: TextStyle(
+                        color: t.link,
                         fontSize: 13.5,
                         height: 1.35,
                         decoration: TextDecoration.underline,
-                        decorationColor: Color(0xFF6BA8E0),
+                        decorationColor: t.link,
                       ),
                     ),
                   ),
                   const SizedBox(height: 2),
                   Text(
                     '${reliabilityLabel(l, s.reliability)} · ${accessLabel(l, s.access)}',
-                    style: const TextStyle(
-                      color: Color(0xFF808080),
+                    style: TextStyle(
+                      color: t.textFaint,
                       fontSize: 11,
                     ),
                   ),

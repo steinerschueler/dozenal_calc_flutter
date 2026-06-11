@@ -9,14 +9,13 @@
 
 import 'package:flutter/material.dart';
 
+import 'app_theme.dart';
 import 'converter_state.dart';
 
-const Color _kBg = Color(0xFF101010);
-const Color _kBorder = Color(0xFF333333);
-const Color _kInput = Colors.white;
-const Color _kResult = Color(0xFF8CDC8C); // egui LIGHT_GREEN
-const Color _kBracket = Color(0xFF8C8C8C);
-const Color _kWorld = Color(0xFF64C8FF);
+// Palette slots (lib/app_theme.dart): displayBg/displayBorder for the frame,
+// displayText for input, equals (egui LIGHT_GREEN) for the result, displaySub
+// for the { } bracket, link for the DOZ/DEZ world badge. The edit caret stays
+// theme-independent red — same convention as the main display's cursor.
 const Color _kCaret = Colors.redAccent;
 
 class ConverterDisplay extends StatelessWidget {
@@ -43,11 +42,12 @@ class ConverterDisplay extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final t = AppColors.of(context);
     return Container(
       decoration: BoxDecoration(
-        color: _kBg,
+        color: t.displayBg,
         borderRadius: BorderRadius.circular(6),
-        border: Border.all(color: _kBorder),
+        border: Border.all(color: t.displayBorder),
       ),
       padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
       child: LayoutBuilder(
@@ -74,7 +74,8 @@ class ConverterDisplay extends StatelessWidget {
               ),
               Expanded(
                 child: _line(resultLine,
-                    numberColor: _kResult,
+                    numberColor: t.equals,
+                    bracketColor: t.displaySub,
                     numberSize: resultSize,
                     bracketSize: bracketSize * 1.05,
                     prefix: '= '),
@@ -83,8 +84,8 @@ class ConverterDisplay extends StatelessWidget {
                 alignment: Alignment.centerRight,
                 child: Text(
                   worldLabel,
-                  style: const TextStyle(
-                    color: _kWorld,
+                  style: TextStyle(
+                    color: t.link,
                     fontSize: 11,
                     fontFamily: 'monospace',
                   ),
@@ -100,6 +101,7 @@ class ConverterDisplay extends StatelessWidget {
   Widget _line(
     ConverterLine? line, {
     required Color numberColor,
+    required Color bracketColor,
     required double numberSize,
     required double bracketSize,
     String prefix = '',
@@ -130,7 +132,7 @@ class ConverterDisplay extends StatelessWidget {
         TextSpan(
           text: '  {${line.bracket}}',
           style: TextStyle(
-            color: _kBracket,
+            color: bracketColor,
             fontSize: bracketSize,
             fontFamily: 'monospace',
           ),
@@ -167,12 +169,12 @@ class _CaretInputLine extends StatelessWidget {
     required this.onTapChar,
   });
 
-  TextPainter _painter() {
+  TextPainter _painter(AppColors t) {
     final spans = <InlineSpan>[
       TextSpan(
         text: text,
         style: TextStyle(
-          color: _kInput,
+          color: t.displayText,
           fontSize: numberSize,
           fontWeight: FontWeight.w600,
           fontFamily: 'monospace',
@@ -182,7 +184,7 @@ class _CaretInputLine extends StatelessWidget {
         TextSpan(
           text: '  {$bracket}',
           style: TextStyle(
-            color: _kBracket,
+            color: t.displaySub,
             fontSize: bracketSize,
             fontFamily: 'monospace',
           ),
@@ -197,10 +199,11 @@ class _CaretInputLine extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final t = AppColors.of(context);
     return LayoutBuilder(
       builder: (ctx, c) {
         final maxW = c.maxWidth;
-        final tp = _painter();
+        final tp = _painter(t);
         final scale = (tp.width > maxW && tp.width > 0) ? maxW / tp.width : 1.0;
         final xOff = maxW - tp.width * scale; // right-align
         return GestureDetector(
@@ -217,7 +220,8 @@ class _CaretInputLine extends StatelessWidget {
                 },
           child: CustomPaint(
             size: Size(maxW, c.maxHeight.isFinite ? c.maxHeight : numberSize * 1.6),
-            painter: _CaretPainter(tp: tp, scale: scale, xOff: xOff, caret: caret),
+            painter: _CaretPainter(
+                tp: tp, scale: scale, xOff: xOff, caret: caret, colors: t),
           ),
         );
       },
@@ -231,11 +235,16 @@ class _CaretPainter extends CustomPainter {
   final double xOff;
   final int caret;
 
+  /// Only for shouldRepaint: the text colors live inside [tp], which is
+  /// rebuilt on theme switches with otherwise identical geometry.
+  final AppColors colors;
+
   _CaretPainter({
     required this.tp,
     required this.scale,
     required this.xOff,
     required this.caret,
+    required this.colors,
   });
 
   @override
@@ -258,5 +267,8 @@ class _CaretPainter extends CustomPainter {
 
   @override
   bool shouldRepaint(covariant _CaretPainter old) =>
-      old.scale != scale || old.xOff != xOff || old.caret != caret;
+      old.scale != scale ||
+      old.xOff != xOff ||
+      old.caret != caret ||
+      old.colors != colors;
 }

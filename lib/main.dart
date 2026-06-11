@@ -1,11 +1,13 @@
 // Step 11+13 of PORTING.md: live state, Info-modal navigation, polishing.
 // Adds physical-keyboard input mapping (port of input.rs::handle_keyboard).
 
+import 'package:flutter/foundation.dart' show defaultTargetPlatform, kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'app_layout.dart';
+import 'app_theme.dart';
 import 'calc_prefs.dart';
 import 'calc_scope.dart';
 import 'display.dart';
@@ -47,11 +49,25 @@ class DozenalCalcApp extends StatefulWidget {
   State<DozenalCalcApp> createState() => _DozenalCalcAppState();
 }
 
-class _DozenalCalcAppState extends State<DozenalCalcApp> {
+class _DozenalCalcAppState extends State<DozenalCalcApp>
+    with WidgetsBindingObserver {
   final LocaleNotifier _localeNotifier = LocaleNotifier();
   final GlyphStyleNotifier _glyphStyleNotifier = GlyphStyleNotifier();
   final HapticsNotifier _hapticsNotifier = HapticsNotifier();
   final CalcPrefsNotifier _calcPrefs = CalcPrefsNotifier();
+  final ThemeNotifier _themeNotifier = ThemeNotifier();
+
+  /// Native channel into MainActivity.java for the status/navigation-bar
+  /// icon brightness. Deliberately NOT SystemChrome (see the comment in
+  /// main()): our own channel ends in WindowInsetsControllerCompat and
+  /// leaves no deprecated Window.* references in the DEX.
+  static const MethodChannel _systemBars = MethodChannel(
+    'app.weltanschauung.dozenal/system_bars',
+  );
+
+  /// Last value sent over [_systemBars]; avoids redundant platform calls on
+  /// every theme notification.
+  bool? _sentLightBars;
 
   // Owned here (not in _CalcScaffold) so it sits above the Navigator: the
   // settings page — pushed as a route — drives the live numeral system and
@@ -61,11 +77,39 @@ class _DozenalCalcAppState extends State<DozenalCalcApp> {
   @override
   void initState() {
     super.initState();
+    WidgetsBinding.instance.addObserver(this);
+    _themeNotifier.updatePlatformBrightness(
+      WidgetsBinding.instance.platformDispatcher.platformBrightness,
+    );
+    _themeNotifier.addListener(_syncSystemBars);
     _localeNotifier.load();
     _glyphStyleNotifier.load();
     _hapticsNotifier.load();
+    _themeNotifier.load();
     _calcPrefs.load().then((_) => _applyStartupPrefs());
     _calcState.addListener(_syncPrefsFromState);
+  }
+
+  @override
+  void didChangePlatformBrightness() {
+    _themeNotifier.updatePlatformBrightness(
+      WidgetsBinding.instance.platformDispatcher.platformBrightness,
+    );
+  }
+
+  /// Mirrors the resolved theme into the Android system-bar icon brightness.
+  /// "Light bars" = light background = dark icons. No-op off Android (iOS/
+  /// macOS/web have no such channel registered) and resilient in tests.
+  Future<void> _syncSystemBars() async {
+    if (kIsWeb || defaultTargetPlatform != TargetPlatform.android) return;
+    final lightBars = !_themeNotifier.colors.isDark;
+    if (lightBars == _sentLightBars) return;
+    _sentLightBars = lightBars;
+    try {
+      await _systemBars.invokeMethod<void>('setLight', lightBars);
+    } on MissingPluginException {
+      // Widget tests / platforms without the channel: ignore.
+    }
   }
 
   /// One-time apply of the persisted numeral system / angle mode after the
@@ -95,10 +139,13 @@ class _DozenalCalcAppState extends State<DozenalCalcApp> {
 
   @override
   void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+    _themeNotifier.removeListener(_syncSystemBars);
     _calcState.removeListener(_syncPrefsFromState);
     _localeNotifier.dispose();
     _glyphStyleNotifier.dispose();
     _hapticsNotifier.dispose();
+    _themeNotifier.dispose();
     _calcPrefs.dispose();
     _calcState.dispose();
     super.dispose();
@@ -108,32 +155,50 @@ class _DozenalCalcAppState extends State<DozenalCalcApp> {
   Widget build(BuildContext context) {
     return LocaleScope(
       notifier: _localeNotifier,
-      child: GlyphStyleScope(
-        notifier: _glyphStyleNotifier,
-        child: HapticsScope(
-          notifier: _hapticsNotifier,
-          child: CalcPrefsScope(
-            notifier: _calcPrefs,
-            child: CalcStateScope(
-              notifier: _calcState,
-              child: ListenableBuilder(
-                listenable: _localeNotifier,
-                builder: (context, _) => MaterialApp(
-                  onGenerateTitle: (ctx) => AppLocalizations.of(ctx).appTitle,
-                  debugShowCheckedModeBanner: false,
-                  locale: _localeNotifier.override,
-                  supportedLocales: AppLocalizations.supportedLocales,
-                  localizationsDelegates:
-                      AppLocalizations.localizationsDelegates,
-                  localeResolutionCallback: resolveLocale,
-                  theme: ThemeData(
-                    brightness: Brightness.dark,
-                    scaffoldBackgroundColor: const Color(0xFF1F1F1F),
-                    // Custom press-color feedback already covers tap state —
-                    // disable the Material splash to avoid double feedback.
-                    splashFactory: NoSplash.splashFactory,
-                  ),
-                  home: _CalcScaffold(state: _calcState),
+      child: ThemeScope(
+        notifier: _themeNotifier,
+        child: GlyphStyleScope(
+          notifier: _glyphStyleNotifier,
+          child: HapticsScope(
+            notifier: _hapticsNotifier,
+            child: CalcPrefsScope(
+              notifier: _calcPrefs,
+              child: CalcStateScope(
+                notifier: _calcState,
+                child: ListenableBuilder(
+                  listenable: Listenable.merge([
+                    _localeNotifier,
+                    _themeNotifier,
+                  ]),
+                  builder: (context, _) {
+                    final colors = _themeNotifier.colors;
+                    return MaterialApp(
+                      onGenerateTitle: (ctx) =>
+                          AppLocalizations.of(ctx).appTitle,
+                      debugShowCheckedModeBanner: false,
+                      locale: _localeNotifier.override,
+                      supportedLocales: AppLocalizations.supportedLocales,
+                      localizationsDelegates:
+                          AppLocalizations.localizationsDelegates,
+                      localeResolutionCallback: resolveLocale,
+                      // Thin ThemeData derived from the semantic palette so
+                      // plain Material widgets (AppBar, Switch, dialogs,
+                      // snackbars) follow without per-widget colors.
+                      theme: ThemeData(
+                        brightness: colors.brightness,
+                        scaffoldBackgroundColor: colors.scaffoldBg,
+                        appBarTheme: AppBarTheme(
+                          backgroundColor: colors.appBarBg,
+                          foregroundColor: colors.textPrimary,
+                        ),
+                        // Custom press-color feedback already covers tap
+                        // state — disable the Material splash to avoid
+                        // double feedback.
+                        splashFactory: NoSplash.splashFactory,
+                      ),
+                      home: _CalcScaffold(state: _calcState),
+                    );
+                  },
                 ),
               ),
             ),
@@ -313,10 +378,11 @@ class _CalcScaffoldState extends State<_CalcScaffold> {
   /// input (exact when available) and closes the sheet.
   void _showHistory() {
     final l = AppLocalizations.of(context);
+    final t = AppColors.of(context);
     final entries = _state.history.reversed.toList();
     showModalBottomSheet<void>(
       context: context,
-      backgroundColor: const Color(0xFF1A1A1A),
+      backgroundColor: t.appBarBg,
       showDragHandle: true,
       builder: (sheetCtx) => SafeArea(
         top: false,
@@ -333,10 +399,10 @@ class _CalcScaffoldState extends State<_CalcScaffold> {
                   alignment: AlignmentDirectional.centerStart,
                   child: Text(
                     l.historyTitle,
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontSize: 13,
                       fontWeight: FontWeight.w600,
-                      color: Color(0xFFB0B0B0),
+                      color: t.textTertiary,
                     ),
                   ),
                 ),
@@ -346,10 +412,7 @@ class _CalcScaffoldState extends State<_CalcScaffold> {
                   padding: const EdgeInsets.fromLTRB(20, 12, 20, 28),
                   child: Text(
                     l.historyEmpty,
-                    style: const TextStyle(
-                      fontSize: 14,
-                      color: Color(0xFF808080),
-                    ),
+                    style: TextStyle(fontSize: 14, color: t.textFaint),
                   ),
                 )
               else

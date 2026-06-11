@@ -20,7 +20,7 @@ flutter pub get
 flutter run                   # aktuelle Plattform
 flutter run -d chrome         # Web
 flutter analyze               # was CI ausführt
-flutter test                  # gesamte Suite (~267 Tests)
+flutter test                  # gesamte Suite (~277 Tests)
 flutter test test/rational_test.dart           # einzelne Datei
 flutter test --plain-name "parses 1/7"         # einzelner Test per Name
 ```
@@ -35,6 +35,9 @@ Test-Routing (für gezielte Edits):
   und die Keypad-Modi/-Profile (Overlay/Scroll, Alle/Einfach).
 - `calc_prefs_test.dart` — `CalcPrefsNotifier`: Defaults, Persistenz-
   Roundtrip, Fallback bei unbekannten Strings, Notify-Verhalten.
+- `app_theme_test.dart` — `ThemeNotifier` (Defaults, Persistenz,
+  System-Modus-Auflösung), `AppColors.of`-Fallback, Light-Boot-Smoke
+  der ganzen App.
 - `settings_page_test.dart` — Einstellungen-Seite: Zeilen-Rendering,
   Segment-Toggles, Sichtbarkeit der State-Zeilen ohne `CalcStateScope`.
 - `edge_cases_test.dart` — Grenzfall-Sammler über die Module hinweg.
@@ -239,8 +242,9 @@ Payload-freie Varianten. Spiegelt das Rust-Enum und erlaubt erschöpfende
   - **`_BreitKeypad`** (Landscape / Tablet): Inline-Layout mit allen zehn
     Sets nebeneinander, gegliedert in drei visuelle Blöcke: Zahlengitter,
     Sets 1–5 (Hauptoperationen + System), Sets 6–10 (erweiterte Funktionen).
-    Zwischen den drei Blöcken läuft je eine 1-dp-Divider-Linie (`Color
-    0xFF333333`, gleich wie der horizontale Divider in `_HochKeypad`).
+    Zwischen den drei Blöcken läuft je eine 1-dp-Divider-Linie
+    (Palette-Slot `hairline`, gleich wie der horizontale Divider in
+    `_HochKeypad`).
     Geometrie (Build 7, mit Build-8-Floor-Anpassung):
     - `buttonSize = min(rawH, rawW).clamp(breitMinTouchTarget, 70)` — beide
       Achsen werden berücksichtigt, damit weder vertikal noch horizontal
@@ -294,7 +298,7 @@ Geometrie-Kapitel.
    Feedback).
 7. `_VersionFooter` (Padding + Versions-Anzeige).
 
-Alle Top-Level-Items sind durch 1-dp-Dividers im Farbton `0xFF2C2C2C`
+Alle Top-Level-Items sind durch 1-dp-Dividers im Palette-Slot `divider`
 getrennt; keine grösseren Gaps mehr (früher 24 dp vor dem Sprach-
 Picker als visueller Sektions-Marker — mit dem Theorie-Expansion-
 Container ist dieser Marker visuell redundant geworden).
@@ -351,13 +355,17 @@ Regional-Indicator-Emojis.
 
 Eigene Seite, erreichbar über die Info-Liste. Bündelt die Quick-Toggles
 (Glyphen-Stil, Haptik — früher lose Zeilen in der Info-Liste) mit den
-Keypad-Präferenzen und den Live-Rechner-Modi. Sechs Zeilen, getrennt
-durch `0xFF2C2C2C`-Dividers, Segment-Optik via `_SegmentRow`
+Keypad-Präferenzen und den Live-Rechner-Modi. Sieben Zeilen, getrennt
+durch Dividers im Palette-Slot `divider`, Segment-Optik via `_SegmentRow`
 (ToggleButtons im Stil des früheren `_GlyphStyleToggle`):
 
-1. **Glyphen-Stil** (`GlyphStyleScope`) und 2. **Haptik**
+1. **Erscheinungsbild** Dunkel/Hell/System — liest `ThemeScope.maybeOf`
+   und schreibt `ThemeNotifier.setSetting` (siehe Theming-Abschnitt
+   unten); ohne ThemeScope (Standalone-Widget-Tests) wird die Zeile
+   ausgeblendet — gleiche Konvention wie die Calc-State-Zeilen.
+2. **Glyphen-Stil** (`GlyphStyleScope`) und 3. **Haptik**
    (`HapticsScope`) — unverändert verschoben.
-3. **Funktionstasten** Overlay/Scrollen und 4. **Funktionsumfang**
+4. **Funktionstasten** Overlay/Scrollen und 5. **Funktionsumfang**
    Alle/Einfach — schreiben in `CalcPrefsNotifier`
    (`lib/calc_prefs.dart`): `ChangeNotifier` + SharedPreferences-Keys
    `keypad_mode_v1`, `keypad_profile_v1`, `numeral_system_v1`,
@@ -365,8 +373,8 @@ durch `0xFF2C2C2C`-Dividers, Segment-Optik via `_SegmentRow`
    Defaults zurück (Overlay/Alle/Doz/Deg = exakt das
    Vor-Einstellungen-Verhalten, Store-Screenshots bleiben gültig).
    Bereitgestellt über `CalcPrefsScope` (InheritedNotifier).
-5. **Zahlensystem** Doz/Dez (Labels literal, sprachneutral — wie die
-   Keypad-Beschriftung) und 6. **Winkelmodus** DEG/RAD/GRD — bedienen
+6. **Zahlensystem** Doz/Dez (Labels literal, sprachneutral — wie die
+   Keypad-Beschriftung) und 7. **Winkelmodus** DEG/RAD/GRD — bedienen
    den **lebenden** `DozenalCalcState` über `CalcStateScope.maybeOf`
    (`lib/calc_scope.dart`); ohne Scope (Widget-Tests, die die Seite
    standalone pumpen) werden beide Zeilen ausgeblendet. Doz/Dez läuft
@@ -386,10 +394,52 @@ einmalig in den State ein, `_syncPrefsFromState` spiegelt
 Keypad-getriebene Änderungen (Doz/Dez-Taste, DRG-Zyklus) zurück in die
 Prefs. ARB: 9 neue Keys (`settingsTitle`, `settingsKeypadMode*`,
 `settingsScope*`, `settingsNumeralSystemTitle`,
-`settingsAngleModeTitle`) in allen 14 Sprachen.
+`settingsAngleModeTitle`) in allen 14 Sprachen; plus 4 Theme-Keys
+(`settingsThemeTitle/Dark/Light/System`).
 
-Hell/Dunkel-Theme kommt später auf diese Seite, sobald ein
-Theme-System existiert (User-Entscheidung: zurückgestellt).
+### Theming Hell/Dunkel (`lib/app_theme.dart`)
+
+Kein Material-ThemeData-zentriertes Theming — die App ist durchgängig
+custom-painted, deshalb läuft alles über eine **semantische Palette**:
+
+- **`AppColors`** — const-Klasse mit zwei Instanzen: `AppColors.dark`
+  (= exakt die historischen Hardcoded-Farben, Default) und
+  `AppColors.light`. Slots statt Literale: `scaffoldBg`, `appBarBg`,
+  `divider` (ex `2C2C2C`), `hairline` (ex `333333`), `cardFill`/
+  `cardBorder`, `inputFill`, Text-Treppe `textPrimary/Secondary/
+  Tertiary/Muted/Faint`, `link`, `accentGold`, Illustrations-Neutrale
+  `illusLine/illusFaint/illusDot`, Tasten-Akzente (`op`, `equals`,
+  `ac`) u. a. Light behält die egui-Akzent-Identität (Blau/Grün/Rot),
+  nur abgedunkelt für Kontrast auf Hell.
+- **`ThemeNotifier`** (`ThemeSetting.dark/light/system`, Default
+  **Dunkel**): SharedPreferences-Key `theme_mode_v1`, unbekannte
+  Strings fallen auf Dunkel zurück. `system` löst über
+  `updatePlatformBrightness` auf (notifiziert nur im System-Modus).
+  Bereitgestellt via **`ThemeScope`** (InheritedNotifier, in
+  `main.dart` zuoberst).
+- **`AppColors.of(context)`** — zentrale Leseroutine; ohne ThemeScope
+  (Widget-Tests, `tool/`-Golden-Generatoren) fällt sie auf
+  `AppColors.dark` zurück. Painter-Konvention: CustomPainters tragen
+  ein `final AppColors colors`-Feld mit Default `AppColors.dark`,
+  `shouldRepaint` vergleicht `old.colors != colors` (const-Identität
+  macht das billig); kontextlose Helper bekommen `AppColors t` als
+  Parameter durchgereicht.
+- **MaterialApp** bekommt nur ein dünnes abgeleitetes ThemeData
+  (brightness, `scaffoldBackgroundColor`, `appBarTheme`,
+  `NoSplash.splashFactory`) aus der Palette — Quelle der Wahrheit
+  bleibt `AppColors`.
+- **Status-Bar-Icon-Brightness:** KEIN `SystemChrome` (siehe
+  Edge-to-edge-Abschnitt) — eigener MethodChannel
+  `app.weltanschauung.dozenal/system_bars`, `MainActivity.java`
+  setzt `setAppearanceLightStatusBars/NavigationBars` via
+  `WindowInsetsControllerCompat`. Dart-Seite guarded gegen Web/
+  Nicht-Android + `MissingPluginException` und dedupliziert
+  (`_sentLightBars`).
+- **Bewusst theme-unabhängig:** Intro bleibt dunkel, Flag-Painter,
+  `legal/*.html`, farbige Polygon-/Diagonal-Akzente in den
+  Theorie-Illustrationen, roter Eingabe-Caret, der `0A84FF`-Button
+  + weißes Icon-Backing in `AppRefCard`. Keypad-Glyphen folgen der
+  Palette, bleiben aber in beiden Themes Custom-Glyphen.
 
 ### Einheitenrechner (zweiter Rechner-Modus)
 

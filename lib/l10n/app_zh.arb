@@ -194,5 +194,9 @@
   "settingsScopeFull": "全部",
   "settingsScopeSimple": "基础",
   "settingsNumeralSystemTitle": "进制",
-  "settingsAngleModeTitle": "角度单位"
+  "settingsAngleModeTitle": "角度单位",
+  "settingsThemeTitle": "外观",
+  "settingsThemeDark": "深色",
+  "settingsThemeLight": "浅色",
+  "settingsThemeSystem": "跟随系统"
 }

@@ -7,6 +7,7 @@ import androidx.core.view.WindowCompat;
 import androidx.core.view.WindowInsetsControllerCompat;
 import io.flutter.embedding.android.FlutterFragmentActivity;
 import io.flutter.embedding.engine.FlutterEngine;
+import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugins.GeneratedPluginRegistrant;
 
 // SDK-35-officially-blessed edge-to-edge declaration. EdgeToEdge.enable() uses
@@ -58,5 +59,26 @@ public class MainActivity extends FlutterFragmentActivity {
     public void configureFlutterEngine(@NonNull FlutterEngine flutterEngine) {
         super.configureFlutterEngine(flutterEngine);
         GeneratedPluginRegistrant.registerWith(flutterEngine);
+        // Theme-driven system-bar icon brightness. Dart's light/dark setting
+        // calls "setLight" with true = light bars (light app background, dark
+        // icons). Same WindowInsetsControllerCompat path as onCreate — and
+        // deliberately NOT SystemChrome on the Dart side, which would pull
+        // Flutter's PlatformPlugin (and its deprecated Window.* references)
+        // back into the DEX.
+        new MethodChannel(
+                flutterEngine.getDartExecutor().getBinaryMessenger(),
+                "app.weltanschauung.dozenal/system_bars")
+            .setMethodCallHandler((call, result) -> {
+                if ("setLight".equals(call.method)) {
+                    boolean light = Boolean.TRUE.equals(call.arguments());
+                    WindowInsetsControllerCompat c = WindowCompat.getInsetsController(
+                            getWindow(), getWindow().getDecorView());
+                    c.setAppearanceLightStatusBars(light);
+                    c.setAppearanceLightNavigationBars(light);
+                    result.success(null);
+                } else {
+                    result.notImplemented();
+                }
+            });
     }
 }

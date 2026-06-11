@@ -194,5 +194,9 @@
   "settingsScopeFull": "सभी",
   "settingsScopeSimple": "बुनियादी",
   "settingsNumeralSystemTitle": "संख्या प्रणाली",
-  "settingsAngleModeTitle": "कोण मोड"
+  "settingsAngleModeTitle": "कोण मोड",
+  "settingsThemeTitle": "दिखावट",
+  "settingsThemeDark": "डार्क",
+  "settingsThemeLight": "लाइट",
+  "settingsThemeSystem": "सिस्टम"
 }
