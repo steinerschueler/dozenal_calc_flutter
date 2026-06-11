@@ -43,8 +43,12 @@ recall + schließen).
 **Constraint:** Mittlerer-großer Aufwand. **Keine** Store-Screenshot-Änderung,
 solange der Einstieg nicht über eine neue Keypad-Taste läuft.
 
-### 2. M+ / M−
-**Problem:** `Sto` überschreibt den einzigen Speicher. Kein akkumulierender
+### 2. M+ / M− — ✅ erledigt (Logik + Hoch-UI; Breit offen)
+**Umgesetzt:** Tokens `MemPlus`/`MemMinus`, exakte BigInt-Akkumulation auf
+`memoryRational` (`cur.add/sub(lastAns)`), Tasten auf der **zweiten Overlay-Seite
+(OLR)**. Tests grün. *Offen: Breit (Tablet) — siehe Sammelnotiz unter #4.*
+
+**Problem (Ausgangslage):** `Sto` überschreibt den einzigen Speicher. Kein akkumulierender
 Speicher (Standard auf wissenschaftlichen Rechnern).
 
 **Lösung:** `memPlus()`/`memMinus()` addieren/subtrahieren `lastAns` auf
@@ -54,8 +58,13 @@ Umwidmung (z. B. Sto-Doppeltipp).
 **Constraint:** Neue Keypad-Tasten ⇒ **Store-Screenshots betroffen.** Set 6
 (Memory) hätte Platz, aber es ist eine Layout-Änderung am Haupt-Keypad.
 
-### 3. Fehlende Funktionstasten (ln, eˣ, x², ±, log₁₂, nCr/nPr)
-**Problem:** Kein direktes `ln`/`eˣ`, kein `x²`, kein Vorzeichen-Toggle `±`,
+### 3. Funktionstasten (ln, eˣ, x², ±, log₁₂, nCr/nPr) — ✅ erledigt (Logik + Hoch-UI; Breit offen)
+**Umgesetzt:** `Ln`/`ExpE`/`Log12` (f64: ln/exp/log12), `NCr`/`NPr`
+(fakultätsbasiert im Resolver), `Square` (= ^2-Shortcut), `PlusMinus`
+(Vorzeichen-Toggle des aktuellen Literals). Tasten auf OLR. 9 Tests grün.
+*Offen: Breit (Tablet) — siehe Sammelnotiz unter #4.*
+
+**Problem (Ausgangslage):** Kein direktes `ln`/`eˣ`, kein `x²`, kein Vorzeichen-Toggle `±`,
 kein Logarithmus zur Basis 12, keine Kombinatorik.
 
 **Lösung:** Pro Funktion ein Token + Eval-Pfad ergänzen (`expression.dart`:
@@ -67,8 +76,19 @@ Shortcut. `±` = Negate am aktuellen Literal. `nCr/nPr` BigInt-Fakultäts-basier
 
 **Constraint:** Neue Tasten ⇒ **Store-Screenshots.** Set 9 (Extended) hat Luft.
 
-### 4. Wissenschaftsnotation / EXP-Eingabe
-**Problem:** Sehr große/kleine Zahlen sind weder eingebbar (`EXP`/`×10ⁿ`) noch
+### 4. Wissenschaftsnotation / EXP-Eingabe — ✅ erledigt (Logik + Hoch-UI; Breit offen)
+**Umgesetzt:** Token `Sci`; `a EXP b` → `a·Basis^b` (×10ⁿ dezimal, ×12ⁿ dozenal,
+in `buildMevalString` mit der aktiven Basis). Taste auf OLR. Test `5 EXP 2 = 500`
+(dozenal) grün.
+
+**Offen für #2–#4 — Breit (Tablet/Landscape):** Die neuen Tasten leben bislang
+nur im **Hoch-Zwei-Seiten-Overlay (OLL/OLR mit Rand-Pfeilen + Wisch)**. In Breit
+(alle Sets inline) fehlen sie noch. Inline-Anhängen (16 statt 13 Spalten) bricht
+die „Kompakt-Phone passt ohne Scrollen"-Garantie (Test) — daher braucht Breit
+**dieselbe Zwei-Seiten-Behandlung** wie Hoch (Design-Entscheid), nicht Inline-
+Scroll. Bis dahin sind die Funktionen am Telefon-Hochformat voll nutzbar.
+
+**Problem (Ausgangslage):** Sehr große/kleine Zahlen sind weder eingebbar (`EXP`/`×10ⁿ`) noch
 lesbar (lange exakte Ergebnisse werden hart geschnitten).
 
 **Lösung:** `Exp`-Token (`×10ⁿ`, in Doz mit 10 = zwölf) + Lexer/Parser-
@@ -172,3 +192,6 @@ bündeln. Nur bei Bedarf — keine Refactor-Schuld auf Vorrat.
 - Glyphen-Doku-Fix: B (elf) ist Halbkreis über Vollkreis, kein gefüllter Kreis
 - „Was ist das Dozenalsystem?": Apfel-Satz entzweideutigt (15 = dutzendunddrei)
 - #1 Ergebnis-Historie / Tape (Wisch-Geste, Bottom-Sheet, recall, 14 Sprachen)
+- #2/#3/#4 Funktionstasten-Rechenkern (M+/M−, x², ±, ln, eˣ, log₁₂, nCr, nPr,
+  EXP) — Tokens, Eval, State, a11y×14, 9 Tests; **Hoch-Zwei-Seiten-Overlay
+  (OLL/OLR)** verdrahtet. Breit-Verdrahtung als einziger Rest offen.
