@@ -179,6 +179,8 @@
   "a11yNcr": "Combinations, n choose r",
   "a11yNpr": "Permutations, n p r",
   "a11ySci": "Scientific notation",
+  "a11yPageFunc": "Show more function keys",
+  "a11yPageSets": "Back to the first page",
   "a11yTheoryChapters": "theory chapters",
   "a11yIntro": "intro",
   "resultCopied": "Copied: {value}",

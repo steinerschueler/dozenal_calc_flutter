@@ -178,6 +178,8 @@
   "a11yNcr": "ترکیب، n از r",
   "a11yNpr": "جایگشت، n p r",
   "a11ySci": "نشانه‌گذاری علمی",
+  "a11yPageFunc": "نمایش کلیدهای تابع بیشتر",
+  "a11yPageSets": "بازگشت به صفحهٔ نخست",
   "a11yTheoryChapters": "فصل‌های نظری",
   "a11yIntro": "معرفی",
   "resultCopied": "کپی شد: {value}",

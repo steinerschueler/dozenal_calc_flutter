@@ -178,6 +178,8 @@
   "a11yNcr": "组合，n 选 r",
   "a11yNpr": "排列，n p r",
   "a11ySci": "科学计数法",
+  "a11yPageFunc": "显示更多功能键",
+  "a11yPageSets": "返回第一页",
   "a11yTheoryChapters": "理论章节",
   "a11yIntro": "介绍",
   "resultCopied": "已复制：{value}",

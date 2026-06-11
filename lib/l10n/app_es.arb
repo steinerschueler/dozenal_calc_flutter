@@ -178,6 +178,8 @@
   "a11yNcr": "Combinaciones, n en r",
   "a11yNpr": "Variaciones, n p r",
   "a11ySci": "Notación científica",
+  "a11yPageFunc": "Mostrar más teclas de función",
+  "a11yPageSets": "Volver a la primera página",
   "a11yTheoryChapters": "capítulos de teoría",
   "a11yIntro": "introducción",
   "resultCopied": "Copiado: {value}",

@@ -178,6 +178,8 @@
   "a11yNcr": "توافيق، n من r",
   "a11yNpr": "تباديل، n p r",
   "a11ySci": "الترميز العلمي",
+  "a11yPageFunc": "عرض المزيد من مفاتيح الدوال",
+  "a11yPageSets": "العودة إلى الصفحة الأولى",
   "a11yTheoryChapters": "فصول النظرية",
   "a11yIntro": "مقدمة",
   "resultCopied": "تم النسخ: {value}",

@@ -4,7 +4,8 @@
 //   - _HochKeypad   (portrait, vertical stack + AnimatedSwitcher panel-swap
 //                    between Sets 1-4 and Sets 6-10)
 //   - _BreitKeypad  (landscape and tablet, inline layout with all ten sets
-//                    visible side-by-side, no overlay)
+//                    side-by-side; the third group pages between Sets 6-10
+//                    and the function keys via an edge arrow)
 //
 // Both modes derive button sizes from LayoutBuilder constraints. Each button
 // is wrapped in a 44 dp minimum-touch-target floor. When the Hoch mode falls
@@ -68,9 +69,12 @@ class Keypad extends StatelessWidget {
   /// in Hoch mode — Breit ignores it (all sets are always visible).
   final bool overlayOpen;
 
-  /// Which overlay page is showing (Hoch only): 0 = Sets 6–10, 1 = function
-  /// keys. [onOverlayPageChanged] is fired by the left/right swipe and the
-  /// edge arrows to flip between the two pages.
+  /// Which extended-sets page is showing: 0 = Sets 6–10, 1 = function keys.
+  /// In Hoch mode this selects the overlay page (visible while the overlay
+  /// is open); in Breit mode it selects the third group's page (always
+  /// visible). [onOverlayPageChanged] is fired by the edge arrows (both
+  /// modes) and the horizontal swipe (Hoch only — in Breit a swipe must
+  /// stay free for the horizontal scroll fallback on narrow devices).
   final int overlayPage;
   final ValueChanged<int>? onOverlayPageChanged;
 
@@ -111,6 +115,8 @@ class Keypad extends StatelessWidget {
           isDisabled: isDisabled,
           onInfoTap: onInfoTap,
           onHelpTap: onHelpTap,
+          page: overlayPage,
+          onPageChanged: onOverlayPageChanged,
         );
       },
     );
@@ -180,6 +186,21 @@ const List<CalcToken> _set7 = [ConstPi(), ConstE(), ConstPhi(), ConstSqrt2()];
 const List<CalcToken> _set8 = [Sinh(), Cosh(), Tanh(), Coth()];
 const List<CalcToken> _set9 = [Factorial(), AbsVal(), Reciprocal(), Mod()];
 const List<CalcToken> _set10Column = [Doz(), Dez(), Drg()]; // Close dropped
+
+/// Function-key columns for the Breit third-group page 1 — the transpose of
+/// _hochFuncRows, following the same row↔column convention as Sets 1-4 vs
+/// _hochOpRows. Short columns are padded to four rows via padToFour.
+const List<CalcToken> _funcCol1 = [MemPlus(), Ln(), NCr()];
+const List<CalcToken> _funcCol2 = [MemMinus(), ExpE(), NPr()];
+const List<CalcToken> _funcCol3 = [Square(), Log12()];
+const List<CalcToken> _funcCol4 = [PlusMinus(), Sci()];
+
+/// Edge-arrow geometry shared by the Hoch overlay pages and the Breit
+/// third-group pages. The Breit width math accounts for
+/// `_kPageArrowWidth + _kPageArrowMargin` so both pages render at the same
+/// total row width.
+const double _kPageArrowWidth = 22.0;
+const double _kPageArrowMargin = 6.0;
 
 // ---------------------------------------------------------------------------
 // Hoch keypad — portrait. Flex Column with panel-swap.
@@ -438,6 +459,7 @@ class _OverlayPanel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l = AppLocalizations.of(context);
     final isFunc = page == 1;
     final panel = _RowsPanel(
       opRows: isFunc ? _hochFuncRows : _hochOverlayRows,
@@ -454,9 +476,19 @@ class _OverlayPanel extends StatelessWidget {
     final gridRow = Row(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        if (isFunc) _PageArrow(pointLeft: true, onTap: () => _go(0)),
+        if (isFunc)
+          _PageArrow(
+            pointLeft: true,
+            onTap: () => _go(0),
+            label: l.a11yPageSets,
+          ),
         Expanded(child: panel),
-        if (!isFunc) _PageArrow(pointLeft: false, onTap: () => _go(1)),
+        if (!isFunc)
+          _PageArrow(
+            pointLeft: false,
+            onTap: () => _go(1),
+            label: l.a11yPageFunc,
+          ),
       ],
     );
     final swipeable = GestureDetector(
@@ -477,43 +509,51 @@ class _OverlayPanel extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       mainAxisSize: fixedHeights ? MainAxisSize.min : MainAxisSize.max,
       children: [
-        _OverlayHeader(
-          title: AppLocalizations.of(context).keypadOverlayTitle,
-          tight: tight,
-        ),
+        _OverlayHeader(title: l.keypadOverlayTitle, tight: tight),
         if (fixedHeights) swipeable else Expanded(child: swipeable),
       ],
     );
   }
 }
 
-/// Tall, slim, tappable edge arrow that flips between the two overlay pages
-/// and signals that a second page exists next to the current one.
+/// Tall, slim, tappable edge arrow that flips between the two extended-sets
+/// pages and signals that a second page exists next to the current one.
+/// Used by the Hoch overlay (OLL/OLR) and the Breit third group.
 class _PageArrow extends StatelessWidget {
   final bool pointLeft;
   final VoidCallback onTap;
-  const _PageArrow({required this.pointLeft, required this.onTap});
+  final String label;
+  const _PageArrow({
+    required this.pointLeft,
+    required this.onTap,
+    required this.label,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      behavior: HitTestBehavior.opaque,
-      onTap: onTap,
-      child: Container(
-        width: 22,
-        margin: EdgeInsets.only(
-          left: pointLeft ? 0 : 6,
-          right: pointLeft ? 6 : 0,
-        ),
-        decoration: BoxDecoration(
-          color: const Color(0x14FFFFFF),
-          borderRadius: BorderRadius.circular(6),
-          border: Border.all(color: const Color(0xFF333333)),
-        ),
-        child: Icon(
-          pointLeft ? Icons.chevron_left : Icons.chevron_right,
-          size: 20,
-          color: const Color(0xFFB0B0B0),
+    return Semantics(
+      button: true,
+      label: label,
+      excludeSemantics: true,
+      child: GestureDetector(
+        behavior: HitTestBehavior.opaque,
+        onTap: onTap,
+        child: Container(
+          width: _kPageArrowWidth,
+          margin: EdgeInsets.only(
+            left: pointLeft ? 0 : _kPageArrowMargin,
+            right: pointLeft ? _kPageArrowMargin : 0,
+          ),
+          decoration: BoxDecoration(
+            color: const Color(0x14FFFFFF),
+            borderRadius: BorderRadius.circular(6),
+            border: Border.all(color: const Color(0xFF333333)),
+          ),
+          child: Icon(
+            pointLeft ? Icons.chevron_left : Icons.chevron_right,
+            size: 20,
+            color: const Color(0xFFB0B0B0),
+          ),
         ),
       ),
     );
@@ -636,6 +676,12 @@ class _BreitKeypad extends StatelessWidget {
   final VoidCallback? onInfoTap;
   final VoidCallback? onHelpTap;
 
+  /// Third-group page: 0 = Sets 6-10, 1 = function keys. Flipped by the
+  /// tall edge arrow (no swipe in Breit — horizontal drags must stay free
+  /// for the scroll fallback on narrow devices).
+  final int page;
+  final ValueChanged<int>? onPageChanged;
+
   const _BreitKeypad({
     required this.onTap,
     this.isArmed,
@@ -643,6 +689,8 @@ class _BreitKeypad extends StatelessWidget {
     this.isDisabled,
     this.onInfoTap,
     this.onHelpTap,
+    required this.page,
+    required this.onPageChanged,
   });
 
   @override
@@ -673,6 +721,12 @@ class _BreitKeypad extends StatelessWidget {
         // outer margins via the SizedBox + MainAxisAlignment.center pair.
         const groupGapBase = interBlockGap + 10.0; // 18 dp
         const maxGroupGap = 100.0;
+        // Width consumed by the third-group page arrow: arrow + its margin
+        // + the extra inter-block gap next to it. Both pages carry exactly
+        // one arrow (right edge on page 0, left edge on page 1), so the row
+        // width is page-independent and the fit math holds for both.
+        const pageArrowExtent =
+            _kPageArrowWidth + _kPageArrowMargin + interBlockGap;
 
         final h = constraints.maxHeight;
         final w = constraints.maxWidth;
@@ -680,25 +734,32 @@ class _BreitKeypad extends StatelessWidget {
             ? (h - 3 * interBlockGap - verticalContentGap) / 5
             : tabletButtonSize;
         final rawW = w.isFinite
-            ? (w - 10 * interBlockGap - 2 * groupGapBase) / 13
+            ? (w - 10 * interBlockGap - 2 * groupGapBase - pageArrowExtent) / 13
             : tabletButtonSize;
         final raw = math.min(rawH, rawW);
         final buttonSize = raw.clamp(breitMinTouchTarget, tabletButtonSize);
 
         final baseNaturalWidth =
-            13 * buttonSize + 10 * interBlockGap + 2 * groupGapBase;
+            13 * buttonSize +
+            10 * interBlockGap +
+            2 * groupGapBase +
+            pageArrowExtent;
         final hSlack = w.isFinite ? math.max(0.0, w - baseNaturalWidth) : 0.0;
         final groupGap = (groupGapBase + hSlack / 2).clamp(
           groupGapBase,
           maxGroupGap,
         );
         final contentWidth =
-            13 * buttonSize + 10 * interBlockGap + 2 * groupGap;
+            13 * buttonSize +
+            10 * interBlockGap +
+            2 * groupGap +
+            pageArrowExtent;
 
         final content = _buildBreitContent(
           buttonSize: buttonSize,
           interBlockGap: interBlockGap,
           groupGap: groupGap,
+          l: AppLocalizations.of(ctx),
         );
 
         final body = Column(
@@ -750,6 +811,7 @@ class _BreitKeypad extends StatelessWidget {
     required double buttonSize,
     required double interBlockGap,
     required double groupGap,
+    required AppLocalizations l,
   }) {
     Widget digitGrid() {
       return Column(
@@ -852,6 +914,21 @@ class _BreitKeypad extends StatelessWidget {
         ),
       ),
     );
+    // Tall edge arrow flipping the third group between its two pages.
+    // Sized to the four-row block height so it reads as a page edge, not
+    // a button.
+    Widget pageArrow({
+      required bool pointLeft,
+      required int target,
+      required String label,
+    }) => SizedBox(
+      height: dividerHeight,
+      child: _PageArrow(
+        pointLeft: pointLeft,
+        onTap: () => onPageChanged?.call(target),
+        label: label,
+      ),
+    );
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -866,16 +943,36 @@ class _BreitKeypad extends StatelessWidget {
         opColumn(_set4),
         gap(),
         systemColumn(),
-        bigGap(), // group break: Sets 1-5 → Sets 6-10
-        opColumn(_set6),
-        gap(),
-        opColumn(_set7),
-        gap(),
-        opColumn(_set8),
-        gap(),
-        opColumn(_set9),
-        gap(),
-        opColumn(_set10Column, padToFour: true),
+        bigGap(), // group break: Sets 1-5 → third group (paged)
+        // Third group, page 0: Sets 6-10 + right-edge arrow to the function
+        // keys. Page 1: function-key columns (transpose of _hochFuncRows)
+        // + left-edge arrow back. A trailing empty column keeps page 1 at
+        // the same total width as page 0 (5 columns + 5 gaps + arrow).
+        if (page == 0) ...[
+          opColumn(_set6),
+          gap(),
+          opColumn(_set7),
+          gap(),
+          opColumn(_set8),
+          gap(),
+          opColumn(_set9),
+          gap(),
+          opColumn(_set10Column, padToFour: true),
+          gap(),
+          pageArrow(pointLeft: false, target: 1, label: l.a11yPageFunc),
+        ] else ...[
+          pageArrow(pointLeft: true, target: 0, label: l.a11yPageSets),
+          gap(),
+          opColumn(_funcCol1, padToFour: true),
+          gap(),
+          opColumn(_funcCol2, padToFour: true),
+          gap(),
+          opColumn(_funcCol3, padToFour: true),
+          gap(),
+          opColumn(_funcCol4, padToFour: true),
+          gap(),
+          SizedBox(width: buttonSize),
+        ],
       ],
     );
   }

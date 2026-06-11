@@ -178,6 +178,8 @@
   "a11yNcr": "Teaglamaí, n as r",
   "a11yNpr": "Iomalartuithe, n p r",
   "a11ySci": "Nodaireacht eolaíoch",
+  "a11yPageFunc": "Taispeáin tuilleadh eochracha feidhme",
+  "a11yPageSets": "Ar ais go dtí an chéad leathanach",
   "a11yTheoryChapters": "caibidlí teoirice",
   "a11yIntro": "réamhrá",
   "resultCopied": "Cóipeáilte: {value}",

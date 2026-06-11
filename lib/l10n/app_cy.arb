@@ -178,6 +178,8 @@
   "a11yNcr": "Cyfuniadau, n dewis r",
   "a11yNpr": "Trefniadau, n p r",
   "a11ySci": "Nodiant gwyddonol",
+  "a11yPageFunc": "Dangos mwy o fysellau swyddogaeth",
+  "a11yPageSets": "Yn ôl i'r dudalen gyntaf",
   "a11yTheoryChapters": "penodau theori",
   "a11yIntro": "rhagarweiniad",
   "resultCopied": "Copïwyd: {value}",

@@ -178,6 +178,8 @@
   "a11yNcr": "組合，n 選 r",
   "a11yNpr": "排列，n p r",
   "a11ySci": "科學記數法",
+  "a11yPageFunc": "顯示更多功能鍵",
+  "a11yPageSets": "返回第一頁",
   "a11yTheoryChapters": "理論章節",
   "a11yIntro": "介紹",
   "resultCopied": "已複製：{value}",

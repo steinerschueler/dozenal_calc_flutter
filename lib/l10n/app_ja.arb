@@ -178,6 +178,8 @@
   "a11yNcr": "組合せ、n から r",
   "a11yNpr": "順列、n p r",
   "a11ySci": "科学的記数法",
+  "a11yPageFunc": "その他のファンクションキーを表示",
+  "a11yPageSets": "最初のページに戻る",
   "a11yTheoryChapters": "理論の章",
   "a11yIntro": "はじめに",
   "resultCopied": "コピーしました：{value}",
