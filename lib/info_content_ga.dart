@@ -39,8 +39,8 @@ List<Widget> _chapterGa(int chapter, AppLocalizations l) {
         ),
         const _P(
           "Tá gach figiúr eile eatarthu tógtha ó leathchiorcail agus "
-          "ciorcail iomlána. Is ciorcal simplí an náid, agus is ciorcal "
-          "líonta B (= aon déag).",
+          "ciorcail iomlána. Is ciorcal simplí an náid, agus is leathchiorcal "
+          "os cionn ciorcail iomláin B (= aon déag).",
         ),
         const _DigitLegend(),
         const _H("Bunúsach"),
@@ -383,8 +383,7 @@ List<Widget> _chapterGa(int chapter, AppLocalizations l) {
           "díreach — sainghné an chóimheasa órga. Déanann an aitheantas "
           "seo de φ tairiseach algéabrach uathúil.",
         ),
-        const _H(
-            "12 = 2² × 3 — díscaoileadh príomhfhachtóirí le hiarmhairtí"),
+        const _H("12 = 2² × 3 — díscaoileadh príomhfhachtóirí le hiarmhairtí"),
         const _P(
           "Is uimhir an-ilchodach í dáréag (highly composite number): "
           "tá níos mó roinnteoirí aici ná aon uimhir nádúrtha níos lú. "

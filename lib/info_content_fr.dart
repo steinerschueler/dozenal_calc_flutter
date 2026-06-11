@@ -25,7 +25,7 @@ List<Widget> _chapterFr(int chapter, AppLocalizations l) {
         const _P(
           "Tous les chiffres intermédiaires sont construits à partir "
           "de demi-cercles et de cercles pleins. Le zéro est un simple "
-          "cercle, B (= onze) un cercle plein.",
+          "cercle, B (= onze) un demi-cercle au-dessus d’un cercle plein.",
         ),
         const _DigitLegend(),
         const _H("Utilisation de base"),
@@ -391,7 +391,8 @@ List<Widget> _chapterFr(int chapter, AppLocalizations l) {
           "fait de φ une constante algébriquement unique.",
         ),
         const _H(
-            "12 = 2² × 3 — une décomposition en facteurs aux conséquences"),
+          "12 = 2² × 3 — une décomposition en facteurs aux conséquences",
+        ),
         const _P(
           "Douze est un nombre hautement composé (highly composite "
           "number) : il a plus de diviseurs que n'importe quel "
@@ -822,8 +823,7 @@ List<Widget> _chapterFr(int chapter, AppLocalizations l) {
           "ouvrage « Formes artistiques de la nature » avec un "
           "détail qui impressionne encore aujourd'hui.",
         ),
-        const _H(
-            "Quasicristaux — l'exception qui confirme la règle"),
+        const _H("Quasicristaux — l'exception qui confirme la règle"),
         const _P(
           "En 1982, Dan Shechtman a découvert un motif à "
           "symétrie icosaédrique dans un alliage "

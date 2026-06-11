@@ -35,7 +35,7 @@ List<Widget> _chapterIt(int chapter, AppLocalizations l) {
         const _P(
           "Tutte le cifre intermedie sono costruite da semicerchi e "
           "cerchi completi. Lo zero è un cerchio semplice, B (= "
-          "undici) un cerchio pieno.",
+          "undici) un semicerchio sopra un cerchio completo.",
         ),
         const _DigitLegend(),
         const _H("Uso base"),
@@ -355,8 +355,7 @@ List<Widget> _chapterIt(int chapter, AppLocalizations l) {
           "Questa identità rende φ una costante algebricamente "
           "unica.",
         ),
-        const _H(
-            "12 = 2² × 3 — una scomposizione in fattori con conseguenze"),
+        const _H("12 = 2² × 3 — una scomposizione in fattori con conseguenze"),
         const _P(
           "Dodici è un numero altamente composto (highly composite "
           "number): ha più divisori di qualsiasi numero naturale "

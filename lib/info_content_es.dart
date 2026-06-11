@@ -36,7 +36,7 @@ List<Widget> _chapterEs(int chapter, AppLocalizations l) {
         const _P(
           "Todos los dígitos intermedios están construidos a partir "
           "de semicírculos y círculos completos. El cero es un "
-          "círculo simple, B (= once) un círculo lleno.",
+          "círculo simple, B (= once) un semicírculo sobre un círculo completo.",
         ),
         const _DigitLegend(),
         const _H("Uso básico"),
@@ -345,7 +345,8 @@ List<Widget> _chapterEs(int chapter, AppLocalizations l) {
           "identidad hace de φ una constante algebraicamente única.",
         ),
         const _H(
-            "12 = 2² × 3 — una descomposición en factores con consecuencias"),
+          "12 = 2² × 3 — una descomposición en factores con consecuencias",
+        ),
         const _P(
           "Doce es un número altamente compuesto (highly composite "
           "number): tiene más divisores que cualquier número natural "

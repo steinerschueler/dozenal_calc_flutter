@@ -14,7 +14,7 @@ List<Widget> _chapterEn(int chapter, AppLocalizations l) {
         ),
         const _P(
           'All digits in between are built from semicircles and full '
-          'circles. Zero is a simple circle, B (= eleven) a filled circle.',
+          'circles. Zero is a simple circle, B (= eleven) a semicircle above a full circle.',
         ),
         const _DigitLegend(),
         const _H('Basic operation'),

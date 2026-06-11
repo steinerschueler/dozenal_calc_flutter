@@ -41,7 +41,7 @@ List<Widget> _chapterZhHant(int chapter, AppLocalizations l) {
         ),
         const _P(
           "所有中間的數字由半圓和滿圓構成。零是簡單的圓，B（= 十一）"
-          "是實心圓。",
+          "是滿圓上方的半圓。",
         ),
         const _DigitLegend(),
         const _H("基本使用"),
@@ -414,9 +414,7 @@ List<Widget> _chapterZhHant(int chapter, AppLocalizations l) {
           "計算機中輸入 3 / π = 進行驗證。",
         ),
         const _H("四個多邊形比較"),
-        const _P(
-          "以下所有圖形共享相同的外接圓。公式：A = (n/2)·R²·sin(2π/n)。",
-        ),
+        const _P("以下所有圖形共享相同的外接圓。公式：A = (n/2)·R²·sin(2π/n)。"),
         const _Pre(
           "  圖形           份額      公式\n"
           "  三角形         41.3%     3√3/(4π)\n"
@@ -640,9 +638,7 @@ List<Widget> _chapterZhHant(int chapter, AppLocalizations l) {
           "  — 12 對腦神經（I 嗅神經到 XII 舌下神經）\n"
           "  — 12 塊胸椎（與 12 對肋骨連接）",
         ),
-        const _P(
-          "解剖變異是存在的（11 或 13 對肋骨偶爾可能）。",
-        ),
+        const _P("解剖變異是存在的（11 或 13 對肋骨偶爾可能）。"),
         const _H("手塑造了數字系統嗎？"),
         const _P(
           "是否指骨解剖學影響了十二進制數字系統的出現，或反之，在"

@@ -33,7 +33,7 @@ List<Widget> _chapterZh(int chapter, AppLocalizations l) {
         ),
         const _P(
           "所有中间的数字由半圆和满圆构成。零是简单的圆，B（= 十一）"
-          "是实心圆。",
+          "是满圆上方的半圆。",
         ),
         const _DigitLegend(),
         const _H("基本使用"),
@@ -406,9 +406,7 @@ List<Widget> _chapterZh(int chapter, AppLocalizations l) {
           "计算器中输入 3 / π = 进行验证。",
         ),
         const _H("四个多边形比较"),
-        const _P(
-          "以下所有图形共享相同的外接圆。公式：A = (n/2)·R²·sin(2π/n)。",
-        ),
+        const _P("以下所有图形共享相同的外接圆。公式：A = (n/2)·R²·sin(2π/n)。"),
         const _Pre(
           "  图形           份额      公式\n"
           "  三角形         41.3%     3√3/(4π)\n"
@@ -632,9 +630,7 @@ List<Widget> _chapterZh(int chapter, AppLocalizations l) {
           "  — 12 对脑神经（I 嗅神经到 XII 舌下神经）\n"
           "  — 12 块胸椎（与 12 对肋骨连接）",
         ),
-        const _P(
-          "解剖变异是存在的（11 或 13 对肋骨偶尔可能）。",
-        ),
+        const _P("解剖变异是存在的（11 或 13 对肋骨偶尔可能）。"),
         const _H("手塑造了数字系统吗？"),
         const _P(
           "是否指骨解剖学影响了十二进制数字系统的出现，或反之，在"

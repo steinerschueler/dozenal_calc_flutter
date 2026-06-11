@@ -44,7 +44,7 @@ List<Widget> _chapterJa(int chapter, AppLocalizations l) {
         ),
         const _P(
           "中間のすべての数字は半円と完全な円から構成されます。零は"
-          "単純な円、B（= 十一）は塗りつぶされた円です。",
+          "単純な円、B（= 十一）は完全な円の上の半円です。",
         ),
         const _DigitLegend(),
         const _H("基本操作"),

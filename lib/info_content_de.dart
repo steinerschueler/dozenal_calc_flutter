@@ -14,7 +14,7 @@ List<Widget> _chapterDe(int chapter, AppLocalizations l) {
         ),
         const _P(
           'Alle Ziffern dazwischen bestehen aus Halbkreisen und Vollkreisen. '
-          'Die Null ist ein einfacher Kreis, B (= elf) ein gefüllter Kreis.',
+          'Die Null ist ein einfacher Kreis, B (= elf) ein Halbkreis über einem Vollkreis.',
         ),
         const _DigitLegend(),
         const _H('Grundbedienung'),

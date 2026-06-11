@@ -52,7 +52,7 @@ List<Widget> _chapterCy(int chapter, AppLocalizations l) {
         ),
         const _P(
           "Adeiledir pob ffigur rhyngddynt o hanner-gylchoedd a chylchoedd "
-          "llawn. Cylch syml yw sero, a chylch wedi'i lenwi yw B "
+          "llawn. Cylch syml yw sero, a hanner-cylch uwchben cylch llawn yw B "
           "(= un ar ddeg).",
         ),
         const _DigitLegend(),
