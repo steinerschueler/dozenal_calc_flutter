@@ -46,50 +46,79 @@ void paintTokenAt(
   }
 
   if (token is ExpTopRight) {
-    _paintXWithCornerSquare(canvas, c, minEdge, q, color, strokeWidth,
-        cornerOffset: Offset(q * 1.3, -q * 1.3));
+    _paintXWithCornerSquare(
+      canvas,
+      c,
+      minEdge,
+      q,
+      color,
+      strokeWidth,
+      cornerOffset: Offset(q * 1.3, -q * 1.3),
+    );
     return;
   }
   if (token is RootTopLeft) {
-    _paintXWithCornerSquare(canvas, c, minEdge, q, color, strokeWidth,
-        cornerOffset: Offset(-q * 1.3, -q * 1.3));
+    _paintXWithCornerSquare(
+      canvas,
+      c,
+      minEdge,
+      q,
+      color,
+      strokeWidth,
+      cornerOffset: Offset(-q * 1.3, -q * 1.3),
+    );
     return;
   }
   if (token is LogBotRight) {
-    _paintXWithCornerSquare(canvas, c, minEdge, q, color, strokeWidth,
-        cornerOffset: Offset(q * 1.3, q * 1.3));
+    _paintXWithCornerSquare(
+      canvas,
+      c,
+      minEdge,
+      q,
+      color,
+      strokeWidth,
+      cornerOffset: Offset(q * 1.3, q * 1.3),
+    );
     return;
   }
   if (token is OplusBotLeft) {
     final sqC = c + Offset(-q * 1.3, q * 1.3);
     final sqSize = minEdge * 0.18;
-    _paintXWithCornerSquareAt(canvas, c, minEdge, color, strokeWidth, sqC, sqSize);
+    _paintXWithCornerSquareAt(
+      canvas,
+      c,
+      minEdge,
+      color,
+      strokeWidth,
+      sqC,
+      sqSize,
+    );
     // Tiny + inside the corner square.
     final cross = sqSize * 0.3;
     final crossPaint = Paint()
       ..color = color
       ..strokeWidth = 1.0
       ..strokeCap = StrokeCap.round;
-    canvas.drawLine(sqC + Offset(0, -cross), sqC + Offset(0, cross), crossPaint);
-    canvas.drawLine(sqC + Offset(-cross, 0), sqC + Offset(cross, 0), crossPaint);
+    canvas.drawLine(
+      sqC + Offset(0, -cross),
+      sqC + Offset(0, cross),
+      crossPaint,
+    );
+    canvas.drawLine(
+      sqC + Offset(-cross, 0),
+      sqC + Offset(cross, 0),
+      crossPaint,
+    );
     return;
   }
 
   if (token is TriangleRight) {
-    final pts = [
-      c + Offset(-q, -q),
-      c + Offset(-q, q),
-      c + Offset(q, 0),
-    ];
+    final pts = [c + Offset(-q, -q), c + Offset(-q, q), c + Offset(q, 0)];
     _drawClosedPolygon(canvas, pts, paint);
     return;
   }
   if (token is TriangleLeft) {
-    final pts = [
-      c + Offset(q, q),
-      c + Offset(q, -q),
-      c + Offset(-q, 0),
-    ];
+    final pts = [c + Offset(q, q), c + Offset(q, -q), c + Offset(-q, 0)];
     _drawClosedPolygon(canvas, pts, paint);
     return;
   }
@@ -111,7 +140,15 @@ void _paintXWithCornerSquare(
 }) {
   final sqC = center + cornerOffset;
   final sqSize = minEdge * 0.18;
-  _paintXWithCornerSquareAt(canvas, center, minEdge, color, strokeWidth, sqC, sqSize);
+  _paintXWithCornerSquareAt(
+    canvas,
+    center,
+    minEdge,
+    color,
+    strokeWidth,
+    sqC,
+    sqSize,
+  );
 }
 
 void _paintXWithCornerSquareAt(
@@ -125,7 +162,11 @@ void _paintXWithCornerSquareAt(
 ) {
   _drawCenteredText(canvas, 'x', center, minEdge * 0.45, color);
   canvas.drawRect(
-    Rect.fromCenter(center: squareCenter, width: squareSize, height: squareSize),
+    Rect.fromCenter(
+      center: squareCenter,
+      width: squareSize,
+      height: squareSize,
+    ),
     Paint()
       ..color = color
       ..style = PaintingStyle.stroke
@@ -206,5 +247,15 @@ String _tokenLabel(CalcToken t) {
   if (t is Drg) return 'DRG';
   if (t is Info) return 'Info';
   if (t is Close) return '…';
+  if (t is MemPlus) return 'M+';
+  if (t is MemMinus) return 'M−';
+  if (t is Square) return 'x²';
+  if (t is PlusMinus) return '±';
+  if (t is Ln) return 'ln';
+  if (t is ExpE) return 'eˣ';
+  if (t is Log12) return 'log₁₂';
+  if (t is NCr) return 'nCr';
+  if (t is NPr) return 'nPr';
+  if (t is Sci) return 'EXP';
   return '';
 }

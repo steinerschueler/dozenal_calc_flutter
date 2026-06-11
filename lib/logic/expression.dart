@@ -188,7 +188,8 @@ void resolveCustomOperators(List<String> tokens) {
     // √ starts a fresh radicand (unary square root), not a binary nth-root.
     // Without this, `2^√3` mis-parses with `^` as the n-th-root index and
     // produces a malformed `(3^(1/^))` substring → SYNTAX ERROR.
-    final precededByOp = i == 0 ||
+    final precededByOp =
+        i == 0 ||
         const {'+', '-', '*', '/', '(', '^', '%'}.contains(tokens[i - 1]);
     final x = tokens.sublist(right.start, right.end).join();
     if (precededByOp) {
@@ -210,6 +211,32 @@ void resolveCustomOperators(List<String> tokens) {
     final x = tokens.sublist(left.start, left.end).join();
     final n = tokens.sublist(right.start, right.end).join();
     tokens.replaceRange(left.start, right.end, ['(ln($x)/ln($n))']);
+  }
+  // Combinatorics: a nCr b = a!/(b!·(a−b)!); a nPr b = a!/(a−b)!. Built on
+  // the evaluator's fact(); operands grabbed exactly like ⊕/log.
+  while (true) {
+    final i = tokens.indexOf('nCr');
+    if (i == -1) break;
+    final left = _leftOperandRange(tokens, i);
+    if (left == null) break;
+    final right = _rightOperandRange(tokens, i);
+    if (right == null) break;
+    final a = tokens.sublist(left.start, left.end).join();
+    final b = tokens.sublist(right.start, right.end).join();
+    tokens.replaceRange(left.start, right.end, [
+      '(fact($a)/(fact($b)*fact(($a)-($b))))',
+    ]);
+  }
+  while (true) {
+    final i = tokens.indexOf('nPr');
+    if (i == -1) break;
+    final left = _leftOperandRange(tokens, i);
+    if (left == null) break;
+    final right = _rightOperandRange(tokens, i);
+    if (right == null) break;
+    final a = tokens.sublist(left.start, left.end).join();
+    final b = tokens.sublist(right.start, right.end).join();
+    tokens.replaceRange(left.start, right.end, ['(fact($a)/fact(($a)-($b)))']);
   }
 }
 
@@ -370,7 +397,10 @@ bool _startsSubexpression(CalcToken next) {
       next is ArTanh ||
       next is ArCoth ||
       next is AbsVal ||
-      next is Reciprocal;
+      next is Reciprocal ||
+      next is Ln ||
+      next is ExpE ||
+      next is Log12;
 }
 
 bool _needsImplicitMul(List<CalcToken> tokens, int i) {
@@ -403,63 +433,72 @@ List<CalcToken> withImplicitMuls(List<CalcToken> tokens) {
 /// Exhaustive over the sealed CalcToken (no default): a new variant is a
 /// compile error here rather than a silently-dropped operator.
 String tokenMevalStr(CalcToken t) => switch (t) {
-      Add() => '+',
-      Sub() || Negate() => '-',
-      Mul() => '*',
-      Div() => '/',
-      Mod() => '%',
-      ParenOpen() => '(',
-      ParenClose() => ')',
-      Sin() => 'sin(',
-      Cos() => 'cos(',
-      Tan() => 'tan(',
-      Cot() => 'cot(',
-      ExpTopRight() => '^',
-      RootTopLeft() => '√',
-      OplusBotLeft() => '⊕',
-      LogBotRight() => 'log',
-      ArcSin() => 'asin(',
-      ArcCos() => 'acos(',
-      ArcTan() => 'atan(',
-      ArcCot() => 'acot(',
-      Sinh() => 'sinh(',
-      Cosh() => 'cosh(',
-      Tanh() => 'tanh(',
-      Coth() => 'coth(',
-      ArSinh() => 'arsinh(',
-      ArCosh() => 'arcosh(',
-      ArTanh() => 'artanh(',
-      ArCoth() => 'arcoth(',
-      Factorial() => 'fact(',
-      AbsVal() => 'abs(',
-      Reciprocal() => 'recip(',
-      // Emit nothing: Digit/Decimal are consumed by buildMevalString before it
-      // calls here; RatLit and the constants are substituted with their numeric
-      // value upstream; mode/memory/app-state tokens never reach the evaluator.
-      Digit() ||
-      Decimal() ||
-      RatLit() ||
-      ConstPi() ||
-      ConstE() ||
-      ConstPhi() ||
-      ConstSqrt2() ||
-      Ac() ||
-      Del() ||
-      Equals() ||
-      Expand() ||
-      Close() ||
-      Sto() ||
-      Rcl() ||
-      Mc() ||
-      Ans() ||
-      Doz() ||
-      Dez() ||
-      Drg() ||
-      Info() ||
-      TriangleLeft() ||
-      TriangleRight() =>
-        '',
-    };
+  Add() => '+',
+  Sub() || Negate() => '-',
+  Mul() => '*',
+  Div() => '/',
+  Mod() => '%',
+  ParenOpen() => '(',
+  ParenClose() => ')',
+  Sin() => 'sin(',
+  Cos() => 'cos(',
+  Tan() => 'tan(',
+  Cot() => 'cot(',
+  ExpTopRight() => '^',
+  RootTopLeft() => '√',
+  OplusBotLeft() => '⊕',
+  LogBotRight() => 'log',
+  ArcSin() => 'asin(',
+  ArcCos() => 'acos(',
+  ArcTan() => 'atan(',
+  ArcCot() => 'acot(',
+  Sinh() => 'sinh(',
+  Cosh() => 'cosh(',
+  Tanh() => 'tanh(',
+  Coth() => 'coth(',
+  ArSinh() => 'arsinh(',
+  ArCosh() => 'arcosh(',
+  ArTanh() => 'artanh(',
+  ArCoth() => 'arcoth(',
+  Factorial() => 'fact(',
+  AbsVal() => 'abs(',
+  Reciprocal() => 'recip(',
+  Ln() => 'ln(',
+  ExpE() => 'exp(',
+  Log12() => 'log12(',
+  NCr() => 'nCr',
+  NPr() => 'nPr',
+  // Emit nothing: Digit/Decimal are consumed by buildMevalString before it
+  // calls here; RatLit and the constants are substituted with their numeric
+  // value upstream; mode/memory/app-state tokens never reach the evaluator.
+  Digit() ||
+  Decimal() ||
+  RatLit() ||
+  ConstPi() ||
+  ConstE() ||
+  ConstPhi() ||
+  ConstSqrt2() ||
+  Ac() ||
+  Del() ||
+  Equals() ||
+  Expand() ||
+  Close() ||
+  MemPlus() ||
+  MemMinus() ||
+  Square() ||
+  PlusMinus() ||
+  Sci() ||
+  Sto() ||
+  Rcl() ||
+  Mc() ||
+  Ans() ||
+  Doz() ||
+  Dez() ||
+  Drg() ||
+  Info() ||
+  TriangleLeft() ||
+  TriangleRight() => '',
+};
 
 /// f64 value for irrational-constant tokens; null for everything else.
 double? constValue(CalcToken t) {
@@ -482,8 +521,10 @@ void _flushNumberLiteral(
       ? '0'
       : DozenalConverter.toDecimal(intDigits, base: base).toString();
   if (inFractionRef[0] && fracDigits.isNotEmpty) {
-    final fracStr =
-        DozenalConverter.toDecimal(fracDigits, base: base).toString();
+    final fracStr = DozenalConverter.toDecimal(
+      fracDigits,
+      base: base,
+    ).toString();
     final len = fracDigits.length;
     out.add('($intStr+($fracStr/($base^$len)))');
   } else {
@@ -515,7 +556,13 @@ String buildMevalString(List<CalcToken> expanded, {int base = 12}) {
       inFraction[0] = true;
     } else {
       _flushNumberLiteral(intDigits, fracDigits, inFraction, tokensStr, base);
-      if (token is RatLit) {
+      if (token is Sci) {
+        // a Sci b  →  a * base^b  (×10ⁿ in decimal, ×12ⁿ in dozenal). `^`
+        // binds tighter than `*`, so this is a·(base^b) without extra parens.
+        tokensStr.add('*');
+        tokensStr.add('$base');
+        tokensStr.add('^');
+      } else if (token is RatLit) {
         tokensStr.add(token.value.toDouble().toString());
       } else {
         final c = constValue(token);
@@ -555,11 +602,17 @@ class PeriodMeta {
   /// True when the true period exceeds maxPeriodDisplay and was truncated.
   final bool capped;
 
-  const PeriodMeta({required this.start, required this.len, required this.capped});
+  const PeriodMeta({
+    required this.start,
+    required this.len,
+    required this.capped,
+  });
 }
 
-({List<CalcToken> buf, PeriodMeta meta}) formatRationalResult(Rational r,
-    {int base = 12}) {
+({List<CalcToken> buf, PeriodMeta meta}) formatRationalResult(
+  Rational r, {
+  int base = 12,
+}) {
   final dec = r.toDozenalPeriodic(base: base);
   final buf = <CalcToken>[];
   if (r.num.isNegative) {
@@ -596,8 +649,11 @@ List<CalcToken> formatF64Result(double value, {int base = 12}) {
   final fracPart = v - v.floorToDouble();
   if (fracPart > fracEpsilon) {
     buf.add(const Decimal());
-    for (final d in DozenalConverter.fracToDigits(fracPart, f64FracDigits,
-        base: base)) {
+    for (final d in DozenalConverter.fracToDigits(
+      fracPart,
+      f64FracDigits,
+      base: base,
+    )) {
       buf.add(Digit(d));
     }
   }
@@ -612,7 +668,18 @@ List<CalcToken> formatF64Result(double value, {int base = 12}) {
 // ===========================================================================
 
 /// Lightweight token kinds for the f64 evaluator's lexer.
-enum _FTokKind { num, ident, lparen, rparen, plus, minus, star, slash, caret, percent }
+enum _FTokKind {
+  num,
+  ident,
+  lparen,
+  rparen,
+  plus,
+  minus,
+  star,
+  slash,
+  caret,
+  percent,
+}
 
 class _FTok {
   final _FTokKind kind;
@@ -641,7 +708,7 @@ class _F64Lexer {
     _skipWs();
     if (pos >= src.length) return null;
     final c = src.codeUnitAt(pos);
-    if (_isDigit(c) || c == 0x2E /* . */) {
+    if (_isDigit(c) || c == 0x2E /* . */ ) {
       final start = pos;
       while (pos < src.length && _isDigit(src.codeUnitAt(pos))) {
         pos++;
@@ -871,6 +938,10 @@ class _F64Parser {
         return 0.5 * math.log((x + 1.0) / (x - 1.0));
       case 'ln':
         return math.log(x);
+      case 'exp':
+        return math.exp(x);
+      case 'log12':
+        return math.log(x) / math.log(12.0);
       case 'fact':
         return _fact(x);
       case 'abs':

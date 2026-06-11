@@ -265,6 +265,55 @@ final class Close extends CalcToken {
   const Close();
 }
 
+// --- Function keys (#2–#4) — wired into expanded overlay sets ---
+//
+// Action / modifier tokens never enter the input buffer: MemPlus/MemMinus act
+// on the memory register; Square inserts `^2`; PlusMinus toggles the sign of
+// the current literal. The eval/text switches handle them as no-ops.
+
+final class MemPlus extends CalcToken {
+  const MemPlus();
+}
+
+final class MemMinus extends CalcToken {
+  const MemMinus();
+}
+
+final class Square extends CalcToken {
+  const Square();
+}
+
+final class PlusMinus extends CalcToken {
+  const PlusMinus(); // ± — toggle the sign of the current literal
+}
+
+// Unary functions — enter the buffer and evaluate like sin/cos.
+final class Ln extends CalcToken {
+  const Ln();
+}
+
+final class ExpE extends CalcToken {
+  const ExpE(); // e^x
+}
+
+final class Log12 extends CalcToken {
+  const Log12(); // logarithm to base twelve
+}
+
+// Binary combinatorics operators — enter the buffer, infix like ⊕.
+final class NCr extends CalcToken {
+  const NCr(); // n choose r
+}
+
+final class NPr extends CalcToken {
+  const NPr(); // n permute r
+}
+
+// Scientific-notation exponent marker (×10ⁿ; ×12ⁿ in dozenal) — enters buffer.
+final class Sci extends CalcToken {
+  const Sci();
+}
+
 // ---------------------------------------------------------------------------
 // NumeralSystem — selects whether digit input/output is interpreted in
 // base 12 (dozenal, the app's default) or base 10 (decimal). Mutually
@@ -283,30 +332,30 @@ enum AngleMode {
   grad;
 
   String get label => switch (this) {
-        AngleMode.deg => 'DEG',
-        AngleMode.rad => 'RAD',
-        AngleMode.grad => 'GRD',
-      };
+    AngleMode.deg => 'DEG',
+    AngleMode.rad => 'RAD',
+    AngleMode.grad => 'GRD',
+  };
 
   AngleMode get next => switch (this) {
-        AngleMode.deg => AngleMode.rad,
-        AngleMode.rad => AngleMode.grad,
-        AngleMode.grad => AngleMode.deg,
-      };
+    AngleMode.deg => AngleMode.rad,
+    AngleMode.rad => AngleMode.grad,
+    AngleMode.grad => AngleMode.deg,
+  };
 
   /// Converts an angle from this mode to radians.
   double toRad(double x) => switch (this) {
-        AngleMode.deg => x * 3.141592653589793 / 180.0,
-        AngleMode.rad => x,
-        AngleMode.grad => x * 3.141592653589793 / 200.0,
-      };
+    AngleMode.deg => x * 3.141592653589793 / 180.0,
+    AngleMode.rad => x,
+    AngleMode.grad => x * 3.141592653589793 / 200.0,
+  };
 
   /// Converts a result in radians to this mode's unit (for inverse trig).
   double radToUnit(double x) => switch (this) {
-        AngleMode.deg => x * 180.0 / 3.141592653589793,
-        AngleMode.rad => x,
-        AngleMode.grad => x * 200.0 / 3.141592653589793,
-      };
+    AngleMode.deg => x * 180.0 / 3.141592653589793,
+    AngleMode.rad => x,
+    AngleMode.grad => x * 200.0 / 3.141592653589793,
+  };
 }
 
 // ---------------------------------------------------------------------------

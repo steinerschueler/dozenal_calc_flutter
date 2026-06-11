@@ -283,6 +283,40 @@ class DozenalCalcState extends ChangeNotifier {
       overlayOpen = false;
       return;
     }
+    // Function keys (#2-#4, overlay page 2).
+    if (token is MemPlus || token is MemMinus) {
+      // Accumulate the last result into the memory register, exactly (BigInt).
+      final delta = lastAns;
+      if (delta != null) {
+        final cur = memoryRational ?? Rational.tryNew(BigInt.zero, BigInt.one)!;
+        memoryRational = token is MemPlus ? cur.add(delta) : cur.sub(delta);
+        memory = formatRationalResult(memoryRational!, base: activeBase).buf;
+      }
+      overlayOpen = false;
+      return;
+    }
+    if (token is Square) {
+      // x² is the `^2` shortcut: square the preceding value.
+      _insertAtCursor(const ExpTopRight());
+      _insertAtCursor(const Digit(DozenalDigit.d2));
+      overlayOpen = false;
+      return;
+    }
+    if (token is PlusMinus) {
+      _toggleSignOfCurrentLiteral();
+      overlayOpen = false;
+      return;
+    }
+    if (token is Ln ||
+        token is ExpE ||
+        token is Log12 ||
+        token is NCr ||
+        token is NPr ||
+        token is Sci) {
+      _insertAtCursor(token);
+      overlayOpen = false;
+      return;
+    }
     // Mode keys — never inserted
     if (token is Drg) {
       angleMode = angleMode.next;
@@ -373,6 +407,44 @@ class DozenalCalcState extends ChangeNotifier {
     cursorPos++;
   }
 
+  /// ± — toggle the sign of the number literal at/just before the cursor by
+  /// adding or removing a unary minus in front of it.
+  void _toggleSignOfCurrentLiteral() {
+    var start = cursorPos;
+    while (start > 0) {
+      final prev = inputBuffer[start - 1];
+      if (prev is Digit || prev is Decimal || prev is RatLit) {
+        start--;
+      } else {
+        break;
+      }
+    }
+    // A leading minus counts as unary when it sits at the start or right after
+    // an operator / open paren (rather than acting as binary subtraction).
+    final hasUnaryMinus =
+        start > 0 &&
+        inputBuffer[start - 1] is Sub &&
+        (start - 1 == 0 || _isOperatorOrOpen(inputBuffer[start - 2]));
+    if (hasUnaryMinus) {
+      inputBuffer = List.of(inputBuffer)..removeAt(start - 1);
+      if (cursorPos >= start) cursorPos--;
+    } else {
+      inputBuffer = List.of(inputBuffer)..insert(start, const Sub());
+      if (cursorPos >= start) cursorPos++;
+    }
+  }
+
+  bool _isOperatorOrOpen(CalcToken t) =>
+      t is Add ||
+      t is Sub ||
+      t is Mul ||
+      t is Div ||
+      t is ExpTopRight ||
+      t is RootTopLeft ||
+      t is OplusBotLeft ||
+      t is LogBotRight ||
+      t is ParenOpen;
+
   /// True when the number literal under the cursor already contains a
   /// decimal point — used to prevent `1.2.3` style double-decimal input.
   /// Walks both directions through contiguous Digit/Decimal tokens until it
@@ -407,7 +479,9 @@ class DozenalCalcState extends ChangeNotifier {
       token is Sto ||
       token is Rcl ||
       token is Mc ||
-      token is Ans;
+      token is Ans ||
+      token is MemPlus ||
+      token is MemMinus;
 
   bool _isTransparentAfterEquals(CalcToken token) =>
       token is TriangleLeft ||

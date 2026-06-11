@@ -649,6 +649,12 @@ String _tokenText(CalcToken t) => switch (t) {
   RootTopLeft() => '√',
   OplusBotLeft() => '⊕',
   LogBotRight() => 'log',
+  Ln() => 'ln',
+  ExpE() => 'eˣ',
+  Log12() => 'log₁₂',
+  NCr() => 'nCr',
+  NPr() => 'nPr',
+  Sci() => 'E',
   RatLit(:final label) => label,
   // No display string: real Digit tokens are laid out via the glyph path,
   // never here; app-state/mode tokens (AC, Del, Equals, Expand, Close, Sto,
@@ -659,6 +665,10 @@ String _tokenText(CalcToken t) => switch (t) {
   Equals() ||
   Expand() ||
   Close() ||
+  MemPlus() ||
+  MemMinus() ||
+  Square() ||
+  PlusMinus() ||
   Sto() ||
   Rcl() ||
   Mc() ||

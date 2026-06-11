@@ -1008,6 +1008,16 @@ String _tokenSemanticLabel(CalcToken t, AppLocalizations l) => switch (t) {
   Dez() => l.a11yDecimalMode,
   Drg() => l.a11yAngleMode,
   Info() => l.a11yInfo,
+  MemPlus() => l.a11yMemPlus,
+  MemMinus() => l.a11yMemMinus,
+  Square() => l.a11ySquare,
+  PlusMinus() => l.a11yPlusMinus,
+  Ln() => l.a11yLn,
+  ExpE() => l.a11yExp,
+  Log12() => l.a11yLog12,
+  NCr() => l.a11yNcr,
+  NPr() => l.a11yNpr,
+  Sci() => l.a11ySci,
   // Never rendered as a keypad button (digits use _DigitButton; Negate and
   // RatLit only ever live in buffers).
   Digit() || Negate() || RatLit() => '',
