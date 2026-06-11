@@ -27,6 +27,7 @@
   "infoListLicenseEntry": "ライセンス",
   "infoListFeedbackEntry": "フィードバックを送る",
   "infoListConversionsEntry": "ヤード・ポンド法（12進）変換",
+  "infoListConverterEntry": "単位換算",
   "unitCatCount": "個数",
   "unitCatDist": "長さ",
   "unitCatArea": "面積",
