@@ -79,8 +79,11 @@ void main() {
       expect(s.isArmed(const Sin()), isTrue);
 
       s.handleClick(const Sin());
-      expect(s.inputBuffer.last, isA<Sin>(),
-          reason: 'third tap toggles back to Sin');
+      expect(
+        s.inputBuffer.last,
+        isA<Sin>(),
+        reason: 'third tap toggles back to Sin',
+      );
     });
 
     test('Ans auto-insert: digit → equals → operator inserts RatLit(prev)', () {
@@ -93,8 +96,10 @@ void main() {
       s.handleClick(const Add());
       expect(s.inputBuffer.length, equals(2));
       expect(s.inputBuffer.first, isA<RatLit>());
-      expect((s.inputBuffer.first as RatLit).value,
-          equals(Rational.fromInts(5)));
+      expect(
+        (s.inputBuffer.first as RatLit).value,
+        equals(Rational.fromInts(5)),
+      );
       expect(s.inputBuffer.last, isA<Add>());
     });
 
@@ -134,7 +139,8 @@ void main() {
           Digit(DozenalDigit.d0),
           Digit(DozenalDigit.d5),
         ]),
-        reason: 'input must be preserved so user can edit the failing '
+        reason:
+            'input must be preserved so user can edit the failing '
             'expression instead of retyping from scratch',
       );
     });
@@ -149,9 +155,13 @@ void main() {
       final initialCursor = s.cursorPos;
 
       s.handleClick(const TriangleLeft());
-      expect(s.errorMsg, isNotNull,
-          reason: 'arrow keys preserve error so context stays visible '
-              'while user navigates to the failing token');
+      expect(
+        s.errorMsg,
+        isNotNull,
+        reason:
+            'arrow keys preserve error so context stays visible '
+            'while user navigates to the failing token',
+      );
       expect(s.cursorPos, equals(initialCursor - 1));
     });
 
@@ -168,7 +178,8 @@ void main() {
       expect(
         s.inputBuffer,
         equals([Digit(DozenalDigit.d1), const Div()]),
-        reason: 'the trailing zero — the cause of div-by-zero — is gone, '
+        reason:
+            'the trailing zero — the cause of div-by-zero — is gone, '
             'ready for the user to type a non-zero divisor',
       );
     });
@@ -182,10 +193,16 @@ void main() {
       expect(s.errorMsg, isNotNull);
 
       s.handleClick(const Drg());
-      expect(s.errorMsg, isNotNull,
-          reason: 'DRG must not clear errors — only AC or input does');
-      expect(s.angleMode, equals(AngleMode.deg),
-          reason: 'angle mode must not change while error is active');
+      expect(
+        s.errorMsg,
+        isNotNull,
+        reason: 'DRG must not clear errors — only AC or input does',
+      );
+      expect(
+        s.angleMode,
+        equals(AngleMode.deg),
+        reason: 'angle mode must not change while error is active',
+      );
     });
 
     test('cursor arrows move within input', () {
@@ -265,12 +282,21 @@ void main() {
         ..handleClick(const Rcl())
         ..handleClick(const Equals());
       expect(s.errorMsg, isNull);
-      expect(s.lastAns, equals(Rational.fromInts(1, 7)),
-          reason: 'recalled rational must round-trip exactly');
-      expect(s.resultPeriodLen, greaterThan(0),
-          reason: 'period detection must still fire after RCL → =');
-      expect(s.isF64Fallback, isFalse,
-          reason: 'rational track must not collapse on a recalled value');
+      expect(
+        s.lastAns,
+        equals(Rational.fromInts(1, 7)),
+        reason: 'recalled rational must round-trip exactly',
+      );
+      expect(
+        s.resultPeriodLen,
+        greaterThan(0),
+        reason: 'period detection must still fire after RCL → =',
+      );
+      expect(
+        s.isF64Fallback,
+        isFalse,
+        reason: 'rational track must not collapse on a recalled value',
+      );
     });
 
     test('Sinh double-tap toggles to ArSinh + closes overlay', () {
@@ -282,8 +308,11 @@ void main() {
 
       s.handleClick(const Expand());
       s.handleClick(const Sinh());
-      expect(s.inputBuffer.last, isA<ArSinh>(),
-          reason: 'second Sinh tap toggles the previous Sinh to ArSinh');
+      expect(
+        s.inputBuffer.last,
+        isA<ArSinh>(),
+        reason: 'second Sinh tap toggles the previous Sinh to ArSinh',
+      );
     });
 
     test('notifyListeners fires once per click', () {
@@ -301,8 +330,11 @@ void main() {
         ..handleClick(Digit(DozenalDigit.d5))
         ..handleClick(const Ac())
         ..handleClick(const Equals());
-      expect(s.errorMsg, isNull,
-          reason: 'AC clears the buffer; = on nothing should not error');
+      expect(
+        s.errorMsg,
+        isNull,
+        reason: 'AC clears the buffer; = on nothing should not error',
+      );
       expect(s.resultBuffer, equals([Digit(DozenalDigit.d0)]));
     });
 
@@ -322,16 +354,18 @@ void main() {
       expect(s.activeBase, equals(12));
     });
 
-    test('Dez mode evaluates 1+2 as decimal 3 (same as doz for small ints)',
-        () {
-      final s = DozenalCalcState()..handleClick(const Dez());
-      s.handleClick(Digit(DozenalDigit.d1));
-      s.handleClick(const Add());
-      s.handleClick(Digit(DozenalDigit.d2));
-      s.handleClick(const Equals());
-      expect(s.errorMsg, isNull);
-      expect(s.resultBuffer, equals([Digit(DozenalDigit.d3)]));
-    });
+    test(
+      'Dez mode evaluates 1+2 as decimal 3 (same as doz for small ints)',
+      () {
+        final s = DozenalCalcState()..handleClick(const Dez());
+        s.handleClick(Digit(DozenalDigit.d1));
+        s.handleClick(const Add());
+        s.handleClick(Digit(DozenalDigit.d2));
+        s.handleClick(const Equals());
+        expect(s.errorMsg, isNull);
+        expect(s.resultBuffer, equals([Digit(DozenalDigit.d3)]));
+      },
+    );
 
     test('Dez mode: 9+1 = 10 (rendered as 1,0 in base 10)', () {
       final s = DozenalCalcState()..handleClick(const Dez());
@@ -341,8 +375,10 @@ void main() {
       s.handleClick(const Equals());
       expect(s.errorMsg, isNull);
       // In base 10, 10 = [1, 0]; in base 12 it would have been [A].
-      expect(s.resultBuffer,
-          equals([Digit(DozenalDigit.d1), Digit(DozenalDigit.d0)]));
+      expect(
+        s.resultBuffer,
+        equals([Digit(DozenalDigit.d1), Digit(DozenalDigit.d0)]),
+      );
     });
 
     test('Doz→Dez switch converts buffer: doz 1,0 (=12) becomes dez 1,2', () {
@@ -375,8 +411,10 @@ void main() {
       s.handleClick(Digit(DozenalDigit.d3));
       s.handleClick(const Dez());
       s.handleClick(const Doz());
-      expect(s.inputBuffer,
-          equals([Digit(DozenalDigit.d2), Digit(DozenalDigit.d3)]));
+      expect(
+        s.inputBuffer,
+        equals([Digit(DozenalDigit.d2), Digit(DozenalDigit.d3)]),
+      );
     });
 
     test('mode-switch preserves operators between literals', () {
@@ -389,14 +427,15 @@ void main() {
       s.handleClick(Digit(DozenalDigit.d1));
       s.handleClick(const Dez());
       expect(
-          s.inputBuffer,
-          equals([
-            Digit(DozenalDigit.d1),
-            Digit(DozenalDigit.d2),
-            const Add(),
-            Digit(DozenalDigit.d1),
-            Digit(DozenalDigit.d3),
-          ]));
+        s.inputBuffer,
+        equals([
+          Digit(DozenalDigit.d1),
+          Digit(DozenalDigit.d2),
+          const Add(),
+          Digit(DozenalDigit.d1),
+          Digit(DozenalDigit.d3),
+        ]),
+      );
     });
 
     test('Doz→Dez reformats the result line into the new base', () {
@@ -408,8 +447,11 @@ void main() {
       s.handleClick(const Add());
       s.handleClick(Digit(DozenalDigit.d5));
       s.handleClick(const Equals());
-      expect(s.resultBuffer, equals([Digit(DozenalDigit.d10)]),
-          reason: 'doz 5+5 = A (ten)');
+      expect(
+        s.resultBuffer,
+        equals([Digit(DozenalDigit.d10)]),
+        reason: 'doz 5+5 = A (ten)',
+      );
       s.handleClick(const Dez());
       expect(
         s.resultBuffer,
@@ -430,40 +472,45 @@ void main() {
         reason: 'dez 5+5 = 10',
       );
       s.handleClick(const Doz());
-      expect(s.resultBuffer, equals([Digit(DozenalDigit.d10)]),
-          reason: '10 (ten) re-rendered in base 12 is A');
+      expect(
+        s.resultBuffer,
+        equals([Digit(DozenalDigit.d10)]),
+        reason: '10 (ten) re-rendered in base 12 is A',
+      );
     });
 
-    test('base switch recomputes periodicity (doz 1/3 finite → dez periodic)',
-        () {
-      final s = DozenalCalcState();
-      s.handleClick(Digit(DozenalDigit.d1));
-      s.handleClick(const Div());
-      s.handleClick(Digit(DozenalDigit.d3));
-      s.handleClick(const Equals());
-      // doz: 1/3 = 0.4 exactly (3 divides twelve) — no period.
-      expect(s.resultPeriodStart, isNull);
-      expect(
-        s.resultBuffer,
-        equals([
-          Digit(DozenalDigit.d0),
-          const Decimal(),
-          Digit(DozenalDigit.d4),
-        ]),
-      );
-      s.handleClick(const Dez());
-      // dez: 1/3 = 0.333… — now periodic, recomputed for the new base.
-      expect(
-        s.resultBuffer,
-        equals([
-          Digit(DozenalDigit.d0),
-          const Decimal(),
-          Digit(DozenalDigit.d3),
-        ]),
-      );
-      expect(s.resultPeriodStart, equals(2));
-      expect(s.resultPeriodLen, equals(1));
-    });
+    test(
+      'base switch recomputes periodicity (doz 1/3 finite → dez periodic)',
+      () {
+        final s = DozenalCalcState();
+        s.handleClick(Digit(DozenalDigit.d1));
+        s.handleClick(const Div());
+        s.handleClick(Digit(DozenalDigit.d3));
+        s.handleClick(const Equals());
+        // doz: 1/3 = 0.4 exactly (3 divides twelve) — no period.
+        expect(s.resultPeriodStart, isNull);
+        expect(
+          s.resultBuffer,
+          equals([
+            Digit(DozenalDigit.d0),
+            const Decimal(),
+            Digit(DozenalDigit.d4),
+          ]),
+        );
+        s.handleClick(const Dez());
+        // dez: 1/3 = 0.333… — now periodic, recomputed for the new base.
+        expect(
+          s.resultBuffer,
+          equals([
+            Digit(DozenalDigit.d0),
+            const Decimal(),
+            Digit(DozenalDigit.d3),
+          ]),
+        );
+        expect(s.resultPeriodStart, equals(2));
+        expect(s.resultPeriodLen, equals(1));
+      },
+    );
 
     test('AC then base switch does not resurrect a stale f64 result', () {
       // sin collapses the rational track → f64 fallback with a non-zero value
@@ -473,7 +520,11 @@ void main() {
       s.handleClick(const Sin());
       s.handleClick(Digit(DozenalDigit.d3));
       s.handleClick(const Equals());
-      expect(s.isF64Fallback, isTrue, reason: 'sin collapses the rational track');
+      expect(
+        s.isF64Fallback,
+        isTrue,
+        reason: 'sin collapses the rational track',
+      );
       s.handleClick(const Ac());
       expect(s.resultBuffer, equals([Digit(DozenalDigit.d0)]));
       s.handleClick(const Dez());
@@ -548,8 +599,11 @@ void main() {
         ..handleClick(const Equals());
       expect(s.errorMsg, isNull);
       expect(s.lastAns, isNull, reason: 'rational track must have collapsed');
-      expect(s.isF64Fallback, isTrue,
-          reason: 'integer f64 results still need the ≈ suffix');
+      expect(
+        s.isF64Fallback,
+        isTrue,
+        reason: 'integer f64 results still need the ≈ suffix',
+      );
     });
 
     // B4: lastAns must be cleared on error so a subsequent Ans (after AC)
@@ -568,16 +622,22 @@ void main() {
         ..handleClick(Digit(DozenalDigit.d0))
         ..handleClick(const Equals()); // DIV BY ZERO
       expect(s.errorMsg, equals('DIV BY ZERO'));
-      expect(s.lastAns, isNull,
-          reason: 'error must invalidate the previous lastAns');
+      expect(
+        s.lastAns,
+        isNull,
+        reason: 'error must invalidate the previous lastAns',
+      );
 
       s.handleClick(const Ac());
       s.handleClick(const Ans());
       // The pre-error 5 must NOT come back. After AC + Ans the buffer
       // either is empty or holds the post-AC zero, but never RatLit(5).
       for (final t in s.inputBuffer) {
-        expect(t, isNot(isA<RatLit>()),
-            reason: 'no stale RatLit from before the error');
+        expect(
+          t,
+          isNot(isA<RatLit>()),
+          reason: 'no stale RatLit from before the error',
+        );
       }
     });
 
@@ -593,10 +653,16 @@ void main() {
 
       final memBefore = s.memory;
       s.handleClick(const Sto());
-      expect(s.errorMsg, isNotNull,
-          reason: 'Sto during error must not clear the error');
-      expect(s.memory, equals(memBefore),
-          reason: 'Sto during error must not mutate memory');
+      expect(
+        s.errorMsg,
+        isNotNull,
+        reason: 'Sto during error must not clear the error',
+      );
+      expect(
+        s.memory,
+        equals(memBefore),
+        reason: 'Sto during error must not mutate memory',
+      );
 
       // The buffer the user typed before the error stays intact too,
       // because the blocked-token branch returns *before* the buffer reset.
@@ -607,8 +673,11 @@ void main() {
       expect(s.errorMsg, isNotNull, reason: 'Mc blocked during error');
       s.handleClick(const Ans());
       expect(s.errorMsg, isNotNull, reason: 'Ans blocked during error');
-      expect(s.inputBuffer, equals(bufBefore),
-          reason: 'no buffer mutation under blocked-token error state');
+      expect(
+        s.inputBuffer,
+        equals(bufBefore),
+        reason: 'no buffer mutation under blocked-token error state',
+      );
     });
 
     // B9: a second Decimal in the same number literal must be a no-op.
@@ -620,13 +689,14 @@ void main() {
         ..handleClick(const Decimal()) // <- should be ignored
         ..handleClick(Digit(DozenalDigit.d3));
       expect(
-          s.inputBuffer,
-          equals([
-            Digit(DozenalDigit.d1),
-            const Decimal(),
-            Digit(DozenalDigit.d2),
-            Digit(DozenalDigit.d3),
-          ]));
+        s.inputBuffer,
+        equals([
+          Digit(DozenalDigit.d1),
+          const Decimal(),
+          Digit(DozenalDigit.d2),
+          Digit(DozenalDigit.d3),
+        ]),
+      );
     });
 
     // B12: postfix-style invocation of n!, |x|, 1/x. Their button labels
@@ -734,9 +804,12 @@ void main() {
       final s = DozenalCalcState()..handleClick(const Sin());
       expect(s.isArmed(const Sin()), isTrue);
       s.handleClick(const Sin()); // toggle Sin → ArcSin
-      expect(s.isArmed(const Sin()), isTrue,
-          reason:
-              'next Sin tap will toggle ArcSin back, indicator must reflect it');
+      expect(
+        s.isArmed(const Sin()),
+        isTrue,
+        reason:
+            'next Sin tap will toggle ArcSin back, indicator must reflect it',
+      );
       s.handleClick(const Sin()); // toggle ArcSin → Sin
       expect(s.isArmed(const Sin()), isTrue);
     });
@@ -775,15 +848,38 @@ void main() {
         ..handleClick(const Decimal()) // <- new literal, accepted
         ..handleClick(Digit(DozenalDigit.d5));
       expect(
-          s.inputBuffer,
-          equals([
-            Digit(DozenalDigit.d1),
-            const Decimal(),
-            Digit(DozenalDigit.d2),
-            const Add(),
-            const Decimal(),
-            Digit(DozenalDigit.d5),
-          ]));
+        s.inputBuffer,
+        equals([
+          Digit(DozenalDigit.d1),
+          const Decimal(),
+          Digit(DozenalDigit.d2),
+          const Add(),
+          const Decimal(),
+          Digit(DozenalDigit.d5),
+        ]),
+      );
+    });
+  });
+
+  group('extended-sets paging', () {
+    // Regression: setOverlayPage used to no-op while overlayOpen was false,
+    // which made the Breit third-group arrows dead — Breit pages without any
+    // overlay (overlayOpen is a Hoch-only concept).
+    test('setOverlayPage works without an open overlay (Breit)', () {
+      final s = DozenalCalcState();
+      expect(s.overlayOpen, isFalse);
+      s.setOverlayPage(1);
+      expect(s.overlayPage, 1);
+      s.setOverlayPage(0);
+      expect(s.overlayPage, 0);
+    });
+
+    test('Expand always opens the overlay on the first page', () {
+      final s = DozenalCalcState();
+      s.setOverlayPage(1); // e.g. paged in Breit, then rotated to portrait
+      s.handleClick(const Expand());
+      expect(s.overlayOpen, isTrue);
+      expect(s.overlayPage, 0);
     });
   });
 }

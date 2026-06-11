@@ -126,10 +126,13 @@ class DozenalCalcState extends ChangeNotifier {
     notifyListeners();
   }
 
-  /// Flip the open overlay between its two pages (swipe left/right on the
-  /// overlay). No-op when the overlay is closed or already on page [p].
+  /// Flip the extended-sets page (0 = Sets 6-10, 1 = function keys). Fired
+  /// by the edge arrows and the Hoch overlay swipe. Deliberately NOT gated
+  /// on [overlayOpen]: in Breit mode the third group pages while no overlay
+  /// exists (overlayOpen stays false there — it's a Hoch-only concept).
+  /// No-op when already on page [p].
   void setOverlayPage(int p) {
-    if (!overlayOpen || overlayPage == p) return;
+    if (overlayPage == p) return;
     overlayPage = p;
     notifyListeners();
   }
