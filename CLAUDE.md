@@ -721,7 +721,7 @@ aber **nicht** die Apple Watch.
   einen eigenen Icon-Katalog (`ios/watch/Assets.xcassets`, alpha-freies 1024er
   aus dem iOS-Icon). Bundle-ID `app.weltanschauung.dozenal.watch`,
   `MARKETING_VERSION`/`CURRENT_PROJECT_VERSION` im Target müssen mit der
-  Flutter-Version synchron gehalten werden (aktuell `1.3.0`/`16`).
+  Flutter-Version synchron gehalten werden (aktuell `1.4.0`/`17`).
 
   Das eigenständige **xcodegen**-Projekt (`watch/project.yml`, daraus
   `watch/DozenalWatch.xcodeproj` + `watch/build/`, beide gitignored) bleibt
