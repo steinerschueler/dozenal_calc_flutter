@@ -148,6 +148,7 @@
   "a11yDecimalPoint": "virgola decimale",
   "a11yEquals": "uguale",
   "a11yExpandPanel": "apri pannello esteso",
+  "keypadOverlayTitle": "Pannello esteso",
   "a11yClosePanel": "chiudi pannello esteso",
   "a11yMemoryStore": "memorizza",
   "a11yMemoryRecall": "richiama dalla memoria",

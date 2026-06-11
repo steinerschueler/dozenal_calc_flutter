@@ -157,19 +157,9 @@ const List<CalcToken> _set4 = [
   TriangleRight(),
 ];
 const List<CalcToken> _set6 = [Sto(), Rcl(), Mc(), Ans()];
-const List<CalcToken> _set7 = [
-  ConstPi(),
-  ConstE(),
-  ConstPhi(),
-  ConstSqrt2(),
-];
+const List<CalcToken> _set7 = [ConstPi(), ConstE(), ConstPhi(), ConstSqrt2()];
 const List<CalcToken> _set8 = [Sinh(), Cosh(), Tanh(), Coth()];
-const List<CalcToken> _set9 = [
-  Factorial(),
-  AbsVal(),
-  Reciprocal(),
-  Mod(),
-];
+const List<CalcToken> _set9 = [Factorial(), AbsVal(), Reciprocal(), Mod()];
 const List<CalcToken> _set10Column = [Doz(), Dez(), Drg()]; // Close dropped
 
 // ---------------------------------------------------------------------------
@@ -215,18 +205,14 @@ class _HochKeypad extends StatelessWidget {
   /// so they share the available height proportionally. In fixed-heights
   /// mode every row gets `minTouchTarget`-tall sized boxes — used inside
   /// the scroll fallback where Expanded would be unbounded.
-  Widget _buildColumn({
-    required bool tight,
-    required bool fixedHeights,
-  }) {
+  Widget _buildColumn({required bool tight, required bool fixedHeights}) {
     final rowGap = tight ? 6.0 : 10.0;
     final sectionGap = tight ? 8.0 : 14.0;
     final equalsGap = tight ? 8.0 : 12.0;
 
-    Widget row(Widget child, {int flex = 8}) =>
-        fixedHeights
-            ? SizedBox(height: minTouchTarget, child: child)
-            : Expanded(flex: flex, child: child);
+    Widget row(Widget child, {int flex = 8}) => fixedHeights
+        ? SizedBox(height: minTouchTarget, child: child)
+        : Expanded(flex: flex, child: child);
 
     final children = <Widget>[
       for (var r = 0; r < _digitGridRows.length; r++) ...[
@@ -413,7 +399,7 @@ class _OverlayPanel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return _RowsPanel(
+    final panel = _RowsPanel(
       opRows: _hochOverlayRows,
       bottomRow: _set10Row,
       tight: tight,
@@ -422,10 +408,55 @@ class _OverlayPanel extends StatelessWidget {
       isArmed: isArmed,
       isSelected: isSelected,
     );
+    // Open-state affordance: a dezent "Erweiterungsfeld" header above the
+    // extended sets, confirming the overlay is open. Only shown here — the
+    // closed main panel is untouched, so the Store screenshot is identical.
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      mainAxisSize: fixedHeights ? MainAxisSize.min : MainAxisSize.max,
+      children: [
+        _OverlayHeader(
+          title: AppLocalizations.of(context).keypadOverlayTitle,
+          tight: tight,
+        ),
+        if (fixedHeights) panel else Expanded(child: panel),
+      ],
+    );
   }
 }
 
 /// Shared 5-row layout used by both _MainOpsPanel and _OverlayPanel so the
+/// Slim, dezent header shown at the top of the open overlay panel (Hoch mode)
+/// to label the extended sets. Rendered only while the overlay is open, so the
+/// closed keypad — the Play-Store screenshot — is unaffected.
+class _OverlayHeader extends StatelessWidget {
+  final String title;
+  final bool tight;
+  const _OverlayHeader({required this.title, required this.tight});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.only(bottom: tight ? 4 : 6),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          const Icon(Icons.more_horiz, size: 13, color: Color(0xFF6E6E6E)),
+          const SizedBox(width: 6),
+          Text(
+            title,
+            style: const TextStyle(
+              fontSize: 11,
+              fontWeight: FontWeight.w500,
+              color: Color(0xFF8C8C8C),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
 /// AnimatedSwitcher children have identical structure.
 class _RowsPanel extends StatelessWidget {
   final List<List<CalcToken>> opRows;
@@ -556,10 +587,11 @@ class _BreitKeypad extends StatelessWidget {
 
         final baseNaturalWidth =
             13 * buttonSize + 10 * interBlockGap + 2 * groupGapBase;
-        final hSlack =
-            w.isFinite ? math.max(0.0, w - baseNaturalWidth) : 0.0;
-        final groupGap = (groupGapBase + hSlack / 2)
-            .clamp(groupGapBase, maxGroupGap);
+        final hSlack = w.isFinite ? math.max(0.0, w - baseNaturalWidth) : 0.0;
+        final groupGap = (groupGapBase + hSlack / 2).clamp(
+          groupGapBase,
+          maxGroupGap,
+        );
         final contentWidth =
             13 * buttonSize + 10 * interBlockGap + 2 * groupGap;
 
@@ -601,7 +633,8 @@ class _BreitKeypad extends StatelessWidget {
         // the available height still can't fit all rows (split-screen
         // landscape, foldable cover display), allow vertical scroll so no
         // row is unreachable. Otherwise center for abundant height (tablet).
-        final naturalHeight = 4 * buttonSize +
+        final naturalHeight =
+            4 * buttonSize +
             3 * interBlockGap +
             verticalContentGap +
             buttonSize;
@@ -637,7 +670,7 @@ class _BreitKeypad extends StatelessWidget {
                       onTap: () => onTap(Digit(_digitGridRows[r][col])),
                       disabled:
                           isDisabled?.call(Digit(_digitGridRows[r][col])) ??
-                              false,
+                          false,
                     ),
                   ),
                 ],
@@ -710,15 +743,15 @@ class _BreitKeypad extends StatelessWidget {
     // the full top section but doesn't bleed into the equals row below.
     final dividerHeight = 4 * buttonSize + 3 * interBlockGap;
     Widget bigGap() => SizedBox(
-          width: groupGap,
-          child: Center(
-            child: Container(
-              width: 1,
-              height: dividerHeight,
-              color: const Color(0xFF333333),
-            ),
-          ),
-        );
+      width: groupGap,
+      child: Center(
+        child: Container(
+          width: 1,
+          height: dividerHeight,
+          color: const Color(0xFF333333),
+        ),
+      ),
+    );
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -910,11 +943,7 @@ class _TokenButton extends StatelessWidget {
                   ),
                 ),
                 if (armed)
-                  const Positioned(
-                    right: 4,
-                    top: 4,
-                    child: _ArmedDot(),
-                  ),
+                  const Positioned(right: 4, top: 4, child: _ArmedDot()),
               ],
             );
           },
@@ -929,60 +958,60 @@ class _TokenButton extends StatelessWidget {
 /// can't ship without a spoken label. Strings come from the ARB so the label
 /// follows the active app language instead of being hard-coded German.
 String _tokenSemanticLabel(CalcToken t, AppLocalizations l) => switch (t) {
-      Add() => l.a11yPlus,
-      Sub() => l.a11yMinus,
-      Mul() => l.a11yTimes,
-      Div() => l.a11yDividedBy,
-      ExpTopRight() => l.a11yPower,
-      RootTopLeft() => l.a11yRoot,
-      OplusBotLeft() => l.a11yParallelAdd,
-      LogBotRight() => l.a11yLogarithm,
-      Sin() => l.a11ySine,
-      Cos() => l.a11yCosine,
-      Tan() => l.a11yTangent,
-      Cot() => l.a11yCotangent,
-      ArcSin() => l.a11yArcsine,
-      ArcCos() => l.a11yArccosine,
-      ArcTan() => l.a11yArctangent,
-      ArcCot() => l.a11yArccotangent,
-      Sinh() => l.a11ySinh,
-      Cosh() => l.a11yCosh,
-      Tanh() => l.a11yTanh,
-      Coth() => l.a11yCoth,
-      ArSinh() => l.a11yArsinh,
-      ArCosh() => l.a11yArcosh,
-      ArTanh() => l.a11yArtanh,
-      ArCoth() => l.a11yArcoth,
-      ParenOpen() => l.a11yParenOpen,
-      ParenClose() => l.a11yParenClose,
-      TriangleLeft() => l.a11yCursorLeft,
-      TriangleRight() => l.a11yCursorRight,
-      Ac() => l.a11yAllClear,
-      Del() => l.a11yDelete,
-      Decimal() => l.a11yDecimalPoint,
-      Equals() => l.a11yEquals,
-      Expand() => l.a11yExpandPanel,
-      Close() => l.a11yClosePanel,
-      Sto() => l.a11yMemoryStore,
-      Rcl() => l.a11yMemoryRecall,
-      Mc() => l.a11yMemoryClear,
-      Ans() => l.a11yLastAnswer,
-      ConstPi() => l.a11yPi,
-      ConstE() => l.a11yEuler,
-      ConstPhi() => l.a11yGoldenRatio,
-      ConstSqrt2() => l.a11ySqrt2,
-      Factorial() => l.a11yFactorial,
-      AbsVal() => l.a11yAbsolute,
-      Reciprocal() => l.a11yReciprocal,
-      Mod() => l.a11yModulo,
-      Doz() => l.a11yDozenalMode,
-      Dez() => l.a11yDecimalMode,
-      Drg() => l.a11yAngleMode,
-      Info() => l.a11yInfo,
-      // Never rendered as a keypad button (digits use _DigitButton; Negate and
-      // RatLit only ever live in buffers).
-      Digit() || Negate() || RatLit() => '',
-    };
+  Add() => l.a11yPlus,
+  Sub() => l.a11yMinus,
+  Mul() => l.a11yTimes,
+  Div() => l.a11yDividedBy,
+  ExpTopRight() => l.a11yPower,
+  RootTopLeft() => l.a11yRoot,
+  OplusBotLeft() => l.a11yParallelAdd,
+  LogBotRight() => l.a11yLogarithm,
+  Sin() => l.a11ySine,
+  Cos() => l.a11yCosine,
+  Tan() => l.a11yTangent,
+  Cot() => l.a11yCotangent,
+  ArcSin() => l.a11yArcsine,
+  ArcCos() => l.a11yArccosine,
+  ArcTan() => l.a11yArctangent,
+  ArcCot() => l.a11yArccotangent,
+  Sinh() => l.a11ySinh,
+  Cosh() => l.a11yCosh,
+  Tanh() => l.a11yTanh,
+  Coth() => l.a11yCoth,
+  ArSinh() => l.a11yArsinh,
+  ArCosh() => l.a11yArcosh,
+  ArTanh() => l.a11yArtanh,
+  ArCoth() => l.a11yArcoth,
+  ParenOpen() => l.a11yParenOpen,
+  ParenClose() => l.a11yParenClose,
+  TriangleLeft() => l.a11yCursorLeft,
+  TriangleRight() => l.a11yCursorRight,
+  Ac() => l.a11yAllClear,
+  Del() => l.a11yDelete,
+  Decimal() => l.a11yDecimalPoint,
+  Equals() => l.a11yEquals,
+  Expand() => l.a11yExpandPanel,
+  Close() => l.a11yClosePanel,
+  Sto() => l.a11yMemoryStore,
+  Rcl() => l.a11yMemoryRecall,
+  Mc() => l.a11yMemoryClear,
+  Ans() => l.a11yLastAnswer,
+  ConstPi() => l.a11yPi,
+  ConstE() => l.a11yEuler,
+  ConstPhi() => l.a11yGoldenRatio,
+  ConstSqrt2() => l.a11ySqrt2,
+  Factorial() => l.a11yFactorial,
+  AbsVal() => l.a11yAbsolute,
+  Reciprocal() => l.a11yReciprocal,
+  Mod() => l.a11yModulo,
+  Doz() => l.a11yDozenalMode,
+  Dez() => l.a11yDecimalMode,
+  Drg() => l.a11yAngleMode,
+  Info() => l.a11yInfo,
+  // Never rendered as a keypad button (digits use _DigitButton; Negate and
+  // RatLit only ever live in buffers).
+  Digit() || Negate() || RatLit() => '',
+};
 
 class _TokenPainter extends CustomPainter {
   final CalcToken token;
@@ -1109,18 +1138,12 @@ class _RoundIconButton extends StatelessWidget {
   Widget build(BuildContext context) {
     final btn = Material(
       color: const Color(0xFF2A2A2A),
-      shape: const CircleBorder(
-        side: BorderSide(color: Color(0xFF555555)),
-      ),
+      shape: const CircleBorder(side: BorderSide(color: Color(0xFF555555))),
       child: InkWell(
         customBorder: const CircleBorder(),
         onTap: onPressed,
         child: Center(
-          child: Icon(
-            icon,
-            size: size * 0.5,
-            color: const Color(0xFF64C8FF),
-          ),
+          child: Icon(icon, size: size * 0.5, color: const Color(0xFF64C8FF)),
         ),
       ),
     );

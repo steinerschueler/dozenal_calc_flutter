@@ -148,6 +148,7 @@
   "a11yDecimalPoint": "दशमलव बिंदु",
   "a11yEquals": "बराबर",
   "a11yExpandPanel": "विस्तार पैनल खोलें",
+  "keypadOverlayTitle": "विस्तार पैनल",
   "a11yClosePanel": "विस्तार पैनल बंद करें",
   "a11yMemoryStore": "मेमोरी में सहेजें",
   "a11yMemoryRecall": "मेमोरी से प्राप्त करें",

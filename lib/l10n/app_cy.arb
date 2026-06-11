@@ -148,6 +148,7 @@
   "a11yDecimalPoint": "pwynt degol",
   "a11yEquals": "yn hafal i",
   "a11yExpandPanel": "agor y panel estynedig",
+  "keypadOverlayTitle": "Panel estynedig",
   "a11yClosePanel": "cau'r panel estynedig",
   "a11yMemoryStore": "storio yn y cof",
   "a11yMemoryRecall": "adalw o'r cof",

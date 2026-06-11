@@ -148,6 +148,7 @@
   "a11yDecimalPoint": "小數點",
   "a11yEquals": "等於",
   "a11yExpandPanel": "開啟擴充面板",
+  "keypadOverlayTitle": "擴充面板",
   "a11yClosePanel": "關閉擴充面板",
   "a11yMemoryStore": "存入記憶體",
   "a11yMemoryRecall": "從記憶體呼叫",

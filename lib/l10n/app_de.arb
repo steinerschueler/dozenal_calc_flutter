@@ -181,6 +181,7 @@
   "a11yDecimalPoint": "Komma",
   "a11yEquals": "Gleich",
   "a11yExpandPanel": "Erweiterungsfeld öffnen",
+  "keypadOverlayTitle": "Erweiterungsfeld",
   "a11yClosePanel": "Erweiterungsfeld schließen",
   "a11yMemoryStore": "In Speicher",
   "a11yMemoryRecall": "Aus Speicher",
