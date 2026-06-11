@@ -78,6 +78,16 @@ List<Widget> _chapterIt(int chapter, AppLocalizations l) {
           "iperboliche nel pannello di estensione. Un piccolo punto "
           "dorato sul tasto indica che il prossimo tocco invertirà.",
         ),
+        const _H("Pressione prolungata per più funzioni"),
+        const _P(
+          "I tasti con un piccolo angolo in basso a destra offrono "
+          "funzioni correlate con una pressione prolungata: x□ "
+          "contiene x², log contiene ln, log₁₂ ed eˣ, − contiene ±, "
+          "STO contiene M+ e M−, n! contiene nCr e nPr. Per "
+          "scegliere, scorri il dito sull'opzione desiderata e "
+          "rilascia — oppure rilascia e tocca l'opzione. Un tocco "
+          "fuori chiude il pannello.",
+        ),
         const _H("Operatori speciali"),
         const _P(
           "x² eleva al quadrato il numero precedente. √ calcola la "
@@ -93,8 +103,8 @@ List<Widget> _chapterIt(int chapter, AppLocalizations l) {
         const _P(
           "Il tasto … in basso a destra apre il pannello di "
           "estensione con più funzioni: memoria, costanti (π, e, "
-          "φ, √2), funzioni iperboliche, operatori avanzati e "
-          "impostazioni. Lo stesso tasto lo chiude, oppure un "
+          "φ, √2), funzioni iperboliche, operatori avanzati, più "
+          "EXP e DRG. Lo stesso tasto lo chiude, oppure un "
           "tocco fuori dal pannello. Sui tablet tutti i set sono "
           "visibili affiancati comunque — nessuna sovrapposizione.",
         ),
@@ -103,7 +113,7 @@ List<Widget> _chapterIt(int chapter, AppLocalizations l) {
           "  7 — Costanti:       π     e     φ     √2\n"
           "  8 — Iperboliche:    sinh  cosh  tanh  coth\n"
           "  9 — Avanzati:       n!    |x|   1/x   mod\n"
-          "  10 — Modi:          Doz   Dez   DRG   …",
+          "  10 — Modi:          EXP   DRG   …",
         ),
         const _H("Memoria"),
         const _P(
@@ -124,12 +134,10 @@ List<Widget> _chapterIt(int chapter, AppLocalizations l) {
         ),
         const _H("Sistema numerico: Doz / Dez"),
         const _P(
-          "Nel pannello di estensione, due tasti Doz e Dez sono "
-          "affiancati. Esattamente uno di essi è sempre attivo "
-          "(con bordo), e il sistema attivo è mostrato in alto a "
-          "destra del display. In modalità Doz la calcolatrice "
-          "calcola in base 12 (predefinito) ; in modalità Dez in "
-          "base 10.",
+          "Il sistema numerico si cambia nelle impostazioni, "
+          "raggiungibili tramite il tasto (i): duodecimale calcola "
+          "in base 12 (predefinito), decimale in base 10. Il sistema "
+          "attivo è mostrato in alto a destra del display.",
         ),
         const _P(
           "Al cambio, il numero attualmente visibile viene "

@@ -1,8 +1,6 @@
 {
   "@@locale": "zh",
-
   "appTitle": "Dozenal Calc",
-
   "infoListTitle": "理论与其他",
   "infoListGlyphStyleTitle": "显示数字",
   "infoListGlyphStyleCustom": "字形",
@@ -45,12 +43,10 @@
   "unitCatLiquid": "液量",
   "unitCatMoment": "扭矩",
   "infoListSupportEntry": "支持开发",
-
   "supportTitle": "支持开发",
   "supportIntro": "如果你喜欢 Dozenal Calc，一笔小费有助于支付日常成本 — 具体来说每年 100 美元的 Apple Developer 账户费，让应用也能登陆 iPhone 和 iPad。",
   "supportKofiNote": "首选平台 — Ko-fi 不收取自己的平台费，只收取标准的支付处理费。类似的服务如 Buy Me a Coffee 会额外抽取平台份额。",
   "supportClose": "关闭",
-
   "conversionsTitle": "英制十二进制换算",
   "conversionsIntro": "英制单位 — 1英尺有12英寸，1先令有12便士，1打有12个，1罗有144个 — 在基数12中成为整数。输入一个值，看看它如何分解为经典单位。",
   "conversionsInputLabel": "输入（解释为）",
@@ -61,7 +57,6 @@
   "conversionsTimeHeading": "时间 — 秒、分钟、小时",
   "conversionsAngleHeading": "角度 — 360°的分数",
   "infoListVersionFooter": "版本 {version} · 构建 {buildNumber}",
-
   "chapterTitle01": "使用计算器",
   "chapterTitle02": "什么是十二进制？",
   "chapterTitle03": "斐波那契、平方数和奇趣",
@@ -74,12 +69,10 @@
   "chapterTitle10": "晶体和生物中的十二面",
   "chapterTitle11": "手上的十二指节",
   "chapterTitle12": "英寸、英尺、磅 — 为什么它们有十二进制意义",
-
   "chapterIllustrationTriangle": "三角形（每4个顶点）",
   "chapterIllustrationSquare": "正方形（每3个顶点）",
   "chapterIllustrationHexagon": "六边形（每2个顶点）",
   "chapterNotFound": "未找到章节。",
-
   "introTitle": "快速导览",
   "introSkip": "跳过",
   "introNext": "下一步",
@@ -90,9 +83,8 @@
   "introSlide4": "函数键块：左侧是基本运算，旁边是幂和根，右侧是三角函数和光标箭头。",
   "introSlide5": "左下角的(i)键 — 它打开十二个关于十二进制系统的理论章节。右下角的(?)键重新播放此导览。",
   "introSlide6": "AC（红色）清除一切。旁边的«…»键打开一个带有更多功能的面板 — 常数、双曲函数、存储器和模式选择。",
-  "introSlide7": "在面板中：Doz/Dez在十二进制（基数12）和十进制（基数10）输入之间切换。激活的键有边框，显示屏右上角的小指示器显示当前模式。切换时，当前数字自动转换。在Dez模式下，10和11的符号变为不活动 — 它们只存在于十二进制系统中。",
+  "introSlide7": "数制在设置中切换（通过(i)键）：十二进制（基数12）或十进制（基数10）。显示屏右上角的小指示器显示当前模式；切换时，当前数字自动转换。新功能：右下角带小角标的按键 — 例如−、x□和log — 长按可打开更多功能。滑动并松开，或点按，即可选择。",
   "introSlide8": "(i)键打开包含十二个教学章节的列表 — 从使用计算器到十二面体和十二星座。",
-
   "feedbackTitle": "反馈",
   "feedbackIntro": "感谢测试 Dozenal Calc！你的回答将作为电子邮件到达你的默认邮件应用，你可以在发送前查看或丢弃。",
   "feedbackRatingLabel": "评分",
@@ -107,14 +99,11 @@
   "feedbackMailChangeLabel": "想改变的：",
   "feedbackMailVersionLabel": "版本",
   "feedbackMailBuildLabel": "构建",
-
   "privacyTitle": "隐私政策",
   "privacyError": "无法加载隐私政策：",
   "licenseTitle": "许可证",
   "licenseError": "无法加载许可证：",
-
   "externalLinkError": "无法打开链接：{href}",
-
   "a11yDigit": "数字 {value}",
   "a11yPlus": "加",
   "a11yMinus": "减",
@@ -185,7 +174,6 @@
   "a11yIntro": "介绍",
   "resultCopied": "已复制：{value}",
   "infoListHapticsTitle": "触感反馈",
-
   "settingsTitle": "设置",
   "settingsKeypadModeTitle": "功能键",
   "settingsKeypadModeOverlay": "叠层",
@@ -198,5 +186,9 @@
   "settingsThemeTitle": "外观",
   "settingsThemeDark": "深色",
   "settingsThemeLight": "浅色",
-  "settingsThemeSystem": "跟随系统"
+  "settingsThemeSystem": "跟随系统",
+  "settingsNumeralSystemDozenal": "十二进制",
+  "settingsNumeralSystemDecimal": "十进制",
+  "settingsKeypadGlyphsTitle": "按键数字",
+  "a11yHoldMore": "长按显示更多功能"
 }

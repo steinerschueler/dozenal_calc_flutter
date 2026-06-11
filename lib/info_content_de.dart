@@ -56,6 +56,15 @@ List<Widget> _chapterDe(int chapter, AppLocalizations l) {
           'Erweiterungsfeld. Ein kleiner goldener Punkt auf der Taste zeigt '
           'an, dass der nächste Klick umkehrt.',
         ),
+        const _H('Lange drücken für mehr'),
+        const _P(
+          'Tasten mit einer kleinen Ecke unten rechts bieten bei langem '
+          'Druck verwandte Funktionen an: x□ enthält x², log enthält ln, '
+          'log₁₂ und eˣ, − enthält ±, STO enthält M+ und M−, n! enthält '
+          'nCr und nPr. Zum Auswählen den Finger auf die gewünschte Option '
+          'gleiten lassen und loslassen — oder loslassen und die Option '
+          'antippen. Ein Tipp daneben schliesst das Feld.',
+        ),
         const _H('Spezialoperatoren'),
         const _P(
           'x² quadriert die vorangehende Zahl. √ berechnet die Quadratwurzel; '
@@ -70,7 +79,7 @@ List<Widget> _chapterDe(int chapter, AppLocalizations l) {
         const _P(
           'Die Taste … rechts unten öffnet das Erweiterungsfeld mit weiteren '
           'Funktionen: Speicher, Konstanten (π, e, φ, √2), hyperbolische '
-          'Funktionen, erweiterte Operatoren und Einstellungen. Es schliesst '
+          'Funktionen, erweiterte Operatoren sowie EXP und DRG. Es schliesst '
           'sich über dieselbe Taste, oder durch Antippen ausserhalb des '
           'Feldes. Auf Tablets sind alle Sets ohnehin nebeneinander '
           'sichtbar — dort gibt es kein Overlay.',
@@ -80,7 +89,7 @@ List<Widget> _chapterDe(int chapter, AppLocalizations l) {
           '  7 — Konstanten:  π     e     φ     √2\n'
           '  8 — Hyperbel:   sinh  cosh  tanh  coth\n'
           '  9 — Erweitert:  n!    |x|   1/x   mod\n'
-          '  10 — Modi:      Doz   Dez   DRG   …',
+          '  10 — Modi:      EXP   DRG   …',
         ),
         const _H('Speicher'),
         const _P(
@@ -100,11 +109,10 @@ List<Widget> _chapterDe(int chapter, AppLocalizations l) {
         ),
         const _H('Zahlensystem Doz / Dez'),
         const _P(
-          'Im Erweiterungsfeld stehen zwei Tasten Doz und Dez nebeneinander. '
-          'Genau eine der beiden ist immer aktiv (umrandet) und das aktive '
-          'System steht oben rechts im Display angezeigt. Im Doz-Modus '
-          'rechnet der Rechner in Basis 12 (Standard), im Dez-Modus in '
-          'Basis 10.',
+          'Das Zahlensystem wechselst du in den Einstellungen, erreichbar '
+          'über die (i)-Taste: Dozenal rechnet in Basis 12 (Standard), '
+          'Dezimal in Basis 10. Das aktive System steht oben rechts im '
+          'Display angezeigt.',
         ),
         const _P(
           'Beim Umschalten wird die aktuell sichtbare Zahl automatisch in '

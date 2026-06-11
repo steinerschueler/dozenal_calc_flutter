@@ -22,6 +22,7 @@ import 'app_layout.dart';
 import 'app_theme.dart';
 import 'converter_state.dart';
 import 'glyph_painter.dart';
+import 'logic/glyph_style.dart';
 import 'logic/unit_data.dart';
 import 'token_painter.dart';
 import 'tokens.dart';
@@ -301,10 +302,13 @@ class ConverterKeypad extends StatelessWidget {
         onTap: enabled ? () => state.inputDigit(digit.value) : null,
         pressedBuilder: (ctx, pressed) {
           final t = AppColors.of(ctx);
+          // Same settings-page preference as the main keypad's digit keys.
+          final style = GlyphStyleScope.keypadStyleOf(ctx);
           return CustomPaint(
             size: Size.infinite,
             painter: _DigitPainter(
               digit: digit,
+              style: style,
               color: !enabled
                   ? t.digitDisabled
                   : (pressed ? t.digitPressed : t.digit),
@@ -798,12 +802,37 @@ class _RoundIcon extends StatelessWidget {
 
 class _DigitPainter extends CustomPainter {
   final DozenalDigit digit;
+  final GlyphStyle style;
   final Color color;
 
-  _DigitPainter({required this.digit, required this.color});
+  _DigitPainter({
+    required this.digit,
+    required this.color,
+    this.style = GlyphStyle.custom,
+  });
 
   @override
   void paint(Canvas canvas, Size size) {
+    if (style == GlyphStyle.conventional) {
+      // Conventional ASCII '0'..'9'/'A'/'B' — mirrors keypad.dart's
+      // _DigitPainter conventional branch.
+      final tp = TextPainter(
+        text: TextSpan(
+          text: conventionalDigitChar(digit),
+          style: TextStyle(
+            color: color,
+            fontSize: size.shortestSide * 0.55,
+            fontFamily: 'monospace',
+          ),
+        ),
+        textDirection: TextDirection.ltr,
+      )..layout();
+      tp.paint(
+        canvas,
+        Offset((size.width - tp.width) / 2, (size.height - tp.height) / 2),
+      );
+      return;
+    }
     final q = (size.shortestSide) / 4;
     paintDozenalDigitAt(
       canvas,
@@ -817,7 +846,7 @@ class _DigitPainter extends CustomPainter {
 
   @override
   bool shouldRepaint(covariant _DigitPainter old) =>
-      old.digit != digit || old.color != color;
+      old.digit != digit || old.color != color || old.style != style;
 }
 
 class _OpPainter extends CustomPainter {

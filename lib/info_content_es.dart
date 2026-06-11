@@ -80,6 +80,15 @@ List<Widget> _chapterEs(int chapter, AppLocalizations l) {
           "dorado en la tecla indica que el siguiente toque "
           "invertirá.",
         ),
+        const _H("Pulsación larga para más funciones"),
+        const _P(
+          "Las teclas con una pequeña esquina abajo a la derecha "
+          "ofrecen funciones relacionadas con una pulsación larga: x□ "
+          "contiene x², log contiene ln, log₁₂ y eˣ, − contiene ±, "
+          "STO contiene M+ y M−, n! contiene nCr y nPr. Para elegir, "
+          "desliza el dedo hasta la opción deseada y suelta — o "
+          "suelta y toca la opción. Un toque fuera cierra el panel.",
+        ),
         const _H("Operadores especiales"),
         const _P(
           "x² eleva al cuadrado el número anterior. √ calcula la raíz "
@@ -95,8 +104,8 @@ List<Widget> _chapterEs(int chapter, AppLocalizations l) {
         const _P(
           "La tecla … en la parte inferior derecha abre el panel de "
           "extensión con más funciones: memoria, constantes (π, e, "
-          "φ, √2), funciones hiperbólicas, operadores avanzados y "
-          "ajustes. La misma tecla lo cierra, o un toque fuera del "
+          "φ, √2), funciones hiperbólicas, operadores avanzados, "
+          "además de EXP y DRG. La misma tecla lo cierra, o un toque fuera del "
           "panel. En tabletas todos los conjuntos están visibles uno "
           "al lado del otro de todos modos — no hay superposición.",
         ),
@@ -105,7 +114,7 @@ List<Widget> _chapterEs(int chapter, AppLocalizations l) {
           "  7 — Constantes:     π     e     φ     √2\n"
           "  8 — Hiperbólicas:   sinh  cosh  tanh  coth\n"
           "  9 — Avanzados:      n!    |x|   1/x   mod\n"
-          "  10 — Modos:         Doz   Dez   DRG   …",
+          "  10 — Modos:         EXP   DRG   …",
         ),
         const _H("Memoria"),
         const _P(
@@ -126,12 +135,10 @@ List<Widget> _chapterEs(int chapter, AppLocalizations l) {
         ),
         const _H("Sistema numérico: Doz / Dez"),
         const _P(
-          "En el panel de extensión, dos teclas Doz y Dez están una "
-          "al lado de la otra. Exactamente una de ellas está siempre "
-          "activa (con borde), y el sistema activo se muestra en la "
-          "parte superior derecha de la pantalla. En modo Doz la "
-          "calculadora calcula en base 12 (predeterminado) ; en modo "
-          "Dez en base 10.",
+          "El sistema numérico se cambia en los ajustes, accesibles "
+          "a través de la tecla (i): duodecimal calcula en base 12 "
+          "(predeterminado), decimal en base 10. El sistema activo "
+          "se muestra en la parte superior derecha de la pantalla.",
         ),
         const _P(
           "Al cambiar, el número actualmente visible se convierte "

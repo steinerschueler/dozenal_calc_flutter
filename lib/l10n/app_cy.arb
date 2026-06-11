@@ -1,8 +1,6 @@
 {
   "@@locale": "cy",
-
   "appTitle": "Dozenal Calc",
-
   "infoListTitle": "Theori a mwy",
   "infoListGlyphStyleTitle": "Digidau ar y sgrin",
   "infoListGlyphStyleCustom": "Glyffau",
@@ -45,12 +43,10 @@
   "unitCatLiquid": "Hylif",
   "unitCatMoment": "Trorym",
   "infoListSupportEntry": "Cefnogi'r datblygiad",
-
   "supportTitle": "Cefnogi'r datblygiad",
   "supportIntro": "Os ydych chi'n mwynhau Dozenal Calc, mae cildwrn bach yn helpu i dalu'r costau parhaol — yn benodol ffi flynyddol 100 USD cyfrif Apple Developer fel y gall yr ap hefyd lansio ar iPhone ac iPad.",
   "supportKofiNote": "Llwyfan a ffafrir — nid yw Ko-fi yn cymryd unrhyw ffi llwyfan ei hun, dim ond y ffi safonol prosesydd taliadau. Mae gwasanaethau cymharol fel Buy Me a Coffee yn cipio cyfran llwyfan ychwanegol.",
   "supportClose": "Cau",
-
   "conversionsTitle": "Trawsnewidiadau imperialaidd-12",
   "conversionsIntro": "Daw'r unedau imperialaidd — 12 modfedd mewn troedfedd, 12 ceiniog mewn swllt, 12 mewn dwsin, 144 mewn grôs — yn rhifau crwn ym môn 12. Rhowch werth a gwelwch sut y mae'n datgymalu i'r unedau clasurol.",
   "conversionsInputLabel": "Mewnbwn (wedi'i ddehongli fel)",
@@ -61,7 +57,6 @@
   "conversionsTimeHeading": "Amser — eiliadau, munudau, oriau",
   "conversionsAngleHeading": "Ongl — ffracsiynau o 360°",
   "infoListVersionFooter": "Fersiwn {version} · Adeiladaeth {buildNumber}",
-
   "chapterTitle01": "Defnyddio'r cyfrifiannell",
   "chapterTitle02": "Beth yw'r system ddwsin?",
   "chapterTitle03": "Fibonacci, rhifau sgwâr a chwilfrydedd",
@@ -74,12 +69,10 @@
   "chapterTitle10": "Deuddeg wyneb mewn crisialau a chreaduriaid",
   "chapterTitle11": "Deuddeg cymal ar y llaw",
   "chapterTitle12": "Modfeddi, troedfeddi, pwysi — a pham eu bod yn gwneud synnwyr dwsin",
-
   "chapterIllustrationTriangle": "Triongl (pob 4ydd fertig)",
   "chapterIllustrationSquare": "Sgwâr (pob 3ydd fertig)",
   "chapterIllustrationHexagon": "Chweongl (pob 2il fertig)",
   "chapterNotFound": "Ni chanfuwyd y bennod.",
-
   "introTitle": "Taith gyflym",
   "introSkip": "Hepgor",
   "introNext": "Nesaf",
@@ -90,9 +83,8 @@
   "introSlide4": "Y bloc bysellau swyddogaeth: rhifyddeg sylfaenol ar y chwith, pwerau a gwreiddiau drws nesaf, swyddogaethau trig a saethau cyrchwr ar y dde.",
   "introSlide5": "Bysell (i) ar y gwaelod chwith — mae'n agor y deuddeg pennod ddamcaniaeth am y system ddwsin. Bysell (?) ar y gwaelod dde sy'n ailchwarae'r daith yma.",
   "introSlide6": "Mae AC (coch) yn clirio popeth. Mae'r fysell «…» drws nesaf yn agor panel gyda mwy o swyddogaethau — cysonion, swyddogaethau hyperbolig, cof a dewis modd.",
-  "introSlide7": "Yn y panel: mae Doz/Dez yn newid rhwng mewnbwn dwsin (bôn 12) a degol (bôn 10). Mae gan y fysell weithredol ymyl, ac mae dangosydd bach yng nghornel dde uchaf y sgrin yn dangos y modd cyfredol. Wrth newid, trosglwyddir y rhif cyfredol yn awtomatig. Yn y modd Dez, mae'r symbolau ar gyfer 10 ac 11 yn dod yn anweithredol — dim ond yn y system ddwsin y maent yn bodoli.",
+  "introSlide7": "Newidiwch y system rifau yn y Gosodiadau (drwy'r fysell (i)): dwsin (bôn 12) neu ddegol (bôn 10). Mae'r dangosydd bach yng nghornel dde uchaf y sgrin yn dangos y modd gweithredol; wrth newid, trosglwyddir y rhif yn awtomatig. Newydd: mae bysellau â chornel fach ar y gwaelod dde — fel −, x□ a log — yn cynnig rhagor o swyddogaethau gyda phwysiad hir. Llithrwch a gollyngwch, neu tapiwch, i ddewis.",
   "introSlide8": "Mae'r fysell (i) yn agor y rhestr hon o ddeuddeg pennod addysgol — o ddefnyddio'r cyfrifiannell at y dodecahedron a deuddeg arwydd y sidydd.",
-
   "feedbackTitle": "Adborth",
   "feedbackIntro": "Diolch am brofi Dozenal Calc! Bydd eich atebion yn cyrraedd eich rhaglen e-bost ddiofyn fel neges, y gallwch ei hadolygu neu ei thaflu cyn ei hanfon.",
   "feedbackRatingLabel": "Sgôr",
@@ -107,14 +99,11 @@
   "feedbackMailChangeLabel": "Beth y byddech yn ei newid:",
   "feedbackMailVersionLabel": "Fersiwn",
   "feedbackMailBuildLabel": "Adeiladaeth",
-
   "privacyTitle": "Polisi preifatrwydd",
   "privacyError": "Methwyd llwytho'r polisi preifatrwydd:",
   "licenseTitle": "Trwydded",
   "licenseError": "Methwyd llwytho'r drwydded:",
-
   "externalLinkError": "Methwyd agor y ddolen: {href}",
-
   "a11yDigit": "Digid {value}",
   "a11yPlus": "plws",
   "a11yMinus": "minws",
@@ -185,7 +174,6 @@
   "a11yIntro": "rhagarweiniad",
   "resultCopied": "Copïwyd: {value}",
   "infoListHapticsTitle": "Adborth haptig",
-
   "settingsTitle": "Gosodiadau",
   "settingsKeypadModeTitle": "Bysellau swyddogaeth",
   "settingsKeypadModeOverlay": "Troshaen",
@@ -198,5 +186,9 @@
   "settingsThemeTitle": "Golwg",
   "settingsThemeDark": "Tywyll",
   "settingsThemeLight": "Golau",
-  "settingsThemeSystem": "System"
+  "settingsThemeSystem": "System",
+  "settingsNumeralSystemDozenal": "Deuddegol",
+  "settingsNumeralSystemDecimal": "Degol",
+  "settingsKeypadGlyphsTitle": "Digidau ar y bysellau",
+  "a11yHoldMore": "Daliwch am ragor o swyddogaethau"
 }

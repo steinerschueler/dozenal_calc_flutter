@@ -65,6 +65,13 @@ List<Widget> _chapterZh(int chapter, AppLocalizations l) {
           "cos 变成 cos⁻¹，以此类推。同一规则适用于扩展面板中的"
           "双曲函数。键上的小金点表示下一次点击将反转。",
         ),
+        const _H("长按显示更多函数"),
+        const _P(
+          "右下角带小角标的按键，长按可显示相关函数：x□ 包含 x²，"
+          "log 包含 ln、log₁₂ 和 eˣ，− 包含 ±，STO 包含 M+ 和 M−，"
+          "n! 包含 nCr 和 nPr。选择方式：将手指滑到所需选项并松开 "
+          "— 或先松开再点按选项。在外部点击关闭弹窗。",
+        ),
         const _H("特殊运算符"),
         const _P(
           "x² 对前面的数字进行平方。√ 计算平方根 — 如果其左侧有"
@@ -76,7 +83,7 @@ List<Widget> _chapterZh(int chapter, AppLocalizations l) {
         const _H("扩展面板"),
         const _P(
           "右下角的 … 键打开带有更多函数的扩展面板：存储器、常数"
-          "（π、e、φ、√2）、双曲函数、高级运算符和设置。同一键将其"
+          "（π、e、φ、√2）、双曲函数、高级运算符以及 EXP 和 DRG。同一键将其"
           "关闭，或在面板外点击。在平板上，所有集合本来就并排显示"
           " — 没有覆盖层。",
         ),
@@ -85,7 +92,7 @@ List<Widget> _chapterZh(int chapter, AppLocalizations l) {
           "  7 — 常数:        π     e     φ     √2\n"
           "  8 — 双曲:       sinh  cosh  tanh  coth\n"
           "  9 — 高级:       n!    |x|   1/x   mod\n"
-          "  10 — 模式:      Doz   Dez   DRG   …",
+          "  10 — 模式:      EXP   DRG   …",
         ),
         const _H("存储器"),
         const _P(
@@ -101,9 +108,9 @@ List<Widget> _chapterZh(int chapter, AppLocalizations l) {
         ),
         const _H("数字系统：Doz / Dez"),
         const _P(
-          "在扩展面板中，两个键 Doz 和 Dez 并排。其中正好有一个始终"
-          "激活（有边框），激活的系统显示在显示屏右上角。在 Doz 模式"
-          "下，计算器以基数 12 计算（默认）；在 Dez 模式下以基数 10。",
+          "数字系统在设置中切换（通过 (i) 键进入）：十二进制以基数 "
+          "12 计算（默认），十进制以基数 10。激活的系统显示在显示屏"
+          "右上角。",
         ),
         const _P(
           "切换时，当前可见的数字自动转换为另一个系统。Doz 中的"

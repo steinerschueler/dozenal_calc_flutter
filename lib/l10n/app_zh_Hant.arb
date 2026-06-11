@@ -1,8 +1,6 @@
 {
   "@@locale": "zh_Hant",
-
   "appTitle": "Dozenal Calc",
-
   "infoListTitle": "理論與其他",
   "infoListGlyphStyleTitle": "顯示數字",
   "infoListGlyphStyleCustom": "字形",
@@ -45,12 +43,10 @@
   "unitCatLiquid": "液量",
   "unitCatMoment": "扭矩",
   "infoListSupportEntry": "支援開發",
-
   "supportTitle": "支援開發",
   "supportIntro": "如果你喜歡 Dozenal Calc，一筆小費有助於支付日常成本 — 具體來說每年 100 美元的 Apple Developer 帳戶費，讓應用程式也能登陸 iPhone 和 iPad。",
   "supportKofiNote": "首選平台 — Ko-fi 不收取自己的平台費，只收取標準的支付處理費。類似的服務如 Buy Me a Coffee 會額外抽取平台份額。",
   "supportClose": "關閉",
-
   "conversionsTitle": "英制十二進制換算",
   "conversionsIntro": "英制單位 — 1英尺有12英吋，1先令有12便士，1打有12個，1籮有144個 — 在基數12中變成整數。輸入一個值，看看它如何分解為經典單位。",
   "conversionsInputLabel": "輸入（解釋為）",
@@ -61,7 +57,6 @@
   "conversionsTimeHeading": "時間 — 秒、分鐘、小時",
   "conversionsAngleHeading": "角度 — 360°的分數",
   "infoListVersionFooter": "版本 {version} · 組建 {buildNumber}",
-
   "chapterTitle01": "使用計算機",
   "chapterTitle02": "何謂十二進制？",
   "chapterTitle03": "費波那契、平方數與奇趣",
@@ -74,12 +69,10 @@
   "chapterTitle10": "晶體與生物中的十二面",
   "chapterTitle11": "手上的十二指節",
   "chapterTitle12": "英吋、英尺、磅 — 為何它們有十二進制意義",
-
   "chapterIllustrationTriangle": "三角形（每4個頂點）",
   "chapterIllustrationSquare": "正方形（每3個頂點）",
   "chapterIllustrationHexagon": "六邊形（每2個頂點）",
   "chapterNotFound": "找不到章節。",
-
   "introTitle": "快速導覽",
   "introSkip": "略過",
   "introNext": "下一步",
@@ -90,9 +83,8 @@
   "introSlide4": "函式鍵區：左側是基本運算，旁邊是冪與根，右側是三角函式與游標箭頭。",
   "introSlide5": "左下角的 (i) 鍵 — 它開啟這十二個關於十二進制系統的理論章節。右下角的 (?) 鍵重新播放此導覽。",
   "introSlide6": "AC（紅色）清除一切。旁邊的「…」鍵開啟一個帶有更多功能的面板 — 常數、雙曲函式、記憶體與模式選擇。",
-  "introSlide7": "在面板中：Doz/Dez 在十二進制（基數 12）與十進制（基數 10）輸入之間切換。啟用的鍵有邊框，顯示螢幕右上角的小指示器顯示當前模式。切換時，當前數字自動轉換。在 Dez 模式下，10 和 11 的符號變為不活動 — 它們只存在於十二進制系統中。",
+  "introSlide7": "在設定中（透過 (i) 鍵）切換數制：十二進制（基數 12）或十進制（基數 10）。顯示螢幕右上角的小指示器顯示當前模式；切換時，當前數字自動轉換。新功能：右下角帶小角標的按鍵 — 例如 −、x□ 和 log — 長按可開啟更多功能。滑動並放開，或點按，即可選擇。",
   "introSlide8": "(i) 鍵開啟包含十二個教學章節的清單 — 從使用計算機到十二面體與十二星座。",
-
   "feedbackTitle": "意見回饋",
   "feedbackIntro": "感謝測試 Dozenal Calc！你的回答將作為電子郵件送至你的預設郵件程式，你可以在傳送前審閱或捨棄。",
   "feedbackRatingLabel": "評分",
@@ -107,14 +99,11 @@
   "feedbackMailChangeLabel": "想改變的：",
   "feedbackMailVersionLabel": "版本",
   "feedbackMailBuildLabel": "組建",
-
   "privacyTitle": "私隱政策",
   "privacyError": "無法載入私隱政策：",
   "licenseTitle": "授權條款",
   "licenseError": "無法載入授權條款：",
-
   "externalLinkError": "無法開啟連結：{href}",
-
   "a11yDigit": "數字 {value}",
   "a11yPlus": "加",
   "a11yMinus": "減",
@@ -185,7 +174,6 @@
   "a11yIntro": "介紹",
   "resultCopied": "已複製：{value}",
   "infoListHapticsTitle": "觸覺回饋",
-
   "settingsTitle": "設定",
   "settingsKeypadModeTitle": "功能鍵",
   "settingsKeypadModeOverlay": "疊層",
@@ -198,5 +186,9 @@
   "settingsThemeTitle": "外觀",
   "settingsThemeDark": "深色",
   "settingsThemeLight": "淺色",
-  "settingsThemeSystem": "跟隨系統"
+  "settingsThemeSystem": "跟隨系統",
+  "settingsNumeralSystemDozenal": "十二進制",
+  "settingsNumeralSystemDecimal": "十進制",
+  "settingsKeypadGlyphsTitle": "按鍵數字",
+  "a11yHoldMore": "長按顯示更多功能"
 }

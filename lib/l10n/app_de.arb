@@ -1,11 +1,9 @@
 {
   "@@locale": "de",
-
   "appTitle": "Dozenal Calc",
   "@appTitle": {
     "description": "Brand name shown as the MaterialApp title (task switcher / browser tab). Identical in both locales."
   },
-
   "infoListTitle": "Theorie und Weiteres",
   "infoListPrivacyEntry": "Datenschutzerklärung",
   "infoListLicenseEntry": "Lizenz",
@@ -29,22 +27,16 @@
   "unitCatLiquid": "Flüssig",
   "unitCatMoment": "Moment",
   "infoListSupportEntry": "Entwicklung unterstützen",
-
   "infoListGlyphStyleTitle": "Ziffern im Display",
   "infoListGlyphStyleCustom": "Glyphen",
   "infoListGlyphStyleConventional": "0–9, A, B",
-
   "infoListTheoryExpansion": "Theorie",
-
   "infoListUnitsExpansion": "Einheiten",
-
   "theoryBlockGrundlagen": "Grundlagen",
-
   "theoryBlockWelt": "Zwölf und die Welt",
   "theoryBlockMath": "Dozenale Mathematik",
   "theoryBlockSociety": "Dozenale Gesellschaft",
   "theoryInProgress": "in Arbeit",
-
   "sourcesSectionTitle": "Quellen",
   "sourceRelR1": "Primärquelle",
   "sourceRelR2": "etablierte Referenz",
@@ -54,12 +46,10 @@
   "sourceAccA1": "Volltext gelesen",
   "sourceAccA2": "teilweise gelesen",
   "sourceAccA3": "indirekt belegt",
-
   "supportTitle": "Entwicklung unterstützen",
   "supportIntro": "Wenn dir Dozenal Calc gefällt: ein kleines Trinkgeld hilft die laufenden Kosten zu decken — konkret die jährliche Apple-Developer-Gebühr von 100 USD, damit die App auch auf iPhone und iPad erscheinen kann.",
   "supportKofiNote": "Bevorzugte Plattform — Ko-fi nimmt selbst keine Plattform-Gebühr, nur die übliche Zahlungs-Provider-Gebühr. Bei vergleichbaren Diensten wie Buy Me a Coffee geht ein zusätzlicher Anteil weg.",
   "supportClose": "Schliessen",
-
   "conversionsTitle": "Einheitentheorie",
   "conversionsIntro": "Die imperialen Einheiten — 12 Inches im Fuss, 12 Pence im Schilling, 12 Stück im Dutzend, 144 im Gros — werden in Basis 12 zu runden Zahlen. Gib einen Wert ein und sieh, wie er in den klassischen Einheiten zerfällt.",
   "conversionsInputLabel": "Eingabe (interpretiert als)",
@@ -73,11 +63,14 @@
   "@infoListVersionFooter": {
     "description": "Footer pinned to the bottom of the info list.",
     "placeholders": {
-      "version": {"type": "String"},
-      "buildNumber": {"type": "String"}
+      "version": {
+        "type": "String"
+      },
+      "buildNumber": {
+        "type": "String"
+      }
     }
   },
-
   "chapterTitle01": "Bedienung des Rechners",
   "chapterTitle02": "Was ist das Dozenalsystem?",
   "chapterTitle03": "Fibonacci, Quadratzahlen und Kuriositäten",
@@ -90,12 +83,10 @@
   "chapterTitle10": "Zwölf Flächen in Kristallen und Lebewesen",
   "chapterTitle11": "Zwölf Glieder an der Hand",
   "chapterTitle12": "Zoll, Fuss, Pfund — und warum sie dozenal Sinn ergeben",
-
   "chapterIllustrationTriangle": "Dreieck (jede 4. Ecke)",
   "chapterIllustrationSquare": "Quadrat (jede 3. Ecke)",
   "chapterIllustrationHexagon": "Sechseck (jede 2. Ecke)",
   "chapterNotFound": "Kapitel nicht gefunden.",
-
   "introTitle": "Bedienungs-Intro",
   "introSkip": "Überspringen",
   "introNext": "Weiter",
@@ -106,9 +97,8 @@
   "introSlide4": "Der Funktionstastenblock: Grundrechenarten links, Potenzen und Wurzeln daneben, Winkelfunktionen und Cursor-Pfeile rechts.",
   "introSlide5": "Links unten die (i)-Taste — sie öffnet zwölf Theorie-Kapitel über das Dozenalsystem. Rechts unten die (?)-Taste, die dieses Intro erneut zeigt.",
   "introSlide6": "AC (rot) löscht alles. Die »…«-Taste rechts daneben öffnet ein Overlay mit weiteren Funktionen — Konstanten, hyperbolische Funktionen, Speicher und Modus-Auswahl.",
-  "introSlide7": "Im Overlay: Doz/Dez schaltet zwischen Dozenal- (Basis 12) und Dezimal-Eingabe (Basis 10) um. Die aktive Taste ist umrandet, und oben rechts im Display zeigt eine kleine Anzeige den aktuellen Modus. Beim Umschalten wird die aktuelle Zahl automatisch umgerechnet. Im Dez-Modus werden die Symbole für 10 und 11 inaktiv — sie existieren nur im Dozenalsystem.",
+  "introSlide7": "Das Zahlensystem wechselst du in den Einstellungen (über die (i)-Taste): Dozenal (Basis 12) oder Dezimal (Basis 10). Die kleine Anzeige oben rechts im Display zeigt den aktiven Modus; beim Umschalten wird die Zahl automatisch umgerechnet. Neu: Tasten mit kleiner Ecke unten rechts — etwa −, x□ und log — bieten bei langem Druck weitere Funktionen. Gleiten und Loslassen oder Antippen wählt aus.",
   "introSlide8": "Über die (i)-Taste erreichst du diese Liste mit zwölf didaktischen Kapiteln — von der Bedienung des Rechners bis hin zu Dodekaedern und den zwölf Tierkreiszeichen.",
-
   "feedbackTitle": "Feedback",
   "feedbackIntro": "Danke fürs Testen von Dozenal Calc! Deine Antworten landen als E-Mail in deinem Standard-Mail-Programm, das du noch prüfen oder verwerfen kannst, bevor sie verschickt wird.",
   "feedbackRatingLabel": "Bewertung",
@@ -120,7 +110,9 @@
   "feedbackRatingValue": "{rating} von 5",
   "@feedbackRatingValue": {
     "placeholders": {
-      "rating": {"type": "int"}
+      "rating": {
+        "type": "int"
+      }
     }
   },
   "feedbackMailSubject": "Feedback Dozenal Calc",
@@ -128,24 +120,25 @@
   "feedbackMailChangeLabel": "Was würdest du anders machen:",
   "feedbackMailVersionLabel": "Version",
   "feedbackMailBuildLabel": "Build",
-
   "privacyTitle": "Datenschutzerklärung",
   "privacyError": "Datenschutzerklärung konnte nicht geladen werden:",
   "licenseTitle": "Lizenz",
   "licenseError": "Lizenz konnte nicht geladen werden:",
-
   "externalLinkError": "Link konnte nicht geöffnet werden: {href}",
   "@externalLinkError": {
     "placeholders": {
-      "href": {"type": "String"}
+      "href": {
+        "type": "String"
+      }
     }
   },
-
   "a11yDigit": "Ziffer {value}",
   "@a11yDigit": {
     "description": "Accessibility (screen-reader) label for a dozenal digit key; {value} is its decimal value 0-11.",
     "placeholders": {
-      "value": {"type": "int"}
+      "value": {
+        "type": "int"
+      }
     }
   },
   "a11yPlus": "plus",
@@ -215,16 +208,16 @@
   "a11yPageSets": "Zurück zur ersten Seite",
   "a11yTheoryChapters": "Theoriekapitel",
   "a11yIntro": "Intro",
-
   "resultCopied": "Kopiert: {value}",
   "@resultCopied": {
     "description": "SnackBar confirmation after the result is copied to the clipboard; {value} is the copied result string.",
     "placeholders": {
-      "value": {"type": "String"}
+      "value": {
+        "type": "String"
+      }
     }
   },
   "infoListHapticsTitle": "Haptisches Feedback",
-
   "settingsTitle": "Einstellungen",
   "settingsKeypadModeTitle": "Funktionstasten",
   "settingsKeypadModeOverlay": "Overlay",
@@ -237,5 +230,9 @@
   "settingsThemeTitle": "Erscheinungsbild",
   "settingsThemeDark": "Dunkel",
   "settingsThemeLight": "Hell",
-  "settingsThemeSystem": "System"
+  "settingsThemeSystem": "System",
+  "settingsNumeralSystemDozenal": "Dozenal",
+  "settingsNumeralSystemDecimal": "Dezimal",
+  "settingsKeypadGlyphsTitle": "Ziffern auf Tasten",
+  "a11yHoldMore": "Halten für weitere Funktionen"
 }

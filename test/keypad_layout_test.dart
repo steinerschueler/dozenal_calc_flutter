@@ -246,12 +246,11 @@ void main() {
     );
   });
 
-  // Third-group paging (Breit): page 1 swaps Sets 6-10 for the function-key
-  // columns at identical total width, so the same compact-phone fit guarantee
-  // must hold — no vertical scroll, row fills the viewport.
-  testWidgets('Breit function page fits compact-phone landscape too', (
-    tester,
-  ) async {
+  // The function page is deactivated (its tokens moved into the long-press
+  // popups): a stale page-1 index must render the normal Sets 6-10 third
+  // group with the same compact-phone fit guarantee — no vertical scroll,
+  // row fills the viewport.
+  testWidgets('Breit ignores a stale function-page index', (tester) async {
     const Size keypadArea = Size(670, 240);
     await tester.binding.setSurfaceSize(keypadArea);
     await tester.pumpWidget(_wrap(keypadArea, overlayPage: 1));
@@ -263,7 +262,7 @@ void main() {
     expect(
       outerVertical,
       findsNothing,
-      reason: 'function page must not change the fit math',
+      reason: 'stale page index must not change the fit math',
     );
 
     final rowFinder = find.descendant(
@@ -277,13 +276,13 @@ void main() {
     expect(
       tester.getSize(rowFinder.first).width,
       closeTo(keypadArea.width, 1.0),
-      reason: 'page 1 row should fill width exactly like page 0',
+      reason: 'row should fill width exactly like page 0',
     );
   });
 
-  // The edge arrow flips the third-group page: right arrow on page 0 fires
-  // onOverlayPageChanged(1); left arrow on page 1 fires (0).
-  testWidgets('Breit edge arrows fire the page-changed callback', (
+  // With the function page off there is no second page to flip to — the
+  // edge arrows must not render in the Breit third group.
+  testWidgets('Breit shows no page arrows while the function page is off', (
     tester,
   ) async {
     const Size keypadArea = Size(800, 300);
@@ -297,18 +296,9 @@ void main() {
         onOverlayPageChanged: (p) => requested = p,
       ),
     );
-    await tester.tap(find.byIcon(Icons.chevron_right));
-    expect(requested, 1, reason: 'right arrow requests the function page');
-
-    await tester.pumpWidget(
-      _wrap(
-        keypadArea,
-        overlayPage: 1,
-        onOverlayPageChanged: (p) => requested = p,
-      ),
-    );
-    await tester.tap(find.byIcon(Icons.chevron_left));
-    expect(requested, 0, reason: 'left arrow requests the sets page');
+    expect(find.byIcon(Icons.chevron_right), findsNothing);
+    expect(find.byIcon(Icons.chevron_left), findsNothing);
+    expect(requested, isNull);
   });
 
   // Settings-driven keypad modes (Build 15): KeypadMode.scroll stacks all

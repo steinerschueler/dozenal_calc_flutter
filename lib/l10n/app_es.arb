@@ -1,8 +1,6 @@
 {
   "@@locale": "es",
-
   "appTitle": "Dozenal Calc",
-
   "infoListTitle": "Teoría y más",
   "infoListGlyphStyleTitle": "Dígitos en pantalla",
   "infoListGlyphStyleCustom": "Glifos",
@@ -45,12 +43,10 @@
   "unitCatLiquid": "Líquido",
   "unitCatMoment": "Par",
   "infoListSupportEntry": "Apoyar el desarrollo",
-
   "supportTitle": "Apoyar el desarrollo",
   "supportIntro": "Si te gusta Dozenal Calc, una pequeña propina ayuda a cubrir los costos recurrentes — específicamente los 100 USD anuales de la cuenta Apple Developer para que la aplicación también pueda lanzarse en iPhone y iPad.",
   "supportKofiNote": "Plataforma preferida — Ko-fi no cobra comisión propia, solo el cargo estándar del procesador de pagos. Servicios comparables como Buy Me a Coffee retienen una parte adicional de plataforma.",
   "supportClose": "Cerrar",
-
   "conversionsTitle": "Conversiones imperial-12",
   "conversionsIntro": "Las unidades imperiales — 12 pulgadas en un pie, 12 peniques en un chelín, 12 en una docena, 144 en una gruesa — se convierten en números redondos en base 12. Ingresa un valor y mira cómo se descompone en las unidades clásicas.",
   "conversionsInputLabel": "Entrada (interpretada como)",
@@ -61,7 +57,6 @@
   "conversionsTimeHeading": "Tiempo — segundos, minutos, horas",
   "conversionsAngleHeading": "Ángulo — fracciones de 360°",
   "infoListVersionFooter": "Versión {version} · Build {buildNumber}",
-
   "chapterTitle01": "Uso de la calculadora",
   "chapterTitle02": "¿Qué es el sistema duodecimal?",
   "chapterTitle03": "Fibonacci, números cuadrados y curiosidades",
@@ -74,12 +69,10 @@
   "chapterTitle10": "Doce caras en cristales y seres vivos",
   "chapterTitle11": "Doce falanges en la mano",
   "chapterTitle12": "Pulgada, pie, libra — y por qué tienen sentido en duodecimal",
-
   "chapterIllustrationTriangle": "Triángulo (un vértice de cada 4)",
   "chapterIllustrationSquare": "Cuadrado (un vértice de cada 3)",
   "chapterIllustrationHexagon": "Hexágono (un vértice de cada 2)",
   "chapterNotFound": "Capítulo no encontrado.",
-
   "introTitle": "Recorrido rápido",
   "introSkip": "Omitir",
   "introNext": "Siguiente",
@@ -90,9 +83,8 @@
   "introSlide4": "El bloque de teclas de función: operaciones básicas a la izquierda, potencias y raíces a su lado, funciones trigonométricas y flechas del cursor a la derecha.",
   "introSlide5": "Abajo a la izquierda, la tecla (i) — abre doce capítulos de teoría sobre el sistema duodecimal. Abajo a la derecha, la tecla (?) reproduce de nuevo este recorrido.",
   "introSlide6": "AC (rojo) borra todo. La tecla «…» de al lado abre una superposición con más funciones — constantes, funciones hiperbólicas, memoria y selección de modo.",
-  "introSlide7": "En la superposición: Doz/Dez alterna entre entrada duodecimal (base 12) y decimal (base 10). La tecla activa tiene un borde, y un pequeño indicador arriba a la derecha de la pantalla muestra el modo actual. Al alternar, el número actual se convierte automáticamente. En modo Dez, los símbolos de 10 y 11 quedan inactivos — solo existen en el sistema duodecimal.",
+  "introSlide7": "El sistema de numeración se cambia en los Ajustes (a través de la tecla (i)): duodecimal (base 12) o decimal (base 10). El pequeño indicador arriba a la derecha de la pantalla muestra el modo activo; al cambiar, el número se convierte automáticamente. Nuevo: las teclas con una pequeña esquina abajo a la derecha — como −, x□ y log — ofrecen más funciones con una pulsación larga. Desliza y suelta, o toca, para elegir.",
   "introSlide8": "La tecla (i) abre esta lista de doce capítulos didácticos — desde el uso de la calculadora hasta los dodecaedros y los doce signos zodiacales.",
-
   "feedbackTitle": "Comentarios",
   "feedbackIntro": "¡Gracias por probar Dozenal Calc! Tus respuestas llegan como un correo a tu aplicación de correo predeterminada, que puedes revisar o descartar antes de enviar.",
   "feedbackRatingLabel": "Valoración",
@@ -107,14 +99,11 @@
   "feedbackMailChangeLabel": "Lo que cambiarías:",
   "feedbackMailVersionLabel": "Versión",
   "feedbackMailBuildLabel": "Build",
-
   "privacyTitle": "Política de privacidad",
   "privacyError": "No se pudo cargar la política de privacidad:",
   "licenseTitle": "Licencia",
   "licenseError": "No se pudo cargar la licencia:",
-
   "externalLinkError": "No se pudo abrir el enlace: {href}",
-
   "a11yDigit": "Dígito {value}",
   "a11yPlus": "más",
   "a11yMinus": "menos",
@@ -185,7 +174,6 @@
   "a11yIntro": "introducción",
   "resultCopied": "Copiado: {value}",
   "infoListHapticsTitle": "Respuesta háptica",
-
   "settingsTitle": "Ajustes",
   "settingsKeypadModeTitle": "Teclas de función",
   "settingsKeypadModeOverlay": "Superposición",
@@ -198,5 +186,9 @@
   "settingsThemeTitle": "Apariencia",
   "settingsThemeDark": "Oscuro",
   "settingsThemeLight": "Claro",
-  "settingsThemeSystem": "Sistema"
+  "settingsThemeSystem": "Sistema",
+  "settingsNumeralSystemDozenal": "Duodecimal",
+  "settingsNumeralSystemDecimal": "Decimal",
+  "settingsKeypadGlyphsTitle": "Dígitos en las teclas",
+  "a11yHoldMore": "Mantener pulsado para más funciones"
 }

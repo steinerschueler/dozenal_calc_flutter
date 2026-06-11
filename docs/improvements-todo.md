@@ -1,6 +1,6 @@
 # Verbesserungen — offene Todos (Code-Review)
 
-Stand: 2026-06-10. Quelle: Code-Review der App. Die **Korrekturen** (Bugfixes +
+Stand: 2026-06-11. Quelle: Code-Review der App. Die **Korrekturen** (Bugfixes +
 Code-Hygiene) und die ersten Features sind bereits umgesetzt und committet
 (siehe [Erledigt](#erledigt-referenz)). Hier die noch offenen Vorschläge als
 Todos — jeweils mit Problem, Lösungsskizze und den Constraints (vor allem:
@@ -146,17 +146,15 @@ Sprachen)** + SharedPreferences-Flag. (c) ist am billigsten, sobald Theorie pass
 
 ## Design
 
-### 7. Heller Modus
-**Problem:** Nur Dark-Theme; Farben sind als `const Color(...)` über die
-Custom-Painter verstreut.
+### 7. Heller Modus — ✅ erledigt (committet)
+**Umgesetzt:** Semantische Palette `AppColors` (dark/light) in
+`lib/app_theme.dart`, `ThemeNotifier` (`theme_mode_v1`,
+Dunkel/Hell/System) + `ThemeScope`, Settings-Zeile „Erscheinungsbild";
+alle Custom-Painter lesen die Palette (`AppColors.of` mit
+Dark-Fallback ohne Scope). Details: CLAUDE.md Theming-Abschnitt.
 
-**Lösung:** Farb-Palette zentralisieren (ein `CalcColors`-Scope statt verstreuter
-Konstanten), Light-Variante definieren, Theme-Toggle (persistiert wie GlyphStyle/
-Haptik). Alle Custom-Painter (Glyphen, Tokens, Display) müssen die Farben aus
-dem Scope lesen statt aus Konstanten.
-
-**Constraint:** Marken-/Design-Entscheidung (wie soll Light aussehen?).
-Größerer Umbau über alle Painter.
+**Problem (Ausgangslage):** Nur Dark-Theme; Farben waren als
+`const Color(...)` über die Custom-Painter verstreut.
 
 ---
 
@@ -206,3 +204,17 @@ bündeln. Nur bei Bedarf — keine Refactor-Schuld auf Vorrat.
   Funktionsspalten (Rand-Pfeile, kein Wisch); Pfeil-Platz in der
   Breiten-Mathematik, Fit-Garantie-Test für Seite 1, Pfeil-Semantics ×14.
   Damit ist #2–#4 vollständig.
+- #7 Heller Modus (`AppColors` dark/light, `ThemeNotifier`/`ThemeScope`,
+  Settings-Zeile, alle Painter auf Palette)
+- **Langdruck-Redesign** (ersetzt die OLR-/Funktionsseiten-Verdrahtung
+  von #2–#4): Funktionstasten jetzt als Langdruck-Popups auf
+  Host-Tasten (x^□→{x²}; log_□→{ln, log₁₂, eˣ}; −→{±}; STO→{M+, M−};
+  n!→{nCr, nPr}; Map `longPressOptionsFor`), Ecken-Marker + a11y-Hint,
+  Auswahl per Gleiten+Loslassen **und** Loslassen+Tippen. Die zweite
+  Overlay-/Funktionsseite ist per `_kFuncPageEnabled = false`
+  deaktiviert (Code bleibt erhalten). Doz/Dez-Tasten vom Keypad
+  entfernt — Basis-Umschaltung nur noch über die Einstellungen
+  (ausgeschriebene Labels „Dozenal"/„Dezimal" ×14); EXP rückte in
+  Set 10 nach. Neue Settings-Zeile „Ziffern auf Tasten"
+  (`keypad_glyph_style_v1`, unabhängig vom Display-Pref). Intro-Slide 7
+  + Kapitel-1-Prosa angepasst ×14, Intro-Flag `intro_seen_v3`.

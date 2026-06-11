@@ -60,6 +60,8 @@ class SettingsPage extends StatelessWidget {
             ],
             const _GlyphStyleRow(),
             Divider(color: t.divider, height: 1),
+            const _KeypadGlyphsRow(),
+            Divider(color: t.divider, height: 1),
             const _HapticsRow(),
             Divider(color: t.divider, height: 1),
             _SegmentRow(
@@ -84,11 +86,15 @@ class SettingsPage extends StatelessWidget {
             if (calc != null) ...[
               Divider(color: t.divider, height: 1),
               _SegmentRow(
-                // Literal "Doz"/"Dez" — matches the painted keypad captions
-                // and is language-neutral, so no ARB entries.
+                // Written out (localized) — since the Doz/Dez keypad keys
+                // moved out of the overlay, this row is the primary base
+                // switch and should be self-explanatory.
                 icon: Icons.dialpad,
                 title: l.settingsNumeralSystemTitle,
-                labels: const ['Doz', 'Dez'],
+                labels: [
+                  l.settingsNumeralSystemDozenal,
+                  l.settingsNumeralSystemDecimal,
+                ],
                 selectedIndex: calc.numeralSystem == NumeralSystem.doz ? 0 : 1,
                 // handleClick runs the same buffer-conversion path as the
                 // keypad's Doz/Dez keys (value-preserving base switch).
@@ -115,8 +121,8 @@ class SettingsPage extends StatelessWidget {
 
 /// Toggle between the twelve custom dozenal glyphs and conventional
 /// 0-9/A-B rendering in the display. Only affects the display — the keypad
-/// always uses custom glyphs as the visual identity. (Moved here from the
-/// info list when the settings page was introduced.)
+/// digit keys have their own independent toggle below (_KeypadGlyphsRow).
+/// (Moved here from the info list when the settings page was introduced.)
 class _GlyphStyleRow extends StatelessWidget {
   const _GlyphStyleRow();
 
@@ -130,6 +136,28 @@ class _GlyphStyleRow extends StatelessWidget {
       labels: [l.infoListGlyphStyleCustom, l.infoListGlyphStyleConventional],
       selectedIndex: notifier.style == GlyphStyle.custom ? 0 : 1,
       onSelected: (i) => notifier.setStyle(
+        i == 0 ? GlyphStyle.custom : GlyphStyle.conventional,
+      ),
+    );
+  }
+}
+
+/// Toggle between custom glyphs and conventional 0-9/A-B digits on the
+/// keypad digit keys (main calculator and converter). Independent of the
+/// display toggle above — both default to glyphs.
+class _KeypadGlyphsRow extends StatelessWidget {
+  const _KeypadGlyphsRow();
+
+  @override
+  Widget build(BuildContext context) {
+    final l = AppLocalizations.of(context);
+    final notifier = GlyphStyleScope.of(context);
+    return _SegmentRow(
+      icon: Icons.dialpad_outlined,
+      title: l.settingsKeypadGlyphsTitle,
+      labels: [l.infoListGlyphStyleCustom, l.infoListGlyphStyleConventional],
+      selectedIndex: notifier.keypadStyle == GlyphStyle.custom ? 0 : 1,
+      onSelected: (i) => notifier.setKeypadStyle(
         i == 0 ? GlyphStyle.custom : GlyphStyle.conventional,
       ),
     );

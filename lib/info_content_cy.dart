@@ -95,6 +95,16 @@ List<Widget> _chapterCy(int chapter, AppLocalizations l) {
           "estyniad. Mae dot bach euraidd ar y fysell yn dynodi y bydd "
           "y tap nesaf yn gwrthdroi.",
         ),
+        const _H("Pwysiad hir am ragor"),
+        const _P(
+          "Mae bysellau â chornel fach yn y gornel dde isaf yn cynnig "
+          "swyddogaethau cysylltiedig gyda phwysiad hir: mae x□ yn "
+          "cynnwys x², mae log yn cynnwys ln, log₁₂ ac eˣ, mae − yn "
+          "cynnwys ±, mae STO yn cynnwys M+ ac M−, mae n! yn cynnwys "
+          "nCr ac nPr. I ddewis, llithrwch eich bys i'r opsiwn a "
+          "ddymunir a gollyngwch — neu gollyngwch a thapiwch yr "
+          "opsiwn. Mae tap y tu allan yn cau'r naidlen.",
+        ),
         const _H("Gweithredwyr arbennig"),
         const _P(
           "Mae x² yn sgwario'r rhif blaenorol. Mae √ yn cyfrifo'r gwraidd "
@@ -110,8 +120,8 @@ List<Widget> _chapterCy(int chapter, AppLocalizations l) {
         const _P(
           "Mae'r fysell … yn y gornel dde isaf yn agor y panel estyniad "
           "gyda mwy o swyddogaethau: cof, cysonion (π, e, φ, √2), "
-          "swyddogaethau hyperbolig, gweithredwyr datblygedig, a "
-          "gosodiadau. Mae'r un fysell yn ei chau, neu dapio y tu allan "
+          "swyddogaethau hyperbolig, gweithredwyr datblygedig, "
+          "ynghyd ag EXP a DRG. Mae'r un fysell yn ei chau, neu dapio y tu allan "
           "i'r panel. Ar dabledi mae pob set ochr yn ochr beth bynnag "
           "— does dim haen.",
         ),
@@ -120,7 +130,7 @@ List<Widget> _chapterCy(int chapter, AppLocalizations l) {
           "  7 — Cysonion:      π     e     φ     √2\n"
           "  8 — Hyperbolig:    sinh  cosh  tanh  coth\n"
           "  9 — Datblygedig:   n!    |x|   1/x   mod\n"
-          "  10 — Moddau:       Doz   Dez   DRG   …",
+          "  10 — Moddau:       EXP   DRG   …",
         ),
         const _H("Cof"),
         const _P(
@@ -141,11 +151,10 @@ List<Widget> _chapterCy(int chapter, AppLocalizations l) {
         ),
         const _H("System rifau: Doz / Dez"),
         const _P(
-          "Yn y panel estyniad eistedda dwy fysell Doz a Dez ochr yn "
-          "ochr. Mae union un ohonynt bob amser yn weithredol (ag ymyl), "
-          "ac mae'r system weithredol yn cael ei dangos yng nghornel "
-          "dde uchaf y sgrin. Ym modd Doz mae'r cyfrifiannell yn cyfrifo "
-          "ym môn 12 (diofyn) ; ym modd Dez ym môn 10.",
+          "Newidiwch y system rifau yn y gosodiadau, ar gael drwy'r "
+          "fysell (i): mae dwsin yn cyfrifo ym môn 12 (diofyn), degol "
+          "ym môn 10. Dangosir y system weithredol yng nghornel dde "
+          "uchaf y sgrin.",
         ),
         const _P(
           "Wrth newid, caiff y rhif sy'n weladwy ar hyn o bryd ei "

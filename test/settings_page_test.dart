@@ -66,7 +66,9 @@ void main() {
     expect(find.text('Functions'), findsOneWidget);
     expect(find.text('Number base'), findsOneWidget);
     expect(find.text('Angle mode'), findsOneWidget);
-    expect(find.text('Doz'), findsOneWidget);
+    // Written-out labels (since the Doz/Dez keys left the keypad overlay,
+    // this row is the primary base switch).
+    expect(find.text('Dozenal'), findsOneWidget);
     expect(find.text('DEG'), findsOneWidget);
     state.dispose();
   });
@@ -113,6 +115,26 @@ void main() {
     expect(theme.setting, ThemeSetting.system);
   });
 
+  testWidgets('keypad-glyphs segment drives setKeypadStyle', (tester) async {
+    final glyphs = GlyphStyleNotifier();
+    await tester.pumpWidget(
+      _wrap(
+        prefs: CalcPrefsNotifier(),
+        glyphs: glyphs,
+        haptics: HapticsNotifier(),
+      ),
+    );
+    expect(find.text('Keypad digits'), findsOneWidget);
+    expect(glyphs.keypadStyle, GlyphStyle.custom);
+
+    // Two glyph rows share the segment labels (display + keypad); the
+    // keypad row is the second one.
+    await tester.tap(find.text('0–9, A, B').last);
+    await tester.pump();
+    expect(glyphs.keypadStyle, GlyphStyle.conventional);
+    expect(glyphs.style, GlyphStyle.custom, reason: 'display pref untouched');
+  });
+
   testWidgets('keypad-mode segment drives CalcPrefsNotifier', (tester) async {
     final prefs = CalcPrefsNotifier();
     await prefs.load();
@@ -132,7 +154,7 @@ void main() {
     expect(prefs.profile, KeypadProfile.simple);
   });
 
-  testWidgets('Dez segment switches the live calc state', (tester) async {
+  testWidgets('Decimal segment switches the live calc state', (tester) async {
     final state = DozenalCalcState();
     await tester.pumpWidget(
       _wrap(
@@ -143,7 +165,7 @@ void main() {
       ),
     );
     expect(state.numeralSystem, NumeralSystem.doz);
-    await tester.tap(find.text('Dez'));
+    await tester.tap(find.text('Decimal'));
     await tester.pump();
     expect(state.numeralSystem, NumeralSystem.dez);
     state.dispose();

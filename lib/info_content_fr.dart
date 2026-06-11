@@ -69,6 +69,16 @@ List<Widget> _chapterFr(int chapter, AppLocalizations l) {
           "hyperboliques du panneau d'extension. Un petit point doré "
           "sur la touche signale que le prochain appui inversera.",
         ),
+        const _H("Appui long pour plus de fonctions"),
+        const _P(
+          "Les touches marquées d'un petit coin en bas à droite "
+          "offrent des fonctions apparentées par appui long : x□ "
+          "contient x², log contient ln, log₁₂ et eˣ, − contient ±, "
+          "STO contient M+ et M−, n! contient nCr et nPr. Pour "
+          "choisir, glissez le doigt sur l'option voulue et relâchez "
+          "— ou relâchez puis touchez l'option. Un tap à côté ferme "
+          "le panneau.",
+        ),
         const _H("Opérateurs spéciaux"),
         const _P(
           "x² élève le nombre précédent au carré. √ calcule la racine "
@@ -84,8 +94,8 @@ List<Widget> _chapterFr(int chapter, AppLocalizations l) {
         const _P(
           "La touche … en bas à droite ouvre le panneau d'extension "
           "avec d'autres fonctions : mémoire, constantes (π, e, φ, "
-          "√2), fonctions hyperboliques, opérateurs avancés et "
-          "réglages. La même touche le ferme, ou un tap en dehors du "
+          "√2), fonctions hyperboliques, opérateurs avancés, ainsi "
+          "que EXP et DRG. La même touche le ferme, ou un tap en dehors du "
           "panneau. Sur tablette, tous les ensembles sont visibles "
           "côte à côte de toute façon — pas de superposition.",
         ),
@@ -94,7 +104,7 @@ List<Widget> _chapterFr(int chapter, AppLocalizations l) {
           "  7 — Constantes :     π     e     φ     √2\n"
           "  8 — Hyperboliques :  sinh  cosh  tanh  coth\n"
           "  9 — Avancés :        n!    |x|   1/x   mod\n"
-          "  10 — Modes :         Doz   Dez   DRG   …",
+          "  10 — Modes :         EXP   DRG   …",
         ),
         const _H("Mémoire"),
         const _P(
@@ -116,11 +126,10 @@ List<Widget> _chapterFr(int chapter, AppLocalizations l) {
         ),
         const _H("Système numérique : Doz / Dez"),
         const _P(
-          "Dans le panneau d'extension, deux touches Doz et Dez sont "
-          "côte à côte. Exactement l'une des deux est toujours active "
-          "(entourée) et le système actif s'affiche en haut à droite "
-          "de l'écran. En mode Doz, la calculatrice calcule en base "
-          "12 (par défaut) ; en mode Dez, en base 10.",
+          "Vous changez le système numérique dans les réglages, "
+          "accessibles via la touche (i) : duodécimal calcule en base "
+          "12 (par défaut), décimal en base 10. Le système actif "
+          "s'affiche en haut à droite de l'écran.",
         ),
         const _P(
           "En basculant, le nombre actuellement visible est "

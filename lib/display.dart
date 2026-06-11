@@ -558,7 +558,7 @@ _LaidToken _layoutToken(
       // d10/d11 (Pitman/Dwiggins extension, standard in academic
       // dozenal literature).
       final tp = _textPainter(
-        _conventionalDigitChar(token.value),
+        conventionalDigitChar(token.value),
         lineH * 0.42,
         color,
       );
@@ -588,12 +588,6 @@ _LaidToken _layoutToken(
   return _LaidToken(tp.width + 4, (canvas, offset, h) {
     tp.paint(canvas, Offset(offset.dx + 2, offset.dy + (h - tp.height) / 2));
   });
-}
-
-String _conventionalDigitChar(DozenalDigit d) {
-  if (d.value == 10) return 'A';
-  if (d.value == 11) return 'B';
-  return '${d.value}';
 }
 
 TextPainter _textPainter(String text, double fontSize, Color color) =>

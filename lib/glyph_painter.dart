@@ -7,6 +7,16 @@ import 'logic/dozenal_digit.dart';
 
 export 'logic/dozenal_digit.dart' show DozenalDigit;
 
+/// Conventional ASCII rendering of a dozenal digit: '0'..'9' for d0..d9,
+/// 'A'/'B' for d10/d11 (Pitman/Dwiggins extension, standard in academic
+/// dozenal literature). Shared by the display and both keypads when the
+/// respective GlyphStyle preference is set to conventional.
+String conventionalDigitChar(DozenalDigit d) {
+  if (d.value == 10) return 'A';
+  if (d.value == 11) return 'B';
+  return '${d.value}';
+}
+
 /// Paints a single dozenal glyph centred at `center` with quarter-size `q`
 /// (digit fits in a 2q × 2q box). Free function so result-line and keypad
 /// renderers can reuse the same drawing code without instantiating a painter.

@@ -153,12 +153,14 @@ List<_IntroSlide> _buildSlides(AppLocalizations l) => [
         ],
         text: l.introSlide6,
       ),
-      // 7 — Doz/Dez mode toggle in the overlay.
+      // 7 — Number base (settings + DOZ indicator) and long-press host keys.
       _IntroSlide(
-        image: 'assets/intro/new3.png',
+        image: 'assets/intro/new4.png',
         circles: const [
-          HighlightCircle(center: Offset(0.14, 0.8778), radius: 0.045),
-          HighlightCircle(center: Offset(0.38, 0.8778), radius: 0.045),
+          // Long-press hosts with the corner mark: −, x^□, log_□.
+          HighlightCircle(center: Offset(0.137, 0.663), radius: 0.045),
+          HighlightCircle(center: Offset(0.378, 0.663), radius: 0.045),
+          HighlightCircle(center: Offset(0.378, 0.803), radius: 0.045),
           // Small DOZ indicator at top-right of the display.
           HighlightCircle(center: Offset(0.93, 0.0549), radius: 0.022),
         ],

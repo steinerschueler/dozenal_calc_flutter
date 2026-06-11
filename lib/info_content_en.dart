@@ -55,6 +55,15 @@ List<Widget> _chapterEn(int chapter, AppLocalizations l) {
           'A small golden dot on the key signals that the next tap '
           'will invert.',
         ),
+        const _H('Hold for more'),
+        const _P(
+          'Keys with a small corner mark at the bottom right offer '
+          'related functions on a long press: x□ holds x², log holds '
+          'ln, log₁₂ and eˣ, − holds ±, STO holds M+ and M−, n! holds '
+          'nCr and nPr. To choose, slide your finger onto the desired '
+          'option and release — or release and tap the option. A tap '
+          'outside closes the popup.',
+        ),
         const _H('Special operators'),
         const _P(
           'x² squares the preceding number. √ computes the square root; '
@@ -69,7 +78,7 @@ List<Widget> _chapterEn(int chapter, AppLocalizations l) {
         const _P(
           'The … key at the bottom right opens the extension panel '
           'with more functions: memory, constants (π, e, φ, √2), '
-          'hyperbolic functions, advanced operators, and settings. '
+          'hyperbolic functions, advanced operators, plus EXP and DRG. '
           'The same key closes it, or a tap outside the panel. On '
           'tablets all sets sit side by side anyway — there is no '
           'overlay.',
@@ -79,7 +88,7 @@ List<Widget> _chapterEn(int chapter, AppLocalizations l) {
           '  7 — Constants:    π     e     φ     √2\n'
           '  8 — Hyperbolic:   sinh  cosh  tanh  coth\n'
           '  9 — Advanced:     n!    |x|   1/x   mod\n'
-          '  10 — Modes:       Doz   Dez   DRG   …',
+          '  10 — Modes:       EXP   DRG   …',
         ),
         const _H('Memory'),
         const _P(
@@ -99,11 +108,10 @@ List<Widget> _chapterEn(int chapter, AppLocalizations l) {
         ),
         const _H('Number system: Doz / Dez'),
         const _P(
-          'In the extension panel two keys Doz and Dez sit next to '
-          'each other. Exactly one of them is always active (outlined) '
-          'and the active system is shown at the top right of the '
-          'display. In Doz mode the calculator computes in base 12 '
-          '(default); in Dez mode in base 10.',
+          'You switch the number base in the settings, reached via '
+          'the (i) key: dozenal computes in base 12 (default), decimal '
+          'in base 10. The active system is shown at the top right of '
+          'the display.',
         ),
         const _P(
           'When switching, the currently visible number is automatically '

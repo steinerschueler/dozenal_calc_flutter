@@ -32,6 +32,7 @@ import 'calc_prefs.dart' show KeypadMode, KeypadProfile;
 import 'glyph_painter.dart';
 import 'haptics.dart';
 import 'l10n/app_localizations.dart';
+import 'logic/glyph_style.dart';
 import 'token_painter.dart';
 import 'tokens.dart';
 
@@ -170,6 +171,13 @@ const List<List<CalcToken>> _hochOverlayRows = [
   [Ans(), ConstSqrt2(), Coth(), Mod()],
 ];
 
+/// Master switch for the function-key page (Hoch overlay page 1 / Breit
+/// third-group page 1). Deactivated — its tokens moved into the long-press
+/// popups (M+/M− under STO, x² under x^□, ln/log₁₂/eˣ under log_□, ± under −,
+/// nCr/nPr under n!) and EXP into the Set-10 row. The page code is kept
+/// intact behind this flag for a possible revival.
+const bool _kFuncPageEnabled = false;
+
 /// Function-key page (overlay page 1, #2–#4): memory accumulator, powers,
 /// sign, logs, combinatorics, scientific notation. Nullable cells pad the
 /// last (short) row so the columns stay aligned with the 4-wide grid.
@@ -178,6 +186,21 @@ const List<List<CalcToken?>> _hochFuncRows = [
   [Ln(), ExpE(), Log12(), Sci()],
   [NCr(), NPr(), null, null],
 ];
+
+/// Long-press popup options per host key — the smartphone-keyboard accent
+/// pattern that replaced the function page. Each host key offers its
+/// mathematically related secondary functions: x^□ the x² shortcut, log_□
+/// its special cases ln/log₁₂ and the inverse eˣ, − the sign toggle, STO the
+/// memory accumulators, n! the combinatorics built on factorials. Empty for
+/// keys without a popup. Public for the widget tests.
+List<CalcToken> longPressOptionsFor(CalcToken token) => switch (token) {
+  ExpTopRight() => const [Square()],
+  LogBotRight() => const [Ln(), Log12(), ExpE()],
+  Sub() => const [PlusMinus()],
+  Sto() => const [MemPlus(), MemMinus()],
+  Factorial() => const [NCr(), NPr()],
+  _ => const [],
+};
 
 const List<CalcToken> _systemRow = [Ac(), Del(), Decimal(), Expand()];
 
@@ -189,17 +212,20 @@ const List<CalcToken?> _systemRowNoExpand = [Ac(), Del(), Decimal(), null];
 
 /// Set 10 lives in the overlay-mode-row position. Close mirrors the Expand
 /// slot from the system-row so the toggle target stays put across the swap.
-const List<CalcToken> _set10Row = [Doz(), Dez(), Drg(), Close()];
+/// Doz/Dez moved to the settings page (written-out, value-preserving base
+/// switch); EXP (Sci) took the freed slot when the function page was folded
+/// into the long-press popups.
+const List<CalcToken?> _set10Row = [Sci(), Drg(), null, Close()];
 
 /// Set 10 for the Hoch scroll mode: Close dropped (there is no overlay to
 /// close when everything is one scrolling column).
-const List<CalcToken?> _set10RowNoClose = [Doz(), Dez(), Drg(), null];
+const List<CalcToken?> _set10RowNoClose = [Sci(), Drg(), null, null];
 
-/// Extended rows for the Hoch scroll mode: Sets 6-9 followed by the
-/// function-key rows, rendered as one block below the main ops.
+/// Extended rows for the Hoch scroll mode: Sets 6-9, followed by the
+/// function-key rows while the function page is active.
 const List<List<CalcToken?>> _hochScrollExtendedRows = [
   ..._hochOverlayRows,
-  ..._hochFuncRows,
+  if (_kFuncPageEnabled) ..._hochFuncRows,
 ];
 
 // Breit-mode column data (one set per column).
@@ -221,7 +247,8 @@ const List<CalcToken> _set6 = [Sto(), Rcl(), Mc(), Ans()];
 const List<CalcToken> _set7 = [ConstPi(), ConstE(), ConstPhi(), ConstSqrt2()];
 const List<CalcToken> _set8 = [Sinh(), Cosh(), Tanh(), Coth()];
 const List<CalcToken> _set9 = [Factorial(), AbsVal(), Reciprocal(), Mod()];
-const List<CalcToken> _set10Column = [Doz(), Dez(), Drg()]; // Close dropped
+// Close dropped; Doz/Dez live in the settings page, EXP (Sci) moved in.
+const List<CalcToken> _set10Column = [Sci(), Drg()];
 
 /// Function-key columns for the Breit third-group page 1 — the transpose of
 /// _hochFuncRows, following the same row↔column convention as Sets 1-4 vs
@@ -585,7 +612,7 @@ class _OverlayPanel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l = AppLocalizations.of(context);
-    final isFunc = page == 1;
+    final isFunc = _kFuncPageEnabled && page == 1;
     final panel = _RowsPanel(
       opRows: isFunc ? _hochFuncRows : _hochOverlayRows,
       bottomRow: _set10Row,
@@ -597,7 +624,9 @@ class _OverlayPanel extends StatelessWidget {
     );
     // Two overlay pages: OLL (page 0, Sets 6–10) shows a right-edge arrow to
     // OLR (page 1, function keys), which shows a left-edge arrow back. The
-    // arrows make the second page discoverable; a horizontal swipe also flips.
+    // arrows make the second page discoverable; a horizontal swipe also
+    // flips. With the function page deactivated (_kFuncPageEnabled) there is
+    // only OLL — no arrows, and swipes are ignored.
     final gridRow = Row(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
@@ -608,7 +637,7 @@ class _OverlayPanel extends StatelessWidget {
             label: l.a11yPageSets,
           ),
         Expanded(child: panel),
-        if (!isFunc)
+        if (_kFuncPageEnabled && !isFunc)
           _PageArrow(
             pointLeft: false,
             onTap: () => _go(1),
@@ -616,17 +645,19 @@ class _OverlayPanel extends StatelessWidget {
           ),
       ],
     );
-    final swipeable = GestureDetector(
-      onHorizontalDragEnd: (d) {
-        final v = d.primaryVelocity ?? 0;
-        if (v < -80) {
-          _go(1); // swipe left → function page
-        } else if (v > 80) {
-          _go(0); // swipe right → first page
-        }
-      },
-      child: gridRow,
-    );
+    final swipeable = !_kFuncPageEnabled
+        ? gridRow
+        : GestureDetector(
+            onHorizontalDragEnd: (d) {
+              final v = d.primaryVelocity ?? 0;
+              if (v < -80) {
+                _go(1); // swipe left → function page
+              } else if (v > 80) {
+                _go(0); // swipe right → first page
+              }
+            },
+            child: gridRow,
+          );
     // Open-state affordance: a dezent "Erweiterungsfeld" header above the
     // extended sets. Only shown here — the closed main panel is untouched, so
     // the Store screenshot is identical.
@@ -779,6 +810,7 @@ class _RowsPanel extends StatelessWidget {
               : _TokenButton(
                   token: tok,
                   onTap: () => onTap(tok),
+                  onTokenTap: onTap,
                   armed: isArmed?.call(tok) ?? false,
                   selected: isSelected?.call(tok) ?? false,
                 ),
@@ -871,10 +903,16 @@ class _BreitKeypad extends StatelessWidget {
         //                   derives from height alone.
         final simple = profile == KeypadProfile.simple;
         final scrollAll = !simple && mode == KeypadMode.scroll;
-        final cols = simple ? 8 : (scrollAll ? 17 : 13);
-        final innerGaps = simple ? 6 : (scrollAll ? 14 : 10);
+        // With the function page off, scroll mode loses its four function
+        // columns (17→13) and overlay mode loses the page arrow.
+        final cols = simple ? 8 : (scrollAll && _kFuncPageEnabled ? 17 : 13);
+        final innerGaps = simple
+            ? 6
+            : (scrollAll && _kFuncPageEnabled ? 14 : 10);
         final nGroupGaps = simple ? 1 : 2;
-        final arrowExtent = (!simple && !scrollAll) ? pageArrowExtent : 0.0;
+        final arrowExtent = (!simple && !scrollAll && _kFuncPageEnabled)
+            ? pageArrowExtent
+            : 0.0;
 
         final h = constraints.maxHeight;
         final w = constraints.maxWidth;
@@ -1010,6 +1048,7 @@ class _BreitKeypad extends StatelessWidget {
               child: _TokenButton(
                 token: tokens[i],
                 onTap: () => onTap(tokens[i]),
+                onTokenTap: onTap,
                 armed: isArmed?.call(tokens[i]) ?? false,
                 selected: isSelected?.call(tokens[i]) ?? false,
               ),
@@ -1104,6 +1143,8 @@ class _BreitKeypad extends StatelessWidget {
         //                columns (transpose of _hochFuncRows) + left-edge
         //                arrow back. A trailing empty column keeps page 1
         //                at the same total width as page 0.
+        // With the function page off (_kFuncPageEnabled) the func columns
+        // and arrows vanish in every configuration — Sets 6-10 only.
         if (!simple) ...[
           bigGap(), // group break: Sets 1-5 → third group
           if (scrollAll) ...[
@@ -1116,15 +1157,17 @@ class _BreitKeypad extends StatelessWidget {
             opColumn(_set9),
             gap(),
             opColumn(_set10Column, padToFour: true),
-            gap(),
-            opColumn(_funcCol1, padToFour: true),
-            gap(),
-            opColumn(_funcCol2, padToFour: true),
-            gap(),
-            opColumn(_funcCol3, padToFour: true),
-            gap(),
-            opColumn(_funcCol4, padToFour: true),
-          ] else if (page == 0) ...[
+            if (_kFuncPageEnabled) ...[
+              gap(),
+              opColumn(_funcCol1, padToFour: true),
+              gap(),
+              opColumn(_funcCol2, padToFour: true),
+              gap(),
+              opColumn(_funcCol3, padToFour: true),
+              gap(),
+              opColumn(_funcCol4, padToFour: true),
+            ],
+          ] else if (!_kFuncPageEnabled || page == 0) ...[
             opColumn(_set6),
             gap(),
             opColumn(_set7),
@@ -1134,8 +1177,10 @@ class _BreitKeypad extends StatelessWidget {
             opColumn(_set9),
             gap(),
             opColumn(_set10Column, padToFour: true),
-            gap(),
-            pageArrow(pointLeft: false, target: 1, label: l.a11yPageFunc),
+            if (_kFuncPageEnabled) ...[
+              gap(),
+              pageArrow(pointLeft: false, target: 1, label: l.a11yPageFunc),
+            ],
           ] else ...[
             pageArrow(pointLeft: true, target: 0, label: l.a11yPageSets),
             gap(),
@@ -1164,12 +1209,20 @@ class _PressableShell extends StatefulWidget {
   final Widget Function(BuildContext, bool pressed) builder;
   final bool selected;
   final bool disabled;
+  // Long-press popup hooks (host keys only — null keeps the recognizer out
+  // of the gesture arena so plain keys are unaffected).
+  final GestureLongPressStartCallback? onLongPressStart;
+  final GestureLongPressMoveUpdateCallback? onLongPressMoveUpdate;
+  final GestureLongPressEndCallback? onLongPressEnd;
 
   const _PressableShell({
     required this.onTap,
     required this.builder,
     this.selected = false,
     this.disabled = false,
+    this.onLongPressStart,
+    this.onLongPressMoveUpdate,
+    this.onLongPressEnd,
   });
 
   @override
@@ -1198,6 +1251,11 @@ class _PressableShellState extends State<_PressableShell> {
       onTapUp: widget.disabled ? null : (_) => _setPressed(false),
       onTapCancel: widget.disabled ? null : () => _setPressed(false),
       onTap: _handleTap,
+      onLongPressStart: widget.disabled ? null : widget.onLongPressStart,
+      onLongPressMoveUpdate: widget.disabled
+          ? null
+          : widget.onLongPressMoveUpdate,
+      onLongPressEnd: widget.disabled ? null : widget.onLongPressEnd,
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(4),
@@ -1228,6 +1286,9 @@ class _DigitButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l = AppLocalizations.of(context);
+    // Subscribing read — flips between custom glyphs and conventional
+    // 0-9/A-B when the settings-page "keypad digits" toggle changes.
+    final style = GlyphStyleScope.keypadStyleOf(context);
     return ConstrainedBox(
       constraints: const BoxConstraints(minHeight: minTouchTarget),
       child: Semantics(
@@ -1244,6 +1305,7 @@ class _DigitButton extends StatelessWidget {
               size: Size.infinite,
               painter: _DigitPainter(
                 digit: digit,
+                style: style,
                 color: disabled
                     ? t.digitDisabled
                     : (pressed ? t.digitPressed : t.digit),
@@ -1258,13 +1320,39 @@ class _DigitButton extends StatelessWidget {
 
 class _DigitPainter extends CustomPainter {
   final DozenalDigit digit;
+  final GlyphStyle style;
   final Color color;
 
-  _DigitPainter({required this.digit, required this.color});
+  _DigitPainter({
+    required this.digit,
+    required this.color,
+    this.style = GlyphStyle.custom,
+  });
 
   @override
   void paint(Canvas canvas, Size size) {
     final minEdge = math.min(size.width, size.height);
+    if (style == GlyphStyle.conventional) {
+      // Conventional ASCII '0'..'9'/'A'/'B' — same Pitman/Dwiggins
+      // convention as the display's conventional mode. Font size chosen so
+      // the digit's visual height roughly matches the 2q glyph box below.
+      final tp = TextPainter(
+        text: TextSpan(
+          text: conventionalDigitChar(digit),
+          style: TextStyle(
+            color: color,
+            fontSize: minEdge * 0.55,
+            fontFamily: 'monospace',
+          ),
+        ),
+        textDirection: TextDirection.ltr,
+      )..layout();
+      tp.paint(
+        canvas,
+        Offset((size.width - tp.width) / 2, (size.height - tp.height) / 2),
+      );
+      return;
+    }
     final q = minEdge / 4;
     paintDozenalDigitAt(
       canvas,
@@ -1278,37 +1366,213 @@ class _DigitPainter extends CustomPainter {
 
   @override
   bool shouldRepaint(covariant _DigitPainter old) =>
-      old.digit != digit || old.color != color;
+      old.digit != digit || old.color != color || old.style != style;
 }
 
-class _TokenButton extends StatelessWidget {
+class _TokenButton extends StatefulWidget {
   final CalcToken token;
   final VoidCallback onTap;
+
+  /// Dispatch channel for long-press popup selections. The popup only
+  /// activates when this is set AND [longPressOptionsFor] yields options
+  /// for [token]; plain keys (and call sites without the handler) keep
+  /// the exact previous behavior.
+  final TokenTapHandler? onTokenTap;
   final bool armed;
   final bool selected;
 
   const _TokenButton({
     required this.token,
     required this.onTap,
+    this.onTokenTap,
     this.armed = false,
     this.selected = false,
   });
 
   @override
+  State<_TokenButton> createState() => _TokenButtonState();
+}
+
+class _TokenButtonState extends State<_TokenButton> {
+  // Long-press popup state. Geometry is captured in global coordinates at
+  // open time so the slide gesture (owned by the key's own recognizer, not
+  // the overlay) can hit-test option cells mathematically.
+  OverlayEntry? _popup;
+  final ValueNotifier<int?> _hover = ValueNotifier<int?>(null);
+  List<CalcToken> _options = const [];
+  Rect _cellsRect = Rect.zero;
+  double _cellW = 0;
+
+  static const double _cellGap = 4.0;
+  static const double _popupPad = 4.0;
+  static const double _popupBorder = 1.0;
+  static const double _popupOffset = 6.0;
+
+  /// Tolerance around the option row during the slide — smartphone-keyboard
+  /// popups accept slightly sloppy fingers.
+  static const double _hitSlop = 12.0;
+
+  @override
+  void dispose() {
+    _removePopup();
+    _hover.dispose();
+    super.dispose();
+  }
+
+  void _removePopup() {
+    _popup?.remove();
+    _popup = null;
+  }
+
+  bool get _haptics => HapticsScope.enabledOf(context);
+
+  void _onLongPressStart(LongPressStartDetails d) {
+    if (_popup != null) return;
+    _options = longPressOptionsFor(widget.token);
+    if (_options.isEmpty) return;
+
+    final box = context.findRenderObject()! as RenderBox;
+    final origin = box.localToGlobal(Offset.zero);
+    final keySize = box.size;
+    final screen = MediaQuery.sizeOf(context);
+    // Option cells mirror the host key's size (visual continuity, like
+    // keyboard accent popups), floored at the touch-target minimum.
+    final cellW = math.max(keySize.width, minTouchTarget);
+    final cellH = math.max(keySize.height, minTouchTarget);
+    final n = _options.length;
+    // Frame = padding + the 1 dp card border (the border draws inside the
+    // Container, so it must be part of the width math or the row overflows).
+    const frame = _popupPad + _popupBorder;
+    final cellsW = n * cellW + (n - 1) * _cellGap;
+    final popupW = cellsW + 2 * frame;
+    final popupH = cellH + 2 * frame;
+    var left = origin.dx + keySize.width / 2 - popupW / 2;
+    left = left.clamp(8.0, math.max(8.0, screen.width - popupW - 8.0));
+    // Above the key; below it when the key sits too close to the top edge.
+    var top = origin.dy - popupH - _popupOffset;
+    if (top < MediaQuery.paddingOf(context).top + 8.0) {
+      top = origin.dy + keySize.height + _popupOffset;
+    }
+    _cellW = cellW;
+    _cellsRect = Rect.fromLTWH(left + frame, top + frame, cellsW, cellH);
+    _hover.value = null;
+
+    if (_haptics) HapticFeedback.selectionClick();
+    final entry = OverlayEntry(
+      builder: (ctx) {
+        final t = AppColors.of(ctx);
+        return Stack(
+          children: [
+            // Barrier: a tap anywhere outside the option row closes the
+            // popup without dispatching anything.
+            Positioned.fill(
+              child: GestureDetector(
+                behavior: HitTestBehavior.opaque,
+                onTap: _removePopup,
+              ),
+            ),
+            Positioned(
+              left: left,
+              top: top,
+              width: popupW,
+              height: popupH,
+              child: ValueListenableBuilder<int?>(
+                valueListenable: _hover,
+                builder: (_, hover, _) => Container(
+                  padding: const EdgeInsets.all(_popupPad),
+                  decoration: BoxDecoration(
+                    color: t.cardFill,
+                    borderRadius: BorderRadius.circular(6),
+                    border: Border.all(color: t.keyBorder),
+                    boxShadow: const [
+                      BoxShadow(
+                        color: Colors.black38,
+                        blurRadius: 10,
+                        offset: Offset(0, 3),
+                      ),
+                    ],
+                  ),
+                  child: Row(
+                    children: [
+                      for (var i = 0; i < _options.length; i++) ...[
+                        if (i > 0) const SizedBox(width: _cellGap),
+                        SizedBox(
+                          width: cellW,
+                          height: cellH,
+                          child: _PopupOption(
+                            token: _options[i],
+                            highlighted: hover == i,
+                            onTap: () => _select(i),
+                          ),
+                        ),
+                      ],
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ],
+        );
+      },
+    );
+    Overlay.of(context).insert(entry);
+    _popup = entry;
+  }
+
+  void _onLongPressMoveUpdate(LongPressMoveUpdateDetails d) {
+    if (_popup == null) return;
+    final next = _hitIndex(d.globalPosition);
+    if (next != _hover.value) {
+      if (next != null && _haptics) HapticFeedback.selectionClick();
+      _hover.value = next;
+    }
+  }
+
+  void _onLongPressEnd(LongPressEndDetails d) {
+    if (_popup == null) return;
+    final i = _hitIndex(d.globalPosition);
+    if (i != null) {
+      // Slide-and-release selection.
+      _select(i);
+    }
+    // Released elsewhere: the popup stays open for the tap mode; the
+    // barrier closes it when the tap lands outside the options.
+  }
+
+  int? _hitIndex(Offset p) {
+    if (!_cellsRect.inflate(_hitSlop).contains(p)) return null;
+    final dx = p.dx - _cellsRect.left;
+    return (dx / (_cellW + _cellGap)).floor().clamp(0, _options.length - 1);
+  }
+
+  void _select(int i) {
+    final tok = _options[i];
+    _removePopup();
+    if (_haptics) HapticFeedback.selectionClick();
+    widget.onTokenTap?.call(tok);
+  }
+
+  @override
   Widget build(BuildContext context) {
     final l = AppLocalizations.of(context);
+    final hasPopup = widget.onTokenTap != null &&
+        longPressOptionsFor(widget.token).isNotEmpty;
     return ConstrainedBox(
       constraints: const BoxConstraints(minHeight: minTouchTarget),
       child: Semantics(
         button: true,
-        label: _tokenSemanticLabel(token, l),
+        label: _tokenSemanticLabel(widget.token, l),
+        hint: hasPopup ? l.a11yHoldMore : null,
         excludeSemantics: true,
         child: _PressableShell(
-          onTap: onTap,
-          selected: selected,
+          onTap: widget.onTap,
+          selected: widget.selected,
+          onLongPressStart: hasPopup ? _onLongPressStart : null,
+          onLongPressMoveUpdate: hasPopup ? _onLongPressMoveUpdate : null,
+          onLongPressEnd: hasPopup ? _onLongPressEnd : null,
           builder: (ctx, pressed) {
             final t = AppColors.of(ctx);
-            final isAc = token is Ac;
+            final isAc = widget.token is Ac;
             final normalColor = isAc ? t.ac : t.op;
             final pressedColor = isAc ? t.acPressed : t.opPressed;
             return Stack(
@@ -1316,12 +1580,23 @@ class _TokenButton extends StatelessWidget {
                 Positioned.fill(
                   child: CustomPaint(
                     painter: _TokenPainter(
-                      token: token,
+                      token: widget.token,
                       color: pressed ? pressedColor : normalColor,
                     ),
                   ),
                 ),
-                if (armed)
+                // Discoverability: host keys carry a small corner wedge,
+                // clear of the armed dot in the opposite corner.
+                if (hasPopup)
+                  Positioned(
+                    right: 3,
+                    bottom: 3,
+                    child: CustomPaint(
+                      size: const Size(6, 6),
+                      painter: _CornerMarkPainter(color: t.textMuted),
+                    ),
+                  ),
+                if (widget.armed)
                   const Positioned(right: 4, top: 4, child: _ArmedDot()),
               ],
             );
@@ -1330,6 +1605,71 @@ class _TokenButton extends StatelessWidget {
       ),
     );
   }
+}
+
+/// One cell inside the long-press popup: rendered with the same token
+/// painter and palette as a real key, tappable for the release-then-tap
+/// mode, highlighted while the slide gesture hovers it.
+class _PopupOption extends StatelessWidget {
+  final CalcToken token;
+  final bool highlighted;
+  final VoidCallback onTap;
+
+  const _PopupOption({
+    required this.token,
+    required this.highlighted,
+    required this.onTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final l = AppLocalizations.of(context);
+    final t = AppColors.of(context);
+    return Semantics(
+      button: true,
+      label: _tokenSemanticLabel(token, l),
+      excludeSemantics: true,
+      child: GestureDetector(
+        behavior: HitTestBehavior.opaque,
+        onTap: onTap,
+        child: Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(4),
+            border: Border.all(
+              color: highlighted ? t.op : t.keyBorder,
+              width: highlighted ? 2 : 1,
+            ),
+          ),
+          child: CustomPaint(
+            size: Size.infinite,
+            painter: _TokenPainter(token: token, color: t.op),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+/// Tiny filled wedge in the bottom-right key corner marking a long-press
+/// host (same discoverability idea as the "…" corner glyphs on smartphone
+/// keyboards).
+class _CornerMarkPainter extends CustomPainter {
+  final Color color;
+
+  _CornerMarkPainter({required this.color});
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final path = Path()
+      ..moveTo(size.width, 0)
+      ..lineTo(size.width, size.height)
+      ..lineTo(0, size.height)
+      ..close();
+    canvas.drawPath(path, Paint()..color = color);
+  }
+
+  @override
+  bool shouldRepaint(covariant _CornerMarkPainter old) => old.color != color;
 }
 
 /// Localized accessibility (screen-reader) label for a keypad token.

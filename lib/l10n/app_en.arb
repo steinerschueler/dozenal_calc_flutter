@@ -1,8 +1,6 @@
 {
   "@@locale": "en",
-
   "appTitle": "Dozenal Calc",
-
   "infoListTitle": "Theory and More",
   "infoListGlyphStyleTitle": "Display digits",
   "infoListGlyphStyleCustom": "Glyphs",
@@ -45,12 +43,10 @@
   "unitCatLiquid": "Liquid",
   "unitCatMoment": "Torque",
   "infoListSupportEntry": "Support development",
-
   "supportTitle": "Support development",
   "supportIntro": "If you enjoy Dozenal Calc, a small tip helps cover the running costs — specifically the annual 100 USD Apple Developer fee so the app can also launch on iPhone and iPad.",
   "supportKofiNote": "Preferred platform — Ko-fi takes no platform fee of its own, only the standard payment-processor cut. Comparable services like Buy Me a Coffee skim an additional platform share.",
   "supportClose": "Close",
-
   "conversionsTitle": "Unit theory",
   "conversionsIntro": "Imperial units — 12 inches in a foot, 12 pence in a shilling, 12 in a dozen, 144 in a gross — become round numbers in base 12. Enter a value and see how it decomposes into the classic units.",
   "conversionsInputLabel": "Input (interpreted as)",
@@ -61,7 +57,6 @@
   "conversionsTimeHeading": "Time — seconds, minutes, hours",
   "conversionsAngleHeading": "Angle — fractions of 360°",
   "infoListVersionFooter": "Version {version} · Build {buildNumber}",
-
   "chapterTitle01": "Operating the Calculator",
   "chapterTitle02": "What is the Dozenal System?",
   "chapterTitle03": "Fibonacci, Square Numbers, and Curiosities",
@@ -74,12 +69,10 @@
   "chapterTitle10": "Twelve Faces in Crystals and Living Beings",
   "chapterTitle11": "Twelve Joints on the Hand",
   "chapterTitle12": "Inch, Foot, Pound — and Why They Make Dozenal Sense",
-
   "chapterIllustrationTriangle": "Triangle (every 4th vertex)",
   "chapterIllustrationSquare": "Square (every 3rd vertex)",
   "chapterIllustrationHexagon": "Hexagon (every 2nd vertex)",
   "chapterNotFound": "Chapter not found.",
-
   "introTitle": "Quick Tour",
   "introSkip": "Skip",
   "introNext": "Next",
@@ -90,9 +83,8 @@
   "introSlide4": "The function key block: basic arithmetic on the left, powers and roots beside them, trigonometric functions and cursor arrows on the right.",
   "introSlide5": "Bottom left, the (i) key — it opens twelve theory chapters about the dozenal system. Bottom right, the (?) key replays this tour.",
   "introSlide6": "AC (red) clears everything. The »…« key next to it opens an overlay with more functions — constants, hyperbolic functions, memory, and mode selection.",
-  "introSlide7": "In the overlay: Doz/Dez switches between dozenal (base 12) and decimal (base 10) input. The active key has a border, and a small indicator at the top right of the display shows the current mode. When switching, the current number is automatically converted. In Dez mode, the symbols for 10 and 11 are inactive — they only exist in the dozenal system.",
+  "introSlide7": "You switch the number base in Settings (via the (i) key): dozenal (base 12) or decimal (base 10). The small indicator at the top right of the display shows the active mode; the number is converted automatically when you switch. New: keys with a small corner mark at the bottom right — such as −, x□ and log — offer more functions on a long press. Slide and release, or tap, to choose.",
   "introSlide8": "The (i) key opens this list with twelve didactic chapters — from operating the calculator to dodecahedrons and the twelve zodiac signs.",
-
   "feedbackTitle": "Feedback",
   "feedbackIntro": "Thanks for testing Dozenal Calc! Your answers land as an email in your default mail app, which you can review or discard before sending.",
   "feedbackRatingLabel": "Rating",
@@ -107,14 +99,11 @@
   "feedbackMailChangeLabel": "What you would change:",
   "feedbackMailVersionLabel": "Version",
   "feedbackMailBuildLabel": "Build",
-
   "privacyTitle": "Privacy Policy",
   "privacyError": "Privacy policy could not be loaded:",
   "licenseTitle": "License",
   "licenseError": "License could not be loaded:",
-
   "externalLinkError": "Link could not be opened: {href}",
-
   "a11yDigit": "Digit {value}",
   "a11yPlus": "plus",
   "a11yMinus": "minus",
@@ -185,7 +174,6 @@
   "a11yIntro": "intro",
   "resultCopied": "Copied: {value}",
   "infoListHapticsTitle": "Haptic feedback",
-
   "settingsTitle": "Settings",
   "settingsKeypadModeTitle": "Function keys",
   "settingsKeypadModeOverlay": "Overlay",
@@ -198,5 +186,9 @@
   "settingsThemeTitle": "Appearance",
   "settingsThemeDark": "Dark",
   "settingsThemeLight": "Light",
-  "settingsThemeSystem": "System"
+  "settingsThemeSystem": "System",
+  "settingsNumeralSystemDozenal": "Dozenal",
+  "settingsNumeralSystemDecimal": "Decimal",
+  "settingsKeypadGlyphsTitle": "Keypad digits",
+  "a11yHoldMore": "Hold for more functions"
 }

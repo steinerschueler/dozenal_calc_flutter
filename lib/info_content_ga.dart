@@ -81,6 +81,15 @@ List<Widget> _chapterGa(int chapter, AppLocalizations l) {
           "hipearbólacha sa phána síneadh. Léiríonn ponc beag órga ar an "
           "eochair go ndéanfaidh an chéad bhrú eile inbhéartú.",
         ),
+        const _H("Brú fada le haghaidh tuilleadh"),
+        const _P(
+          "Tugann eochracha le cúinne beag ag bun na láimhe deise "
+          "feidhmeanna gaolmhara le brú fada: tá x² in x□, tá ln, "
+          "log₁₂ agus eˣ in log, tá ± in −, tá M+ agus M− in STO, tá "
+          "nCr agus nPr in n!. Chun rogha a dhéanamh, sleamhnaigh do "
+          "mhéar chuig an rogha atá uait agus scaoil — nó scaoil agus "
+          "tapáil an rogha. Dúnann cniogadh lasmuigh an fhuinneog.",
+        ),
         const _H("Oibreoirí speisialta"),
         const _P(
           "Cearnaíonn x² an uimhir roimhe. Ríomhann √ an fhréamh chearnach; "
@@ -96,8 +105,8 @@ List<Widget> _chapterGa(int chapter, AppLocalizations l) {
         const _P(
           "Osclaíonn an eochair … ag bun na láimhe deise an pána síneadh "
           "le feidhmeanna breise: cuimhne, tairisigh (π, e, φ, √2), "
-          "feidhmeanna hipearbólacha, oibreoirí ardleibhéil agus "
-          "socruithe. Dúnann an eochair chéanna é, nó cniogadh lasmuigh "
+          "feidhmeanna hipearbólacha, oibreoirí ardleibhéil, chomh "
+          "maith le EXP agus DRG. Dúnann an eochair chéanna é, nó cniogadh lasmuigh "
           "den phána. Ar tháibléid tá na tacair go léir le feiceáil le "
           "chéile pé scéal é — níl forshrac ann.",
         ),
@@ -106,7 +115,7 @@ List<Widget> _chapterGa(int chapter, AppLocalizations l) {
           "  7 — Tairisigh:     π     e     φ     √2\n"
           "  8 — Hipearbólach:  sinh  cosh  tanh  coth\n"
           "  9 — Ardleibhéil:   n!    |x|   1/x   mod\n"
-          "  10 — Móid:         Doz   Dez   DRG   …",
+          "  10 — Móid:         EXP   DRG   …",
         ),
         const _H("Cuimhne"),
         const _P(
@@ -126,11 +135,10 @@ List<Widget> _chapterGa(int chapter, AppLocalizations l) {
         ),
         const _H("Córas uimhrithe: Doz / Dez"),
         const _P(
-          "Sa phána síneadh, suíonn dhá eochair Doz agus Dez taobh le "
-          "taobh. Tá ceann amháin díobh i gcónaí gníomhach (le himlíne), "
-          "agus taispeántar an córas gníomhach ag barr na láimhe deise "
-          "den taispeáint. I mód Doz ríomhann an t-áireamhán i mbonn 12 "
-          "(réamhshocrú) ; i mód Dez i mbonn 10.",
+          "Athraíonn tú an córas uimhrithe sna socruithe, ar fáil "
+          "tríd an eochair (i): ríomhann dosaenach i mbonn 12 "
+          "(réamhshocrú), deachúil i mbonn 10. Taispeántar an córas "
+          "gníomhach ag barr na láimhe deise den taispeáint.",
         ),
         const _P(
           "Ag aistriú, déantar an uimhir reatha le feiceáil a thiontú go "

@@ -1,8 +1,6 @@
 {
   "@@locale": "fr",
-
   "appTitle": "Dozenal Calc",
-
   "infoListTitle": "Théorie et autres",
   "infoListGlyphStyleTitle": "Chiffres à l'écran",
   "infoListGlyphStyleCustom": "Glyphes",
@@ -45,12 +43,10 @@
   "unitCatLiquid": "Liquide",
   "unitCatMoment": "Couple",
   "infoListSupportEntry": "Soutenir le développement",
-
   "supportTitle": "Soutenir le développement",
   "supportIntro": "Si Dozenal Calc vous plaît : un petit pourboire aide à couvrir les coûts récurrents — notamment les 100 USD annuels du compte Apple Developer pour que l'application puisse aussi sortir sur iPhone et iPad.",
   "supportKofiNote": "Plateforme préférée — Ko-fi ne prélève aucune commission propre, seulement les frais standard du processeur de paiement. Des services comparables comme Buy Me a Coffee retiennent une part de plateforme supplémentaire.",
   "supportClose": "Fermer",
-
   "conversionsTitle": "Conversions impériales-12",
   "conversionsIntro": "Les unités impériales — 12 pouces dans un pied, 12 pence dans un shilling, 12 dans une douzaine, 144 dans une grosse — deviennent des nombres ronds en base 12. Entrez une valeur et voyez comment elle se décompose dans les unités classiques.",
   "conversionsInputLabel": "Entrée (interprétée comme)",
@@ -61,7 +57,6 @@
   "conversionsTimeHeading": "Temps — secondes, minutes, heures",
   "conversionsAngleHeading": "Angle — fractions de 360°",
   "infoListVersionFooter": "Version {version} · Build {buildNumber}",
-
   "chapterTitle01": "Utilisation de la calculatrice",
   "chapterTitle02": "Qu'est-ce que le système duodécimal ?",
   "chapterTitle03": "Fibonacci, nombres carrés et curiosités",
@@ -74,12 +69,10 @@
   "chapterTitle10": "Douze faces dans les cristaux et les êtres vivants",
   "chapterTitle11": "Douze phalanges sur la main",
   "chapterTitle12": "Pouce, pied, livre — et pourquoi ils ont du sens en duodécimal",
-
   "chapterIllustrationTriangle": "Triangle (un sommet sur 4)",
   "chapterIllustrationSquare": "Carré (un sommet sur 3)",
   "chapterIllustrationHexagon": "Hexagone (un sommet sur 2)",
   "chapterNotFound": "Chapitre introuvable.",
-
   "introTitle": "Visite guidée",
   "introSkip": "Passer",
   "introNext": "Suivant",
@@ -90,9 +83,8 @@
   "introSlide4": "Le bloc de touches de fonction : opérations de base à gauche, puissances et racines à côté, fonctions trigonométriques et flèches de curseur à droite.",
   "introSlide5": "En bas à gauche, la touche (i) — elle ouvre douze chapitres de théorie sur le système duodécimal. En bas à droite, la touche (?) rejoue cette visite.",
   "introSlide6": "AC (rouge) efface tout. La touche « … » à côté ouvre une superposition avec d'autres fonctions — constantes, fonctions hyperboliques, mémoire et sélection de mode.",
-  "introSlide7": "Dans la superposition : Doz/Dez bascule entre la saisie duodécimale (base 12) et décimale (base 10). La touche active est entourée, et un petit indicateur en haut à droite de l'écran affiche le mode courant. En basculant, le nombre courant est converti automatiquement. En mode Dez, les symboles 10 et 11 sont inactifs — ils n'existent qu'en duodécimal.",
+  "introSlide7": "Vous changez le système de numération dans les Réglages (via la touche (i)) : duodécimal (base 12) ou décimal (base 10). Le petit indicateur en haut à droite de l'écran affiche le mode actif ; au changement, le nombre est converti automatiquement. Nouveau : les touches avec un petit coin en bas à droite — comme −, x□ et log — offrent d'autres fonctions par appui long. Glissez et relâchez, ou touchez, pour choisir.",
   "introSlide8": "La touche (i) ouvre cette liste de douze chapitres didactiques — de l'utilisation de la calculatrice aux dodécaèdres et aux douze signes du zodiaque.",
-
   "feedbackTitle": "Retour",
   "feedbackIntro": "Merci de tester Dozenal Calc ! Vos réponses arrivent comme un e-mail dans votre application de messagerie par défaut, que vous pouvez relire ou écarter avant l'envoi.",
   "feedbackRatingLabel": "Note",
@@ -107,14 +99,11 @@
   "feedbackMailChangeLabel": "Ce que vous changeriez :",
   "feedbackMailVersionLabel": "Version",
   "feedbackMailBuildLabel": "Build",
-
   "privacyTitle": "Politique de confidentialité",
   "privacyError": "Impossible de charger la politique de confidentialité :",
   "licenseTitle": "Licence",
   "licenseError": "Impossible de charger la licence :",
-
   "externalLinkError": "Impossible d'ouvrir le lien : {href}",
-
   "a11yDigit": "Chiffre {value}",
   "a11yPlus": "plus",
   "a11yMinus": "moins",
@@ -185,7 +174,6 @@
   "a11yIntro": "intro",
   "resultCopied": "Copié : {value}",
   "infoListHapticsTitle": "Retour haptique",
-
   "settingsTitle": "Réglages",
   "settingsKeypadModeTitle": "Touches de fonction",
   "settingsKeypadModeOverlay": "Superposition",
@@ -198,5 +186,9 @@
   "settingsThemeTitle": "Apparence",
   "settingsThemeDark": "Sombre",
   "settingsThemeLight": "Clair",
-  "settingsThemeSystem": "Système"
+  "settingsThemeSystem": "Système",
+  "settingsNumeralSystemDozenal": "Duodécimal",
+  "settingsNumeralSystemDecimal": "Décimal",
+  "settingsKeypadGlyphsTitle": "Chiffres sur les touches",
+  "a11yHoldMore": "Maintenir pour plus de fonctions"
 }

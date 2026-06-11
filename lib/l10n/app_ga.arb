@@ -1,8 +1,6 @@
 {
   "@@locale": "ga",
-
   "appTitle": "Dozenal Calc",
-
   "infoListTitle": "Teoiric agus tuilleadh",
   "infoListGlyphStyleTitle": "Digití ar an scáileán",
   "infoListGlyphStyleCustom": "Glifeanna",
@@ -45,12 +43,10 @@
   "unitCatLiquid": "Leacht",
   "unitCatMoment": "Casadh",
   "infoListSupportEntry": "Tacaigh leis an bhforbairt",
-
   "supportTitle": "Tacaigh leis an bhforbairt",
   "supportIntro": "Más maith leat Dozenal Calc, cabhraíonn beart beag leis na costais leanúnacha a íoc — go háirithe an táille bhliantúil 100 USD do chuntas Apple Developer ionas gur féidir an aip a sheoladh ar iPhone agus iPad freisin.",
   "supportKofiNote": "Ardán is fearr — ní thógann Ko-fi aon táille ardáin féin, díreach an muirear caighdeánach phróiseálaí íocaíochta. Tógann seirbhísí cosúla mar Buy Me a Coffee sciar ardáin breise.",
   "supportClose": "Dún",
-
   "conversionsTitle": "Tiontuithe Impiriúla-12",
   "conversionsIntro": "Tagann na haonaid impiriúla — 12 orlach in troigh, 12 pingin i scilling, 12 i ndosaen, 144 i ngrós — chun bheith ina n-uimhreacha cruinne i mbonn 12. Cuir luach isteach agus féach conas a roinneann sé sna haonaid chlasaiceacha.",
   "conversionsInputLabel": "Ionchur (léite mar)",
@@ -61,7 +57,6 @@
   "conversionsTimeHeading": "Am — soicindí, nóiméid, uaireanta",
   "conversionsAngleHeading": "Uillinn — codáin de 360°",
   "infoListVersionFooter": "Leagan {version} · Tógáil {buildNumber}",
-
   "chapterTitle01": "Úsáid an áireamháin",
   "chapterTitle02": "Cad é an córas dosaenach?",
   "chapterTitle03": "Fibonacci, uimhreacha cearnacha agus aisteachais",
@@ -74,12 +69,10 @@
   "chapterTitle10": "Dáréag aghaidh i gcriostail agus i mbeo",
   "chapterTitle11": "Dáréag alt ar an láimh",
   "chapterTitle12": "Orlach, troigh, punt — agus an fáth a bhfuil ciall dhosaenach acu",
-
   "chapterIllustrationTriangle": "Triantán (gach 4ú rinn)",
   "chapterIllustrationSquare": "Cearnóg (gach 3ú rinn)",
   "chapterIllustrationHexagon": "Heicseagán (gach 2ú rinn)",
   "chapterNotFound": "Caibidil gan teacht uirthi.",
-
   "introTitle": "Turas tapa",
   "introSkip": "Léim",
   "introNext": "Ar aghaidh",
@@ -90,9 +83,8 @@
   "introSlide4": "Bloc na n-eochracha feidhme: oibríochtaí bunúsacha ar chlé, cumhachtaí agus fréamhacha lena dtaobh, feidhmeanna triantánaíochta agus saigheada cúrsóra ar dheis.",
   "introSlide5": "Ag bun na láimhe clé, an eochair (i) — osclaíonn sí dáréag caibidil teoirice faoin gcóras dosaenach. Ag bun na láimhe deise, an eochair (?) athchasann an turas seo.",
   "introSlide6": "Glanann AC (dearg) gach rud. Osclaíonn an eochair « … » in aice leis pána ina bhfuil tuilleadh feidhmeanna — tairisigh, feidhmeanna hipearbólacha, cuimhne agus rogha mód.",
-  "introSlide7": "Sa phána: aistríonn Doz/Dez idir ionchur dosaenach (bonn 12) agus deachúil (bonn 10). Tá imlíne ar an eochair ghníomhach, agus léiríonn táscaire beag ag barr na láimhe deise an mód reatha. Ag aistriú, déantar an uimhir reatha a thiontú go huathoibríoch. I mód Dez, éiríonn na siombailí do 10 agus 11 neamhghníomhach — níl siad ann ach sa chóras dosaenach.",
+  "introSlide7": "Athraíonn tú an córas uimhreach sna Socruithe (tríd an eochair (i)): dosaenach (bonn 12) nó deachúil (bonn 10). Léiríonn an táscaire beag ag barr na láimhe deise an mód gníomhach; ag athrú, déantar an uimhir a thiontú go huathoibríoch. Nua: tugann eochracha le cúinne beag ag bun na láimhe deise — mar shampla −, x□ agus log — tuilleadh feidhmeanna le brú fada. Sleamhnaigh agus scaoil, nó tapáil, chun rogha a dhéanamh.",
   "introSlide8": "Osclaíonn an eochair (i) an liosta seo le dáréag caibidil mhúinteoireachta — ó úsáid an áireamháin go dtí dóideicéadróin agus an dáréag comhartha stoidiaca.",
-
   "feedbackTitle": "Aiseolas",
   "feedbackIntro": "Go raibh maith agat as Dozenal Calc a thástáil! Tagann do fhreagraí mar ríomhphost i d'aip ríomhphoist réamhshocraithe, ar féidir leat athbhreithniú nó a chaitheamh i leataobh sula seoltar é.",
   "feedbackRatingLabel": "Rátáil",
@@ -107,14 +99,11 @@
   "feedbackMailChangeLabel": "Cad a athrófá:",
   "feedbackMailVersionLabel": "Leagan",
   "feedbackMailBuildLabel": "Tógáil",
-
   "privacyTitle": "Polasaí Príobháideachta",
   "privacyError": "Níorbh fhéidir polasaí príobháideachta a luchtú:",
   "licenseTitle": "Ceadúnas",
   "licenseError": "Níorbh fhéidir ceadúnas a luchtú:",
-
   "externalLinkError": "Níorbh fhéidir nasc a oscailt: {href}",
-
   "a11yDigit": "Digit {value}",
   "a11yPlus": "móide",
   "a11yMinus": "lúide",
@@ -185,7 +174,6 @@
   "a11yIntro": "réamhrá",
   "resultCopied": "Cóipeáilte: {value}",
   "infoListHapticsTitle": "Aiseolas tadhlach",
-
   "settingsTitle": "Socruithe",
   "settingsKeypadModeTitle": "Eochracha feidhme",
   "settingsKeypadModeOverlay": "Forleagan",
@@ -198,5 +186,9 @@
   "settingsThemeTitle": "Cuma",
   "settingsThemeDark": "Dorcha",
   "settingsThemeLight": "Geal",
-  "settingsThemeSystem": "Córas"
+  "settingsThemeSystem": "Córas",
+  "settingsNumeralSystemDozenal": "Dosaenach",
+  "settingsNumeralSystemDecimal": "Deachúil",
+  "settingsKeypadGlyphsTitle": "Digití ar na heochracha",
+  "a11yHoldMore": "Coinnigh síos le haghaidh tuilleadh feidhmeanna"
 }

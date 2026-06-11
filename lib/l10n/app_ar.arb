@@ -1,8 +1,6 @@
 {
   "@@locale": "ar",
-
   "appTitle": "Dozenal Calc",
-
   "infoListTitle": "النظرية والمزيد",
   "infoListGlyphStyleTitle": "الأرقام في الشاشة",
   "infoListGlyphStyleCustom": "الرموز",
@@ -45,12 +43,10 @@
   "unitCatLiquid": "السائل",
   "unitCatMoment": "العزم",
   "infoListSupportEntry": "دعم التطوير",
-
   "supportTitle": "دعم التطوير",
   "supportIntro": "إذا أعجبك Dozenal Calc، فإن إكرامية صغيرة تساعد في تغطية التكاليف الجارية — تحديداً رسم Apple Developer السنوي 100 دولار حتى يتم إطلاق التطبيق على iPhone وiPad أيضاً.",
   "supportKofiNote": "المنصة المفضلة — لا تأخذ Ko-fi أي رسوم منصة خاصة بها، فقط رسوم معالج الدفع القياسية. تأخذ خدمات مماثلة مثل Buy Me a Coffee حصة منصة إضافية.",
   "supportClose": "إغلاق",
-
   "conversionsTitle": "تحويلات النظام الإمبراطوري-12",
   "conversionsIntro": "الوحدات الإمبراطورية — 12 بوصة في القدم، 12 بنس في الشلن، 12 في الدزينة، 144 في الجروس — تصبح أرقاماً مدورة في الأساس 12. أدخل قيمة وانظر كيف تتحلل إلى الوحدات الكلاسيكية.",
   "conversionsInputLabel": "الإدخال (يُفسَّر على أنه)",
@@ -61,7 +57,6 @@
   "conversionsTimeHeading": "الزمن — الثواني، الدقائق، الساعات",
   "conversionsAngleHeading": "الزاوية — كسور من 360°",
   "infoListVersionFooter": "الإصدار {version} · البناء {buildNumber}",
-
   "chapterTitle01": "استخدام الحاسبة",
   "chapterTitle02": "ما هو النظام الاثنا‌عشري؟",
   "chapterTitle03": "فيبوناتشي والأعداد المربعة والعجائب",
@@ -74,12 +69,10 @@
   "chapterTitle10": "اثنا عشر وجهاً في البلورات والكائنات الحية",
   "chapterTitle11": "اثنا عشر مفصلاً على اليد",
   "chapterTitle12": "البوصة والقدم والرطل — ولماذا تفهم اثنا‌عشرياً",
-
   "chapterIllustrationTriangle": "المثلث (كل ٤ رؤوس)",
   "chapterIllustrationSquare": "المربع (كل ٣ رؤوس)",
   "chapterIllustrationHexagon": "المسدس (كل رأسين)",
   "chapterNotFound": "لم يُعثر على الفصل.",
-
   "introTitle": "جولة سريعة",
   "introSkip": "تخطٍ",
   "introNext": "التالي",
@@ -90,9 +83,8 @@
   "introSlide4": "كتلة مفاتيح الدوال: العمليات الأساسية على اليسار، القوى والجذور بجانبها، الدوال المثلثية وأسهم المؤشر على اليمين.",
   "introSlide5": "مفتاح (i) في الأسفل على اليسار — يفتح الفصول النظرية الاثني عشر حول النظام الاثنا‌عشري. مفتاح (?) في الأسفل على اليمين يعيد تشغيل هذه الجولة.",
   "introSlide6": "AC (الأحمر) يمسح كل شيء. مفتاح «…» المجاور يفتح لوحة بالمزيد من الدوال — الثوابت والدوال الزائدية والذاكرة واختيار النمط.",
-  "introSlide7": "في اللوحة: Doz/Dez يبدّل بين الإدخال الاثنا‌عشري (الأساس ١٢) والعشري (الأساس ١٠). المفتاح النشط محاط بإطار، ومؤشر صغير في أعلى يمين الشاشة يعرض النمط الحالي. عند التبديل، يتم تحويل الرقم الحالي تلقائياً. في نمط Dez تصبح رموز ١٠ و١١ غير نشطة — فهي توجد فقط في النظام الاثنا‌عشري.",
+  "introSlide7": "تبدّل نظام الأعداد في الإعدادات (عبر مفتاح (i)): الاثنا عشري (الأساس ١٢) أو العشري (الأساس ١٠). يعرض المؤشر الصغير في أعلى يمين الشاشة النمط النشط؛ وعند التبديل يُحوَّل الرقم تلقائياً. جديد: المفاتيح ذات الزاوية الصغيرة في الأسفل — مثل −، x□ وlog — تقدّم مزيداً من الدوال بالضغط المطوّل. اسحب وأفلِت، أو انقر، للاختيار.",
   "introSlide8": "مفتاح (i) يفتح قائمة الفصول التعليمية الاثني عشر — من استخدام الحاسبة إلى متعدد الوجوه الاثنا‌عشري والأبراج الاثني عشر.",
-
   "feedbackTitle": "الملاحظات",
   "feedbackIntro": "شكراً على اختبار Dozenal Calc! ستصل إجاباتك كرسالة إلى تطبيق البريد الافتراضي لديك، حيث يمكنك مراجعتها أو رفضها قبل الإرسال.",
   "feedbackRatingLabel": "التقييم",
@@ -107,14 +99,11 @@
   "feedbackMailChangeLabel": "ما تودّ تغييره:",
   "feedbackMailVersionLabel": "الإصدار",
   "feedbackMailBuildLabel": "البناء",
-
   "privacyTitle": "سياسة الخصوصية",
   "privacyError": "تعذّر تحميل سياسة الخصوصية:",
   "licenseTitle": "الترخيص",
   "licenseError": "تعذّر تحميل الترخيص:",
-
   "externalLinkError": "تعذّر فتح الرابط: {href}",
-
   "a11yDigit": "رقم {value}",
   "a11yPlus": "زائد",
   "a11yMinus": "ناقص",
@@ -185,7 +174,6 @@
   "a11yIntro": "مقدمة",
   "resultCopied": "تم النسخ: {value}",
   "infoListHapticsTitle": "ردود فعل لمسية",
-
   "settingsTitle": "الإعدادات",
   "settingsKeypadModeTitle": "مفاتيح الدوال",
   "settingsKeypadModeOverlay": "تراكب",
@@ -198,5 +186,9 @@
   "settingsThemeTitle": "المظهر",
   "settingsThemeDark": "داكن",
   "settingsThemeLight": "فاتح",
-  "settingsThemeSystem": "النظام"
+  "settingsThemeSystem": "النظام",
+  "settingsNumeralSystemDozenal": "اثنا عشري",
+  "settingsNumeralSystemDecimal": "عشري",
+  "settingsKeypadGlyphsTitle": "الأرقام على المفاتيح",
+  "a11yHoldMore": "اضغط مطولاً لمزيد من الدوال"
 }

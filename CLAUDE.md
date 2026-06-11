@@ -20,7 +20,7 @@ flutter pub get
 flutter run                   # aktuelle Plattform
 flutter run -d chrome         # Web
 flutter analyze               # was CI ausführt
-flutter test                  # gesamte Suite (~277 Tests)
+flutter test                  # gesamte Suite (~294 Tests)
 flutter test test/rational_test.dart           # einzelne Datei
 flutter test --plain-name "parses 1/7"         # einzelner Test per Name
 ```
@@ -33,6 +33,11 @@ Test-Routing (für gezielte Edits):
 - `dozenal_converter_test.dart` — Doz ↔ Dez-Konvertierung.
 - `keypad_layout_test.dart` — Orientierungs-Dispatch, Repaint-Verhalten
   und die Keypad-Modi/-Profile (Overlay/Scroll, Alle/Einfach).
+- `long_press_popup_test.dart` — Langdruck-Popups: Host-Map, beide
+  Auswahl-Gesten (Gleiten+Loslassen / Loslassen+Tippen),
+  Tap-outside-Dismiss, a11y-Hold-Hint, EXP-statt-Doz/Dez in Set 10.
+- `glyph_style_test.dart` — `GlyphStyleNotifier`: beide unabhängigen
+  Prefs (Display/Keypad), Persistenz, Fallbacks, `keypadStyleOf`.
 - `calc_prefs_test.dart` — `CalcPrefsNotifier`: Defaults, Persistenz-
   Roundtrip, Fallback bei unbekannten Strings, Notify-Verhalten.
 - `app_theme_test.dart` — `ThemeNotifier` (Defaults, Persistenz,
@@ -211,15 +216,39 @@ Payload-freie Varianten. Spiegelt das Rust-Enum und erlaubt erschöpfende
   `CustomPaint`-Wraps): `custom` = Dozenal-Glyphen via
   `paintDozenalDigitAt` (Default), `conventional` = ASCII `'0'..'9'/'A'/'B'`
   per TextPainter (Pitman/Dwiggins-Konvention für die Über-9er-Stellen).
-  Affektiert nur das Display — der Keypad-Render-Pfad in `keypad.dart`
-  bleibt bewusst immer auf Custom-Glyphen (Marken-Identität). Quell-
-  Datei `lib/logic/glyph_style.dart`, Persistenz via SharedPreferences-
-  Key `glyph_style_v1`.
+  Quell-Datei `lib/logic/glyph_style.dart`: der `GlyphStyleNotifier`
+  hält **zwei unabhängige Prefs** — `style` für das Display
+  (SharedPreferences-Key `glyph_style_v1`) und `keypadStyle` für die
+  Ziffern-Tasten (`keypad_glyph_style_v1`, gelesen via
+  `GlyphStyleScope.keypadStyleOf(context)`; ohne Scope Fallback auf
+  custom). Beide defaulten auf custom; Display und Keypad lassen sich
+  also getrennt auf konventionelle Ziffern umstellen
+  (Settings-Zeilen „Glyphen-Stil" bzw. „Ziffern auf Tasten").
 - `keypad.dart` — orientierungsgesteuertes Dispatch. `Keypad` nimmt
   zusätzlich `keypadMode` (Overlay/Scroll) und `keypadProfile`
   (Alle/Einfach) aus den Einstellungen entgegen (siehe
-  Einstellungen-Abschnitt). `Keypad.build` liest die
-  `LayoutBuilder`-Constraints und wählt:
+  Einstellungen-Abschnitt).
+  **Set 10 ist seit dem Langdruck-Umbau [EXP (Sci), DRG, –, Close]** —
+  die Doz/Dez-Tasten sind vom Keypad entfernt, die Basis-Umschaltung
+  läuft nur noch über die Einstellungen-Seite (werterhaltend, gleicher
+  `handleClick(Doz()/Dez())`-Pfad).
+  **Langdruck-Popups:** ausgewählte Host-Tasten bieten bei langem Druck
+  ein Akzent-Popup im Smartphone-Tastatur-Stil an. Host-Map ist die
+  öffentliche Funktion `longPressOptionsFor(token)`:
+  x^□ → {x²}; log_□ → {ln, log₁₂, eˣ}; − → {±}; STO → {M+, M−};
+  n! → {nCr, nPr}. Host-Tasten tragen eine kleine Ecke unten rechts
+  (`_CornerMarkPainter`, Dreieck in `textMuted`, 6×6 dp bei
+  right:3/bottom:3) und einen a11y-Hint (`a11yHoldMore`). Auswahl per
+  **beiden** Gesten: Gleiten+Loslassen (Hit-Test in globalen
+  Koordinaten) oder Loslassen+Antippen; Tap außerhalb schließt
+  (OverlayEntry + Barrier). Die Popup-Breiten-Mathematik muss den
+  1-px-Container-Border (`_popupBorder`) einrechnen.
+  **Zweite Overlay-Seite (Funktionsseite) ist deaktiviert, nicht
+  gelöscht:** const-Flag `_kFuncPageEnabled = false` hält den Code
+  intakt aber unerreichbar (auch die Breit-Spaltenbreiten-Mathematik
+  ist auf das Flag konditioniert). Bei Reaktivierung nur das Flag
+  kippen.
+  `Keypad.build` liest die `LayoutBuilder`-Constraints und wählt:
   - **`_HochKeypad`** (Portrait): vertikale Flex-`Column` mit
     `AnimatedSwitcher`-Panel-Swap zwischen Sets 1–4 + System-Reihe und
     Sets 6–10. Drei Gap-Regimes nach verfügbarer Höhe: normal (≥560 dp),
@@ -228,11 +257,11 @@ Payload-freie Varianten. Spiegelt das Rust-Enum und erlaubt erschöpfende
       statt Panel-Swap eine `SingleChildScrollView` mit allen Sets
       untereinander — Sets 1–4, System-Reihe ohne Expand
       (`_systemRowNoExpand`), „Erweiterungsfeld"-Header,
-      `_hochScrollExtendedRows` (Sets 6–9) und Doz/Dez/Drg ohne Close
+      `_hochScrollExtendedRows` (Sets 6–9) und EXP/Drg ohne Close
       (`_set10RowNoClose`). Die `=`-Zeile bleibt außerhalb gepinnt.
     - **Profil „Einfach"** (`KeypadProfile.simple`): nur Ziffern +
       Sets 1–4 + AC/Del/`.` — keine Expand-Taste, kein Erweiterungsfeld,
-      keine Doz/Dez/Drg-Reihe (Zahlensystem + Winkelmodus dann über die
+      keine EXP/DRG-Reihe (Winkelmodus dann über die
       Einstellungen-Seite). Scroll-Modus wird in „Einfach" ignoriert.
   - **`_BreitKeypad`**: drei Konfigurationen in `_buildBreitContent` —
     Einfach = 8 Spalten ohne Pfeiltaste und ohne dritte Gruppe;
@@ -355,7 +384,7 @@ Regional-Indicator-Emojis.
 
 Eigene Seite, erreichbar über die Info-Liste. Bündelt die Quick-Toggles
 (Glyphen-Stil, Haptik — früher lose Zeilen in der Info-Liste) mit den
-Keypad-Präferenzen und den Live-Rechner-Modi. Sieben Zeilen, getrennt
+Keypad-Präferenzen und den Live-Rechner-Modi. Acht Zeilen, getrennt
 durch Dividers im Palette-Slot `divider`, Segment-Optik via `_SegmentRow`
 (ToggleButtons im Stil des früheren `_GlyphStyleToggle`):
 
@@ -363,9 +392,11 @@ durch Dividers im Palette-Slot `divider`, Segment-Optik via `_SegmentRow`
    und schreibt `ThemeNotifier.setSetting` (siehe Theming-Abschnitt
    unten); ohne ThemeScope (Standalone-Widget-Tests) wird die Zeile
    ausgeblendet — gleiche Konvention wie die Calc-State-Zeilen.
-2. **Glyphen-Stil** (`GlyphStyleScope`) und 3. **Haptik**
-   (`HapticsScope`) — unverändert verschoben.
-4. **Funktionstasten** Overlay/Scrollen und 5. **Funktionsumfang**
+2. **Glyphen-Stil** (Display, `GlyphStyleScope.style`),
+   3. **Ziffern auf Tasten** (`_KeypadGlyphsRow`,
+   `GlyphStyleScope.keypadStyle` — unabhängiger zweiter Pref, siehe
+   Rendering-Abschnitt) und 4. **Haptik** (`HapticsScope`).
+5. **Funktionstasten** Overlay/Scrollen und 6. **Funktionsumfang**
    Alle/Einfach — schreiben in `CalcPrefsNotifier`
    (`lib/calc_prefs.dart`): `ChangeNotifier` + SharedPreferences-Keys
    `keypad_mode_v1`, `keypad_profile_v1`, `numeral_system_v1`,
@@ -373,26 +404,30 @@ durch Dividers im Palette-Slot `divider`, Segment-Optik via `_SegmentRow`
    Defaults zurück (Overlay/Alle/Doz/Deg = exakt das
    Vor-Einstellungen-Verhalten, Store-Screenshots bleiben gültig).
    Bereitgestellt über `CalcPrefsScope` (InheritedNotifier).
-6. **Zahlensystem** Doz/Dez (Labels literal, sprachneutral — wie die
-   Keypad-Beschriftung) und 7. **Winkelmodus** DEG/RAD/GRD — bedienen
-   den **lebenden** `DozenalCalcState` über `CalcStateScope.maybeOf`
+7. **Zahlensystem** mit ausgeschriebenen, lokalisierten Labels
+   „Dozenal"/„Dezimal" (`settingsNumeralSystemDozenal/Decimal`, ×14 —
+   seit dem Wegfall der Doz/Dez-Keypad-Tasten ist diese Zeile der
+   primäre Basis-Schalter und muss selbsterklärend sein) und
+   8. **Winkelmodus** DEG/RAD/GRD — bedienen den **lebenden**
+   `DozenalCalcState` über `CalcStateScope.maybeOf`
    (`lib/calc_scope.dart`); ohne Scope (Widget-Tests, die die Seite
    standalone pumpen) werden beide Zeilen ausgeblendet. Doz/Dez läuft
    über `handleClick(Doz()/Dez())` (wertbewahrende Basis-Umschaltung,
-   gleicher Pfad wie die Keypad-Taste); der Winkelmodus über den
+   gleicher Pfad wie früher die Keypad-Taste); der Winkelmodus über den
    Setter `setAngleMode` (die DRG-Taste zykelt stattdessen).
 
-Wichtig im Profil „Einfach": die Doz/Dez/Drg-Tasten fehlen auf dem
-Keypad — diese beiden Settings-Zeilen sind dann der einzige Zugang zu
-Zahlensystem und Winkelmodus.
+Wichtig: die Doz/Dez-Tasten existieren auf dem Keypad nicht mehr
+(in keinem Profil) — die Zahlensystem-Zeile ist der einzige Zugang
+zur Basis-Umschaltung. Im Profil „Einfach" fehlt zusätzlich die
+DRG-Taste, dann ist auch der Winkelmodus nur hier erreichbar.
 
 Verdrahtung in `main.dart`: `_DozenalCalcAppState` besitzt
 `CalcPrefsNotifier` **und** `DozenalCalcState` (oberhalb des
 Navigators, damit die Settings-Seite den State erreicht);
 `_applyStartupPrefs` spielt die persistierten Werte nach `load()`
 einmalig in den State ein, `_syncPrefsFromState` spiegelt
-Keypad-getriebene Änderungen (Doz/Dez-Taste, DRG-Zyklus) zurück in die
-Prefs. ARB: 9 neue Keys (`settingsTitle`, `settingsKeypadMode*`,
+State-getriebene Änderungen (DRG-Zyklus auf dem Keypad, Doz/Dez via
+Settings-`handleClick`) zurück in die Prefs. ARB: 9 neue Keys (`settingsTitle`, `settingsKeypadMode*`,
 `settingsScope*`, `settingsNumeralSystemTitle`,
 `settingsAngleModeTitle`) in allen 14 Sprachen; plus 4 Theme-Keys
 (`settingsThemeTitle/Dark/Light/System`).
@@ -438,8 +473,10 @@ custom-painted, deshalb läuft alles über eine **semantische Palette**:
 - **Bewusst theme-unabhängig:** Intro bleibt dunkel, Flag-Painter,
   `legal/*.html`, farbige Polygon-/Diagonal-Akzente in den
   Theorie-Illustrationen, roter Eingabe-Caret, der `0A84FF`-Button
-  + weißes Icon-Backing in `AppRefCard`. Keypad-Glyphen folgen der
-  Palette, bleiben aber in beiden Themes Custom-Glyphen.
+  + weißes Icon-Backing in `AppRefCard`. Keypad-Ziffern folgen der
+  Palette; ob sie als Custom-Glyphen oder konventionell gerendert
+  werden, steuert der theme-unabhängige `keypadStyle`-Pref (siehe
+  Rendering-Abschnitt).
 
 ### Einheitenrechner (zweiter Rechner-Modus)
 
@@ -483,7 +520,7 @@ Umrechner: `converter_display` Caret-Hit-Test → `ConverterState.handleInputTap
 ### Intro
 
 Onboarding-PageView beim ersten Start, gesperrt über einen
-`SharedPreferences`-Schlüssel der Form `intro_seen_v<N>` (aktuell `v2`,
+`SharedPreferences`-Schlüssel der Form `intro_seen_v<N>` (aktuell `v3`,
 definiert als `_kIntroSeenFlag` in `lib/main.dart`). Bei substanziellen
 Intro-Änderungen den Suffix erhöhen, damit Bestandstester das
 überarbeitete Intro erneut sehen. Slide-Inhalte (Text) kommen aus dem
@@ -582,7 +619,7 @@ liegt, dann hier:
   Portierungen aus `src/input.rs::handle_keyboard` und mündet in
   `_state.handleClick(token)` — derselbe Pfad wie ein Tastendruck.
 - **Intro-Gate:** `_maybeShowIntro` liest `_kIntroSeenFlag` (aktuell
-  `intro_seen_v2`) aus `SharedPreferences` und pusht beim ersten Start
+  `intro_seen_v3`) aus `SharedPreferences` und pusht beim ersten Start
   `IntroPage`; danach wird das Flag gesetzt.
 - **Info-Routing:** `_onStateChanged` lauscht auf `state.infoState`,
   resettet es auf `InfoClosed` und pusht `InfoListPage`. Nach
