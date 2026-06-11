@@ -20,7 +20,7 @@ flutter pub get
 flutter run                   # aktuelle Plattform
 flutter run -d chrome         # Web
 flutter analyze               # was CI ausführt
-flutter test                  # gesamte Suite (~221 Tests)
+flutter test                  # gesamte Suite (~267 Tests)
 flutter test test/rational_test.dart           # einzelne Datei
 flutter test --plain-name "parses 1/7"         # einzelner Test per Name
 ```
@@ -31,7 +31,12 @@ Test-Routing (für gezielte Edits):
 - `rational_test.dart` + `rat_parser_test.dart` — exakte Rational-Schiene.
 - `expression_test.dart` — f64-Auswerter inkl. `resolvePostfix`.
 - `dozenal_converter_test.dart` — Doz ↔ Dez-Konvertierung.
-- `keypad_layout_test.dart` — Orientierungs-Dispatch und Repaint-Verhalten.
+- `keypad_layout_test.dart` — Orientierungs-Dispatch, Repaint-Verhalten
+  und die Keypad-Modi/-Profile (Overlay/Scroll, Alle/Einfach).
+- `calc_prefs_test.dart` — `CalcPrefsNotifier`: Defaults, Persistenz-
+  Roundtrip, Fallback bei unbekannten Strings, Notify-Verhalten.
+- `settings_page_test.dart` — Einstellungen-Seite: Zeilen-Rendering,
+  Segment-Toggles, Sichtbarkeit der State-Zeilen ohne `CalcStateScope`.
 - `edge_cases_test.dart` — Grenzfall-Sammler über die Module hinweg.
 - `unit_convert_test.dart` + `converter_state_test.dart` — Einheitenrechner:
   SI-Drehscheibe/Faktoren/Breakdown bzw. Compound-Eingabe + Cursor.
@@ -207,12 +212,30 @@ Payload-freie Varianten. Spiegelt das Rust-Enum und erlaubt erschöpfende
   bleibt bewusst immer auf Custom-Glyphen (Marken-Identität). Quell-
   Datei `lib/logic/glyph_style.dart`, Persistenz via SharedPreferences-
   Key `glyph_style_v1`.
-- `keypad.dart` — orientierungsgesteuertes Dispatch. `Keypad.build` liest
-  die `LayoutBuilder`-Constraints und wählt:
+- `keypad.dart` — orientierungsgesteuertes Dispatch. `Keypad` nimmt
+  zusätzlich `keypadMode` (Overlay/Scroll) und `keypadProfile`
+  (Alle/Einfach) aus den Einstellungen entgegen (siehe
+  Einstellungen-Abschnitt). `Keypad.build` liest die
+  `LayoutBuilder`-Constraints und wählt:
   - **`_HochKeypad`** (Portrait): vertikale Flex-`Column` mit
     `AnimatedSwitcher`-Panel-Swap zwischen Sets 1–4 + System-Reihe und
     Sets 6–10. Drei Gap-Regimes nach verfügbarer Höhe: normal (≥560 dp),
     eng (480–559 dp), Scroll-Fallback (<480 dp).
+    - **Scroll-Modus** (`KeypadMode.scroll`, nur bei Profil „Alle"):
+      statt Panel-Swap eine `SingleChildScrollView` mit allen Sets
+      untereinander — Sets 1–4, System-Reihe ohne Expand
+      (`_systemRowNoExpand`), „Erweiterungsfeld"-Header,
+      `_hochScrollExtendedRows` (Sets 6–9) und Doz/Dez/Drg ohne Close
+      (`_set10RowNoClose`). Die `=`-Zeile bleibt außerhalb gepinnt.
+    - **Profil „Einfach"** (`KeypadProfile.simple`): nur Ziffern +
+      Sets 1–4 + AC/Del/`.` — keine Expand-Taste, kein Erweiterungsfeld,
+      keine Doz/Dez/Drg-Reihe (Zahlensystem + Winkelmodus dann über die
+      Einstellungen-Seite). Scroll-Modus wird in „Einfach" ignoriert.
+  - **`_BreitKeypad`**: drei Konfigurationen in `_buildBreitContent` —
+    Einfach = 8 Spalten ohne Pfeiltaste und ohne dritte Gruppe;
+    Alle+Overlay = 13 Spalten mit Page-Pfeil (bisheriges Verhalten);
+    Alle+Scroll = 17 Spalten inline ohne Pfeil, Button-Sizing dann nur
+    über `rawH` (horizontaler Scroll absorbiert die Überbreite).
   - **`_BreitKeypad`** (Landscape / Tablet): Inline-Layout mit allen zehn
     Sets nebeneinander, gegliedert in drei visuelle Blöcke: Zahlengitter,
     Sets 1–5 (Hauptoperationen + System), Sets 6–10 (erweiterte Funktionen).
@@ -255,19 +278,21 @@ Lehr-Kapiteln als Prosa + custom-painted Illustrationen für die
 Geometrie-Kapitel.
 
 **Layout der Info-Liste** (`InfoListPage`):
-1. `_TheoryExpansion(titles: titles)` — ausklappbarer Container für die
-   zwölf Lehr-Kapitel, Default collapsed, Header „Theorie" mit
-   `Icons.menu_book_outlined` und Chevron. Inside: 12 ListTiles mit
-   monospace-Nummern-Prefix + Navigations-Chevron, eingerückt um 32 dp.
-2. `_GlyphStyleToggle` — zweisegmentiger ToggleButtons-Switch zwischen
-   Glyphen und 0-9/A,B (siehe Rendering-Abschnitt). Liegt direkt unter
-   der Theorie, weil die Darstellungs-Wahl Teil davon ist, wie der
-   Nutzer Dozenal liest — kein tiefes Setting-Menue dahinter.
-3. `_LanguagePickerExpansion` — analoge Ausklapp-Struktur, Default
+1. „Bedienung des Rechners" (`chapterTitle01`) — eigenständiger
+   Eintrag ganz oben: App-Hilfe, kein Theorie-Stoff.
+2. `_TheoryExpansion` — ausklappbarer Container (Default collapsed) zu
+   den Theorie-Blöcken (Zwölf und die Welt, Dozenale Mathematik,
+   Dozenale Gesellschaft); jeder Block führt zu seinen Kapiteln.
+3. `_UnitsExpansion` — analoge Ausklapp-Struktur, bündelt
+   Einheitenrechner + Einheitentheorie.
+4. **Einstellungen-Eintrag** — pusht `SettingsPage`
+   (`settings_page.dart`, eigener Abschnitt unten). Die früher hier
+   liegenden Quick-Toggles (Glyphen-Stil, Haptik) sind dorthin gezogen.
+5. `_LanguagePickerExpansion` — analoge Ausklapp-Struktur, Default
    collapsed, listet `kSupportedLanguages`.
-4. Sekundärseiten als Navigations-Items (Imperial-12, Datenschutz,
-   Lizenz, Spenden, Feedback).
-5. `_VersionFooter` (Padding + Versions-Anzeige).
+6. Sekundärseiten als Navigations-Items (Datenschutz, Lizenz, Spenden,
+   Feedback).
+7. `_VersionFooter` (Padding + Versions-Anzeige).
 
 Alle Top-Level-Items sind durch 1-dp-Dividers im Farbton `0xFF2C2C2C`
 getrennt; keine grösseren Gaps mehr (früher 24 dp vor dem Sprach-
@@ -321,6 +346,50 @@ FA/AR nicht spiegeln). **Walisische Flagge ist Inline-SVG** (Pfad aus
 `WelshFlagPainter`), weil die Unicode-Subdivision-Sequenz auf Firefox-Linux
 und älteren Android-Versionen unzuverlässig rendert; die anderen 13 nutzen
 Regional-Indicator-Emojis.
+
+### Einstellungen (`lib/settings_page.dart`)
+
+Eigene Seite, erreichbar über die Info-Liste. Bündelt die Quick-Toggles
+(Glyphen-Stil, Haptik — früher lose Zeilen in der Info-Liste) mit den
+Keypad-Präferenzen und den Live-Rechner-Modi. Sechs Zeilen, getrennt
+durch `0xFF2C2C2C`-Dividers, Segment-Optik via `_SegmentRow`
+(ToggleButtons im Stil des früheren `_GlyphStyleToggle`):
+
+1. **Glyphen-Stil** (`GlyphStyleScope`) und 2. **Haptik**
+   (`HapticsScope`) — unverändert verschoben.
+3. **Funktionstasten** Overlay/Scrollen und 4. **Funktionsumfang**
+   Alle/Einfach — schreiben in `CalcPrefsNotifier`
+   (`lib/calc_prefs.dart`): `ChangeNotifier` + SharedPreferences-Keys
+   `keypad_mode_v1`, `keypad_profile_v1`, `numeral_system_v1`,
+   `angle_mode_v1`; unbekannte gespeicherte Strings fallen auf die
+   Defaults zurück (Overlay/Alle/Doz/Deg = exakt das
+   Vor-Einstellungen-Verhalten, Store-Screenshots bleiben gültig).
+   Bereitgestellt über `CalcPrefsScope` (InheritedNotifier).
+5. **Zahlensystem** Doz/Dez (Labels literal, sprachneutral — wie die
+   Keypad-Beschriftung) und 6. **Winkelmodus** DEG/RAD/GRD — bedienen
+   den **lebenden** `DozenalCalcState` über `CalcStateScope.maybeOf`
+   (`lib/calc_scope.dart`); ohne Scope (Widget-Tests, die die Seite
+   standalone pumpen) werden beide Zeilen ausgeblendet. Doz/Dez läuft
+   über `handleClick(Doz()/Dez())` (wertbewahrende Basis-Umschaltung,
+   gleicher Pfad wie die Keypad-Taste); der Winkelmodus über den
+   Setter `setAngleMode` (die DRG-Taste zykelt stattdessen).
+
+Wichtig im Profil „Einfach": die Doz/Dez/Drg-Tasten fehlen auf dem
+Keypad — diese beiden Settings-Zeilen sind dann der einzige Zugang zu
+Zahlensystem und Winkelmodus.
+
+Verdrahtung in `main.dart`: `_DozenalCalcAppState` besitzt
+`CalcPrefsNotifier` **und** `DozenalCalcState` (oberhalb des
+Navigators, damit die Settings-Seite den State erreicht);
+`_applyStartupPrefs` spielt die persistierten Werte nach `load()`
+einmalig in den State ein, `_syncPrefsFromState` spiegelt
+Keypad-getriebene Änderungen (Doz/Dez-Taste, DRG-Zyklus) zurück in die
+Prefs. ARB: 9 neue Keys (`settingsTitle`, `settingsKeypadMode*`,
+`settingsScope*`, `settingsNumeralSystemTitle`,
+`settingsAngleModeTitle`) in allen 14 Sprachen.
+
+Hell/Dunkel-Theme kommt später auf diese Seite, sobald ein
+Theme-System existiert (User-Entscheidung: zurückgestellt).
 
 ### Einheitenrechner (zweiter Rechner-Modus)
 
@@ -468,8 +537,16 @@ liegt, dann hier:
 - **Info-Routing:** `_onStateChanged` lauscht auf `state.infoState`,
   resettet es auf `InfoClosed` und pusht `InfoListPage`. Nach
   Navigator-Pop wird der Keyboard-Focus wieder angefordert.
+- **State-Ownership:** `DozenalCalcState` und `CalcPrefsNotifier`
+  gehören `_DozenalCalcAppState` (oberhalb des Navigators), gereicht
+  über `CalcStateScope` + `CalcPrefsScope` sowie per Konstruktor an
+  `_CalcScaffold` — der Scaffold lauscht nur, erzeugt/disposed den
+  State nicht. Startup: `_calcPrefs.load()` → `_applyStartupPrefs`
+  (einmalig Prefs → State); danach spiegelt `_syncPrefsFromState`
+  laufend State → Prefs. Details siehe Einstellungen-Abschnitt.
 - **Layout-Wurzel:** `_CalcScaffold` rendert `TwoLineDisplay` über
-  `Keypad`, mit `displayHeightFor(bodyH)` aus `app_layout.dart` als
+  `Keypad` (inkl. `keypadMode`/`keypadProfile` aus `CalcPrefsScope`),
+  mit `displayHeightFor(bodyH)` aus `app_layout.dart` als
   einzige Größenrechnung. Splash-Feedback ist global via
   `NoSplash.splashFactory` aus, weil die Tasten ihre eigene
   Press-Color-Animation haben.

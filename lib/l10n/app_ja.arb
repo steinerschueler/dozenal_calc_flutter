@@ -184,5 +184,15 @@
   "a11yTheoryChapters": "理論の章",
   "a11yIntro": "はじめに",
   "resultCopied": "コピーしました：{value}",
-  "infoListHapticsTitle": "触覚フィードバック"
+  "infoListHapticsTitle": "触覚フィードバック",
+
+  "settingsTitle": "設定",
+  "settingsKeypadModeTitle": "ファンクションキー",
+  "settingsKeypadModeOverlay": "オーバーレイ",
+  "settingsKeypadModeScroll": "スクロール",
+  "settingsScopeTitle": "機能",
+  "settingsScopeFull": "すべて",
+  "settingsScopeSimple": "基本",
+  "settingsNumeralSystemTitle": "記数法",
+  "settingsAngleModeTitle": "角度単位"
 }

@@ -184,5 +184,15 @@
   "a11yTheoryChapters": "فصل‌های نظری",
   "a11yIntro": "معرفی",
   "resultCopied": "کپی شد: {value}",
-  "infoListHapticsTitle": "بازخورد لمسی"
+  "infoListHapticsTitle": "بازخورد لمسی",
+
+  "settingsTitle": "تنظیمات",
+  "settingsKeypadModeTitle": "کلیدهای تابع",
+  "settingsKeypadModeOverlay": "همپوشانی",
+  "settingsKeypadModeScroll": "پیمایش",
+  "settingsScopeTitle": "توابع",
+  "settingsScopeFull": "همه",
+  "settingsScopeSimple": "پایه",
+  "settingsNumeralSystemTitle": "مبنای اعداد",
+  "settingsAngleModeTitle": "واحد زاویه"
 }

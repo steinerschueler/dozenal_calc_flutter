@@ -7,6 +7,15 @@
 //                    side-by-side; the third group pages between Sets 6-10
 //                    and the function keys via an edge arrow)
 //
+// Both layouts additionally honour the two settings-page preferences
+// (lib/calc_prefs.dart):
+//   - KeypadProfile.simple — digits + Sets 1-4 + AC/DEL/. only. No Expand,
+//     no extended sets; Doz/Dez/DRG live in the settings page instead.
+//   - KeypadMode.scroll    — extended sets reached by scrolling instead of
+//     overlay pages: Hoch stacks every set in one vertical scroll column
+//     (equals row stays pinned), Breit lays all columns inline and lets the
+//     existing horizontal scroll absorb the overflow.
+//
 // Both modes derive button sizes from LayoutBuilder constraints. Each button
 // is wrapped in a 44 dp minimum-touch-target floor. When the Hoch mode falls
 // below the minimum viable layout, a SingleChildScrollView is used as a
@@ -18,6 +27,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'app_layout.dart';
+import 'calc_prefs.dart' show KeypadMode, KeypadProfile;
 import 'glyph_painter.dart';
 import 'haptics.dart';
 import 'l10n/app_localizations.dart';
@@ -78,6 +88,12 @@ class Keypad extends StatelessWidget {
   final int overlayPage;
   final ValueChanged<int>? onOverlayPageChanged;
 
+  /// Settings-page preferences (see calc_prefs.dart). Defaults reproduce the
+  /// pre-settings behaviour, so callers and tests that don't care are
+  /// unaffected.
+  final KeypadMode keypadMode;
+  final KeypadProfile keypadProfile;
+
   const Keypad({
     super.key,
     required this.onTap,
@@ -89,6 +105,8 @@ class Keypad extends StatelessWidget {
     this.overlayOpen = false,
     this.overlayPage = 0,
     this.onOverlayPageChanged,
+    this.keypadMode = KeypadMode.overlay,
+    this.keypadProfile = KeypadProfile.full,
   });
 
   @override
@@ -106,6 +124,8 @@ class Keypad extends StatelessWidget {
             overlayOpen: overlayOpen,
             overlayPage: overlayPage,
             onOverlayPageChanged: onOverlayPageChanged,
+            mode: keypadMode,
+            profile: keypadProfile,
           );
         }
         return _BreitKeypad(
@@ -117,6 +137,8 @@ class Keypad extends StatelessWidget {
           onHelpTap: onHelpTap,
           page: overlayPage,
           onPageChanged: onOverlayPageChanged,
+          mode: keypadMode,
+          profile: keypadProfile,
         );
       },
     );
@@ -162,9 +184,26 @@ const List<List<CalcToken?>> _hochFuncRows = [
 
 const List<CalcToken> _systemRow = [Ac(), Del(), Decimal(), Expand()];
 
+/// System row without the Expand toggle — used by the simple profile (no
+/// extended sets to expand to) and the Hoch scroll mode (the sets are
+/// reached by scrolling, not by a panel swap). The null slot keeps the
+/// 4-wide grid alignment.
+const List<CalcToken?> _systemRowNoExpand = [Ac(), Del(), Decimal(), null];
+
 /// Set 10 lives in the overlay-mode-row position. Close mirrors the Expand
 /// slot from the system-row so the toggle target stays put across the swap.
 const List<CalcToken> _set10Row = [Doz(), Dez(), Drg(), Close()];
+
+/// Set 10 for the Hoch scroll mode: Close dropped (there is no overlay to
+/// close when everything is one scrolling column).
+const List<CalcToken?> _set10RowNoClose = [Doz(), Dez(), Drg(), null];
+
+/// Extended rows for the Hoch scroll mode: Sets 6-9 followed by the
+/// function-key rows, rendered as one block below the main ops.
+const List<List<CalcToken?>> _hochScrollExtendedRows = [
+  ..._hochOverlayRows,
+  ..._hochFuncRows,
+];
 
 // Breit-mode column data (one set per column).
 const List<CalcToken> _set1 = [Add(), Sub(), Mul(), Div()];
@@ -216,6 +255,8 @@ class _HochKeypad extends StatelessWidget {
   final bool overlayOpen;
   final int overlayPage;
   final ValueChanged<int>? onOverlayPageChanged;
+  final KeypadMode mode;
+  final KeypadProfile profile;
 
   const _HochKeypad({
     required this.onTap,
@@ -227,10 +268,18 @@ class _HochKeypad extends StatelessWidget {
     required this.overlayOpen,
     required this.overlayPage,
     required this.onOverlayPageChanged,
+    required this.mode,
+    required this.profile,
   });
 
   @override
   Widget build(BuildContext context) {
+    // Scroll mode (full profile only — the simple profile has nothing to
+    // scroll to): one fixed-height column with every set, wrapped in a
+    // scroll view, equals row pinned below. Replaces the overlay swap.
+    if (mode == KeypadMode.scroll && profile == KeypadProfile.full) {
+      return _buildScrollMode(context);
+    }
     return LayoutBuilder(
       builder: (ctx, constraints) {
         final h = constraints.maxHeight;
@@ -242,6 +291,69 @@ class _HochKeypad extends StatelessWidget {
         final tight = h.isFinite && h < _kTightThreshold;
         return _buildColumn(tight: tight, fixedHeights: false);
       },
+    );
+  }
+
+  /// Scroll-mode layout: digits, Sets 1-4 + AC/DEL/., then the extended
+  /// sets (6-9, function keys, Doz/Dez/DRG) in one vertically scrolling
+  /// column of fixed-height rows. The equals row stays pinned at the bottom
+  /// so `=` never has to be scrolled to.
+  Widget _buildScrollMode(BuildContext context) {
+    final l = AppLocalizations.of(context);
+    const sectionGap = 10.0;
+
+    final scrollContent = Column(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        for (var r = 0; r < _digitGridRows.length; r++) ...[
+          if (r > 0) const SizedBox(height: 8),
+          SizedBox(height: minTouchTarget, child: _digitRow(_digitGridRows[r])),
+        ],
+        const SizedBox(height: sectionGap),
+        const Divider(color: Color(0xFF333333), height: 1, thickness: 1),
+        const SizedBox(height: sectionGap),
+        _RowsPanel(
+          opRows: _hochOpRows,
+          bottomRow: _systemRowNoExpand,
+          tight: false,
+          fixedHeights: true,
+          onTap: onTap,
+          isArmed: isArmed,
+          isSelected: isSelected,
+          isDisabled: isDisabled,
+        ),
+        const SizedBox(height: sectionGap),
+        const Divider(color: Color(0xFF333333), height: 1, thickness: 1),
+        const SizedBox(height: sectionGap),
+        _OverlayHeader(title: l.keypadOverlayTitle, tight: false),
+        _RowsPanel(
+          opRows: _hochScrollExtendedRows,
+          bottomRow: _set10RowNoClose,
+          tight: false,
+          fixedHeights: true,
+          onTap: onTap,
+          isArmed: isArmed,
+          isSelected: isSelected,
+        ),
+      ],
+    );
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Expanded(child: SingleChildScrollView(child: scrollContent)),
+        const SizedBox(height: 12),
+        SizedBox(
+          height: minTouchTarget * 1.2,
+          child: _EqualsRow(
+            onEquals: () => onTap(const Equals()),
+            sideGap: 10,
+            onInfoTap: onInfoTap,
+            onHelpTap: onHelpTap,
+          ),
+        ),
+      ],
     );
   }
 
@@ -268,33 +380,15 @@ class _HochKeypad extends StatelessWidget {
       SizedBox(height: sectionGap),
       // Middle section: panel-swap between main ops and overlay sets.
       // Both panels have identical internal flex structure so the
-      // AnimatedSwitcher crossfade lands cleanly.
+      // AnimatedSwitcher crossfade lands cleanly. The simple profile skips
+      // the switcher entirely — just Sets 1-4 plus AC/DEL/. (no Expand,
+      // nothing to expand to).
       if (fixedHeights)
-        _MiddleSection(
-          overlayOpen: overlayOpen,
-          overlayPage: overlayPage,
-          onOverlayPageChanged: onOverlayPageChanged,
-          tight: tight,
-          fixedHeights: true,
-          onTap: onTap,
-          isArmed: isArmed,
-          isSelected: isSelected,
-          isDisabled: isDisabled,
-        )
+        _middleSection(tight: tight, fixedHeights: true)
       else
         Expanded(
           flex: 40, // 5 rows × 8 = 40
-          child: _MiddleSection(
-            overlayOpen: overlayOpen,
-            overlayPage: overlayPage,
-            onOverlayPageChanged: onOverlayPageChanged,
-            tight: tight,
-            fixedHeights: false,
-            onTap: onTap,
-            isArmed: isArmed,
-            isSelected: isSelected,
-            isDisabled: isDisabled,
-          ),
+          child: _middleSection(tight: tight, fixedHeights: false),
         ),
       SizedBox(height: equalsGap),
       // Equals row — slightly taller than a normal button (flex 10 vs 8).
@@ -324,6 +418,34 @@ class _HochKeypad extends StatelessWidget {
       mainAxisSize: fixedHeights ? MainAxisSize.min : MainAxisSize.max,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: children,
+    );
+  }
+
+  /// The middle five rows: simple profile renders Sets 1-4 + AC/DEL/.
+  /// directly, the full profile keeps the overlay panel-swap.
+  Widget _middleSection({required bool tight, required bool fixedHeights}) {
+    if (profile == KeypadProfile.simple) {
+      return _RowsPanel(
+        opRows: _hochOpRows,
+        bottomRow: _systemRowNoExpand,
+        tight: tight,
+        fixedHeights: fixedHeights,
+        onTap: onTap,
+        isArmed: isArmed,
+        isSelected: isSelected,
+        isDisabled: isDisabled,
+      );
+    }
+    return _MiddleSection(
+      overlayOpen: overlayOpen,
+      overlayPage: overlayPage,
+      onOverlayPageChanged: onOverlayPageChanged,
+      tight: tight,
+      fixedHeights: fixedHeights,
+      onTap: onTap,
+      isArmed: isArmed,
+      isSelected: isSelected,
+      isDisabled: isDisabled,
     );
   }
 
@@ -678,9 +800,13 @@ class _BreitKeypad extends StatelessWidget {
 
   /// Third-group page: 0 = Sets 6-10, 1 = function keys. Flipped by the
   /// tall edge arrow (no swipe in Breit — horizontal drags must stay free
-  /// for the scroll fallback on narrow devices).
+  /// for the scroll fallback on narrow devices). Only meaningful in the
+  /// default overlay mode — scroll mode lays both pages inline, the simple
+  /// profile has no third group at all.
   final int page;
   final ValueChanged<int>? onPageChanged;
+  final KeypadMode mode;
+  final KeypadProfile profile;
 
   const _BreitKeypad({
     required this.onTap,
@@ -691,6 +817,8 @@ class _BreitKeypad extends StatelessWidget {
     this.onHelpTap,
     required this.page,
     required this.onPageChanged,
+    required this.mode,
+    required this.profile,
   });
 
   @override
@@ -728,32 +856,52 @@ class _BreitKeypad extends StatelessWidget {
         const pageArrowExtent =
             _kPageArrowWidth + _kPageArrowMargin + interBlockGap;
 
+        // Column configuration per settings profile/mode:
+        //   simple        — digits + Sets 1-4 + system column, one group gap,
+        //                   no third group, no arrow.
+        //   full+overlay  — the default 13-column layout with the paged
+        //                   third group and one edge arrow.
+        //   full+scroll   — every column inline (Sets 6-10 AND the function
+        //                   keys), no arrow; width overflow is handled by the
+        //                   existing horizontal scroll view, so buttonSize
+        //                   derives from height alone.
+        final simple = profile == KeypadProfile.simple;
+        final scrollAll = !simple && mode == KeypadMode.scroll;
+        final cols = simple ? 8 : (scrollAll ? 17 : 13);
+        final innerGaps = simple ? 6 : (scrollAll ? 14 : 10);
+        final nGroupGaps = simple ? 1 : 2;
+        final arrowExtent = (!simple && !scrollAll) ? pageArrowExtent : 0.0;
+
         final h = constraints.maxHeight;
         final w = constraints.maxWidth;
         final rawH = h.isFinite
             ? (h - 3 * interBlockGap - verticalContentGap) / 5
             : tabletButtonSize;
         final rawW = w.isFinite
-            ? (w - 10 * interBlockGap - 2 * groupGapBase - pageArrowExtent) / 13
+            ? (w -
+                      innerGaps * interBlockGap -
+                      nGroupGaps * groupGapBase -
+                      arrowExtent) /
+                  cols
             : tabletButtonSize;
-        final raw = math.min(rawH, rawW);
+        final raw = scrollAll ? rawH : math.min(rawH, rawW);
         final buttonSize = raw.clamp(breitMinTouchTarget, tabletButtonSize);
 
         final baseNaturalWidth =
-            13 * buttonSize +
-            10 * interBlockGap +
-            2 * groupGapBase +
-            pageArrowExtent;
+            cols * buttonSize +
+            innerGaps * interBlockGap +
+            nGroupGaps * groupGapBase +
+            arrowExtent;
         final hSlack = w.isFinite ? math.max(0.0, w - baseNaturalWidth) : 0.0;
-        final groupGap = (groupGapBase + hSlack / 2).clamp(
+        final groupGap = (groupGapBase + hSlack / nGroupGaps).clamp(
           groupGapBase,
           maxGroupGap,
         );
         final contentWidth =
-            13 * buttonSize +
-            10 * interBlockGap +
-            2 * groupGap +
-            pageArrowExtent;
+            cols * buttonSize +
+            innerGaps * interBlockGap +
+            nGroupGaps * groupGap +
+            arrowExtent;
 
         final content = _buildBreitContent(
           buttonSize: buttonSize,
@@ -929,6 +1077,8 @@ class _BreitKeypad extends StatelessWidget {
         label: label,
       ),
     );
+    final simple = profile == KeypadProfile.simple;
+    final scrollAll = !simple && mode == KeypadMode.scroll;
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -943,35 +1093,60 @@ class _BreitKeypad extends StatelessWidget {
         opColumn(_set4),
         gap(),
         systemColumn(),
-        bigGap(), // group break: Sets 1-5 → third group (paged)
-        // Third group, page 0: Sets 6-10 + right-edge arrow to the function
-        // keys. Page 1: function-key columns (transpose of _hochFuncRows)
-        // + left-edge arrow back. A trailing empty column keeps page 1 at
-        // the same total width as page 0 (5 columns + 5 gaps + arrow).
-        if (page == 0) ...[
-          opColumn(_set6),
-          gap(),
-          opColumn(_set7),
-          gap(),
-          opColumn(_set8),
-          gap(),
-          opColumn(_set9),
-          gap(),
-          opColumn(_set10Column, padToFour: true),
-          gap(),
-          pageArrow(pointLeft: false, target: 1, label: l.a11yPageFunc),
-        ] else ...[
-          pageArrow(pointLeft: true, target: 0, label: l.a11yPageSets),
-          gap(),
-          opColumn(_funcCol1, padToFour: true),
-          gap(),
-          opColumn(_funcCol2, padToFour: true),
-          gap(),
-          opColumn(_funcCol3, padToFour: true),
-          gap(),
-          opColumn(_funcCol4, padToFour: true),
-          gap(),
-          SizedBox(width: buttonSize),
+        // Third group — by settings profile/mode:
+        //   simple:      absent (digits + Sets 1-4 + system column only).
+        //   full+scroll: Sets 6-10 AND function columns inline, no arrow;
+        //                the horizontal scroll view absorbs the overflow.
+        //   full+overlay (default): paged. Page 0: Sets 6-10 + right-edge
+        //                arrow to the function keys. Page 1: function-key
+        //                columns (transpose of _hochFuncRows) + left-edge
+        //                arrow back. A trailing empty column keeps page 1
+        //                at the same total width as page 0.
+        if (!simple) ...[
+          bigGap(), // group break: Sets 1-5 → third group
+          if (scrollAll) ...[
+            opColumn(_set6),
+            gap(),
+            opColumn(_set7),
+            gap(),
+            opColumn(_set8),
+            gap(),
+            opColumn(_set9),
+            gap(),
+            opColumn(_set10Column, padToFour: true),
+            gap(),
+            opColumn(_funcCol1, padToFour: true),
+            gap(),
+            opColumn(_funcCol2, padToFour: true),
+            gap(),
+            opColumn(_funcCol3, padToFour: true),
+            gap(),
+            opColumn(_funcCol4, padToFour: true),
+          ] else if (page == 0) ...[
+            opColumn(_set6),
+            gap(),
+            opColumn(_set7),
+            gap(),
+            opColumn(_set8),
+            gap(),
+            opColumn(_set9),
+            gap(),
+            opColumn(_set10Column, padToFour: true),
+            gap(),
+            pageArrow(pointLeft: false, target: 1, label: l.a11yPageFunc),
+          ] else ...[
+            pageArrow(pointLeft: true, target: 0, label: l.a11yPageSets),
+            gap(),
+            opColumn(_funcCol1, padToFour: true),
+            gap(),
+            opColumn(_funcCol2, padToFour: true),
+            gap(),
+            opColumn(_funcCol3, padToFour: true),
+            gap(),
+            opColumn(_funcCol4, padToFour: true),
+            gap(),
+            SizedBox(width: buttonSize),
+          ],
         ],
       ],
     );

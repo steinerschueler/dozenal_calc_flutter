@@ -184,5 +184,15 @@
   "a11yTheoryChapters": "penodau theori",
   "a11yIntro": "rhagarweiniad",
   "resultCopied": "Copïwyd: {value}",
-  "infoListHapticsTitle": "Adborth haptig"
+  "infoListHapticsTitle": "Adborth haptig",
+
+  "settingsTitle": "Gosodiadau",
+  "settingsKeypadModeTitle": "Bysellau swyddogaeth",
+  "settingsKeypadModeOverlay": "Troshaen",
+  "settingsKeypadModeScroll": "Sgrolio",
+  "settingsScopeTitle": "Ffwythiannau",
+  "settingsScopeFull": "Pob un",
+  "settingsScopeSimple": "Sylfaenol",
+  "settingsNumeralSystemTitle": "System rifau",
+  "settingsAngleModeTitle": "Uned ongl"
 }

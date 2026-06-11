@@ -184,5 +184,15 @@
   "a11yTheoryChapters": "capitoli di teoria",
   "a11yIntro": "introduzione",
   "resultCopied": "Copiato: {value}",
-  "infoListHapticsTitle": "Feedback aptico"
+  "infoListHapticsTitle": "Feedback aptico",
+
+  "settingsTitle": "Impostazioni",
+  "settingsKeypadModeTitle": "Tasti funzione",
+  "settingsKeypadModeOverlay": "Overlay",
+  "settingsKeypadModeScroll": "Scorrimento",
+  "settingsScopeTitle": "Funzioni",
+  "settingsScopeFull": "Tutte",
+  "settingsScopeSimple": "Di base",
+  "settingsNumeralSystemTitle": "Sistema numerico",
+  "settingsAngleModeTitle": "Unità angolare"
 }

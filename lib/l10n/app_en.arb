@@ -184,5 +184,15 @@
   "a11yTheoryChapters": "theory chapters",
   "a11yIntro": "intro",
   "resultCopied": "Copied: {value}",
-  "infoListHapticsTitle": "Haptic feedback"
+  "infoListHapticsTitle": "Haptic feedback",
+
+  "settingsTitle": "Settings",
+  "settingsKeypadModeTitle": "Function keys",
+  "settingsKeypadModeOverlay": "Overlay",
+  "settingsKeypadModeScroll": "Scroll",
+  "settingsScopeTitle": "Functions",
+  "settingsScopeFull": "All",
+  "settingsScopeSimple": "Basic",
+  "settingsNumeralSystemTitle": "Number base",
+  "settingsAngleModeTitle": "Angle mode"
 }

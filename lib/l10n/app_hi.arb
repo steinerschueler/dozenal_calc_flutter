@@ -184,5 +184,15 @@
   "a11yTheoryChapters": "सिद्धांत अध्याय",
   "a11yIntro": "परिचय",
   "resultCopied": "कॉपी किया गया: {value}",
-  "infoListHapticsTitle": "हैप्टिक फीडबैक"
+  "infoListHapticsTitle": "हैप्टिक फीडबैक",
+
+  "settingsTitle": "सेटिंग्स",
+  "settingsKeypadModeTitle": "फ़ंक्शन कुंजियाँ",
+  "settingsKeypadModeOverlay": "ओवरले",
+  "settingsKeypadModeScroll": "स्क्रॉल",
+  "settingsScopeTitle": "फ़ंक्शन",
+  "settingsScopeFull": "सभी",
+  "settingsScopeSimple": "बुनियादी",
+  "settingsNumeralSystemTitle": "संख्या प्रणाली",
+  "settingsAngleModeTitle": "कोण मोड"
 }

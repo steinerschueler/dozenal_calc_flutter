@@ -137,6 +137,16 @@ class DozenalCalcState extends ChangeNotifier {
     notifyListeners();
   }
 
+  /// Direct angle-mode set from the settings page. The keypad's DRG key
+  /// cycles deg → rad → grad via [handleClick] instead; this setter exists
+  /// because a three-segment toggle addresses one specific mode. No-op when
+  /// already in [m].
+  void setAngleMode(AngleMode m) {
+    if (angleMode == m) return;
+    angleMode = m;
+    notifyListeners();
+  }
+
   // Click handling — 1:1 port of input.rs::handle_click.
   // --------------------------------------------------------------------
 

@@ -184,5 +184,15 @@
   "a11yTheoryChapters": "理論章節",
   "a11yIntro": "介紹",
   "resultCopied": "已複製：{value}",
-  "infoListHapticsTitle": "觸覺回饋"
+  "infoListHapticsTitle": "觸覺回饋",
+
+  "settingsTitle": "設定",
+  "settingsKeypadModeTitle": "功能鍵",
+  "settingsKeypadModeOverlay": "疊層",
+  "settingsKeypadModeScroll": "捲動",
+  "settingsScopeTitle": "功能範圍",
+  "settingsScopeFull": "全部",
+  "settingsScopeSimple": "基礎",
+  "settingsNumeralSystemTitle": "進位制",
+  "settingsAngleModeTitle": "角度單位"
 }

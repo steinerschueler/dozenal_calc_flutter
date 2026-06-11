@@ -6,6 +6,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
+import 'package:dozenal_calc_flutter/calc_prefs.dart';
 import 'package:dozenal_calc_flutter/keypad.dart';
 import 'package:dozenal_calc_flutter/l10n/app_localizations.dart';
 
@@ -14,6 +15,8 @@ Widget _wrap(
   bool overlayOpen = false,
   int overlayPage = 0,
   ValueChanged<int>? onOverlayPageChanged,
+  KeypadMode keypadMode = KeypadMode.overlay,
+  KeypadProfile keypadProfile = KeypadProfile.full,
 }) {
   return MaterialApp(
     localizationsDelegates: AppLocalizations.localizationsDelegates,
@@ -28,12 +31,19 @@ Widget _wrap(
             overlayOpen: overlayOpen,
             overlayPage: overlayPage,
             onOverlayPageChanged: onOverlayPageChanged,
+            keypadMode: keypadMode,
+            keypadProfile: keypadProfile,
           ),
         ),
       ),
     ),
   );
 }
+
+// English semantics labels (test locale resolves to en) used to identify
+// specific keys across the mode/profile matrix.
+const String _expandLabel = 'open extension panel';
+const String _sinhLabel = 'hyperbolic sine';
 
 void main() {
   // Hoch (portrait) — three keypad-height classes.
@@ -299,5 +309,125 @@ void main() {
     );
     await tester.tap(find.byIcon(Icons.chevron_left));
     expect(requested, 0, reason: 'left arrow requests the sets page');
+  });
+
+  // Settings-driven keypad modes (Build 15): KeypadMode.scroll stacks all
+  // sets in one scrolling column, KeypadProfile.simple drops the extended
+  // sets entirely. Defaults (overlay + full) must reproduce the pre-settings
+  // keypad exactly — covered implicitly by every test above.
+  group('keypad mode / profile prefs', () {
+    test('Keypad defaults to overlay mode and full profile', () {
+      final k = Keypad(onTap: (_) {});
+      expect(k.keypadMode, KeypadMode.overlay);
+      expect(k.keypadProfile, KeypadProfile.full);
+    });
+
+    testWidgets('Hoch full profile shows the Expand key', (tester) async {
+      final semantics = tester.ensureSemantics();
+      await tester.binding.setSurfaceSize(const Size(400, 800));
+      await tester.pumpWidget(_wrap(const Size(400, 700)));
+      expect(find.bySemanticsLabel(_expandLabel), findsOneWidget);
+      semantics.dispose();
+    });
+
+    testWidgets('Hoch simple profile omits Expand and extended sets', (
+      tester,
+    ) async {
+      final semantics = tester.ensureSemantics();
+      await tester.binding.setSurfaceSize(const Size(400, 800));
+      await tester.pumpWidget(
+        _wrap(const Size(400, 700), keypadProfile: KeypadProfile.simple),
+      );
+      expect(tester.takeException(), isNull);
+      expect(find.bySemanticsLabel(_expandLabel), findsNothing);
+      expect(find.bySemanticsLabel(_sinhLabel), findsNothing);
+      semantics.dispose();
+    });
+
+    testWidgets('Hoch scroll mode stacks extended sets without Expand', (
+      tester,
+    ) async {
+      final semantics = tester.ensureSemantics();
+      await tester.binding.setSurfaceSize(const Size(400, 800));
+      await tester.pumpWidget(
+        _wrap(const Size(400, 700), keypadMode: KeypadMode.scroll),
+      );
+      expect(tester.takeException(), isNull);
+      // One vertical scroll column instead of the panel swap…
+      expect(
+        find.byWidgetPredicate(
+          (w) =>
+              w is SingleChildScrollView && w.scrollDirection == Axis.vertical,
+        ),
+        findsOneWidget,
+      );
+      // …no Expand toggle, but the extended keys are in the tree.
+      expect(find.bySemanticsLabel(_expandLabel), findsNothing);
+      expect(find.bySemanticsLabel(_sinhLabel), findsOneWidget);
+      semantics.dispose();
+    });
+
+    testWidgets('Hoch scroll mode ignored for the simple profile', (
+      tester,
+    ) async {
+      final semantics = tester.ensureSemantics();
+      await tester.binding.setSurfaceSize(const Size(400, 800));
+      await tester.pumpWidget(
+        _wrap(
+          const Size(400, 700),
+          keypadMode: KeypadMode.scroll,
+          keypadProfile: KeypadProfile.simple,
+        ),
+      );
+      expect(tester.takeException(), isNull);
+      // Simple has nothing to scroll to — no scroll view at this height.
+      expect(find.byType(SingleChildScrollView), findsNothing);
+      expect(find.bySemanticsLabel(_sinhLabel), findsNothing);
+      semantics.dispose();
+    });
+
+    testWidgets('Breit scroll mode inlines function columns, no arrows', (
+      tester,
+    ) async {
+      final semantics = tester.ensureSemantics();
+      const Size keypadArea = Size(800, 300);
+      await tester.binding.setSurfaceSize(keypadArea);
+      await tester.pumpWidget(_wrap(keypadArea, keypadMode: KeypadMode.scroll));
+      expect(tester.takeException(), isNull);
+      expect(find.byIcon(Icons.chevron_right), findsNothing);
+      expect(find.byIcon(Icons.chevron_left), findsNothing);
+      // Function keys sit inline with Sets 6-10 on the same row.
+      expect(find.bySemanticsLabel(_sinhLabel), findsOneWidget);
+      semantics.dispose();
+    });
+
+    testWidgets('Breit simple profile drops the third group entirely', (
+      tester,
+    ) async {
+      final semantics = tester.ensureSemantics();
+      const Size keypadArea = Size(800, 300);
+      await tester.binding.setSurfaceSize(keypadArea);
+      await tester.pumpWidget(
+        _wrap(keypadArea, keypadProfile: KeypadProfile.simple),
+      );
+      expect(tester.takeException(), isNull);
+      expect(find.byIcon(Icons.chevron_right), findsNothing);
+      expect(find.bySemanticsLabel(_sinhLabel), findsNothing);
+      // Row still spans the viewport (outer SizedBox forces it).
+      final rowFinder = find.descendant(
+        of: find.byWidgetPredicate(
+          (w) =>
+              w is SingleChildScrollView &&
+              w.scrollDirection == Axis.horizontal,
+        ),
+        matching: find.byType(Row),
+      );
+      expect(rowFinder, findsWidgets);
+      expect(
+        tester.getSize(rowFinder.first).width,
+        closeTo(keypadArea.width, 1.0),
+      );
+      semantics.dispose();
+    });
   });
 }

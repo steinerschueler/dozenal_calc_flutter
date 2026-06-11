@@ -184,5 +184,15 @@
   "a11yTheoryChapters": "chapitres de théorie",
   "a11yIntro": "intro",
   "resultCopied": "Copié : {value}",
-  "infoListHapticsTitle": "Retour haptique"
+  "infoListHapticsTitle": "Retour haptique",
+
+  "settingsTitle": "Réglages",
+  "settingsKeypadModeTitle": "Touches de fonction",
+  "settingsKeypadModeOverlay": "Superposition",
+  "settingsKeypadModeScroll": "Défilement",
+  "settingsScopeTitle": "Fonctions",
+  "settingsScopeFull": "Toutes",
+  "settingsScopeSimple": "De base",
+  "settingsNumeralSystemTitle": "Base numérique",
+  "settingsAngleModeTitle": "Unité d'angle"
 }

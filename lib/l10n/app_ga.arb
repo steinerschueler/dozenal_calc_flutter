@@ -184,5 +184,15 @@
   "a11yTheoryChapters": "caibidlí teoirice",
   "a11yIntro": "réamhrá",
   "resultCopied": "Cóipeáilte: {value}",
-  "infoListHapticsTitle": "Aiseolas tadhlach"
+  "infoListHapticsTitle": "Aiseolas tadhlach",
+
+  "settingsTitle": "Socruithe",
+  "settingsKeypadModeTitle": "Eochracha feidhme",
+  "settingsKeypadModeOverlay": "Forleagan",
+  "settingsKeypadModeScroll": "Scrolláil",
+  "settingsScopeTitle": "Feidhmeanna",
+  "settingsScopeFull": "Uile",
+  "settingsScopeSimple": "Bunúsach",
+  "settingsNumeralSystemTitle": "Córas uimhreacha",
+  "settingsAngleModeTitle": "Aonad uillinne"
 }

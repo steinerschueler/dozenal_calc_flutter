@@ -8,14 +8,13 @@ import 'package:package_info_plus/package_info_plus.dart';
 import 'conversions_page.dart';
 import 'converter_page.dart';
 import 'feedback_dialog.dart';
-import 'haptics.dart';
 import 'info_content.dart';
 import 'l10n/app_localizations.dart';
 import 'language_options.dart';
 import 'license_page.dart';
 import 'locale_notifier.dart';
-import 'logic/glyph_style.dart';
 import 'privacy_page.dart';
+import 'settings_page.dart';
 import 'support_page.dart';
 import 'theory/chapter_image_view.dart';
 import 'theory/chapter_images.dart';
@@ -79,17 +78,28 @@ class InfoListPage extends StatelessWidget {
             // die Welt, Dozenale Mathematik, Dozenale Gesellschaft).
             const _UnitsExpansion(),
             const Divider(color: Color(0xFF2C2C2C), height: 1),
-            // Display-Glyph-Style toggle: liegt direkt unter der Theorie,
-            // weil die Wahl zwischen Custom-Glyphen und konventionellen
-            // 0-9/A/B Teil davon ist, wie der Nutzer Dozenal liest — kein
-            // tiefes Settings-Menue dahinter. Tastatur bleibt immer
-            // Custom-Glyphen (Marken-Identitaet).
-            const _GlyphStyleToggle(),
-            const Divider(color: Color(0xFF2C2C2C), height: 1),
-            // Haptic-feedback on/off for keypad taps. A quick feedback
-            // preference, so it sits beside the glyph-style switch rather than
-            // in a deeper settings screen.
-            const _HapticsToggle(),
+            // Einstellungen: buendelt die frueher hier liegenden Quick-Toggles
+            // (Glyphen-Stil, Haptik) mit den Keypad-Praeferenzen (Overlay/
+            // Scrollen, Alle/Einfach) und Zahlensystem/Winkelmodus auf einer
+            // eigenen Seite (settings_page.dart).
+            ListTile(
+              leading: const SizedBox(
+                width: 28,
+                child: Icon(
+                  Icons.settings_outlined,
+                  color: Color(0xFFA0A0A0),
+                  size: 16,
+                ),
+              ),
+              title: Text(
+                l.settingsTitle,
+                style: const TextStyle(fontSize: 14, color: Color(0xFFD0D0D0)),
+              ),
+              trailing: const _NavChevron(),
+              onTap: () => Navigator.of(
+                context,
+              ).push(MaterialPageRoute(builder: (_) => const SettingsPage())),
+            ),
             const Divider(color: Color(0xFF2C2C2C), height: 1),
             const _LanguagePickerExpansion(),
             const Divider(color: Color(0xFF2C2C2C), height: 1),
@@ -422,80 +432,6 @@ class _UnitsExpansionState extends State<_UnitsExpansion> {
               : const SizedBox.shrink(),
         ),
       ],
-    );
-  }
-}
-
-/// Two-segment toggle between custom glyph rendering and conventional
-/// 0-9/A-B rendering in the display. Lives directly under the chapter
-/// list because the choice belongs to the reading experience, not to
-/// settings. Only affects the display — the keypad always uses custom
-/// glyphs as the visual identity.
-class _GlyphStyleToggle extends StatelessWidget {
-  const _GlyphStyleToggle();
-
-  @override
-  Widget build(BuildContext context) {
-    final l = AppLocalizations.of(context);
-    final notifier = GlyphStyleScope.of(context);
-    final isCustom = notifier.style == GlyphStyle.custom;
-    return ListTile(
-      leading: const SizedBox(
-        width: 28,
-        child: Icon(Icons.text_fields, color: Color(0xFFA0A0A0), size: 16),
-      ),
-      title: Text(
-        l.infoListGlyphStyleTitle,
-        style: const TextStyle(fontSize: 14, color: Colors.white),
-      ),
-      trailing: ToggleButtons(
-        isSelected: [isCustom, !isCustom],
-        onPressed: (i) => notifier.setStyle(
-          i == 0 ? GlyphStyle.custom : GlyphStyle.conventional,
-        ),
-        constraints: const BoxConstraints(minWidth: 64, minHeight: 32),
-        borderRadius: BorderRadius.circular(6),
-        borderColor: const Color(0xFF3A3A3A),
-        selectedBorderColor: const Color(0xFF5A5A5A),
-        color: const Color(0xFF888888),
-        selectedColor: Colors.white,
-        fillColor: const Color(0xFF2A2A2A),
-        textStyle: const TextStyle(fontSize: 12),
-        children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8),
-            child: Text(l.infoListGlyphStyleCustom),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8),
-            child: Text(l.infoListGlyphStyleConventional),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-/// On/off switch for keypad tap haptics. Sits next to the glyph-style toggle
-/// because both are quick feedback/reading preferences, not buried settings.
-/// Persisted via [HapticsNotifier] and consulted by every keypad button tap.
-class _HapticsToggle extends StatelessWidget {
-  const _HapticsToggle();
-
-  @override
-  Widget build(BuildContext context) {
-    final l = AppLocalizations.of(context);
-    final notifier = HapticsScope.of(context);
-    return ListTile(
-      leading: const SizedBox(
-        width: 28,
-        child: Icon(Icons.vibration, color: Color(0xFFA0A0A0), size: 16),
-      ),
-      title: Text(
-        l.infoListHapticsTitle,
-        style: const TextStyle(fontSize: 14, color: Colors.white),
-      ),
-      trailing: Switch(value: notifier.enabled, onChanged: notifier.setEnabled),
     );
   }
 }

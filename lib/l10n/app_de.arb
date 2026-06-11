@@ -223,5 +223,15 @@
       "value": {"type": "String"}
     }
   },
-  "infoListHapticsTitle": "Haptisches Feedback"
+  "infoListHapticsTitle": "Haptisches Feedback",
+
+  "settingsTitle": "Einstellungen",
+  "settingsKeypadModeTitle": "Funktionstasten",
+  "settingsKeypadModeOverlay": "Overlay",
+  "settingsKeypadModeScroll": "Scrollen",
+  "settingsScopeTitle": "Funktionsumfang",
+  "settingsScopeFull": "Alle",
+  "settingsScopeSimple": "Einfach",
+  "settingsNumeralSystemTitle": "Zahlensystem",
+  "settingsAngleModeTitle": "Winkelmodus"
 }

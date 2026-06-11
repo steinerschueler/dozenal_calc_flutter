@@ -6,6 +6,8 @@ import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'app_layout.dart';
+import 'calc_prefs.dart';
+import 'calc_scope.dart';
 import 'display.dart';
 import 'haptics.dart';
 import 'info_pages.dart';
@@ -49,6 +51,12 @@ class _DozenalCalcAppState extends State<DozenalCalcApp> {
   final LocaleNotifier _localeNotifier = LocaleNotifier();
   final GlyphStyleNotifier _glyphStyleNotifier = GlyphStyleNotifier();
   final HapticsNotifier _hapticsNotifier = HapticsNotifier();
+  final CalcPrefsNotifier _calcPrefs = CalcPrefsNotifier();
+
+  // Owned here (not in _CalcScaffold) so it sits above the Navigator: the
+  // settings page — pushed as a route — drives the live numeral system and
+  // angle mode through CalcStateScope.
+  final DozenalCalcState _calcState = DozenalCalcState();
 
   @override
   void initState() {
@@ -56,13 +64,43 @@ class _DozenalCalcAppState extends State<DozenalCalcApp> {
     _localeNotifier.load();
     _glyphStyleNotifier.load();
     _hapticsNotifier.load();
+    _calcPrefs.load().then((_) => _applyStartupPrefs());
+    _calcState.addListener(_syncPrefsFromState);
+  }
+
+  /// One-time apply of the persisted numeral system / angle mode after the
+  /// prefs finish loading. handleClick(Doz/Dez) runs the same buffer
+  /// conversion path as the keypad keys — a no-op on the empty startup
+  /// buffers, correct in the unlikely case the user already typed.
+  void _applyStartupPrefs() {
+    if (_calcPrefs.numeralSystem != _calcState.numeralSystem) {
+      _calcState.handleClick(
+        _calcPrefs.numeralSystem == NumeralSystem.dez
+            ? const Dez()
+            : const Doz(),
+      );
+    }
+    _calcState.setAngleMode(_calcPrefs.angleMode);
+  }
+
+  /// After startup the calc state is the source of truth: every Doz/Dez/DRG
+  /// change (keypad keys or settings toggles) flows through the state, and
+  /// this listener mirrors it into the persisted prefs. The setters no-op on
+  /// equal values, so ordinary keystrokes never touch disk.
+  void _syncPrefsFromState() {
+    if (!_calcPrefs.loaded) return;
+    _calcPrefs.setNumeralSystem(_calcState.numeralSystem);
+    _calcPrefs.setAngleMode(_calcState.angleMode);
   }
 
   @override
   void dispose() {
+    _calcState.removeListener(_syncPrefsFromState);
     _localeNotifier.dispose();
     _glyphStyleNotifier.dispose();
     _hapticsNotifier.dispose();
+    _calcPrefs.dispose();
+    _calcState.dispose();
     super.dispose();
   }
 
@@ -74,23 +112,30 @@ class _DozenalCalcAppState extends State<DozenalCalcApp> {
         notifier: _glyphStyleNotifier,
         child: HapticsScope(
           notifier: _hapticsNotifier,
-          child: ListenableBuilder(
-            listenable: _localeNotifier,
-            builder: (context, _) => MaterialApp(
-              onGenerateTitle: (ctx) => AppLocalizations.of(ctx).appTitle,
-              debugShowCheckedModeBanner: false,
-              locale: _localeNotifier.override,
-              supportedLocales: AppLocalizations.supportedLocales,
-              localizationsDelegates: AppLocalizations.localizationsDelegates,
-              localeResolutionCallback: resolveLocale,
-              theme: ThemeData(
-                brightness: Brightness.dark,
-                scaffoldBackgroundColor: const Color(0xFF1F1F1F),
-                // Custom press-color feedback already covers tap state —
-                // disable the Material splash to avoid double feedback.
-                splashFactory: NoSplash.splashFactory,
+          child: CalcPrefsScope(
+            notifier: _calcPrefs,
+            child: CalcStateScope(
+              notifier: _calcState,
+              child: ListenableBuilder(
+                listenable: _localeNotifier,
+                builder: (context, _) => MaterialApp(
+                  onGenerateTitle: (ctx) => AppLocalizations.of(ctx).appTitle,
+                  debugShowCheckedModeBanner: false,
+                  locale: _localeNotifier.override,
+                  supportedLocales: AppLocalizations.supportedLocales,
+                  localizationsDelegates:
+                      AppLocalizations.localizationsDelegates,
+                  localeResolutionCallback: resolveLocale,
+                  theme: ThemeData(
+                    brightness: Brightness.dark,
+                    scaffoldBackgroundColor: const Color(0xFF1F1F1F),
+                    // Custom press-color feedback already covers tap state —
+                    // disable the Material splash to avoid double feedback.
+                    splashFactory: NoSplash.splashFactory,
+                  ),
+                  home: _CalcScaffold(state: _calcState),
+                ),
               ),
-              home: const _CalcScaffold(),
             ),
           ),
         ),
@@ -181,14 +226,18 @@ CalcToken? _tokenForKey(KeyEvent event) {
 }
 
 class _CalcScaffold extends StatefulWidget {
-  const _CalcScaffold();
+  const _CalcScaffold({required this.state});
+
+  /// Owned by _DozenalCalcAppState (above the Navigator) so the settings
+  /// page can reach it via CalcStateScope; the scaffold only listens.
+  final DozenalCalcState state;
 
   @override
   State<_CalcScaffold> createState() => _CalcScaffoldState();
 }
 
 class _CalcScaffoldState extends State<_CalcScaffold> {
-  final DozenalCalcState _state = DozenalCalcState();
+  DozenalCalcState get _state => widget.state;
   final FocusNode _focusNode = FocusNode(debugLabel: 'calc-keyboard');
 
   @override
@@ -211,9 +260,9 @@ class _CalcScaffoldState extends State<_CalcScaffold> {
 
   @override
   void dispose() {
+    // The state itself is owned and disposed by _DozenalCalcAppState.
     _state.removeListener(_onStateChanged);
     _focusNode.dispose();
-    _state.dispose();
     super.dispose();
   }
 
@@ -376,6 +425,7 @@ class _CalcScaffoldState extends State<_CalcScaffold> {
 
   @override
   Widget build(BuildContext context) {
+    final prefs = CalcPrefsScope.of(context);
     return Focus(
       focusNode: _focusNode,
       autofocus: true,
@@ -443,6 +493,8 @@ class _CalcScaffoldState extends State<_CalcScaffold> {
                             overlayOpen: _state.overlayOpen,
                             overlayPage: _state.overlayPage,
                             onOverlayPageChanged: _state.setOverlayPage,
+                            keypadMode: prefs.mode,
+                            keypadProfile: prefs.profile,
                           ),
                         ),
                       ],

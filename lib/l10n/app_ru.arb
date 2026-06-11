@@ -184,5 +184,15 @@
   "a11yTheoryChapters": "главы теории",
   "a11yIntro": "введение",
   "resultCopied": "Скопировано: {value}",
-  "infoListHapticsTitle": "Тактильная отдача"
+  "infoListHapticsTitle": "Тактильная отдача",
+
+  "settingsTitle": "Настройки",
+  "settingsKeypadModeTitle": "Функциональные клавиши",
+  "settingsKeypadModeOverlay": "Оверлей",
+  "settingsKeypadModeScroll": "Прокрутка",
+  "settingsScopeTitle": "Функции",
+  "settingsScopeFull": "Все",
+  "settingsScopeSimple": "Базовые",
+  "settingsNumeralSystemTitle": "Система счисления",
+  "settingsAngleModeTitle": "Единицы углов"
 }

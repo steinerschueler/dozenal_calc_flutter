@@ -184,5 +184,15 @@
   "a11yTheoryChapters": "فصول النظرية",
   "a11yIntro": "مقدمة",
   "resultCopied": "تم النسخ: {value}",
-  "infoListHapticsTitle": "ردود فعل لمسية"
+  "infoListHapticsTitle": "ردود فعل لمسية",
+
+  "settingsTitle": "الإعدادات",
+  "settingsKeypadModeTitle": "مفاتيح الدوال",
+  "settingsKeypadModeOverlay": "تراكب",
+  "settingsKeypadModeScroll": "تمرير",
+  "settingsScopeTitle": "الدوال",
+  "settingsScopeFull": "الكل",
+  "settingsScopeSimple": "أساسية",
+  "settingsNumeralSystemTitle": "نظام العد",
+  "settingsAngleModeTitle": "وحدة الزاوية"
 }

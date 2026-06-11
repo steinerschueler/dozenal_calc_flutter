@@ -184,5 +184,15 @@
   "a11yTheoryChapters": "理论章节",
   "a11yIntro": "介绍",
   "resultCopied": "已复制：{value}",
-  "infoListHapticsTitle": "触感反馈"
+  "infoListHapticsTitle": "触感反馈",
+
+  "settingsTitle": "设置",
+  "settingsKeypadModeTitle": "功能键",
+  "settingsKeypadModeOverlay": "叠层",
+  "settingsKeypadModeScroll": "滚动",
+  "settingsScopeTitle": "功能范围",
+  "settingsScopeFull": "全部",
+  "settingsScopeSimple": "基础",
+  "settingsNumeralSystemTitle": "进制",
+  "settingsAngleModeTitle": "角度单位"
 }
