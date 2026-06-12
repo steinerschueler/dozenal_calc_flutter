@@ -22,6 +22,7 @@ import 'app_layout.dart';
 import 'app_theme.dart';
 import 'converter_state.dart';
 import 'glyph_painter.dart';
+import 'haptics.dart';
 import 'logic/glyph_style.dart';
 import 'logic/unit_data.dart';
 import 'token_painter.dart';
@@ -663,7 +664,9 @@ class _ShellState extends State<_Shell> {
       onTap: disabled
           ? null
           : () {
-              HapticFeedback.selectionClick();
+              if (HapticsScope.enabledOf(context)) {
+                HapticFeedback.lightImpact();
+              }
               widget.onTap!();
             },
       child: ConstrainedBox(
@@ -730,7 +733,7 @@ class _LabelButtonState extends State<_LabelButton> {
       onTapUp: (_) => _set(false),
       onTapCancel: () => _set(false),
       onTap: () {
-        HapticFeedback.selectionClick();
+        if (HapticsScope.enabledOf(context)) HapticFeedback.lightImpact();
         widget.onTap();
       },
       child: ConstrainedBox(

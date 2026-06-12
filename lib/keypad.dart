@@ -1238,7 +1238,7 @@ class _PressableShellState extends State<_PressableShell> {
 
   void _handleTap() {
     if (widget.disabled) return;
-    if (HapticsScope.enabledOf(context)) HapticFeedback.selectionClick();
+    if (HapticsScope.enabledOf(context)) HapticFeedback.lightImpact();
     widget.onTap();
   }
 
@@ -1457,7 +1457,7 @@ class _TokenButtonState extends State<_TokenButton> {
     _cellsRect = Rect.fromLTWH(left + frame, top + frame, cellsW, cellH);
     _hover.value = null;
 
-    if (_haptics) HapticFeedback.selectionClick();
+    if (_haptics) HapticFeedback.lightImpact();
     final entry = OverlayEntry(
       builder: (ctx) {
         final t = AppColors.of(ctx);
@@ -1523,7 +1523,7 @@ class _TokenButtonState extends State<_TokenButton> {
     if (_popup == null) return;
     final next = _hitIndex(d.globalPosition);
     if (next != _hover.value) {
-      if (next != null && _haptics) HapticFeedback.selectionClick();
+      if (next != null && _haptics) HapticFeedback.lightImpact();
       _hover.value = next;
     }
   }
@@ -1548,7 +1548,7 @@ class _TokenButtonState extends State<_TokenButton> {
   void _select(int i) {
     final tok = _options[i];
     _removePopup();
-    if (_haptics) HapticFeedback.selectionClick();
+    if (_haptics) HapticFeedback.lightImpact();
     widget.onTokenTap?.call(tok);
   }
 
