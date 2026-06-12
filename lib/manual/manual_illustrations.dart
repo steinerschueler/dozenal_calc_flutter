@@ -97,21 +97,35 @@ void _arrowHead(
 // ---------------------------------------------------------------------------
 
 class PowerTriangleFigure extends StatelessWidget {
-  const PowerTriangleFigure({super.key});
+  /// Localizable node roles — German defaults; translated per language.
+  final String power;
+  final String base;
+  final String exponent;
+  const PowerTriangleFigure({
+    super.key,
+    this.power = 'Potenz',
+    this.base = 'Basis',
+    this.exponent = 'Exponent',
+  });
 
   @override
   Widget build(BuildContext context) => Padding(
     padding: const EdgeInsets.symmetric(vertical: 12),
     child: AspectRatio(
       aspectRatio: 1.35,
-      child: CustomPaint(painter: _PowerTrianglePainter(AppColors.of(context))),
+      child: CustomPaint(
+          painter: _PowerTrianglePainter(
+              AppColors.of(context), power, base, exponent)),
     ),
   );
 }
 
 class _PowerTrianglePainter extends CustomPainter {
   final AppColors c;
-  _PowerTrianglePainter(this.c);
+  final String power;
+  final String base;
+  final String exponent;
+  _PowerTrianglePainter(this.c, this.power, this.base, this.exponent);
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -192,13 +206,17 @@ class _PowerTrianglePainter extends CustomPainter {
       weight: FontWeight.w500,
     );
 
-    node(n, 'n', 'Potenz');
-    node(b, 'b', 'Basis');
-    node(e, 'e', 'Exponent');
+    node(n, 'n', power);
+    node(b, 'b', base);
+    node(e, 'e', exponent);
   }
 
   @override
-  bool shouldRepaint(covariant _PowerTrianglePainter old) => old.c != c;
+  bool shouldRepaint(covariant _PowerTrianglePainter old) =>
+      old.c != c ||
+      old.power != power ||
+      old.base != base ||
+      old.exponent != exponent;
 }
 
 // ---------------------------------------------------------------------------
@@ -656,21 +674,28 @@ class _ParallelCircuitPainter extends CustomPainter {
 // ---------------------------------------------------------------------------
 
 class ParallelBarFigure extends StatelessWidget {
-  const ParallelBarFigure({super.key});
+  /// Localizable caption — German default; translated per language.
+  final String lessThanBoth;
+  const ParallelBarFigure({
+    super.key,
+    this.lessThanBoth = 'kleiner als beide Einzelwerte',
+  });
 
   @override
   Widget build(BuildContext context) => Padding(
     padding: const EdgeInsets.symmetric(vertical: 12),
     child: AspectRatio(
       aspectRatio: 1.7,
-      child: CustomPaint(painter: _ParallelBarPainter(AppColors.of(context))),
+      child: CustomPaint(
+          painter: _ParallelBarPainter(AppColors.of(context), lessThanBoth)),
     ),
   );
 }
 
 class _ParallelBarPainter extends CustomPainter {
   final AppColors c;
-  _ParallelBarPainter(this.c);
+  final String lessThanBoth;
+  _ParallelBarPainter(this.c, this.lessThanBoth);
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -726,7 +751,7 @@ class _ParallelBarPainter extends CustomPainter {
     );
     _text(
       canvas,
-      'kleiner als beide Einzelwerte',
+      lessThanBoth,
       o(0.20, 0.9),
       c.textFaint,
       size: 9,
@@ -735,7 +760,8 @@ class _ParallelBarPainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(covariant _ParallelBarPainter old) => old.c != c;
+  bool shouldRepaint(covariant _ParallelBarPainter old) =>
+      old.c != c || old.lessThanBoth != lessThanBoth;
 }
 
 // ---------------------------------------------------------------------------
@@ -883,21 +909,46 @@ class _UnitCirclePainter extends CustomPainter {
 // ---------------------------------------------------------------------------
 
 class RightTriangleFigure extends StatelessWidget {
-  const RightTriangleFigure({super.key});
+  /// Localizable labels — German defaults; translated per language. The ratio
+  /// strings carry the side abbreviations (Geg/An/Hyp), so translate them whole.
+  final String adjacent;
+  final String opposite;
+  final String hypotenuse;
+  final String sinRatio;
+  final String cosRatio;
+  final String tanRatio;
+  const RightTriangleFigure({
+    super.key,
+    this.adjacent = 'Ankathete',
+    this.opposite = 'Gegenkathete',
+    this.hypotenuse = 'Hypotenuse',
+    this.sinRatio = 'sin θ = Geg / Hyp',
+    this.cosRatio = 'cos θ = An / Hyp',
+    this.tanRatio = 'tan θ = Geg / An',
+  });
 
   @override
   Widget build(BuildContext context) => Padding(
     padding: const EdgeInsets.symmetric(vertical: 12),
     child: AspectRatio(
       aspectRatio: 1.6,
-      child: CustomPaint(painter: _RightTrianglePainter(AppColors.of(context))),
+      child: CustomPaint(
+          painter: _RightTrianglePainter(AppColors.of(context), adjacent,
+              opposite, hypotenuse, sinRatio, cosRatio, tanRatio)),
     ),
   );
 }
 
 class _RightTrianglePainter extends CustomPainter {
   final AppColors c;
-  _RightTrianglePainter(this.c);
+  final String adjacent;
+  final String opposite;
+  final String hypotenuse;
+  final String sinRatio;
+  final String cosRatio;
+  final String tanRatio;
+  _RightTrianglePainter(this.c, this.adjacent, this.opposite, this.hypotenuse,
+      this.sinRatio, this.cosRatio, this.tanRatio);
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -951,28 +1002,21 @@ class _RightTrianglePainter extends CustomPainter {
     // side labels
     _text(
       canvas,
-      'Ankathete',
+      adjacent,
       Offset((a.dx + b.dx) / 2 - 24, a.dy + 6),
       c.textSecondary,
       size: 9.5,
     );
     _text(
       canvas,
-      'Gegen-',
-      Offset(w * 0.005, (a.dy + cc.dy) / 2 - 8),
+      opposite,
+      Offset(w * 0.005, (a.dy + cc.dy) / 2 - 2),
       c.textSecondary,
       size: 9.5,
     );
     _text(
       canvas,
-      'kathete',
-      Offset(w * 0.005, (a.dy + cc.dy) / 2 + 4),
-      c.textSecondary,
-      size: 9.5,
-    );
-    _text(
-      canvas,
-      'Hypotenuse',
+      hypotenuse,
       Offset((b.dx + cc.dx) / 2 - 6, (b.dy + cc.dy) / 2 - 14),
       c.textPrimary,
       size: 9.5,
@@ -996,13 +1040,20 @@ class _RightTrianglePainter extends CustomPainter {
       _text(canvas, s, Offset(w * 0.59, fy * h), col, size: 10.5);
     }
 
-    formula(0.36, 'sin θ = Geg / Hyp', _blue);
-    formula(0.54, 'cos θ = An / Hyp', _teal);
-    formula(0.72, 'tan θ = Geg / An', _orange);
+    formula(0.36, sinRatio, _blue);
+    formula(0.54, cosRatio, _teal);
+    formula(0.72, tanRatio, _orange);
   }
 
   @override
-  bool shouldRepaint(covariant _RightTrianglePainter old) => old.c != c;
+  bool shouldRepaint(covariant _RightTrianglePainter old) =>
+      old.c != c ||
+      old.adjacent != adjacent ||
+      old.opposite != opposite ||
+      old.hypotenuse != hypotenuse ||
+      old.sinRatio != sinRatio ||
+      old.cosRatio != cosRatio ||
+      old.tanRatio != tanRatio;
 }
 
 // ---------------------------------------------------------------------------
@@ -1134,21 +1185,34 @@ class _SineWavePainter extends CustomPainter {
 // ---------------------------------------------------------------------------
 
 class MemoryFlowFigure extends StatelessWidget {
-  const MemoryFlowFigure({super.key});
+  /// Localizable box labels — German defaults; translated per language.
+  final String result;
+  final String store;
+  final String input;
+  const MemoryFlowFigure({
+    super.key,
+    this.result = 'Ergebnis',
+    this.store = 'Speicher',
+    this.input = 'Eingabe',
+  });
 
   @override
   Widget build(BuildContext context) => Padding(
     padding: const EdgeInsets.symmetric(vertical: 12),
     child: AspectRatio(
       aspectRatio: 1.7,
-      child: CustomPaint(painter: _MemoryFlowPainter(AppColors.of(context))),
+      child: CustomPaint(
+          painter: _MemoryFlowPainter(AppColors.of(context), result, store, input)),
     ),
   );
 }
 
 class _MemoryFlowPainter extends CustomPainter {
   final AppColors c;
-  _MemoryFlowPainter(this.c);
+  final String result;
+  final String store;
+  final String input;
+  _MemoryFlowPainter(this.c, this.result, this.store, this.input);
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -1262,11 +1326,11 @@ class _MemoryFlowPainter extends CustomPainter {
       );
     }
 
-    centerLabel(boxes['res']!, 'Ergebnis', c.textSecondary, -6);
-    centerLabel(boxes['mem']!, 'Speicher', c.textPrimary, -9,
+    centerLabel(boxes['res']!, result, c.textSecondary, -6);
+    centerLabel(boxes['mem']!, store, c.textPrimary, -9,
         size: 11, weight: FontWeight.w600);
     centerLabel(boxes['mem']!, '(M)', c.textMuted, 4, size: 9);
-    centerLabel(boxes['inp']!, 'Eingabe', c.textSecondary, -6);
+    centerLabel(boxes['inp']!, input, c.textSecondary, -6);
 
     // --- MC delete mark: small × just outside the memory box's top-right.
     final mc = Offset(boxes['mem']!.right - 1, boxes['mem']!.top + 1);
@@ -1282,7 +1346,11 @@ class _MemoryFlowPainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(covariant _MemoryFlowPainter old) => old.c != c;
+  bool shouldRepaint(covariant _MemoryFlowPainter old) =>
+      old.c != c ||
+      old.result != result ||
+      old.store != store ||
+      old.input != input;
 }
 
 // ---------------------------------------------------------------------------
@@ -1291,21 +1359,34 @@ class _MemoryFlowPainter extends CustomPainter {
 // ---------------------------------------------------------------------------
 
 class HistoryBandFigure extends StatelessWidget {
-  const HistoryBandFigure({super.key});
+  /// Localizable labels — German defaults; translated per language.
+  final String swipe;
+  final String newCap;
+  final String tap;
+  const HistoryBandFigure({
+    super.key,
+    this.swipe = 'wischen',
+    this.newCap = 'neu',
+    this.tap = 'antippen',
+  });
 
   @override
   Widget build(BuildContext context) => Padding(
     padding: const EdgeInsets.symmetric(vertical: 12),
     child: AspectRatio(
       aspectRatio: 1.3,
-      child: CustomPaint(painter: _HistoryBandPainter(AppColors.of(context))),
+      child: CustomPaint(
+          painter: _HistoryBandPainter(AppColors.of(context), swipe, newCap, tap)),
     ),
   );
 }
 
 class _HistoryBandPainter extends CustomPainter {
   final AppColors c;
-  _HistoryBandPainter(this.c);
+  final String swipe;
+  final String newCap;
+  final String tap;
+  _HistoryBandPainter(this.c, this.swipe, this.newCap, this.tap);
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -1328,7 +1409,7 @@ class _HistoryBandPainter extends CustomPainter {
       ..strokeCap = StrokeCap.round;
     canvas.drawLine(p(0.40, 0.04), p(0.40, 0.13), swipePaint);
     _arrowHead(canvas, p(0.40, 0.135), const Offset(0, 1), c.textMuted);
-    _text(canvas, 'wischen', Offset(w * 0.43, h * 0.04), c.textMuted,
+    _text(canvas, swipe, Offset(w * 0.43, h * 0.04), c.textMuted,
         size: 9, style: FontStyle.italic);
 
     // --- Four entries, newest at top.
@@ -1376,12 +1457,12 @@ class _HistoryBandPainter extends CustomPainter {
       RRect.fromRectAndRadius(cap, const Radius.circular(4)),
       Paint()..color = _teal.withAlpha(0x55),
     );
-    _text(canvas, 'neu', Offset(cap.left + 5, cap.center.dy - 5), _teal,
+    _text(canvas, newCap, Offset(cap.left + 5, cap.center.dy - 5), _teal,
         size: 8);
 
     // --- Tap arrow from entry 2 to the input field.
     straight(canvas, p(0.74, 0.44), p(0.88, 0.44), _blue);
-    _text(canvas, 'antippen', Offset(w * 0.755, h * 0.44 - 14), _blue,
+    _text(canvas, tap, Offset(w * 0.755, h * 0.44 - 14), _blue,
         size: 9, style: FontStyle.italic);
 
     // --- Small input field with a red caret (where the value lands).
@@ -1420,7 +1501,11 @@ class _HistoryBandPainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(covariant _HistoryBandPainter old) => old.c != c;
+  bool shouldRepaint(covariant _HistoryBandPainter old) =>
+      old.c != c ||
+      old.swipe != swipe ||
+      old.newCap != newCap ||
+      old.tap != tap;
 }
 
 // ---------------------------------------------------------------------------
@@ -1429,21 +1514,25 @@ class _HistoryBandPainter extends CustomPainter {
 // ---------------------------------------------------------------------------
 
 class UnitHyperbolaFigure extends StatelessWidget {
-  const UnitHyperbolaFigure({super.key});
+  /// Localizable label — German default; translated per language.
+  final String area;
+  const UnitHyperbolaFigure({super.key, this.area = 'Fläche = t/2'});
 
   @override
   Widget build(BuildContext context) => Padding(
     padding: const EdgeInsets.symmetric(vertical: 12),
     child: AspectRatio(
       aspectRatio: 1.15,
-      child: CustomPaint(painter: _UnitHyperbolaPainter(AppColors.of(context))),
+      child: CustomPaint(
+          painter: _UnitHyperbolaPainter(AppColors.of(context), area)),
     ),
   );
 }
 
 class _UnitHyperbolaPainter extends CustomPainter {
   final AppColors c;
-  _UnitHyperbolaPainter(this.c);
+  final String area;
+  _UnitHyperbolaPainter(this.c, this.area);
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -1547,7 +1636,7 @@ class _UnitHyperbolaPainter extends CustomPainter {
         size: 10);
 
     // (9) Sector-area label.
-    _text(canvas, 'Fläche = t/2', px(0.42, 0.30), c.textSecondary,
+    _text(canvas, area, px(0.42, 0.30), c.textSecondary,
         size: 8.5, style: FontStyle.italic);
 
     // (10) Unit marker on the radius.
@@ -1557,7 +1646,8 @@ class _UnitHyperbolaPainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(covariant _UnitHyperbolaPainter old) => old.c != c;
+  bool shouldRepaint(covariant _UnitHyperbolaPainter old) =>
+      old.c != c || old.area != area;
 }
 
 // ---------------------------------------------------------------------------
@@ -1687,21 +1777,31 @@ class _HyperbolicCurvesPainter extends CustomPainter {
 // ---------------------------------------------------------------------------
 
 class CatenaryFigure extends StatelessWidget {
-  const CatenaryFigure({super.key});
+  /// Localizable labels — German defaults; translated per language.
+  final String catenary;
+  final String parabola;
+  const CatenaryFigure({
+    super.key,
+    this.catenary = 'Kettenlinie',
+    this.parabola = 'Parabel',
+  });
 
   @override
   Widget build(BuildContext context) => Padding(
     padding: const EdgeInsets.symmetric(vertical: 12),
     child: AspectRatio(
       aspectRatio: 1.6,
-      child: CustomPaint(painter: _CatenaryPainter(AppColors.of(context))),
+      child: CustomPaint(
+          painter: _CatenaryPainter(AppColors.of(context), catenary, parabola)),
     ),
   );
 }
 
 class _CatenaryPainter extends CustomPainter {
   final AppColors c;
-  _CatenaryPainter(this.c);
+  final String catenary;
+  final String parabola;
+  _CatenaryPainter(this.c, this.catenary, this.parabola);
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -1755,7 +1855,7 @@ class _CatenaryPainter extends CustomPainter {
         ..strokeWidth = 1.4
         ..strokeJoin = StrokeJoin.round,
     );
-    _text(canvas, 'Parabel', px(1.4, 0.5 * 1.4 * 1.4 + 1.0) + const Offset(6, -2),
+    _text(canvas, parabola, px(1.4, 0.5 * 1.4 * 1.4 + 1.0) + const Offset(6, -2),
         c.textFaint, size: 8.5, style: FontStyle.italic);
 
     // (3) Catenary y = cosh x.
@@ -1799,7 +1899,7 @@ class _CatenaryPainter extends CustomPainter {
         Paint()..color = c.hairline..strokeWidth = 0.8);
 
     // (7) Title.
-    _text(canvas, 'Kettenlinie  y = cosh x',
+    _text(canvas, '$catenary  y = cosh x',
         Offset(plot.left + plot.width * 0.22, plot.top + 4), c.textSecondary,
         size: 10.5, weight: FontWeight.w500);
 
@@ -1817,7 +1917,8 @@ class _CatenaryPainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(covariant _CatenaryPainter old) => old.c != c;
+  bool shouldRepaint(covariant _CatenaryPainter old) =>
+      old.c != c || old.catenary != catenary || old.parabola != parabola;
 }
 
 // ---------------------------------------------------------------------------
@@ -1826,21 +1927,25 @@ class _CatenaryPainter extends CustomPainter {
 // ---------------------------------------------------------------------------
 
 class PascalTriangleFigure extends StatelessWidget {
-  const PascalTriangleFigure({super.key});
+  /// Localizable label — German default; pass a translation in the per-language manual file.
+  final String title;
+  const PascalTriangleFigure({super.key, this.title = 'Pascalsches Dreieck'});
 
   @override
   Widget build(BuildContext context) => Padding(
     padding: const EdgeInsets.symmetric(vertical: 12),
     child: AspectRatio(
       aspectRatio: 1.35,
-      child: CustomPaint(painter: _PascalTrianglePainter(AppColors.of(context))),
+      child: CustomPaint(
+          painter: _PascalTrianglePainter(AppColors.of(context), title)),
     ),
   );
 }
 
 class _PascalTrianglePainter extends CustomPainter {
   final AppColors c;
-  _PascalTrianglePainter(this.c);
+  final String title;
+  _PascalTrianglePainter(this.c, this.title);
 
   // pascal[n][k] = "n choose k", dozenal (10 dec = A).
   static const List<List<String>> _rows = [
@@ -1917,12 +2022,13 @@ class _PascalTrianglePainter extends CustomPainter {
     }
 
     // 5. Title.
-    _text(canvas, 'Pascalsches Dreieck', Offset(w * 0.17, h * 0.03),
+    _text(canvas, title, Offset(w * 0.17, h * 0.03),
         c.textMuted, size: 10, weight: FontWeight.w500);
   }
 
   @override
-  bool shouldRepaint(covariant _PascalTrianglePainter old) => old.c != c;
+  bool shouldRepaint(covariant _PascalTrianglePainter old) =>
+      old.c != c || old.title != title;
 }
 
 // ---------------------------------------------------------------------------
@@ -1931,21 +2037,34 @@ class _PascalTrianglePainter extends CustomPainter {
 // ---------------------------------------------------------------------------
 
 class ModuloClockFigure extends StatelessWidget {
-  const ModuloClockFigure({super.key});
+  /// Localizable labels — German defaults; pass translations in the per-language manual file.
+  final String title;
+  final String wrap;
+  final String note;
+  const ModuloClockFigure({
+    super.key,
+    this.title = 'Modulo — die Uhr-Arithmetik',
+    this.wrap = 'Umlauf',
+    this.note = '(= 17 dez., 17 mod 12 = 5)',
+  });
 
   @override
   Widget build(BuildContext context) => Padding(
     padding: const EdgeInsets.symmetric(vertical: 12),
     child: AspectRatio(
       aspectRatio: 1.0,
-      child: CustomPaint(painter: _ModuloClockPainter(AppColors.of(context))),
+      child: CustomPaint(
+          painter: _ModuloClockPainter(AppColors.of(context), title, wrap, note)),
     ),
   );
 }
 
 class _ModuloClockPainter extends CustomPainter {
   final AppColors c;
-  _ModuloClockPainter(this.c);
+  final String title;
+  final String wrap;
+  final String note;
+  _ModuloClockPainter(this.c, this.title, this.wrap, this.note);
 
   static const _labels = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B'];
 
@@ -2024,22 +2143,23 @@ class _ModuloClockPainter extends CustomPainter {
     final arcEndPt = Offset(cx + rArc * math.cos(arcEnd), cy + rArc * math.sin(arcEnd));
     _arrowHead(canvas, arcEndPt, Offset(-math.sin(arcEnd), math.cos(arcEnd)), _orange,
         len: 7, halfW: 3.0);
-    _text(canvas, 'Umlauf', Offset(cx + rArc * 0.42, cy - rArc * 0.92), _orange,
+    _text(canvas, wrap, Offset(cx + rArc * 0.42, cy - rArc * 0.92), _orange,
         size: 9, style: FontStyle.italic);
 
     // 6. Formula labels.
     _text(canvas, '15₁₂ mod 10₁₂ = 5', Offset(w * 0.20, h * 0.90),
         c.textSecondary, size: 10.5, weight: FontWeight.w500);
-    _text(canvas, '(= 17 dez., 17 mod 12 = 5)', Offset(w * 0.21, h * 0.945),
+    _text(canvas, note, Offset(w * 0.21, h * 0.945),
         c.textFaint, size: 8.5, style: FontStyle.italic);
 
     // 7. Title.
-    _text(canvas, 'Modulo — die Uhr-Arithmetik', Offset(w * 0.14, h * 0.03),
+    _text(canvas, title, Offset(w * 0.14, h * 0.03),
         c.textMuted, size: 10, weight: FontWeight.w500);
   }
 
   @override
-  bool shouldRepaint(covariant _ModuloClockPainter old) => old.c != c;
+  bool shouldRepaint(covariant _ModuloClockPainter old) =>
+      old.c != c || old.title != title || old.wrap != wrap || old.note != note;
 }
 
 // ---------------------------------------------------------------------------
@@ -2048,7 +2168,16 @@ class _ModuloClockPainter extends CustomPainter {
 // ---------------------------------------------------------------------------
 
 class DozenalPowersScaleFigure extends StatelessWidget {
-  const DozenalPowersScaleFigure({super.key});
+  /// Localizable labels — German defaults; pass translations in the per-language manual file.
+  final String title;
+  final String dozLabel;
+  final String decLabel;
+  const DozenalPowersScaleFigure({
+    super.key,
+    this.title = 'Zwölferpotenzen  —  1 EXP n',
+    this.dozLabel = 'Doz.',
+    this.decLabel = 'Dez.',
+  });
 
   @override
   Widget build(BuildContext context) => Padding(
@@ -2056,14 +2185,18 @@ class DozenalPowersScaleFigure extends StatelessWidget {
     child: AspectRatio(
       aspectRatio: 2.2,
       child: CustomPaint(
-          painter: _DozenalPowersScalePainter(AppColors.of(context))),
+          painter: _DozenalPowersScalePainter(
+              AppColors.of(context), title, dozLabel, decLabel)),
     ),
   );
 }
 
 class _DozenalPowersScalePainter extends CustomPainter {
   final AppColors c;
-  _DozenalPowersScalePainter(this.c);
+  final String title;
+  final String dozLabel;
+  final String decLabel;
+  _DozenalPowersScalePainter(this.c, this.title, this.dozLabel, this.decLabel);
 
   static const _doz = ['1', '10', '100', '1000', '10000'];
   static const _pow = ['12⁰', '12¹', '12²', '12³', '12⁴'];
@@ -2075,10 +2208,10 @@ class _DozenalPowersScalePainter extends CustomPainter {
     final x0 = w * 0.12, x1 = w * 0.88, yAxis = h * 0.50;
     double xi(int i) => x0 + i / 4.0 * (x1 - x0);
 
-    _text(canvas, 'Zwölferpotenzen  —  1 EXP n', Offset(w * 0.07, h * 0.06),
+    _text(canvas, title, Offset(w * 0.07, h * 0.06),
         c.textMuted, size: 10, weight: FontWeight.w500);
-    _text(canvas, 'Doz.', Offset(w * 0.01, yAxis - 24), c.textMuted, size: 8.5);
-    _text(canvas, 'Dez.', Offset(w * 0.01, yAxis + 14), c.textFaint,
+    _text(canvas, dozLabel, Offset(w * 0.01, yAxis - 24), c.textMuted, size: 8.5);
+    _text(canvas, decLabel, Offset(w * 0.01, yAxis + 14), c.textFaint,
         size: 8.5, style: FontStyle.italic);
 
     // Axis + arrow.
@@ -2155,5 +2288,9 @@ class _DozenalPowersScalePainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(covariant _DozenalPowersScalePainter old) => old.c != c;
+  bool shouldRepaint(covariant _DozenalPowersScalePainter old) =>
+      old.c != c ||
+      old.title != title ||
+      old.dozLabel != dozLabel ||
+      old.decLabel != decLabel;
 }
