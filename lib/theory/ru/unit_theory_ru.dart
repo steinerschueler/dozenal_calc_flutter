@@ -8,6 +8,49 @@ part of '../unit_theory.dart';
 
 List<UnitTheorySection> _unitTheoryRu(UnitCategory cat) {
   switch (cat) {
+    case UnitCategory.count:
+      return const [
+        UnitTheorySection(
+          'Счёт дюжинами',
+          'Количества можно группировать в десятки — или в дюжины. Дюжина — это '
+              'двенадцать штук, гросс — двенадцать дюжин (144), большой гросс — '
+              'двенадцать гроссов (1728). Это та же лестница, что единицы, десятки, '
+              'сотни, тысячи, только в основании двенадцать: дюжина = 12¹, '
+              'гросс = 12², большой гросс = 12³. В записи по основанию двенадцать '
+              'это ровные 10, 100 и 1000 — большой гросс и есть «двенадцатеричная '
+              'тысяча».\n\n'
+              'Почему двенадцать так удобно делится и как ведут счёт до двенадцати '
+              'по трём фалангам четырёх пальцев — об этом рассказывает '
+              'Теория → Основы. Здесь речь о самих счётных единицах.',
+        ),
+        UnitTheorySection(
+          'Откуда берутся названия',
+          '«Дюжина» пришла через старофранцузское douzaine из латинского '
+              'duodecim, «два-и-десять»; слово означает ровно двенадцать, а не '
+              'приблизительно. С ним родственны испанское docena, итальянское '
+              'dozzina и английское dozen.\n\n'
+              '«Гросс» происходит от grosse douzaine, «большой дюжины», и '
+              'засвидетельствован с начала XV века. В оптовой торговле мелкий '
+              'товар — карандаши, пуговицы, иглы — считали и упаковывали гроссами; '
+              'некоторые карандашные коробки до сих пор несут надпись «1 gross». '
+              'Большой гросс (1728) — это дюжина гроссов, и, кстати, ровно '
+              'столько кубических дюймов в кубическом футе (12 × 12 × 12). '
+              'Яйца и сегодня продают дюжинами.',
+        ),
+        UnitTheorySection(
+          'Чёртова дюжина',
+          'Чёртова дюжина (baker’s dozen) — это тринадцать: на одну больше '
+              'обычной дюжины; тринадцатый хлеб называют vantage loaf. '
+              'Распространённое объяснение отсылает к средневековому английскому '
+              'хлебному уставу (Assize of Bread, XIII век): за продажу '
+              'недовесного хлеба грозили штрафы, поэтому пекарь на всякий случай '
+              'добавлял лишнюю буханку.\n\n'
+              'К этому нужна честная оговорка: данная версия правдоподобна и '
+              'широко повторяется, но документами не подтверждена. Самые ранние '
+              'письменные свидетельства английского «baker’s dozen» относятся '
+              'лишь к концу XVI века — спустя долгое время после самого устава.',
+        ),
+      ];
     case UnitCategory.dist:
       return const [
         UnitTheorySection(
@@ -728,6 +771,16 @@ List<UnitTheorySection> _unitTheoryRu(UnitCategory cat) {
 // docs/research/unit_<area>.md. The complete tiered lists live there.
 List<Source> _unitSourcesRu(UnitCategory cat) {
   switch (cat) {
+    case UnitCategory.count:
+      return [
+        Source('Dozen — Wikipedia', 'https://en.wikipedia.org/wiki/Dozen', 'R2', 'A1'),
+        Source('Gross (unit) — Wikipedia', 'https://en.wikipedia.org/wiki/Gross_(unit)', 'R2', 'A1'),
+        Source('Great gross — Wikipedia', 'https://en.wikipedia.org/wiki/Great_gross', 'R2', 'A1'),
+        Source('Baker’s dozen — Wikipedia', 'https://en.wikipedia.org/wiki/Baker%27s_dozen', 'R2', 'A1'),
+        Source('Assize of Bread and Ale — Wikipedia', 'https://en.wikipedia.org/wiki/Assize_of_Bread_and_Ale', 'R2', 'A1'),
+        Source('dozen — Online Etymology Dictionary', 'https://www.etymonline.com/word/dozen', 'R2', 'A1'),
+        Source('gross — Online Etymology Dictionary', 'https://www.etymonline.com/word/gross', 'R2', 'A1'),
+      ];
     case UnitCategory.dist:
       return [
         Source('Measurement — MacTutor History of Mathematics', 'https://mathshistory.st-andrews.ac.uk/HistTopics/Measurement/', 'R1', 'A1'),

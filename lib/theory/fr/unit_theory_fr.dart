@@ -7,6 +7,51 @@ part of '../unit_theory.dart';
 
 List<UnitTheorySection> _unitTheoryFr(UnitCategory cat) {
   switch (cat) {
+    case UnitCategory.count:
+      return const [
+        UnitTheorySection(
+          'Empiler par douzaines',
+          'On peut regrouper des quantités par dizaines — ou par douzaines. Une '
+              'douzaine représente douze pièces, une grosse douze douzaines (144), '
+              'une grande grosse douze grosses (1728). C\'est le même escalier que '
+              'les unités, dizaines, centaines et milliers, mais en base douze : '
+              'douzaine = 12¹, grosse = 12², grande grosse = 12³. Écrits en base '
+              'douze, ces nombres donnent tout ronds 10, 100 et 1000 — la grande '
+              'grosse est donc le « millier dozenal ».\n\n'
+              'La raison pour laquelle douze se divise si commodément, et comment '
+              'on compte jusqu\'à douze sur les trois phalanges des quatre doigts, '
+              'est expliquée dans Théorie → Notions de base. Ici, on s\'intéresse '
+              'aux unités de comptage elles-mêmes.',
+        ),
+        UnitTheorySection(
+          'D\'où viennent les noms',
+          '« Douzaine » vient de l\'ancien français douzaine, lui-même du latin '
+              'duodecim, « deux-et-dix » ; le mot signifie exactement douze, pas '
+              'approximativement. L\'espagnol docena, l\'italien dozzina et '
+              'l\'anglais dozen lui sont apparentés.\n\n'
+              '« Grosse » vient de la grosse douzaine, la « grande douzaine », et '
+              'est attestée dès le début du 15e siècle. Dans le commerce de gros, '
+              'les petits articles — crayons, boutons, aiguilles — se comptaient '
+              'et se conditionnaient à la grosse ; certaines boîtes de crayons '
+              'portent encore aujourd\'hui l\'inscription « 1 grosse ». La grande '
+              'grosse (1728) est la douzaine de grosses — et c\'est aussi, par '
+              'coïncidence, le nombre de pouces cubes dans un pied cube '
+              '(12 × 12 × 12). Les œufs se vendent encore à la douzaine.',
+        ),
+        UnitTheorySection(
+          'La douzaine du boulanger',
+          'Une douzaine du boulanger, c\'est treize — une de plus qu\'une douzaine '
+              'ordinaire ; le treizième pain s\'appelle le « vantage loaf ». '
+              'L\'explication courante renvoie à l\'ancienne loi anglaise sur le '
+              'pain (Assize of Bread, 13e siècle) : vendre du pain en sous-poids '
+              'exposait à des sanctions, aussi le boulanger ajoutait-il un pain '
+              'par précaution.\n\n'
+              'Une réserve honnête s\'impose : cette explication est plausible et '
+              'très répandue, mais n\'est pas attestée par des documents. Les plus '
+              'anciennes mentions écrites de l\'expression anglaise « baker’s '
+              'dozen » ne datent que de la fin du 16e siècle — bien après la loi.',
+        ),
+      ];
     case UnitCategory.dist:
       return const [
         UnitTheorySection(
@@ -806,6 +851,16 @@ List<UnitTheorySection> _unitTheoryFr(UnitCategory cat) {
 // docs/research/unit_<area>.md. The complete tiered lists live there.
 List<Source> _unitSourcesFr(UnitCategory cat) {
   switch (cat) {
+    case UnitCategory.count:
+      return [
+        Source('Dozen — Wikipedia', 'https://en.wikipedia.org/wiki/Dozen', 'R2', 'A1'),
+        Source('Gross (unit) — Wikipedia', 'https://en.wikipedia.org/wiki/Gross_(unit)', 'R2', 'A1'),
+        Source('Great gross — Wikipedia', 'https://en.wikipedia.org/wiki/Great_gross', 'R2', 'A1'),
+        Source('Baker’s dozen — Wikipedia', 'https://en.wikipedia.org/wiki/Baker%27s_dozen', 'R2', 'A1'),
+        Source('Assize of Bread and Ale — Wikipedia', 'https://en.wikipedia.org/wiki/Assize_of_Bread_and_Ale', 'R2', 'A1'),
+        Source('dozen — Online Etymology Dictionary', 'https://www.etymonline.com/word/dozen', 'R2', 'A1'),
+        Source('gross — Online Etymology Dictionary', 'https://www.etymonline.com/word/gross', 'R2', 'A1'),
+      ];
     case UnitCategory.dist:
       return [
         Source('Measurement — MacTutor History of Mathematics', 'https://mathshistory.st-andrews.ac.uk/HistTopics/Measurement/', 'R1', 'A1'),

@@ -2,6 +2,47 @@ part of '../unit_theory.dart';
 
 List<UnitTheorySection> _unitTheoryAr(UnitCategory cat) {
   switch (cat) {
+    case UnitCategory.count:
+      return const [
+        UnitTheorySection(
+          'التكديس باثني عشر',
+          'يمكن تجميع الأعداد في عشرات — أو في اثني عشريات. الدزينة اثنا عشر '
+              'قطعة، والغروس اثنتا عشرة دزينة (144)، والغروس الكبير اثنا عشر '
+              'غروسًا (1728). هذا السلّم نفسه كالآحاد والعشرات والمئات والآلاف، '
+              'غير أنه بالأساس اثني عشر: الدزينة = 12¹، والغروس = 12², '
+              'والغروس الكبير = 12³. كتابةً بالأساس اثني عشر تكون هذه الأرقام '
+              'بسلاسة 10 و100 و1000 — فالغروس الكبير هو إذن «الألف الدازيني».\n\n'
+              'لماذا ينقسم الاثنا عشر بهذه السهولة، وكيف تعدّ حتى اثني عشر على '
+              'السُّلاميات الثلاث للأصابع الأربعة — هذا مغطّى في '
+              'النظرية → أساسيات. هنا نتناول وحدات العدّ نفسها.',
+        ),
+        UnitTheorySection(
+          'من أين جاءت الأسماء',
+          '«دزينة» جاءت عبر الفرنسية القديمة douzaine من اللاتينية duodecim، '
+              '«اثنان وعشرة»؛ والكلمة تعني اثني عشر بالضبط، لا تقريبًا. '
+              'والإسبانية docena والإيطالية dozzina والإنجليزية dozen كلها صلات '
+              'بالجذر نفسه.\n\n'
+              '«غروس» مشتق من grosse douzaine، أي «الدزينة الكبيرة»، '
+              'وهو موثّق منذ أوائل القرن الخامس عشر. في البيع بالجملة كانت '
+              'البضائع الصغيرة — أقلام الرصاص والأزرار والإبر — تُعدّ وتُرزّم '
+              'بالغروس؛ وبعض علب الأقلام تحمل حتى اليوم عبارة «1 gross». '
+              'والغروس الكبير (1728) هو دزينة الغروسات — وبالمصادفة أيضًا عدد '
+              'البوصات المكعبة في قدم مكعبة (12 × 12 × 12). '
+              'والبيض يُباع بالدزينة حتى اليوم.',
+        ),
+        UnitTheorySection(
+          'دزينة الخبّاز',
+          'دزينة الخبّاز ثلاثة عشر — واحد أكثر من الدزينة العادية؛ ويُسمّى '
+              'الرغيف الثالث عشر «vantage loaf». يستشهد التفسير الشائع '
+              'بقانون الخبز الإنجليزي في العصور الوسطى (Assize of Bread، '
+              'القرن الثالث عشر): كان بيع الخبز ناقص الوزن يستوجب عقوبة، فكان '
+              'الخبّاز يضيف رغيفًا احتياطًا.\n\n'
+              'ويلزم هنا تحفّظ صادق: هذا الاشتقاق معقول ومتداول على نطاق واسع، '
+              'لكنه غير مثبت بالوثائق. أقدم الشواهد الكتابية لعبارة «baker’s dozen» '
+              'الإنجليزية لا تعود إلا إلى أواخر القرن السادس عشر — بعد القانون '
+              'بأمد طويل.',
+        ),
+      ];
     case UnitCategory.dist:
       return const [
         UnitTheorySection(
@@ -675,6 +716,16 @@ List<UnitTheorySection> _unitTheoryAr(UnitCategory cat) {
 // docs/research/unit_<area>.md. The complete tiered lists live there.
 List<Source> _unitSourcesAr(UnitCategory cat) {
   switch (cat) {
+    case UnitCategory.count:
+      return [
+        Source('Dozen — Wikipedia', 'https://en.wikipedia.org/wiki/Dozen', 'R2', 'A1'),
+        Source('Gross (unit) — Wikipedia', 'https://en.wikipedia.org/wiki/Gross_(unit)', 'R2', 'A1'),
+        Source('Great gross — Wikipedia', 'https://en.wikipedia.org/wiki/Great_gross', 'R2', 'A1'),
+        Source('Baker’s dozen — Wikipedia', 'https://en.wikipedia.org/wiki/Baker%27s_dozen', 'R2', 'A1'),
+        Source('Assize of Bread and Ale — Wikipedia', 'https://en.wikipedia.org/wiki/Assize_of_Bread_and_Ale', 'R2', 'A1'),
+        Source('dozen — Online Etymology Dictionary', 'https://www.etymonline.com/word/dozen', 'R2', 'A1'),
+        Source('gross — Online Etymology Dictionary', 'https://www.etymonline.com/word/gross', 'R2', 'A1'),
+      ];
     case UnitCategory.dist:
       return [
         Source('Measurement — MacTutor History of Mathematics', 'https://mathshistory.st-andrews.ac.uk/HistTopics/Measurement/', 'R1', 'A1'),

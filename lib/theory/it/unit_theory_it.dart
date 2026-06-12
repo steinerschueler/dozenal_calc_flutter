@@ -7,6 +7,47 @@ part of '../unit_theory.dart';
 
 List<UnitTheorySection> _unitTheoryIt(UnitCategory cat) {
   switch (cat) {
+    case UnitCategory.count:
+      return const [
+        UnitTheorySection(
+          'Contare per dozzine',
+          'I pezzi si possono raggruppare per dieci — o per dodici. Una dozzina è '
+              'dodici pezzi, una grossa è dodici dozzine (144), una grande grossa è dodici '
+              'grosse (1728). È la stessa scala di unità, decine, centinaia e migliaia, '
+              'solo in base dodici: dozzina = 12¹, grossa = 12², grande grossa = 12³. '
+              'Scritti in base dodici vengono un tondo 10, 100 e 1000 — '
+              'la grande grossa è dunque il «migliaio dozenale».\n\n'
+              'Perché il dodici si lasci dividere in modo così comodo, e come si '
+              'conti fino a dodici sulle tre falangi delle quattro dita, è trattato in '
+              'Teoria → Fondamenti. Qui si parla delle unità di conteggio stesse.',
+        ),
+        UnitTheorySection(
+          'Da dove vengono i nomi',
+          '«Dozzina» giunge attraverso il francese antico douzaine dal latino '
+              'duodecim, «due-e-dieci»; la parola significa esattamente dodici, non '
+              'approssimativamente. Imparentati sono lo spagnolo docena, '
+              'l\'italiano dozzina e l\'inglese dozen.\n\n'
+              '«Grossa» deriva dalla grosse douzaine, la «grande dozzina», ed è '
+              'attestata dall\'inizio del XV secolo. Nel commercio all\'ingrosso si '
+              'contavano e imballavano piccole merci — matite, bottoni, aghi — a grosse; '
+              'alcune scatole di matite portano ancora oggi la scritta «1 grossa». '
+              'La grande grossa (1728) è la dozzina di grosse — ed è anche, per '
+              'coincidenza, il numero di pollici cubi in un piede cubo '
+              '(12 × 12 × 12). Le uova si vendono ancora oggi a dozzine.',
+        ),
+        UnitTheorySection(
+          'La dozzina del fornaio',
+          'Una dozzina del fornaio è tredici — uno in più di una dozzina comune; '
+              'il tredicesimo pane si chiama «vantage loaf». La spiegazione più '
+              'diffusa rimanda alla legge medievale inglese sul pane (Assize of Bread, '
+              'XIII secolo): chi vendeva pane sottopeso rischiava sanzioni, così il '
+              'fornaio aggiungeva un pane per sicurezza.\n\n'
+              'Va aggiunta un\'onesta riserva: questa derivazione è plausibile e '
+              'ampiamente ripetuta, ma non documentata nelle fonti. Le prime '
+              'testimonianze scritte per l\'inglese «baker’s dozen» risalgono solo alla '
+              'fine del XVI secolo — molto tempo dopo la legge.',
+        ),
+      ];
     case UnitCategory.dist:
       return const [
         UnitTheorySection(
@@ -760,6 +801,16 @@ List<UnitTheorySection> _unitTheoryIt(UnitCategory cat) {
 // docs/research/unit_<area>.md. The complete tiered lists live there.
 List<Source> _unitSourcesIt(UnitCategory cat) {
   switch (cat) {
+    case UnitCategory.count:
+      return [
+        Source('Dozen — Wikipedia', 'https://en.wikipedia.org/wiki/Dozen', 'R2', 'A1'),
+        Source('Gross (unit) — Wikipedia', 'https://en.wikipedia.org/wiki/Gross_(unit)', 'R2', 'A1'),
+        Source('Great gross — Wikipedia', 'https://en.wikipedia.org/wiki/Great_gross', 'R2', 'A1'),
+        Source('Baker’s dozen — Wikipedia', 'https://en.wikipedia.org/wiki/Baker%27s_dozen', 'R2', 'A1'),
+        Source('Assize of Bread and Ale — Wikipedia', 'https://en.wikipedia.org/wiki/Assize_of_Bread_and_Ale', 'R2', 'A1'),
+        Source('dozen — Online Etymology Dictionary', 'https://www.etymonline.com/word/dozen', 'R2', 'A1'),
+        Source('gross — Online Etymology Dictionary', 'https://www.etymonline.com/word/gross', 'R2', 'A1'),
+      ];
     case UnitCategory.dist:
       return [
         Source('Measurement — MacTutor History of Mathematics', 'https://mathshistory.st-andrews.ac.uk/HistTopics/Measurement/', 'R1', 'A1'),

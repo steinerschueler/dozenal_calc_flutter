@@ -2,6 +2,46 @@ part of '../unit_theory.dart';
 
 List<UnitTheorySection> _unitTheoryFa(UnitCategory cat) {
   switch (cat) {
+    case UnitCategory.count:
+      return const [
+        UnitTheorySection(
+          'انباشتن به دوازده‌تایی',
+          'می‌توان شمارگان را به ده‌تایی دسته کرد — یا به دوازده‌تایی. یک دوجین '
+              'دوازده عدد است، یک گروس دوازده دوجین (144)، یک گروسِ بزرگ دوازده '
+              'گروس (1728). این همان پلکانِ یکی، ده، صد، هزار است، تنها در پایهٔ '
+              'دوازده: دوجین = 12¹، گروس = 12²، گروسِ بزرگ = 12³. در پایهٔ دوازده '
+              'نوشته‌شده، اینها به‌ترتیب 10، 100 و 1000 هموار می‌شوند — پس گروسِ '
+              'بزرگ همان «هزارِ دوازده‌ای» است.\n\n'
+              'این‌که چرا دوازده چنین آسان بخش می‌شود، و چگونه می‌توان روی سه بند '
+              'چهار انگشت تا دوازده شمرد، در نظریه → مبانی آمده است. '
+              'اینجا خودِ واحدهای شمارش بررسی می‌شوند.',
+        ),
+        UnitTheorySection(
+          'ریشهٔ نام‌ها',
+          '«دوجین» از راه فرانسهٔ کهن douzaine از لاتین duodecim آمده است، '
+              '«دو-و-ده»؛ این واژه دقیقاً دوازده معنا می‌دهد، نه تقریباً. '
+              'اسپانیایی docena، ایتالیایی dozzina و انگلیسی dozen '
+              'همه با آن خویشاوندند.\n\n'
+              '«گروس» از grosse douzaine، «دوجینِ بزرگ»، می‌آید و از اوایل سدهٔ '
+              'پانزدهم گواهی شده است. در خرده‌فروشی عمده، کالاهای ریز — مداد، '
+              'دکمه، سوزن — گروسی شمرده و بسته‌بندی می‌شدند؛ برخی جعبه‌های مداد '
+              'تا امروز «1 gross» می‌نویسند. گروسِ بزرگ (1728) دوازده گروس است — '
+              'و تصادفاً همان شمار اینچ مکعب در یک فوت مکعب نیز هست '
+              '(12 × 12 × 12). تخم‌مرغ تا امروز دوجینی فروخته می‌شود.',
+        ),
+        UnitTheorySection(
+          'دوجینِ نانوا',
+          'یک دوجینِ نانوا سیزده عدد است — یکی بیشتر از دوجین معمول؛ به '
+              'سیزدهمین قرص نان «vantage loaf» می‌گویند. توضیح رایج به قانون '
+              'نانِ انگلستان در قرون وسطی اشاره دارد (Assize of Bread، '
+              'سدهٔ سیزدهم): فروش نانِ زیر وزن جریمه داشت، پس نانوا '
+              'برای احتیاط یک قرص اضافه می‌گذاشت.\n\n'
+              'یک تردید صادقانه هم باید گفت: این ریشه‌شناسی محتمل و پرتکرار است، '
+              'اما در اسناد تاریخی ثبت نشده. کهن‌ترین مدارک نوشتاری برای '
+              'واژهٔ انگلیسی «baker’s dozen» تنها از اواخر سدهٔ شانزدهم است — '
+              'مدت‌ها پس از آن فرمان.',
+        ),
+      ];
     case UnitCategory.dist:
       return const [
         UnitTheorySection(
@@ -676,6 +716,16 @@ List<UnitTheorySection> _unitTheoryFa(UnitCategory cat) {
 // docs/research/unit_<area>.md. The complete tiered lists live there.
 List<Source> _unitSourcesFa(UnitCategory cat) {
   switch (cat) {
+    case UnitCategory.count:
+      return [
+        Source('Dozen — Wikipedia', 'https://en.wikipedia.org/wiki/Dozen', 'R2', 'A1'),
+        Source('Gross (unit) — Wikipedia', 'https://en.wikipedia.org/wiki/Gross_(unit)', 'R2', 'A1'),
+        Source('Great gross — Wikipedia', 'https://en.wikipedia.org/wiki/Great_gross', 'R2', 'A1'),
+        Source('Baker’s dozen — Wikipedia', 'https://en.wikipedia.org/wiki/Baker%27s_dozen', 'R2', 'A1'),
+        Source('Assize of Bread and Ale — Wikipedia', 'https://en.wikipedia.org/wiki/Assize_of_Bread_and_Ale', 'R2', 'A1'),
+        Source('dozen — Online Etymology Dictionary', 'https://www.etymonline.com/word/dozen', 'R2', 'A1'),
+        Source('gross — Online Etymology Dictionary', 'https://www.etymonline.com/word/gross', 'R2', 'A1'),
+      ];
     case UnitCategory.dist:
       return [
         Source('Measurement — MacTutor History of Mathematics', 'https://mathshistory.st-andrews.ac.uk/HistTopics/Measurement/', 'R1', 'A1'),

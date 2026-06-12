@@ -8,6 +8,49 @@ part of '../unit_theory.dart';
 
 List<UnitTheorySection> _unitTheoryEs(UnitCategory cat) {
   switch (cat) {
+    case UnitCategory.count:
+      return const [
+        UnitTheorySection(
+          'Apilar en docenas',
+          'Se puede agrupar cantidades en decenas — o en docenas. Una docena son '
+              'doce unidades, una gruesa son doce docenas (144), una gruesa grande '
+              'son doce gruesas (1728). Es la misma escala que unidades, decenas, '
+              'centenas y millares, solo que en base doce: docena = 12¹, gruesa = '
+              '12², gruesa grande = 12³. Escritas en base doce salen como un limpio '
+              '10, 100 y 1000 — así que la gruesa grande es el «millar dozenal».\n\n'
+              'Por qué el doce se divide con tanta comodidad, y cómo se cuenta hasta '
+              'doce en las tres falanges de los cuatro dedos, está explicado en '
+              'Teoría → Fundamentos. Aquí nos ocupamos de las unidades de conteo '
+              'en sí.',
+        ),
+        UnitTheorySection(
+          'El origen de los nombres',
+          '«Docena» viene a través del francés antiguo douzaine del latín '
+              'duodecim, «dos-y-diez»; la palabra significa exactamente doce, no '
+              'aproximadamente. El español docena es en sí mismo un cognado — '
+              'también el italiano dozzina y el inglés dozen son parientes.\n\n'
+              '«Gruesa» viene de la grosse douzaine, la «docena grande», y está '
+              'documentada desde principios del siglo XV. En el comercio al por '
+              'mayor se contaban y empaquetaban artículos pequeños — lápices, '
+              'botones, agujas — por gruesas; algunas cajas de lápices aún llevan '
+              'hoy la indicación «1 gross». La gruesa grande (1728) es la docena de '
+              'gruesas — y casualmente también el número de pulgadas cúbicas en un '
+              'pie cúbico (12 × 12 × 12). Los huevos se siguen vendiendo hoy por '
+              'docenas.',
+        ),
+        UnitTheorySection(
+          'La docena del panadero',
+          'Una docena del panadero son trece — uno más que una docena corriente; '
+              'el decimotercer pan se llama «vantage loaf». La explicación habitual '
+              'apunta a la ley medieval inglesa del pan (Assize of Bread, siglo '
+              'XIII): vender pan con peso insuficiente acarreaba sanciones, así que '
+              'el panadero añadía un pan de más por precaución.\n\n'
+              'Una reserva honesta viene al caso: esta derivación es plausible y '
+              'muy repetida, pero no está documentada en los registros. Los '
+              'testimonios escritos más antiguos del «baker’s dozen» inglés datan '
+              'solo de finales del siglo XVI — mucho después de la ley.',
+        ),
+      ];
     case UnitCategory.dist:
       return const [
         UnitTheorySection(
@@ -761,6 +804,16 @@ List<UnitTheorySection> _unitTheoryEs(UnitCategory cat) {
 // docs/research/unit_<area>.md. The complete tiered lists live there.
 List<Source> _unitSourcesEs(UnitCategory cat) {
   switch (cat) {
+    case UnitCategory.count:
+      return [
+        Source('Dozen — Wikipedia', 'https://en.wikipedia.org/wiki/Dozen', 'R2', 'A1'),
+        Source('Gross (unit) — Wikipedia', 'https://en.wikipedia.org/wiki/Gross_(unit)', 'R2', 'A1'),
+        Source('Great gross — Wikipedia', 'https://en.wikipedia.org/wiki/Great_gross', 'R2', 'A1'),
+        Source('Baker’s dozen — Wikipedia', 'https://en.wikipedia.org/wiki/Baker%27s_dozen', 'R2', 'A1'),
+        Source('Assize of Bread and Ale — Wikipedia', 'https://en.wikipedia.org/wiki/Assize_of_Bread_and_Ale', 'R2', 'A1'),
+        Source('dozen — Online Etymology Dictionary', 'https://www.etymonline.com/word/dozen', 'R2', 'A1'),
+        Source('gross — Online Etymology Dictionary', 'https://www.etymonline.com/word/gross', 'R2', 'A1'),
+      ];
     case UnitCategory.dist:
       return [
         Source('Measurement — MacTutor History of Mathematics', 'https://mathshistory.st-andrews.ac.uk/HistTopics/Measurement/', 'R1', 'A1'),

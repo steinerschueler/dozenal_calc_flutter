@@ -7,6 +7,48 @@ part of '../unit_theory.dart';
 
 List<UnitTheorySection> _unitTheoryEn(UnitCategory cat) {
   switch (cat) {
+    case UnitCategory.count:
+      return const [
+        UnitTheorySection(
+          'Stacking in Twelves',
+          'You can bundle counts in tens — or in twelves. A dozen is twelve '
+              'items, a gross is twelve dozen (144), a great gross is twelve '
+              'gross (1728). This is the same ladder as ones, tens, hundreds '
+              'and thousands, only in base twelve: dozen = 12¹, gross = 12², '
+              'great gross = 12³. Written in base twelve these come out as a '
+              'clean 10, 100 and 1000 — so the great gross is the “dozenal '
+              'thousand”.\n\n'
+              'Why twelve divides so conveniently, and how you count to twelve '
+              'on the three joints of the four fingers, is covered in '
+              'Theory → Basics. Here we look at the counting units themselves.',
+        ),
+        UnitTheorySection(
+          'Where the Names Come From',
+          '“Dozen” comes through Old French douzaine from the Latin duodecim, '
+              '“two-and-ten”; the word means exactly twelve, not roughly. The '
+              'Spanish docena, the Italian dozzina and the English dozen are '
+              'all related.\n\n'
+              '“Gross” comes from the grosse douzaine, the “great dozen”, and '
+              'is attested from the early 15th century. In wholesale, small '
+              'goods — pencils, buttons, needles — were counted and packed by '
+              'the gross; some boxes of pencils still read “1 gross” today. '
+              'The great gross (1728) is the dozen gross — and, as it happens, '
+              'also the number of cubic inches in a cubic foot (12 × 12 × 12). '
+              'Eggs are still sold by the dozen today.',
+        ),
+        UnitTheorySection(
+          'The Baker’s Dozen',
+          'A baker’s dozen is thirteen — one more than an ordinary dozen; the '
+              'thirteenth loaf is called the “vantage loaf”. The common '
+              'explanation points to the medieval English bread law (the '
+              'Assize of Bread, 13th century): selling underweight bread '
+              'risked penalties, so the baker added one loaf to be safe.\n\n'
+              'An honest caveat belongs here: this derivation is plausible and '
+              'widely repeated, but not documented in the records. The earliest '
+              'written evidence for the English “baker’s dozen” dates only from '
+              'the late 16th century — long after the law.',
+        ),
+      ];
     case UnitCategory.dist:
       return const [
         UnitTheorySection(
@@ -761,6 +803,16 @@ List<UnitTheorySection> _unitTheoryEn(UnitCategory cat) {
 // docs/research/unit_<area>.md. The complete tiered lists live there.
 List<Source> _unitSourcesEn(UnitCategory cat) {
   switch (cat) {
+    case UnitCategory.count:
+      return [
+        Source('Dozen — Wikipedia', 'https://en.wikipedia.org/wiki/Dozen', 'R2', 'A1'),
+        Source('Gross (unit) — Wikipedia', 'https://en.wikipedia.org/wiki/Gross_(unit)', 'R2', 'A1'),
+        Source('Great gross — Wikipedia', 'https://en.wikipedia.org/wiki/Great_gross', 'R2', 'A1'),
+        Source('Baker’s dozen — Wikipedia', 'https://en.wikipedia.org/wiki/Baker%27s_dozen', 'R2', 'A1'),
+        Source('Assize of Bread and Ale — Wikipedia', 'https://en.wikipedia.org/wiki/Assize_of_Bread_and_Ale', 'R2', 'A1'),
+        Source('dozen — Online Etymology Dictionary', 'https://www.etymonline.com/word/dozen', 'R2', 'A1'),
+        Source('gross — Online Etymology Dictionary', 'https://www.etymonline.com/word/gross', 'R2', 'A1'),
+      ];
     case UnitCategory.dist:
       return [
         Source('Measurement — MacTutor History of Mathematics', 'https://mathshistory.st-andrews.ac.uk/HistTopics/Measurement/', 'R1', 'A1'),

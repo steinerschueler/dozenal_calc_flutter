@@ -2,6 +2,45 @@ part of '../unit_theory.dart';
 
 List<UnitTheorySection> _unitTheoryJa(UnitCategory cat) {
   switch (cat) {
+    case UnitCategory.count:
+      return const [
+        UnitTheorySection(
+          '十二を積み重ねる',
+          '個数は十でまとめることもできるし、十二でまとめることもできる。一ダース'
+              'は十二個、一グロスは十二ダース（144）、一グレートグロスは十二グロス'
+              '（1728）だ。これは一・十・百・千と同じ階段で、ただし十二進でのものだ。'
+              'ダース = 12¹、グロス = 12²、グレートグロス = 12³。十二進で書けば、'
+              'きれいに10、100、1000になる——だからグレートグロスは「十二進の千」'
+              'なのである。\n\n'
+              'なぜ十二がこれほど便利に割り切れるのか、そして四本の指の三つの関節で'
+              'どうやって十二まで数えるのかは、理論 → 基礎で扱っている。ここでは'
+              '数え方の単位そのものを見ていく。',
+        ),
+        UnitTheorySection(
+          '名前の由来',
+          '「ダース」は古フランス語の douzaine を経てラテン語の duodecim、'
+              '「二と十」から来ている。この語はおよそではなく、きっかり十二を意味する。'
+              'スペイン語の docena、イタリア語の dozzina、英語の dozen はいずれも'
+              '同じ仲間だ。\n\n'
+              '「グロス」は grosse douzaine、「大きなダース」から来ており、15世紀'
+              '初頭から用例がある。卸売りでは、鉛筆・ボタン・針などの小物をグロス'
+              '単位で数えて梱包した。今日でも一部の鉛筆箱には「1 gross」と書かれて'
+              'いる。グレートグロス（1728）は一ダース分のグロスであり——偶然にも——'
+              '一立方フィートの立方インチの数でもある（12 × 12 × 12）。卵は'
+              '今日までダース単位で売られている。',
+        ),
+        UnitTheorySection(
+          'ベイカーズ・ダズン',
+          'ベイカーズ・ダズン（baker’s dozen）とは十三のことで、ふつうのダースより'
+              'も一つ多い。十三枚目のパンは「vantage loaf」と呼ばれる。よく知られた'
+              '説明は中世イングランドのパン規制法（Assize of Bread、13世紀）を指す。'
+              '軽量のパンを売れば罰則を受ける恐れがあったため、パン屋は用心のために'
+              '一つ余分に加えた、というのだ。\n\n'
+              '率直な留保も添えておく。この由来はもっともらしく広く語られているが、'
+              '記録には残っていない。英語の「baker’s dozen」の最初の文書による用例は'
+              '16世紀後半にしか遡れない——その法律よりもずっとあとのことである。',
+        ),
+      ];
     case UnitCategory.dist:
       return const [
         UnitTheorySection(
@@ -658,6 +697,16 @@ List<UnitTheorySection> _unitTheoryJa(UnitCategory cat) {
 
 List<Source> _unitSourcesJa(UnitCategory cat) {
   switch (cat) {
+    case UnitCategory.count:
+      return [
+        Source('Dozen — Wikipedia', 'https://en.wikipedia.org/wiki/Dozen', 'R2', 'A1'),
+        Source('Gross (unit) — Wikipedia', 'https://en.wikipedia.org/wiki/Gross_(unit)', 'R2', 'A1'),
+        Source('Great gross — Wikipedia', 'https://en.wikipedia.org/wiki/Great_gross', 'R2', 'A1'),
+        Source('Baker’s dozen — Wikipedia', 'https://en.wikipedia.org/wiki/Baker%27s_dozen', 'R2', 'A1'),
+        Source('Assize of Bread and Ale — Wikipedia', 'https://en.wikipedia.org/wiki/Assize_of_Bread_and_Ale', 'R2', 'A1'),
+        Source('dozen — Online Etymology Dictionary', 'https://www.etymonline.com/word/dozen', 'R2', 'A1'),
+        Source('gross — Online Etymology Dictionary', 'https://www.etymonline.com/word/gross', 'R2', 'A1'),
+      ];
     case UnitCategory.dist:
       return [
         Source('Measurement — MacTutor History of Mathematics', 'https://mathshistory.st-andrews.ac.uk/HistTopics/Measurement/', 'R1', 'A1'),

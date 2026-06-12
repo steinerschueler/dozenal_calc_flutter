@@ -2,6 +2,49 @@ part of '../unit_theory.dart';
 
 List<UnitTheorySection> _unitTheoryGa(UnitCategory cat) {
   switch (cat) {
+    case UnitCategory.count:
+      return const [
+        UnitTheorySection(
+          'Cruachadh ina nDosaenacha',
+          'Is féidir stácaí a bhunú ina ndeicheanna — nó ina ndosaenacha. Is dhá '
+              'rud dhéag dosaen, is dhá dhosaen dhéag grós (144), is dhá ghrós dhéag '
+              'an grós mór (1728). Is í an céim chéanna í sin le haonaid, deicheanna, '
+              'céadanna agus mílte, ach i mbonn a dó dhéag: dosaen = 12¹, grós = 12², '
+              'grós mór = 12³. Scríofa i mbonn a dó dhéag is 10, 100 agus 1000 '
+              'cothrom iad sin — is é an grós mór mar sin an „míle duaisíneach".\n\n'
+              'Cén fáth a roinneann an dó dhéag chomh compordach sin, agus conas a '
+              'comhairtear go dtí a dó dhéag ar na trí alt de na ceithre mhéar, tá '
+              'sé sin clúdaithe in Teoiric → Buneolas. Anseo féachaimid ar na '
+              'haonaid chomhairimh féin.',
+        ),
+        UnitTheorySection(
+          'Cad as a dTagann na hAinmneacha',
+          'Tagann „dosaen" tríd an bhFraincis ársa douzaine ón Laidin duodecim, '
+              '„dhó is a deich"; ciallaíonn an focal dhá cheann dhéag go díreach, ní '
+              'go garbh. Tá an Spáinnis docena, an Iodáilis dozzina agus an Béarla '
+              'dozen gaolmhar leis.\n\n'
+              'Tagann „grós" ón grosse douzaine, an „dosaen mór", agus tá sé doiciméadaithe '
+              'ón luath-15ú haois. Sa mhórdhíol comhairtí agus pacáilí earraí beaga '
+              '— peansail, cnaipí, snáthaidí — ina ngróstaí; léann cuid de bhoscaí '
+              'peansail „1 grós" go fóill inniu. Is é an grós mór (1728) an dosaen '
+              'gróstaí — agus is é freisin, mar a tharlaíonn sé, líon na n-orlach '
+              'ciúbach i dtroigh chiúbach (12 × 12 × 12). Díoltar uibheacha ina '
+              'ndosaenacha go fóill inniu.',
+        ),
+        UnitTheorySection(
+          'Dosaen an Bháicéara',
+          'Is trí cinn déag dosaen an bháicéara — ceann amháin níos mó ná gnáthdosaen; '
+              'tugtar „vantage loaf" (builín buntáiste) ar an tríú builín déag. '
+              'Díríonn an míniúchán coitianta ar dhlí aráin meánaoiseach na Sasana '
+              '(Assize of Bread, 13ú haois): bhí pionóis i ndán don té a dhíol arán '
+              'faoi mheáchan, mar sin chuir an báicéir builín breise leis ar son '
+              'sábháilteachta.\n\n'
+              'Tá admháil ionraic ag baint leis: tá an sliocht seo sochreidte agus '
+              'forleathan, ach níl sé doiciméadaithe sna taifid. Ní thagann na '
+              'fianaise scríofa is luaithe don „baker’s dozen" sa Bhéarla ach ó '
+              'dheireadh an 16ú haois — i bhfad tar éis an dlí.',
+        ),
+      ];
     case UnitCategory.dist:
       return const [
         UnitTheorySection(
@@ -749,6 +792,16 @@ List<UnitTheorySection> _unitTheoryGa(UnitCategory cat) {
 // docs/research/unit_<area>.md. The complete tiered lists live there.
 List<Source> _unitSourcesGa(UnitCategory cat) {
   switch (cat) {
+    case UnitCategory.count:
+      return [
+        Source('Dozen — Wikipedia', 'https://en.wikipedia.org/wiki/Dozen', 'R2', 'A1'),
+        Source('Gross (unit) — Wikipedia', 'https://en.wikipedia.org/wiki/Gross_(unit)', 'R2', 'A1'),
+        Source('Great gross — Wikipedia', 'https://en.wikipedia.org/wiki/Great_gross', 'R2', 'A1'),
+        Source('Baker’s dozen — Wikipedia', 'https://en.wikipedia.org/wiki/Baker%27s_dozen', 'R2', 'A1'),
+        Source('Assize of Bread and Ale — Wikipedia', 'https://en.wikipedia.org/wiki/Assize_of_Bread_and_Ale', 'R2', 'A1'),
+        Source('dozen — Online Etymology Dictionary', 'https://www.etymonline.com/word/dozen', 'R2', 'A1'),
+        Source('gross — Online Etymology Dictionary', 'https://www.etymonline.com/word/gross', 'R2', 'A1'),
+      ];
     case UnitCategory.dist:
       return [
         Source('Measurement — MacTutor History of Mathematics', 'https://mathshistory.st-andrews.ac.uk/HistTopics/Measurement/', 'R1', 'A1'),

@@ -2,6 +2,46 @@ part of '../unit_theory.dart';
 
 List<UnitTheorySection> _unitTheoryHi(UnitCategory cat) {
   switch (cat) {
+    case UnitCategory.count:
+      return const [
+        UnitTheorySection(
+          'बारहों में ढेर लगाना',
+          'वस्तुओं को दहाइयों में बाँधा जा सकता है — या बारहों में। एक दर्जन बारह '
+              'वस्तुएँ होती हैं, एक ग्रोस बारह दर्जन (144), एक महा-ग्रोस बारह ग्रोस '
+              '(1728)। यह वही सीढ़ी है जो इकाई, दहाई, सौ और हज़ार की है, केवल आधार '
+              'बारह में: दर्जन = 12¹, ग्रोस = 12², महा-ग्रोस = 12³। आधार बारह में '
+              'लिखने पर ये चिकने 10, 100 और 1000 बनते हैं — इसलिए महा-ग्रोस ही '
+              '„डज़नल हज़ार" है।\n\n'
+              'बारह इतनी सुविधाजनक रूप से क्यों विभाजित होती है, और चार उँगलियों '
+              'के तीन पोरों पर बारह तक कैसे गिना जाता है — यह सिद्धांत → मूल बातें '
+              'में बताया गया है। यहाँ हम स्वयं गिनती-इकाइयों की बात करते हैं।',
+        ),
+        UnitTheorySection(
+          'नामों का उद्गम',
+          '„दर्जन" पुरानी फ्रांसीसी douzaine के रास्ते लैटिन duodecim से आता है, '
+              'जिसका अर्थ है „दो-और-दस"; यह शब्द ठीक बारह का अर्थ रखता है, लगभग '
+              'नहीं। स्पेनी docena, इतालवी dozzina और अंग्रेज़ी dozen सभी इससे '
+              'संबंधित हैं।\n\n'
+              '„ग्रोस" grosse douzaine, यानी „बड़े दर्जन" से आता है, और 15वीं सदी '
+              'के आरंभ से दर्ज है। थोक व्यापार में छोटी वस्तुएँ — पेंसिलें, बटन, '
+              'सुइयाँ — ग्रोस में गिनी और पैक की जाती थीं; कुछ पेंसिल-बक्सों पर '
+              'आज भी „1 gross" लिखा होता है। महा-ग्रोस (1728) बारह ग्रोस है — '
+              'और संयोगवश एक घनफुट में घनइंचों की संख्या भी (12 × 12 × 12)। '
+              'अंडे आज भी दर्जन में बेचे जाते हैं।',
+        ),
+        UnitTheorySection(
+          'बेकर का दर्जन',
+          'एक baker’s dozen तेरह होते हैं — सामान्य दर्जन से एक अधिक; तेरहवें '
+              'रोटी को „vantage loaf“ कहते हैं। प्रचलित व्याख्या मध्यकालीन '
+              'अंग्रेज़ी रोटी-कानून (Assize of Bread, 13वीं सदी) की ओर इशारा '
+              'करती है: कम वज़न की रोटी बेचने पर दंड का ख़तरा था, इसलिए बेकर '
+              'सुरक्षा के लिए एक रोटी और जोड़ देता था।\n\n'
+              'इसके साथ एक ईमानदार आपत्ति भी जोड़नी होगी: यह व्युत्पत्ति प्रशंसनीय '
+              'और व्यापक रूप से प्रचलित है, पर अभिलेखों में दर्ज नहीं है। अंग्रेज़ी '
+              '„baker’s dozen“ के सबसे पुराने लिखित प्रमाण 16वीं सदी के अंत से ही '
+              'मिलते हैं — उस कानून के बहुत बाद।',
+        ),
+      ];
     case UnitCategory.dist:
       return const [
         UnitTheorySection(
@@ -693,6 +733,16 @@ List<UnitTheorySection> _unitTheoryHi(UnitCategory cat) {
 // docs/research/unit_<area>.md. The complete tiered lists live there.
 List<Source> _unitSourcesHi(UnitCategory cat) {
   switch (cat) {
+    case UnitCategory.count:
+      return [
+        Source('Dozen — Wikipedia', 'https://en.wikipedia.org/wiki/Dozen', 'R2', 'A1'),
+        Source('Gross (unit) — Wikipedia', 'https://en.wikipedia.org/wiki/Gross_(unit)', 'R2', 'A1'),
+        Source('Great gross — Wikipedia', 'https://en.wikipedia.org/wiki/Great_gross', 'R2', 'A1'),
+        Source('Baker’s dozen — Wikipedia', 'https://en.wikipedia.org/wiki/Baker%27s_dozen', 'R2', 'A1'),
+        Source('Assize of Bread and Ale — Wikipedia', 'https://en.wikipedia.org/wiki/Assize_of_Bread_and_Ale', 'R2', 'A1'),
+        Source('dozen — Online Etymology Dictionary', 'https://www.etymonline.com/word/dozen', 'R2', 'A1'),
+        Source('gross — Online Etymology Dictionary', 'https://www.etymonline.com/word/gross', 'R2', 'A1'),
+      ];
     case UnitCategory.dist:
       return [
         Source('Measurement — MacTutor History of Mathematics', 'https://mathshistory.st-andrews.ac.uk/HistTopics/Measurement/', 'R1', 'A1'),

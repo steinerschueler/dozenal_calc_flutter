@@ -1,12 +1,57 @@
 // Rhyddiaith theori unedau yn Gymraeg. part of ../unit_theory.dart.
 // Cedwir y cyrff mewn brawddegau syml, byr (haws i\'w cyfieithu). Wedi\'i grynhoi
-// o ddogfennau ymchwil docs/research/. Nid oes cofnod ar gyfer `count` o fwriad
-// — mae stori\'r dwsin/deuddeg yn byw yn 12 pennod addysgu\'r ap.
+// o ddogfennau ymchwil docs/research/. Mae `count` yn ymdrin ag unedau cyfrif
+// (dwsin/gros/gros mawr/dwsin y pobydd); mae\'n ategu Theori → Hanfodion.
 
 part of '../unit_theory.dart';
 
 List<UnitTheorySection> _unitTheoryCy(UnitCategory cat) {
   switch (cat) {
+    case UnitCategory.count:
+      return const [
+        UnitTheorySection(
+          'Pentyrru mewn deuddegau',
+          'Gellir bwndelu cyfrifon mewn degau — neu mewn deuddegau. Mae dwsin '
+              'yn ddeuddeg o eitemau, gros yn ddeuddeg dwsin (144), a gros mawr '
+              'yn ddeuddeg gros (1728). Dyma\'r un ysgol â rhai, degau, cannoedd '
+              'a miloedd, ond ym môn deuddeg: dwsin = 12¹, gros = 12², gros '
+              'mawr = 12³. Wedi\'u hysgrifennu ym môn deuddeg maent yn dod allan '
+              'yn lân fel 10, 100 a 1000 — felly\'r gros mawr yw\'r „mil '
+              'ddeuddegol".\n\n'
+              'Mae\'r rheswm pam y mae deuddeg yn rhannu mor gyfleus, a sut y '
+              'cyfrifir at ddeuddeg ar dair cymal y pedwar bys, wedi\'i drafod yn '
+              'Damcaniaeth → Hanfodion. Yma edrychwn ar yr unedau cyfrif eu '
+              'hunain.',
+        ),
+        UnitTheorySection(
+          'O ble daeth yr enwau',
+          'Daw „dwsin" drwy\'r hen Ffrangeg douzaine o\'r Lladin duodecim, '
+              '„dau a deg"; mae\'r gair yn golygu union ddeuddeg, nid tua '
+              'deuddeg. Mae\'r Sbaeneg docena, yr Eidaleg dozzina a\'r Saesneg '
+              'dozen oll yn perthyn.\n\n'
+              'Daw „gros" o\'r grosse douzaine, y „dwsin mawr", ac fe\'i '
+              'tystiolir o ddechrau\'r 15fed ganrif. Yn y fasnach gyfanwerthu, '
+              'cyfrid a phaciwyd nwyddau mân — pensiliau, botymau, nodwyddau — '
+              'fesul gros; mae rhai bocsys pensiliau hyd heddiw yn darllen '
+              '„1 gros". Y gros mawr (1728) yw\'r dwsin o rosiau — ac, fel y '
+              'digwydd, hefyd nifer y modfeddi ciwbig mewn troedfedd giwbig '
+              '(12 × 12 × 12). Mae wyau\'n dal i\'w gwerthu fesul dwsin heddiw.',
+        ),
+        UnitTheorySection(
+          'Dwsin y pobydd',
+          'Mae dwsin y pobydd yn dri ar ddeg — un yn ychwaneg at ddwsin '
+              'cyffredin; gelwir y dorth ychwanegol yn „vantage loaf". Mae\'r '
+              'esboniad cyffredin yn cyfeirio at gyfraith bara canoloesol '
+              'Lloegr (yr Assize of Bread, 13eg ganrif): roedd gwerthu bara '
+              'rhy ysgafn yn peryglu cosbau, felly ychwanegai\'r pobydd un '
+              'dorth yn ychwaneg i fod ar yr ochr ddiogel.\n\n'
+              'Perthyn amheuaeth onest i hyn: mae\'r tarddiad hwn yn gredadwy '
+              'ac yn cael ei ailadrodd yn helaeth, ond nid yw\'n hysbys mewn '
+              'cofnodion. Nid yw\'r dystiolaeth ysgrifenedig gynharaf am y '
+              'Saesneg „baker’s dozen" ond o ddiwedd y 16eg ganrif — ymhell '
+              'ar ôl y gyfraith.',
+        ),
+      ];
     case UnitCategory.dist:
       return const [
         UnitTheorySection(
@@ -743,7 +788,7 @@ List<UnitTheorySection> _unitTheoryCy(UnitCategory cat) {
               'i\'w darllen yn ofalus.',
         ),
       ];
-    // Mae pob un o\'r wyth maes theori bellach ar gael yn Gymraeg.
+    // Mae pob un o\'r naw maes theori bellach ar gael yn Gymraeg.
     default:
       return const [];
   }
@@ -753,6 +798,16 @@ List<UnitTheorySection> _unitTheoryCy(UnitCategory cat) {
 // docs/research/unit_<area>.md. The complete tiered lists live there.
 List<Source> _unitSourcesCy(UnitCategory cat) {
   switch (cat) {
+    case UnitCategory.count:
+      return [
+        Source('Dozen — Wikipedia', 'https://en.wikipedia.org/wiki/Dozen', 'R2', 'A1'),
+        Source('Gross (unit) — Wikipedia', 'https://en.wikipedia.org/wiki/Gross_(unit)', 'R2', 'A1'),
+        Source('Great gross — Wikipedia', 'https://en.wikipedia.org/wiki/Great_gross', 'R2', 'A1'),
+        Source('Baker’s dozen — Wikipedia', 'https://en.wikipedia.org/wiki/Baker%27s_dozen', 'R2', 'A1'),
+        Source('Assize of Bread and Ale — Wikipedia', 'https://en.wikipedia.org/wiki/Assize_of_Bread_and_Ale', 'R2', 'A1'),
+        Source('dozen — Online Etymology Dictionary', 'https://www.etymonline.com/word/dozen', 'R2', 'A1'),
+        Source('gross — Online Etymology Dictionary', 'https://www.etymonline.com/word/gross', 'R2', 'A1'),
+      ];
     case UnitCategory.dist:
       return [
         Source('Measurement — MacTutor History of Mathematics', 'https://mathshistory.st-andrews.ac.uk/HistTopics/Measurement/', 'R1', 'A1'),

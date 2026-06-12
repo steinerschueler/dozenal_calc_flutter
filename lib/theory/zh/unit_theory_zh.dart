@@ -1,11 +1,44 @@
 // 中文（简体）单位理论文本。属于 ../unit_theory.dart。
 // 正文保持简短的句子（便于翻译）。从 docs/research/ 中的研究资料提炼而来。
-// `count` 故意没有条目——一打/十二的故事写在应用的 12 个教学章节里。
+// `count` 涵盖计数单位（打/罗/大罗/面包师的一打）；与理论 → 基础互补。
 
 part of '../unit_theory.dart';
 
 List<UnitTheorySection> _unitTheoryZh(UnitCategory cat) {
   switch (cat) {
+    case UnitCategory.count:
+      return const [
+        UnitTheorySection(
+          '以十二为单位的叠加',
+          '计数时可以把物品十个一捆——也可以十二个一捆。一打是十二件，'
+              '一罗是十二打（144），一大罗是十二罗（1728）。这和个、十、百、'
+              '千是同一套阶梯，只是改用十二进制：打 = 12¹，罗 = 12²，'
+              '大罗 = 12³。写成十二进制，这三个数恰好是整齐的 10、100 和 '
+              '1000——所以大罗就是"十二进制的千"。\n\n'
+              '十二为何如此方便整除，以及如何用四根手指的三个指节数到十二，'
+              '详见理论 → 基础。这里只讲计数单位本身。',
+        ),
+        UnitTheorySection(
+          '名称的来历',
+          '"打"对应的英语 dozen 经由古法语 douzaine 来自拉丁语 duodecim，'
+              '意为"二加十"；这个词指的就是整整十二，并非大约。西班牙语 docena、'
+              '意大利语 dozzina 和英语 dozen 都与它同源。\n\n'
+              '"罗"对应的英语 gross 来自 grosse douzaine，即"大的一打"，'
+              '最早见于 15 世纪初。批发商按罗来清点和包装小件货物——铅笔、纽扣、'
+              '针——有些铅笔盒上至今还印着"1 gross"。大罗（1728）是十二罗，'
+              '恰好也是一立方英尺里的立方英寸数（12 × 12 × 12）。鸡蛋至今仍按打出售。',
+        ),
+        UnitTheorySection(
+          '面包师的一打',
+          '面包师的一打（baker’s dozen）是十三个——比普通的一打多一个；'
+              '第十三个面包叫"vantage loaf"。通行的解释指向中世纪英格兰的'
+              '面包法令（Assize of Bread，13 世纪）：出售分量不足的面包会遭到'
+              '处罚，因此面包师多放一个以策安全。\n\n'
+              '这里有一个诚实的保留：这一说法合理且广为流传，但在文献中并无'
+              '直接记录。英语"baker’s dozen"最早的书面证据只能追溯到 16 世纪'
+              '末——远在那项法令之后。',
+        ),
+      ];
     case UnitCategory.dist:
       return const [
         UnitTheorySection(
@@ -757,6 +790,16 @@ List<UnitTheorySection> _unitTheoryZh(UnitCategory cat) {
 // docs/research/unit_<area>.md. The complete tiered lists live there.
 List<Source> _unitSourcesZh(UnitCategory cat) {
   switch (cat) {
+    case UnitCategory.count:
+      return [
+        Source('Dozen — Wikipedia', 'https://en.wikipedia.org/wiki/Dozen', 'R2', 'A1'),
+        Source('Gross (unit) — Wikipedia', 'https://en.wikipedia.org/wiki/Gross_(unit)', 'R2', 'A1'),
+        Source('Great gross — Wikipedia', 'https://en.wikipedia.org/wiki/Great_gross', 'R2', 'A1'),
+        Source('Baker’s dozen — Wikipedia', 'https://en.wikipedia.org/wiki/Baker%27s_dozen', 'R2', 'A1'),
+        Source('Assize of Bread and Ale — Wikipedia', 'https://en.wikipedia.org/wiki/Assize_of_Bread_and_Ale', 'R2', 'A1'),
+        Source('dozen — Online Etymology Dictionary', 'https://www.etymonline.com/word/dozen', 'R2', 'A1'),
+        Source('gross — Online Etymology Dictionary', 'https://www.etymonline.com/word/gross', 'R2', 'A1'),
+      ];
     case UnitCategory.dist:
       return [
         Source('Measurement — MacTutor History of Mathematics', 'https://mathshistory.st-andrews.ac.uk/HistTopics/Measurement/', 'R1', 'A1'),
