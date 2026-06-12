@@ -119,7 +119,7 @@ List<ManualChapter> _manualChaptersJa() => const [
     _H("角度モード"),
     _P(
       "DRG は三角関数の角度モードを切り替えます：DEG → RAD → "
-      "GRAD → DEG。現在のモードはディスプレイ右上、Doz/Dez 表示"
+      "GRD → DEG。現在のモードはディスプレイ右上、Doz/Dez 表示"
       "のすぐ上に表示されます。既定は DEG。",
     ),
   ]),
@@ -452,7 +452,7 @@ List<ManualChapter> _manualChaptersJa() => const [
       '四つの関数 sin、cos、tan、cot はメインキーパッドにあり、押すとすぐに'
       '括弧が開きます（内にカーソルがある sin(）。同じキーをもう一度タップすると'
       '逆関数に切り替わります — 金色の点が次のタップで逆転することを示します。'
-      'DRG キーは角度モードを変更します（DEG → RAD → GRAD）、右上に表示されます。'
+      'DRG キーは角度モードを変更します（DEG → RAD → GRD）、右上に表示されます。'
       '「シンプル」プロファイルでは設定から行います。',
     ),
     _P(

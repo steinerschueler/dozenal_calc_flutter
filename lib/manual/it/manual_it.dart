@@ -135,7 +135,7 @@ List<ManualChapter> _manualChaptersIt() => const [
     _H("Modalità angolo"),
     _P(
       "DRG cicla la modalità angolo per le funzioni "
-      "trigonometriche: DEG → RAD → GRAD → DEG. La modalità "
+      "trigonometriche: DEG → RAD → GRD → DEG. La modalità "
       "corrente è mostrata in alto a destra del display, "
       "direttamente sopra l'indicatore Doz/Dez. Predefinito: "
       "DEG.",
@@ -520,7 +520,7 @@ List<ManualChapter> _manualChaptersIt() => const [
       '(sin( con il cursore all\'interno). Un secondo tocco sullo stesso '
       'tasto passa alla funzione inversa — un punto dorato indica che il '
       'prossimo tocco invertirà. Il tasto DRG cambia la modalità angolo '
-      '(DEG → RAD → GRAD), mostrata in alto a destra; nel profilo '
+      '(DEG → RAD → GRD), mostrata in alto a destra; nel profilo '
       '"Semplice" si fa tramite Impostazioni.',
     ),
     _P(

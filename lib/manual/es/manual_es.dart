@@ -135,7 +135,7 @@ List<ManualChapter> _manualChaptersEs() => const [
     _H("Modo de ángulo"),
     _P(
       "DRG cicla el modo de ángulo para las funciones "
-      "trigonométricas: DEG → RAD → GRAD → DEG. El modo actual se "
+      "trigonométricas: DEG → RAD → GRD → DEG. El modo actual se "
       "muestra en la parte superior derecha de la pantalla, "
       "justo encima del indicador Doz/Dez. Predeterminado: DEG.",
     ),
@@ -514,7 +514,7 @@ List<ManualChapter> _manualChaptersEs() => const [
       'y abren un paréntesis en cuanto se pulsan (sin( con el cursor dentro). '
       'Un segundo toque en la misma tecla cambia a la función inversa — un '
       'punto dorado indica que el siguiente toque invertirá. La tecla DRG '
-      'cambia el modo de ángulo (DEG → RAD → GRAD), mostrado en la parte '
+      'cambia el modo de ángulo (DEG → RAD → GRD), mostrado en la parte '
       'superior derecha; en el perfil «Simple» esto se hace a través de '
       'los Ajustes.',
     ),

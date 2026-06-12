@@ -104,7 +104,7 @@ List<ManualChapter> _manualChaptersZh() => const [
     ),
     _H("角度模式"),
     _P(
-      "DRG 切换三角函数的角度模式：DEG → RAD → GRAD → DEG。当前"
+      "DRG 切换三角函数的角度模式：DEG → RAD → GRD → DEG。当前"
       "模式显示在显示屏右上角，正好在 Doz/Dez 指示器上方。默认："
       "DEG。",
     ),
@@ -410,7 +410,7 @@ List<ManualChapter> _manualChaptersZh() => const [
     _P(
       '四个函数 sin、cos、tan 和 cot 位于主键盘上，按下即打开括号'
       '（sin( 且光标在内）。再次点击同一键切换到反函数——金点表示下次'
-      '点击将反转。DRG 键切换角度模式（DEG → RAD → GRAD），显示在右上角；'
+      '点击将反转。DRG 键切换角度模式（DEG → RAD → GRD），显示在右上角；'
       '在"简洁"模式下通过设置操作。',
     ),
     _P(

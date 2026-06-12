@@ -134,7 +134,7 @@ List<ManualChapter> _manualChaptersCy() => const [
     _H("Modd ongl"),
     _P(
       "Mae DRG yn cylchu modd ongl y swyddogaethau trigonometrig: "
-      "DEG → RAD → GRAD → DEG. Dangosir y modd cyfredol yng nghornel "
+      "DEG → RAD → GRD → DEG. Dangosir y modd cyfredol yng nghornel "
       "dde uchaf y sgrin, yn union uwchben y dangosydd Doz/Dez. "
       "Diofyn yw DEG.",
     ),
@@ -505,7 +505,7 @@ List<ManualChapter> _manualChaptersCy() => const [
       "yn agor cromfach ar unwaith wrth eu pwyso (sin( â'r cyrchwr y tu "
       "mewn). Mae ail dap ar yr un fysell yn newid i'r swyddogaeth wrthdro — "
       "mae dot euraidd yn dangos y bydd y tap nesaf yn gwrthdroi. Mae'r "
-      "fysell DRG yn newid y modd ongl (DEG → RAD → GRAD), a ddangosir "
+      "fysell DRG yn newid y modd ongl (DEG → RAD → GRD), a ddangosir "
       "yn dde uchaf; yn y proffil 'Syml' gwneir hyn drwy'r Gosodiadau.",
     ),
     _P(

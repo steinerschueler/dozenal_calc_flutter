@@ -104,7 +104,7 @@ List<ManualChapter> _manualChaptersZhHant() => const [
     ),
     _H('角度模式'),
     _P(
-      'DRG 切換三角函式的角度模式：DEG → RAD → GRAD → DEG。當前'
+      'DRG 切換三角函式的角度模式：DEG → RAD → GRD → DEG。當前'
       '模式顯示在螢幕右上角，正好在 Doz/Dez 指示器上方。預設：'
       'DEG。',
     ),
@@ -428,7 +428,7 @@ List<ManualChapter> _manualChaptersZhHant() => const [
       '四個函式 sin、cos、tan 和 cot 位於主鍵盤上，按下即開啟括號'
       '（sin( 且游標在括號內）。再次按同一鍵切換到反函式 — 金點'
       '表示下一次按下將反轉。DRG 鍵切換角度模式（DEG → RAD →'
-      'GRAD），顯示在右上角；在「簡單」模式中，通過設定頁面操作。',
+      'GRD），顯示在右上角；在「簡單」模式中，通過設定頁面操作。',
     ),
     _P(
       '需注意一個十二進制陷阱：角度在當前數字系統中輸入。在十二進制'

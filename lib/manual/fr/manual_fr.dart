@@ -137,7 +137,7 @@ List<ManualChapter> _manualChaptersFr() => const [
     _H("Mode angle"),
     _P(
       "DRG cycle le mode angle pour les fonctions "
-      "trigonométriques : DEG → RAD → GRAD → DEG. Le mode actuel "
+      "trigonométriques : DEG → RAD → GRD → DEG. Le mode actuel "
       "s'affiche en haut à droite de l'écran, juste au-dessus de "
       "l'indicateur Doz/Dez. Par défaut : DEG.",
     ),
@@ -517,7 +517,7 @@ List<ManualChapter> _manualChaptersFr() => const [
       "principal et ouvrent une parenthèse dès qu'on les appuie (sin( avec le "
       "curseur à l'intérieur). Un second appui sur la même touche bascule vers la "
       "fonction inverse — un point doré indique que le prochain appui inversera. "
-      "La touche DRG change le mode angle (DEG → RAD → GRAD), affiché en haut à "
+      "La touche DRG change le mode angle (DEG → RAD → GRD), affiché en haut à "
       "droite ; dans le profil « Simple » cela se fait via les Réglages.",
     ),
     _P(

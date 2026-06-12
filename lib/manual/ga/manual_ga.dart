@@ -130,7 +130,7 @@ List<ManualChapter> _manualChaptersGa() => const [
     _H("Mód uillinne"),
     _P(
       "Athraíonn DRG mód na huillinne d'fheidhmeanna triantánaíochta: "
-      "DEG → RAD → GRAD → DEG. Taispeántar an mód reatha ag barr na "
+      "DEG → RAD → GRD → DEG. Taispeántar an mód reatha ag barr na "
       "láimhe deise den taispeáint, díreach os cionn an táscaire "
       "Doz/Dez. Réamhshocrú: DEG.",
     ),
@@ -522,7 +522,7 @@ List<ManualChapter> _manualChaptersGa() => const [
       'gcúrsóir istigh). Athraíonn an dara tapáil ar an eochair chéanna go '
       'dtí an fheidhm inbhéartach — léiríonn ponc órga go n-inbhéartóidh an '
       'chéad tapáil eile. Athraíonn an eochair DRG mód na huillinn '
-      '(DEG → RAD → GRAD), taispeánta ag barr na láimhe deise; sa phróifíl '
+      '(DEG → RAD → GRD), taispeánta ag barr na láimhe deise; sa phróifíl '
       '"Simplí" déantar é seo tríd na Socruithe.',
     ),
     _P(

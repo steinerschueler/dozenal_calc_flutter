@@ -127,7 +127,7 @@ List<ManualChapter> _manualChaptersEn() => const [
     _H('Angle mode'),
     _P(
       'DRG cycles the angle mode for trigonometric functions: '
-      'DEG → RAD → GRAD → DEG. The current mode is shown at the '
+      'DEG → RAD → GRD → DEG. The current mode is shown at the '
       'top right of the display, directly above the Doz/Dez '
       'indicator. Default is DEG.',
     ),
@@ -494,7 +494,7 @@ List<ManualChapter> _manualChaptersEn() => const [
       'a bracket as soon as you press them (sin( with the cursor inside). A '
       'second tap on the same key switches to the inverse function — a golden '
       'dot shows that the next tap will invert. The DRG key changes the angle '
-      'mode (DEG → RAD → GRAD), shown at the top right; in the "Simple" profile '
+      'mode (DEG → RAD → GRD), shown at the top right; in the "Simple" profile '
       'this is done via Settings.',
     ),
     _P(

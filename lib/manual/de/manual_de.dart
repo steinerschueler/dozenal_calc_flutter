@@ -129,7 +129,7 @@ List<ManualChapter> _manualChaptersDe() => const [
     _H('Winkelmodus'),
     _P(
       'DRG wechselt den Winkelmodus für trigonometrische Funktionen: '
-      'DEG → RAD → GRAD → DEG. Der aktuelle Modus steht oben rechts '
+      'DEG → RAD → GRD → DEG. Der aktuelle Modus steht oben rechts '
       'im Display, direkt über der Doz/Dez-Anzeige. Standard ist DEG.',
     ),
   ]),
@@ -502,7 +502,7 @@ List<ManualChapter> _manualChaptersDe() => const [
       'öffnen beim Druck gleich eine Klammer (sin( mit dem Cursor innen). Ein '
       'zweiter Tipp auf dieselbe Taste schaltet auf die Umkehrfunktion — ein '
       'goldener Punkt zeigt an, dass der nächste Tipp umkehrt. Die DRG-Taste '
-      'wechselt den Winkelmodus (DEG → RAD → GRAD), oben rechts angezeigt; im '
+      'wechselt den Winkelmodus (DEG → RAD → GRD), oben rechts angezeigt; im '
       'Profil „Einfach" geht das über die Einstellungen.',
     ),
     _P(
