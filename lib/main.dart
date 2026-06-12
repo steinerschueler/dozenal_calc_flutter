@@ -427,17 +427,6 @@ class _CalcScaffoldState extends State<_CalcScaffold> {
     super.dispose();
   }
 
-  /// Animate the pager to [page] (0 = main calculator, 1 = converter). Used
-  /// by the info-list converter entry; the swipe gesture itself is handled
-  /// by the PageView.
-  void _goToPage(int page) {
-    if (!_pageController.hasClients) return;
-    _pageController.animateToPage(
-      page,
-      duration: const Duration(milliseconds: 260),
-      curve: Curves.easeOutCubic,
-    );
-  }
 
   bool _isModeSelected(CalcToken token) {
     if (token is Doz) return _state.numeralSystem == NumeralSystem.doz;
@@ -572,17 +561,11 @@ class _CalcScaffoldState extends State<_CalcScaffold> {
 
   /// When handle_click sets `infoState` to InfoList, reset it locally and
   /// push the Info route. The Navigator drives all further list/detail/back
-  /// transitions; state.infoState stays Closed. The converterRequested flag
-  /// follows the same request/reset pattern: the info list's converter entry
-  /// pops itself and asks the pager to swipe over.
+  /// transitions; state.infoState stays Closed.
   void _onStateChanged() {
     if (_state.infoState is! InfoClosed) {
       _state.infoState = const InfoClosed();
       _openInfo();
-    }
-    if (_state.converterRequested) {
-      _state.converterRequested = false;
-      _goToPage(1);
     }
     // Mirror the global numeral system into the converter's digit base
     // (no-op on equal values, so ordinary keystrokes cost nothing).

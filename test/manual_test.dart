@@ -20,6 +20,40 @@ void main() {
     }
   });
 
+  test('converterManualChapters: six German chapters, full fallback', () {
+    // German is the authored reference; until translations land, every
+    // locale falls back to the complete German set (positional fallback).
+    final de = converterManualChapters('de');
+    expect(de.length, 6);
+    expect(de.first.title, 'Der zweite Rechner');
+    for (final tag in [
+      'en', 'fr', 'es', 'it', 'fa', 'ru', 'ga',
+      'hi', 'zh', 'zh-Hant', 'cy', 'ja', 'ar',
+    ]) {
+      final chapters = converterManualChapters(tag);
+      expect(chapters.length, de.length, reason: '$tag falls back to German');
+      expect(chapters.first.title, de.first.title);
+    }
+  });
+
+  testWidgets('the German converter-manual chapters render', (tester) async {
+    for (final chapter in converterManualChapters('de')) {
+      await tester.pumpWidget(
+        MaterialApp(
+          home: Scaffold(
+            body: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: chapter.body,
+              ),
+            ),
+          ),
+        ),
+      );
+      expect(tester.takeException(), isNull);
+    }
+  });
+
   testWidgets('each migrated language renders its own (not German) body', (
     tester,
   ) async {

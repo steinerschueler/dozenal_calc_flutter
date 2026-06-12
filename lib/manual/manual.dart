@@ -70,6 +70,22 @@ List<ManualChapter> _ownManualChapters(String langTag) {
   return _manualChaptersDe();
 }
 
+/// The unit-converter manual chapters in [langTag] — the second "Bedienung"
+/// section ("Bedienung des Einheitenrechners"). Same per-chapter German
+/// fallback as [manualChapters]: a language shows its own chapters as far
+/// as it has authored them (by position), the rest falls back to German.
+List<ManualChapter> converterManualChapters(String langTag) {
+  final de = _converterManualChaptersDe();
+  final own = _ownConverterManualChapters(langTag);
+  if (own.length >= de.length) return own;
+  return [...own, ...de.sublist(own.length)];
+}
+
+/// No translations authored yet — every language falls back to the German
+/// reference. Extend exactly like [_ownManualChapters] as translations land
+/// (e.g. `if (c.startsWith('en')) return _converterManualChaptersEn();`).
+List<ManualChapter> _ownConverterManualChapters(String langTag) => const [];
+
 // ---------------------------------------------------------------------------
 // Shared content helpers (heading / paragraph / monospace block), styled to
 // match the theory pages. Copied from the retired info_content.dart so the

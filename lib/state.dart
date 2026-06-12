@@ -90,16 +90,6 @@ class DozenalCalcState extends ChangeNotifier {
   NumeralSystem numeralSystem = NumeralSystem.doz;
   InfoState infoState = const InfoClosed();
 
-  /// UI request flag in the [infoState] style: the info list's converter
-  /// entry asks the calc scaffold to swipe over to the converter page. The
-  /// scaffold listener performs the page change and resets the flag.
-  bool converterRequested = false;
-
-  void requestConverter() {
-    converterRequested = true;
-    notifyListeners();
-  }
-
   /// Bridge to the unit converter (the CONV key): pulls the converter's
   /// current result. Injected by the calc scaffold; null when no converter
   /// is attached (standalone state in tests) — the key is then disabled.

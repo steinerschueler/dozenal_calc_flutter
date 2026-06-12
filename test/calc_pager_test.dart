@@ -135,22 +135,25 @@ void main() {
     ]);
   });
 
-  testWidgets('the info-list converter entry swipes the pager over',
-      (tester) async {
+  testWidgets('the info list carries both manuals; the converter nav entry '
+      'is gone', (tester) async {
     await bootApp(tester);
     await tester.tap(find.byTooltip('theory chapters'));
     await tester.pumpAndSettle();
 
-    await tester.tap(find.text('Units'));
-    await tester.pumpAndSettle();
-    await tester.tap(find.text('Unit converter'));
-    await tester.pumpAndSettle();
+    // Restructured list: two manual sections at the top, no "Unit
+    // converter" navigation entry anymore (swipe + page peek carry that).
+    expect(find.text('Using the main calculator'), findsOneWidget);
+    expect(find.text('Using the unit converter'), findsOneWidget);
+    expect(find.text('Unit converter'), findsNothing);
 
-    // The info route popped itself and the pager landed on the converter
-    // (the page-peek pulse may still show its labels — assert on the page,
-    // not on label text).
+    // The converter manual opens its chapters (German fallback in EN).
+    await tester.tap(find.text('Using the unit converter'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Der zweite Rechner'));
+    await tester.pumpAndSettle();
+    expect(find.text('Hin- und herwechseln'), findsOneWidget);
     expect(find.byType(InfoListPage), findsNothing);
-    expect(find.byType(ConverterDisplay), findsOneWidget);
   });
 
   testWidgets('page peek pulses on swipe, blocks nothing, and unmounts',

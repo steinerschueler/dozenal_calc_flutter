@@ -350,17 +350,28 @@ zehn `info_content_<lang>.dart`-Part-Dateien, eine pro Sprache, mit
 Lehr-Kapiteln als Prosa + custom-painted Illustrationen für die
 Geometrie-Kapitel.
 
-**Layout der Info-Liste** (`InfoListPage`):
-1. „Bedienung des Rechners" (`chapterTitle01`) — eigenständiger
-   Eintrag ganz oben: App-Hilfe, kein Theorie-Stoff.
-2. `_TheoryExpansion` — ausklappbarer Container (Default collapsed) zu
-   den Theorie-Blöcken (Zwölf und die Welt, Dozenale Mathematik,
-   Dozenale Gesellschaft); jeder Block führt zu seinen Kapiteln.
-3. `_RecommendationsExpansion` — ausklappbar, direkt unter „Theorie";
-   ein Kapitel pro Plattform mit Pros/Cons je Rechner (eigener
-   Abschnitt „Empfehlungen" unten).
-4. `_UnitsExpansion` — analoge Ausklapp-Struktur, bündelt
-   Einheitenrechner + Einheitentheorie.
+**Layout der Info-Liste** (`InfoListPage`) — seit dem Texte-Umbau:
+1. „Bedienung des Hauptrechners" (`chapterTitle01`) — Handbuch-
+   Expansion (`_ManualSectionExpansion`, parametrisiert statt
+   dupliziert): App-Hilfe, kein Theorie-Stoff.
+2. „Bedienung des Einheitenrechners" (`infoListConverterManual`) —
+   zweite Instanz derselben Expansion, gespeist aus
+   `converterManualChapters` (sechs Kapitel: Der zweite Rechner ·
+   Kategorie/Zahl/Einheit · met/imp+Farben · +/−-Terme ·
+   Skalar-Rechnen · Speicher/Konstanten/Brücke). Deutsch ist die
+   Referenz, die 13 Übersetzungen folgen kapitelweise (positionsweiser
+   Fallback wie beim Hauptrechner-Handbuch).
+3. `_TheoryExpansion` — ausklappbar zu den drei Theorie-Blöcken
+   (Zwölf und die Welt, Dozenale Mathematik, Dozenale Gesellschaft)
+   **plus „Einheitentheorie"** (`infoListConversionsEntry` →
+   `ConversionsPage`) als viertem Eintrag — dorthin gezogen, als die
+   frühere `_UnitsExpansion` aufgelöst wurde. Einen
+   Navigations-Eintrag „Einheitenrechner" gibt es nicht mehr (Swipe +
+   Page-Peek tragen den Zugang; der `requestConverter`-Pfad in
+   state/main ist entfernt).
+4. `_RecommendationsExpansion` — ausklappbar; ein Kapitel pro
+   Plattform mit Pros/Cons je Rechner (eigener Abschnitt
+   „Empfehlungen" unten).
 5. **Einstellungen-Eintrag** — pusht `SettingsPage`
    (`settings_page.dart`, eigener Abschnitt unten). Die früher hier
    liegenden Quick-Toggles (Glyphen-Stil, Haptik) sind dorthin gezogen.
@@ -551,11 +562,11 @@ custom-painted, deshalb läuft alles über eine **semantische Palette**:
 Vollständiger Umrechner, seit dem Pager-Umbau **Seite 2 eines horizontalen
 PageView** im `_CalcScaffold`: Links-Swipe auf dem Hauptrechner öffnet ihn,
 Rechts-Swipe führt zurück (Default beim Start ist immer der Hauptrechner).
-Zusätzlicher Zugang: der Eintrag „Einheitenrechner" in „Theorie und
-Weiteres" (`infoListConverterEntry` — poppt die Info-Route und setzt
-`DozenalCalcState.requestConverter()`, Request/Reset-Muster wie `infoState`;
-ohne `CalcStateScope`, z. B. in Standalone-Tests, fällt er auf die alte
-`ConverterPage`-Route zurück). Der einbettbare Inhalt ist `ConverterBody`
+Einen Listen-Eintrag als Zugang gibt es seit dem Texte-Umbau nicht mehr —
+Swipe + Page-Peek tragen die Entdeckbarkeit, das Kapitel „Der zweite
+Rechner" im Einheitenrechner-Handbuch erklärt den Wechsel
+(`requestConverter`/`converterRequested` wurden entfernt). Der
+einbettbare Inhalt ist `ConverterBody`
 (`converter_page.dart`); `ConverterPage` bleibt als Route-Wrapper für
 Tests/Preview mit eigenem, brückenlosem State. Im Pager besitzt
 `_CalcScaffoldState` den langlebigen `ConverterState` — Eingaben überleben

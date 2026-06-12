@@ -11,6 +11,7 @@
   "infoListConversionsEntry": "Einheitentheorie",
   "infoListConverterEntry": "Einheitenrechner",
   "pagerLabelMain": "Hauptrechner",
+  "infoListConverterManual": "Bedienung des Einheitenrechners",
   "converterEqualsHint": "mehrmals tippen: nächste Einheit",
   "unitCatCount": "Anzahl",
   "unitCatDist": "Länge",
@@ -75,7 +76,7 @@
       }
     }
   },
-  "chapterTitle01": "Bedienung des Rechners",
+  "chapterTitle01": "Bedienung des Hauptrechners",
   "chapterIllustrationTriangle": "Dreieck (jede 4. Ecke)",
   "chapterIllustrationSquare": "Quadrat (jede 3. Ecke)",
   "chapterIllustrationHexagon": "Sechseck (jede 2. Ecke)",

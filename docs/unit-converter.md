@@ -36,13 +36,12 @@ Seit dem Pager-Umbau ist der Umrechner **Seite 2 des Rechner-PageView**:
 zurück. Die früheren Rundtasten der Equals-Reihe ((i)-Info und
 Taschenrechner-Icon) sind den met/imp-System-Tasten gewichen: Info läuft
 über das (i) der Hauptrechner-Seite, zurück geht nur noch der Swipe. Beim
-App-Start zeigt das Display immer den Hauptrechner. Der Eintrag in
-`InfoListPage` bleibt als zweiter Zugang: er poppt die Info-Route und lässt
-den Pager hinüberwischen
-(`DozenalCalcState.requestConverter()`); ohne `CalcStateScope` —
-Standalone-Tests — pusht er wie früher die `ConverterPage`-Route. Der
-`ConverterState` lebt im Calc-Scaffold, Eingaben überleben also
-Seitenwechsel in beide Richtungen.
+App-Start zeigt das Display immer den Hauptrechner. Einen Listen-Eintrag als Zugang
+gibt es seit dem Texte-Umbau nicht mehr — Swipe + Page-Peek tragen die
+Entdeckbarkeit, und das Handbuch „Bedienung des Einheitenrechners"
+(sechs Kapitel, `converterManualChapters` in `lib/manual/`) erklärt
+Wechsel und Bedienung. Der `ConverterState` lebt im Calc-Scaffold,
+Eingaben überleben also Seitenwechsel in beide Richtungen.
 
 ### Resultat-Brücke (Ans ↔ CONV)
 
@@ -83,10 +82,10 @@ Set6    Set7     Set8 (Kategorien)   Set9 (Kategorien)
 
 - **Set 6 (STO/RCL/MC/ANS)** und **Set 7 (π/e/φ/√2)**: **alle verdrahtet** —
   ANS = Resultat-Brücke zum Hauptrechner (siehe §2); STO speichert den
-  Ergebniszeilen-Wert ins converter-lokale Register (überlebt AC), RCL und
-  die Konstanten fügen ihren Wert in ein leeres Skalar-Segment ein
-  (Segment-Regel, siehe §4a). Nur Drg bleibt inert (keine
-  Winkelfunktionen).
+  Ergebniszeilen-Wert — ohne Terme die getippte Eingabe — ins
+  converter-lokale Register (überlebt AC), RCL und die Konstanten
+  ERSETZEN das Skalar-Segment am Caret durch ihren Wert (nie Splicing in
+  halbgetippte Zahlen). Nur Drg bleibt inert (keine Winkelfunktionen).
 - **Set 2 (⊕/xⁿ/ⁿ√/log)**: verdrahtet als Skalar-Entry-Operatoren
   (siehe §4a).
 - **Set 10:** Doz/Dez sind **entfernt** (Basis = globale Einstellung, System
@@ -382,7 +381,7 @@ temp °F↔°C, fuel mpg↔L/100km, price £sd↔£dez, count Basis↔Basis, tim
       → `handleInputTapAtChar` (Caret/Term-Grenze); Vorschau bestätigt
 - [x] **Pager-Integration**: Umrechner als Seite 2 des Rechner-PageView
       (Links-/Rechts-Swipe), `ConverterBody` extrahiert, `ConverterState`
-      im Scaffold, Info-Listen-Eintrag → `requestConverter()`,
+      im Scaffold, Tastatur-Routing nach aktiver Seite,
       Tastatur-Routing nach aktiver Seite — `calc_pager_test.dart`
 - [x] **Resultat-Brücke**: Set-6-**Ans** verdrahtet (zieht das
       Hauptrechner-Resultat, `insertCalcAns`) + neues **CONV**-Token im

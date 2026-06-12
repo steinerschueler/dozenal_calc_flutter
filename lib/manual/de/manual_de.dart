@@ -1063,3 +1063,164 @@ List<ManualChapter> _manualChaptersDe() => const [
     ),
   ]),
 ];
+
+// ---------------------------------------------------------------------------
+// Bedienung des Einheitenrechners — die zweite Handbuch-Sektion. Deutsch ist
+// die Referenz; Übersetzungen werden wie beim Hauptrechner-Handbuch Kapitel
+// für Kapitel nachgezogen (positionsweiser Fallback in manual.dart).
+// ---------------------------------------------------------------------------
+
+List<ManualChapter> _converterManualChaptersDe() => const [
+  ManualChapter('Der zweite Rechner', [
+    _P(
+      'Hinter dem Hauptrechner liegt ein vollwertiger Einheitenrechner: '
+      'Er rechnet Längen, Gewichte, Zeiten, Temperaturen und ein Dutzend '
+      'weitere Kategorien zwischen dem metrischen und dem imperialen '
+      'System um — wahlweise in dozenalen oder dezimalen Ziffern.',
+    ),
+    _H('Hin- und herwechseln'),
+    _P(
+      'Wische auf dem Hauptrechner nach links, und der Einheitenrechner '
+      'erscheint. Wische auf dem Einheitenrechner nach rechts, und du '
+      'bist zurück. Beim Wechsel zeigen zwei durchscheinende Karten kurz '
+      'an, auf welcher Seite du gerade bist — die goldumrandete Karte ist '
+      'die aktive Seite.',
+    ),
+    _P(
+      'Beide Rechner behalten ihre Eingaben beim Wechsel: Du kannst '
+      'mitten in einer Umrechnung zum Hauptrechner wischen, dort etwas '
+      'nachrechnen und nahtlos weitermachen.',
+    ),
+  ]),
+  ManualChapter('Kategorie, Zahl, Einheit', [
+    _P(
+      'Eine Umrechnung besteht aus drei Tipps: Kategorie wählen, Zahl '
+      'tippen, Einheit tippen.',
+    ),
+    _H('Die Kategorie'),
+    _P(
+      'Die rechten beiden Tastenspalten zeigen die Kategorien (Länge, '
+      'Gewicht, Zeit, …; weitere im Erweiterungsfeld „…"). Ein Tipp auf '
+      'eine Kategorie klappt ihre Einheiten-Leiter auf — die Tasten rund '
+      'um die goldumrandete Kategorie zeigen jetzt ihre Einheiten. Ein '
+      'zweiter Tipp klappt die Leiter wieder zu.',
+    ),
+    _H('Zahl und Einheit'),
+    _P(
+      'Tippe eine Zahl und dann eine Einheiten-Taste: „144" und „ft" '
+      'ergibt 144 Fuß. Die Ergebniszeile zeigt sofort dieselbe Größe in '
+      'einer anderen Einheit, und die geschweifte Klammer daneben den '
+      'Wert im jeweils anderen System.',
+    ),
+    _H('Die =-Taste'),
+    _P(
+      'Jeder Druck auf = zeigt die nächste Einheit der Leiter — so '
+      'wanderst du durch alle Darstellungen derselben Größe. In der '
+      'imperialen Welt folgt am Ende die gemischte Schreibweise, etwa '
+      '„1 yd 2 ft 3 in", bevor der Zyklus von vorn beginnt.',
+    ),
+    _P(
+      'Wechselst du zu einer anderen Kategorie, werden die fertigen '
+      'Terme verworfen — eine bereits getippte Zahl bleibt aber stehen, '
+      'du kannst also erst die Zahl und dann die Kategorie wählen.',
+    ),
+  ]),
+  ManualChapter('Metrisch, imperial und die Farben', [
+    _H('Die beiden runden Tasten'),
+    _P(
+      'Links und rechts der =-Taste sitzen „met" (grün) und „imp" '
+      '(violett). Sie schalten zwischen dem metrischen und dem imperialen '
+      'Einheitensystem um — der Wert bleibt dabei physikalisch gleich: '
+      'Aus 144 ft werden 43.89 m, nicht 144 m. Die aktive Seite trägt '
+      'einen Ring in ihrer Farbe.',
+    ),
+    _H('Das Farbsystem'),
+    _P(
+      'Grün steht überall in der App für die Zehner-Welt: metrische '
+      'Einheiten und dezimale Ziffern. Violett steht für die Zwölfer-'
+      'Welt: imperiale Einheiten und dozenale Ziffern. Einheitenzeichen '
+      'wie „m" oder „ft" erscheinen in ihrer Systemfarbe, das DOZ/DEZ-'
+      'Zeichen unten rechts in seiner Basisfarbe — und die geschweifte '
+      'Klammer leuchtet immer in der Farbe der Welt, die sie zeigt.',
+    ),
+    _H('Dozenal oder dezimal'),
+    _P(
+      'Die Ziffernbasis ist vom Einheitensystem unabhängig und gilt für '
+      'beide Rechner gemeinsam. Du stellst sie unter Einstellungen → '
+      'Zahlensystem um — auch mitten in einer Umrechnung, die Werte '
+      'bleiben erhalten. So kannst du metrische Einheiten dozenal lesen '
+      'oder imperiale dezimal.',
+    ),
+  ]),
+  ManualChapter('Mehrere Terme: + und −', [
+    _P(
+      'Innerhalb einer Kategorie kannst du Größen verketten: „5" „ft" '
+      '„3" „in" ergibt 5 Fuß plus 3 Zoll. Das Plus bleibt unsichtbar, '
+      'solange die Einheiten verschieden sind; bei gleichen Einheiten '
+      '(„3 h + 2 h") wird es angezeigt.',
+    ),
+    _P(
+      'Die −-Taste zieht den nächsten Term ab: „5" „ft" „−" „3" „in" '
+      'ergibt 5 Fuß minus 3 Zoll. Das Minus ist immer sichtbar, und die '
+      '−-Taste trägt einen goldenen Rahmen, solange sie scharf ist.',
+    ),
+    _H('Korrigieren'),
+    _P(
+      'Tippe in die Eingabezeile, um den roten Cursor zu setzen — mitten '
+      'in eine Zahl oder zwischen zwei Terme. Ziffern erscheinen am '
+      'Cursor, Del löscht das Zeichen davor; steht der Cursor an einer '
+      'Term-Grenze, entfernt Del den ganzen Term davor. AC löscht alles.',
+    ),
+  ]),
+  ManualChapter('Rechnen in der Eingabe: × ÷ ⊕ ^ √ ㏒', [
+    _P(
+      'Die getippte Zahl darf selbst eine kleine Rechnung sein: „3 × 2" '
+      'und dann „ft" ergibt 6 Fuß. Ausgewertet wird strikt von links '
+      'nach rechts, beim Tipp auf die Einheit.',
+    ),
+    _P(
+      'Drückst du einen Rechenoperator, während schon ein fertiger '
+      'Ausdruck dasteht, wird er zuerst in editierbare Ziffern '
+      'verwandelt — der Gesamtwert in der zuletzt benutzten Einheit. '
+      '„5 ft 3 in" und „×" wird so zu einer Zahl mal …, die du mit „2" '
+      'und einer Einheit abschließt.',
+    ),
+    _H('Die besonderen Operatoren'),
+    _P(
+      'Bei Wurzel und Logarithmus steht links der Grad beziehungsweise '
+      'die Basis: „2 √ 9" ist die Quadratwurzel aus 9, also 3; „2 ㏒ 8" '
+      'ist der Logarithmus von 8 zur Basis 2, also 3. Das ⊕ bildet die '
+      'Parallelsumme a·b/(a+b), bekannt von parallelen Widerständen.',
+    ),
+    _P(
+      'Jedes Segment der Rechnung darf einen eigenen Dezimalpunkt '
+      'tragen („1.6 × 0.6"). Beim Umschalten der Ziffernbasis werden '
+      'alle Zahlen der Rechnung einzeln umgerechnet.',
+    ),
+  ]),
+  ManualChapter('Speicher, Konstanten und die Brücke', [
+    _H('Der Speicher'),
+    _P(
+      'Im Erweiterungsfeld „…" liegen STO, RCL und MC: STO merkt sich '
+      'die Zahl der Ergebniszeile — oder, wenn noch keine Einheit '
+      'gewählt ist, die getippte Eingabe. RCL fügt den gemerkten Wert '
+      'wieder ein, MC löscht ihn. Sind RCL und MC grau, ist der '
+      'Speicher leer.',
+    ),
+    _H('Die Konstanten'),
+    _P(
+      'π, e, φ und √2 setzen ihren Wert als Ziffern an die Stelle der '
+      'Zahl am Cursor — praktisch für Umfänge und Verhältnisse: „3" „ד '
+      '„π" „ft" ergibt den Umfang eines Kreises mit 3 Fuß Durchmesser.',
+    ),
+    _H('Die Brücke zum Hauptrechner'),
+    _P(
+      'Die Ans-Taste holt das letzte Ergebnis des Hauptrechners in die '
+      'Eingabe — rechne dort etwas aus, wische herüber und gib dem Wert '
+      'eine Einheit. Umgekehrt holt die CONV-Taste im Erweiterungsfeld '
+      'des Hauptrechners die Zahl aus der Ergebniszeile des '
+      'Einheitenrechners. Werte reisen dabei als Zahl und erscheinen '
+      'automatisch in der Basis der Zielseite.',
+    ),
+  ]),
+];

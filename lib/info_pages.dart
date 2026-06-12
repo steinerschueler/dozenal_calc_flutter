@@ -6,9 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
 import 'app_theme.dart';
-import 'calc_scope.dart';
 import 'conversions_page.dart';
-import 'converter_page.dart';
 import 'feedback_dialog.dart';
 import 'l10n/app_localizations.dart';
 import 'language_options.dart';
@@ -45,27 +43,36 @@ class InfoListPage extends StatelessWidget {
         child: ListView(
           padding: const EdgeInsets.symmetric(vertical: 4),
           children: [
-            // "Bedienung des Rechners" ist App-Hilfe, kein Theorie-Stoff —
-            // darum eigenstaendige, ausklappbare Sammlung ganz oben, ausserhalb
-            // der Theorie-Bloecke (Grundbedienung + Lehr-Kapitel).
-            const _ManualExpansion(),
+            // Bedienung ist App-Hilfe, kein Theorie-Stoff — darum zwei
+            // eigenstaendige, ausklappbare Handbuch-Sammlungen ganz oben:
+            // Hauptrechner (Grundbedienung + Lehr-Kapitel) und
+            // Einheitenrechner (Wechsel, Kategorien, met/imp + Farbcode,
+            // Terme, Skalar-Rechnen, Speicher/Bruecke).
+            _ManualSectionExpansion(
+              icon: Icons.touch_app_outlined,
+              titleOf: (l) => l.chapterTitle01,
+              chaptersOf: manualChapters,
+            ),
+            Divider(color: t.divider, height: 1),
+            _ManualSectionExpansion(
+              icon: Icons.swap_horiz,
+              titleOf: (l) => l.infoListConverterManual,
+              chaptersOf: converterManualChapters,
+            ),
             Divider(color: t.divider, height: 1),
             // Theorie-Sektion: ausklappbar (Default collapsed) zu den drei
             // Bloecken (Zwoelf und die Welt, Dozenale Mathematik, Dozenale
-            // Gesellschaft); jeder Block fuehrt zu seinen Kapiteln.
+            // Gesellschaft) plus der Einheitentheorie; jeder Block fuehrt zu
+            // seinen Kapiteln. Die fruehere Einheiten-Sektion ist aufgeloest:
+            // der Einheitenrechner ist seit dem Pager eine Swipe-Geste (kein
+            // Navigations-Eintrag mehr noetig), die Einheitentheorie wohnt
+            // jetzt hier.
             const _TheoryExpansion(),
             Divider(color: t.divider, height: 1),
             // Empfehlungen-Sektion: ausklappbar, direkt unter "Theorie" — ein
             // Kapitel pro Plattform (Physisch, Android Play Store / F-Droid,
             // iOS, macOS, Linux, Windows) mit Pros/Cons je Rechner.
             const _RecommendationsExpansion(),
-            Divider(color: t.divider, height: 1),
-            // Einheiten-Sektion: ausklappbar, buendelt Einheitenrechner +
-            // Einheitentheorie. Liegt als Geschwister direkt unter "Theorie",
-            // weil beides Inhalt ist — die Einheitentheorie gehoert bewusst
-            // NICHT in den Theorie-Tab (der traegt nur die Bloecke Zwoelf und
-            // die Welt, Dozenale Mathematik, Dozenale Gesellschaft).
-            const _UnitsExpansion(),
             Divider(color: t.divider, height: 1),
             // Einstellungen: buendelt die frueher hier liegenden Quick-Toggles
             // (Glyphen-Stil, Haptik) mit den Keypad-Praeferenzen (Overlay/
@@ -220,18 +227,27 @@ class _VersionFooterState extends State<_VersionFooter> {
 /// compact; tapping the header unfolds the three theory blocks (Zwölf und die
 /// Welt, Dozenale Mathematik, Dozenale Gesellschaft). Each block leads to its
 /// own chapter list (see [theoryBlocks] / [TheoryBlockPage]).
-/// Collapsible "Bedienung des Rechners" section: the calculator manual as a
-/// collection of chapters (Grundbedienung + the teaching chapters). Flat list
-/// — unlike the theory section there are no sub-blocks. Replaces the former
-/// single app-help entry.
-class _ManualExpansion extends StatefulWidget {
-  const _ManualExpansion();
+/// Collapsible manual section: a flat list of chapters (no sub-blocks,
+/// unlike the theory section). Instantiated twice — "Bedienung des
+/// Hauptrechners" (Grundbedienung + Lehr-Kapitel) and "Bedienung des
+/// Einheitenrechners" — parameterised instead of duplicated.
+class _ManualSectionExpansion extends StatefulWidget {
+  const _ManualSectionExpansion({
+    required this.icon,
+    required this.titleOf,
+    required this.chaptersOf,
+  });
+
+  final IconData icon;
+  final String Function(AppLocalizations) titleOf;
+  final List<ManualChapter> Function(String langTag) chaptersOf;
 
   @override
-  State<_ManualExpansion> createState() => _ManualExpansionState();
+  State<_ManualSectionExpansion> createState() =>
+      _ManualSectionExpansionState();
 }
 
-class _ManualExpansionState extends State<_ManualExpansion> {
+class _ManualSectionExpansionState extends State<_ManualSectionExpansion> {
   bool _expanded = false;
 
   @override
@@ -239,16 +255,16 @@ class _ManualExpansionState extends State<_ManualExpansion> {
     final l = AppLocalizations.of(context);
     final t = AppColors.of(context);
     final langTag = Localizations.localeOf(context).toLanguageTag();
-    final chapters = manualChapters(langTag);
+    final chapters = widget.chaptersOf(langTag);
     return Column(
       children: [
         ListTile(
           leading: SizedBox(
             width: 28,
-            child: Icon(Icons.touch_app_outlined, color: t.textMuted, size: 16),
+            child: Icon(widget.icon, color: t.textMuted, size: 16),
           ),
           title: Text(
-            l.chapterTitle01,
+            widget.titleOf(l),
             style: TextStyle(fontSize: 14, color: t.textPrimary),
           ),
           trailing: AnimatedRotation(
@@ -401,6 +417,29 @@ class _TheoryExpansionState extends State<_TheoryExpansion> {
                         ),
                       ),
                     ],
+                    // Einheitentheorie als vierter Block — hierher gezogen,
+                    // als die Einheiten-Sektion aufgeloest wurde (der
+                    // Einheitenrechner selbst ist eine Swipe-Geste, kein
+                    // Listen-Eintrag mehr).
+                    Divider(color: t.divider, height: 1),
+                    ListTile(
+                      contentPadding: const EdgeInsetsDirectional.fromSTEB(
+                        32,
+                        0,
+                        16,
+                        0,
+                      ),
+                      title: Text(
+                        l.infoListConversionsEntry,
+                        style: TextStyle(fontSize: 14, color: t.textPrimary),
+                      ),
+                      trailing: const _NavChevron(),
+                      onTap: () => Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (_) => const ConversionsPage(),
+                        ),
+                      ),
+                    ),
                   ],
                 )
               : const SizedBox.shrink(),
@@ -479,138 +518,6 @@ class _RecommendationsExpansionState extends State<_RecommendationsExpansion> {
                         ),
                       ),
                     ],
-                  ],
-                )
-              : const SizedBox.shrink(),
-        ),
-      ],
-    );
-  }
-}
-
-/// Collapsible units section bundling the two unit-related screens —
-/// the interactive Einheitenrechner (ConverterPage) and the Einheiten-
-/// theorie tabs (ConversionsPage). A sibling of the theory section so the
-/// unit theory deliberately stays OUT of the top "Theorie" tab, which is
-/// reserved for the three teaching blocks (Zwölf und die Welt, Dozenale
-/// Mathematik, Dozenale Gesellschaft).
-class _UnitsExpansion extends StatefulWidget {
-  const _UnitsExpansion();
-
-  @override
-  State<_UnitsExpansion> createState() => _UnitsExpansionState();
-}
-
-class _UnitsExpansionState extends State<_UnitsExpansion> {
-  bool _expanded = false;
-
-  @override
-  Widget build(BuildContext context) {
-    final l = AppLocalizations.of(context);
-    final t = AppColors.of(context);
-    return Column(
-      children: [
-        ListTile(
-          leading: SizedBox(
-            width: 28,
-            child: Icon(Icons.square_foot, color: t.textMuted, size: 16),
-          ),
-          title: Text(
-            l.infoListUnitsExpansion,
-            style: TextStyle(fontSize: 14, color: t.textPrimary),
-          ),
-          trailing: AnimatedRotation(
-            turns: _expanded ? 0.5 : 0,
-            duration: const Duration(milliseconds: 200),
-            child: Icon(
-              Icons.expand_more,
-              color: t.textFaint,
-              size: 20,
-            ),
-          ),
-          onTap: () => setState(() => _expanded = !_expanded),
-        ),
-        AnimatedSize(
-          duration: const Duration(milliseconds: 200),
-          alignment: Alignment.topCenter,
-          child: _expanded
-              ? Column(
-                  children: [
-                    Divider(color: t.divider, height: 1),
-                    ListTile(
-                      contentPadding: const EdgeInsetsDirectional.fromSTEB(
-                        32,
-                        0,
-                        16,
-                        0,
-                      ),
-                      leading: SizedBox(
-                        width: 28,
-                        child: Icon(
-                          Icons.swap_horiz,
-                          color: t.textMuted,
-                          size: 16,
-                        ),
-                      ),
-                      title: Text(
-                        l.infoListConverterEntry,
-                        style: TextStyle(
-                          fontSize: 14,
-                          color: t.textSecondary,
-                        ),
-                      ),
-                      trailing: const _NavChevron(),
-                      onTap: () {
-                        // In the app the converter is the calc pager's second
-                        // page: pop back to the calculator and ask it to
-                        // swipe over (request/reset pattern like infoState).
-                        // Without a CalcStateScope (standalone tests) fall
-                        // back to pushing the stand-alone route.
-                        final calc = CalcStateScope.maybeOf(context);
-                        if (calc != null) {
-                          Navigator.of(
-                            context,
-                          ).popUntil((route) => route.isFirst);
-                          calc.requestConverter();
-                        } else {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (_) => const ConverterPage(),
-                            ),
-                          );
-                        }
-                      },
-                    ),
-                    Divider(color: t.divider, height: 1),
-                    ListTile(
-                      contentPadding: const EdgeInsetsDirectional.fromSTEB(
-                        32,
-                        0,
-                        16,
-                        0,
-                      ),
-                      leading: SizedBox(
-                        width: 28,
-                        child: Icon(
-                          Icons.straighten,
-                          color: t.textMuted,
-                          size: 16,
-                        ),
-                      ),
-                      title: Text(
-                        l.infoListConversionsEntry,
-                        style: TextStyle(
-                          fontSize: 14,
-                          color: t.textSecondary,
-                        ),
-                      ),
-                      trailing: const _NavChevron(),
-                      onTap: () => Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (_) => const ConversionsPage(),
-                        ),
-                      ),
-                    ),
                   ],
                 )
               : const SizedBox.shrink(),
