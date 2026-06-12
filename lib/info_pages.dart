@@ -15,6 +15,8 @@ import 'manual/manual.dart';
 import 'license_page.dart';
 import 'locale_notifier.dart';
 import 'privacy_page.dart';
+import 'recommendations/recommendations.dart';
+import 'recommendations/recommendations_page.dart';
 import 'settings_page.dart';
 import 'support_page.dart';
 import 'theory/chapter_image_view.dart';
@@ -51,6 +53,11 @@ class InfoListPage extends StatelessWidget {
             // Bloecken (Zwoelf und die Welt, Dozenale Mathematik, Dozenale
             // Gesellschaft); jeder Block fuehrt zu seinen Kapiteln.
             const _TheoryExpansion(),
+            Divider(color: t.divider, height: 1),
+            // Empfehlungen-Sektion: ausklappbar, direkt unter "Theorie" — ein
+            // Kapitel pro Plattform (Physisch, Android Play Store / F-Droid,
+            // iOS, macOS, Linux, Windows) mit Pros/Cons je Rechner.
+            const _RecommendationsExpansion(),
             Divider(color: t.divider, height: 1),
             // Einheiten-Sektion: ausklappbar, buendelt Einheitenrechner +
             // Einheitentheorie. Liegt als Geschwister direkt unter "Theorie",
@@ -389,6 +396,84 @@ class _TheoryExpansionState extends State<_TheoryExpansion> {
                         onTap: () => Navigator.of(context).push(
                           MaterialPageRoute(
                             builder: (_) => TheoryBlockPage(block: block),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ],
+                )
+              : const SizedBox.shrink(),
+        ),
+      ],
+    );
+  }
+}
+
+/// Collapsible "Empfehlungen" section: one chapter per platform, each opening a
+/// [RecChapterPage] with pros/cons per recommended calculator. A flat list (no
+/// sub-blocks), placed directly under the Theorie section.
+class _RecommendationsExpansion extends StatefulWidget {
+  const _RecommendationsExpansion();
+
+  @override
+  State<_RecommendationsExpansion> createState() =>
+      _RecommendationsExpansionState();
+}
+
+class _RecommendationsExpansionState extends State<_RecommendationsExpansion> {
+  bool _expanded = false;
+
+  @override
+  Widget build(BuildContext context) {
+    final l = AppLocalizations.of(context);
+    final t = AppColors.of(context);
+    final langTag = Localizations.localeOf(context).toLanguageTag();
+    final chapters = recommendationChapters(langTag);
+    return Column(
+      children: [
+        ListTile(
+          leading: SizedBox(
+            width: 28,
+            child: Icon(
+              Icons.recommend_outlined,
+              color: t.textMuted,
+              size: 16,
+            ),
+          ),
+          title: Text(
+            l.infoListRecommendationsExpansion,
+            style: TextStyle(fontSize: 14, color: t.textPrimary),
+          ),
+          trailing: AnimatedRotation(
+            turns: _expanded ? 0.5 : 0,
+            duration: const Duration(milliseconds: 200),
+            child: Icon(Icons.expand_more, color: t.textFaint, size: 20),
+          ),
+          onTap: () => setState(() => _expanded = !_expanded),
+        ),
+        AnimatedSize(
+          duration: const Duration(milliseconds: 200),
+          alignment: Alignment.topCenter,
+          child: _expanded
+              ? Column(
+                  children: [
+                    for (final c in chapters) ...[
+                      Divider(color: t.divider, height: 1),
+                      ListTile(
+                        contentPadding: const EdgeInsetsDirectional.fromSTEB(
+                          32,
+                          0,
+                          16,
+                          0,
+                        ),
+                        title: Text(
+                          c.title,
+                          style: TextStyle(fontSize: 14, color: t.textPrimary),
+                        ),
+                        trailing: const _NavChevron(),
+                        onTap: () => Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (_) => RecChapterPage(c),
                           ),
                         ),
                       ),

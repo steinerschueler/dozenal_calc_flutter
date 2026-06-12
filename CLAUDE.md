@@ -50,6 +50,10 @@ Test-Routing (für gezielte Edits):
   SI-Drehscheibe/Faktoren/Breakdown bzw. Compound-Eingabe + Cursor.
 - `converter_keypad_layout_test.dart` — Umrechner-Layout über Seitenverhältnisse.
 - `cursor_tap_test.dart` — Tipp-Cursor (Hauptrechner-Hit-Test + `moveCursorTo`).
+- `recommendations_test.dart` — „Empfehlungen": Kapitel-Dispatcher plus
+  Struktur-Treue aller 14 Sprachen (7 Kapitel, Pro-/Contra-Zählung je Rechner,
+  URL-Menge identisch zur deutschen Vorlage), übersetzte Titel,
+  `RecChapterPage`-Rendering.
 
 CI (`.github/workflows/ci.yml`) ist auf Flutter 3.41.8 stable festgenagelt
 und führt `analyze` + `test` aus. Das Flutter-SDK selbst pinnt sechs
@@ -323,19 +327,22 @@ Geometrie-Kapitel.
 2. `_TheoryExpansion` — ausklappbarer Container (Default collapsed) zu
    den Theorie-Blöcken (Zwölf und die Welt, Dozenale Mathematik,
    Dozenale Gesellschaft); jeder Block führt zu seinen Kapiteln.
-3. `_UnitsExpansion` — analoge Ausklapp-Struktur, bündelt
+3. `_RecommendationsExpansion` — ausklappbar, direkt unter „Theorie";
+   ein Kapitel pro Plattform mit Pros/Cons je Rechner (eigener
+   Abschnitt „Empfehlungen" unten).
+4. `_UnitsExpansion` — analoge Ausklapp-Struktur, bündelt
    Einheitenrechner + Einheitentheorie.
-4. **Einstellungen-Eintrag** — pusht `SettingsPage`
+5. **Einstellungen-Eintrag** — pusht `SettingsPage`
    (`settings_page.dart`, eigener Abschnitt unten). Die früher hier
    liegenden Quick-Toggles (Glyphen-Stil, Haptik) sind dorthin gezogen.
-5. `_LanguagePickerExpansion` — analoge Ausklapp-Struktur, Default
+6. `_LanguagePickerExpansion` — analoge Ausklapp-Struktur, Default
    collapsed, listet `kSupportedLanguages`.
-6. Sekundärseiten als Navigations-Items (Datenschutz, Lizenz, Spenden,
+7. Sekundärseiten als Navigations-Items (Datenschutz, Lizenz, Spenden,
    Feedback).
-7. `_VersionFooter` (Padding + Versions-Anzeige).
+8. `_VersionFooter` (Padding + Versions-Anzeige).
 
 Alle Top-Level-Items sind durch 1-dp-Dividers im Palette-Slot `divider`
-getrennt; keine grösseren Gaps mehr (früher 24 dp vor dem Sprach-
+getrennt; keine größeren Gaps mehr (früher 24 dp vor dem Sprach-
 Picker als visueller Sektions-Marker — mit dem Theorie-Expansion-
 Container ist dieser Marker visuell redundant geworden).
 
@@ -386,6 +393,28 @@ FA/AR nicht spiegeln). **Walisische Flagge ist Inline-SVG** (Pfad aus
 `WelshFlagPainter`), weil die Unicode-Subdivision-Sequenz auf Firefox-Linux
 und älteren Android-Versionen unzuverlässig rendert; die anderen 13 nutzen
 Regional-Indicator-Emojis.
+
+### Empfehlungen (`lib/recommendations/`)
+
+Ausklappbarer Eintrag direkt unter „Theorie" (`_RecommendationsExpansion` in
+`info_pages.dart`) → sieben Plattform-Kapitel: Physisch, Android — Play Store,
+Android — F-Droid, iOS, macOS, Linux, Windows. Jedes öffnet eine
+`RecChapterPage` (`recommendations_page.dart`): kurze Einleitung, je Rechner
+eine Karte (Name · `tag` = Lizenz/Genre · `blurb` · ✓ Pros in `t.equals` · ✗
+Cons in `t.ac` · Link-Zeile mit abgeleitetem Host) und ein „Fazit"-Kasten mit
+Goldakzent. Kuratiert aus [`docs/taschenrechner-analyse.md`](docs/taschenrechner-analyse.md):
+Power-User-Rahmung, immergrün (keine Preise/Versionen/Daten/Lagerstatus),
+redaktionell ehrlich (nur belegte Aussagen als Fakt).
+
+Datenmodell + Dispatch in `recommendations.dart` (`RecCalc`, `RecChapter`,
+`recommendationChapters(langTag)`); Inhalte als per-Sprach-`part`-Dateien
+`<lang>/recommendations_<lang>.dart` — **alle 14 Sprachen übersetzt**, Dispatch
+script-aware wie bei `theory/` (zh-Hant vor zh). Produktnamen werden im
+Karten-Titel per `TextDirection.ltr` erzwungen, damit „!" („Qalculate!") und
+„/" („Free42 / Plus42") in RTL (fa/ar) nicht umsortiert werden. Plattform-
+Kapiteltitel außer „Physisch" bleiben Eigennamen (iOS, macOS, …). ARB-Eintrag
+der Sektion: `infoListRecommendationsExpansion` (×14). Der Dozenal-Bezug
+(Qalculate! als einziger mit Basis-12-Ausgabe) ist bewusst eingewoben.
 
 ### Einstellungen (`lib/settings_page.dart`)
 
@@ -797,6 +826,12 @@ aber **nicht** die Apple Watch.
 - **Keine Analytics, kein Netzwerk, keine Plattform-Berechtigungen.** Die
   Datenschutzerklärung ist im App-Bundle (`legal/privacy-policy.de.md`,
   gerendert via `privacy_page.dart`), die App ist deutsch-zuerst.
+- **Deutsche Rechtschreibung (HART): durchgängig „ß" (Hochdeutsch), niemals
+  das Schweizer „ss".** Gilt für die **gesamte App** und sämtliche
+  deutschsprachigen Inhalte (ARB, Theorie, Handbuch, Empfehlungen,
+  `legal/*.de.md`, Store-Listings). Eine etwaige gegenteilige „ss"-Vorgabe in
+  `docs/`-Recherchedokumenten gilt **nicht** für App-Texte — bei Konflikt
+  gewinnt diese Konvention.
 - Beim Portieren aus Rust die Rust-Funktions-/Struct-Namen in Kommentaren
   beibehalten — sie sind der Lookup-Schlüssel für Verhaltens-Querverweise.
 - **Lints:** `analysis_options.yaml` aktiviert nur das

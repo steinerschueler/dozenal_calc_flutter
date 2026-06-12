@@ -59,7 +59,7 @@ Dozenal Calc nutzt einen exakten Rational-Track parallel zur normalen Gleitkomma
 • Doppelklick auf Funktionstasten schaltet zur Umkehrfunktion (sin → sin⁻¹)
 • Doz/Dez-Umschaltung: Eingabe UND Ergebnis wahlweise in Basis 12 oder Basis 10, mit automatischer Umrechnung der aktuell sichtbaren Zahl beim Wechsel
 • Bedienungs-Intro beim ersten Start: acht erklärende Bilder mit einer interaktiven Decoder-Seite, die Glyphen und vertraute Zahlen direkt nebeneinanderstellt — jederzeit über den (?)-Knopf erneut aufrufbar
-• Umrechnungsseite: Live-Konvertierung des Eingabewerts in klassische Zwölfer-Einheiten (Inches/Fuss, Pence/Schilling/Pfund, Dutzend/Gros/Großgros, Sekunden/Minuten/Stunden, Bruchteile von 360°), jeweils in Dez- und Doz-Darstellung
+• Umrechnungsseite: Live-Konvertierung des Eingabewerts in klassische Zwölfer-Einheiten (Inches/Fuß, Pence/Schilling/Pfund, Dutzend/Gros/Großgros, Sekunden/Minuten/Stunden, Bruchteile von 360°), jeweils in Dez- und Doz-Darstellung
 • Vierzehn Sprachen mit eigener Auswahl im Info-Menü: Deutsch, English, Français, Español, Italiano, فارسی, Русский, Gaeilge, हिन्दी, 简体中文, 繁體中文, Cymraeg, 日本語, العربية
 
 <b>Zwölf Kapitel zur Mathematik der Zwölf</b>
@@ -77,7 +77,7 @@ Eine integrierte Lektüre erklärt, warum gerade die Zwölf eine besondere Zahl 
 9. Zwölf Tierkreiszeichen und der Himmel
 10. Zwölf Flächen in Kristallen und Lebewesen
 11. Zwölf Glieder an der Hand
-12. Zoll, Fuss, Pfund — und warum sie dozenal Sinn ergeben
+12. Zoll, Fuß, Pfund — und warum sie dozenal Sinn ergeben
 
 <b>Was Dozenal Calc nicht macht</b>
 

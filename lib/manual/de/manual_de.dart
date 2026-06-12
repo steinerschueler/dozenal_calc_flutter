@@ -68,7 +68,7 @@ List<ManualChapter> _manualChaptersDe() => const [
       'log₁₂ und eˣ, − enthält ±, STO enthält M+ und M−, n! enthält '
       'nCr und nPr. Zum Auswählen den Finger auf die gewünschte Option '
       'gleiten lassen und loslassen — oder loslassen und die Option '
-      'antippen. Ein Tipp daneben schliesst das Feld.',
+      'antippen. Ein Tipp daneben schließt das Feld.',
     ),
     _H('Spezialoperatoren'),
     _P(
@@ -84,8 +84,8 @@ List<ManualChapter> _manualChaptersDe() => const [
     _P(
       'Die Taste … rechts unten öffnet das Erweiterungsfeld mit weiteren '
       'Funktionen: Speicher, Konstanten (π, e, φ, √2), hyperbolische '
-      'Funktionen, erweiterte Operatoren sowie EXP und DRG. Es schliesst '
-      'sich über dieselbe Taste, oder durch Antippen ausserhalb des '
+      'Funktionen, erweiterte Operatoren sowie EXP und DRG. Es schließt '
+      'sich über dieselbe Taste, oder durch Antippen außerhalb des '
       'Feldes. Auf Tablets sind alle Sets ohnehin nebeneinander '
       'sichtbar — dort gibt es kein Overlay.',
     ),
@@ -238,7 +238,7 @@ List<ManualChapter> _manualChaptersDe() => const [
       'Die drei Grundtasten liegen in Set 2: x^□ für die Potenz, √ für die '
       'Wurzel, log für den Logarithmus. x² im Langdruck-Feld der Potenztaste '
       'ist die Kurzform für „hoch zwei". Über den Langdruck auf log erreichst '
-      'du ausserdem ln, log₁₂ und eˣ; diese öffnen gleich eine Klammer, in die '
+      'du außerdem ln, log₁₂ und eˣ; diese öffnen gleich eine Klammer, in die '
       'du das Argument tippst.',
     ),
     _P(
