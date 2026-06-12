@@ -70,7 +70,10 @@ class _LineLayout {
       for (var k = 0; k < s.text.length; k++) {
         final ch = s.text[k];
         final v = _glyphDigit(ch);
-        digits.add(v);
+        // Only record a glyph to overlay in custom mode; in conventional mode
+        // the cell keeps its visible ASCII digit and must NOT be overpainted
+        // (that caused the glyph to overlap the ASCII number).
+        digits.add(custom ? v : null);
         colors.add(s.color);
         final hide = custom && v != null;
         spans.add(TextSpan(
