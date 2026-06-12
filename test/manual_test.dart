@@ -7,13 +7,16 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:dozenal_calc_flutter/manual/manual.dart';
 
 void main() {
-  test('manualChapters returns the basics chapter for every locale', () {
-    // Locales whose chapter-1 title is still the German default (en is fully
-    // translated and has its own title — covered by a dedicated test below).
-    for (final tag in ['de', 'fr', 'zh-Hant', 'ar', 'fa']) {
+  test('manualChapters returns chapters for every locale', () {
+    // All 14 languages are fully translated — every locale resolves to a
+    // non-empty chapter list.
+    for (final tag in [
+      'de', 'en', 'fr', 'es', 'it', 'fa', 'ru', 'ga',
+      'hi', 'zh', 'zh-Hant', 'cy', 'ja', 'ar',
+    ]) {
       final chapters = manualChapters(tag);
-      expect(chapters, isNotEmpty, reason: '$tag should resolve to a chapter');
-      expect(chapters.first.title, 'Grundbedienung');
+      expect(chapters, isNotEmpty, reason: '$tag should resolve to chapters');
+      expect(chapters.length, 7, reason: '$tag should have 7 chapters');
     }
   });
 
@@ -28,6 +31,7 @@ void main() {
       'it': 'Le cifre',
       'ru': 'Цифры',
       'ja': '数字',
+      'fa': 'ارقام',
     };
     for (final entry in cases.entries) {
       await tester.pumpWidget(
@@ -211,15 +215,25 @@ void main() {
     expect(tester.takeException(), isNull);
   });
 
-  test('untranslated locales fall back to German teaching chapters', () {
+  test('all locales have all 7 chapters (no German fallback needed)', () {
+    // All 14 languages are now fully translated. Every locale returns the same
+    // chapter count as German, with its own translated titles throughout.
     final de = manualChapters('de');
-    expect(de.length, greaterThanOrEqualTo(2));
-    final fr = manualChapters('fr');
-    // French keeps its own Grundbedienung body but gains the German teaching
-    // chapters by per-chapter fallback (same count as German).
-    expect(fr.length, de.length);
-    expect(fr.first.title, 'Grundbedienung'); // title not yet translated
-    expect(fr[1].title, de[1].title); // German teaching chapter appended
+    expect(de.length, 7);
+    for (final tag in [
+      'en', 'fr', 'es', 'it', 'fa', 'ru', 'ga', 'hi',
+      'zh', 'zh-Hant', 'cy', 'ja', 'ar',
+    ]) {
+      final chapters = manualChapters(tag);
+      expect(chapters.length, de.length,
+          reason: '$tag should have the same chapter count as German');
+      // Teaching chapters (ch 2+) should have own translated titles —
+      // not falling back to the German string.
+      if (tag != 'de') {
+        expect(chapters[1].title != de[1].title, isTrue,
+            reason: '$tag ch2 title should be translated, not German');
+      }
+    }
   });
 
   test('English is fully translated — own titles, not German fallback', () {
