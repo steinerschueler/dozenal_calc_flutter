@@ -181,7 +181,7 @@ Play Store erlaubt 2-8 Screenshots pro Format (Phone, 7"-Tablet,
 
 ## Tablet-Screenshots
 
-Aktuell vom Tablet (Mai 2026), in `screenshots/tablet/`:
+Aktuell von einem Tablet (Mai 2026), in `screenshots/tablet/`:
 
 | # | Datei | Was es zeigt |
 |---|---|---|

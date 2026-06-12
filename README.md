@@ -60,7 +60,7 @@ test/                     — 147 Tests über Logik, State und Layout
 tool/                     — Icon-, Kompass-, Feature-Graphic-Generatoren
 legal/                    — Datenschutzerklärung (.md + .html)
 assets/                   — icon.png, compass.png, feature_graphic.png
-screenshots/              — Play-Store-Screenshots (Phone + tablet)
+screenshots/              — Play-Store-Screenshots (Phone + Tablet)
 .github/workflows/ci.yml  — analyze + test bei Push / PR
 ```
 

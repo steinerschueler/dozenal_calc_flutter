@@ -41,8 +41,8 @@ const double minTouchTarget = 44.0;
 /// Touch-target floor for `_BreitKeypad`. Lower than the Hoch-mode 44 dp
 /// because in landscape phones are cradled two-handed with both thumbs at
 /// the screen — smaller targets remain comfortable. Critical so the keypad
-/// can actually shrink to fit the viewport on 360-dp-tall phones (Honor
-/// X-series, compact phones): at 44 dp the 5-row stack and 13-col row
+/// can actually shrink to fit the viewport on compact 360-dp-tall phones:
+/// at 44 dp the 5-row stack and 13-col row
 /// would both overflow, forcing scroll on both axes. Below ~28 dp tap
 /// accuracy collapses; the existing scroll fallback handles those cases.
 const double breitMinTouchTarget = 36.0;

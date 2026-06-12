@@ -186,7 +186,7 @@ void main() {
   // Regression: a compact phone (~829 × 274 dp keypad area) is height-limited
   // and used to show a ~41 dp horizontal gap on the right. Same assertion
   // covers a different phone-landscape aspect ratio.
-  testWidgets('Breit keypad fills width on compact-phone landscape', (
+  testWidgets('Breit keypad fills width on a compact-phone landscape', (
     tester,
   ) async {
     const Size keypadArea = Size(829, 274);
@@ -212,7 +212,7 @@ void main() {
   // buttonSize uniformly too big — naturalHeight=262>240 AND baseNaturalWidth=688>670.
   // With breitMinTouchTarget = 36 the button shrinks to ~40 dp and the whole
   // layout fits both axes without any scroll fallback engaging.
-  testWidgets('Breit keypad fits compact-phone landscape without scrolling', (
+  testWidgets('Breit keypad fits a very compact landscape without scrolling', (
     tester,
   ) async {
     const Size keypadArea = Size(670, 240);

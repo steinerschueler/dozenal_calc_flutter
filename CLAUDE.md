@@ -288,7 +288,7 @@ Payload-freie Varianten. Spiegelt das Rust-Enum und erlaubt erschöpfende
       `minTouchTarget = 44 dp`): Material 48 / iOS 44 sind Empfehlungen,
       nicht Mauern, und in Landscape wird das Phone zweihändig gehalten —
       36-dp-Targets bleiben treffbar. Mit 44 als Floor klemmten 360-dp-
-      hohe Phones (kompakte Phones, kompakte Phones) auf beiden Achsen und
+      hohe, kompakte Phones auf beiden Achsen und
       scrollten redundant; der niedrigere Floor lässt die Tasten der
       Viewport-Form folgen, statt sie hinauszuschieben.
     - Alle inner-Block-Abstände (im Zifferngitter h+v, in opColumns v,
@@ -806,6 +806,6 @@ aber **nicht** die Apple Watch.
 
 ## Umgebungs-Hinweise
 
-- Der `tablet` Android-Emulator ist instabil bei wiederholten
+- Der Tablet-Emulator (AVD) ist instabil bei wiederholten
   `flutter install`-Zyklen auf dieser Maschine. Lieber ein physisches
   Gerät verwenden oder den Emulator zwischen Installs neu starten.
