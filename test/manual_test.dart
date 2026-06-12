@@ -8,7 +8,9 @@ import 'package:dozenal_calc_flutter/manual/manual.dart';
 
 void main() {
   test('manualChapters returns the basics chapter for every locale', () {
-    for (final tag in ['de', 'en', 'fr', 'zh-Hant', 'ar', 'fa']) {
+    // Locales whose chapter-1 title is still the German default (en is fully
+    // translated and has its own title — covered by a dedicated test below).
+    for (final tag in ['de', 'fr', 'zh-Hant', 'ar', 'fa']) {
       final chapters = manualChapters(tag);
       expect(chapters, isNotEmpty, reason: '$tag should resolve to a chapter');
       expect(chapters.first.title, 'Grundbedienung');
@@ -209,15 +211,50 @@ void main() {
     expect(tester.takeException(), isNull);
   });
 
-  test('non-German locales get their basics + German teaching chapters', () {
+  test('untranslated locales fall back to German teaching chapters', () {
     final de = manualChapters('de');
     expect(de.length, greaterThanOrEqualTo(2));
-    final en = manualChapters('en');
-    // English keeps its own Grundbedienung but gains the German teaching
+    final fr = manualChapters('fr');
+    // French keeps its own Grundbedienung body but gains the German teaching
     // chapters by per-chapter fallback (same count as German).
+    expect(fr.length, de.length);
+    expect(fr.first.title, 'Grundbedienung'); // title not yet translated
+    expect(fr[1].title, de[1].title); // German teaching chapter appended
+  });
+
+  test('English is fully translated — own titles, not German fallback', () {
+    final de = manualChapters('de');
+    final en = manualChapters('en');
     expect(en.length, de.length);
-    expect(en.first.title, 'Grundbedienung'); // its own (placeholder title)
-    expect(en[1].title, de[1].title); // German teaching chapter appended
+    expect(en.first.title, 'Getting started');
+    expect(en[1].title, 'Exponents, Roots & Logarithms');
+    expect(en[6].title, 'Set 9 & 10');
+    expect(en[1].title == de[1].title, isFalse);
+  });
+
+  testWidgets('English chapter 7 renders with localized figure labels', (
+    tester,
+  ) async {
+    final ch = manualChapters('en')[6];
+    expect(ch.title, 'Set 9 & 10');
+    await tester.pumpWidget(
+      MaterialApp(
+        home: Scaffold(
+          body: SingleChildScrollView(
+            child: SizedBox(
+              width: 400,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: ch.body,
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+    expect(find.text('Pascal\'s triangle'), findsOneWidget); // _H heading
+    expect(find.text('Modulo: remainders and cycles'), findsOneWidget);
+    expect(tester.takeException(), isNull);
   });
 
   test('zh-Hant resolves to Traditional, distinct from zh (Simplified)', () {
