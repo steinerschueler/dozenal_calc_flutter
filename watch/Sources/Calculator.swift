@@ -80,7 +80,9 @@ final class Calculator: ObservableObject {
 
     // MARK: - Evaluation
 
-    private func evaluate(_ s: String) throws -> Double {
+    // Internal (not private) so the parity test target can drive it directly
+    // through `@testable import`. See watch/Tests/CalculatorParityTests.swift.
+    func evaluate(_ s: String) throws -> Double {
         let tokens = try Calculator.tokenize(s)
         var pos = 0
         func peek() -> Tok? { pos < tokens.count ? tokens[pos] : nil }

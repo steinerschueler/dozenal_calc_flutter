@@ -30,3 +30,23 @@ targets:
         ASSETCATALOG_COMPILER_APPICON_NAME: ""
         CODE_SIGNING_ALLOWED: NO
         CODE_SIGNING_REQUIRED: NO
+
+  # Parity safety net: replays test/fixtures/watch_parity_fixtures.json (the same
+  # file the Flutter suite uses) against the watch evaluator. Run on a Mac:
+  #   cd watch && xcodegen generate && xcodebuild test -scheme DozenalWatch ...
+  DozenalWatchTests:
+    type: bundle.unit-test
+    platform: watchOS
+    sources:
+      - Tests
+      - path: ../test/fixtures/watch_parity_fixtures.json
+        buildPhase: resources
+    dependencies:
+      - target: DozenalWatch
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: app.weltanschauung.dozenal.watch.tests
+        SWIFT_VERSION: "5.0"
+        GENERATE_INFOPLIST_FILE: YES
+        CODE_SIGNING_ALLOWED: NO
+        CODE_SIGNING_REQUIRED: NO
