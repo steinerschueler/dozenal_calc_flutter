@@ -15,6 +15,7 @@ import 'converter_state.dart';
 import 'info_pages.dart';
 import 'l10n/app_localizations.dart';
 import 'logic/unit_data.dart';
+import 'unit_descriptions/unit_descriptions.dart';
 import 'unit_labels.dart';
 
 class ConverterPage extends StatefulWidget {
@@ -36,6 +37,7 @@ class _ConverterPageState extends State<ConverterPage> {
   @override
   Widget build(BuildContext context) {
     final l = AppLocalizations.of(context);
+    final langTag = Localizations.localeOf(context).toLanguageTag();
     // Background comes from the MaterialApp's scaffoldBackgroundColor
     // (palette-derived) — same convention as the themed info pages.
     return Scaffold(
@@ -78,6 +80,10 @@ class _ConverterPageState extends State<ConverterPage> {
                             ),
                           ),
                           categoryLabelOf: (c) => converterCategoryLabel(c, l),
+                          unitInfoOf: (cat, symbol) => (
+                            desc: unitDescription(cat, symbol, langTag) ?? '',
+                            more: l.unitInfoMore(converterCategoryLabel(cat, l)),
+                          ),
                         ),
                       ),
                     ],

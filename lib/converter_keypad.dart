@@ -96,12 +96,19 @@ class ConverterKeypad extends StatelessWidget {
   /// catalogue key (used by the preview harness, which has no localizations).
   final String Function(UnitCategory)? categoryLabelOf;
 
+  /// Long-press info for a unit key: a one-sentence description plus the
+  /// "more in the unit theory" pointer line. Null → no long-press box (e.g.
+  /// the preview harness without localizations).
+  final ({String desc, String more}) Function(
+      UnitCategory category, String symbol)? unitInfoOf;
+
   const ConverterKeypad({
     super.key,
     required this.state,
     required this.onBack,
     required this.onInfo,
     this.categoryLabelOf,
+    this.unitInfoOf,
   });
 
   @override
@@ -381,11 +388,14 @@ class ConverterKeypad extends StatelessWidget {
 
   Widget _magnitudeCell(Unit unit) {
     final selected = state.inputUnit?.symbol == unit.symbol;
+    final cat = state.activeCategory;
     return _LabelButton(
       label: unit.symbol,
       colorOf: (t) => selected ? t.accentGold : t.magnitude,
       softGold: selected,
       onTap: () => state.tapMagnitude(unit),
+      // Long-press → a small box above the key explaining the unit.
+      info: cat == null ? null : unitInfoOf?.call(cat, unit.symbol),
     );
   }
 
@@ -690,6 +700,75 @@ class _ShellState extends State<_Shell> {
   }
 }
 
+/// Shows a small info box directly above [anchor] (a unit key's global rect),
+/// with the unit's one-sentence [desc] and the unit-theory [more] pointer.
+/// A full-screen barrier dismisses it on the next tap.
+void _showUnitInfoBox(
+    BuildContext context, Rect anchor, String desc, String more) {
+  final overlay = Overlay.of(context);
+  final t = AppColors.of(context);
+  final media = MediaQuery.of(context);
+  final w = math.min(300.0, media.size.width - 16);
+  final left = (anchor.center.dx - w / 2).clamp(8.0, media.size.width - w - 8);
+  // Anchor the box's bottom just above the key so it grows upward.
+  final bottom = media.size.height - anchor.top + 6;
+  late OverlayEntry entry;
+  entry = OverlayEntry(
+    builder: (ctx) => Stack(
+      children: [
+        Positioned.fill(
+          child: GestureDetector(
+            behavior: HitTestBehavior.opaque,
+            onTap: () => entry.remove(),
+            child: const SizedBox(),
+          ),
+        ),
+        Positioned(
+          left: left,
+          bottom: bottom,
+          width: w,
+          child: Material(
+            color: Colors.transparent,
+            child: Container(
+              padding: const EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                color: t.cardFill,
+                borderRadius: BorderRadius.circular(8),
+                border: Border.all(color: t.cardBorder),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withValues(alpha: 0.3),
+                    blurRadius: 10,
+                    offset: const Offset(0, 3),
+                  ),
+                ],
+              ),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    desc,
+                    style: TextStyle(
+                        color: t.textPrimary, fontSize: 13, height: 1.35),
+                  ),
+                  const SizedBox(height: 8),
+                  Text(
+                    more,
+                    style: TextStyle(
+                        color: t.textMuted, fontSize: 11, height: 1.3),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ],
+    ),
+  );
+  overlay.insert(entry);
+}
+
 class _LabelButton extends StatefulWidget {
   final String label;
 
@@ -705,12 +784,17 @@ class _LabelButton extends StatefulWidget {
   final bool softGold;
   final VoidCallback onTap;
 
+  /// Optional long-press box content (one-sentence description + the
+  /// "more in the unit theory" pointer). Null → no long-press box.
+  final ({String desc, String more})? info;
+
   const _LabelButton({
     required this.label,
     required this.colorOf,
     this.gold = false,
     this.softGold = false,
     required this.onTap,
+    this.info,
   });
 
   @override
@@ -736,6 +820,18 @@ class _LabelButtonState extends State<_LabelButton> {
         if (HapticsScope.enabledOf(context)) HapticFeedback.lightImpact();
         widget.onTap();
       },
+      onLongPress: widget.info == null
+          ? null
+          : () {
+              if (HapticsScope.enabledOf(context)) {
+                HapticFeedback.mediumImpact();
+              }
+              final rb = context.findRenderObject();
+              if (rb is! RenderBox) return;
+              final anchor = rb.localToGlobal(Offset.zero) & rb.size;
+              _showUnitInfoBox(
+                  context, anchor, widget.info!.desc, widget.info!.more);
+            },
       child: ConstrainedBox(
         constraints: const BoxConstraints(minHeight: minTouchTarget),
         child: Container(
