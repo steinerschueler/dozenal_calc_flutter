@@ -31,9 +31,9 @@ import 'app_theme.dart';
 import 'calc_prefs.dart' show KeypadMode, KeypadProfile;
 import 'glyph_painter.dart';
 import 'haptics.dart';
+import 'keypad_parts.dart';
 import 'l10n/app_localizations.dart';
 import 'logic/glyph_style.dart';
-import 'token_painter.dart';
 import 'tokens.dart';
 
 // Button colors (formerly file-level egui consts) live in AppColors
@@ -47,19 +47,9 @@ typedef ArmedPredicate = bool Function(CalcToken token);
 typedef SelectedPredicate = bool Function(CalcToken token);
 typedef DisabledPredicate = bool Function(CalcToken token);
 
-// ---------------------------------------------------------------------------
-// Hoch-mode thresholds (in dp of available keypad height — i.e. screen height
-// minus SafeArea, minus Padding, minus the display and its gap).
-// ---------------------------------------------------------------------------
-
-/// Below this keypad height the Hoch layout switches to a tight gap regime
-/// to squeeze ~26 dp out of the inter-row spacing.
-const double _kTightThreshold = 560.0;
-
-/// Below this keypad height even the tight layout would push buttons below
-/// the 44 dp touch-target floor. We fall back to a scrollable fixed-height
-/// layout so no row is unreachable.
-const double _kScrollThreshold = 480.0;
+// Hoch-mode thresholds, the digit grid, the shared set columns, the key
+// shell and the key painters live in keypad_parts.dart — one source of
+// truth for both keypads.
 
 // ---------------------------------------------------------------------------
 // Public entry point
@@ -147,13 +137,6 @@ class Keypad extends StatelessWidget {
 // Token catalogue
 // ---------------------------------------------------------------------------
 
-const List<List<DozenalDigit>> _digitGridRows = [
-  [DozenalDigit.d10, DozenalDigit.d11, DozenalDigit.d0],
-  [DozenalDigit.d7, DozenalDigit.d8, DozenalDigit.d9],
-  [DozenalDigit.d4, DozenalDigit.d5, DozenalDigit.d6],
-  [DozenalDigit.d1, DozenalDigit.d2, DozenalDigit.d3],
-];
-
 /// Op grid for Hoch mode, read row-by-row. Each column corresponds to a
 /// vertical Set 1-4 in the tablet/Breit inline layout.
 const List<List<CalcToken>> _hochOpRows = [
@@ -214,12 +197,13 @@ const List<CalcToken?> _systemRowNoExpand = [Ac(), Del(), Decimal(), null];
 /// slot from the system-row so the toggle target stays put across the swap.
 /// Doz/Dez moved to the settings page (written-out, value-preserving base
 /// switch); EXP (Sci) took the freed slot when the function page was folded
-/// into the long-press popups.
-const List<CalcToken?> _set10Row = [Sci(), Drg(), null, Close()];
+/// into the long-press popups. CONV (the unit-converter bridge) fills the
+/// remaining slot: it inserts the converter's current result as digits.
+const List<CalcToken?> _set10Row = [Sci(), Drg(), ConvAns(), Close()];
 
 /// Set 10 for the Hoch scroll mode: Close dropped (there is no overlay to
 /// close when everything is one scrolling column).
-const List<CalcToken?> _set10RowNoClose = [Sci(), Drg(), null, null];
+const List<CalcToken?> _set10RowNoClose = [Sci(), Drg(), ConvAns(), null];
 
 /// Extended rows for the Hoch scroll mode: Sets 6-9, followed by the
 /// function-key rows while the function page is active.
@@ -228,14 +212,8 @@ const List<List<CalcToken?>> _hochScrollExtendedRows = [
   if (_kFuncPageEnabled) ..._hochFuncRows,
 ];
 
-// Breit-mode column data (one set per column).
-const List<CalcToken> _set1 = [Add(), Sub(), Mul(), Div()];
-const List<CalcToken> _set2 = [
-  OplusBotLeft(),
-  ExpTopRight(),
-  RootTopLeft(),
-  LogBotRight(),
-];
+// Breit-mode column data (one set per column); Sets 1/2/6/7 are the shared
+// kSet* columns from keypad_parts.dart.
 const List<CalcToken> _set3 = [Sin(), Cos(), Tan(), Cot()];
 const List<CalcToken> _set4 = [
   ParenOpen(),
@@ -243,12 +221,11 @@ const List<CalcToken> _set4 = [
   TriangleLeft(),
   TriangleRight(),
 ];
-const List<CalcToken> _set6 = [Sto(), Rcl(), Mc(), Ans()];
-const List<CalcToken> _set7 = [ConstPi(), ConstE(), ConstPhi(), ConstSqrt2()];
 const List<CalcToken> _set8 = [Sinh(), Cosh(), Tanh(), Coth()];
 const List<CalcToken> _set9 = [Factorial(), AbsVal(), Reciprocal(), Mod()];
-// Close dropped; Doz/Dez live in the settings page, EXP (Sci) moved in.
-const List<CalcToken> _set10Column = [Sci(), Drg()];
+// Close dropped; Doz/Dez live in the settings page, EXP (Sci) moved in,
+// CONV (unit-converter bridge) appended like in the Hoch Set-10 row.
+const List<CalcToken> _set10Column = [Sci(), Drg(), ConvAns()];
 
 /// Function-key columns for the Breit third-group page 1 — the transpose of
 /// _hochFuncRows, following the same row↔column convention as Sets 1-4 vs
@@ -307,12 +284,12 @@ class _HochKeypad extends StatelessWidget {
     return LayoutBuilder(
       builder: (ctx, constraints) {
         final h = constraints.maxHeight;
-        if (h.isFinite && h < _kScrollThreshold) {
+        if (h.isFinite && h < kKeypadScrollThreshold) {
           return SingleChildScrollView(
             child: _buildColumn(ctx, tight: true, fixedHeights: true),
           );
         }
-        final tight = h.isFinite && h < _kTightThreshold;
+        final tight = h.isFinite && h < kKeypadTightThreshold;
         return _buildColumn(ctx, tight: tight, fixedHeights: false);
       },
     );
@@ -331,9 +308,9 @@ class _HochKeypad extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        for (var r = 0; r < _digitGridRows.length; r++) ...[
+        for (var r = 0; r < kDigitGridRows.length; r++) ...[
           if (r > 0) const SizedBox(height: 8),
-          SizedBox(height: minTouchTarget, child: _digitRow(_digitGridRows[r])),
+          SizedBox(height: minTouchTarget, child: _digitRow(kDigitGridRows[r])),
         ],
         const SizedBox(height: sectionGap),
         Divider(color: t.hairline, height: 1, thickness: 1),
@@ -401,9 +378,9 @@ class _HochKeypad extends StatelessWidget {
         : Expanded(flex: flex, child: child);
 
     final children = <Widget>[
-      for (var r = 0; r < _digitGridRows.length; r++) ...[
+      for (var r = 0; r < kDigitGridRows.length; r++) ...[
         if (r > 0) SizedBox(height: rowGap),
-        row(_digitRow(_digitGridRows[r])),
+        row(_digitRow(kDigitGridRows[r])),
       ],
       SizedBox(height: sectionGap),
       Divider(color: t.hairline, height: 1, thickness: 1),
@@ -1009,21 +986,21 @@ class _BreitKeypad extends StatelessWidget {
       return Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          for (var r = 0; r < _digitGridRows.length; r++) ...[
+          for (var r = 0; r < kDigitGridRows.length; r++) ...[
             if (r > 0) const SizedBox(height: tabletDigitGap),
             Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                for (var col = 0; col < _digitGridRows[r].length; col++) ...[
+                for (var col = 0; col < kDigitGridRows[r].length; col++) ...[
                   if (col > 0) const SizedBox(width: tabletDigitGap),
                   SizedBox(
                     width: buttonSize,
                     height: buttonSize,
                     child: _DigitButton(
-                      digit: _digitGridRows[r][col],
-                      onTap: () => onTap(Digit(_digitGridRows[r][col])),
+                      digit: kDigitGridRows[r][col],
+                      onTap: () => onTap(Digit(kDigitGridRows[r][col])),
                       disabled:
-                          isDisabled?.call(Digit(_digitGridRows[r][col])) ??
+                          isDisabled?.call(Digit(kDigitGridRows[r][col])) ??
                           false,
                     ),
                   ),
@@ -1125,9 +1102,9 @@ class _BreitKeypad extends StatelessWidget {
       children: [
         digitGrid(),
         bigGap(), // group break: digit pad → Sets 1-5
-        opColumn(_set1),
+        opColumn(kSet1),
         gap(),
-        opColumn(_set2),
+        opColumn(kSet2),
         gap(),
         opColumn(_set3),
         gap(),
@@ -1148,9 +1125,9 @@ class _BreitKeypad extends StatelessWidget {
         if (!simple) ...[
           bigGap(), // group break: Sets 1-5 → third group
           if (scrollAll) ...[
-            opColumn(_set6),
+            opColumn(kSet6),
             gap(),
-            opColumn(_set7),
+            opColumn(kSet7),
             gap(),
             opColumn(_set8),
             gap(),
@@ -1168,9 +1145,9 @@ class _BreitKeypad extends StatelessWidget {
               opColumn(_funcCol4, padToFour: true),
             ],
           ] else if (!_kFuncPageEnabled || page == 0) ...[
-            opColumn(_set6),
+            opColumn(kSet6),
             gap(),
-            opColumn(_set7),
+            opColumn(kSet7),
             gap(),
             opColumn(_set8),
             gap(),
@@ -1204,74 +1181,6 @@ class _BreitKeypad extends StatelessWidget {
 // Button building blocks
 // ---------------------------------------------------------------------------
 
-class _PressableShell extends StatefulWidget {
-  final VoidCallback onTap;
-  final Widget Function(BuildContext, bool pressed) builder;
-  final bool selected;
-  final bool disabled;
-  // Long-press popup hooks (host keys only — null keeps the recognizer out
-  // of the gesture arena so plain keys are unaffected).
-  final GestureLongPressStartCallback? onLongPressStart;
-  final GestureLongPressMoveUpdateCallback? onLongPressMoveUpdate;
-  final GestureLongPressEndCallback? onLongPressEnd;
-
-  const _PressableShell({
-    required this.onTap,
-    required this.builder,
-    this.selected = false,
-    this.disabled = false,
-    this.onLongPressStart,
-    this.onLongPressMoveUpdate,
-    this.onLongPressEnd,
-  });
-
-  @override
-  State<_PressableShell> createState() => _PressableShellState();
-}
-
-class _PressableShellState extends State<_PressableShell> {
-  bool _pressed = false;
-
-  void _setPressed(bool v) {
-    if (_pressed != v) setState(() => _pressed = v);
-  }
-
-  void _handleTap() {
-    if (widget.disabled) return;
-    if (HapticsScope.enabledOf(context)) HapticFeedback.lightImpact();
-    widget.onTap();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    final t = AppColors.of(context);
-    return GestureDetector(
-      behavior: HitTestBehavior.opaque,
-      onTapDown: widget.disabled ? null : (_) => _setPressed(true),
-      onTapUp: widget.disabled ? null : (_) => _setPressed(false),
-      onTapCancel: widget.disabled ? null : () => _setPressed(false),
-      onTap: _handleTap,
-      onLongPressStart: widget.disabled ? null : widget.onLongPressStart,
-      onLongPressMoveUpdate: widget.disabled
-          ? null
-          : widget.onLongPressMoveUpdate,
-      onLongPressEnd: widget.disabled ? null : widget.onLongPressEnd,
-      child: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(4),
-          border: Border.all(
-            color: widget.selected
-                ? t.op
-                : (widget.disabled ? t.keyBorderDisabled : t.keyBorder),
-            width: widget.selected ? 2 : 1,
-          ),
-        ),
-        child: widget.builder(context, _pressed),
-      ),
-    );
-  }
-}
-
 class _DigitButton extends StatelessWidget {
   final DozenalDigit digit;
   final VoidCallback onTap;
@@ -1296,14 +1205,14 @@ class _DigitButton extends StatelessWidget {
         label: l.a11yDigit(digit.value),
         excludeSemantics: true,
         enabled: !disabled,
-        child: _PressableShell(
+        child: PressableShell(
           onTap: onTap,
           disabled: disabled,
           builder: (ctx, pressed) {
             final t = AppColors.of(ctx);
             return CustomPaint(
               size: Size.infinite,
-              painter: _DigitPainter(
+              painter: DigitKeyPainter(
                 digit: digit,
                 style: style,
                 color: disabled
@@ -1316,57 +1225,6 @@ class _DigitButton extends StatelessWidget {
       ),
     );
   }
-}
-
-class _DigitPainter extends CustomPainter {
-  final DozenalDigit digit;
-  final GlyphStyle style;
-  final Color color;
-
-  _DigitPainter({
-    required this.digit,
-    required this.color,
-    this.style = GlyphStyle.custom,
-  });
-
-  @override
-  void paint(Canvas canvas, Size size) {
-    final minEdge = math.min(size.width, size.height);
-    if (style == GlyphStyle.conventional) {
-      // Conventional ASCII '0'..'9'/'A'/'B' — same Pitman/Dwiggins
-      // convention as the display's conventional mode. Font size chosen so
-      // the digit's visual height roughly matches the 2q glyph box below.
-      final tp = TextPainter(
-        text: TextSpan(
-          text: conventionalDigitChar(digit),
-          style: TextStyle(
-            color: color,
-            fontSize: minEdge * 0.55,
-            fontFamily: 'monospace',
-          ),
-        ),
-        textDirection: TextDirection.ltr,
-      )..layout();
-      tp.paint(
-        canvas,
-        Offset((size.width - tp.width) / 2, (size.height - tp.height) / 2),
-      );
-      return;
-    }
-    final q = minEdge / 4;
-    paintDozenalDigitAt(
-      canvas,
-      digit,
-      center: Offset(size.width / 2, size.height / 2),
-      q: q,
-      color: color,
-      strokeWidth: 2.5,
-    );
-  }
-
-  @override
-  bool shouldRepaint(covariant _DigitPainter old) =>
-      old.digit != digit || old.color != color || old.style != style;
 }
 
 class _TokenButton extends StatefulWidget {
@@ -1463,12 +1321,16 @@ class _TokenButtonState extends State<_TokenButton> {
         final t = AppColors.of(ctx);
         return Stack(
           children: [
-            // Barrier: a tap anywhere outside the option row closes the
-            // popup without dispatching anything.
+            // Barrier: any pointer-down outside the option row closes the
+            // popup. A Listener (not a GestureDetector) with translucent
+            // hit-testing stays out of the gesture arena, so the same tap
+            // continues to whatever lies beneath — tapping another key while
+            // the popup is open types that key instead of being swallowed,
+            // exactly like smartphone-keyboard accent popups.
             Positioned.fill(
-              child: GestureDetector(
-                behavior: HitTestBehavior.opaque,
-                onTap: _removePopup,
+              child: Listener(
+                behavior: HitTestBehavior.translucent,
+                onPointerDown: (_) => _removePopup(),
               ),
             ),
             Positioned(
@@ -1564,7 +1426,7 @@ class _TokenButtonState extends State<_TokenButton> {
         label: _tokenSemanticLabel(widget.token, l),
         hint: hasPopup ? l.a11yHoldMore : null,
         excludeSemantics: true,
-        child: _PressableShell(
+        child: PressableShell(
           onTap: widget.onTap,
           selected: widget.selected,
           onLongPressStart: hasPopup ? _onLongPressStart : null,
@@ -1579,7 +1441,7 @@ class _TokenButtonState extends State<_TokenButton> {
               children: [
                 Positioned.fill(
                   child: CustomPaint(
-                    painter: _TokenPainter(
+                    painter: TokenKeyPainter(
                       token: widget.token,
                       color: pressed ? pressedColor : normalColor,
                     ),
@@ -1642,7 +1504,7 @@ class _PopupOption extends StatelessWidget {
           ),
           child: CustomPaint(
             size: Size.infinite,
-            painter: _TokenPainter(token: token, color: t.op),
+            painter: TokenKeyPainter(token: token, color: t.op),
           ),
         ),
       ),
@@ -1726,6 +1588,7 @@ String _tokenSemanticLabel(CalcToken t, AppLocalizations l) => switch (t) {
   Doz() => l.a11yDozenalMode,
   Dez() => l.a11yDecimalMode,
   Drg() => l.a11yAngleMode,
+  ConvAns() => l.a11yConvAns,
   Info() => l.a11yInfo,
   MemPlus() => l.a11yMemPlus,
   MemMinus() => l.a11yMemMinus,
@@ -1741,28 +1604,6 @@ String _tokenSemanticLabel(CalcToken t, AppLocalizations l) => switch (t) {
   // RatLit only ever live in buffers).
   Digit() || Negate() || RatLit() => '',
 };
-
-class _TokenPainter extends CustomPainter {
-  final CalcToken token;
-  final Color color;
-
-  _TokenPainter({required this.token, required this.color});
-
-  @override
-  void paint(Canvas canvas, Size size) {
-    paintTokenAt(
-      canvas,
-      token,
-      rect: Rect.fromLTWH(0, 0, size.width, size.height),
-      color: color,
-      strokeWidth: 2.0,
-    );
-  }
-
-  @override
-  bool shouldRepaint(covariant _TokenPainter old) =>
-      old.token != token || old.color != color;
-}
 
 class _ArmedDot extends StatelessWidget {
   const _ArmedDot();
@@ -1788,10 +1629,10 @@ class _EqualsBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return _PressableShell(
+    return PressableShell(
       onTap: onTap,
       builder: (ctx, pressed) => CustomPaint(
-        painter: _TokenPainter(
+        painter: TokenKeyPainter(
           token: const Equals(),
           color: pressed ? AppColors.of(ctx).opPressed : normalColor,
         ),

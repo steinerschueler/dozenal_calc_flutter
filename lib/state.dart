@@ -90,6 +90,35 @@ class DozenalCalcState extends ChangeNotifier {
   NumeralSystem numeralSystem = NumeralSystem.doz;
   InfoState infoState = const InfoClosed();
 
+  /// UI request flag in the [infoState] style: the info list's converter
+  /// entry asks the calc scaffold to swipe over to the converter page. The
+  /// scaffold listener performs the page change and resets the flag.
+  bool converterRequested = false;
+
+  void requestConverter() {
+    converterRequested = true;
+    notifyListeners();
+  }
+
+  /// Bridge to the unit converter (the CONV key): pulls the converter's
+  /// current result. Injected by the calc scaffold; null when no converter
+  /// is attached (standalone state in tests) — the key is then disabled.
+  double? Function()? convAnsProvider;
+
+  /// The converter's current result, or null when there is none (no terms
+  /// typed over there, no provider attached, or a non-finite value).
+  double? get convAnsValue {
+    final v = convAnsProvider?.call();
+    return v != null && v.isFinite ? v : null;
+  }
+
+  /// What this calculator offers to the converter's Ans key: the last
+  /// computed result as a double ([lastResultF64] is kept in sync on the
+  /// exact track too). Null when no live result is on screen (post-AC or
+  /// after an error), so the converter can grey its key out.
+  double? get ansForBridge =>
+      _resultLive && errorMsg == null ? lastResultF64 : null;
+
   /// True when the display should show the State-B "≈"-suffix.
   bool get isF64Fallback => errorMsg == null && _ratCollapsed;
 
@@ -215,7 +244,14 @@ class DozenalCalcState extends ChangeNotifier {
       }
     }
 
-    if (token is! TriangleLeft && token is! TriangleRight) {
+    // Transparent tokens must not consume the after-equals state either —
+    // otherwise `= → Expand → digit` appends to the evaluated expression
+    // while `= → digit` starts fresh, and the overlay keys (Ans, CONV, π, …)
+    // behave differently in Hoch mode (reached through Expand) than in the
+    // Breit inline layout. The Rust original never met this: without an
+    // overlay there is no Expand between = and the next key. AC stays a full
+    // reset.
+    if (token is Ac || !_isTransparentAfterEquals(token)) {
       resultFieldActive = false;
     }
 
@@ -335,6 +371,21 @@ class DozenalCalcState extends ChangeNotifier {
       } else {
         for (final m in resultBuffer) {
           _insertAtCursor(m);
+        }
+      }
+      overlayOpen = false;
+      return;
+    }
+    if (token is ConvAns) {
+      final v = convAnsValue;
+      if (v != null) {
+        // Insert as plain digits in the active base, like a history-recalled
+        // f64 value. formatF64Result handles the near-integer snap and the
+        // sign; its display-only Negate becomes a unary Sub so the literal
+        // stays parseable on both evaluation tracks (the ± key sets the same
+        // shape).
+        for (final m in formatF64Result(v, base: activeBase)) {
+          _insertAtCursor(m is Negate ? const Sub() : m);
         }
       }
       overlayOpen = false;
@@ -590,6 +641,7 @@ class DozenalCalcState extends ChangeNotifier {
       token is Rcl ||
       token is Mc ||
       token is Ans ||
+      token is ConvAns ||
       token is MemPlus ||
       token is MemMinus;
 

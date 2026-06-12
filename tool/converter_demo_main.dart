@@ -52,11 +52,7 @@ void main() {
                       ),
                       const SizedBox(height: 14),
                       Expanded(
-                        child: ConverterKeypad(
-                          state: state,
-                          onBack: () {},
-                          onInfo: () {},
-                        ),
+                        child: ConverterKeypad(state: state),
                       ),
                     ],
                   ),

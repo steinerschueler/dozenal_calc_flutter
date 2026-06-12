@@ -88,13 +88,16 @@ class SettingsPage extends StatelessWidget {
               _SegmentRow(
                 // Written out (localized) — since the Doz/Dez keypad keys
                 // moved out of the overlay, this row is the primary base
-                // switch and should be self-explanatory.
+                // switch and should be self-explanatory. World colour code:
+                // dozenal = Twelve-world violet, decimal = Ten-world green
+                // (same hues as the DOZ/DEZ badges and the converter keys).
                 icon: Icons.dialpad,
                 title: l.settingsNumeralSystemTitle,
                 labels: [
                   l.settingsNumeralSystemDozenal,
                   l.settingsNumeralSystemDecimal,
                 ],
+                optionColors: [t.worldTwelve, t.worldTen],
                 selectedIndex: calc.numeralSystem == NumeralSystem.doz ? 0 : 1,
                 // handleClick runs the same buffer-conversion path as the
                 // keypad's Doz/Dez keys (value-preserving base switch).
@@ -199,6 +202,7 @@ class _SegmentRow extends StatelessWidget {
     required this.selectedIndex,
     required this.onSelected,
     this.segmentMinWidth = 64,
+    this.optionColors,
   });
 
   final IconData icon;
@@ -208,9 +212,16 @@ class _SegmentRow extends StatelessWidget {
   final ValueChanged<int> onSelected;
   final double segmentMinWidth;
 
+  /// Optional per-option hue (the world colour code): each label is tinted in
+  /// its own colour (dimmed while unselected) and the selected segment's
+  /// frame takes that hue — same active-frame convention as the keypads.
+  /// Null → the neutral grey segment styling.
+  final List<Color>? optionColors;
+
   @override
   Widget build(BuildContext context) {
     final t = AppColors.of(context);
+    final hues = optionColors;
     return ListTile(
       leading: SizedBox(
         width: 28,
@@ -228,16 +239,25 @@ class _SegmentRow extends StatelessWidget {
         constraints: BoxConstraints(minWidth: segmentMinWidth, minHeight: 32),
         borderRadius: BorderRadius.circular(6),
         borderColor: t.cardBorder,
-        selectedBorderColor: t.pagerBorder,
+        selectedBorderColor: hues?[selectedIndex] ?? t.pagerBorder,
         color: t.textFaint,
         selectedColor: t.textPrimary,
         fillColor: t.cardFill,
         textStyle: const TextStyle(fontSize: 12),
         children: [
-          for (final label in labels)
+          for (var i = 0; i < labels.length; i++)
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8),
-              child: Text(label),
+              child: Text(
+                labels[i],
+                style: hues == null
+                    ? null
+                    : TextStyle(
+                        color: i == selectedIndex
+                            ? hues[i]
+                            : hues[i].withValues(alpha: 0.55),
+                      ),
+              ),
             ),
         ],
       ),

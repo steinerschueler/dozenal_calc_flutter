@@ -129,10 +129,33 @@ void main() {
       await tester.pump();
       expect(find.bySemanticsLabel('Toggle sign'), findsOneWidget);
 
-      await tester.tapAt(const Offset(5, 5)); // barrier
+      await tester.tapAt(const Offset(5, 5)); // empty scaffold corner
       await tester.pump();
       expect(find.bySemanticsLabel('Toggle sign'), findsNothing);
       expect(tapped, isEmpty);
+      handle.dispose();
+    });
+
+    testWidgets('tap on another key closes the popup AND types that key', (
+      tester,
+    ) async {
+      // The barrier must not swallow input (device-found): like a
+      // smartphone-keyboard accent popup, tapping elsewhere acts normally.
+      final handle = tester.ensureSemantics();
+      final tapped = <CalcToken>[];
+      await tester.pumpWidget(_wrap(hochArea, tapped));
+
+      final gesture = await _holdKey(tester, 'minus');
+      await gesture.up();
+      await tester.pump();
+      expect(find.bySemanticsLabel('Toggle sign'), findsOneWidget);
+
+      // × sits below the host, clear of the popup row (the + key above is
+      // covered by the option cell — tapping there selects ±, also fine).
+      await tester.tap(find.bySemanticsLabel('times'));
+      await tester.pump();
+      expect(find.bySemanticsLabel('Toggle sign'), findsNothing);
+      expect(tapped, const [Mul()]);
       handle.dispose();
     });
 

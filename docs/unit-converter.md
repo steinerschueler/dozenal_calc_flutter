@@ -11,11 +11,18 @@ Ein **zweiter Rechner-Modus** — ein vollwertiger Einheitenrechner. Er lebt in
 (Tasten-Shells, Painter, Layout-Logik), ist aber ein **eigener Screen**. Das
 normale Keypad bleibt unangetastet — die Store-Screenshots bleiben gültig.
 
-Leitidee: zwei Welten, per Doz/Dez umschaltbar.
-- **Doz-Welt** — imperiale/dozenale Einheiten, in Basis-12-Ziffern (alles
-  rund: 12 in = 1 ft = „10" dozenal). Klammer zeigt die metrische Entsprechung.
-- **Dez-Welt** — metrische/SI-Einheiten, in Basis-10-Ziffern (100 cm = 1 m).
-  Klammer zeigt die imperiale Entsprechung.
+Leitidee (seit dem Farb-Umbau **entkoppelt**): zwei unabhängige Achsen statt
+einer Welt-Kopplung — alle vier Kombinationen sind gültig.
+- **Einheitensystem** (imperial ↔ metrisch): converter-lokal über die
+  met/imp-Tasten in der Equals-Reihe. Imperiale Maße bleiben die
+  12-freundlichen (12 in = 1 ft = „10" dozenal).
+- **Zahlbasis** (12 ↔ 10): global über die Settings-Zeile „Zahlensystem"
+  (gilt für beide Rechner; `ConverterState.setBase` synct werterhaltend).
+- **Farbcode** („eine Farbe pro Welt, ein Träger pro Achse"): Grün =
+  Zehner-Welt (metrisch, dezimal), Violett = Zwölfer-Welt (imperial,
+  dozenal). Einheitensymbole tragen die System-Farbe, das DOZ/DEZ-Badge die
+  Basis-Farbe, Ziffern bleiben neutral, die `{ }`-Klammer leuchtet in der
+  Farbe der Welt, die sie zeigt. Blau bleibt exklusiv den Funktions-Glyphen.
 
 > **Zukunft:** ein separater **Edelmetallrechner** ist geplant (baut auf der
 > Feinunze auf — daher Troy-Einheiten hier behalten).
@@ -24,9 +31,32 @@ Leitidee: zwei Welten, per Doz/Dez umschaltbar.
 
 ## 2. Zugang
 
-Eintrag in `InfoListPage` → pusht den Einheitenrechner-Screen. Rückkehr über
-das **Taschenrechner-Icon** (`Icons.calculate_outlined`) unten rechts, an der
-Stelle des bisherigen (?)-Intro-Icons.
+Seit dem Pager-Umbau ist der Umrechner **Seite 2 des Rechner-PageView**:
+**Links-Swipe** auf dem Hauptrechner öffnet ihn, **Rechts-Swipe** führt
+zurück. Die früheren Rundtasten der Equals-Reihe ((i)-Info und
+Taschenrechner-Icon) sind den met/imp-System-Tasten gewichen: Info läuft
+über das (i) der Hauptrechner-Seite, zurück geht nur noch der Swipe. Beim
+App-Start zeigt das Display immer den Hauptrechner. Der Eintrag in
+`InfoListPage` bleibt als zweiter Zugang: er poppt die Info-Route und lässt
+den Pager hinüberwischen
+(`DozenalCalcState.requestConverter()`); ohne `CalcStateScope` —
+Standalone-Tests — pusht er wie früher die `ConverterPage`-Route. Der
+`ConverterState` lebt im Calc-Scaffold, Eingaben überleben also
+Seitenwechsel in beide Richtungen.
+
+### Resultat-Brücke (Ans ↔ CONV)
+
+Werte wandern per Taste zwischen den Rechnern (immer als Zahl, formatiert
+in der Basis der Zielseite):
+- **Ans** (Umrechner, Set 6): zieht das letzte Resultat des Hauptrechners
+  als Pending-Zahl (negativ → −-Operator armiert). Grau, solange drüben
+  kein lebendes Resultat liegt.
+- **CONV** (Hauptrechner, Set-10-Slot): fügt die Zahl der
+  Umrechner-Ergebniszeile (in der `=`-gezykelten Einheit; Breakdown →
+  Arbeits-Einheit) als Ziffern an der Cursor-Position ein. Grau ohne
+  committete Terme drüben.
+Damit „Ans → Kategorie → Magnitude" funktioniert, überlebt die
+Pending-Zahl den Kategorienwechsel (nur Terme werden verworfen).
 
 ## 3. Tastenbelegung
 
@@ -51,9 +81,19 @@ Set6    Set7     Set8 (Kategorien)   Set9 (Kategorien)
  ANS    √2       work                moment
 ```
 
-- **Set 6 (STO/RCL/MC/ANS)** und **Set 7 (π/e/φ/√2)** bleiben funktional.
-- **Set 10 (Doz/Dez/Drg/Close)** bleibt — **Doz/Dez = Welt-Umschalter**
-  (imperial ↔ metrisch, inkl. Ziffernbasis 12 ↔ 10, siehe §7).
+- **Set 6 (STO/RCL/MC/ANS)** und **Set 7 (π/e/φ/√2)**: **alle verdrahtet** —
+  ANS = Resultat-Brücke zum Hauptrechner (siehe §2); STO speichert den
+  Ergebniszeilen-Wert ins converter-lokale Register (überlebt AC), RCL und
+  die Konstanten fügen ihren Wert in ein leeres Skalar-Segment ein
+  (Segment-Regel, siehe §4a). Nur Drg bleibt inert (keine
+  Winkelfunktionen).
+- **Set 2 (⊕/xⁿ/ⁿ√/log)**: verdrahtet als Skalar-Entry-Operatoren
+  (siehe §4a).
+- **Set 10:** Doz/Dez sind **entfernt** (Basis = globale Einstellung, System
+  = met/imp-Tasten in der Equals-Reihe, siehe §7); die Slots bleiben leer,
+  Drg (inert) und Close behalten ihre Plätze.
+- **Equals-Reihe:** `met` (grün) | `=` | `imp` (violett) — die System-Tasten
+  flankieren die Gleichtaste, die aktive trägt einen Eigenfarb-Rahmen.
 - **Beschriftung:** Text-Labels (`dist`, `area`, …), keine custom-Glyphen.
 
 ## 4. Interaktionsmodell
@@ -63,10 +103,10 @@ Set6    Set7     Set8 (Kategorien)   Set9 (Kategorien)
 **Zustand B — Einheit aktiv.** Tipp auf eine Kategorie (z. B. `dist`):
 - die anderen 7 Kategorietasten verschwinden, `dist` bleibt auf seinem Platz
   (**goldig umrandet** = aktiv),
-- die **Magnitudentasten** der Kategorie erscheinen — in der aktuellen Welt
-  (Doz → imperiale Leiter, Dez → metrische Leiter): zuerst die Gegenspalte
-  (4 Slots), bei Überlauf zusätzlich die frei gewordenen Slots rund um die
-  aktive Taste (bis zu 3) → **max. 7 Magnituden**,
+- die **Magnitudentasten** der Kategorie erscheinen — im aktiven
+  Einheitensystem (imp → imperiale Leiter, met → metrische Leiter): zuerst
+  die Gegenspalte (4 Slots), bei Überlauf zusätzlich die frei gewordenen
+  Slots rund um die aktive Taste (bis zu 3) → **max. 7 Magnituden**,
 - oben im Display erscheint die aktive Einheit + Klammer.
 
 **Zurück zu A.** Erneuter Tipp auf `dist`: Magnituden weg, Einheit aus dem
@@ -104,7 +144,7 @@ tippe 100  tippe m   oben: 100 m {109.4 yd}     unten: = 0.1 km {0.0621 mi}
 Kette: Zahl tippen → Magnitude tippen (committet einen Term „5 ft") → Zahl →
 Magnitude („3 in") → … Die Summe ist der laufende Gesamtwert (intern SI).
 
-**Operatoren (nur + und −; × ÷ entfallen):**
+**Term-Operatoren (+ und −):**
 - Intern hat jede Lücke einen Operator, Default **+**.
 - **+ wird nicht angezeigt, wenn die benachbarten Magnituden verschieden sind**
   (`5 ft 3 in`).
@@ -112,7 +152,18 @@ Magnitude („3 in") → … Die Summe ist der laufende Gesamtwert (intern SI).
   mehrdeutig (`3 h + 2 h` / `3 h − 2 h`).
 - **−** wird immer angezeigt (auch zwischen verschiedenen Magnituden:
   `5 ft − 3 in`).
-- In Set 1 sind dadurch **+ und −** aktiv; × ÷ bleiben ausgegraut.
+
+**Skalar-Operatoren (× und ÷, nachgerüstet):** Eine Größe mal/geteilt durch
+eine **einheitslose Zahl** bleibt in ihrer Kategorie — deshalb leben × ÷ in
+der Pending-Eingabe, nicht auf Term-Ebene:
+- `3 × 2` → `ft` committet 6 ft; Auswertung strikt links-nach-rechts beim
+  Magnituden-Tipp (`parseScalarEntry`), hängender Operator wird toleriert.
+- Auf einem committeten Compound kollabiert der erste ×/÷-Druck das Ganze
+  in editierbare Ziffern (Gesamtwert in der Arbeits-Einheit, gleiches Idiom
+  wie der Welt-Wechsel): `5 ft 3 in` → `×` → `53×` (doz) → `2` → `in`.
+- Dezimalpunkt-Guard pro Segment (`1.6×0.6` ist gültig); Basis-Wechsel
+  reformatiert segmentweise; Tasten dynamisch aktiv via `canScalarOp`.
+- Damit ist **ganz Set 1** aktiv.
 
 **`=`-Ausgaben.** `=` durchläuft die Ergebnis-Ansichten und wrappt:
 1. der Gesamtwert in **je einer Einheit** der Leiter (wie bisher), dann
@@ -245,19 +296,20 @@ Kubik-Volumen und `cook` Rezeptmaßen)
 
 ## 7. Doz/Dez-Verhalten (Welt-Umschalter)
 
-Set-10-Doz/Dez schaltet die **ganze Welt** um:
-1. **Einheitensystem** — imperiale Leiter (Doz) ↔ metrische Leiter (Dez). Die
-   Magnitudentasten der aktiven Kategorie wechseln entsprechend.
-2. **Klammer-Richtung** — Doz zeigt metrische `{ }`, Dez zeigt imperiale `{ }`.
-3. **Ziffernbasis** — Doz rendert Zahlen in Basis 12, Dez in Basis 10 (über die
-   bestehende `_toDoz`-Logik), inkl. der Zahlen in der Klammer.
+> **Überholt durch die Basis/System-Entkopplung** (siehe §1/§2): Die feste
+> Kopplung „ein Toggle für beides" erwies sich als zu großer Einschnitt —
+> wer dozenal rechnen will, war auf imperiale Einheiten festgelegt.
 
-Die Ziffernbasis ist **fest an die Welt gekoppelt** (Doz = Basis 12 + imperial,
-Dez = Basis 10 + metrisch) — ein Toggle für beides.
-
-Beim Welt-Wechsel wird der aktuell gezeigte Wert **physikalisch erhalten** und
-in die nächstliegende Einheit des neuen Systems überführt (z. B. `144 ft` →
-`43.89 m`), nicht die Ziffer reinterpretiert.
+Heutiges Verhalten, zwei getrennte Schalter:
+1. **met/imp (Equals-Reihe)** schaltet NUR das Einheitensystem: imperiale ↔
+   metrische Leiter (Magnitudentasten wechseln), Klammer-Richtung dreht
+   mit. Der gezeigte Wert wird **physikalisch erhalten** und in die
+   Partner-Einheit überführt (`144 ft` → `43.89 m`), nicht die Ziffer
+   reinterpretiert.
+2. **Einstellungen → Zahlensystem** schaltet NUR die Ziffernbasis (12 ↔ 10,
+   beide Rechner, inkl. Klammer-Zahlen); `setBase` formatiert die
+   Pending-Eingabe werterhaltend um. A/B-Ziffern folgen der Basis, der
+   Breakdown dem System.
 
 ## 8. Umbauplan (Implementierungs-Reihenfolge)
 
@@ -286,7 +338,9 @@ in die nächstliegende Einheit des neuen Systems überführt (z. B. `144 ft` →
 ## 9. Status
 
 Spec **eingefroren** — alle Design-Entscheidungen getroffen:
-- Ziffernbasis fest an Welt gekoppelt (Doz=12/imperial, Dez=10/metrisch).
+- ~~Ziffernbasis fest an Welt gekoppelt (Doz=12/imperial, Dez=10/metrisch)~~
+  **revidiert**: Basis und System sind entkoppelt (§1/§7), Farbcode
+  grün=Zehner-/violett=Zwölfer-Welt.
 - count: Dutzend- ↔ Dezimal-Gruppierung, konsequent durchgezogen.
 - time: einsystemig, Klammer zeigt den Wert in der anderen Ziffernbasis.
 - Einheiten = US-Varianten; Feinunze (Troy) behalten.
@@ -326,7 +380,28 @@ temp °F↔°C, fuel mpg↔L/100km, price £sd↔£dez, count Basis↔Basis, tim
 - [x] Tipp-Cursor **Umrechner** — **Display**: roter Caret im
       `converter_display` (custom-paint, skaliert) + Taps auf die Eingabezeile
       → `handleInputTapAtChar` (Caret/Term-Grenze); Vorschau bestätigt
-- [ ] Set 2 + Set 6/7 verdrahten (Konstanten/Speicher)
+- [x] **Pager-Integration**: Umrechner als Seite 2 des Rechner-PageView
+      (Links-/Rechts-Swipe), `ConverterBody` extrahiert, `ConverterState`
+      im Scaffold, Info-Listen-Eintrag → `requestConverter()`,
+      Tastatur-Routing nach aktiver Seite — `calc_pager_test.dart`
+- [x] **Resultat-Brücke**: Set-6-**Ans** verdrahtet (zieht das
+      Hauptrechner-Resultat, `insertCalcAns`) + neues **CONV**-Token im
+      Set-10-Slot des Hauptrechners (zieht die Umrechner-Ergebniszeile,
+      `ansForBridge` beidseitig, Provider-Verdrahtung im Scaffold);
+      Pending-Zahl überlebt den Kategorienwechsel
+- [x] **Basis/System-Entkopplung + Farbsystem**: Doz/Dez-Tasten entfernt,
+      met/imp-System-Tasten als Equals-Flanken (grün/violett, Rundtasten
+      entfallen), Basis global via Settings-Sync (`setBase`), Palette-Slots
+      `worldTen`/`worldTwelve`, Einheitensymbole/Badge/Klammern farbcodiert
+      (`unitRanges`/`bracketTenWorld`), `formatBaseNum`-Near-Integer-Snap
+- [x] **× ÷ verdrahtet** (Skalar-Operatoren in der Pending-Eingabe +
+      Compound-Kollaps; `parseScalarEntry`/`reformatScalarEntry` in
+      `base_num.dart`, Tastatur-Routing `*`/`/`, 9 Tests)
+- [x] **Set 2 + Set 6/7 verdrahtet**: ⊕ ^ √ ㏒ als weitere Entry-Operatoren
+      (Fold-Konventionen wie Hauptrechner: linker Operand = Grad/Basis),
+      Konstanten + RCL + Ans als Wert-Tasten mit Segment-Regel
+      (`insertValueEntry`), STO/MC-Register; nur Drg bleibt inert.
+      **Der Umrechner-Keypad ist damit vollständig.**
 
 Schritt 1 (Tokens) entfiel: das Keypad nutzt `UnitCategory`/`Unit` direkt
 statt eigener `CalcToken`-Varianten.

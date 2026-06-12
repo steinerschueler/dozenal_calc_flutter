@@ -257,6 +257,14 @@ final class Drg extends CalcToken {
   const Drg();
 }
 
+/// Bridge key between the two calculators: inserts the unit converter's
+/// current result into the main input as plain digits (the converter's
+/// mirror key is its Ans, which pulls the main calculator's last answer).
+/// Action token — never enters a buffer itself.
+final class ConvAns extends CalcToken {
+  const ConvAns();
+}
+
 final class Info extends CalcToken {
   const Info();
 }

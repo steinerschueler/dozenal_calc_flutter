@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
 import 'app_theme.dart';
+import 'calc_scope.dart';
 import 'conversions_page.dart';
 import 'converter_page.dart';
 import 'feedback_dialog.dart';
@@ -559,11 +560,26 @@ class _UnitsExpansionState extends State<_UnitsExpansion> {
                         ),
                       ),
                       trailing: const _NavChevron(),
-                      onTap: () => Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (_) => const ConverterPage(),
-                        ),
-                      ),
+                      onTap: () {
+                        // In the app the converter is the calc pager's second
+                        // page: pop back to the calculator and ask it to
+                        // swipe over (request/reset pattern like infoState).
+                        // Without a CalcStateScope (standalone tests) fall
+                        // back to pushing the stand-alone route.
+                        final calc = CalcStateScope.maybeOf(context);
+                        if (calc != null) {
+                          Navigator.of(
+                            context,
+                          ).popUntil((route) => route.isFirst);
+                          calc.requestConverter();
+                        } else {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (_) => const ConverterPage(),
+                            ),
+                          );
+                        }
+                      },
                     ),
                     Divider(color: t.divider, height: 1),
                     ListTile(

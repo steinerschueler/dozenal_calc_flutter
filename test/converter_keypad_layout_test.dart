@@ -32,11 +32,7 @@ Widget _keypad(double height, {bool overlayOpen = false, bool active = false}) {
         child: SizedBox(
           width: 400,
           height: height,
-          child: ConverterKeypad(
-            state: state,
-            onBack: () {},
-            onInfo: () {},
-          ),
+          child: ConverterKeypad(state: state),
         ),
       ),
     ),

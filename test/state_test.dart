@@ -1002,4 +1002,114 @@ void main() {
       expect(s.resultFieldActive, isTrue);
     });
   });
+
+  group('ConvAns bridge (unit-converter result → input)', () {
+    Digit dg(int v) => Digit(DozenalDigit.values[v]);
+
+    test('inserts the converter value as digits in the active base', () {
+      final s = DozenalCalcState()..convAnsProvider = () => 15.0;
+      s.handleClick(const ConvAns());
+      // 15 (decimal) = 13 in base 12.
+      expect(s.inputBuffer, [dg(1), dg(3)]);
+      expect(s.cursorPos, 2);
+    });
+
+    test('fractional value inserts digits + decimal point', () {
+      final s = DozenalCalcState()..convAnsProvider = () => 1.5;
+      s.handleClick(const ConvAns());
+      // 1.5 (decimal) = 1.6 in base 12.
+      expect(s.inputBuffer, [dg(1), const Decimal(), dg(6)]);
+    });
+
+    test('negative value inserts a unary minus (Sub), not Negate', () {
+      final s = DozenalCalcState()..convAnsProvider = () => -3.0;
+      s.handleClick(const ConvAns());
+      expect(s.inputBuffer, [const Sub(), dg(3)]);
+      // …and evaluates on the exact track (no ≈ fallback).
+      s.handleClick(const Equals());
+      expect(s.errorMsg, isNull);
+      expect(s.isF64Fallback, isFalse);
+      expect(s.lastAns, equals(Rational.fromInts(-3)));
+    });
+
+    test('Dez mode formats the value in base 10', () {
+      final s = DozenalCalcState()
+        ..handleClick(const Dez())
+        ..convAnsProvider = () => 15.0;
+      s.handleClick(const ConvAns());
+      expect(s.inputBuffer, [dg(1), dg(5)]);
+    });
+
+    test('without a provider (or value) the key is a no-op', () {
+      final s = DozenalCalcState()..handleClick(dg(7));
+      expect(s.convAnsValue, isNull);
+      s.handleClick(const ConvAns());
+      expect(s.inputBuffer, [dg(7)]);
+      s.convAnsProvider = () => double.infinity; // non-finite → still null
+      expect(s.convAnsValue, isNull);
+    });
+
+    test('after = it starts a fresh expression like Ans', () {
+      final s = DozenalCalcState()
+        ..handleClick(dg(2))
+        ..handleClick(const Add())
+        ..handleClick(dg(2))
+        ..handleClick(const Equals())
+        ..convAnsProvider = () => 5.0;
+      s.handleClick(const ConvAns());
+      expect(s.inputBuffer, [dg(5)]);
+    });
+
+    test('= → Expand (overlay) → ConvAns still starts a fresh expression', () {
+      // The Hoch-mode path to the CONV key goes through Expand. Transparent
+      // tokens must not consume the after-equals state, or this would append
+      // the pulled digits to the evaluated expression (device-found bug).
+      final s = DozenalCalcState()
+        ..handleClick(dg(5))
+        ..handleClick(const Mul())
+        ..handleClick(dg(3))
+        ..handleClick(const Equals())
+        ..convAnsProvider = () => 15.0;
+      s.handleClick(const Expand());
+      s.handleClick(const ConvAns());
+      expect(s.inputBuffer, [dg(1), dg(3)]);
+    });
+
+    test('= → Expand → digit starts fresh too (overlay = inline parity)', () {
+      final s = DozenalCalcState()
+        ..handleClick(dg(5))
+        ..handleClick(const Mul())
+        ..handleClick(dg(3))
+        ..handleClick(const Equals())
+        ..handleClick(const Expand());
+      s.handleClick(dg(7));
+      expect(s.inputBuffer, [dg(7)]);
+    });
+
+    test('blocked while an error is showing (like Ans/Rcl)', () {
+      final s = DozenalCalcState()
+        ..handleClick(dg(1))
+        ..handleClick(const Div())
+        ..handleClick(dg(0))
+        ..handleClick(const Equals());
+      expect(s.errorMsg, isNotNull);
+      s.convAnsProvider = () => 5.0;
+      s.handleClick(const ConvAns());
+      expect(s.errorMsg, isNotNull); // still blocked
+      expect(s.inputBuffer, [dg(1), const Div(), dg(0)]); // untouched
+    });
+
+    test('ansForBridge offers the live result and clears on AC/error', () {
+      final s = DozenalCalcState();
+      expect(s.ansForBridge, isNull); // nothing computed yet
+      s
+        ..handleClick(dg(5))
+        ..handleClick(const Mul())
+        ..handleClick(dg(3))
+        ..handleClick(const Equals());
+      expect(s.ansForBridge, 15.0); // 5×3 in base 12 = 13 (doz) = 15 dec
+      s.handleClick(const Ac());
+      expect(s.ansForBridge, isNull);
+    });
+  });
 }

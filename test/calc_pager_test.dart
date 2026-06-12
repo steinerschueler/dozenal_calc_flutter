@@ -1,0 +1,181 @@
+// The calculator ↔ unit-converter pager: the converter is page 2 of a
+// horizontal PageView (swipe left from the main calculator, swipe right to
+// come back), with the Ans/CONV result bridge carrying values across.
+//
+// Runs at the default 800×600 test surface (landscape → Breit keypads), where
+// every set is inline: the converter's Ans key (Set 6) and the main keypad's
+// CONV key (Set 10) are visible without opening an overlay.
+
+import 'package:flutter/services.dart';
+import 'package:flutter_test/flutter_test.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
+import 'package:dozenal_calc_flutter/converter_display.dart';
+import 'package:dozenal_calc_flutter/display.dart';
+import 'package:dozenal_calc_flutter/info_pages.dart';
+import 'package:dozenal_calc_flutter/logic/dozenal_digit.dart';
+import 'package:dozenal_calc_flutter/main.dart';
+import 'package:dozenal_calc_flutter/tokens.dart';
+
+void main() {
+  /// Lets the transient page-peek indicator (1050 ms hold + fade) finish and
+  /// unmount, so its labels can't collide with later finders.
+  Future<void> flushPagePeek(WidgetTester tester) async {
+    await tester.pump(const Duration(milliseconds: 1200));
+    await tester.pumpAndSettle();
+  }
+
+  Future<void> bootApp(WidgetTester tester) async {
+    SharedPreferences.setMockInitialValues({'intro_seen_v3': true});
+    await tester.pumpWidget(const DozenalCalcApp());
+    await tester.pumpAndSettle();
+    await flushPagePeek(tester); // boot pulse
+  }
+
+  Future<void> swipeToConverter(WidgetTester tester) async {
+    await tester.fling(
+      find.byType(TwoLineDisplay),
+      const Offset(-400, 0),
+      1000,
+    );
+    await tester.pumpAndSettle();
+  }
+
+  Future<void> swipeToCalculator(WidgetTester tester) async {
+    await tester.fling(
+      find.byType(ConverterDisplay),
+      const Offset(400, 0),
+      1000,
+    );
+    await tester.pumpAndSettle();
+  }
+
+  String converterInput(WidgetTester tester) => tester
+      .widget<ConverterDisplay>(find.byType(ConverterDisplay))
+      .topLine
+      .number;
+
+  testWidgets('boots on the main calculator; swipe left/right pages between '
+      'the two calculators', (tester) async {
+    await bootApp(tester);
+    expect(find.byType(TwoLineDisplay), findsOneWidget);
+    expect(find.byType(ConverterDisplay), findsNothing);
+
+    await swipeToConverter(tester);
+    expect(find.byType(ConverterDisplay), findsOneWidget);
+    expect(find.byType(TwoLineDisplay), findsNothing);
+
+    await swipeToCalculator(tester);
+    expect(find.byType(TwoLineDisplay), findsOneWidget);
+    expect(find.byType(ConverterDisplay), findsNothing);
+  });
+
+  testWidgets('physical keyboard routes to the visible calculator',
+      (tester) async {
+    await bootApp(tester);
+    await tester.sendKeyEvent(LogicalKeyboardKey.digit5);
+    await tester.pump();
+    var display =
+        tester.widget<TwoLineDisplay>(find.byType(TwoLineDisplay));
+    expect(display.inputBuffer, [const Digit(DozenalDigit.d5)]);
+
+    // On the converter page the same keys drive the converter…
+    await swipeToConverter(tester);
+    await tester.sendKeyEvent(LogicalKeyboardKey.digit7);
+    await tester.pump();
+    expect(converterInput(tester), '7');
+
+    // …and the main calculator's buffer stays untouched.
+    await swipeToCalculator(tester);
+    display = tester.widget<TwoLineDisplay>(find.byType(TwoLineDisplay));
+    expect(display.inputBuffer, [const Digit(DozenalDigit.d5)]);
+  });
+
+  testWidgets('result bridge round trip: calc → converter (Ans) → calc (CONV)',
+      (tester) async {
+    await bootApp(tester);
+
+    // 5 × 3 = → 13 (dozenal 13 = decimal 15).
+    await tester.sendKeyEvent(LogicalKeyboardKey.digit5);
+    await tester.sendKeyEvent(LogicalKeyboardKey.numpadMultiply);
+    await tester.sendKeyEvent(LogicalKeyboardKey.digit3);
+    await tester.sendKeyEvent(LogicalKeyboardKey.enter);
+    await tester.pump();
+    final display =
+        tester.widget<TwoLineDisplay>(find.byType(TwoLineDisplay));
+    expect(display.resultBuffer, [
+      const Digit(DozenalDigit.d1),
+      const Digit(DozenalDigit.d3),
+    ]);
+
+    // Converter: Ans pulls the answer as the pending number (world base 12).
+    await swipeToConverter(tester);
+    await tester.tap(find.bySemanticsLabel('Ergebnis des Rechners einfügen'));
+    await tester.pump();
+    expect(converterInput(tester), '13');
+
+    // Commit it as 13 ft (category first taps fine after Ans — the pending
+    // number survives the category switch).
+    await tester.tap(find.text('Length'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('ft'));
+    await tester.pump();
+    expect(converterInput(tester), '13 ft');
+
+    // Back on the calculator, CONV inserts the converter's shown result
+    // (13 ft → the same 13 in dozenal digits).
+    await swipeToCalculator(tester);
+    await tester
+        .tap(find.bySemanticsLabel("Insert the unit converter's result"));
+    await tester.pump();
+    final after = tester.widget<TwoLineDisplay>(find.byType(TwoLineDisplay));
+    expect(after.inputBuffer, [
+      const Digit(DozenalDigit.d1),
+      const Digit(DozenalDigit.d3),
+    ]);
+  });
+
+  testWidgets('the info-list converter entry swipes the pager over',
+      (tester) async {
+    await bootApp(tester);
+    await tester.tap(find.byTooltip('theory chapters'));
+    await tester.pumpAndSettle();
+
+    await tester.tap(find.text('Units'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Unit converter'));
+    await tester.pumpAndSettle();
+
+    // The info route popped itself and the pager landed on the converter
+    // (the page-peek pulse may still show its labels — assert on the page,
+    // not on label text).
+    expect(find.byType(InfoListPage), findsNothing);
+    expect(find.byType(ConverterDisplay), findsOneWidget);
+  });
+
+  testWidgets('page peek pulses on swipe, blocks nothing, and unmounts',
+      (tester) async {
+    await bootApp(tester); // helper already flushed the boot pulse …
+    expect(find.text('Main calculator'), findsNothing); // … fully unmounted
+
+    await swipeToConverter(tester);
+    // The swipe pulse shows both page cards.
+    expect(find.text('Main calculator'), findsOneWidget);
+    expect(find.text('Unit converter'), findsOneWidget);
+
+    // Input passes straight through the overlay: a tap on a key under the
+    // indicator region works (Length expands its magnitude ladder) …
+    await tester.tap(find.text('Length'));
+    await tester.pump();
+    expect(find.text('ft'), findsOneWidget);
+    // … and so do physical keys.
+    await tester.sendKeyEvent(LogicalKeyboardKey.digit4);
+    await tester.pump();
+    expect(converterInput(tester), '4');
+
+    // After the hold + fade the overlay unmounts entirely.
+    await flushPagePeek(tester);
+    expect(find.text('Main calculator'), findsNothing);
+    expect(find.text('Unit converter'), findsNothing);
+  });
+}

@@ -320,7 +320,12 @@ class _TwoLineDisplayPainter extends CustomPainter {
         text: TextSpan(
           text: numeralSystemLabel,
           style: TextStyle(
-            color: colors.link,
+            // Base badge wears its world hue (colour code "eine Farbe pro
+            // Welt"): dozenal = Twelve-world violet, decimal = Ten-world
+            // green — no longer the link blue, which belongs to functions.
+            color: numeralSystemLabel == 'DOZ'
+                ? colors.worldTwelve
+                : colors.worldTen,
             fontSize: 10,
             fontFamily: 'monospace',
             fontWeight: FontWeight.bold,
@@ -469,10 +474,14 @@ class _TwoLineDisplayPainter extends CustomPainter {
     // Cross-base reference „{…}" on the far left — only when it fits left of
     // the result block. It's secondary: the result keeps width priority and is
     // never pushed for it; the bracket simply hides if there's no room.
+    // Colour code: the bracket glows in the hue of the world it shows — here
+    // always the OTHER base (dozenal result → green decimal reference).
     final cross = crossBaseBracket;
     if (cross != null) {
-      final bracketTp =
-          _bracketPainter('{$cross}', rect.height, colors.displaySub);
+      final bracketHue =
+          (numeralSystemLabel == 'DOZ' ? colors.worldTen : colors.worldTwelve)
+              .withValues(alpha: 0.85);
+      final bracketTp = _bracketPainter('{$cross}', rect.height, bracketHue);
       final blockLeft = rect.right - totalW - suffixW - approxW;
       if (rect.left + bracketTp.width + 8 <= blockLeft) {
         bracketTp.paint(
@@ -695,6 +704,7 @@ String _tokenText(CalcToken t) => switch (t) {
   Rcl() ||
   Mc() ||
   Ans() ||
+  ConvAns() ||
   Doz() ||
   Dez() ||
   Drg() ||

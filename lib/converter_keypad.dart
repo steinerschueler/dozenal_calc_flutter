@@ -21,11 +21,12 @@ import 'package:flutter/services.dart';
 import 'app_layout.dart';
 import 'app_theme.dart';
 import 'converter_state.dart';
-import 'glyph_painter.dart';
 import 'haptics.dart';
+import 'keypad_parts.dart';
+import 'logic/base_num.dart';
+import 'logic/dozenal_digit.dart';
 import 'logic/glyph_style.dart';
 import 'logic/unit_data.dart';
-import 'token_painter.dart';
 import 'tokens.dart';
 
 // Colors live in AppColors (lib/app_theme.dart). Converter-specific slots:
@@ -33,31 +34,10 @@ import 'tokens.dart';
 // keys). Categories read like operators → t.op; the selected sub-unit border
 // uses t.accentGoldSoft, subordinate to a category's full-strength
 // t.accentGold frame.
-
-// Height regimes — mirror of keypad.dart's _kTightThreshold / _kScrollThreshold
-// so the converter survives the same extreme Android aspect ratios as the main
-// calculator (split-screen, foldable cover displays, short phones). Keep these
-// in sync with keypad.dart.
-const double _kTightThreshold = 560.0;
-const double _kScrollThreshold = 480.0;
-
-const List<List<DozenalDigit>> _digitGridRows = [
-  [DozenalDigit.d10, DozenalDigit.d11, DozenalDigit.d0],
-  [DozenalDigit.d7, DozenalDigit.d8, DozenalDigit.d9],
-  [DozenalDigit.d4, DozenalDigit.d5, DozenalDigit.d6],
-  [DozenalDigit.d1, DozenalDigit.d2, DozenalDigit.d3],
-];
-
-// Operator columns kept from the main calculator.
-const List<CalcToken> _set1 = [Add(), Sub(), Mul(), Div()];
-const List<CalcToken> _set2 = [
-  OplusBotLeft(),
-  ExpTopRight(),
-  RootTopLeft(),
-  LogBotRight(),
-];
-const List<CalcToken> _set6 = [Sto(), Rcl(), Mc(), Ans()];
-const List<CalcToken> _set7 = [ConstPi(), ConstE(), ConstPhi(), ConstSqrt2()];
+//
+// Height regimes, the digit grid, the shared op/memory/constant columns
+// (kSet1/2/6/7), the key shell and the key painters come from
+// keypad_parts.dart — single source of truth with the main keypad.
 
 // Category columns.
 const List<UnitCategory> _set3 = [
@@ -89,8 +69,6 @@ const List<CalcToken> _systemRow = [Ac(), Del(), Decimal(), Expand()];
 
 class ConverterKeypad extends StatelessWidget {
   final ConverterState state;
-  final VoidCallback onBack;
-  final VoidCallback onInfo;
 
   /// Resolves a category's localized label. Null → fall back to the English
   /// catalogue key (used by the preview harness, which has no localizations).
@@ -105,8 +83,6 @@ class ConverterKeypad extends StatelessWidget {
   const ConverterKeypad({
     super.key,
     required this.state,
-    required this.onBack,
-    required this.onInfo,
     this.categoryLabelOf,
     this.unitInfoOf,
   });
@@ -130,12 +106,12 @@ class ConverterKeypad extends StatelessWidget {
     // Three height regimes, identical to _HochKeypad: scroll fallback below the
     // floor (fixed 44 dp rows so nothing is unreachable), tight gaps in the mid
     // band, flex layout above.
-    if (h.isFinite && h < _kScrollThreshold) {
+    if (h.isFinite && h < kKeypadScrollThreshold) {
       return SingleChildScrollView(
         child: _buildColumn(context, tight: true, fixedHeights: true),
       );
     }
-    final tight = h.isFinite && h < _kTightThreshold;
+    final tight = h.isFinite && h < kKeypadTightThreshold;
     return _buildColumn(context, tight: tight, fixedHeights: false);
   }
 
@@ -157,9 +133,9 @@ class ConverterKeypad extends StatelessWidget {
       mainAxisSize: fixedHeights ? MainAxisSize.min : MainAxisSize.max,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        for (var r = 0; r < _digitGridRows.length; r++) ...[
+        for (var r = 0; r < kDigitGridRows.length; r++) ...[
           if (r > 0) SizedBox(height: rowGap),
-          row(_digitRow(_digitGridRows[r])),
+          row(_digitRow(kDigitGridRows[r])),
         ],
         SizedBox(height: sectionGap),
         Divider(color: t.hairline, height: 1, thickness: 1),
@@ -188,10 +164,13 @@ class ConverterKeypad extends StatelessWidget {
       switchInCurve: Curves.easeOut,
       switchOutCurve: Curves.easeIn,
       child: state.overlayOpen
-          ? _panel(const ValueKey('overlay'), _set6, _set7, _set8, _set9,
-              bottomRow: const [Doz(), Dez(), Drg(), Close()],
+          // Doz/Dez removed (base is the global setting now; the unit system
+          // sits on the met/imp keys in the equals row) — their old slots
+          // stay empty so Drg/Close keep their positions.
+          ? _panel(const ValueKey('overlay'), kSet6, kSet7, _set8, _set9,
+              bottomRow: const [null, null, Drg(), Close()],
               tight: tight, fixedHeights: fixedHeights)
-          : _panel(const ValueKey('main'), _set1, _set2, _set3, _set4,
+          : _panel(const ValueKey('main'), kSet1, kSet2, _set3, _set4,
               bottomRow: _systemRow, tight: tight, fixedHeights: fixedHeights),
     );
   }
@@ -204,7 +183,7 @@ class ConverterKeypad extends StatelessWidget {
     List<CalcToken> opColB,
     List<UnitCategory> catColA,
     List<UnitCategory> catColB, {
-    required List<CalcToken> bottomRow,
+    required List<CalcToken?> bottomRow,
     required bool tight,
     required bool fixedHeights,
   }) {
@@ -242,7 +221,8 @@ class ConverterKeypad extends StatelessWidget {
           ])),
         ],
         SizedBox(height: bottomGap),
-        rowWrap(fourCellRow([for (final t in bottomRow) _opCell(t)])),
+        rowWrap(fourCellRow(
+            [for (final t in bottomRow) t == null ? _emptyCell() : _opCell(t)])),
       ],
     );
   }
@@ -306,15 +286,15 @@ class ConverterKeypad extends StatelessWidget {
       enabled: enabled,
       label: 'Ziffer ${digit.value}',
       excludeSemantics: true,
-      child: _Shell(
+      child: PressableShell(
         onTap: enabled ? () => state.inputDigit(digit.value) : null,
-        pressedBuilder: (ctx, pressed) {
+        builder: (ctx, pressed) {
           final t = AppColors.of(ctx);
           // Same settings-page preference as the main keypad's digit keys.
           final style = GlyphStyleScope.keypadStyleOf(ctx);
           return CustomPaint(
             size: Size.infinite,
-            painter: _DigitPainter(
+            painter: DigitKeyPainter(
               digit: digit,
               style: style,
               color: !enabled
@@ -327,29 +307,46 @@ class ConverterKeypad extends StatelessWidget {
     );
   }
 
+  /// Enabled-state per key. The dynamic ones: Ans needs the main calculator
+  /// to have an answer; the scalar operators (Set 1 × ÷ and all of Set 2)
+  /// need a pending entry to extend or a compound to collapse; STO needs a
+  /// result or a typed entry, RCL/MC a filled register. Constants always
+  /// work (value keys replace the caret's segment). Everything else follows
+  /// the static wired-up set.
+  bool _opActive(CalcToken t) {
+    if (t is Ans) return state.calcAnsAvailable;
+    if (t is Mul ||
+        t is Div ||
+        t is OplusBotLeft ||
+        t is ExpTopRight ||
+        t is RootTopLeft ||
+        t is LogBotRight) {
+      return state.canScalarOp;
+    }
+    if (t.isIrrationalConstant) return true;
+    if (t is Sto) return state.canMemStore;
+    if (t is Rcl) return state.canMemRecall;
+    if (t is Mc) return state.memoryAvailable;
+    return _isActiveOp(t);
+  }
+
   Widget _opCell(CalcToken token) {
     final isAc = token is Ac;
-    final active = _isActiveOp(token);
+    final active = _opActive(token);
     final armed = token is Sub && state.subtractArmed;
-    // The world toggle: the currently-active world (Doz/imperial or
-    // Dez/metric) always carries the blue mode frame — like the main
-    // calculator — exactly one, never both, never none.
-    final worldActive = (token is Doz && state.world == UnitWorld.imperial) ||
-        (token is Dez && state.world == UnitWorld.metric);
     return Semantics(
       button: active,
       enabled: active,
       label: _opSemanticLabel(token),
       excludeSemantics: true,
-      child: _Shell(
+      child: PressableShell(
         onTap: active ? () => _handleToken(token) : null,
         gold: armed,
-        selected: worldActive,
-        pressedBuilder: (ctx, pressed) {
+        builder: (ctx, pressed) {
           final t = AppColors.of(ctx);
           return CustomPaint(
             size: Size.infinite,
-            painter: _OpPainter(
+            painter: TokenKeyPainter(
               token: token,
               color: !active
                   ? t.inertKey
@@ -367,12 +364,24 @@ class ConverterKeypad extends StatelessWidget {
     if (t is Ac) return 'Alles löschen';
     if (t is Del) return 'Zeichen löschen';
     if (t is Decimal) return 'Komma';
+    if (t is Ans) return 'Ergebnis des Rechners einfügen';
     if (t is Expand) return 'Erweiterungsfeld öffnen';
     if (t is Close) return 'Erweiterungsfeld schließen';
-    if (t is Doz) return 'Dozenal-Modus';
-    if (t is Dez) return 'Dezimal-Modus';
     if (t is Add) return 'plus';
     if (t is Sub) return 'minus';
+    if (t is Mul) return 'mal';
+    if (t is Div) return 'geteilt';
+    if (t is OplusBotLeft) return 'parallel addiert';
+    if (t is ExpTopRight) return 'hoch';
+    if (t is RootTopLeft) return 'Wurzel';
+    if (t is LogBotRight) return 'Logarithmus zur Basis';
+    if (t is Sto) return 'Ergebnis speichern';
+    if (t is Rcl) return 'Speicher einfügen';
+    if (t is Mc) return 'Speicher löschen';
+    if (t is ConstPi) return 'Pi';
+    if (t is ConstE) return 'Eulersche Zahl';
+    if (t is ConstPhi) return 'Goldener Schnitt';
+    if (t is ConstSqrt2) return 'Wurzel aus zwei';
     return '';
   }
 
@@ -402,6 +411,10 @@ class ConverterKeypad extends StatelessWidget {
   Widget _emptyCell() => const SizedBox.shrink();
 
   // ── Equals row ─────────────────────────────────────────────────────────
+  // The system keys flank the equals bar: metric (Ten-world green) on the
+  // left, imperial (Twelve-world violet) on the right — the converter's
+  // primary toggle, always visible. The former round buttons moved out with
+  // the pager rebuild: back = swipe right, info = the main calculator's (i).
 
   Widget _equalsRow() {
     return LayoutBuilder(
@@ -410,11 +423,15 @@ class ConverterKeypad extends StatelessWidget {
         return Row(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            _RoundIcon(
-              size: h,
-              icon: Icons.info_outline,
-              tooltip: 'Theorie',
-              onPressed: onInfo,
+            SizedBox(
+              width: h,
+              child: _SystemKey(
+                label: 'met',
+                semanticLabel: 'Metrisches System',
+                tenWorld: true,
+                active: state.world == UnitWorld.metric,
+                onTap: () => state.setWorld(UnitWorld.metric),
+              ),
             ),
             const SizedBox(width: 10),
             Expanded(
@@ -422,12 +439,12 @@ class ConverterKeypad extends StatelessWidget {
                 button: true,
                 label: 'Gleich',
                 excludeSemantics: true,
-                child: _Shell(
+                child: PressableShell(
                   onTap: state.equals,
-                  pressedBuilder: (ctx, pressed) {
+                  builder: (ctx, pressed) {
                     final t = AppColors.of(ctx);
                     return CustomPaint(
-                      painter: _OpPainter(
+                      painter: TokenKeyPainter(
                         token: const Equals(),
                         color: pressed ? t.opPressed : t.equals,
                       ),
@@ -437,11 +454,15 @@ class ConverterKeypad extends StatelessWidget {
               ),
             ),
             const SizedBox(width: 10),
-            _RoundIcon(
-              size: h,
-              icon: Icons.calculate_outlined,
-              tooltip: 'Zurück zum Rechner',
-              onPressed: onBack,
+            SizedBox(
+              width: h,
+              child: _SystemKey(
+                label: 'imp',
+                semanticLabel: 'Imperiales System',
+                tenWorld: false,
+                active: state.world == UnitWorld.imperial,
+                onTap: () => state.setWorld(UnitWorld.imperial),
+              ),
             ),
           ],
         );
@@ -534,14 +555,14 @@ class ConverterKeypad extends StatelessWidget {
     Widget digitGrid() => Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            for (var r = 0; r < _digitGridRows.length; r++) ...[
+            for (var r = 0; r < kDigitGridRows.length; r++) ...[
               if (r > 0) const SizedBox(height: tabletDigitGap),
               Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  for (var c = 0; c < _digitGridRows[r].length; c++) ...[
+                  for (var c = 0; c < kDigitGridRows[r].length; c++) ...[
                     if (c > 0) const SizedBox(width: tabletDigitGap),
-                    cell(_digitCell(_digitGridRows[r][c])),
+                    cell(_digitCell(kDigitGridRows[r][c])),
                   ],
                 ],
               ),
@@ -570,9 +591,9 @@ class ConverterKeypad extends StatelessWidget {
       children: [
         digitGrid(),
         bigGap(), // group break: digit pad → Sets 1-5
-        opColumn(_set1),
+        opColumn(kSet1),
         gap(),
-        opColumn(_set2),
+        opColumn(kSet2),
         gap(),
         column(cells34.$1),
         gap(),
@@ -580,15 +601,17 @@ class ConverterKeypad extends StatelessWidget {
         gap(),
         opColumn(const [Ac(), Del(), Decimal()]), // system column
         bigGap(), // group break: Sets 1-5 → Sets 6-10
-        opColumn(_set6),
+        opColumn(kSet6),
         gap(),
-        opColumn(_set7),
+        opColumn(kSet7),
         gap(),
         column(cells89.$1),
         gap(),
         column(cells89.$2),
         gap(),
-        opColumn(const [Doz(), Dez(), Drg()]), // Set 10 (no overlay in Breit)
+        // Set 10 (no overlay in Breit): Doz/Dez removed with the base/system
+        // decoupling — only the (inert) Drg remains.
+        opColumn(const [Drg()]),
       ],
     );
   }
@@ -606,56 +629,89 @@ class ConverterKeypad extends StatelessWidget {
       case Expand():
       case Close():
         state.toggleOverlay();
-      case Doz():
-        state.setWorld(UnitWorld.imperial);
-      case Dez():
-        state.setWorld(UnitWorld.metric);
       case Add():
         state.setSubtract(false); // + : default; un-arms subtraction
       case Sub():
         state.setSubtract(true); // − : next term subtracts
+      case Mul():
+        state.inputScalarOp(kScalarTimes); // scalar entry operators …
+      case Div():
+        state.inputScalarOp(kScalarDivide);
+      case OplusBotLeft():
+        state.inputScalarOp(kScalarParallel);
+      case ExpTopRight():
+        state.inputScalarOp(kScalarPower);
+      case RootTopLeft():
+        state.inputScalarOp(kScalarRoot);
+      case LogBotRight():
+        state.inputScalarOp(kScalarLog);
+      case Ans():
+        state.insertCalcAns(); // bridge: the main calculator's last answer
+      case Sto():
+        state.memStore();
+      case Rcl():
+        state.memRecall();
+      case Mc():
+        state.memClear();
+      case ConstPi():
+        state.insertValueEntry(math.pi);
+      case ConstE():
+        state.insertValueEntry(math.e);
+      case ConstPhi():
+        state.insertValueEntry((1 + math.sqrt(5)) / 2);
+      case ConstSqrt2():
+        state.insertValueEntry(math.sqrt2);
       default:
-        // Set 1/2 operators and Set 6/7 memory/constants are wired in a later
-        // step; for now they are inert.
+        // Drg stays inert (the converter has no angle functions).
         break;
     }
   }
 }
 
-/// Op-keys that do something in the converter. + and − are term operators;
-/// everything else routed through _opCell that is not listed (× ÷, Set 2,
-/// Set 6/7 memory + constants, Drg) is not wired yet and renders greyed-out.
+/// Statically wired op-keys (always enabled): clearing/editing, the panel
+/// toggle, and the + / − term operators. Everything DYNAMIC — the scalar
+/// entry operators (× ÷ ⊕ ^ √ ㏒), the value keys (constants, Ans, RCL) and
+/// the memory keys — is decided in _opActive; only Drg stays inert (no
+/// angle functions in the converter). The unit system lives on the met/imp
+/// keys (equals row); the base on the global setting — neither passes
+/// through here.
 bool _isActiveOp(CalcToken t) =>
     t is Ac ||
     t is Del ||
     t is Decimal ||
     t is Expand ||
     t is Close ||
-    t is Doz ||
-    t is Dez ||
     t is Add ||
     t is Sub;
 
 // ── Building blocks ─────────────────────────────────────────────────────────
 
-class _Shell extends StatefulWidget {
-  final VoidCallback? onTap;
-  final Widget Function(BuildContext ctx, bool pressed) pressedBuilder;
-  final bool gold; // gold border, e.g. armed − operator
-  final bool selected; // blue border for the active mode, like the main calc
+/// One of the two unit-system keys flanking the equals bar — round, like the
+/// (i)/(?) buttons on the main calculator's equals row, so the two pager
+/// pages rhyme. Carries its world hue permanently (metric → Ten-world green,
+/// imperial → Twelve-world violet); the active system additionally gets a
+/// 2 dp ring in its own hue — the colour-code replacement for the old blue
+/// mode frame. Exactly one of the pair is active at any time.
+class _SystemKey extends StatefulWidget {
+  final String label;
+  final String semanticLabel;
+  final bool tenWorld;
+  final bool active;
+  final VoidCallback onTap;
 
-  const _Shell({
-    this.onTap,
-    required this.pressedBuilder,
-    this.gold = false,
-    this.selected = false,
+  const _SystemKey({
+    required this.label,
+    required this.semanticLabel,
+    required this.tenWorld,
+    required this.active,
+    required this.onTap,
   });
 
   @override
-  State<_Shell> createState() => _ShellState();
+  State<_SystemKey> createState() => _SystemKeyState();
 }
 
-class _ShellState extends State<_Shell> {
+class _SystemKeyState extends State<_SystemKey> {
   bool _pressed = false;
 
   void _set(bool v) {
@@ -665,35 +721,54 @@ class _ShellState extends State<_Shell> {
   @override
   Widget build(BuildContext context) {
     final t = AppColors.of(context);
-    final disabled = widget.onTap == null;
-    return GestureDetector(
-      behavior: HitTestBehavior.opaque,
-      onTapDown: disabled ? null : (_) => _set(true),
-      onTapUp: disabled ? null : (_) => _set(false),
-      onTapCancel: disabled ? null : () => _set(false),
-      onTap: disabled
-          ? null
-          : () {
-              if (HapticsScope.enabledOf(context)) {
-                HapticFeedback.lightImpact();
-              }
-              widget.onTap!();
-            },
-      child: ConstrainedBox(
-        constraints: const BoxConstraints(minHeight: minTouchTarget),
-        child: Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(4),
-            border: Border.all(
-              color: widget.gold
-                  ? t.accentGold
-                  : widget.selected
-                      ? t.op
-                      : (disabled ? t.keyBorderDisabled : t.keyBorder),
-              width: widget.gold || widget.selected ? 2 : 1,
+    final hue = widget.tenWorld ? t.worldTen : t.worldTwelve;
+    return Semantics(
+      button: true,
+      selected: widget.active,
+      label: widget.semanticLabel,
+      excludeSemantics: true,
+      child: GestureDetector(
+        behavior: HitTestBehavior.opaque,
+        onTapDown: (_) => _set(true),
+        onTapUp: (_) => _set(false),
+        onTapCancel: () => _set(false),
+        onTap: () {
+          if (HapticsScope.enabledOf(context)) HapticFeedback.lightImpact();
+          widget.onTap();
+        },
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(
+            minHeight: minTouchTarget,
+            minWidth: minTouchTarget,
+          ),
+          child: Container(
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: t.pagerFill, // same fill as the (i)/(?) round buttons
+              border: Border.all(
+                color: widget.active ? hue : t.pagerBorder,
+                width: widget.active ? 2 : 1,
+              ),
+            ),
+            alignment: Alignment.center,
+            padding: const EdgeInsets.all(10),
+            child: FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Text(
+                widget.label,
+                maxLines: 1,
+                style: TextStyle(
+                  color: _pressed
+                      ? t.opPressed
+                      : (widget.active
+                          ? hue
+                          : hue.withValues(alpha: 0.55)),
+                  fontSize: 15,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
             ),
           ),
-          child: widget.pressedBuilder(context, _pressed),
         ),
       ),
     );
@@ -716,11 +791,15 @@ void _showUnitInfoBox(
   entry = OverlayEntry(
     builder: (ctx) => Stack(
       children: [
+        // Non-swallowing barrier (see keypad.dart's popup): closes the box
+        // on any outside pointer-down and lets that tap act normally. The
+        // mounted check guards a simultaneous second pointer.
         Positioned.fill(
-          child: GestureDetector(
-            behavior: HitTestBehavior.opaque,
-            onTap: () => entry.remove(),
-            child: const SizedBox(),
+          child: Listener(
+            behavior: HitTestBehavior.translucent,
+            onPointerDown: (_) {
+              if (entry.mounted) entry.remove();
+            },
           ),
         ),
         Positioned(
@@ -864,108 +943,3 @@ class _LabelButtonState extends State<_LabelButton> {
   }
 }
 
-class _RoundIcon extends StatelessWidget {
-  final double size;
-  final IconData icon;
-  final String? tooltip;
-  final VoidCallback? onPressed;
-
-  const _RoundIcon({
-    required this.size,
-    required this.icon,
-    this.tooltip,
-    this.onPressed,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    final t = AppColors.of(context);
-    final btn = Material(
-      color: t.pagerFill,
-      shape: CircleBorder(side: BorderSide(color: t.pagerBorder)),
-      child: InkWell(
-        customBorder: const CircleBorder(),
-        onTap: onPressed,
-        child: Center(
-          child: Icon(icon, size: size * 0.5, color: t.link),
-        ),
-      ),
-    );
-    return SizedBox(
-      width: size,
-      height: size,
-      child: tooltip != null ? Tooltip(message: tooltip!, child: btn) : btn,
-    );
-  }
-}
-
-class _DigitPainter extends CustomPainter {
-  final DozenalDigit digit;
-  final GlyphStyle style;
-  final Color color;
-
-  _DigitPainter({
-    required this.digit,
-    required this.color,
-    this.style = GlyphStyle.custom,
-  });
-
-  @override
-  void paint(Canvas canvas, Size size) {
-    if (style == GlyphStyle.conventional) {
-      // Conventional ASCII '0'..'9'/'A'/'B' — mirrors keypad.dart's
-      // _DigitPainter conventional branch.
-      final tp = TextPainter(
-        text: TextSpan(
-          text: conventionalDigitChar(digit),
-          style: TextStyle(
-            color: color,
-            fontSize: size.shortestSide * 0.55,
-            fontFamily: 'monospace',
-          ),
-        ),
-        textDirection: TextDirection.ltr,
-      )..layout();
-      tp.paint(
-        canvas,
-        Offset((size.width - tp.width) / 2, (size.height - tp.height) / 2),
-      );
-      return;
-    }
-    final q = (size.shortestSide) / 4;
-    paintDozenalDigitAt(
-      canvas,
-      digit,
-      center: Offset(size.width / 2, size.height / 2),
-      q: q,
-      color: color,
-      strokeWidth: 2.5,
-    );
-  }
-
-  @override
-  bool shouldRepaint(covariant _DigitPainter old) =>
-      old.digit != digit || old.color != color || old.style != style;
-}
-
-class _OpPainter extends CustomPainter {
-  final CalcToken token;
-  final Color color;
-
-  _OpPainter({required this.token, required this.color});
-
-  @override
-  void paint(Canvas canvas, Size size) {
-    paintTokenAt(
-      canvas,
-      token,
-      rect: Rect.fromLTWH(0, 0, size.width, size.height),
-      color: color,
-      strokeWidth: 2.0,
-    );
-  }
-
-  @override
-  bool shouldRepaint(covariant _OpPainter old) =>
-      old.token != token || old.color != color;
-}

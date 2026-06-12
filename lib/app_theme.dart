@@ -65,6 +65,8 @@ class AppColors {
     // Converter keypad extras
     required this.magnitude,
     required this.inertKey,
+    required this.worldTen,
+    required this.worldTwelve,
     // Illustrations (theory diagrams): neutral strokes/labels only — the
     // colored polygon accents stay theme-independent.
     required this.illusLine,
@@ -86,7 +88,7 @@ class AppColors {
   final Color textTertiary; // dark: 0xFFC8C8C8/B0B0B0
   final Color textMuted; // dark: 0xFFA0A0A0
   final Color textFaint; // dark: 0xFF808080/8C8C8C
-  final Color link; // dark: 0xFF64C8FF (also info icons, world badge)
+  final Color link; // dark: 0xFF64C8FF (also info icons)
   final Color accentGold; // dark: 0xFFFFD700
 
   final Color displayBg; // dark: 0xFF101010
@@ -113,6 +115,15 @@ class AppColors {
 
   final Color magnitude; // dark: 0xFFE6C77A (converter magnitude keys)
   final Color inertKey; // dark: 0xFF555555 (converter inert op keys)
+
+  /// World hues for the decoupled base/system colour code ("eine Farbe pro
+  /// Welt, ein Träger pro Achse"): the TEN world (metric units, decimal base)
+  /// is green; the TWELVE world (imperial units, dozenal base) is violet —
+  /// deliberately NOT the op-blue, which belongs to function glyphs. Unit
+  /// symbols carry the system hue, the DOZ/DEZ badge the base hue, and the
+  /// { } brackets glow in the hue of the world they show.
+  final Color worldTen; // dark: 0xFF35D08E (emerald green)
+  final Color worldTwelve; // dark: 0xFFC3A6F9 (lavender violet)
 
   final Color illusLine; // dark: 0xFFD0D0D0
   final Color illusFaint; // dark: 0xFF6E6E6E
@@ -167,6 +178,8 @@ class AppColors {
     dotsIcon: Color(0xFF6E6E6E),
     magnitude: Color(0xFFE6C77A),
     inertKey: Color(0xFF555555),
+    worldTen: Color(0xFF35D08E),
+    worldTwelve: Color(0xFFC3A6F9),
     illusLine: Color(0xFFD0D0D0),
     illusFaint: Color(0xFF6E6E6E),
     illusDot: Color(0xFF646464),
@@ -212,6 +225,8 @@ class AppColors {
     dotsIcon: Color(0xFF9A9A9A),
     magnitude: Color(0xFF8A6D1F),
     inertKey: Color(0xFFAAAAAA),
+    worldTen: Color(0xFF047857),
+    worldTwelve: Color(0xFF6A4FBF),
     illusLine: Color(0xFF454545),
     illusFaint: Color(0xFFA0A0A0),
     illusDot: Color(0xFFB0B0B0),

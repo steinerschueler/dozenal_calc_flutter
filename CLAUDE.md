@@ -47,7 +47,12 @@ Test-Routing (für gezielte Edits):
   Segment-Toggles, Sichtbarkeit der State-Zeilen ohne `CalcStateScope`.
 - `edge_cases_test.dart` — Grenzfall-Sammler über die Module hinweg.
 - `unit_convert_test.dart` + `converter_state_test.dart` — Einheitenrechner:
-  SI-Drehscheibe/Faktoren/Breakdown bzw. Compound-Eingabe + Cursor.
+  SI-Drehscheibe/Faktoren/Breakdown bzw. Compound-Eingabe + Cursor; dazu
+  die Resultat-Brücke (`insertCalcAns`/`ansForBridge`) und das Überleben
+  der Pending-Zahl beim Kategorienwechsel.
+- `calc_pager_test.dart` — Rechner↔Umrechner-Pager: Swipe in beide
+  Richtungen, Tastatur-Routing nach aktiver Seite, Ans/CONV-Roundtrip
+  durchs UI, Info-Listen-Eintrag → Pager-Wechsel.
 - `converter_keypad_layout_test.dart` — Umrechner-Layout über Seitenverhältnisse.
 - `cursor_tap_test.dart` — Tipp-Cursor (Hauptrechner-Hit-Test + `moveCursorTo`).
 - `recommendations_test.dart` — „Empfehlungen": Kapitel-Dispatcher plus
@@ -219,6 +224,15 @@ Payload-freie Varianten. Spiegelt das Rust-Enum und erlaubt erschöpfende
 - `glyph_painter.dart` — zwölf benutzerdefinierte Dozenal-Glyphen (kein
   Font: reines `CustomPainter`).
 - `token_painter.dart` — Glyphen der Operator-/Funktionstasten.
+- `keypad_parts.dart` — **gemeinsame Bausteine beider Keypads** (Haupt +
+  Umrechner), damit nichts auseinanderdriftet: `PressableShell` (Tasten-
+  Chassis: Press-Flash, Haptik, Rahmen inkl. gold/selected, Langdruck-
+  Hooks, 44-dp-Floor), `DigitKeyPainter`/`TokenKeyPainter`, das
+  Ziffern-Grid `kDigitGridRows`, die identischen Spalten `kSet1/2/6/7`
+  und die Hoch-Höhen-Regime `kKeypadTight-/ScrollThreshold` (früher je
+  Datei dupliziert mit „keep in sync"-Kommentar). Die Keypads selbst
+  bleiben bewusst getrennte Widget-Bäume: gleiche Glyphen, verschiedene
+  Semantik/Dispatches.
 - `display.dart` — Zwei-Zeilen-Display, Überstrich-Rendering,
   Periode-Markierung. `TwoLineDisplay` skaliert sich adaptiv an seinen
   Container, funktioniert also vom Landscape-Phone (~60 dp) bis zum
@@ -239,10 +253,13 @@ Payload-freie Varianten. Spiegelt das Rust-Enum und erlaubt erschöpfende
   zusätzlich `keypadMode` (Overlay/Scroll) und `keypadProfile`
   (Alle/Einfach) aus den Einstellungen entgegen (siehe
   Einstellungen-Abschnitt).
-  **Set 10 ist seit dem Langdruck-Umbau [EXP (Sci), DRG, –, Close]** —
+  **Set 10 ist [EXP (Sci), DRG, CONV, Close]** —
   die Doz/Dez-Tasten sind vom Keypad entfernt, die Basis-Umschaltung
   läuft nur noch über die Einstellungen-Seite (werterhaltend, gleicher
-  `handleClick(Doz()/Dez())`-Pfad).
+  `handleClick(Doz()/Dez())`-Pfad). CONV (`ConvAns`-Token) ist die
+  Brücken-Taste zum Einheitenrechner — siehe „Resultat-Brücke" im
+  Einheitenrechner-Abschnitt; im Profil „Einfach" fehlt sie wie alle
+  erweiterten Sets (Ans/Speicher dort ebenfalls nicht erreichbar).
   **Langdruck-Popups:** ausgewählte Host-Tasten bieten bei langem Druck
   ein Akzent-Popup im Smartphone-Tastatur-Stil an. Host-Map ist die
   öffentliche Funktion `longPressOptionsFor(token)`:
@@ -251,9 +268,14 @@ Payload-freie Varianten. Spiegelt das Rust-Enum und erlaubt erschöpfende
   (`_CornerMarkPainter`, Dreieck in `textMuted`, 6×6 dp bei
   right:3/bottom:3) und einen a11y-Hint (`a11yHoldMore`). Auswahl per
   **beiden** Gesten: Gleiten+Loslassen (Hit-Test in globalen
-  Koordinaten) oder Loslassen+Antippen; Tap außerhalb schließt
-  (OverlayEntry + Barrier). Die Popup-Breiten-Mathematik muss den
-  1-px-Container-Border (`_popupBorder`) einrechnen.
+  Koordinaten) oder Loslassen+Antippen. Die Schließen-Barrier ist ein
+  **`Listener` mit translucent-Hit-Test** (OverlayEntry), KEIN opaker
+  GestureDetector: Pointer-down außerhalb schließt das Popup UND der
+  Tap wirkt normal auf die Taste darunter — die Barrier darf nie
+  Eingabe schlucken (Smartphone-Tastatur-Verhalten; gleiche Konvention
+  im Unit-Info-Kasten des Umrechner-Keypads). Die
+  Popup-Breiten-Mathematik muss den 1-px-Container-Border
+  (`_popupBorder`) einrechnen.
   **Zweite Overlay-Seite (Funktionsseite) ist deaktiviert, nicht
   gelöscht:** const-Flag `_kFuncPageEnabled = false` hält den Code
   intakt aber unerreichbar (auch die Breit-Spaltenbreiten-Mathematik
@@ -443,7 +465,10 @@ durch Dividers im Palette-Slot `divider`, Segment-Optik via `_SegmentRow`
 7. **Zahlensystem** mit ausgeschriebenen, lokalisierten Labels
    „Dozenal"/„Dezimal" (`settingsNumeralSystemDozenal/Decimal`, ×14 —
    seit dem Wegfall der Doz/Dez-Keypad-Tasten ist diese Zeile der
-   primäre Basis-Schalter und muss selbsterklärend sein) und
+   primäre Basis-Schalter und muss selbsterklärend sein; sie gilt seit
+   der Basis/System-Entkopplung für BEIDE Rechner). Die Segmente tragen
+   den Welt-Farbcode (`optionColors` auf `_SegmentRow`: Dozenal violett,
+   Dezimal grün, gewähltes Segment mit Eigenfarb-Rahmen) und
    8. **Winkelmodus** DEG/RAD/GRD — bedienen den **lebenden**
    `DozenalCalcState` über `CalcStateScope.maybeOf`
    (`lib/calc_scope.dart`); ohne Scope (Widget-Tests, die die Seite
@@ -516,15 +541,106 @@ custom-painted, deshalb läuft alles über eine **semantische Palette**:
 
 ### Einheitenrechner (zweiter Rechner-Modus)
 
-Vollständiger Umrechner, erreichbar über „Theorie und Weiteres" →
-„Einheitenrechner" (`InfoListPage`, Eintrag `infoListConverterEntry`). Nutzt
-die Bausteine des Hauptrechners wieder, ist aber ein **eigener Screen** — das
-Hauptrechner-Keypad bleibt unangetastet (Store-Screenshots gültig). Vollständige
-Spezifikation + Implementierungs-Fortschritt: [`docs/unit-converter.md`](docs/unit-converter.md).
+Vollständiger Umrechner, seit dem Pager-Umbau **Seite 2 eines horizontalen
+PageView** im `_CalcScaffold`: Links-Swipe auf dem Hauptrechner öffnet ihn,
+Rechts-Swipe führt zurück (Default beim Start ist immer der Hauptrechner).
+Zusätzlicher Zugang: der Eintrag „Einheitenrechner" in „Theorie und
+Weiteres" (`infoListConverterEntry` — poppt die Info-Route und setzt
+`DozenalCalcState.requestConverter()`, Request/Reset-Muster wie `infoState`;
+ohne `CalcStateScope`, z. B. in Standalone-Tests, fällt er auf die alte
+`ConverterPage`-Route zurück). Der einbettbare Inhalt ist `ConverterBody`
+(`converter_page.dart`); `ConverterPage` bleibt als Route-Wrapper für
+Tests/Preview mit eigenem, brückenlosem State. Im Pager besitzt
+`_CalcScaffoldState` den langlebigen `ConverterState` — Eingaben überleben
+Seitenwechsel. Die Swipe-Geste ist frei, weil beide Displays nur
+Tap/Langdruck/Vertikal-Drag belegen; in Breit-Layouts mit horizontalem
+Keypad-Scroll funktioniert der Seiten-Swipe auf der Display-Fläche.
 
-**Zwei-Welten-Logik (Doz/Dez):** Doz = imperiale/dozenale Einheiten in Basis 12,
-Dez = metrische Einheiten in Basis 10. Die `{ }`-Klammer zeigt jeweils das
-Gegen-System; intern läuft alles über eine **SI-Drehscheibe**.
+**Page-Peek-Indikator** (Swipe-Discoverability): zwei durchscheinende
+Karten in Bildschirmmitte als **Miniaturen der Seite** — Karten-
+Seitenverhältnis = Body-Seitenverhältnis, also Hochformat-Karten im
+Portrait, breite Karten im Landscape; alles skaliert mit der Breite
+(Karte 0.38 w, Lücke 0.08 w, Nachbar ~40 % angeschnitten). Die aktuelle
+Karte zentriert mit **goldener Umrandung** (`accentGold` α 0.7, 2 dp),
+die Nachbar-Karte seitlich vom Rand angeschnitten — Seitennamen in
+18-pt-Semibold (`pagerLabelMain` ×14; Umrechner nutzt
+`infoListConverterEntry`). Puls bei jedem Landen (Boot, Intro-Schluss,
+Rückkehr aus „Theorie und Weiteres") und bei jedem Seitenwechsel
+(`_pulsePagePeek` in `_CalcScaffoldState`): 160 ms Fade-in, ~1050 ms Halt,
+420 ms Fade-out. `IgnorePointer` + `ExcludeSemantics`, und nach dem
+Ausblenden wird das Overlay komplett **unmounted** (`_pagePeekMounted`),
+damit keine unsichtbaren Flächen für Hit-Tests/Semantics/Test-Finder
+zurückbleiben — Widget-Tests, die Listen-Einträge wie „Einheitenrechner"
+per `find.text` antippen, müssen den Puls vorher ausklingen lassen
+(`flushPagePeek`-Helper in `calc_pager_test.dart`).
+Vollständige Spezifikation + Implementierungs-Fortschritt:
+[`docs/unit-converter.md`](docs/unit-converter.md).
+
+**Resultat-Brücke (Ans ↔ CONV):** jeder Rechner kann das aktuelle Resultat
+des anderen per Taste ziehen. Werte reisen als `double`
+(Provider-Callbacks, verdrahtet in `_CalcScaffoldState.initState`); jede
+Seite formatiert in ihrer eigenen aktiven Basis:
+- **Umrechner-Ans** (Set 6, vorher inert): `ConverterState.insertCalcAns()`
+  ersetzt die Pending-Zahl durch `DozenalCalcState.ansForBridge`
+  (= `lastResultF64`, nur bei lebendem fehlerfreiem Resultat non-null) in
+  Weltbasis; negative Werte armieren den −-Operator (Vorzeichen leben im
+  Umrechner auf den Term-Lücken, nie in den Ziffern). Ausgegraut über
+  `calcAnsAvailable`.
+- **Hauptrechner-CONV** (`ConvAns`-Token, füllt den freien Set-10-Slot):
+  fügt `ConverterState.ansForBridge` (die Zahl der Ergebnis-Zeile in der
+  `=`-gezykelten Einheit; in der Breakdown-Ansicht der Gesamtwert in der
+  Arbeits-Einheit) als Ziffern-Tokens via `formatF64Result` ein — das
+  display-only `Negate` wird beim Einfügen zu unärem `Sub`, damit das
+  Literal auf beiden Auswertungs-Schienen exakt bleibt. Im Fehlerzustand
+  blockiert (`_isErrorBlocked` wie Ans/Rcl), nach `=` startet es einen
+  frischen Ausdruck; ausgegraut, wenn drüben nichts liegt
+  (`_isTokenDisabled` liest `convAnsValue`).
+Damit der Brücken-Flow „Ans → Kategorie → Magnitude" funktioniert,
+**überlebt die Pending-Zahl in `tapCategory` den Kategorienwechsel**
+(sie ist einheitenlos; nur committete Terme werden verworfen).
+
+**Physische Tastatur im Pager:** `_handleKey` routet nach aktiver Seite —
+auf Seite 1 mappt `_handleConverterKey` Ziffern/Punkt/+/−/=/Del/AC/Pfeile
+auf die Converter-Handler (Pfeile via `moveCaretLeft/Right`, zerstörungsfrei
+an den Rändern); alles andere wird geschluckt, damit kein Tastendruck
+unsichtbar den verdeckten Hauptrechner editiert.
+
+**Basis ⊗ System (entkoppelt seit dem Farb-Umbau):** Die frühere Kopplung
+„Doz = imperial in Basis 12 / Dez = metrisch in Basis 10" ist aufgelöst —
+zwei unabhängige Achsen, alle **vier** Kombinationen gültig:
+- **Einheitensystem** (imperial ↔ metrisch): converter-lokal, über die zwei
+  **runden System-Tasten in der Equals-Reihe** — `met` (links, grün) / `imp`
+  (rechts, violett); Kreisform + `pagerFill` wie die (i)/(?)-Rundtasten des
+  Hauptrechners, die aktive trägt einen 2-dp-Eigenfarb-Ring. Sie
+  ersetzen die früheren Rundtasten ((i)/Taschenrechner-Icon: Info läuft über
+  die Hauptrechner-Seite, zurück per Rechts-Swipe) und die Doz/Dez-Tasten
+  des Umrechner-Overlays (Slots leer, Drg/Close behalten ihre Plätze).
+  `setWorld` kollabiert Terme werterhaltend zur Partner-Einheit.
+- **Zahlbasis** (12 ↔ 10): global — die Settings-Zeile „Zahlensystem" wirkt
+  auf BEIDE Rechner. Der Scaffold spiegelt `DozenalCalcState.activeBase` per
+  Listener in `ConverterState.setBase` (werterhaltend: Pending-Ziffern
+  werden umformatiert, Terme speichern Doubles). A/B-Tasten-Gating folgt
+  der Basis, Breakdown-Verfügbarkeit dem System (imperial).
+Intern läuft alles über eine **SI-Drehscheibe**; die `{ }`-Klammer zeigt das
+Gegen-System (Zeit-Kategorie: die Gegen-Basis).
+
+**Farbsystem „eine Farbe pro Welt, ein Träger pro Achse"** (Palette-Slots
+`worldTen`/`worldTwelve` in `app_theme.dart`): **Grün = Zehner-Welt**
+(metrische Einheiten UND Basis 10), **Violett = Zwölfer-Welt** (imperiale
+Einheiten UND Basis 12) — bewusst NICHT das Op-Blau, das den
+Funktions-Glyphen gehört. Träger trennen die Achsen: **Einheitensymbole**
+tragen die System-Farbe (Eingabe-, Ergebnis- und Breakdown-Zeile, via
+`unitRanges`-Char-Ranges in `ConverterLine`/`_InputLayout` — derselbe
+Monospace-String, nur Span-Farben, Caret/Tap-Geometrie unverändert);
+das **DOZ/DEZ-Badge** trägt die Basis-Farbe (beide Displays); **Ziffern und
+Operatoren bleiben neutral weiß**; die **`{ }`-Klammer leuchtet gedimmt
+(α 0.85) in der Farbe der Welt, die sie zeigt** (`bracketTenWorld` in
+`ConverterLine`; Hauptrechner: Gegen-Basis-Farbe für `{…}`). Das pauschale
+Ergebniszeilen-Grün des Umrechners ist gewichen (Wert weiß, `=` neutral) —
+Grün-auf-Inhalt heißt jetzt eindeutig Zehner-Welt, Grün-auf-Aktions-Glyph
+(=-Taste) bleibt „auswerten". `formatBaseNum` snappt seit diesem Umbau
+Near-Integer-f64-Rauschen (SI-Roundtrip `14 ft` → 13.999…) wie
+`formatF64Result`, sonst rendert `12 ft` als `11.BBBBBB`.
 
 - `lib/logic/unit_data.dart` — reine Daten: 16 Kategorien (`UnitCategory`),
   je imperiale + metrische Leiter, SI-Faktoren, `breakdown`-Kaskaden (imperial),
@@ -539,7 +655,34 @@ Gegen-System; intern läuft alles über eine **SI-Drehscheibe**.
 - `lib/converter_keypad.dart` — Portrait (`_buildColumn`, drei Höhen-Regime
   wie `_HochKeypad`) + Breit (`_buildBreit`, alle Sets inline). Set 3/4 + 8/9
   sind Kategorien; Tipp expandiert die Magnituden-Leiter in die Gegenspalte
-  (+ frei werdende Slots). Inaktive Op-Tasten (× ÷, Set 2/6/7, Drg) ausgegraut.
+  (+ frei werdende Slots). Der Keypad ist **voll verdrahtet** bis auf Drg
+  (inert — keine Winkelfunktionen im Umrechner):
+  - **Skalar-Operatoren × ÷ ⊕ ^ √ ㏒** (Set 1 + Set 2, dynamisch aktiv
+    über `canScalarOp`): erweitern die Pending-Eingabe zu einem
+    links-nach-rechts-Ausdruck (`3×2`, KEIN Vorrang — laufende Eingabe),
+    ausgewertet beim Magnituden-Commit via `parseScalarEntry` in
+    `base_num.dart`. Binär-Konventionen wie im Hauptrechner: linker
+    Operand = Wurzelgrad/Log-Basis (`2√9`=3, `2㏒8`=3), ⊕ = a·b/(a+b).
+    Ein Zeichen pro Tastendruck (㏒ = U+33D2), damit Caret/Del
+    zeichenweise stimmen. Auf einem committeten Compound kollabiert der
+    erste Operator-Druck das Ganze in editierbare Ziffern (Gesamtwert in
+    der Arbeits-Einheit — gleiches Idiom wie der Welt-Wechsel), sodass
+    `3 ft × 2` und `3 × 2 ft` beide funktionieren. Dezimal-Guard pro
+    Segment; `setBase` reformatiert segmentweise (`reformatScalarEntry`).
+  - **Wert-Tasten** (Set 7 Konstanten π/e/φ/√2, RCL, **Ans** =
+    Resultat-Brücke): **ersetzen das Skalar-Segment am Caret** durch ihre
+    Ziffern (`insertValueEntry`; leeres Segment = einfaches Einfügen, nie
+    Splicing in halbgetippte Zahlen). Dadurch praktisch immer aktiv —
+    Konstanten bedingungslos, Ans sobald drüben ein Resultat liegt, RCL
+    sobald das Register gefüllt ist. Negative Werte nur, wenn die
+    Ersetzung die GANZE Eingabe abdeckt (Vorzeichen lebt auf der
+    Term-Lücke, durch ^/√/㏒ nicht faktorisierbar; sonst No-op).
+  - **Speicher** (Set 6): STO speichert den Ergebniszeilen-Wert
+    (`ansForBridge`) — ohne committete Terme den Wert der **getippten
+    Eingabe** („speichere, was ich getippt habe"); MC löscht. Register ist
+    in-memory, überlebt AC und Kategorienwechsel (wie der
+    Hauptrechner-Speicher). Feedback über die dynamischen Aktiv-Zustände
+    (RCL/MC grau = Register leer) statt eines M-Badges.
 - `lib/converter_display.dart` — zweizeilig, Ausdruck + `{ }`-Klammer, plus
   custom-paint **Caret** (rote Linie) mit Tap-Hit-Testing auf der Eingabezeile.
   Ziffern folgen dem **geteilten** „Ziffern im Display"-Pref
@@ -551,13 +694,11 @@ Gegen-System; intern läuft alles über eine **SI-Drehscheibe**.
 - Kategorie-Labels lokalisiert (`unitCat*`, 14 Sprachen); Einheiten-Symbole
   (`ft`, `kg`, …) bleiben international.
 
-**Glyphen-Stil geteilt, Basis nicht:** Display (`styleOf`) und Keypad
+**Glyphen-Stil geteilt, Basis auch:** Display (`styleOf`) und Keypad
 (`keypadStyleOf`) des Umrechners teilen die beiden Settings-Glyphen-Prefs mit
-dem Hauptrechner. Die Settings-**Zahlensystem**-Zeile (Doz/Dez) wirkt dagegen
-NUR auf den Hauptrechner (`DozenalCalcState`) — der Umrechner behält seinen
-eigenen Welt-Schalter (DOZ/DEZ, `ConverterState`), weil dort Doz/Dez an die
-Zwei-Welten-Logik (imperial ↔ metrisch) gekoppelt ist und nicht bloß eine
-Anzeigebasis umschaltet.
+dem Hauptrechner, und seit der Basis/System-Entkopplung gilt auch die
+Settings-**Zahlensystem**-Zeile für beide Rechner (Sync siehe oben). Nur das
+**Einheitensystem** bleibt converter-lokal (met/imp-Tasten).
 
 Die alte statische `conversions_page.dart` bleibt vorerst parallel bestehen
 (soll später zu einem Theorie-Block werden).
@@ -666,8 +807,10 @@ liegt, dann hier:
   Dezimaltrenner für deutsche Layouts) und `_logicalKeyMap` (Enter,
   Backspace, Pfeiltasten, kompletter Numpad inkl. Fallback-Digits, weil
   Linux bei manchen Layouts `event.character` leerlässt). Beides
-  Portierungen aus `src/input.rs::handle_keyboard` und mündet in
-  `_state.handleClick(token)` — derselbe Pfad wie ein Tastendruck.
+  Portierungen aus `src/input.rs::handle_keyboard`. Auf Pager-Seite 0
+  mündet alles in `_state.handleClick(token)` — derselbe Pfad wie ein
+  Tastendruck; auf Seite 1 (Umrechner) übersetzt `_handleConverterKey`
+  in die `ConverterState`-Handler (siehe Einheitenrechner-Abschnitt).
 - **Intro-Gate:** `_maybeShowIntro` liest `_kIntroSeenFlag` (aktuell
   `intro_seen_v3`) aus `SharedPreferences` und pusht beim ersten Start
   `IntroPage`; danach wird das Flag gesetzt.
@@ -681,12 +824,17 @@ liegt, dann hier:
   State nicht. Startup: `_calcPrefs.load()` → `_applyStartupPrefs`
   (einmalig Prefs → State); danach spiegelt `_syncPrefsFromState`
   laufend State → Prefs. Details siehe Einstellungen-Abschnitt.
-- **Layout-Wurzel:** `_CalcScaffold` rendert `TwoLineDisplay` über
-  `Keypad` (inkl. `keypadMode`/`keypadProfile` aus `CalcPrefsScope`),
-  mit `displayHeightFor(bodyH)` aus `app_layout.dart` als
-  einzige Größenrechnung. Splash-Feedback ist global via
-  `NoSplash.splashFactory` aus, weil die Tasten ihre eigene
-  Press-Color-Animation haben.
+- **Layout-Wurzel:** `_CalcScaffold` ist seit dem Pager-Umbau ein
+  horizontaler **PageView** (forciert LTR, auch in RTL-Locales): Seite 0
+  rendert `TwoLineDisplay` über `Keypad` (inkl.
+  `keypadMode`/`keypadProfile` aus `CalcPrefsScope`), Seite 1 den
+  `ConverterBody`. `displayHeightFor(bodyH)` aus `app_layout.dart`
+  bleibt die einzige Größenrechnung (pro Seite). `_CalcScaffoldState`
+  besitzt `ConverterState` + `PageController`, verdrahtet die
+  Resultat-Brücken-Provider in beide Richtungen und lauscht zusätzlich
+  auf `state.converterRequested` (Info-Listen-Eintrag → `_goToPage(1)`).
+  Splash-Feedback ist global via `NoSplash.splashFactory` aus, weil die
+  Tasten ihre eigene Press-Color-Animation haben.
 
 ### Edge-to-edge (Android 15) und Native-Activity
 

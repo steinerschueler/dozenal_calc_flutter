@@ -25,9 +25,11 @@ import 'glyph_painter.dart';
 import 'logic/glyph_style.dart';
 
 // Palette slots (lib/app_theme.dart): displayBg/displayBorder for the frame,
-// displayText for input, equals (egui LIGHT_GREEN) for the result, displaySub
-// for the { } bracket, link for the DOZ/DEZ world badge. The edit caret stays
-// theme-independent red — same convention as the main display's cursor.
+// displayText for all digits (neutral — base and system are colour-coded on
+// their own carriers), worldTen/worldTwelve for unit symbols (system hue),
+// the { } brackets (hue of the world they show) and the DOZ/DEZ base badge.
+// The edit caret stays theme-independent red — same convention as the main
+// display's cursor.
 const Color _kCaret = Colors.redAccent;
 
 /// 0..11 if [ch] is a single base-12 digit character ('0'..'9','A','B); else
@@ -120,12 +122,26 @@ class _LineLayout {
   }
 }
 
+/// World hue for a bracket flag: null → neutral sub colour (no world info).
+Color _bracketHue(bool? tenWorld, AppColors t) => tenWorld == null
+    ? t.displaySub
+    : (tenWorld ? t.worldTen : t.worldTwelve).withValues(alpha: 0.85);
+
 class ConverterDisplay extends StatelessWidget {
   final ConverterLine topLine;
   final ConverterLine? resultLine;
 
-  /// `DOZ` or `DEZ`.
+  /// `DOZ` or `DEZ` — the BASE badge (the unit system shows itself through
+  /// the coloured unit symbols and the system keys instead).
   final String worldLabel;
+
+  /// True when the global base is 10 → the badge wears the Ten-world green;
+  /// base 12 wears the Twelve-world violet.
+  final bool baseIsTen;
+
+  /// True when the metric system is active → unit symbols wear the Ten-world
+  /// green; imperial symbols wear the Twelve-world violet.
+  final bool systemIsTen;
 
   /// Caret char offset within [topLine].number (the edit cursor).
   final int inputCaret;
@@ -138,6 +154,8 @@ class ConverterDisplay extends StatelessWidget {
     required this.topLine,
     required this.resultLine,
     required this.worldLabel,
+    this.baseIsTen = false,
+    this.systemIsTen = false,
     this.inputCaret = 0,
     this.onInputTapChar,
   });
@@ -147,6 +165,7 @@ class ConverterDisplay extends StatelessWidget {
     final t = AppColors.of(context);
     // Shared with the main display ("Ziffern im Display" in settings).
     final style = GlyphStyleScope.styleOf(context);
+    final unitColor = systemIsTen ? t.worldTen : t.worldTwelve;
     return Container(
       decoration: BoxDecoration(
         color: t.displayBg,
@@ -169,7 +188,10 @@ class ConverterDisplay extends StatelessWidget {
               Expanded(
                 child: _CaretInputLine(
                   text: topLine.number,
+                  unitRanges: topLine.unitRanges,
+                  unitColor: unitColor,
                   bracket: topLine.bracket,
+                  bracketColor: _bracketHue(topLine.bracketTenWorld, t),
                   caret: inputCaret,
                   numberSize: topSize,
                   bracketSize: bracketSize,
@@ -180,8 +202,12 @@ class ConverterDisplay extends StatelessWidget {
               Expanded(
                 child: _ResultLine(
                   line: resultLine,
-                  numberColor: t.equals,
-                  bracketColor: t.displaySub,
+                  // Result digits are neutral since the colour rebuild —
+                  // green belongs to the Ten world now, not to "result".
+                  numberColor: t.displayText,
+                  unitColor: unitColor,
+                  bracketColor:
+                      _bracketHue(resultLine?.bracketTenWorld, t),
                   numberSize: resultSize,
                   bracketSize: bracketSize * 1.05,
                   style: style,
@@ -192,8 +218,9 @@ class ConverterDisplay extends StatelessWidget {
                 child: Text(
                   worldLabel,
                   style: TextStyle(
-                    color: t.link,
+                    color: baseIsTen ? t.worldTen : t.worldTwelve,
                     fontSize: 11,
+                    fontWeight: FontWeight.bold,
                     fontFamily: 'monospace',
                   ),
                 ),
@@ -206,11 +233,41 @@ class ConverterDisplay extends StatelessWidget {
   }
 }
 
+/// Splits [text] into neutral/[unitColor] runs along [unitRanges] (the
+/// system-hue carrier: unit symbols inside a composed expression or
+/// breakdown string). [offset] shifts the ranges when a prefix was prepended.
+List<_Seg> _splitByUnitRanges(
+  String text,
+  List<(int, int)> unitRanges,
+  Color neutral,
+  Color unitColor,
+  double size, {
+  int offset = 0,
+  FontWeight weight = FontWeight.w600,
+}) {
+  final segs = <_Seg>[];
+  var pos = 0;
+  for (final (s, e) in unitRanges) {
+    final start = s + offset;
+    final end = e + offset;
+    if (start > pos) {
+      segs.add(_Seg(text.substring(pos, start), neutral, size, weight: weight));
+    }
+    segs.add(_Seg(text.substring(start, end), unitColor, size, weight: weight));
+    pos = end;
+  }
+  if (pos < text.length) {
+    segs.add(_Seg(text.substring(pos), neutral, size, weight: weight));
+  }
+  return segs;
+}
+
 /// Right-aligned, scale-to-fit result line (no caret). Custom-painted so the
 /// dozenal glyph overlay lines up with the (possibly down-scaled) text.
 class _ResultLine extends StatelessWidget {
   final ConverterLine? line;
   final Color numberColor;
+  final Color unitColor;
   final Color bracketColor;
   final double numberSize;
   final double bracketSize;
@@ -219,6 +276,7 @@ class _ResultLine extends StatelessWidget {
   const _ResultLine({
     required this.line,
     required this.numberColor,
+    required this.unitColor,
     required this.bracketColor,
     required this.numberSize,
     required this.bracketSize,
@@ -230,10 +288,12 @@ class _ResultLine extends StatelessWidget {
     final l = line;
     if (l == null) return SizedBox(height: numberSize); // keep the row slot
     final segs = <_Seg>[
-      _Seg('= ${l.number}', numberColor, numberSize, weight: FontWeight.w600),
+      // The '= value' run is neutral; breakdown strings carry their unit
+      // symbols inside `number`, coloured via the ranges ('= ' shifts by 2).
+      ..._splitByUnitRanges('= ${l.number}', l.unitRanges, numberColor,
+          unitColor, numberSize, offset: 2),
       if (l.unit != null)
-        _Seg(' ${l.unit}', numberColor.withValues(alpha: 0.82),
-            numberSize * 0.82),
+        _Seg(' ${l.unit}', unitColor, numberSize * 0.82),
       if (l.bracket != null) _Seg('  {${l.bracket}}', bracketColor, bracketSize),
     ];
     final layout = _LineLayout.build(segs, style);
@@ -262,7 +322,10 @@ class _ResultLine extends StatelessWidget {
 /// (possibly down-scaled) text.
 class _CaretInputLine extends StatelessWidget {
   final String text;
+  final List<(int, int)> unitRanges;
+  final Color unitColor;
   final String? bracket;
+  final Color bracketColor;
   final int caret;
   final double numberSize;
   final double bracketSize;
@@ -271,7 +334,10 @@ class _CaretInputLine extends StatelessWidget {
 
   const _CaretInputLine({
     required this.text,
+    required this.unitRanges,
+    required this.unitColor,
     required this.bracket,
+    required this.bracketColor,
     required this.caret,
     required this.numberSize,
     required this.bracketSize,
@@ -283,8 +349,11 @@ class _CaretInputLine extends StatelessWidget {
   Widget build(BuildContext context) {
     final t = AppColors.of(context);
     final segs = <_Seg>[
-      _Seg(text, t.displayText, numberSize, weight: FontWeight.w600),
-      if (bracket != null) _Seg('  {$bracket}', t.displaySub, bracketSize),
+      // Same string, char for char, as the un-coloured version — only span
+      // colours differ, so the caret/tap geometry stays exact.
+      ..._splitByUnitRanges(
+          text, unitRanges, t.displayText, unitColor, numberSize),
+      if (bracket != null) _Seg('  {$bracket}', bracketColor, bracketSize),
     ];
     final layout = _LineLayout.build(segs, style);
     final tp = layout.tp;
