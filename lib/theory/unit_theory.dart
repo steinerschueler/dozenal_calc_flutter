@@ -38,10 +38,12 @@ class UnitTheorySection {
   const UnitTheorySection(this.heading, this.body);
 }
 
-/// The areas that get a theory tab, in display order. `count` is omitted on
-/// purpose — the dozen/twelve story already lives in the app's 12 teaching
-/// chapters, so repeating it here would duplicate.
+/// The areas that get a theory tab, in display order. `count` is first and
+/// covers the counting *units* (dozen/gross/great gross/baker's dozen) — kept
+/// deliberately complementary to Theorie → Grundlagen, which carries the
+/// why-twelve / finger-counting story (no duplication).
 const List<UnitCategory> kTheoryAreas = [
+  UnitCategory.count,
   UnitCategory.dist,
   UnitCategory.area,
   UnitCategory.space,
@@ -55,6 +57,13 @@ const List<UnitCategory> kTheoryAreas = [
 /// Theory sections for [cat] in [langTag] (BCP-47). Falls back to German until
 /// the other languages are filled in.
 List<UnitTheorySection> unitTheory(UnitCategory cat, String langTag) {
+  final r = _localeTheory(cat, langTag);
+  // A language that has not translated this area yet returns [] (currently only
+  // `count`); fall back to German so the tab is never empty.
+  return r.isEmpty ? _unitTheoryDe(cat) : r;
+}
+
+List<UnitTheorySection> _localeTheory(UnitCategory cat, String langTag) {
   final c = langTag.toLowerCase();
   if (c.startsWith('en')) return _unitTheoryEn(cat);
   if (c.startsWith('fr')) return _unitTheoryFr(cat);
@@ -76,6 +85,11 @@ List<UnitTheorySection> unitTheory(UnitCategory cat, String langTag) {
 /// area's tab. Curated from the dossier in docs/research/unit_<area>.md.
 /// Falls back to German until other languages are filled in.
 List<Source> unitSources(UnitCategory cat, String langTag) {
+  final r = _localeSources(cat, langTag);
+  return r.isEmpty ? _unitSourcesDe(cat) : r;
+}
+
+List<Source> _localeSources(UnitCategory cat, String langTag) {
   final c = langTag.toLowerCase();
   if (c.startsWith('en')) return _unitSourcesEn(cat);
   if (c.startsWith('fr')) return _unitSourcesFr(cat);

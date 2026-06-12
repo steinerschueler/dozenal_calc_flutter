@@ -1,12 +1,57 @@
 // German unit-theory prose. part of ../unit_theory.dart.
 // Bodies are kept in simple, short sentences (easier to translate). Distilled
-// from the research dossiers in docs/research/. `count` has no entry on purpose
-// — the dozen/twelve story lives in the app's 12 teaching chapters.
+// from the research dossiers in docs/research/. `count` covers the counting
+// units (Dutzend/Gros/Großgros/Bäckerdutzend); it stays complementary to
+// Theorie → Grundlagen (the why-twelve / finger-counting story lives there).
 
 part of '../unit_theory.dart';
 
 List<UnitTheorySection> _unitTheoryDe(UnitCategory cat) {
   switch (cat) {
+    case UnitCategory.count:
+      return const [
+        UnitTheorySection(
+          'Stapeln in Zwölfern',
+          'Stückzahlen kann man in Zehnern bündeln — oder in Zwölfern. Ein '
+              'Dutzend sind zwölf Stück, ein Gros zwölf Dutzend (144), ein '
+              'Großgros zwölf Gros (1728). Das ist dieselbe Treppe wie Einer, '
+              'Zehner, Hundert, Tausend, nur in Basis zwölf: Dutzend = 12¹, '
+              'Gros = 12², Großgros = 12³. In Basis zwölf geschrieben sind das '
+              'glatt 10, 100 und 1000 — das Großgros ist also das „dozenale '
+              'Tausend".\n\n'
+              'Warum sich die Zwölf so bequem teilen lässt und wie man an den '
+              'drei Gliedern der vier Finger bis zwölf zählt, steht in '
+              'Theorie → Grundlagen. Hier geht es um die Zähl-Einheiten selbst.',
+        ),
+        UnitTheorySection(
+          'Woher die Namen kommen',
+          '„Dutzend" kommt über das altfranzösische douzaine vom lateinischen '
+              'duodecim, „zwei-und-zehn"; das Wort meint genau zwölf, nicht '
+              'ungefähr. Verwandt sind das spanische docena, das italienische '
+              'dozzina und das englische dozen.\n\n'
+              '„Gros" stammt von der grosse douzaine, dem „großen Dutzend", und '
+              'ist seit dem frühen 15. Jahrhundert belegt. Im Großhandel zählte '
+              'und verpackte man Kleinwaren — Bleistifte, Knöpfe, Nadeln — '
+              'gros-weise; manche Bleistiftdosen tragen bis heute die Aufschrift '
+              '„1 Gros". Das Großgros (1728) ist das Dutzend Gros — und '
+              'zufällig auch die Zahl der Kubikzoll in einem Kubikfuß '
+              '(12 × 12 × 12). Eier verkauft man bis heute im Dutzend.',
+        ),
+        UnitTheorySection(
+          'Das Bäckerdutzend',
+          'Ein Bäckerdutzend sind dreizehn — eines mehr als ein gewöhnliches '
+              'Dutzend; der dreizehnte Laib heißt „Vantage-Laib". Die geläufige '
+              'Erklärung verweist auf die mittelalterliche englische '
+              'Brotverordnung (Assize of Bread, 13. Jahrhundert): Wer '
+              'untergewichtiges Brot verkaufte, dem drohten Strafen, also legte '
+              'der Bäcker sicherheitshalber einen Laib drauf.\n\n'
+              'Ein ehrlicher Vorbehalt gehört dazu: Diese Herleitung ist '
+              'plausibel und weit verbreitet, aber nicht urkundlich belegt. Die '
+              'ältesten schriftlichen Belege für das englische „baker’s dozen" '
+              'stammen erst aus dem späten 16. Jahrhundert — lange nach der '
+              'Verordnung.',
+        ),
+      ];
     case UnitCategory.dist:
       return const [
         UnitTheorySection(
@@ -762,6 +807,16 @@ List<UnitTheorySection> _unitTheoryDe(UnitCategory cat) {
 // docs/research/unit_<area>.md. The complete tiered lists live there.
 List<Source> _unitSourcesDe(UnitCategory cat) {
   switch (cat) {
+    case UnitCategory.count:
+      return const [
+        Source('Dozen — Wikipedia', 'https://en.wikipedia.org/wiki/Dozen', 'R2', 'A1'),
+        Source('Gross (unit) — Wikipedia', 'https://en.wikipedia.org/wiki/Gross_(unit)', 'R2', 'A1'),
+        Source('Great gross — Wikipedia', 'https://en.wikipedia.org/wiki/Great_gross', 'R2', 'A1'),
+        Source('Baker’s dozen — Wikipedia', 'https://en.wikipedia.org/wiki/Baker%27s_dozen', 'R2', 'A1'),
+        Source('Assize of Bread and Ale — Wikipedia', 'https://en.wikipedia.org/wiki/Assize_of_Bread_and_Ale', 'R2', 'A1'),
+        Source('dozen — Online Etymology Dictionary', 'https://www.etymonline.com/word/dozen', 'R2', 'A1'),
+        Source('gross — Online Etymology Dictionary', 'https://www.etymonline.com/word/gross', 'R2', 'A1'),
+      ];
     case UnitCategory.dist:
       return [
         Source('Measurement — MacTutor History of Mathematics', 'https://mathshistory.st-andrews.ac.uk/HistTopics/Measurement/', 'R1', 'A1'),
