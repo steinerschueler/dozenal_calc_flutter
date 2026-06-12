@@ -542,8 +542,22 @@ Gegen-System; intern läuft alles über eine **SI-Drehscheibe**.
   (+ frei werdende Slots). Inaktive Op-Tasten (× ÷, Set 2/6/7, Drg) ausgegraut.
 - `lib/converter_display.dart` — zweizeilig, Ausdruck + `{ }`-Klammer, plus
   custom-paint **Caret** (rote Linie) mit Tap-Hit-Testing auf der Eingabezeile.
+  Ziffern folgen dem **geteilten** „Ziffern im Display"-Pref
+  (`GlyphStyleScope.styleOf`, dieselbe Quelle wie das Hauptdisplay): custom =
+  Dozenal-Glyphen, gezeichnet als Overlay über unsichtbar gesetzte
+  Ziffernzellen (die Monospace-`TextPainter`-Geometrie bleibt erhalten, damit
+  Caret + Tap exakt bleiben), conventional = ASCII (`A`/`B` für 10/11).
+  Einheiten-Symbole, Operatoren, Punkt und `{ }`-Klammer bleiben immer Text.
 - Kategorie-Labels lokalisiert (`unitCat*`, 14 Sprachen); Einheiten-Symbole
   (`ft`, `kg`, …) bleiben international.
+
+**Glyphen-Stil geteilt, Basis nicht:** Display (`styleOf`) und Keypad
+(`keypadStyleOf`) des Umrechners teilen die beiden Settings-Glyphen-Prefs mit
+dem Hauptrechner. Die Settings-**Zahlensystem**-Zeile (Doz/Dez) wirkt dagegen
+NUR auf den Hauptrechner (`DozenalCalcState`) — der Umrechner behält seinen
+eigenen Welt-Schalter (DOZ/DEZ, `ConverterState`), weil dort Doz/Dez an die
+Zwei-Welten-Logik (imperial ↔ metrisch) gekoppelt ist und nicht bloß eine
+Anzeigebasis umschaltet.
 
 Die alte statische `conversions_page.dart` bleibt vorerst parallel bestehen
 (soll später zu einem Theorie-Block werden).

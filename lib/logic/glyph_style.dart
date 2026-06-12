@@ -85,4 +85,14 @@ class GlyphStyleScope extends InheritedNotifier<GlyphStyleNotifier> {
         context.dependOnInheritedWidgetOfExactType<GlyphStyleScope>();
     return scope?.notifier?.keypadStyle ?? GlyphStyle.custom;
   }
+
+  /// Subscribing read of the display digit style, with the same no-scope
+  /// fallback as [keypadStyleOf] (isolated widget tests / tool generators).
+  /// Used by the unit-converter display, which shares the main display's
+  /// "Ziffern im Display" preference.
+  static GlyphStyle styleOf(BuildContext context) {
+    final scope =
+        context.dependOnInheritedWidgetOfExactType<GlyphStyleScope>();
+    return scope?.notifier?.style ?? GlyphStyle.custom;
+  }
 }
