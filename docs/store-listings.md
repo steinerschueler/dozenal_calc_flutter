@@ -67,5 +67,5 @@ adb -s <serial> pull /sdcard/s.png store/screenshots/<locale>/N-name.png
 
 Pro Locale: in der App die Sprache umstellen (oder OS-Locale ändern), dann
 durchklicken und capturen. Funktioniert mit echten Android-Fonts inkl. CJK,
-ohne Font-Workarounds — siehe `docs/device-testing.md` für die generelle
-adb-UI-Driving-Loop.
+ohne Font-Workarounds — die generelle adb-UI-Driving-Loop steht in
+`docs/local/device-testing.md` (lokal/gitignored, nicht im Repo).

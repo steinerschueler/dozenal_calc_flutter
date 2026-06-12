@@ -59,13 +59,20 @@ erwartet, kein Bug. Nach jedem Flutter-Minor-Stable-Release erneut prüfen.
 
 ### Manuelles Testen auf physischem Gerät
 
-adb-Loop (Gerät finden → bauen/installieren → per `input tap/swipe`
-ansteuern → `screencap`+`pull` → `Read`). Bei State-Wechsel-Prüfungen
-(Sprache/Orientierung/Theme/Tastenmodus) **beide** Zustände als Datei
-capturen und via `SendUserFile` nebeneinander zeigen, nie Spot-Check
-zurückgeben. Vollständige Schritt-für-Schritt-Anleitung inkl.
-Install-Konflikt-Lösung und udev-Reflex:
-[`docs/device-testing.md`](docs/device-testing.md).
+Grundprinzip: adb-Loop (Gerät finden → bauen/installieren → per
+`input tap/swipe` ansteuern → `screencap` → `Read`); bei
+State-Wechsel-Prüfungen (Sprache/Orientierung/Theme/Tastenmodus) **beide**
+Zustände als Datei capturen und via `SendUserFile` nebeneinander zeigen, nie
+Spot-Check zurückgeben.
+
+Die **vollständige Anleitung** (Geräte-Quick-Reference mit Serials/Auflösung,
+Entsperr-Rezepte mit Pixelkoordinaten, Install-Konflikt-Lösung, udev-Reflex)
+liegt **bewusst nur lokal** in `docs/local/device-testing.md` — diese Datei ist
+**gitignored und gehört nicht ins (ggf. veröffentlichte) Repo**, weil sie
+gerätespezifische und persönliche Daten enthält. Sie ist auf der Arbeits-
+maschine vorhanden; bei Gerätetests dort nachschlagen. Beim Anlegen neuer
+gerätebezogener Test-Doku ebenfalls dort (gitignored) ablegen, nie in
+versionierten Dateien.
 
 ### Release-Builds
 
@@ -123,7 +130,7 @@ Keine per-Locale-Screenshots im Repo — die `tool/generate_screenshots.dart`-
 Pipeline wurde wegen unzuverlässigem `.ttc`-Font-Loading in flutter_test
 (CJK-Tofu) verworfen. Play Console nutzt das Default-Locale-Set für alle
 Sprachen. Falls per-Locale gewünscht: adb-Capture vom Gerät (siehe
-`docs/device-testing.md`). Details + Begründung:
+`docs/local/device-testing.md`, lokal/gitignored). Details + Begründung:
 [`docs/store-listings.md`](docs/store-listings.md).
 
 ## Architektur

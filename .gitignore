@@ -84,3 +84,7 @@ fastlane/screenshots/
 fastlane/report.xml
 fastlane/Preview.html
 fastlane/test_output/
+
+# Lokale Geräte-Testdoku (Serials, Entsperren) — bewusst NICHT versioniert,
+# darf nicht auf GitHub (siehe CLAUDE.md). Inhalt: docs/local/device-testing.md
+/docs/local/
