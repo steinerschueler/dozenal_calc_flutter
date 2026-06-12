@@ -240,10 +240,34 @@ List<ManualChapter> _manualChaptersFr() => const [
       "fondamentalement différentes, mais la même question sur une échelle "
       "différente — elles ne diffèrent que par un facteur fixe.",
     ),
+    _H("Les symboles sur les touches"),
+    _P(
+      "Cette calculatrice ne porte pas les signes familiers comme √ ou « log ». "
+      "À la place, chacune de ces touches affiche un x avec un petit carré □ "
+      "dans un coin. Le carré est le paramètre fictif pour le nombre que vous "
+      "entrez — et le coin dans lequel il se trouve indique l'opération, car la "
+      "position reflète la notation mathématique habituelle.",
+    ),
+    KeyGlyphsFigure(
+      square: "Carré",
+      power: "Puissance",
+      root: "Racine",
+      logarithm: "Logarithme",
+    ),
+    _P(
+      "Carré en haut à droite (x^□) signifie élever à une puissance — x exposant □, "
+      "comme l'exposant dans xⁿ se trouve en haut à droite. Carré en haut à gauche "
+      "(□√x) signifie extraire une racine — la racine □-ième de x, comme l'indice "
+      "de la racine dans ⁿ√x se trouve en haut à gauche. Carré en bas à droite "
+      "(x_□) signifie logarithme — le logarithme de x en base □, comme la base "
+      "dans log_b se trouve en bas à droite. x² est simplement le raccourci tout "
+      "fait pour « au carré ». (Le quatrième signe de coin — carré en bas à gauche "
+      "avec un petit + — est l'addition parallèle ⊕, qui a son propre chapitre.)",
+    ),
     _H("Sur cette calculatrice"),
     _P(
-      "Les trois touches de base se trouvent dans Set 2 : x^□ pour la puissance, "
-      "√ pour la racine, log pour le logarithme. x² dans le menu appui long de la "
+      "Les trois touches de base se trouvent dans Set 2 : x^□ (puissance), "
+      "□√x (racine) et x_□ (logarithme). x² dans le menu appui long de la "
       "touche puissance est le raccourci pour « au carré ». Un appui long sur log "
       "donne aussi ln, log₁₂ et eˣ ; ceux-ci ouvrent immédiatement une parenthèse "
       "pour y saisir l'argument.",

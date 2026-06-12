@@ -228,10 +228,34 @@ List<ManualChapter> _manualChaptersEn() => const [
       'and log₁₂ are therefore not fundamentally different functions, but the '
       'same question on a different scale — they differ only by a fixed factor.',
     ),
+    _H('The symbols on the keys'),
+    _P(
+      'This calculator carries no familiar signs like √ or "log". Instead each '
+      'of these keys shows an x with a small square □ in one corner. The square '
+      'is the placeholder for the number you supply — and which corner it sits '
+      'in tells you the operation, because the position mirrors the usual '
+      'mathematical notation.',
+    ),
+    KeyGlyphsFigure(
+      square: 'Square',
+      power: 'Power',
+      root: 'Root',
+      logarithm: 'Logarithm',
+    ),
+    _P(
+      'Square at top right (x^□) means raising to a power — x to the □, just as '
+      'the exponent sits at the top right in xⁿ. Square at top left (□√x) means '
+      'taking a root — the □-th root of x, just as the root index sits at the '
+      'top left in ⁿ√x. Square at bottom right (x_□) means logarithm — the '
+      'logarithm of x to base □, just as the base sits at the bottom right in '
+      'log_b. x² is simply the ready-made shorthand for "squared". (The fourth '
+      'corner mark — a square at bottom left with a small + — is parallel '
+      'addition ⊕, which has its own chapter.)',
+    ),
     _H('On this calculator'),
     _P(
-      'The three basic keys are in Set 2: x^□ for the power, √ for the root, log '
-      'for the logarithm. x² in the long-press menu of the power key is the '
+      'The three basic keys are in Set 2: x^□ (power), □√x (root) and x_□ '
+      '(logarithm). x² in the long-press menu of the power key is the '
       'shorthand for "squared". A long press on log also gives you ln, log₁₂ and '
       'eˣ; these open a bracket straight away for you to type the argument into.',
     ),

@@ -240,13 +240,38 @@ List<ManualChapter> _manualChaptersIt() => const [
       'stessa domanda su scala diversa — differiscono solo per un fattore '
       'fisso.',
     ),
+    _H('I simboli sui tasti'),
+    _P(
+      'Questa calcolatrice non porta segni familiari come √ o «log». '
+      'Al loro posto ogni tasto mostra una x con un piccolo quadrato □ '
+      'in un angolo. Il quadrato è il segnaposto per il numero che inserisci '
+      '— e l’angolo in cui si trova rivela l’operazione, perché la '
+      'posizione rispecchia la consueta notazione matematica.',
+    ),
+    KeyGlyphsFigure(
+      square: 'Quadrato',
+      power: 'Potenza',
+      root: 'Radice',
+      logarithm: 'Logaritmo',
+    ),
+    _P(
+      'Quadrato in alto a destra (x^□) significa elevare a potenza — x alla '
+      '□, proprio come l’esponente in xⁿ sta in alto a destra. Quadrato in '
+      'alto a sinistra (□√x) significa estrarre una radice — la radice □-esima '
+      'di x, proprio come l’indice della radice in ⁿ√x sta in alto a '
+      'sinistra. Quadrato in basso a destra (x_□) significa logaritmo — il '
+      'logaritmo di x in base □, proprio come la base in log_b sta in basso a '
+      'destra. x² è semplicemente la scorciatoia già pronta per «al quadrato». '
+      '(Il quarto segno d’angolo — un quadrato in basso a sinistra con un '
+      'piccolo + — è l’addizione parallela ⊕, che ha il suo capitolo.)',
+    ),
     _H('Su questa calcolatrice'),
     _P(
-      'I tre tasti di base si trovano nel Set 2: x^□ per la potenza, √ per '
-      'la radice, log per il logaritmo. x² nel menu a pressione prolungata '
-      'del tasto potenza è la scorciatoia per "al quadrato". Con la pressione '
+      'I tre tasti di base si trovano nel Set 2: x^□ (potenza), □√x (radice) '
+      'e x_□ (logaritmo). x² nel menu a pressione prolungata '
+      'del tasto potenza è la scorciatoia per «al quadrato». Con la pressione '
       'prolungata su log si accede anche a ln, log₁₂ ed eˣ; questi aprono '
-      'subito una parentesi in cui digitare l\'argomento.',
+      'subito una parentesi in cui digitare l’argomento.',
     ),
     _P(
       "L'operatore potenza è associativo a destra: 2^2^3 significa "

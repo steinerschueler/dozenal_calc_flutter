@@ -233,10 +233,29 @@ List<ManualChapter> _manualChaptersDe() => const [
       'Funktionen, sondern dieselbe Frage in unterschiedlichem Maßstab — sie '
       'unterscheiden sich nur um einen festen Faktor.',
     ),
+    _H('Die Symbole auf den Tasten'),
+    _P(
+      'Dieser Rechner trägt keine gewohnten Zeichen wie √ oder „log". '
+      'Stattdessen zeigt jede dieser Tasten ein x mit einem kleinen Quadrat □ '
+      'in einer Ecke. Das Quadrat ist der Platzhalter für die Zahl, die du '
+      'angibst — und in welcher Ecke es sitzt, verrät die Rechenart, denn die '
+      'Position ist der üblichen mathematischen Schreibweise nachempfunden.',
+    ),
+    KeyGlyphsFigure(),
+    _P(
+      'Quadrat oben rechts (x^□) heißt potenzieren — x hoch □, so wie der '
+      'Exponent in xⁿ oben rechts steht. Quadrat oben links (□√x) heißt Wurzel '
+      'ziehen — die □-te Wurzel von x, so wie der Wurzelgrad in ⁿ√x oben links '
+      'steht. Quadrat unten rechts (x_□) heißt Logarithmus — der Logarithmus '
+      'von x zur Basis □, so wie die Basis in log_b unten rechts steht. x² '
+      'schließlich ist die fertige Kurzform für „hoch zwei". (Das vierte '
+      'Eckzeichen — Quadrat unten links mit einem kleinen + — ist die '
+      'Paralleladdition ⊕ und hat ihr eigenes Kapitel.)',
+    ),
     _H('Auf diesem Rechner'),
     _P(
-      'Die drei Grundtasten liegen in Set 2: x^□ für die Potenz, √ für die '
-      'Wurzel, log für den Logarithmus. x² im Langdruck-Feld der Potenztaste '
+      'Die drei Grundtasten liegen in Set 2: x^□ (Potenz), □√x (Wurzel) und '
+      'x_□ (Logarithmus). x² im Langdruck-Feld der Potenztaste '
       'ist die Kurzform für „hoch zwei". Über den Langdruck auf log erreichst '
       'du außerdem ln, log₁₂ und eˣ; diese öffnen gleich eine Klammer, in die '
       'du das Argument tippst.',

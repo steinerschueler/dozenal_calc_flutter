@@ -233,13 +233,38 @@ List<ManualChapter> _manualChaptersCy() => const [
       "ond yr un cwestiwn ar raddfa wahanol — maent yn wahanol dim ond gan "
       "ffactor sefydlog.",
     ),
+    _H('Y symbolau ar y bysellau'),
+    _P(
+      "Nid yw’r cyfrifiannell hwn yn defnyddio arwyddion cyfarwydd fel √ neu "
+      "“log”. Yn hytrach, mae pob un o’r bysellau hyn yn dangos x gyda sgwâr "
+      "bach □ mewn cornel. Y sgwâr yw’r gofynnwr ar gyfer y rhif a roddir "
+      "gennych — a pha gornel y mae’n eistedd ynddi sy’n datgelu’r weithred, "
+      "oherwydd mae’r safle’n adlewyrchu’r nodiant mathemategol arferol.",
+    ),
+    KeyGlyphsFigure(
+      square: 'Sgwâr',
+      power: 'Pŵer',
+      root: 'Gwraidd',
+      logarithm: 'Logarithm',
+    ),
+    _P(
+      "Sgwâr yn y gornel dde uchaf (x^□) yw codi i bŵer — x i’r □, yn union "
+      "fel y mae’r esbonydd yn eistedd yn y gornel dde uchaf yn xⁿ. Sgwâr "
+      "yn y gornel chwith uchaf (□√x) yw tynnu gwraidd — gwraidd □-fed x, yn "
+      "union fel y mae’r mynegai gwraidd yn eistedd yn y gornel chwith uchaf "
+      "yn ⁿ√x. Sgwâr yn y gornel dde isaf (x_□) yw logarithm — logarithm x "
+      "i sylfaen □, yn union fel y mae’r sylfaen yn eistedd yn y gornel dde "
+      'isaf yn log_b. x² yw’r ffurf fer barod am "sgwâr". (Yr arwydd pedwaredd '
+      "gornel — sgwâr yn y gornel chwith isaf gyda + bach — yw’r adiad "
+      "cyfochrog ⊕, sydd â’i bennod ei hun.)",
+    ),
     _H('Ar y cyfrifiannell hwn'),
     _P(
-      "Mae'r tair bysell sylfaenol yn Set 2: x^□ ar gyfer y pŵer, √ ar gyfer "
-      "y gwraidd, log ar gyfer y logarithm. Mae x² ym mlwch pwysiad hir y "
-      "fysell bŵer yn ffurf fer am 'sgwâr'. Mae pwysiad hir ar log hefyd yn "
-      "rhoi ln, log₁₂ ac eˣ; mae'r rhain yn agor cromfach ar unwaith i chi "
-      "deipio'r arg i mewn iddi.",
+      "Mae’r tair bysell sylfaenol yn Set 2: x^□ (Pŵer), □√x (Gwraidd) ac "
+      "x_□ (Logarithm). Mae x² ym mlwch pwysiad hir y "
+      "fysell bŵer yn ffurf fer am “sgwâr”. Mae pwysiad hir ar log hefyd yn "
+      "rhoi ln, log₁₂ ac eˣ; mae’r rhain yn agor cromfach ar unwaith i chi "
+      "deipio’r arg i mewn iddi.",
     ),
     _P(
       "Mae'r gweithredydd pŵer yn gysylltol dde: mae 2^2^3 yn golygu "

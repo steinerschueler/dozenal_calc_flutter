@@ -8,6 +8,8 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 
 import '../app_theme.dart';
+import '../token_painter.dart';
+import '../tokens.dart';
 
 // Theme-independent accent colours (match the theory palette).
 const _teal = Color(0xFF0F6E56);
@@ -2293,4 +2295,120 @@ class _DozenalPowersScalePainter extends CustomPainter {
       old.title != title ||
       old.dozLabel != dozLabel ||
       old.decLabel != decLabel;
+}
+
+/// Centered text by measured width (robust across scripts/lengths, unlike the
+/// char-count estimates used elsewhere). Forced LTR like [_text].
+void _textCenteredAt(
+  Canvas canvas,
+  String s,
+  double centerX,
+  double top,
+  Color color, {
+  double size = 9,
+}) {
+  final tp = TextPainter(
+    text: TextSpan(text: s, style: TextStyle(color: color, fontSize: size)),
+    textDirection: TextDirection.ltr,
+  )..layout();
+  tp.paint(canvas, Offset(centerX - tp.width / 2, top));
+}
+
+/// The four exponent/root/log key glyphs exactly as they appear on the keypad
+/// (x², x^□, □√x, x_□), each captioned with what it does. Renders the real
+/// button glyphs via [paintTokenAt] so the manual shows precisely what the user
+/// taps — the corner of the little square encodes the role (see the prose).
+class KeyGlyphsFigure extends StatelessWidget {
+  /// Localizable captions — German defaults; translated per language.
+  final String square;
+  final String power;
+  final String root;
+  final String logarithm;
+  const KeyGlyphsFigure({
+    super.key,
+    this.square = 'Quadrat',
+    this.power = 'Potenz',
+    this.root = 'Wurzel',
+    this.logarithm = 'Logarithmus',
+  });
+
+  @override
+  Widget build(BuildContext context) => Padding(
+    padding: const EdgeInsets.symmetric(vertical: 12),
+    child: AspectRatio(
+      aspectRatio: 2.7,
+      child: CustomPaint(
+        painter: _KeyGlyphsPainter(
+            AppColors.of(context), square, power, root, logarithm),
+      ),
+    ),
+  );
+}
+
+class _KeyGlyphsPainter extends CustomPainter {
+  final AppColors c;
+  final String square;
+  final String power;
+  final String root;
+  final String logarithm;
+  _KeyGlyphsPainter(
+      this.c, this.square, this.power, this.root, this.logarithm);
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    const tokens = <CalcToken>[
+      Square(),
+      ExpTopRight(),
+      RootTopLeft(),
+      LogBotRight(),
+    ];
+    final captions = [square, power, root, logarithm];
+    const n = 4;
+    const captionBand = 16.0;
+    final gap = size.width * 0.045;
+    final cell = math.min(
+      (size.width - gap * (n + 1)) / n,
+      size.height - captionBand,
+    );
+    final totalW = cell * n + gap * (n - 1);
+    var x = (size.width - totalW) / 2;
+    final top = (size.height - captionBand - cell) / 2;
+
+    for (var i = 0; i < n; i++) {
+      final r = Rect.fromLTWH(x, top, cell, cell);
+      final rr = RRect.fromRectAndRadius(r, const Radius.circular(8));
+      canvas.drawRRect(rr, Paint()..color = c.cardFill);
+      canvas.drawRRect(
+        rr,
+        Paint()
+          ..color = c.keyBorder
+          ..style = PaintingStyle.stroke
+          ..strokeWidth = 1.2,
+      );
+      // The real keypad glyph, inset within the key cell.
+      paintTokenAt(
+        canvas,
+        tokens[i],
+        rect: r.deflate(cell * 0.27),
+        color: c.op,
+        strokeWidth: 2.0,
+      );
+      _textCenteredAt(
+        canvas,
+        captions[i],
+        x + cell / 2,
+        top + cell + 4,
+        c.textMuted,
+      );
+      x += cell + gap;
+    }
+  }
+
+  @override
+  bool shouldRepaint(covariant _KeyGlyphsPainter old) =>
+      old.c != c ||
+      old.square != square ||
+      old.power != power ||
+      old.root != root ||
+      old.logarithm != logarithm;
 }

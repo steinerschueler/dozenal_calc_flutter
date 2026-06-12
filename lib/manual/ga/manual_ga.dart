@@ -235,10 +235,36 @@ List<ManualChapter> _manualChaptersGa() => const [
       'cheist chéanna ar scála difriúil — ní bhíonn difríocht eatarthu ach '
       'fachtóir seasta.',
     ),
+    _H('Na siombailí ar na heochracha'),
+    _P(
+      'Ní iompraíonn an t-áireamhán seo comharthaí coitianta ar nós √ nó '
+      '"log". Ina áit taispeánann gach ceann de na heochracha seo x le cearnóg '
+      'bheag □ i gcúinne. Is ionann an cearnóg agus an áireamhán don uimhir a '
+      'sholáthraíonn tú — agus insíonn an cúinne sin an oibríocht, '
+      'mar go n-aithrisíonn an suíomh an gnáthnodaireacht mhatamaitice.',
+    ),
+    KeyGlyphsFigure(
+      square: 'Cearnóg',
+      power: 'Cumhacht',
+      root: 'Fréamh',
+      logarithm: 'Logartam',
+    ),
+    _P(
+      'Ciallaíonn cearnóg ar bharr na láimhe deise (x^□) ardú le cumhacht — '
+      'x go dtí □, díreach mar a shuíonn an t-easpónant ar bharr na láimhe '
+      'deise in xⁿ. Ciallaíonn cearnóg ar bharr na láimhe clé (□√x) fréamh '
+      'a bhaint — □-ú fréamh x, díreach mar a shuíonn céim na fréimhe ar '
+      'bharr na láimhe clé in ⁿ√x. Ciallaíonn cearnóg ag bun na láimhe '
+      'deise (x_□) logartam — logartam x le bonn □, díreach mar a shuíonn '
+      'an bonn ag bun na láimhe deise in log_b. Is é x² díreach an ghiorrúchán '
+      'réidh do "cearnaithe". (Is í an ceathrú marcuillinn — cearnóg ag bun '
+      'na láimhe clé le + beag — an tsuim chomhthreomhar ⊕ agus tá caibidil '
+      'dá cuid féin aici.)',
+    ),
     _H('Ar an áireamhán seo'),
     _P(
-      'Tá na trí bhuneochair i Set 2: x^□ don chumhacht, √ don fhréamh, log '
-      'don logartam. Is é x² sa roghchlár brú fada na heochrach cumhachta an '
+      'Tá na trí bhuneochair i Set 2: x^□ (cumhacht), □√x (fréamh) agus '
+      'x_□ (logartam). Is é x² sa roghchlár brú fada na heochrach cumhachta an '
       'ghiorrúchán do "cearnaithe". Le brú fada ar log gheobhaidh tú freisin '
       'ln, log₁₂ agus eˣ; osclaíonn siad lúibín láithreach le do chuid '
       'argóinte a chlóscríobh.',

@@ -238,10 +238,36 @@ List<ManualChapter> _manualChaptersEs() => const [
       'distintas, sino la misma pregunta en una escala diferente — solo difieren '
       'en un factor constante.',
     ),
+    _H('Los símbolos en las teclas'),
+    _P(
+      'Esta calculadora no lleva signos conocidos como √ o «log». En cambio, '
+      'cada una de estas teclas muestra una x con un pequeño cuadrado □ en una '
+      'esquina. El cuadrado es el marcador de posición para el número que '
+      'introduces — y en qué esquina se encuentra revela la operación, porque '
+      'la posición refleja la notación matemática habitual.',
+    ),
+    KeyGlyphsFigure(
+      square: 'Cuadrado',
+      power: 'Potencia',
+      root: 'Raíz',
+      logarithm: 'Logaritmo',
+    ),
+    _P(
+      'Cuadrado arriba a la derecha (x^□) significa elevar a una potencia — x '
+      'elevado a □, igual que el exponente ocupa la posición superior derecha '
+      'en xⁿ. Cuadrado arriba a la izquierda (□√x) significa extraer una raíz '
+      '— la raíz □-ésima de x, igual que el índice de la raíz ocupa la posición '
+      'superior izquierda en ⁿ√x. Cuadrado abajo a la derecha (x_□) significa '
+      'logaritmo — el logaritmo de x en base □, igual que la base ocupa la '
+      'posición inferior derecha en log_b. x² es sencillamente la forma '
+      'abreviada ya hecha para «al cuadrado». (La cuarta marca de esquina '
+      '— cuadrado abajo a la izquierda con un pequeño + — es la suma paralela '
+      '⊕, que tiene su propio capítulo.)',
+    ),
     _H('En esta calculadora'),
     _P(
-      'Las tres teclas básicas están en el Set 2: x^□ para la potencia, √ para '
-      'la raíz, log para el logaritmo. x² en el menú de pulsación larga de la '
+      'Las tres teclas básicas están en el Set 2: x^□ (potencia), □√x (raíz) '
+      'y x_□ (logaritmo). x² en el menú de pulsación larga de la '
       'tecla de potencia es la forma abreviada de «al cuadrado». Con una '
       'pulsación larga sobre log también se accede a ln, log₁₂ y eˣ; estas '
       'abren un paréntesis directamente para que escribas el argumento.',
