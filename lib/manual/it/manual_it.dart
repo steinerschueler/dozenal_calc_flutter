@@ -460,8 +460,8 @@ List<ManualChapter> _manualChaptersIt() => const [
       opposite: 'Opposto',
       hypotenuse: 'Ipotenusa',
       sinRatio: 'sin θ = Opp / Ip',
-      cosRatio: 'cos θ = Adj / Ip',
-      tanRatio: 'tan θ = Opp / Adj',
+      cosRatio: 'cos θ = Adi / Ip',
+      tanRatio: 'tan θ = Opp / Adi',
     ),
     _H('Il cerchio unitario'),
     _P(

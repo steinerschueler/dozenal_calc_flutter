@@ -784,7 +784,7 @@ List<ManualChapter> _manualChaptersEs() => const [
     ),
     _H('La forma de las cuatro curvas'),
     _P(
-      'cosh es una cubeta abierta hacia arriba, simétricamente axial, con su '
+      'cosh es una cuenca abierta hacia arriba, simétricamente axial, con su '
       'punto más bajo en (0, 1), pues cosh 0 = 1; su valor nunca es menor '
       'que 1. sinh es simétrica por punto, pasa por el origen y crece sin '
       'límite en ambas direcciones. Para x grande ambas se aproximan a la '
@@ -927,7 +927,7 @@ List<ManualChapter> _manualChaptersEs() => const [
       'factorial es el bloque de construcción para todo lo demás. En la '
       'calculadora n! es exacto — el resultado no lleva «≈».',
     ),
-    _H('Permutaciones: selección con orden'),
+    _H('Variaciones: selección con orden'),
     _P(
       'A menudo no se ordena todo, sino que se eligen r de n cosas — y el '
       'orden importa. Una carrera con ocho pilotos: ¿cuántos podios (1.º, 2.º, '
@@ -1052,7 +1052,7 @@ List<ManualChapter> _manualChaptersEs() => const [
       '4 → 1/x       recíproco de 4        0.3     (exacto)\n'
       '7 mod 3       resto de 7 ÷ 3        1\n'
       '5 nCr 2       combinaciones         ≈A      (= 10)\n'
-      '8 nPr 3       permutaciones         ≈240    (= 336)\n'
+      '8 nPr 3       variaciones         ≈240    (= 336)\n'
       '1 EXP 2       1 × 12²               100     (= 144)\n'
       '2 EXP 3       2 × 12³               2000    (= 3456)',
     ),

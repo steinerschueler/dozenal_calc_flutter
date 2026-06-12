@@ -208,7 +208,7 @@ List<ManualChapter> _manualChaptersGa() => const [
     ),
     _P(
       'Is scáthán é an logartam freisin: tagann y = log_2(x) ó y = 2^x trí '
-      'scáthánú trasna na líne y = x. Nuair a dreapadh an cuar easpónantach '
+      'scáthánú trasna na líne y = x. Nuair a fhásann an cuar easpónantach '
       'go géar, ní fhásann an logartam ach go mall — déanann sé raonta ollmhóra '
       'ina n-uimhreacha inláimhsithe.',
     ),
@@ -346,7 +346,7 @@ List<ManualChapter> _manualChaptersGa() => const [
     ),
     _P(
       'Ó thaobh na samhla de: ligeann dhá dhoras taobh le taobh níos mó daoine '
-      'tríd ná doras amháin; giorraithe an scuaine nuair a osclaítear cliabhán '
+      'tríd ná doras amháin; giorraithe an scuaine nuair a osclaítear cuntar '
       'nua. Ciallaíonn níos mó cosán níos lú friotaíochta agus tréchur níos '
       'airde.',
     ),
@@ -382,7 +382,7 @@ List<ManualChapter> _manualChaptersGa() => const [
     _P(
       'Tá an tsuim chomhthreomhar dlúth-ghaolmhar leis an meán armónach: '
       'is é meán armónach dhá uimhir 2·(a ⊕ b), agus is é a ⊕ b ar a mhalairt '
-      'a leath. Dé na trí mheán clasaiceach luíonn an meán armónach i gcónaí '
+      'a leath. De na trí mheán clasaiceach luíonn an meán armónach i gcónaí '
       'is ísle — faoin meán geoiméadrach agus faoin meán uimhríochtúil.',
     ),
     _P(
@@ -441,7 +441,7 @@ List<ManualChapter> _manualChaptersGa() => const [
     ),
     _H('Sin, cosán, tadhgán sa triantán'),
     _P(
-      'I dtriantán dearg tá brí shocraithe ag gach uillinn ghéar θ. Is é an '
+      'I dtriantán dronuilleach tá brí shocraithe ag gach uillinn ghéar θ. Is é an '
       'taobh is faide, os comhair na huillinn cearta, an hipitéis. Is é an '
       'taobh os comhair θ an taobh os comhair, agus an ceann in aice leis '
       'an taobh cóngarach.',
@@ -492,8 +492,8 @@ List<ManualChapter> _manualChaptersGa() => const [
       'Tar éis rothlú iomlán tá tú ar ais ag an bpointe tosaigh: athdhéanann '
       'sin agus cos le tréimhse 360° (nó 2π). Más rud é go bpléascann tú '
       'sin θ os cionn na huillinn, feiceann tú an tonn sín eolach ag luaineacht '
-      'idir −1 agus +1; is é an cosán an tonn chéanna, dírithe 90° i gcoinne '
-      'na gcimthuathchló. Déanann tonnta den sórt seo cur síos ar fhuaim, '
+      'idir −1 agus +1; is é an cosán an tonn chéanna, ach caochta 90°. '
+      'Déanann tonnta den sórt seo cur síos ar fhuaim, '
       'solas agus sruth ailtéarnach — gach creathán.',
     ),
     _Pre(
@@ -741,7 +741,7 @@ List<ManualChapter> _manualChaptersGa() => const [
       'Do eˣ is féidir an dá chuid a scríobh go díreach: is é cosh an ceann '
       'cothrom, sinh an ceann corr. Suimigh arís iad agus filleann eˣ — '
       'mar eˣ = cosh x + sinh x, agus e⁻ˣ = cosh x − sinh x. Ní roghnach '
-      'é an decomposition seo ach an t-aon cheann amháin atá indéanta.',
+      'é an dianscaoileadh seo ach an t-aon cheann amháin atá indéanta.',
     ),
     _Pre(
       'sinh x = (eˣ − e⁻ˣ) / 2          arsinh x = ln(x + √(x²+1))\n'
@@ -832,9 +832,9 @@ List<ManualChapter> _manualChaptersGa() => const [
       'hargóint shamhailteach".',
     ),
     _P(
-      'Rithean na teoirimí breisithe go comhthreomhar freisin: '
+      'Ritheann na teoirimí breisithe go comhthreomhar freisin: '
       'sinh(a+b) = sinh a·cosh b + cosh a·sinh b, díreach mar atá le sin. '
-      'Don chosán áfach cásca comhartha — tá míneas ag cos(a+b), móide ag '
+      'Don chasán, áfach, casann comhartha — tá míneas ag cos(a+b), ach móide ag '
       'cosh(a+b). Is é seo riail Osborn: bíonn gach féiniúlacht '
       'thriantánaíochta hipearbólach trí sin→sinh, cos→cosh a chur ina '
       'ionad agus an comhartha a athrú i ngach áit ina bhfuil táirgeadh de '
@@ -943,7 +943,7 @@ List<ManualChapter> _manualChaptersGa() => const [
     _P(
       'Go minic ní socraíonn tú gach rud ach roghnaíonn r as n rudaí — agus '
       'tá ord tábhachtach. Rás le hocht tiománaí: cé mhéad podium (1ú, 2ú, '
-      '3ú) atá indéanta? Ocht do or, seacht d\'airgead, sé do chré-umha: '
+      "3ú) atá indéanta? Ocht d'ór, seacht d'airgead, sé do chré-umha: "
       '8·7·6 = 240 (= 336 deachúil). Go ginearálta is é seo nPr '
       '(n permutáid r) = n!/(n−r)!. Roinntear ar (n−r)! toisc go dteipeann '
       'na fachtóirí íochtaracha.',

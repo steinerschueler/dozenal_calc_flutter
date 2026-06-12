@@ -183,7 +183,7 @@ List<ManualChapter> _manualChaptersFr() => const [
     ),
     _P(
       "Tracer les valeurs d'une puissance comme 2^x produit une courbe qui monte "
-      "de plus en plus steeply — l'image familière de la croissance exponentielle.",
+      "de plus en plus vite — l'image familière de la croissance exponentielle.",
     ),
     ExpCurveFigure(),
     _H("La racine — le premier inverse"),
@@ -327,7 +327,7 @@ List<ManualChapter> _manualChaptersFr() => const [
     _H("Le courant prend le chemin le plus facile"),
     _P(
       "Connectez deux résistances en parallèle et elles se trouvent entre les "
-      "mêmes deux points ; la même tension est appliquée aux deux, et le courant "
+      "deux mêmes points ; la même tension est appliquée aux deux, et le courant "
       "se répartit entre les deux chemins. La quantité qui traverse chaque branche "
       "dépend de sa résistance — davantage passe par le chemin de moindre "
       "résistance.",
@@ -582,7 +582,7 @@ List<ManualChapter> _manualChaptersFr() => const [
       "Après chaque calcul, la calculatrice mémorise le résultat sous le nom Ans. "
       "Si vous continuez directement avec un opérateur — par exemple « × 2 = » "
       "juste après un résultat — Ans est automatiquement utilisé comme premier "
-      "opérande, sans toucher du tout à la touche. C'est le geste le plus courant "
+      "opérande, sans appuyer sur la touche. C'est le geste le plus courant "
       "lors d'un calcul en chaîne : le résultat d'une étape devient silencieusement "
       "le début de la suivante.",
     ),
@@ -749,7 +749,7 @@ List<ManualChapter> _manualChaptersFr() => const [
     _P(
       "Sur le cercle unité chaque point (cos t, sin t) satisfait l'équation "
       "x² + y² = 1. Pour les fonctions hyperboliques une identité presque "
-      "identique mais crucialemement différente est valable. Substituez les "
+      "identique mais crucialement différente est valable. Substituez les "
       "définitions et calculez la différence des carrés, les termes mixtes "
       "s'annulent :",
     ),
@@ -778,7 +778,7 @@ List<ManualChapter> _manualChaptersFr() => const [
       "l'aire ombrée dans la figure ci-dessus.",
     ),
     _P(
-      "D'où le nom des inverses. Elles s'appellent fonctions aires — arsinh, "
+      "D'où le nom des inverses. Elles s'appellent fonctions d'aire — arsinh, "
       "arcosh, artanh — du latin « area ». Le « arcsinh » répandu sur certains "
       "appareils est strictement parlant incorrect : il transfère le préfixe arc "
       "(« arc ») à une fonction où il n'y a aucun arc. arsinh(y) est cette valeur "

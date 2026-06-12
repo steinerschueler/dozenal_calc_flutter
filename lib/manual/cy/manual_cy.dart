@@ -350,7 +350,7 @@ List<ManualChapter> _manualChaptersCy() => const [
       "Y man cychwyn yw'r rheol fod y cilyddion yn adio: "
       "1/(a⊕b) = 1/a + 1/b. Rhowch yr ochr dde dros enwadur cyffredin a daw "
       "yn (a+b)/(a·b). Cilydd hwnnw yw a ⊕ b = (a·b)/(a+b). Nid oes dim mwy "
-      "i'r peth — y gweithred gyfan yw 'ado'r cilyddion a chymryd cilydd y "
+      "i'r peth — y gweithred gyfan yw 'adio'r cilyddion a chymryd cilydd y "
       "canlyniad'.",
     ),
     _H('Priodweddau'),
@@ -374,7 +374,7 @@ List<ManualChapter> _manualChaptersCy() => const [
     _P(
       "Mae adiad cyfochrog yn agos at y cymedr harmonig: cymedr harmonig dau "
       "rif yw 2·(a ⊕ b), ac mae a ⊕ b yn hanner hwnnw. O'r tri chymedr "
-      "clasurol, y cymedr harmonig yw'r isaf bob amser — o dan y daearegol "
+      "clasurol, y cymedr harmonig yw'r isaf bob amser — o dan y geometrig "
       "a'r rhifyddol.",
     ),
     _P(
@@ -592,7 +592,7 @@ List<ManualChapter> _manualChaptersCy() => const [
       "Mae MC (clirio cof) yn gwagu'r cof, a'r 'M' yn diffodd.",
     ),
     _P(
-      "Sgwenario nodweddiadol: cyfrifwch radiws cylch a'i angen wedyn ar "
+      "Senario nodweddiadol: cyfrifwch radiws cylch a'i angen wedyn ar "
       "gyfer yr arwynebedd a'r cylchedd. Storiwyd y radiws unwaith gyda STO; "
       "mae'r ddwy fformiwla wedyn yn ei alw'n ôl yn annibynnol â RCL, heb "
       "ei ail-deipio unwaith.",
@@ -714,12 +714,12 @@ List<ManualChapter> _manualChaptersCy() => const [
       "hyperbolig sinh a cosh. Maent yn codi pan amidir'r cylch â hyperbol "
       "— a'r allwedd iddynt yw'r ffwythiant esbonyddol eˣ.",
     ),
-    _H("Hanner cyfart a hanner anghyfart eˣ"),
+    _H("Y rhan ffwythiant eilrif a'r rhan ffwythiant odrif o eˣ"),
     _P(
-      "Gellir hollti pob ffwythiant yn ran cyfart (cymesur am echelin-y) a "
-      "rhan anghyfart (cymesuredd pwynt am y tarddbwynt). Ar gyfer eˣ gellir "
-      "ysgrifennu'r ddwy ran yn uniongyrchol: cosh yw'r ran gyfart, sinh yw'r "
-      "ran anghyfart. Adiwch hwy eto a daw eˣ yn ôl — oherwydd "
+      "Gellir hollti pob ffwythiant yn ran ffwythiant eilrif (cymesur am echelin-y) a "
+      "rhan ffwythiant odrif (cymesuredd pwynt am y tarddbwynt). Ar gyfer eˣ gellir "
+      "ysgrifennu'r ddwy ran yn uniongyrchol: cosh yw'r rhan ffwythiant eilrif, sinh yw'r "
+      "rhan ffwythiant odrif. Adiwch hwy eto a daw eˣ yn ôl — oherwydd "
       "eˣ = cosh x + sinh x, ac e⁻ˣ = cosh x − sinh x. Nid mympwyol yw'r "
       "deiliad hwn ond yr unig un posibl.",
     ),
@@ -836,7 +836,7 @@ List<ManualChapter> _manualChaptersCy() => const [
     ),
     _P(
       "Yn y ddamcaniaeth berthydedd, yn olaf, nid yw cyflymderau ger "
-      "cyflymder golau yn adio'n syml. Cyfliwch y 'buanrwydd' φ drwy "
+      "cyflymder golau yn adio'n syml. Diffinniwch y 'buanrwydd' φ drwy "
       "v = c·tanh φ a daw'r fformiwla adio gymhleth yn syml eto: mae'r "
       "buanrwyddau'n adio'n gyffredin (φ = φ₁ + φ₂), yn union am fod gan "
       "tanh ei theorem adio. Yr hyn yw'r radian mewn geometreg wastad yw'r "
@@ -856,7 +856,7 @@ List<ManualChapter> _manualChaptersCy() => const [
       "pur. Nid oes unrhyw effaith o gwbl gan y modd ongl (DEG/RAD/GRD) ar y "
       "swyddogaethau hyperbolig — dim trosi graddau, dim trap ongl dwsinol fel "
       "gyda sin a cos. Mae sinh(2) yn golygu'r un peth ym mhob modd. Gan fod "
-      "y swyddogaethau hyn yn drawsrif, mae eu canlyniadau bob amser yn dwyn "
+      "y swyddogaethau hyn yn drawsgrisiol, mae eu canlyniadau bob amser yn dwyn "
       "'≈'.",
     ),
     _P('Enghreifftiau wedi eu gweithio (pob canlyniad ≈, dwsinol wedi ei gwtogi):'),
@@ -896,7 +896,7 @@ List<ManualChapter> _manualChaptersCy() => const [
     _P(
       "Mae'r ddau banel olaf o'r maes estyniad yn bwndelu'r hyn sydd ei "
       "angen ar gyfrifiannell gwyddonol ymhellach: cyfrif (ffactoriol a "
-      "combinatoreg), tri gweithredydd defnyddiol (gwerth absoliwt, cilydd, "
+      "cyfuniadeg), tri gweithredydd defnyddiol (gwerth absoliwt, cilydd, "
       "gweddill) a nodiant gwyddonol. Mae'r cyfan y tu ôl i'r fysell '…'.",
     ),
     _H("Ffactoriol: porth i gyfrif"),
@@ -937,7 +937,7 @@ List<ManualChapter> _manualChaptersCy() => const [
       "pwynt arnofio a felly bob amser yn dwyn '≈', hyd yn oed pan fo'r "
       "canlyniad — fel y mae bron bob amser — yn rhif cyfan. Yn y loteri rhif "
       "(chwech o 49), er enghraifft, mae 49 nCr 6 yn rhoi ≈48245A0 — tua "
-      "phymtheg miliwn ar y nod o bosibiliadau am un tocyn.",
+      "phedair ar ddeg miliwn ar y nod o bosibiliadau am un tocyn.",
     ),
     _H("Triongl Pascal"),
     _P(
@@ -953,7 +953,7 @@ List<ManualChapter> _manualChaptersCy() => const [
       "dim ond yn rhes 5 y mae 'A' yn ymddangos yn lle deg. Yr un rhifau, "
       "gyda llaw, yw cyfernodau (a+b)ⁿ: o res 4 (1, 4, 6, 4, 1) darllenon "
       "ni (a+b)⁴ = a⁴ + 4a³b + 6a²b² + 4ab³ + b⁴ yn uniongyrchol. Mae hyn "
-      "yn cysylltu combinatoreg ac algebra mewn un darlun.",
+      "yn cysylltu cyfuniadeg ac algebra mewn un darlun.",
     ),
     _H("Gwerth absoliwt a chilydd"),
     _P(
@@ -1052,7 +1052,7 @@ List<ManualChapter> _manualChaptersCy() => const [
     ),
     _P(
       "Gyda hynny mae'r blwch offer yn gyflawn: o'r pwysiad ffigur syml yn y "
-      "defnydd sylfaenol at combinatoreg, modwlo a nodiant maint-graddfa "
+      "defnydd sylfaenol at cyfuniadeg, modwlo a nodiant maint-graddfa "
       "dwsinol, mae'r cyfrifiannell yn cyfrifo'n union lle gall, ac yn onest "
       "â '≈' lle mai brasamcan yn unig sy'n bosibl.",
     ),
