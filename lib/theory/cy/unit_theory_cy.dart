@@ -5,6 +5,48 @@
 
 part of '../unit_theory.dart';
 
+List<UnitTheorySection> _converterIntroCy() {
+  return const [
+    UnitTheorySection(
+      'Beth all y cyfrifydd ei wneud',
+      'Mae\'r cyfrifydd unedau yn trosi rhwng y byd imperial-deuddegol '
+          '(sylfaen deuddeg) a\'r byd metrig (sylfaen deg) — ar draws pob '
+          'categori: hyd, arwynebedd, cyfaint, pwysau, amser, ongl, '
+          'arian cyfred, tymheredd, a rhagor fel pwysedd, grym, egni, '
+          'pŵer, coginio a throrym.\n\n'
+          'Mae\'r braced { } bob amser yn dangos y gwerth yn y system arall. '
+          'Gellir cyfuno sawl uned yn un gwerth — er enghraifft '
+          '1 ft 6 in neu 2 h 30 min. Mae pwyso = yn cylchu drwy\'r '
+          'cynrychioliadau uned a\'r dadansoddiad graddedig; mae pwyso\'n hir '
+          'ar uned yn dangos diffiniad byr. Mae\'r digidau\'n ymddangos fel '
+          'glifiau deuddegol neu fel 0–9/A/B cyffredin, yn dibynnu ar '
+          'y gosodiad arddangos.',
+    ),
+    UnitTheorySection(
+      'Beth na all ei wneud',
+      'Cyfnewidydd yw hwn, nid cyfrifydd gwyddonol: dim ffwythiannau fel '
+          'sin neu logarithm, dim rhifyddeg rydd â × a ÷, dim cof a dim '
+          'modd ongl. Dyna bwrpas y prif gyfrifydd.\n\n'
+          'Mae\'r adran arian cyfred (ceiniogau/swllt/punt) yn adlewyrchu\'r '
+          'gymhareb Brydeinig hanesyddol — deuddeg ceiniog i\'r swllt, ugain '
+          'swllt i\'r bunt — nid cyfraddau cyfnewid cyfredol. Mae\'n dangos '
+          'strwythur deuddegol yr hen arian, nid gwerthoedd ariannol heddiw. '
+          'Mae\'r set o unedau wedi\'i phennu ymlaen llaw.',
+    ),
+    UnitTheorySection(
+      'Sut i\'w ddefnyddio',
+      'Tapiwch gategori (hyd, dyweder) — mae ei ysgol o unedau yn agor yn '
+          'y golofn gyferbyn. Tapiwch uned, teipiwch ddigidau, a chyfunwch '
+          'sawl uned yn un gwerth. Mae\'r botwm DOZ/DEZ yn newid rhwng y byd '
+          'imperial a\'r byd metrig; mae\'r braced { } yn dangos y cyfwerth. '
+          'Mae = yn cylchu\'r cynrychioliadau, mae pwyso\'n hir ar uned yn '
+          'dangos ei hystyr, ac mae tapio ar y llinell fewnbwn yn symud '
+          'y cyrchwr.\n\n'
+          'Enghraifft — rhowch 1 ft 6 in a darllenwch y gwerth yn y byd arall:',
+    ),
+  ];
+}
+
 List<UnitTheorySection> _unitTheoryCy(UnitCategory cat) {
   switch (cat) {
     case UnitCategory.count:

@@ -1,5 +1,46 @@
 part of '../unit_theory.dart';
 
+List<UnitTheorySection> _converterIntroGa() {
+  return const [
+    UnitTheorySection(
+      'Cad is féidir leis an Áireamhán',
+      'Déanann an tiontaire aonad tiontú idir an domhan impiriúil-duaisíneach '
+          '(bonn a dó dhéag) agus an domhan méadrach (bonn a deich) — thar gach '
+          'catagóir: fad, achar, toirt, meáchan, am, uillinn, airgeadra, '
+          'teocht agus eile mar bhrú, fórsa, fuinneamh, cumhacht, cócaireacht '
+          'agus casadh.\n\n'
+          'Léiríonn an lúibín { } an luach sa chóras eile i gcónaí. Is féidir '
+          'roinnt aonad a chur le chéile in aon luach amháin — mar shampla '
+          '1 ft 6 in nó 2 h 30 min. Le brú ar = timthriallann na '
+          'léirithe aonad agus an mhionchuntas céimnithe; léiríonn brú fada '
+          'ar aonad sainmhíniú gairid. Feictear na figiúirí mar ghlyphanna '
+          'duaisíneacha nó mar 0–9/A/B choitianta, de réir an tsocraithe taispeána.',
+    ),
+    UnitTheorySection(
+      'Cad nach féidir leis',
+      'Is tiontaire aonad é, ní áireamhán eolaíochta: gan fheidhmeanna ar nós síneas '
+          'nó logartam, gan saor-uimhríocht le × agus ÷, gan chuimhne agus gan '
+          'mhód uillinne. Is é an príomh-áireamhán atá ann chuige sin.\n\n'
+          'Léiríonn an t-airgeadra (pinginí/scillingí/puint) an cóimheas '
+          'Briotanach stairiúil — dhá phingin déag ar an scilling, fiche '
+          'scilling ar an bpunt —, ní rátaí malairte reatha. Léiríonn sé '
+          'struchtúr duaisíneach an tseanairgid, ní luachanna airgid an lae '
+          'inniu. Tá an tacar aonad socraithe.',
+    ),
+    UnitTheorySection(
+      'Conas é a Úsáid',
+      'Buail catagóir (fad, abair) — osclaíonn léidear a aonad sa cholún '
+          'os a comhair. Buail aonad, clóscríobh figiúirí agus cuir roinnt '
+          'aonad le chéile in aon luach amháin. Athraíonn an eochair DOZ/DEZ '
+          'idir an domhan impiriúil agus an domhan méadrach; léiríonn an '
+          'lúibín { } an mhacasamhail. Timthriallann = na léirithe, léiríonn '
+          'brú fada ar aonad a bhrí, agus bogann buille ar líne na '
+          'hionchuir an cúrsóir.\n\n'
+          'Sampla — 1 ft 6 in a chur isteach agus é a léamh sa domhan eile:',
+    ),
+  ];
+}
+
 List<UnitTheorySection> _unitTheoryGa(UnitCategory cat) {
   switch (cat) {
     case UnitCategory.count:

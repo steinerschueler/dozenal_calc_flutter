@@ -5,6 +5,50 @@
 
 part of '../unit_theory.dart';
 
+List<UnitTheorySection> _converterIntroIt() {
+  return const [
+    UnitTheorySection(
+      'Cosa può fare il calcolatore',
+      'Il convertitore di unità converte tra il mondo imperiale-dozenale '
+          '(base dodici) e il mondo metrico (base dieci) — in tutte le '
+          'categorie: lunghezza, area, volume, peso, tempo, angolo, '
+          'valuta, temperatura e altre come pressione, forza, energia, '
+          'potenza, cucina e coppia.\n\n'
+          'La parentesi { } mostra sempre il valore nell\'altro sistema. '
+          'Più unità si possono combinare in un unico valore — ad esempio '
+          '1 ft 6 in o 2 h 30 min. Premere = scorre le rappresentazioni '
+          'delle unità e la scomposizione a gradini; una pressione prolungata '
+          'su un\'unità mostra una breve definizione. Le cifre appaiono come '
+          'glifi dozenali o come normali 0–9/A/B, in base all\'impostazione '
+          'del display.',
+    ),
+    UnitTheorySection(
+      'Cosa non può fare',
+      'È un convertitore, non una calcolatrice scientifica: nessuna '
+          'funzione come seno o logaritmo, nessun calcolo libero con '
+          '× e ÷, nessuna memoria e nessuna modalità angolo. Per questo '
+          'c\'è la calcolatrice principale.\n\n'
+          'La valuta (pence/scellino/sterlina) riflette il rapporto '
+          'storico britannico — dodici pence allo scellino, venti '
+          'scellini alla sterlina —, non i tassi di cambio attuali. '
+          'Mostra la struttura dozenale del vecchio denaro, non valori '
+          'monetari odierni. Il set di unità è fisso.',
+    ),
+    UnitTheorySection(
+      'Come si usa',
+      'Tocca una categoria (ad esempio lunghezza) — la sua scala di '
+          'unità si apre nella colonna opposta. Tocca un\'unità, inserisci '
+          'le cifre e combina più unità in un unico valore. Il tasto '
+          'DOZ/DEZ passa tra il mondo imperiale e quello metrico; la '
+          'parentesi { } mostra il corrispondente. = scorre le '
+          'rappresentazioni, una pressione prolungata su un\'unità ne '
+          'mostra il significato, e un tocco sulla riga di inserimento '
+          'sposta il cursore.\n\n'
+          'Un esempio — inserire 1 ft 6 in e leggere il risultato nel mondo opposto:',
+    ),
+  ];
+}
+
 List<UnitTheorySection> _unitTheoryIt(UnitCategory cat) {
   switch (cat) {
     case UnitCategory.count:

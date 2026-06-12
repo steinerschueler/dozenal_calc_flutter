@@ -6,6 +6,49 @@
 
 part of '../unit_theory.dart';
 
+List<UnitTheorySection> _converterIntroEs() {
+  return const [
+    UnitTheorySection(
+      'Qué puede hacer el conversor',
+      'El conversor de unidades convierte entre el mundo imperial-dozenal '
+          '(base doce) y el mundo métrico (base diez) — en todas las '
+          'categorías: longitud, área, volumen, peso, tiempo, ángulo, '
+          'moneda, temperatura y otras como presión, fuerza, energía, '
+          'potencia, cocina y par de torsión.\n\n'
+          'La llave { } muestra siempre el valor en el otro sistema. '
+          'Varias unidades pueden combinarse en un único valor — por ejemplo '
+          '1 ft 6 in o 2 h 30 min. = cicla las representaciones '
+          'de unidades y el desglose escalonado; una pulsación larga sobre '
+          'una unidad muestra una definición breve. Las cifras aparecen como '
+          'glifos dozenales o como los ordinarios 0–9/A/B, según el ajuste '
+          'de visualización.',
+    ),
+    UnitTheorySection(
+      'Qué no puede hacer',
+      'Es un conversor, no una calculadora científica: sin funciones como '
+          'el seno o el logaritmo, sin aritmética libre con × y ÷, sin '
+          'memoria y sin modo de ángulo. Para eso está la calculadora '
+          'principal.\n\n'
+          'La moneda (penique/chelín/libra) refleja la proporción histórica '
+          'británica — doce peniques por chelín, veinte chelines por libra —, '
+          'no los tipos de cambio actuales. Muestra la estructura dozenal del '
+          'dinero antiguo, no valores monetarios de hoy. El conjunto de '
+          'unidades es fijo.',
+    ),
+    UnitTheorySection(
+      'Cómo se usa',
+      'Toca una categoría (por ejemplo, longitud) — su escala de unidades '
+          'se despliega en la columna opuesta. Toca una unidad, introduce '
+          'cifras y combina varias unidades en un solo valor. La tecla '
+          'DOZ/DEZ alterna entre el mundo imperial y el métrico; la llave '
+          '{ } muestra el valor equivalente. = cicla las representaciones, '
+          'una pulsación larga sobre una unidad muestra su significado, y '
+          'un toque en la línea de entrada mueve el cursor.\n\n'
+          'Un ejemplo — introducir 1 ft 6 in y leer el resultado en el otro mundo:',
+    ),
+  ];
+}
+
 List<UnitTheorySection> _unitTheoryEs(UnitCategory cat) {
   switch (cat) {
     case UnitCategory.count:

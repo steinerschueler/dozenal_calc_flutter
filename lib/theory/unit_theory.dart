@@ -115,6 +115,17 @@ List<Source> _localeSources(UnitCategory cat, String langTag) {
 List<UnitTheorySection> converterIntro(String langTag) {
   final c = langTag.toLowerCase();
   if (c.startsWith('en')) return _converterIntroEn();
-  // TODO(i18n): other languages fall back to German until translated.
+  if (c.startsWith('fr')) return _converterIntroFr();
+  if (c.startsWith('es')) return _converterIntroEs();
+  if (c.startsWith('it')) return _converterIntroIt();
+  if (c.startsWith('ru')) return _converterIntroRu();
+  if (c.startsWith('ga')) return _converterIntroGa();
+  if (c.startsWith('hi')) return _converterIntroHi();
+  if (c.startsWith('cy')) return _converterIntroCy();
+  if (c.startsWith('ja')) return _converterIntroJa();
+  if (c.startsWith('fa')) return _converterIntroFa();
+  if (c.startsWith('ar')) return _converterIntroAr();
+  if (c.startsWith('zh') && c.contains('hant')) return _converterIntroZhHant();
+  if (c.startsWith('zh')) return _converterIntroZh();
   return _converterIntroDe();
 }

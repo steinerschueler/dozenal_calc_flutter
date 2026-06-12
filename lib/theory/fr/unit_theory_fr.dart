@@ -5,6 +5,49 @@
 
 part of '../unit_theory.dart';
 
+List<UnitTheorySection> _converterIntroFr() {
+  return const [
+    UnitTheorySection(
+      'Ce que la calculatrice sait faire',
+      'Le convertisseur d’unités convertit entre le monde impérial-dozenal '
+          '(base douze) et le monde métrique (base dix) — dans toutes les '
+          'catégories : longueur, surface, volume, poids, temps, angle, '
+          'monnaie, température et davantage, comme pression, force, énergie, '
+          'puissance, cuisine et couple.\n\n'
+          'La { }-parenthèse indique toujours la valeur dans l’autre système. '
+          'Plusieurs unités peuvent être combinées en une seule valeur — par '
+          'exemple 1 ft 6 in ou 2 h 30 min. Appuyer sur = fait défiler les '
+          'représentations d’unités et la décomposition étagée ; un appui long '
+          'sur une unité affiche une courte définition. Les chiffres apparaissent '
+          'sous forme de glyphes dozenaux ou en 0–9/A/B ordinaires, selon le '
+          'réglage d’affichage.',
+    ),
+    UnitTheorySection(
+      'Ce qu’elle ne sait pas faire',
+      'C’est un convertisseur, pas une calculatrice scientifique : pas de '
+          'fonctions comme le sinus ou le logarithme, pas de calcul libre avec '
+          '× et ÷, pas de mémoire et pas de mode d’angle. C’est à cela que '
+          'sert la calculatrice principale.\n\n'
+          'La monnaie (pence/shilling/livre) reflète le rapport historique '
+          'britannique — douze pence pour le shilling, vingt shillings pour la '
+          'livre —, et non les taux de change actuels. Elle illustre la structure '
+          'dozenale de l’ancienne monnaie, pas les valeurs d’aujourd’hui. '
+          'L’ensemble des unités est fixe.',
+    ),
+    UnitTheorySection(
+      'Comment l’utiliser',
+      'Appuie sur une catégorie (par exemple longueur) — son échelle d’unités '
+          's’ouvre dans la colonne opposée. Appuie sur une unité, saisis des '
+          'chiffres et combine plusieurs unités en une seule valeur. La touche '
+          'DOZ/DEZ bascule entre le monde impérial et le monde métrique ; la '
+          '{ }-parenthèse montre l’équivalent. = fait défiler les '
+          'représentations, un appui long sur une unité affiche sa signification, '
+          'et un appui sur la ligne de saisie déplace le curseur.\n\n'
+          'Un exemple — saisir 1 ft 6 in et lire le résultat dans l’autre monde :',
+    ),
+  ];
+}
+
 List<UnitTheorySection> _unitTheoryFr(UnitCategory cat) {
   switch (cat) {
     case UnitCategory.count:
