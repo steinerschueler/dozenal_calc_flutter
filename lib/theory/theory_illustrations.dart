@@ -1,192 +1,22 @@
-// Step 11 of PORTING.md: info-modal content.
-// Port of src/info_content.rs (chapter prose) + the painting.rs helpers
-// (info_h / info_p / info_pre, draw_digit_legend, draw_chapter4_svg,
-// draw_chapter5_svg). German prose is reproduced verbatim from the Rust
-// source; one-line surface-level edits are not allowed without an explicit
-// content change request.
+// Custom-painted theory illustrations, extracted from the (now retired) legacy
+// info_content.dart so they survive that file's deletion. These are referenced
+// by the prose theory chapters via info_pages.dart's `_customChapterIllustration`
+// (math/dodekagon → Chapter4 + Chapter5; math/parkettierung → Parkettierung).
+//
+// Origin: ports of painting.rs::draw_chapter4_svg / draw_chapter5_svg and the
+// 4.6.12 Archimedean tiling. Theme-aware via AppColors (shouldRepaint compares
+// const-identity); the polygon/diagonal accent colours are deliberately
+// theme-independent so legend ↔ drawing stays exact on both surfaces.
 
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 
-import 'app_theme.dart';
-import 'glyph_painter.dart';
-import 'l10n/app_localizations.dart';
-
-// Per-locale chapter content lives in these part files so each language's
-// prose stays in its own ~850-line file instead of accumulating in one
-// monolithic switch. Library-private helpers (_H, _P, _Pre, illustrations)
-// remain visible to the parts via the `part of` mechanism.
-part 'info_content_de.dart';
-part 'info_content_en.dart';
-part 'info_content_fr.dart';
-part 'info_content_es.dart';
-part 'info_content_it.dart';
-part 'info_content_fa.dart';
-part 'info_content_ru.dart';
-part 'info_content_ga.dart';
-part 'info_content_hi.dart';
-part 'info_content_zh.dart';
-part 'info_content_zh_hant.dart';
-part 'info_content_cy.dart';
-part 'info_content_ja.dart';
-part 'info_content_ar.dart';
-
-/// Chapter list titles (12 chapters, fixed). Mirrors Rust `INFO_TITLES`,
-/// now routed through AppLocalizations so the same list serves both
-/// locales. Callers pass `AppLocalizations.of(context)`.
-List<String> infoTitles(AppLocalizations l) => [
-  l.chapterTitle01,
-  l.chapterTitle02,
-  l.chapterTitle03,
-  l.chapterTitle04,
-  l.chapterTitle05,
-  l.chapterTitle06,
-  l.chapterTitle07,
-  l.chapterTitle08,
-  l.chapterTitle09,
-  l.chapterTitle10,
-  l.chapterTitle11,
-  l.chapterTitle12,
-];
-
-// ---------------------------------------------------------------------------
-// Helper widgets (port of info_h, info_p, info_pre).
-// ---------------------------------------------------------------------------
-
-class _H extends StatelessWidget {
-  final String text;
-  const _H(this.text);
-
-  @override
-  Widget build(BuildContext context) => Padding(
-    padding: const EdgeInsets.only(top: 14, bottom: 4),
-    child: Text(
-      text,
-      style: TextStyle(
-        fontWeight: FontWeight.bold,
-        fontSize: 18,
-        color: AppColors.of(context).textPrimary,
-      ),
-    ),
-  );
-}
-
-class _P extends StatelessWidget {
-  final String text;
-  const _P(this.text);
-
-  @override
-  Widget build(BuildContext context) => Padding(
-    padding: const EdgeInsets.only(bottom: 6),
-    child: Text(
-      text,
-      style: TextStyle(
-        fontSize: 16,
-        fontWeight: FontWeight.w300,
-        height: 1.45,
-        color: AppColors.of(context).textSecondary,
-      ),
-    ),
-  );
-}
-
-class _Pre extends StatelessWidget {
-  final String text;
-  const _Pre(this.text);
-
-  @override
-  Widget build(BuildContext context) => Padding(
-    padding: const EdgeInsets.symmetric(vertical: 6),
-    // Force LTR for monospace tables in every locale — column
-    // alignment relies on left-to-right flow even in RTL locales
-    // like Persian. Without this, the bidi algorithm reorders
-    // mixed-direction rows (numbers + RTL labels) and shreds the
-    // table layout. FittedBox scales the monospace block uniformly
-    // so the column alignment stays exact — Text with softWrap
-    // would re-flow individual lines and shred the table. scaleDown
-    // means no upscaling on tablets; narrow phones get a
-    // proportionally smaller table that still fits.
-    child: Directionality(
-      textDirection: TextDirection.ltr,
-      child: FittedBox(
-        fit: BoxFit.scaleDown,
-        alignment: Alignment.centerLeft,
-        child: Text(
-          text,
-          softWrap: false,
-          style: TextStyle(
-            fontFamily: 'JetBrainsMono',
-            fontSize: 14,
-            height: 1.5,
-            color: AppColors.of(context).textSecondary,
-          ),
-        ),
-      ),
-    ),
-  );
-}
-
-// ---------------------------------------------------------------------------
-// Digit legend (chapter 1).
-// ---------------------------------------------------------------------------
-
-class _DigitLegend extends StatelessWidget {
-  const _DigitLegend();
-
-  @override
-  Widget build(BuildContext context) {
-    final t = AppColors.of(context);
-    Widget row(int v) => Padding(
-      padding: const EdgeInsets.symmetric(vertical: 2),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          SizedBox(
-            width: 24,
-            height: 24,
-            child: CustomPaint(
-              painter: DozenalGlyphPainter(
-                digit: DozenalDigit.values[v],
-                color: t.textPrimary,
-                strokeWidth: 1.4,
-              ),
-            ),
-          ),
-          const SizedBox(width: 8),
-          Text(
-            '= $v',
-            style: TextStyle(
-              fontFamily: 'JetBrainsMono',
-              fontSize: 13,
-              color: t.textTertiary,
-            ),
-          ),
-        ],
-      ),
-    );
-    Widget col(Iterable<int> values) => Column(
-      mainAxisSize: MainAxisSize.min,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: values.map(row).toList(),
-    );
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 8),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          col([0, 1, 2, 3, 4, 5]),
-          const SizedBox(width: 24),
-          col([6, 7, 8, 9, 10, 11]),
-        ],
-      ),
-    );
-  }
-}
+import '../app_theme.dart';
+import '../l10n/app_localizations.dart';
 
 // ---------------------------------------------------------------------------
 // Chapter-4 illustration: dodecagon + inscribed triangle/square/hexagon.
-// Port of painting.rs::draw_chapter4_svg.
 // ---------------------------------------------------------------------------
 
 class Chapter4Illustration extends StatelessWidget {
@@ -333,7 +163,6 @@ class Chapter4Painter extends CustomPainter {
 
 // ---------------------------------------------------------------------------
 // Chapter-5 illustration: dodecagon + 6 diagonal types.
-// Port of painting.rs::draw_chapter5_svg.
 // ---------------------------------------------------------------------------
 
 class Chapter5Illustration extends StatelessWidget {
@@ -570,46 +399,4 @@ class ParkettierungPainter extends CustomPainter {
   @override
   bool shouldRepaint(covariant ParkettierungPainter old) =>
       old.colors != colors;
-}
-
-// ---------------------------------------------------------------------------
-// Chapter content. Each entry returns the body widgets for that chapter.
-// One-to-one port of src/info_content.rs::draw_info_chapter. The actual
-// switches live in info_content_<code>.dart files registered above; this
-// file holds only the dispatch table.
-// ---------------------------------------------------------------------------
-
-typedef _ChapterBuilder =
-    List<Widget> Function(int chapter, AppLocalizations l);
-
-/// Per-locale chapter content table. Keyed by BCP-47 language tag
-/// (e.g. `de`, `zh`, `zh-Hant`) so script-tagged locales like
-/// Traditional Chinese stay distinct from the bare-language variant.
-/// To add a language: create `info_content_<code>.dart` as a
-/// `part of 'info_content.dart'`, implement `_chapter<Code>`, and
-/// register it here. The dispatcher falls back to German if the active
-/// locale's builder is missing — that should not happen at runtime
-/// because locale resolution only yields supported codes, but the
-/// fallback keeps the app debuggable.
-const Map<String, _ChapterBuilder> _chapterBuilders = {
-  'de': _chapterDe,
-  'en': _chapterEn,
-  'fr': _chapterFr,
-  'es': _chapterEs,
-  'it': _chapterIt,
-  'fa': _chapterFa,
-  'ru': _chapterRu,
-  'ga': _chapterGa,
-  'hi': _chapterHi,
-  'zh': _chapterZh,
-  'zh-Hant': _chapterZhHant,
-  'cy': _chapterCy,
-  'ja': _chapterJa,
-  'ar': _chapterAr,
-};
-
-List<Widget> buildChapterContent(int chapter, BuildContext context) {
-  final tag = Localizations.localeOf(context).toLanguageTag();
-  final builder = _chapterBuilders[tag] ?? _chapterBuilders['de']!;
-  return builder(chapter, AppLocalizations.of(context));
 }

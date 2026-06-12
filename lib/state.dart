@@ -107,12 +107,31 @@ class DozenalCalcState extends ChangeNotifier {
   /// versa — without switching modes.
   String? get resultCrossBracket {
     if (!_resultLive || errorMsg != null) return null;
+    final a = lastAns;
+    // Skip the cross-base reference for astronomically large exact values:
+    // converting one (a full long-division in the other base) and rendering
+    // it run every paint, and a multi-hundred-digit string in a small "{…}"
+    // slot helps nobody. Mirrors the maxResultDigits cap on the result line.
+    if (a != null &&
+        (a.num.bitLength > _crossBracketMaxBits ||
+            a.den.bitLength > _crossBracketMaxBits)) {
+      return null;
+    }
     final otherBase = numeralSystem == NumeralSystem.doz ? 10 : 12;
-    final cross = lastAns != null
-        ? compactRationalString(lastAns!, otherBase)
+    final cross = a != null
+        ? compactRationalString(a, otherBase)
         : compactF64String(lastResultF64, otherBase);
     return cross == resultText ? null : cross;
   }
+
+  /// Above this bit length (≈ 240 base-12 digits) the cross-base "{…}"
+  /// reference is suppressed — see [resultCrossBracket].
+  static const int _crossBracketMaxBits = 800;
+
+  /// Above this bit length (≈ 5500 base-12 digits) an exact result is too
+  /// costly to expand to digits for display, so [calculateResult] drops it to
+  /// the f64 fallback instead of rendering it. See the guard there.
+  static const int _maxExactRenderBits = 20000;
 
   // --------------------------------------------------------------------
   /// Tap-to-position the input cursor (the fine red line). [pos] is a gap
@@ -228,8 +247,30 @@ class DozenalCalcState extends ChangeNotifier {
     }
     if (token is Del) {
       if (cursorPos > 0) {
-        inputBuffer = List.of(inputBuffer)..removeAt(cursorPos - 1);
+        // An empty auto-paired call (`sin(|)`) deletes as a unit: drop the
+        // function token and its matching close paren together, so Del never
+        // leaves an orphan `)`.
+        if (cursorPos < inputBuffer.length &&
+            inputBuffer[cursorPos] is ParenClose &&
+            _isPrefixParenFn(inputBuffer[cursorPos - 1])) {
+          inputBuffer = List.of(inputBuffer)
+            ..removeAt(cursorPos)
+            ..removeAt(cursorPos - 1);
+        } else {
+          inputBuffer = List.of(inputBuffer)..removeAt(cursorPos - 1);
+        }
         cursorPos--;
+      }
+      return;
+    }
+    if (token is ParenClose) {
+      // Auto-pair step-over: pressing `)` when one already sits at the cursor
+      // moves past it instead of inserting a duplicate (commercial behaviour).
+      if (cursorPos < inputBuffer.length &&
+          inputBuffer[cursorPos] is ParenClose) {
+        cursorPos++;
+      } else {
+        _insertAtCursor(token);
       }
       return;
     }
@@ -335,12 +376,12 @@ class DozenalCalcState extends ChangeNotifier {
       overlayOpen = false;
       return;
     }
-    if (token is Ln ||
-        token is ExpE ||
-        token is Log12 ||
-        token is NCr ||
-        token is NPr ||
-        token is Sci) {
+    if (token is Ln || token is ExpE || token is Log12) {
+      _insertPrefixFn(token);
+      overlayOpen = false;
+      return;
+    }
+    if (token is NCr || token is NPr || token is Sci) {
       _insertAtCursor(token);
       overlayOpen = false;
       return;
@@ -380,7 +421,11 @@ class DozenalCalcState extends ChangeNotifier {
     // otherwise insert. Overlay tokens close the overlay after insertion.
     final toggled = _tryInverseToggle(token);
     if (!toggled) {
-      _insertAtCursor(token);
+      if (_isPrefixParenFn(token)) {
+        _insertPrefixFn(token);
+      } else {
+        _insertAtCursor(token);
+      }
     }
     if (token is Sinh ||
         token is Cosh ||
@@ -433,6 +478,43 @@ class DozenalCalcState extends ChangeNotifier {
     if (token is Decimal && _hasDecimalInCurrentLiteral()) return;
     inputBuffer = List.of(inputBuffer)..insert(cursorPos, token);
     cursorPos++;
+  }
+
+  /// A prefix function that opens a paren (`sin(`, `ln(`, `exp(`, …). These
+  /// auto-pair a closing paren on insertion (see [_insertPrefixFn]). Combinatoric
+  /// (nCr/nPr), scientific (EXP), and postfix (n!/|x|/1÷x) tokens are not in
+  /// this set — they are infix/suffix and carry no opening paren.
+  bool _isPrefixParenFn(CalcToken t) =>
+      t is Sin ||
+      t is Cos ||
+      t is Tan ||
+      t is Cot ||
+      t is ArcSin ||
+      t is ArcCos ||
+      t is ArcTan ||
+      t is ArcCot ||
+      t is Sinh ||
+      t is Cosh ||
+      t is Tanh ||
+      t is Coth ||
+      t is ArSinh ||
+      t is ArCosh ||
+      t is ArTanh ||
+      t is ArCoth ||
+      t is Ln ||
+      t is ExpE ||
+      t is Log12;
+
+  /// Inserts a prefix function together with a matching closing paren and lands
+  /// the cursor between them (`sin(|)`) — the commercial auto-pair convention.
+  /// The closing paren is visible immediately so the argument's scope is clear;
+  /// the user types the argument inside and steps past the `)` with the `)` key
+  /// (handled in [_dispatch]).
+  void _insertPrefixFn(CalcToken token) {
+    inputBuffer = List.of(inputBuffer)
+      ..insert(cursorPos, token)
+      ..insert(cursorPos + 1, const ParenClose());
+    cursorPos++; // between the function and its auto-paired close paren
   }
 
   /// ± — toggle the sign of the number literal at/just before the cursor by
@@ -557,34 +639,63 @@ class DozenalCalcState extends ChangeNotifier {
     final expanded = withImplicitMuls(normalized);
     final mathString = buildMevalString(expanded, base: base);
     final ratExprs = buildRatExpr(expanded, base: base);
-    final ratResult = ratExprs == null ? null : evalRational(ratExprs);
+    var ratResult = ratExprs == null ? null : evalRational(ratExprs);
 
-    final f64 = evalF64(mathString, angleMode);
-    if (f64 == null) {
-      _failWithError('SYNTAX ERROR');
-      return;
-    }
-    if (f64.isNaN) {
-      _failWithError('DOMAIN ERROR');
-      return;
-    }
-    if (f64.isInfinite) {
-      _failWithError('DIV BY ZERO');
-      return;
+    // Guard against an exact result so large its decimal expansion would
+    // freeze the renderer. The rational pow cap (rat_parser.dart) permits up
+    // to ~10 M bits, but formatRationalResult's digit extraction is ~O(n²):
+    // ~20 K bits (≈ 5500 base-12 digits) is ~tens of ms; megabit results take
+    // minutes. Past the bound, drop to the f64 fallback (∞ → DIV BY ZERO for
+    // an overflow) so `=` stays responsive instead of hanging.
+    if (ratResult != null &&
+        (ratResult.num.bitLength > _maxExactRenderBits ||
+            ratResult.den.bitLength > _maxExactRenderBits)) {
+      ratResult = null;
     }
 
-    errorMsg = null;
-    lastAns = ratResult;
-    lastResultF64 = f64;
-    _ratCollapsed = (ratResult == null);
+    final f64eval = evalF64Detailed(mathString, angleMode);
+    final f64 = f64eval.value;
 
     if (ratResult != null) {
+      // The exact rational track is authoritative; the f64 track is only a
+      // fallback for when it collapses. So an f64 overflow / NaN here must NOT
+      // override a valid exact result with a spurious error: e.g. `2^1000`
+      // (dozenal) is an exact BigInt but ±∞ as a double — without this guard
+      // it reported "DIV BY ZERO" and discarded the correct answer.
+      errorMsg = null;
+      lastAns = ratResult;
+      lastResultF64 = (f64 != null && f64.isFinite)
+          ? f64
+          : ratResult.toDouble();
+      _ratCollapsed = false;
       final r = formatRationalResult(ratResult, base: base);
       resultBuffer = r.buf;
       resultPeriodStart = r.meta.start;
       resultPeriodLen = r.meta.len;
       resultPeriodCapped = r.meta.capped;
     } else {
+      // Rational track collapsed — the f64 value is what we display, so its
+      // failure modes are genuine errors here.
+      if (f64 == null) {
+        _failWithError('SYNTAX ERROR');
+        return;
+      }
+      if (f64.isNaN) {
+        _failWithError('DOMAIN ERROR');
+        return;
+      }
+      if (f64.isInfinite) {
+        // ±∞ is either a true division by zero (1/0, recip/cot/coth at a pole)
+        // or a magnitude overflow (exp(1000), an exact integer too large to
+        // render, B^B^B). The f64 evaluator flags the former; everything else
+        // is an overflow.
+        _failWithError(f64eval.divByZero ? 'DIV BY ZERO' : 'OVERFLOW');
+        return;
+      }
+      errorMsg = null;
+      lastAns = null;
+      lastResultF64 = f64;
+      _ratCollapsed = true;
       resultBuffer = formatF64Result(f64, base: base);
       resultPeriodStart = null;
       resultPeriodLen = 0;

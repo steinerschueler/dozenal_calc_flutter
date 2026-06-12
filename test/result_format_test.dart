@@ -70,5 +70,12 @@ void main() {
     test('whole number has no fractional tail', () {
       expect(compactF64String(7.0, 12), equals('7'));
     });
+
+    test('near-integer noise snaps onto the integer (tan 45°)', () {
+      // 0.9999999999999999 must read as "1", not "0.BBBBBB…".
+      expect(compactF64String(0.9999999999999999, 12), equals('1'));
+      // Tiny negative (tan 180°) collapses to a plain "0", not "-0".
+      expect(compactF64String(-1.2246467991473532e-16, 12), equals('0'));
+    });
   });
 }

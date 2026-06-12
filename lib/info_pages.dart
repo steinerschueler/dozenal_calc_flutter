@@ -1,6 +1,6 @@
-// Step 11 of PORTING.md: Info modal navigation.
-// List → Detail → Back via the Flutter Navigator. Pure routing; chapter
-// content is in info_content.dart.
+// Info modal navigation: List → Detail → Back via the Flutter Navigator.
+// Pure routing. Chapter content lives in lib/theory/ (theory blocks) and
+// lib/manual/ (the calculator manual).
 
 import 'package:flutter/material.dart';
 import 'package:package_info_plus/package_info_plus.dart';
@@ -9,9 +9,9 @@ import 'app_theme.dart';
 import 'conversions_page.dart';
 import 'converter_page.dart';
 import 'feedback_dialog.dart';
-import 'info_content.dart';
 import 'l10n/app_localizations.dart';
 import 'language_options.dart';
+import 'manual/manual.dart';
 import 'license_page.dart';
 import 'locale_notifier.dart';
 import 'privacy_page.dart';
@@ -21,6 +21,7 @@ import 'theory/chapter_image_view.dart';
 import 'theory/chapter_images.dart';
 import 'theory/prose_chapter.dart';
 import 'theory/theory_blocks.dart';
+import 'theory/theory_illustrations.dart';
 
 class InfoListPage extends StatelessWidget {
   const InfoListPage({super.key});
@@ -42,30 +43,9 @@ class InfoListPage extends StatelessWidget {
           padding: const EdgeInsets.symmetric(vertical: 4),
           children: [
             // "Bedienung des Rechners" ist App-Hilfe, kein Theorie-Stoff —
-            // darum eigenstaendiger Eintrag ganz oben, ausserhalb der Bloecke.
-            ListTile(
-              leading: SizedBox(
-                width: 28,
-                child: Icon(
-                  Icons.touch_app_outlined,
-                  color: t.textMuted,
-                  size: 16,
-                ),
-              ),
-              title: Text(
-                l.chapterTitle01,
-                style: TextStyle(fontSize: 14, color: t.textSecondary),
-              ),
-              trailing: const _NavChevron(),
-              onTap: () => Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (_) => TheoryChapterPage(
-                    title: l.chapterTitle01,
-                    legacyIndex: 0,
-                  ),
-                ),
-              ),
-            ),
+            // darum eigenstaendige, ausklappbare Sammlung ganz oben, ausserhalb
+            // der Theorie-Bloecke (Grundbedienung + Lehr-Kapitel).
+            const _ManualExpansion(),
             Divider(color: t.divider, height: 1),
             // Theorie-Sektion: ausklappbar (Default collapsed) zu den drei
             // Bloecken (Zwoelf und die Welt, Dozenale Mathematik, Dozenale
@@ -232,6 +212,106 @@ class _VersionFooterState extends State<_VersionFooter> {
 /// compact; tapping the header unfolds the three theory blocks (Zwölf und die
 /// Welt, Dozenale Mathematik, Dozenale Gesellschaft). Each block leads to its
 /// own chapter list (see [theoryBlocks] / [TheoryBlockPage]).
+/// Collapsible "Bedienung des Rechners" section: the calculator manual as a
+/// collection of chapters (Grundbedienung + the teaching chapters). Flat list
+/// — unlike the theory section there are no sub-blocks. Replaces the former
+/// single app-help entry.
+class _ManualExpansion extends StatefulWidget {
+  const _ManualExpansion();
+
+  @override
+  State<_ManualExpansion> createState() => _ManualExpansionState();
+}
+
+class _ManualExpansionState extends State<_ManualExpansion> {
+  bool _expanded = false;
+
+  @override
+  Widget build(BuildContext context) {
+    final l = AppLocalizations.of(context);
+    final t = AppColors.of(context);
+    final langTag = Localizations.localeOf(context).toLanguageTag();
+    final chapters = manualChapters(langTag);
+    return Column(
+      children: [
+        ListTile(
+          leading: SizedBox(
+            width: 28,
+            child: Icon(Icons.touch_app_outlined, color: t.textMuted, size: 16),
+          ),
+          title: Text(
+            l.chapterTitle01,
+            style: TextStyle(fontSize: 14, color: t.textPrimary),
+          ),
+          trailing: AnimatedRotation(
+            turns: _expanded ? 0.5 : 0,
+            duration: const Duration(milliseconds: 200),
+            child: Icon(Icons.expand_more, color: t.textFaint, size: 20),
+          ),
+          onTap: () => setState(() => _expanded = !_expanded),
+        ),
+        AnimatedSize(
+          duration: const Duration(milliseconds: 200),
+          alignment: Alignment.topCenter,
+          child: _expanded
+              ? Column(
+                  children: [
+                    for (final c in chapters) ...[
+                      Divider(color: t.divider, height: 1),
+                      ListTile(
+                        contentPadding: const EdgeInsetsDirectional.fromSTEB(
+                          32,
+                          0,
+                          16,
+                          0,
+                        ),
+                        title: Text(
+                          c.title,
+                          style: TextStyle(fontSize: 14, color: t.textPrimary),
+                        ),
+                        trailing: const _NavChevron(),
+                        onTap: () => Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (_) => ManualChapterPage(c),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ],
+                )
+              : const SizedBox.shrink(),
+        ),
+      ],
+    );
+  }
+}
+
+/// Renders a single manual chapter — its title in the AppBar and its body
+/// widgets (prose + inline illustrations) in a scroll view.
+class ManualChapterPage extends StatelessWidget {
+  final ManualChapter chapter;
+  const ManualChapterPage(this.chapter, {super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(chapter.title, style: const TextStyle(fontSize: 14)),
+      ),
+      body: SafeArea(
+        top: false,
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.fromLTRB(16, 8, 16, 24),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: chapter.body,
+          ),
+        ),
+      ),
+    );
+  }
+}
+
 class _TheoryExpansion extends StatefulWidget {
   const _TheoryExpansion();
 
@@ -644,12 +724,10 @@ class TheoryBlockPage extends StatelessWidget {
   }
 }
 
-/// Renders a single theory chapter: either a legacy chapter (via
-/// [buildChapterContent], incl. custom-painted illustrations) or a prose
-/// chapter (heading + body sections). Replaces the former InfoDetailPage.
+/// Renders a single theory chapter: a heading + body prose sections, with an
+/// optional head image or custom-painted illustration keyed by [imageId].
 class TheoryChapterPage extends StatelessWidget {
   final String title;
-  final int? legacyIndex;
   final List<ProseSection>? prose;
   final List<Source> sources;
   final String? imageId;
@@ -657,7 +735,6 @@ class TheoryChapterPage extends StatelessWidget {
   const TheoryChapterPage({
     super.key,
     required this.title,
-    this.legacyIndex,
     this.prose,
     this.sources = const [],
     this.imageId,
@@ -665,7 +742,6 @@ class TheoryChapterPage extends StatelessWidget {
 
   TheoryChapterPage.fromRef(TheoryChapterRef ref, {super.key})
     : title = ref.title,
-      legacyIndex = ref.legacyIndex,
       prose = ref.prose,
       sources = ref.sources,
       imageId = ref.imageId;
@@ -679,13 +755,9 @@ class TheoryChapterPage extends StatelessWidget {
     if (appRef != null) children.add(AppRefCard(appRef));
     final customIllu = _customChapterIllustration(imageId);
     if (customIllu != null) children.add(customIllu);
-    children.addAll(
-      legacyIndex != null
-          ? buildChapterContent(legacyIndex!, context)
-          : <Widget>[
-              for (final s in prose ?? const <ProseSection>[]) _ProseBlock(s),
-            ],
-    );
+    children.addAll([
+      for (final s in prose ?? const <ProseSection>[]) _ProseBlock(s),
+    ]);
     if (sources.isNotEmpty) children.add(_SourceList(sources: sources));
     return Scaffold(
       appBar: AppBar(

@@ -1,8 +1,7 @@
-// Navigation model for the restructured "Theorie" tab: blocks → chapters.
-// Groups the existing teaching chapters (referenced by index into
-// info_content.dart's buildChapterContent) with the new prose nature chapters
-// (worldChapters) under named blocks. This keeps info_content.dart and the 14
-// language part-files untouched — chapters are only re-grouped at this layer.
+// Navigation model for the "Theorie" tab: blocks → chapters. All chapters are
+// now bequellte prose (ProseChapter); custom-painted diagrams attach via a
+// chapter's imageId (see _customChapterIllustration in info_pages.dart). The
+// former legacy chapters (info_content.dart) have been fully migrated away.
 
 import '../l10n/app_localizations.dart';
 import 'grundlagen_theory.dart';
@@ -11,12 +10,11 @@ import 'prose_chapter.dart';
 import 'society_theory.dart';
 import 'world_theory.dart';
 
-/// One chapter inside a theory block. Exactly one of [legacyIndex] (rendered
-/// via buildChapterContent, incl. custom-painted illustrations) or [prose]
-/// (rendered directly) is set.
+/// One chapter inside a theory block: a [title], its [prose] sections, cited
+/// [sources], and an optional [imageId] for a chapter illustration (photo via
+/// theoryImageFor, or a custom-painted diagram via _customChapterIllustration).
 class TheoryChapterRef {
   final String title;
-  final int? legacyIndex;
   final List<ProseSection>? prose;
   final List<Source> sources;
 
@@ -24,16 +22,9 @@ class TheoryChapterRef {
   /// ([theoryImageFor]). Null for chapters without an image slot.
   final String? imageId;
 
-  const TheoryChapterRef.legacy(this.title, int index)
-      : legacyIndex = index,
-        prose = null,
-        sources = const [],
-        imageId = null;
-
   const TheoryChapterRef.prose(this.title, List<ProseSection> sections,
       [this.sources = const [], this.imageId])
-      : legacyIndex = null,
-        prose = sections;
+      : prose = sections;
 }
 
 /// A named group of chapters. [inProgress] blocks have no chapters yet and are

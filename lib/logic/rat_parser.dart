@@ -4,9 +4,14 @@
 //
 // Precedence (lowest to highest):
 //   1. + and -                            (parseAddSub)
-//   2. *, /, ⊕  — left-associative        (parseMulDiv)
+//   2. *, /, ⊕, mod — left-associative    (parseMulDiv)
 //   3. unary +/- and ^ (right-associative) (parsePow)
-//   4. literals, parenthesised expressions (parsePrimary)
+//   4. literals, parenthesised expressions, and the rationality-preserving
+//      unary functions fact()/abs()/recip()  (parsePrimary)
+//
+// Beyond the Rust original the Dart track also keeps mod, scientific notation
+// (a EXP b → a·base^b, expanded in buildRatExpr), and n!/|x|/1÷x exact, so
+// these no longer collapse to the f64 ≈ fallback.
 
 import 'rational.dart';
 
@@ -48,6 +53,26 @@ final class RatPow extends RatExpr {
 
 final class RatOPlus extends RatExpr {
   const RatOPlus();
+}
+
+/// Modulo — same precedence as `*` and `/` (left-associative).
+final class RatMod extends RatExpr {
+  const RatMod();
+}
+
+/// Rationality-preserving unary functions on a parenthesised operand:
+/// `fact(…)`, `abs(…)`, `recip(…)`. Each is an opener matched by a following
+/// [RatRParen] — the shape `resolvePostfix` produces for n! / |x| / 1÷x.
+final class RatFact extends RatExpr {
+  const RatFact();
+}
+
+final class RatAbs extends RatExpr {
+  const RatAbs();
+}
+
+final class RatRecip extends RatExpr {
+  const RatRecip();
 }
 
 final class RatLParen extends RatExpr {
@@ -127,6 +152,13 @@ class _RatParser {
         final o = left.oplus(r);
         if (o == null) return null;
         left = o;
+      } else if (p is RatMod) {
+        _pos++;
+        final r = _parsePow();
+        if (r == null) return null;
+        final m = left.mod(r);
+        if (m == null) return null; // mod by zero → collapse
+        left = m;
       } else {
         break;
       }
@@ -187,6 +219,18 @@ class _RatParser {
         return val;
       }
       return null; // unmatched paren
+    }
+    // Unary rational functions: fact( … ) / abs( … ) / recip( … ). The opener
+    // is followed by its operand and a matching RatRParen.
+    if (p is RatFact || p is RatAbs || p is RatRecip) {
+      _pos++;
+      final inner = _parseAddSub();
+      if (inner == null) return null;
+      if (_peek() is! RatRParen) return null;
+      _pos++;
+      if (p is RatFact) return inner.factorial(); // null if non-int/neg/huge
+      if (p is RatAbs) return inner.abs();
+      return inner.reciprocal(); // RatRecip; null on zero
     }
     return null;
   }

@@ -208,6 +208,110 @@ void main() {
       final out = resolved(['10', '%', '√', '4']);
       expect(out, equals('10 % (4^(1/2))'));
     });
+
+    // Regression: a custom operator (√/⊕/log/nCr/nPr) adjacent to a function
+    // call used to fail. Function tokens render as an *unclosed* opener
+    // (`sin(`, `fact(`, …) that auto-closes at the end of the stream, so the
+    // operand-range walk grabbed only the bare `sin(` token and produced a
+    // malformed substring → SYNTAX ERROR (or, when the function wrapped the
+    // left side, a silently wrong result). The ranges now treat any `…(`
+    // token as an opener and _joinBalanced supplies the missing close.
+    test('unary sqrt of an unparenthesised function operand', () {
+      // √ sin( 1   →   (sin(1)^(1/2))   (sin(1 rad) > 0 so the root is real)
+      final out = resolved(['√', 'sin(', '1']);
+      expect(out, equals('(sin(1)^(1/2))'));
+      expect(
+        (evalDouble(out) - math.sqrt(math.sin(1.0))).abs(),
+        lessThan(1e-10),
+      );
+    });
+
+    test('sqrt after a function opener is unary, not an nth-root', () {
+      // sin √ 4   →   sin( (4^(1/2))   (√ unary because preceded by `sin(`)
+      final out = resolved(['sin(', '√', '4']);
+      expect(out, equals('sin( (4^(1/2))'));
+    });
+
+    test('oplus with an unparenthesised function right operand', () {
+      // 5 ⊕ sin( 9   →   ((5*sin(9))/(5+sin(9)))
+      final out = resolved(['5', '⊕', 'sin(', '9']);
+      expect(out, equals('((5*sin(9))/(5+sin(9)))'));
+      final v = evalDouble(out);
+      final s = math.sin(9.0);
+      expect((v - (5 * s) / (5 + s)).abs(), lessThan(1e-10));
+    });
+
+    test('nCr with a factorial (fact(…)) left operand', () {
+      // fact( 5 ) nCr 2  — the postfix `5!` shape after resolvePostfix.
+      // Left operand must include the whole fact(5) call, not just `(5)`.
+      final out = resolved(['fact(', '5', ')', 'nCr', '2']);
+      expect((evalDouble(out) - 7140.0).abs(), lessThan(1e-6)); // C(120,2)
+    });
+  });
+
+  // --- resolvePostfix binding ---
+
+  group('resolvePostfix', () {
+    // Run the full postfix→meval pipeline on base-10 digit tokens.
+    double pipe(List<CalcToken> tokens) {
+      final ms = buildMevalString(
+        withImplicitMuls(resolvePostfix(tokens)),
+        base: 10,
+      );
+      final v = evalF64(ms, AngleMode.rad);
+      expect(v, isNotNull, reason: 'pipeline returned null for: $ms');
+      return v!;
+    }
+
+    Digit d(int v) => Digit(DozenalDigit.values[v]);
+
+    // Regression: a postfix n!/|x|/1/x followed by a binary operator used to
+    // fold the trailing term into the call. resolvePostfix wrapped the operand
+    // as `[fact, (, operand, )]`, but `fact` *also* emits an opening paren, so
+    // the explicit `)` closed the inner paren and `fact(`'s own paren floated
+    // to the end of the string: `5! + 2` became `fact((5)+2)` = fact(7) = 5040.
+    test('5! + 2 = 122 (factorial binds to its operand only)', () {
+      expect(pipe([d(5), const Factorial(), const Add(), d(2)]), 122.0);
+    });
+
+    test('5! * 2 = 240, not fact(10)', () {
+      expect(pipe([d(5), const Factorial(), const Mul(), d(2)]), 240.0);
+    });
+
+    test('3! + 4! = 30 (both factorials bounded)', () {
+      expect(
+        pipe([d(3), const Factorial(), const Add(), d(4), const Factorial()]),
+        30.0,
+      );
+    });
+
+    test('|−3| + 1 = 4 (abs bounded)', () {
+      expect(
+        pipe([
+          const ParenOpen(), const Sub(), d(3), const ParenClose(),
+          const AbsVal(), const Add(), d(1),
+        ]),
+        4.0,
+      );
+    });
+
+    test('4 1/x + 1 = 1.25 (reciprocal bounded)', () {
+      expect(pipe([d(4), const Reciprocal(), const Add(), d(1)]), 1.25);
+    });
+
+    // Previously-working shapes must keep working.
+    test('5! = 120 and prefix fact 5 = 120', () {
+      expect(pipe([d(5), const Factorial()]), 120.0);
+      expect(pipe([const Factorial(), d(5)]), 120.0);
+    });
+
+    test('nested 3!! = 720 ((3!)! = 6!)', () {
+      expect(pipe([d(3), const Factorial(), const Factorial()]), 720.0);
+    });
+
+    test('5 + 3! = 11 (postfix binds tighter than +)', () {
+      expect(pipe([d(5), const Add(), d(3), const Factorial()]), 11.0);
+    });
   });
 
   // --- buildRatExpr / rational evaluation ---
@@ -246,15 +350,23 @@ void main() {
   // --- formatRationalResult ---
 
   group('formatRationalResult', () {
-    test('period_longer_than_display_is_capped: 1/7 → period 6 capped to 5',
-        () {
-      final r = formatRationalResult(Rational.fromInts(1, 7));
-      expect(r.meta.start, isNotNull, reason: '1/7 must be periodic');
+    test('period_longer_than_display_is_capped (1/17dec, period 16₁₂)', () {
+      // 1/17 (decimal) has a 16-digit base-12 period — longer than the cap.
+      final r = formatRationalResult(Rational.fromInts(1, 17));
+      expect(r.meta.start, isNotNull, reason: '1/17 must be periodic');
       expect(r.meta.len, equals(maxPeriodDisplay));
       expect(r.meta.capped, isTrue);
-      // "0" + 5 period digits = 6 Digit tokens; pre-period is empty for 1/7
+      // "0" + maxPeriodDisplay period digits; pre-period is empty for 1/17.
       final digitCount = r.buf.whereType<Digit>().length;
       expect(digitCount, equals(1 + maxPeriodDisplay));
+    });
+
+    test('period_within_cap_is_shown_in_full: 1/7 → period 6 (186A35)', () {
+      // With the cap at 10, 1/7's six-digit period renders fully, uncapped.
+      final r = formatRationalResult(Rational.fromInts(1, 7));
+      expect(r.meta.start, isNotNull);
+      expect(r.meta.len, equals(6));
+      expect(r.meta.capped, isFalse);
     });
 
     test('period_shorter_than_display_is_not_capped: 1/5 → period 4 (2497)',
@@ -268,6 +380,77 @@ void main() {
     test('negative_rational_renders_negate_token: -1/2 → leading Negate', () {
       final r = formatRationalResult(Rational.fromInts(-1, 2));
       expect(r.buf.first, isA<Negate>());
+    });
+  });
+
+  // --- formatF64Result precision budget ---
+
+  group('formatF64Result precision budget (~kF64SigDigits significant)', () {
+    int fracCount(List<CalcToken> buf) {
+      final dot = buf.indexWhere((t) => t is Decimal);
+      return dot < 0 ? 0 : buf.length - dot - 1;
+    }
+
+    test('value below 1 gets the full fractional budget', () {
+      final r = formatF64Result(math.sin(36 * math.pi / 180)); // 0.5877…
+      expect(fracCount(r), kF64SigDigits);
+    });
+
+    test('one integer digit → kF64SigDigits − 1 fractional (π = 3.…)', () {
+      final r = formatF64Result(math.pi);
+      expect(fracCount(r), kF64SigDigits - 1);
+      expect(r.first, Digit(DozenalDigit.d3));
+    });
+
+    test('large integer part leaves fewer fractional places (~12 sig total)',
+        () {
+      // π·12⁵ ≈ 318480.95₁₂ → six integer dozenal digits.
+      final r = formatF64Result(math.pi * 248832);
+      final dot = r.indexWhere((t) => t is Decimal);
+      expect(dot, 6, reason: 'six integer digits before the point');
+      expect(fracCount(r), kF64SigDigits - 6);
+    });
+
+    test('shown digits track the true value (π = 3.184809493B9…)', () {
+      final r = formatF64Result(math.pi);
+      final s = r
+          .whereType<Digit>()
+          .map((d) => d.value.value)
+          .map((v) => v < 10 ? '$v' : (v == 10 ? 'A' : 'B'))
+          .join();
+      expect(s, '3184809493B9'); // 3 + first 11 fractional digits of π₁₂
+    });
+
+    test('a clean value stops early (no zero padding): 0.5 → 0.6₁₂', () {
+      final r = formatF64Result(0.5);
+      expect(fracCount(r), 1);
+    });
+
+    String ascii(List<CalcToken> buf) => buf.map((t) {
+          if (t is Digit) {
+            final v = t.value.value;
+            return v < 10 ? '$v' : (v == 10 ? 'A' : 'B');
+          }
+          if (t is Decimal) return '.';
+          if (t is Negate) return '-';
+          return '';
+        }).join();
+
+    test('near-integer f64 noise snaps onto the integer (tan 45° → 1)', () {
+      // tan(45°) lands at 0.9999999999999999; without the snap this rendered as
+      // 0.BBBBBBBBBBBB (or a clamped overflow digit), not the clean 1.
+      expect(ascii(formatF64Result(0.9999999999999999)), '1');
+      expect(ascii(formatF64Result(1.0000000000000002)), '1');
+    });
+
+    test('tiny negative snaps to a plain "0" (no "-0"): tan 180°', () {
+      // tan(180°) ≈ −1.2e−16 — the signed snap must collapse it to "0".
+      expect(ascii(formatF64Result(-1.2246467991473532e-16)), '0');
+    });
+
+    test('a value half a unit off does NOT snap (sin 30° stays 0.6₁₂)', () {
+      // 0.5 is 0.5 away from the nearest integer — well past fracEpsilon.
+      expect(ascii(formatF64Result(0.49999999999999994)), '0.6');
     });
   });
 

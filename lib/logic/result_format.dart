@@ -63,7 +63,10 @@ String compactF64String(double v, int base) {
   if (v.isNaN) return 'NaN';
   if (v.isInfinite) return '∞';
   final sb = StringBuffer();
-  var x = v;
+  // Snap near-integer f64 noise (e.g. tan(45°) = 0.9999…) onto the integer so
+  // the cross-base reference shows "1", not "0.BBBBBB…". Mirrors the snap in
+  // formatF64Result; the signed snap also avoids a "-0" bracket.
+  var x = (v - v.roundToDouble()).abs() < fracEpsilon ? v.roundToDouble() : v;
   if (x < 0) {
     sb.write('-');
     x = x.abs();

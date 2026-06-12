@@ -100,6 +100,49 @@ class Rational {
     return product.div(sum);
   }
 
+  /// Euclidean modulo, matching Dart's f64 `%`: r = a − rhs·⌊a/rhs⌋, so the
+  /// result carries the divisor's sign and 0 ≤ |r| < |rhs|. Null on rhs = 0.
+  Rational? mod(Rational rhs) {
+    if (rhs.num == BigInt.zero) return null;
+    // a/rhs = (num·rhs.den)/(den·rhs.num); floor it toward −∞.
+    final f = _floorDiv(num * rhs.den, den * rhs.num);
+    return sub(rhs.mul(Rational._raw(f, BigInt.one)));
+  }
+
+  /// Absolute value (den is always positive by invariant).
+  Rational abs() => num.isNegative ? Rational._raw(-num, den) : this;
+
+  /// Reciprocal 1/x. Returns null when x = 0.
+  Rational? reciprocal() => num == BigInt.zero ? null : tryNew(den, num);
+
+  /// Largest factorial argument expanded on the exact track. Beyond this the
+  /// result is far past [maxResultDigits] anyway, so [factorial] collapses to
+  /// the f64 fallback instead of spending a long BigInt loop on a value that
+  /// would only be rendered truncated.
+  static const int factorialCap = 3000;
+
+  /// Factorial n! when this is a non-negative integer ≤ [factorialCap];
+  /// null otherwise (non-integer, negative, or too large).
+  Rational? factorial() {
+    if (den != BigInt.one || num.isNegative || !num.isValidInt) return null;
+    final n = num.toInt();
+    if (n > factorialCap) return null;
+    var r = BigInt.one;
+    for (var i = 2; i <= n; i++) {
+      r *= BigInt.from(i);
+    }
+    return Rational._raw(r, BigInt.one);
+  }
+
+  /// Integer floor division (toward −∞), unlike `~/` which truncates toward 0.
+  static BigInt _floorDiv(BigInt a, BigInt b) {
+    var q = a ~/ b;
+    if (a % b != BigInt.zero && a.isNegative != b.isNegative) {
+      q -= BigInt.one;
+    }
+    return q;
+  }
+
   double toDouble() => num.toDouble() / den.toDouble();
 
   // ---------------------------------------------------------------------

@@ -138,4 +138,53 @@ void main() {
       );
     });
   });
+
+  // Exact-track extensions: mod / abs / reciprocal / factorial keep these
+  // operations on the rational rail instead of collapsing to the f64 ≈ path.
+  group('Rational mod / abs / reciprocal / factorial', () {
+    test('mod matches Dart f64 % sign convention (divisor sign)', () {
+      expect(Rational.fromInts(7).mod(Rational.fromInts(3)),
+          Rational.fromInts(1));
+      expect(Rational.fromInts(-7).mod(Rational.fromInts(3)),
+          Rational.fromInts(2)); // euclidean
+      expect(Rational.fromInts(7).mod(Rational.fromInts(-3)),
+          Rational.fromInts(-2));
+      expect(Rational.fromInts(-7).mod(Rational.fromInts(-3)),
+          Rational.fromInts(-1));
+    });
+
+    test('mod of non-integers', () {
+      // 7/2 mod 2 = 3/2
+      expect(Rational.fromInts(7, 2).mod(Rational.fromInts(2)),
+          Rational.fromInts(3, 2));
+    });
+
+    test('mod by zero returns null', () {
+      expect(Rational.fromInts(5).mod(Rational.zero), isNull);
+    });
+
+    test('abs', () {
+      expect(Rational.fromInts(-3, 4).abs(), Rational.fromInts(3, 4));
+      expect(Rational.fromInts(3, 4).abs(), Rational.fromInts(3, 4));
+      expect(Rational.zero.abs(), Rational.zero);
+    });
+
+    test('reciprocal, null on zero', () {
+      expect(Rational.fromInts(3, 4).reciprocal(), Rational.fromInts(4, 3));
+      expect(Rational.fromInts(-2).reciprocal(), Rational.fromInts(-1, 2));
+      expect(Rational.zero.reciprocal(), isNull);
+    });
+
+    test('factorial of small non-negative integers', () {
+      expect(Rational.fromInts(0).factorial(), Rational.fromInts(1));
+      expect(Rational.fromInts(5).factorial(), Rational.fromInts(120));
+      expect(Rational.fromInts(6).factorial(), Rational.fromInts(720));
+    });
+
+    test('factorial null for non-integer, negative, or over the cap', () {
+      expect(Rational.fromInts(3, 2).factorial(), isNull); // non-integer
+      expect(Rational.fromInts(-1).factorial(), isNull); // negative
+      expect(Rational.fromInts(Rational.factorialCap + 1).factorial(), isNull);
+    });
+  });
 }

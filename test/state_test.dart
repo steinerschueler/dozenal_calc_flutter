@@ -24,7 +24,9 @@ void main() {
       expect(s.resultBuffer.first, equals(Digit(DozenalDigit.d3)));
     });
 
-    test('1/7 produces capped period (State C)', () {
+    test('1/7 shows its full 6-digit period (within the cap)', () {
+      // maxPeriodDisplay is 10, so 1/7's period of six (186A35) renders in
+      // full with the overline rather than being clipped to a State-C marker.
       final s = DozenalCalcState()
         ..handleClick(Digit(DozenalDigit.d1))
         ..handleClick(const Div())
@@ -33,7 +35,23 @@ void main() {
       expect(s.errorMsg, isNull);
       expect(s.lastAns, equals(Rational.fromInts(1, 7)));
       expect(s.resultPeriodStart, isNotNull);
-      expect(s.resultPeriodLen, equals(5));
+      expect(s.resultPeriodLen, equals(6));
+      expect(s.resultPeriodCapped, isFalse);
+    });
+
+    test('a long period (1/17dec, period 14₁₂) is capped (State C)', () {
+      // 1/17 (decimal) has a 16-digit period in base 12 — past the cap, so the
+      // period is clipped to maxPeriodDisplay and flagged State C.
+      final s = DozenalCalcState()
+        ..handleClick(Digit(DozenalDigit.d1))
+        ..handleClick(const Div())
+        ..handleClick(Digit(DozenalDigit.d1))
+        ..handleClick(Digit(DozenalDigit.d5)) // 15 dozenal = 17 decimal
+        ..handleClick(const Equals());
+      expect(s.errorMsg, isNull);
+      expect(s.lastAns, equals(Rational.fromInts(1, 17)));
+      expect(s.resultPeriodStart, isNotNull);
+      expect(s.resultPeriodLen, equals(10)); // capped at maxPeriodDisplay
       expect(s.resultPeriodCapped, isTrue);
     });
 
@@ -68,19 +86,23 @@ void main() {
     });
 
     test('inverse toggle: Sin Sin → ArcSin; Sin Sin Sin → Sin', () {
+      // Functions auto-pair a closing paren (`sin(|)`), so the function token
+      // sits at index 0 with the cursor before the trailing ParenClose; the
+      // inverse toggle swaps that leading token in place.
       final s = DozenalCalcState()..handleClick(const Sin());
-      expect(s.inputBuffer.last, isA<Sin>());
+      expect(s.inputBuffer.first, isA<Sin>());
+      expect(s.inputBuffer.last, isA<ParenClose>());
       expect(s.isArmed(const Sin()), isTrue);
 
       s.handleClick(const Sin());
-      expect(s.inputBuffer.last, isA<ArcSin>());
+      expect(s.inputBuffer.first, isA<ArcSin>());
       // isArmed stays true: the *next* Sin tap toggles ArcSin back to Sin,
       // so the gold dot needs to surface that the function is still armed.
       expect(s.isArmed(const Sin()), isTrue);
 
       s.handleClick(const Sin());
       expect(
-        s.inputBuffer.last,
+        s.inputBuffer.first,
         isA<Sin>(),
         reason: 'third tap toggles back to Sin',
       );
@@ -304,12 +326,15 @@ void main() {
       s.handleClick(const Expand());
       s.handleClick(const Sinh());
       expect(s.overlayOpen, isFalse);
-      expect(s.inputBuffer.last, isA<Sinh>());
+      // Auto-paired: [Sinh, )] — the function token leads, the cursor sits
+      // before the trailing close paren.
+      expect(s.inputBuffer.first, isA<Sinh>());
+      expect(s.inputBuffer.last, isA<ParenClose>());
 
       s.handleClick(const Expand());
       s.handleClick(const Sinh());
       expect(
-        s.inputBuffer.last,
+        s.inputBuffer.first,
         isA<ArSinh>(),
         reason: 'second Sinh tap toggles the previous Sinh to ArSinh',
       );
@@ -880,6 +905,101 @@ void main() {
       s.handleClick(const Expand());
       expect(s.overlayOpen, isTrue);
       expect(s.overlayPage, 0);
+    });
+  });
+
+  // Commercial auto-pair: a prefix function inserts its matching close paren
+  // and lands the cursor inside (`sin(|)`), so the argument scope is visible.
+  group('auto-pair parentheses', () {
+    Digit dg(int v) => Digit(DozenalDigit.values[v]);
+
+    test('pressing a function inserts fn + close paren, cursor between', () {
+      final s = DozenalCalcState()..handleClick(const Sin());
+      expect(s.inputBuffer, [const Sin(), const ParenClose()]);
+      expect(s.cursorPos, 1);
+    });
+
+    test('ln/exp/log12 auto-pair too', () {
+      for (final f in const [Ln(), ExpE(), Log12()]) {
+        final s = DozenalCalcState()..handleClick(f);
+        expect(s.inputBuffer.length, 2);
+        expect(s.inputBuffer.last, isA<ParenClose>());
+        expect(s.cursorPos, 1);
+      }
+    });
+
+    test('typed argument and operators land inside the parens', () {
+      final s = DozenalCalcState()
+        ..handleClick(const Sin())
+        ..handleClick(dg(3))
+        ..handleClick(dg(0))
+        ..handleClick(const Add())
+        ..handleClick(dg(5));
+      expect(s.inputBuffer, [
+        const Sin(), Digit(DozenalDigit.d3), Digit(DozenalDigit.d0),
+        const Add(), Digit(DozenalDigit.d5), const ParenClose(),
+      ]);
+      expect(s.cursorPos, 5); // still inside, before the close paren
+    });
+
+    test('the ) key steps over the auto-paired close instead of duplicating', () {
+      final s = DozenalCalcState()
+        ..handleClick(const Sin())
+        ..handleClick(dg(3))
+        ..handleClick(dg(0))
+        ..handleClick(const ParenClose()) // step over
+        ..handleClick(const Add())
+        ..handleClick(dg(5));
+      expect(s.inputBuffer, [
+        const Sin(), Digit(DozenalDigit.d3), Digit(DozenalDigit.d0),
+        const ParenClose(), const Add(), Digit(DozenalDigit.d5),
+      ]);
+      // exactly one close paren (no duplicate from the ) press)
+      expect(s.inputBuffer.whereType<ParenClose>().length, 1);
+    });
+
+    test('Del on an empty auto-pair removes both tokens', () {
+      final s = DozenalCalcState()
+        ..handleClick(const Sin())
+        ..handleClick(const Del());
+      expect(s.inputBuffer, isEmpty);
+      expect(s.cursorPos, 0);
+    });
+
+    test('nested functions auto-pair and evaluate cleanly', () {
+      final s = DozenalCalcState()
+        ..handleClick(const Sin())
+        ..handleClick(const Cos())
+        ..handleClick(dg(0));
+      expect(s.inputBuffer, [
+        const Sin(), const Cos(), Digit(DozenalDigit.d0),
+        const ParenClose(), const ParenClose(),
+      ]);
+      s.handleClick(const Equals());
+      expect(s.errorMsg, isNull);
+    });
+
+    test('inverse toggle still swaps the leading function in place', () {
+      final s = DozenalCalcState()
+        ..handleClick(const Sin())
+        ..handleClick(const Sin());
+      expect(s.inputBuffer, [const ArcSin(), const ParenClose()]);
+      expect(s.isArmed(const Sin()), isTrue);
+    });
+
+    test('a lone ) key still inserts when nothing to step over', () {
+      final s = DozenalCalcState()..handleClick(const ParenClose());
+      expect(s.inputBuffer, [const ParenClose()]);
+    });
+
+    test('sin(30) then = evaluates (auto-pair does not change the value)', () {
+      final s = DozenalCalcState()
+        ..handleClick(const Sin())
+        ..handleClick(dg(3))
+        ..handleClick(dg(0))
+        ..handleClick(const Equals());
+      expect(s.errorMsg, isNull);
+      expect(s.resultFieldActive, isTrue);
     });
   });
 }

@@ -263,4 +263,48 @@ void main() {
       expect(() => s.handleClick(const Dez()), returnsNormally);
     });
   });
+
+  // Regression: a large exact power (e.g. 2^1152) is an exact BigInt but ±∞ as
+  // a double — the f64 overflow check used to report "DIV BY ZERO" and discard
+  // it. calculateResult now trusts the rational track, with a magnitude guard
+  // so the digit expansion can't freeze the renderer.
+  group('Large exact results', () {
+    Digit dd(int v) => Digit(DozenalDigit.values[v]);
+
+    test('2^800 (dozenal) computes exactly, not DIV BY ZERO', () {
+      final s = DozenalCalcState()
+        ..handleClick(dd(2))
+        ..handleClick(const ExpTopRight())
+        ..handleClick(dd(8))
+        ..handleClick(dd(0))
+        ..handleClick(dd(0)); // 800 doz = 1152 dec
+      final sw = Stopwatch()..start();
+      s.handleClick(const Equals());
+      sw.stop();
+      expect(s.errorMsg, isNull);
+      expect(s.lastAns, isNotNull, reason: 'must keep the exact value');
+      // 2^1152 starts with "2411…" in dozenal.
+      expect(s.resultText.startsWith('2411'), isTrue);
+      expect(sw.elapsedMilliseconds, lessThan(1000));
+    });
+
+    test('astronomically large power collapses fast (no freeze)', () {
+      // ~2^300000 would take ~8 s to expand if it weren't guarded; the
+      // magnitude bound drops it to the f64 fallback (∞ → OVERFLOW) at once.
+      final s = DozenalCalcState()
+        ..handleClick(dd(2))
+        ..handleClick(const ExpTopRight())
+        ..handleClick(dd(1))
+        ..handleClick(dd(2))
+        ..handleClick(dd(5))
+        ..handleClick(dd(7))
+        ..handleClick(dd(6))
+        ..handleClick(dd(0)); // 125760 doz ≈ 300000 dec
+      final sw = Stopwatch()..start();
+      s.handleClick(const Equals());
+      sw.stop();
+      expect(s.errorMsg, 'OVERFLOW'); // not a division → overflow, not DIV BY ZERO
+      expect(sw.elapsedMilliseconds, lessThan(500));
+    });
+  });
 }

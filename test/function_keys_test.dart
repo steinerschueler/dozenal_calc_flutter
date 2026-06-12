@@ -120,4 +120,166 @@ void main() {
       expect(s.resultText, '500'); // 720 decimal = 500 dozenal
     });
   });
+
+  // Regression: postfix n!/|x|/1/x must bind to their operand only — a
+  // trailing operator used to be swallowed by the function's auto-paren
+  // (`5! + 2` → fact(5+2) = 5040). See resolvePostfix in expression.dart.
+  group('state — postfix binding (n!, |x|, 1/x)', () {
+    test('5! + 2 = A2 dozenal (122 dec), not 5040', () {
+      final s = DozenalCalcState()
+        ..handleClick(d(5))
+        ..handleClick(const Factorial())
+        ..handleClick(const Add())
+        ..handleClick(d(2))
+        ..handleClick(const Equals());
+      expect(s.errorMsg, isNull);
+      expect(s.lastResultF64, 122.0);
+      expect(s.resultText, 'A2');
+    });
+
+    test('3! + 4! = 26 dozenal (30 dec)', () {
+      final s = DozenalCalcState()
+        ..handleClick(d(3))
+        ..handleClick(const Factorial())
+        ..handleClick(const Add())
+        ..handleClick(d(4))
+        ..handleClick(const Factorial())
+        ..handleClick(const Equals());
+      expect(s.errorMsg, isNull);
+      expect(s.lastResultF64, 30.0);
+    });
+
+    test('(−3)|x| + 1 = 4 (abs bounded)', () {
+      final s = DozenalCalcState()
+        ..handleClick(const ParenOpen())
+        ..handleClick(const Sub())
+        ..handleClick(d(3))
+        ..handleClick(const ParenClose())
+        ..handleClick(const AbsVal())
+        ..handleClick(const Add())
+        ..handleClick(d(1))
+        ..handleClick(const Equals());
+      expect(s.errorMsg, isNull);
+      expect(s.lastResultF64, 4.0);
+    });
+
+    test('4 1/x + 1 = 1.25 (reciprocal bounded)', () {
+      final s = DozenalCalcState()
+        ..handleClick(d(4))
+        ..handleClick(const Reciprocal())
+        ..handleClick(const Add())
+        ..handleClick(d(1))
+        ..handleClick(const Equals());
+      expect(s.errorMsg, isNull);
+      expect(s.lastResultF64, 1.25);
+    });
+  });
+
+  // Regression: custom operators (√, ⊕, log, nCr, nPr) with an
+  // unparenthesised function-call operand. See resolveCustomOperators.
+  group('state — custom ops with function operands', () {
+    test('5! nCr 2 = 4170 dozenal (7140 dec = C(120,2))', () {
+      final s = DozenalCalcState()
+        ..handleClick(d(5))
+        ..handleClick(const Factorial())
+        ..handleClick(const NCr())
+        ..handleClick(d(2))
+        ..handleClick(const Equals());
+      expect(s.errorMsg, isNull);
+      expect(s.lastResultF64, 7140.0);
+      expect(s.resultText, '4170');
+    });
+
+    test('√sin30 (deg) evaluates instead of erroring', () {
+      final s = DozenalCalcState()
+        ..handleClick(const RootTopLeft())
+        ..handleClick(const Sin())
+        ..handleClick(d(3))
+        ..handleClick(d(0)) // "30" dozenal = 36 decimal degrees
+        ..handleClick(const Equals());
+      expect(s.errorMsg, isNull);
+      // sqrt(sin(36°))
+      expect((s.lastResultF64 - math.sqrt(math.sin(36 * math.pi / 180))).abs(),
+          lessThan(1e-9));
+    });
+
+    test('√4! evaluates to sqrt(24)', () {
+      final s = DozenalCalcState()
+        ..handleClick(const RootTopLeft())
+        ..handleClick(d(4))
+        ..handleClick(const Factorial())
+        ..handleClick(const Equals());
+      expect(s.errorMsg, isNull);
+      expect((s.lastResultF64 - math.sqrt(24)).abs(), lessThan(1e-9));
+    });
+  });
+
+  // Exactly-rational operations stay on the exact rail (no "≈"): Sci, Mod,
+  // n!, 1÷x, |x|. Irrational ones (√, log, sin) still fall back to f64.
+  group('state — exact (no ≈) for rational operations', () {
+    DozenalCalcState run(List<CalcToken> tokens) {
+      final s = DozenalCalcState();
+      for (final t in tokens) {
+        s.handleClick(t);
+      }
+      s.handleClick(const Equals());
+      return s;
+    }
+
+    test('Sci is exact: 5 EXP 2 = 500 dozenal (720 dec)', () {
+      final s = run([d(5), const Sci(), d(2)]);
+      expect(s.isF64Fallback, isFalse);
+      expect(s.lastAns, isNotNull);
+      expect(s.resultText, '500');
+    });
+
+    test('Sci with negative exponent is exact: 2 EXP -3 = 0.002 dozenal', () {
+      final s = run([d(2), const Sci(), const Sub(), d(3)]);
+      expect(s.isF64Fallback, isFalse);
+      expect(s.resultText, '0.002');
+    });
+
+    test('Mod is exact: 7 mod 3 = 1', () {
+      final s = run([d(7), const Mod(), d(3)]);
+      expect(s.isF64Fallback, isFalse);
+      expect(s.resultText, '1');
+    });
+
+    test('factorial is exact: 5! = A0 dozenal (120 dec)', () {
+      final s = run([d(5), const Factorial()]);
+      expect(s.isF64Fallback, isFalse);
+      expect(s.resultText, 'A0');
+    });
+
+    test('reciprocal is exact: 4 1/x = 0.3 dozenal (¼), period kept for 1/7', () {
+      final quarter = run([d(4), const Reciprocal()]);
+      expect(quarter.isF64Fallback, isFalse);
+      expect(quarter.resultText, '0.3'); // ¼ = 0.3 dozenal
+
+      final seventh = run([d(7), const Reciprocal()]);
+      expect(seventh.isF64Fallback, isFalse);
+      expect(seventh.resultPeriodStart, isNotNull); // 1/7 periodic, exact
+    });
+
+    test('abs is exact: (−5)|x| = 5', () {
+      final s = run([
+        const ParenOpen(), const Sub(), d(5), const ParenClose(),
+        const AbsVal(),
+      ]);
+      expect(s.isF64Fallback, isFalse);
+      expect(s.resultText, '5');
+    });
+
+    test('mixed exact: 5! mod 7 = 1', () {
+      final s = run([d(5), const Factorial(), const Mod(), d(7)]);
+      expect(s.isF64Fallback, isFalse);
+      expect(s.resultText, '1');
+    });
+
+    test('irrational stays ≈: √4, sin0, 8 log 2', () {
+      expect(run([const RootTopLeft(), d(4)]).isF64Fallback, isTrue);
+      expect(run([const Sin(), d(0)]).isF64Fallback, isTrue);
+      expect(run([d(8), const LogBotRight(), d(2)]).isF64Fallback, isTrue);
+    });
+  });
 }
