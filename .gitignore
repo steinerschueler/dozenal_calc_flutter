@@ -88,3 +88,10 @@ fastlane/test_output/
 # Lokale Geräte-Testdoku (Serials, Entsperren) — bewusst NICHT versioniert,
 # darf nicht auf GitHub (siehe CLAUDE.md). Inhalt: docs/local/device-testing.md
 /docs/local/
+
+# Graphify-Wissensgraph (lokales Claude-Code-Navigationstool, nicht Teil der
+# App). graphify-out/ = generierter Graph; .graphifyignore = lokale Scope-Config.
+# Bewusst nicht versioniert — gehört nicht ins veröffentlichte Repo. Neu bauen
+# mit `graphify extract .`.
+/graphify-out/
+/.graphifyignore
