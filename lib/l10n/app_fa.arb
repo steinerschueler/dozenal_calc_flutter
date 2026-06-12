@@ -28,6 +28,7 @@
   "infoListConversionsEntry": "نظریهٔ یکاها",
   "infoListConverterEntry": "مبدل واحدها",
   "pagerLabelMain": "ماشین‌حساب اصلی",
+  "converterEqualsHint": "دوباره بزنید: واحد بعدی",
   "unitCatCount": "تعداد",
   "unitCatDist": "طول",
   "unitCatArea": "مساحت",

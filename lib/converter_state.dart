@@ -280,11 +280,6 @@ class ConverterState extends ChangeNotifier {
     notifyListeners();
   }
 
-  /// Whether × / ÷ can do anything right now (keypad enabled-state): there
-  /// is either a pending entry to extend or a committed compound to
-  /// collapse into one.
-  bool get canScalarOp => _input.isNotEmpty || _terms.isNotEmpty;
-
   /// Scalar operators inside the pending entry (× ÷ ⊕ ^ √ ㏒): "3×2",
   /// folded left to right when a magnitude commits it — a quantity combined
   /// with unitless numbers stays in its category, so no unit algebra is

@@ -5,6 +5,7 @@ import 'dart:async';
 
 import 'package:flutter/foundation.dart' show defaultTargetPlatform, kIsWeb;
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -333,16 +334,49 @@ class _CalcScaffoldState extends State<_CalcScaffold> {
 
   /// Show the page-peek indicator briefly (restarting the clock if it is
   /// already up). Fired on boot, on closing the intro, on returning from
-  /// "Theory and More", and on every page change.
+  /// "Theory and More" — and continuously while the pager moves (see
+  /// [_onPagerScroll]), so the hide timer only starts counting once the
+  /// cards have settled.
   void _pulsePagePeek() {
     _pagePeekTimer?.cancel();
-    setState(() {
-      _pagePeekMounted = true;
-      _pagePeekVisible = true;
-    });
     _pagePeekTimer = Timer(const Duration(milliseconds: 1050), () {
       if (mounted) setState(() => _pagePeekVisible = false);
     });
+    if (_pagePeekMounted && _pagePeekVisible) return; // hot path: timer only
+    void show() {
+      if (!mounted) return;
+      setState(() {
+        _pagePeekMounted = true;
+        _pagePeekVisible = true;
+      });
+    }
+
+    // Scroll callbacks can arrive during layout — never markNeedsBuild
+    // mid-build.
+    final phase = SchedulerBinding.instance.schedulerPhase;
+    if (phase == SchedulerPhase.idle ||
+        phase == SchedulerPhase.postFrameCallbacks) {
+      show();
+    } else {
+      WidgetsBinding.instance.addPostFrameCallback((_) => show());
+    }
+  }
+
+  /// Any pager movement — finger drag, ballistic settle, programmatic
+  /// animation — keeps the peek alive; the cards glide with the page via
+  /// the AnimatedBuilder in [build] and come to rest with the pager's own
+  /// deceleration.
+  void _onPagerScroll() => _pulsePagePeek();
+
+  /// Continuous pager position (0 = main calculator … 1 = converter) for
+  /// the gliding peek cards; falls back to the settled page before the
+  /// controller has dimensions.
+  double get _pagerProgress {
+    if (_pageController.hasClients &&
+        _pageController.position.haveDimensions) {
+      return (_pageController.page ?? _page.toDouble()).clamp(0.0, 1.0);
+    }
+    return _page.toDouble();
   }
 
   @override
@@ -360,6 +394,7 @@ class _CalcScaffoldState extends State<_CalcScaffold> {
     // base too — initial value here, every later change via _onStateChanged.
     // The unit system stays converter-local (met/imp keys).
     _converterState.setBase(_state.activeBase);
+    _pageController.addListener(_onPagerScroll);
     WidgetsBinding.instance.addPostFrameCallback((_) => _maybeShowIntro());
   }
 
@@ -385,6 +420,7 @@ class _CalcScaffoldState extends State<_CalcScaffold> {
     _state.convAnsProvider = null;
     _state.removeListener(_onStateChanged);
     _pagePeekTimer?.cancel();
+    _pageController.removeListener(_onPagerScroll);
     _converterState.dispose();
     _pageController.dispose();
     _focusNode.dispose();
@@ -649,10 +685,9 @@ class _CalcScaffoldState extends State<_CalcScaffold> {
               children: [
                 PageView(
                   controller: _pageController,
-                  onPageChanged: (i) {
-                    _page = i;
-                    _pulsePagePeek(); // every swipe re-shows the indicator
-                  },
+                  // The peek pulses via the controller listener; here only
+                  // the keyboard routing needs the settled page.
+                  onPageChanged: (i) => _page = i,
                   children: [
                     _calcPage(prefs),
                     ConverterBody(state: _converterState),
@@ -660,7 +695,10 @@ class _CalcScaffoldState extends State<_CalcScaffold> {
                 ),
                 // Page-peek indicator: transient, never blocks input, and
                 // unmounts entirely after the fade so it leaves no invisible
-                // surfaces (hit tests, semantics, test finders) behind.
+                // surfaces (hit tests, semantics, test finders) behind. The
+                // AnimatedBuilder re-renders the cards on every pager tick,
+                // so they glide along with the pages and settle with the
+                // pager's own deceleration.
                 if (_pagePeekMounted)
                   Positioned.fill(
                     child: IgnorePointer(
@@ -675,7 +713,11 @@ class _CalcScaffoldState extends State<_CalcScaffold> {
                               setState(() => _pagePeekMounted = false);
                             }
                           },
-                          child: _PagePeekOverlay(page: _page),
+                          child: AnimatedBuilder(
+                            animation: _pageController,
+                            builder: (_, _) =>
+                                _PagePeekOverlay(progress: _pagerProgress),
+                          ),
                         ),
                       ),
                     ),
@@ -756,16 +798,19 @@ class _CalcScaffoldState extends State<_CalcScaffold> {
   }
 }
 
-/// The page-peek indicator content: a translucent rectangle per pager page,
-/// the current one centred with an outline, the neighbour offset past the
-/// screen edge (clipped) — a minimap of the swipeable pages, with faint page
-/// names. The host wraps it in IgnorePointer + ExcludeSemantics and fades it
-/// in/out; this widget is purely visual.
+/// The page-peek indicator content: a translucent miniature card per pager
+/// page with faint page names — a minimap of the swipeable pages. [progress]
+/// is the CONTINUOUS pager position (0…1): the card pair glides with the
+/// pages (one swipe-width = one card-pitch) and the golden outline
+/// crossfades from the leaving to the arriving card, so the minimap tracks
+/// the finger and settles with the pager's own gentle deceleration. The
+/// host wraps it in IgnorePointer + ExcludeSemantics and fades it in/out;
+/// this widget is purely visual.
 class _PagePeekOverlay extends StatelessWidget {
-  const _PagePeekOverlay({required this.page});
+  const _PagePeekOverlay({required this.progress});
 
-  /// The settled pager page (0 = main calculator, 1 = converter).
-  final int page;
+  /// Continuous pager position: 0 = main calculator … 1 = converter.
+  final double progress;
 
   @override
   Widget build(BuildContext context) {
@@ -786,19 +831,19 @@ class _PagePeekOverlay extends StatelessWidget {
         final top = (h - rectH) / 2;
         final centerLeft = (w - rectW) / 2;
 
-        Widget card(String label, {required bool current}) => Container(
+        Widget card(String label, double outline) => Container(
               width: rectW,
               height: rectH,
               decoration: BoxDecoration(
                 color: (t.isDark ? Colors.black : Colors.white)
                     .withValues(alpha: 0.40),
                 borderRadius: BorderRadius.circular(6),
-                border: current
-                    ? Border.all(
-                        color: t.accentGold.withValues(alpha: 0.70),
-                        width: 2,
-                      )
-                    : null,
+                // Constant 2 dp border, alpha-crossfaded — the card never
+                // changes size, only its outline lights up.
+                border: Border.all(
+                  color: t.accentGold.withValues(alpha: 0.70 * outline),
+                  width: 2,
+                ),
               ),
               alignment: Alignment.center,
               padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -816,24 +861,21 @@ class _PagePeekOverlay extends StatelessWidget {
               ),
             );
 
-        // Main calc card: centred on page 0, clipped off the left edge on
-        // page 1; converter card mirrors that to the right. The Stack's
-        // default hard-edge clip cuts the off-screen neighbour.
-        final mainLeft =
-            page == 0 ? centerLeft : centerLeft - gap - rectW;
-        final convLeft =
-            page == 0 ? centerLeft + rectW + gap : centerLeft;
+        // One swipe-width of page travel = one card-pitch of minimap
+        // travel: both cards shift left as the converter scrolls in. The
+        // Stack's hard-edge clip cuts whatever leaves the screen.
+        final shift = (rectW + gap) * progress;
         return Stack(
           children: [
             Positioned(
               top: top,
-              left: mainLeft,
-              child: card(l.pagerLabelMain, current: page == 0),
+              left: centerLeft - shift,
+              child: card(l.pagerLabelMain, 1 - progress),
             ),
             Positioned(
               top: top,
-              left: convLeft,
-              child: card(l.infoListConverterEntry, current: page == 1),
+              left: centerLeft + rectW + gap - shift,
+              child: card(l.infoListConverterEntry, progress),
             ),
           ],
         );

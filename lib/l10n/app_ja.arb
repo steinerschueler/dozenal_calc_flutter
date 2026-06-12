@@ -28,6 +28,7 @@
   "infoListConversionsEntry": "単位の理論",
   "infoListConverterEntry": "単位換算",
   "pagerLabelMain": "メイン電卓",
+  "converterEqualsHint": "もう一度タップ：次の単位",
   "unitCatCount": "個数",
   "unitCatDist": "長さ",
   "unitCatArea": "面積",

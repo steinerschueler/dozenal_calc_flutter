@@ -63,6 +63,7 @@ class ConverterBody extends StatelessWidget {
                 Expanded(
                   child: ConverterKeypad(
                     state: state,
+                    equalsHint: l.converterEqualsHint,
                     categoryLabelOf: (c) => converterCategoryLabel(c, l),
                     unitInfoOf: (cat, symbol) => (
                       desc: unitDescription(cat, symbol, langTag) ?? '',

@@ -28,6 +28,7 @@
   "infoListConversionsEntry": "Теория единиц",
   "infoListConverterEntry": "Конвертер единиц",
   "pagerLabelMain": "Основной калькулятор",
+  "converterEqualsHint": "нажмите ещё раз: следующая единица",
   "unitCatCount": "Кол-во",
   "unitCatDist": "Длина",
   "unitCatArea": "Площадь",

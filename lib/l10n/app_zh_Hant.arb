@@ -28,6 +28,7 @@
   "infoListConversionsEntry": "單位理論",
   "infoListConverterEntry": "單位換算器",
   "pagerLabelMain": "主計算機",
+  "converterEqualsHint": "再點一次：下一個單位",
   "unitCatCount": "數量",
   "unitCatDist": "長度",
   "unitCatArea": "面積",

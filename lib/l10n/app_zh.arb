@@ -28,6 +28,7 @@
   "infoListConversionsEntry": "单位理论",
   "infoListConverterEntry": "单位换算器",
   "pagerLabelMain": "主计算器",
+  "converterEqualsHint": "再点一次：下一个单位",
   "unitCatCount": "数量",
   "unitCatDist": "长度",
   "unitCatArea": "面积",

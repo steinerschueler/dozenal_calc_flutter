@@ -11,6 +11,7 @@
   "infoListConversionsEntry": "Einheitentheorie",
   "infoListConverterEntry": "Einheitenrechner",
   "pagerLabelMain": "Hauptrechner",
+  "converterEqualsHint": "mehrmals tippen: nächste Einheit",
   "unitCatCount": "Anzahl",
   "unitCatDist": "Länge",
   "unitCatArea": "Fläche",

@@ -28,6 +28,7 @@
   "infoListConversionsEntry": "نظرية الوحدات",
   "infoListConverterEntry": "محوّل الوحدات",
   "pagerLabelMain": "الآلة الحاسبة الرئيسية",
+  "converterEqualsHint": "انقر مجددًا: الوحدة التالية",
   "unitCatCount": "العدد",
   "unitCatDist": "الطول",
   "unitCatArea": "المساحة",

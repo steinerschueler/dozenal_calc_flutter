@@ -223,7 +223,14 @@ Payload-freie Varianten. Spiegelt das Rust-Enum und erlaubt erschöpfende
 
 - `glyph_painter.dart` — zwölf benutzerdefinierte Dozenal-Glyphen (kein
   Font: reines `CustomPainter`).
-- `token_painter.dart` — Glyphen der Operator-/Funktionstasten.
+- `token_painter.dart` — Glyphen der Operator-/Funktionstasten. Der
+  Text-Fallback skaliert pro Token (`_labelScale`): `.`/`…` 0.55,
+  `(`/`)` 0.5, Rest 0.35 — kleine/dünne Glyphen lesbar groß. Die
+  Equals-Taste ist seit dem Welt-Farbcode **blau** (Palette-Slot
+  `equals` = Op-Blau; Grün gehört der Zehner-Welt). Im Umrechner trägt
+  der Gleichbalken zusätzlich einen lokalisierten Hinweis am unteren
+  Rand (`equalsHint`-Param, ARB `converterEqualsHint` ×14: „mehrmals
+  tippen: nächste Einheit").
 - `keypad_parts.dart` — **gemeinsame Bausteine beider Keypads** (Haupt +
   Umrechner), damit nichts auseinanderdriftet: `PressableShell` (Tasten-
   Chassis: Press-Flash, Haptik, Rahmen inkl. gold/selected, Langdruck-
@@ -564,7 +571,17 @@ Portrait, breite Karten im Landscape; alles skaliert mit der Breite
 Karte zentriert mit **goldener Umrandung** (`accentGold` α 0.7, 2 dp),
 die Nachbar-Karte seitlich vom Rand angeschnitten — Seitennamen in
 18-pt-Semibold (`pagerLabelMain` ×14; Umrechner nutzt
-`infoListConverterEntry`). Puls bei jedem Landen (Boot, Intro-Schluss,
+`infoListConverterEntry`). Die Karten **gleiten live mit dem Pager**:
+ein `AnimatedBuilder` am `PageController` bindet die Positionen an den
+kontinuierlichen `page`-Wert (eine Swipe-Breite = ein Karten-Pitch), die
+goldene Umrandung blendet per Alpha von der verlassenen zur ankommenden
+Karte über (konstante 2 dp, keine Layout-Sprünge), und das sanfte
+Ausrollen liefert die Pager-Physik selbst. Der Puls läuft über einen
+Controller-Listener (`_onPagerScroll`): jede Bewegung hält den Peek am
+Leben, der Hide-Timer zählt erst ab Stillstand; `_pulsePagePeek` ist
+Build-Phasen-sicher (Scroll-Callbacks können während des Layouts
+eintreffen → `SchedulerPhase`-Check + Post-Frame-Fallback) und setStatet
+nur beim Mounten, nicht pro Scroll-Tick. Puls bei jedem Landen (Boot, Intro-Schluss,
 Rückkehr aus „Theorie und Weiteres") und bei jedem Seitenwechsel
 (`_pulsePagePeek` in `_CalcScaffoldState`): 160 ms Fade-in, ~1050 ms Halt,
 420 ms Fade-out. `IgnorePointer` + `ExcludeSemantics`, und nach dem
@@ -657,8 +674,9 @@ Near-Integer-f64-Rauschen (SI-Roundtrip `14 ft` → 13.999…) wie
   sind Kategorien; Tipp expandiert die Magnituden-Leiter in die Gegenspalte
   (+ frei werdende Slots). Der Keypad ist **voll verdrahtet** bis auf Drg
   (inert — keine Winkelfunktionen im Umrechner):
-  - **Skalar-Operatoren × ÷ ⊕ ^ √ ㏒** (Set 1 + Set 2, dynamisch aktiv
-    über `canScalarOp`): erweitern die Pending-Eingabe zu einem
+  - **Skalar-Operatoren × ÷ ⊕ ^ √ ㏒** (Set 1 + Set 2, **immer aktiv** —
+    Grau liest sich als „nicht verdrahtet"; auf komplett leerer Eingabe
+    sind sie ein stiller No-op): erweitern die Pending-Eingabe zu einem
     links-nach-rechts-Ausdruck (`3×2`, KEIN Vorrang — laufende Eingabe),
     ausgewertet beim Magnituden-Commit via `parseScalarEntry` in
     `base_num.dart`. Binär-Konventionen wie im Hauptrechner: linker

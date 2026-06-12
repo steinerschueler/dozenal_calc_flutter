@@ -126,7 +126,17 @@ void paintTokenAt(
   // Text fallback for everything else.
   final text = _tokenLabel(token);
   if (text.isEmpty) return;
-  _drawCenteredText(canvas, text, c, minEdge * 0.35, color);
+  _drawCenteredText(canvas, text, c, minEdge * _labelScale(token), color);
+}
+
+/// Per-token font scale for the text fallback. Tokens whose glyph is
+/// intrinsically tiny (the decimal dot, the … of Expand/Close) or thin
+/// (the parens) render larger so they read at keypad size; everything
+/// else keeps the 0.35 baseline.
+double _labelScale(CalcToken t) {
+  if (t is Decimal || t is Expand || t is Close) return 0.55;
+  if (t is ParenOpen || t is ParenClose) return 0.5;
+  return 0.35;
 }
 
 void _paintXWithCornerSquare(

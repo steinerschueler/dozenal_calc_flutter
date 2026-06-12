@@ -343,11 +343,10 @@ void main() {
 
     test('guards: no leading, doubled, or empty-state operators', () {
       final s = distState();
-      s.inputScalarOp(kScalarTimes); // nothing at all → no-op
+      s.inputScalarOp(kScalarTimes); // nothing at all → silent no-op
       expect(s.pendingInput, isEmpty);
-      expect(s.canScalarOp, isFalse);
+      expect(s.termCount, 0);
       type(s, '3');
-      expect(s.canScalarOp, isTrue);
       s.inputScalarOp(kScalarTimes);
       s.inputScalarOp(kScalarDivide); // doubled → no-op
       expect(s.pendingInput, '3×');

@@ -103,7 +103,7 @@ class AppColors {
   final Color digitDisabled; // dark: 0xFF606060
   final Color op; // dark: LIGHT_BLUE 0xFF98C8FF
   final Color opPressed; // dark: LIGHT_RED 0xFFFF9090
-  final Color equals; // dark: LIGHT_GREEN 0xFF8CDC8C
+  final Color equals; // dark: 0xFF98C8FF (blau — Grün gehört der Zehner-Welt)
   final Color keyBorder; // dark: 0xFF505050
   final Color keyBorderDisabled; // dark: 0xFF303030
   final Color ac; // dark: 0xFFFF4040
@@ -167,7 +167,9 @@ class AppColors {
     digitDisabled: Color(0xFF606060),
     op: Color(0xFF98C8FF), // egui LIGHT_BLUE
     opPressed: Color(0xFFFF9090), // egui LIGHT_RED
-    equals: Color(0xFF8CDC8C), // egui LIGHT_GREEN
+    // Blue like the ops since the world colour code claimed green for the
+    // metric/Ten world (was egui LIGHT_GREEN 0xFF8CDC8C).
+    equals: Color(0xFF98C8FF),
     keyBorder: Color(0xFF505050),
     keyBorderDisabled: Color(0xFF303030),
     ac: Color(0xFFFF4040),
@@ -214,7 +216,7 @@ class AppColors {
     digitDisabled: Color(0xFFB4B4B4),
     op: Color(0xFF1565C0), // darkened blue
     opPressed: Color(0xFFC62828), // darkened red
-    equals: Color(0xFF2E7D32), // darkened green
+    equals: Color(0xFF1565C0), // darkened blue (green belongs to worldTen)
     keyBorder: Color(0xFFBDBDBD),
     keyBorderDisabled: Color(0xFFDCDCDC),
     ac: Color(0xFFD32F2F),

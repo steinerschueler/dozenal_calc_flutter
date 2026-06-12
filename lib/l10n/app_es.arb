@@ -28,6 +28,7 @@
   "infoListConversionsEntry": "Teoría de unidades",
   "infoListConverterEntry": "Conversor de unidades",
   "pagerLabelMain": "Calculadora principal",
+  "converterEqualsHint": "toca otra vez: siguiente unidad",
   "unitCatCount": "Cantidad",
   "unitCatDist": "Longitud",
   "unitCatArea": "Área",

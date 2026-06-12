@@ -80,11 +80,17 @@ class ConverterKeypad extends StatelessWidget {
   final ({String desc, String more}) Function(
       UnitCategory category, String symbol)? unitInfoOf;
 
+  /// Small localized hint inside the equals bar (between the `=` glyph and
+  /// the bottom edge): repeated taps cycle the displayed unit. Null → no
+  /// hint (preview harness without localizations).
+  final String? equalsHint;
+
   const ConverterKeypad({
     super.key,
     required this.state,
     this.categoryLabelOf,
     this.unitInfoOf,
+    this.equalsHint,
   });
 
   @override
@@ -307,26 +313,19 @@ class ConverterKeypad extends StatelessWidget {
     );
   }
 
-  /// Enabled-state per key. The dynamic ones: Ans needs the main calculator
-  /// to have an answer; the scalar operators (Set 1 × ÷ and all of Set 2)
-  /// need a pending entry to extend or a compound to collapse; STO needs a
-  /// result or a typed entry, RCL/MC a filled register. Constants always
-  /// work (value keys replace the caret's segment). Everything else follows
-  /// the static wired-up set.
+  /// Enabled-state per key. Operators and constants are ALWAYS active —
+  /// a grey key reads as "not wired" (device-learned, twice), so greys are
+  /// reserved for genuinely state-bound keys: Ans needs the main calculator
+  /// to have an answer, STO a result or a typed entry, RCL/MC a filled
+  /// register (the grey doubles as the register indicator). A scalar
+  /// operator tapped on a completely empty converter is a silent no-op
+  /// (the entry guards refuse leading operators anyway).
   bool _opActive(CalcToken t) {
     if (t is Ans) return state.calcAnsAvailable;
-    if (t is Mul ||
-        t is Div ||
-        t is OplusBotLeft ||
-        t is ExpTopRight ||
-        t is RootTopLeft ||
-        t is LogBotRight) {
-      return state.canScalarOp;
-    }
-    if (t.isIrrationalConstant) return true;
     if (t is Sto) return state.canMemStore;
     if (t is Rcl) return state.canMemRecall;
     if (t is Mc) return state.memoryAvailable;
+    if (t.isIrrationalConstant) return true;
     return _isActiveOp(t);
   }
 
@@ -438,16 +437,42 @@ class ConverterKeypad extends StatelessWidget {
               child: Semantics(
                 button: true,
                 label: 'Gleich',
+                hint: equalsHint,
                 excludeSemantics: true,
                 child: PressableShell(
                   onTap: state.equals,
                   builder: (ctx, pressed) {
                     final t = AppColors.of(ctx);
-                    return CustomPaint(
-                      painter: TokenKeyPainter(
-                        token: const Equals(),
-                        color: pressed ? t.opPressed : t.equals,
-                      ),
+                    return Stack(
+                      children: [
+                        Positioned.fill(
+                          child: CustomPaint(
+                            painter: TokenKeyPainter(
+                              token: const Equals(),
+                              color: pressed ? t.opPressed : t.equals,
+                            ),
+                          ),
+                        ),
+                        // Discoverability for the = cycle: a faint one-liner
+                        // between the glyph and the bottom edge.
+                        if (equalsHint != null)
+                          Positioned(
+                            left: 8,
+                            right: 8,
+                            bottom: 3,
+                            child: FittedBox(
+                              fit: BoxFit.scaleDown,
+                              child: Text(
+                                equalsHint!,
+                                maxLines: 1,
+                                style: TextStyle(
+                                  fontSize: 9.5,
+                                  color: t.textFaint,
+                                ),
+                              ),
+                            ),
+                          ),
+                      ],
                     );
                   },
                 ),
@@ -669,12 +694,12 @@ class ConverterKeypad extends StatelessWidget {
 }
 
 /// Statically wired op-keys (always enabled): clearing/editing, the panel
-/// toggle, and the + / − term operators. Everything DYNAMIC — the scalar
-/// entry operators (× ÷ ⊕ ^ √ ㏒), the value keys (constants, Ans, RCL) and
-/// the memory keys — is decided in _opActive; only Drg stays inert (no
-/// angle functions in the converter). The unit system lives on the met/imp
-/// keys (equals row); the base on the global setting — neither passes
-/// through here.
+/// toggle, the + / − term operators and the scalar entry operators
+/// (× ÷ ⊕ ^ √ ㏒ — no-ops on an empty entry rather than greying out).
+/// State-bound keys (Ans, STO/RCL/MC) are decided in _opActive; only Drg
+/// stays inert (no angle functions in the converter). The unit system
+/// lives on the met/imp keys (equals row); the base on the global
+/// setting — neither passes through here.
 bool _isActiveOp(CalcToken t) =>
     t is Ac ||
     t is Del ||
@@ -682,7 +707,13 @@ bool _isActiveOp(CalcToken t) =>
     t is Expand ||
     t is Close ||
     t is Add ||
-    t is Sub;
+    t is Sub ||
+    t is Mul ||
+    t is Div ||
+    t is OplusBotLeft ||
+    t is ExpTopRight ||
+    t is RootTopLeft ||
+    t is LogBotRight;
 
 // ── Building blocks ─────────────────────────────────────────────────────────
 
