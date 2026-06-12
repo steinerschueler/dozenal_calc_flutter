@@ -1,9 +1,49 @@
 // English unit-theory prose. part of ../unit_theory.dart.
 // Bodies are kept in simple, short sentences (easier to translate). Distilled
-// from the research dossiers in docs/research/. `count` has no entry on purpose
-// — the dozen/twelve story lives in the app's 12 teaching chapters.
+// from the research dossiers in docs/research/. Also carries the converter
+// intro card (first tab) and the count card (dozen/gross/great gross).
 
 part of '../unit_theory.dart';
+
+List<UnitTheorySection> _converterIntroEn() {
+  return const [
+    UnitTheorySection(
+      'What the Calculator Can Do',
+      'The unit converter converts between the imperial-dozenal world '
+          '(base twelve) and the metric world (base ten) — across every '
+          'category: length, area, volume, weight, time, angle, currency, '
+          'temperature, and more such as pressure, force, energy, power, '
+          'cooking and torque.\n\n'
+          'The { } bracket always shows the value in the other system. '
+          'Several units can be combined into one value — for example '
+          '1 ft 6 in or 2 h 30 min. Pressing = cycles through the unit '
+          'representations and the stepped breakdown; a long press on a unit '
+          'shows a short definition. Digits appear as dozenal glyphs or as '
+          'ordinary 0–9/A/B, depending on the display setting.',
+    ),
+    UnitTheorySection(
+      'What It Cannot Do',
+      'It is a converter, not a scientific calculator: no functions such as '
+          'sine or logarithm, no free arithmetic with × and ÷, no memory and '
+          'no angle mode. The main calculator is there for that.\n\n'
+          'The currency (pence/shilling/pound) reflects the historic British '
+          'ratio — twelve pence to the shilling, twenty shillings to the '
+          'pound — not current exchange rates. It shows the dozenal structure '
+          'of the old money, not present-day values. The set of units is '
+          'fixed.',
+    ),
+    UnitTheorySection(
+      'How to Use It',
+      'Tap a category (length, say) — its ladder of units opens in the '
+          'opposite column. Tap a unit, type digits, and combine several '
+          'units into one value. The DOZ/DEZ key switches between the '
+          'imperial and the metric world; the { } bracket shows the '
+          'counterpart. = cycles the representations, a long press on a unit '
+          'shows its meaning, and a tap on the input line moves the cursor.\n\n'
+          'An example — enter 1 ft 6 in and read it in the opposite world:',
+    ),
+  ];
+}
 
 List<UnitTheorySection> _unitTheoryEn(UnitCategory cat) {
   switch (cat) {

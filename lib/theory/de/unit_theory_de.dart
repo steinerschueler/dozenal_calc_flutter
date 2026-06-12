@@ -6,6 +6,49 @@
 
 part of '../unit_theory.dart';
 
+List<UnitTheorySection> _converterIntroDe() {
+  return const [
+    UnitTheorySection(
+      'Was der Rechner kann',
+      'Der Einheitenrechner rechnet zwischen der imperial-dozenalen Welt '
+          '(Basis zwölf) und der metrischen Welt (Basis zehn) um — über alle '
+          'Kategorien: Länge, Fläche, Volumen, Gewicht, Zeit, Winkel, '
+          'Währung, Temperatur und weitere wie Druck, Kraft, Energie, '
+          'Leistung, Küche und Drehmoment.\n\n'
+          'Die { }-Klammer zeigt stets den Wert im jeweils anderen System. '
+          'Mehrere Einheiten lassen sich zu einem Wert zusammensetzen — etwa '
+          '1 ft 6 in oder 2 h 30 min. Ein Druck auf = zykelt durch die '
+          'Einheiten-Darstellungen und die gestufte Aufschlüsselung; langer '
+          'Druck auf eine Einheit zeigt eine Kurzdefinition. Die Ziffern '
+          'erscheinen als Dozenal-Glyphen oder als gewöhnliche 0–9/A/B, je '
+          'nach Anzeige-Einstellung.',
+    ),
+    UnitTheorySection(
+      'Was er nicht kann',
+      'Er ist ein Umrechner, kein wissenschaftlicher Rechner: keine '
+          'Funktionen wie Sinus oder Logarithmus, kein freies Rechnen mit '
+          '× und ÷, kein Speicher und kein Winkelmodus. Dafür ist der '
+          'Hauptrechner da.\n\n'
+          'Die Währung (Pence/Schilling/Pfund) bildet das historische '
+          'britische Verhältnis ab — zwölf Pence auf den Schilling, zwanzig '
+          'Schilling aufs Pfund —, nicht aktuelle Wechselkurse. Sie zeigt die '
+          'dozenale Struktur des alten Geldes, keine tagesaktuellen '
+          'Geldwerte. Der Satz an Einheiten ist fest vorgegeben.',
+    ),
+    UnitTheorySection(
+      'So wird er bedient',
+      'Tippe eine Kategorie an (etwa Länge) — ihre Einheiten-Leiter klappt '
+          'in die Gegenspalte auf. Tippe eine Einheit, gib Ziffern ein und '
+          'setze mehrere Einheiten zu einem Wert zusammen. Die DOZ/DEZ-Taste '
+          'wechselt zwischen der imperialen und der metrischen Welt; die '
+          '{ }-Klammer zeigt das Gegenstück. = zykelt die Darstellungen, '
+          'langer Druck auf eine Einheit zeigt ihre Bedeutung, und ein Tipp '
+          'auf die Eingabezeile setzt den Cursor.\n\n'
+          'Ein Beispiel — 1 ft 6 in eingeben und in der Gegenwelt ablesen:',
+    ),
+  ];
+}
+
 List<UnitTheorySection> _unitTheoryDe(UnitCategory cat) {
   switch (cat) {
     case UnitCategory.count:

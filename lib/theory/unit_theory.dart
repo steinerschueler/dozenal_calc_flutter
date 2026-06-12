@@ -106,3 +106,15 @@ List<Source> _localeSources(UnitCategory cat, String langTag) {
   if (c.startsWith('zh')) return _unitSourcesZh(cat);
   return _unitSourcesDe(cat);
 }
+
+/// Intro / how-to card for the unit converter itself — shown as the FIRST tab
+/// on the unit-theory page, before the category cards. Explains what the
+/// converter can and cannot do and how it is operated; it is not tied to a
+/// [UnitCategory] and carries no sources. Falls back to German until a language
+/// is translated.
+List<UnitTheorySection> converterIntro(String langTag) {
+  final c = langTag.toLowerCase();
+  if (c.startsWith('en')) return _converterIntroEn();
+  // TODO(i18n): other languages fall back to German until translated.
+  return _converterIntroDe();
+}

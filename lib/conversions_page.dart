@@ -109,7 +109,7 @@ class _ConversionsPageState extends State<ConversionsPage> {
     final langTag = Localizations.localeOf(context).toLanguageTag();
     final t = AppColors.of(context);
     return DefaultTabController(
-      length: kTheoryAreas.length,
+      length: kTheoryAreas.length + 1,
       child: Scaffold(
         appBar: AppBar(
           title: Text(l.conversionsTitle, style: const TextStyle(fontSize: 14)),
@@ -117,6 +117,7 @@ class _ConversionsPageState extends State<ConversionsPage> {
             isScrollable: true,
             tabAlignment: TabAlignment.start,
             tabs: [
+              Tab(text: l.infoListConverterEntry),
               for (final cat in kTheoryAreas)
                 Tab(text: converterCategoryLabel(cat, l)),
             ],
@@ -126,13 +127,27 @@ class _ConversionsPageState extends State<ConversionsPage> {
           top: false,
           child: Column(
             children: [
-              Padding(
-                padding: const EdgeInsets.fromLTRB(16, 12, 16, 4),
-                child: _inputCard(l, t),
+              // The shared number-input card drives the per-category conversion
+              // rows; it is meaningless on the converter-intro tab (index 0), so
+              // hide it there.
+              Builder(
+                builder: (context) {
+                  final controller = DefaultTabController.of(context);
+                  return AnimatedBuilder(
+                    animation: controller,
+                    builder: (context, _) => controller.index == 0
+                        ? const SizedBox.shrink()
+                        : Padding(
+                            padding: const EdgeInsets.fromLTRB(16, 12, 16, 4),
+                            child: _inputCard(l, t),
+                          ),
+                  );
+                },
               ),
               Expanded(
                 child: TabBarView(
                   children: [
+                    _converterIntroTab(langTag, l, t),
                     for (final cat in kTheoryAreas) _areaTab(cat, langTag, t),
                   ],
                 ),
@@ -170,6 +185,32 @@ class _ConversionsPageState extends State<ConversionsPage> {
         ],
       ),
     );
+  }
+
+  Widget _converterIntroTab(String langTag, AppLocalizations l, AppColors t) {
+    final sections = converterIntro(langTag);
+    return SingleChildScrollView(
+      padding: const EdgeInsets.fromLTRB(16, 12, 16, 28),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          for (final s in sections) _theorySection(s, t),
+          _conversionRows(_converterExampleRows(l), t),
+        ],
+      ),
+    );
+  }
+
+  /// A small, mostly language-neutral worked example for the converter-intro
+  /// tab: enter 1 ft 6 in and read it in both worlds (the { } bracket shows the
+  /// counterpart). Only the leading category label is localized.
+  List<String> _converterExampleRows(AppLocalizations l) {
+    final length = converterCategoryLabel(UnitCategory.dist, l);
+    return [
+      '$length  →  ft 1   in 6',
+      'DOZ   1 ft 6 in      { 457.2 mm }',
+      'DEZ   457.2 mm       { 1 ft 6 in }',
+    ];
   }
 
   Widget _theorySection(UnitTheorySection s, AppColors t) {
