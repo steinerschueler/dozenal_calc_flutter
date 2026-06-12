@@ -52,12 +52,7 @@
   "supportKofiNote": "Bevorzugte Plattform — Ko-fi nimmt selbst keine Plattform-Gebühr, nur die übliche Zahlungs-Provider-Gebühr. Bei vergleichbaren Diensten wie Buy Me a Coffee geht ein zusätzlicher Anteil weg.",
   "supportClose": "Schließen",
   "conversionsTitle": "Einheitentheorie",
-  "unitInfoMore": "Weiteres siehe Infotab → Einheiten → Einheitentheorie → {category}",
-  "@unitInfoMore": {
-    "placeholders": {
-      "category": { "type": "String" }
-    }
-  },
+  "unitInfoMore": "Weiteres siehe Infotab",
   "conversionsIntro": "Die imperialen Einheiten — 12 Inches im Fuß, 12 Pence im Schilling, 12 Stück im Dutzend, 144 im Gros — werden in Basis 12 zu runden Zahlen. Gib einen Wert ein und sieh, wie er in den klassischen Einheiten zerfällt.",
   "conversionsInputLabel": "Eingabe (interpretiert als)",
   "conversionsLengthHeading": "Distanz — Inches, Fuß, Yard, Meile, Fathom",

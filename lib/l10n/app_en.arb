@@ -49,6 +49,7 @@
   "supportKofiNote": "Preferred platform — Ko-fi takes no platform fee of its own, only the standard payment-processor cut. Comparable services like Buy Me a Coffee skim an additional platform share.",
   "supportClose": "Close",
   "conversionsTitle": "Unit theory",
+  "unitInfoMore": "More in the Info tab",
   "conversionsIntro": "Imperial units — 12 inches in a foot, 12 pence in a shilling, 12 in a dozen, 144 in a gross — become round numbers in base 12. Enter a value and see how it decomposes into the classic units.",
   "conversionsInputLabel": "Input (interpreted as)",
   "conversionsLengthHeading": "Distance — inches, feet, yards, miles, fathoms",

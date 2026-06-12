@@ -82,7 +82,12 @@ class _ConverterPageState extends State<ConverterPage> {
                           categoryLabelOf: (c) => converterCategoryLabel(c, l),
                           unitInfoOf: (cat, symbol) => (
                             desc: unitDescription(cat, symbol, langTag) ?? '',
-                            more: l.unitInfoMore(converterCategoryLabel(cat, l)),
+                            // Pointer assembled from already-localized labels so
+                            // the nav terms always match the app; only the
+                            // lead-in (unitInfoMore) is translated per language.
+                            more: '${l.unitInfoMore} → ${l.infoListUnitsExpansion}'
+                                ' → ${l.conversionsTitle}'
+                                ' → ${converterCategoryLabel(cat, l)}',
                           ),
                         ),
                       ),
