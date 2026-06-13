@@ -18,6 +18,14 @@ TARGET   = 'DozenalWatch'
 WATCH_ID = 'app.weltanschauung.dozenal.watch'
 APP_ID   = 'app.weltanschauung.dozenal'
 
+# Watch version mirrors pubspec.yaml (single source of truth) so a re-embed
+# never regresses it — the embedded watch's CFBundle versions must match the
+# host iOS app, which itself derives from pubspec via FLUTTER_BUILD_*.
+_v = File.read(File.join(ROOT, 'pubspec.yaml')).match(/^version:\s*([\d.]+)\+(\d+)/m)
+abort 'version (X.Y.Z+N) not found in pubspec.yaml' unless _v
+MARKETING = _v[1]
+BUILD_NUM = _v[2]
+
 project = Xcodeproj::Project.open(PROJECT)
 runner  = project.targets.find { |t| t.name == 'Runner' }
 abort 'Runner target not found' unless runner
@@ -50,8 +58,8 @@ watch.build_configurations.each do |c|
   s['SDKROOT']                            = 'watchos'
   s['SUPPORTED_PLATFORMS']                = 'watchsimulator watchos'
   s['SWIFT_VERSION']                      = '5.0'
-  s['MARKETING_VERSION']                  = '1.3.0'
-  s['CURRENT_PROJECT_VERSION']            = '16'
+  s['MARKETING_VERSION']                  = MARKETING
+  s['CURRENT_PROJECT_VERSION']            = BUILD_NUM
   s['CODE_SIGN_STYLE']                    = 'Automatic'
   s['SKIP_INSTALL']                       = 'YES'
   s['ENABLE_BITCODE']                     = 'NO'
