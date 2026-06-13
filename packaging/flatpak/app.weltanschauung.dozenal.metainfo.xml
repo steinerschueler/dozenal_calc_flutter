@@ -6,15 +6,15 @@
   <project_license>MIT</project_license>
 
   <name>Dozenal Calc</name>
-  <summary>Scientific calculator that computes in base 12</summary>
-  <summary xml:lang="de">Wissenschaftlicher Taschenrechner in Basis 12</summary>
+  <summary>Dozenal (base-12) scientific calculator</summary>
+  <summary xml:lang="de">Wissenschaftlicher Taschenrechner mit Dozenal-Anzeige</summary>
 
   <description>
     <p>
-      Dozenal Calc is a scientific calculator that computes natively in base 12
-      (dozenal) — with its own digit glyphs, exact rational arithmetic and
-      repeating-period detection. It can also display and enter numbers in the
-      familiar decimal system.
+      Dozenal Calc is a scientific calculator with a dozenal (base-12) display:
+      read and enter numbers in base 12 — with its own digit glyphs, exact
+      fractions and repeating-period detection. Numbers can also be shown and
+      entered in the familiar decimal system.
     </p>
     <p>It includes:</p>
     <ul>
@@ -25,11 +25,11 @@
       <li>No ads, no tracking, no network access</li>
     </ul>
     <p xml:lang="de">
-      Dozenal Calc ist ein wissenschaftlicher Taschenrechner, der nativ in
-      Basis 12 (dozenal) rechnet — mit eigenen Ziffern-Glyphen, exakter
-      Bruchrechnung und Periodenerkennung. Zahlen lassen sich auch im
-      gewohnten Dezimalsystem anzeigen und eingeben. Ohne Werbung, ohne
-      Tracking, ohne Netzwerkzugriff.
+      Dozenal Calc ist ein wissenschaftlicher Taschenrechner mit Dozenal-
+      Anzeige (Basis 12): Zahlen dozenal lesen und eingeben — mit eigenen
+      Ziffern-Glyphen, exakter Bruchrechnung und Periodenerkennung. Zahlen
+      lassen sich auch im gewohnten Dezimalsystem anzeigen und eingeben.
+      Ohne Werbung, ohne Tracking, ohne Netzwerkzugriff.
     </p>
   </description>
 
