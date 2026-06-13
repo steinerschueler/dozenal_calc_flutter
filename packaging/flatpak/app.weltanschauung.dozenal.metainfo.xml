@@ -46,17 +46,16 @@
   <!-- All-ages: no objectionable content (OARS 1.1, all categories "none"). -->
   <content_rating type="oars-1.1" />
 
-  <!-- TODO(Flathub): at least one screenshot is REQUIRED and should show the
-       DESKTOP app. No display is available on the build host, so these must be
-       captured from the running Linux build (1280x720 window) and hosted at a
-       stable URL (e.g. raw GitHub). Replace this block before submitting:
   <screenshots>
     <screenshot type="default">
-      <image>https://raw.githubusercontent.com/steinerschueler/dozenal_calc_flutter/master/store/screenshots/linux/main.png</image>
-      <caption>The main calculator</caption>
+      <image>https://raw.githubusercontent.com/steinerschueler/dozenal_calc_flutter/master/store/screenshots/linux/calculator.png</image>
+      <caption>Scientific calculator with exact fractions and repeating periods</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/steinerschueler/dozenal_calc_flutter/master/store/screenshots/linux/converter.png</image>
+      <caption>Unit converter with compound imperial and metric units</caption>
     </screenshot>
   </screenshots>
-  -->
 
   <releases>
     <release version="1.5.1" date="2026-06-13">
