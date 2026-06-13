@@ -1096,3 +1096,173 @@ List<ManualChapter> _manualChaptersFr() => const [
     ),
   ]),
 ];
+
+// ---------------------------------------------------------------------------
+// Utilisation du convertisseur d'unités — seconde section du manuel.
+// Traduction française complète de la référence allemande
+// (_converterManualChaptersDe).
+// ---------------------------------------------------------------------------
+
+List<ManualChapter> _converterManualChaptersFr() => const [
+  ManualChapter('La seconde calculatrice', [
+    _P(
+      "Derrière la calculatrice principale se trouve un convertisseur "
+      "d'unités à part entière : il convertit longueurs, poids, temps, "
+      "températures et une douzaine d'autres catégories entre le système "
+      "métrique et le système impérial — au choix en chiffres duodécimaux "
+      "ou décimaux.",
+    ),
+    _H("Passer de l'un à l'autre"),
+    _P(
+      "Glissez vers la gauche sur la calculatrice principale et le "
+      "convertisseur d'unités apparaît. Glissez vers la droite sur le "
+      "convertisseur et vous voilà de retour. Au changement, deux cartes "
+      "translucides indiquent brièvement sur quelle page vous vous "
+      "trouvez — la carte bordée d'or est la page active.",
+    ),
+    _P(
+      "Les deux calculatrices conservent leur saisie au changement : "
+      "vous pouvez, en pleine conversion, glisser vers la calculatrice "
+      "principale, y calculer quelque chose et poursuivre sans "
+      "interruption.",
+    ),
+  ]),
+  ManualChapter('Catégorie, nombre, unité', [
+    _P(
+      "Une conversion tient en trois appuis : choisir la catégorie, "
+      "taper le nombre, toucher l'unité.",
+    ),
+    _H("La catégorie"),
+    _P(
+      "Les deux colonnes de touches de droite affichent les catégories "
+      "(Longueur, Poids, Temps, … ; d'autres dans le panneau d'extension "
+      "« … »). Un appui sur une catégorie déplie son échelle d'unités — "
+      "les touches autour de la catégorie bordée d'or affichent alors "
+      "ses unités. Un second appui replie l'échelle.",
+    ),
+    _H("Nombre et unité"),
+    _P(
+      "Tapez un nombre puis une touche d'unité : « 144 » et « ft » "
+      "donnent 144 pieds. La ligne de résultat affiche aussitôt la même "
+      "grandeur dans une autre unité, et l'accolade à côté la valeur "
+      "dans l'autre système.",
+    ),
+    _H("La touche ="),
+    _P(
+      "Chaque appui sur = affiche l'unité suivante de l'échelle — vous "
+      "parcourez ainsi toutes les représentations de la même grandeur. "
+      "Dans le monde impérial, la notation mixte vient en dernier, par "
+      "exemple « 1 yd 2 ft 3 in », avant que le cycle ne recommence.",
+    ),
+    _P(
+      "Si vous passez à une autre catégorie, les termes achevés sont "
+      "abandonnés — mais un nombre déjà tapé reste en place : vous "
+      "pouvez donc choisir d'abord le nombre, puis la catégorie.",
+    ),
+  ]),
+  ManualChapter('Métrique, impérial et les couleurs', [
+    _H("Les deux touches rondes"),
+    _P(
+      "À gauche et à droite de la touche = se trouvent « met » (vert) "
+      "et « imp » (violet). Elles basculent entre le système d'unités "
+      "métrique et le système impérial — la valeur reste physiquement "
+      "la même : 144 ft devient 43.89 m, et non 144 m. Le côté actif "
+      "porte un anneau de sa couleur.",
+    ),
+    _H("Le code couleur"),
+    _P(
+      "Partout dans l'application, le vert représente le monde du dix : "
+      "unités métriques et chiffres décimaux. Le violet représente le "
+      "monde du douze : unités impériales et chiffres duodécimaux. Les "
+      "symboles d'unités comme « m » ou « ft » apparaissent dans la "
+      "couleur de leur système, le signe DOZ/DEZ en bas à droite dans "
+      "la couleur de sa base — et l'accolade brille toujours dans la "
+      "couleur du monde qu'elle montre.",
+    ),
+    _H("Duodécimal ou décimal"),
+    _P(
+      "La base numérique est indépendante du système d'unités et vaut "
+      "pour les deux calculatrices à la fois. Vous la changez sous "
+      "Réglages → Base numérique — même en pleine conversion, les "
+      "valeurs sont conservées. Vous pouvez ainsi lire les unités "
+      "métriques en duodécimal, ou les impériales en décimal.",
+    ),
+  ]),
+  ManualChapter('Plusieurs termes : + et −', [
+    _P(
+      "Au sein d'une catégorie, vous pouvez enchaîner des grandeurs : "
+      "« 5 » « ft » « 3 » « in » donne 5 pieds plus 3 pouces. Le plus "
+      "reste invisible tant que les unités diffèrent ; pour des unités "
+      "identiques (« 3 h + 2 h »), il est affiché.",
+    ),
+    _P(
+      "La touche − soustrait le terme suivant : « 5 » « ft » « − » "
+      "« 3 » « in » donne 5 pieds moins 3 pouces. Le moins est toujours "
+      "visible, et la touche − porte un cadre doré tant qu'elle est "
+      "armée.",
+    ),
+    _H("Corriger"),
+    _P(
+      "Touchez la ligne de saisie pour placer le curseur rouge — au "
+      "milieu d'un nombre ou entre deux termes. Les chiffres "
+      "apparaissent au curseur, Del supprime le caractère qui précède ; "
+      "si le curseur se trouve à une limite de terme, Del retire tout "
+      "le terme précédent. AC efface tout.",
+    ),
+  ]),
+  ManualChapter('Calculer dans la saisie : × ÷ ⊕ ^ √ ㏒', [
+    _P(
+      "Le nombre tapé peut être lui-même un petit calcul : « 3 × 2 » "
+      "puis « ft » donne 6 pieds. L'évaluation se fait strictement de "
+      "gauche à droite, au moment où vous touchez l'unité.",
+    ),
+    _P(
+      "Si vous appuyez sur un opérateur de calcul alors qu'une "
+      "expression achevée est déjà affichée, elle est d'abord "
+      "transformée en chiffres éditables — la valeur totale dans la "
+      "dernière unité utilisée. « 5 ft 3 in » suivi de « × » devient "
+      "ainsi un nombre fois …, que vous complétez avec « 2 » et une "
+      "unité.",
+    ),
+    _H("Les opérateurs particuliers"),
+    _P(
+      "Pour la racine et le logarithme, le nombre de gauche est le "
+      "degré ou la base : « 2 √ 9 » est la racine carrée de 9, soit 3 ; "
+      "« 2 ㏒ 8 » est le logarithme de 8 en base 2, soit 3. Le ⊕ forme "
+      "la somme parallèle a·b/(a+b), bien connue des résistances en "
+      "parallèle.",
+    ),
+    _P(
+      "Chaque segment du calcul peut porter son propre point décimal "
+      "(« 1.6 × 0.6 »). Au changement de base numérique, tous les "
+      "nombres du calcul sont convertis un à un.",
+    ),
+  ]),
+  ManualChapter('Mémoire, constantes et la passerelle', [
+    _H("La mémoire"),
+    _P(
+      "Le panneau d'extension « … » contient STO, RCL et MC : STO "
+      "mémorise le nombre de la ligne de résultat — ou, si aucune unité "
+      "n'est encore choisie, la saisie en cours. RCL réinsère la valeur "
+      "mémorisée, MC l'efface. Si RCL et MC sont grisés, la mémoire est "
+      "vide.",
+    ),
+    _H("Les constantes"),
+    _P(
+      "π, e, φ et √2 insèrent leur valeur en chiffres à la place du "
+      "nombre au curseur — pratique pour les circonférences et les "
+      "rapports : « 3 » « × » « π » « ft » donne la circonférence d'un "
+      "cercle de 3 pieds de diamètre.",
+    ),
+    _H("La passerelle vers la calculatrice principale"),
+    _P(
+      "La touche Ans ramène le dernier résultat de la calculatrice "
+      "principale dans la saisie — calculez-y quelque chose, glissez "
+      "pour revenir et donnez une unité à la valeur. Inversement, la "
+      "touche CONV du panneau d'extension de la calculatrice principale "
+      "récupère le nombre de la ligne de résultat du convertisseur "
+      "d'unités. Les valeurs voyagent sous forme de nombre et "
+      "apparaissent automatiquement dans la base de la page d'arrivée.",
+    ),
+  ]),
+];

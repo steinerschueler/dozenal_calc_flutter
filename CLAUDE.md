@@ -358,9 +358,10 @@ Geometrie-Kapitel.
    zweite Instanz derselben Expansion, gespeist aus
    `converterManualChapters` (sechs Kapitel: Der zweite Rechner ·
    Kategorie/Zahl/Einheit · met/imp+Farben · +/−-Terme ·
-   Skalar-Rechnen · Speicher/Konstanten/Brücke). Deutsch ist die
-   Referenz, die 13 Übersetzungen folgen kapitelweise (positionsweiser
-   Fallback wie beim Hauptrechner-Handbuch).
+   Skalar-Rechnen · Speicher/Konstanten/Brücke). **Alle 14 Sprachen
+   vollständig übersetzt** (Subagenten-Pipeline: Übersetzen + Review);
+   der positionsweise Deutsch-Fallback bleibt als Mechanik für
+   künftige Kapitel bestehen.
 3. `_TheoryExpansion` — ausklappbar zu den drei Theorie-Blöcken
    (Zwölf und die Welt, Dozenale Mathematik, Dozenale Gesellschaft)
    **plus „Einheitentheorie"** (`infoListConversionsEntry` →

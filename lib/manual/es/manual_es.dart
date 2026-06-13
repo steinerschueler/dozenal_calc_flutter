@@ -1101,3 +1101,167 @@ List<ManualChapter> _manualChaptersEs() => const [
     ),
   ]),
 ];
+
+// ---------------------------------------------------------------------------
+// Uso del conversor de unidades — la segunda sección del manual. Espejo
+// completo, capítulo por capítulo, de la referencia alemana
+// (_converterManualChaptersDe en de/manual_de.dart).
+// ---------------------------------------------------------------------------
+
+List<ManualChapter> _converterManualChaptersEs() => const [
+  ManualChapter('La segunda calculadora', [
+    _P(
+      'Detrás de la calculadora principal hay un conversor de unidades '
+      'completo: convierte longitudes, pesos, tiempos, temperaturas y una '
+      'docena de categorías más entre el sistema métrico y el imperial — a '
+      'elección, en dígitos duodecimales o decimales.',
+    ),
+    _H('Cambiar de un lado a otro'),
+    _P(
+      'Desliza hacia la izquierda en la calculadora principal y aparece el '
+      'conversor de unidades. Desliza hacia la derecha en el conversor y '
+      'estás de vuelta. Al cambiar, dos tarjetas translúcidas indican '
+      'brevemente en qué página estás — la tarjeta con borde dorado es la '
+      'página activa.',
+    ),
+    _P(
+      'Ambas calculadoras conservan sus entradas al cambiar: puedes '
+      'deslizarte a la calculadora principal en medio de una conversión, '
+      'calcular algo allí y continuar sin interrupciones.',
+    ),
+  ]),
+  ManualChapter('Categoría, número, unidad', [
+    _P(
+      'Una conversión consta de tres toques: elegir la categoría, escribir '
+      'el número, tocar la unidad.',
+    ),
+    _H('La categoría'),
+    _P(
+      'Las dos columnas de teclas de la derecha muestran las categorías '
+      '(Longitud, Peso, Tiempo, …; hay más en el panel ampliado «…»). Un '
+      'toque en una categoría despliega su escala de unidades — las teclas '
+      'alrededor de la categoría con borde dorado muestran ahora sus '
+      'unidades. Un segundo toque vuelve a plegar la escala.',
+    ),
+    _H('Número y unidad'),
+    _P(
+      'Escribe un número y luego una tecla de unidad: «144» y «ft» da '
+      '144 pies. La línea de resultado muestra al instante la misma '
+      'magnitud en otra unidad, y la llave a su lado, el valor en el otro '
+      'sistema.',
+    ),
+    _H('La tecla ='),
+    _P(
+      'Cada pulsación de = muestra la siguiente unidad de la escala — así '
+      'recorres todas las representaciones de la misma magnitud. En el '
+      'mundo imperial, al final sigue la notación mixta, como '
+      '«1 yd 2 ft 3 in», antes de que el ciclo vuelva a empezar.',
+    ),
+    _P(
+      'Si cambias a otra categoría, los términos completados se descartan '
+      '— pero un número ya escrito se mantiene, así que puedes elegir '
+      'primero el número y luego la categoría.',
+    ),
+  ]),
+  ManualChapter('Métrico, imperial y los colores', [
+    _H('Las dos teclas redondas'),
+    _P(
+      'A la izquierda y a la derecha de la tecla = están «met» (verde) e '
+      '«imp» (violeta). Cambian entre el sistema de unidades métrico y el '
+      'imperial — el valor permanece físicamente igual: 144 ft se '
+      'convierten en 43.89 m, no en 144 m. El lado activo lleva un anillo '
+      'de su color.',
+    ),
+    _H('El sistema de colores'),
+    _P(
+      'El verde representa en toda la app el mundo del diez: unidades '
+      'métricas y dígitos decimales. El violeta representa el mundo del '
+      'doce: unidades imperiales y dígitos duodecimales. Los símbolos de '
+      'unidad como «m» o «ft» aparecen en el color de su sistema, el '
+      'indicador DOZ/DEZ abajo a la derecha en el color de su base — y la '
+      'llave brilla siempre en el color del mundo que muestra.',
+    ),
+    _H('Duodecimal o decimal'),
+    _P(
+      'La base numérica es independiente del sistema de unidades y es '
+      'común a ambas calculadoras. La cambias en Ajustes → Sistema '
+      'numérico — incluso en medio de una conversión, los valores se '
+      'conservan. Así puedes leer unidades métricas en duodecimal o '
+      'imperiales en decimal.',
+    ),
+  ]),
+  ManualChapter('Varios términos: + y −', [
+    _P(
+      'Dentro de una categoría puedes encadenar magnitudes: «5» «ft» «3» '
+      '«in» da 5 pies más 3 pulgadas. El signo más permanece invisible '
+      'mientras las unidades sean distintas; con unidades iguales '
+      '(«3 h + 2 h») se muestra.',
+    ),
+    _P(
+      'La tecla − resta el siguiente término: «5» «ft» «−» «3» «in» da '
+      '5 pies menos 3 pulgadas. El signo menos es siempre visible, y la '
+      'tecla − lleva un marco dorado mientras está armada.',
+    ),
+    _H('Corregir'),
+    _P(
+      'Toca en la línea de entrada para colocar el cursor rojo — en medio '
+      'de un número o entre dos términos. Los dígitos aparecen en el '
+      'cursor, Del elimina el carácter anterior; si el cursor está en un '
+      'límite entre términos, Del elimina el término entero anterior. AC '
+      'lo borra todo.',
+    ),
+  ]),
+  ManualChapter('Calcular en la entrada: × ÷ ⊕ ^ √ ㏒', [
+    _P(
+      'El número escrito puede ser él mismo un pequeño cálculo: «3 × 2» y '
+      'luego «ft» da 6 pies. Se evalúa estrictamente de izquierda a '
+      'derecha, al tocar la unidad.',
+    ),
+    _P(
+      'Si pulsas un operador aritmético cuando ya hay una expresión '
+      'terminada, esta se convierte primero en dígitos editables — el '
+      'valor total en la última unidad usada. «5 ft 3 in» y «×» se '
+      'convierte así en un número por …, que completas con «2» y una '
+      'unidad.',
+    ),
+    _H('Los operadores especiales'),
+    _P(
+      'En la raíz y el logaritmo, a la izquierda va el grado o la base, '
+      'respectivamente: «2 √ 9» es la raíz cuadrada de 9, es decir 3; '
+      '«2 ㏒ 8» es el logaritmo de 8 en base 2, es decir 3. El ⊕ forma la '
+      'suma paralela a·b/(a+b), conocida por las resistencias en paralelo.',
+    ),
+    _P(
+      'Cada segmento del cálculo puede llevar su propio punto decimal '
+      '(«1.6 × 0.6»). Al cambiar la base numérica, todos los números del '
+      'cálculo se convierten individualmente.',
+    ),
+  ]),
+  ManualChapter('Memoria, constantes y el puente', [
+    _H('La memoria'),
+    _P(
+      'En el panel ampliado «…» están STO, RCL y MC: STO almacena el '
+      'número de la línea de resultado — o, si aún no se ha elegido '
+      'ninguna unidad, la entrada escrita. RCL vuelve a insertar el valor '
+      'almacenado, MC lo borra. Si RCL y MC están en gris, la memoria '
+      'está vacía.',
+    ),
+    _H('Las constantes'),
+    _P(
+      'π, e, φ y √2 colocan su valor como dígitos en el lugar del número '
+      'en el cursor — práctico para circunferencias y proporciones: «3» '
+      '«×» «π» «ft» da la circunferencia de un círculo de 3 pies de '
+      'diámetro.',
+    ),
+    _H('El puente a la calculadora principal'),
+    _P(
+      'La tecla Ans trae el último resultado de la calculadora principal '
+      'a la entrada — calcula algo allí, desliza hacia aquí y dale una '
+      'unidad al valor. A la inversa, la tecla CONV en el panel ampliado '
+      'de la calculadora principal trae el número de la línea de '
+      'resultado del conversor de unidades. Los valores viajan como '
+      'número y aparecen automáticamente en la base de la página de '
+      'destino.',
+    ),
+  ]),
+];

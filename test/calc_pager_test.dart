@@ -147,12 +147,13 @@ void main() {
     expect(find.text('Using the unit converter'), findsOneWidget);
     expect(find.text('Unit converter'), findsNothing);
 
-    // The converter manual opens its chapters (German fallback in EN).
+    // The converter manual opens its chapters (now fully translated — the
+    // EN locale shows the English titles, no German fallback).
     await tester.tap(find.text('Using the unit converter'));
     await tester.pumpAndSettle();
-    await tester.tap(find.text('Der zweite Rechner'));
+    await tester.tap(find.text('The second calculator'));
     await tester.pumpAndSettle();
-    expect(find.text('Hin- und herwechseln'), findsOneWidget);
+    expect(find.byType(ManualChapterPage), findsOneWidget);
     expect(find.byType(InfoListPage), findsNothing);
   });
 

@@ -81,10 +81,25 @@ List<ManualChapter> converterManualChapters(String langTag) {
   return [...own, ...de.sublist(own.length)];
 }
 
-/// No translations authored yet — every language falls back to the German
-/// reference. Extend exactly like [_ownManualChapters] as translations land
-/// (e.g. `if (c.startsWith('en')) return _converterManualChaptersEn();`).
-List<ManualChapter> _ownConverterManualChapters(String langTag) => const [];
+List<ManualChapter> _ownConverterManualChapters(String langTag) {
+  final c = langTag.toLowerCase();
+  if (c.startsWith('en')) return _converterManualChaptersEn();
+  if (c.startsWith('fr')) return _converterManualChaptersFr();
+  if (c.startsWith('es')) return _converterManualChaptersEs();
+  if (c.startsWith('it')) return _converterManualChaptersIt();
+  if (c.startsWith('fa')) return _converterManualChaptersFa();
+  if (c.startsWith('ru')) return _converterManualChaptersRu();
+  if (c.startsWith('ga')) return _converterManualChaptersGa();
+  if (c.startsWith('hi')) return _converterManualChaptersHi();
+  if (c.startsWith('cy')) return _converterManualChaptersCy();
+  if (c.startsWith('ja')) return _converterManualChaptersJa();
+  if (c.startsWith('ar')) return _converterManualChaptersAr();
+  if (c.startsWith('zh') && c.contains('hant')) {
+    return _converterManualChaptersZhHant();
+  }
+  if (c.startsWith('zh')) return _converterManualChaptersZh();
+  return _converterManualChaptersDe();
+}
 
 // ---------------------------------------------------------------------------
 // Shared content helpers (heading / paragraph / monospace block), styled to

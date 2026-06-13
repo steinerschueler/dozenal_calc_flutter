@@ -1054,3 +1054,157 @@ List<ManualChapter> _manualChaptersEn() => const [
     ),
   ]),
 ];
+
+// ---------------------------------------------------------------------------
+// Using the unit converter — the second manual section, translated from the
+// German reference at the end of manual_de.dart.
+// ---------------------------------------------------------------------------
+
+List<ManualChapter> _converterManualChaptersEn() => const [
+  ManualChapter('The second calculator', [
+    _P(
+      'Behind the main calculator lies a fully fledged unit converter: it '
+      'converts lengths, weights, times, temperatures and a dozen further '
+      'categories between the metric and the imperial system — in dozenal '
+      'or decimal digits, as you choose.',
+    ),
+    _H('Switching back and forth'),
+    _P(
+      'Swipe left on the main calculator and the unit converter appears. '
+      'Swipe right on the unit converter and you are back. During the '
+      'switch two translucent cards briefly show which page you are on — '
+      'the gold-framed card is the active page.',
+    ),
+    _P(
+      'Both calculators keep their input across the switch: you can swipe '
+      'to the main calculator in the middle of a conversion, work something '
+      'out there and carry on seamlessly.',
+    ),
+  ]),
+  ManualChapter('Category, number, unit', [
+    _P(
+      'A conversion consists of three taps: choose a category, type a '
+      'number, tap a unit.',
+    ),
+    _H('The category'),
+    _P(
+      'The two right-hand key columns show the categories (Length, Weight, '
+      'Time, …; more in the "…" extension panel). A tap on a category '
+      'unfolds its unit ladder — the keys around the gold-framed category '
+      'now show its units. A second tap folds the ladder up again.',
+    ),
+    _H('Number and unit'),
+    _P(
+      'Type a number and then a unit key: "144" and "ft" gives 144 feet. '
+      'The result line immediately shows the same quantity in another '
+      'unit, and the curly brace beside it the value in the other system.',
+    ),
+    _H('The = key'),
+    _P(
+      'Every press of = shows the next unit of the ladder — so you walk '
+      'through all representations of the same quantity. In the imperial '
+      'world the mixed notation follows at the end, such as '
+      '"1 yd 2 ft 3 in", before the cycle starts over.',
+    ),
+    _P(
+      'If you switch to another category, the finished terms are '
+      'discarded — but a number you have already typed stays, so you can '
+      'choose the number first and the category second.',
+    ),
+  ]),
+  ManualChapter('Metric, imperial and the colours', [
+    _H('The two round keys'),
+    _P(
+      'To the left and right of the = key sit "met" (green) and "imp" '
+      '(violet). They switch between the metric and the imperial unit '
+      'system — the value stays physically the same: 144 ft becomes '
+      '43.89 m, not 144 m. The active side carries a ring in its colour.',
+    ),
+    _H('The colour system'),
+    _P(
+      'Throughout the app, green stands for the world of ten: metric '
+      'units and decimal digits. Violet stands for the world of twelve: '
+      'imperial units and dozenal digits. Unit symbols such as "m" or '
+      '"ft" appear in their system colour, the DOZ/DEZ indicator at the '
+      'bottom right in its base colour — and the curly brace always glows '
+      'in the colour of the world it shows.',
+    ),
+    _H('Dozenal or decimal'),
+    _P(
+      'The digit base is independent of the unit system and is shared by '
+      'both calculators. You switch it under Settings → Number base — '
+      'even in the middle of a conversion, the values are preserved. So '
+      'you can read metric units in dozenal or imperial ones in decimal.',
+    ),
+  ]),
+  ManualChapter('Several terms: + and −', [
+    _P(
+      'Within a category you can chain quantities: "5" "ft" "3" "in" '
+      'gives 5 feet plus 3 inches. The plus stays invisible as long as '
+      'the units differ; with equal units ("3 h + 2 h") it is shown.',
+    ),
+    _P(
+      'The − key subtracts the next term: "5" "ft" "−" "3" "in" gives '
+      '5 feet minus 3 inches. The minus is always visible, and the − key '
+      'carries a golden frame while it is armed.',
+    ),
+    _H('Correcting'),
+    _P(
+      'Tap the input line to place the red cursor — in the middle of a '
+      'number or between two terms. Digits appear at the cursor, Del '
+      'removes the character before it; if the cursor sits at a term '
+      'boundary, Del removes the whole term before it. AC clears '
+      'everything.',
+    ),
+  ]),
+  ManualChapter('Calculating in the input: × ÷ ⊕ ^ √ ㏒', [
+    _P(
+      'The typed number may itself be a small calculation: "3 × 2" and '
+      'then "ft" gives 6 feet. It is evaluated strictly from left to '
+      'right, at the tap on the unit.',
+    ),
+    _P(
+      'If you press an arithmetic operator while a finished expression '
+      'already stands there, the expression is first turned into editable '
+      'digits — the total value in the unit last used. "5 ft 3 in" and '
+      '"×" thus becomes a number times …, which you complete with "2" '
+      'and a unit.',
+    ),
+    _H('The special operators'),
+    _P(
+      'For root and logarithm the degree or the base stands on the left: '
+      '"2 √ 9" is the square root of 9, i.e. 3; "2 ㏒ 8" is the logarithm '
+      'of 8 to base 2, i.e. 3. The ⊕ forms the parallel sum a·b/(a+b), '
+      'familiar from resistors in parallel.',
+    ),
+    _P(
+      'Each segment of the calculation may carry its own decimal point '
+      '("1.6 × 0.6"). When the digit base is switched, all numbers in '
+      'the calculation are converted individually.',
+    ),
+  ]),
+  ManualChapter('Memory, constants and the bridge', [
+    _H('The memory'),
+    _P(
+      'The "…" extension panel holds STO, RCL and MC: STO remembers the '
+      'number on the result line — or, if no unit has been chosen yet, '
+      'the typed input. RCL inserts the remembered value again, MC '
+      'clears it. If RCL and MC are grey, the memory is empty.',
+    ),
+    _H('The constants'),
+    _P(
+      'π, e, φ and √2 put their value as digits in place of the number '
+      'at the cursor — handy for circumferences and ratios: "3" "×" "π" '
+      '"ft" gives the circumference of a circle 3 feet in diameter.',
+    ),
+    _H('The bridge to the main calculator'),
+    _P(
+      'The Ans key fetches the last result of the main calculator into '
+      'the input — work something out there, swipe over and give the '
+      'value a unit. Conversely, the CONV key in the extension panel of '
+      'the main calculator fetches the number from the result line of '
+      'the unit converter. Values travel as a number and appear '
+      'automatically in the base of the destination page.',
+    ),
+  ]),
+];

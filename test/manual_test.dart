@@ -20,9 +20,7 @@ void main() {
     }
   });
 
-  test('converterManualChapters: six German chapters, full fallback', () {
-    // German is the authored reference; until translations land, every
-    // locale falls back to the complete German set (positional fallback).
+  test('converterManualChapters: six chapters in every locale', () {
     final de = converterManualChapters('de');
     expect(de.length, 6);
     expect(de.first.title, 'Der zweite Rechner');
@@ -31,8 +29,37 @@ void main() {
       'hi', 'zh', 'zh-Hant', 'cy', 'ja', 'ar',
     ]) {
       final chapters = converterManualChapters(tag);
-      expect(chapters.length, de.length, reason: '$tag falls back to German');
-      expect(chapters.first.title, de.first.title);
+      expect(chapters.length, de.length, reason: '$tag should have 6');
+      // Fully translated: no locale shows the German chapter titles.
+      expect(chapters.first.title, isNot(de.first.title),
+          reason: '$tag should carry its own translation');
+    }
+    // Script-awareness: traditional and simplified Chinese differ.
+    expect(converterManualChapters('zh-Hant').first.title,
+        isNot(converterManualChapters('zh').first.title));
+  });
+
+  testWidgets('every converter-manual translation renders', (tester) async {
+    for (final tag in [
+      'de', 'en', 'fr', 'es', 'it', 'fa', 'ru', 'ga',
+      'hi', 'zh', 'zh-Hant', 'cy', 'ja', 'ar',
+    ]) {
+      for (final chapter in converterManualChapters(tag)) {
+        await tester.pumpWidget(
+          MaterialApp(
+            home: Scaffold(
+              body: SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: chapter.body,
+                ),
+              ),
+            ),
+          ),
+        );
+        expect(tester.takeException(), isNull,
+            reason: '$tag/${chapter.title} should render');
+      }
     }
   });
 

@@ -1210,7 +1210,7 @@ List<ManualChapter> _converterManualChaptersDe() => const [
     _H('Die Konstanten'),
     _P(
       'π, e, φ und √2 setzen ihren Wert als Ziffern an die Stelle der '
-      'Zahl am Cursor — praktisch für Umfänge und Verhältnisse: „3" „ד '
+      'Zahl am Cursor — praktisch für Umfänge und Verhältnisse: „3" „×" '
       '„π" „ft" ergibt den Umfang eines Kreises mit 3 Fuß Durchmesser.',
     ),
     _H('Die Brücke zum Hauptrechner'),

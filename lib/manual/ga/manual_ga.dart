@@ -1111,3 +1111,172 @@ List<ManualChapter> _manualChaptersGa() => const [
     ),
   ]),
 ];
+
+// ---------------------------------------------------------------------------
+// An tiontaire aonad a úsáid — an dara rannán den lámhleabhar. Aistriúchán
+// iomlán ar an mbunleagan Gearmáinise (_converterManualChaptersDe).
+// ---------------------------------------------------------------------------
+
+List<ManualChapter> _converterManualChaptersGa() => const [
+  ManualChapter('An dara háireamhán', [
+    _P(
+      'Taobh thiar den phríomháireamhán luíonn tiontaire aonad '
+      'lánfheidhmiúil: tiontaíonn sé faid, meáchain, amanna, teochtaí '
+      'agus dosaen catagóir eile idir an córas méadrach agus an córas '
+      'impiriúil — i bhfigiúir dhosaenacha nó dheachúlacha, mar is '
+      'rogha leat.',
+    ),
+    _H('Athrú anonn is anall'),
+    _P(
+      'Svuáil ar chlé ar an bpríomháireamhán, agus taispeánfar an '
+      'tiontaire aonad. Svuáil ar dheis ar an tiontaire aonad, agus tá '
+      'tú ar ais. Agus tú ag athrú, taispeánann dhá chárta '
+      'thréshoilseacha ar feadh meandair cén leathanach ar a bhfuil tú — is é '
+      'an cárta leis an imlíne órga an leathanach gníomhach.',
+    ),
+    _P(
+      'Coinníonn an dá áireamhán a n-ionchur agus tú ag athrú: is '
+      'féidir leat svuáil chuig an bpríomháireamhán i lár tiontaithe, '
+      'rud éigin a ríomh ansiúd agus leanúint ar aghaidh gan uaim.',
+    ),
+  ]),
+  ManualChapter('Catagóir, uimhir, aonad', [
+    _P(
+      'Cuimsíonn tiontú trí thapáil: catagóir a roghnú, uimhir a '
+      'chlóscríobh, aonad a thapáil.',
+    ),
+    _H('An chatagóir'),
+    _P(
+      'Taispeánann an dá cholún eochracha ar dheis na catagóirí (Fad, '
+      'Meáchan, Am, …; tuilleadh sa phainéal breisithe "…"). Osclaíonn '
+      'tapáil ar chatagóir a dréimire aonad — taispeánann na heochracha '
+      'timpeall na catagóire leis an imlíne órga a haonaid anois. '
+      'Dúnann an dara tapáil an dréimire arís.',
+    ),
+    _H('Uimhir agus aonad'),
+    _P(
+      'Clóscríobh uimhir agus ansin eochair aonaid: tugann "144" agus '
+      '"ft" 144 troigh. Taispeánann líne an toraidh láithreach an '
+      'chainníocht chéanna in aonad eile, agus taispeánann an lúibín '
+      'slabhrach lena hais an luach sa chóras eile.',
+    ),
+    _H('An eochair ='),
+    _P(
+      'Taispeánann gach brú ar = an chéad aonad eile den dréimire — '
+      'mar sin siúlann tú trí léirithe uile na cainníochta céanna. Sa '
+      'domhan impiriúil tagann an nodaireacht mheasctha ag an deireadh, '
+      'mar shampla "1 yd 2 ft 3 in", sula dtosaíonn an timthriall arís '
+      'ón tús.',
+    ),
+    _P(
+      'Má athraíonn tú go catagóir eile, caitear na téarmaí '
+      'críochnaithe i leataobh — ach fanann uimhir atá clóscríofa '
+      'cheana, mar sin is féidir leat an uimhir a roghnú ar dtús agus '
+      'ansin an chatagóir.',
+    ),
+  ]),
+  ManualChapter('Méadrach, impiriúil agus na dathanna', [
+    _H('An dá eochair chruinne'),
+    _P(
+      'Ar chlé agus ar dheis na heochrach =, suíonn "met" (uaine) agus '
+      '"imp" (corcra). Athraíonn siad idir an córas aonad méadrach agus '
+      'an córas impiriúil — fanann an luach mar an gcéanna go '
+      'fisiciúil: éiríonn 144 ft ina 43.89 m, ní ina 144 m. Iompraíonn '
+      'an taobh gníomhach fáinne ina dhath féin.',
+    ),
+    _H('Córas na ndathanna'),
+    _P(
+      'Seasann uaine i ngach áit san aip do dhomhan an deich: aonaid '
+      'mhéadracha agus figiúir dheachúlacha. Seasann corcra do dhomhan '
+      'an dó dhéag: aonaid impiriúla agus figiúir dhosaenacha. '
+      'Taispeántar siombailí aonaid mar "m" nó "ft" i ndath a gcórais, '
+      'an comhartha DOZ/DEZ ag bun na láimhe deise i ndath a bhoinn — '
+      'agus lonraíonn an lúibín slabhrach i gcónaí i ndath an domhain '
+      'a thaispeánann sé.',
+    ),
+    _H('Dosaenach nó deachúil'),
+    _P(
+      'Tá bonn na bhfigiúr neamhspleách ar chóras na n-aonad agus '
+      'baineann sé leis an dá áireamhán i gcomhpháirt. Athraíonn tú é '
+      'sna Socruithe → Córas uimhreacha — fiú i lár tiontaithe; '
+      'caomhnaítear na luachanna. Mar sin is féidir leat aonaid '
+      'mhéadracha a léamh go dosaenach, nó cinn impiriúla go deachúil.',
+    ),
+  ]),
+  ManualChapter('Roinnt téarmaí: + agus −', [
+    _P(
+      'Laistigh de chatagóir is féidir leat cainníochtaí a nascadh le '
+      'chéile: tugann "5" "ft" "3" "in" 5 troigh móide 3 orlach. Fanann '
+      'an comhartha móide dofheicthe chomh fada agus atá na haonaid '
+      'éagsúil; taispeántar é le haonaid chomhionanna ("3 h + 2 h").',
+    ),
+    _P(
+      'Dealaíonn an eochair − an chéad téarma eile: tugann "5" "ft" '
+      '"−" "3" "in" 5 troigh lúide 3 orlach. Bíonn an comhartha lúide '
+      'le feiceáil i gcónaí, agus iompraíonn an eochair − fráma órga '
+      'fad atá sí ar tinneall.',
+    ),
+    _H('Ceartú'),
+    _P(
+      'Tapáil ar líne an ionchuir chun an cúrsóir dearg a shocrú — i '
+      'lár uimhreach nó idir dhá théarma. Taispeántar figiúir ag an '
+      'gcúrsóir, baineann Del an carachtar roimhe; má sheasann an '
+      'cúrsóir ag teorainn téarma, baineann Del an téarma iomlán '
+      'roimhe. Glanann AC gach rud.',
+    ),
+  ]),
+  ManualChapter('Ríomh san ionchur: × ÷ ⊕ ^ √ ㏒', [
+    _P(
+      'Is féidir leis an uimhir chlóscríofa féin a bheith ina ríomhadh '
+      'beag: tugann "3 × 2" agus ansin "ft" 6 troigh. Ríomhtar go '
+      'docht ó chlé go deas é, ag an tapáil ar an aonad.',
+    ),
+    _P(
+      'Má bhrúnn tú oibreoir ríomha agus slonn críochnaithe ann '
+      'cheana, tiontaítear é ar dtús ina fhigiúir ar féidir iad a chur '
+      'in eagar — an luach iomlán san aonad is déanaí a úsáideadh. '
+      'Éiríonn "5 ft 3 in" agus "×" mar sin ina uimhir faoi …, a '
+      'chríochnaíonn tú le "2" agus aonad.',
+    ),
+    _H('Na hoibreoirí speisialta'),
+    _P(
+      'I gcás fréimhe agus logartaim seasann an chéim nó an bonn ar '
+      'chlé: is é "2 √ 9" fréamh chearnach 9, is é sin 3; is é "2 ㏒ 8" '
+      'logartam 8 le bonn 2, is é sin 3. Cruthaíonn an ⊕ an tsuim '
+      'chomhthreomhar a·b/(a+b), atá ar eolas ó fhriotóirí '
+      'comhthreomhara.',
+    ),
+    _P(
+      'Féadfaidh gach deighleog den ríomhadh a pointe deachúlach féin '
+      'a iompar ("1.6 × 0.6"). Nuair a athraítear bonn na bhfigiúr, '
+      'tiontaítear uimhreacha uile an ríomhaidh ceann ar cheann.',
+    ),
+  ]),
+  ManualChapter('Cuimhne, tairisigh agus an droichead', [
+    _H('An chuimhne'),
+    _P(
+      'Sa phainéal breisithe "…" tá STO, RCL agus MC: meabhraíonn STO '
+      'uimhir líne an toraidh — nó, mura bhfuil aonad roghnaithe fós, '
+      'an t-ionchur clóscríofa. Cuireann RCL an luach stóráilte '
+      'isteach arís, glanann MC é. Má tá RCL agus MC liath, tá an '
+      'chuimhne folamh.',
+    ),
+    _H('Na tairisigh'),
+    _P(
+      'Cuireann π, e, φ agus √2 a luach mar fhigiúir in áit na '
+      'huimhreach ag an gcúrsóir — áisiúil d\'imlínte agus do '
+      'chóimheasa: tugann "3" "×" "π" "ft" imlíne ciorcail le '
+      'trastomhas 3 troigh.',
+    ),
+    _H('An droichead chuig an bpríomháireamhán'),
+    _P(
+      'Faigheann an eochair Ans toradh deireanach an phríomháireamháin '
+      'isteach san ionchur — ríomh rud éigin ansiúd, svuáil anall agus '
+      'tabhair aonad don luach. Os a choinne sin, faigheann an eochair '
+      'CONV i bpainéal breisithe an phríomháireamháin an uimhir ó líne '
+      'thoraidh an tiontaire aonad. Taistealaíonn luachanna mar '
+      'uimhir, agus taispeántar iad go huathoibríoch i mbonn an '
+      'leathanaigh sprice.',
+    ),
+  ]),
+];

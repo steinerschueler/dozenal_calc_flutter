@@ -1083,3 +1083,166 @@ List<ManualChapter> _manualChaptersCy() => const [
     ),
   ]),
 ];
+
+// ---------------------------------------------------------------------------
+// Defnyddio'r trawsnewidydd unedau — ail adran y llawlyfr. Cyfieithwyd
+// fesul pennod o _converterManualChaptersDe() yn de/manual_de.dart.
+// ---------------------------------------------------------------------------
+
+List<ManualChapter> _converterManualChaptersCy() => const [
+  ManualChapter('Yr ail gyfrifiannell', [
+    _P(
+      "Y tu ôl i'r brif gyfrifiannell mae trawsnewidydd unedau cyflawn: "
+      "mae'n trosi hydoedd, pwysau, amserau, tymereddau a dwsin o "
+      "gategorïau eraill rhwng y system fetrig a'r system imperial — "
+      "mewn ffigurau deuddegol neu ddegol, yn ôl eich dewis.",
+    ),
+    _H("Newid yn ôl ac ymlaen"),
+    _P(
+      "Sweipiwch i'r chwith ar y brif gyfrifiannell, ac fe "
+      "ymddengys y trawsnewidydd unedau. Sweipiwch i'r dde ar y "
+      "trawsnewidydd, ac rydych yn ôl. Wrth newid, mae dau gerdyn "
+      "tryloyw yn dangos am ennyd ar ba ochr yr ydych — y cerdyn ag "
+      "ymyl aur yw'r ochr weithredol.",
+    ),
+    _P(
+      "Mae'r ddwy gyfrifiannell yn cadw eu mewnbwn wrth newid: gallwch "
+      "sweipio i'r brif gyfrifiannell yng nghanol trosiad, cyfrifo "
+      "rhywbeth yno, a pharhau'n ddi-dor.",
+    ),
+  ]),
+  ManualChapter('Categori, rhif, uned', [
+    _P(
+      "Tri thap yw trosiad: dewis categori, teipio rhif, tapio uned.",
+    ),
+    _H("Y categori"),
+    _P(
+      "Mae'r ddwy golofn fysellau ar y dde yn dangos y categorïau (Hyd, "
+      "Pwysau, Amser, …; rhagor yn y panel estynedig \"…\"). Mae tap ar "
+      "gategori yn agor ei ysgol unedau — mae'r bysellau o amgylch y "
+      "categori ag ymyl aur bellach yn dangos ei unedau. Mae ail dap "
+      "yn cau'r ysgol eto.",
+    ),
+    _H("Rhif ac uned"),
+    _P(
+      "Teipiwch rif ac yna bysell uned: mae \"144\" ac \"ft\" yn rhoi "
+      "144 troedfedd. Mae llinell y canlyniad yn dangos yr un maint ar "
+      "unwaith mewn uned arall, a'r gromfach gyrliog wrth ei hymyl y "
+      "gwerth yn y system arall.",
+    ),
+    _H("Y fysell ="),
+    _P(
+      "Mae pob gwasgiad ar = yn dangos uned nesaf yr ysgol — felly "
+      "rydych yn teithio drwy holl ffurfiau'r un maint. Yn y byd "
+      "imperial, daw'r nodiant cymysg ar y diwedd, megis "
+      "\"1 yd 2 ft 3 in\", cyn i'r cylch ddechrau eto.",
+    ),
+    _P(
+      "Os newidiwch i gategori arall, caiff y termau gorffenedig eu "
+      "taflu — ond erys rhif sydd eisoes wedi'i deipio, felly gallwch "
+      "ddewis y rhif yn gyntaf ac yna'r categori.",
+    ),
+  ]),
+  ManualChapter("Metrig, imperial a'r lliwiau", [
+    _H("Y ddwy fysell gron"),
+    _P(
+      "I'r chwith ac i'r dde o'r fysell = eistedda \"met\" (gwyrdd) ac "
+      "\"imp\" (fioled). Maent yn newid rhwng y system fetrig a'r "
+      "system imperial — ac erys y gwerth yn ffisegol yr un fath: daw "
+      "144 ft yn 43.89 m, nid yn 144 m. Mae'r ochr weithredol yn "
+      "gwisgo cylch yn ei lliw.",
+    ),
+    _H("Y system liwiau"),
+    _P(
+      "Mae gwyrdd ym mhobman yn yr ap yn sefyll am fyd y deg: unedau "
+      "metrig a ffigurau degol. Mae fioled yn sefyll am fyd y deuddeg: "
+      "unedau imperial a ffigurau deuddegol. Ymddengys symbolau unedau "
+      "fel \"m\" neu \"ft\" yn lliw eu system, yr arwydd DOZ/DEZ ar y "
+      "gwaelod ar y dde yn lliw ei fôn — ac mae'r gromfach gyrliog bob "
+      "amser yn disgleirio yn lliw y byd y mae'n ei ddangos.",
+    ),
+    _H("Deuddegol neu ddegol"),
+    _P(
+      "Mae bôn y ffigurau yn annibynnol ar y system unedau ac yn "
+      "berthnasol i'r ddwy gyfrifiannell gyda'i gilydd. Newidiwch ef "
+      "dan y Gosodiadau → System rifau — hyd yn oed yng nghanol trosiad; "
+      "erys y gwerthoedd. Felly gallwch ddarllen unedau metrig yn "
+      "ddeuddegol, neu rai imperial yn ddegol.",
+    ),
+  ]),
+  ManualChapter('Sawl term: + a −', [
+    _P(
+      "O fewn categori gallwch gadwyno meintiau: mae \"5\" \"ft\" \"3\" "
+      "\"in\" yn rhoi 5 troedfedd plws 3 modfedd. Erys y plws yn "
+      "anweledig tra bo'r unedau'n wahanol; gydag unedau cyfartal "
+      "(\"3 h + 2 h\") fe'i dangosir.",
+    ),
+    _P(
+      "Mae'r fysell − yn tynnu'r term nesaf: mae \"5\" \"ft\" \"−\" "
+      "\"3\" \"in\" yn rhoi 5 troedfedd minws 3 modfedd. Mae'r minws "
+      "bob amser yn weladwy, ac mae'r fysell − yn gwisgo ffrâm aur tra "
+      "bo'n barod.",
+    ),
+    _H("Cywiro"),
+    _P(
+      "Tapiwch yn llinell y mewnbwn i osod y cyrchwr coch — yng "
+      "nghanol rhif neu rhwng dau derm. Ymddengys ffigurau wrth y "
+      "cyrchwr; mae Del yn dileu'r cymeriad o'i flaen; os saif y "
+      "cyrchwr ar ffin term, mae Del yn tynnu'r term cyfan o'i flaen. "
+      "Mae AC yn clirio popeth.",
+    ),
+  ]),
+  ManualChapter('Cyfrifo yn y mewnbwn: × ÷ ⊕ ^ √ ㏒', [
+    _P(
+      "Caiff y rhif a deipiwyd fod yn gyfrifiad bach ei hun: mae "
+      "\"3 × 2\" ac yna \"ft\" yn rhoi 6 troedfedd. Gwerthusir yn llym "
+      "o'r chwith i'r dde, wrth dapio'r uned.",
+    ),
+    _P(
+      "Os gwasgwch weithredydd tra bo mynegiad gorffenedig eisoes yn "
+      "sefyll, caiff yn gyntaf ei droi'n ffigurau golygadwy — y "
+      "cyfanswm yn yr uned a ddefnyddiwyd ddiwethaf. Felly daw "
+      "\"5 ft 3 in\" ac \"×\" yn rhif wedi'i luosi â …, a orffennwch "
+      "gyda \"2\" ac uned.",
+    ),
+    _H("Y gweithredwyr arbennig"),
+    _P(
+      "Gyda'r gwraidd a'r logarithm, saif y radd neu'r bôn ar y "
+      "chwith: \"2 √ 9\" yw gwraidd sgwâr 9, sef 3; \"2 ㏒ 8\" yw "
+      "logarithm 8 i'r bôn 2, sef 3. Mae'r ⊕ yn ffurfio'r swm paralel "
+      "a·b/(a+b), sy'n gyfarwydd o wrthyddion paralel.",
+    ),
+    _P(
+      "Caiff pob segment o'r cyfrifiad gario ei bwynt degol ei hun "
+      "(\"1.6 × 0.6\"). Wrth newid bôn y ffigurau, caiff holl rifau'r "
+      "cyfrifiad eu trosi fesul un.",
+    ),
+  ]),
+  ManualChapter("Cof, cysonion a'r bont", [
+    _H("Y cof"),
+    _P(
+      "Yn y panel estynedig \"…\" mae STO, RCL ac MC: mae STO yn "
+      "cofio rhif llinell y canlyniad — neu, os nad oes uned wedi'i "
+      "dewis eto, y mewnbwn a deipiwyd. Mae RCL yn mewnosod y gwerth a "
+      "gofiwyd eto, ac MC yn ei glirio. Os yw RCL ac MC yn llwyd, "
+      "mae'r cof yn wag.",
+    ),
+    _H("Y cysonion"),
+    _P(
+      "Mae π, e, φ a √2 yn gosod eu gwerth fel ffigurau yn lle'r rhif "
+      "wrth y cyrchwr — defnyddiol ar gyfer cylcheddau a chymarebau: "
+      "mae \"3\" \"×\" \"π\" \"ft\" yn rhoi cylchedd cylch â diamedr o "
+      "3 troedfedd.",
+    ),
+    _H("Y bont i'r brif gyfrifiannell"),
+    _P(
+      "Mae'r fysell Ans yn cyrchu canlyniad diwethaf y brif "
+      "gyfrifiannell i'r mewnbwn — cyfrifwch rywbeth yno, sweipiwch "
+      "draw, a rhowch uned i'r gwerth. I'r gwrthwyneb, mae'r fysell "
+      "CONV ym mhanel estynedig y brif gyfrifiannell yn cyrchu'r rhif "
+      "o linell canlyniad y trawsnewidydd unedau. Mae gwerthoedd yn "
+      "teithio fel rhif ac yn ymddangos yn awtomatig ym môn yr ochr "
+      "darged.",
+    ),
+  ]),
+];
