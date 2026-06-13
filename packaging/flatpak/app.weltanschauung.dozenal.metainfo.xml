@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>app.weltanschauung.dozenal</id>
+
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+
+  <name>Dozenal Calc</name>
+  <summary>Scientific calculator that computes in base 12</summary>
+  <summary xml:lang="de">Wissenschaftlicher Taschenrechner in Basis 12</summary>
+
+  <description>
+    <p>
+      Dozenal Calc is a scientific calculator that computes natively in base 12
+      (dozenal) — with its own digit glyphs, exact rational arithmetic and
+      repeating-period detection. It can also display and enter numbers in the
+      familiar decimal system.
+    </p>
+    <p>It includes:</p>
+    <ul>
+      <li>Exact fractions with overlined repeating periods — no rounding</li>
+      <li>A full scientific keypad: powers, roots, logarithms, trigonometry</li>
+      <li>A second screen: a unit converter with compound imperial/metric units</li>
+      <li>An illustrated chapter set on the dozenal system, in 14 languages</li>
+      <li>No ads, no tracking, no network access</li>
+    </ul>
+    <p xml:lang="de">
+      Dozenal Calc ist ein wissenschaftlicher Taschenrechner, der nativ in
+      Basis 12 (dozenal) rechnet — mit eigenen Ziffern-Glyphen, exakter
+      Bruchrechnung und Periodenerkennung. Zahlen lassen sich auch im
+      gewohnten Dezimalsystem anzeigen und eingeben. Ohne Werbung, ohne
+      Tracking, ohne Netzwerkzugriff.
+    </p>
+  </description>
+
+  <launchable type="desktop-id">app.weltanschauung.dozenal.desktop</launchable>
+
+  <url type="homepage">https://weltanschauung.app</url>
+  <url type="bugtracker">https://github.com/steinerschueler/dozenal_calc_flutter/issues</url>
+  <url type="vcs-browser">https://github.com/steinerschueler/dozenal_calc_flutter</url>
+
+  <developer id="app.weltanschauung">
+    <name>Eric Naville</name>
+  </developer>
+
+  <!-- All-ages: no objectionable content (OARS 1.1, all categories "none"). -->
+  <content_rating type="oars-1.1" />
+
+  <!-- TODO(Flathub): at least one screenshot is REQUIRED and should show the
+       DESKTOP app. No display is available on the build host, so these must be
+       captured from the running Linux build (1280x720 window) and hosted at a
+       stable URL (e.g. raw GitHub). Replace this block before submitting:
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/steinerschueler/dozenal_calc_flutter/master/store/screenshots/linux/main.png</image>
+      <caption>The main calculator</caption>
+    </screenshot>
+  </screenshots>
+  -->
+
+  <releases>
+    <release version="1.5.1" date="2026-06-13">
+      <description>
+        <p>Decimal and familiar digits by default; round colourful menu icons;
+           a font-size setting; unit editing without all-clear; a reworked
+           introduction; smaller download.</p>
+      </description>
+    </release>
+  </releases>
+</component>
