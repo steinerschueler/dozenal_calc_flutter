@@ -10,7 +10,7 @@
 # (bundle url+sha256, the metainfo screenshot, flatpak-builder test pass).
 app-id: app.weltanschauung.dozenal
 runtime: org.freedesktop.Platform
-runtime-version: '24.08'
+runtime-version: '25.08'
 sdk: org.freedesktop.Sdk
 command: dozenal_calc_flutter
 
