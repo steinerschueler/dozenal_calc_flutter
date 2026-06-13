@@ -13,15 +13,16 @@ the owned domain `weltanschauung.app` (Flathub may ask to verify ownership).
 
 ## Open TODOs before this is submittable
 
-1. **Publish the bundle + fill the manifest source.** Flathub builders have no
-   network, so we ship the pre-built bundle:
+1. **[DONE] Bundle published + manifest pinned.** The pre-built bundle is the
+   `dozenal-calc-1.5.1-linux-x64.tar.gz` asset on the
+   [v1.5.1 release](https://github.com/steinerschueler/dozenal_calc_flutter/releases/tag/v1.5.1);
+   `app.weltanschauung.dozenal.yml` references it with its sha256. To refresh for
+   a future version:
    ```bash
    flutter build linux --release
-   tar czf dozenal-calc-1.5.1-linux-x64.tar.gz -C build/linux/x64/release bundle
-   sha256sum dozenal-calc-1.5.1-linux-x64.tar.gz
+   tar czf dozenal-calc-<ver>-linux-x64.tar.gz -C build/linux/x64/release bundle
+   sha256sum dozenal-calc-<ver>-linux-x64.tar.gz   # → update url + sha256
    ```
-   Upload the tarball to a GitHub release (tag `v1.5.1`) and put its URL + sha256
-   into `app.weltanschauung.dozenal.yml` (`sources[0]`).
 
 2. **Add a screenshot to the metainfo.** Flathub requires ≥1, showing the
    *desktop* app. Capture from the running build (the window is 1280×720),
