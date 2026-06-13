@@ -55,27 +55,24 @@ Dozenal Calc ejecuta una vía racional exacta en paralelo con la aritmética en 
 • Memoria (STO/RCL/MC) con conservación racional exacta en ida y vuelta
 • Modos de ángulo DEG / RAD / GRAD (predeterminado: DEG)
 • Doble toque en las teclas de función para cambiar a la inversa (sin → sin⁻¹)
-• Conmutación Doz/Dec: entrada Y resultado en base 12 o base 10, con conversión automática del número visible al cambiar
-• Introducción al primer arranque: ocho imágenes explicativas con una página decodificadora interactiva que coloca los glifos y los dígitos conocidos uno al lado del otro — reabrible en cualquier momento mediante el botón (?)
-• Página de conversión: conversión en vivo del valor introducido a las unidades clásicas en base 12 (pulgadas/pies, peniques/chelines/libras, docena/gruesa/gran gruesa, segundos/minutos/horas, fracciones de 360°), mostradas en base 10 y base 12
+• Conmutación del sistema numérico en los ajustes: entrada Y resultado en base 12 o base 10, con conversión automática — vale para ambas calculadoras
+• Tema claro y tema oscuro
+• Introducción al primer arranque — reabrible en cualquier momento mediante el botón (?)
 • Catorce idiomas con selector en el menú de información: Deutsch, English, Français, Español, Italiano, فارسی, Русский, Gaeilge, हिन्दी, 简体中文, 繁體中文, Cymraeg, 日本語, العربية
 
-<b>Doce capítulos sobre las matemáticas del doce</b>
+<b>Conversor de unidades</b>
 
-Una lectura integrada explica por qué el doce en particular es un número especial:
+Un deslizamiento a la izquierda abre la segunda calculadora: convierte unidades imperiales y métricas entre sí — longitud, área, volumen, peso, tiempo, ángulo, dinero (£/sh/d), temperatura y más. Entradas compuestas como 3 ft 5 in, desglose en subunidades y cálculo directamente en la entrada (× ÷ ⊕ ^ √ ㏒) con memoria y constantes. Los resultados viajan entre ambas calculadoras con una tecla. Un código de colores separa los mundos: verde para el mundo del diez (métrico, base 10), violeta para el mundo del doce (imperial, base 12).
 
-1. Uso de la calculadora
-2. ¿Qué es el sistema duodecimal?
-3. Fibonacci, números cuadrados y curiosidades
-4. El dodecágono — fundamentos
-5. El dodecágono — ángulos y diagonales
-6. El dodecágono — áreas y proporciones
-7. El dodecaedro — doce pentágonos en el espacio
-8. El dodecaedro — φ, dualidad y simetría
-9. Doce signos zodiacales y el cielo
-10. Doce caras en cristales y seres vivos
-11. Doce falanges en la mano
-12. Pulgada, pie, libra — y por qué tienen sentido en duodecimal
+<b>Teoría y manuales</b>
+
+Dos manuales ilustrados explican ambas calculadoras paso a paso. Una lectura ricamente ilustrada muestra después, en tres bloques, por qué el doce en particular es un número especial:
+
+• Doce y el mundo — del dodecágono y el dodecaedro, pasando por cristales, virus y cuasicristales, hasta la música, el arte, la arquitectura y el calendario
+• Matemáticas duodecimales — divisores y periodos, las bases numéricas comparadas, una historia de los sistemas posicionales
+• Sociedad duodecimal — el movimiento por el doce, nuevos dígitos para diez y once, el sistema de medidas TGM
+
+Muchos capítulos muestran ilustraciones históricas de dominio público con referencia de fuente consultable al toque. Además, una teoría de unidades sobre medida y número, y recomendaciones de calculadoras afines al duodecimal en todas las plataformas.
 
 <b>Lo que Dozenal Calc no hace</b>
 

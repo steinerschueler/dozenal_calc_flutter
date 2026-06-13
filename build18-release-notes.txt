@@ -1,0 +1,27 @@
+<de-DE>
+Großes Update: Der Einheitenrechner ist jetzt die zweite Seite des Rechners — einfach nach links wischen, zurück geht's nach rechts. Ergebnisse wandern per Taste zwischen beiden Rechnern. Im Umrechner lässt sich direkt rechnen (× ÷ ⊕ ^ √ ㏒), mit Speicher und Konstanten. Neuer Farbcode: Grün für die Zehnerwelt, Violett für die Zwölferwelt. Dazu zwei bebilderte Handbücher, Langdruck-Popups auf den Tasten und Rechner-Empfehlungen — alles in 14 Sprachen.
+</de-DE>
+
+<en-US>
+Big update: the unit converter is now the calculator's second page — swipe left to open it, swipe right to return. Results travel between the two calculators at the press of a key. You can now do math right inside the converter (× ÷ ⊕ ^ √ ㏒), with memory and constants. New color code: green for the world of ten, violet for the world of twelve. Plus two illustrated manuals, long-press key popups and calculator recommendations — all in 14 languages.
+</en-US>
+
+<fr-FR>
+Grande mise à jour : le convertisseur d'unités est désormais la deuxième page de la calculatrice — balayez vers la gauche pour l'ouvrir, vers la droite pour revenir. Les résultats passent d'une calculatrice à l'autre d'une simple touche. On peut maintenant calculer directement dans le convertisseur (× ÷ ⊕ ^ √ ㏒), avec mémoire et constantes. Nouveau code couleur : vert pour le monde du dix, violet pour le monde du douze. Plus deux manuels illustrés — en 14 langues.
+</fr-FR>
+
+<es-ES>
+Gran actualización: el convertidor de unidades es ahora la segunda página de la calculadora — desliza a la izquierda para abrirlo y a la derecha para volver. Los resultados viajan entre ambas calculadoras con una tecla. Ya se puede calcular directamente en el convertidor (× ÷ ⊕ ^ √ ㏒), con memoria y constantes. Nuevo código de colores: verde para el mundo del diez, violeta para el mundo del doce. Además, dos manuales ilustrados — en 14 idiomas.
+</es-ES>
+
+<it-IT>
+Grande aggiornamento: il convertitore di unità è ora la seconda pagina della calcolatrice — scorri a sinistra per aprirlo, a destra per tornare. I risultati passano da una calcolatrice all'altra con un tasto. Ora si può calcolare direttamente nel convertitore (× ÷ ⊕ ^ √ ㏒), con memoria e costanti. Nuovo codice colore: verde per il mondo del dieci, viola per il mondo del dodici. In più due manuali illustrati e consigli sulle calcolatrici — in 14 lingue.
+</it-IT>
+
+<fa-AF>
+به‌روزرسانی بزرگ: مبدل واحدها اکنون صفحهٔ دوم ماشین‌حساب است — برای باز کردن به چپ بکشید و برای بازگشت به راست. نتیجه‌ها با یک کلید میان دو ماشین‌حساب جابه‌جا می‌شوند. اکنون می‌توان درون مبدل مستقیماً محاسبه کرد (× ÷ ⊕ ^ √ ㏒)، با حافظه و ثابت‌ها. کد رنگی تازه: سبز برای جهان ده، بنفش برای جهان دوازده. به‌علاوه دو راهنمای مصور و پیشنهادهایی برای ماشین‌حساب — همه به ۱۴ زبان.
+</fa-AF>
+
+<ru-RU>
+Большое обновление: конвертер единиц теперь — вторая страница калькулятора: смахните влево, чтобы открыть, вправо — чтобы вернуться. Результаты переносятся между двумя калькуляторами одной клавишей. В конвертере теперь можно считать напрямую (× ÷ ⊕ ^ √ ㏒), с памятью и константами. Новый цветовой код: зелёный — мир десяти, фиолетовый — мир двенадцати. Плюс два иллюстрированных руководства и рекомендации калькуляторов — всё на 14 языках.
+</ru-RU>

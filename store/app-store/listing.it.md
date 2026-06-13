@@ -21,7 +21,7 @@ dozenale,base 12,duodecimale,scientifica,frazioni,convertitore,unità,imperiale,
 ```
 
 ## Neuheiten · What's New
-Pro Version separat — siehe `whats-new-1.2.0.md`.
+Pro Version separat — siehe `whats-new-1.5.0.md`.
 
 ## Beschreibung · Description (max. 4000, genutzt 3047, reiner Text)
 ```
@@ -42,11 +42,12 @@ Funzionalità
 • Addizione parallela (a⊕b) per i circuiti di resistenze
 • Memoria (STO/RCL/MC) con conservazione razionale esatta
 • Modalità angolari DEG / RAD / GRAD
-• Commutazione Doz/Dez per l'inserimento E il risultato, con conversione automatica
+• Commutazione del sistema numerico (base 12/10) nelle impostazioni — inserimento E risultato, vale per entrambe le calcolatrici
+• Tema chiaro e tema scuro
 
-Calcolatrice di unità
+Convertitore di unità
 
-Una seconda modalità di calcolo converte tra loro le unità imperiali/dozenali e metriche — lunghezza, area, volume, peso, tempo, angolo, denaro (£/sh/d) e temperatura. Novità: pendenza in percentuale nella sezione angoli (0–90°).
+Uno scorrimento a sinistra apre la seconda calcolatrice: converte le unità imperiali e metriche le une nelle altre — lunghezza, area, volume, peso, tempo, angolo, denaro (£/sh/d), temperatura e altro. Inserimenti composti come 3 ft 5 in, scomposizione in sottounità e calcolo direttamente nell'inserimento (× ÷ ⊕ ^ √ ㏒) con memoria e costanti. I risultati passano da una calcolatrice all'altra con un tasto. Un codice colore separa i mondi: verde per il mondo del dieci (metrico, base 10), viola per il mondo del dodici (imperiale, base 12).
 
 Teoria da toccare con mano — ora con immagini
 
@@ -55,7 +56,7 @@ Una lettura riccamente illustrata spiega perché proprio il dodici sia un numero
 • Matematica dozenale — divisori e periodi, le basi numeriche a confronto, una storia dei sistemi posizionali
 • Società dozenale — il movimento per il dodici, nuove cifre per dieci e undici, il sistema di misura TGM e altre calcolatrici dozenali affini
 
-Molti capitoli mostrano ora illustrazioni storiche di pubblico dominio — dalla tavola della pirite di Haüy, al dodecaedro di Leonardo, fino alla bilancia di Vermeer — ciascuna con un riferimento alla fonte da toccare. Inoltre, una teoria dedicata alle unità, sulla misura e sul numero.
+Molti capitoli mostrano illustrazioni storiche di pubblico dominio — dalla tavola della pirite di Haüy, al dodecaedro di Leonardo, fino alla bilancia di Vermeer — ciascuna con un riferimento alla fonte da toccare. Inoltre, una teoria dedicata alle unità sulla misura e sul numero, due manuali illustrati per entrambe le calcolatrici e consigli su calcolatrici adatte al dozenale su tutte le piattaforme.
 
 Quattordici lingue
 

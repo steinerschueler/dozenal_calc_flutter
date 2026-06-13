@@ -21,7 +21,7 @@ dozenal,base 12,duodecimal,científica,fracciones,conversor,unidades,imperial,di
 ```
 
 ## Neuheiten · What's New
-Pro Version separat — siehe `whats-new-1.2.0.md`.
+Pro Version separat — siehe `whats-new-1.5.0.md`.
 
 ## Beschreibung · Description (max. 4000, genutzt 3084, reiner Text)
 ```
@@ -42,11 +42,12 @@ Funciones
 • Suma en paralelo (a⊕b) para circuitos de resistencias
 • Memoria (STO/RCL/MC) con conservación racional exacta
 • Modos de ángulo DEG / RAD / GRAD
-• Conmutación Doz/Dec para la entrada Y el resultado, con conversión automática
+• Conmutación del sistema numérico (base 12/10) en los ajustes — entrada Y resultado, vale para ambas calculadoras
+• Tema claro y tema oscuro
 
-Calculadora de unidades
+Conversor de unidades
 
-Un segundo modo de cálculo convierte entre sí unidades imperiales/dozenales y métricas: longitud, superficie, volumen, peso, tiempo, ángulo, dinero (£/sh/d) y temperatura. Novedad: pendiente en porcentaje dentro del apartado de ángulos (0–90°).
+Un deslizamiento a la izquierda abre la segunda calculadora: convierte unidades imperiales y métricas entre sí — longitud, superficie, volumen, peso, tiempo, ángulo, dinero (£/sh/d), temperatura y más. Entradas compuestas como 3 ft 5 in, desglose en subunidades y cálculo directamente en la entrada (× ÷ ⊕ ^ √ ㏒) con memoria y constantes. Los resultados viajan entre ambas calculadoras con una tecla. Un código de colores separa los mundos: verde para el mundo del diez (métrico, base 10), violeta para el mundo del doce (imperial, base 12).
 
 Teoría para descubrir, ahora con imágenes
 
@@ -55,7 +56,7 @@ Una lectura ricamente ilustrada explica por qué precisamente el doce es un núm
 • Matemática dozenal — divisores y periodos, las bases numéricas en comparación, una historia de los sistemas posicionales
 • Sociedad dozenal — el movimiento por el doce, nuevos dígitos para el diez y el once, el sistema de medidas TGM y otras calculadoras dozenales afines
 
-Muchos capítulos muestran ahora ilustraciones históricas de dominio público —desde la lámina de pirita de Haüy y el dodecaedro de Leonardo hasta la balanza de Vermeer—, cada una con su referencia de fuente pulsable. Además, una teoría propia de las unidades sobre la medida y el número.
+Muchos capítulos muestran ilustraciones históricas de dominio público —desde la lámina de pirita de Haüy y el dodecaedro de Leonardo hasta la balanza de Vermeer—, cada una con su referencia de fuente pulsable. Además, una teoría propia de las unidades sobre la medida y el número, dos manuales ilustrados para ambas calculadoras y recomendaciones de calculadoras afines al dozenal en todas las plataformas.
 
 Catorce idiomas
 

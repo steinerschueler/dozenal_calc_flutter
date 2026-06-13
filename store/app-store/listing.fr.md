@@ -21,7 +21,7 @@ douzénal,base 12,duodécimal,scientifique,fractions,convertisseur,unités,impé
 ```
 
 ## Neuheiten · What's New
-Pro Version separat — siehe `whats-new-1.2.0.md`.
+Pro Version separat — siehe `whats-new-1.5.0.md`.
 
 ## Beschreibung · Description (max. 4000, genutzt 3332, reiner Text)
 ```
@@ -42,11 +42,12 @@ Fonctionnalités
 • Addition parallèle (a⊕b) pour les montages de résistances
 • Mémoire (STO/RCL/MC) avec conservation rationnelle exacte
 • Modes d'angle DEG / RAD / GRAD
-• Bascule Doz/Déc pour la saisie ET le résultat, avec conversion automatique
+• Bascule du système de numération (base 12/10) dans les réglages — saisie ET résultat, vaut pour les deux calculatrices
+• Thème clair et thème sombre
 
-Calculatrice d'unités
+Convertisseur d'unités
 
-Un deuxième mode de calcul convertit les unités impériales/dozénales et métriques entre elles — longueur, surface, volume, poids, temps, angle, monnaie (£/sh/d) et température. Nouveau : la pente en pourcentage dans la section des angles (0–90°).
+Un balayage vers la gauche ouvre la deuxième calculatrice : elle convertit les unités impériales et métriques entre elles — longueur, surface, volume, poids, temps, angle, monnaie (£/sh/d), température et plus encore. Saisies composées comme 3 ft 5 in, décomposition en sous-unités et calcul directement dans la saisie (× ÷ ⊕ ^ √ ㏒) avec mémoire et constantes. Les résultats passent d'une calculatrice à l'autre d'une simple touche. Un code couleur sépare les mondes : vert pour le monde du dix (métrique, base 10), violet pour le monde du douze (impérial, base 12).
 
 La théorie à portée de main — désormais en images
 
@@ -55,7 +56,7 @@ Une lecture richement illustrée explique pourquoi le nombre douze est précisé
 • Mathématiques dozénales — diviseurs et périodes, les bases numériques comparées, une histoire des systèmes de numération de position
 • Société dozénale — le mouvement en faveur de la douzaine, de nouveaux chiffres pour dix et onze, le système de mesures TGM et les calculatrices dozénales apparentées
 
-De nombreux chapitres présentent désormais des illustrations historiques du domaine public — de la planche de pyrite de Haüy au dodécaèdre de Leonardo, jusqu'à la balance de Vermeer — chacune accompagnée d'une référence de source consultable d'une simple pression. À cela s'ajoute une théorie dédiée des unités, sur la mesure et le nombre.
+De nombreux chapitres présentent des illustrations historiques du domaine public — de la planche de pyrite de Haüy au dodécaèdre de Leonardo, jusqu'à la balance de Vermeer — chacune accompagnée d'une référence de source consultable d'une simple pression. À cela s'ajoutent une théorie dédiée des unités sur la mesure et le nombre, deux manuels illustrés pour les deux calculatrices, ainsi que des recommandations de calculatrices adaptées au duodécimal sur toutes les plateformes.
 
 Quatorze langues
 

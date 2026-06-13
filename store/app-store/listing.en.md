@@ -21,7 +21,7 @@ dozenal,base 12,base twelve,duodecimal,scientific,fractions,converter,imperial,u
 ```
 
 ## Neuheiten · What's New
-Pro Version separat — siehe `whats-new-1.2.0.md`.
+Pro Version separat — siehe `whats-new-1.5.0.md`.
 
 ## Beschreibung · Description (max. 4000, genutzt 2719, reiner Text)
 ```
@@ -42,11 +42,12 @@ Features
 • Parallel addition (a⊕b) for resistor circuits
 • Memory (STO/RCL/MC) with exact rational preservation
 • Angle modes DEG / RAD / GRAD
-• Dozenal/decimal switching for input AND result, with automatic conversion
+• Numeral-system switch (base 12/10) in the settings — input AND result, applies to both calculators
+• Light and dark theme
 
 Unit converter
 
-A second calculator mode converts between imperial/dozenal and metric units — length, area, volume, weight, time, angle, money (£/sh/d) and temperature. New: slope as a percentage in the angle section (0–90°).
+One swipe to the left opens the second calculator: it converts imperial and metric units into one another — length, area, volume, weight, time, angle, money (£/sh/d), temperature and more. Compound entries like 3 ft 5 in, breakdown into part units, and math right inside the entry (× ÷ ⊕ ^ √ ㏒) with memory and constants. Results travel between the two calculators at the press of a key. A color code keeps the worlds apart: green for the world of ten (metric, base 10), violet for the world of twelve (imperial, base 12).
 
 Hands-on theory — now with pictures
 
@@ -55,7 +56,7 @@ A richly illustrated read explains why twelve in particular is a special number,
 • Dozenal Mathematics — divisors and periods, the number bases compared, a history of place-value systems
 • Dozenal Society — the movement for twelve, new digits for ten and eleven, the TGM measurement system and related dozenal calculators
 
-Many chapters now show public-domain historical illustrations — from Haüy's pyrite plate through Leonardo's dodecahedron to Vermeer's balance — each with a tappable source citation. Plus a dedicated theory of measurement and number.
+Many chapters show public-domain historical illustrations — from Haüy's pyrite plate through Leonardo's dodecahedron to Vermeer's balance — each with a tappable source citation. Plus a dedicated unit theory on measure and number, two illustrated operating manuals for both calculators, and recommendations for dozenal-friendly calculators on every platform.
 
 Fourteen languages
 

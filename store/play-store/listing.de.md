@@ -57,27 +57,24 @@ Dozenal Calc nutzt einen exakten Rational-Track parallel zur normalen Gleitkomma
 • Speicher (STO/RCL/MC) mit exakter rationaler Round-Trip-Erhaltung
 • Winkelmodi DEG / RAD / GRAD (Standard: DEG)
 • Doppelklick auf Funktionstasten schaltet zur Umkehrfunktion (sin → sin⁻¹)
-• Doz/Dez-Umschaltung: Eingabe UND Ergebnis wahlweise in Basis 12 oder Basis 10, mit automatischer Umrechnung der aktuell sichtbaren Zahl beim Wechsel
-• Bedienungs-Intro beim ersten Start: acht erklärende Bilder mit einer interaktiven Decoder-Seite, die Glyphen und vertraute Zahlen direkt nebeneinanderstellt — jederzeit über den (?)-Knopf erneut aufrufbar
-• Umrechnungsseite: Live-Konvertierung des Eingabewerts in klassische Zwölfer-Einheiten (Inches/Fuß, Pence/Schilling/Pfund, Dutzend/Gros/Großgros, Sekunden/Minuten/Stunden, Bruchteile von 360°), jeweils in Dez- und Doz-Darstellung
+• Zahlensystem-Umschaltung in den Einstellungen: Eingabe UND Ergebnis wahlweise in Basis 12 oder Basis 10, mit automatischer Umrechnung — gilt für beide Rechner
+• Helles und dunkles Design
+• Bedienungs-Intro beim ersten Start — jederzeit über den (?)-Knopf erneut aufrufbar
 • Vierzehn Sprachen mit eigener Auswahl im Info-Menü: Deutsch, English, Français, Español, Italiano, فارسی, Русский, Gaeilge, हिन्दी, 简体中文, 繁體中文, Cymraeg, 日本語, العربية
 
-<b>Zwölf Kapitel zur Mathematik der Zwölf</b>
+<b>Einheitenrechner</b>
 
-Eine integrierte Lektüre erklärt, warum gerade die Zwölf eine besondere Zahl ist:
+Ein Wisch nach links öffnet den zweiten Rechner: Er wandelt imperiale und metrische Einheiten ineinander um — Länge, Fläche, Volumen, Gewicht, Zeit, Winkel, Geld (£/sh/d), Temperatur und mehr. Zusammengesetzte Eingaben wie 3 ft 5 in, Aufschlüsselung in Teil-Einheiten und direktes Rechnen in der Eingabe (× ÷ ⊕ ^ √ ㏒) mit Speicher und Konstanten. Ergebnisse wandern per Taste zwischen beiden Rechnern. Ein Farbcode hält die Welten auseinander: Grün für die Zehnerwelt (metrisch, Basis 10), Violett für die Zwölferwelt (imperial, Basis 12).
 
-1. Bedienung des Rechners
-2. Was ist das Dozenalsystem?
-3. Fibonacci, Quadratzahlen und Kuriositäten
-4. Das Zwölfeck — Grundlagen (mit Illustration)
-5. Das Zwölfeck — Winkel und Diagonalen (mit Illustration)
-6. Das Zwölfeck — Flächen und Verhältnisse
-7. Der Dodekaeder — zwölf Fünfecke im Raum
-8. Der Dodekaeder — φ, Dualität und Symmetrie
-9. Zwölf Tierkreiszeichen und der Himmel
-10. Zwölf Flächen in Kristallen und Lebewesen
-11. Zwölf Glieder an der Hand
-12. Zoll, Fuß, Pfund — und warum sie dozenal Sinn ergeben
+<b>Theorie und Handbücher</b>
+
+Zwei bebilderte Handbücher erklären beide Rechner Schritt für Schritt. Dazu zeigt eine reich illustrierte Lektüre in drei Blöcken, warum gerade die Zwölf eine besondere Zahl ist:
+
+• Zwölf und die Welt — vom Zwölfeck und Dodekaeder über Kristalle, Viren und Quasikristalle bis zu Musik, Kunst, Architektur und Kalender
+• Dozenale Mathematik — Teiler und Perioden, die Zahlenbasen im Vergleich, eine Geschichte der Stellenwertsysteme
+• Dozenale Gesellschaft — die Bewegung für die Zwölf, neue Ziffern für Zehn und Elf, das Maßsystem TGM
+
+Viele Kapitel zeigen gemeinfreie historische Illustrationen mit antippbarer Quellenangabe. Dazu eine Einheitentheorie zu Maß und Zahl sowie Empfehlungen für dozenal-freundliche Rechner auf allen Plattformen.
 
 <b>Was Dozenal Calc nicht macht</b>
 

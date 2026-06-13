@@ -59,27 +59,24 @@ Dozenal Calc runs an exact rational track in parallel with ordinary floating-poi
 • Memory (STO/RCL/MC) with exact rational round-trip preservation
 • Angle modes DEG / RAD / GRAD (default: DEG)
 • Double-tap function keys switch to the inverse (sin → sin⁻¹)
-• Doz/Dec switch: input AND result in base 12 or base 10, with automatic conversion of the currently visible number on switch
-• First-launch operating intro: eight explanatory images with an interactive decoder page placing glyphs and familiar numbers side by side — re-openable any time via the (?) button
-• Conversion page: live conversion of the input value into classic twelve-based units (inches/feet, pence/shillings/pounds, dozen/gross/great gross, seconds/minutes/hours, fractions of 360°), shown in both base 10 and base 12
+• Numeral-system switch in the settings: input AND result in base 12 or base 10, with automatic conversion — applies to both calculators
+• Light and dark theme
+• First-launch operating intro — re-openable any time via the (?) button
 • Fourteen languages with a picker in the info menu: Deutsch, English, Français, Español, Italiano, فارسی, Русский, Gaeilge, हिन्दी, 简体中文, 繁體中文, Cymraeg, 日本語, العربية
 
-<b>Twelve chapters on the mathematics of twelve</b>
+<b>Unit converter</b>
 
-A built-in reader explains why twelve in particular is a special number:
+One swipe to the left opens the second calculator: it converts imperial and metric units into one another — length, area, volume, weight, time, angle, money (£/sh/d), temperature and more. Compound entries like 3 ft 5 in, breakdown into part units, and math right inside the entry (× ÷ ⊕ ^ √ ㏒) with memory and constants. Results travel between the two calculators at the press of a key. A color code keeps the worlds apart: green for the world of ten (metric, base 10), violet for the world of twelve (imperial, base 12).
 
-1. Operating the Calculator
-2. What is the Dozenal System?
-3. Fibonacci, Square Numbers, and Curiosities
-4. The Dodecagon — Basics
-5. The Dodecagon — Angles and Diagonals
-6. The Dodecagon — Areas and Ratios
-7. The Dodecahedron — Twelve Pentagons in Space
-8. The Dodecahedron — φ, Duality, and Symmetry
-9. Twelve Zodiac Signs and the Sky
-10. Twelve Faces in Crystals and Living Beings
-11. Twelve Joints on the Hand
-12. Inch, Foot, Pound — and Why They Make Dozenal Sense
+<b>Theory and manuals</b>
+
+Two illustrated manuals explain both calculators step by step. A richly illustrated reader then shows, in three blocks, why twelve in particular is a special number:
+
+• Twelve and the World — from the dodecagon and dodecahedron through crystals, viruses and quasicrystals to music, art, architecture and the calendar
+• Dozenal Mathematics — divisors and periods, the number bases compared, a history of place-value systems
+• Dozenal Society — the movement for twelve, new digits for ten and eleven, the TGM measurement system
+
+Many chapters show public-domain historical illustrations with tappable source citations. Plus a unit theory on measure and number, and recommendations for dozenal-friendly calculators on every platform.
 
 <b>What Dozenal Calc does not do</b>
 

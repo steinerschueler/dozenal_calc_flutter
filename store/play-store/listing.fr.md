@@ -40,7 +40,7 @@ Une « calculatrice duodécimale » — une calculatrice scientifique qui compte
 
 En décimal, 1/3 est une fraction périodique infinie (0,333…). En base 12, elle est courte et exacte : 0,4. Les sixièmes, les neuvièmes et toutes les fractions dont le dénominateur est composé de deux et de trois deviennent finies en duodécimal. Ce n'est pas un hasard : douze a six diviseurs, dix n'en a que quatre.
 
-Dozenal Calc fait tourner une voie rationnelle exacte en parallèle de l'arithmétique à virgule flottante ordinaire. Les fractions périodiques sont affichées avec une barre au-dessus des chiffres qui se répètent, comme à l'école. Exemple : 1/7 apparaît sous la forme 0,186A3 avec la barre de période, suivie de points surélevés lorsque la période dépasse cinq chiffres.
+Dozenal Calc fait tourner une voie rationnelle exacte en parallèle de l'arithmétique à virgule flottante ordinaire. Les fractions périodiques sont affichées avec une barre au-dessus des chiffres qui se répètent, comme à l'école. Exemple : 1/7 apparaît sous la forme 0,186A3 avec la barre de période.
 
 <b>Fonctionnalités</b>
 
@@ -52,30 +52,27 @@ Dozenal Calc fait tourner une voie rationnelle exacte en parallèle de l'arithm�
 • Fonctions hyperboliques (sinh, cosh, tanh, coth) et leurs réciproques
 • Constantes π, e, φ, √2
 • Factorielle, valeur absolue, inverse, modulo
-• Mémoire (STO/RCL/MC) avec préservation rationnelle exacte à l'aller-retour
+• Mémoire (STO/RCL/MC) avec préservation rationnelle exacte
 • Modes d'angle DEG / RAD / GRAD (par défaut : DEG)
 • Double appui sur les touches de fonction pour passer à la réciproque (sin → sin⁻¹)
-• Bascule Doz/Déc : saisie ET résultat au choix en base 12 ou base 10, avec conversion automatique du nombre visible lors de la bascule
-• Intro de prise en main au premier lancement : huit images explicatives avec une page de décodeur interactif qui place glyphes et chiffres familiers côte à côte — réouvrable à tout moment via le bouton (?)
-• Page de conversion : conversion en direct de la valeur saisie vers les unités classiques en base 12 (pouces/pieds, pence/shillings/livres, douzaine/grosse/grande grosse, secondes/minutes/heures, fractions de 360°), affichée en base 10 et en base 12
+• Bascule du système de numération dans les réglages : saisie ET résultat en base 12 ou 10, conversion automatique — pour les deux calculatrices
+• Thème clair et thème sombre
+• Intro de prise en main au premier lancement — réouvrable à tout moment via le bouton (?)
 • Quatorze langues avec sélecteur dans le menu d'info : Deutsch, English, Français, Español, Italiano, فارسی, Русский, Gaeilge, हिन्दी, 简体中文, 繁體中文, Cymraeg, 日本語, العربية
 
-<b>Douze chapitres sur les mathématiques du douze</b>
+<b>Convertisseur d'unités</b>
 
-Une lecture intégrée explique pourquoi le douze en particulier est un nombre spécial :
+Un balayage vers la gauche ouvre la deuxième calculatrice : elle convertit les unités impériales et métriques entre elles — longueur, surface, volume, poids, temps, angle, monnaie (£/sh/d), température et plus encore. Saisies composées comme 3 ft 5 in, décomposition en sous-unités et calcul directement dans la saisie (× ÷ ⊕ ^ √ ㏒) avec mémoire et constantes. Les résultats passent d'une calculatrice à l'autre d'une simple touche. Un code couleur sépare les mondes : vert pour le monde du dix (métrique, base 10), violet pour le monde du douze (impérial, base 12).
 
-1. Utilisation de la calculatrice
-2. Qu'est-ce que le système duodécimal ?
-3. Fibonacci, nombres carrés et curiosités
-4. Le dodécagone — bases
-5. Le dodécagone — angles et diagonales
-6. Le dodécagone — aires et rapports
-7. Le dodécaèdre — douze pentagones dans l'espace
-8. Le dodécaèdre — φ, dualité et symétrie
-9. Douze signes du zodiaque et le ciel
-10. Douze faces dans les cristaux et les êtres vivants
-11. Douze phalanges sur la main
-12. Pouce, pied, livre — et pourquoi ils ont du sens en duodécimal
+<b>Théorie et manuels</b>
+
+Deux manuels illustrés expliquent les deux calculatrices pas à pas. Une lecture richement illustrée montre ensuite, en trois blocs, pourquoi le douze en particulier est un nombre spécial :
+
+• Douze et le monde — du dodécagone et du dodécaèdre aux cristaux, virus et quasi-cristaux, jusqu'à la musique, l'art, l'architecture et le calendrier
+• Mathématiques duodécimales — diviseurs et périodes, les bases numériques comparées, une histoire des systèmes positionnels
+• Société duodécimale — le mouvement pour le douze, de nouveaux chiffres pour dix et onze, le système de mesures TGM
+
+De nombreux chapitres montrent des illustrations historiques du domaine public, source consultable d'un appui. S'y ajoutent une théorie des unités sur la mesure et le nombre, et des recommandations de calculatrices pour toutes les plateformes.
 
 <b>Ce que Dozenal Calc ne fait pas</b>
 
@@ -83,7 +80,7 @@ Une lecture intégrée explique pourquoi le douze en particulier est un nombre s
 • Pas de pistage
 • Pas d'analytique
 • Pas de connexion internet
-• Aucune autorisation — l'application ne demande ni caméra, ni microphone, ni localisation, ni stockage, ni aucun autre accès
+• Aucune autorisation — ni caméra, ni microphone, ni localisation, ni stockage
 • Aucune donnée personnelle
 
 L'application fonctionne entièrement hors ligne. Ce que vous tapez reste sur votre appareil.

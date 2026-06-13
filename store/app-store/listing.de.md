@@ -21,7 +21,7 @@ dozenal,zwölfersystem,duodezimal,basis 12,brüche,umrechner,einheiten,imperial,
 ```
 
 ## Neuheiten · What's New
-Pro Version separat — siehe `whats-new-1.2.0.md`.
+Pro Version separat — siehe `whats-new-1.5.0.md`.
 
 ## Beschreibung · Description (max. 4000, genutzt 2791, reiner Text)
 ```
@@ -42,11 +42,12 @@ Funktionsumfang
 • Paralleladdition (a⊕b) für Widerstandsschaltungen
 • Speicher (STO/RCL/MC) mit exakter rationaler Erhaltung
 • Winkelmodi DEG / RAD / GRAD
-• Doz/Dez-Umschaltung für Eingabe UND Ergebnis, mit automatischer Umrechnung
+• Zahlensystem-Umschaltung (Basis 12/10) in den Einstellungen — Eingabe UND Ergebnis, gilt für beide Rechner
+• Helles und dunkles Design
 
 Einheitenrechner
 
-Ein zweiter Rechner-Modus wandelt imperiale/dozenale und metrische Einheiten ineinander um — Länge, Fläche, Volumen, Gewicht, Zeit, Winkel, Geld (£/sh/d) und Temperatur. Neu: Steigung in Prozent im Winkel-Bereich (0–90°).
+Ein Wisch nach links öffnet den zweiten Rechner: Er wandelt imperiale und metrische Einheiten ineinander um — Länge, Fläche, Volumen, Gewicht, Zeit, Winkel, Geld (£/sh/d), Temperatur und mehr. Zusammengesetzte Eingaben wie 3 ft 5 in, Aufschlüsselung in Teil-Einheiten und direktes Rechnen in der Eingabe (× ÷ ⊕ ^ √ ㏒) mit Speicher und Konstanten. Ergebnisse wandern per Taste zwischen beiden Rechnern. Ein Farbcode hält die Welten auseinander: Grün für die Zehnerwelt (metrisch, Basis 10), Violett für die Zwölferwelt (imperial, Basis 12).
 
 Theorie zum Anfassen — jetzt mit Bildern
 
@@ -55,7 +56,7 @@ Eine reich bebilderte Lektüre erklärt, warum gerade die Zwölf eine besondere 
 • Dozenale Mathematik — Teiler und Perioden, die Zahlenbasen im Vergleich, eine Geschichte der Stellenwertsysteme
 • Dozenale Gesellschaft — die Bewegung für die Zwölf, neue Ziffern für Zehn und Elf, das Maßsystem TGM und verwandte dozenale Rechner
 
-Viele Kapitel zeigen nun gemeinfreie historische Illustrationen — von Haüys Pyrit-Tafel über Leonardos Dodekaeder bis zu Vermeers Waage — jeweils mit antippbarer Quellenangabe. Dazu eine eigene Einheitentheorie zu Maß und Zahl.
+Viele Kapitel zeigen gemeinfreie historische Illustrationen — von Haüys Pyrit-Tafel über Leonardos Dodekaeder bis zu Vermeers Waage — jeweils mit antippbarer Quellenangabe. Dazu eine eigene Einheitentheorie zu Maß und Zahl, zwei bebilderte Bedienungs-Handbücher für beide Rechner sowie Empfehlungen für dozenal-freundliche Rechner auf allen Plattformen.
 
 Vierzehn Sprachen
 
