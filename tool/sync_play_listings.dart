@@ -44,6 +44,10 @@ const String _playReleaseNotesDir = 'android/app/src/main/play/release-notes';
 // unlike the bare "zh" used for listing text). Mapped to Play Console graphics
 // locale dirs. Locales without a folder (fa/ga/cy) keep their Play screenshots.
 const String _screenshotSrcDir = 'store/screenshots/play';
+// Framed TABLET screenshots (1 landscape + 3 portrait per locale). Pushed to
+// both the seven-inch and ten-inch Play graphics slots (same images, since the
+// app's tablet layout is identical across tablet sizes).
+const String _tabletScreenshotSrcDir = 'store/screenshots/play-tablet';
 const Map<String, String> _screenshotLocaleMap = {
   'de': 'de-DE',
   'en': 'en-US',
@@ -61,7 +65,9 @@ const Map<String, String> _screenshotLocaleMap = {
 void main() {
   _syncListings();
   _syncReleaseNotes();
-  _syncScreenshots();
+  _syncShots(_screenshotSrcDir, 'phone-screenshots');
+  _syncShots(_tabletScreenshotSrcDir, 'ten-inch-screenshots');
+  _syncShots(_tabletScreenshotSrcDir, 'seven-inch-screenshots');
 }
 
 void _syncListings() {
@@ -143,16 +149,20 @@ void _syncReleaseNotes() {
   stdout.writeln('synced $n release-notes blocks');
 }
 
-void _syncScreenshots() {
+// Copies framed screenshots from `$srcRoot/<key>/*.png` into the Play graphics
+// dir `play/listings/<play-locale>/graphics/<graphicsSub>/`. Used for phone and
+// both tablet slots; the per-slot dir is wiped first so removed shots don't
+// linger on the Console.
+void _syncShots(String srcRoot, String graphicsSub) {
   var n = 0;
   for (final entry in _screenshotLocaleMap.entries) {
-    final srcDir = Directory('$_screenshotSrcDir/${entry.key}');
+    final srcDir = Directory('$srcRoot/${entry.key}');
     if (!srcDir.existsSync()) {
-      stderr.writeln('WARN: missing screenshots ${srcDir.path}, skipping ${entry.key}');
+      stderr.writeln('WARN: missing $srcRoot/${entry.key}, skipping ${entry.key}');
       continue;
     }
     final outDir =
-        Directory('$_playListingsDir/${entry.value}/graphics/phone-screenshots');
+        Directory('$_playListingsDir/${entry.value}/graphics/$graphicsSub');
     if (outDir.existsSync()) outDir.deleteSync(recursive: true);
     outDir.createSync(recursive: true);
     final pngs = srcDir
@@ -164,10 +174,11 @@ void _syncScreenshots() {
     for (final f in pngs) {
       f.copySync('${outDir.path}/${f.uri.pathSegments.last}');
     }
-    stdout.writeln('shots   → ${entry.value.padRight(6)}  ${pngs.length} png');
+    stdout.writeln(
+        '$graphicsSub → ${entry.value.padRight(6)}  ${pngs.length} png');
     n++;
   }
-  stdout.writeln('synced $n screenshot locales');
+  stdout.writeln('synced $n locales → $graphicsSub');
 }
 
 int _buildNumber(String path) {
