@@ -1,7 +1,7 @@
 {
   "@@locale": "ga",
   "appTitle": "Dozenal Calc",
-  "infoListTitle": "Teoiric agus tuilleadh",
+  "infoListTitle": "Roghchlár",
   "infoListGlyphStyleTitle": "Digití ar an scáileán",
   "infoListGlyphStyleCustom": "Glifeanna",
   "infoListGlyphStyleConventional": "0–9, A, B",
@@ -170,6 +170,7 @@
   "resultCopied": "Cóipeáilte: {value}",
   "infoListHapticsTitle": "Aiseolas tadhlach",
   "settingsTitle": "Socruithe",
+  "settingsFontSizeTitle": "Clómhéid",
   "settingsKeypadModeTitle": "Eochracha feidhme",
   "settingsKeypadModeOverlay": "Forleagan",
   "settingsKeypadModeScroll": "Scrolláil",

@@ -1,7 +1,7 @@
 {
   "@@locale": "cy",
   "appTitle": "Dozenal Calc",
-  "infoListTitle": "Theori a mwy",
+  "infoListTitle": "Dewislen",
   "infoListGlyphStyleTitle": "Digidau ar y sgrin",
   "infoListGlyphStyleCustom": "Glyffau",
   "infoListGlyphStyleConventional": "0–9, A, B",
@@ -170,6 +170,7 @@
   "resultCopied": "Copïwyd: {value}",
   "infoListHapticsTitle": "Adborth haptig",
   "settingsTitle": "Gosodiadau",
+  "settingsFontSizeTitle": "Maint y testun",
   "settingsKeypadModeTitle": "Bysellau swyddogaeth",
   "settingsKeypadModeOverlay": "Troshaen",
   "settingsKeypadModeScroll": "Sgrolio",

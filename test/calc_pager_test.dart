@@ -25,8 +25,13 @@ void main() {
     await tester.pumpAndSettle();
   }
 
-  Future<void> bootApp(WidgetTester tester) async {
-    SharedPreferences.setMockInitialValues({'intro_seen_v3': true});
+  // Defaults boot decimal now; tests that assert dozenal digits opt in via
+  // numeralSystem: 'doz'.
+  Future<void> bootApp(WidgetTester tester, {String? numeralSystem}) async {
+    SharedPreferences.setMockInitialValues({
+      'intro_seen_v3': true,
+      'numeral_system_v1': ?numeralSystem,
+    });
     await tester.pumpWidget(const DozenalCalcApp());
     await tester.pumpAndSettle();
     await flushPagePeek(tester); // boot pulse
@@ -93,7 +98,7 @@ void main() {
 
   testWidgets('result bridge round trip: calc → converter (Ans) → calc (CONV)',
       (tester) async {
-    await bootApp(tester);
+    await bootApp(tester, numeralSystem: 'doz'); // asserts dozenal digits
 
     // 5 × 3 = → 13 (dozenal 13 = decimal 15).
     await tester.sendKeyEvent(LogicalKeyboardKey.digit5);

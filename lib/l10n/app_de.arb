@@ -4,7 +4,7 @@
   "@appTitle": {
     "description": "Brand name shown as the MaterialApp title (task switcher / browser tab). Identical in both locales."
   },
-  "infoListTitle": "Theorie und Weiteres",
+  "infoListTitle": "Menü",
   "infoListPrivacyEntry": "Datenschutzerklärung",
   "infoListLicenseEntry": "Lizenz",
   "infoListFeedbackEntry": "Feedback geben",
@@ -214,6 +214,7 @@
   },
   "infoListHapticsTitle": "Haptisches Feedback",
   "settingsTitle": "Einstellungen",
+  "settingsFontSizeTitle": "Schriftgröße",
   "settingsKeypadModeTitle": "Funktionstasten",
   "settingsKeypadModeOverlay": "Overlay",
   "settingsKeypadModeScroll": "Scrollen",

@@ -125,16 +125,113 @@ void main() {
       expect(s.totalSi, closeTo(5 * 0.3048 - 3 * 0.0254, 1e-9));
     });
 
-    test('del removes pending char, then the last term', () {
+    test('del erases the pending number, then reopens the last term', () {
       final s = distState();
       type(s, '5');
       s.tapMagnitude(mag(s, 'ft'));
       type(s, '37');
       s.del(); // drop '7'
       expect(s.topLine.number, '5 ft 3');
-      s.del(); // drop '3' (pending empty)
-      s.del(); // remove the 'ft' term
+      s.del(); // drop '3' → pending empty
+      // The last term reopens for editing: its digit goes, the unit lingers.
+      s.del(); // "5 ft" → unit "ft" with no digits left
+      expect(s.termCount, 0); // not a committed term while editing …
+      expect(s.inputUnit?.symbol, 'ft'); // … but the unit is still shown
+      expect(s.topLine.number, 'ft');
+      s.del(); // now the unit goes too
+      expect(s.inputUnit, isNull);
+      expect(s.topLine.number, '0');
+    });
+  });
+
+  group('reopen the selected unit without All Clear', () {
+    test('tapping another magnitude relabels the committed term', () {
+      final s = distState(); // imperial / base 12
+      type(s, '3');
+      s.tapMagnitude(mag(s, 'in')); // "3 in"
+      expect(s.topLine.number, '3 in');
+      s.tapMagnitude(mag(s, 'ft')); // change the unit, keep the number
+      expect(s.termCount, 1);
+      expect(s.topLine.number, '3 ft');
+      expect(s.resultLine!.unit, 'ft');
+      expect(s.resultLine!.number, '3'); // value kept, not converted
+      s.tapMagnitude(mag(s, 'mi')); // and again
+      expect(s.topLine.number, '3 mi');
+    });
+
+    test('re-tapping the same magnitude changes nothing', () {
+      final s = distState();
+      type(s, '3');
+      s.tapMagnitude(mag(s, 'ft'));
+      s.tapMagnitude(mag(s, 'ft'));
+      expect(s.termCount, 1);
+      expect(s.topLine.number, '3 ft');
+    });
+
+    test('del erases digits but keeps the unit, then removes it', () {
+      final s = distState();
+      type(s, '13'); // base 12
+      s.tapMagnitude(mag(s, 'ft')); // "13 ft"
+      s.del(); // → "1 ft" (reopened, one digit dropped)
+      expect(s.topLine.number, '1 ft');
+      expect(s.inputUnit?.symbol, 'ft');
+      expect(s.termCount, 0); // reopened: not committed while editing
+      s.del(); // → "ft" (no digits)
+      expect(s.topLine.number, 'ft');
+      expect(s.inputUnit?.symbol, 'ft');
+      s.del(); // → unit gone
+      expect(s.topLine.number, '0');
+      expect(s.inputUnit, isNull);
+    });
+
+    test('retype after reopening, then re-commit with a magnitude tap', () {
+      final s = distState();
+      type(s, '5');
+      s.tapMagnitude(mag(s, 'ft')); // "5 ft"
+      s.del(); // single digit dropped → "ft" held, no digits
+      expect(s.topLine.number, 'ft');
+      type(s, '7'); // the held unit takes the new digits
+      expect(s.topLine.number, '7 ft');
+      s.tapMagnitude(mag(s, 'ft')); // re-commit
+      expect(s.termCount, 1);
+      expect(s.resultLine!.number, '7');
+      expect(s.resultLine!.unit, 'ft');
+    });
+
+    test('relabel the held unit when no digits remain', () {
+      final s = distState();
+      type(s, '5');
+      s.tapMagnitude(mag(s, 'in')); // "5 in"
+      s.del(); // → "in" held, no digits
+      expect(s.topLine.number, 'in');
+      s.tapMagnitude(mag(s, 'ft')); // relabel the held unit (no commit)
+      expect(s.topLine.number, 'ft');
+      expect(s.inputUnit?.symbol, 'ft');
       expect(s.termCount, 0);
+      type(s, '7'); // type into the relabeled held unit
+      expect(s.topLine.number, '7 ft');
+    });
+
+    test('a category switch drops the held unit', () {
+      final s = distState();
+      type(s, '5');
+      s.tapMagnitude(mag(s, 'ft'));
+      s.del(); // reopen → "ft" held
+      s.tapCategory(UnitCategory.weight);
+      expect(s.inputUnit, isNull);
+      expect(s.topLine.number, '0');
+    });
+
+    test('the reopened unit is the system-hue carrier on the input line', () {
+      final s = distState();
+      type(s, '13');
+      s.tapMagnitude(mag(s, 'ft'));
+      s.del(); // → "1 ft", held unit
+      final line = s.topLine;
+      final units = [
+        for (final (a, b) in line.unitRanges) line.number.substring(a, b),
+      ];
+      expect(units, ['ft']); // the held unit is coloured like a committed one
     });
   });
 

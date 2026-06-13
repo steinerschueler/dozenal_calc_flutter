@@ -1,7 +1,7 @@
 {
   "@@locale": "ja",
   "appTitle": "Dozenal Calc",
-  "infoListTitle": "理論とその他",
+  "infoListTitle": "メニュー",
   "infoListGlyphStyleTitle": "表示の数字",
   "infoListGlyphStyleCustom": "グリフ",
   "infoListGlyphStyleConventional": "0–9, A, B",
@@ -170,6 +170,7 @@
   "resultCopied": "コピーしました：{value}",
   "infoListHapticsTitle": "触覚フィードバック",
   "settingsTitle": "設定",
+  "settingsFontSizeTitle": "文字サイズ",
   "settingsKeypadModeTitle": "ファンクションキー",
   "settingsKeypadModeOverlay": "オーバーレイ",
   "settingsKeypadModeScroll": "スクロール",

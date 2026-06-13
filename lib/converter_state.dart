@@ -92,6 +92,15 @@ class ConverterState extends ChangeNotifier {
   bool _pendingSubtract = false; // operator for the next committed term
   int _resultStep = -1; // index into the result views (units + breakdown)
 
+  // A "selected" unit kept on the pending entry while its digits are edited.
+  // Set when Del reopens a committed term (the unit lingers as the digits are
+  // erased, then the next Del clears it once none remain) and when a magnitude
+  // is tapped with no number pending. Null = the plain pending number, which
+  // carries no unit until a magnitude commits it. Lets the user fix a value or
+  // its unit without All Clear — but a held unit is NOT a committed term, so
+  // it does not feed totalSi / the result line until re-committed.
+  Unit? _heldUnit;
+
   // Edit cursor. `_cursorTerm` is the term slot the cursor sits at (0..N): the
   // pending number, if any, is inserted there. `_inputCursor` is the caret
   // within the pending number (0.._input.length). With no pending number the
@@ -155,8 +164,10 @@ class ConverterState extends ChangeNotifier {
   bool get magnitudesExpanded => _magnitudesExpanded;
   bool get overlayOpen => _overlayOpen;
 
-  /// Last committed unit — used by the keypad to gold-mark the working unit.
-  Unit? get inputUnit => _terms.isEmpty ? null : _terms.last.unit;
+  /// The "selected" unit — used by the keypad to gold-mark the working unit:
+  /// a held unit being edited, otherwise the last committed term's unit.
+  Unit? get inputUnit =>
+      _heldUnit ?? (_terms.isEmpty ? null : _terms.last.unit);
 
   /// Whether `−` is armed for the next term (keypad indicator).
   bool get subtractArmed => _pendingSubtract;
@@ -318,7 +329,30 @@ class ConverterState extends ChangeNotifier {
       _input = _input.substring(0, _inputCursor - 1) +
           _input.substring(_inputCursor);
       _inputCursor--;
+    } else if (_input.isEmpty && _heldUnit != null) {
+      // A reopened term whose digits are all gone: this Del clears the unit
+      // too, so the term finally disappears.
+      _heldUnit = null;
+      _pendingSubtract = false;
+    } else if (_input.isEmpty &&
+        _cursorTerm == _terms.length &&
+        _terms.isNotEmpty) {
+      // Cursor right after the last ("selected") term: reopen it for editing
+      // instead of deleting it whole. Its number becomes the pending entry
+      // with the unit held, and this Del drops one digit; further Dels erase
+      // digits, and once none remain the next Del clears the held unit. Lets
+      // the user fix a misentered value without All Clear.
+      final t = _terms[_cursorTerm - 1];
+      _heldUnit = t.unit;
+      _pendingSubtract = t.subtract;
+      _removeTermAt(_cursorTerm - 1); // steps _cursorTerm back to the slot
+      _input = formatBaseNum(t.value, base);
+      if (_input.isNotEmpty) {
+        _input = _input.substring(0, _input.length - 1);
+      }
+      _inputCursor = _input.length;
     } else if (_input.isEmpty && _cursorTerm > 0) {
+      // Mid-expression boundary: remove the whole preceding term.
       _removeTermAt(_cursorTerm - 1);
     } else if (_input.isNotEmpty && _inputCursor == 0 && _cursorTerm > 0) {
       // caret at the very start of the pending number → delete the term before
@@ -335,6 +369,7 @@ class ConverterState extends ChangeNotifier {
     _inputCursor = 0;
     _cursorTerm = 0;
     _pendingSubtract = false;
+    _heldUnit = null;
     _activeCategory = null;
     _magnitudesExpanded = false;
     _resultStep = -1;
@@ -419,6 +454,7 @@ class ConverterState extends ChangeNotifier {
       _activeCategory = category;
       _magnitudesExpanded = true;
       _terms = const [];
+      _heldUnit = null; // its unit belonged to the old category
       // The pending number (and an armed −) survives the switch: it is
       // unit-less, so "type first, then choose the category" works — and so
       // does the Ans bridge's insert-then-categorise flow. Committed terms
@@ -433,10 +469,39 @@ class ConverterState extends ChangeNotifier {
   /// slot. Requires a pending entry; scalar expressions ("3×2") collapse to
   /// their value here.
   void tapMagnitude(Unit unit) {
-    if (_input.isEmpty) return;
     final ladder = currentLadder;
     final i = ladder.indexWhere((u) => u.symbol == unit.symbol);
     if (i < 0) return;
+
+    if (_input.isEmpty) {
+      // No number being typed. If a unit is already "selected" — a held unit
+      // (a term reopened by Del) or the last committed term sitting right at
+      // the cursor — re-assign it to the tapped magnitude, keeping the number.
+      // Lets the user correct the unit (in → ft → mi) without All Clear. This
+      // re-labels the value; the `=` cycle is what *converts* between units.
+      if (_heldUnit != null) {
+        if (_heldUnit!.symbol != unit.symbol) {
+          _heldUnit = unit;
+          notifyListeners();
+        }
+        return;
+      }
+      if (_cursorTerm == _terms.length && _terms.isNotEmpty) {
+        final idx = _cursorTerm - 1;
+        final old = _terms[idx];
+        if (old.unit.symbol == unit.symbol) return; // no change
+        _terms = [
+          ..._terms.sublist(0, idx),
+          _Term(old.value, unit, subtract: old.subtract),
+          ..._terms.sublist(idx + 1),
+        ];
+        _resultStep = i;
+        notifyListeners();
+      }
+      return;
+    }
+
+    // Commit the pending number as a term in `unit` (clearing any held unit).
     final term = _Term(parseScalarEntry(_input, base), unit,
         subtract: _pendingSubtract);
     if (_def!.affine) {
@@ -451,6 +516,7 @@ class ConverterState extends ChangeNotifier {
       _cursorTerm++;
     }
     _pendingSubtract = false;
+    _heldUnit = null;
     _input = '';
     _inputCursor = 0;
     _resultStep = i;
@@ -469,10 +535,11 @@ class ConverterState extends ChangeNotifier {
   // ── Cursor (tap-to-position) ────────────────────────────────────────────
 
   /// Place the cursor at a term boundary (0..N). Discards an incomplete pending
-  /// number (it has no unit yet, so it can't become a term).
+  /// number and any held unit being edited (neither is a committed term).
   void moveCursorToTermBoundary(int boundary) {
     _input = '';
     _inputCursor = 0;
+    _heldUnit = null;
     _cursorTerm = boundary.clamp(0, _terms.length);
     notifyListeners();
   }
@@ -489,7 +556,7 @@ class ConverterState extends ChangeNotifier {
   /// boundaries. Never discards the pending number (unlike a boundary tap):
   /// at its edge the key simply stops.
   void moveCaretLeft() {
-    if (_input.isNotEmpty) {
+    if (_input.isNotEmpty || _heldUnit != null) {
       if (_inputCursor > 0) {
         _inputCursor--;
         notifyListeners();
@@ -501,7 +568,7 @@ class ConverterState extends ChangeNotifier {
   }
 
   void moveCaretRight() {
-    if (_input.isNotEmpty) {
+    if (_input.isNotEmpty || _heldUnit != null) {
       if (_inputCursor < _input.length) {
         _inputCursor++;
         notifyListeners();
@@ -525,6 +592,7 @@ class ConverterState extends ChangeNotifier {
     final ref = hadTerms ? _terms.last.unit : null;
 
     _world = w;
+    _heldUnit = null; // a unit being edited belongs to the old system
 
     if (hadTerms && def != null && !def.singleWorld) {
       final partner = bracketPartner(_activeCategory!, ref!);
@@ -636,14 +704,21 @@ class ConverterState extends ChangeNotifier {
     }
 
     final unitRanges = <(int, int)>[];
+    final hasPending = _input.isNotEmpty || _heldUnit != null;
     for (var i = 0; i <= _terms.length; i++) {
-      if (i == _cursorTerm && _input.isNotEmpty) {
-        emit(opStr(_pendingSubtract, null));
+      if (i == _cursorTerm && hasPending) {
+        emit(opStr(_pendingSubtract, _heldUnit));
         pendingStart = len;
         emit(_input);
-        pendingEnd = len;
+        pendingEnd = len; // caret stays within the digits, before the unit
+        if (_heldUnit != null) {
+          if (_input.isNotEmpty) emit(' ');
+          final unitStart = len;
+          emit(_heldUnit!.symbol);
+          unitRanges.add((unitStart, len));
+        }
         rendered++;
-        prevUnit = null;
+        prevUnit = _heldUnit;
       }
       if (i < _terms.length) {
         final t = _terms[i];

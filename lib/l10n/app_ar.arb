@@ -1,7 +1,7 @@
 {
   "@@locale": "ar",
   "appTitle": "Dozenal Calc",
-  "infoListTitle": "النظرية والمزيد",
+  "infoListTitle": "القائمة",
   "infoListGlyphStyleTitle": "الأرقام في الشاشة",
   "infoListGlyphStyleCustom": "الرموز",
   "infoListGlyphStyleConventional": "0–9, A, B",
@@ -170,6 +170,7 @@
   "resultCopied": "تم النسخ: {value}",
   "infoListHapticsTitle": "ردود فعل لمسية",
   "settingsTitle": "الإعدادات",
+  "settingsFontSizeTitle": "حجم الخط",
   "settingsKeypadModeTitle": "مفاتيح الدوال",
   "settingsKeypadModeOverlay": "تراكب",
   "settingsKeypadModeScroll": "تمرير",

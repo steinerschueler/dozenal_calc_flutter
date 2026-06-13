@@ -175,6 +175,7 @@ class _DozenalCalcAppState extends State<DozenalCalcApp>
                   listenable: Listenable.merge([
                     _localeNotifier,
                     _themeNotifier,
+                    _calcPrefs,
                   ]),
                   builder: (context, _) {
                     final colors = _themeNotifier.colors;
@@ -202,6 +203,24 @@ class _DozenalCalcAppState extends State<DozenalCalcApp>
                         // double feedback.
                         splashFactory: NoSplash.splashFactory,
                       ),
+                      builder: (ctx, child) {
+                        // App-wide text size: the user's Schriftgröße choice
+                        // times the automatic tablet baseline. Phones at
+                        // Normal stay 1.0; composed over the system textScaler
+                        // so the OS font-size accessibility setting still
+                        // applies. Custom-painted displays don't follow this
+                        // (the converter display scales itself; see there).
+                        final mq = MediaQuery.of(ctx);
+                        final scale = effectiveTextScale(
+                          _calcPrefs.fontSize, mq.size.shortestSide);
+                        return MediaQuery(
+                          data: mq.copyWith(
+                            textScaler: TextScaler.linear(
+                                mq.textScaler.scale(1.0) * scale),
+                          ),
+                          child: child!,
+                        );
+                      },
                       home: _CalcScaffold(state: _calcState),
                     );
                   },
@@ -334,7 +353,7 @@ class _CalcScaffoldState extends State<_CalcScaffold> {
 
   /// Show the page-peek indicator briefly (restarting the clock if it is
   /// already up). Fired on boot, on closing the intro, on returning from
-  /// "Theory and More" — and continuously while the pager moves (see
+  /// the "Menu" page — and continuously while the pager moves (see
   /// [_onPagerScroll]), so the hide timer only starts counting once the
   /// cards have settled.
   void _pulsePagePeek() {

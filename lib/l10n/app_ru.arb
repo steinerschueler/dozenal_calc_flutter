@@ -1,7 +1,7 @@
 {
   "@@locale": "ru",
   "appTitle": "Dozenal Calc",
-  "infoListTitle": "Теория и прочее",
+  "infoListTitle": "Меню",
   "infoListGlyphStyleTitle": "Цифры на дисплее",
   "infoListGlyphStyleCustom": "Глифы",
   "infoListGlyphStyleConventional": "0–9, A, B",
@@ -170,6 +170,7 @@
   "resultCopied": "Скопировано: {value}",
   "infoListHapticsTitle": "Тактильная отдача",
   "settingsTitle": "Настройки",
+  "settingsFontSizeTitle": "Размер шрифта",
   "settingsKeypadModeTitle": "Функциональные клавиши",
   "settingsKeypadModeOverlay": "Оверлей",
   "settingsKeypadModeScroll": "Прокрутка",

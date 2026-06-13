@@ -16,6 +16,7 @@ import 'locale_notifier.dart';
 import 'privacy_page.dart';
 import 'recommendations/recommendations.dart';
 import 'recommendations/recommendations_page.dart';
+import 'round_badge.dart';
 import 'settings_page.dart';
 import 'support_page.dart';
 import 'theory/chapter_image_view.dart';
@@ -50,12 +51,14 @@ class InfoListPage extends StatelessWidget {
             // Terme, Skalar-Rechnen, Speicher/Bruecke).
             _ManualSectionExpansion(
               icon: Icons.touch_app_outlined,
+              color: BadgeHue.blue,
               titleOf: (l) => l.chapterTitle01,
               chaptersOf: manualChapters,
             ),
             Divider(color: t.divider, height: 1),
             _ManualSectionExpansion(
               icon: Icons.swap_horiz,
+              color: BadgeHue.teal,
               titleOf: (l) => l.infoListConverterManual,
               chaptersOf: converterManualChapters,
             ),
@@ -79,13 +82,9 @@ class InfoListPage extends StatelessWidget {
             // Scrollen, Alle/Einfach) und Zahlensystem/Winkelmodus auf einer
             // eigenen Seite (settings_page.dart).
             ListTile(
-              leading: SizedBox(
-                width: 28,
-                child: Icon(
-                  Icons.settings_outlined,
-                  color: t.textMuted,
-                  size: 16,
-                ),
+              leading: const RoundIconBadge(
+                icon: Icons.settings_outlined,
+                color: BadgeHue.slate,
               ),
               title: Text(
                 l.settingsTitle,
@@ -100,13 +99,9 @@ class InfoListPage extends StatelessWidget {
             const _LanguagePickerExpansion(),
             Divider(color: t.divider, height: 1),
             ListTile(
-              leading: SizedBox(
-                width: 28,
-                child: Icon(
-                  Icons.shield_outlined,
-                  color: t.textMuted,
-                  size: 16,
-                ),
+              leading: const RoundIconBadge(
+                icon: Icons.shield_outlined,
+                color: BadgeHue.green,
               ),
               title: Text(
                 l.infoListPrivacyEntry,
@@ -119,9 +114,9 @@ class InfoListPage extends StatelessWidget {
             ),
             Divider(color: t.divider, height: 1),
             ListTile(
-              leading: SizedBox(
-                width: 28,
-                child: Icon(Icons.balance, color: t.textMuted, size: 16),
+              leading: const RoundIconBadge(
+                icon: Icons.balance,
+                color: BadgeHue.bronze,
               ),
               title: Text(
                 l.infoListLicenseEntry,
@@ -134,13 +129,9 @@ class InfoListPage extends StatelessWidget {
             ),
             Divider(color: t.divider, height: 1),
             ListTile(
-              leading: SizedBox(
-                width: 28,
-                child: Icon(
-                  Icons.favorite_outline,
-                  color: t.textMuted,
-                  size: 16,
-                ),
+              leading: const RoundIconBadge(
+                icon: Icons.favorite_outline,
+                color: BadgeHue.pink,
               ),
               title: Text(
                 l.infoListSupportEntry,
@@ -153,13 +144,9 @@ class InfoListPage extends StatelessWidget {
             ),
             Divider(color: t.divider, height: 1),
             ListTile(
-              leading: SizedBox(
-                width: 28,
-                child: Icon(
-                  Icons.mail_outline,
-                  color: t.textMuted,
-                  size: 16,
-                ),
+              leading: const RoundIconBadge(
+                icon: Icons.mail_outline,
+                color: BadgeHue.cyan,
               ),
               title: Text(
                 l.infoListFeedbackEntry,
@@ -234,11 +221,13 @@ class _VersionFooterState extends State<_VersionFooter> {
 class _ManualSectionExpansion extends StatefulWidget {
   const _ManualSectionExpansion({
     required this.icon,
+    required this.color,
     required this.titleOf,
     required this.chaptersOf,
   });
 
   final IconData icon;
+  final Color color;
   final String Function(AppLocalizations) titleOf;
   final List<ManualChapter> Function(String langTag) chaptersOf;
 
@@ -259,10 +248,7 @@ class _ManualSectionExpansionState extends State<_ManualSectionExpansion> {
     return Column(
       children: [
         ListTile(
-          leading: SizedBox(
-            width: 28,
-            child: Icon(widget.icon, color: t.textMuted, size: 16),
-          ),
+          leading: RoundIconBadge(icon: widget.icon, color: widget.color),
           title: Text(
             widget.titleOf(l),
             style: TextStyle(fontSize: 14, color: t.textPrimary),
@@ -284,7 +270,7 @@ class _ManualSectionExpansionState extends State<_ManualSectionExpansion> {
                       Divider(color: t.divider, height: 1),
                       ListTile(
                         contentPadding: const EdgeInsetsDirectional.fromSTEB(
-                          32,
+                          kSubItemIndent,
                           0,
                           16,
                           0,
@@ -355,13 +341,9 @@ class _TheoryExpansionState extends State<_TheoryExpansion> {
     return Column(
       children: [
         ListTile(
-          leading: SizedBox(
-            width: 28,
-            child: Icon(
-              Icons.menu_book_outlined,
-              color: t.textMuted,
-              size: 16,
-            ),
+          leading: const RoundIconBadge(
+            icon: Icons.menu_book_outlined,
+            color: BadgeHue.violet,
           ),
           title: Text(
             l.infoListTheoryExpansion,
@@ -388,7 +370,7 @@ class _TheoryExpansionState extends State<_TheoryExpansion> {
                       Divider(color: t.divider, height: 1),
                       ListTile(
                         contentPadding: const EdgeInsetsDirectional.fromSTEB(
-                          32,
+                          kSubItemIndent,
                           0,
                           16,
                           0,
@@ -424,7 +406,7 @@ class _TheoryExpansionState extends State<_TheoryExpansion> {
                     Divider(color: t.divider, height: 1),
                     ListTile(
                       contentPadding: const EdgeInsetsDirectional.fromSTEB(
-                        32,
+                        kSubItemIndent,
                         0,
                         16,
                         0,
@@ -472,13 +454,9 @@ class _RecommendationsExpansionState extends State<_RecommendationsExpansion> {
     return Column(
       children: [
         ListTile(
-          leading: SizedBox(
-            width: 28,
-            child: Icon(
-              Icons.recommend_outlined,
-              color: t.textMuted,
-              size: 16,
-            ),
+          leading: const RoundIconBadge(
+            icon: Icons.recommend_outlined,
+            color: BadgeHue.amber,
           ),
           title: Text(
             l.infoListRecommendationsExpansion,
@@ -501,7 +479,7 @@ class _RecommendationsExpansionState extends State<_RecommendationsExpansion> {
                       Divider(color: t.divider, height: 1),
                       ListTile(
                         contentPadding: const EdgeInsetsDirectional.fromSTEB(
-                          32,
+                          kSubItemIndent,
                           0,
                           16,
                           0,
@@ -561,7 +539,7 @@ class _LanguagePickerExpansionState extends State<_LanguagePickerExpansion> {
     return Column(
       children: [
         ListTile(
-          leading: _FlagThumb(option: active),
+          leading: RoundFlagBadge(option: active),
           title: Text(
             active.label,
             style: TextStyle(fontSize: 14, color: t.textSecondary),
@@ -587,12 +565,12 @@ class _LanguagePickerExpansionState extends State<_LanguagePickerExpansion> {
                     for (final lang in kSupportedLanguages)
                       ListTile(
                         contentPadding: const EdgeInsetsDirectional.fromSTEB(
-                          32,
+                          kSubItemIndent,
                           0,
                           16,
                           0,
                         ),
-                        leading: _FlagThumb(option: lang),
+                        leading: RoundFlagBadge(option: lang),
                         title: Text(
                           lang.label,
                           style: TextStyle(
@@ -636,25 +614,6 @@ class _NavChevron extends StatelessWidget {
       rtl ? Icons.chevron_left : Icons.chevron_right,
       color: AppColors.of(context).textFaint,
       size: 18,
-    );
-  }
-}
-
-/// Small flag rendered at a uniform 16-dp height; width follows the
-/// language's canonical flag aspect ratio so DE (5:3) and UK (2:1) keep
-/// their natural shape.
-class _FlagThumb extends StatelessWidget {
-  final LanguageOption option;
-  const _FlagThumb({required this.option});
-
-  @override
-  Widget build(BuildContext context) {
-    const h = 16.0;
-    final w = h * option.canonicalFlagSize.aspectRatio;
-    return SizedBox(
-      width: w,
-      height: h,
-      child: CustomPaint(size: Size(w, h), painter: option.flagPainter),
     );
   }
 }

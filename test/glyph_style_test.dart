@@ -12,45 +12,46 @@ void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
   setUp(() => SharedPreferences.setMockInitialValues({}));
 
-  test('defaults: both prefs are custom glyphs', () {
+  test('defaults: both prefs are conventional digits', () {
     final n = GlyphStyleNotifier();
-    expect(n.style, GlyphStyle.custom);
-    expect(n.keypadStyle, GlyphStyle.custom);
+    expect(n.style, GlyphStyle.conventional);
+    expect(n.keypadStyle, GlyphStyle.conventional);
   });
 
   test('keypad pref persists and reloads independently of the display pref',
       () async {
     final first = GlyphStyleNotifier();
     await first.load();
-    await first.setKeypadStyle(GlyphStyle.conventional);
-    expect(first.style, GlyphStyle.custom, reason: 'display pref untouched');
+    await first.setKeypadStyle(GlyphStyle.custom); // non-default
+    expect(first.style, GlyphStyle.conventional, reason: 'display pref untouched');
 
     final second = GlyphStyleNotifier();
     await second.load();
-    expect(second.keypadStyle, GlyphStyle.conventional);
-    expect(second.style, GlyphStyle.custom);
+    expect(second.keypadStyle, GlyphStyle.custom);
+    expect(second.style, GlyphStyle.conventional);
   });
 
   test('display pref persists without affecting the keypad pref', () async {
     final first = GlyphStyleNotifier();
     await first.load();
-    await first.setStyle(GlyphStyle.conventional);
+    await first.setStyle(GlyphStyle.custom); // non-default
 
     final second = GlyphStyleNotifier();
     await second.load();
-    expect(second.style, GlyphStyle.conventional);
-    expect(second.keypadStyle, GlyphStyle.custom);
+    expect(second.style, GlyphStyle.custom);
+    expect(second.keypadStyle, GlyphStyle.conventional);
   });
 
-  test('unknown stored strings fall back to custom', () async {
+  test('unknown stored strings fall back to the conventional default',
+      () async {
     SharedPreferences.setMockInitialValues({
       'glyph_style_v1': 'comic-sans',
       'keypad_glyph_style_v1': 'wingdings',
     });
     final n = GlyphStyleNotifier();
     await n.load();
-    expect(n.style, GlyphStyle.custom);
-    expect(n.keypadStyle, GlyphStyle.custom);
+    expect(n.style, GlyphStyle.conventional);
+    expect(n.keypadStyle, GlyphStyle.conventional);
   });
 
   test('setKeypadStyle notifies on change and no-ops on equal values',
@@ -60,9 +61,9 @@ void main() {
     var notifications = 0;
     n.addListener(() => notifications++);
 
-    await n.setKeypadStyle(GlyphStyle.conventional);
+    await n.setKeypadStyle(GlyphStyle.custom); // non-default → changes
     expect(notifications, 1);
-    await n.setKeypadStyle(GlyphStyle.conventional);
+    await n.setKeypadStyle(GlyphStyle.custom);
     expect(notifications, 1);
   });
 
@@ -82,8 +83,9 @@ void main() {
   });
 
   testWidgets('keypadStyleOf reads the scoped notifier', (tester) async {
+    // Default keypad style is conventional — distinct from the no-scope
+    // fallback (custom), so this proves the scope's value is read.
     final n = GlyphStyleNotifier();
-    await n.setKeypadStyle(GlyphStyle.conventional);
     late GlyphStyle resolved;
     await tester.pumpWidget(
       GlyphStyleScope(

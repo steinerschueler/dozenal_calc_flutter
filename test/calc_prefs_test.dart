@@ -10,12 +10,13 @@ import 'package:dozenal_calc_flutter/tokens.dart' show AngleMode, NumeralSystem;
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
-  test('defaults match the pre-settings app behavior', () {
+  test('defaults: decimal numerals, overlay/full/deg keypad', () {
     final prefs = CalcPrefsNotifier();
     expect(prefs.mode, KeypadMode.overlay);
     expect(prefs.profile, KeypadProfile.full);
-    expect(prefs.numeralSystem, NumeralSystem.doz);
+    expect(prefs.numeralSystem, NumeralSystem.dez);
     expect(prefs.angleMode, AngleMode.deg);
+    expect(prefs.fontSize, FontSize.normal);
     expect(prefs.loaded, isFalse);
   });
 
@@ -25,8 +26,9 @@ void main() {
     await prefs.load();
     expect(prefs.mode, KeypadMode.overlay);
     expect(prefs.profile, KeypadProfile.full);
-    expect(prefs.numeralSystem, NumeralSystem.doz);
+    expect(prefs.numeralSystem, NumeralSystem.dez);
     expect(prefs.angleMode, AngleMode.deg);
+    expect(prefs.fontSize, FontSize.normal);
     expect(prefs.loaded, isTrue);
   });
 
@@ -36,15 +38,28 @@ void main() {
     await first.load();
     await first.setMode(KeypadMode.scroll);
     await first.setProfile(KeypadProfile.simple);
-    await first.setNumeralSystem(NumeralSystem.dez);
+    await first.setNumeralSystem(NumeralSystem.doz); // non-default → real roundtrip
     await first.setAngleMode(AngleMode.rad);
+    await first.setFontSize(FontSize.large);
 
     final second = CalcPrefsNotifier();
     await second.load();
     expect(second.mode, KeypadMode.scroll);
     expect(second.profile, KeypadProfile.simple);
-    expect(second.numeralSystem, NumeralSystem.dez);
+    expect(second.numeralSystem, NumeralSystem.doz);
     expect(second.angleMode, AngleMode.rad);
+    expect(second.fontSize, FontSize.large);
+  });
+
+  test('effectiveTextScale: phones unchanged at Normal, tablets boosted', () {
+    expect(effectiveTextScale(FontSize.normal, 360), 1.0); // phone
+    expect(effectiveTextScale(FontSize.normal, 600), 1.0); // phone/tablet edge
+    expect(effectiveTextScale(FontSize.normal, 800), greaterThan(1.3)); // tablet
+    expect(effectiveTextScale(FontSize.large, 360), closeTo(1.2, 1e-9));
+    expect(effectiveTextScale(FontSize.xlarge, 360), closeTo(1.4, 1e-9));
+    // User choice and tablet baseline compose.
+    expect(effectiveTextScale(FontSize.large, 800),
+        closeTo(effectiveTextScale(FontSize.normal, 800) * 1.2, 1e-9));
   });
 
   test('unknown stored strings fall back to the defaults', () async {
@@ -58,7 +73,7 @@ void main() {
     await prefs.load();
     expect(prefs.mode, KeypadMode.overlay);
     expect(prefs.profile, KeypadProfile.full);
-    expect(prefs.numeralSystem, NumeralSystem.doz);
+    expect(prefs.numeralSystem, NumeralSystem.dez);
     expect(prefs.angleMode, AngleMode.deg);
   });
 

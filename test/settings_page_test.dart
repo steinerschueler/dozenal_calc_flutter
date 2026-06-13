@@ -117,6 +117,11 @@ void main() {
 
   testWidgets('keypad-glyphs segment drives setKeypadStyle', (tester) async {
     final glyphs = GlyphStyleNotifier();
+    // Both prefs now default to conventional; start on the custom glyphs so
+    // tapping the conventional segment is a real change and the display
+    // pref's independence stays observable.
+    await glyphs.setKeypadStyle(GlyphStyle.custom);
+    await glyphs.setStyle(GlyphStyle.custom);
     await tester.pumpWidget(
       _wrap(
         prefs: CalcPrefsNotifier(),

@@ -1,7 +1,7 @@
 {
   "@@locale": "fr",
   "appTitle": "Dozenal Calc",
-  "infoListTitle": "Théorie et autres",
+  "infoListTitle": "Menu",
   "infoListGlyphStyleTitle": "Chiffres à l'écran",
   "infoListGlyphStyleCustom": "Glyphes",
   "infoListGlyphStyleConventional": "0–9, A, B",
@@ -170,6 +170,7 @@
   "resultCopied": "Copié : {value}",
   "infoListHapticsTitle": "Retour haptique",
   "settingsTitle": "Réglages",
+  "settingsFontSizeTitle": "Taille du texte",
   "settingsKeypadModeTitle": "Touches de fonction",
   "settingsKeypadModeOverlay": "Superposition",
   "settingsKeypadModeScroll": "Défilement",

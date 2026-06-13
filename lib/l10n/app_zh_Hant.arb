@@ -1,7 +1,7 @@
 {
   "@@locale": "zh_Hant",
   "appTitle": "Dozenal Calc",
-  "infoListTitle": "理論與其他",
+  "infoListTitle": "選單",
   "infoListGlyphStyleTitle": "顯示數字",
   "infoListGlyphStyleCustom": "字形",
   "infoListGlyphStyleConventional": "0–9, A, B",
@@ -170,6 +170,7 @@
   "resultCopied": "已複製：{value}",
   "infoListHapticsTitle": "觸覺回饋",
   "settingsTitle": "設定",
+  "settingsFontSizeTitle": "字體大小",
   "settingsKeypadModeTitle": "功能鍵",
   "settingsKeypadModeOverlay": "疊層",
   "settingsKeypadModeScroll": "捲動",

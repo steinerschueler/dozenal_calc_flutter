@@ -1,7 +1,7 @@
 {
   "@@locale": "hi",
   "appTitle": "Dozenal Calc",
-  "infoListTitle": "सिद्धांत और अधिक",
+  "infoListTitle": "मेन्यू",
   "infoListGlyphStyleTitle": "डिस्प्ले में अंक",
   "infoListGlyphStyleCustom": "ग्लिफ़",
   "infoListGlyphStyleConventional": "0–9, A, B",
@@ -170,6 +170,7 @@
   "resultCopied": "कॉपी किया गया: {value}",
   "infoListHapticsTitle": "हैप्टिक फीडबैक",
   "settingsTitle": "सेटिंग्स",
+  "settingsFontSizeTitle": "फ़ॉन्ट आकार",
   "settingsKeypadModeTitle": "फ़ंक्शन कुंजियाँ",
   "settingsKeypadModeOverlay": "ओवरले",
   "settingsKeypadModeScroll": "स्क्रॉल",

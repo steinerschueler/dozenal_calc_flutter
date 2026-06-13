@@ -1,7 +1,7 @@
 {
   "@@locale": "fa",
   "appTitle": "Dozenal Calc",
-  "infoListTitle": "نظریه و موارد دیگر",
+  "infoListTitle": "منو",
   "infoListGlyphStyleTitle": "ارقام در نمایشگر",
   "infoListGlyphStyleCustom": "نمادها",
   "infoListGlyphStyleConventional": "0–9, A, B",
@@ -170,6 +170,7 @@
   "resultCopied": "کپی شد: {value}",
   "infoListHapticsTitle": "بازخورد لمسی",
   "settingsTitle": "تنظیمات",
+  "settingsFontSizeTitle": "اندازه قلم",
   "settingsKeypadModeTitle": "کلیدهای تابع",
   "settingsKeypadModeOverlay": "همپوشانی",
   "settingsKeypadModeScroll": "پیمایش",

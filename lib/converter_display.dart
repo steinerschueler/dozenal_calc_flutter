@@ -20,6 +20,7 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 
 import 'app_theme.dart';
+import 'calc_prefs.dart';
 import 'converter_state.dart';
 import 'glyph_painter.dart';
 import 'logic/glyph_style.dart';
@@ -166,6 +167,16 @@ class ConverterDisplay extends StatelessWidget {
     // Shared with the main display ("Ziffern im Display" in settings).
     final style = GlyphStyleScope.styleOf(context);
     final unitColor = systemIsTen ? t.worldTen : t.worldTwelve;
+    // The wide tablet display would otherwise leave the height-sized text —
+    // the unit symbols especially — lost in empty space. Scale with the same
+    // factor as the rest of the app (the Schriftgröße setting × the automatic
+    // tablet baseline); the app-wide textScaler can't reach this custom-
+    // painted line, so it reads the factor directly. Capped so the two lines
+    // never overflow the fixed-height panel. Phones at Normal stay 1.0.
+    final fontSize =
+        CalcPrefsScope.maybeOf(context)?.fontSize ?? FontSize.normal;
+    final shortest = MediaQuery.maybeOf(context)?.size.shortestSide ?? 0.0;
+    final tabletScale = effectiveTextScale(fontSize, shortest).clamp(1.0, 1.8);
     return Container(
       decoration: BoxDecoration(
         color: t.displayBg,
@@ -176,7 +187,7 @@ class ConverterDisplay extends StatelessWidget {
       child: LayoutBuilder(
         builder: (ctx, c) {
           final h = c.maxHeight.isFinite ? c.maxHeight : 120.0;
-          final resultSize = (h * 0.24).clamp(18.0, 38.0);
+          final resultSize = (h * 0.24).clamp(18.0, 38.0) * tabletScale;
           final topSize = resultSize * 0.72;
           final bracketSize = topSize * 0.74;
 

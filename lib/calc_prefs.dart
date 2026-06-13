@@ -31,22 +31,49 @@ enum KeypadProfile {
   simple,
 }
 
+/// User-selectable text size, applied app-wide via [effectiveTextScale].
+enum FontSize { normal, large, xlarge }
+
+extension FontSizeFactor on FontSize {
+  /// The user-chosen multiplier (on top of the automatic tablet baseline).
+  double get factor => switch (this) {
+        FontSize.normal => 1.0,
+        FontSize.large => 1.2,
+        FontSize.xlarge => 1.4,
+      };
+}
+
+/// Effective text scale: the user's [FontSize] choice times an automatic
+/// tablet baseline. Phones (shortestSide ≤ 600 dp) get exactly 1.0 at
+/// [FontSize.normal], so they're unchanged; tablets scale up so text isn't
+/// lost on the wide screen. Drives the app-wide MediaQuery textScaler and the
+/// custom-painted converter display (which the textScaler can't reach).
+double effectiveTextScale(FontSize fontSize, double shortestSide) {
+  final tablet = shortestSide <= 600
+      ? 1.0
+      : (1.0 + (shortestSide - 600) / 300).clamp(1.0, 1.6);
+  return fontSize.factor * tablet;
+}
+
 class CalcPrefsNotifier extends ChangeNotifier {
   static const String _kModeKey = 'keypad_mode_v1';
   static const String _kProfileKey = 'keypad_profile_v1';
   static const String _kNumeralKey = 'numeral_system_v1';
   static const String _kAngleKey = 'angle_mode_v1';
+  static const String _kFontSizeKey = 'font_size_v1';
 
   KeypadMode _mode = KeypadMode.overlay;
   KeypadProfile _profile = KeypadProfile.full;
-  NumeralSystem _numeralSystem = NumeralSystem.doz;
+  NumeralSystem _numeralSystem = NumeralSystem.dez; // decimal by default
   AngleMode _angleMode = AngleMode.deg;
+  FontSize _fontSize = FontSize.normal;
   bool _loaded = false;
 
   KeypadMode get mode => _mode;
   KeypadProfile get profile => _profile;
   NumeralSystem get numeralSystem => _numeralSystem;
   AngleMode get angleMode => _angleMode;
+  FontSize get fontSize => _fontSize;
   bool get loaded => _loaded;
 
   Future<void> load() async {
@@ -66,6 +93,11 @@ class CalcPrefsNotifier extends ChangeNotifier {
       AngleMode.values,
       prefs.getString(_kAngleKey),
       _angleMode,
+    );
+    _fontSize = _enumFromName(
+      FontSize.values,
+      prefs.getString(_kFontSizeKey),
+      _fontSize,
     );
     _loaded = true;
     notifyListeners();
@@ -99,6 +131,13 @@ class CalcPrefsNotifier extends ChangeNotifier {
     await _persist(_kAngleKey, next.name);
   }
 
+  Future<void> setFontSize(FontSize next) async {
+    if (next == _fontSize) return;
+    _fontSize = next;
+    notifyListeners();
+    await _persist(_kFontSizeKey, next.name);
+  }
+
   static Future<void> _persist(String key, String value) async {
     final prefs = await SharedPreferences.getInstance();
     await prefs.setString(key, value);
@@ -125,4 +164,9 @@ class CalcPrefsScope extends InheritedNotifier<CalcPrefsNotifier> {
     assert(scope != null, 'CalcPrefsScope.of called outside the prefs scope.');
     return scope!.notifier!;
   }
+
+  /// Like [of] but returns null outside the scope (the converter display and
+  /// preview/test harnesses read the font size defensively).
+  static CalcPrefsNotifier? maybeOf(BuildContext context) =>
+      context.dependOnInheritedWidgetOfExactType<CalcPrefsScope>()?.notifier;
 }

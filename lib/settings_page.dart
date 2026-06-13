@@ -1,4 +1,4 @@
-// Settings page, reached from the info list ("Theorie und Weiteres" →
+// Settings page, reached from the info list ("Menü" →
 // "Einstellungen"). Bundles the quick preferences that used to live as
 // loose rows in the info list (glyph style, haptics) with the new keypad
 // preferences (overlay vs. scroll, full vs. simple) and — because the
@@ -18,6 +18,7 @@ import 'calc_scope.dart';
 import 'haptics.dart';
 import 'l10n/app_localizations.dart';
 import 'logic/glyph_style.dart';
+import 'round_badge.dart';
 import 'tokens.dart';
 
 class SettingsPage extends StatelessWidget {
@@ -45,6 +46,7 @@ class SettingsPage extends StatelessWidget {
             if (theme != null) ...[
               _SegmentRow(
                 icon: Icons.brightness_6_outlined,
+                color: BadgeHue.indigo,
                 title: l.settingsThemeTitle,
                 labels: [
                   // Label order mirrors ThemeSetting.values (dark/light/system).
@@ -62,10 +64,13 @@ class SettingsPage extends StatelessWidget {
             Divider(color: t.divider, height: 1),
             const _KeypadGlyphsRow(),
             Divider(color: t.divider, height: 1),
+            const _FontSizeRow(),
+            Divider(color: t.divider, height: 1),
             const _HapticsRow(),
             Divider(color: t.divider, height: 1),
             _SegmentRow(
               icon: Icons.layers_outlined,
+              color: BadgeHue.green,
               title: l.settingsKeypadModeTitle,
               labels: [l.settingsKeypadModeOverlay, l.settingsKeypadModeScroll],
               selectedIndex: prefs.mode == KeypadMode.overlay ? 0 : 1,
@@ -76,6 +81,7 @@ class SettingsPage extends StatelessWidget {
             Divider(color: t.divider, height: 1),
             _SegmentRow(
               icon: Icons.functions,
+              color: BadgeHue.pink,
               title: l.settingsScopeTitle,
               labels: [l.settingsScopeFull, l.settingsScopeSimple],
               selectedIndex: prefs.profile == KeypadProfile.full ? 0 : 1,
@@ -92,6 +98,7 @@ class SettingsPage extends StatelessWidget {
                 // dozenal = Twelve-world violet, decimal = Ten-world green
                 // (same hues as the DOZ/DEZ badges and the converter keys).
                 icon: Icons.dialpad,
+                color: BadgeHue.cyan,
                 title: l.settingsNumeralSystemTitle,
                 labels: [
                   l.settingsNumeralSystemDozenal,
@@ -107,6 +114,7 @@ class SettingsPage extends StatelessWidget {
               Divider(color: t.divider, height: 1),
               _SegmentRow(
                 icon: Icons.architecture,
+                color: BadgeHue.bronze,
                 title: l.settingsAngleModeTitle,
                 // DEG/RAD/GRD are the same labels the display badge shows.
                 labels: [for (final m in AngleMode.values) m.label],
@@ -135,6 +143,7 @@ class _GlyphStyleRow extends StatelessWidget {
     final notifier = GlyphStyleScope.of(context);
     return _SegmentRow(
       icon: Icons.text_fields,
+      color: BadgeHue.violet,
       title: l.infoListGlyphStyleTitle,
       labels: [l.infoListGlyphStyleCustom, l.infoListGlyphStyleConventional],
       selectedIndex: notifier.style == GlyphStyle.custom ? 0 : 1,
@@ -157,11 +166,63 @@ class _KeypadGlyphsRow extends StatelessWidget {
     final notifier = GlyphStyleScope.of(context);
     return _SegmentRow(
       icon: Icons.dialpad_outlined,
+      color: BadgeHue.blue,
       title: l.settingsKeypadGlyphsTitle,
       labels: [l.infoListGlyphStyleCustom, l.infoListGlyphStyleConventional],
       selectedIndex: notifier.keypadStyle == GlyphStyle.custom ? 0 : 1,
       onSelected: (i) => notifier.setKeypadStyle(
         i == 0 ? GlyphStyle.custom : GlyphStyle.conventional,
+      ),
+    );
+  }
+}
+
+/// Text-size picker: three "A" glyphs at increasing sizes (language-neutral,
+/// so only the row title is localized). Drives [CalcPrefsNotifier.setFontSize]
+/// → the app-wide textScaler and the converter display. Default Normal; on
+/// tablets the baseline is already enlarged (see [effectiveTextScale]).
+class _FontSizeRow extends StatelessWidget {
+  const _FontSizeRow();
+
+  @override
+  Widget build(BuildContext context) {
+    final l = AppLocalizations.of(context);
+    final prefs = CalcPrefsScope.of(context);
+    final t = AppColors.of(context);
+    const sizes = [13.0, 18.0, 23.0]; // normal / large / xlarge sample "A"s
+    final sel = FontSize.values.indexOf(prefs.fontSize);
+    return ListTile(
+      leading: const RoundIconBadge(
+        icon: Icons.format_size,
+        color: BadgeHue.teal,
+      ),
+      title: Text(
+        l.settingsFontSizeTitle,
+        style: TextStyle(fontSize: 14, color: t.textPrimary),
+      ),
+      trailing: ToggleButtons(
+        isSelected: [for (var i = 0; i < sizes.length; i++) i == sel],
+        onPressed: (i) => prefs.setFontSize(FontSize.values[i]),
+        constraints: const BoxConstraints(minWidth: 48, minHeight: 36),
+        borderRadius: BorderRadius.circular(6),
+        borderColor: t.cardBorder,
+        selectedBorderColor: t.pagerBorder,
+        color: t.textFaint,
+        selectedColor: t.textPrimary,
+        fillColor: t.cardFill,
+        children: [
+          for (final s in sizes)
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              // noScaling: the sample A's show their own relative sizes, not
+              // re-scaled by the (live) app textScaler this row controls.
+              child: Text(
+                'A',
+                textScaler: TextScaler.noScaling,
+                style: TextStyle(fontSize: s),
+              ),
+            ),
+        ],
       ),
     );
   }
@@ -178,9 +239,9 @@ class _HapticsRow extends StatelessWidget {
     final notifier = HapticsScope.of(context);
     final t = AppColors.of(context);
     return ListTile(
-      leading: SizedBox(
-        width: 28,
-        child: Icon(Icons.vibration, color: t.textMuted, size: 16),
+      leading: const RoundIconBadge(
+        icon: Icons.vibration,
+        color: BadgeHue.amber,
       ),
       title: Text(
         l.infoListHapticsTitle,
@@ -197,6 +258,7 @@ class _HapticsRow extends StatelessWidget {
 class _SegmentRow extends StatelessWidget {
   const _SegmentRow({
     required this.icon,
+    required this.color,
     required this.title,
     required this.labels,
     required this.selectedIndex,
@@ -206,6 +268,7 @@ class _SegmentRow extends StatelessWidget {
   });
 
   final IconData icon;
+  final Color color;
   final String title;
   final List<String> labels;
   final int selectedIndex;
@@ -223,10 +286,7 @@ class _SegmentRow extends StatelessWidget {
     final t = AppColors.of(context);
     final hues = optionColors;
     return ListTile(
-      leading: SizedBox(
-        width: 28,
-        child: Icon(icon, color: t.textMuted, size: 16),
-      ),
+      leading: RoundIconBadge(icon: icon, color: color),
       title: Text(
         title,
         style: TextStyle(fontSize: 14, color: t.textPrimary),

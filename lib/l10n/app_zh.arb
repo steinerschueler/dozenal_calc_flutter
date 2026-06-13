@@ -1,7 +1,7 @@
 {
   "@@locale": "zh",
   "appTitle": "Dozenal Calc",
-  "infoListTitle": "理论与其他",
+  "infoListTitle": "菜单",
   "infoListGlyphStyleTitle": "显示数字",
   "infoListGlyphStyleCustom": "字形",
   "infoListGlyphStyleConventional": "0–9, A, B",
@@ -170,6 +170,7 @@
   "resultCopied": "已复制：{value}",
   "infoListHapticsTitle": "触感反馈",
   "settingsTitle": "设置",
+  "settingsFontSizeTitle": "字体大小",
   "settingsKeypadModeTitle": "功能键",
   "settingsKeypadModeOverlay": "叠层",
   "settingsKeypadModeScroll": "滚动",
