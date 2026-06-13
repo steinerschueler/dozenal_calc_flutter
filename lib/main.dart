@@ -31,7 +31,7 @@ import 'tokens.dart';
 /// SharedPreferences key for the "user has seen the intro" flag. Bump the
 /// version suffix when the intro changes substantially enough to warrant
 /// showing it again to existing users.
-const String _kIntroSeenFlag = 'intro_seen_v3';
+const String _kIntroSeenFlag = 'intro_seen_v4';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();

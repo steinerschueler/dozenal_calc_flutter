@@ -29,7 +29,7 @@ void main() {
   // numeralSystem: 'doz'.
   Future<void> bootApp(WidgetTester tester, {String? numeralSystem}) async {
     SharedPreferences.setMockInitialValues({
-      'intro_seen_v3': true,
+      'intro_seen_v4': true,
       'numeral_system_v1': ?numeralSystem,
     });
     await tester.pumpWidget(const DozenalCalcApp());

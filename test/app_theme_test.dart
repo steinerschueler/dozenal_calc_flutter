@@ -114,7 +114,7 @@ void main() {
     SharedPreferences.setMockInitialValues({
       'theme_mode_v1': 'light',
       // Skip the onboarding intro (matches _kIntroSeenFlag in main.dart).
-      'intro_seen_v3': true,
+      'intro_seen_v4': true,
     });
     await tester.pumpWidget(const DozenalCalcApp());
     await tester.pumpAndSettle();

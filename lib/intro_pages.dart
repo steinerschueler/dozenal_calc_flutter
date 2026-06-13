@@ -1,8 +1,14 @@
-// Bedienungs-Intro: PageView, das frischen Nutzern den Rechner erklärt.
-// Jede Seite zeigt einen Screenshot mit roten Highlight-Markierungen
-// (Kreise und/oder Rechtecke) plus einen kurzen Erklärtext. Alle
-// Koordinaten sind relativ (0..1), damit sie auf jeder Bildschirmgröße
-// passen.
+// Bedienungs-Intro: PageView, das frischen Nutzern die App erklärt. Vier
+// Seiten, jede mit einem Screenshot + roten Highlight-Markierungen (Kreise
+// oder Rechtecke) plus kurzem Erklärtext:
+//   1 — die (i)-Taste (öffnet das Menü)
+//   2 — die (?)-Taste (ruft dieses Intro erneut auf)
+//   3 — das Wischen zwischen Haupt- und Einheitenrechner
+//   4 — Zahlensystem + Glyphen-Stil in den Einstellungen
+// Alle Koordinaten sind relativ (0..1), passen also auf jede Bildschirmgröße.
+// Screenshots (assets/intro/v4_*.png) sind Telefon-Captures (720×1448, Status-
+// und Navigationsleiste beschnitten); Layout-Metadata ist sprach-neutral, nur
+// die Texte kommen aus dem ARB-System der aktiven Locale.
 
 import 'package:flutter/material.dart';
 
@@ -27,150 +33,68 @@ class HighlightRect {
   const HighlightRect({required this.rect});
 }
 
-/// A numeric label drawn over a digit cell on the decoder slide, so the
-/// user can map the unfamiliar dozenal glyph to its everyday value.
-class DigitLabel {
-  /// Cell centre as fraction of screenshot width/height.
-  final Offset center;
-
-  /// Label text — e.g. "0", "1", ..., "9", "10", "11".
-  final String text;
-
-  const DigitLabel({required this.center, required this.text});
-}
-
 class _IntroSlide {
   final String image;
   final List<HighlightCircle> circles;
   final List<HighlightRect> rects;
-  final List<DigitLabel> labels;
   final String text;
 
   const _IntroSlide({
     required this.image,
     this.circles = const [],
     this.rects = const [],
-    this.labels = const [],
     required this.text,
   });
 }
 
 // ---------------------------------------------------------------------------
-// Standard coordinates derived from the 576×980 cropped screenshots in
-// assets/intro/. The original phone screenshots were 576×1280; the
-// statusbar (rows 0-54) and the empty area below the equals row plus the
-// navigation bar (rows 1035-1280) have been trimmed so the calculator
-// fills the frame top to bottom. This both removes irrelevant chrome and
-// gives the image a less extreme aspect ratio, so it stays readable on
-// landscape tablets. Adjust here if a future screenshot moves anything.
+// Coordinates for the 720×1448 phone screenshots in assets/intro/ (the status
+// bar and the navigation pill were cropped off, so the app fills the frame).
+// Re-measure here if a future screenshot moves anything.
 // ---------------------------------------------------------------------------
 
-// Rectangle covering the full 4×3 dozenal digit block on new4.png.
-const Rect _kDigitBlock = Rect.fromLTRB(0.02, 0.2378, 0.98, 0.5382);
+/// Aspect ratio of the cropped intro screenshots.
+const double _kIntroAspect = 720 / 1448;
 
-// Rectangle covering the two-line display window on new4.png.
-const Rect _kDisplay = Rect.fromLTRB(0.02, 0.0027, 0.98, 0.2508);
+// The two round buttons in the equals row of v4_calc.png.
+const HighlightCircle _kInfoButton =
+    HighlightCircle(center: Offset(0.121, 0.956), radius: 0.036);
+const HighlightCircle _kHelpButton =
+    HighlightCircle(center: Offset(0.879, 0.956), radius: 0.036);
 
-// Rectangle covering the 4×4 function-key (op-grid) block on new4.png.
-const Rect _kOpBlock = Rect.fromLTRB(0.02, 0.5643, 0.98, 0.8386);
+// On v4_settings.png: the two glyph rows (Ziffern im Display + auf Tasten)
+// grouped into one box, and the number-system row below.
+const HighlightRect _kGlyphRows =
+    HighlightRect(rect: Rect.fromLTRB(0.035, 0.158, 0.965, 0.312));
+const HighlightRect _kNumberSystemRow =
+    HighlightRect(rect: Rect.fromLTRB(0.035, 0.632, 0.965, 0.707));
 
-// Rectangle covering the twelve theory chapters list on new1.png.
-const Rect _kChapterList = Rect.fromLTRB(0.02, 0.0745, 0.98, 0.8843);
-
-// Digit-glyph cell centres in the 4×3 grid of new4.png. Layout matches
-// keypad.dart::_digitGrid:
-//   row 0: 10, 11,  0   (column x: 0.165, 0.50, 0.835)
-//   row 1:  7,  8,  9   (row     y: 0.2926, 0.3631, 0.4337, 0.5029)
-//   row 2:  4,  5,  6
-//   row 3:  1,  2,  3
-//
-// Decoder labels sit just to the right of each glyph (x + 0.085) so the
-// pairing glyph ↔ everyday number is visually obvious.
-const List<DigitLabel> _kDecoderLabels = [
-  // Row 0
-  DigitLabel(center: Offset(0.25, 0.2926), text: '10'),
-  DigitLabel(center: Offset(0.585, 0.2926), text: '11'),
-  DigitLabel(center: Offset(0.92, 0.2926), text: '0'),
-  // Row 1
-  DigitLabel(center: Offset(0.25, 0.3631), text: '7'),
-  DigitLabel(center: Offset(0.585, 0.3631), text: '8'),
-  DigitLabel(center: Offset(0.92, 0.3631), text: '9'),
-  // Row 2
-  DigitLabel(center: Offset(0.25, 0.4337), text: '4'),
-  DigitLabel(center: Offset(0.585, 0.4337), text: '5'),
-  DigitLabel(center: Offset(0.92, 0.4337), text: '6'),
-  // Row 3
-  DigitLabel(center: Offset(0.25, 0.5029), text: '1'),
-  DigitLabel(center: Offset(0.585, 0.5029), text: '2'),
-  DigitLabel(center: Offset(0.92, 0.5029), text: '3'),
-];
-
-/// The slide list depends on AppLocalizations for the per-slide prose, so
-/// it can't be a top-level const list. Layout metadata (image, highlight
-/// rects/circles, decoder labels) stays here as const; only the text
-/// strings come from the current locale.
+/// The slide list depends on AppLocalizations for the per-slide prose, so it
+/// can't be a top-level const. Layout metadata (image, highlight rects/
+/// circles) stays const; only the text strings come from the current locale.
 List<_IntroSlide> _buildSlides(AppLocalizations l) => [
-      // 1 — Welcome + introduction of the strange glyphs.
+      // 1 — the (i) button: opens the menu.
       _IntroSlide(
-        image: 'assets/intro/new4.png',
-        rects: const [HighlightRect(rect: _kDigitBlock)],
+        image: 'assets/intro/v4_calc.png',
+        circles: const [_kInfoButton],
         text: l.introSlide1,
       ),
-      // 2 — Decoder: same screenshot + Arabic numerals overlaid.
+      // 2 — the (?) button: re-opens this intro.
       _IntroSlide(
-        image: 'assets/intro/new4.png',
-        rects: const [HighlightRect(rect: _kDigitBlock)],
-        labels: _kDecoderLabels,
+        image: 'assets/intro/v4_calc.png',
+        circles: const [_kHelpButton],
         text: l.introSlide2,
       ),
-      // 3 — Display area.
+      // 3 — swiping between the two calculators (swipe graphic baked in).
       _IntroSlide(
-        image: 'assets/intro/new4.png',
-        rects: const [HighlightRect(rect: _kDisplay)],
+        image: 'assets/intro/v4_swipe.png',
         text: l.introSlide3,
       ),
-      // 4 — Function-key block.
+      // 4 — number system + glyph style in the settings.
       _IntroSlide(
-        image: 'assets/intro/new4.png',
-        rects: const [HighlightRect(rect: _kOpBlock)],
+        image: 'assets/intro/v4_settings.png',
+        rects: const [_kGlyphRows, _kNumberSystemRow],
         text: l.introSlide4,
-      ),
-      // 5 — Round (i) and (?) buttons.
-      _IntroSlide(
-        image: 'assets/intro/new4.png',
-        circles: const [
-          HighlightCircle(center: Offset(0.087, 0.9522), radius: 0.04),
-          HighlightCircle(center: Offset(0.91, 0.9522), radius: 0.04),
-        ],
-        text: l.introSlide5,
-      ),
-      // 6 — AC and "…".
-      _IntroSlide(
-        image: 'assets/intro/new4.png',
-        circles: const [
-          HighlightCircle(center: Offset(0.14, 0.8712), radius: 0.04),
-          HighlightCircle(center: Offset(0.86, 0.8712), radius: 0.04),
-        ],
-        text: l.introSlide6,
-      ),
-      // 7 — Number base (settings + DOZ indicator) and long-press host keys.
-      _IntroSlide(
-        image: 'assets/intro/new4.png',
-        circles: const [
-          // Long-press hosts with the corner mark: −, x^□, log_□.
-          HighlightCircle(center: Offset(0.137, 0.663), radius: 0.045),
-          HighlightCircle(center: Offset(0.378, 0.663), radius: 0.045),
-          HighlightCircle(center: Offset(0.378, 0.803), radius: 0.045),
-          // Small DOZ indicator at top-right of the display.
-          HighlightCircle(center: Offset(0.93, 0.0549), radius: 0.022),
-        ],
-        text: l.introSlide7,
-      ),
-      // 8 — Theory chapter list reached via (i).
-      _IntroSlide(
-        image: 'assets/intro/new1.png',
-        rects: const [HighlightRect(rect: _kChapterList)],
-        text: l.introSlide8,
       ),
     ];
 
@@ -271,7 +195,7 @@ class _SlideView extends StatelessWidget {
         children: [
           Expanded(
             child: AspectRatio(
-              aspectRatio: 576 / 980,
+              aspectRatio: _kIntroAspect,
               child: Stack(
                 fit: StackFit.expand,
                 children: [
@@ -329,34 +253,6 @@ class _SlidePainter extends CustomPainter {
       );
       canvas.drawCircle(center, c.radius * size.height, stroke);
     }
-
-    for (final l in slide.labels) {
-      _paintLabel(canvas, size, l);
-    }
-  }
-
-  void _paintLabel(Canvas canvas, Size size, DigitLabel label) {
-    final fontSize = size.height * 0.022;
-    final center = Offset(
-      label.center.dx * size.width,
-      label.center.dy * size.height,
-    );
-    final tp = TextPainter(
-      text: TextSpan(
-        text: label.text,
-        style: TextStyle(
-          color: _kHighlight,
-          fontSize: fontSize,
-          fontWeight: FontWeight.bold,
-          fontFamily: 'monospace',
-        ),
-      ),
-      textDirection: TextDirection.ltr,
-    )..layout();
-    tp.paint(
-      canvas,
-      Offset(center.dx - tp.width / 2, center.dy - tp.height / 2),
-    );
   }
 
   @override
