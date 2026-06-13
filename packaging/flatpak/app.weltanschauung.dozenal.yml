@@ -45,6 +45,8 @@ modules:
         #   tar czf dozenal-calc-1.5.1-linux-x64.tar.gz -C build/linux/x64/release bundle
         url: https://github.com/steinerschueler/dozenal_calc_flutter/releases/download/v1.5.1/dozenal-calc-1.5.1-linux-x64.tar.gz
         sha256: 19eebf1a378d121f00f9b1ca787ae23e42bf44597a50f65af7cca277d57dbd48
+        # The tarball keeps its top-level bundle/ dir (default would strip it).
+        strip-components: 0
       - type: file
         path: app.weltanschauung.dozenal.desktop
       - type: file
