@@ -1,7 +1,7 @@
 {
   "@@locale": "hi",
   "appTitle": "Dozenal Calc",
-  "infoListTitle": "मेन्यू",
+  "infoListTitle": "दर्जन गणक मेन्यू",
   "infoListGlyphStyleTitle": "डिस्प्ले में अंक",
   "infoListGlyphStyleCustom": "ग्लिफ़",
   "infoListGlyphStyleConventional": "0–9, A, B",

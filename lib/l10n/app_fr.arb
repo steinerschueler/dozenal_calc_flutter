@@ -1,7 +1,7 @@
 {
   "@@locale": "fr",
   "appTitle": "Dozenal Calc",
-  "infoListTitle": "Menu",
+  "infoListTitle": "Menu Dozenal Calc",
   "infoListGlyphStyleTitle": "Chiffres à l'écran",
   "infoListGlyphStyleCustom": "Glyphes",
   "infoListGlyphStyleConventional": "0–9, A, B",

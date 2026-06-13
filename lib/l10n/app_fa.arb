@@ -1,7 +1,7 @@
 {
   "@@locale": "fa",
   "appTitle": "Dozenal Calc",
-  "infoListTitle": "منو",
+  "infoListTitle": "منوی حساب دوجینی",
   "infoListGlyphStyleTitle": "ارقام در نمایشگر",
   "infoListGlyphStyleCustom": "نمادها",
   "infoListGlyphStyleConventional": "0–9, A, B",

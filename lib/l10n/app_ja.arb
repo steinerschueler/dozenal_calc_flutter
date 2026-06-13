@@ -1,7 +1,7 @@
 {
   "@@locale": "ja",
   "appTitle": "Dozenal Calc",
-  "infoListTitle": "メニュー",
+  "infoListTitle": "ダース計算メニュー",
   "infoListGlyphStyleTitle": "表示の数字",
   "infoListGlyphStyleCustom": "グリフ",
   "infoListGlyphStyleConventional": "0–9, A, B",

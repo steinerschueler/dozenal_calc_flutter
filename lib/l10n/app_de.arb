@@ -4,7 +4,7 @@
   "@appTitle": {
     "description": "Brand name shown as the MaterialApp title (task switcher / browser tab). Identical in both locales."
   },
-  "infoListTitle": "Menü",
+  "infoListTitle": "Dozenal Calc Menü",
   "infoListPrivacyEntry": "Datenschutzerklärung",
   "infoListLicenseEntry": "Lizenz",
   "infoListFeedbackEntry": "Feedback geben",

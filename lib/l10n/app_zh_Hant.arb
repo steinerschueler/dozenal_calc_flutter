@@ -1,7 +1,7 @@
 {
   "@@locale": "zh_Hant",
   "appTitle": "Dozenal Calc",
-  "infoListTitle": "選單",
+  "infoListTitle": "打進制計算選單",
   "infoListGlyphStyleTitle": "顯示數字",
   "infoListGlyphStyleCustom": "字形",
   "infoListGlyphStyleConventional": "0–9, A, B",
