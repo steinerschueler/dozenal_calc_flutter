@@ -1,0 +1,69 @@
+<de-DE>
+Neu in 1.5.1:
+• Standardmäßig Dezimalzahlen und gewohnte Ziffern – Dozenal (Basis 12) und die eigenen Glyphen lassen sich jederzeit in den Einstellungen einschalten.
+• Neue runde, farbige Menüsymbole; der App-Name steht nun im Menütitel.
+• Neue Einstellung „Schriftgröße", vor allem für Tablets.
+• Einheitenrechner: Einheit ohne „Alles löschen" wechselbar.
+• Überarbeitete, kürzere Einführung.
+• Etwas kleinere App.
+</de-DE>
+
+<en-US>
+New in 1.5.1:
+• Decimal numbers and familiar digits by default — dozenal (base 12) and the custom glyphs can be enabled anytime in Settings.
+• New round, colorful menu icons; the app name now appears in the menu title.
+• New "Font size" setting, especially for tablets.
+• Unit converter: change the unit without "All clear".
+• Reworked, shorter introduction.
+• Slightly smaller app.
+</en-US>
+
+<fr-FR>
+Nouveautés de la 1.5.1 :
+• Décimal et chiffres habituels par défaut — le douzénal (base 12) et les glyphes s'activent à tout moment dans les réglages.
+• Nouvelles icônes de menu rondes et colorées ; le nom de l'app figure dans le titre du menu.
+• Nouveau réglage « Taille du texte », surtout pour les tablettes.
+• Convertisseur : changer d'unité sans « Tout effacer ».
+• Introduction revue et raccourcie.
+• Application un peu plus légère.
+</fr-FR>
+
+<es-ES>
+Novedades de la 1.5.1:
+• Números decimales y cifras habituales por defecto — el duodecimal (base 12) y los glifos se activan cuando quieras en los ajustes.
+• Nuevos iconos de menú redondos y en color; el nombre de la app aparece en el título del menú.
+• Nuevo ajuste «Tamaño del texto», sobre todo para tablets.
+• Conversor: cambiar de unidad sin «Borrar todo».
+• Introducción renovada y más corta.
+• App algo más ligera.
+</es-ES>
+
+<it-IT>
+Novità nella 1.5.1:
+• Numeri decimali e cifre abituali come impostazione predefinita — il duodecimale (base 12) e i glifi si attivano quando vuoi nelle impostazioni.
+• Nuove icone di menu rotonde e colorate; il nome dell'app è ora nel titolo del menu.
+• Nuova impostazione «Dimensione del testo», soprattutto per i tablet.
+• Convertitore: cambiare unità senza «Cancella tutto».
+• Introduzione rivista e più breve.
+• App un po' più leggera.
+</it-IT>
+
+<fa-AF>
+تازه‌های ۱.۵.۱:
+• به‌صورت پیش‌فرض اعداد ده‌دهی و ارقام معمول — دوازده‌دهی (پایهٔ ۱۲) و گلیف‌های ویژه را هر زمان در تنظیمات روشن کنید.
+• نمادهای گرد و رنگی تازه در منو؛ نام برنامه اکنون در عنوان منو دیده می‌شود.
+• تنظیم تازهٔ «اندازهٔ قلم»، به‌ویژه برای تبلت‌ها.
+• مبدل واحدها: تغییر واحد بدون «پاک کردن همه».
+• معرفی بازنگری‌شده و کوتاه‌تر.
+• حجم برنامه کمی کمتر.
+</fa-AF>
+
+<ru-RU>
+Что нового в 1.5.1:
+• По умолчанию десятичные числа и привычные цифры — двенадцатеричную систему (основание 12) и собственные глифы можно включить в настройках.
+• Новые круглые цветные значки меню; название приложения теперь в заголовке меню.
+• Новая настройка «Размер шрифта», особенно для планшетов.
+• Конвертер единиц: смена единицы без «Очистить всё».
+• Переработанное, более короткое вступление.
+• Чуть меньше размер приложения.
+</ru-RU>
