@@ -157,8 +157,8 @@ List<ProseChapter> _societyChaptersCy() => const [
           'cyfrifianellau dwsinol, trosyddion mesur, hyd yn oed cloc dwsinol a '
           'chalendr, llawer ohono\'n ffynhonnell agored ac wedi\'i adeiladu gan '
           'aelodau\'r cymdeithasau.\n\n'
-          'Mae\'r ap hwn yn ffitio\'n union yno — cyfrifiannell sy\'n rhifo\'n '
-          'frodorol yn sail Deuddeg, gyda\'i glyffau ei hun, ffracsiynau union '
+          'Mae\'r ap hwn yn ffitio\'n union yno — cyfrifiannell sy\'n rhifo '
+          'yn sail Deuddeg, nid yn sail Deg, gyda\'i glyffau ei hun, ffracsiynau union '
           'a rhan unedau. Mae\'n gyfraniad bach i draddodiad cilfachol hir a '
           'chariadus.',
     ),

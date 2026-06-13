@@ -1,5 +1,5 @@
 name: dozenal_calc_flutter
-description: "Scientific calculator that computes natively in base 12 (dozenal), with custom digit glyphs, exact rational arithmetic, period detection, and an embedded didactic chapter set."
+description: "Scientific calculator that counts not in ten, but in twelve — dozenal (base 12): its own digit glyphs, exact rational arithmetic, period detection, and an embedded didactic chapter set."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev

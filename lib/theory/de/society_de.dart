@@ -156,10 +156,10 @@ List<ProseChapter> _societyChaptersDe() => const [
           'entstanden: dozenale Taschenrechner, Maß-Umrechner, sogar eine '
           'dozenale Uhr und ein Kalender, vieles davon quelloffen und von '
           'Mitgliedern der Gesellschaften gebaut.\n\n'
-          'Diese App reiht sich genau dort ein — ein Rechner, der nativ in '
-          'Basis Zwölf rechnet, mit eigenen Glyphen, exakten Brüchen und '
-          'einem Einheitenteil. Sie ist ein kleiner Beitrag zu einer langen, '
-          'liebevollen Nischen-Tradition.',
+          'Diese App reiht sich genau dort ein — ein Rechner, der nicht in '
+          'Zehnern, sondern in Zwölfern zählt, mit eigenen Glyphen, exakten '
+          'Brüchen und einem Einheitenteil. Sie ist ein kleiner Beitrag zu '
+          'einer langen, liebevollen Nischen-Tradition.',
     ),
     ProseSection(
       'Warum die Welt trotzdem dezimal bleibt',

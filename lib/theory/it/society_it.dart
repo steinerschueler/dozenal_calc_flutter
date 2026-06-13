@@ -155,8 +155,8 @@ List<ProseChapter> _societyChaptersIt() => const [
           'calcolatrici dozenali, convertitori di misure, persino un orologio '
           'dozenale e un calendario, molti dei quali open source e costruiti da '
           'membri delle società.\n\n'
-          'Questa app si inserisce proprio lì — una calcolatrice che calcola '
-          'nativamente in base dodici, con glifi propri, frazioni esatte e una '
+          'Questa app si inserisce proprio lì — una calcolatrice che conta '
+          'non in dieci, ma in dodici, con glifi propri, frazioni esatte e una '
           'parte dedicata alle unità. È un piccolo contributo a una lunga e '
           'amorevole tradizione di nicchia.',
     ),

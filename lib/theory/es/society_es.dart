@@ -161,8 +161,8 @@ List<ProseChapter> _societyChaptersEs() => const [
           'sorprendentemente animada: calculadoras dozenales, conversores de '
           'medidas, incluso un reloj dozenal y un calendario, muchos de ellos '
           'de código abierto y construidos por miembros de las sociedades.\n\n'
-          'Esta app se inscribe justo ahí — una calculadora que calcula de '
-          'forma nativa en base doce, con glifos propios, fracciones exactas y '
+          'Esta app se inscribe justo ahí — una calculadora que cuenta no en '
+          'diez, sino en doce, con glifos propios, fracciones exactas y '
           'una parte de unidades. Es una pequeña contribución a una larga y '
           'entrañable tradición de nicho.',
     ),

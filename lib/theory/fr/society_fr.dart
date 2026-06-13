@@ -165,7 +165,7 @@ List<ProseChapter> _societyChaptersFr() => const [
           'une horloge et un calendrier dozénaux, en grande partie open source '
           'et bâtis par des membres des sociétés.\n\n'
           'Cette application s\'inscrit précisément dans cette lignée — une '
-          'calculatrice qui calcule nativement en base douze, avec ses propres '
+          'calculatrice qui compte non pas en dix, mais en douze, avec ses propres '
           'glyphes, des fractions exactes et une partie consacrée aux unités. '
           'Elle est une modeste contribution à une longue et affectueuse '
           'tradition de niche.',

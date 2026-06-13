@@ -163,7 +163,7 @@ List<ProseChapter> _societyChaptersGa() => const [
           'Dózónach agus féilire, cuid mhór díobh ina bhfoinse oscailte agus '
           'tógtha ag baill na gcumann.\n\n'
           'Tagann an feidhmchlár seo go díreach isteach ansin — áireamhán a '
-          'áiríonn go dúchasach i mBonn a Dó Dhéag, le glifeanna dá chuid féin, '
+          'áiríonn i mBonn a Dó Dhéag seachas i mBonn a deich, le glifeanna dá chuid féin, '
           'codáin chruinne agus cuid aonad. Is rannchuidiú beag é le traidisiún '
           'fada grách nideoige.',
     ),

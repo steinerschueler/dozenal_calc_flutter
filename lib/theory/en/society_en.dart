@@ -154,8 +154,8 @@ List<ProseChapter> _societyChaptersEn() => const [
       'A surprisingly busy tool scene has grown up around the twelve: dozenal '
           'calculators, measure converters, even a dozenal clock and a calendar, '
           'much of it open source and built by members of the societies.\n\n'
-          'This app fits right in there — a calculator that computes natively in '
-          'base twelve, with its own glyphs, exact fractions, and a units '
+          'This app fits right in there — a calculator that counts not in ten, '
+          'but in twelve, with its own glyphs, exact fractions, and a units '
           'section. It is a small contribution to a long, lovingly tended niche '
           'tradition.',
     ),
