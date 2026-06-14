@@ -997,6 +997,61 @@ aber **nicht** die Apple Watch.
   statt Companion. Bei Glyphen-/Logik-Änderungen genügt das Editieren der
   geteilten `watch/Sources/`-Dateien; beide Projekte ziehen sie automatisch.
 
+## Plattform-Distribution & Packaging (Linux/Flathub, Windows, F-Droid)
+
+Neben **Google Play** (Android, live) und **App Store** (iOS/iPadOS/macOS, live —
+auf dem Mac per Xcode gebaut/eingereicht, nicht von hier) laufen drei weitere
+Schienen. Play-/App-Store-Workflows siehe „### Release-Builds" +
+`docs/release-workflow.md`; diese drei sind eigenständig und jeweils nur hier
+dokumentiert:
+
+### Linux / Flathub
+
+`flutter build linux --release` → portables `build/linux/x64/release/bundle/`
+(Binary `dozenal_calc_flutter` + `lib/` + `data/`). Fenstertitel „Dozenal Calc",
+`APPLICATION_ID app.weltanschauung.dozenal` (`linux/CMakeLists.txt` +
+`linux/runner/my_application.cc`). Paketierung in **`packaging/flatpak/`** (eigene
+`README.md`): flatpak-builder-Manifest, AppStream-Metainfo, `.desktop`,
+hicolor-Icons. **Strategie: vorgebautes Bundle** — Flathubs Builder haben kein
+Netz, ein Flutter-Source-Build zöge zur Bauzeit Engine/pub-Pakete; daher wird das
+`bundle` als `.tar.gz` ein **GitHub-Release-Asset** (am `v<ver>`-Tag) und das
+Manifest referenziert es per `url`+`sha256` (**`strip-components: 0`**!). Runtime
+`org.freedesktop.Platform 25.08`, finish-args bewusst **ohne** `--share=network`.
+Einreichung: PR gegen `flathub/flathub` (Base `new-pr`), Build per PR-Kommentar
+**`bot, build`**. Stand: PR **flathub/flathub#8968** baute grün (aarch64+x86_64),
+liegt im Review.
+
+### Windows / Microsoft Store
+
+Flutter-Desktop-Target in **`windows/`** (`flutter create --platforms=windows
+--org app.weltanschauung .`, braucht VS 2022 + „Desktop development with C++").
+`flutter build windows --release` → `build\windows\x64\runner\Release\…exe`.
+Store-Paket als **MSIX** über die dev-dependency `msix` (`msix_config` in
+`pubspec.yaml`, `store: true` = unsigniert, der Store signiert beim Ingest):
+`dart run msix:create --store`; **pro Einreichung `msix_version` erhöhen**
+(4-teilig, Revision = 0). Listings in **`store/microsoft-store/`** (eine
+`listing.<locale>.md` je Sprache, **15 Sprachspalten** inkl. neu übersetztem
+cy/ga; Texte aus den Play-Listings ohne HTML; **Titel global „Dozenal Calc"**,
+kein Per-Sprache-Titel). Der **vollständige, erprobte Ablauf inkl. aller
+Stolpersteine** (Bilder per **URL-Propagation** statt Pfad-Import; **jede Sprache
+nach CSV-Import öffnen + Save**, sonst „Incomplete"; `runFullTrust`-Begründung bei
+jeder Submission) steht in **`store/microsoft-store/WORKFLOW.md`** — der
+maßgebliche Leitfaden. Identität: Store ID `9N4M1XLPLP0N`, Package
+`steinerschler.DozenalCalc`, Publisher „steinerschüler".
+
+### F-Droid (Paketierung vorbereitet, Einreichung offen)
+
+Paketierung in **`packaging/fdroid/`** (eigene `README.md`): F-Droid baut **aus dem
+Quellcode** auf eigenen Servern — also ein Bau-Rezept, kein Artefakt. Metadata
+`app.weltanschauung.dozenal.yml`: MIT, Science & Education, baut den **`v1.5.1`-Tag**
+als **universelles APK** (`flutter build apk --release`), Flutter auf **3.41.8**
+gepinnt (= CI-Version, im Lockstep halten) via `flutter`-srclib; F-Droid **signiert
+selbst** (fehlende `key.properties` daher unkritisch). Sauberer Kandidat: keine
+proprietären Deps, keine Anti-Features (kein Google/Firebase/Tracking/Netz). **Noch
+offen:** Rezept lokal mit `fdroid build` testen, dann MR gegen
+`gitlab.com/fdroid/fdroiddata` (F-Droid nutzt **GitLab**, nicht GitHub → eigenes
+Konto nötig). Schritte in `packaging/fdroid/README.md`.
+
 ## Konventionen
 
 - **Branch-Trennung (HART):** Arbeit am **Dozenal Calc** (diese App — Rechner,

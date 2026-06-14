@@ -1,0 +1,59 @@
+Categories:
+  - Science & Education
+License: MIT
+AuthorName: Eric Naville
+AuthorEmail: dozenal@weltanschauung.app
+WebSite: https://weltanschauung.app
+SourceCode: https://github.com/steinerschueler/dozenal_calc_flutter
+IssueTracker: https://github.com/steinerschueler/dozenal_calc_flutter/issues
+Donate: https://ko-fi.com/steinerschueler
+
+AutoName: Dozenal Calc
+
+Description: |-
+  Dozenal Calc is a scientific calculator with a dozenal (base-12) display:
+  read and enter numbers in base 12 — with its own digit glyphs, exact
+  fractions and repeating-period detection. Numbers can also be shown and
+  entered in the familiar decimal system.
+
+  Features:
+
+  * Exact fractions with overlined repeating periods — no rounding
+  * A full scientific keypad: powers, roots, logarithms, trigonometry
+  * A second screen: a unit converter with compound imperial/metric units
+  * An illustrated chapter set on the dozenal system, in 14 languages
+  * No ads, no tracking, no network access
+
+RepoType: git
+Repo: https://github.com/steinerschueler/dozenal_calc_flutter.git
+
+Builds:
+  - versionName: 1.5.1
+    versionCode: 19
+    commit: v1.5.1
+    # Pin Flutter to the exact version CI uses (.github/workflows/ci.yml).
+    # Bump this in lockstep whenever the CI Flutter version changes.
+    srclibs:
+      - flutter@3.41.8
+    # Drop the non-Android Flutter targets so only the Android build remains
+    # in the tree the F-Droid scanner sees.
+    rm:
+      - ios
+      - linux
+      - macos
+      - web
+      - watch
+    build:
+      - export PUB_CACHE="$(pwd)/.pub-cache"
+      - $$flutter$$/bin/flutter config --no-analytics
+      - $$flutter$$/bin/flutter pub get
+      - $$flutter$$/bin/flutter build apk --release
+    # Universal APK (both abiFilters: armeabi-v7a + arm64-v8a). F-Droid re-signs
+    # with its own key, so the missing android/key.properties is fine — the
+    # release build falls back to debug signing, which F-Droid then replaces.
+    output: build/app/outputs/flutter-apk/app-release.apk
+
+AutoUpdateMode: Version
+UpdateCheckMode: Tags ^v[0-9.]+$
+CurrentVersion: 1.5.1
+CurrentVersionCode: 19
