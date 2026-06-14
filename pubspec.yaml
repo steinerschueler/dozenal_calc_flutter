@@ -58,6 +58,7 @@ dev_dependencies:
   #   dart run flutter_native_splash:create
   flutter_launcher_icons: ^0.14.0
   flutter_native_splash: ^2.4.0
+  msix: ^3.17.0
 
 flutter_launcher_icons:
   image_path: "assets/icon.png"
@@ -80,6 +81,22 @@ flutter_native_splash:
   android_12:
     color: "#1F1F1F"
     image: "assets/icon.png"
+
+# Microsoft Store packaging (msix package). Build with:
+#   dart run msix:create --store
+# The identity values below come from Partner Center → Product identity for
+# "Dozenal Calc" (Store ID 9N4M1XLPLP0N). store: true builds an unsigned
+# package that the Store signs on ingestion — no local certificate needed.
+msix_config:
+  display_name: Dozenal Calc
+  publisher_display_name: steinerschüler
+  identity_name: steinerschler.DozenalCalc
+  publisher: CN=59EEE4E1-9593-4B2E-B30A-C93DF902109B
+  # 4-part version; Store requires the final (revision) part to be 0.
+  msix_version: 1.5.1.0
+  logo_path: assets/icon.png
+  capabilities: internetClient
+  store: true
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

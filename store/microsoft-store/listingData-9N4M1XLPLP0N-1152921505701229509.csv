@@ -1,0 +1,1294 @@
+﻿Field,ID,Type (Type),default,en-us,ar,zh-hans,zh-hant,en,fr-fr,de,hi,ga,it,ja,fa,ru,es-es,cy
+Description,2,Text,,"A ""dozenal calculator"" — a scientific calculator that counts not in ten, but in twelve. With its own symbols for the digits.
+
+What base 12 can do that base 10 cannot
+
+In decimal, 1/3 is an infinite repeating fraction (0.333…). In base 12 it is short and exact: 0.4. Sixths, ninths, and every fraction whose denominator is built from twos and threes become finite in dozenal. This is no accident: twelve has six divisors, ten only four.
+
+Dozenal Calc runs an exact rational track in parallel with ordinary floating-point arithmetic. Repeating fractions are shown with a bar over the repeating digits, just as taught in school. Example: 1/7 appears as 0.186A3 with a period bar, followed by raised dots when the period exceeds five digits.
+
+Feature set
+
+• Basic arithmetic + parentheses + signs
+• Power, square root, nth root
+• Logarithm to any base
+• Parallel addition (a⊕b = ab/(a+b)) — useful for resistor circuits
+• Trigonometry (sin, cos, tan, cot) and their inverses
+• Hyperbolic functions (sinh, cosh, tanh, coth) and their inverses
+• Constants π, e, φ, √2
+• Factorial, absolute value, reciprocal, modulo
+• Memory (STO/RCL/MC) with exact rational round-trip preservation
+• Angle modes DEG / RAD / GRAD (default: DEG)
+• Double-tap function keys switch to the inverse (sin → sin⁻¹)
+• Numeral-system switch in the settings: input AND result in base 12 or base 10, with automatic conversion — applies to both calculators
+• Light and dark theme
+• First-launch operating intro — re-openable any time via the (?) button
+• Fourteen languages with a picker in the info menu: Deutsch, English, Français, Español, Italiano, فارسی, Русский, Gaeilge, हिन्दी, 简体中文, 繁體中文, Cymraeg, 日本語, العربية
+
+Unit converter
+
+One swipe to the left opens the second calculator: it converts imperial and metric units into one another — length, area, volume, weight, time, angle, money (£/sh/d), temperature and more. Compound entries like 3 ft 5 in, breakdown into part units, and math right inside the entry (× ÷ ⊕ ^ √ ㏒) with memory and constants. Results travel between the two calculators at the press of a key. A color code keeps the worlds apart: green for the world of ten (metric, base 10), violet for the world of twelve (imperial, base 12).
+
+Theory and manuals
+
+Two illustrated manuals explain both calculators step by step. A richly illustrated reader then shows, in three blocks, why twelve in particular is a special number:
+
+• Twelve and the World — from the dodecagon and dodecahedron through crystals, viruses and quasicrystals to music, art, architecture and the calendar
+• Dozenal Mathematics — divisors and periods, the number bases compared, a history of place-value systems
+• Dozenal Society — the movement for twelve, new digits for ten and eleven, the TGM measurement system
+
+Many chapters show public-domain historical illustrations with tappable source citations. Plus a unit theory on measure and number, and recommendations for dozenal-friendly calculators on every platform.
+
+What Dozenal Calc does not do
+
+• No ads
+• No tracking
+• No analytics
+• No internet connection
+• No permissions — the app requests no camera, microphone, location, storage, or any other access
+• No personal data
+
+The app works completely offline. What you type stays on your device.
+
+Whom is it for?
+
+For teachers who want to show how a different number system would change everyday fraction arithmetic. For students who want to see their mathematics from an unfamiliar perspective.
+
+License: MIT License
+Contact: dozenal@weltanschauung.app","«حاسبة اثنا‌عشرية» — حاسبة علمية تَعدّ ليس بالعشرة بل بالاثنا عشر. برموز خاصة بها للأرقام.
+
+ما يستطيعه الأساس 12 ولا يستطيعه الأساس 10
+
+في النظام العشري، 1/3 كسر دوري لا نهائي (0.333…). في الأساس 12 يصير قصيراً ودقيقاً: 0.4. الأسداس والأتساع وكل الكسور التي يتكوّن مقامها من الاثنينات والثلاثات تصير منتهية في النظام الاثناعشري. وهذا ليس مصادفة: للاثنا عشر ستة قواسم، وللعشرة أربعة فقط.
+
+تُشغّل Dozenal Calc مساراً نسبياً دقيقاً بالتوازي مع الحساب العائم العادي. تُعرض الكسور الدورية بشَرطة فوق الأرقام المتكررة، كما في المدرسة. مثلاً: 1/7 يظهر بوصفه 0.186A3 مع شَرطة دور، تليها نقاط مرفوعة عند تجاوز الدور خمسة أرقام.
+
+الميزات
+
+• العمليات الحسابية الأساسية + الأقواس + الإشارات
+• القوى، الجذر التربيعي، الجذر النوني
+• اللوغاريتم بأي أساس
+• الجمع المتوازي (a⊕b = ab/(a+b)) — مفيد لدوائر المقاومات
+• حساب المثلثات (sin, cos, tan, cot) ومعكوساتها
+• الدوال الزائدية (sinh, cosh, tanh, coth) ومعكوساتها
+• الثوابت π, e, φ, √2
+• المضروب، القيمة المطلقة، المقلوب، باقي القسمة
+• الذاكرة (STO/RCL/MC) مع حفظ نسبي دقيق في الاتجاهين
+• أوضاع الزاوية DEG / RAD / GRAD (الافتراضي: DEG)
+• النقر المزدوج على مفاتيح الدوال للتحويل إلى المعكوس (sin → sin⁻¹)
+• تبديل نظام العدّ في الإعدادات: الإدخال والنتيجة بالأساس 12 أو 10 بحسب الاختيار، مع تحويل تلقائي — يسري على الحاسبتين معاً
+• سمة فاتحة وسمة داكنة
+• مقدمة تشغيلية عند أول تشغيل — يمكن إعادة فتحها في أي وقت عبر زر (?)
+• أربع عشرة لغة مع منتقي في قائمة المعلومات: Deutsch, English, Français, Español, Italiano, فارسی, Русский, Gaeilge, हिन्दी, 简体中文, 繁體中文, Cymraeg, 日本語, العربية
+
+محوّل الوحدات
+
+سحبة واحدة نحو اليسار تفتح الحاسبة الثانية: تحوّل الوحدات الإمبراطورية والمترية بعضها إلى بعض — الطول والمساحة والحجم والوزن والزمن والزاوية والمال (£/sh/d) ودرجة الحرارة وأكثر. إدخالات مركّبة مثل 3 ft 5 in، وتفكيك إلى وحدات جزئية، وحسابٌ مباشر داخل الإدخال (× ÷ ⊕ ^ √ ㏒) مع ذاكرة وثوابت. تنتقل النتائج بين الحاسبتين بضغطة زر. ترميز لوني يفصل العالمين: الأخضر لعالم العشرة (متري، أساس 10)، والبنفسجي لعالم الاثني عشر (إمبراطوري، أساس 12).
+
+النظرية والأدلّة
+
+دليلان مصوَّران يشرحان الحاسبتين خطوة بخطوة. ثم تُظهر قراءة غنية بالصور في ثلاث كتل لماذا الاثنا عشر تحديداً عدد مميّز:
+
+• الاثنا عشر والعالم — من المضلع الاثنا‌عشري ومتعدد الوجوه الاثنا‌عشري، مروراً بالبلورات والفيروسات وأشباه البلورات، إلى الموسيقى والفن والعمارة والتقويم
+• الرياضيات الاثنا‌عشرية — القواسم والأدوار، مقارنة أنظمة العدّ، تاريخ أنظمة القيمة المكانية
+• المجتمع الاثنا‌عشري — حركة الاثني عشر، رقمان جديدان للعشرة والأحد عشر، نظام القياس TGM
+
+تعرض فصول كثيرة صوراً تاريخية من الملك العام مع مصدر يظهر بلمسة. إضافةً إلى نظرية الوحدات في القياس والعدد، وتوصيات بحاسبات صديقة للنظام الاثنا‌عشري على كل المنصات.
+
+ما لا تفعله Dozenal Calc
+
+• بلا إعلانات
+• بلا تتبع
+• بلا تحليلات
+• بلا اتصال إنترنت
+• بلا أذونات — لا يطلب التطبيق كاميرا ولا ميكروفون ولا موقعاً ولا تخزيناً ولا أي وصول آخر
+• بلا بيانات شخصية
+
+يعمل التطبيق بالكامل دون اتصال. يبقى ما تكتبه على جهازك.
+
+لمن هذا التطبيق؟
+
+للمعلمين الذين يريدون إظهار كيف يغيّر نظام عددي مختلف يومياتِ حساب الكسور. للطلاب الذين يريدون رؤية رياضياتهم من زاوية غير مألوفة.
+
+الرخصة: رخصة MIT
+التواصل: dozenal@weltanschauung.app","一款「十二进制计算器」——一款不在十进制、而在十二进制中运算的科学计算器。配备自己的数字符号。
+
+十二进制能做、而十进制做不到的事
+
+在十进制中，1/3 是一个无限循环小数（0.333…）。在十二进制中，它简短且精确：0.4。六分之一、九分之一以及所有分母由二与三构成的分数，在十二进制中都是有限的。这并非偶然：十二有六个因数，十只有四个。
+
+Dozenal Calc 在普通浮点运算之外并行运行一条精确的有理数轨道。循环小数以重复数字上方的横线显示，就像在课堂上一样。例如：1/7 显示为 0.186A3 加循环节横线，当循环节超过五位时其后会附加上升点。
+
+功能集
+
+• 基本四则运算 + 括号 + 正负号
+• 幂、平方根、n 次方根
+• 任意底数的对数
+• 并联加法（a⊕b = ab/(a+b)）——对电阻电路有用
+• 三角函数（sin, cos, tan, cot）及其反函数
+• 双曲函数（sinh, cosh, tanh, coth）及其反函数
+• 常数 π、e、φ、√2
+• 阶乘、绝对值、倒数、取模
+• 内存（STO/RCL/MC），具有精确有理数的往返保留
+• 角度模式 DEG / RAD / GRAD（默认：DEG）
+• 双击功能键切换为反函数（sin → sin⁻¹）
+• 在设置中切换数制：输入与结果均可在十二进制或十进制下显示，自动转换——对两个计算器同时生效
+• 浅色与深色主题
+• 首次启动操作指引——可随时通过 (?) 按钮重新打开
+• 十四种语言，可在信息菜单中选择：Deutsch, English, Français, Español, Italiano, فارسی, Русский, Gaeilge, हिन्दी, 简体中文, 繁體中文, Cymraeg, 日本語, العربية
+
+单位换算器
+
+向左轻扫即可打开第二个计算器：它在英制与公制单位之间互相换算——长度、面积、体积、重量、时间、角度、货币（£/sh/d）、温度等等。支持 3 ft 5 in 这样的复合输入、拆分为子单位，并可直接在输入中计算（× ÷ ⊕ ^ √ ㏒），带记忆与常数。结果可一键在两个计算器之间传递。颜色编码区分两个世界：绿色代表十的世界（公制、十进制），紫色代表十二的世界（英制、十二进制）。
+
+理论与手册
+
+两部图解手册逐步讲解两个计算器。随后一部插图丰富的读物分三个板块说明为什么十二是一个特殊的数：
+
+• 十二与世界——从十二边形和十二面体，经过晶体、病毒与准晶体，到音乐、艺术、建筑与历法
+• 十二进制数学——因数与循环节、各数制的比较、位值制的历史
+• 十二进制社会——推行十二的运动、十和十一的新数字、度量体系 TGM
+
+许多章节展示公有领域的历史插图，来源一点即见。另有关于度量与数的单位理论，以及各平台上对十二进制友好的计算器推荐。
+
+Dozenal Calc 不做什么
+
+• 无广告
+• 无跟踪
+• 无分析
+• 无网络连接
+• 无权限——应用不请求摄像头、麦克风、位置、存储或任何其他访问
+• 无个人数据
+
+应用完全离线运行。你输入的内容只留在你的设备上。
+
+这是为谁准备的？
+
+为想要展示一种不同的数系如何改变日常分数运算的教师准备。为想要从一个陌生的视角看自己数学的学生准备。
+
+许可证：MIT 许可证
+联系：dozenal@weltanschauung.app","一款「十二進制計算機」——一款不在十進制、而在十二進制中運算的科學計算機。配備自己的數字符號。
+
+十二進制能做、而十進制做不到的事
+
+在十進制中，1/3 是一個無限循環小數（0.333…）。在十二進制中，它簡短且精確：0.4。六分之一、九分之一，以及所有分母由二與三組成的分數，在十二進制中皆為有限。這並非偶然：十二有六個因數，十只有四個。
+
+Dozenal Calc 在普通浮點運算之外並行運行一條精確的有理數軌道。循環小數以重複數字上方的橫線顯示，就像在課堂上一樣。例如：1/7 顯示為 0.186A3 加循環節橫線，當循環節超過五位時其後會附加上升點。
+
+功能集
+
+• 基本四則運算 + 括號 + 正負號
+• 冪、平方根、n 次方根
+• 任意底數的對數
+• 並聯加法（a⊕b = ab/(a+b)）——對電阻電路有用
+• 三角函數（sin, cos, tan, cot）及其反函數
+• 雙曲函數（sinh, cosh, tanh, coth）及其反函數
+• 常數 π、e、φ、√2
+• 階乘、絕對值、倒數、取模
+• 記憶體（STO/RCL/MC），具有精確有理數的往返保留
+• 角度模式 DEG / RAD / GRAD（預設：DEG）
+• 雙擊功能鍵切換為反函數（sin → sin⁻¹）
+• 在設定中切換數制：輸入與結果皆可在十二進制或十進制下顯示，自動轉換——對兩個計算機同時生效
+• 淺色與深色主題
+• 首次啟動操作指引——可隨時透過 (?) 按鈕重新開啟
+• 十四種語言，可在資訊選單中選擇：Deutsch, English, Français, Español, Italiano, فارسی, Русский, Gaeilge, हिन्दी, 简体中文, 繁體中文, Cymraeg, 日本語, العربية
+
+單位換算器
+
+向左輕掃即可開啟第二個計算機：它在英制與公制單位之間互相換算——長度、面積、體積、重量、時間、角度、貨幣（£/sh/d）、溫度等等。支援 3 ft 5 in 這樣的複合輸入、拆分為子單位，並可直接在輸入中計算（× ÷ ⊕ ^ √ ㏒），含記憶與常數。結果可一鍵在兩個計算機之間傳遞。顏色編碼區分兩個世界：綠色代表十的世界（公制、十進位），紫色代表十二的世界（英制、十二進位）。
+
+理論與手冊
+
+兩部圖解手冊逐步講解兩個計算機。隨後一部插圖豐富的讀本分三個板塊說明為何十二是一個特別的數：
+
+• 十二與世界——從十二邊形和十二面體，經過晶體、病毒與準晶體，到音樂、藝術、建築與曆法
+• 十二進位數學——因數與循環節、各數制的比較、位值制的歷史
+• 十二進位社會——推行十二的運動、十和十一的新數字、度量體系 TGM
+
+許多章節展示公有領域的歷史插圖，來源一點即見。另有關於度量與數的單位理論，以及各平台上對十二進位友善的計算機推薦。
+
+Dozenal Calc 不做什麼
+
+• 無廣告
+• 無追蹤
+• 無分析
+• 無網路連線
+• 無權限——應用不請求相機、麥克風、位置、儲存或任何其他存取
+• 無個人資料
+
+應用完全離線運作。你輸入的內容只留在你的裝置上。
+
+這是給誰的？
+
+為想展示一種不同的數系如何改變日常分數運算的教師而設。為想以陌生的視角看自己數學的學生而設。
+
+授權：MIT 授權
+聯絡：dozenal@weltanschauung.app","A ""dozenal calculator"" — a scientific calculator that counts not in ten, but in twelve. With its own symbols for the digits.
+
+What base 12 can do that base 10 cannot
+
+In decimal, 1/3 is an infinite repeating fraction (0.333…). In base 12 it is short and exact: 0.4. Sixths, ninths, and every fraction whose denominator is built from twos and threes become finite in dozenal. This is no accident: twelve has six divisors, ten only four.
+
+Dozenal Calc runs an exact rational track in parallel with ordinary floating-point arithmetic. Repeating fractions are shown with a bar over the repeating digits, just as taught in school. Example: 1/7 appears as 0.186A3 with a period bar, followed by raised dots when the period exceeds five digits.
+
+Feature set
+
+• Basic arithmetic + parentheses + signs
+• Power, square root, nth root
+• Logarithm to any base
+• Parallel addition (a⊕b = ab/(a+b)) — useful for resistor circuits
+• Trigonometry (sin, cos, tan, cot) and their inverses
+• Hyperbolic functions (sinh, cosh, tanh, coth) and their inverses
+• Constants π, e, φ, √2
+• Factorial, absolute value, reciprocal, modulo
+• Memory (STO/RCL/MC) with exact rational round-trip preservation
+• Angle modes DEG / RAD / GRAD (default: DEG)
+• Double-tap function keys switch to the inverse (sin → sin⁻¹)
+• Numeral-system switch in the settings: input AND result in base 12 or base 10, with automatic conversion — applies to both calculators
+• Light and dark theme
+• First-launch operating intro — re-openable any time via the (?) button
+• Fourteen languages with a picker in the info menu: Deutsch, English, Français, Español, Italiano, فارسی, Русский, Gaeilge, हिन्दी, 简体中文, 繁體中文, Cymraeg, 日本語, العربية
+
+Unit converter
+
+One swipe to the left opens the second calculator: it converts imperial and metric units into one another — length, area, volume, weight, time, angle, money (£/sh/d), temperature and more. Compound entries like 3 ft 5 in, breakdown into part units, and math right inside the entry (× ÷ ⊕ ^ √ ㏒) with memory and constants. Results travel between the two calculators at the press of a key. A color code keeps the worlds apart: green for the world of ten (metric, base 10), violet for the world of twelve (imperial, base 12).
+
+Theory and manuals
+
+Two illustrated manuals explain both calculators step by step. A richly illustrated reader then shows, in three blocks, why twelve in particular is a special number:
+
+• Twelve and the World — from the dodecagon and dodecahedron through crystals, viruses and quasicrystals to music, art, architecture and the calendar
+• Dozenal Mathematics — divisors and periods, the number bases compared, a history of place-value systems
+• Dozenal Society — the movement for twelve, new digits for ten and eleven, the TGM measurement system
+
+Many chapters show public-domain historical illustrations with tappable source citations. Plus a unit theory on measure and number, and recommendations for dozenal-friendly calculators on every platform.
+
+What Dozenal Calc does not do
+
+• No ads
+• No tracking
+• No analytics
+• No internet connection
+• No permissions — the app requests no camera, microphone, location, storage, or any other access
+• No personal data
+
+The app works completely offline. What you type stays on your device.
+
+Whom is it for?
+
+For teachers who want to show how a different number system would change everyday fraction arithmetic. For students who want to see their mathematics from an unfamiliar perspective.
+
+License: MIT License
+Contact: dozenal@weltanschauung.app","Une « calculatrice duodécimale » — une calculatrice scientifique qui compte non pas en dix, mais en douze. Avec ses propres symboles pour les chiffres.
+
+Ce que la base 12 sait faire et que la base 10 ne sait pas
+
+En décimal, 1/3 est une fraction périodique infinie (0,333…). En base 12, elle est courte et exacte : 0,4. Les sixièmes, les neuvièmes et toutes les fractions dont le dénominateur est composé de deux et de trois deviennent finies en duodécimal. Ce n'est pas un hasard : douze a six diviseurs, dix n'en a que quatre.
+
+Dozenal Calc fait tourner une voie rationnelle exacte en parallèle de l'arithmétique à virgule flottante ordinaire. Les fractions périodiques sont affichées avec une barre au-dessus des chiffres qui se répètent, comme à l'école. Exemple : 1/7 apparaît sous la forme 0,186A3 avec la barre de période.
+
+Fonctionnalités
+
+• Arithmétique de base + parenthèses + signes
+• Puissance, racine carrée, racine n-ième
+• Logarithme dans n'importe quelle base
+• Addition parallèle (a⊕b = ab/(a+b)) — utile pour les circuits de résistances
+• Trigonométrie (sin, cos, tan, cot) et leurs réciproques
+• Fonctions hyperboliques (sinh, cosh, tanh, coth) et leurs réciproques
+• Constantes π, e, φ, √2
+• Factorielle, valeur absolue, inverse, modulo
+• Mémoire (STO/RCL/MC) avec préservation rationnelle exacte
+• Modes d'angle DEG / RAD / GRAD (par défaut : DEG)
+• Double appui sur les touches de fonction pour passer à la réciproque (sin → sin⁻¹)
+• Bascule du système de numération dans les réglages : saisie ET résultat en base 12 ou 10, conversion automatique — pour les deux calculatrices
+• Thème clair et thème sombre
+• Intro de prise en main au premier lancement — réouvrable à tout moment via le bouton (?)
+• Quatorze langues avec sélecteur dans le menu d'info : Deutsch, English, Français, Español, Italiano, فارسی, Русский, Gaeilge, हिन्दी, 简体中文, 繁體中文, Cymraeg, 日本語, العربية
+
+Convertisseur d'unités
+
+Un balayage vers la gauche ouvre la deuxième calculatrice : elle convertit les unités impériales et métriques entre elles — longueur, surface, volume, poids, temps, angle, monnaie (£/sh/d), température et plus encore. Saisies composées comme 3 ft 5 in, décomposition en sous-unités et calcul directement dans la saisie (× ÷ ⊕ ^ √ ㏒) avec mémoire et constantes. Les résultats passent d'une calculatrice à l'autre d'une simple touche. Un code couleur sépare les mondes : vert pour le monde du dix (métrique, base 10), violet pour le monde du douze (impérial, base 12).
+
+Théorie et manuels
+
+Deux manuels illustrés expliquent les deux calculatrices pas à pas. Une lecture richement illustrée montre ensuite, en trois blocs, pourquoi le douze en particulier est un nombre spécial :
+
+• Douze et le monde — du dodécagone et du dodécaèdre aux cristaux, virus et quasi-cristaux, jusqu'à la musique, l'art, l'architecture et le calendrier
+• Mathématiques duodécimales — diviseurs et périodes, les bases numériques comparées, une histoire des systèmes positionnels
+• Société duodécimale — le mouvement pour le douze, de nouveaux chiffres pour dix et onze, le système de mesures TGM
+
+De nombreux chapitres montrent des illustrations historiques du domaine public, source consultable d'un appui. S'y ajoutent une théorie des unités sur la mesure et le nombre, et des recommandations de calculatrices pour toutes les plateformes.
+
+Ce que Dozenal Calc ne fait pas
+
+• Pas de publicité
+• Pas de pistage
+• Pas d'analytique
+• Pas de connexion internet
+• Aucune autorisation — ni caméra, ni microphone, ni localisation, ni stockage
+• Aucune donnée personnelle
+
+L'application fonctionne entièrement hors ligne. Ce que vous tapez reste sur votre appareil.
+
+À qui s'adresse-t-elle ?
+
+Aux enseignant·es qui souhaitent montrer comment un autre système numérique changerait le quotidien du calcul fractionnaire. Aux élèves qui souhaitent voir leurs mathématiques sous un angle inhabituel.
+
+Licence : licence MIT
+Contact : dozenal@weltanschauung.app","Ein ""Dozenalrechner"" — ein wissenschaftlicher Taschenrechner, der nicht in zehn, sondern in zwölf rechnet. Mit eigenen Symbolen für die Ziffern.
+
+Was Basis 12 kann, was Basis 10 nicht kann
+
+Im Dezimalsystem ist 1/3 ein unendlicher periodischer Bruch (0.333…). In Basis 12 ist es kurz und exakt: 0.4. Auch Sechstel, Neuntel und alle Brüche, deren Nenner aus Zweien und Dreien besteht, werden im Dozenalsystem endlich. Das ist kein Zufall: zwölf hat sechs Teiler, zehn nur vier.
+
+Dozenal Calc nutzt einen exakten Rational-Track parallel zur normalen Gleitkomma-Arithmetik. Periodische Brüche werden mit Strich über den sich wiederholenden Ziffern angezeigt, ganz wie aus dem Mathematikunterricht. Beispiel: 1/7 erscheint als 0.186A3 mit Periodenstrich, gefolgt von erhobenen Punkten wenn die Periode mehr als fünf Ziffern hat.
+
+Funktionsumfang
+
+• Grundrechenarten + Klammern + Vorzeichen
+• Potenz, Quadratwurzel, n-te Wurzel
+• Logarithmus zur beliebigen Basis
+• Paralleladdition (a⊕b = ab/(a+b)) — nützlich für Widerstandsschaltungen
+• Trigonometrie (sin, cos, tan, cot) und ihre Umkehrfunktionen
+• Hyperbolische Funktionen (sinh, cosh, tanh, coth) und ihre Umkehrfunktionen
+• Konstanten π, e, φ, √2
+• Fakultät, Absolutbetrag, Kehrwert, Modulo
+• Speicher (STO/RCL/MC) mit exakter rationaler Round-Trip-Erhaltung
+• Winkelmodi DEG / RAD / GRAD (Standard: DEG)
+• Doppelklick auf Funktionstasten schaltet zur Umkehrfunktion (sin → sin⁻¹)
+• Zahlensystem-Umschaltung in den Einstellungen: Eingabe UND Ergebnis wahlweise in Basis 12 oder Basis 10, mit automatischer Umrechnung — gilt für beide Rechner
+• Helles und dunkles Design
+• Bedienungs-Intro beim ersten Start — jederzeit über den (?)-Knopf erneut aufrufbar
+• Vierzehn Sprachen mit eigener Auswahl im Info-Menü: Deutsch, English, Français, Español, Italiano, فارسی, Русский, Gaeilge, हिन्दी, 简体中文, 繁體中文, Cymraeg, 日本語, العربية
+
+Einheitenrechner
+
+Ein Wisch nach links öffnet den zweiten Rechner: Er wandelt imperiale und metrische Einheiten ineinander um — Länge, Fläche, Volumen, Gewicht, Zeit, Winkel, Geld (£/sh/d), Temperatur und mehr. Zusammengesetzte Eingaben wie 3 ft 5 in, Aufschlüsselung in Teil-Einheiten und direktes Rechnen in der Eingabe (× ÷ ⊕ ^ √ ㏒) mit Speicher und Konstanten. Ergebnisse wandern per Taste zwischen beiden Rechnern. Ein Farbcode hält die Welten auseinander: Grün für die Zehnerwelt (metrisch, Basis 10), Violett für die Zwölferwelt (imperial, Basis 12).
+
+Theorie und Handbücher
+
+Zwei bebilderte Handbücher erklären beide Rechner Schritt für Schritt. Dazu zeigt eine reich illustrierte Lektüre in drei Blöcken, warum gerade die Zwölf eine besondere Zahl ist:
+
+• Zwölf und die Welt — vom Zwölfeck und Dodekaeder über Kristalle, Viren und Quasikristalle bis zu Musik, Kunst, Architektur und Kalender
+• Dozenale Mathematik — Teiler und Perioden, die Zahlenbasen im Vergleich, eine Geschichte der Stellenwertsysteme
+• Dozenale Gesellschaft — die Bewegung für die Zwölf, neue Ziffern für Zehn und Elf, das Maßsystem TGM
+
+Viele Kapitel zeigen gemeinfreie historische Illustrationen mit antippbarer Quellenangabe. Dazu eine Einheitentheorie zu Maß und Zahl sowie Empfehlungen für dozenal-freundliche Rechner auf allen Plattformen.
+
+Was Dozenal Calc nicht macht
+
+• Keine Werbung
+• Kein Tracking
+• Keine Analytics
+• Keine Internetverbindung
+• Keine Berechtigungen — die App fordert weder Kamera, Mikrofon, Standort, Speicher noch sonstige Zugriffe an
+• Keine personenbezogenen Daten
+
+Die App funktioniert komplett offline. Was du tippst, bleibt auf deinem Gerät.
+
+Für wen ist das?
+
+Für Lehrer und Lehrerinnen, die zeigen wollen, wie ein anderes Zahlensystem den Bruchrechen-Alltag verändern würde. Für Schüler und Schülerinnen, die ihre Mathematik aus einer ungewohnten Perspektive sehen wollen.
+
+Lizenz: MIT-Lizenz
+Kontakt: dozenal@weltanschauung.app","एक «द्वादशमी कैलकुलेटर» — एक वैज्ञानिक कैलकुलेटर जो दस में नहीं, बल्कि बारह में गिनता है। अंकों के लिए अपने स्वयं के प्रतीकों के साथ।
+
+आधार 12 क्या कर सकता है जो आधार 10 नहीं कर सकता
+
+दशमलव में 1/3 एक अनंत आवर्ती भिन्न है (0.333…)। आधार 12 में यह छोटा और सटीक है: 0.4। छठांश, नवांश और वे सभी भिन्न जिनके हर दो और तीन से बने होते हैं, द्वादशमी में परिमित हो जाते हैं। यह संयोग नहीं है: बारह के छह भाजक हैं, दस के केवल चार।
+
+Dozenal Calc सामान्य फ़्लोटिंग-पॉइंट अंकगणित के समानांतर एक यथार्थ परिमेय पथ चलाता है। आवर्ती भिन्नों को दोहराने वाले अंकों के ऊपर एक रेखा के साथ दिखाया जाता है, बिल्कुल जैसे स्कूल में। उदाहरण: 1/7 को 0.186A3 के रूप में आवर्ती-रेखा के साथ दिखाया जाता है, और जब आवर्तकाल पाँच अंकों से अधिक हो तो उठे हुए बिंदु जुड़ते हैं।
+
+विशेषताएँ
+
+• मूल अंकगणित + कोष्ठक + चिन्ह
+• घात, वर्गमूल, n-वाँ मूल
+• किसी भी आधार का लघुगणक
+• समानांतर योग (a⊕b = ab/(a+b)) — प्रतिरोधक परिपथों के लिए उपयोगी
+• त्रिकोणमिति (sin, cos, tan, cot) और उनके प्रतिलोम
+• अतिपरवलयिक फलन (sinh, cosh, tanh, coth) और उनके प्रतिलोम
+• स्थिरांक π, e, φ, √2
+• क्रमगुणित, निरपेक्ष मान, व्युत्क्रम, मॉड्यूलो
+• मेमोरी (STO/RCL/MC) यथार्थ परिमेय राउंड-ट्रिप संरक्षण के साथ
+• कोण मोड DEG / RAD / GRAD (पूर्व निर्धारित: DEG)
+• फलन कुंजियों पर डबल-टैप प्रतिलोम पर बदलता है (sin → sin⁻¹)
+• सेटिंग्स में संख्या-प्रणाली स्विच: इनपुट और परिणाम वैकल्पिक रूप से आधार 12 या आधार 10 में, स्वत: रूपांतरण के साथ — दोनों कैलकुलेटरों पर लागू
+• हल्की और गहरी थीम
+• पहली बार खोलने पर परिचालन-परिचय — (?) बटन से कभी भी दोबारा खोला जा सकता है
+• चौदह भाषाएँ सूचना मेनू में चयनकर्ता के साथ: Deutsch, English, Français, Español, Italiano, فارسی, Русский, Gaeilge, हिन्दी, 简体中文, 繁體中文, Cymraeg, 日本語, العربية
+
+इकाई परिवर्तक
+
+बाईं ओर एक स्वाइप दूसरा कैलकुलेटर खोलता है: यह इम्पीरियल और मीट्रिक इकाइयों को एक-दूसरे में बदलता है — लंबाई, क्षेत्रफल, आयतन, वज़न, समय, कोण, मुद्रा (£/sh/d), तापमान और बहुत कुछ। 3 ft 5 in जैसी संयुक्त प्रविष्टियाँ, उप-इकाइयों में विभाजन और प्रविष्टि के भीतर ही गणना (× ÷ ⊕ ^ √ ㏒), स्मृति और स्थिरांकों के साथ। परिणाम एक कुंजी से दोनों कैलकुलेटरों के बीच आते-जाते हैं। एक रंग-संकेत दुनियाओं को अलग रखता है: दस की दुनिया के लिए हरा (मीट्रिक, आधार 10), बारह की दुनिया के लिए बैंगनी (इम्पीरियल, आधार 12)।
+
+सिद्धांत और पुस्तिकाएँ
+
+दो सचित्र पुस्तिकाएँ दोनों कैलकुलेटरों को चरण-दर-चरण समझाती हैं। फिर एक समृद्ध सचित्र पठन तीन खंडों में दिखाता है कि बारह विशेष रूप से एक विशेष संख्या क्यों है:
+
+• बारह और दुनिया — द्वादशभुज और द्वादशफलक से लेकर क्रिस्टल, विषाणु और अर्ध-क्रिस्टल होते हुए संगीत, कला, वास्तुकला और पंचांग तक
+• द्वादशमी गणित — भाजक और आवर्तकाल, संख्या-आधारों की तुलना, स्थानीय-मान प्रणालियों का इतिहास
+• द्वादशमी समाज — बारह के लिए आंदोलन, दस और ग्यारह के लिए नए अंक, माप-प्रणाली TGM
+
+कई अध्याय सार्वजनिक डोमेन के ऐतिहासिक चित्र दिखाते हैं, स्रोत एक टैप पर। साथ ही माप और संख्या पर इकाई सिद्धांत, और सभी प्लेटफ़ॉर्मों पर द्वादशमी-अनुकूल कैलकुलेटरों की सिफ़ारिशें।
+
+Dozenal Calc क्या नहीं करता
+
+• कोई विज्ञापन नहीं
+• कोई ट्रैकिंग नहीं
+• कोई एनालिटिक्स नहीं
+• कोई इंटरनेट कनेक्शन नहीं
+• कोई अनुमतियाँ नहीं — ऐप कैमरा, माइक्रोफ़ोन, स्थान, संग्रहण या कोई अन्य अनुमति नहीं माँगता
+• कोई व्यक्तिगत डेटा नहीं
+
+ऐप पूरी तरह से ऑफ़लाइन काम करता है। जो आप टाइप करते हैं वह आपके डिवाइस पर ही रहता है।
+
+यह किसके लिए है?
+
+उन शिक्षकों के लिए जो दिखाना चाहते हैं कि एक भिन्न संख्या प्रणाली रोज़मर्रा के भिन्न-अंकगणित को कैसे बदल देगी। उन छात्रों के लिए जो अपनी गणित को एक अपरिचित दृष्टिकोण से देखना चाहते हैं।
+
+लाइसेंस: MIT लाइसेंस
+संपर्क: dozenal@weltanschauung.app","«Áireamhán dáréagach» — áireamhán eolaíoch a chomhaireamh ní i ndeich, ach i ndó dhéag. Lena shiombailí féin do na digití.
+
+An rud is féidir le bonn 12 a dhéanamh nach féidir le bonn 10
+
+Sa chóras deachúlach, is codán timthriallach gan teorainn é 1/3 (0.333…). I mbonn 12 tá sé gairid agus cruinn: 0.4. Éiríonn séú cuid, naoú cuid, agus gach codán a bhfuil a ainmneoir tógtha as a dó agus a trí, teoranta sa chóras dáréagach. Ní timpiste é seo: tá sé roinnteoir ag a dó dhéag, níl ach ceithre cinn ag a deich.
+
+Ritheann Dozenal Calc rian cóimheasach cruinn comhthreomhar leis an uimhríocht snámhphointe ghnách. Taispeántar codáin timthriallacha le barra os cionn na ndigití a athchleachtann, díreach mar a mhúintear ar scoil. Sampla: taispeántar 1/7 mar 0.186A3 le barra tréimhse, agus poncanna ardaithe ina dhiaidh nuair a sháraíonn an tréimhse cúig dhigit.
+
+Sraith gnéithe
+
+• Uimhríocht bhunúsach + lúibíní + comharthaí
+• Cumhacht, fréamh chearnach, fréamh n-ú
+• Logartam ar aon bhonn
+• Suimiú comhthreomhar (a⊕b = ab/(a+b)) — úsáideach do chiorcaid friotóra
+• Triantánacht (sin, cos, tan, cot) agus a n-inbhéartaigh
+• Feidhmeanna hipearbóileacha (sinh, cosh, tanh, coth) agus a n-inbhéartaigh
+• Tairisigh π, e, φ, √2
+• Iolrúchán, luach absalóideach, inbhéarta, modal
+• Cuimhne (STO/RCL/MC) le caomhnú cóimheasach cruinn dhá bhealach
+• Móid uillinne DEG / RAD / GRAD (réamhshocrú: DEG)
+• Tapáil dhúbailte ar eochracha feidhme chun athrú go dtí an t-inbhéarta (sin → sin⁻¹)
+• Lasc córais uimhreacha sna socruithe: ionchur AGUS toradh i mbonn 12 nó bonn 10, le tiontú uathoibríoch — baineann sé leis an dá áireamhán
+• Téama geal agus dorcha
+• Réamhrá oibrithe ag an gcéad tosú — is féidir é a athoscailt am ar bith leis an gcnaipe (?)
+• Ceithre theanga dhéag le roghnóir sa roghchlár eolais: Deutsch, English, Français, Español, Italiano, فارسی, Русский, Gaeilge, हिन्दी, 简体中文, 繁體中文, Cymraeg, 日本語, العربية
+
+Tiontaire aonad
+
+Osclaíonn svaidhpeáil amháin ar chlé an dara háireamhán: tiontaíonn sé aonaid impiriúla agus mhéadracha ina chéile — fad, achar, toirt, meáchan, am, uillinn, airgead (£/sh/d), teocht agus tuilleadh. Iontrálacha comhshuite ar nós 3 ft 5 in, miondealú ina fho-aonaid, agus matamaitic díreach san iontráil (× ÷ ⊕ ^ √ ㏒) le cuimhne agus tairisigh. Taistealaíonn torthaí idir an dá áireamhán le brú eochrach. Coinníonn cód datha na saolta scartha: glas do shaol an deich (méadrach, bonn 10), corcra do shaol an dó dhéag (impiriúil, bonn 12).
+
+Teoiric agus lámhleabhair
+
+Míníonn dhá lámhleabhar maisithe an dá áireamhán céim ar chéim. Ansin taispeánann léitheoir saibhir maisithe, i dtrí bhloc, cén fáth a bhfuil a dó dhéag ina uimhir speisialta go háirithe:
+
+• A Dó Dhéag agus an Domhan — ón dáréaguilleog agus an dóideacaihéadrán trí chriostail, víris agus chuasaichriostail go ceol, ealaín, ailtireacht agus an féilire
+• Matamaitic Dháréagach — roinnteoirí agus tréimhsí, na boinn uimhreacha i gcomparáid, stair na gcóras luach-ionaid
+• Sochaí Dháréagach — an ghluaiseacht ar son a dó dhéag, digití nua do dheich agus aon déag, an córas tomhais TGM
+
+Taispeánann a lán caibidlí léaráidí stairiúla ón bhfearann poiblí le luanna foinse intapáilte. Chomh maith le teoiric aonad ar thomhas agus uimhir, agus moltaí d'áireamháin dháréag-chairdiúla ar gach ardán.
+
+An rud nach ndéanann Dozenal Calc
+
+• Gan fógraí
+• Gan rianú
+• Gan anailísíocht
+• Gan ceangal idirlín
+• Gan ceadanna — ní iarrann an aip ceamara, micreafón, suíomh, stóras, ná aon rochtain eile
+• Gan sonraí pearsanta
+
+Oibríonn an aip go hiomlán as líne. Fanann an méid a chlóscríobhann tú ar do ghléas.
+
+Cé dó é?
+
+Do mhúinteoirí ar mhaith leo a thaispeáint conas a d'athródh córas uimhreacha difriúil uimhríocht laethúil na gcodán. Do dhaltaí ar mhaith leo a gcuid matamaitice a fheiceáil ó pheirspictíocht neamhghnách.
+
+Ceadúnas: Ceadúnas MIT
+Teagmháil: dozenal@weltanschauung.app","Una «calcolatrice duodecimale» — una calcolatrice scientifica che conta non in dieci, ma in dodici. Con simboli propri per le cifre.
+
+Ciò che la base 12 sa fare e la base 10 no
+
+In decimale, 1/3 è una frazione periodica infinita (0,333…). In base 12 è breve ed esatta: 0,4. I sesti, i noni e tutte le frazioni il cui denominatore è composto di due e di tre diventano finite in duodecimale. Non è un caso: dodici ha sei divisori, dieci solo quattro.
+
+Dozenal Calc esegue una via razionale esatta in parallelo all'aritmetica in virgola mobile ordinaria. Le frazioni periodiche sono mostrate con una barra sopra le cifre che si ripetono, come a scuola. Esempio: 1/7 appare come 0,186A3 con la barra di periodo, seguita da punti rialzati quando il periodo supera le cinque cifre.
+
+Funzionalità
+
+• Aritmetica di base + parentesi + segni
+• Potenza, radice quadrata, radice n-esima
+• Logaritmo in qualsiasi base
+• Addizione parallela (a⊕b = ab/(a+b)) — utile per i circuiti di resistenze
+• Trigonometria (sin, cos, tan, cot) e le loro inverse
+• Funzioni iperboliche (sinh, cosh, tanh, coth) e le loro inverse
+• Costanti π, e, φ, √2
+• Fattoriale, valore assoluto, reciproco, modulo
+• Memoria (STO/RCL/MC) con conservazione razionale esatta in andata e ritorno
+• Modi angolari DEG / RAD / GRAD (predefinito: DEG)
+• Doppio tocco sui tasti funzione per passare all'inversa (sin → sin⁻¹)
+• Commutazione del sistema numerico nelle impostazioni: inserimento E risultato a scelta in base 12 o base 10, con conversione automatica — vale per entrambe le calcolatrici
+• Tema chiaro e tema scuro
+• Introduzione operativa al primo avvio — riapribile in qualsiasi momento tramite il pulsante (?)
+• Quattordici lingue con selettore nel menu informazioni: Deutsch, English, Français, Español, Italiano, فارسی, Русский, Gaeilge, हिन्दी, 简体中文, 繁體中文, Cymraeg, 日本語, العربية
+
+Convertitore di unità
+
+Uno scorrimento a sinistra apre la seconda calcolatrice: converte le unità imperiali e metriche le une nelle altre — lunghezza, area, volume, peso, tempo, angolo, denaro (£/sh/d), temperatura e altro. Inserimenti composti come 3 ft 5 in, scomposizione in sottounità e calcolo direttamente nell'inserimento (× ÷ ⊕ ^ √ ㏒) con memoria e costanti. I risultati passano da una calcolatrice all'altra con un tasto. Un codice colore separa i mondi: verde per il mondo del dieci (metrico, base 10), viola per il mondo del dodici (imperiale, base 12).
+
+Teoria e manuali
+
+Due manuali illustrati spiegano entrambe le calcolatrici passo dopo passo. Una lettura riccamente illustrata mostra poi, in tre blocchi, perché il dodici in particolare è un numero speciale:
+
+• Dodici e il mondo — dal dodecagono e dal dodecaedro, passando per cristalli, virus e quasicristalli, fino a musica, arte, architettura e calendario
+• Matematica duodecimale — divisori e periodi, le basi numeriche a confronto, una storia dei sistemi posizionali
+• Società duodecimale — il movimento per il dodici, nuove cifre per dieci e undici, il sistema di misure TGM
+
+Molti capitoli mostrano illustrazioni storiche di pubblico dominio con fonte consultabile al tocco. In più una teoria delle unità su misura e numero, e consigli su calcolatrici adatte al duodecimale su tutte le piattaforme.
+
+Ciò che Dozenal Calc non fa
+
+• Nessuna pubblicità
+• Nessun tracciamento
+• Nessuna analitica
+• Nessuna connessione internet
+• Nessun permesso — l'app non richiede fotocamera, microfono, posizione, memoria né alcun altro accesso
+• Nessun dato personale
+
+L'app funziona completamente offline. Ciò che digiti resta sul tuo dispositivo.
+
+Per chi è?
+
+Per insegnanti che vogliono mostrare come un sistema numerico diverso cambierebbe il calcolo frazionario quotidiano. Per studenti che vogliono vedere la matematica da una prospettiva inconsueta.
+
+Licenza: licenza MIT
+Contatto: dozenal@weltanschauung.app","「十二進電卓」——十ではなく十二で計算する関数電卓。数字には独自の記号を採用しています。
+
+基数 12 にできて、基数 10 にできないこと
+
+十進では 1/3 は無限循環小数（0.333…）です。十二進では短く正確で、0.4 となります。六分の一、九分の一、そして分母が 2 と 3 だけで構成されるすべての分数が、十二進では有限になります。これは偶然ではありません — 十二には六つの約数があり、十には四つしかありません。
+
+Dozenal Calc は通常の浮動小数点演算と並行して、正確な有理数トラックを走らせます。循環小数は学校で習うように、繰り返す桁の上に横線を引いて表示します。例：1/7 は 0.186A3 として循環バーつきで表示され、循環節が五桁を超えるとその後に上付きの点が続きます。
+
+機能
+
+• 四則演算 + 括弧 + 符号
+• べき乗、平方根、n 乗根
+• 任意の底の対数
+• 並列加算（a⊕b = ab/(a+b)）——抵抗回路に便利
+• 三角関数（sin, cos, tan, cot）とその逆関数
+• 双曲線関数（sinh, cosh, tanh, coth）とその逆関数
+• 定数 π, e, φ, √2
+• 階乗、絶対値、逆数、剰余
+• メモリ（STO/RCL/MC）— 有理数の正確な往復保持
+• 角度モード DEG / RAD / GRAD（既定: DEG）
+• 関数キーをダブルタップで逆関数に切り替え（sin → sin⁻¹）
+• 設定で数体系を切り替え：入力も結果も基数 12 か基数 10 で表示可能、自動変換つき — 両方の電卓に適用
+• ライト／ダークテーマ
+• 初回起動時の操作チュートリアル — (?) ボタンでいつでも再表示可能
+• 十四言語、情報メニューから選択可：Deutsch, English, Français, Español, Italiano, فارسی, Русский, Gaeilge, हिन्दी, 简体中文, 繁體中文, Cymraeg, 日本語, العربية
+
+単位換算
+
+左にスワイプすると第二の電卓が開きます：ヤード・ポンド法とメートル法の単位を相互に換算 — 長さ、面積、体積、重さ、時間、角度、通貨（£/sh/d）、温度など。3 ft 5 in のような複合入力、下位単位への分解、そして入力内での直接計算（× ÷ ⊕ ^ √ ㏒）— メモリーと定数つき。計算結果はキーひとつで2つの電卓の間を行き来します。カラーコードが世界を区別：十の世界は緑（メートル法・10進）、十二の世界は紫（ヤード・ポンド法・12進）。
+
+理論とマニュアル
+
+図解入りマニュアル2冊が両方の電卓を順を追って解説。さらに、挿絵豊富な読本が三つのブロックで、なぜ十二が特別な数なのかを示します：
+
+• 十二と世界 — 正十二角形と正十二面体から、結晶・ウイルス・準結晶を経て、音楽・芸術・建築・暦まで
+• 十二進の数学 — 約数と循環節、基数の比較、位取り記数法の歴史
+• 十二進の社会 — 十二を推す運動、十と十一の新しい数字、度量衡体系 TGM
+
+多くの章がパブリックドメインの歴史的図版を掲載し、出典はタップで参照可能。さらに測度と数についての単位の理論、各プラットフォームの十二進フレンドリーな電卓のおすすめも。
+
+Dozenal Calc がしないこと
+
+• 広告なし
+• トラッキングなし
+• 解析なし
+• インターネット接続なし
+• 権限要求なし — アプリはカメラ、マイク、位置情報、ストレージ、その他いかなるアクセスも要求しません
+• 個人データなし
+
+アプリは完全にオフラインで動作します。入力した内容は端末内にとどまります。
+
+誰のため？
+
+異なる数体系が日常の分数計算をどう変えるかを示したい教員のために。自分の数学を見慣れない視点から見たい生徒のために。
+
+ライセンス：MIT ライセンス
+連絡先：dozenal@weltanschauung.app","یک «ماشین حساب دوازده‌دهی» — یک ماشین حساب علمی که نه در پایه ده، بلکه در پایه دوازده می‌شمارد. با نمادهای ویژهٔ خود برای ارقام.
+
+آنچه پایه ۱۲ می‌تواند و پایه ۱۰ نمی‌تواند
+
+در نظام دهدهی، ۱/۳ یک کسر متناوب بی‌نهایت است (0.333…). در پایه ۱۲ کوتاه و دقیق است: 0.4. شش‌یک‌ها، نه‌یک‌ها و همهٔ کسرهایی که مخرجشان از دوها و سه‌ها ساخته شده، در دوازده‌دهی متناهی می‌شوند. این تصادفی نیست: دوازده شش مقسوم‌علیه دارد، ده تنها چهار.
+
+Dozenal Calc یک مسیر گویای دقیق را به موازات حساب اعشاری معمولی اجرا می‌کند. کسرهای متناوب با خطی بر فراز ارقام تکراری نمایش داده می‌شوند، درست مانند مدرسه. مثال: ۱/۷ به‌صورت 0.186A3 با خط دوره ظاهر می‌شود و در صورت بیش از پنج رقم بودن دوره، نقاط برافراشته به دنبال آن می‌آیند.
+
+قابلیت‌ها
+
+• چهار عمل اصلی + پرانتز + علامت‌ها
+• توان، جذر، ریشهٔ n‌اُم
+• لگاریتم در هر پایه
+• جمع موازی (a⊕b = ab/(a+b)) — مفید برای مدارهای مقاومتی
+• مثلثات (sin, cos, tan, cot) و معکوس‌هایشان
+• توابع هذلولوی (sinh, cosh, tanh, coth) و معکوس‌هایشان
+• ثوابت π, e, φ, √2
+• فاکتوریل، قدر مطلق، معکوس، باقی‌مانده
+• حافظه (STO/RCL/MC) با حفظ گویای دقیق رفت‌وبرگشتی
+• حالت‌های زاویه DEG / RAD / GRAD (پیش‌فرض: DEG)
+• دو بار ضربه بر کلیدهای تابع برای تغییر به معکوس (sin → sin⁻¹)
+• تعویض نظام عددی در تنظیمات: ورودی و نتیجه به دلخواه در پایه ۱۲ یا پایه ۱۰، با تبدیل خودکار — برای هر دو ماشین حساب
+• پوستهٔ روشن و تیره
+• راهنمای آغازین در نخستین اجرا — همواره با دکمهٔ (?) دوباره قابل دسترس است
+• چهارده زبان با انتخابگر در منوی اطلاعات: Deutsch, English, Français, Español, Italiano, فارسی, Русский, Gaeilge, हिन्दी, 简体中文, 繁體中文, Cymraeg, 日本語, العربية
+
+مبدل واحدها
+
+یک کشیدن به چپ، ماشین حساب دوم را باز می‌کند: واحدهای امپراتوری و متری را به یکدیگر تبدیل می‌کند — طول، مساحت، حجم، وزن، زمان، زاویه، پول (£/sh/d)، دما و بیشتر. ورودی‌های مرکب مانند 3 ft 5 in، تجزیه به زیرواحدها و محاسبهٔ مستقیم در ورودی (× ÷ ⊕ ^ √ ㏒) با حافظه و ثابت‌ها. نتیجه‌ها با یک کلید میان دو ماشین حساب جابه‌جا می‌شوند. یک کد رنگی جهان‌ها را از هم جدا می‌کند: سبز برای جهان ده (متری، پایه ۱۰)، بنفش برای جهان دوازده (امپراتوری، پایه ۱۲).
+
+نظریه و راهنماها
+
+دو راهنمای مصور هر دو ماشین حساب را گام‌به‌گام توضیح می‌دهند. سپس یک متن سرشار از تصویر در سه بخش نشان می‌دهد چرا به‌ویژه عدد دوازده خاص است:
+
+• دوازده و جهان — از دوازده‌ضلعی و دوازده‌وجهی، از میان بلورها، ویروس‌ها و شبه‌بلورها تا موسیقی، هنر، معماری و تقویم
+• ریاضیات دوازده‌دهی — مقسوم‌علیه‌ها و دوره‌ها، مقایسهٔ پایه‌های عددی، تاریخچهٔ نظام‌های مکانی
+• جامعهٔ دوازده‌دهی — جنبش دوازده، ارقام تازه برای ده و یازده، نظام اندازه‌گیری TGM
+
+بسیاری از فصل‌ها تصاویر تاریخی مالکیت عمومی را با منبع قابل لمس نشان می‌دهند. به‌علاوه نظریهٔ یکاها دربارهٔ اندازه و عدد، و پیشنهادهایی برای ماشین حساب‌های سازگار با دوازده‌دهی در همهٔ سکوها.
+
+آنچه Dozenal Calc انجام نمی‌دهد
+
+• بدون تبلیغات
+• بدون ردیابی
+• بدون تحلیل
+• بدون اتصال اینترنت
+• بدون مجوزها — برنامه نه دوربین، نه میکروفون، نه موقعیت، نه حافظه و نه هیچ دسترسی دیگری درخواست نمی‌کند
+• بدون داده‌های شخصی
+
+برنامه کاملاً به‌صورت آفلاین کار می‌کند. آنچه می‌نویسید روی دستگاه شما باقی می‌ماند.
+
+برای چه کسی است؟
+
+برای آموزگارانی که می‌خواهند نشان دهند یک نظام عددی متفاوت چگونه حساب کسرهای روزمره را دگرگون می‌کند. برای دانش‌آموزانی که می‌خواهند ریاضی خود را از زاویه‌ای ناآشنا ببینند.
+
+مجوز: مجوز MIT
+تماس: dozenal@weltanschauung.app","«Двенадцатеричный калькулятор» — научный калькулятор, который считает не в десяти, а в двенадцати. С собственными символами для цифр.
+
+Что умеет основание 12 и не умеет основание 10
+
+В десятичной 1/3 — бесконечная периодическая дробь (0,333…). В основании 12 она коротка и точна: 0,4. Шестые, девятые и все дроби, знаменатель которых составлен из двоек и троек, становятся конечными в двенадцатеричной. Это не случайность: у двенадцати шесть делителей, у десяти только четыре.
+
+Dozenal Calc выполняет точную рациональную дорожку параллельно с обычной арифметикой с плавающей точкой. Периодические дроби показываются с чертой над повторяющимися цифрами, как в школе. Пример: 1/7 отображается как 0,186A3 с чертой периода, после которой при длине периода больше пяти цифр следуют приподнятые точки.
+
+Функциональность
+
+• Базовая арифметика + скобки + знаки
+• Степень, квадратный корень, корень n-й степени
+• Логарифм по произвольному основанию
+• Параллельное сложение (a⊕b = ab/(a+b)) — полезно для цепей сопротивлений
+• Тригонометрия (sin, cos, tan, cot) и обратные к ним
+• Гиперболические функции (sinh, cosh, tanh, coth) и обратные к ним
+• Константы π, e, φ, √2
+• Факториал, абсолютная величина, обратная величина, остаток от деления
+• Память (STO/RCL/MC) с точным рациональным сохранением в обе стороны
+• Угловые режимы DEG / RAD / GRAD (по умолчанию: DEG)
+• Двойное нажатие на функциональные клавиши переключает на обратную (sin → sin⁻¹)
+• Переключение системы счисления в настройках: ввод И результат по выбору в основании 12 или 10, с автоматическим преобразованием — действует для обоих калькуляторов
+• Светлая и тёмная тема
+• Введение в управление при первом запуске — его можно открыть снова в любой момент кнопкой (?)
+• Четырнадцать языков с выбором в информационном меню: Deutsch, English, Français, Español, Italiano, فارسی, Русский, Gaeilge, हिन्दी, 简体中文, 繁體中文, Cymraeg, 日本語, العربية
+
+Конвертер единиц
+
+Смахивание влево открывает второй калькулятор: он преобразует имперские и метрические единицы друг в друга — длина, площадь, объём, вес, время, угол, деньги (£/sh/d), температура и не только. Составной ввод вроде 3 ft 5 in, разложение на под-единицы и счёт прямо в строке ввода (× ÷ ⊕ ^ √ ㏒) с памятью и константами. Результаты переносятся между двумя калькуляторами одной клавишей. Цветовой код разделяет миры: зелёный — мир десяти (метрика, основание 10), фиолетовый — мир двенадцати (имперские единицы, основание 12).
+
+Теория и руководства
+
+Два иллюстрированных руководства объясняют оба калькулятора шаг за шагом. Богато иллюстрированный читальный модуль затем показывает в трёх блоках, почему именно двенадцать — особенное число:
+
+• Двенадцать и мир — от двенадцатиугольника и додекаэдра через кристаллы, вирусы и квазикристаллы до музыки, искусства, архитектуры и календаря
+• Двенадцатеричная математика — делители и периоды, сравнение оснований, история позиционных систем
+• Двенадцатеричное общество — движение за двенадцать, новые цифры для десяти и одиннадцати, система мер TGM
+
+Многие главы показывают исторические иллюстрации из общественного достояния с источником по касанию. Плюс теория единиц о мере и числе и рекомендации калькуляторов, дружественных к двенадцатеричной системе, на всех платформах.
+
+Чего Dozenal Calc не делает
+
+• Никакой рекламы
+• Никакой слежки
+• Никакой аналитики
+• Никакого интернет-соединения
+• Никаких разрешений — приложение не запрашивает ни камеры, ни микрофона, ни местоположения, ни хранилища, ни какого-либо другого доступа
+• Никаких персональных данных
+
+Приложение работает полностью офлайн. То, что вы вводите, остаётся на вашем устройстве.
+
+Для кого это?
+
+Для учителей, которые хотят показать, как другая система счисления изменила бы повседневный расчёт дробей. Для учеников, которые хотят увидеть свою математику под непривычным углом.
+
+Лицензия: лицензия MIT
+Контакт: dozenal@weltanschauung.app","Una «calculadora duodecimal» — una calculadora científica que cuenta no en diez, sino en doce. Con sus propios símbolos para los dígitos.
+
+Lo que la base 12 sabe hacer y la base 10 no
+
+En decimal, 1/3 es una fracción periódica infinita (0,333…). En base 12 es corta y exacta: 0,4. Los sextos, los novenos y todas las fracciones cuyo denominador se compone de doses y treses se vuelven finitas en duodecimal. No es casualidad: doce tiene seis divisores, diez solo cuatro.
+
+Dozenal Calc ejecuta una vía racional exacta en paralelo con la aritmética en coma flotante ordinaria. Las fracciones periódicas se muestran con una barra sobre los dígitos que se repiten, igual que en la escuela. Ejemplo: 1/7 aparece como 0,186A3 con la barra de periodo, seguida de puntos elevados cuando el periodo supera los cinco dígitos.
+
+Funciones
+
+• Aritmética básica + paréntesis + signos
+• Potencia, raíz cuadrada, raíz n-ésima
+• Logaritmo en cualquier base
+• Suma paralela (a⊕b = ab/(a+b)) — útil para circuitos de resistencias
+• Trigonometría (sin, cos, tan, cot) y sus inversas
+• Funciones hiperbólicas (sinh, cosh, tanh, coth) y sus inversas
+• Constantes π, e, φ, √2
+• Factorial, valor absoluto, recíproco, módulo
+• Memoria (STO/RCL/MC) con conservación racional exacta en ida y vuelta
+• Modos de ángulo DEG / RAD / GRAD (predeterminado: DEG)
+• Doble toque en las teclas de función para cambiar a la inversa (sin → sin⁻¹)
+• Conmutación del sistema numérico en los ajustes: entrada Y resultado en base 12 o base 10, con conversión automática — vale para ambas calculadoras
+• Tema claro y tema oscuro
+• Introducción al primer arranque — reabrible en cualquier momento mediante el botón (?)
+• Catorce idiomas con selector en el menú de información: Deutsch, English, Français, Español, Italiano, فارسی, Русский, Gaeilge, हिन्दी, 简体中文, 繁體中文, Cymraeg, 日本語, العربية
+
+Conversor de unidades
+
+Un deslizamiento a la izquierda abre la segunda calculadora: convierte unidades imperiales y métricas entre sí — longitud, área, volumen, peso, tiempo, ángulo, dinero (£/sh/d), temperatura y más. Entradas compuestas como 3 ft 5 in, desglose en subunidades y cálculo directamente en la entrada (× ÷ ⊕ ^ √ ㏒) con memoria y constantes. Los resultados viajan entre ambas calculadoras con una tecla. Un código de colores separa los mundos: verde para el mundo del diez (métrico, base 10), violeta para el mundo del doce (imperial, base 12).
+
+Teoría y manuales
+
+Dos manuales ilustrados explican ambas calculadoras paso a paso. Una lectura ricamente ilustrada muestra después, en tres bloques, por qué el doce en particular es un número especial:
+
+• Doce y el mundo — del dodecágono y el dodecaedro, pasando por cristales, virus y cuasicristales, hasta la música, el arte, la arquitectura y el calendario
+• Matemáticas duodecimales — divisores y periodos, las bases numéricas comparadas, una historia de los sistemas posicionales
+• Sociedad duodecimal — el movimiento por el doce, nuevos dígitos para diez y once, el sistema de medidas TGM
+
+Muchos capítulos muestran ilustraciones históricas de dominio público con referencia de fuente consultable al toque. Además, una teoría de unidades sobre medida y número, y recomendaciones de calculadoras afines al duodecimal en todas las plataformas.
+
+Lo que Dozenal Calc no hace
+
+• Sin publicidad
+• Sin seguimiento
+• Sin analíticas
+• Sin conexión a internet
+• Sin permisos — la aplicación no solicita cámara, micrófono, ubicación, almacenamiento ni ningún otro acceso
+• Sin datos personales
+
+La aplicación funciona completamente sin conexión. Lo que escribes permanece en tu dispositivo.
+
+¿Para quién es?
+
+Para docentes que quieran mostrar cómo un sistema numérico diferente cambiaría el cálculo cotidiano de fracciones. Para alumnos que quieran ver sus matemáticas desde una perspectiva inhabitual.
+
+Licencia: licencia MIT
+Contacto: dozenal@weltanschauung.app","«Cyfrifiannell ddeuddegol» — cyfrifiannell wyddonol sy'n cyfrif nid mewn deg, ond mewn deuddeg. Gyda'i symbolau ei hun ar gyfer y digidau.
+
+Yr hyn y gall sail 12 ei wneud na all sail 10
+
+Yn y system ddegol, mae 1/3 yn ffracsiwn cylchol diddiwedd (0.333…). Yn sail 12 mae'n fyr ac yn union: 0.4. Mae chweched rannau, nawfed rannau, a phob ffracsiwn y mae ei enwadur wedi'i adeiladu o ddau a thri yn dod yn feidraidd yn y system ddeuddegol. Nid damwain mo hyn: mae gan ddeuddeg chwe rhannydd, dim ond pedwar sydd gan ddeg.
+
+Mae Dozenal Calc yn rhedeg trywydd cymarebol union ochr yn ochr â rhifyddeg pwynt arnawf cyffredin. Dangosir ffracsiynau cylchol â bar dros y digidau sy'n ailadrodd, yn union fel y dysgir yn yr ysgol. Enghraifft: mae 1/7 yn ymddangos fel 0.186A3 gyda bar cyfnod, ac yna dotiau uwchgodedig pan fo'r cyfnod yn fwy na phum digid.
+
+Set nodweddion
+
+• Rhifyddeg sylfaenol + cromfachau + arwyddion
+• Pŵer, ail isradd, isradd n-fed
+• Logarithm i unrhyw sail
+• Adio cyfochrog (a⊕b = ab/(a+b)) — defnyddiol ar gyfer cylchedau gwrthyddion
+• Trigonometreg (sin, cos, tan, cot) a'u gwrthdroeon
+• Ffwythiannau hyperbolig (sinh, cosh, tanh, coth) a'u gwrthdroeon
+• Cysonion π, e, φ, √2
+• Ffactorial, gwerth absoliwt, cilydd, modwlo
+• Cof (STO/RCL/MC) gyda chadwraeth gymarebol union ddwyffordd
+• Moddau ongl DEG / RAD / GRAD (rhagosodedig: DEG)
+• Tap dwbl ar fysellau ffwythiant i newid i'r gwrthdro (sin → sin⁻¹)
+• Switsh system rifau yn y gosodiadau: mewnbwn A chanlyniad yn sail 12 neu sail 10, gyda throsi awtomatig — yn berthnasol i'r ddwy gyfrifiannell
+• Thema olau a thywyll
+• Cyflwyniad gweithredu wrth gychwyn am y tro cyntaf — gellir ei ailagor unrhyw bryd drwy'r botwm (?)
+• Pedair iaith ar ddeg gyda dewisydd yn y ddewislen wybodaeth: Deutsch, English, Français, Español, Italiano, فارسی, Русский, Gaeilge, हिन्दी, 简体中文, 繁體中文, Cymraeg, 日本語, العربية
+
+Trawsnewidydd unedau
+
+Mae un sweip i'r chwith yn agor yr ail gyfrifiannell: mae'n trosi unedau imperialaidd a metrig i'w gilydd — hyd, arwynebedd, cyfaint, pwysau, amser, ongl, arian (£/sh/d), tymheredd a mwy. Cofnodion cyfansawdd fel 3 ft 5 in, dadansoddiad yn is-unedau, a mathemateg yn syth yn y cofnod (× ÷ ⊕ ^ √ ㏒) gyda chof a chysonion. Mae canlyniadau'n teithio rhwng y ddwy gyfrifiannell ag un fysell. Mae cod lliw'n cadw'r bydoedd ar wahân: gwyrdd ar gyfer byd y deg (metrig, sail 10), fioled ar gyfer byd y deuddeg (imperialaidd, sail 12).
+
+Theori a llawlyfrau
+
+Mae dau lawlyfr darluniadol yn esbonio'r ddwy gyfrifiannell gam wrth gam. Yna mae darllenydd cyfoethog ei ddarluniau'n dangos, mewn tri bloc, pam fod deuddeg yn arbennig yn rhif arbennig:
+
+• Deuddeg a'r Byd — o'r deuddegongl a'r dodecahedron drwy grisialau, firysau a chwasi-grisialau hyd at gerddoriaeth, celf, pensaernïaeth a'r calendr
+• Mathemateg Ddeuddegol — rhanyddion a chyfnodau, cymharu'r seiliau rhif, hanes systemau gwerth-lle
+• Cymdeithas Ddeuddegol — y mudiad dros ddeuddeg, digidau newydd ar gyfer deg ac un ar ddeg, y system fesur TGM
+
+Mae llawer o benodau'n dangos darluniau hanesyddol parth cyhoeddus gyda dyfyniadau ffynhonnell y gellir eu tapio. Hefyd theori unedau ar fesur a rhif, ac argymhellion ar gyfer cyfrifianellau deuddeg-gyfeillgar ar bob llwyfan.
+
+Yr hyn nad yw Dozenal Calc yn ei wneud
+
+• Dim hysbysebion
+• Dim tracio
+• Dim dadansoddeg
+• Dim cysylltiad rhyngrwyd
+• Dim caniatâd — nid yw'r ap yn gofyn am gamera, meicroffon, lleoliad, storfa, nac unrhyw fynediad arall
+• Dim data personol
+
+Mae'r ap yn gweithio'n gwbl all-lein. Mae'r hyn rydych chi'n ei deipio'n aros ar eich dyfais.
+
+I bwy mae hwn?
+
+I athrawon sydd am ddangos sut y byddai system rifau wahanol yn newid rhifyddeg ffracsiynau bob dydd. I fyfyrwyr sydd am weld eu mathemateg o safbwynt anghyfarwydd.
+
+Trwydded: Trwydded MIT
+Cyswllt: dozenal@weltanschauung.app"
+ReleaseNotes,3,Text,,,,,,,,,,,,,,,,
+Title,4,Text,,Dozenal Calc,Dozenal Calc,,,,,,,,,,,,,
+ShortTitle,5,Text,,,,,,,,,,,,,,,,
+SortTitle,6,Text,,,,,,,,,,,,,,,,
+VoiceTitle,7,Text,,,,,,,,,,,,,,,,
+ShortDescription,8,Text,,,,,,,,,,,,,,,,
+DevStudio,9,Text,,,,,,,,,,,,,,,,
+CopyrightTrademarkInformation,12,Text,,,,,,,,,,,,,,,,
+AdditionalLicenseTerms,13,Text,,,,,,,,,,,,,,,,
+DesktopScreenshot1,100,Relative path (or URL to file in Partner Center),,https://developer.microsoft.com/en-us/dashboard/apps/9N4M1XLPLP0N/submissions/1152921505701229509/listings/1152922700025704186/listingassets/3055244133372196729,,,,,,,,,,,,,,
+DesktopScreenshot2,101,Relative path (or URL to file in Partner Center),,https://developer.microsoft.com/en-us/dashboard/apps/9N4M1XLPLP0N/submissions/1152921505701229509/listings/1152922700025704186/listingassets/3005753777739686924,,,,,,,,,,,,,,
+DesktopScreenshot3,102,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+DesktopScreenshot4,103,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+DesktopScreenshot5,104,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+DesktopScreenshot6,105,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+DesktopScreenshot7,106,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+DesktopScreenshot8,107,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+DesktopScreenshot9,108,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+DesktopScreenshot10,109,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+DesktopScreenshot11,110,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+DesktopScreenshot12,111,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+DesktopScreenshot13,112,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+DesktopScreenshot14,113,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+DesktopScreenshot15,114,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+DesktopScreenshot16,115,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+DesktopScreenshot17,116,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+DesktopScreenshot18,117,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+DesktopScreenshot19,118,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+DesktopScreenshot20,119,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+DesktopScreenshot21,120,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+DesktopScreenshot22,121,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+DesktopScreenshot23,122,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+DesktopScreenshot24,123,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+DesktopScreenshot25,124,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+DesktopScreenshot26,125,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+DesktopScreenshot27,126,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+DesktopScreenshot28,127,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+DesktopScreenshot29,128,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+DesktopScreenshot30,129,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+DesktopScreenshotCaption1,150,Text,,,,,,,,,,,,,,,,
+DesktopScreenshotCaption2,151,Text,,,,,,,,,,,,,,,,
+DesktopScreenshotCaption3,152,Text,,,,,,,,,,,,,,,,
+DesktopScreenshotCaption4,153,Text,,,,,,,,,,,,,,,,
+DesktopScreenshotCaption5,154,Text,,,,,,,,,,,,,,,,
+DesktopScreenshotCaption6,155,Text,,,,,,,,,,,,,,,,
+DesktopScreenshotCaption7,156,Text,,,,,,,,,,,,,,,,
+DesktopScreenshotCaption8,157,Text,,,,,,,,,,,,,,,,
+DesktopScreenshotCaption9,158,Text,,,,,,,,,,,,,,,,
+DesktopScreenshotCaption10,159,Text,,,,,,,,,,,,,,,,
+DesktopScreenshotCaption11,160,Text,,,,,,,,,,,,,,,,
+DesktopScreenshotCaption12,161,Text,,,,,,,,,,,,,,,,
+DesktopScreenshotCaption13,162,Text,,,,,,,,,,,,,,,,
+DesktopScreenshotCaption14,163,Text,,,,,,,,,,,,,,,,
+DesktopScreenshotCaption15,164,Text,,,,,,,,,,,,,,,,
+DesktopScreenshotCaption16,165,Text,,,,,,,,,,,,,,,,
+DesktopScreenshotCaption17,166,Text,,,,,,,,,,,,,,,,
+DesktopScreenshotCaption18,167,Text,,,,,,,,,,,,,,,,
+DesktopScreenshotCaption19,168,Text,,,,,,,,,,,,,,,,
+DesktopScreenshotCaption20,169,Text,,,,,,,,,,,,,,,,
+DesktopScreenshotCaption21,170,Text,,,,,,,,,,,,,,,,
+DesktopScreenshotCaption22,171,Text,,,,,,,,,,,,,,,,
+DesktopScreenshotCaption23,172,Text,,,,,,,,,,,,,,,,
+DesktopScreenshotCaption24,173,Text,,,,,,,,,,,,,,,,
+DesktopScreenshotCaption25,174,Text,,,,,,,,,,,,,,,,
+DesktopScreenshotCaption26,175,Text,,,,,,,,,,,,,,,,
+DesktopScreenshotCaption27,176,Text,,,,,,,,,,,,,,,,
+DesktopScreenshotCaption28,177,Text,,,,,,,,,,,,,,,,
+DesktopScreenshotCaption29,178,Text,,,,,,,,,,,,,,,,
+DesktopScreenshotCaption30,179,Text,,,,,,,,,,,,,,,,
+MobileScreenshot1,200,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+MobileScreenshot2,201,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+MobileScreenshot3,202,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+MobileScreenshot4,203,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+MobileScreenshot5,204,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+MobileScreenshot6,205,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+MobileScreenshot7,206,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+MobileScreenshot8,207,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+MobileScreenshot9,208,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+MobileScreenshot10,209,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+MobileScreenshot11,210,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+MobileScreenshot12,211,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+MobileScreenshot13,212,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+MobileScreenshot14,213,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+MobileScreenshot15,214,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+MobileScreenshot16,215,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+MobileScreenshot17,216,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+MobileScreenshot18,217,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+MobileScreenshot19,218,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+MobileScreenshot20,219,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+MobileScreenshot21,220,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+MobileScreenshot22,221,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+MobileScreenshot23,222,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+MobileScreenshot24,223,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+MobileScreenshot25,224,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+MobileScreenshot26,225,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+MobileScreenshot27,226,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+MobileScreenshot28,227,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+MobileScreenshot29,228,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+MobileScreenshot30,229,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+MobileScreenshotCaption1,250,Text,,,,,,,,,,,,,,,,
+MobileScreenshotCaption2,251,Text,,,,,,,,,,,,,,,,
+MobileScreenshotCaption3,252,Text,,,,,,,,,,,,,,,,
+MobileScreenshotCaption4,253,Text,,,,,,,,,,,,,,,,
+MobileScreenshotCaption5,254,Text,,,,,,,,,,,,,,,,
+MobileScreenshotCaption6,255,Text,,,,,,,,,,,,,,,,
+MobileScreenshotCaption7,256,Text,,,,,,,,,,,,,,,,
+MobileScreenshotCaption8,257,Text,,,,,,,,,,,,,,,,
+MobileScreenshotCaption9,258,Text,,,,,,,,,,,,,,,,
+MobileScreenshotCaption10,259,Text,,,,,,,,,,,,,,,,
+MobileScreenshotCaption11,260,Text,,,,,,,,,,,,,,,,
+MobileScreenshotCaption12,261,Text,,,,,,,,,,,,,,,,
+MobileScreenshotCaption13,262,Text,,,,,,,,,,,,,,,,
+MobileScreenshotCaption14,263,Text,,,,,,,,,,,,,,,,
+MobileScreenshotCaption15,264,Text,,,,,,,,,,,,,,,,
+MobileScreenshotCaption16,265,Text,,,,,,,,,,,,,,,,
+MobileScreenshotCaption17,266,Text,,,,,,,,,,,,,,,,
+MobileScreenshotCaption18,267,Text,,,,,,,,,,,,,,,,
+MobileScreenshotCaption19,268,Text,,,,,,,,,,,,,,,,
+MobileScreenshotCaption20,269,Text,,,,,,,,,,,,,,,,
+MobileScreenshotCaption21,270,Text,,,,,,,,,,,,,,,,
+MobileScreenshotCaption22,271,Text,,,,,,,,,,,,,,,,
+MobileScreenshotCaption23,272,Text,,,,,,,,,,,,,,,,
+MobileScreenshotCaption24,273,Text,,,,,,,,,,,,,,,,
+MobileScreenshotCaption25,274,Text,,,,,,,,,,,,,,,,
+MobileScreenshotCaption26,275,Text,,,,,,,,,,,,,,,,
+MobileScreenshotCaption27,276,Text,,,,,,,,,,,,,,,,
+MobileScreenshotCaption28,277,Text,,,,,,,,,,,,,,,,
+MobileScreenshotCaption29,278,Text,,,,,,,,,,,,,,,,
+MobileScreenshotCaption30,279,Text,,,,,,,,,,,,,,,,
+XboxScreenshot1,300,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+XboxScreenshot2,301,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+XboxScreenshot3,302,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+XboxScreenshot4,303,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+XboxScreenshot5,304,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+XboxScreenshot6,305,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+XboxScreenshot7,306,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+XboxScreenshot8,307,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+XboxScreenshot9,308,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+XboxScreenshot10,309,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+XboxScreenshot11,310,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+XboxScreenshot12,311,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+XboxScreenshot13,312,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+XboxScreenshot14,313,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+XboxScreenshot15,314,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+XboxScreenshot16,315,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+XboxScreenshot17,316,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+XboxScreenshot18,317,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+XboxScreenshot19,318,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+XboxScreenshot20,319,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+XboxScreenshot21,320,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+XboxScreenshot22,321,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+XboxScreenshot23,322,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+XboxScreenshot24,323,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+XboxScreenshot25,324,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+XboxScreenshot26,325,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+XboxScreenshot27,326,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+XboxScreenshot28,327,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+XboxScreenshot29,328,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+XboxScreenshot30,329,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+XboxScreenshotCaption1,350,Text,,,,,,,,,,,,,,,,
+XboxScreenshotCaption2,351,Text,,,,,,,,,,,,,,,,
+XboxScreenshotCaption3,352,Text,,,,,,,,,,,,,,,,
+XboxScreenshotCaption4,353,Text,,,,,,,,,,,,,,,,
+XboxScreenshotCaption5,354,Text,,,,,,,,,,,,,,,,
+XboxScreenshotCaption6,355,Text,,,,,,,,,,,,,,,,
+XboxScreenshotCaption7,356,Text,,,,,,,,,,,,,,,,
+XboxScreenshotCaption8,357,Text,,,,,,,,,,,,,,,,
+XboxScreenshotCaption9,358,Text,,,,,,,,,,,,,,,,
+XboxScreenshotCaption10,359,Text,,,,,,,,,,,,,,,,
+XboxScreenshotCaption11,360,Text,,,,,,,,,,,,,,,,
+XboxScreenshotCaption12,361,Text,,,,,,,,,,,,,,,,
+XboxScreenshotCaption13,362,Text,,,,,,,,,,,,,,,,
+XboxScreenshotCaption14,363,Text,,,,,,,,,,,,,,,,
+XboxScreenshotCaption15,364,Text,,,,,,,,,,,,,,,,
+XboxScreenshotCaption16,365,Text,,,,,,,,,,,,,,,,
+XboxScreenshotCaption17,366,Text,,,,,,,,,,,,,,,,
+XboxScreenshotCaption18,367,Text,,,,,,,,,,,,,,,,
+XboxScreenshotCaption19,368,Text,,,,,,,,,,,,,,,,
+XboxScreenshotCaption20,369,Text,,,,,,,,,,,,,,,,
+XboxScreenshotCaption21,370,Text,,,,,,,,,,,,,,,,
+XboxScreenshotCaption22,371,Text,,,,,,,,,,,,,,,,
+XboxScreenshotCaption23,372,Text,,,,,,,,,,,,,,,,
+XboxScreenshotCaption24,373,Text,,,,,,,,,,,,,,,,
+XboxScreenshotCaption25,374,Text,,,,,,,,,,,,,,,,
+XboxScreenshotCaption26,375,Text,,,,,,,,,,,,,,,,
+XboxScreenshotCaption27,376,Text,,,,,,,,,,,,,,,,
+XboxScreenshotCaption28,377,Text,,,,,,,,,,,,,,,,
+XboxScreenshotCaption29,378,Text,,,,,,,,,,,,,,,,
+XboxScreenshotCaption30,379,Text,,,,,,,,,,,,,,,,
+HolographicScreenshot1,400,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+HolographicScreenshot2,401,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+HolographicScreenshot3,402,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+HolographicScreenshot4,403,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+HolographicScreenshot5,404,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+HolographicScreenshot6,405,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+HolographicScreenshot7,406,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+HolographicScreenshot8,407,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+HolographicScreenshot9,408,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+HolographicScreenshot10,409,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+HolographicScreenshot11,410,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+HolographicScreenshot12,411,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+HolographicScreenshot13,412,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+HolographicScreenshot14,413,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+HolographicScreenshot15,414,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+HolographicScreenshot16,415,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+HolographicScreenshot17,416,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+HolographicScreenshot18,417,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+HolographicScreenshot19,418,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+HolographicScreenshot20,419,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+HolographicScreenshot21,420,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+HolographicScreenshot22,421,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+HolographicScreenshot23,422,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+HolographicScreenshot24,423,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+HolographicScreenshot25,424,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+HolographicScreenshot26,425,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+HolographicScreenshot27,426,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+HolographicScreenshot28,427,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+HolographicScreenshot29,428,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+HolographicScreenshot30,429,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+HolographicScreenshotCaption1,450,Text,,,,,,,,,,,,,,,,
+HolographicScreenshotCaption2,451,Text,,,,,,,,,,,,,,,,
+HolographicScreenshotCaption3,452,Text,,,,,,,,,,,,,,,,
+HolographicScreenshotCaption4,453,Text,,,,,,,,,,,,,,,,
+HolographicScreenshotCaption5,454,Text,,,,,,,,,,,,,,,,
+HolographicScreenshotCaption6,455,Text,,,,,,,,,,,,,,,,
+HolographicScreenshotCaption7,456,Text,,,,,,,,,,,,,,,,
+HolographicScreenshotCaption8,457,Text,,,,,,,,,,,,,,,,
+HolographicScreenshotCaption9,458,Text,,,,,,,,,,,,,,,,
+HolographicScreenshotCaption10,459,Text,,,,,,,,,,,,,,,,
+HolographicScreenshotCaption11,460,Text,,,,,,,,,,,,,,,,
+HolographicScreenshotCaption12,461,Text,,,,,,,,,,,,,,,,
+HolographicScreenshotCaption13,462,Text,,,,,,,,,,,,,,,,
+HolographicScreenshotCaption14,463,Text,,,,,,,,,,,,,,,,
+HolographicScreenshotCaption15,464,Text,,,,,,,,,,,,,,,,
+HolographicScreenshotCaption16,465,Text,,,,,,,,,,,,,,,,
+HolographicScreenshotCaption17,466,Text,,,,,,,,,,,,,,,,
+HolographicScreenshotCaption18,467,Text,,,,,,,,,,,,,,,,
+HolographicScreenshotCaption19,468,Text,,,,,,,,,,,,,,,,
+HolographicScreenshotCaption20,469,Text,,,,,,,,,,,,,,,,
+HolographicScreenshotCaption21,470,Text,,,,,,,,,,,,,,,,
+HolographicScreenshotCaption22,471,Text,,,,,,,,,,,,,,,,
+HolographicScreenshotCaption23,472,Text,,,,,,,,,,,,,,,,
+HolographicScreenshotCaption24,473,Text,,,,,,,,,,,,,,,,
+HolographicScreenshotCaption25,474,Text,,,,,,,,,,,,,,,,
+HolographicScreenshotCaption26,475,Text,,,,,,,,,,,,,,,,
+HolographicScreenshotCaption27,476,Text,,,,,,,,,,,,,,,,
+HolographicScreenshotCaption28,477,Text,,,,,,,,,,,,,,,,
+HolographicScreenshotCaption29,478,Text,,,,,,,,,,,,,,,,
+HolographicScreenshotCaption30,479,Text,,,,,,,,,,,,,,,,
+SurfaceHubScreenshot11,510,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+SurfaceHubScreenshot12,511,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+SurfaceHubScreenshot13,512,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+SurfaceHubScreenshot14,513,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+SurfaceHubScreenshot15,514,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+SurfaceHubScreenshot16,515,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+SurfaceHubScreenshot17,516,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+SurfaceHubScreenshot18,517,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+SurfaceHubScreenshot19,518,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+SurfaceHubScreenshot20,519,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+SurfaceHubScreenshot21,520,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+SurfaceHubScreenshot22,521,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+SurfaceHubScreenshot23,522,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+SurfaceHubScreenshot24,523,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+SurfaceHubScreenshot25,524,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+SurfaceHubScreenshot26,525,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+SurfaceHubScreenshot27,526,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+SurfaceHubScreenshot28,527,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+SurfaceHubScreenshot29,528,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+SurfaceHubScreenshot30,529,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+SurfaceHubScreenshotCaption11,560,Text,,,,,,,,,,,,,,,,
+SurfaceHubScreenshotCaption12,561,Text,,,,,,,,,,,,,,,,
+SurfaceHubScreenshotCaption13,562,Text,,,,,,,,,,,,,,,,
+SurfaceHubScreenshotCaption14,563,Text,,,,,,,,,,,,,,,,
+SurfaceHubScreenshotCaption15,564,Text,,,,,,,,,,,,,,,,
+SurfaceHubScreenshotCaption16,565,Text,,,,,,,,,,,,,,,,
+SurfaceHubScreenshotCaption17,566,Text,,,,,,,,,,,,,,,,
+SurfaceHubScreenshotCaption18,567,Text,,,,,,,,,,,,,,,,
+SurfaceHubScreenshotCaption19,568,Text,,,,,,,,,,,,,,,,
+SurfaceHubScreenshotCaption20,569,Text,,,,,,,,,,,,,,,,
+SurfaceHubScreenshotCaption21,570,Text,,,,,,,,,,,,,,,,
+SurfaceHubScreenshotCaption22,571,Text,,,,,,,,,,,,,,,,
+SurfaceHubScreenshotCaption23,572,Text,,,,,,,,,,,,,,,,
+SurfaceHubScreenshotCaption24,573,Text,,,,,,,,,,,,,,,,
+SurfaceHubScreenshotCaption25,574,Text,,,,,,,,,,,,,,,,
+SurfaceHubScreenshotCaption26,575,Text,,,,,,,,,,,,,,,,
+SurfaceHubScreenshotCaption27,576,Text,,,,,,,,,,,,,,,,
+SurfaceHubScreenshotCaption28,577,Text,,,,,,,,,,,,,,,,
+SurfaceHubScreenshotCaption29,578,Text,,,,,,,,,,,,,,,,
+SurfaceHubScreenshotCaption30,579,Text,,,,,,,,,,,,,,,,
+StoreLogo720x1080,600,Relative path (or URL to file in Partner Center),,https://developer.microsoft.com/en-us/dashboard/apps/9N4M1XLPLP0N/submissions/1152921505701229509/listings/1152922700025704186/listingassets/3048620147773904778,,,,,,,,,,,,,,
+StoreLogo1080x1080,601,Relative path (or URL to file in Partner Center),,https://developer.microsoft.com/en-us/dashboard/apps/9N4M1XLPLP0N/submissions/1152921505701229509/listings/1152922700025704186/listingassets/3035016781593389342,,,,,,,,,,,,,,
+StoreLogo300x300,602,Relative path (or URL to file in Partner Center),,https://developer.microsoft.com/en-us/dashboard/apps/9N4M1XLPLP0N/submissions/1152921505701229509/listings/1152922700025704186/listingassets/3026482896681631955,,,,,,,,,,,,,,
+OverrideLogosForWin10,603,True/False,,True,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+StoreLogoOverride150x150,604,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+StoreLogoOverride71x71,605,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+PromoImage1920x1080,606,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+PromoImage2400x1200,607,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+XboxBrandedKeyArt584x800,608,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+XboxTitledHero1920x1080,609,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+XboxFeaturedPromo1080x1080,610,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+OptionalPromo358x358,611,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+OptionalPromo1000x800,612,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+OptionalPromo414x180,613,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+Feature1,700,Text,,,,,,,,,,,,,,,,
+Feature2,701,Text,,,,,,,,,,,,,,,,
+Feature3,702,Text,,,,,,,,,,,,,,,,
+Feature4,703,Text,,,,,,,,,,,,,,,,
+Feature5,704,Text,,,,,,,,,,,,,,,,
+Feature6,705,Text,,,,,,,,,,,,,,,,
+Feature7,706,Text,,,,,,,,,,,,,,,,
+Feature8,707,Text,,,,,,,,,,,,,,,,
+Feature9,708,Text,,,,,,,,,,,,,,,,
+Feature10,709,Text,,,,,,,,,,,,,,,,
+Feature11,710,Text,,,,,,,,,,,,,,,,
+Feature12,711,Text,,,,,,,,,,,,,,,,
+Feature13,712,Text,,,,,,,,,,,,,,,,
+Feature14,713,Text,,,,,,,,,,,,,,,,
+Feature15,714,Text,,,,,,,,,,,,,,,,
+Feature16,715,Text,,,,,,,,,,,,,,,,
+Feature17,716,Text,,,,,,,,,,,,,,,,
+Feature18,717,Text,,,,,,,,,,,,,,,,
+Feature19,718,Text,,,,,,,,,,,,,,,,
+Feature20,719,Text,,,,,,,,,,,,,,,,
+MinimumHardwareReq1,800,Text,,,,,,,,,,,,,,,,
+MinimumHardwareReq2,801,Text,,,,,,,,,,,,,,,,
+MinimumHardwareReq3,802,Text,,,,,,,,,,,,,,,,
+MinimumHardwareReq4,803,Text,,,,,,,,,,,,,,,,
+MinimumHardwareReq5,804,Text,,,,,,,,,,,,,,,,
+MinimumHardwareReq6,805,Text,,,,,,,,,,,,,,,,
+MinimumHardwareReq7,806,Text,,,,,,,,,,,,,,,,
+MinimumHardwareReq8,807,Text,,,,,,,,,,,,,,,,
+MinimumHardwareReq9,808,Text,,,,,,,,,,,,,,,,
+MinimumHardwareReq10,809,Text,,,,,,,,,,,,,,,,
+MinimumHardwareReq11,810,Text,,,,,,,,,,,,,,,,
+RecommendedHardwareReq1,850,Text,,,,,,,,,,,,,,,,
+RecommendedHardwareReq2,851,Text,,,,,,,,,,,,,,,,
+RecommendedHardwareReq3,852,Text,,,,,,,,,,,,,,,,
+RecommendedHardwareReq4,853,Text,,,,,,,,,,,,,,,,
+RecommendedHardwareReq5,854,Text,,,,,,,,,,,,,,,,
+RecommendedHardwareReq6,855,Text,,,,,,,,,,,,,,,,
+RecommendedHardwareReq7,856,Text,,,,,,,,,,,,,,,,
+RecommendedHardwareReq8,857,Text,,,,,,,,,,,,,,,,
+RecommendedHardwareReq9,858,Text,,,,,,,,,,,,,,,,
+RecommendedHardwareReq10,859,Text,,,,,,,,,,,,,,,,
+RecommendedHardwareReq11,860,Text,,,,,,,,,,,,,,,,
+SearchTerm1,900,Text,,,,,,,,,,,,,,,,
+SearchTerm2,901,Text,,,,,,,,,,,,,,,,
+SearchTerm3,902,Text,,,,,,,,,,,,,,,,
+SearchTerm4,903,Text,,,,,,,,,,,,,,,,
+SearchTerm5,904,Text,,,,,,,,,,,,,,,,
+SearchTerm6,905,Text,,,,,,,,,,,,,,,,
+SearchTerm7,906,Text,,,,,,,,,,,,,,,,
+TrailerToPlayAtTopOfListing,999,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+Trailer1,1000,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+Trailer2,1001,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+Trailer3,1002,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+Trailer4,1003,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+Trailer5,1004,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+Trailer6,1005,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+Trailer7,1006,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+Trailer8,1007,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+Trailer9,1008,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+Trailer10,1009,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+Trailer11,1010,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+Trailer12,1011,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+Trailer13,1012,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+Trailer14,1013,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+Trailer15,1014,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+TrailerTitle1,1020,Text,,,,,,,,,,,,,,,,
+TrailerTitle2,1021,Text,,,,,,,,,,,,,,,,
+TrailerTitle3,1022,Text,,,,,,,,,,,,,,,,
+TrailerTitle4,1023,Text,,,,,,,,,,,,,,,,
+TrailerTitle5,1024,Text,,,,,,,,,,,,,,,,
+TrailerTitle6,1025,Text,,,,,,,,,,,,,,,,
+TrailerTitle7,1026,Text,,,,,,,,,,,,,,,,
+TrailerTitle8,1027,Text,,,,,,,,,,,,,,,,
+TrailerTitle9,1028,Text,,,,,,,,,,,,,,,,
+TrailerTitle10,1029,Text,,,,,,,,,,,,,,,,
+TrailerTitle11,1030,Text,,,,,,,,,,,,,,,,
+TrailerTitle12,1031,Text,,,,,,,,,,,,,,,,
+TrailerTitle13,1032,Text,,,,,,,,,,,,,,,,
+TrailerTitle14,1033,Text,,,,,,,,,,,,,,,,
+TrailerTitle15,1034,Text,,,,,,,,,,,,,,,,
+TrailerThumbnail1,1040,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+TrailerThumbnail2,1041,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+TrailerThumbnail3,1042,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+TrailerThumbnail4,1043,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+TrailerThumbnail5,1044,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+TrailerThumbnail6,1045,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+TrailerThumbnail7,1046,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+TrailerThumbnail8,1047,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+TrailerThumbnail9,1048,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+TrailerThumbnail10,1049,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+TrailerThumbnail11,1050,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+TrailerThumbnail12,1051,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+TrailerThumbnail13,1052,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+TrailerThumbnail14,1053,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+TrailerThumbnail15,1054,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+TrailerClosedCaption1,1055,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+TrailerClosedCaption2,1056,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+TrailerClosedCaption3,1057,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+TrailerClosedCaption4,1058,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+TrailerClosedCaption5,1059,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+TrailerClosedCaption6,1060,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+TrailerClosedCaption7,1061,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+TrailerClosedCaption8,1062,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+TrailerClosedCaption9,1063,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+TrailerClosedCaption10,1064,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+TrailerClosedCaption11,1065,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+TrailerClosedCaption12,1066,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+TrailerClosedCaption13,1067,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+TrailerClosedCaption14,1068,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+TrailerClosedCaption15,1069,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+TrailerAudioDescription1,1070,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+TrailerAudioDescription2,1071,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+TrailerAudioDescription3,1072,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+TrailerAudioDescription4,1073,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+TrailerAudioDescription5,1074,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+TrailerAudioDescription6,1075,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+TrailerAudioDescription7,1076,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+TrailerAudioDescription8,1077,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+TrailerAudioDescription9,1078,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+TrailerAudioDescription10,1079,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+TrailerAudioDescription11,1080,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+TrailerAudioDescription12,1081,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+TrailerAudioDescription13,1082,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+TrailerAudioDescription14,1083,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+TrailerAudioDescription15,1084,Relative path (or URL to file in Partner Center),,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
