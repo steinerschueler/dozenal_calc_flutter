@@ -9,7 +9,7 @@ das pro Locale nicht mehr passiert.
 
 - **Nur iOS.** Google Play hat **kein** Keywords-Feld — dort läuft ASO über die
   lange Beschreibung + die „Tags" (siehe `docs/store-listings.md` und die
-  `store/listing.*.md`). Diese Datei betrifft ausschließlich den App Store.
+  `store/play-store/listing.*.md`). Diese Datei betrifft ausschließlich den App Store.
 - **Max. 100 Zeichen**, kommagetrennt. **Keine Leerzeichen nach den Kommas** —
   Leerzeichen zählen mit, also spart `a,b` gegenüber `a, b` pro Komma ein Zeichen.
 - **Pro Lokalisierung getrennt.** Jede App-Store-Sprache hat ihr eigenes
@@ -103,11 +103,11 @@ cyfrifiannell wyddonol,sail 12,ffracsiwn,mathemateg,system rifau,dwsin
 
 Die zentralen Begriffe (**„wissenschaftlicher Taschenrechner"**,
 **„duodezimal/Zwölfersystem"**, **„Bruch"**) sind aus dem jeweils vom Autor
-geschriebenen Eröffnungssatz der `store/listing.<code>.md` gezogen — also bereits
+geschriebenen Eröffnungssatz der `store/app-store/listing.<code>.md` gezogen — also bereits
 muttersprachlich geprüft. Die ergänzenden Begriffe (base 12, Mathematik,
 Zahlensystem, Dutzend) sind abgeleitete Übersetzungen.
 
-Zwei Sprachen haben **keine** `store/listing.*.md` (Gaeilge, Cymraeg), ihre
+Zwei Sprachen haben **keine** `store/app-store/listing.*.md` (Gaeilge, Cymraeg), ihre
 Keywords sind daher nicht autoren-gegründet → mit ⚠️ markiert, vor dem nächsten
 Release idealerweise gegenprüfen lassen.
 
@@ -119,6 +119,6 @@ CJK-Felder (zh, zh-Hant, ja) haben durch das Ein-Zeichen-Zählen viel Budget
 
 - `docs/store-listings.md` — Play-Store-Listing (App-Namen-Konvention, Tags,
   Screenshots). Play hat kein Keyword-Feld.
-- `store/listing.<code>.md` — vollständige Listing-Texte (App-Name,
+- `store/app-store/listing.<code>.md` — vollständige Listing-Texte (App-Name,
   Kurz-/Langbeschreibung) für 12 Locales. **Lücke:** `ga` und `cy` fehlen noch
   als eigene Listing-Datei.

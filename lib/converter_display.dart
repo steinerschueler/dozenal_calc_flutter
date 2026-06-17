@@ -43,14 +43,19 @@ int? _glyphDigit(String ch) {
   return null;
 }
 
-/// One styled run of a display line.
+/// One styled run of a display line. [glyph] gates the custom-mode dozenal
+/// glyph overlay: true only for number runs; unit symbols and the { } bracket
+/// set it false so letters like 'B' in "BTU" keep their ASCII rendering and
+/// are not mistaken for the dozenal eleven glyph (header: units/brackets stay
+/// as text).
 class _Seg {
   final String text;
   final Color color;
   final double size;
   final FontWeight weight;
+  final bool glyph;
   const _Seg(this.text, this.color, this.size,
-      {this.weight = FontWeight.w400});
+      {this.weight = FontWeight.w400, this.glyph = true});
 }
 
 /// A laid-out line: the [TextPainter] plus, per character, its digit value
@@ -72,7 +77,9 @@ class _LineLayout {
     for (final s in segs) {
       for (var k = 0; k < s.text.length; k++) {
         final ch = s.text[k];
-        final v = _glyphDigit(ch);
+        // Only number runs (s.glyph) can carry a glyph; unit symbols and the
+        // bracket stay ASCII so 'A'/'B' inside e.g. "BTU" aren't glyphified.
+        final v = s.glyph ? _glyphDigit(ch) : null;
         // Only record a glyph to overlay in custom mode; in conventional mode
         // the cell keeps its visible ASCII digit and must NOT be overpainted
         // (that caused the glyph to overlap the ASCII number).
@@ -264,7 +271,8 @@ List<_Seg> _splitByUnitRanges(
     if (start > pos) {
       segs.add(_Seg(text.substring(pos, start), neutral, size, weight: weight));
     }
-    segs.add(_Seg(text.substring(start, end), unitColor, size, weight: weight));
+    segs.add(_Seg(text.substring(start, end), unitColor, size,
+        weight: weight, glyph: false));
     pos = end;
   }
   if (pos < text.length) {
@@ -272,6 +280,42 @@ List<_Seg> _splitByUnitRanges(
   }
   return segs;
 }
+
+/// Segments for the result line (`= value  unit  {bracket}`). Shared by the
+/// painter and the test hook so the unit/bracket glyph-gating can't drift.
+List<_Seg> _resultSegs(
+  ConverterLine l, {
+  required Color numberColor,
+  required Color unitColor,
+  required Color bracketColor,
+  required double numberSize,
+  required double bracketSize,
+}) =>
+    <_Seg>[
+      // The '= value' run is neutral; breakdown strings carry their unit
+      // symbols inside `number`, coloured via the ranges ('= ' shifts by 2).
+      ..._splitByUnitRanges('= ${l.number}', l.unitRanges, numberColor,
+          unitColor, numberSize, offset: 2),
+      if (l.unit != null)
+        _Seg(' ${l.unit}', unitColor, numberSize * 0.82, glyph: false),
+      if (l.bracket != null)
+        _Seg('  {${l.bracket}}', bracketColor, bracketSize, glyph: false),
+    ];
+
+/// Test hook: the per-character glyph overlay cells for a result [line] in
+/// [style] (custom → the dozenal digit overlaid at that cell, null → stays
+/// ASCII). Locks in that unit symbols like "BTU" are never glyphified.
+@visibleForTesting
+List<int?> debugResultGlyphCells(ConverterLine line, GlyphStyle style) =>
+    _LineLayout.build(
+      _resultSegs(line,
+          numberColor: const Color(0xFFFFFFFF),
+          unitColor: const Color(0xFFFFFFFF),
+          bracketColor: const Color(0xFFFFFFFF),
+          numberSize: 20,
+          bracketSize: 14),
+      style,
+    ).digits;
 
 /// Right-aligned, scale-to-fit result line (no caret). Custom-painted so the
 /// dozenal glyph overlay lines up with the (possibly down-scaled) text.
@@ -298,15 +342,12 @@ class _ResultLine extends StatelessWidget {
   Widget build(BuildContext context) {
     final l = line;
     if (l == null) return SizedBox(height: numberSize); // keep the row slot
-    final segs = <_Seg>[
-      // The '= value' run is neutral; breakdown strings carry their unit
-      // symbols inside `number`, coloured via the ranges ('= ' shifts by 2).
-      ..._splitByUnitRanges('= ${l.number}', l.unitRanges, numberColor,
-          unitColor, numberSize, offset: 2),
-      if (l.unit != null)
-        _Seg(' ${l.unit}', unitColor, numberSize * 0.82),
-      if (l.bracket != null) _Seg('  {${l.bracket}}', bracketColor, bracketSize),
-    ];
+    final segs = _resultSegs(l,
+        numberColor: numberColor,
+        unitColor: unitColor,
+        bracketColor: bracketColor,
+        numberSize: numberSize,
+        bracketSize: bracketSize);
     final layout = _LineLayout.build(segs, style);
     return LayoutBuilder(
       builder: (ctx, c) {
@@ -364,7 +405,8 @@ class _CaretInputLine extends StatelessWidget {
       // colours differ, so the caret/tap geometry stays exact.
       ..._splitByUnitRanges(
           text, unitRanges, t.displayText, unitColor, numberSize),
-      if (bracket != null) _Seg('  {$bracket}', bracketColor, bracketSize),
+      if (bracket != null)
+        _Seg('  {$bracket}', bracketColor, bracketSize, glyph: false),
     ];
     final layout = _LineLayout.build(segs, style);
     final tp = layout.tp;

@@ -35,7 +35,7 @@ ja.wiki/ダース, …).
 Die App-Namen leben an *zwei* Stellen, die parallel gepflegt werden müssen:
 
 1. **Play-Console-Listing-Titel**: `## App-Name`-Block in
-   `store/listing.<code>.md`. Sync via `tool/sync_play_listings.dart`.
+   `store/play-store/listing.<code>.md`. Sync via `tool/sync_play_listings.dart`.
 2. **Android-Launcher-Name**: `<string name="app_name">…</string>` in
    `android/app/src/main/res/values-<XX>/strings.xml` (Default in
    `values/strings.xml` = „Dozenal Calc"). Manifest referenziert nur

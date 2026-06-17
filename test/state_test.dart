@@ -39,7 +39,7 @@ void main() {
       expect(s.resultPeriodCapped, isFalse);
     });
 
-    test('a long period (1/17dec, period 14₁₂) is capped (State C)', () {
+    test('a long period (1/17dec, 16-digit period) is capped (State C)', () {
       // 1/17 (decimal) has a 16-digit period in base 12 — past the cap, so the
       // period is clipped to maxPeriodDisplay and flagged State C.
       final s = DozenalCalcState()

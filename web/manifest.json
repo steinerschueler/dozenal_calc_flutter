@@ -1,11 +1,11 @@
 {
-    "name": "dozenal_calc_flutter",
-    "short_name": "dozenal_calc_flutter",
+    "name": "Dozenal Calc",
+    "short_name": "Dozenal Calc",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#1F1F1F",
     "theme_color": "#1F1F1F",
-    "description": "A new Flutter project.",
+    "description": "Scientific calculator that counts in twelve — dozenal (base 12).",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

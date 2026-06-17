@@ -790,6 +790,7 @@ class _RowsPanel extends StatelessWidget {
                   onTokenTap: onTap,
                   armed: isArmed?.call(tok) ?? false,
                   selected: isSelected?.call(tok) ?? false,
+                  disabled: isDisabled?.call(tok) ?? false,
                 ),
         ),
       );
@@ -1028,6 +1029,7 @@ class _BreitKeypad extends StatelessWidget {
                 onTokenTap: onTap,
                 armed: isArmed?.call(tokens[i]) ?? false,
                 selected: isSelected?.call(tokens[i]) ?? false,
+                disabled: isDisabled?.call(tokens[i]) ?? false,
               ),
             ),
           ],
@@ -1059,6 +1061,7 @@ class _BreitKeypad extends StatelessWidget {
                 onTap: () => onTap(tokens[i]),
                 armed: isArmed?.call(tokens[i]) ?? false,
                 selected: isSelected?.call(tokens[i]) ?? false,
+                disabled: isDisabled?.call(tokens[i]) ?? false,
               ),
             ),
           ],
@@ -1239,12 +1242,18 @@ class _TokenButton extends StatefulWidget {
   final bool armed;
   final bool selected;
 
+  /// Greyed and inert (e.g. CONV while the converter holds no result). The
+  /// hardware-keyboard path swallows the same tokens in main.dart, so the
+  /// touch button and the keyboard stay in lockstep.
+  final bool disabled;
+
   const _TokenButton({
     required this.token,
     required this.onTap,
     this.onTokenTap,
     this.armed = false,
     this.selected = false,
+    this.disabled = false,
   });
 
   @override
@@ -1417,7 +1426,8 @@ class _TokenButtonState extends State<_TokenButton> {
   @override
   Widget build(BuildContext context) {
     final l = AppLocalizations.of(context);
-    final hasPopup = widget.onTokenTap != null &&
+    final hasPopup = !widget.disabled &&
+        widget.onTokenTap != null &&
         longPressOptionsFor(widget.token).isNotEmpty;
     return ConstrainedBox(
       constraints: const BoxConstraints(minHeight: minTouchTarget),
@@ -1426,9 +1436,11 @@ class _TokenButtonState extends State<_TokenButton> {
         label: _tokenSemanticLabel(widget.token, l),
         hint: hasPopup ? l.a11yHoldMore : null,
         excludeSemantics: true,
+        enabled: !widget.disabled,
         child: PressableShell(
           onTap: widget.onTap,
           selected: widget.selected,
+          disabled: widget.disabled,
           onLongPressStart: hasPopup ? _onLongPressStart : null,
           onLongPressMoveUpdate: hasPopup ? _onLongPressMoveUpdate : null,
           onLongPressEnd: hasPopup ? _onLongPressEnd : null,
@@ -1437,13 +1449,16 @@ class _TokenButtonState extends State<_TokenButton> {
             final isAc = widget.token is Ac;
             final normalColor = isAc ? t.ac : t.op;
             final pressedColor = isAc ? t.acPressed : t.opPressed;
+            final keyColor = widget.disabled
+                ? t.digitDisabled
+                : (pressed ? pressedColor : normalColor);
             return Stack(
               children: [
                 Positioned.fill(
                   child: CustomPaint(
                     painter: TokenKeyPainter(
                       token: widget.token,
-                      color: pressed ? pressedColor : normalColor,
+                      color: keyColor,
                     ),
                   ),
                 ),

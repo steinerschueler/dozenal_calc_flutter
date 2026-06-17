@@ -354,6 +354,37 @@ void main() {
       expect(s.topLine.number, '3 in');
     });
 
+    test('deleting the leading term does not flip the sign of a − successor',
+        () {
+      // Regression (audit H1): "5 ft − 3 in", delete the leading "5 ft".
+      // The promoted "3 in" term must NOT keep its subtract flag (which
+      // referred to the now-deleted gap) and silently become "−3 in".
+      final s = distState();
+      type(s, '5');
+      s.tapMagnitude(mag(s, 'ft'));
+      s.setSubtract(true);
+      type(s, '3');
+      s.tapMagnitude(mag(s, 'in')); // "5 ft − 3 in"
+      expect(s.totalSi, closeTo(5 * 0.3048 - 3 * 0.0254, 1e-9));
+      s.moveCursorToTermBoundary(1); // between ft and in
+      s.del(); // removes "5 ft"
+      expect(s.termCount, 1);
+      expect(s.topLine.number, '3 in'); // not "−3 in"
+      expect(s.totalSi, closeTo(3 * 0.0254, 1e-9)); // positive
+      expect(s.ansForBridge, closeTo(3.0, 1e-9)); // bridge value positive too
+    });
+
+    test('an intentionally negative leading term is preserved', () {
+      // The fix must not break a deliberately negative head term (armed −
+      // before the first commit): "−5 ft" stays negative.
+      final s = distState();
+      s.setSubtract(true);
+      type(s, '5');
+      s.tapMagnitude(mag(s, 'ft')); // "−5 ft"
+      expect(s.totalSi, closeTo(-5 * 0.3048, 1e-9));
+      expect(s.topLine.number, '−5 ft');
+    });
+
     test('tapping a boundary discards an incomplete pending number', () {
       final s = distState();
       type(s, '5');

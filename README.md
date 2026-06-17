@@ -42,8 +42,9 @@ lib/
   glyph_painter.dart      — zwölf Dozenal-Ziffer-Glyphen
   token_painter.dart      — Operator-/Funktionstasten-Glyphen
   app_layout.dart         — Display-Höhen-Formel + Tablet-Proportionen
-  info_pages.dart         — Info-Modal-Navigation
-  info_content.dart       — Kapitelprosa + Illustrationen
+  info_pages.dart         — Info-Modal-Navigation (Routing)
+  theory/                 — Theorie-Kapitel (Prosa + Illustrationen)
+  manual/                 — Bedienhandbuch (Haupt- + Umrechner)
   privacy_page.dart       — gebündelte Datenschutzerklärung
   license_page.dart       — gebündelte Lizenz (MIT)
   markdown_page.dart      — geteilte Markdown-Asset-Rendering-Komponente
@@ -56,7 +57,7 @@ lib/
                             Ergebnisformatierung
     dozenal_converter.dart
     dozenal_digit.dart
-test/                     — 147 Tests über Logik, State und Layout
+test/                     — über 400 Tests über Logik, State und Layout
 tool/                     — Icon-, Kompass-, Feature-Graphic-Generatoren
 legal/                    — Datenschutzerklärung (.md + .html)
 assets/                   — icon.png, compass.png, feature_graphic.png
@@ -70,7 +71,7 @@ screenshots/              — Play-Store-Screenshots (Phone + Tablet)
 flutter pub get
 flutter run                   # aktuelle Plattform
 flutter run -d chrome         # Web
-flutter test                  # alle 147 Tests
+flutter test                  # gesamte Suite
 ```
 
 `flutter pub get` meldet sechs transitive Abhängigkeiten (`meta`,

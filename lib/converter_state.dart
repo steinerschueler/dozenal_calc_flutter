@@ -51,7 +51,10 @@ class ConverterLine {
 }
 
 /// A committed (number, unit) term plus the operator joining it to the previous
-/// term (`subtract` = the gap before it is −; the first term's flag is ignored).
+/// term: `subtract` means the gap before it is −. On the first term it acts as
+/// a leading sign (an armed − or a negative Ans/RCL makes the head negative);
+/// when the head term is removed, [ConverterState._removeTermAt] clears a
+/// promoted successor's flag so a now-deleted gap can't silently flip the total.
 @immutable
 class _Term {
   final double value;
@@ -638,6 +641,17 @@ class ConverterState extends ChangeNotifier {
   void _removeTermAt(int index) {
     _terms = [..._terms.sublist(0, index), ..._terms.sublist(index + 1)];
     if (_cursorTerm > index) _cursorTerm--;
+    // Removing the head term promotes its successor to first position. That
+    // term's `subtract` flag referred to the gap before the now-deleted term;
+    // left intact it would act as a leading unary minus and silently flip the
+    // sign of the whole total (and the Ans-bridge value). Clear it so the
+    // remaining quantity keeps its own sign.
+    if (index == 0 && _terms.isNotEmpty && _terms.first.subtract) {
+      _terms = [
+        _Term(_terms.first.value, _terms.first.unit),
+        ..._terms.sublist(1),
+      ];
+    }
     _resultStep =
         _terms.isEmpty ? -1 : _resultStep.clamp(0, _resultViewCount - 1);
   }

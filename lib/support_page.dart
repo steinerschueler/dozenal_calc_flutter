@@ -1,6 +1,6 @@
 // Donation / "support development" page. Reached from the Info list.
-// Two external-link cards: Ko-fi (preferred, lower platform overhead)
-// and GitHub Sponsors (secondary). Intro paragraph frames donations
+// One external-link card: Ko-fi (lower platform overhead than the
+// alternatives). Intro paragraph frames donations
 // concretely against the Apple Developer Program fee, which gives
 // supporters a tangible "what your tip enables" — namely the iOS
 // publication path that currently isn't accessible from a Linux-only

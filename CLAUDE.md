@@ -20,7 +20,7 @@ flutter pub get
 flutter run                   # aktuelle Plattform
 flutter run -d chrome         # Web
 flutter analyze               # was CI ausführt
-flutter test                  # gesamte Suite (~294 Tests)
+flutter test                  # gesamte Suite (über 400 Tests)
 flutter test test/rational_test.dart           # einzelne Datei
 flutter test --plain-name "parses 1/7"         # einzelner Test per Name
 ```
@@ -105,7 +105,7 @@ keinen Slot. Als `build<N>-release-notes.txt`
 im Projekt-Root ablegen, dann via Gradle Play Publisher pushen:
 
 ```bash
-dart run tool/sync_play_listings.dart   # store/listing.*.md + build<N>-release-notes.txt → play/
+dart run tool/sync_play_listings.dart   # store/play-store/listing.*.md + build<N>-release-notes.txt → play/
 ./gradlew publishListing                # nur Texte/Grafiken
 ./gradlew publishBundle                 # AAB-Upload (Track: internal, Status: DRAFT)
 ```
@@ -156,7 +156,7 @@ Jeder `=`-Druck startet **beide** Auswerter parallel — den exakten
   `value`/`fromValue` (Port von `DozenalDigit` aus `src/logic.rs`). Keine
   Flutter-Imports, wird von Parser, State und Tastenmap geteilt.
 - `lib/logic/rational.dart` — exakte Rationals mit Periodenerkennung
-  (`1/7` → `0.186A3` mit Überstrich + Punktmarker für den Periodenstart).
+  (`1/7` → `0.186A35` mit Überstrich + Punktmarker für den Periodenstart).
 - `lib/logic/rat_parser.dart` — Parser der Rational-Schiene. Kollabiert
   nur bei nicht-rationalen Tokens (sin, log, …) oder Division durch null.
 - `lib/logic/expression.dart` — f64-Fallback-Auswerter und
@@ -206,7 +206,7 @@ gefiltert (beidseitiger Walk durch das aktuelle Zahlen-Literal), damit
 dreiteilig:
 - **AC** → kompletter Reset (Buffer, Cursor, Error).
 - **Mode/Memory/Info-Tokens** (`_isErrorBlocked`: Drg/Doz/Dez/Sto/Rcl/
-  Mc/Ans/Info/Expand/Close) → blockiert, User muss AC drücken.
+  Mc/Ans/ConvAns/M+/M−/Info/Expand/Close) → blockiert, User muss AC drücken.
 - **Pfeil-Tasten** → Cursor bewegt sich, Error + Input + Cursor bleiben
   erhalten. Lässt den User im fehlerhaften Input navigieren, mit
   Fehlermeldung als Kontext sichtbar.
@@ -249,15 +249,15 @@ Payload-freie Varianten. Spiegelt das Rust-Enum und erlaubt erschöpfende
   Tablet-Portrait (170 dp). Liest **GlyphStyle** aus dem
   `GlyphStyleScope`-InheritedNotifier (via `Builder` innerhalb des
   `CustomPaint`-Wraps): `custom` = Dozenal-Glyphen via
-  `paintDozenalDigitAt` (Default), `conventional` = ASCII `'0'..'9'/'A'/'B'`
+  `paintDozenalDigitAt`, `conventional` = ASCII `'0'..'9'/'A'/'B'` (Default)
   per TextPainter (Pitman/Dwiggins-Konvention für die Über-9er-Stellen).
   Quell-Datei `lib/logic/glyph_style.dart`: der `GlyphStyleNotifier`
   hält **zwei unabhängige Prefs** — `style` für das Display
   (SharedPreferences-Key `glyph_style_v1`) und `keypadStyle` für die
   Ziffern-Tasten (`keypad_glyph_style_v1`, gelesen via
   `GlyphStyleScope.keypadStyleOf(context)`; ohne Scope Fallback auf
-  custom). Beide defaulten auf custom; Display und Keypad lassen sich
-  also getrennt auf konventionelle Ziffern umstellen
+  custom). Beide defaulten auf conventional (die Dozenal-Glyphen sind
+  opt-in); Display und Keypad lassen sich getrennt auf die Glyphen umstellen
   (Settings-Zeilen „Glyphen-Stil" bzw. „Ziffern auf Tasten").
 - `keypad.dart` — orientierungsgesteuertes Dispatch. `Keypad` nimmt
   zusätzlich `keypadMode` (Overlay/Scroll) und `keypadProfile`
@@ -346,12 +346,24 @@ Payload-freie Varianten. Spiegelt das Rust-Enum und erlaubt erschöpfende
 
 ### Info-Modal
 
-`info_pages.dart` (Navigator-Routen) + `info_content.dart` (Dispatcher) +
-zehn `info_content_<lang>.dart`-Part-Dateien, eine pro Sprache, mit
-`part of 'info_content.dart'`-Direktive. Jede Part-Datei exportiert eine
-`_chapter<Lang>(int chapter, AppLocalizations l)`-Funktion mit den zwölf
-Lehr-Kapiteln als Prosa + custom-painted Illustrationen für die
-Geometrie-Kapitel.
+`info_pages.dart` (Navigator-Routen + reine Routing-Logik der `InfoListPage`).
+Der eigentliche Inhalt liegt in zwei Bäumen:
+- **`lib/theory/`** — der Theorie-Stoff. `theory_blocks.dart` baut über
+  `theoryBlocks(l, langTag)` die vier Blöcke (Grundlagen, Zwölf und die Welt,
+  Dozenale Mathematik, Dozenale Gesellschaft) aus `TheoryChapterRef`-Prosa-
+  Kapiteln (Datenmodell `ProseChapter`/`ProseSection` in `prose_chapter.dart`).
+  Genre-Dateien `grundlagen_/math_/society_/world_/unit_theory.dart` mit je
+  einem per-Sprach-Part-Verzeichnis `lib/theory/<lang>/`. Custom-Illustrationen
+  hängen per `imageId` an (`_customChapterIllustration` in `info_pages.dart`).
+- **`lib/manual/`** — das Bedienhandbuch. `manual.dart` liefert
+  `manualChapters(langTag)` (Hauptrechner) und `converterManualChapters(langTag)`
+  (Umrechner) als `ManualChapter`-Widget-Listen; Inhalt in den per-Sprach-Part-
+  Dateien `lib/manual/<lang>/manual_<lang>.dart`, geteilte Helfer `_H/_P/_Pre`,
+  Illustrationen in `manual_illustrations.dart`.
+
+Die frühere `info_content.dart` mit ihren `info_content_<lang>.dart`-Parts und
+der `_chapter<Lang>`-Funktion ist vollständig hierher migriert und existiert
+nicht mehr.
 
 **Layout der Info-Liste** (`InfoListPage`) — seit dem Texte-Umbau:
 1. „Bedienung des Hauptrechners" (`chapterTitle01`) — Handbuch-
@@ -394,16 +406,18 @@ AppBar-Titel ist `infoListTitle` und reflektiert die Mischnatur der
 Seite (Theorie + alle anderen Items): DE „Theorie und Weiteres",
 EN „Theory and More", entsprechend lokalisiert in allen 14 Locales.
 
-Der Dispatcher (`buildChapterContent` in `info_content.dart`) wählt über
-eine `const Map<String, _ChapterBuilder> _chapterBuilders` anhand der
-aktiven Locale die passende Sprach-Funktion. Fallback auf Deutsch bei
-unbekannter Locale (sollte nie passieren, weil `resolveLocale` nur
-unterstützte Codes durchlässt).
+Der Dispatch ist script-aware (zh-Hant vor zh): `manualChapters` /
+`converterManualChapters` wählen über `_ownManualChapters` /
+`_ownConverterManualChapters` per BCP-47-Präfix die Sprach-Funktion, die
+Theorie analog über `worldChapters/mathChapters/societyChapters/
+grundlagenChapters(langTag)`. Per-Kapitel-Fallback auf Deutsch nach Position:
+eine Sprache zeigt ihre eigenen Kapitel so weit sie übersetzt sind, der Rest
+fällt auf Deutsch zurück.
 
-Kapitel 2 hält die sprach-spezifische Aussprache-Konvention für
-Dozenal-Zahlen fest (Magnituden quader/cuber/tesser/…, pro Sprache
-unterschiedliche Konnektoren und Mutationsregeln). **Vor jedem Edit an
-Kapitel-2-Prosa in `info_content_<lang>.dart` die vollständige Konvention
+Die Aussprache-Konvention für Dozenal-Zahlen (Magnituden quader/cuber/tesser/…,
+pro Sprache unterschiedliche Konnektoren und Mutationsregeln) lebt im
+Mathematik-Theoriekapitel. **Vor jedem Edit an dieser Prosa in
+`lib/theory/<lang>/math_<lang>.dart` die vollständige Konvention
 in [`docs/chapter2-conventions.md`](docs/chapter2-conventions.md)
 nachschlagen.** Das e/o-Präfix als Theorie-Lese-Hilfe (e = dezimal,
 o = dozenal) bleibt in allen Sprachen sprachneutral.
@@ -464,7 +478,7 @@ der Sektion: `infoListRecommendationsExpansion` (×14). Der Dozenal-Bezug
 
 Eigene Seite, erreichbar über die Info-Liste. Bündelt die Quick-Toggles
 (Glyphen-Stil, Haptik — früher lose Zeilen in der Info-Liste) mit den
-Keypad-Präferenzen und den Live-Rechner-Modi. Acht Zeilen, getrennt
+Keypad-Präferenzen und den Live-Rechner-Modi. Neun Zeilen, getrennt
 durch Dividers im Palette-Slot `divider`, Segment-Optik via `_SegmentRow`
 (ToggleButtons im Stil des früheren `_GlyphStyleToggle`):
 
@@ -475,23 +489,25 @@ durch Dividers im Palette-Slot `divider`, Segment-Optik via `_SegmentRow`
 2. **Glyphen-Stil** (Display, `GlyphStyleScope.style`),
    3. **Ziffern auf Tasten** (`_KeypadGlyphsRow`,
    `GlyphStyleScope.keypadStyle` — unabhängiger zweiter Pref, siehe
-   Rendering-Abschnitt) und 4. **Haptik** (`HapticsScope`).
-5. **Funktionstasten** Overlay/Scrollen und 6. **Funktionsumfang**
+   Rendering-Abschnitt), 4. **Schriftgröße** (`_FontSizeRow`,
+   `CalcPrefsNotifier.setFontSize`, Key `font_size_v1`) und
+   5. **Haptik** (`HapticsScope`).
+6. **Funktionstasten** Overlay/Scrollen und 7. **Funktionsumfang**
    Alle/Einfach — schreiben in `CalcPrefsNotifier`
    (`lib/calc_prefs.dart`): `ChangeNotifier` + SharedPreferences-Keys
    `keypad_mode_v1`, `keypad_profile_v1`, `numeral_system_v1`,
    `angle_mode_v1`; unbekannte gespeicherte Strings fallen auf die
-   Defaults zurück (Overlay/Alle/Doz/Deg = exakt das
+   Defaults zurück (Overlay/Alle/Dez/Deg = exakt das
    Vor-Einstellungen-Verhalten, Store-Screenshots bleiben gültig).
    Bereitgestellt über `CalcPrefsScope` (InheritedNotifier).
-7. **Zahlensystem** mit ausgeschriebenen, lokalisierten Labels
+8. **Zahlensystem** mit ausgeschriebenen, lokalisierten Labels
    „Dozenal"/„Dezimal" (`settingsNumeralSystemDozenal/Decimal`, ×14 —
    seit dem Wegfall der Doz/Dez-Keypad-Tasten ist diese Zeile der
    primäre Basis-Schalter und muss selbsterklärend sein; sie gilt seit
    der Basis/System-Entkopplung für BEIDE Rechner). Die Segmente tragen
    den Welt-Farbcode (`optionColors` auf `_SegmentRow`: Dozenal violett,
    Dezimal grün, gewähltes Segment mit Eigenfarb-Rahmen) und
-   8. **Winkelmodus** DEG/RAD/GRD — bedienen den **lebenden**
+   9. **Winkelmodus** DEG/RAD/GRD — bedienen den **lebenden**
    `DozenalCalcState` über `CalcStateScope.maybeOf`
    (`lib/calc_scope.dart`); ohne Scope (Widget-Tests, die die Seite
    standalone pumpen) werden beide Zeilen ausgeblendet. Doz/Dez läuft
@@ -702,7 +718,7 @@ Near-Integer-f64-Rauschen (SI-Roundtrip `14 ft` → 13.999…) wie
     der Arbeits-Einheit — gleiches Idiom wie der Welt-Wechsel), sodass
     `3 ft × 2` und `3 × 2 ft` beide funktionieren. Dezimal-Guard pro
     Segment; `setBase` reformatiert segmentweise (`reformatScalarEntry`).
-  - **Wert-Tasten** (Set 7 Konstanten π/e/φ/√2, RCL, **Ans** =
+  - **Wert-Tasten** (Konstanten π/e/φ/√2 aus Set 7, dazu RCL und **Ans** aus Set 6 =
     Resultat-Brücke): **ersetzen das Skalar-Segment am Caret** durch ihre
     Ziffern (`insertValueEntry`; leeres Segment = einfaches Einfügen, nie
     Splicing in halbgetippte Zahlen). Dadurch praktisch immer aktiv —
@@ -744,11 +760,11 @@ Umrechner: `converter_display` Caret-Hit-Test → `ConverterState.handleInputTap
 ### Intro
 
 Onboarding-PageView beim ersten Start, gesperrt über einen
-`SharedPreferences`-Schlüssel der Form `intro_seen_v<N>` (aktuell `v3`,
+`SharedPreferences`-Schlüssel der Form `intro_seen_v<N>` (aktuell `v4`,
 definiert als `_kIntroSeenFlag` in `lib/main.dart`). Bei substanziellen
 Intro-Änderungen den Suffix erhöhen, damit Bestandstester das
 überarbeitete Intro erneut sehen. Slide-Inhalte (Text) kommen aus dem
-ARB-System (`introSlide1`–`introSlide8`); Slide-Layout-Metadata
+ARB-System (`introSlide1`–`introSlide4`); Slide-Layout-Metadata
 (Bild, Highlight-Rechtecke/Kreise, Ziffer-Labels) bleibt
 sprach-neutral in `intro_pages.dart`.
 
@@ -772,10 +788,10 @@ JA (Japanisch) und AR (Arabisch). Die Infrastruktur:
   koexistieren können; alte einsprachige Einträge (`de`) bleiben
   rückwärtskompatibel. `resolveLocale` ist script-aware: exakte
   Sprache+Script gewinnt vor reinem Sprach-Match; `zh-TW/HK/MO` mappt
-  automatisch auf `zh-Hant`. `info_content.dart`, `privacy_page.dart`,
-  `license_page.dart` und der Sprach-Picker in `info_pages.dart`
-  (`_LanguagePickerExpansion`) vergleichen über `toLanguageTag()` statt
-  nur `languageCode`. Sonst würden zh-Hant-Routen auf die vereinfachten
+  automatisch auf `zh-Hant`. Die Theorie-/Manual-Dispatcher (`lib/theory/`,
+  `lib/manual/`), `privacy_page.dart`, `license_page.dart` und der
+  Sprach-Picker in `info_pages.dart` (`_LanguagePickerExpansion`) vergleichen
+  über `toLanguageTag()` statt nur `languageCode`. Sonst würden zh-Hant-Routen auf die vereinfachten
   Dateien zurückfallen — und im Picker (`languageCode == 'zh'` für beide
   Chinesisch-Varianten) markiert der Häkchen-Indikator fälschlich beide
   Zeilen und der Header zeigt immer die zuerst registrierte Variante.
@@ -790,8 +806,8 @@ JA (Japanisch) und AR (Arabisch). Die Infrastruktur:
 - **Flag-Painter:** `lib/flag_painter.dart` enthält je einen
   `CustomPainter` pro Sprache. Iran-Wappen ist eine vereinfachte
   Tulpen-Silhouette mit weisser Schwert-Aussparung in Rot.
-- **Kapitel-Prosa:** `info_content_<code>.dart` per `part of`-Mechanik —
-  siehe Info-Modal-Abschnitt oben.
+- **Kapitel-Prosa:** per-Sprach-`part`-Dateien unter `lib/theory/<lang>/`
+  und `lib/manual/<lang>/` — siehe Info-Modal-Abschnitt oben.
 
 ### RTL-Behandlung (Persisch + Arabisch)
 
@@ -809,7 +825,7 @@ Widgets automatisch. Zwei Eigenheiten in dieser App:
 - **`_Pre`-Tabellen werden ebenfalls auf LTR gezwungen.** Monospace-
   Tabellen mit westlichen Ziffern und sprach-Labels würden sonst vom
   Bidi-Algorithmus zerlegt. Der Wrap sitzt direkt im `_Pre`-Widget in
-  `info_content.dart`.
+  `lib/manual/manual.dart`.
 
 Direction-aware Bauteile, die korrekt sein müssen:
 - `_NavChevron` in `info_pages.dart` — wählt `chevron_left` in RTL,
@@ -845,7 +861,7 @@ liegt, dann hier:
   Tastendruck; auf Seite 1 (Umrechner) übersetzt `_handleConverterKey`
   in die `ConverterState`-Handler (siehe Einheitenrechner-Abschnitt).
 - **Intro-Gate:** `_maybeShowIntro` liest `_kIntroSeenFlag` (aktuell
-  `intro_seen_v3`) aus `SharedPreferences` und pusht beim ersten Start
+  `intro_seen_v4`) aus `SharedPreferences` und pusht beim ersten Start
   `IntroPage`; danach wird das Flag gesetzt.
 - **Info-Routing:** `_onStateChanged` lauscht auf `state.infoState`,
   resettet es auf `InfoClosed` und pusht `InfoListPage`. Nach
@@ -863,9 +879,10 @@ liegt, dann hier:
   `keypadMode`/`keypadProfile` aus `CalcPrefsScope`), Seite 1 den
   `ConverterBody`. `displayHeightFor(bodyH)` aus `app_layout.dart`
   bleibt die einzige Größenrechnung (pro Seite). `_CalcScaffoldState`
-  besitzt `ConverterState` + `PageController`, verdrahtet die
-  Resultat-Brücken-Provider in beide Richtungen und lauscht zusätzlich
-  auf `state.converterRequested` (Info-Listen-Eintrag → `_goToPage(1)`).
+  besitzt `ConverterState` + `PageController` und verdrahtet die
+  Resultat-Brücken-Provider in beide Richtungen. (Der frühere
+  `state.converterRequested`-Pfad ist entfernt — der Zugang zum Umrechner
+  läuft über Swipe + Page-Peek.)
   Splash-Feedback ist global via `NoSplash.splashFactory` aus, weil die
   Tasten ihre eigene Press-Color-Animation haben.
 
@@ -989,7 +1006,7 @@ aber **nicht** die Apple Watch.
   einen eigenen Icon-Katalog (`ios/watch/Assets.xcassets`, alpha-freies 1024er
   aus dem iOS-Icon). Bundle-ID `app.weltanschauung.dozenal.watch`,
   `MARKETING_VERSION`/`CURRENT_PROJECT_VERSION` im Target müssen mit der
-  Flutter-Version synchron gehalten werden (aktuell `1.4.0`/`17`).
+  Flutter-Version synchron gehalten werden (aktuell `1.5.1`/`19`).
 
   Das eigenständige **xcodegen**-Projekt (`watch/project.yml`, daraus
   `watch/DozenalWatch.xcodeproj` + `watch/build/`, beide gitignored) bleibt

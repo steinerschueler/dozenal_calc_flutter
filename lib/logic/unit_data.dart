@@ -316,8 +316,9 @@ const Map<UnitCategory, CategoryDef> kUnitCatalogue = {
     label: 'liquid',
     units: [
       // base = litre. US liquid measures (distinct from `space` cubic volume
-      // and `cook` recipe measures).
-      Unit('fl oz', _imp, 0.0295735296),
+      // and `cook` recipe measures). fl oz is exact (= 29.5735295625 mL) so the
+      // larger units stay integer multiples of it: 1 gallon → exactly 128 fl oz.
+      Unit('fl oz', _imp, 0.0295735295625),
       Unit('gill', _imp, 0.11829411825),
       Unit('pint', _imp, 0.473176473),
       Unit('quart', _imp, 0.946352946),

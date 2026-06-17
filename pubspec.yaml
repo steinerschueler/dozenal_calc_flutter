@@ -95,7 +95,10 @@ msix_config:
   # 4-part version; Store requires the final (revision) part to be 0.
   msix_version: 1.5.1.0
   logo_path: assets/icon.png
-  capabilities: internetClient
+  # No capabilities declared: the app is fully offline (matches the bundled
+  # privacy policy and every other platform's manifest). msix still adds the
+  # mandatory runFullTrust for a desktop package; internetClient is omitted on
+  # purpose so the Store does not show an "Internet connection" permission.
   store: true
 
 # For information on the generic Dart part of this file, see the

@@ -92,15 +92,16 @@ void main() {
     test('gallon ladder', () {
       expect(conv(UnitCategory.liquid, 1, 'gallon', 'quart'), closeTo(4, 1e-9));
       expect(conv(UnitCategory.liquid, 1, 'gallon', 'pint'), closeTo(8, 1e-9));
+      // fl oz is exact, so the ladder ratios are now integer-tight (audit).
       expect(conv(UnitCategory.liquid, 1, 'gallon', 'fl oz'),
-          closeTo(128, 1e-6));
-      expect(conv(UnitCategory.liquid, 1, 'quart', 'fl oz'), closeTo(32, 1e-6));
+          closeTo(128, 1e-9));
+      expect(conv(UnitCategory.liquid, 1, 'quart', 'fl oz'), closeTo(32, 1e-9));
     });
     test('cross to metric', () {
       expect(conv(UnitCategory.liquid, 1, 'gallon', 'L'),
           closeTo(3.785411784, 1e-9));
       expect(conv(UnitCategory.liquid, 1, 'fl oz', 'mL'),
-          closeTo(29.5735296, 1e-6));
+          closeTo(29.5735295625, 1e-9));
     });
   });
 

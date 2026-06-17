@@ -647,7 +647,12 @@ class DozenalCalcState extends ChangeNotifier {
       token is Expand ||
       token is Close ||
       token is Sto ||
-      token is Mc;
+      token is Mc ||
+      // M+/M− are pure memory side-effects that insert nothing (like Sto/Mc);
+      // they must not consume the after-equals state, or the next operator
+      // fails to seed Ans (e.g. `2 + 3 = M+ × 4 =` would SYNTAX ERROR).
+      token is MemPlus ||
+      token is MemMinus;
 
   // --------------------------------------------------------------------
   // Calculation — 1:1 port of eval.rs::calculate_result.

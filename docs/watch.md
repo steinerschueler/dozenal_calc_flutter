@@ -127,7 +127,7 @@ Eigene Dateien des eingebetteten Targets (nicht die des Standalone-Projekts):
 
 Bundle-ID `app.weltanschauung.dozenal.watch` (Präfix der iOS-ID — Pflicht).
 `MARKETING_VERSION`/`CURRENT_PROJECT_VERSION` im Target **synchron zur
-Flutter-Version halten** (aktuell `1.3.0`/`16`; sie sind im pbxproj
+Flutter-Version halten** (aktuell `1.5.1`/`19`; sie sind im pbxproj
 hartcodiert, nicht aus `pubspec.yaml` abgeleitet).
 
 Signing/Provisioning: der vorhandene Apple-Distribution-Cert deckt watchOS ab;

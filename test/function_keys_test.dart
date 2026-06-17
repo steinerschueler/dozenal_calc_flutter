@@ -62,6 +62,36 @@ void main() {
         ..handleClick(const Equals());
       expect(s.resultText, '9'); // 9 decimal = 9 dozenal
     });
+
+    test('M+ after = is transparent: answer-chaining survives (audit M1)', () {
+      // `2 + 3 = M+ × 4 =` must chain off the answer (5 × 4 = 20), exactly
+      // like STO does — M+/M− insert nothing and must stay transparent.
+      final s = DozenalCalcState();
+      s
+        ..handleClick(d(2))
+        ..handleClick(const Add())
+        ..handleClick(d(3))
+        ..handleClick(const Equals()) // 5
+        ..handleClick(const MemPlus()) // mem = 5, result chain preserved
+        ..handleClick(const Mul())
+        ..handleClick(d(4))
+        ..handleClick(const Equals());
+      expect(s.errorMsg, isNull);
+      expect(s.resultText, '18'); // 20 decimal = 18 dozenal
+
+      // Parity check: the identical sequence with STO already worked.
+      final s2 = DozenalCalcState();
+      s2
+        ..handleClick(d(2))
+        ..handleClick(const Add())
+        ..handleClick(d(3))
+        ..handleClick(const Equals())
+        ..handleClick(const Sto())
+        ..handleClick(const Mul())
+        ..handleClick(d(4))
+        ..handleClick(const Equals());
+      expect(s2.resultText, '18');
+    });
   });
 
   group('state — x² and ±', () {

@@ -69,7 +69,7 @@ durch Play Console. Plugin: `com.github.triplet.play` 3.12.x, im app-Modul von
 `android/app/build.gradle.kts` konfiguriert.
 
 ```bash
-dart run tool/sync_play_listings.dart   # store/listing.*.md + build<N>-release-notes.txt → android/app/src/main/play/
+dart run tool/sync_play_listings.dart   # store/play-store/listing.*.md + build<N>-release-notes.txt → android/app/src/main/play/
 ./gradlew publishListing                # nur Texte/Grafiken
 ./gradlew publishBundle                 # AAB + Listings + Release-Notes (Track: internal, Status: DRAFT)
 ```
@@ -93,7 +93,7 @@ dem App-Account hinzufügen, Rolle „Store-Eintrag verwalten" für Listings +
 JSON laufen die `publish*`-Tasks mit klarer Fehlermeldung ins Leere — lokales
 Bauen bleibt unbeeinflusst.
 
-**Quell-Layout:** `store/listing.<code>.md` bleibt menschenlesbar autoritativ.
+**Quell-Layout:** `store/play-store/listing.<code>.md` bleibt menschenlesbar autoritativ.
 Das Sync-Script extrahiert die drei Code-Blöcke (App-Name, Kurzbeschreibung,
 Lange Beschreibung) und schreibt sie in das vom Plugin erwartete Layout
 `android/app/src/main/play/listings/<play-locale>/{title,short-description,full-description}.txt`.

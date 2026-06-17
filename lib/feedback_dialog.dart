@@ -74,8 +74,11 @@ ${l.feedbackMailBuildLabel}: ${pkg.buildNumber}
           '&body=${Uri.encodeComponent(body)}',
     );
     if (!mounted) return;
-    Navigator.of(context).pop();
+    // Open the link BEFORE popping: openExternalLink needs a live context for
+    // AppLocalizations and the failure SnackBar. Popping first leaves it with
+    // this dialog's defunct context (the error toast would be swallowed).
     await openExternalLink(context, uri.toString());
+    if (mounted) Navigator.of(context).pop();
   }
 
   Widget _stars(AppColors t) {

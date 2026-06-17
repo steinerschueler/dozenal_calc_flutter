@@ -34,7 +34,11 @@ void main() {
   testWidgets('renders in both custom and conventional glyph styles',
       (tester) async {
     SharedPreferences.setMockInitialValues({});
-    final n = GlyphStyleNotifier(); // defaults to custom
+    final n = GlyphStyleNotifier();
+    // The notifier defaults to conventional, so the custom overlay path must be
+    // selected explicitly — otherwise this test would only ever exercise the
+    // conventional path twice (audit L-glyphtest).
+    await n.setStyle(GlyphStyle.custom);
 
     await tester.pumpWidget(_host(n));
     expect(find.text('DOZ'), findsOneWidget);
@@ -44,6 +48,25 @@ void main() {
     await tester.pumpWidget(_host(n));
     await tester.pump();
     expect(tester.takeException(), isNull, reason: 'conventional mode');
+  });
+
+  test('custom overlay glyphifies number digits but not unit letters (M2)', () {
+    // Result "AB BTU" → text "= AB BTU". The number's A/B become dozenal
+    // glyphs; the same 'B' inside the unit "BTU" must stay ASCII (audit M2).
+    final cells = debugResultGlyphCells(
+        const ConverterLine('AB', unit: 'BTU'), GlyphStyle.custom);
+    // indices: 0'=' 1' ' 2'A' 3'B' 4' ' 5'B' 6'T' 7'U'
+    expect(cells[2], 10); // 'A' in the number → dozenal ten
+    expect(cells[3], 11); // 'B' in the number → dozenal eleven
+    expect(cells[5], isNull); // 'B' in "BTU" is NOT a glyph (the bug)
+    expect(cells[6], isNull);
+    expect(cells[7], isNull);
+  });
+
+  test('conventional mode overlays no glyphs at all', () {
+    final cells = debugResultGlyphCells(
+        const ConverterLine('AB', unit: 'BTU'), GlyphStyle.conventional);
+    expect(cells.every((c) => c == null), isTrue);
   });
 
   testWidgets('renders without a GlyphStyleScope (fallback to custom)',
