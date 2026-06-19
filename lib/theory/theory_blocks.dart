@@ -8,6 +8,7 @@ import 'grundlagen_theory.dart';
 import 'math_theory.dart';
 import 'prose_chapter.dart';
 import 'society_theory.dart';
+import 'werte_theory.dart';
 import 'world_theory.dart';
 
 /// One chapter inside a theory block: a [title], its [prose] sections, cited
@@ -88,4 +89,19 @@ List<TheoryBlock> theoryBlocks(AppLocalizations l, String langTag) {
         TheoryChapterRef.prose(c.title, c.sections, c.sources, 'society/$i'),
     ]),
   ];
+}
+
+/// The "Wertetheorie" block — the bequellte prose companion to the Werterechner
+/// (Geld & Wert, Edelmetalle, Gold-Silber-Verhältnis, Kaufkraft, Preiskurve
+/// lesen). Kept OUT of [theoryBlocks] on purpose: the info list places it LAST,
+/// AFTER the Einheitentheorie entry. It renders the same way (TheoryBlockPage →
+/// TheoryChapterPage); the imageId-override (world/math form) is preserved so a
+/// custom diagram can attach later.
+TheoryBlock werteTheoryBlock(AppLocalizations l, String langTag) {
+  final werte = werteChapters(langTag);
+  return TheoryBlock(l.theoryBlockWerte, [
+    for (final (i, c) in werte.indexed)
+      TheoryChapterRef.prose(
+          c.title, c.sections, c.sources, c.imageId ?? 'werte/$i'),
+  ]);
 }

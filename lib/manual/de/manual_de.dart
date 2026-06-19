@@ -1224,3 +1224,163 @@ List<ManualChapter> _converterManualChaptersDe() => const [
     ),
   ]),
 ];
+
+// ---------------------------------------------------------------------------
+// Bedienung des Werterechners — die dritte Handbuch-Sektion (Edelmetalle &
+// Währungen). Deutsch ist die Referenz; Übersetzungen werden wie bei den
+// anderen Handbüchern Kapitel für Kapitel nachgezogen (positionsweiser
+// Fallback in manual.dart).
+// ---------------------------------------------------------------------------
+
+List<ManualChapter> _assetManualChaptersDe() => const [
+  ManualChapter('Der dritte Rechner', [
+    _P(
+      'Hinter dem Einheitenrechner liegt ein dritter Rechner: der '
+      'Werterechner. Er rechnet Gewichte von Edelmetallen und '
+      'Stückelungen von Währungen exakt um, schätzt ihren Wert in einer '
+      'Leitwährung und vergleicht, wie sich dieser Wert über die '
+      'Jahrhunderte gehalten hat.',
+    ),
+    _H('Hin und zurück'),
+    _P(
+      'Wische auf dem Hauptrechner zweimal nach links — über den '
+      'Einheitenrechner hinweg — und der Werterechner erscheint. Nach '
+      'rechts wischen führt Schritt für Schritt zurück. Die zwei '
+      'durchscheinenden Karten beim Wechsel zeigen wieder, auf welcher '
+      'Seite du bist; die goldumrandete ist die aktive.',
+    ),
+    _P(
+      'Wie die anderen Rechner behält der Werterechner seine Eingabe beim '
+      'Seitenwechsel. Die Optik ist dieselbe wie beim Einheitenrechner — '
+      'nur die rechten Tastenspalten führen eine Ebene tiefer.',
+    ),
+  ]),
+  ManualChapter('Klasse, Gattung, Einheit', [
+    _P(
+      'Während der Einheitenrechner zwei Ebenen kennt (Kategorie und '
+      'Einheit), hat der Werterechner drei: Klasse, Gattung und Einheit. '
+      'Eine Umrechnung tippst du dich von oben nach unten durch.',
+    ),
+    _H('Die drei Ebenen'),
+    _P(
+      'In den rechten beiden Tastenspalten stehen zuerst die Klassen: '
+      'Edelmetall und Währung. Tippst du eine an, erscheinen ihre '
+      'Gattungen — bei Edelmetall etwa Gold, Silber, Platin und '
+      'Palladium; bei Währung die Währungskürzel. Tippst du eine Gattung '
+      'an, erscheinen ihre Einheiten. Ein Tipp auf eine Einheit übernimmt '
+      'sie als Term.',
+    ),
+    _H('Zurück eine Ebene'),
+    _P(
+      'Die gewählte Klasse oder Gattung bleibt oben in der rechten Spalte '
+      'stehen — gold umrandet — und dient als Rücksprung: ein Tipp darauf '
+      'führt eine Ebene höher. So springt nichts hin und her, du siehst '
+      'immer, wo du gerade bist.',
+    ),
+    _H('Die =-Taste'),
+    _P(
+      'Wie im Einheitenrechner zeigt jeder Druck auf = dieselbe Größe in '
+      'der nächsten Einheit; bei den Troy-Gewichten folgt am Ende die '
+      'gemischte Schreibweise (etwa „1 lb t 2 oz t 3 dwt"). Ein '
+      'Klassen- oder Gattungswechsel verwirft die fertigen Terme, eine '
+      'bereits getippte Zahl bleibt erhalten.',
+    ),
+  ]),
+  ManualChapter('Metrisch und imperial zugleich', [
+    _H('Beide Systeme auf einmal'),
+    _P(
+      'Der Werterechner hat keine met/imp-Tasten. Sobald du in eine '
+      'Metall-Gattung hineintippst, stehen beide Systeme gleichzeitig da: '
+      'die imperialen Troy-Einheiten (gr, dwt, oz t, lb t) in der einen '
+      'Spalte, die metrischen (g, kg) in der anderen. Du tippst einfach '
+      'die gewünschte an — die Arbeits-Welt richtet sich danach, in '
+      'welcher Einheit du zuletzt eingegeben hast.',
+    ),
+    _H('Die Farben'),
+    _P(
+      'Der Farbcode ist derselbe wie im Einheitenrechner: Violett steht '
+      'für die Zwölfer-Welt (imperiale Einheiten und dozenale Ziffern), '
+      'Grün für die Zehner-Welt (metrische Einheiten und dezimale '
+      'Ziffern). Das Einheitenzeichen trägt die Farbe seines Systems, die '
+      'geschweifte Klammer zeigt denselben Wert im jeweils anderen System '
+      'in dessen Farbe, das DOZ/DEZ-Zeichen die Farbe der Basis. '
+      'Währungen haben keine Welt-Achse — ihre Zeichen bleiben violett.',
+    ),
+    _H('Dozenal oder dezimal'),
+    _P(
+      'Die Ziffernbasis stellst du wie bei den anderen Rechnern unter '
+      'Einstellungen → Zahlensystem um; sie gilt für alle drei Rechner '
+      'gemeinsam und ist vom Einheitensystem unabhängig.',
+    ),
+  ]),
+  ManualChapter('Speicher und die übrigen Tasten', [
+    _H('Der Speicher'),
+    _P(
+      'Solange noch keine Klasse gewählt ist, liegen in der linken der '
+      'beiden rechten Spalten die Speichertasten STO, RCL, MC und Ans. '
+      'Wählst du eine Klasse, treten dort die Gattungen an ihre Stelle — '
+      'der Speicher teilt sich den Platz mit dem Drill. STO merkt sich '
+      'den Wert der Ergebniszeile, RCL fügt ihn ein, MC löscht ihn; Ans '
+      'holt das letzte Ergebnis des Hauptrechners herüber. Grau heißt '
+      'leer oder nichts vorhanden.',
+    ),
+    _H('Wert, Rechnen und Löschen'),
+    _P(
+      'Die Wert-Taste sitzt fest in der System-Reihe und schaltet scharf, '
+      'sobald ein Term steht (siehe nächstes Kapitel). Die '
+      'Skalar-Operatoren (× ÷ ⊕ ^ √ ㏒) lassen die getippte Zahl wie im '
+      'Einheitenrechner selbst eine kleine Rechnung sein. AC löscht alles, '
+      'Del das Zeichen davor.',
+    ),
+  ]),
+  ManualChapter('Wert: in eine Währung umrechnen', [
+    _P(
+      'Über die exakte Gewichts-Umrechnung hinaus kann der Werterechner '
+      'einen ungefähren Geldwert schätzen.',
+    ),
+    _H('Der Wertmodus'),
+    _P(
+      'Tippe eine Menge ein und übernimm sie als Einheit — etwa „5" und '
+      '„oz t" Gold. Jetzt wird die Wert-Taste blau. Ein Tipp darauf '
+      'verwandelt den Drill in eine Auswahl von Zielwährungen; tippst du '
+      'eine an, zeigt die Ergebniszeile den Wert mit einem „≈" davor und '
+      'einem kleinen, datierten Hinweis darunter.',
+    ),
+    _H('Die Kurse'),
+    _P(
+      'Die zugrunde liegenden Kurse sind grobe, datierte Richtwerte. Die '
+      'Kurse-Taste rechts unten öffnet einen Editor, in dem du jeden Kurs '
+      'überschreiben kannst; ein Reset stellt die eingebauten Werte '
+      'wieder her.',
+    ),
+    _H('Kein Netz'),
+    _P(
+      'Die App ruft nichts aus dem Internet ab — das „≈" heißt „grob, '
+      'kursbasiert", nie „live". Du hältst die Kurse selbst aktuell, etwa '
+      'nach Kitco für Metalle oder der EZB für Währungen.',
+    ),
+  ]),
+  ManualChapter('Kurve: der historische Vergleich', [
+    _P(
+      'Die Kurve-Taste — der linke Kreis neben dem Gleichbalken — ersetzt '
+      'das Tastenfeld durch ein Diagramm; das × oben schließt es wieder.',
+    ),
+    _H('Die drei Reihen'),
+    _P(
+      'Alles wird an Gold gemessen: Silber in Gold, Getreide in Gold und '
+      'Gold in Getreide — also die Kaufkraft des Goldes in Nahrung. Jede '
+      'Reihe ist auf ihren ältesten bekannten Wert bezogen; diese liegt '
+      'als fette Nulllinie in der Mitte. Über der Linie heißt teurer, '
+      'darunter billiger, jeweils relativ zu Gold.',
+    ),
+    _H('Lesen und bewegen'),
+    _P(
+      'Ziehen verschiebt das Bild, Zusammenziehen zoomt, der Knopf rechts '
+      'zoomt ganz heraus bis in die Antike. Standardmäßig zeigt die Kurve '
+      'die letzten rund hundert Jahre. Das schattierte Band um die '
+      'Antike-Punkte ist der geschätzte Bereich — die Antike besteht aus '
+      'einzelnen Ringen (nur Größenordnungen), keine Linie läuft über '
+      'eine Lücke. Die Quellen-Zeile listet den Datensatz.',
+    ),
+  ]),
+];

@@ -12,6 +12,7 @@
   "infoListConverterEntry": "Einheitenrechner",
   "pagerLabelMain": "Hauptrechner",
   "infoListConverterManual": "Bedienung des Einheitenrechners",
+  "infoListAssetManual": "Bedienung des Werterechners",
   "converterEqualsHint": "mehrmals tippen: nächste Einheit",
   "pagerLabelAsset": "Werterechner",
   "@pagerLabelAsset": {
@@ -92,6 +93,7 @@
   "theoryBlockWelt": "Zwölf und die Welt",
   "theoryBlockMath": "Dozenale Mathematik",
   "theoryBlockSociety": "Dozenale Gesellschaft",
+  "theoryBlockWerte": "Wertetheorie",
   "theoryInProgress": "in Arbeit",
   "sourcesSectionTitle": "Quellen",
   "sourceRelR1": "Primärquelle",

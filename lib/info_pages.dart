@@ -63,6 +63,15 @@ class InfoListPage extends StatelessWidget {
               chaptersOf: converterManualChapters,
             ),
             Divider(color: t.divider, height: 1),
+            // Werterechner (dritte Pager-Seite): Klasse/Gattung/Einheit,
+            // beide Welt-Systeme zugleich, Speicher im Drill, Wert/Kurse/Kurve.
+            _ManualSectionExpansion(
+              icon: Icons.diamond_outlined,
+              color: BadgeHue.bronze,
+              titleOf: (l) => l.infoListAssetManual,
+              chaptersOf: assetManualChapters,
+            ),
+            Divider(color: t.divider, height: 1),
             // Theorie-Sektion: ausklappbar (Default collapsed) zu den drei
             // Bloecken (Zwoelf und die Welt, Dozenale Mathematik, Dozenale
             // Gesellschaft) plus der Einheitentheorie; jeder Block fuehrt zu
@@ -338,6 +347,8 @@ class _TheoryExpansionState extends State<_TheoryExpansion> {
     final t = AppColors.of(context);
     final langTag = Localizations.localeOf(context).toLanguageTag();
     final blocks = theoryBlocks(l, langTag);
+    // Rendered LAST, after the Einheitentheorie entry (per the desired order).
+    final werteBlock = werteTheoryBlock(l, langTag);
     return Column(
       children: [
         ListTile(
@@ -419,6 +430,27 @@ class _TheoryExpansionState extends State<_TheoryExpansion> {
                       onTap: () => Navigator.of(context).push(
                         MaterialPageRoute(
                           builder: (_) => const ConversionsPage(),
+                        ),
+                      ),
+                    ),
+                    // Wertetheorie zuletzt — nach der Einheitentheorie. Prosa-
+                    // Block, rendert wie die anderen über TheoryBlockPage.
+                    Divider(color: t.divider, height: 1),
+                    ListTile(
+                      contentPadding: const EdgeInsetsDirectional.fromSTEB(
+                        kSubItemIndent,
+                        0,
+                        16,
+                        0,
+                      ),
+                      title: Text(
+                        werteBlock.title,
+                        style: TextStyle(fontSize: 14, color: t.textPrimary),
+                      ),
+                      trailing: const _NavChevron(),
+                      onTap: () => Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (_) => TheoryBlockPage(block: werteBlock),
                         ),
                       ),
                     ),
