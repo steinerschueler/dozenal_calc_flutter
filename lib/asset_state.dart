@@ -163,6 +163,20 @@ class AssetState extends ChangeNotifier {
 
   void toggleValueMode() => _valueMode ? exitValueMode() : enterValueMode();
 
+  // ── Historical price chart (Phase 3) ───────────────────────────────────
+
+  bool _chartOpen = false;
+
+  /// Whether the price chart replaces the keypad. Toggled by the keypad's
+  /// "Kurve" key (on) and the chart's close button (off).
+  bool get chartOpen => _chartOpen;
+
+  void toggleChart() {
+    _chartOpen = !_chartOpen;
+    if (_chartOpen) _valueMode = false; // chart is its own full view
+    notifyListeners();
+  }
+
   void setValueTarget(String currencyKey) {
     // Refuse the source currency itself — valuing a currency in itself is a
     // meaningless identity (the source tile is also hidden in the picker).

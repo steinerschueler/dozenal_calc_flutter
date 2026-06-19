@@ -15,7 +15,10 @@ import 'asset_labels.dart';
 import 'asset_state.dart';
 import 'converter_display.dart';
 import 'l10n/app_localizations.dart';
+import 'logic/price_history.dart';
 import 'logic/unit_data.dart';
+import 'price_chart.dart';
+import 'price_sources_page.dart';
 import 'rates_page.dart';
 
 /// Embeddable asset-converter content: display + keypad, padded like the main
@@ -80,20 +83,39 @@ class AssetBody extends StatelessWidget {
                     ),
                   const SizedBox(height: 14),
                   Expanded(
-                    child: AssetKeypad(
-                      state: state,
-                      equalsHint: l.converterEqualsHint,
-                      valueHint: l.assetValueHint,
-                      valueLabel: l.assetValueKey,
-                      ratesLabel: l.assetRatesKey,
-                      onRatesTap: state.rates == null
-                          ? null
-                          : () => Navigator.of(ctx).push(MaterialPageRoute(
-                                builder: (_) =>
-                                    RatesPage(store: state.rates!),
-                              )),
-                      classLabelOf: (c) => assetClassLabel(c, l),
-                      genusLabelOf: (g) => assetGenusLabel(g, l),
+                    child: AnimatedSwitcher(
+                      duration: const Duration(milliseconds: 200),
+                      child: state.chartOpen
+                          ? PriceChart(
+                              key: const ValueKey('chart'),
+                              base: state.base,
+                              seriesLabel: (id) => _seriesLabel(id, l),
+                              sourcesLabel: l.priceSourcesLabel,
+                              caption: l.priceChartCaption,
+                              eraReconstructedLabel: l.priceEraAnchor,
+                              onClose: state.toggleChart,
+                              onSourcesTap: () => Navigator.of(ctx).push(
+                                  MaterialPageRoute(
+                                      builder: (_) =>
+                                          const PriceSourcesPage())),
+                            )
+                          : AssetKeypad(
+                              key: const ValueKey('keypad'),
+                              state: state,
+                              equalsHint: l.converterEqualsHint,
+                              valueHint: l.assetValueHint,
+                              valueLabel: l.assetValueKey,
+                              ratesLabel: l.assetRatesKey,
+                              chartLabel: l.assetChartKey,
+                              onRatesTap: state.rates == null
+                                  ? null
+                                  : () => Navigator.of(ctx).push(
+                                      MaterialPageRoute(
+                                          builder: (_) =>
+                                              RatesPage(store: state.rates!))),
+                              classLabelOf: (c) => assetClassLabel(c, l),
+                              genusLabelOf: (g) => assetGenusLabel(g, l),
+                            ),
                     ),
                   ),
                 ],
@@ -105,6 +127,13 @@ class AssetBody extends StatelessWidget {
     );
   }
 }
+
+/// Localized toggle label for a price-chart series.
+String _seriesLabel(PriceSeriesId id, AppLocalizations l) => switch (id) {
+      PriceSeriesId.gold => l.priceSeriesGold,
+      PriceSeriesId.silver => l.priceSeriesSilver,
+      PriceSeriesId.wheat => l.priceSeriesWheat,
+    };
 
 /// Standalone route wrapper (widget tests, preview): owns a private AssetState.
 class AssetPage extends StatefulWidget {

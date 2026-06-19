@@ -773,9 +773,11 @@ im Design des Einheitenrechners,
 aber mit **drei** Hierarchien: **Klasse → Gattung → Einheit** (Edelmetall →
 Gold → troy oz/g/kg; Währung → GBP → £/sh/d). **Phase 1** = exakte Umrechnung
 (Troy-/avoirdupois-Gewichte metallunabhängig; Währungs-Stückelungen wie £sd).
-**Phase 2 (Werte/Kurse) ist umgesetzt** (Wertmodus + Zielwährungs-Picker, grober
-datierter Snapshot + Kurs-Editor — siehe unten); die historische Preiskurve
-bleibt **Phase 3**. Vollständige Spezifikation + Roadmap:
+**Phase 2 (Werte/Kurse)** ist umgesetzt (Wertmodus + Zielwährungs-Picker, grober
+datierter Snapshot + Kurs-Editor) und **Phase 3 (historische Preiskurve)**
+ebenso („Kurve"-Taste ersetzt das Keypad durch einen Pan/Zoom-Custom-Paint-
+Chart — Gold/Silber/Weizen, Antike→heute, kuratierter belegter Datensatz).
+Vollständige Spezifikation + Roadmap:
 [`docs/asset-converter.md`](docs/asset-converter.md).
 
 - `lib/logic/asset_data.dart` — reine Daten, **wiederverwendet `Unit`/`UnitWorld`**
@@ -806,6 +808,16 @@ bleibt **Phase 3**. Vollständige Spezifikation + Roadmap:
   geteilten `converter_display.dart`. **Opt-in-API nur als Doku**
   (`docs/asset-rates-api.md`) — ausgeliefertes Binary netzwerkfrei,
   `legal/privacy-*` unverändert.
+- **Phase 3 (historische Preiskurve):** „Kurve"-Taste ersetzt das Keypad per
+  AnimatedSwitcher (`AssetState.chartOpen`/`toggleChart`, Schließen über × im
+  Chart). `lib/logic/price_history.dart` (Modell + log10/Viewport + LTTB +
+  Achsen-Ticks), `lib/logic/price_history_data.dart` (kompilierter belegter
+  Datensatz: Gold = Gold/Silber-Verhältnis cross-era, Silber USD/oz modern,
+  Weizen g Ag/L; `kPriceSources`), `lib/price_chart.dart` (Custom-Paint +
+  Scale-Recognizer-Pan/Zoom, Era-Styling: Antike = diskrete Ringe, Linie nur
+  modern, nie über Lücken; Basis-12-Achsen via `formatBaseNum`),
+  `lib/price_sources_page.dart` (Quellen & Methodik). **Kein Netz, keine neue
+  Dependency.**
 - ARB (`pagerLabelAsset`, `assetClass*`, `assetGenus*`, `assetValueHint` plus die
   Phase-2-Keys `assetValueKey`/`assetRatesKey`/`assetRates*`/`assetValueNote`):
   **alle 14 Sprachen vollständig übersetzt** (Subagenten-Pipeline).

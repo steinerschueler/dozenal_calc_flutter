@@ -30,9 +30,11 @@ Prüfung). Diese Datei ist die laufende Spezifikation.
   wird die Metall-Gattung (Wert) und die Cross-Währungs-Umrechnung aktiv.
   Opt-in-Selbst-API nur als Doku (`docs/asset-rates-api.md`), **kein Netzcode
   im ausgelieferten Binary, keine Datenschutz-Änderung** (erlauben ≠ ausliefern).
-- **Phase 3 — geplant:** historische Preiskurve (BoE-Spine ab 1209 + diskrete
-  Antike-Ankerpunkte), Custom-Paint, log10-Achse, Basis-12-Ticks; Toggle ersetzt
-  das Keypad im selben Rect.
+- **Phase 3 — umgesetzt:** historische Preiskurve (`price_chart.dart`) — Gold/
+  Silber/Weizen umschaltbar, Antike→heute, Custom-Paint mit Pan/Zoom (Scale-
+  Recognizer), log10-Achse, Basis-12-Ticks, Era-Styling (Antike = diskrete
+  Ringe, nie Linie über Lücken); „Kurve"-Taste ersetzt das Keypad
+  (AnimatedSwitcher), kuratierter belegter Datensatz + Quellen-Screen.
 
 ## Datenmodell (`lib/logic/asset_data.dart`)
 
@@ -141,6 +143,31 @@ Picker**:
   netzwerkfrei, Release/Main-Manifest ohne `INTERNET`, `legal/privacy-*`
   unverändert.
 
+## Historische Preiskurve (Phase 3)
+
+Scroll-/zoombare Kurve, die per **„Kurve"-Taste** das Keypad ersetzt
+(AnimatedSwitcher in `asset_page.dart`; `AssetState.toggleChart`/`chartOpen`;
+Schließen über das ×-Symbol im Chart, da das Keypad dann verdeckt ist).
+
+- `lib/logic/price_history.dart` — reines Modell + Mathematik: `PriceSeries`/
+  `PricePoint` (mit `Era` reconstructed/sparse/modern + Label/Quelle für
+  Antike-Punkte), `ChartViewport` (log10-Y, Pan/Zoom-Transforms), **LTTB**-
+  Downsampling (vendored), Achsen-Ticks (`niceTicks`/`logDecadeTicks`).
+- `lib/logic/price_history_data.dart` — der **kompilierte, belegte Datensatz**
+  (Subagenten+Prüfer-Workflow). Eine Einheit je Reihe: Gold = Gold/Silber-
+  Verhältnis (Cross-Era, −3200→2024), Silber = USD/Unze (modern), Weizen =
+  g Silber/Liter (Antike-Anker + modern). `kPriceSources` mit Lizenz/URL.
+  Bewusst grob, ehrlich gerahmt.
+- `lib/price_chart.dart` — `CustomPaint` + `GestureDetector` (nur Scale-
+  Recognizer: Pan+Zoom; Doppeltipp = Fit; Tap = Punkt lesen). Era-Styling:
+  Antike/sparse = diskrete Punkte (Ringe), **Linie nur zwischen benachbarten
+  modernen Punkten**, nie über Era-Grenzen/Lücken. log10-Y, Basis-12-Achsen via
+  `formatBaseNum`. Reihen-Tabs + „Quellen"-Link + ×-Schließen.
+- `lib/price_sources_page.dart` — Quellen & Methodik (Ehrlichkeits-Note +
+  `kPriceSources` mit `openExternalLink`).
+- „Kurve"-Taste in `asset_keypad.dart` (Overlay-Bottom-Row-Slot; Breit in der
+  value/rates-Spalte). **Kein Netz, keine neue Dependency.**
+
 ## Tests
 
 - `test/asset_convert_test.dart` — exakte Faktoren + Breakdown + Bracket.
@@ -152,6 +179,9 @@ Picker**:
   `valueTargets`/Overlay) × Seitenverhältnisse, plus Tile-Tap-Drilldown.
 - `test/calc_pager_test.dart` — dritte Seite per Swipe, Tastatur-Routing,
   Page-Peek mit drei Karten.
+- `test/price_history_test.dart` — Chart-Mathematik (log10/Viewport/LTTB/Ticks)
+  + Datensatz-Integrität. `test/price_chart_test.dart` — Chart-/Quellen-Widget
+  + „Kurve"-Toggle (Keypad ↔ Chart).
 
 ## Offene Punkte für spätere Phasen
 

@@ -51,6 +51,7 @@ class AssetKeypad extends StatelessWidget {
   /// rates key inert.
   final String? valueLabel;
   final String? ratesLabel;
+  final String? chartLabel;
   final VoidCallback? onRatesTap;
 
   const AssetKeypad({
@@ -62,6 +63,7 @@ class AssetKeypad extends StatelessWidget {
     this.valueHint,
     this.valueLabel,
     this.ratesLabel,
+    this.chartLabel,
     this.onRatesTap,
   });
 
@@ -143,7 +145,7 @@ class AssetKeypad extends StatelessWidget {
               bottomCells: [
                 _valueCell(),
                 _ratesCell(),
-                _emptyCell(),
+                _chartCell(),
                 _opCell(const Close()),
               ],
               tight: tight, fixedHeights: fixedHeights)
@@ -416,6 +418,17 @@ class AssetKeypad extends StatelessWidget {
     );
   }
 
+  /// "Kurve" key — toggles the historical price chart in place of the keypad.
+  Widget _chartCell() {
+    final active = state.chartOpen;
+    return LabelButton(
+      label: chartLabel ?? 'Kurve',
+      colorOf: (t) => active ? t.accentGold : t.op,
+      gold: active,
+      onTap: state.toggleChart,
+    );
+  }
+
   Widget _emptyCell() => const SizedBox.shrink();
 
   // ── Equals row ─────────────────────────────────────────────────────────
@@ -629,7 +642,7 @@ class AssetKeypad extends StatelessWidget {
         gap(),
         opColumn(kSet7),
         gap(),
-        column([_valueCell(), _ratesCell()]),
+        column([_valueCell(), _ratesCell(), _chartCell()]),
       ],
     );
   }
