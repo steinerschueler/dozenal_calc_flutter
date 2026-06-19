@@ -88,9 +88,8 @@ void main() {
       expect(find.byType(AssetKeypad), findsOneWidget);
       expect(find.byType(PriceChart), findsNothing);
 
-      // Open the expansion overlay, then tap the chart key (EN locale: "Chart").
-      await tester.tap(find.bySemanticsLabel('Erweiterungsfeld öffnen'));
-      await tester.pumpAndSettle();
+      // No overlay any more — the chart key (EN locale: "Chart") is a round key
+      // flanking the equals bar, tappable directly.
       await tester.tap(find.text('Chart'));
       await tester.pumpAndSettle();
       expect(find.byType(PriceChart), findsOneWidget);

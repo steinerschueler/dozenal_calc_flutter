@@ -1,6 +1,7 @@
 // Behaviour of AssetState: the three-level drill-down (class → genus → unit),
-// compound entry, the `=` ladder/breakdown cycle, the met/imp world toggle
-// (inert for currencies) and the decoupled numeral base.
+// compound entry, the `=` ladder/breakdown cycle, the working world derived
+// from the committed unit (no met/imp toggle — both systems sit on the ladder)
+// and the decoupled numeral base.
 
 import 'package:dozenal_calc_flutter/asset_state.dart';
 import 'package:dozenal_calc_flutter/logic/asset_data.dart';
@@ -76,9 +77,8 @@ void main() {
       s.tapGenus(gold());
       s.inputDigit(1);
       s.tapMagnitude(unit(gold(), 'oz t'));
-      // Switch to metric so the gram value is on the ladder.
-      s.setWorld(UnitWorld.metric);
-      // Cycle = until the gram unit shows.
+      // All units (Troy + metric) are on the ladder at once — cycle = until the
+      // gram unit shows.
       var guard = 0;
       while (s.resultLine!.unit != 'g' && guard++ < 12) {
         s.equals();
@@ -88,20 +88,23 @@ void main() {
     });
   });
 
-  group('world toggle', () {
-    test('metals: imperial ↔ metric is value-preserving', () {
-      s.setBase(10);
+  group('world (derived from the committed unit)', () {
+    test('committing a unit sets the working world to its system', () {
+      s.tapClass(AssetClass.metal);
+      s.tapGenus(gold());
+      expect(s.worldToggleEnabled, isTrue); // a metal has a met/imp axis
+      s.inputDigit(2);
+      s.tapMagnitude(unit(gold(), 'g')); // commit in grams
+      expect(s.world, UnitWorld.metric); // world follows the committed unit
+      s.allClear();
       s.tapClass(AssetClass.metal);
       s.tapGenus(gold());
       s.inputDigit(2);
-      s.tapMagnitude(unit(gold(), 'oz t')); // 2 troy oz
-      expect(s.worldToggleEnabled, isTrue);
-      s.setWorld(UnitWorld.metric);
-      // total preserved: 2 oz t = 62.206... g
-      expect(s.totalBase, closeTo(0.0622069536, 1e-9)); // kg
+      s.tapMagnitude(unit(gold(), 'oz t')); // commit in Troy
+      expect(s.world, UnitWorld.imperial);
     });
 
-    test('currencies: world toggle is inert', () {
+    test('currencies are single-world (no met/imp axis)', () {
       s.tapClass(AssetClass.currency);
       s.tapGenus(gbp());
       expect(s.worldToggleEnabled, isFalse);

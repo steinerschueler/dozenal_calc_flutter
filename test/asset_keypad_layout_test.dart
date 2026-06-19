@@ -25,7 +25,6 @@ enum _Drill {
   metalUnits,
   currencyGenera,
   currencyUnits,
-  overlay,
   valueTargets,
 }
 
@@ -41,20 +40,15 @@ Widget _keypad(double height, {_Drill drill = _Drill.classes}) {
     case _Drill.metalUnits:
       state.tapClass(AssetClass.metal);
       state.inputDigit(1);
-      state.tapGenus(metal); // 6 imperial units fill both columns
+      // Troy units (gr/dwt/oz t/lb t) fill Set 3, metric (g/kg) sits under the
+      // breadcrumb in Set 4 — both systems shown at once.
+      state.tapGenus(metal);
     case _Drill.currencyGenera:
-      state.tapClass(AssetClass.currency); // 7 genera + header = 8 cells
+      state.tapClass(AssetClass.currency); // 7 genera: Set 3 + breadcrumb Set 4
     case _Drill.currencyUnits:
       state.tapClass(AssetClass.currency);
       state.inputDigit(1);
       state.tapGenus(gbp); // £/sh/d/p
-    case _Drill.overlay:
-      // Expansion field: Set 6/7 + the Wert/Kurse bottom row.
-      state.tapClass(AssetClass.metal);
-      state.inputDigit(1);
-      state.tapGenus(metal);
-      state.tapMagnitude(metal.unitBySymbol('oz t')!);
-      state.toggleOverlay();
     case _Drill.valueTargets:
       // Value mode: the drill area becomes a currency target picker.
       state.rates = RateStore();
@@ -150,6 +144,43 @@ void main() {
       expect(state.termCount, 1);
       expect(state.resultLine!.unit, 'oz t');
       expect(tester.takeException(), isNull);
+    });
+
+    testWidgets('no overlay: memory rides the class-level drill and yields '
+        'to the genera; Kurve/Kurse/Wert always visible', (tester) async {
+      await tester.binding.setSurfaceSize(const Size(412, 915));
+      addTearDown(() => tester.binding.setSurfaceSize(null));
+      final state = AssetState();
+      await tester.pumpWidget(MaterialApp(
+        home: Scaffold(
+          body: SizedBox(
+            width: 412,
+            height: 760,
+            child: AnimatedBuilder(
+              animation: state,
+              builder: (_, _) => AssetKeypad(state: state),
+            ),
+          ),
+        ),
+      ));
+
+      // The Expand overlay is gone, and the always-visible function field
+      // carries Kurve/Kurse (equals circles), Wert (system row) and the memory
+      // register (STO, via its a11y label) right at the class level.
+      expect(find.bySemanticsLabel('Erweiterungsfeld öffnen'), findsNothing);
+      expect(find.text('Kurve'), findsOneWidget);
+      expect(find.text('Kurse'), findsOneWidget);
+      expect(find.text('Wert'), findsOneWidget);
+      expect(find.bySemanticsLabel('Ergebnis speichern'), findsOneWidget);
+
+      // Drill into a class → the genera replace the memory register in Set 3,
+      // while the selected class stays pinned as the Set-4 breadcrumb.
+      await tester.tap(find.text('metal'));
+      await tester.pumpAndSettle();
+      expect(state.drillLevel, AssetDrillLevel.genera);
+      expect(find.bySemanticsLabel('Ergebnis speichern'), findsNothing);
+      expect(find.text('gold'), findsOneWidget);
+      expect(find.text('metal'), findsOneWidget); // breadcrumb stays
     });
   });
 }

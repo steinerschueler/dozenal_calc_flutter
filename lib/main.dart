@@ -744,16 +744,29 @@ class _CalcScaffoldState extends State<_CalcScaffold> {
             textDirection: TextDirection.ltr,
             child: Stack(
               children: [
-                PageView(
-                  controller: _pageController,
-                  // The peek pulses via the controller listener; here only
-                  // the keyboard routing needs the settled page.
-                  onPageChanged: (i) => _page = i,
-                  children: [
-                    _calcPage(prefs),
-                    ConverterBody(state: _converterState),
-                    AssetBody(state: _assetState),
-                  ],
+                // The PageView rebuilds on _assetState so the price chart
+                // (page 3, AssetBody) can lock page-swiping while it is open:
+                // its own pan/zoom GestureDetector would otherwise lose the
+                // gesture arena to the pager's horizontal drag, and a sideways
+                // pan would flip to the unit converter instead of scrolling the
+                // curve. Closed → null physics (normal swiping). The page-peek
+                // overlay stays OUTSIDE this builder (it is independent).
+                ListenableBuilder(
+                  listenable: _assetState,
+                  builder: (ctx, _) => PageView(
+                    controller: _pageController,
+                    physics: _assetState.chartOpen
+                        ? const NeverScrollableScrollPhysics()
+                        : null,
+                    // The peek pulses via the controller listener; here only
+                    // the keyboard routing needs the settled page.
+                    onPageChanged: (i) => _page = i,
+                    children: [
+                      _calcPage(prefs),
+                      ConverterBody(state: _converterState),
+                      AssetBody(state: _assetState),
+                    ],
+                  ),
                 ),
                 // Page-peek indicator: transient, never blocks input, and
                 // unmounts entirely after the fade so it leaves no invisible

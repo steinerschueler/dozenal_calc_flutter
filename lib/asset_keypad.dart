@@ -1,25 +1,31 @@
 // Keypad for the asset-converter mode (metals & currencies). A separate widget
 // tree from converter_keypad.dart (same convention: identical-looking keys,
 // different semantics) but built from the same shared parts (keypad_parts.dart:
-// PressableShell, DigitKeyPainter, TokenKeyPainter, LabelButton, SystemKey,
+// PressableShell, DigitKeyPainter, TokenKeyPainter, LabelButton,
 // showUnitInfoBox) and laid out like converter_keypad.
 //
-// The one structural difference is the THREE-level drill-down. The two
-// right-hand tile columns (eight cells) host a navigator:
-//   classes : [Edelmetall] [Währung]
-//   genera  : [<class header>] [Gold] [Silber] …      (tap header → back)
-//   units   : [<genus header>] [oz t] [g] [kg] …       (tap header → back)
-// Tapping a unit commits it as a term. The op columns (Set 1/2), the system
-// row and the met/imp equals row are unchanged from the converter. Design:
-// docs/asset-converter.md.
+// No overlay: every key sits on one face. The structural heart is the
+// THREE-level drill across two tile columns (eight cells) — Set 3 (left) and
+// Set 4 (right):
+//   classes : Set 3 = memory [STO][RCL][MC][Ans]   Set 4 = [Edelmetall][Währung]
+//   genera  : Set 3 = [Gold][Silber]…              Set 4 = [<class>↩] (stays put)
+//   units   : Set 3 = imperial/Troy [gr][dwt]…     Set 4 = [<genus>↩][g][kg]
+// Memory lives in Set 3 only at the class level and YIELDS to the genera once a
+// class is picked; the selected class/genus stays pinned at the top of Set 4 as
+// a back affordance so nothing jumps. Both unit systems show at once (no met/imp
+// toggle — the working world follows the committed unit). Tapping a unit commits
+// it as a term. "Wert" lives in the always-visible system row; "Kurve"/"Kurse"
+// are the two round keys flanking the equals bar. Design: docs/asset-converter.md.
 
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import 'app_layout.dart';
 import 'app_theme.dart';
 import 'asset_state.dart';
+import 'haptics.dart';
 import 'keypad_parts.dart';
 import 'logic/asset_data.dart';
 import 'logic/base_num.dart';
@@ -28,7 +34,9 @@ import 'logic/glyph_style.dart';
 import 'logic/unit_data.dart';
 import 'tokens.dart';
 
-const List<CalcToken> _systemRow = [Ac(), Del(), Decimal(), Expand()];
+/// The always-visible system/mode row beneath the panel: clear, delete,
+/// decimal — plus the "Wert" key (a [LabelButton], appended by the caller).
+const List<CalcToken> _systemTokens = [Ac(), Del(), Decimal()];
 
 class AssetKeypad extends StatelessWidget {
   final AssetState state;
@@ -135,24 +143,16 @@ class AssetKeypad extends StatelessWidget {
 
   // ── Panels ───────────────────────────────────────────────────────────────
 
+  // One face, no overlay: op columns (Set 1/2) + the drill (memory↔genera↔
+  // units) + the system/Wert row. Memory and the genera share Set 3 via
+  // _drillColumns, so no panel swap is needed.
   Widget _middleSection({required bool tight, required bool fixedHeights}) {
-    return AnimatedSwitcher(
-      duration: const Duration(milliseconds: 150),
-      switchInCurve: Curves.easeOut,
-      switchOutCurve: Curves.easeIn,
-      child: state.overlayOpen
-          ? _panel(const ValueKey('overlay'), kSet6, kSet7,
-              bottomCells: [
-                _valueCell(),
-                _ratesCell(),
-                _chartCell(),
-                _opCell(const Close()),
-              ],
-              tight: tight, fixedHeights: fixedHeights)
-          : _panel(const ValueKey('main'), kSet1, kSet2,
-              bottomCells: [for (final tk in _systemRow) _opCell(tk)],
-              tight: tight, fixedHeights: fixedHeights),
-    );
+    return _panel(const ValueKey('main'), kSet1, kSet2,
+        bottomCells: [
+          for (final tk in _systemTokens) _opCell(tk),
+          _valueCell(),
+        ],
+        tight: tight, fixedHeights: fixedHeights);
   }
 
   /// A 5-row panel: four op rows (opColA · opColB · drillColA · drillColB)
@@ -202,43 +202,60 @@ class AssetKeypad extends StatelessWidget {
     );
   }
 
-  /// The eight-cell drill area, distributed top-to-bottom over two columns
-  /// (left = cells 0..3, right = cells 4..7), padded with empties.
+  /// The eight-cell drill area as two 4-cell columns — Set 3 (left = colA) and
+  /// Set 4 (right = colB). Memory lives in Set 3 at the class level and yields
+  /// to the genera once a class is picked; the selected class/genus stays
+  /// pinned at the top of Set 4 (a back affordance, so nothing jumps). On the
+  /// unit level imperial/Troy units fill Set 3 and metric units sit under the
+  /// breadcrumb in Set 4 — both systems at once. Each column is padded to four
+  /// cells with empties.
   (List<Widget>, List<Widget>) _drillColumns() {
-    final cells = <Widget>[];
+    final colA = <Widget>[];
+    final colB = <Widget>[];
     switch (state.drillLevel) {
       case AssetDrillLevel.classes:
+        // Set 3 = the memory register; Set 4 = the class tiles.
+        colA.addAll([
+          _opCell(const Sto()),
+          _opCell(const Rcl()),
+          _opCell(const Mc()),
+          _opCell(const Ans()),
+        ]);
         for (final c in AssetClass.values) {
-          cells.add(_classCell(c));
+          colB.add(_classCell(c));
         }
       case AssetDrillLevel.genera:
+        // Selected class pinned at top of Set 4; genera fill Set 3, then spill
+        // under the header in Set 4 (currencies carry seven genera).
         final c = state.activeClass!;
-        cells.add(_classCell(c, header: true));
+        colB.add(_classCell(c, header: true));
         for (final g in generaOf(c)) {
-          cells.add(_genusCell(g));
+          (colA.length < 4 ? colA : colB).add(_genusCell(g));
         }
       case AssetDrillLevel.units:
-        cells.add(_genusCell(state.activeGenus!, header: true));
+        // Genus breadcrumb at top of Set 4; imperial/Troy → Set 3, metric →
+        // Set 4 (both systems visible at once, no met/imp toggle).
+        colB.add(_genusCell(state.activeGenus!, header: true));
         for (final u in state.currentLadder) {
-          cells.add(_unitCell(u));
+          (u.world == UnitWorld.imperial ? colA : colB).add(_unitCell(u));
         }
       case AssetDrillLevel.valueTargets:
-        // Value mode: the drill area becomes a currency target picker. The
-        // source currency itself is excluded — valuing it in itself is a
-        // meaningless identity (the state also rejects it).
+        // Value mode: the drill becomes a currency target picker. The source
+        // currency itself is excluded — valuing it in itself is a meaningless
+        // identity (the state also rejects it).
         final srcKey = state.activeClass == AssetClass.currency
             ? state.activeGenus?.key
             : null;
         for (final g in generaOf(AssetClass.currency)) {
           if (g.key == srcKey) continue;
-          cells.add(_targetCell(g));
+          (colA.length < 4 ? colA : colB).add(_targetCell(g));
         }
     }
-    final colA = <Widget>[];
-    final colB = <Widget>[];
-    for (var i = 0; i < 8; i++) {
-      final w = i < cells.length ? cells[i] : _emptyCell();
-      (i < 4 ? colA : colB).add(w);
+    while (colA.length < 4) {
+      colA.add(_emptyCell());
+    }
+    while (colB.length < 4) {
+      colB.add(_emptyCell());
     }
     return (colA, colB);
   }
@@ -290,7 +307,6 @@ class AssetKeypad extends StatelessWidget {
     if (t is Sto) return state.canMemStore;
     if (t is Rcl) return state.canMemRecall;
     if (t is Mc) return state.memoryAvailable;
-    if (t.isIrrationalConstant) return true;
     return _isActiveOp(t);
   }
 
@@ -407,34 +423,16 @@ class AssetKeypad extends StatelessWidget {
     );
   }
 
-  /// "Kurse" key — opens the rate editor.
-  Widget _ratesCell() {
-    final enabled = onRatesTap != null;
-    return LabelButton(
-      label: ratesLabel ?? 'Kurse',
-      colorOf: (t) => enabled ? t.op : t.inertKey,
-      enabled: enabled,
-      onTap: () => onRatesTap?.call(),
-    );
-  }
-
-  /// "Kurve" key — toggles the historical price chart in place of the keypad.
-  Widget _chartCell() {
-    final active = state.chartOpen;
-    return LabelButton(
-      label: chartLabel ?? 'Kurve',
-      colorOf: (t) => active ? t.accentGold : t.op,
-      gold: active,
-      onTap: state.toggleChart,
-    );
-  }
-
   Widget _emptyCell() => const SizedBox.shrink();
 
   // ── Equals row ─────────────────────────────────────────────────────────
+  //
+  // "Kurve" (chart) and "Kurse" (rate editor) flank the equals bar in the two
+  // round keys that used to host the met/imp world toggle — there is no world
+  // toggle any more (both unit systems sit on the drill at once). Kurve carries
+  // a gold ring while the chart is open; Kurse greys out without a rate store.
 
   Widget _equalsRow() {
-    final worldEnabled = state.worldToggleEnabled;
     return LayoutBuilder(
       builder: (ctx, c) {
         final h = c.maxHeight.isFinite ? c.maxHeight : minTouchTarget * 1.2;
@@ -443,13 +441,12 @@ class AssetKeypad extends StatelessWidget {
           children: [
             SizedBox(
               width: h,
-              child: SystemKey(
-                label: 'met',
-                semanticLabel: 'Metrisches System',
-                tenWorld: true,
-                enabled: worldEnabled,
-                active: worldEnabled && state.world == UnitWorld.metric,
-                onTap: () => state.setWorld(UnitWorld.metric),
+              child: _RoundKey(
+                label: chartLabel ?? 'Kurve',
+                semanticLabel: 'Kurve',
+                active: state.chartOpen,
+                enabled: true,
+                onTap: state.toggleChart,
               ),
             ),
             const SizedBox(width: 10),
@@ -497,13 +494,12 @@ class AssetKeypad extends StatelessWidget {
             const SizedBox(width: 10),
             SizedBox(
               width: h,
-              child: SystemKey(
-                label: 'imp',
-                semanticLabel: 'Imperiales System',
-                tenWorld: false,
-                enabled: worldEnabled,
-                active: worldEnabled && state.world == UnitWorld.imperial,
-                onTap: () => state.setWorld(UnitWorld.imperial),
+              child: _RoundKey(
+                label: ratesLabel ?? 'Kurse',
+                semanticLabel: 'Kurse',
+                active: false,
+                enabled: onRatesTap != null,
+                onTap: () => onRatesTap?.call(),
               ),
             ),
           ],
@@ -522,24 +518,26 @@ class AssetKeypad extends StatelessWidget {
 
     final h = constraints.maxHeight;
     final w = constraints.maxWidth;
-    // 11 button-columns horizontally (3 digit + Set1/Set2/drillA/drillB/system
-    // + Set6/Set7/value-rates = 3 + 8), with 8 inner (interBlockGap) gaps + 2
-    // group gaps. (The asset keypad is one block shorter than the converter's.)
+    // 8 button-columns horizontally (3 digit + Set1/Set2/drillA/drillB/system =
+    // 3 + 5), with 6 inner (interBlockGap) gaps — 2 inside the digit grid + 4
+    // between the function columns — and 1 group gap (digits | functions). The
+    // overlay's memory/constants/value columns are gone: memory now rides the
+    // drill at the class level, Kurve/Kurse live in the equals circles.
     final rawH = h.isFinite
         ? (h - 3 * interBlockGap - verticalContentGap) / 5
         : tabletButtonSize;
     final rawW = w.isFinite
-        ? (w - 8 * interBlockGap - 2 * groupGapBase) / 11
+        ? (w - 6 * interBlockGap - groupGapBase) / 8
         : tabletButtonSize;
     final buttonSize =
         math.min(rawH, rawW).clamp(breitMinTouchTarget, tabletButtonSize);
 
     final baseNaturalWidth =
-        11 * buttonSize + 8 * interBlockGap + 2 * groupGapBase;
+        8 * buttonSize + 6 * interBlockGap + groupGapBase;
     final hSlack = w.isFinite ? math.max(0.0, w - baseNaturalWidth) : 0.0;
     final groupGap =
         (groupGapBase + hSlack / 2).clamp(groupGapBase, maxGroupGap);
-    final contentWidth = 11 * buttonSize + 8 * interBlockGap + 2 * groupGap;
+    final contentWidth = 8 * buttonSize + 6 * interBlockGap + groupGap;
 
     final content = _buildBreitContent(
       buttonSize: buttonSize,
@@ -636,13 +634,12 @@ class AssetKeypad extends StatelessWidget {
         gap(),
         column(drillB),
         gap(),
-        opColumn(const [Ac(), Del(), Decimal()]),
-        bigGap(),
-        opColumn(kSet6),
-        gap(),
-        opColumn(kSet7),
-        gap(),
-        column([_valueCell(), _ratesCell(), _chartCell()]),
+        column([
+          _opCell(const Ac()),
+          _opCell(const Del()),
+          _opCell(const Decimal()),
+          _valueCell(),
+        ]),
       ],
     );
   }
@@ -657,9 +654,6 @@ class AssetKeypad extends StatelessWidget {
         state.del();
       case Decimal():
         state.inputDecimal();
-      case Expand():
-      case Close():
-        state.toggleOverlay();
       case Add():
         state.setSubtract(false);
       case Sub():
@@ -684,14 +678,6 @@ class AssetKeypad extends StatelessWidget {
         state.memRecall();
       case Mc():
         state.memClear();
-      case ConstPi():
-        state.insertValueEntry(math.pi);
-      case ConstE():
-        state.insertValueEntry(math.e);
-      case ConstPhi():
-        state.insertValueEntry((1 + math.sqrt(5)) / 2);
-      case ConstSqrt2():
-        state.insertValueEntry(math.sqrt2);
       default:
         break;
     }
@@ -704,8 +690,6 @@ bool _isActiveOp(CalcToken t) =>
     t is Ac ||
     t is Del ||
     t is Decimal ||
-    t is Expand ||
-    t is Close ||
     t is Add ||
     t is Sub ||
     t is Mul ||
@@ -714,3 +698,98 @@ bool _isActiveOp(CalcToken t) =>
     t is ExpTopRight ||
     t is RootTopLeft ||
     t is LogBotRight;
+
+/// A round mode/utility key flanking the equals bar — same circular chrome as
+/// the shared [SystemKey] (pagerFill disc, [minTouchTarget] floor) but in the
+/// op palette instead of the world hues: [active] draws a gold ring + gold
+/// label (e.g. the chart is open), [enabled] false greys it inert. Hosts
+/// "Kurve" (chart) and "Kurse" (rate editor).
+class _RoundKey extends StatefulWidget {
+  final String label;
+  final String semanticLabel;
+  final bool active;
+  final bool enabled;
+  final VoidCallback onTap;
+
+  const _RoundKey({
+    required this.label,
+    required this.semanticLabel,
+    required this.active,
+    required this.enabled,
+    required this.onTap,
+  });
+
+  @override
+  State<_RoundKey> createState() => _RoundKeyState();
+}
+
+class _RoundKeyState extends State<_RoundKey> {
+  bool _pressed = false;
+
+  void _set(bool v) {
+    if (_pressed != v) setState(() => _pressed = v);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final t = AppColors.of(context);
+    final enabled = widget.enabled;
+    return Semantics(
+      button: enabled,
+      enabled: enabled,
+      selected: widget.active,
+      label: widget.semanticLabel,
+      excludeSemantics: true,
+      child: GestureDetector(
+        behavior: HitTestBehavior.opaque,
+        onTapDown: enabled ? (_) => _set(true) : null,
+        onTapUp: enabled ? (_) => _set(false) : null,
+        onTapCancel: enabled ? () => _set(false) : null,
+        onTap: !enabled
+            ? null
+            : () {
+                if (HapticsScope.enabledOf(context)) {
+                  HapticFeedback.lightImpact();
+                }
+                widget.onTap();
+              },
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(
+            minHeight: minTouchTarget,
+            minWidth: minTouchTarget,
+          ),
+          child: Container(
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: t.pagerFill,
+              border: Border.all(
+                color: !enabled
+                    ? t.keyBorderDisabled
+                    : (widget.active ? t.accentGold : t.pagerBorder),
+                width: widget.active ? 2 : 1,
+              ),
+            ),
+            alignment: Alignment.center,
+            padding: const EdgeInsets.all(10),
+            child: FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Text(
+                widget.label,
+                maxLines: 1,
+                style: TextStyle(
+                  color: !enabled
+                      ? t.inertKey
+                      : (_pressed
+                          ? t.opPressed
+                          : (widget.active ? t.accentGold : t.op)),
+                  fontSize: 15,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}

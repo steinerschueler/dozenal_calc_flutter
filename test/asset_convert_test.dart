@@ -36,14 +36,11 @@ void main() {
       expect(convert(1, ozt, _u(gold, 'gr')), closeTo(480.0, 1e-9));
     });
 
-    test('troy oz is 9.71% heavier than avoirdupois oz', () {
-      final ratio = convert(1, _u(gold, 'oz t'), _u(gold, 'oz'));
-      expect(ratio, closeTo(192 / 175, 1e-12)); // = 1.097142857…
-    });
-
-    test('troy pound is LIGHTER than avoirdupois pound (the trap)', () {
-      final g = _u(gold, 'g');
-      expect(convert(1, _u(gold, 'lb t'), g), lessThan(convert(1, _u(gold, 'lb'), g)));
+    test('the ladder is Troy + metric only (no avoirdupois oz/lb)', () {
+      final syms = gold.units.map((u) => u.symbol).toSet();
+      expect(syms, containsAll(<String>['gr', 'dwt', 'oz t', 'lb t', 'g', 'kg']));
+      expect(syms, isNot(contains('oz'))); // avoirdupois ounce dropped
+      expect(syms, isNot(contains('lb'))); // avoirdupois pound dropped
     });
 
     test('all four metals share the identical weight ladder', () {

@@ -61,7 +61,6 @@ class AssetState extends ChangeNotifier {
   AssetClass? _activeClass;
   AssetGenus? _activeGenus;
   bool _genusExpanded = false;
-  bool _overlayOpen = false;
 
   /// Rate table for value mode (Phase 2). Injected by the calc scaffold; null
   /// when the calculator runs standalone (the value key then stays inert).
@@ -95,7 +94,6 @@ class AssetState extends ChangeNotifier {
         ansForBridge ?? (_input.isEmpty ? null : parseScalarEntry(_input, base));
     if (v == null || !v.isFinite) return;
     _memory = v;
-    _overlayOpen = false;
     notifyListeners();
   }
 
@@ -108,7 +106,6 @@ class AssetState extends ChangeNotifier {
   void memClear() {
     if (_memory == null) return;
     _memory = null;
-    _overlayOpen = false;
     notifyListeners();
   }
 
@@ -119,7 +116,6 @@ class AssetState extends ChangeNotifier {
   AssetClass? get activeClass => _activeClass;
   AssetGenus? get activeGenus => _activeGenus;
   bool get genusExpanded => _genusExpanded;
-  bool get overlayOpen => _overlayOpen;
 
   /// Which drill tier the keypad renders.
   AssetDrillLevel get drillLevel {
@@ -231,8 +227,10 @@ class AssetState extends ChangeNotifier {
         unit: currencySymbol(target));
   }
 
-  /// True when the met/imp keys do anything: only a non-single-world genus
-  /// (i.e. a metal) has a metric ↔ imperial axis. Currencies disable them.
+  /// True for a genus that HAS a metric ↔ imperial axis (a metal). Drives the
+  /// display unit-symbol hue (currencies are single-world → pinned violet).
+  /// There is no met/imp key any more: both systems' units are shown at once
+  /// and [world] follows whichever unit was last committed.
   bool get worldToggleEnabled =>
       _activeGenus != null && !_activeGenus!.singleWorld;
 
@@ -245,7 +243,10 @@ class AssetState extends ChangeNotifier {
   int get inputCursor => _inputCursor;
   String get pendingInput => _input;
 
-  List<Unit> get currentLadder => _activeGenus?.ladderFor(_world) ?? const [];
+  /// All units of the active genus — both systems at once (metals show Troy +
+  /// metric together; there is no met/imp filter any more). Currencies return
+  /// their full denomination list as before.
+  List<Unit> get currentLadder => _activeGenus?.units ?? const [];
   List<Unit> get magnitudeUnits =>
       _genusExpanded ? currentLadder : const [];
 
@@ -428,6 +429,7 @@ class AssetState extends ChangeNotifier {
     _resultStep = -1;
     _valueMode = false;
     _valueTarget = null;
+    _world = UnitWorld.imperial;
     notifyListeners();
   }
 
@@ -479,7 +481,6 @@ class AssetState extends ChangeNotifier {
       _input = _input.substring(0, s) + digits + _input.substring(e);
       _inputCursor = s + digits.length;
     }
-    _overlayOpen = false;
     notifyListeners();
   }
 
@@ -531,6 +532,10 @@ class AssetState extends ChangeNotifier {
     final ladder = currentLadder;
     final i = ladder.indexWhere((u) => u.symbol == unit.symbol);
     if (i < 0) return;
+    // No met/imp toggle any more: the working world simply follows whichever
+    // unit was last committed, so the bracket {…}, the Troy breakdown gate and
+    // the display hue all track it.
+    _world = unit.world;
 
     if (_input.isEmpty) {
       if (_heldUnit != null) {
@@ -621,40 +626,11 @@ class AssetState extends ChangeNotifier {
     }
   }
 
-  // ── World / base ───────────────────────────────────────────────────────
-
-  /// Switch the unit system (imperial ↔ metric) — value-preserving. No-op for
-  /// single-world genera (currencies). Mirrors ConverterState.setWorld.
-  void setWorld(UnitWorld w) {
-    if (w == _world) return;
-    _leaveValueMode();
-    final g = _activeGenus;
-    if (g != null && g.singleWorld) {
-      _world = w; // harmless; the ladder is world-agnostic
-      notifyListeners();
-      return;
-    }
-    final hadTerms = _terms.isNotEmpty;
-    final total = hadTerms ? totalBase : 0.0;
-    final ref = hadTerms ? _terms.last.unit : null;
-
-    _world = w;
-    _heldUnit = null;
-
-    if (hadTerms && g != null) {
-      final partner = assetBracketPartner(g, ref!);
-      if (partner != null) {
-        _terms = [_Term(partner.fromBase(total), partner)];
-        _cursorTerm = 1;
-        final idx = currentLadder.indexWhere((u) => u.symbol == partner.symbol);
-        _resultStep = idx < 0 ? 0 : idx;
-      }
-    }
-    notifyListeners();
-  }
-
-  void toggleWorld() => setWorld(
-      _world == UnitWorld.imperial ? UnitWorld.metric : UnitWorld.imperial);
+  // ── Base ─────────────────────────────────────────────────────────────────
+  //
+  // The unit system (imperial ↔ metric) is no longer a switch: both systems'
+  // units sit on the keypad at once and [world] follows the committed unit
+  // (see tapMagnitude). Only the numeral base is still switched here.
 
   /// Switch the numeral base (12 ↔ 10) — value-preserving. Driven by the
   /// global "Zahlensystem" setting via the calc scaffold.
@@ -666,11 +642,6 @@ class AssetState extends ChangeNotifier {
       _input = reformatScalarEntry(_input, from, b);
       _inputCursor = _input.length;
     }
-    notifyListeners();
-  }
-
-  void toggleOverlay() {
-    _overlayOpen = !_overlayOpen;
     notifyListeners();
   }
 

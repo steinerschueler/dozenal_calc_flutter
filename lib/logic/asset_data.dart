@@ -86,17 +86,16 @@ class AssetGenus {
 // international yard-and-pound agreement). The dozenal hook is genuine and
 // definitional: 12 troy oz = 1 troy lb, and 1 dwt = 24 grains = 2 dozen grains.
 //
-//   trap (surfaced in the long-press note): troy oz (31.1034768 g) is 9.71 %
-//   HEAVIER than the avoirdupois oz (28.349523125 g), yet the troy POUND
-//   (373.2417216 g) is LIGHTER than the avoirdupois pound (453.59237 g),
-//   because the troy pound has only 12 ounces instead of 16.
+// Precious metals are weighed in TROY, so the ladder is Troy + metric only —
+// the avoirdupois ounce/pound were dropped (you don't buy gold by the
+// avoirdupois pound, and the breakdown cascade is Troy-only anyway). Imperial
+// first, then metric: the keypad shows imperial (Troy) and metric units
+// side by side at once, no system toggle.
 const List<Unit> _metalUnits = [
   Unit('gr', _imp, 0.00006479891), // grain = 0.06479891 g exactly
   Unit('dwt', _imp, 0.00155517384), // pennyweight = 24 grains
-  Unit('oz', _imp, 0.028349523125), // avoirdupois ounce = 437.5 grains
   Unit('oz t', _imp, 0.0311034768), // troy ounce = 480 grains
   Unit('lb t', _imp, 0.3732417216), // troy pound = 12 troy oz = 5760 grains
-  Unit('lb', _imp, 0.45359237), // avoirdupois pound = 7000 grains
   Unit('g', _met, 0.001),
   Unit('kg', _met, 1),
 ];
