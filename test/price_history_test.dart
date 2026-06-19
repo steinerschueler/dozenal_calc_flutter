@@ -47,23 +47,42 @@ void main() {
     });
   });
 
-  group('fitViewport', () {
-    test('encloses all points + anchors with margin', () {
-      const s = PriceSeries(
-        id: PriceSeriesId.gold,
-        unit: 'USD/oz t',
-        points: [
-          PricePoint(-400, 5, Era.reconstructed, label: 'Babylon', sourceId: 0),
-          PricePoint(1900, 20, Era.modern),
-          PricePoint(2000, 280, Era.modern),
-          PricePoint(2024, 2350, Era.modern),
-        ],
-      );
+  group('index viewport (baseline = oldest)', () {
+    const s = PriceSeries(
+      id: PriceSeriesId.gold,
+      unit: 'x',
+      points: [
+        PricePoint(-400, 5, Era.reconstructed,
+            valueLow: 3, valueHigh: 8, label: 'Babylon', sourceId: 0),
+        PricePoint(1900, 20, Era.modern),
+        PricePoint(2000, 280, Era.modern),
+        PricePoint(2024, 2350, Era.modern),
+      ],
+    );
+
+    test('baselineOf = oldest point value', () {
+      expect(baselineOf(s), 5);
+    });
+
+    test('fit encloses all points in index space (oldest → 0 line)', () {
+      final base = baselineOf(s);
       final vp = fitViewport(s);
       expect(vp.xMin, lessThan(-400));
       expect(vp.xMax, greaterThan(2024));
-      expect(vp.ny(5), greaterThan(0)); // anchor visible
-      expect(vp.ny(2350), lessThan(1));
+      // index values (value/baseline) land inside [0,1]; the baseline (index 1)
+      // is included.
+      expect(vp.ny(5 / base), inInclusiveRange(0.0, 1.0)); // = ny(1)
+      expect(vp.ny(2350 / base), inInclusiveRange(0.0, 1.0));
+      expect(vp.lyMin, lessThanOrEqualTo(0)); // 0 (= log10 index 1) in range
+      expect(vp.lyMax, greaterThanOrEqualTo(0));
+    });
+
+    test('defaultViewport shows the last ~century and keeps the 0 line', () {
+      final vp = defaultViewport(s, nowYear: 2025, span: 100);
+      expect(vp.xMin, closeTo(1925, 1));
+      expect(vp.xMax, closeTo(2025, 1));
+      expect(vp.lyMin, lessThanOrEqualTo(0));
+      expect(vp.lyMax, greaterThanOrEqualTo(0));
     });
   });
 
@@ -137,14 +156,34 @@ void main() {
       }
     });
 
-    test('gold spans antiquity to today; each series fits', () {
-      final gold = kPriceSeries[PriceSeriesId.gold]!;
-      expect(gold.minYear, lessThan(-1000)); // reaches deep antiquity
-      expect(gold.maxYear, greaterThanOrEqualTo(2024));
+    test('bands are consistent (low ≤ value ≤ high)', () {
       for (final s in kPriceSeries.values) {
-        final vp = fitViewport(s);
-        expect(vp.xSpan, greaterThan(0));
-        expect(vp.lySpan, greaterThan(0));
+        for (final p in s.points) {
+          if (p.hasBand) {
+            expect(p.valueLow!, lessThanOrEqualTo(p.value));
+            expect(p.valueHigh!, greaterThanOrEqualTo(p.value));
+          }
+        }
+      }
+    });
+
+    test('silver reaches deep antiquity; every series reaches today; fits', () {
+      expect(kPriceSeries[PriceSeriesId.silver]!.minYear, lessThan(-1000));
+      for (final s in kPriceSeries.values) {
+        expect(s.maxYear, greaterThanOrEqualTo(2024));
+        for (final vp in [fitViewport(s), defaultViewport(s)]) {
+          expect(vp.xSpan, greaterThan(0));
+          expect(vp.lySpan, greaterThan(0));
+        }
+      }
+    });
+
+    test('gold series is the reciprocal of grain-in-gold (wheat)', () {
+      final gold = kPriceSeries[PriceSeriesId.gold]!;
+      final wheat = kPriceSeries[PriceSeriesId.wheat]!;
+      expect(gold.points.length, wheat.points.length);
+      for (var i = 0; i < gold.points.length; i++) {
+        expect(gold.points[i].value, closeTo(1 / wheat.points[i].value, 1e-9));
       }
     });
   });

@@ -20,6 +20,7 @@ Widget _wrap(Widget child) => MaterialApp(
 PriceChart _chart() => PriceChart(
       base: 12,
       seriesLabel: (id) => id.name,
+      unitLabel: (id) => '${id.name} in gold',
       sourcesLabel: 'Quellen',
       caption: 'caption',
       eraReconstructedLabel: 'Ankerpunkt',

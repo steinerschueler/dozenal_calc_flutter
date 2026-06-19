@@ -90,6 +90,7 @@ class AssetBody extends StatelessWidget {
                               key: const ValueKey('chart'),
                               base: state.base,
                               seriesLabel: (id) => _seriesLabel(id, l),
+                              unitLabel: (id) => _seriesRelLabel(id, l),
                               sourcesLabel: l.priceSourcesLabel,
                               caption: l.priceChartCaption,
                               eraReconstructedLabel: l.priceEraAnchor,
@@ -128,11 +129,18 @@ class AssetBody extends StatelessWidget {
   }
 }
 
-/// Localized toggle label for a price-chart series.
+/// Localized toggle label for a price-chart series (short tab name).
 String _seriesLabel(PriceSeriesId id, AppLocalizations l) => switch (id) {
       PriceSeriesId.gold => l.priceSeriesGold,
       PriceSeriesId.silver => l.priceSeriesSilver,
       PriceSeriesId.wheat => l.priceSeriesWheat,
+    };
+
+/// Localized relationship caption (gold-referenced) for the value axis.
+String _seriesRelLabel(PriceSeriesId id, AppLocalizations l) => switch (id) {
+      PriceSeriesId.gold => l.priceRelGold,
+      PriceSeriesId.silver => l.priceRelSilver,
+      PriceSeriesId.wheat => l.priceRelWheat,
     };
 
 /// Standalone route wrapper (widget tests, preview): owns a private AssetState.

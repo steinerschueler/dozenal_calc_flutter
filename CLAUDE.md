@@ -808,16 +808,19 @@ Vollständige Spezifikation + Roadmap:
   geteilten `converter_display.dart`. **Opt-in-API nur als Doku**
   (`docs/asset-rates-api.md`) — ausgeliefertes Binary netzwerkfrei,
   `legal/privacy-*` unverändert.
-- **Phase 3 (historische Preiskurve):** „Kurve"-Taste ersetzt das Keypad per
-  AnimatedSwitcher (`AssetState.chartOpen`/`toggleChart`, Schließen über × im
-  Chart). `lib/logic/price_history.dart` (Modell + log10/Viewport + LTTB +
-  Achsen-Ticks), `lib/logic/price_history_data.dart` (kompilierter belegter
-  Datensatz: Gold = Gold/Silber-Verhältnis cross-era, Silber USD/oz modern,
-  Weizen g Ag/L; `kPriceSources`), `lib/price_chart.dart` (Custom-Paint +
-  Scale-Recognizer-Pan/Zoom, Era-Styling: Antike = diskrete Ringe, Linie nur
-  modern, nie über Lücken; Basis-12-Achsen via `formatBaseNum`),
-  `lib/price_sources_page.dart` (Quellen & Methodik). **Kein Netz, keine neue
-  Dependency.**
+- **Phase 3 (historische Preiskurve, gold-bezogene Index-Darstellung):**
+  „Kurve"-Taste ersetzt das Keypad per AnimatedSwitcher
+  (`AssetState.chartOpen`/`toggleChart`, Schließen über × im Chart). **Alles
+  relativ zu Gold, auf den ältesten Wert indexiert (fette 0-Linie, zentriert):**
+  Silber in Gold · Getreide in Gold · Gold in Getreide (= Kehrwert, abgeleitet).
+  `lib/logic/price_history.dart` (Modell mit Unsicherheitsband `valueLow/High`,
+  `baselineOf`, log10-Index-Viewport, `default`/`fitViewport` 0-zentriert, LTTB,
+  Ticks), `lib/logic/price_history_data.dart` (kompilierter belegter Datensatz
+  aus zwei Subagenten+Prüfer-Läufen; `kPriceSources`), `lib/price_chart.dart`
+  (Custom-Paint + Scale-Recognizer-Pan/Zoom + Fit-Knopf, Faktor-Achsen via
+  `formatBaseNum`, Unsicherheitsband um die Antike; Antike = diskrete Ringe,
+  Linie nur modern, nie über Lücken), `lib/price_sources_page.dart` (Quellen &
+  Methodik). **Kein Netz, keine neue Dependency.**
 - ARB (`pagerLabelAsset`, `assetClass*`, `assetGenus*`, `assetValueHint` plus die
   Phase-2-Keys `assetValueKey`/`assetRatesKey`/`assetRates*`/`assetValueNote`):
   **alle 14 Sprachen vollständig übersetzt** (Subagenten-Pipeline).

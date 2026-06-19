@@ -30,11 +30,14 @@ Prüfung). Diese Datei ist die laufende Spezifikation.
   wird die Metall-Gattung (Wert) und die Cross-Währungs-Umrechnung aktiv.
   Opt-in-Selbst-API nur als Doku (`docs/asset-rates-api.md`), **kein Netzcode
   im ausgelieferten Binary, keine Datenschutz-Änderung** (erlauben ≠ ausliefern).
-- **Phase 3 — umgesetzt:** historische Preiskurve (`price_chart.dart`) — Gold/
-  Silber/Weizen umschaltbar, Antike→heute, Custom-Paint mit Pan/Zoom (Scale-
-  Recognizer), log10-Achse, Basis-12-Ticks, Era-Styling (Antike = diskrete
-  Ringe, nie Linie über Lücken); „Kurve"-Taste ersetzt das Keypad
-  (AnimatedSwitcher), kuratierter belegter Datensatz + Quellen-Screen.
+- **Phase 3 — umgesetzt (gold-bezogene Index-Darstellung):** historische
+  Preiskurve (`price_chart.dart`) — **alles relativ zu Gold, indexiert auf den
+  ältesten Wert (0-Linie in der Mitte)**: Silber in Gold · Getreide in Gold ·
+  Gold in Getreide. Custom-Paint mit Pan/Zoom (Scale-Recognizer), Standard
+  letzte ~100 Jahre + Fit-Knopf/Doppeltipp/Pinch zum Herauszoomen bis zur
+  Antike, log10-Faktorachse, Basis-12-Ticks, Era-Styling (Antike = diskrete
+  Ringe + **Unsicherheitsband**, nie Linie über Lücken). „Kurve"-Taste ersetzt
+  das Keypad (AnimatedSwitcher), kuratierter belegter Datensatz + Quellen-Screen.
 
 ## Datenmodell (`lib/logic/asset_data.dart`)
 
@@ -149,20 +152,30 @@ Scroll-/zoombare Kurve, die per **„Kurve"-Taste** das Keypad ersetzt
 (AnimatedSwitcher in `asset_page.dart`; `AssetState.toggleChart`/`chartOpen`;
 Schließen über das ×-Symbol im Chart, da das Keypad dann verdeckt ist).
 
-- `lib/logic/price_history.dart` — reines Modell + Mathematik: `PriceSeries`/
-  `PricePoint` (mit `Era` reconstructed/sparse/modern + Label/Quelle für
-  Antike-Punkte), `ChartViewport` (log10-Y, Pan/Zoom-Transforms), **LTTB**-
-  Downsampling (vendored), Achsen-Ticks (`niceTicks`/`logDecadeTicks`).
+**Framing (gold-bezogen, indexiert):** Jede Reihe wird **relativ zu Gold**
+gezeigt und auf ihren **ältesten Wert** indexiert (ältester → Index 1 → die
+**fette 0-Linie**, zentriert; rauf = teurer in Gold, runter = billiger). Eine
+konsistente Einheit je Reihe: `silver` = Silber in Gold (= 1/Gold-Silber-
+Verhältnis), `wheat` = Getreide in Gold (= Getreide-in-Silber ÷ Verhältnis),
+`gold` = Gold in Getreide (Gold-Kaufkraft in Nahrung, **Kehrwert von `wheat`**,
+programmatisch abgeleitet → eine Quelle der Wahrheit).
+
+- `lib/logic/price_history.dart` — Modell + Mathematik: `PriceSeries`/
+  `PricePoint` (mit `Era` + optionalem **`valueLow`/`valueHigh`-Unsicherheits-
+  band** + Label/Quelle), `baselineOf` (ältester Wert), `ChartViewport`
+  (log10-**Index**-Y, Pan/Zoom), `defaultViewport` (letzte ~100 J.) /
+  `fitViewport` (voll, beide **0-zentriert**), **LTTB**, Achsen-Ticks.
 - `lib/logic/price_history_data.dart` — der **kompilierte, belegte Datensatz**
-  (Subagenten+Prüfer-Workflow). Eine Einheit je Reihe: Gold = Gold/Silber-
-  Verhältnis (Cross-Era, −3200→2024), Silber = USD/Unze (modern), Weizen =
-  g Silber/Liter (Antike-Anker + modern). `kPriceSources` mit Lizenz/URL.
-  Bewusst grob, ehrlich gerahmt.
+  (zwei Subagenten+Prüfer-Workflows). Silber-in-Gold (−3200→2024) +
+  Getreide-in-Gold (−380→2024), je Antike-Punkt mit Band; Gold-in-Getreide als
+  Kehrwert. `kPriceSources` mit Lizenz/URL. Bewusst grob, ehrlich gerahmt.
 - `lib/price_chart.dart` — `CustomPaint` + `GestureDetector` (nur Scale-
-  Recognizer: Pan+Zoom; Doppeltipp = Fit; Tap = Punkt lesen). Era-Styling:
-  Antike/sparse = diskrete Punkte (Ringe), **Linie nur zwischen benachbarten
-  modernen Punkten**, nie über Era-Grenzen/Lücken. log10-Y, Basis-12-Achsen via
-  `formatBaseNum`. Reihen-Tabs + „Quellen"-Link + ×-Schließen.
+  Recognizer: Pan+Zoom; manuell erkannter Doppeltipp + **Fit-Knopf** = ganz
+  herauszoomen; Tap = Punkt lesen). Werte indexiert (value/baseline); **fette
+  0-Linie**, Y-Labels als **Faktoren** (×A, ÷A) via `formatBaseNum`;
+  **Unsicherheitsband** (gefüllte Fläche + Whisker) um die Antike. Era-Styling:
+  Antike/sparse = diskrete Ringe, **Linie nur zwischen modernen Punkten**, nie
+  über Lücken. Reihen-Tabs (Gold/Silber/Getreide) + „Quellen"-Link + ×-Schließen.
 - `lib/price_sources_page.dart` — Quellen & Methodik (Ehrlichkeits-Note +
   `kPriceSources` mit `openExternalLink`).
 - „Kurve"-Taste in `asset_keypad.dart` (Overlay-Bottom-Row-Slot; Breit in der

@@ -1,29 +1,27 @@
 // The compiled historical price dataset for the Werterechner chart. Pure data,
-// no Flutter imports. Source of truth: a multi-agent compile + adversarial-
-// verify run (see docs/asset-converter.md). DELIBERATELY COARSE and honestly
-// framed — a curated reconstruction, not an authoritative series.
+// no Flutter imports. Source of truth: multi-agent compile + adversarial-verify
+// runs (see docs/asset-converter.md). DELIBERATELY COARSE and honestly framed —
+// a curated reconstruction, not an authoritative series.
 //
-// Framing (verified): one consistent UNIT per series, each plotted alone:
-//   - gold   = the GOLD/SILVER RATIO (dimensionless) — the strongest cross-era
-//              series (antiquity → today; no currency conversion needed).
-//   - silver = nominal price in USD per troy ounce (modern only, familiar).
-//   - wheat  = grams of fine silver per litre of grain (cross-era: antiquity
-//              anchors + modern, derived from wheat$ ÷ silver$).
+// FRAMING (gold-referenced, indexed): the chart shows each series RELATIVE TO
+// GOLD, indexed to its OLDEST value (oldest → the "0" baseline line; up = more
+// expensive in gold, down = cheaper). One consistent measure per series:
+//   - silver = SILVER IN GOLD   (oz gold per oz silver)   = 1 / gold-silver ratio
+//   - wheat  = GRAIN IN GOLD    (g gold per litre)        = grain-in-silver ÷ ratio
+//   - gold   = GOLD IN GRAIN    (gold's food purchasing power) = reciprocal of wheat
 //
-// Honesty rules the chart enforces: antiquity/sparse points are DISCRETE dots
-// (Era != modern), never joined by a line; lines connect only adjacent modern
-// points; gaps stay gaps; no decimal over-precision on reconstructed values.
-// All caveats live on the sources screen (price_sources_page.dart).
+// Each antiquity/sparse point carries an uncertainty band (valueLow/High); the
+// chart shades it. Honesty rules the chart enforces: reconstructed/sparse points
+// are discrete dots, never joined by a line; lines connect only adjacent modern
+// points; gaps stay gaps; no decimal over-precision. Caveats: sources screen.
 
 import 'price_history.dart';
 
 /// Freely-citable sources (public-domain / CC-BY / citable academic facts).
-/// Restrictive compilations (MeasuringWorth, FRED bulk, dealer tables) were
-/// used only as cross-checks and are NOT bundled. Points reference these by
-/// index via [PricePoint.sourceId].
+/// Points reference these by index via [PricePoint.sourceId].
 const List<PriceSource> kPriceSources = [
   PriceSource(
-    'World Bank — Commodity Markets „Pink Sheet", Historical Annual Data (Gold London PM, Silber London Fix, Weizen US HRW)',
+    'World Bank — Commodity Markets „Pink Sheet", Historical Annual Data (Gold/Silber London Fix, Weizen US HRW)',
     'CC-BY 4.0',
     'https://www.worldbank.org/en/research/commodity-markets',
   ),
@@ -73,7 +71,7 @@ const List<PriceSource> kPriceSources = [
     'https://en.wikipedia.org/wiki/Silver_Thursday',
   ),
   PriceSource(
-    'Wikipedia — „Coinage Act of 1834 / 1873" (Bimetall-Verhältnisse 15:1 → 16:1)',
+    'Wikipedia — „Coinage Act of 1834 / 1873 / 1792" (Bimetall-Verhältnisse 15:1 → 16:1)',
     'CC-BY-SA 4.0',
     'https://en.wikipedia.org/wiki/Coinage_Act_of_1873',
   ),
@@ -82,121 +80,122 @@ const List<PriceSource> kPriceSources = [
     'CC-BY-SA 4.0 (Edikt selbst Public Domain)',
     'https://en.wikipedia.org/wiki/Edict_on_Maximum_Prices',
   ),
-  PriceSource(
-    'World Economic Forum — „A short history of the British pound" (Newtons Münzpreis 1717, GBP 4,25/oz)',
-    'Editorial source for a public historical fact',
-    'https://www.weforum.org/stories/2016/06/a-short-history-of-the-british-pound/',
-  ),
 ];
 
-// ── Series ───────────────────────────────────────────────────────────────────
-
-/// GOLD = gold/silver ratio (oz silver per oz gold), dimensionless. The
-/// cross-era backbone — runs from early antiquity to today with no currency
-/// conversion. Antiquity/medieval points are discrete (Era != modern).
-const PriceSeries _gold = PriceSeries(
-  id: PriceSeriesId.gold,
-  unit: 'Au/Ag',
-  sourceIds: [4, 10, 1, 0],
-  points: [
-    PricePoint(-3200, 2.5, Era.reconstructed,
-        label: 'Frühes Ägypten', sourceId: 4),
-    PricePoint(-1900, 6, Era.reconstructed,
-        label: 'Mittleres Reich, Ägypten', sourceId: 4),
-    PricePoint(-1150, 3, Era.reconstructed,
-        label: 'Spätbronzezeit', sourceId: 4),
-    PricePoint(-690, 15, Era.reconstructed,
-        label: 'Babylonische Aufzeichnungen', sourceId: 4),
-    PricePoint(-546, 13, Era.reconstructed, label: 'Lydien', sourceId: 4),
-    PricePoint(-348, 10, Era.reconstructed,
-        label: 'Klassisches Griechenland', sourceId: 4),
-    PricePoint(-210, 8, Era.reconstructed, label: 'Hellenismus', sourceId: 4),
-    PricePoint(-46, 11.5, Era.reconstructed,
-        label: 'Römische Republik', sourceId: 4),
-    PricePoint(1250, 11, Era.sparse, label: 'Hochmittelalter', sourceId: 10),
-    PricePoint(1500, 11, Era.sparse, label: 'Spätmittelalter', sourceId: 10),
-    PricePoint(1700, 15, Era.sparse, label: 'Frühe Neuzeit', sourceId: 10),
-    PricePoint(1792, 15, Era.modern), // US-Münzgesetz 15:1
-    PricePoint(1834, 16, Era.modern), // 16:1
-    PricePoint(1869, 16, Era.modern),
-    PricePoint(1900, 33, Era.modern),
-    PricePoint(1915, 38, Era.modern),
-    PricePoint(1933, 75, Era.modern),
-    PricePoint(1939, 98, Era.modern), // Vor-Floating-Hoch
-    PricePoint(1971, 20, Era.modern),
-    PricePoint(1980, 17, Era.modern),
-    PricePoint(1991, 100, Era.modern),
-    PricePoint(2000, 55, Era.modern),
-    PricePoint(2008, 56, Era.modern),
-    PricePoint(2011, 44, Era.modern),
-    PricePoint(2015, 75, Era.modern),
-    PricePoint(2020, 125, Era.modern),
-    PricePoint(2024, 88, Era.modern),
-  ],
-);
-
-/// SILVER = nominal price in USD per troy ounce (modern only). The pre-1873
-/// flat 1.29 is a statutory mint/monetary anchor, not a market observation;
-/// 1980/2011 are peaks (not annual averages) — labelled per point.
+// ── SILBER IN GOLD = oz gold per oz silver = 1 / gold-silver ratio ───────────
+// Baseline (oldest, -3200) = 0.4. Silver became far cheaper in gold over the
+// millennia (down to ~0.011 today) — the curve falls below the 0 line.
 const PriceSeries _silver = PriceSeries(
   id: PriceSeriesId.silver,
-  unit: 'USD/oz t',
-  sourceIds: [0, 2, 9, 10],
+  unit: 'Ag→Au',
+  sourceIds: [4, 10, 0],
   points: [
-    PricePoint(1700, 1.29, Era.sparse,
-        label: 'gesetzlicher Münzpreis', sourceId: 2),
-    PricePoint(1800, 1.29, Era.sparse,
-        label: 'gesetzlicher Münzpreis', sourceId: 2),
-    PricePoint(1873, 1.29, Era.sparse,
-        label: 'Ende des Bimetallismus', sourceId: 2),
-    PricePoint(1900, 0.62, Era.sparse, label: 'Markt (grob)', sourceId: 0),
-    PricePoint(1980, 50, Era.modern, label: 'Hunt-Peak (Intraday)', sourceId: 9),
-    PricePoint(1990, 4.82, Era.modern),
-    PricePoint(2000, 4.95, Era.modern),
-    PricePoint(2008, 14.99, Era.modern),
-    PricePoint(2011, 49.5, Era.modern, label: 'Peak (April 2011)', sourceId: 0),
-    PricePoint(2020, 20.69, Era.modern),
-    PricePoint(2024, 28.5, Era.modern),
+    PricePoint(-3200, 0.4, Era.reconstructed,
+        valueLow: 0.2, valueHigh: 0.6, label: 'Frühes Ägypten', sourceId: 4),
+    PricePoint(-1900, 0.167, Era.reconstructed,
+        valueLow: 0.083, valueHigh: 0.25, label: 'Ägypten', sourceId: 4),
+    PricePoint(-1150, 0.333, Era.reconstructed,
+        valueLow: 0.167, valueHigh: 0.5, label: 'Spätbronzezeit', sourceId: 4),
+    PricePoint(-690, 0.0667, Era.reconstructed,
+        valueLow: 0.0333, valueHigh: 0.1, label: 'Babylon', sourceId: 4),
+    PricePoint(-546, 0.0769, Era.reconstructed,
+        valueLow: 0.0385, valueHigh: 0.115, label: 'Lydien', sourceId: 4),
+    PricePoint(-348, 0.1, Era.reconstructed,
+        valueLow: 0.05, valueHigh: 0.15,
+        label: 'Klassisches Griechenland', sourceId: 4),
+    PricePoint(-210, 0.125, Era.reconstructed,
+        valueLow: 0.0625, valueHigh: 0.188, label: 'Hellenismus', sourceId: 4),
+    PricePoint(-46, 0.087, Era.reconstructed,
+        valueLow: 0.0435, valueHigh: 0.13,
+        label: 'Römische Republik', sourceId: 4),
+    PricePoint(1250, 0.0909, Era.sparse,
+        valueLow: 0.0727, valueHigh: 0.109,
+        label: 'Hochmittelalter', sourceId: 11),
+    PricePoint(1500, 0.0909, Era.sparse,
+        valueLow: 0.0727, valueHigh: 0.109,
+        label: 'Spätmittelalter', sourceId: 11),
+    PricePoint(1700, 0.0667, Era.sparse,
+        valueLow: 0.0533, valueHigh: 0.08, label: 'Frühe Neuzeit', sourceId: 11),
+    PricePoint(1792, 0.0667, Era.sparse,
+        valueLow: 0.0533, valueHigh: 0.08,
+        label: 'US-Münzgesetz 1792', sourceId: 11),
+    PricePoint(1834, 0.0625, Era.modern, valueLow: 0.0594, valueHigh: 0.0656),
+    PricePoint(1869, 0.0625, Era.modern, valueLow: 0.0594, valueHigh: 0.0656),
+    PricePoint(1900, 0.0303, Era.modern, valueLow: 0.0288, valueHigh: 0.0318),
+    PricePoint(1915, 0.0263, Era.modern, valueLow: 0.025, valueHigh: 0.0276),
+    PricePoint(1933, 0.0133, Era.modern, valueLow: 0.0127, valueHigh: 0.014),
+    PricePoint(1939, 0.0102, Era.modern, valueLow: 0.0097, valueHigh: 0.0107),
+    PricePoint(1971, 0.05, Era.modern, valueLow: 0.0475, valueHigh: 0.0525),
+    PricePoint(1980, 0.0588, Era.modern,
+        valueLow: 0.0559, valueHigh: 0.0618, label: 'Hunt-Spitze', sourceId: 9),
+    PricePoint(1991, 0.01, Era.modern, valueLow: 0.0095, valueHigh: 0.0105),
+    PricePoint(2000, 0.0182, Era.modern, valueLow: 0.0173, valueHigh: 0.0191),
+    PricePoint(2008, 0.0179, Era.modern, valueLow: 0.017, valueHigh: 0.0188),
+    PricePoint(2011, 0.0227, Era.modern, valueLow: 0.0216, valueHigh: 0.0239),
+    PricePoint(2015, 0.0133, Era.modern, valueLow: 0.0127, valueHigh: 0.014),
+    PricePoint(2020, 0.008, Era.modern, valueLow: 0.0076, valueHigh: 0.0084),
+    PricePoint(2024, 0.0114, Era.modern, valueLow: 0.0108, valueHigh: 0.0119),
   ],
 );
 
-/// WHEAT = grams of fine silver per litre of grain. Antiquity anchors are
-/// computed from each era's coin/weight standard (silver-equivalent); the
-/// modern points are derived from the wheat$/silver$ market ratio. Discrete
-/// antiquity dots; modern line; the ~1500→1900 gap stays a gap.
+// ── GETREIDE IN GOLD = grams of fine gold per litre of grain ─────────────────
+// = grain-in-silver ÷ gold-silver ratio. Baseline (oldest, -380) = 0.0046.
 const PriceSeries _wheat = PriceSeries(
   id: PriceSeriesId.wheat,
-  unit: 'g Ag/L',
+  unit: 'Korn→Au',
   sourceIds: [7, 8, 5, 11, 6, 0],
   points: [
-    PricePoint(-380, 0.046, Era.reconstructed,
-        label: 'Gerste, Babylon (Norm)', sourceId: 7),
-    PricePoint(-335, 0.41, Era.reconstructed,
-        label: 'Weizen, Athen', sourceId: 8),
-    PricePoint(50, 0.175, Era.reconstructed,
+    PricePoint(-380, 0.0046, Era.reconstructed,
+        valueLow: 0.0021, valueHigh: 0.01,
+        label: 'Gerste, Babylon', sourceId: 7),
+    PricePoint(-335, 0.041, Era.reconstructed,
+        valueLow: 0.019, valueHigh: 0.09, label: 'Weizen, Athen', sourceId: 8),
+    PricePoint(50, 0.015, Era.reconstructed,
+        valueLow: 0.0065, valueHigh: 0.035,
         label: 'Weizen, Römisches Ägypten', sourceId: 5),
-    PricePoint(200, 0.37, Era.reconstructed,
-        label: 'Weizen, Röm. Ägypten (post-Pest)', sourceId: 5),
-    PricePoint(301, 0.17, Era.reconstructed,
+    PricePoint(200, 0.032, Era.reconstructed,
+        valueLow: 0.014, valueHigh: 0.074,
+        label: 'Röm. Ägypten (post-Pest)', sourceId: 5),
+    PricePoint(301, 0.015, Era.reconstructed,
+        valueLow: 0.0065, valueHigh: 0.035,
         label: 'Diokletian-Edikt (Maximum)', sourceId: 11),
-    PricePoint(1300, 0.32, Era.sparse, label: 'Weizen, England', sourceId: 6),
-    PricePoint(1400, 0.21, Era.sparse,
-        label: 'Weizen, England (post-Pest)', sourceId: 6),
-    PricePoint(1500, 0.18, Era.sparse,
-        label: 'Weizen, England (vor Preisrevolution)', sourceId: 6),
-    PricePoint(1900, 0.88, Era.sparse,
-        label: 'aus Markt-Weizen/Silber', sourceId: 0),
-    PricePoint(1990, 0.68, Era.modern),
-    PricePoint(2000, 0.57, Era.modern),
-    PricePoint(2008, 0.52, Era.modern),
-    PricePoint(2020, 0.26, Era.modern),
-    PricePoint(2024, 0.30, Era.modern),
+    PricePoint(1300, 0.029, Era.sparse,
+        valueLow: 0.018, valueHigh: 0.046, label: 'Weizen, England', sourceId: 6),
+    PricePoint(1400, 0.019, Era.sparse,
+        valueLow: 0.012, valueHigh: 0.03, label: 'Weizen, England', sourceId: 6),
+    PricePoint(1500, 0.016, Era.sparse,
+        valueLow: 0.01, valueHigh: 0.026, label: 'Weizen, England', sourceId: 6),
+    PricePoint(1900, 0.027, Era.sparse,
+        valueLow: 0.019, valueHigh: 0.038, label: '1900', sourceId: 0),
+    PricePoint(1990, 0.0068, Era.modern, valueLow: 0.004, valueHigh: 0.012),
+    PricePoint(2000, 0.01, Era.modern, valueLow: 0.0077, valueHigh: 0.013),
+    PricePoint(2008, 0.0093, Era.modern, valueLow: 0.0072, valueHigh: 0.012),
+    PricePoint(2020, 0.0021, Era.modern, valueLow: 0.0012, valueHigh: 0.0036),
+    PricePoint(2024, 0.0034, Era.modern, valueLow: 0.0026, valueHigh: 0.0044),
   ],
 );
 
-/// The dataset: one series per [PriceSeriesId].
-const Map<PriceSeriesId, PriceSeries> kPriceSeries = {
-  PriceSeriesId.gold: _gold,
+/// GOLD IN GRAIN = gold's purchasing power in food = the reciprocal of
+/// grain-in-gold (so the single source of truth is [_wheat]). Litres of grain
+/// per gram of gold; baseline = the oldest (-380). A band's reciprocal flips
+/// low↔high.
+PriceSeries _goldFromWheat() => PriceSeries(
+      id: PriceSeriesId.gold,
+      unit: 'Au→Korn',
+      sourceIds: _wheat.sourceIds,
+      points: [
+        for (final p in _wheat.points)
+          PricePoint(p.year, 1 / p.value, p.era,
+              valueLow: p.valueHigh == null ? null : 1 / p.valueHigh!,
+              valueHigh: p.valueLow == null ? null : 1 / p.valueLow!,
+              label: p.label,
+              sourceId: p.sourceId),
+      ],
+    );
+
+/// The dataset: one gold-referenced series per [PriceSeriesId].
+final Map<PriceSeriesId, PriceSeries> kPriceSeries = {
+  PriceSeriesId.gold: _goldFromWheat(),
   PriceSeriesId.silver: _silver,
   PriceSeriesId.wheat: _wheat,
 };

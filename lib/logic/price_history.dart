@@ -34,11 +34,19 @@ class PricePoint {
   final int year;
   final double value;
   final Era era;
+
+  /// Optional uncertainty band (low ≤ value ≤ high). Set mainly on antiquity /
+  /// sparse points; the chart draws a shaded estimated range around them.
+  final double? valueLow;
+  final double? valueHigh;
+
   final String? label;
   final int? sourceId;
-  const PricePoint(this.year, this.value, this.era, {this.label, this.sourceId});
+  const PricePoint(this.year, this.value, this.era,
+      {this.valueLow, this.valueHigh, this.label, this.sourceId});
 
   bool get isAnchor => era != Era.modern;
+  bool get hasBand => valueLow != null && valueHigh != null;
 }
 
 /// One series: ordered points, its unit and the source ids backing it. Antiquity
@@ -141,21 +149,59 @@ class ChartViewport {
   int get hashCode => Object.hash(xMin, xMax, lyMin, lyMax);
 }
 
-/// A viewport that fits [series] with a small margin (log Y).
+/// The index baseline of a series: its OLDEST point's value. Every value is
+/// shown relative to this (oldest → index 1 → the "0" reference line).
+double baselineOf(PriceSeries series) =>
+    series.points.isEmpty ? 1.0 : series.points.first.value;
+
+/// All index values (value/baseline plus band bounds) used for the Y extent.
+List<double> _indexExtent(PriceSeries s, double base, bool Function(int) keep) {
+  final out = <double>[1.0]; // the baseline (0 line) is always in range
+  for (final p in s.points) {
+    if (!keep(p.year)) continue;
+    out.add(p.value / base);
+    if (p.valueLow != null) out.add(p.valueLow! / base);
+    if (p.valueHigh != null) out.add(p.valueHigh! / base);
+  }
+  return out;
+}
+
+ChartViewport _yFitted(double xMin, double xMax, List<double> index) {
+  // Centre the value axis on the baseline (index 1 → log10 = 0): the bold "0"
+  // reference line (= oldest value) sits in the middle of the picture, and the
+  // curve fans up/down from it. The half-span covers the largest deviation.
+  var maxDev = 0.25;
+  for (final v in index) {
+    final d = log10(v).abs();
+    if (d > maxDev) maxDev = d;
+  }
+  final span = maxDev * 1.15;
+  return ChartViewport(xMin, xMax, -span, span);
+}
+
+/// Fully zoomed-out view: the whole series in index space (oldest point left,
+/// near the 0 line). Reached via double-tap.
 ChartViewport fitViewport(PriceSeries series) {
-  if (series.points.isEmpty) return const ChartViewport(0, 1, 0, 1);
+  if (series.points.isEmpty) return const ChartViewport(0, 1, -1, 1);
+  final base = baselineOf(series);
   final years = [for (final p in series.points) p.year];
-  final vals = [for (final p in series.points) p.value];
   var xMin = years.reduce(math.min).toDouble();
   var xMax = years.reduce(math.max).toDouble();
   if (xMax - xMin < 1) xMax = xMin + 1;
   final xPad = (xMax - xMin) * 0.03;
-  var lyMin = log10(vals.reduce(math.min));
-  var lyMax = log10(vals.reduce(math.max));
-  if (lyMax - lyMin < 0.3) lyMax = lyMin + 0.3;
-  final yPad = (lyMax - lyMin) * 0.08;
-  return ChartViewport(
-      xMin - xPad, xMax + xPad, lyMin - yPad, lyMax + yPad);
+  return _yFitted(xMin - xPad, xMax + xPad, _indexExtent(series, base, (_) => true));
+}
+
+/// Default initial view: the last [span] years (≈ a century) on X, Y fitted to
+/// that window in index space, with the baseline (0 line) always visible.
+ChartViewport defaultViewport(PriceSeries series,
+    {int nowYear = 2025, int span = 100}) {
+  if (series.points.isEmpty) return const ChartViewport(0, 1, -1, 1);
+  final base = baselineOf(series);
+  final xMax = nowYear.toDouble();
+  final xMin = (nowYear - span).toDouble();
+  return _yFitted(
+      xMin, xMax, _indexExtent(series, base, (y) => y >= xMin && y <= xMax + 1));
 }
 
 // ── LTTB downsampling (Largest-Triangle-Three-Buckets) ───────────────────────

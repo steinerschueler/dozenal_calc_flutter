@@ -23,6 +23,7 @@ class PriceChart extends StatefulWidget {
     super.key,
     required this.base,
     required this.seriesLabel,
+    required this.unitLabel,
     required this.sourcesLabel,
     required this.caption,
     required this.eraReconstructedLabel,
@@ -33,8 +34,12 @@ class PriceChart extends StatefulWidget {
   /// Active numeral base (12 / 10) for axis labels.
   final int base;
 
-  /// Localized toggle label for a series.
+  /// Localized toggle label for a series (short, e.g. "Silber").
   final String Function(PriceSeriesId) seriesLabel;
+
+  /// Localized relationship caption shown on the value axis (e.g.
+  /// "Silber in Gold").
+  final String Function(PriceSeriesId) unitLabel;
 
   /// Localized "Quellen" link label + the honesty caption shown under the chart.
   final String sourcesLabel;
@@ -54,28 +59,31 @@ class PriceChart extends StatefulWidget {
 
 class _PriceChartState extends State<PriceChart> {
   PriceSeriesId _id = PriceSeriesId.gold;
-  late ChartViewport _viewport = fitViewport(kPriceSeries[_id]!);
+  late ChartViewport _viewport = defaultViewport(kPriceSeries[_id]!);
 
   // Gesture snapshot.
   ChartViewport _startVp = const ChartViewport(0, 1, 0, 1);
   Offset _startFocal = Offset.zero;
   bool _moved = false;
   Rect _plotRect = Rect.zero;
+  DateTime? _lastTapAt; // manual double-tap detection (scale recognizer eats it)
 
   // Tap-to-read selection.
   PricePoint? _selected;
   Offset _selectedAt = Offset.zero;
 
   PriceSeries get _series => kPriceSeries[_id]!;
+  double get _baseline => baselineOf(_series);
 
   void _selectSeries(PriceSeriesId id) {
     setState(() {
       _id = id;
-      _viewport = fitViewport(kPriceSeries[id]!);
+      _viewport = defaultViewport(kPriceSeries[id]!); // last ~100 years
       _selected = null;
     });
   }
 
+  // Double-tap zooms fully out (oldest value at left, near the 0 baseline).
   void _resetView() => setState(() {
         _viewport = fitViewport(_series);
         _selected = null;
@@ -111,9 +119,21 @@ class _PriceChartState extends State<PriceChart> {
   }
 
   void _onScaleEnd(ScaleEndDetails d) {
-    if (_moved) return;
-    // A tap (no movement) → hit-test the nearest point.
-    _hitTest(_startFocal);
+    if (_moved) {
+      _lastTapAt = null;
+      return;
+    }
+    // No movement → a tap. Two quick taps = double-tap → zoom fully out (the
+    // scale recognizer otherwise swallows GestureDetector.onDoubleTap).
+    final now = DateTime.now();
+    if (_lastTapAt != null &&
+        now.difference(_lastTapAt!).inMilliseconds < 500) {
+      _lastTapAt = null;
+      _resetView();
+    } else {
+      _lastTapAt = now;
+      _hitTest(_startFocal);
+    }
   }
 
   void _hitTest(Offset local) {
@@ -121,9 +141,10 @@ class _PriceChartState extends State<PriceChart> {
     PricePoint? best;
     Offset bestAt = Offset.zero;
     var bestDist = 28.0; // hit radius
+    final base = _baseline;
     for (final p in _series.points) {
       final sx = rect.left + _viewport.nx(p.year) * rect.width;
-      final sy = rect.bottom - _viewport.ny(p.value) * rect.height;
+      final sy = rect.bottom - _viewport.ny(p.value / base) * rect.height;
       final at = Offset(sx, sy);
       final dist = (at - local).distance;
       if (dist < bestDist) {
@@ -155,13 +176,14 @@ class _PriceChartState extends State<PriceChart> {
                 onScaleStart: _onScaleStart,
                 onScaleUpdate: _onScaleUpdate,
                 onScaleEnd: _onScaleEnd,
-                onDoubleTap: _resetView,
                 child: CustomPaint(
                   size: size,
                   painter: _PriceChartPainter(
                     series: _series,
                     viewport: _viewport,
                     base: widget.base,
+                    baseline: _baseline,
+                    unitLabel: widget.unitLabel(_id),
                     colors: t,
                     plotMargin: _kPlotMargin,
                     selected: _selected,
@@ -206,10 +228,18 @@ class _PriceChartState extends State<PriceChart> {
               ),
             ),
           ),
+          // Zoom fully out (oldest value left, at the 0 line). Pinch + double-
+          // tap do the same; this makes it discoverable.
+          IconButton(
+            onPressed: _resetView,
+            visualDensity: VisualDensity.compact,
+            tooltip: 'Fit',
+            icon: Icon(Icons.zoom_out_map, color: t.textSecondary, size: 18),
+          ),
           TextButton(
             onPressed: widget.onSourcesTap,
             style: TextButton.styleFrom(
-              padding: const EdgeInsets.symmetric(horizontal: 8),
+              padding: const EdgeInsets.symmetric(horizontal: 6),
               minimumSize: const Size(0, 36),
               tapTargetSize: MaterialTapTargetSize.shrinkWrap,
             ),
@@ -257,6 +287,14 @@ class _PriceChartPainter extends CustomPainter {
   final PriceSeries series;
   final ChartViewport viewport;
   final int base;
+
+  /// The series' index baseline (oldest value); every value is plotted as
+  /// value/baseline (so the oldest sits on the 0 reference line).
+  final double baseline;
+
+  /// Localized relationship caption (e.g. "Silber in Gold").
+  final String unitLabel;
+
   final AppColors colors;
   final EdgeInsets plotMargin;
   final PricePoint? selected;
@@ -267,6 +305,8 @@ class _PriceChartPainter extends CustomPainter {
     required this.series,
     required this.viewport,
     required this.base,
+    required this.baseline,
+    required this.unitLabel,
     required this.colors,
     required this.plotMargin,
     required this.selected,
@@ -277,10 +317,18 @@ class _PriceChartPainter extends CustomPainter {
   Rect _rect(Size size) => Rect.fromLTRB(plotMargin.left, plotMargin.top,
       size.width - plotMargin.right, size.height - plotMargin.bottom);
 
+  /// Screen position of a raw (year, value) — value is indexed to [baseline].
   Offset _screen(Rect r, num year, double value) => Offset(
         r.left + viewport.nx(year) * r.width,
-        r.bottom - viewport.ny(value) * r.height,
+        r.bottom - viewport.ny(value / baseline) * r.height,
       );
+
+  /// Label for an index tick value: "0" at the baseline, else ×factor / ÷factor.
+  String _factorLabel(double index) {
+    if ((index - 1).abs() < 1e-9) return '0';
+    if (index > 1) return '×${formatBaseNum(index, base)}';
+    return '÷${formatBaseNum(1 / index, base)}';
+  }
 
   void _label(Canvas canvas, String text, Offset at, Color color,
       {double size = 9, TextAlign align = TextAlign.left}) {
@@ -319,13 +367,19 @@ class _PriceChartPainter extends CustomPainter {
     final gridPaint = Paint()
       ..color = colors.hairline
       ..strokeWidth = 1;
-    // Y: log decade ticks.
+    final baselinePaint = Paint()
+      ..color = colors.textSecondary
+      ..strokeWidth = 1.5;
+    // Y: index decade ticks; the baseline (index 1 = oldest value) is the bold
+    // "0" reference line.
     for (final v in logDecadeTicks(viewport.lyMin, viewport.lyMax)) {
       final y = r.bottom - viewport.ny(v) * r.height;
       if (y < r.top - 1 || y > r.bottom + 1) continue;
-      canvas.drawLine(Offset(r.left, y), Offset(r.right, y), gridPaint);
-      _label(canvas, formatBaseNum(v, base), Offset(r.left - 4, y - 5),
-          colors.textMuted,
+      final isBaseline = (v - 1).abs() < 1e-9;
+      canvas.drawLine(Offset(r.left, y), Offset(r.right, y),
+          isBaseline ? baselinePaint : gridPaint);
+      _label(canvas, _factorLabel(v), Offset(r.left - 4, y - 5),
+          isBaseline ? colors.textSecondary : colors.textMuted,
           align: TextAlign.right);
     }
     // X: nice year ticks.
@@ -336,13 +390,38 @@ class _PriceChartPainter extends CustomPainter {
       _label(canvas, _yearLabel(yr), Offset(x, r.bottom + 4), colors.textMuted,
           align: TextAlign.center);
     }
-    // Unit (value axis caption).
-    _label(canvas, series.unit, Offset(r.left + 2, r.top + 2),
+    // Relationship caption (value axis).
+    _label(canvas, unitLabel, Offset(r.left + 2, r.top + 2),
         colors.textSecondary, size: 10);
 
     // ── Series ──
     canvas.save();
     canvas.clipRect(r);
+
+    // Uncertainty band: a filled estimated range around the points that carry
+    // one (mostly antiquity / sparse) — "geschätzter Bereich rund um die Linie".
+    final banded = series.points.where((p) => p.hasBand).toList();
+    if (banded.length >= 2) {
+      final path = Path();
+      for (var i = 0; i < banded.length; i++) {
+        final at = _screen(r, banded[i].year, banded[i].valueHigh!);
+        i == 0 ? path.moveTo(at.dx, at.dy) : path.lineTo(at.dx, at.dy);
+      }
+      for (var i = banded.length - 1; i >= 0; i--) {
+        final at = _screen(r, banded[i].year, banded[i].valueLow!);
+        path.lineTo(at.dx, at.dy);
+      }
+      path.close();
+      canvas.drawPath(
+          path, Paint()..color = colors.textMuted.withValues(alpha: 0.13));
+    }
+    final whisker = Paint()
+      ..color = colors.textMuted.withValues(alpha: 0.5)
+      ..strokeWidth = 1;
+    for (final p in banded) {
+      canvas.drawLine(_screen(r, p.year, p.valueHigh!),
+          _screen(r, p.year, p.valueLow!), whisker);
+    }
 
     // Lines only between adjacent MODERN points (never across eras/gaps).
     final linePaint = Paint()
@@ -392,7 +471,7 @@ class _PriceChartPainter extends CustomPainter {
             ..style = PaintingStyle.stroke
             ..strokeWidth = 2);
       final lines = <String>[
-        '${_yearLabel(sel.year.toDouble())} · ${formatBaseNum(sel.value, base)} ${series.unit}',
+        '${_yearLabel(sel.year.toDouble())} · ${_factorLabel(sel.value / baseline)}',
         if (sel.label != null) sel.label!,
         if (sel.era == Era.reconstructed) reconstructedLabel,
       ];
@@ -439,6 +518,8 @@ class _PriceChartPainter extends CustomPainter {
       old.series.id != series.id ||
       old.viewport != viewport ||
       old.base != base ||
+      old.baseline != baseline ||
+      old.unitLabel != unitLabel ||
       old.colors != colors ||
       old.selected != selected;
 }
