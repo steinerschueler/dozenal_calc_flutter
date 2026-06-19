@@ -27,11 +27,13 @@ List<ProseChapter> _werteChaptersDe() => const [
       'Lange war Geld schlicht gewogenes Metall. Eine Münze war ein '
           'Gewichtsstück mit einem Stempel, der Gewicht und Feinheit '
           'verbürgte. Viele Geldnamen sind darum Gewichtsnamen: Das englische '
-          '„Pfund" (£) ist dasselbe Wort wie das Gewicht.\n\n'
-          'Woher das Zeichen „£" kommt und wie die alte Stückelung von Pfund, '
-          'Schilling und Penny dozenal gebaut ist, steht ausführlich in der '
-          'Einheitentheorie unter „Preis". Hier geht es um die Edelmetalle '
-          'selbst und um die Frage, ob sie ihren Wert halten.',
+          '„Pfund" (£) ist dasselbe Wort wie das Gewicht. Und wie auch in der '
+          'Einheitentheorie unter „Währung" zu finden ist, ist das Zeichen „£" '
+          'ein verziertes L für lateinisch libra, die Waage.\n\n'
+          'Wie die alte Stückelung von Pfund, Schilling und Penny dozenal '
+          'gebaut ist, steht ausführlich in der Einheitentheorie unter '
+          '„Währung". Hier geht es um die Edelmetalle selbst und um die Frage, '
+          'ob sie ihren Wert halten.',
     ),
   ]),
   ProseChapter('Edelmetalle als Geld', [
