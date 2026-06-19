@@ -13,6 +13,8 @@ import 'app_layout.dart';
 import 'app_theme.dart';
 import 'calc_prefs.dart';
 import 'calc_scope.dart';
+import 'asset_page.dart';
+import 'asset_state.dart';
 import 'converter_page.dart';
 import 'converter_state.dart';
 import 'display.dart';
@@ -335,10 +337,16 @@ class _CalcScaffoldState extends State<_CalcScaffold> {
   /// in the page widget — so compound input survives page swipes, and so the
   /// Ans/CONV result bridge below can reach both calculators.
   final ConverterState _converterState = ConverterState();
+
+  /// The asset converter (precious metals & currencies) is page 3 of the
+  /// pager. Like the unit converter its state lives here so input survives
+  /// page swipes. v1 has no result bridge (exact conversions only — prices /
+  /// rates are Phase 2), but it does follow the global numeral base.
+  final AssetState _assetState = AssetState();
   final PageController _pageController = PageController();
 
-  /// Currently visible pager page (0 = main calculator, 1 = converter);
-  /// routes physical-keyboard input to the right state.
+  /// Currently visible pager page (0 = main calculator, 1 = converter,
+  /// 2 = asset converter); routes physical-keyboard input to the right state.
   int _page = 0;
 
   // Page-peek indicator: two translucent rectangles (the current page
@@ -387,13 +395,13 @@ class _CalcScaffoldState extends State<_CalcScaffold> {
   /// deceleration.
   void _onPagerScroll() => _pulsePagePeek();
 
-  /// Continuous pager position (0 = main calculator … 1 = converter) for
-  /// the gliding peek cards; falls back to the settled page before the
-  /// controller has dimensions.
+  /// Continuous pager position (0 = main calculator … 1 = converter …
+  /// 2 = asset converter) for the gliding peek cards; falls back to the
+  /// settled page before the controller has dimensions.
   double get _pagerProgress {
     if (_pageController.hasClients &&
         _pageController.position.haveDimensions) {
-      return (_pageController.page ?? _page.toDouble()).clamp(0.0, 1.0);
+      return (_pageController.page ?? _page.toDouble()).clamp(0.0, 2.0);
     }
     return _page.toDouble();
   }
@@ -413,6 +421,7 @@ class _CalcScaffoldState extends State<_CalcScaffold> {
     // base too — initial value here, every later change via _onStateChanged.
     // The unit system stays converter-local (met/imp keys).
     _converterState.setBase(_state.activeBase);
+    _assetState.setBase(_state.activeBase);
     _pageController.addListener(_onPagerScroll);
     WidgetsBinding.instance.addPostFrameCallback((_) => _maybeShowIntro());
   }
@@ -441,6 +450,7 @@ class _CalcScaffoldState extends State<_CalcScaffold> {
     _pagePeekTimer?.cancel();
     _pageController.removeListener(_onPagerScroll);
     _converterState.dispose();
+    _assetState.dispose();
     _pageController.dispose();
     _focusNode.dispose();
     super.dispose();
@@ -586,9 +596,10 @@ class _CalcScaffoldState extends State<_CalcScaffold> {
       _state.infoState = const InfoClosed();
       _openInfo();
     }
-    // Mirror the global numeral system into the converter's digit base
-    // (no-op on equal values, so ordinary keystrokes cost nothing).
+    // Mirror the global numeral system into both other calculators' digit
+    // base (no-op on equal values, so ordinary keystrokes cost nothing).
     _converterState.setBase(_state.activeBase);
+    _assetState.setBase(_state.activeBase);
   }
 
   void _openInfo() {
@@ -610,10 +621,14 @@ class _CalcScaffoldState extends State<_CalcScaffold> {
     }
     final token = _tokenForKey(event);
     if (token == null) return KeyEventResult.ignored;
-    // While the converter page is showing, physical keys drive the converter
-    // — never the hidden main calculator.
+    // While a secondary page is showing, physical keys drive THAT page's
+    // calculator — never the hidden main calculator.
     if (_page == 1) {
       _handleConverterKey(token);
+      return KeyEventResult.handled;
+    }
+    if (_page == 2) {
+      _handleAssetKey(token);
       return KeyEventResult.handled;
     }
     // Respect the same disable rule as the on-screen keypad: in Dez mode the
@@ -661,6 +676,41 @@ class _CalcScaffoldState extends State<_CalcScaffold> {
     }
   }
 
+  /// Physical-keyboard layer for the asset converter (page 3). Same mapping as
+  /// [_handleConverterKey] onto the AssetState handlers; unmapped tokens are
+  /// swallowed so nothing edits the hidden main calculator.
+  void _handleAssetKey(CalcToken token) {
+    final s = _assetState;
+    switch (token) {
+      case Digit():
+        s.inputDigit(token.value.value);
+      case Decimal():
+        s.inputDecimal();
+      case Add():
+        s.setSubtract(false);
+      case Sub():
+        s.setSubtract(true);
+      case Mul():
+        s.inputScalarOp(kScalarTimes);
+      case Div():
+        s.inputScalarOp(kScalarDivide);
+      case ExpTopRight():
+        s.inputScalarOp(kScalarPower);
+      case Equals():
+        s.equals();
+      case Del():
+        s.del();
+      case Ac():
+        s.allClear();
+      case TriangleLeft():
+        s.moveCaretLeft();
+      case TriangleRight():
+        s.moveCaretRight();
+      default:
+        break;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final prefs = CalcPrefsScope.of(context);
@@ -693,6 +743,7 @@ class _CalcScaffoldState extends State<_CalcScaffold> {
                   children: [
                     _calcPage(prefs),
                     ConverterBody(state: _converterState),
+                    AssetBody(state: _assetState),
                   ],
                 ),
                 // Page-peek indicator: transient, never blocks input, and
@@ -811,7 +862,8 @@ class _CalcScaffoldState extends State<_CalcScaffold> {
 class _PagePeekOverlay extends StatelessWidget {
   const _PagePeekOverlay({required this.progress});
 
-  /// Continuous pager position: 0 = main calculator … 1 = converter.
+  /// Continuous pager position: 0 = main calculator … 1 = converter …
+  /// 2 = asset converter.
   final double progress;
 
   @override
@@ -863,22 +915,29 @@ class _PagePeekOverlay extends StatelessWidget {
               ),
             );
 
-        // One swipe-width of page travel = one card-pitch of minimap
-        // travel: both cards shift left as the converter scrolls in. The
-        // Stack's hard-edge clip cuts whatever leaves the screen.
-        final shift = (rectW + gap) * progress;
+        // One swipe-width of page travel = one card-pitch of minimap travel:
+        // every card shifts left as the next page scrolls in. The Stack's
+        // hard-edge clip cuts whatever leaves the screen. The golden outline
+        // of card i lights up as the pager nears position i (1 at i, fading
+        // to 0 a full page away), generalising the old two-card crossfade.
+        final pitch = rectW + gap;
+        final shift = pitch * progress;
+        final labels = [
+          l.pagerLabelMain,
+          l.infoListConverterEntry,
+          l.pagerLabelAsset,
+        ];
         return Stack(
           children: [
-            Positioned(
-              top: top,
-              left: centerLeft - shift,
-              child: card(l.pagerLabelMain, 1 - progress),
-            ),
-            Positioned(
-              top: top,
-              left: centerLeft + rectW + gap - shift,
-              child: card(l.infoListConverterEntry, progress),
-            ),
+            for (var i = 0; i < labels.length; i++)
+              Positioned(
+                top: top,
+                left: centerLeft + i * pitch - shift,
+                child: card(
+                  labels[i],
+                  (1 - (progress - i).abs()).clamp(0.0, 1.0),
+                ),
+              ),
           ],
         );
       },

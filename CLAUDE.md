@@ -54,6 +54,12 @@ Test-Routing (für gezielte Edits):
   Richtungen, Tastatur-Routing nach aktiver Seite, Ans/CONV-Roundtrip
   durchs UI, Info-Listen-Eintrag → Pager-Wechsel.
 - `converter_keypad_layout_test.dart` — Umrechner-Layout über Seitenverhältnisse.
+- `asset_convert_test.dart` + `asset_state_test.dart` — Asset-Rechner (dritte
+  Pager-Seite, Edelmetalle/Währungen): exakte Metall-/Währungsfaktoren bzw.
+  Klasse→Gattung→Einheit-Drilldown, `=`-Zyklus, met/imp, Basis. Dazu
+  `asset_keypad_layout_test.dart` (Höhen-Regime × Drill-Ebenen ×
+  Seitenverhältnisse + Tile-Tap-Drilldown). `calc_pager_test.dart` deckt
+  zusätzlich die dritte Seite ab (Swipe, Tastatur-Routing, 3-Karten-Peek).
 - `cursor_tap_test.dart` — Tipp-Cursor (Hauptrechner-Hit-Test + `moveCursorTo`).
 - `recommendations_test.dart` — „Empfehlungen": Kapitel-Dispatcher plus
   Struktur-Treue aller 14 Sprachen (7 Kapitel, Pro-/Contra-Zählung je Rechner,
@@ -234,15 +240,17 @@ Payload-freie Varianten. Spiegelt das Rust-Enum und erlaubt erschöpfende
   der Gleichbalken zusätzlich einen lokalisierten Hinweis am unteren
   Rand (`equalsHint`-Param, ARB `converterEqualsHint` ×14: „mehrmals
   tippen: nächste Einheit").
-- `keypad_parts.dart` — **gemeinsame Bausteine beider Keypads** (Haupt +
-  Umrechner), damit nichts auseinanderdriftet: `PressableShell` (Tasten-
-  Chassis: Press-Flash, Haptik, Rahmen inkl. gold/selected, Langdruck-
+- `keypad_parts.dart` — **gemeinsame Bausteine aller drei Keypads** (Haupt,
+  Umrechner, Asset-Rechner), damit nichts auseinanderdriftet: `PressableShell`
+  (Tasten-Chassis: Press-Flash, Haptik, Rahmen inkl. gold/selected, Langdruck-
   Hooks, 44-dp-Floor), `DigitKeyPainter`/`TokenKeyPainter`, das
-  Ziffern-Grid `kDigitGridRows`, die identischen Spalten `kSet1/2/6/7`
-  und die Hoch-Höhen-Regime `kKeypadTight-/ScrollThreshold` (früher je
-  Datei dupliziert mit „keep in sync"-Kommentar). Die Keypads selbst
-  bleiben bewusst getrennte Widget-Bäume: gleiche Glyphen, verschiedene
-  Semantik/Dispatches.
+  Ziffern-Grid `kDigitGridRows`, die identischen Spalten `kSet1/2/6/7`,
+  die Hoch-Höhen-Regime `kKeypadTight-/ScrollThreshold` und — seit dem
+  Asset-Rechner — die Tile-Bausteine `LabelButton`/`SystemKey`/
+  `showUnitInfoBox` (vorher privat in `converter_keypad.dart`; `SystemKey`
+  hat jetzt ein `enabled`-Flag, das die met/imp-Tasten bei Ein-Welt-Gattungen
+  ausgraut). Die Keypads selbst bleiben bewusst getrennte Widget-Bäume:
+  gleiche Glyphen, verschiedene Semantik/Dispatches.
 - `display.dart` — Zwei-Zeilen-Display, Überstrich-Rendering,
   Periode-Markierung. `TwoLineDisplay` skaliert sich adaptiv an seinen
   Container, funktioniert also vom Landscape-Phone (~60 dp) bis zum
@@ -757,6 +765,40 @@ Bearbeitungs-Cursor (die rote Linie). Hauptrechner: `TwoLineDisplay`
 (`inputCursorPosForTap` + `GestureDetector`) → `DozenalCalcState.moveCursorTo`.
 Umrechner: `converter_display` Caret-Hit-Test → `ConverterState.handleInputTapAtChar`.
 
+### Werterechner (dritter Rechner-Modus): Edelmetalle & Währungen
+
+Nutzer-sichtbarer Name **„Werterechner"** (`pagerLabelAsset`); interner Code-/
+Dateinamensraum bleibt `asset`. **Seite 3 des Pagers** (zweimal Links-Swipe),
+im Design des Einheitenrechners,
+aber mit **drei** Hierarchien: **Klasse → Gattung → Einheit** (Edelmetall →
+Gold → troy oz/g/kg; Währung → GBP → £/sh/d). **v1 = nur exakte Umrechnung**
+(Troy-/avoirdupois-Gewichte metallunabhängig; Währungs-Stückelungen wie £sd);
+**Preise/Kurse sind Phase 2, die historische Preiskurve Phase 3.** Vollständige
+Spezifikation + Roadmap: [`docs/asset-converter.md`](docs/asset-converter.md).
+
+- `lib/logic/asset_data.dart` — reine Daten, **wiederverwendet `Unit`/`UnitWorld`**
+  (jeder v1-Faktor ist „Tier 1", exaktes Vielfaches; Anker grain = 0,06479891 g →
+  1 troy oz = 31,1034768 g, 12 troy oz = 1 troy lb). Vier Metalle teilen **eine**
+  Gewichtsleiter; sieben Währungen mit eigenen Stückelungen (`singleWorld`).
+- `lib/logic/asset_convert.dart` — `assetNextInLadder`/`assetBracketPartner`/
+  `assetBreakdown` (Floor-Epsilon gegen f64-Undershoot), `convert` reexportiert.
+- `lib/asset_state.dart` — `AssetState`, eng an `ConverterState` (Compound-Terme,
+  Skalar-Ops, Cursor, `=`-Zyklus, met/imp, `setBase`); zusätzlich `drillLevel`
+  (`tapClass`/`tapGenus`/`tapMagnitude`, Tipp auf aktiven Header = zurück).
+  Liefert `topLine`/`resultLine` als **`ConverterLine`** → `ConverterDisplay`
+  unverändert wiederverwendet. `worldToggleEnabled` false bei Währungen.
+  Bridge-Felder vorhanden, in v1 inert.
+- `lib/asset_keypad.dart` — eigener Widget-Baum aus den geteilten
+  `keypad_parts.dart`-Bausteinen; die zwei rechten Tile-Spalten (8 Zellen) sind
+  ein 3-Ebenen-Navigator. `lib/asset_page.dart` (`AssetBody`/`AssetPage`),
+  Labels in `lib/asset_labels.dart` (Währungs-Tiles = ISO-Code).
+- Verdrahtung in `main.dart`: `_assetState` im `_CalcScaffoldState`, drittes
+  PageView-Kind, `_pagerProgress` clampt `[0,2]`, `_PagePeekOverlay` als
+  3-Karten-Schleife, `_handleAssetKey` für physische Tasten auf Seite 2, Basis-
+  Sync via `_assetState.setBase`. ARB: `pagerLabelAsset`, `assetClass*`,
+  `assetGenus*`, `assetValueHint` (DE+EN gepflegt, übrige 12 fallen vorerst auf
+  DE zurück — Übersetzung nachzuziehen).
+
 ### Intro
 
 Onboarding-PageView beim ersten Start, gesperrt über einen
@@ -874,15 +916,16 @@ liegt, dann hier:
   (einmalig Prefs → State); danach spiegelt `_syncPrefsFromState`
   laufend State → Prefs. Details siehe Einstellungen-Abschnitt.
 - **Layout-Wurzel:** `_CalcScaffold` ist seit dem Pager-Umbau ein
-  horizontaler **PageView** (forciert LTR, auch in RTL-Locales): Seite 0
-  rendert `TwoLineDisplay` über `Keypad` (inkl.
+  horizontaler **PageView** (forciert LTR, auch in RTL-Locales) mit **drei**
+  Seiten: Seite 0 rendert `TwoLineDisplay` über `Keypad` (inkl.
   `keypadMode`/`keypadProfile` aus `CalcPrefsScope`), Seite 1 den
-  `ConverterBody`. `displayHeightFor(bodyH)` aus `app_layout.dart`
+  `ConverterBody`, Seite 2 den `AssetBody` (Edelmetalle/Währungen, siehe
+  Asset-Rechner-Abschnitt). `displayHeightFor(bodyH)` aus `app_layout.dart`
   bleibt die einzige Größenrechnung (pro Seite). `_CalcScaffoldState`
-  besitzt `ConverterState` + `PageController` und verdrahtet die
-  Resultat-Brücken-Provider in beide Richtungen. (Der frühere
-  `state.converterRequested`-Pfad ist entfernt — der Zugang zum Umrechner
-  läuft über Swipe + Page-Peek.)
+  besitzt `ConverterState`, `AssetState` + `PageController` und verdrahtet die
+  Resultat-Brücken-Provider in beide Richtungen (Asset-Bridge erst Phase 2).
+  (Der frühere `state.converterRequested`-Pfad ist entfernt — der Zugang zu
+  den Folgeseiten läuft über Swipe + Page-Peek.)
   Splash-Feedback ist global via `NoSplash.splashFactory` aus, weil die
   Tasten ihre eigene Press-Color-Animation haben.
 

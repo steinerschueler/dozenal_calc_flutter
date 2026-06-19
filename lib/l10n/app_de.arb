@@ -13,6 +13,20 @@
   "pagerLabelMain": "Hauptrechner",
   "infoListConverterManual": "Bedienung des Einheitenrechners",
   "converterEqualsHint": "mehrmals tippen: nächste Einheit",
+  "pagerLabelAsset": "Werterechner",
+  "@pagerLabelAsset": {
+    "description": "Page-peek label / name of the third calculator (precious metals & currencies)."
+  },
+  "assetClassMetal": "Edelmetall",
+  "assetClassCurrency": "Währung",
+  "assetGenusGold": "Gold",
+  "assetGenusSilver": "Silber",
+  "assetGenusPlatinum": "Platin",
+  "assetGenusPalladium": "Palladium",
+  "assetValueHint": "Reine Gewichtsumrechnung. Spotwert und Währungskurse folgen in einer späteren Version.",
+  "@assetValueHint": {
+    "description": "Long-press note on an asset genus tile: v1 converts weights/denominations only; prices/rates come later."
+  },
   "unitCatCount": "Anzahl",
   "unitCatDist": "Länge",
   "unitCatArea": "Fläche",

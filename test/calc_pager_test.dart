@@ -7,10 +7,14 @@
 // CONV key (Set 10) are visible without opening an overlay.
 
 import 'package:flutter/services.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'package:dozenal_calc_flutter/asset_keypad.dart';
+import 'package:dozenal_calc_flutter/asset_page.dart';
 import 'package:dozenal_calc_flutter/converter_display.dart';
+import 'package:dozenal_calc_flutter/converter_keypad.dart';
 import 'package:dozenal_calc_flutter/display.dart';
 import 'package:dozenal_calc_flutter/info_pages.dart';
 import 'package:dozenal_calc_flutter/logic/dozenal_digit.dart';
@@ -57,6 +61,22 @@ void main() {
 
   String converterInput(WidgetTester tester) => tester
       .widget<ConverterDisplay>(find.byType(ConverterDisplay))
+      .topLine
+      .number;
+
+  // Both the unit converter (page 2) and the asset converter (page 3) reuse
+  // ConverterDisplay, so a page is identified by its keypad type. The asset
+  // input is the display under AssetBody.
+  Future<void> swipePager(WidgetTester tester, double dx) async {
+    await tester.fling(find.byType(PageView), Offset(dx, 0), 1000);
+    await tester.pumpAndSettle();
+  }
+
+  String assetInput(WidgetTester tester) => tester
+      .widget<ConverterDisplay>(find.descendant(
+        of: find.byType(AssetBody),
+        matching: find.byType(ConverterDisplay),
+      ))
       .topLine
       .number;
 
@@ -186,5 +206,43 @@ void main() {
     await flushPagePeek(tester);
     expect(find.text('Main calculator'), findsNothing);
     expect(find.text('Unit converter'), findsNothing);
+  });
+
+  testWidgets('a second left swipe reaches the asset converter (page 3); '
+      'physical keys route there', (tester) async {
+    await bootApp(tester);
+    expect(find.byType(AssetKeypad), findsNothing);
+
+    await swipePager(tester, -400); // → unit converter
+    expect(find.byType(ConverterKeypad), findsOneWidget);
+    await flushPagePeek(tester);
+
+    await swipePager(tester, -400); // → asset converter
+    expect(find.byType(AssetKeypad), findsOneWidget);
+    expect(find.byType(ConverterKeypad), findsNothing);
+    await flushPagePeek(tester);
+
+    // Physical keys now drive the asset page, not the hidden calculators.
+    await tester.sendKeyEvent(LogicalKeyboardKey.digit6);
+    await tester.pump();
+    expect(assetInput(tester), '6');
+
+    // Swipe all the way back to the main calculator.
+    await swipePager(tester, 400);
+    await flushPagePeek(tester);
+    await swipePager(tester, 400);
+    expect(find.byType(TwoLineDisplay), findsOneWidget);
+    expect(find.byType(AssetKeypad), findsNothing);
+  });
+
+  testWidgets('page peek shows all three page cards', (tester) async {
+    await bootApp(tester);
+    await swipePager(tester, -400); // pulse fires on the swipe
+    // The minimap renders one card per page (the asset card may be clipped
+    // off-screen but is still in the tree).
+    expect(find.text('Main calculator'), findsOneWidget);
+    expect(find.text('Unit converter'), findsOneWidget);
+    expect(find.text('Value calculator'), findsOneWidget);
+    await flushPagePeek(tester);
   });
 }

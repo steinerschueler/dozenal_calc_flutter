@@ -1,17 +1,17 @@
-// Keypad for the unit-converter mode (portrait / Hoch). Deliberately a
-// separate widget from keypad.dart so the main calculator keypad — and its
-// store screenshots — stay untouched. Reuses the public painters
-// (glyph_painter, token_painter) and the egui colour palette for visual
-// parity, but renders the category/magnitude swap that is unique to the
-// converter.
+// Keypad for the asset-converter mode (metals & currencies). A separate widget
+// tree from converter_keypad.dart (same convention: identical-looking keys,
+// different semantics) but built from the same shared parts (keypad_parts.dart:
+// PressableShell, DigitKeyPainter, TokenKeyPainter, LabelButton, SystemKey,
+// showUnitInfoBox) and laid out like converter_keypad.
 //
-// Layout mirrors _HochKeypad: digit grid → divider → panel-swap middle
-// section (main ops / overlay) → equals row. Sets 3/4 (main) and 8/9
-// (overlay) hold the unit categories; tapping one expands its magnitude
-// ladder into the opposite column (plus the freed slots around the active
-// tile). Design: docs/unit-converter.md §3-§4.
-//
-// Landscape/tablet (Breit) is a follow-up — this step targets portrait.
+// The one structural difference is the THREE-level drill-down. The two
+// right-hand tile columns (eight cells) host a navigator:
+//   classes : [Edelmetall] [Währung]
+//   genera  : [<class header>] [Gold] [Silber] …      (tap header → back)
+//   units   : [<genus header>] [oz t] [g] [kg] …       (tap header → back)
+// Tapping a unit commits it as a term. The op columns (Set 1/2), the system
+// row and the met/imp equals row are unchanged from the converter. Design:
+// docs/asset-converter.md.
 
 import 'dart:math' as math;
 
@@ -19,76 +19,41 @@ import 'package:flutter/material.dart';
 
 import 'app_layout.dart';
 import 'app_theme.dart';
-import 'converter_state.dart';
+import 'asset_state.dart';
 import 'keypad_parts.dart';
+import 'logic/asset_data.dart';
 import 'logic/base_num.dart';
 import 'logic/dozenal_digit.dart';
 import 'logic/glyph_style.dart';
 import 'logic/unit_data.dart';
 import 'tokens.dart';
 
-// Colors live in AppColors (lib/app_theme.dart). Converter-specific slots:
-// magnitude (value-like gold-tinted labels) and inertKey (not-yet-wired op
-// keys). Categories read like operators → t.op; the selected sub-unit border
-// uses t.accentGoldSoft, subordinate to a category's full-strength
-// t.accentGold frame.
-//
-// Height regimes, the digit grid, the shared op/memory/constant columns
-// (kSet1/2/6/7), the key shell and the key painters come from
-// keypad_parts.dart — single source of truth with the main keypad.
-
-// Category columns.
-const List<UnitCategory> _set3 = [
-  UnitCategory.count,
-  UnitCategory.dist,
-  UnitCategory.area,
-  UnitCategory.space,
-];
-const List<UnitCategory> _set4 = [
-  UnitCategory.weight,
-  UnitCategory.time,
-  UnitCategory.angle,
-  UnitCategory.price,
-];
-const List<UnitCategory> _set8 = [
-  UnitCategory.temp,
-  UnitCategory.press,
-  UnitCategory.force,
-  UnitCategory.work,
-];
-const List<UnitCategory> _set9 = [
-  UnitCategory.power,
-  UnitCategory.cook,
-  UnitCategory.liquid,
-  UnitCategory.moment,
-];
-
 const List<CalcToken> _systemRow = [Ac(), Del(), Decimal(), Expand()];
 
-class ConverterKeypad extends StatelessWidget {
-  final ConverterState state;
+class AssetKeypad extends StatelessWidget {
+  final AssetState state;
 
-  /// Resolves a category's localized label. Null → fall back to the English
-  /// catalogue key (used by the preview harness, which has no localizations).
-  final String Function(UnitCategory)? categoryLabelOf;
+  /// Localized class label (Edelmetall/Währung). Null → English key fallback
+  /// (preview harness without localizations).
+  final String Function(AssetClass)? classLabelOf;
 
-  /// Long-press info for a unit key: a one-sentence description plus the
-  /// "more in the unit theory" pointer line. Null → no long-press box (e.g.
-  /// the preview harness without localizations).
-  final ({String desc, String more}) Function(
-      UnitCategory category, String symbol)? unitInfoOf;
+  /// Localized genus label (metal name, or currency ISO code). Null → key.
+  final String Function(AssetGenus)? genusLabelOf;
 
-  /// Small localized hint inside the equals bar (between the `=` glyph and
-  /// the bottom edge): repeated taps cycle the displayed unit. Null → no
-  /// hint (preview harness without localizations).
+  /// Hint inside the equals bar (repeated taps cycle the unit).
   final String? equalsHint;
 
-  const ConverterKeypad({
+  /// Long-press note on a genus tile ("Spotwert/Kurs folgt in einer späteren
+  /// Version" — v1 has no prices). Null → no long-press box.
+  final String? valueHint;
+
+  const AssetKeypad({
     super.key,
     required this.state,
-    this.categoryLabelOf,
-    this.unitInfoOf,
+    this.classLabelOf,
+    this.genusLabelOf,
     this.equalsHint,
+    this.valueHint,
   });
 
   @override
@@ -107,9 +72,6 @@ class ConverterKeypad extends StatelessWidget {
 
   Widget _buildPortrait(BuildContext context, BoxConstraints constraints) {
     final h = constraints.maxHeight;
-    // Three height regimes, identical to _HochKeypad: scroll fallback below the
-    // floor (fixed 44 dp rows so nothing is unreachable), tight gaps in the mid
-    // band, flex layout above.
     if (h.isFinite && h < kKeypadScrollThreshold) {
       return SingleChildScrollView(
         child: _buildColumn(context, tight: true, fixedHeights: true),
@@ -148,7 +110,7 @@ class ConverterKeypad extends StatelessWidget {
           _middleSection(tight: tight, fixedHeights: true)
         else
           Expanded(
-            flex: 40, // 5 rows × 8
+            flex: 40,
             child: _middleSection(tight: tight, fixedHeights: false),
           ),
         SizedBox(height: equalsGap),
@@ -168,32 +130,25 @@ class ConverterKeypad extends StatelessWidget {
       switchInCurve: Curves.easeOut,
       switchOutCurve: Curves.easeIn,
       child: state.overlayOpen
-          // Doz/Dez removed (base is the global setting now; the unit system
-          // sits on the met/imp keys in the equals row) — their old slots
-          // stay empty so Drg/Close keep their positions.
-          ? _panel(const ValueKey('overlay'), kSet6, kSet7, _set8, _set9,
-              bottomRow: const [null, null, Drg(), Close()],
+          ? _panel(const ValueKey('overlay'), kSet6, kSet7,
+              bottomRow: const [null, null, null, Close()],
               tight: tight, fixedHeights: fixedHeights)
-          : _panel(const ValueKey('main'), kSet1, kSet2, _set3, _set4,
+          : _panel(const ValueKey('main'), kSet1, kSet2,
               bottomRow: _systemRow, tight: tight, fixedHeights: fixedHeights),
     );
   }
 
-  /// A 5-row panel: four op rows (opColA · opColB · catColA · catColB) plus a
-  /// system/mode bottom row.
+  /// A 5-row panel: four op rows (opColA · opColB · drillColA · drillColB)
+  /// plus a system/mode bottom row.
   Widget _panel(
     Key key,
     List<CalcToken> opColA,
-    List<CalcToken> opColB,
-    List<UnitCategory> catColA,
-    List<UnitCategory> catColB, {
+    List<CalcToken> opColB, {
     required List<CalcToken?> bottomRow,
     required bool tight,
     required bool fixedHeights,
   }) {
-    final cols = _buildCategoryColumns(catColA, catColB);
-    final cellsA = cols.$1;
-    final cellsB = cols.$2;
+    final (drillA, drillB) = _drillColumns();
     final rowGap = tight ? 6.0 : 8.0;
     final bottomGap = tight ? 8.0 : 12.0;
 
@@ -220,54 +175,45 @@ class ConverterKeypad extends StatelessWidget {
           rowWrap(fourCellRow([
             _opCell(opColA[r]),
             _opCell(opColB[r]),
-            cellsA[r],
-            cellsB[r],
+            drillA[r],
+            drillB[r],
           ])),
         ],
         SizedBox(height: bottomGap),
         rowWrap(fourCellRow(
-            [for (final t in bottomRow) t == null ? _emptyCell() : _opCell(t)])),
+            [for (final tk in bottomRow) tk == null ? _emptyCell() : _opCell(tk)])),
       ],
     );
   }
 
-  /// Builds the two category columns, swapping in magnitude buttons when the
-  /// active category lives in this panel and is expanded.
-  (List<Widget>, List<Widget>) _buildCategoryColumns(
-    List<UnitCategory> catColA,
-    List<UnitCategory> catColB,
-  ) {
-    final active = state.activeCategory;
-    final inThisPanel =
-        active != null && (catColA.contains(active) || catColB.contains(active));
-
-    if (!inThisPanel || !state.magnitudesExpanded) {
-      return (
-        [for (final c in catColA) _categoryCell(c)],
-        [for (final c in catColB) _categoryCell(c)],
-      );
+  /// The eight-cell drill area, distributed top-to-bottom over two columns
+  /// (left = cells 0..3, right = cells 4..7), padded with empties.
+  (List<Widget>, List<Widget>) _drillColumns() {
+    final cells = <Widget>[];
+    switch (state.drillLevel) {
+      case AssetDrillLevel.classes:
+        for (final c in AssetClass.values) {
+          cells.add(_classCell(c));
+        }
+      case AssetDrillLevel.genera:
+        final c = state.activeClass!;
+        cells.add(_classCell(c, header: true));
+        for (final g in generaOf(c)) {
+          cells.add(_genusCell(g));
+        }
+      case AssetDrillLevel.units:
+        cells.add(_genusCell(state.activeGenus!, header: true));
+        for (final u in state.currentLadder) {
+          cells.add(_unitCell(u));
+        }
     }
-
-    final mags = state.magnitudeUnits;
-    final activeInA = catColA.contains(active);
-    final activeCol = activeInA ? catColA : catColB;
-    final activeIdx = activeCol.indexOf(active);
-
-    // Opposite column: first four magnitudes.
-    final oppCells = List<Widget>.generate(
-      4,
-      (i) => i < mags.length ? _magnitudeCell(mags[i]) : _emptyCell(),
-    );
-
-    // Active column: the active tile at its row, remaining magnitudes around it.
-    var m = 4;
-    final actCells = List<Widget>.generate(4, (i) {
-      if (i == activeIdx) return _categoryCell(active, forceActive: true);
-      if (m < mags.length) return _magnitudeCell(mags[m++]);
-      return _emptyCell();
-    });
-
-    return activeInA ? (actCells, oppCells) : (oppCells, actCells);
+    final colA = <Widget>[];
+    final colB = <Widget>[];
+    for (var i = 0; i < 8; i++) {
+      final w = i < cells.length ? cells[i] : _emptyCell();
+      (i < 4 ? colA : colB).add(w);
+    }
+    return (colA, colB);
   }
 
   // ── Cells ────────────────────────────────────────────────────────────────
@@ -294,7 +240,6 @@ class ConverterKeypad extends StatelessWidget {
         onTap: enabled ? () => state.inputDigit(digit.value) : null,
         builder: (ctx, pressed) {
           final t = AppColors.of(ctx);
-          // Same settings-page preference as the main keypad's digit keys.
           final style = GlyphStyleScope.keypadStyleOf(ctx);
           return CustomPaint(
             size: Size.infinite,
@@ -311,13 +256,8 @@ class ConverterKeypad extends StatelessWidget {
     );
   }
 
-  /// Enabled-state per key. Operators and constants are ALWAYS active —
-  /// a grey key reads as "not wired" (device-learned, twice), so greys are
-  /// reserved for genuinely state-bound keys: Ans needs the main calculator
-  /// to have an answer, STO a result or a typed entry, RCL/MC a filled
-  /// register (the grey doubles as the register indicator). A scalar
-  /// operator tapped on a completely empty converter is a silent no-op
-  /// (the entry guards refuse leading operators anyway).
+  /// Op-key enablement. Operators/constants are always active (a grey reads as
+  /// "not wired"); Ans needs the (Phase-2) bridge, STO/RCL/MC the register.
   bool _opActive(CalcToken t) {
     if (t is Ans) return state.calcAnsAvailable;
     if (t is Sto) return state.canMemStore;
@@ -382,38 +322,45 @@ class ConverterKeypad extends StatelessWidget {
     return '';
   }
 
-  Widget _categoryCell(UnitCategory cat, {bool forceActive = false}) {
-    final active = forceActive || state.isCategoryActive(cat);
+  Widget _classCell(AssetClass c, {bool header = false}) {
+    final active = header || state.isClassActive(c);
     return LabelButton(
-      label: categoryLabelOf?.call(cat) ?? kUnitCatalogue[cat]!.label,
+      label: classLabelOf?.call(c) ?? c.name,
       colorOf: (t) => active ? t.accentGold : t.op,
       gold: active,
-      onTap: () => state.tapCategory(cat),
+      onTap: () => state.tapClass(c),
     );
   }
 
-  Widget _magnitudeCell(Unit unit) {
+  Widget _genusCell(AssetGenus g, {bool header = false}) {
+    final selected = state.isGenusActive(g);
+    return LabelButton(
+      label: genusLabelOf?.call(g) ?? g.key,
+      colorOf: (t) => (header || selected) ? t.accentGold : t.op,
+      gold: header,
+      softGold: !header && selected,
+      onTap: () => state.tapGenus(g),
+      // Long-press note: v1 has no prices yet.
+      info: (header || valueHint == null) ? null : (desc: valueHint!, more: ''),
+    );
+  }
+
+  Widget _unitCell(Unit unit) {
     final selected = state.inputUnit?.symbol == unit.symbol;
-    final cat = state.activeCategory;
     return LabelButton(
       label: unit.symbol,
       colorOf: (t) => selected ? t.accentGold : t.magnitude,
       softGold: selected,
       onTap: () => state.tapMagnitude(unit),
-      // Long-press → a small box above the key explaining the unit.
-      info: cat == null ? null : unitInfoOf?.call(cat, unit.symbol),
     );
   }
 
   Widget _emptyCell() => const SizedBox.shrink();
 
   // ── Equals row ─────────────────────────────────────────────────────────
-  // The system keys flank the equals bar: metric (Ten-world green) on the
-  // left, imperial (Twelve-world violet) on the right — the converter's
-  // primary toggle, always visible. The former round buttons moved out with
-  // the pager rebuild: back = swipe right, info = the main calculator's (i).
 
   Widget _equalsRow() {
+    final worldEnabled = state.worldToggleEnabled;
     return LayoutBuilder(
       builder: (ctx, c) {
         final h = c.maxHeight.isFinite ? c.maxHeight : minTouchTarget * 1.2;
@@ -426,7 +373,8 @@ class ConverterKeypad extends StatelessWidget {
                 label: 'met',
                 semanticLabel: 'Metrisches System',
                 tenWorld: true,
-                active: state.world == UnitWorld.metric,
+                enabled: worldEnabled,
+                active: worldEnabled && state.world == UnitWorld.metric,
                 onTap: () => state.setWorld(UnitWorld.metric),
               ),
             ),
@@ -451,8 +399,6 @@ class ConverterKeypad extends StatelessWidget {
                             ),
                           ),
                         ),
-                        // Discoverability for the = cycle: a faint one-liner
-                        // between the glyph and the bottom edge.
                         if (equalsHint != null)
                           Positioned(
                             left: 8,
@@ -464,9 +410,7 @@ class ConverterKeypad extends StatelessWidget {
                                 equalsHint!,
                                 maxLines: 1,
                                 style: TextStyle(
-                                  fontSize: 9.5,
-                                  color: t.textFaint,
-                                ),
+                                    fontSize: 9.5, color: t.textFaint),
                               ),
                             ),
                           ),
@@ -483,7 +427,8 @@ class ConverterKeypad extends StatelessWidget {
                 label: 'imp',
                 semanticLabel: 'Imperiales System',
                 tenWorld: false,
-                active: state.world == UnitWorld.imperial,
+                enabled: worldEnabled,
+                active: worldEnabled && state.world == UnitWorld.imperial,
                 onTap: () => state.setWorld(UnitWorld.imperial),
               ),
             ),
@@ -503,8 +448,7 @@ class ConverterKeypad extends StatelessWidget {
 
     final h = constraints.maxHeight;
     final w = constraints.maxWidth;
-    // 5 button-rows vertically; 13 button-columns horizontally (3 digit + 5 + 5)
-    // with 10 inner gaps + 2 group gaps. Pick the tighter axis.
+    // 13 button-columns horizontally (3 digit + 5 + 5), 10 inner + 2 group gaps.
     final rawH = h.isFinite
         ? (h - 3 * interBlockGap - verticalContentGap) / 5
         : tabletButtonSize;
@@ -561,7 +505,6 @@ class ConverterKeypad extends StatelessWidget {
     Widget cell(Widget child) =>
         SizedBox(width: buttonSize, height: buttonSize, child: child);
 
-    // A vertical block of (up to) four cells, padded to four for alignment.
     Widget column(List<Widget> children) => Column(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -573,7 +516,7 @@ class ConverterKeypad extends StatelessWidget {
         );
 
     Widget opColumn(List<CalcToken> tokens) =>
-        column([for (final t in tokens) _opCell(t)]);
+        column([for (final tk in tokens) _opCell(tk)]);
 
     Widget digitGrid() => Column(
           mainAxisSize: MainAxisSize.min,
@@ -593,19 +536,14 @@ class ConverterKeypad extends StatelessWidget {
           ],
         );
 
-    final cells34 = _buildCategoryColumns(_set3, _set4);
-    final cells89 = _buildCategoryColumns(_set8, _set9);
+    final (drillA, drillB) = _drillColumns();
 
     Widget gap() => const SizedBox(width: tabletColGap);
     final dividerHeight = 4 * buttonSize + 3 * interBlockGap;
     Widget bigGap() => SizedBox(
           width: groupGap,
           child: Center(
-            child: Container(
-              width: 1,
-              height: dividerHeight,
-              color: t.hairline,
-            ),
+            child: Container(width: 1, height: dividerHeight, color: t.hairline),
           ),
         );
 
@@ -613,28 +551,20 @@ class ConverterKeypad extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         digitGrid(),
-        bigGap(), // group break: digit pad → Sets 1-5
+        bigGap(),
         opColumn(kSet1),
         gap(),
         opColumn(kSet2),
         gap(),
-        column(cells34.$1),
+        column(drillA),
         gap(),
-        column(cells34.$2),
+        column(drillB),
         gap(),
-        opColumn(const [Ac(), Del(), Decimal()]), // system column
-        bigGap(), // group break: Sets 1-5 → Sets 6-10
+        opColumn(const [Ac(), Del(), Decimal()]),
+        bigGap(),
         opColumn(kSet6),
         gap(),
         opColumn(kSet7),
-        gap(),
-        column(cells89.$1),
-        gap(),
-        column(cells89.$2),
-        gap(),
-        // Set 10 (no overlay in Breit): Doz/Dez removed with the base/system
-        // decoupling — only the (inert) Drg remains.
-        opColumn(const [Drg()]),
       ],
     );
   }
@@ -653,11 +583,11 @@ class ConverterKeypad extends StatelessWidget {
       case Close():
         state.toggleOverlay();
       case Add():
-        state.setSubtract(false); // + : default; un-arms subtraction
+        state.setSubtract(false);
       case Sub():
-        state.setSubtract(true); // − : next term subtracts
+        state.setSubtract(true);
       case Mul():
-        state.inputScalarOp(kScalarTimes); // scalar entry operators …
+        state.inputScalarOp(kScalarTimes);
       case Div():
         state.inputScalarOp(kScalarDivide);
       case OplusBotLeft():
@@ -669,7 +599,7 @@ class ConverterKeypad extends StatelessWidget {
       case LogBotRight():
         state.inputScalarOp(kScalarLog);
       case Ans():
-        state.insertCalcAns(); // bridge: the main calculator's last answer
+        state.insertCalcAns();
       case Sto():
         state.memStore();
       case Rcl():
@@ -685,19 +615,13 @@ class ConverterKeypad extends StatelessWidget {
       case ConstSqrt2():
         state.insertValueEntry(math.sqrt2);
       default:
-        // Drg stays inert (the converter has no angle functions).
         break;
     }
   }
 }
 
-/// Statically wired op-keys (always enabled): clearing/editing, the panel
-/// toggle, the + / − term operators and the scalar entry operators
-/// (× ÷ ⊕ ^ √ ㏒ — no-ops on an empty entry rather than greying out).
-/// State-bound keys (Ans, STO/RCL/MC) are decided in _opActive; only Drg
-/// stays inert (no angle functions in the converter). The unit system
-/// lives on the met/imp keys (equals row); the base on the global
-/// setting — neither passes through here.
+/// Statically wired op-keys (always enabled). State-bound keys (Ans, STO/RCL/MC)
+/// are decided in _opActive.
 bool _isActiveOp(CalcToken t) =>
     t is Ac ||
     t is Del ||
@@ -712,7 +636,3 @@ bool _isActiveOp(CalcToken t) =>
     t is ExpTopRight ||
     t is RootTopLeft ||
     t is LogBotRight;
-
-// Shared building blocks (LabelButton, SystemKey, showUnitInfoBox) live in
-// keypad_parts.dart so the unit and asset keypads can't drift apart.
-

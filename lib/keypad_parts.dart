@@ -224,3 +224,285 @@ class TokenKeyPainter extends CustomPainter {
   bool shouldRepaint(covariant TokenKeyPainter old) =>
       old.token != token || old.color != color;
 }
+
+// ---------------------------------------------------------------------------
+// Shared label / system keys + the long-press info box.
+//
+// Used by both the unit converter (converter_keypad.dart) and the asset
+// converter (asset_keypad.dart): the category/genus/magnitude tiles, the two
+// round met/imp system keys flanking the equals bar, and the info box a unit
+// tile pops on long-press. Promoted here so the two keypads can't drift apart.
+// ---------------------------------------------------------------------------
+
+/// A bordered text tile (a unit category, an asset class/genus, or a
+/// magnitude). [gold] draws the full-strength active frame (the Überbegriff);
+/// [softGold] the fainter selected-sub-unit frame. Optional [info] adds a
+/// long-press box (one-sentence description + a "more in the theory" pointer).
+class LabelButton extends StatefulWidget {
+  final String label;
+
+  /// Resolves the label colour from the active palette (called in build, so
+  /// the button follows theme switches without rebuilding the call sites).
+  final Color Function(AppColors) colorOf;
+
+  /// Full-strength gold frame (active category — the Überbegriff).
+  final bool gold;
+
+  /// Fainter gold frame, same hue (selected sub-unit / magnitude). Subordinate
+  /// to a category's [gold] frame.
+  final bool softGold;
+  final VoidCallback onTap;
+
+  /// Optional long-press box content (one-sentence description + the
+  /// "more in the … theory" pointer). Null → no long-press box.
+  final ({String desc, String more})? info;
+
+  const LabelButton({
+    super.key,
+    required this.label,
+    required this.colorOf,
+    this.gold = false,
+    this.softGold = false,
+    required this.onTap,
+    this.info,
+  });
+
+  @override
+  State<LabelButton> createState() => _LabelButtonState();
+}
+
+class _LabelButtonState extends State<LabelButton> {
+  bool _pressed = false;
+
+  void _set(bool v) {
+    if (_pressed != v) setState(() => _pressed = v);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final t = AppColors.of(context);
+    return GestureDetector(
+      behavior: HitTestBehavior.opaque,
+      onTapDown: (_) => _set(true),
+      onTapUp: (_) => _set(false),
+      onTapCancel: () => _set(false),
+      onTap: () {
+        if (HapticsScope.enabledOf(context)) HapticFeedback.lightImpact();
+        widget.onTap();
+      },
+      onLongPress: widget.info == null
+          ? null
+          : () {
+              if (HapticsScope.enabledOf(context)) {
+                HapticFeedback.mediumImpact();
+              }
+              final rb = context.findRenderObject();
+              if (rb is! RenderBox) return;
+              final anchor = rb.localToGlobal(Offset.zero) & rb.size;
+              showUnitInfoBox(
+                  context, anchor, widget.info!.desc, widget.info!.more);
+            },
+      child: ConstrainedBox(
+        constraints: const BoxConstraints(minHeight: minTouchTarget),
+        child: Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(4),
+            border: Border.all(
+              color: widget.gold
+                  ? t.accentGold
+                  : (widget.softGold ? t.accentGoldSoft : t.keyBorder),
+              width: widget.gold ? 2 : (widget.softGold ? 1.5 : 1),
+            ),
+          ),
+          alignment: Alignment.center,
+          padding: const EdgeInsets.symmetric(horizontal: 4),
+          child: FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              widget.label,
+              maxLines: 1,
+              style: TextStyle(
+                color: _pressed ? t.opPressed : widget.colorOf(t),
+                fontSize: 15,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+/// One of the two round unit-system keys flanking the equals bar — styled like
+/// the (i)/(?) buttons on the main calculator so the pager pages rhyme. Carries
+/// its world hue permanently (metric → Ten-world green, imperial → Twelve-world
+/// violet); the active system also gets a 2 dp ring in its own hue.
+/// [enabled] greys it out (e.g. currencies have no metric/imperial axis).
+class SystemKey extends StatefulWidget {
+  final String label;
+  final String semanticLabel;
+  final bool tenWorld;
+  final bool active;
+  final bool enabled;
+  final VoidCallback onTap;
+
+  const SystemKey({
+    super.key,
+    required this.label,
+    required this.semanticLabel,
+    required this.tenWorld,
+    required this.active,
+    required this.onTap,
+    this.enabled = true,
+  });
+
+  @override
+  State<SystemKey> createState() => _SystemKeyState();
+}
+
+class _SystemKeyState extends State<SystemKey> {
+  bool _pressed = false;
+
+  void _set(bool v) {
+    if (_pressed != v) setState(() => _pressed = v);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final t = AppColors.of(context);
+    final hue = widget.tenWorld ? t.worldTen : t.worldTwelve;
+    final enabled = widget.enabled;
+    return Semantics(
+      button: enabled,
+      enabled: enabled,
+      selected: widget.active,
+      label: widget.semanticLabel,
+      excludeSemantics: true,
+      child: GestureDetector(
+        behavior: HitTestBehavior.opaque,
+        onTapDown: enabled ? (_) => _set(true) : null,
+        onTapUp: enabled ? (_) => _set(false) : null,
+        onTapCancel: enabled ? () => _set(false) : null,
+        onTap: !enabled
+            ? null
+            : () {
+                if (HapticsScope.enabledOf(context)) {
+                  HapticFeedback.lightImpact();
+                }
+                widget.onTap();
+              },
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(
+            minHeight: minTouchTarget,
+            minWidth: minTouchTarget,
+          ),
+          child: Container(
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: t.pagerFill,
+              border: Border.all(
+                color: !enabled
+                    ? t.keyBorderDisabled
+                    : (widget.active ? hue : t.pagerBorder),
+                width: widget.active ? 2 : 1,
+              ),
+            ),
+            alignment: Alignment.center,
+            padding: const EdgeInsets.all(10),
+            child: FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Text(
+                widget.label,
+                maxLines: 1,
+                style: TextStyle(
+                  color: !enabled
+                      ? t.inertKey
+                      : (_pressed
+                          ? t.opPressed
+                          : (widget.active
+                              ? hue
+                              : hue.withValues(alpha: 0.55))),
+                  fontSize: 15,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+/// Shows a small info box directly above [anchor] (a tile's global rect) with a
+/// one-sentence [desc] and the [more] pointer. A translucent, non-swallowing
+/// barrier dismisses it on the next outside pointer-down (the same tap still
+/// acts on the key beneath — smartphone-keyboard convention).
+void showUnitInfoBox(
+    BuildContext context, Rect anchor, String desc, String more) {
+  final overlay = Overlay.of(context);
+  final t = AppColors.of(context);
+  final media = MediaQuery.of(context);
+  final w = math.min(300.0, media.size.width - 16);
+  final left = (anchor.center.dx - w / 2).clamp(8.0, media.size.width - w - 8);
+  final bottom = media.size.height - anchor.top + 6;
+  late OverlayEntry entry;
+  entry = OverlayEntry(
+    builder: (ctx) => Stack(
+      children: [
+        Positioned.fill(
+          child: Listener(
+            behavior: HitTestBehavior.translucent,
+            onPointerDown: (_) {
+              if (entry.mounted) entry.remove();
+            },
+          ),
+        ),
+        Positioned(
+          left: left,
+          bottom: bottom,
+          width: w,
+          child: Material(
+            color: Colors.transparent,
+            child: Container(
+              padding: const EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                color: t.cardFill,
+                borderRadius: BorderRadius.circular(8),
+                border: Border.all(color: t.cardBorder),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withValues(alpha: 0.3),
+                    blurRadius: 10,
+                    offset: const Offset(0, 3),
+                  ),
+                ],
+              ),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    desc,
+                    style: TextStyle(
+                        color: t.textPrimary, fontSize: 13, height: 1.35),
+                  ),
+                  if (more.isNotEmpty) ...[
+                    const SizedBox(height: 8),
+                    Text(
+                      more,
+                      style: TextStyle(
+                          color: t.textMuted, fontSize: 11, height: 1.3),
+                    ),
+                  ],
+                ],
+              ),
+            ),
+          ),
+        ),
+      ],
+    ),
+  );
+  overlay.insert(entry);
+}
