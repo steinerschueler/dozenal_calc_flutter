@@ -23,10 +23,36 @@
   "assetGenusSilver": "Silber",
   "assetGenusPlatinum": "Platin",
   "assetGenusPalladium": "Palladium",
-  "assetValueHint": "Reine Gewichtsumrechnung. Spotwert und Währungskurse folgen in einer späteren Version.",
+  "assetValueHint": "Für den Geldwert: Menge + Einheit wählen, dann „Wert\" tippen und eine Zielwährung. Kurse sind grobe Richtwerte (im Kurs-Editor überschreibbar).",
   "@assetValueHint": {
-    "description": "Long-press note on an asset genus tile: v1 converts weights/denominations only; prices/rates come later."
+    "description": "Long-press note on an asset genus tile: how to get a money value (the Wert key), and that rates are rough/overridable."
   },
+  "assetValueKey": "Wert",
+  "assetRatesKey": "Kurse",
+  "assetRatesTitle": "Kurse bearbeiten",
+  "assetRatesAsOf": "Stand: {date}",
+  "@assetRatesAsOf": {
+    "description": "Snapshot-date label for the rate table.",
+    "placeholders": { "date": { "type": "String" } }
+  },
+  "assetValueNote": "≈ kurs-basiert · Stand {date}",
+  "@assetValueNote": {
+    "description": "Small note under the value-mode result: the value is approximate and dated.",
+    "placeholders": { "date": { "type": "String" } }
+  },
+  "assetRatesCurrencies": "Währungen (pro 1 {pivot})",
+  "@assetRatesCurrencies": {
+    "description": "Section header for currency rates; pivot is the reference currency code.",
+    "placeholders": { "pivot": { "type": "String" } }
+  },
+  "assetRatesMetals": "Edelmetalle (Spot pro Troy-Unze, {pivot})",
+  "@assetRatesMetals": {
+    "description": "Section header for metal spot prices.",
+    "placeholders": { "pivot": { "type": "String" } }
+  },
+  "assetRatesReset": "Zurücksetzen",
+  "assetRatesResetAll": "Alle auf Snapshot zurücksetzen",
+  "assetRatesSourceHint": "Kurse sind grobe Richtwerte und können veraltet sein. Aktuelle Werte z. B. bei Kitco (Edelmetalle) oder der EZB (Währungen) nachschlagen und hier eintragen.",
   "unitCatCount": "Anzahl",
   "unitCatDist": "Länge",
   "unitCatArea": "Fläche",

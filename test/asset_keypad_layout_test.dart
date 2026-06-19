@@ -11,6 +11,7 @@ import 'package:dozenal_calc_flutter/asset_page.dart';
 import 'package:dozenal_calc_flutter/asset_state.dart';
 import 'package:dozenal_calc_flutter/l10n/app_localizations.dart';
 import 'package:dozenal_calc_flutter/logic/asset_data.dart';
+import 'package:dozenal_calc_flutter/rate_store.dart';
 
 Widget _pageApp() => MaterialApp(
       localizationsDelegates: AppLocalizations.localizationsDelegates,
@@ -18,7 +19,15 @@ Widget _pageApp() => MaterialApp(
       home: const AssetPage(),
     );
 
-enum _Drill { classes, metalGenera, metalUnits, currencyGenera, currencyUnits }
+enum _Drill {
+  classes,
+  metalGenera,
+  metalUnits,
+  currencyGenera,
+  currencyUnits,
+  overlay,
+  valueTargets,
+}
 
 Widget _keypad(double height, {_Drill drill = _Drill.classes}) {
   final state = AssetState();
@@ -39,6 +48,21 @@ Widget _keypad(double height, {_Drill drill = _Drill.classes}) {
       state.tapClass(AssetClass.currency);
       state.inputDigit(1);
       state.tapGenus(gbp); // £/sh/d/p
+    case _Drill.overlay:
+      // Expansion field: Set 6/7 + the Wert/Kurse bottom row.
+      state.tapClass(AssetClass.metal);
+      state.inputDigit(1);
+      state.tapGenus(metal);
+      state.tapMagnitude(metal.unitBySymbol('oz t')!);
+      state.toggleOverlay();
+    case _Drill.valueTargets:
+      // Value mode: the drill area becomes a currency target picker.
+      state.rates = RateStore();
+      state.tapClass(AssetClass.metal);
+      state.inputDigit(1);
+      state.tapGenus(metal);
+      state.tapMagnitude(metal.unitBySymbol('oz t')!);
+      state.enterValueMode();
   }
   return MaterialApp(
     home: Scaffold(

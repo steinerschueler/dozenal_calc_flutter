@@ -43,9 +43,15 @@ class AssetKeypad extends StatelessWidget {
   /// Hint inside the equals bar (repeated taps cycle the unit).
   final String? equalsHint;
 
-  /// Long-press note on a genus tile ("Spotwert/Kurs folgt in einer späteren
-  /// Version" — v1 has no prices). Null → no long-press box.
+  /// Long-press note on a genus tile. Null → no long-press box.
   final String? valueHint;
+
+  /// "Wert" / "Kurse" key labels and the rates-page opener (Phase 2). Null
+  /// labels fall back to the German defaults; a null [onRatesTap] makes the
+  /// rates key inert.
+  final String? valueLabel;
+  final String? ratesLabel;
+  final VoidCallback? onRatesTap;
 
   const AssetKeypad({
     super.key,
@@ -54,6 +60,9 @@ class AssetKeypad extends StatelessWidget {
     this.genusLabelOf,
     this.equalsHint,
     this.valueHint,
+    this.valueLabel,
+    this.ratesLabel,
+    this.onRatesTap,
   });
 
   @override
@@ -131,10 +140,16 @@ class AssetKeypad extends StatelessWidget {
       switchOutCurve: Curves.easeIn,
       child: state.overlayOpen
           ? _panel(const ValueKey('overlay'), kSet6, kSet7,
-              bottomRow: const [null, null, null, Close()],
+              bottomCells: [
+                _valueCell(),
+                _ratesCell(),
+                _emptyCell(),
+                _opCell(const Close()),
+              ],
               tight: tight, fixedHeights: fixedHeights)
           : _panel(const ValueKey('main'), kSet1, kSet2,
-              bottomRow: _systemRow, tight: tight, fixedHeights: fixedHeights),
+              bottomCells: [for (final tk in _systemRow) _opCell(tk)],
+              tight: tight, fixedHeights: fixedHeights),
     );
   }
 
@@ -144,7 +159,7 @@ class AssetKeypad extends StatelessWidget {
     Key key,
     List<CalcToken> opColA,
     List<CalcToken> opColB, {
-    required List<CalcToken?> bottomRow,
+    required List<Widget> bottomCells,
     required bool tight,
     required bool fixedHeights,
   }) {
@@ -180,8 +195,7 @@ class AssetKeypad extends StatelessWidget {
           ])),
         ],
         SizedBox(height: bottomGap),
-        rowWrap(fourCellRow(
-            [for (final tk in bottomRow) tk == null ? _emptyCell() : _opCell(tk)])),
+        rowWrap(fourCellRow(bottomCells)),
       ],
     );
   }
@@ -205,6 +219,11 @@ class AssetKeypad extends StatelessWidget {
         cells.add(_genusCell(state.activeGenus!, header: true));
         for (final u in state.currentLadder) {
           cells.add(_unitCell(u));
+        }
+      case AssetDrillLevel.valueTargets:
+        // Value mode: the drill area becomes a currency target picker.
+        for (final g in generaOf(AssetClass.currency)) {
+          cells.add(_targetCell(g));
         }
     }
     final colA = <Widget>[];
@@ -352,6 +371,41 @@ class AssetKeypad extends StatelessWidget {
       colorOf: (t) => selected ? t.accentGold : t.magnitude,
       softGold: selected,
       onTap: () => state.tapMagnitude(unit),
+    );
+  }
+
+  /// A currency target tile shown in value mode (drill level valueTargets).
+  Widget _targetCell(AssetGenus g) {
+    final active = state.valueTarget == g.key;
+    return LabelButton(
+      label: genusLabelOf?.call(g) ?? g.key.toUpperCase(),
+      colorOf: (t) => active ? t.accentGold : t.op,
+      gold: active,
+      onTap: () => state.setValueTarget(g.key),
+    );
+  }
+
+  /// "Wert" key — toggles value mode. Greyed (inert no-op) until a result is
+  /// live and a rate table is present.
+  Widget _valueCell() {
+    final active = state.valueMode;
+    final enabled = active || state.canEnterValueMode;
+    return LabelButton(
+      label: valueLabel ?? 'Wert',
+      colorOf: (t) => active ? t.accentGold : (enabled ? t.op : t.inertKey),
+      gold: active,
+      onTap: () {
+        if (enabled) state.toggleValueMode();
+      },
+    );
+  }
+
+  /// "Kurse" key — opens the rate editor.
+  Widget _ratesCell() {
+    return LabelButton(
+      label: ratesLabel ?? 'Kurse',
+      colorOf: (t) => onRatesTap == null ? t.inertKey : t.op,
+      onTap: () => onRatesTap?.call(),
     );
   }
 
@@ -565,6 +619,8 @@ class AssetKeypad extends StatelessWidget {
         opColumn(kSet6),
         gap(),
         opColumn(kSet7),
+        gap(),
+        column([_valueCell(), _ratesCell()]),
       ],
     );
   }

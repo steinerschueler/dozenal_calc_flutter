@@ -8,7 +8,29 @@
   "assetGenusSilver": "Silver",
   "assetGenusPlatinum": "Platinum",
   "assetGenusPalladium": "Palladium",
-  "assetValueHint": "Pure weight conversion. Spot value and exchange rates arrive in a later version.",
+  "assetValueHint": "For a money value: pick an amount + unit, then tap \"Value\" and a target currency. Rates are rough reference figures (overridable in the rate editor).",
+  "assetValueKey": "Value",
+  "assetRatesKey": "Rates",
+  "assetRatesTitle": "Edit rates",
+  "assetRatesAsOf": "As of: {date}",
+  "@assetRatesAsOf": {
+    "placeholders": { "date": { "type": "String" } }
+  },
+  "assetValueNote": "≈ rate-based · as of {date}",
+  "@assetValueNote": {
+    "placeholders": { "date": { "type": "String" } }
+  },
+  "assetRatesCurrencies": "Currencies (per 1 {pivot})",
+  "@assetRatesCurrencies": {
+    "placeholders": { "pivot": { "type": "String" } }
+  },
+  "assetRatesMetals": "Precious metals (spot per troy ounce, {pivot})",
+  "@assetRatesMetals": {
+    "placeholders": { "pivot": { "type": "String" } }
+  },
+  "assetRatesReset": "Reset",
+  "assetRatesResetAll": "Reset all to snapshot",
+  "assetRatesSourceHint": "Rates are rough reference figures and may be stale. Look up current values e.g. at Kitco (precious metals) or the ECB (currencies) and enter them here.",
   "infoListTitle": "Dozenal Calc Menu",
   "infoListGlyphStyleTitle": "Display digits",
   "infoListGlyphStyleCustom": "Glyphs",

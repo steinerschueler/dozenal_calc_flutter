@@ -157,6 +157,10 @@ class ConverterDisplay extends StatelessWidget {
   /// Tap on the input line → char offset within [topLine].number.
   final ValueChanged<int>? onInputTapChar;
 
+  /// Prefix on the result line ('= ' for exact results; '≈ ' for the value
+  /// calculator's rate-based value line).
+  final String resultPrefix;
+
   const ConverterDisplay({
     super.key,
     required this.topLine,
@@ -166,6 +170,7 @@ class ConverterDisplay extends StatelessWidget {
     this.systemIsTen = false,
     this.inputCaret = 0,
     this.onInputTapChar,
+    this.resultPrefix = '= ',
   });
 
   @override
@@ -229,6 +234,7 @@ class ConverterDisplay extends StatelessWidget {
                   numberSize: resultSize,
                   bracketSize: bracketSize * 1.05,
                   style: style,
+                  prefix: resultPrefix,
                 ),
               ),
               Align(
@@ -290,12 +296,14 @@ List<_Seg> _resultSegs(
   required Color bracketColor,
   required double numberSize,
   required double bracketSize,
+  String prefix = '= ',
 }) =>
     <_Seg>[
-      // The '= value' run is neutral; breakdown strings carry their unit
-      // symbols inside `number`, coloured via the ranges ('= ' shifts by 2).
-      ..._splitByUnitRanges('= ${l.number}', l.unitRanges, numberColor,
-          unitColor, numberSize, offset: 2),
+      // The 'PREFIX value' run is neutral; breakdown strings carry their unit
+      // symbols inside `number`, coloured via the ranges (the prefix shifts the
+      // ranges by its length — '= ' for exact results, '≈ ' for value mode).
+      ..._splitByUnitRanges('$prefix${l.number}', l.unitRanges, numberColor,
+          unitColor, numberSize, offset: prefix.length),
       if (l.unit != null)
         _Seg(' ${l.unit}', unitColor, numberSize * 0.82, glyph: false),
       if (l.bracket != null)
@@ -327,6 +335,7 @@ class _ResultLine extends StatelessWidget {
   final double numberSize;
   final double bracketSize;
   final GlyphStyle style;
+  final String prefix;
 
   const _ResultLine({
     required this.line,
@@ -336,6 +345,7 @@ class _ResultLine extends StatelessWidget {
     required this.numberSize,
     required this.bracketSize,
     required this.style,
+    this.prefix = '= ',
   });
 
   @override
@@ -347,7 +357,8 @@ class _ResultLine extends StatelessWidget {
         unitColor: unitColor,
         bracketColor: bracketColor,
         numberSize: numberSize,
-        bracketSize: bracketSize);
+        bracketSize: bracketSize,
+        prefix: prefix);
     final layout = _LineLayout.build(segs, style);
     return LayoutBuilder(
       builder: (ctx, c) {

@@ -23,9 +23,11 @@ import 'logic/asset_convert.dart';
 import 'logic/asset_data.dart';
 import 'logic/base_num.dart';
 import 'logic/unit_data.dart';
+import 'rate_store.dart';
 
-/// Which tier of the drill-down the keypad should show.
-enum AssetDrillLevel { classes, genera, units }
+/// Which tier of the drill-down the keypad should show. In value mode the drill
+/// area becomes a currency target picker ([valueTargets]).
+enum AssetDrillLevel { classes, genera, units, valueTargets }
 
 /// A committed (number, unit) term plus the operator joining it to the
 /// previous one. Same model as ConverterState's private term.
@@ -56,6 +58,15 @@ class AssetState extends ChangeNotifier {
   AssetGenus? _activeGenus;
   bool _genusExpanded = false;
   bool _overlayOpen = false;
+
+  /// Rate table for value mode (Phase 2). Injected by the calc scaffold; null
+  /// when the calculator runs standalone (the value key then stays inert).
+  RateStore? rates;
+
+  /// Value mode: the result line shows the committed quantity converted into a
+  /// chosen target currency (≈, rate-based) instead of the exact ladder.
+  bool _valueMode = false;
+  String? _valueTarget; // currency genus key
 
   List<_Term> _terms = const [];
   String _input = '';
@@ -108,9 +119,92 @@ class AssetState extends ChangeNotifier {
 
   /// Which drill tier the keypad renders.
   AssetDrillLevel get drillLevel {
+    if (_valueMode) return AssetDrillLevel.valueTargets;
     if (_activeClass == null) return AssetDrillLevel.classes;
     if (_activeGenus == null || !_genusExpanded) return AssetDrillLevel.genera;
     return AssetDrillLevel.units;
+  }
+
+  // ── Value mode (Phase 2) ───────────────────────────────────────────────
+
+  bool get valueMode => _valueMode;
+  String? get valueTarget => _valueTarget;
+
+  /// Whether the value key can act: a live result and an injected rate table.
+  bool get canEnterValueMode => hasResult && rates != null;
+
+  /// The snapshot's `asOf` date label (for the "Stand: …" note), or null
+  /// without rates.
+  String? get rateAsOf => rates?.asOf;
+
+  void enterValueMode() {
+    if (!canEnterValueMode) return;
+    _valueMode = true;
+    _valueTarget ??= _defaultValueTarget();
+    notifyListeners();
+  }
+
+  void exitValueMode() {
+    if (!_valueMode) return;
+    _valueMode = false;
+    notifyListeners();
+  }
+
+  void toggleValueMode() => _valueMode ? exitValueMode() : enterValueMode();
+
+  void setValueTarget(String currencyKey) {
+    _valueTarget = currencyKey;
+    notifyListeners();
+  }
+
+  /// Clears value mode without notifying — called by the source-editing
+  /// handlers so any edit drops back to the live exact result.
+  void _leaveValueMode() {
+    _valueMode = false;
+  }
+
+  String _defaultValueTarget() {
+    final src =
+        _activeClass == AssetClass.currency ? _activeGenus?.key : null;
+    final currencies = generaOf(AssetClass.currency);
+    for (final g in currencies) {
+      if (g.key != src) return g.key;
+    }
+    return currencies.first.key;
+  }
+
+  String _currencySymbol(String key) {
+    for (final g in generaOf(AssetClass.currency)) {
+      if (g.key == key) return g.units.first.symbol;
+    }
+    return key.toUpperCase();
+  }
+
+  /// The ≈ value line shown in value mode: the committed quantity converted to
+  /// [_valueTarget]. Null when value mode is off, no target/rate, or the
+  /// result is non-finite. Always approximate (rate-based) — the display
+  /// renders it with the "≈" prefix.
+  ConverterLine? get valueLine {
+    final r = rates;
+    final g = _activeGenus;
+    final target = _valueTarget;
+    if (!_valueMode || r == null || g == null || target == null ||
+        _terms.isEmpty) {
+      return null;
+    }
+    final double pivot;
+    switch (_activeClass) {
+      case AssetClass.currency:
+        pivot = r.pivotOfCurrency(totalBase, g.key);
+      case AssetClass.metal:
+        pivot = r.pivotOfMetalKg(totalBase, g.key);
+      case null:
+        return null;
+    }
+    final value = r.currencyFromPivot(pivot, target);
+    if (!value.isFinite) return null;
+    return ConverterLine(formatBaseNum(value, base),
+        unit: _currencySymbol(target));
   }
 
   /// True when the met/imp keys do anything: only a non-single-world genus
@@ -210,6 +304,7 @@ class AssetState extends ChangeNotifier {
 
   void inputDigit(int value) {
     if (value >= base) return;
+    _leaveValueMode();
     _input = _input.substring(0, _inputCursor) +
         _digitChar(value) +
         _input.substring(_inputCursor);
@@ -218,6 +313,7 @@ class AssetState extends ChangeNotifier {
   }
 
   void inputDecimal() {
+    _leaveValueMode();
     var segStart = _inputCursor;
     while (segStart > 0 && !isScalarOpChar(_input[segStart - 1])) {
       segStart--;
@@ -241,6 +337,7 @@ class AssetState extends ChangeNotifier {
 
   void inputScalarOp(String op) {
     assert(isScalarOpChar(op), 'not a scalar operator: $op');
+    _leaveValueMode();
     final ch = op;
     if (_input.isEmpty) {
       if (_terms.isEmpty) return;
@@ -264,6 +361,7 @@ class AssetState extends ChangeNotifier {
   }
 
   void del() {
+    _leaveValueMode();
     if (_input.isNotEmpty && _inputCursor > 0) {
       _input = _input.substring(0, _inputCursor - 1) +
           _input.substring(_inputCursor);
@@ -304,11 +402,14 @@ class AssetState extends ChangeNotifier {
     _activeGenus = null;
     _genusExpanded = false;
     _resultStep = -1;
+    _valueMode = false;
+    _valueTarget = null;
     notifyListeners();
   }
 
   void setSubtract(bool subtract) {
     if (_pendingSubtract == subtract) return;
+    _leaveValueMode();
     _pendingSubtract = subtract;
     notifyListeners();
   }
@@ -342,6 +443,7 @@ class AssetState extends ChangeNotifier {
 
   void insertValueEntry(double v) {
     if (!_canInsertValue(v)) return;
+    _leaveValueMode();
     final x = v.abs() < 1e-9 ? 0.0 : v;
     final (s, e) = _segmentBoundsAtCaret();
     if (x < 0) {
@@ -363,6 +465,7 @@ class AssetState extends ChangeNotifier {
   /// class level; a different class selects it and shows its genera. The
   /// pending number survives (it is unit-less); committed terms are dropped.
   void tapClass(AssetClass c) {
+    _leaveValueMode();
     if (_activeClass == c) {
       _activeClass = null;
       _activeGenus = null;
@@ -382,6 +485,7 @@ class AssetState extends ChangeNotifier {
   /// Tap a genus tile. The active genus's header steps back to the genus
   /// level (collapse); a different genus selects it and expands its ladder.
   void tapGenus(AssetGenus g) {
+    _leaveValueMode();
     if (_activeGenus?.key == g.key) {
       _genusExpanded = !_genusExpanded;
     } else {
@@ -399,6 +503,7 @@ class AssetState extends ChangeNotifier {
   /// Commit the pending entry as a term in [unit] (scalar expressions collapse
   /// to their value here), or re-label a held/last unit when nothing is typed.
   void tapMagnitude(Unit unit) {
+    _leaveValueMode();
     final ladder = currentLadder;
     final i = ladder.indexWhere((u) => u.symbol == unit.symbol);
     if (i < 0) return;
@@ -495,6 +600,7 @@ class AssetState extends ChangeNotifier {
   /// single-world genera (currencies). Mirrors ConverterState.setWorld.
   void setWorld(UnitWorld w) {
     if (w == _world) return;
+    _leaveValueMode();
     final g = _activeGenus;
     if (g != null && g.singleWorld) {
       _world = w; // harmless; the ladder is world-agnostic

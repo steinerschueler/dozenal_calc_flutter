@@ -24,10 +24,12 @@ Prüfung). Diese Datei ist die laufende Spezifikation.
 
 - **Phase 1 (v1) — umgesetzt:** exakte Umrechnung. Troy-/avoirdupois-Gewichte
   (metallunabhängig) und Währungs-Stückelungen. **Keine** Preise/Kurse.
-- **Phase 2 — geplant:** Kurse & Werte. Datiertes Snapshot-Asset + manuelles
-  Override-Feld + dokumentierter Opt-in-Selbst-API-Pfad (kein Netzcode im
-  ausgelieferten Binary). Erst dann wird die Metall-Gattung (Wert) und die
-  Cross-Währungs-Umrechnung aktiv.
+- **Phase 2 — umgesetzt:** Kurse & Werte. Grober, datierter Snapshot
+  (`logic/rate_data.dart`, überschreibbar) + Kurs-Editor (`rates_page.dart`) +
+  **Wertmodus mit Zielwährungs-Picker** („≈"-Wert, „Stand: Datum"). Erst hier
+  wird die Metall-Gattung (Wert) und die Cross-Währungs-Umrechnung aktiv.
+  Opt-in-Selbst-API nur als Doku (`docs/asset-rates-api.md`), **kein Netzcode
+  im ausgelieferten Binary, keine Datenschutz-Änderung** (erlauben ≠ ausliefern).
 - **Phase 3 — geplant:** historische Preiskurve (BoE-Spine ab 1209 + diskrete
   Antike-Ankerpunkte), Custom-Paint, log10-Achse, Basis-12-Ticks; Toggle ersetzt
   das Keypad im selben Rect.
@@ -106,23 +108,54 @@ beim Umrechner) in `_assetState.setBase` gespiegelt.
 
 `pagerLabelAsset` (DE „Werterechner", EN „Value calculator"),
 `assetClassMetal/Currency`, `assetGenus{Gold,Silver,Platinum,Palladium}`,
-`assetValueHint` — DE (Template) + EN gepflegt; die übrigen 12
-Locales fallen vorerst auf DE zurück (Übersetzung via Subagenten-Pipeline
-nachzuziehen). Equals-Hinweis nutzt `converterEqualsHint`. Einheiten-/Währungs-
+`assetValueHint` plus die Phase-2-Keys (`assetValueKey`, `assetRatesKey`,
+`assetRatesTitle`, `assetRatesAsOf`, `assetValueNote`, `assetRatesCurrencies`,
+`assetRatesMetals`, `assetRatesReset`, `assetRatesResetAll`,
+`assetRatesSourceHint`) — **alle 14 Sprachen vollständig übersetzt**
+(Subagenten-Pipeline: Übersetzen + Review), Platzhalter `{date}`/`{pivot}`
+erhalten. Equals-Hinweis nutzt `converterEqualsHint`. Einheiten-/Währungs-
 symbole bleiben international.
+
+## Wertmodus & Kurse (Phase 2)
+
+Gattungsübergreifende Geldwerte über einen **expliziten Wertmodus + Zielwährungs-
+Picker**:
+
+- `lib/logic/rate_data.dart` — `RateSnapshot` + `kRateSnapshot`: grobe, datierte
+  Richtwerte (Pivot USD, `asOf`). Keys = `AssetGenus.key`. Bewusst ungefähr.
+- `lib/rate_store.dart` — `RateStore extends ChangeNotifier`: Snapshot +
+  SharedPreferences-Overrides (`rate_ovr_cur_*` / `rate_ovr_met_*`), Pivot-
+  geroutete Konversion (`pivotOfCurrency`/`pivotOfMetalKg`/`currencyFromPivot`).
+- `lib/asset_state.dart` — Wertmodus: `drillLevel == valueTargets` (Picker),
+  `enterValueMode`/`setValueTarget`/`toggleValueMode`, `valueLine` („≈", über
+  `rates`). Jede bearbeitende Aktion ruft `_leaveValueMode()` → zurück zur
+  exakten Leiter.
+- `lib/asset_keypad.dart` — „Wert"/„Kurse"-Tasten in der Overlay-Bottom-Row
+  (Breit: eigene Spalte); im Wertmodus rendert der Drill die Währungs-Ziel-Tiles.
+- `lib/rates_page.dart` — Kurs-Editor (Stand-Kopf, editierbare Felder pro
+  Währung/Metall, Reset pro Zeile + global), gepusht aus „Kurse".
+- `lib/converter_display.dart` — neuer `resultPrefix` („≈ " statt „= ").
+- `lib/main.dart` — `RateStore` besessen/`load()`, in `_assetState.rates`
+  injiziert; `asset_page` lauscht via `Listenable.merge` auch auf die Kurse.
+- **Opt-in-API:** nur Doku (`docs/asset-rates-api.md`); ausgeliefertes Binary
+  netzwerkfrei, Release/Main-Manifest ohne `INTERNET`, `legal/privacy-*`
+  unverändert.
 
 ## Tests
 
 - `test/asset_convert_test.dart` — exakte Faktoren + Breakdown + Bracket.
-- `test/asset_state_test.dart` — Drill-down, Commit, `=`-Zyklus, met/imp, Basis.
-- `test/asset_keypad_layout_test.dart` — Höhen-Regime × Drill-Ebenen ×
-  Seitenverhältnisse, plus Tile-Tap-Drilldown.
+- `test/asset_state_test.dart` — Drill-down, Commit, `=`-Zyklus, met/imp, Basis,
+  **Wertmodus** (Ziel-Picker, `valueLine`, „≈", Editier-Exit).
+- `test/rate_store_test.dart` — Konversionsmathematik + Override-Persistenz.
+- `test/rates_page_test.dart` — Editor rendert, Override schreibt/zurücksetzt.
+- `test/asset_keypad_layout_test.dart` — Höhen-Regime × Drill-Ebenen (inkl.
+  `valueTargets`/Overlay) × Seitenverhältnisse, plus Tile-Tap-Drilldown.
 - `test/calc_pager_test.dart` — dritte Seite per Swipe, Tastatur-Routing,
   Page-Peek mit drei Karten.
 
 ## Offene Punkte für spätere Phasen
 
-Übersetzung der ARB-Keys in die übrigen 12 Sprachen · Krypto/Rohstoff-Klassen
+Krypto/Rohstoff-Klassen
 (Krypto: f64 mit gedeckelter Anzeige) · Rhodium/Karat/Apothekereinheiten ·
 Result-Brücke Asset ↔ Hauptrechner · Breit-Layout-Feinschliff für lange
 Gattungs-Labels.

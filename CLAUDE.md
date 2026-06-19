@@ -771,10 +771,12 @@ Nutzer-sichtbarer Name **„Werterechner"** (`pagerLabelAsset`); interner Code-/
 Dateinamensraum bleibt `asset`. **Seite 3 des Pagers** (zweimal Links-Swipe),
 im Design des Einheitenrechners,
 aber mit **drei** Hierarchien: **Klasse → Gattung → Einheit** (Edelmetall →
-Gold → troy oz/g/kg; Währung → GBP → £/sh/d). **v1 = nur exakte Umrechnung**
-(Troy-/avoirdupois-Gewichte metallunabhängig; Währungs-Stückelungen wie £sd);
-**Preise/Kurse sind Phase 2, die historische Preiskurve Phase 3.** Vollständige
-Spezifikation + Roadmap: [`docs/asset-converter.md`](docs/asset-converter.md).
+Gold → troy oz/g/kg; Währung → GBP → £/sh/d). **Phase 1** = exakte Umrechnung
+(Troy-/avoirdupois-Gewichte metallunabhängig; Währungs-Stückelungen wie £sd).
+**Phase 2 (Werte/Kurse) ist umgesetzt** (Wertmodus + Zielwährungs-Picker, grober
+datierter Snapshot + Kurs-Editor — siehe unten); die historische Preiskurve
+bleibt **Phase 3**. Vollständige Spezifikation + Roadmap:
+[`docs/asset-converter.md`](docs/asset-converter.md).
 
 - `lib/logic/asset_data.dart` — reine Daten, **wiederverwendet `Unit`/`UnitWorld`**
   (jeder v1-Faktor ist „Tier 1", exaktes Vielfaches; Anker grain = 0,06479891 g →
@@ -792,12 +794,21 @@ Spezifikation + Roadmap: [`docs/asset-converter.md`](docs/asset-converter.md).
   `keypad_parts.dart`-Bausteinen; die zwei rechten Tile-Spalten (8 Zellen) sind
   ein 3-Ebenen-Navigator. `lib/asset_page.dart` (`AssetBody`/`AssetPage`),
   Labels in `lib/asset_labels.dart` (Währungs-Tiles = ISO-Code).
-- Verdrahtung in `main.dart`: `_assetState` im `_CalcScaffoldState`, drittes
-  PageView-Kind, `_pagerProgress` clampt `[0,2]`, `_PagePeekOverlay` als
-  3-Karten-Schleife, `_handleAssetKey` für physische Tasten auf Seite 2, Basis-
-  Sync via `_assetState.setBase`. ARB: `pagerLabelAsset`, `assetClass*`,
-  `assetGenus*`, `assetValueHint` (DE+EN gepflegt, übrige 12 fallen vorerst auf
-  DE zurück — Übersetzung nachzuziehen).
+- Verdrahtung in `main.dart`: `_assetState` + `_rateStore` im
+  `_CalcScaffoldState`, drittes PageView-Kind, `_pagerProgress` clampt `[0,2]`,
+  `_PagePeekOverlay` als 3-Karten-Schleife, `_handleAssetKey` für physische
+  Tasten auf Seite 2, Basis-Sync via `_assetState.setBase`.
+- **Phase 2 (Werte/Kurse):** `lib/logic/rate_data.dart` (grober datierter
+  Snapshot, Pivot USD), `lib/rate_store.dart` (`RateStore`, SharedPreferences-
+  Overrides, pivot-geroutete Konversion), Wertmodus in `asset_state.dart`
+  (`drillLevel == valueTargets`, `valueLine` mit „≈"), „Wert"/„Kurse"-Tasten im
+  Keypad-Overlay, Kurs-Editor `lib/rates_page.dart`, `resultPrefix` („≈ ") im
+  geteilten `converter_display.dart`. **Opt-in-API nur als Doku**
+  (`docs/asset-rates-api.md`) — ausgeliefertes Binary netzwerkfrei,
+  `legal/privacy-*` unverändert.
+- ARB (`pagerLabelAsset`, `assetClass*`, `assetGenus*`, `assetValueHint` plus die
+  Phase-2-Keys `assetValueKey`/`assetRatesKey`/`assetRates*`/`assetValueNote`):
+  **alle 14 Sprachen vollständig übersetzt** (Subagenten-Pipeline).
 
 ### Intro
 

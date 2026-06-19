@@ -16,6 +16,7 @@ import 'calc_scope.dart';
 import 'asset_page.dart';
 import 'asset_state.dart';
 import 'converter_page.dart';
+import 'rate_store.dart';
 import 'converter_state.dart';
 import 'display.dart';
 import 'haptics.dart';
@@ -343,6 +344,11 @@ class _CalcScaffoldState extends State<_CalcScaffold> {
   /// page swipes. v1 has no result bridge (exact conversions only — prices /
   /// rates are Phase 2), but it does follow the global numeral base.
   final AssetState _assetState = AssetState();
+
+  /// Rate table for the value calculator (Phase 2): baked snapshot + persisted
+  /// user overrides. Injected into [_assetState] and handed to the rate editor.
+  final RateStore _rateStore = RateStore();
+
   final PageController _pageController = PageController();
 
   /// Currently visible pager page (0 = main calculator, 1 = converter,
@@ -422,6 +428,8 @@ class _CalcScaffoldState extends State<_CalcScaffold> {
     // The unit system stays converter-local (met/imp keys).
     _converterState.setBase(_state.activeBase);
     _assetState.setBase(_state.activeBase);
+    _assetState.rates = _rateStore;
+    _rateStore.load();
     _pageController.addListener(_onPagerScroll);
     WidgetsBinding.instance.addPostFrameCallback((_) => _maybeShowIntro());
   }
@@ -451,6 +459,7 @@ class _CalcScaffoldState extends State<_CalcScaffold> {
     _pageController.removeListener(_onPagerScroll);
     _converterState.dispose();
     _assetState.dispose();
+    _rateStore.dispose();
     _pageController.dispose();
     _focusNode.dispose();
     super.dispose();

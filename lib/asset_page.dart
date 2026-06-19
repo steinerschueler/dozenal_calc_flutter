@@ -9,12 +9,14 @@
 import 'package:flutter/material.dart';
 
 import 'app_layout.dart';
+import 'app_theme.dart';
 import 'asset_keypad.dart';
 import 'asset_labels.dart';
 import 'asset_state.dart';
 import 'converter_display.dart';
 import 'l10n/app_localizations.dart';
 import 'logic/unit_data.dart';
+import 'rates_page.dart';
 
 /// Embeddable asset-converter content: display + keypad, padded like the main
 /// calculator body. Expects Scaffold/SafeArea/Directionality(ltr) from its host.
@@ -31,40 +33,72 @@ class AssetBody extends StatelessWidget {
       child: LayoutBuilder(
         builder: (ctx, constraints) {
           final displayH = displayHeightFor(constraints.maxHeight);
+          // Listen to the rate store too, so an edited rate updates the value
+          // line immediately (the store is a separate ChangeNotifier).
+          final listenable = state.rates == null
+              ? state
+              : Listenable.merge([state, state.rates!]);
           return ListenableBuilder(
-            listenable: state,
-            builder: (ctx, _) => Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                SizedBox(
-                  height: displayH,
-                  child: ConverterDisplay(
-                    topLine: state.topLine,
-                    resultLine: state.resultLine,
-                    worldLabel: state.base == 12 ? 'DOZ' : 'DEZ',
-                    baseIsTen: state.base == 10,
-                    // Single-world genera (currencies) have no metric/imperial
-                    // axis, so their unit symbols must not flip hue with a
-                    // leftover (disabled) world toggle — pin them to the
-                    // Twelve-world violet (the duodecimal-money theme).
-                    systemIsTen:
-                        state.worldToggleEnabled && state.world == UnitWorld.metric,
-                    inputCaret: state.inputLayout.caret,
-                    onInputTapChar: state.handleInputTapAtChar,
+            listenable: listenable,
+            builder: (ctx, _) {
+              final t = AppColors.of(ctx);
+              // In value mode the result line shows the ≈ value in the chosen
+              // target currency instead of the exact ladder, with a small
+              // "≈ rate-based · as of <date>" note.
+              final inValue = state.valueMode;
+              final asOf = state.rateAsOf;
+              return Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  SizedBox(
+                    height: displayH,
+                    child: ConverterDisplay(
+                      topLine: state.topLine,
+                      resultLine:
+                          inValue ? state.valueLine : state.resultLine,
+                      resultPrefix: inValue ? '≈ ' : '= ',
+                      worldLabel: state.base == 12 ? 'DOZ' : 'DEZ',
+                      baseIsTen: state.base == 10,
+                      // Single-world genera (currencies) have no metric/
+                      // imperial axis, so their unit symbols must not flip hue
+                      // with a leftover (disabled) world toggle — pin them to
+                      // the Twelve-world violet (the duodecimal-money theme).
+                      systemIsTen: state.worldToggleEnabled &&
+                          state.world == UnitWorld.metric,
+                      inputCaret: state.inputLayout.caret,
+                      onInputTapChar: state.handleInputTapAtChar,
+                    ),
                   ),
-                ),
-                const SizedBox(height: 14),
-                Expanded(
-                  child: AssetKeypad(
-                    state: state,
-                    equalsHint: l.converterEqualsHint,
-                    valueHint: l.assetValueHint,
-                    classLabelOf: (c) => assetClassLabel(c, l),
-                    genusLabelOf: (g) => assetGenusLabel(g, l),
+                  if (inValue && asOf != null)
+                    Padding(
+                      padding: const EdgeInsets.only(top: 3, right: 2),
+                      child: Text(
+                        l.assetValueNote(asOf),
+                        textAlign: TextAlign.end,
+                        style: TextStyle(fontSize: 11, color: t.textFaint),
+                      ),
+                    ),
+                  const SizedBox(height: 14),
+                  Expanded(
+                    child: AssetKeypad(
+                      state: state,
+                      equalsHint: l.converterEqualsHint,
+                      valueHint: l.assetValueHint,
+                      valueLabel: l.assetValueKey,
+                      ratesLabel: l.assetRatesKey,
+                      onRatesTap: state.rates == null
+                          ? null
+                          : () => Navigator.of(ctx).push(MaterialPageRoute(
+                                builder: (_) =>
+                                    RatesPage(store: state.rates!),
+                              )),
+                      classLabelOf: (c) => assetClassLabel(c, l),
+                      genusLabelOf: (g) => assetGenusLabel(g, l),
+                    ),
                   ),
-                ),
-              ],
-            ),
+                ],
+              );
+            },
           );
         },
       ),

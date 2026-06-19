@@ -5,6 +5,7 @@
 import 'package:dozenal_calc_flutter/asset_state.dart';
 import 'package:dozenal_calc_flutter/logic/asset_data.dart';
 import 'package:dozenal_calc_flutter/logic/unit_data.dart';
+import 'package:dozenal_calc_flutter/rate_store.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -141,6 +142,74 @@ void main() {
       s.inputDigit(0); // "10" in base 12 = twelve
       s.setBase(10);
       expect(s.pendingInput, '12'); // twelve rendered in base 10
+    });
+  });
+
+  group('value mode (Phase 2)', () {
+    AssetGenus usd() =>
+        generaOf(AssetClass.currency).firstWhere((g) => g.key == 'usd');
+
+    void commitGoldOzt() {
+      s.setBase(10);
+      s.rates = RateStore();
+      s.tapClass(AssetClass.metal);
+      s.tapGenus(gold());
+      s.inputDigit(1);
+      s.tapMagnitude(unit(gold(), 'oz t'));
+    }
+
+    test('value key is inert without a rate store', () {
+      s.tapClass(AssetClass.metal);
+      s.tapGenus(gold());
+      s.inputDigit(1);
+      s.tapMagnitude(unit(gold(), 'oz t'));
+      expect(s.canEnterValueMode, isFalse); // no rates injected
+      s.enterValueMode();
+      expect(s.valueMode, isFalse);
+    });
+
+    test('1 oz t gold → ≈ value in a target currency', () {
+      commitGoldOzt();
+      expect(s.canEnterValueMode, isTrue);
+      s.enterValueMode();
+      expect(s.valueMode, isTrue);
+      expect(s.drillLevel, AssetDrillLevel.valueTargets);
+      s.setValueTarget('usd');
+      expect(s.valueLine!.unit, r'$');
+      expect(s.valueLine!.number, '2350'); // 1 oz × 2350 USD
+      s.setValueTarget('eur');
+      expect(s.valueLine!.unit, '€');
+      expect(s.valueLine!.number, startsWith('2162')); // 2350 × 0.92
+    });
+
+    test('currency cross-conversion: 100 USD → EUR', () {
+      s.setBase(10);
+      s.rates = RateStore();
+      s.tapClass(AssetClass.currency);
+      s.tapGenus(usd());
+      s.inputDigit(1);
+      s.inputDigit(0);
+      s.inputDigit(0);
+      s.tapMagnitude(unit(usd(), r'$'));
+      s.enterValueMode();
+      s.setValueTarget('eur');
+      expect(s.valueLine!.number, '92'); // 100 USD × 0.92
+    });
+
+    test('editing a digit drops back out of value mode', () {
+      commitGoldOzt();
+      s.enterValueMode();
+      expect(s.valueMode, isTrue);
+      s.inputDigit(2);
+      expect(s.valueMode, isFalse);
+      expect(s.drillLevel, AssetDrillLevel.units);
+    });
+
+    test('toggle off returns to the exact ladder', () {
+      commitGoldOzt();
+      s.enterValueMode();
+      s.toggleValueMode();
+      expect(s.valueMode, isFalse);
     });
   });
 
