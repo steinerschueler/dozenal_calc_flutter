@@ -65,7 +65,7 @@ in v1 leer (Phase 2).
 
 ## Konversionslogik (`lib/logic/asset_convert.dart`)
 
-`assetNextInLadder`, `assetBracketPartner`/`assetBracketValue` (metals: nächster
+`assetNextInLadder`, `assetBracketPartner` (metals: nächster
 Partner im Gegen-System; singleWorld: kein Partner → State zeigt Gegen-Basis),
 `assetBreakdown` (mixed-radix; **Floor-Epsilon 1e-9** gegen f64-Undershoot der
 kg-basierten Troy-Faktoren). `convert` wird aus `unit_convert.dart` reexportiert.

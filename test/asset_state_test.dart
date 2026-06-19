@@ -211,6 +211,51 @@ void main() {
       s.toggleValueMode();
       expect(s.valueMode, isFalse);
     });
+
+    void commit100Usd() {
+      s.setBase(10);
+      s.rates = RateStore();
+      s.tapClass(AssetClass.currency);
+      s.tapGenus(usd());
+      s.inputDigit(1);
+      s.inputDigit(0);
+      s.inputDigit(0);
+      s.tapMagnitude(unit(usd(), r'$'));
+    }
+
+    test('setValueTarget refuses the source currency (no self-conversion)', () {
+      commit100Usd();
+      s.enterValueMode();
+      s.setValueTarget('usd'); // the source — must be refused
+      expect(s.valueTarget, isNot('usd'));
+    });
+
+    test('re-entering value mode re-validates a stale source target', () {
+      s.setBase(10);
+      s.rates = RateStore();
+      // First a gold quantity valued in USD.
+      s.tapClass(AssetClass.metal);
+      s.tapGenus(gold());
+      s.inputDigit(1);
+      s.tapMagnitude(unit(gold(), 'oz t'));
+      s.enterValueMode();
+      s.setValueTarget('usd');
+      s.exitValueMode();
+      // Switch to a USD source — the 'usd' target is now stale (== source).
+      s.tapClass(AssetClass.currency);
+      s.tapGenus(usd());
+      s.inputDigit(1);
+      s.tapMagnitude(unit(usd(), r'$'));
+      s.enterValueMode();
+      expect(s.valueTarget, isNot('usd')); // re-validated off the source
+    });
+
+    test('= is inert in value mode (no hidden ladder cycling)', () {
+      commitGoldOzt();
+      s.enterValueMode();
+      s.equals();
+      expect(s.valueMode, isTrue);
+    });
   });
 
   test('AC resets the whole drill-down', () {

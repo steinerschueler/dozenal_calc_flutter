@@ -193,3 +193,13 @@ final Map<AssetClass, List<AssetGenus>> kAssetCatalogue = {
 
 /// Genera of [c] (the keypad's genus tiles).
 List<AssetGenus> generaOf(AssetClass c) => kAssetCatalogue[c] ?? const [];
+
+/// The display symbol of a currency genus (its major unit, e.g. usd → "$"),
+/// or the uppercased key as a fallback. Shared by the value line and the rate
+/// editor.
+String currencySymbol(String key) {
+  for (final g in generaOf(AssetClass.currency)) {
+    if (g.key == key) return g.units.first.symbol;
+  }
+  return key.toUpperCase();
+}

@@ -57,6 +57,13 @@ void main() {
     expect(s.hasCurrencyOverride('eur'), isFalse);
   });
 
+  test('the pivot rate (USD = 1) cannot be overridden', () {
+    final s = RateStore();
+    s.setCurrencyOverride(s.pivot, 1.1);
+    expect(s.hasCurrencyOverride(s.pivot), isFalse);
+    expect(s.currencyRate(s.pivot), 1.0);
+  });
+
   test('overrides persist across a reload', () async {
     final s1 = RateStore();
     await s1.load();

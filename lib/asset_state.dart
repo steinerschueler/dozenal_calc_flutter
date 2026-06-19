@@ -2,17 +2,21 @@
 // metals & currencies). A ChangeNotifier closely analogous to ConverterState,
 // but with THREE hierarchies — Klasse → Gattung → Einheit — instead of two.
 //
-// v1 = EXACT conversions only (no prices/rates; those are Phase 2):
+// Exact layer (Phase 1):
 //   - metal genera share one troy/avoirdupois weight ladder; the genus is
-//     inert for pure weight (a "Spotwert folgt" hint explains it).
-//   - currency genera each carry their own exact denomination ladder; cross-
-//     currency conversion is inert until the rate layer lands.
+//     inert for pure weight (it gains meaning via the value mode).
+//   - currency genera each carry their own exact denomination ladder.
+//
+// Value layer (Phase 2, here): value mode converts the committed quantity into
+// a chosen target currency via the injected [rates] (RateStore), shown as an
+// "≈" value line. Cross-currency and metal-spot valuation live here; the
+// historical price curve (Phase 3) does not.
 //
 // Interaction model mirrors ConverterState (compound terms, scalar-entry
 // operators, an edit caret, the `=` ladder/breakdown cycle, the met/imp world
-// toggle and the decoupled numeral base). The only structural addition is the
-// drill-down: tap a class → its genera; tap a genus → its unit ladder; tap a
-// unit → commit. Tapping the active class/genus header steps back up a level.
+// toggle and the decoupled numeral base). The structural additions are the
+// drill-down (tap a class → its genera; a genus → its unit ladder; a unit →
+// commit; the active header steps back) and the value mode + target picker.
 //
 // Design + roadmap: docs/asset-converter.md.
 
@@ -140,7 +144,14 @@ class AssetState extends ChangeNotifier {
   void enterValueMode() {
     if (!canEnterValueMode) return;
     _valueMode = true;
-    _valueTarget ??= _defaultValueTarget();
+    // Re-validate the (sticky) target: a target left over from a previous
+    // quantity must not equal the current currency source — that would be a
+    // meaningless self-conversion. A null target also gets the default.
+    if (_valueTarget == null ||
+        (_activeClass == AssetClass.currency &&
+            _valueTarget == _activeGenus?.key)) {
+      _valueTarget = _defaultValueTarget();
+    }
     notifyListeners();
   }
 
@@ -153,6 +164,12 @@ class AssetState extends ChangeNotifier {
   void toggleValueMode() => _valueMode ? exitValueMode() : enterValueMode();
 
   void setValueTarget(String currencyKey) {
+    // Refuse the source currency itself — valuing a currency in itself is a
+    // meaningless identity (the source tile is also hidden in the picker).
+    if (_activeClass == AssetClass.currency &&
+        currencyKey == _activeGenus?.key) {
+      return;
+    }
     _valueTarget = currencyKey;
     notifyListeners();
   }
@@ -171,13 +188,6 @@ class AssetState extends ChangeNotifier {
       if (g.key != src) return g.key;
     }
     return currencies.first.key;
-  }
-
-  String _currencySymbol(String key) {
-    for (final g in generaOf(AssetClass.currency)) {
-      if (g.key == key) return g.units.first.symbol;
-    }
-    return key.toUpperCase();
   }
 
   /// The ≈ value line shown in value mode: the committed quantity converted to
@@ -204,7 +214,7 @@ class AssetState extends ChangeNotifier {
     final value = r.currencyFromPivot(pivot, target);
     if (!value.isFinite) return null;
     return ConverterLine(formatBaseNum(value, base),
-        unit: _currencySymbol(target));
+        unit: currencySymbol(target));
   }
 
   /// True when the met/imp keys do anything: only a non-single-world genus
@@ -548,6 +558,9 @@ class AssetState extends ChangeNotifier {
   }
 
   void equals() {
+    // In value mode the result line shows the ≈ value, not the ladder, so `=`
+    // is inert (it must not silently cycle the hidden exact-result step).
+    if (_valueMode) return;
     final count = _resultViewCount;
     if (_terms.isEmpty || count <= 0) return;
     _resultStep = (_resultStep < 0 ? 0 : (_resultStep + 1) % count);

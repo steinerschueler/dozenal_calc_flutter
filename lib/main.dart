@@ -11,12 +11,11 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import 'app_layout.dart';
 import 'app_theme.dart';
-import 'calc_prefs.dart';
-import 'calc_scope.dart';
 import 'asset_page.dart';
 import 'asset_state.dart';
+import 'calc_prefs.dart';
+import 'calc_scope.dart';
 import 'converter_page.dart';
-import 'rate_store.dart';
 import 'converter_state.dart';
 import 'display.dart';
 import 'haptics.dart';
@@ -28,6 +27,7 @@ import 'locale_notifier.dart';
 import 'logic/base_num.dart';
 import 'logic/dozenal_digit.dart';
 import 'logic/glyph_style.dart';
+import 'rate_store.dart';
 import 'state.dart';
 import 'tokens.dart';
 

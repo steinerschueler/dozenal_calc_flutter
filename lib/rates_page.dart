@@ -68,13 +68,6 @@ class _RatesPageState extends State<RatesPage> {
     return key.toUpperCase();
   }
 
-  String _currencySymbol(String key) {
-    for (final g in generaOf(AssetClass.currency)) {
-      if (g.key == key) return g.units.first.symbol;
-    }
-    return '';
-  }
-
   @override
   Widget build(BuildContext context) {
     final l = AppLocalizations.of(context);
@@ -103,19 +96,23 @@ class _RatesPageState extends State<RatesPage> {
               ),
               const SizedBox(height: 18),
               _sectionHeader(l.assetRatesCurrencies(pivot), t),
+              // The pivot currency is the reference (rate ≡ 1) and is not
+              // editable — skip its row.
               for (final k in _s.currencyKeys)
-                _rateRow(
-                  label: '${k.toUpperCase()}  ${_currencySymbol(k)}'.trim(),
-                  controller: _cur[k]!,
-                  overridden: _s.hasCurrencyOverride(k),
-                  onChanged: (v) => _s.setCurrencyOverride(k, v),
-                  onReset: () {
-                    _s.clearCurrencyOverride(k);
-                    _cur[k]!.text = _fmt(_s.snapshotCurrencyRate(k));
-                  },
-                  l: l,
-                  t: t,
-                ),
+                if (k != _s.pivot)
+                  _rateRow(
+                    label: '${k.toUpperCase()}  ${currencySymbol(k)}'.trim(),
+                    controller: _cur[k]!,
+                    overridden: _s.hasCurrencyOverride(k),
+                    onChanged: (v) => _s.setCurrencyOverride(k, v),
+                    onClear: () => _s.clearCurrencyOverride(k),
+                    onReset: () {
+                      _s.clearCurrencyOverride(k);
+                      _cur[k]!.text = _fmt(_s.snapshotCurrencyRate(k));
+                    },
+                    l: l,
+                    t: t,
+                  ),
               const SizedBox(height: 18),
               _sectionHeader(l.assetRatesMetals(pivot), t),
               for (final k in _s.metalKeys)
@@ -124,6 +121,7 @@ class _RatesPageState extends State<RatesPage> {
                   controller: _met[k]!,
                   overridden: _s.hasMetalOverride(k),
                   onChanged: (v) => _s.setMetalOverride(k, v),
+                  onClear: () => _s.clearMetalOverride(k),
                   onReset: () {
                     _s.clearMetalOverride(k);
                     _met[k]!.text = _fmt(_s.snapshotMetalSpot(k));
@@ -173,6 +171,7 @@ class _RatesPageState extends State<RatesPage> {
     required TextEditingController controller,
     required bool overridden,
     required ValueChanged<double> onChanged,
+    required VoidCallback onClear,
     required VoidCallback onReset,
     required AppLocalizations l,
     required AppColors t,
@@ -217,6 +216,12 @@ class _RatesPageState extends State<RatesPage> {
                 ),
               ),
               onChanged: (s) {
+                // Empty/invalid field → drop the override (so the shown field
+                // and the stored rate never diverge); a valid value sets it.
+                if (s.trim().isEmpty) {
+                  onClear();
+                  return;
+                }
                 final v = double.tryParse(s.replaceAll(',', '.'));
                 if (v != null && v.isFinite && v > 0) onChanged(v);
               },

@@ -5,9 +5,10 @@
 import 'dart:math' as math;
 
 import 'asset_data.dart';
-import 'unit_convert.dart' show convert;
 import 'unit_data.dart';
 
+// `convert` is re-exported for consumers (asset_state) — this file no longer
+// calls it directly.
 export 'unit_convert.dart' show convert;
 
 /// Step to the next unit in [unit]'s visible ladder for [genus] in [world],
@@ -42,14 +43,6 @@ Unit? assetBracketPartner(AssetGenus genus, Unit unit) {
     }
   }
   return best;
-}
-
-/// The value shown in the `{ }` bracket, or null when there is no cross-world
-/// partner (single-world genera).
-double? assetBracketValue(AssetGenus genus, Unit unit, double value) {
-  final partner = assetBracketPartner(genus, unit);
-  if (partner == null) return null;
-  return convert(value, unit, partner);
 }
 
 /// Greedy mixed-radix breakdown of [totalBase] into [genus]'s cascade

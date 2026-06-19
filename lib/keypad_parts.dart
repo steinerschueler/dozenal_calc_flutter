@@ -257,6 +257,10 @@ class LabelButton extends StatefulWidget {
   /// "more in the … theory" pointer). Null → no long-press box.
   final ({String desc, String more})? info;
 
+  /// When false the tile is inert: no tap, no haptics, no long-press, and it
+  /// reports `button: false` to a11y (callers also grey it via [colorOf]).
+  final bool enabled;
+
   const LabelButton({
     super.key,
     required this.label,
@@ -265,6 +269,7 @@ class LabelButton extends StatefulWidget {
     this.softGold = false,
     required this.onTap,
     this.info,
+    this.enabled = true,
   });
 
   @override
@@ -281,16 +286,21 @@ class _LabelButtonState extends State<LabelButton> {
   @override
   Widget build(BuildContext context) {
     final t = AppColors.of(context);
+    final enabled = widget.enabled;
     return GestureDetector(
       behavior: HitTestBehavior.opaque,
-      onTapDown: (_) => _set(true),
-      onTapUp: (_) => _set(false),
-      onTapCancel: () => _set(false),
-      onTap: () {
-        if (HapticsScope.enabledOf(context)) HapticFeedback.lightImpact();
-        widget.onTap();
-      },
-      onLongPress: widget.info == null
+      onTapDown: enabled ? (_) => _set(true) : null,
+      onTapUp: enabled ? (_) => _set(false) : null,
+      onTapCancel: enabled ? () => _set(false) : null,
+      onTap: !enabled
+          ? null
+          : () {
+              if (HapticsScope.enabledOf(context)) {
+                HapticFeedback.lightImpact();
+              }
+              widget.onTap();
+            },
+      onLongPress: (!enabled || widget.info == null)
           ? null
           : () {
               if (HapticsScope.enabledOf(context)) {

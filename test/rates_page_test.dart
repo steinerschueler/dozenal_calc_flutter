@@ -33,8 +33,8 @@ void main() {
     await tester.pumpWidget(_app(store));
     await tester.pumpAndSettle();
 
-    // Currency fields render in snapshot order (usd, eur, …) → EUR is index 1.
-    await tester.enterText(find.byType(TextField).at(1), '0.9');
+    // The pivot (USD) row is skipped, so EUR is the first currency field.
+    await tester.enterText(find.byType(TextField).at(0), '0.9');
     await tester.pump();
     expect(store.currencyRate('eur'), closeTo(0.9, 1e-9));
     expect(store.hasCurrencyOverride('eur'), isTrue);

@@ -221,8 +221,14 @@ class AssetKeypad extends StatelessWidget {
           cells.add(_unitCell(u));
         }
       case AssetDrillLevel.valueTargets:
-        // Value mode: the drill area becomes a currency target picker.
+        // Value mode: the drill area becomes a currency target picker. The
+        // source currency itself is excluded — valuing it in itself is a
+        // meaningless identity (the state also rejects it).
+        final srcKey = state.activeClass == AssetClass.currency
+            ? state.activeGenus?.key
+            : null;
         for (final g in generaOf(AssetClass.currency)) {
+          if (g.key == srcKey) continue;
           cells.add(_targetCell(g));
         }
     }
@@ -394,17 +400,18 @@ class AssetKeypad extends StatelessWidget {
       label: valueLabel ?? 'Wert',
       colorOf: (t) => active ? t.accentGold : (enabled ? t.op : t.inertKey),
       gold: active,
-      onTap: () {
-        if (enabled) state.toggleValueMode();
-      },
+      enabled: enabled,
+      onTap: state.toggleValueMode,
     );
   }
 
   /// "Kurse" key — opens the rate editor.
   Widget _ratesCell() {
+    final enabled = onRatesTap != null;
     return LabelButton(
       label: ratesLabel ?? 'Kurse',
-      colorOf: (t) => onRatesTap == null ? t.inertKey : t.op,
+      colorOf: (t) => enabled ? t.op : t.inertKey,
+      enabled: enabled,
       onTap: () => onRatesTap?.call(),
     );
   }
@@ -502,22 +509,24 @@ class AssetKeypad extends StatelessWidget {
 
     final h = constraints.maxHeight;
     final w = constraints.maxWidth;
-    // 13 button-columns horizontally (3 digit + 5 + 5), 10 inner + 2 group gaps.
+    // 11 button-columns horizontally (3 digit + Set1/Set2/drillA/drillB/system
+    // + Set6/Set7/value-rates = 3 + 8), with 8 inner (interBlockGap) gaps + 2
+    // group gaps. (The asset keypad is one block shorter than the converter's.)
     final rawH = h.isFinite
         ? (h - 3 * interBlockGap - verticalContentGap) / 5
         : tabletButtonSize;
     final rawW = w.isFinite
-        ? (w - 10 * interBlockGap - 2 * groupGapBase) / 13
+        ? (w - 8 * interBlockGap - 2 * groupGapBase) / 11
         : tabletButtonSize;
     final buttonSize =
         math.min(rawH, rawW).clamp(breitMinTouchTarget, tabletButtonSize);
 
     final baseNaturalWidth =
-        13 * buttonSize + 10 * interBlockGap + 2 * groupGapBase;
+        11 * buttonSize + 8 * interBlockGap + 2 * groupGapBase;
     final hSlack = w.isFinite ? math.max(0.0, w - baseNaturalWidth) : 0.0;
     final groupGap =
         (groupGapBase + hSlack / 2).clamp(groupGapBase, maxGroupGap);
-    final contentWidth = 13 * buttonSize + 10 * interBlockGap + 2 * groupGap;
+    final contentWidth = 11 * buttonSize + 8 * interBlockGap + 2 * groupGap;
 
     final content = _buildBreitContent(
       buttonSize: buttonSize,

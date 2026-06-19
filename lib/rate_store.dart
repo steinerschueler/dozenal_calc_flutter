@@ -61,6 +61,9 @@ class RateStore extends ChangeNotifier {
   // ── Overrides ──────────────────────────────────────────────────────────
 
   void setCurrencyOverride(String key, double value) {
+    // The pivot's own rate is definitionally 1.0 — it anchors every conversion
+    // and must never be overridden.
+    if (key == pivot) return;
     if (!value.isFinite || value <= 0) return;
     _curOverride[key] = value;
     _prefs?.setDouble('$_curPrefix$key', value);
