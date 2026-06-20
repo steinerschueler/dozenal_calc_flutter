@@ -1246,3 +1246,160 @@ List<ManualChapter> _converterManualChaptersCy() => const [
     ),
   ]),
 ];
+
+List<ManualChapter> _assetManualChaptersCy() => const [
+  ManualChapter('Y drydedd gyfrifiannell', [
+    _P(
+      'Y tu ôl i\'r trawsnewidydd unedau mae trydedd gyfrifiannell: y '
+      'trawsnewidydd gwerth. Mae\'n trosi pwysau metelau gwerthfawr a '
+      'darnau arian arianyddau yn union, yn amcangyfrif eu gwerth mewn '
+      'arian arweiniol, ac yn cymharu sut y mae\'r gwerth hwnnw wedi dal '
+      'ei dir dros y canrifoedd.'
+    ),
+    _H('Yn ôl ac ymlaen'),
+    _P(
+      'Sweipiwch ddwywaith i\'r chwith ar y brif gyfrifiannell — heibio '
+      'i\'r trawsnewidydd unedau — ac fe ymddengys y trawsnewidydd '
+      'gwerth. Mae sweipio i\'r dde yn eich arwain yn ôl gam wrth gam. '
+      'Mae\'r ddau gerdyn tryloyw wrth newid yn dangos eto ar ba ochr yr '
+      'ydych; yr un ag ymyl aur yw\'r ochr weithredol.'
+    ),
+    _P(
+      'Fel y cyfrifianellau eraill, mae\'r trawsnewidydd gwerth yn cadw '
+      'ei fewnbwn wrth newid tudalen. Mae\'r olwg yr un fath â\'r '
+      'trawsnewidydd unedau — dim ond y colofnau bysellau ar y dde sy\'n '
+      'arwain un lefel yn ddyfnach.'
+    ),
+  ]),
+  ManualChapter('Dosbarth, math, uned', [
+    _P(
+      'Tra bod y trawsnewidydd unedau yn adnabod dwy lefel (categori ac '
+      'uned), mae gan y trawsnewidydd gwerth dair: dosbarth, math ac '
+      'uned. Rydych yn teipio drwy drosiad o\'r brig i\'r gwaelod.'
+    ),
+    _H('Y tair lefel'),
+    _P(
+      'Yn y ddwy golofn fysellau ar y dde, saif y dosbarthiadau yn '
+      'gyntaf: metel gwerthfawr ac arian. Os tapiwch un, ymddengys ei '
+      'fathau — gyda metel gwerthfawr, megis aur, arian, platinwm a '
+      'phaladiwm; gydag arian, y talfyriadau arianyddol. Os tapiwch fath, '
+      'ymddengys ei unedau. Mae tap ar uned yn ei chymryd fel term.'
+    ),
+    _H('Yn ôl un lefel'),
+    _P(
+      'Mae\'r dosbarth neu\'r math a ddewiswyd yn aros ar y brig yn y '
+      'golofn dde — ag ymyl aur — ac yn gweithredu fel naid yn ôl: mae '
+      'tap arno yn eich arwain un lefel yn uwch. Felly nid oes dim yn '
+      'neidio yn ôl ac ymlaen, ac rydych bob amser yn gweld ymhle\'r '
+      'ydych ar hyn o bryd.'
+    ),
+    _H('Y fysell ='),
+    _P(
+      'Fel yn y trawsnewidydd unedau, mae pob gwasgiad ar = yn dangos yr '
+      'un maint yn yr uned nesaf; gyda phwysau troy, daw\'r nodiant '
+      'cymysg ar y diwedd (megis „1 lb t 2 oz t 3 dwt"). Mae newid '
+      'dosbarth neu fath yn taflu\'r termau gorffenedig, ond erys rhif '
+      'sydd eisoes wedi\'i deipio.'
+    ),
+  ]),
+  ManualChapter('Metrig ac imperial ar yr un pryd', [
+    _H('Y ddwy system ar unwaith'),
+    _P(
+      'Nid oes gan y trawsnewidydd gwerth fysellau met/imp. Cyn gynted ag '
+      'y tapiwch i mewn i fath o fetel, saif y ddwy system yno ar yr un '
+      'pryd: yr unedau troy imperial (gr, dwt, oz t, lb t) mewn un '
+      'golofn, y rhai metrig (g, kg) yn y llall. Rydych yn tapio\'r un a '
+      'ddymunwch yn syml — mae\'r byd gweithredol yn dilyn yr uned y bu i '
+      'chi ei mewnbynnu ddiwethaf.'
+    ),
+    _H('Y lliwiau'),
+    _P(
+      'Mae\'r cod lliw yr un fath ag yn y trawsnewidydd unedau: mae '
+      'fioled yn sefyll am fyd y deuddeg (unedau imperial a ffigurau '
+      'deuddegol), gwyrdd am fyd y deg (unedau metrig a ffigurau degol). '
+      'Mae\'r symbol uned yn gwisgo lliw ei system, mae\'r gromfach '
+      'gyrliog yn dangos yr un gwerth yn y system arall yn ei lliw '
+      'hithau, a\'r arwydd DOZ/DEZ yn lliw y bôn. Nid oes gan arianyddau '
+      'echel byd — erys eu symbolau yn fioled.'
+    ),
+    _H('Deuddegol neu ddegol'),
+    _P(
+      'Newidiwch fôn y ffigurau fel gyda\'r cyfrifianellau eraill dan y '
+      'Gosodiadau → System rifau; mae\'n berthnasol i\'r tair '
+      'cyfrifiannell gyda\'i gilydd ac yn annibynnol ar y system unedau.'
+    ),
+  ]),
+  ManualChapter('Y cof a\'r bysellau eraill', [
+    _H('Y cof'),
+    _P(
+      'Tra na bo dosbarth wedi\'i ddewis eto, yn y chwith o\'r ddwy '
+      'golofn dde y saif y bysellau cof STO, RCL, MC ac Ans. Os dewiswch '
+      'ddosbarth, daw\'r mathau i\'w lle yno — mae\'r cof yn rhannu\'r '
+      'lle â\'r drilio. Mae STO yn cofio gwerth llinell y canlyniad, RCL '
+      'yn ei fewnosod, MC yn ei glirio; mae Ans yn cyrchu canlyniad '
+      'diwethaf y brif gyfrifiannell draw. Mae llwyd yn golygu gwag neu '
+      'ddim ar gael.'
+    ),
+    _H('Gwerth, cyfrifo a chlirio'),
+    _P(
+      'Mae\'r fysell Gwerth yn eistedd yn sefydlog yn rhes y system ac yn '
+      'dod yn barod cyn gynted ag y saif term (gweler y bennod nesaf). '
+      'Mae\'r gweithredwyr sgalar (× ÷ ⊕ ^ √ ㏒) yn gadael i\'r rhif a '
+      'deipiwyd fod yn gyfrifiad bach ei hun, fel yn y trawsnewidydd '
+      'unedau. Mae AC yn clirio popeth, a Del y cymeriad o\'i flaen.'
+    ),
+  ]),
+  ManualChapter('Gwerth: trosi i arian', [
+    _P(
+      'Y tu hwnt i\'r trosiad pwysau union, gall y trawsnewidydd gwerth '
+      'amcangyfrif gwerth arian bras.'
+    ),
+    _H('Y modd gwerth'),
+    _P(
+      'Teipiwch faint a\'i gymryd fel uned — megis „5" a „oz t" o aur. '
+      'Bellach mae\'r fysell Gwerth yn troi\'n las. Mae tap arni yn '
+      'trawsnewid y drilio yn ddetholiad o arianyddau targed; os tapiwch '
+      'un, mae llinell y canlyniad yn dangos y gwerth gyda „≈" o\'i flaen '
+      'a nodyn bach, dyddiedig oddi tano.'
+    ),
+    _H('Y cyfraddau'),
+    _P(
+      'Mae\'r cyfraddau sylfaenol yn werthoedd cyfeiriol bras, dyddiedig. '
+      'Mae\'r fysell Cyfraddau ar y gwaelod ar y dde yn agor golygydd lle '
+      'gallwch drosysgrifo pob cyfradd; mae ailosod yn adfer y gwerthoedd '
+      'adeiledig.'
+    ),
+    _H('Dim rhwydwaith'),
+    _P(
+      'Nid yw\'r ap yn nôl dim o\'r rhyngrwyd — mae\'r „≈" yn golygu '
+      '„bras, ar sail cyfradd", byth „byw". Rydych yn cadw\'r '
+      'cyfraddau\'n gyfredol eich hun, megis yn ôl Kitco ar gyfer metelau '
+      'neu\'r ECB ar gyfer arianyddau.'
+    ),
+  ]),
+  ManualChapter('Cromlin: y gymhariaeth hanesyddol', [
+    _P(
+      'Mae\'r fysell Cromlin — y cylch chwith wrth ymyl bar yr hafal — yn '
+      'disodli\'r bysellfwrdd â siart; mae\'r × ar y brig yn ei gau eto.'
+    ),
+    _H('Y tair rhes'),
+    _P(
+      'Caiff popeth ei fesur yn erbyn aur: arian mewn aur, grawn mewn '
+      'aur, ac aur mewn grawn — hynny yw, gallu prynu aur mewn bwyd. '
+      'Caiff pob rhes ei chyfeirio at ei gwerth hysbys hynaf; saif hwnnw '
+      'fel llinell sero drwchus yn y canol. Mae uwchlaw\'r llinell yn '
+      'golygu drytach, oddi tani\'n rhatach, y naill a\'r llall yn '
+      'berthynol i aur.'
+    ),
+    _H('Darllen a symud'),
+    _P(
+      'Mae llusgo yn symud y darlun, mae pinsio yn chwyddo, ac mae\'r '
+      'botwm ar y dde yn chwyddo\'n llwyr allan hyd at y cynfyd. Yn '
+      'ddiofyn, mae\'r gromlin yn dangos y can mlynedd diwethaf neu fwy. '
+      'Y band cysgodol o amgylch pwyntiau\'r cynfyd yw\'r amrediad '
+      'amcangyfrifedig — mae\'r cynfyd yn cynnwys cylchoedd unigol '
+      '(meintiau bras yn unig), ac ni red unrhyw linell dros fwlch. Mae '
+      'llinell y ffynonellau yn rhestru\'r set ddata.'
+    ),
+  ]),
+];

@@ -1266,3 +1266,164 @@ List<ManualChapter> _converterManualChaptersFr() => const [
     ),
   ]),
 ];
+
+List<ManualChapter> _assetManualChaptersFr() => const [
+  ManualChapter('La troisième calculatrice', [
+    _P(
+      'Derrière le convertisseur d\'unités se trouve une troisième '
+      'calculatrice : la calculatrice de valeurs. Elle convertit '
+      'exactement les poids des métaux précieux et les coupures des '
+      'monnaies, estime leur valeur dans une monnaie de référence et '
+      'compare comment cette valeur s\'est maintenue au fil des siècles.'
+    ),
+    _H('Aller et revenir'),
+    _P(
+      'Glissez deux fois vers la gauche sur la calculatrice principale — '
+      'par-dessus le convertisseur d\'unités — et la calculatrice de '
+      'valeurs apparaît. Glisser vers la droite ramène pas à pas en '
+      'arrière. Au changement, les deux cartes translucides indiquent de '
+      'nouveau sur quelle page vous vous trouvez ; celle bordée d\'or est '
+      'la page active.'
+    ),
+    _P(
+      'Comme les autres calculatrices, la calculatrice de valeurs '
+      'conserve sa saisie au changement de page. L\'aspect est le même '
+      'que celui du convertisseur d\'unités — seules les colonnes de '
+      'touches de droite mènent un niveau plus bas.'
+    ),
+  ]),
+  ManualChapter('Classe, genre, unité', [
+    _P(
+      'Alors que le convertisseur d\'unités connaît deux niveaux '
+      '(catégorie et unité), la calculatrice de valeurs en a trois : '
+      'classe, genre et unité. Une conversion se tape de haut en bas.'
+    ),
+    _H('Les trois niveaux'),
+    _P(
+      'Les deux colonnes de touches de droite affichent d\'abord les '
+      'classes : Métal précieux et Monnaie. Si vous en touchez une, ses '
+      'genres apparaissent — pour les métaux précieux par exemple Or, '
+      'Argent, Platine et Palladium ; pour les monnaies les codes des '
+      'devises. Si vous touchez un genre, ses unités apparaissent. Un '
+      'appui sur une unité la reprend comme terme.'
+    ),
+    _H('Revenir d\'un niveau'),
+    _P(
+      'La classe ou le genre choisi reste affiché en haut de la colonne '
+      'de droite — bordé d\'or — et sert de retour : un appui dessus mène '
+      'un niveau plus haut. Ainsi rien ne saute en tous sens, vous voyez '
+      'toujours où vous vous trouvez.'
+    ),
+    _H('La touche ='),
+    _P(
+      'Comme dans le convertisseur d\'unités, chaque appui sur = affiche '
+      'la même grandeur dans l\'unité suivante ; pour les poids troy, la '
+      'notation mixte vient en dernier (par exemple « 1 lb t 2 oz t 3 dwt '
+      '»). Un changement de classe ou de genre abandonne les termes '
+      'achevés, mais un nombre déjà tapé reste en place.'
+    ),
+  ]),
+  ManualChapter('Métrique et impérial à la fois', [
+    _H('Les deux systèmes en même temps'),
+    _P(
+      'La calculatrice de valeurs n\'a pas de touches met/imp. Dès que '
+      'vous entrez dans un genre de métal, les deux systèmes s\'affichent '
+      'simultanément : les unités troy impériales (gr, dwt, oz t, lb t) '
+      'dans une colonne, les métriques (g, kg) dans l\'autre. Vous '
+      'touchez simplement celle voulue — le monde de travail se règle '
+      'selon l\'unité dans laquelle vous avez saisi en dernier.'
+    ),
+    _H('Les couleurs'),
+    _P(
+      'Le code couleur est le même que dans le convertisseur d\'unités : '
+      'le violet représente le monde du douze (unités impériales et '
+      'chiffres duodécimaux), le vert le monde du dix (unités métriques '
+      'et chiffres décimaux). Le symbole d\'unité porte la couleur de son '
+      'système, l\'accolade montre la même valeur dans l\'autre système '
+      'dans sa couleur, le signe DOZ/DEZ la couleur de la base. Les '
+      'monnaies n\'ont pas d\'axe de mondes — leurs symboles restent '
+      'violets.'
+    ),
+    _H('Duodécimal ou décimal'),
+    _P(
+      'La base numérique se change, comme pour les autres calculatrices, '
+      'sous Réglages → Base numérique ; elle vaut pour les trois '
+      'calculatrices à la fois et est indépendante du système d\'unités.'
+    ),
+  ]),
+  ManualChapter('La mémoire et les autres touches', [
+    _H('La mémoire'),
+    _P(
+      'Tant qu\'aucune classe n\'est choisie, la gauche des deux colonnes '
+      'de droite contient les touches de mémoire STO, RCL, MC et Ans. Si '
+      'vous choisissez une classe, les genres prennent leur place — la '
+      'mémoire partage l\'emplacement avec la navigation. STO mémorise la '
+      'valeur de la ligne de résultat, RCL la réinsère, MC l\'efface ; '
+      'Ans ramène le dernier résultat de la calculatrice principale. '
+      'Grisé signifie vide ou rien de disponible.'
+    ),
+    _H('Valeur, calcul et effacement'),
+    _P(
+      'La touche Valeur est fixée dans la rangée du système et s\'arme '
+      'dès qu\'un terme est posé (voir le chapitre suivant). Les '
+      'opérateurs scalaires (× ÷ ⊕ ^ √ ㏒) permettent au nombre tapé '
+      'd\'être lui-même un petit calcul, comme dans le convertisseur '
+      'd\'unités. AC efface tout, Del le caractère qui précède.'
+    ),
+  ]),
+  ManualChapter('Valeur : convertir en une monnaie', [
+    _P(
+      'Au-delà de la conversion exacte des poids, la calculatrice de '
+      'valeurs peut estimer une valeur monétaire approximative.'
+    ),
+    _H('Le mode valeur'),
+    _P(
+      'Tapez une quantité et reprenez-la comme unité — par exemple « 5 » '
+      'et « oz t » d\'or. La touche Valeur devient alors bleue. Un appui '
+      'dessus transforme la navigation en une sélection de monnaies '
+      'cibles ; si vous en touchez une, la ligne de résultat affiche la '
+      'valeur précédée d\'un « ≈ » et suivie d\'une petite indication '
+      'datée en dessous.'
+    ),
+    _H('Les cours'),
+    _P(
+      'Les cours sous-jacents sont des valeurs indicatives approximatives '
+      'et datées. La touche Cours en bas à droite ouvre un éditeur dans '
+      'lequel vous pouvez remplacer chaque cours ; une réinitialisation '
+      'rétablit les valeurs intégrées.'
+    ),
+    _H('Pas de réseau'),
+    _P(
+      'L\'application ne récupère rien sur Internet — le « ≈ » signifie « '
+      'approximatif, fondé sur les cours », jamais « en direct ». Vous '
+      'tenez les cours à jour vous-même, par exemple d\'après Kitco pour '
+      'les métaux ou la BCE pour les monnaies.'
+    ),
+  ]),
+  ManualChapter('Courbe : la comparaison historique', [
+    _P(
+      'La touche Courbe — le cercle de gauche à côté de la barre '
+      'd\'égalité — remplace le clavier par un graphique ; le × en haut '
+      'le referme.'
+    ),
+    _H('Les trois séries'),
+    _P(
+      'Tout est mesuré par rapport à l\'or : l\'argent en or, le grain en '
+      'or et l\'or en grain — c\'est-à-dire le pouvoir d\'achat de l\'or '
+      'en nourriture. Chaque série est rapportée à sa plus ancienne '
+      'valeur connue ; celle-ci se trouve au centre comme une ligne zéro '
+      'en gras. Au-dessus de la ligne signifie plus cher, en dessous '
+      'moins cher, chaque fois relativement à l\'or.'
+    ),
+    _H('Lire et déplacer'),
+    _P(
+      'Tirer déplace l\'image, pincer zoome, le bouton de droite dézoome '
+      'entièrement jusqu\'à l\'Antiquité. Par défaut, la courbe montre la '
+      'dernière centaine d\'années environ. La bande ombrée autour des '
+      'points de l\'Antiquité est la plage estimée — l\'Antiquité se '
+      'compose d\'anneaux isolés (ordres de grandeur seulement), aucune '
+      'ligne ne court par-dessus une lacune. La ligne des sources liste '
+      'le jeu de données.'
+    ),
+  ]),
+];

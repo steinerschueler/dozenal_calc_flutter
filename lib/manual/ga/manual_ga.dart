@@ -1280,3 +1280,164 @@ List<ManualChapter> _converterManualChaptersGa() => const [
     ),
   ]),
 ];
+
+List<ManualChapter> _assetManualChaptersGa() => const [
+  ManualChapter('An tríú háireamhán', [
+    _P(
+      'Taobh thiar den tiontaire aonad luíonn tríú háireamhán: an '
+      't-áireamhán luacha. Tiontaíonn sé meáchain mhiotal lómhar agus '
+      'sonraíochtaí airgeadraí go cruinn, déanann sé meastachán ar a '
+      'luach in airgeadra tagartha, agus déanann sé comparáid idir mar a '
+      'sheas an luach sin thar na céadta bliain.'
+    ),
+    _H('Anonn is anall'),
+    _P(
+      'Svuáil ar chlé ar an bpríomháireamhán faoi dhó — thar an tiontaire '
+      'aonad — agus taispeánfar an t-áireamhán luacha. Tugann svuáil ar '
+      'dheis ar ais thú céim ar chéim. Taispeánann an dá chárta '
+      'thréshoilseacha ag an athrú arís cén leathanach ar a bhfuil tú; is '
+      'é an ceann leis an imlíne órga an leathanach gníomhach.'
+    ),
+    _P(
+      'Cosúil leis na háireamháin eile, coinníonn an t-áireamhán luacha a '
+      'ionchur agus tú ag athrú leathanaigh. Tá an chuma chéanna air agus '
+      'atá ar an tiontaire aonad — ach téann na colúin eochracha ar dheis '
+      'leibhéal amháin níos doimhne.'
+    ),
+  ]),
+  ManualChapter('Aicme, cineál, aonad', [
+    _P(
+      'Cé go bhfuil dhá leibhéal ag an tiontaire aonad (catagóir agus '
+      'aonad), tá trí cinn ag an áireamhán luacha: aicme, cineál agus '
+      'aonad. Tapálann tú do bhealach trí thiontú ó bharr go bun.'
+    ),
+    _H('Na trí leibhéal'),
+    _P(
+      'Sa dá cholún eochracha ar dheis seasann na haicmí ar dtús: Miotal '
+      'lómhar agus Airgeadra. Tapáil ceann acu agus taispeánfar a '
+      'cineálacha — i gcás miotail lómhair Ór, Airgead, Platanam agus '
+      'Pallaidiam, mar shampla; i gcás airgeadra na giorrúcháin '
+      'airgeadra. Tapáil cineál agus taispeánfar a aonaid. Glacann tapáil '
+      'ar aonad é mar théarma.'
+    ),
+    _H('Leibhéal amháin ar ais'),
+    _P(
+      'Fanann an aicme nó an cineál roghnaithe ag barr an cholúin ar '
+      'dheis — le himlíne órga — agus feidhmíonn sé mar fhillteán: tugann '
+      'tapáil air leibhéal amháin níos airde thú. Mar sin ní léimeann aon '
+      'rud anonn is anall, agus feiceann tú i gcónaí cá bhfuil tú.'
+    ),
+    _H('An eochair ='),
+    _P(
+      'Cosúil leis an tiontaire aonad, taispeánann gach brú ar = an '
+      'chainníocht chéanna san aonad eile; i gcás na meáchan troy tagann '
+      'an nodaireacht mheasctha ag an deireadh (mar shampla „1 lb t 2 oz '
+      't 3 dwt"). Caitheann athrú aicme nó cineáil na téarmaí '
+      'críochnaithe i leataobh, ach fanann uimhir atá clóscríofa cheana.'
+    ),
+  ]),
+  ManualChapter('Méadrach agus impiriúil ag an am céanna', [
+    _H('An dá chóras le chéile'),
+    _P(
+      'Níl eochracha met/imp ag an áireamhán luacha. A luaithe a '
+      'thapálann tú isteach i gcineál miotail, seasann an dá chóras le '
+      'chéile: na haonaid troy impiriúla (gr, dwt, oz t, lb t) i gcolún '
+      'amháin, na cinn mhéadracha (g, kg) sa cholún eile. Tapálann tú an '
+      'ceann atá uait — leanann an domhan oibre an t-aonad ina ndearna tú '
+      'an iontráil dheireanach.'
+    ),
+    _H('Na dathanna'),
+    _P(
+      'Is é an cód datha céanna atá ann is atá sa tiontaire aonad: '
+      'seasann corcra do dhomhan an dó dhéag (aonaid impiriúla agus '
+      'figiúir dhosaenacha), uaine do dhomhan an deich (aonaid mhéadracha '
+      'agus figiúir dheachúlacha). Iompraíonn an comhartha aonaid dath a '
+      'chórais, taispeánann an lúibín slabhrach an luach céanna sa chóras '
+      'eile ina dhath sin, agus iompraíonn an comhartha DOZ/DEZ dath an '
+      'bhoinn. Níl aon ais dhomhain ag airgeadraí — fanann a gcomharthaí '
+      'corcra.'
+    ),
+    _H('Dosaenach nó deachúil'),
+    _P(
+      'Athraíonn tú bonn na bhfigiúr, mar atá leis na háireamháin eile, '
+      'faoi Socruithe → Córas uimhreacha; baineann sé leis na trí '
+      'áireamhán i gcomhpháirt agus tá sé neamhspleách ar chóras na '
+      'n-aonad.'
+    ),
+  ]),
+  ManualChapter('An chuimhne agus na heochracha eile', [
+    _H('An chuimhne'),
+    _P(
+      'Fad nach bhfuil aicme roghnaithe fós, luíonn na heochracha cuimhne '
+      'STO, RCL, MC agus Ans sa cholún clé den dá cholún ar dheis. '
+      'Roghnaigh aicme agus tagann na cineálacha ina n-áit ansin — '
+      'roinneann an chuimhne an spás leis an druileáil. Meabhraíonn STO '
+      'luach líne an toraidh, cuireann RCL isteach é, glanann MC é; '
+      'tugann Ans toradh deireanach an phríomháireamháin anall. '
+      'Ciallaíonn liath folamh nó nach bhfuil rud ar bith ann.'
+    ),
+    _H('Luach, ríomh agus glanadh'),
+    _P(
+      'Suíonn an eochair Luach go daingean sa tsraith chórais agus téann '
+      'sí ar tinneall a luaithe atá téarma ann (féach an chéad chaibidil '
+      'eile). Ligeann na hoibreoirí scalaracha (× ÷ ⊕ ^ √ ㏒) don uimhir '
+      'chlóscríofa féin a bheith ina ríomhadh beag, díreach mar atá sa '
+      'tiontaire aonad. Glanann AC gach rud, baineann Del an carachtar '
+      'roimhe.'
+    ),
+  ]),
+  ManualChapter('Luach: tiontú go hairgeadra', [
+    _P(
+      'Seachas an tiontú meáchain chruinn, is féidir leis an áireamhán '
+      'luacha luach airgid garbh a mheas.'
+    ),
+    _H('An mód luacha'),
+    _P(
+      'Clóscríobh méid agus glac é mar aonad — mar shampla „5" agus „oz '
+      't" óir. Anois éiríonn an eochair Luach gorm. Athraíonn tapáil '
+      'uirthi an druileáil ina rogha airgeadraí sprice; tapáil ceann acu '
+      'agus taispeánann líne an toraidh an luach le „≈" roimhe agus leid '
+      'bheag dhátaithe faoi.'
+    ),
+    _H('Na rátaí'),
+    _P(
+      'Is treoirluachanna garbha dátaithe iad na rátaí bunúsacha. '
+      'Osclaíonn an eochair Rátaí ag bun na láimhe deise eagarthóir inar '
+      'féidir leat aon ráta a fhorscríobh; cuireann athshocrú na '
+      'luachanna ionsuite ar ais.'
+    ),
+    _H('Gan líonra'),
+    _P(
+      'Ní fhaigheann an aip aon rud ón idirlíon — ciallaíonn an „≈" '
+      '„garbh, rátabhunaithe", ní „beo" riamh. Coinníonn tú féin na rátaí '
+      'cothrom le dáta, mar shampla de réir Kitco do mhiotail nó an BCE '
+      'd\'airgeadraí.'
+    ),
+  ]),
+  ManualChapter('Cuar: an chomparáid stairiúil', [
+    _P(
+      'Cuireann an eochair Cuar — an ciorcal ar chlé in aice leis an '
+      'mbarra cothroime — cairt in áit an eochaircheaptha; dúnann an × ag '
+      'an mbarr arís é.'
+    ),
+    _H('Na trí shraith'),
+    _P(
+      'Tomhaistear gach rud i gcoinne óir: airgead in ór, gránach in ór '
+      'agus ór i ngránach — is é sin cumhacht cheannaigh an óir i mbia. '
+      'Tá gach sraith bunaithe ar a luach is sine ar a bhfuil eolas; '
+      'luíonn sé sin mar líne nialais throm sa lár. Os cionn na líne '
+      'ciallaíonn níos daoire, faoina bun níos saoire, gach ceann i '
+      'gcoinne óir.'
+    ),
+    _H('Léamh agus bogadh'),
+    _P(
+      'Bogann tarraingt an pictiúr, súmálann fáscadh, súmálann an cnaipe '
+      'ar dheis amach ar fad isteach san ársaíocht. De réir '
+      'réamhshocraithe taispeánann an cuar an céad bliain deireanach nó '
+      'mar sin. Is é an banda scáthaithe timpeall na bpointí ársa an raon '
+      'measta — is é an ársaíocht fáinní aonair (ord méide amháin), agus '
+      'ní ritheann aon líne thar bhearna. Liostaíonn líne na bhfoinsí an '
+      'tacar sonraí.'
+    ),
+  ]),
+];

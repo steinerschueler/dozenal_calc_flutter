@@ -62,6 +62,24 @@ void main() {
             reason: '${chapter.title} should render');
       }
     });
+
+    testWidgets('every locale\'s asset-manual chapters render', (tester) async {
+      for (final tag in _allTags) {
+        for (final chapter in assetManualChapters(tag)) {
+          await tester.pumpWidget(MaterialApp(
+            home: Scaffold(
+              body: SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: chapter.body,
+                ),
+              ),
+            ),
+          ));
+          expect(tester.takeException(), isNull, reason: '$tag: ${chapter.title}');
+        }
+      }
+    });
   });
 
   group('Wertetheorie (theory)', () {

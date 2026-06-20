@@ -119,6 +119,18 @@ List<ManualChapter> _ownAssetManualChapters(String langTag) {
   // (zh-Hant must be tested before bare zh); the rest fall back to German.
   final c = langTag.toLowerCase();
   if (c.startsWith('en')) return _assetManualChaptersEn();
+  if (c.startsWith('fr')) return _assetManualChaptersFr();
+  if (c.startsWith('es')) return _assetManualChaptersEs();
+  if (c.startsWith('it')) return _assetManualChaptersIt();
+  if (c.startsWith('ru')) return _assetManualChaptersRu();
+  if (c.startsWith('fa')) return _assetManualChaptersFa();
+  if (c.startsWith('ar')) return _assetManualChaptersAr();
+  if (c.startsWith('hi')) return _assetManualChaptersHi();
+  if (c.startsWith('ga')) return _assetManualChaptersGa();
+  if (c.startsWith('zh') && c.contains('hant')) return _assetManualChaptersZhHant();
+  if (c.startsWith('cy')) return _assetManualChaptersCy();
+  if (c.startsWith('ja')) return _assetManualChaptersJa();
+  if (c.startsWith('zh')) return _assetManualChaptersZh();
   return _assetManualChaptersDe();
 }
 

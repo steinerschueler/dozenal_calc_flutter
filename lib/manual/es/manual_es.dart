@@ -1265,3 +1265,163 @@ List<ManualChapter> _converterManualChaptersEs() => const [
     ),
   ]),
 ];
+
+List<ManualChapter> _assetManualChaptersEs() => const [
+  ManualChapter('La tercera calculadora', [
+    _P(
+      'Detrás del conversor de unidades hay una tercera calculadora: la '
+      'calculadora de valores. Convierte con exactitud pesos de metales '
+      'preciosos y denominaciones de monedas, estima su valor en una '
+      'moneda de referencia y compara cómo se ha mantenido ese valor a lo '
+      'largo de los siglos.'
+    ),
+    _H('Cambiar de un lado a otro'),
+    _P(
+      'Desliza dos veces hacia la izquierda en la calculadora principal — '
+      'más allá del conversor de unidades — y aparece la calculadora de '
+      'valores. Deslizar hacia la derecha te lleva de vuelta paso a paso. '
+      'Las dos tarjetas translúcidas que aparecen al cambiar indican de '
+      'nuevo en qué página estás; la que tiene el borde dorado es la '
+      'activa.'
+    ),
+    _P(
+      'Como las demás calculadoras, la calculadora de valores conserva su '
+      'entrada al cambiar de página. Su aspecto es el mismo que el del '
+      'conversor de unidades — solo que las columnas de teclas de la '
+      'derecha llevan un nivel más abajo.'
+    ),
+  ]),
+  ManualChapter('Clase, género, unidad', [
+    _P(
+      'Mientras que el conversor de unidades tiene dos niveles (categoría '
+      'y unidad), la calculadora de valores tiene tres: clase, género y '
+      'unidad. Una conversión la recorres tocando de arriba abajo.'
+    ),
+    _H('Los tres niveles'),
+    _P(
+      'En las dos columnas de teclas de la derecha aparecen primero las '
+      'clases: metal precioso y moneda. Si tocas una, aparecen sus '
+      'géneros — en el metal precioso, por ejemplo, oro, plata, platino y '
+      'paladio; en las monedas, las abreviaturas de divisa. Si tocas un '
+      'género, aparecen sus unidades. Un toque en una unidad la adopta '
+      'como término.'
+    ),
+    _H('Volver un nivel atrás'),
+    _P(
+      'La clase o el género elegidos permanecen arriba en la columna de '
+      'la derecha — con borde dorado — y sirven de retorno: un toque '
+      'sobre ellos lleva un nivel más arriba. Así nada salta de un lado a '
+      'otro y siempre ves dónde estás.'
+    ),
+    _H('La tecla ='),
+    _P(
+      'Como en el conversor de unidades, cada pulsación de = muestra la '
+      'misma magnitud en la siguiente unidad; en los pesos troy, al final '
+      'sigue la notación mixta (como «1 lb t 2 oz t 3 dwt»). Un cambio de '
+      'clase o de género descarta los términos completados, pero un '
+      'número ya escrito se mantiene.'
+    ),
+  ]),
+  ManualChapter('Métrico e imperial a la vez', [
+    _H('Ambos sistemas a la vez'),
+    _P(
+      'La calculadora de valores no tiene teclas met/imp. En cuanto '
+      'entras en un género de metal, los dos sistemas aparecen a la vez: '
+      'las unidades troy imperiales (gr, dwt, oz t, lb t) en una columna, '
+      'las métricas (g, kg) en la otra. Simplemente tocas la que quieras '
+      '— el mundo de trabajo se rige por la unidad en la que escribiste '
+      'por última vez.'
+    ),
+    _H('Los colores'),
+    _P(
+      'El código de colores es el mismo que en el conversor de unidades: '
+      'el violeta representa el mundo del doce (unidades imperiales y '
+      'dígitos duodecimales), el verde el mundo del diez (unidades '
+      'métricas y dígitos decimales). El símbolo de unidad lleva el color '
+      'de su sistema, la llave muestra el mismo valor en el otro sistema '
+      'en el color de este, y el indicador DOZ/DEZ el color de la base. '
+      'Las monedas no tienen eje de mundo — sus símbolos permanecen en '
+      'violeta.'
+    ),
+    _H('Duodecimal o decimal'),
+    _P(
+      'La base numérica la cambias, como en las demás calculadoras, en '
+      'Ajustes → Sistema numérico; es común a las tres calculadoras y es '
+      'independiente del sistema de unidades.'
+    ),
+  ]),
+  ManualChapter('La memoria y las demás teclas', [
+    _H('La memoria'),
+    _P(
+      'Mientras todavía no se ha elegido ninguna clase, en la izquierda '
+      'de las dos columnas de la derecha están las teclas de memoria STO, '
+      'RCL, MC y Ans. Al elegir una clase, los géneros ocupan su lugar — '
+      'la memoria comparte el espacio con la navegación por niveles. STO '
+      'recuerda el valor de la línea de resultado, RCL lo inserta, MC lo '
+      'borra; Ans trae el último resultado de la calculadora principal. '
+      'El gris significa vacío o no disponible.'
+    ),
+    _H('Valor, calcular y borrar'),
+    _P(
+      'La tecla de valor está fija en la fila del sistema y se arma en '
+      'cuanto hay un término (véase el siguiente capítulo). Los '
+      'operadores escalares (× ÷ ⊕ ^ √ ㏒) permiten que el número escrito '
+      'sea él mismo un pequeño cálculo, como en el conversor de unidades. '
+      'AC lo borra todo, Del el carácter anterior.'
+    ),
+  ]),
+  ManualChapter('Valor: convertir a una moneda', [
+    _P(
+      'Más allá de la conversión exacta de pesos, la calculadora de '
+      'valores puede estimar un valor monetario aproximado.'
+    ),
+    _H('El modo de valor'),
+    _P(
+      'Escribe una cantidad y adóptala como unidad — por ejemplo «5» y '
+      '«oz t» de oro. Ahora la tecla de valor se vuelve azul. Un toque '
+      'sobre ella convierte la navegación por niveles en una selección de '
+      'monedas de destino; si tocas una, la línea de resultado muestra el '
+      'valor con un «≈» delante y una pequeña nota fechada debajo.'
+    ),
+    _H('Las cotizaciones'),
+    _P(
+      'Las cotizaciones subyacentes son valores de referencia aproximados '
+      'y fechados. La tecla de cotizaciones, abajo a la derecha, abre un '
+      'editor en el que puedes sobrescribir cada cotización; un reinicio '
+      'restaura los valores incorporados.'
+    ),
+    _H('Sin red'),
+    _P(
+      'La app no descarga nada de internet — el «≈» significa '
+      '«aproximado, basado en cotizaciones», nunca «en vivo». Tú mismo '
+      'mantienes las cotizaciones al día, por ejemplo según Kitco para '
+      'los metales o el BCE para las monedas.'
+    ),
+  ]),
+  ManualChapter('Curva: la comparación histórica', [
+    _P(
+      'La tecla de curva — el círculo de la izquierda junto a la barra de '
+      'igual — sustituye el teclado por un diagrama; la × de arriba lo '
+      'vuelve a cerrar.'
+    ),
+    _H('Las tres series'),
+    _P(
+      'Todo se mide respecto al oro: plata en oro, grano en oro y oro en '
+      'grano — es decir, el poder adquisitivo del oro en alimentos. Cada '
+      'serie está referida a su valor conocido más antiguo; este se sitúa '
+      'como línea de cero en negrita en el centro. Por encima de la línea '
+      'significa más caro, por debajo más barato, siempre respecto al '
+      'oro.'
+    ),
+    _H('Leer y desplazar'),
+    _P(
+      'Arrastrar desplaza la imagen, pellizcar hace zoom, el botón de la '
+      'derecha aleja el zoom hasta la Antigüedad. De forma '
+      'predeterminada, la curva muestra los últimos cien años '
+      'aproximadamente. La banda sombreada en torno a los puntos de la '
+      'Antigüedad es el rango estimado — la Antigüedad consta de anillos '
+      'sueltos (solo órdenes de magnitud), ninguna línea cruza un hueco. '
+      'La línea de fuentes enumera el conjunto de datos.'
+    ),
+  ]),
+];
