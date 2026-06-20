@@ -59,30 +59,30 @@ void main() {
   });
 
   group('Wertetheorie (theory)', () {
-    test('German has six chapters with the expected bookends', () {
+    test('German is the full 27-chapter set with the expected bookends', () {
       final de = werteChapters('de');
-      expect(de.length, 6);
+      expect(de.length, 27);
       expect(de.first.title, 'Was ist Wert?');
       expect(de.last.title, 'Spekulatives (mit Vorsicht)');
+      // Titles are unique (no accidental duplicate from the assembly).
+      expect(de.map((c) => c.title).toSet().length, de.length);
     });
 
-    test('every chapter has sections; factual chapters cite sources', () {
+    test('every chapter has sections; most carry cited sources', () {
       final de = werteChapters('de');
       for (final c in de) {
         expect(c.sections, isNotEmpty, reason: '${c.title} needs sections');
       }
-      // Gold-Silber-Verhältnis, Hält Gold seinen Wert?, Die Preiskurve lesen
-      // carry cited sources.
-      expect(de[2].sources, isNotEmpty);
-      expect(de[3].sources, isNotEmpty);
-      expect(de[4].sources, isNotEmpty);
+      final withSources = de.where((c) => c.sources.isNotEmpty).length;
+      expect(withSources, greaterThanOrEqualTo(20),
+          reason: 'the factual chapters should be sourced');
     });
 
-    test('Phase 1: every other locale falls back to the German six', () {
+    test('Phase 1: every other locale falls back to the German set', () {
       final de = werteChapters('de');
       for (final tag in _allTags) {
         final own = werteChapters(tag);
-        expect(own.length, de.length, reason: '$tag should have six chapters');
+        expect(own.length, de.length, reason: '$tag should have 27 chapters');
         expect(own.first.title, de.first.title,
             reason: '$tag falls back to German until translated');
       }
@@ -98,7 +98,7 @@ void main() {
       expect(blocks.map((b) => b.title), isNot(contains('Wertetheorie')));
       final werte = werteTheoryBlock(l, 'de');
       expect(werte.title, 'Wertetheorie');
-      expect(werte.chapters.length, 6);
+      expect(werte.chapters.length, 27);
       // Carries imageId slots (werte/$i) through to the refs.
       expect(werte.chapters.last.imageId, isNotNull);
     });
