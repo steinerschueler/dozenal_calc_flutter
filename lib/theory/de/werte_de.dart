@@ -10,32 +10,108 @@
 part of '../werte_theory.dart';
 
 List<ProseChapter> _werteChaptersDe() => const [
-  ProseChapter('Was ist Wert?', [
-    ProseSection(
-      'Wert ist nicht Preis',
-      'Ein Preis ist, was eine Sache gerade kostet. Wert ist, was sie auf '
-          'Dauer wert ist — ihr bleibender Nutzen. Die beiden fallen oft '
-          'auseinander: Ein Preis steigt und fällt, während der Wert ungefähr '
-          'derselbe bleibt.\n\n'
-          'Geld ist dabei vor allem ein Maßstab. Mit ihm misst man Werte, so '
-          'wie man mit dem Meter Längen misst. Damit das Messen verlässlich '
-          'ist, müsste der Maßstab selbst einen stabilen Wert haben — und genau '
-          'das ist die schwierige Stelle.',
-    ),
-    ProseSection(
-      'Geld war Gewicht',
-      'Lange war Geld schlicht gewogenes Metall. Eine Münze war ein '
-          'Gewichtsstück mit einem Stempel, der Gewicht und Feinheit '
-          'verbürgte. Viele Geldnamen sind darum Gewichtsnamen: Das englische '
-          '„Pfund" (£) ist dasselbe Wort wie das Gewicht. Und wie auch in der '
-          'Einheitentheorie unter „Währung" zu finden ist, ist das Zeichen „£" '
-          'ein verziertes L für lateinisch libra, die Waage.\n\n'
-          'Wie die alte Stückelung von Pfund, Schilling und Penny dozenal '
-          'gebaut ist, steht ausführlich in der Einheitentheorie unter '
-          '„Währung". Hier geht es um die Edelmetalle selbst und um die Frage, '
-          'ob sie ihren Wert halten.',
-    ),
-  ]),
+  ProseChapter(
+    'Was ist Wert?',
+    [
+      ProseSection(
+        'Wert ist nicht Preis',
+        'Ein Preis ist, was eine Sache gerade kostet. Wert ist, was sie auf '
+            'Dauer wert ist — ihr bleibender Nutzen. Die beiden fallen oft '
+            'auseinander: Ein Preis steigt und fällt, während der Wert ungefähr '
+            'derselbe bleibt.\n\n'
+            'Geld ist dabei vor allem ein Maßstab. Mit ihm misst man Werte, so '
+            'wie man mit dem Meter Längen misst. Damit das Messen verlässlich '
+            'ist, müsste der Maßstab selbst einen stabilen Wert haben — und genau '
+            'das ist die schwierige Stelle.',
+      ),
+      ProseSection(
+        'Geld war Gewicht',
+        'Lange war Geld schlicht gewogenes Metall. Eine Münze war ein '
+            'Gewichtsstück mit einem Stempel, der Gewicht und Feinheit '
+            'verbürgte. Viele Geldnamen sind darum Gewichtsnamen: Das englische '
+            '„Pfund" (£) ist dasselbe Wort wie das Gewicht. Und wie auch in der '
+            'Einheitentheorie unter „Währung" zu finden ist, ist das Zeichen „£" '
+            'ein verziertes L für lateinisch libra, die Waage.\n\n'
+            'Wie die alte Stückelung von Pfund, Schilling und Penny dozenal '
+            'gebaut ist, steht ausführlich in der Einheitentheorie unter '
+            '„Währung". Hier geht es um die Edelmetalle selbst und um die Frage, '
+            'ob sie ihren Wert halten.',
+      ),
+      ProseSection(
+        'Was Geld leisten muss',
+        'Damit etwas als Geld taugt, muss es drei Dinge zugleich leisten. Es '
+            'muss ein Tauschmittel sein: ein Ding, das jeder im Handel annimmt, '
+            'damit man nicht Ware gegen Ware tauschen muss. Es muss eine '
+            'Recheneinheit sein: ein gemeinsamer Maßstab, in dem sich alle Preise '
+            'ausdrücken lassen. Und es muss ein Wertspeicher sein: etwas, das '
+            'seinen Wert über die Zeit bewahrt, sodass man heute verdienen und '
+            'morgen ausgeben kann.\n\n'
+            'Diese drei Aufgaben hängen zusammen, ziehen aber nicht immer in '
+            'dieselbe Richtung. Ein gutes Tauschmittel ist handlich und teilbar; '
+            'ein guter Wertspeicher ist vor allem beständig. Manches Geld ist im '
+            'Alltag bequem, hält aber den Wert schlecht; anderes hält den Wert '
+            'gut, ist aber unhandlich.\n\n'
+            'Diese Dreiteilung — Tauschmittel, Recheneinheit, Wertspeicher — ist '
+            'eine alte und verbreitete Beschreibung dessen, was Geld tut. Sie ist '
+            'ein nützliches Ordnungsschema, keine Naturgesetzmäßigkeit; '
+            'Fachleute streiten darüber, welche der drei Aufgaben die '
+            'wichtigste ist.',
+      ),
+      ProseSection(
+        'Was den Wert hält',
+        'Warum behält das eine seinen Wert und das andere nicht? Drei Dinge '
+            'spielen zusammen. Das erste ist Knappheit: Was es im Überfluss gibt, '
+            'taugt nicht als Wertspeicher, denn jeder kann es sich beschaffen. '
+            'Das zweite ist Brauchbarkeit: Was niemand braucht oder begehrt, '
+            'verliert seinen Wert, sobald die Mode verfliegt. Das dritte ist '
+            'Vertrauen: Wert hält nur, was andere weiter anerkennen werden.\n\n'
+            'Fehlt eines dieser drei, wankt der Wert. Etwas sehr Seltenes, das '
+            'niemand will, ist wertlos. Etwas sehr Begehrtes, das beliebig '
+            'vermehrbar ist, hält keinen Preis. Und selbst Seltenes und '
+            'Brauchbares verliert seinen Wert, wenn das Vertrauen schwindet, dass '
+            'morgen noch jemand es annimmt.\n\n'
+            'Vertrauen ist dabei der heikelste Punkt. Es lässt sich nicht wiegen '
+            'und nicht messen, und es kann rasch kippen. Vieles, was lange als '
+            'sicherer Wert galt, hat seinen Wert verloren, als das Vertrauen '
+            'darin zerbrach — von einst begehrten Waren bis zu staatlichem '
+            'Papiergeld in Zeiten der Geldentwertung.',
+      ),
+      ProseSection(
+        'Warum nun die Edelmetalle',
+        'Wer einen verlässlichen Wertspeicher sucht, fragt also nach einem Ding, '
+            'das knapp ist, das man braucht und dem man über lange Zeit traut. '
+            'Wenige Dinge erfüllen alle drei Forderungen so lange wie die '
+            'Edelmetalle — und mit ihnen ist auch das alte Geld aus Gewicht '
+            'gebaut, von dem dieses Kapitel ausging.\n\n'
+            'Darum wendet sich die Wertetheorie von hier an den Edelmetallen zu. '
+            'Was diese Stoffe im Einzelnen ausmacht — warum gerade Metalle zu '
+            'Geld wurden und welche Eigenschaften sie dazu befähigen —, ist '
+            'Sache des nächsten Kapitels. Hier genügt der Übergang: vom Wert im '
+            'Allgemeinen zu den Metallen, an denen sich der Wert über '
+            'Jahrtausende festgemacht hat.',
+      ),
+    ],
+    sources: [
+      Source(
+        'Money — Wikipedia',
+        'https://en.wikipedia.org/wiki/Money',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Britannica — money',
+        'https://www.britannica.com/money/money',
+        'R2',
+        'A2',
+      ),
+      Source(
+        'Value (economics) — Wikipedia',
+        'https://en.wikipedia.org/wiki/Value_(economics)',
+        'R2',
+        'A1',
+      ),
+    ],
+  ),
   ProseChapter(
     'Edelmetalle als Geld',
     [
@@ -45,7 +121,64 @@ List<ProseChapter> _werteChaptersDe() => const [
             'zugleich können: Sie verderben nicht, man kann sie teilen und wieder '
             'einschmelzen, sie sind selten genug, um nicht beliebig zu sein, und '
             'man erkennt sie wieder. Gold, Silber, Platin und Palladium sind die '
-            'vier, die der Werterechner kennt.',
+            'vier, die der Werterechner kennt.\n\n'
+            'Andere Dinge dienten auch schon als Geld — Muscheln, Salz, Vieh, '
+            'Tabak. Doch keines hielt alle vier Eigenschaften zugleich. Vieh muss '
+            'man füttern, Salz löst sich in Wasser, Muscheln lassen sich am '
+            'Strand auflesen. Metall hat diese Schwächen nicht, und so setzte es '
+            'sich überall dort durch, wo Handel über Grenzen und Zeiten hinweg '
+            'lief.\n\n'
+            'Welche Stoffeigenschaften Gold dabei besonders auszeichnen — dass '
+            'es nicht anläuft, dicht und formbar ist —, steht eigens im Kapitel '
+            '„Was Gold zu Gold macht".',
+      ),
+      ProseSection(
+        'Ein Gramm Gold ist wie jedes andere',
+        'Eine fünfte Eigenschaft trägt das Geld besonders: die Gleichartigkeit, '
+            'fachlich Fungibilität. Ein Gramm reines Gold ist so gut wie jedes '
+            'andere Gramm reines Gold. Es gibt kein „besseres" und kein '
+            '„schlechteres" Stück gleicher Feinheit, kein Alter, keine Marke, '
+            'keine persönliche Note. Reines Metall ist austauschbar bis aufs '
+            'Atom.\n\n'
+            'Gerade darin unterscheidet sich Metall von fast allem anderen. Zwei '
+            'Häuser, zwei Felder, zwei Bilder sind nie ganz gleich; man muss '
+            'jedes einzeln einschätzen. Zwei gleich schwere Stücke Feingold sind '
+            'es. Diese Gleichheit macht das Metall zum natürlichen Maßstab: Man '
+            'kann mit ihm rechnen wie mit einer Einheit, weil eine Einheit immer '
+            'dasselbe bedeutet.',
+      ),
+      ProseSection(
+        'Vom Klumpen zur Münze',
+        'Zunächst wog man das Metall bei jedem Geschäft neu. Das war mühsam und '
+            'lud zum Betrug ein — wer prüft schon bei jedem Handel Gewicht und '
+            'Feinheit? Die Münze löste das Problem: ein genormtes Metallstück mit '
+            'einem Stempel, der Gewicht und Feinheit verbürgt. Wer dem Prägeherrn '
+            'traute, musste nicht mehr selbst wiegen.\n\n'
+            'Die ersten Münzen entstanden im antiken Lydien; wie sich das '
+            'Münzwesen für Gold und Silber dann entwickelte, tragen die Kapitel '
+            '„Gold durch die Geschichte" und „Silber durch die Geschichte".\n\n'
+            'Eine Münze ist also kein neues Geld, sondern altes Geld in '
+            'verbürgter Form. Der Stempel ersetzt die Waage, nicht das Metall. '
+            'Genau deshalb verlor eine Münze ihren Wert, sobald der Prägeherr '
+            'heimlich unedles Metall beimischte — der Stempel log dann über das '
+            'Gewicht, das er verbürgen sollte.',
+      ),
+      ProseSection(
+        'Die vier Metalle des Werterechners',
+        'Vier Edelmetalle kennt der Werterechner, und jedes hat sein eigenes '
+            'Kapitel. Gold ist das Königsmetall: selten, beständig und seit '
+            'Jahrtausenden der Inbegriff des Wertspeichers — was es physisch '
+            'ausmacht, steht in „Was Gold zu Gold macht".\n\n'
+            'Silber ist das Volksmetall, lange das Geld des täglichen Handels und '
+            'zugleich ein wichtiger Werkstoff der Technik; sein eigener Weg läuft '
+            'durch die Silber-Kapitel. Platin und Palladium schließlich sind die '
+            'jüngsten im Bunde: edel, aber vor allem industriell gebraucht, '
+            'besonders im Abgaskatalysator — ihr Doppelleben behandelt das '
+            'Kapitel „Platin und Palladium: edel, aber industriell".\n\n'
+            'Hier geht es nur um das Gemeinsame: dass alle vier die '
+            'Geld-Eigenschaften tragen. Das Eigene jedes Metalls — seine '
+            'Geschichte, sein Nutzen, sein Preisverhalten — heben die folgenden '
+            'Kapitel.',
       ),
       ProseSection(
         'Troy: zwölf Unzen aufs Pfund',
@@ -53,22 +186,30 @@ List<ProseChapter> _werteChaptersDe() => const [
             'echt dozenal: Zwölf Troy-Unzen ergeben ein Troy-Pfund. Alle Stufen '
             'sind ganzzahlige Vielfache des Grains — 1959 festgelegt auf '
             '0,06479891 Gramm: 24 Grain sind ein Pennyweight, 480 Grain eine '
-            'Troy-Unze.\n\n'
-            'Auch die Feinheit zählt dozenal-nah: Reines Gold hat 24 Karat, und '
-            '24 ist zweimal zwölf.',
-      ),
-      ProseSection(
-        'Ein ehrlicher Vorbehalt',
-        'Das Troy-Gewicht steht neben dem alltäglichen Avoirdupois-Gewicht, und '
-            'das stiftet Verwirrung. Eine Troy-Unze ist rund 9,7 Prozent '
-            'schwerer als eine gewöhnliche Unze — aber das Troy-Pfund ist '
-            'leichter als das gewöhnliche Pfund, weil es nur zwölf Unzen hat '
-            'statt sechzehn.\n\n'
-            'Die Zwölf ist hier also echt. Durchgesetzt hat sie sich aber nie '
-            'überall: Daneben blieb die Sechzehn des Avoirdupois bestehen.',
+            'Troy-Unze. Selbst die Feinheit zählt dozenal-nah: Die volle '
+            'Reinheit misst man in vierundzwanzig Teilen, zweimal zwölf.\n\n'
+            'Das Troy-Gewicht steht neben dem alltäglichen Avoirdupois-Gewicht, '
+            'und das stiftet eine hübsche Verwirrung: Eine Troy-Unze ist rund '
+            '9,7 Prozent schwerer als eine gewöhnliche Unze — aber das '
+            'Troy-Pfund ist leichter als das gewöhnliche Pfund, weil es nur '
+            'zwölf Unzen hat statt sechzehn. Die Zwölf ist hier also echt; dass '
+            'man daraus aber keine „natürliche" Geldbasis ableiten sollte, '
+            'steht am Ende dieses Blocks unter „Spekulatives".',
       ),
     ],
     sources: [
+      Source(
+        'Commodity money — Wikipedia',
+        'https://en.wikipedia.org/wiki/Commodity_money',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Coin — Wikipedia',
+        'https://en.wikipedia.org/wiki/Coin',
+        'R2',
+        'A1',
+      ),
       Source(
         'Troy weight — Wikipedia',
         'https://en.wikipedia.org/wiki/Troy_weight',
@@ -1102,31 +1243,83 @@ List<ProseChapter> _werteChaptersDe() => const [
     [
       ProseSection(
         'Die Frage',
-        'Gold gilt als Wertspeicher. Aber hält es seinen Wert wirklich? Um das '
-            'zu prüfen, misst man Gold nicht in Geld — das selbst schwankt — '
-            'sondern in etwas, das die Menschen immer brauchten: Nahrung, konkret '
-            'Getreide.',
+        'Gold gilt als Wertspeicher. Aber hält es seinen Wert wirklich? Die '
+            'Frage ist tückisch, denn man kann Gold nicht in Geld messen, ohne '
+            'sich im Kreis zu drehen. Geld schwankt selbst — gerade das ist der '
+            'Grund, warum man überhaupt nach einem festen Wert sucht.\n\n'
+            'Darum braucht es einen Maßstab außerhalb des Geldes. Man misst Gold '
+            'in etwas, das die Menschen zu allen Zeiten brauchten und das man '
+            'über Jahrtausende vergleichen kann: in Nahrung, konkret in '
+            'Getreide. Wie viel Brotkorn kauft eine bestimmte Menge Gold? Das '
+            'ist die ehrliche Frage hinter der Behauptung vom Wertspeicher.',
+      ),
+      ProseSection(
+        'Warum gerade Getreide der Maßstab ist',
+        'Getreide ist der älteste und gleichmäßigste Bedarf der Menschheit. Wer '
+            'lebt, muss essen, und über die meiste Geschichte hieß essen vor '
+            'allem Brotkorn — Weizen, Gerste, Reis. Ein Scheffel Getreide war '
+            'vor zweitausend Jahren ungefähr dasselbe wie heute: eine Mahlzeit, '
+            'eine Tagesration, ein Stück Überleben.\n\n'
+            'Diese Beständigkeit macht Getreide zu einem besseren Maßstab als '
+            'jede Währung. Münzen wurden entwertet, Reiche vergingen, Papiergeld '
+            'kam und ging — der Hunger blieb gleich. Ein Maß, das sich an einem '
+            'unveränderlichen menschlichen Bedürfnis festmacht, lügt weniger als '
+            'ein Maß, das an einer Regierung hängt.\n\n'
+            'Ganz neutral ist auch das Korn nicht: Missernten, neue Anbaumethoden '
+            'und der Welthandel haben den Getreidepreis selbst bewegt. Aber diese '
+            'Schwankungen sind klein gegen den Zerfall mancher Währungen. Als '
+            '„Lineal" für sehr lange Zeiträume ist Getreide darum ehrlicher als '
+            'Geld — nicht perfekt, aber das beste verfügbare.',
       ),
       ProseSection(
         'Über sehr lange Zeit grob stabil',
         'Über sehr lange Zeiträume kauft eine feste Menge Gold ungefähr '
-            'vergleichbare Mengen Getreide — vom römischen Ägypten über das '
-            'mittelalterliche England bis heute. „Ungefähr" ist dabei das '
-            'wichtige Wort: Es geht um Größenordnungen, nicht um feste Zahlen.',
+            'vergleichbare Mengen Getreide. „Ungefähr" ist dabei das wichtige '
+            'Wort: Es geht um Größenordnungen, nicht um feste Zahlen.\n\n'
+            'Ein paar Anker geben ein Gefühl für die Spanne, jeweils nur als grobe '
+            'Größenordnung. Im römischen Ägypten lassen sich Goldmengen und '
+            'Getreidepreise in Papyri vergleichen; im mittelalterlichen England '
+            'reichen Clarks lange Preisreihen vom dreizehnten Jahrhundert an '
+            'zurück; und auch heute kauft eine Unze Gold wieder eine '
+            'Getreidemenge in einer ähnlichen Größenordnung wie damals. Zwischen '
+            'diesen Punkten lagen Jahrhunderte mit ganz anderen Verhältnissen.\n\n'
+            'Das Erstaunliche ist, dass die Endpunkte einer so langen Strecke so '
+            'nah beieinanderliegen. Über zwei Jahrtausende blieb die Kaufkraft '
+            'des Goldes in Brotkorn in derselben groben Größenordnung — etwas, '
+            'das von kaum einer Währung gesagt werden kann.',
       ),
       ProseSection(
         'Aber nicht von Jahr zu Jahr',
         'Kurzfristig ist Gold alles andere als stabil. Sein Preis in Getreide '
-            'schwankt über Jahre und Jahrzehnte deutlich. Gold ist ein '
-            'Wertspeicher über Generationen, kein verlässlicher Maßstab von einem '
-            'Jahr aufs nächste.',
+            'schwankt über Jahre und Jahrzehnte deutlich. Auf eine Generation '
+            'gesehen kann eine feste Menge Gold einmal viel und einmal wenig '
+            'Korn kaufen.\n\n'
+            'Wer im falschen Jahr kaufte und im falschen verkaufte, verlor real, '
+            'obwohl Gold „über die Jahrtausende" stabil ist. Die lange Linie '
+            'beruhigt; die kurze kann hart sein. Gold ist ein Wertspeicher über '
+            'Generationen, kein verlässlicher Maßstab von einem Jahr aufs '
+            'nächste.\n\n'
+            'Das ist die andere, modernere Frage: Schützt Gold im Anlegerleben '
+            'eines einzelnen Menschen vor Inflation und Krise? Sie wird '
+            'gesondert im Kapitel „Gold als Schutz vor Inflation und Krise" '
+            'behandelt. Dieses Kapitel hier nimmt bewusst den langen, '
+            'jahrtausendelangen Blick gegen das Getreide ein.\n\n'
+            'Wie sich diese lange Stabilität im Diagramm niederschlägt — ein '
+            'Pendeln in derselben Größenordnung, mit antiken Ringen statt '
+            'durchgezogener Linie —, zeigt das Kapitel „Die Preiskurve lesen".',
       ),
       ProseSection(
         'Ein ehrlicher Vorbehalt',
         'Die alten Werte sind grob, regional und oft nur als Größenordnung '
-            'überliefert. Wer sagt, Gold sei „ewig stabil", sagt zu viel. Richtig '
-            'ist: Über sehr lange Zeit bleibt die Kaufkraft erstaunlich in '
-            'derselben Größenordnung — mit großen Ausschlägen dazwischen.',
+            'überliefert. Antike Getreidepreise schwankten mit der Ernte und der '
+            'Gegend; ein Preis aus dem Niltal sagt wenig über denselben Tag in '
+            'Britannien. Wer aus solchen Zahlen eine genaue Kurve macht, gibt '
+            'eine Sicherheit vor, die die Quellen nicht hergeben.\n\n'
+            'Wer sagt, Gold sei „ewig stabil", sagt darum zu viel. Richtig ist '
+            'die zweiseitige Aussage: Über sehr lange Zeit bleibt die Kaufkraft '
+            'erstaunlich in derselben Größenordnung — mit großen Ausschlägen '
+            'dazwischen. Beide Hälften gehören genannt; nur zusammen sind sie '
+            'ehrlich.',
       ),
     ],
     sources: [
@@ -1147,6 +1340,12 @@ List<ProseChapter> _werteChaptersDe() => const [
         'https://www.worldbank.org/en/research/commodity-markets',
         'R1',
         'A1',
+      ),
+      Source(
+        'Officer & Williamson — The Price of Gold, 1257–Present (MeasuringWorth)',
+        'https://www.measuringworth.com/datasets/gold/',
+        'R2',
+        'A2',
       ),
     ],
   ),
@@ -2044,33 +2243,81 @@ List<ProseChapter> _werteChaptersDe() => const [
     'Die Preiskurve lesen',
     [
       ProseSection(
-        'Alles relativ zu Gold',
-        'Das Diagramm im Werterechner misst alles an Gold: Silber in Gold, '
-            'Getreide in Gold und Gold in Getreide. Jede Reihe ist auf ihren '
-            'ältesten bekannten Wert bezogen — dieser liegt als fette Nulllinie '
-            'in der Mitte. Über der Linie heißt teurer, darunter billiger, '
-            'jeweils gegenüber Gold.',
+        'Die drei Reihen',
+        'Das Diagramm zeigt drei Reihen, und alle drei messen an Gold. „Silber '
+            'in Gold" sagt, was ein Gewicht Silber in Gold wert ist. „Getreide '
+            'in Gold" sagt, was eine Menge Getreide in Gold kostet — also, wie '
+            'viel Brotkorn man für sein Gold bekommt. „Gold in Getreide" ist '
+            'deren Kehrwert, abgeleitet aus derselben Reihe: was ein Stück Gold '
+            'an Getreide aufwiegt.\n\n'
+            'Jede Reihe erzählt etwas anderes. Silber gegen Gold ist eine Frage '
+            'der zwei Geldmetalle zueinander. Getreide gegen Gold ist die '
+            'Kaufkraft des Goldes am Grundnahrungsmittel — wie weit dieser Faden '
+            'durch die Jahrhunderte trägt, steht im Kapitel „Hält Gold seinen '
+            'Wert?". Hier geht es nur darum, wie man die Linien im Bild liest.',
       ),
       ProseSection(
-        'Das Unsicherheitsband',
-        'Die antiken Punkte tragen ein geschätztes Band von einem niedrigen bis '
-            'zu einem hohen Wert, und sie stehen als einzelne Ringe da, nicht als '
-            'Linie. Das ist Absicht: Antike Preise sind unregelmäßig, regional '
-            'und nur als Größenordnung bekannt. Über eine Lücke wird keine Linie '
-            'gezogen, die es nicht gibt.',
+        'Die Nulllinie in der Mitte',
+        'Jede Reihe ist auf ihren ältesten bekannten Wert bezogen. Dieser '
+            'älteste Wert wird zu eins gesetzt und liegt als fette Nulllinie '
+            'quer durch die Mitte. Alles Spätere wird daran gemessen.\n\n'
+            'Die Leserichtung ist einfach: Über der Linie heißt teurer '
+            'gegenüber Gold, darunter billiger. Steigt eine Linie, ist die Sache '
+            'im Verhältnis zu Gold wertvoller geworden; fällt sie, ist sie '
+            'gegenüber Gold billiger geworden. Weil die Mitte der Startpunkt '
+            'ist, sieht man auf einen Blick, ob sich seither nach oben oder nach '
+            'unten etwas bewegt hat.',
       ),
       ProseSection(
-        'Ein kuratierter, belegter Datensatz',
-        'Die Kurve ist keine amtliche Zeitreihe, sondern eine bewusst grobe, '
-            'belegte Rekonstruktion aus zitierten Quellen — in zwei Durchgängen '
-            'von recherchierenden und prüfenden Helfern zusammengetragen. Die '
-            'Quellen-Zeile im Diagramm listet sie auf.',
+        'Die Umkehrung bei „Silber in Gold"',
+        'Bei der Silberreihe ist eine Drehung zu beachten. Das Diagramm zeigt '
+            'nicht das gewohnte Gold-Silber-Verhältnis, sondern dessen Kehrwert: '
+            'Silber gemessen in Gold. Darum steht eine fallende Linie hier für '
+            'ein sich weitendes Verhältnis.\n\n'
+            'Wird Silber gegenüber Gold billiger, so wächst die übliche '
+            'Verhältniszahl — und die Linie „Silber in Gold" sinkt. Die große '
+            'Spreizung der Neuzeit erscheint im Bild also als langes Absinken, '
+            'nicht als Anstieg. Die lange Geschichte dieses Verhältnisses selbst '
+            'gehört in die Kapitel zum Gold-Silber-Verhältnis; hier zählt nur, '
+            'wie sie sich in der Kurve niederschlägt.',
+      ),
+      ProseSection(
+        'Antike Ringe und das Unsicherheitsband',
+        'Die antiken Punkte sehen anders aus als die moderne Linie. Sie stehen '
+            'als einzelne Ringe da, nicht verbunden, und jeder trägt ein '
+            'geschätztes Band von einem niedrigen bis zu einem hohen Wert. Das '
+            'Band ist breit, weil antike Preise unregelmäßig, regional '
+            'verschieden und nur als Größenordnung bekannt sind.\n\n'
+            'Dass über die Lücken keine Linie läuft, ist Absicht. Zwischen einem '
+            'babylonischen und einem römischen Punkt liegen Jahrhunderte ohne '
+            'verlässliche Zahl. Eine durchgezogene Linie würde dort einen '
+            'Verlauf vortäuschen, den niemand kennt. Die moderne Reihe dagegen '
+            'ist dicht genug, um als Linie geführt zu werden.',
+      ),
+      ProseSection(
+        'Schieben, zoomen, einpassen',
+        'Die Kurve öffnet sich über die „Kurve"-Taste, die das Tastenfeld '
+            'ersetzt; das ×-Symbol schließt sie wieder. Von Haus aus zeigt das '
+            'Bild ungefähr die letzten hundert Jahre — den Abschnitt mit den '
+            'dichtesten Daten.\n\n'
+            'Mit dem Finger lässt sich die Ansicht verschieben und mit zwei '
+            'Fingern zoomen. Wer ganz herauszoomt — über den Fit-Knopf oder '
+            'einen Doppeltipp —, sieht die volle Spanne bis in die Antike, mit '
+            'dem ältesten Wert links nahe der Nulllinie. Die Werte an der Achse '
+            'sind Faktoren gegenüber diesem Startwert und folgen der '
+            'eingestellten Zahlbasis, dozenal oder dezimal.',
       ),
       ProseSection(
         'Wie man ehrlich liest',
-        'Lies die moderne Linie als Daten, die antiken Ringe als grobe Marken. '
-            'Genauigkeit hinein-zu-lesen, wo nur Größenordnungen stehen, führt in '
-            'die Irre — das gilt gerade für die ältesten Punkte.',
+        'Die Kurve ist keine amtliche Zeitreihe, sondern eine bewusst grobe, '
+            'belegte Rekonstruktion aus zitierten Quellen — in zwei Durchgängen '
+            'von recherchierenden und prüfenden Helfern zusammengetragen. Die '
+            'Quellen-Zeile im Diagramm listet sie auf.\n\n'
+            'Darum gilt: Die moderne Linie liest man als Daten, die antiken '
+            'Ringe als grobe Marken. Genauigkeit hinein-zu-lesen, wo nur '
+            'Größenordnungen stehen, führt in die Irre — das gilt gerade für die '
+            'ältesten Punkte. Das Bild zeigt eine lange Bewegung, keine '
+            'tagesgenaue Buchführung.',
       ),
     ],
     sources: [
@@ -2100,30 +2347,116 @@ List<ProseChapter> _werteChaptersDe() => const [
       ),
     ],
   ),
-  ProseChapter('Spekulatives (mit Vorsicht)', [
-    ProseSection(
-      'Sound Money',
-      'Manche halten metallgedecktes Geld für das ehrlichste, weil es sich '
-          'nicht beliebig vermehren lässt. Andere halten dagegen, dass eine '
-          'feste Geldmenge eine Wirtschaft erdrosseln kann. Das ist eine '
-          'umstrittene wirtschaftspolitische Frage, kein gesicherter Befund — '
-          'beide Seiten haben Argumente.',
-    ),
-    ProseSection(
-      'Innerer Wert',
-      'Hat Gold einen „inneren" Wert, oder gilt es nur, weil alle sich darauf '
-          'geeinigt haben? Darüber streiten Philosophen und Ökonomen seit '
-          'langem. Edelmetalle haben einen Nutzwert in Schmuck und Industrie, '
-          'aber ihr Geldwert beruht zu großen Teilen auf Übereinkunft.',
-    ),
-    ProseSection(
-      'Zwölf im Geld',
-      'Dass Troy-Gewicht und die alte £sd-Stückelung dozenal gebaut sind, ist '
-          'belegt. Der Sprung von dort zu „Zwölf ist die natürliche Geldbasis" '
-          'ist es nicht. Die Zwölf half beim Teilen (durch 2, 3, 4 und 6), aber '
-          'daneben standen die Zwanzig der Schillinge und die Sechzehn des '
-          'Avoirdupois. Zwölf war nützlich, nicht heilig — mehr dazu steht in '
-          'den Grundlagen der Theorie.',
-    ),
-  ]),
+  ProseChapter(
+    'Spekulatives (mit Vorsicht)',
+    [
+      ProseSection(
+        'Wo der Boden weich wird',
+        'Bis hierher ging es um Belegbares: Gewichte, Stoffe, Geschichte, Kurse. '
+            'Dieses Kapitel sammelt das, wo der Boden weich wird — die '
+            'umstrittenen, die unbeweisbaren, die geglaubten Behauptungen rund um '
+            'Geld und Metall. Sie gehören in einen Text über Wert, aber sie '
+            'gehören eigens markiert.\n\n'
+            'Die Regel hier ist einfach: Was belegt ist, steht als Tatsache; was '
+            'umstritten, attribuiert oder spekulativ ist, wird genau so genannt. '
+            'Manche dieser Fäden haben inzwischen ein eigenes Kapitel bekommen — '
+            'dort werden sie ausführlich behandelt, hier nur als das verbucht, was '
+            'sie sind: offene Fragen, keine Wahrheiten.',
+      ),
+      ProseSection(
+        'Sound Money',
+        'Manche halten metallgedecktes Geld für das ehrlichste, weil es sich '
+            'nicht beliebig vermehren lässt. Andere halten dagegen, dass eine '
+            'feste Geldmenge eine Wirtschaft erdrosseln kann. Das ist eine '
+            'umstrittene wirtschaftspolitische Frage, kein gesicherter Befund — '
+            'beide Seiten haben Argumente.\n\n'
+            'Ob das Geld zum Gold zurückkehren sollte, ist eine eigene große '
+            'Streitfrage; sie ist im Kapitel „Soll das Geld zurück zum Gold?" '
+            'mit beiden Seiten ausgebreitet und wird hier nicht erneut '
+            'verhandelt. Wichtig bleibt nur: Wer „Sound Money" sagt, gibt eine '
+            'Überzeugung wieder, keine bewiesene Lehre.',
+      ),
+      ProseSection(
+        'Innerer Wert',
+        'Hat Gold einen „inneren" Wert, oder gilt es nur, weil alle sich darauf '
+            'geeinigt haben? Darüber streiten Philosophen und Ökonomen seit '
+            'langem. Edelmetalle haben einen Nutzwert in Schmuck und Industrie, '
+            'aber ihr Geldwert beruht zu großen Teilen auf Übereinkunft.\n\n'
+            'Die ältere Vorstellung, ein Ding trage seinen Wert in sich, gilt '
+            'heute als überholt; die meisten Ökonomen sehen Wert als etwas, das '
+            'erst im Tausch entsteht. Beweisen lässt sich keine der Seiten '
+            'endgültig — es ist eine Frage der Sichtweise, nicht der Messung. '
+            'Darum steht sie hier, unter Vorbehalt.',
+      ),
+      ProseSection(
+        'Zwölf im Geld',
+        'Dass Troy-Gewicht und die alte £sd-Stückelung dozenal gebaut sind, ist '
+            'belegt. Der Sprung von dort zu „Zwölf ist die natürliche Geldbasis" '
+            'ist es nicht. Die Zwölf half beim Teilen (durch 2, 3, 4 und 6), aber '
+            'daneben standen die Zwanzig der Schillinge und die Sechzehn des '
+            'Avoirdupois. Zwölf war nützlich, nicht heilig — mehr dazu steht in '
+            'den Grundlagen der Theorie.\n\n'
+            'Reizvoll ist der Gedanke trotzdem: Ein Maßstab, der sich glatt '
+            'dritteln und vierteln lässt, passt gut zu einem Geld, das man '
+            'aufteilen muss. Doch aus „nützlich" wird hier gern „naturgegeben", '
+            'und das ist der Schritt zu viel. Die Zwölf ist eine kluge Wahl '
+            'gewesen, keine im Wesen des Geldes angelegte Notwendigkeit.',
+      ),
+      ProseSection(
+        'Manipulation und das angebliche Verhältnis',
+        'Rund um Silber und Gold kreisen hartnäckige Erzählungen: Der Preis '
+            'werde planmäßig gedrückt, die Lager seien leer, ein festes '
+            'Papier-zu-Metall-Verhältnis erzwinge den Crash. Einzelne Strafen '
+            'wegen „Spoofing" — vorgetäuschter Orders — sind dokumentiert; daraus '
+            'folgt aber keine dauerhafte, koordinierte Unterdrückung des '
+            'Preises.\n\n'
+            'Diese Fäden sind ausführlich und mit ihren belegten Kernen in den '
+            'Kapiteln „Papier gegen Metall" und „Papiergold und physisches Gold" '
+            'eingeordnet; hier zählt nur das Etikett. Die belegten Einzelfälle '
+            'sind das eine, die pauschale Verschwörungsdeutung das andere. Wer '
+            'beides vermengt, macht aus einem Verdacht eine Tatsache, die er nicht '
+            'hat.\n\n'
+            'Ebenso umstritten ist die Erwartung, das Gold-Silber-Verhältnis '
+            'kehre zu einer alten Marke nahe sechzehn zurück. Dass diese Zahl '
+            'kein Naturgesetz ist, steht in den Kapiteln zum Verhältnis; eine '
+            'Rückkehr bleibt Anlagethese, nicht Gewähr.',
+      ),
+      ProseSection(
+        'Was offen bleibt',
+        'Am Ende steht weniger Gewissheit, als mancher erwartet. Was eine Sache '
+            '„wirklich wert" ist, lässt sich nicht messen wie ihr Gewicht. Wert '
+            'entsteht zwischen Menschen, in Knappheit, Nutzen und Vertrauen — und '
+            'all das wandert mit der Zeit. Ein Rechner kann Mengen umrechnen; ob '
+            'sie ihren Wert halten, kann er nicht versprechen.\n\n'
+            'Auch das Geld selbst bleibt eine offene Frage. Ob es an Metall '
+            'gebunden sein sollte, ob „digitales Gold" das alte Gold beerbt, ob '
+            'Silber zu Gold aufholt — diese Debatten sind in den eigenen Kapiteln '
+            '(„Soll das Geld zurück zum Gold?", „Gold und Bitcoin") aufgefächert, '
+            'und keine ist entschieden. Dieser Text fällt darüber bewusst kein '
+            'Urteil.\n\n'
+            'Wer den Wert von Gold und Silber versteht, versteht damit auch die '
+            'Grenzen dessen, was sich über Wert überhaupt wissen lässt.',
+      ),
+    ],
+    sources: [
+      Source(
+        'Sound money — Wikipedia',
+        'https://en.wikipedia.org/wiki/Sound_money',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Theory of value (economics) — Wikipedia',
+        'https://en.wikipedia.org/wiki/Theory_of_value_(economics)',
+        'R2',
+        'A1',
+      ),
+      Source(
+        'Gold standard — Wikipedia',
+        'https://en.wikipedia.org/wiki/Gold_standard',
+        'R2',
+        'A1',
+      ),
+    ],
+  ),
 ];
