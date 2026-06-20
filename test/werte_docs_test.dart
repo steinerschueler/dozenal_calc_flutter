@@ -8,15 +8,23 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'package:dozenal_calc_flutter/l10n/app_localizations.dart';
 import 'package:dozenal_calc_flutter/manual/manual.dart';
+import 'package:dozenal_calc_flutter/theory/prose_chapter.dart';
 import 'package:dozenal_calc_flutter/theory/theory_blocks.dart';
 import 'package:dozenal_calc_flutter/theory/werte_illustrations.dart';
 import 'package:dozenal_calc_flutter/theory/werte_theory.dart';
 
-// Languages that still fall back to German (English is authored separately).
+// All supported BCP-47 tags. A language either has its own authored set or
+// falls back to German — either way the structure must match German exactly.
 const _allTags = [
-  'fr', 'es', 'it', 'fa', 'ru', 'ga',
+  'de', 'en', 'fr', 'es', 'it', 'fa', 'ru', 'ga',
   'hi', 'zh', 'zh-Hant', 'cy', 'ja', 'ar',
 ];
+
+List<String> _figureIds(List<ProseChapter> chapters) => [
+      for (final c in chapters)
+        for (final s in c.sections)
+          if (s.illustrationId != null) s.illustrationId!,
+    ];
 
 void main() {
   group('Bedienung des Werterechners (manual)', () {
@@ -27,13 +35,9 @@ void main() {
       expect(de.last.title, 'Kurve: der historische Vergleich');
     });
 
-    test('Phase 1: every other locale falls back to the German six', () {
-      final de = assetManualChapters('de');
+    test('every locale yields six asset-manual chapters (own or fallback)', () {
       for (final tag in _allTags) {
-        final own = assetManualChapters(tag);
-        expect(own.length, de.length, reason: '$tag should have six chapters');
-        expect(own.first.title, de.first.title,
-            reason: '$tag falls back to German until translated');
+        expect(assetManualChapters(tag).length, 6, reason: '$tag');
       }
     });
 
@@ -80,13 +84,20 @@ void main() {
           reason: 'the factual chapters should be sourced');
     });
 
-    test('Phase 1: every other locale falls back to the German set', () {
+    test('every locale: 27 chapters, section/source/figure parity to German',
+        () {
       final de = werteChapters('de');
+      final deIds = _figureIds(de);
       for (final tag in _allTags) {
         final own = werteChapters(tag);
-        expect(own.length, de.length, reason: '$tag should have 27 chapters');
-        expect(own.first.title, de.first.title,
-            reason: '$tag falls back to German until translated');
+        expect(own.length, de.length, reason: '$tag chapter count');
+        for (var i = 0; i < de.length; i++) {
+          expect(own[i].sections.length, de[i].sections.length,
+              reason: '$tag chapter $i section count');
+          expect(own[i].sources.length, de[i].sources.length,
+              reason: '$tag chapter $i source count');
+        }
+        expect(_figureIds(own), deIds, reason: '$tag figure tags');
       }
     });
 

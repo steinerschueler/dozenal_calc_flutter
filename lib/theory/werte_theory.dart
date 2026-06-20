@@ -10,6 +10,9 @@ import 'prose_chapter.dart';
 
 part 'de/werte_de.dart';
 part 'en/werte_en.dart';
+part 'it/werte_it.dart';
+part 'es/werte_es.dart';
+part 'fr/werte_fr.dart';
 
 /// The "Wertetheorie" chapters in [langTag] (BCP-47). German is the reference;
 /// languages not yet authored fall back to German. To add a language, register
@@ -18,5 +21,8 @@ part 'en/werte_en.dart';
 List<ProseChapter> werteChapters(String langTag) {
   final c = langTag.toLowerCase();
   if (c.startsWith('en')) return _werteChaptersEn();
+  if (c.startsWith('fr')) return _werteChaptersFr();
+  if (c.startsWith('es')) return _werteChaptersEs();
+  if (c.startsWith('it')) return _werteChaptersIt();
   return _werteChaptersDe();
 }
