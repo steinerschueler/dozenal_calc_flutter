@@ -1,7 +1,7 @@
 // Structure tests for the two new Werterechner text deliverables: the
 // "Bedienung des Werterechners" manual (assetManualChapters) and the
-// "Wertetheorie" theory block (werteChapters / theoryBlocks). Phase 1 ships
-// German only; the other 13 languages fall back to German until translated.
+// "Wertetheorie" theory block (werteChapters / theoryBlocks). German and
+// English are authored; the other 12 languages fall back to German.
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -12,8 +12,9 @@ import 'package:dozenal_calc_flutter/theory/theory_blocks.dart';
 import 'package:dozenal_calc_flutter/theory/werte_illustrations.dart';
 import 'package:dozenal_calc_flutter/theory/werte_theory.dart';
 
+// Languages that still fall back to German (English is authored separately).
 const _allTags = [
-  'en', 'fr', 'es', 'it', 'fa', 'ru', 'ga',
+  'fr', 'es', 'it', 'fa', 'ru', 'ga',
   'hi', 'zh', 'zh-Hant', 'cy', 'ja', 'ar',
 ];
 
@@ -138,6 +139,67 @@ void main() {
         ));
         await tester.pump();
         expect(tester.takeException(), isNull, reason: '$id should paint');
+      }
+    });
+  });
+
+  group('English translation (parity with German)', () {
+    test('asset manual: six EN chapters with translated titles', () {
+      final en = assetManualChapters('en');
+      final de = assetManualChapters('de');
+      expect(en.length, de.length);
+      expect(en.first.title, 'The third calculator');
+      expect(en.last.title, 'Curve: the historical comparison');
+      expect(en.first.title, isNot(de.first.title), reason: 'not a DE fallback');
+    });
+
+    test('theory: 27 EN chapters with translated, unique titles', () {
+      final en = werteChapters('en');
+      expect(en.length, 27);
+      expect(en.first.title, 'What Is Value?');
+      expect(en.last.title, 'Contested Interpretations');
+      expect(en.map((c) => c.title).toSet().length, en.length);
+    });
+
+    test('theory: section/source counts + figure tags match German', () {
+      final en = werteChapters('en');
+      final de = werteChapters('de');
+      for (var i = 0; i < de.length; i++) {
+        expect(en[i].sections.length, de[i].sections.length,
+            reason: 'chapter $i (${de[i].title}) section count');
+        expect(en[i].sources.length, de[i].sources.length,
+            reason: 'chapter $i (${de[i].title}) source count');
+        // Source URLs/tiers are carried over from German verbatim.
+        expect(en[i].sources.map((s) => s.url).toList(),
+            de[i].sources.map((s) => s.url).toList(),
+            reason: 'chapter $i source urls');
+      }
+      final enIds = [
+        for (final c in en)
+          for (final s in c.sections)
+            if (s.illustrationId != null) s.illustrationId!,
+      ];
+      final deIds = [
+        for (final c in de)
+          for (final s in c.sections)
+            if (s.illustrationId != null) s.illustrationId!,
+      ];
+      expect(enIds, deIds, reason: 'illustrationId tags identical to German');
+    });
+
+    testWidgets('the English asset-manual chapters render', (tester) async {
+      for (final chapter in assetManualChapters('en')) {
+        await tester.pumpWidget(MaterialApp(
+          home: Scaffold(
+            body: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: chapter.body,
+              ),
+            ),
+          ),
+        ));
+        expect(tester.takeException(), isNull, reason: chapter.title);
       }
     });
   });

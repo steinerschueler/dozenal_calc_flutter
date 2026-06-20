@@ -1208,3 +1208,153 @@ List<ManualChapter> _converterManualChaptersEn() => const [
     ),
   ]),
 ];
+
+List<ManualChapter> _assetManualChaptersEn() => const [
+  ManualChapter('The third calculator', [
+    _P(
+      'Behind the unit converter lies a third calculator: the value '
+      'calculator. It converts weights of precious metals and '
+      'denominations of currencies exactly, estimates their worth in a '
+      'lead currency and compares how that worth has held up over the '
+      'centuries.',
+    ),
+    _H('There and back'),
+    _P(
+      'Swipe left twice on the main calculator — past the unit '
+      'converter — and the value calculator appears. Swiping right takes '
+      'you back step by step. The two translucent cards during the '
+      'switch again show which page you are on; the gold-framed one is '
+      'the active page.',
+    ),
+    _P(
+      'Like the other calculators, the value calculator keeps its input '
+      'across the switch. The look is the same as the unit converter\'s — '
+      'only the right-hand key columns lead one level deeper.',
+    ),
+  ]),
+  ManualChapter('Class, genus, unit', [
+    _P(
+      'Where the unit converter has two levels (category and unit), the '
+      'value calculator has three: class, genus and unit. You tap your '
+      'way through a conversion from top to bottom.',
+    ),
+    _H('The three levels'),
+    _P(
+      'The two right-hand key columns first show the classes: precious '
+      'metal and currency. Tap one and its genera appear — for precious '
+      'metal that is Gold, Silver, Platinum and Palladium; for currency '
+      'the currency codes. Tap a genus and its units appear. A tap on a '
+      'unit adopts it as a term.',
+    ),
+    _H('Back one level'),
+    _P(
+      'The chosen class or genus stays at the top of the right-hand '
+      'column — gold-framed — and serves as the way back: a tap on it '
+      'leads one level higher. So nothing jumps around, and you always '
+      'see where you are.',
+    ),
+    _H('The = key'),
+    _P(
+      'As in the unit converter, every press of = shows the same '
+      'quantity in the next unit; for the troy weights the mixed '
+      'notation follows at the end (such as "1 lb t 2 oz t 3 dwt"). A '
+      'change of class or genus discards the finished terms, but a '
+      'number you have already typed stays.',
+    ),
+  ]),
+  ManualChapter('Metric and imperial at once', [
+    _H('Both systems at once'),
+    _P(
+      'The value calculator has no met/imp keys. As soon as you tap into '
+      'a metal genus, both systems stand there at the same time: the '
+      'imperial troy units (gr, dwt, oz t, lb t) in one column, the '
+      'metric ones (g, kg) in the other. You simply tap the one you want '
+      '— the working world follows whichever unit you last entered in.',
+    ),
+    _H('The colours'),
+    _P(
+      'The colour code is the same as in the unit converter: violet '
+      'stands for the world of twelve (imperial units and dozenal '
+      'digits), green for the world of ten (metric units and decimal '
+      'digits). The unit symbol carries the colour of its system, the '
+      'curly brace shows the same value in the other system in that '
+      'system\'s colour, the DOZ/DEZ indicator the colour of the base. '
+      'Currencies have no world axis — their symbols stay violet.',
+    ),
+    _H('Dozenal or decimal'),
+    _P(
+      'You switch the digit base, as with the other calculators, under '
+      'Settings → Number base; it applies to all three calculators '
+      'together and is independent of the unit system.',
+    ),
+  ]),
+  ManualChapter('Memory and the remaining keys', [
+    _H('The memory'),
+    _P(
+      'As long as no class is chosen yet, the left of the two right-hand '
+      'columns holds the memory keys STO, RCL, MC and Ans. Once you '
+      'choose a class, the genera take their place there — the memory '
+      'shares the space with the drill. STO remembers the value on the '
+      'result line, RCL inserts it, MC clears it; Ans fetches the last '
+      'result of the main calculator over. Grey means empty or nothing '
+      'available.',
+    ),
+    _H('Value, calculating and clearing'),
+    _P(
+      'The Value key sits fixed in the system row and arms as soon as a '
+      'term stands there (see the next chapter). The scalar operators '
+      '(× ÷ ⊕ ^ √ ㏒) let the typed number itself be a small '
+      'calculation, just as in the unit converter. AC clears everything, '
+      'Del the character before it.',
+    ),
+  ]),
+  ManualChapter('Value: converting into a currency', [
+    _P(
+      'Beyond the exact weight conversion, the value calculator can '
+      'estimate an approximate monetary worth.',
+    ),
+    _H('Value mode'),
+    _P(
+      'Type an amount and adopt it as a unit — say "5" and "oz t" of '
+      'gold. Now the Value key turns blue. A tap on it turns the drill '
+      'into a choice of destination currencies; tap one and the result '
+      'line shows the worth with a "≈" in front and a small, dated note '
+      'below it.',
+    ),
+    _H('The rates'),
+    _P(
+      'The underlying rates are rough, dated reference figures. The '
+      'Rates key at the bottom right opens an editor in which you can '
+      'override any rate; a reset restores the built-in values.',
+    ),
+    _H('No network'),
+    _P(
+      'The app fetches nothing from the internet — the "≈" means "rough, '
+      'rate-based", never "live". You keep the rates current yourself, '
+      'for instance from Kitco for metals or the ECB for currencies.',
+    ),
+  ]),
+  ManualChapter('Curve: the historical comparison', [
+    _P(
+      'The Curve key — the left circle next to the equals bar — replaces '
+      'the keypad with a chart; the × at the top closes it again.',
+    ),
+    _H('The three rows'),
+    _P(
+      'Everything is measured against gold: silver in gold, grain in '
+      'gold and gold in grain — that is, the purchasing power of gold in '
+      'food. Each row is referenced to its oldest known value; that '
+      'value lies as a bold zero line in the middle. Above the line '
+      'means dearer, below it cheaper, each relative to gold.',
+    ),
+    _H('Reading and moving'),
+    _P(
+      'Dragging shifts the view, pinching zooms, the button on the right '
+      'zooms all the way out into antiquity. By default the curve shows '
+      'the last hundred years or so. The shaded band around the '
+      'antiquity points is the estimated range — antiquity consists of '
+      'individual rings (orders of magnitude only), no line runs across '
+      'a gap. The sources line lists the dataset.',
+    ),
+  ]),
+];

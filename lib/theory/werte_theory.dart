@@ -9,12 +9,14 @@
 import 'prose_chapter.dart';
 
 part 'de/werte_de.dart';
+part 'en/werte_en.dart';
 
-/// The "Wertetheorie" chapters in [langTag] (BCP-47). German is currently the
-/// only authored language; the rest fall back to German. To add a language,
-/// register a `part 'xx/werte_xx.dart';` above and a branch here — in the same
-/// order as the other genre dispatchers, with zh-Hant tested before bare zh.
+/// The "Wertetheorie" chapters in [langTag] (BCP-47). German is the reference;
+/// languages not yet authored fall back to German. To add a language, register
+/// a `part 'xx/werte_xx.dart';` above and a branch here — in the same order as
+/// the other genre dispatchers, with zh-Hant tested before bare zh.
 List<ProseChapter> werteChapters(String langTag) {
-  // Phase 1: German only — every tag resolves to the German chapters.
+  final c = langTag.toLowerCase();
+  if (c.startsWith('en')) return _werteChaptersEn();
   return _werteChaptersDe();
 }

@@ -115,9 +115,10 @@ List<ManualChapter> assetManualChapters(String langTag) {
 }
 
 List<ManualChapter> _ownAssetManualChapters(String langTag) {
-  // Phase 1: German is the only authored language — every tag falls back to it.
-  // Phase 2 adds the per-language branches here, in the same order as the
-  // converter dispatcher (zh-Hant must be tested before bare zh).
+  // Per-language branches go here in the same order as the converter dispatcher
+  // (zh-Hant must be tested before bare zh); the rest fall back to German.
+  final c = langTag.toLowerCase();
+  if (c.startsWith('en')) return _assetManualChaptersEn();
   return _assetManualChaptersDe();
 }
 
