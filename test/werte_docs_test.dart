@@ -64,7 +64,7 @@ void main() {
       final de = werteChapters('de');
       expect(de.length, 27);
       expect(de.first.title, 'Was ist Wert?');
-      expect(de.last.title, 'Spekulatives (mit Vorsicht)');
+      expect(de.last.title, 'Strittige Deutungen');
       // Titles are unique (no accidental duplicate from the assembly).
       expect(de.map((c) => c.title).toSet().length, de.length);
     });

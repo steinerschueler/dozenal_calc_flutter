@@ -39,23 +39,24 @@ List<ProseChapter> _werteChaptersDe() => const [
       ),
       ProseSection(
         'Was Geld leisten muss',
-        'Damit etwas als Geld taugt, muss es drei Dinge zugleich leisten. Es '
-            'muss ein Tauschmittel sein: ein Ding, das jeder im Handel annimmt, '
-            'damit man nicht Ware gegen Ware tauschen muss. Es muss eine '
-            'Recheneinheit sein: ein gemeinsamer Maßstab, in dem sich alle Preise '
-            'ausdrücken lassen. Und es muss ein Wertspeicher sein: etwas, das '
-            'seinen Wert über die Zeit bewahrt, sodass man heute verdienen und '
-            'morgen ausgeben kann.\n\n'
-            'Diese drei Aufgaben hängen zusammen, ziehen aber nicht immer in '
-            'dieselbe Richtung. Ein gutes Tauschmittel ist handlich und teilbar; '
-            'ein guter Wertspeicher ist vor allem beständig. Manches Geld ist im '
-            'Alltag bequem, hält aber den Wert schlecht; anderes hält den Wert '
-            'gut, ist aber unhandlich.\n\n'
-            'Diese Dreiteilung — Tauschmittel, Recheneinheit, Wertspeicher — ist '
-            'eine alte und verbreitete Beschreibung dessen, was Geld tut. Sie ist '
-            'ein nützliches Ordnungsschema, keine Naturgesetzmäßigkeit; '
-            'Fachleute streiten darüber, welche der drei Aufgaben die '
-            'wichtigste ist.',
+        'Damit etwas als Geld taugt, muss es drei Dinge zugleich '
+            'leisten. Es muss ein Tauschmittel sein: ein Ding, das jeder im '
+            'Handel annimmt, damit man nicht Ware gegen Ware tauschen muss. '
+            'Es muss eine Recheneinheit sein: ein gemeinsamer Maßstab, in '
+            'dem sich alle Preise ausdrücken lassen. Und es muss ein '
+            'Wertspeicher sein: etwas, das seinen Wert über die Zeit '
+            'bewahrt, sodass man heute verdienen und morgen ausgeben '
+            'kann.\n\n'
+            'Diese drei Aufgaben hängen zusammen, ziehen aber nicht immer '
+            'in dieselbe Richtung. Ein gutes Tauschmittel ist handlich und '
+            'teilbar; ein guter Wertspeicher ist vor allem beständig. '
+            'Manches Geld ist im Alltag bequem, hält aber den Wert '
+            'schlecht; anderes hält den Wert gut, ist aber unhandlich.\n\n'
+            'Diese Dreiteilung — Tauschmittel, Recheneinheit, Wertspeicher '
+            '— ist eine alte und verbreitete Beschreibung dessen, was Geld '
+            'tut. Welche der drei Aufgaben die wichtigste ist, sehen '
+            'Fachleute verschieden: die einen stellen das Tauschmittel '
+            'voran, die anderen den Wertspeicher.',
         illustrationId: 'werte/money-functions',
       ),
       ProseSection(
@@ -156,7 +157,7 @@ List<ProseChapter> _werteChaptersDe() => const [
             'einem Stempel, der Gewicht und Feinheit verbürgt. Wer dem Prägeherrn '
             'traute, musste nicht mehr selbst wiegen.\n\n'
             'Die ersten Münzen entstanden im antiken Lydien; wie sich das '
-            'Münzwesen für Gold und Silber dann entwickelte, tragen die Kapitel '
+            'Münzwesen für Gold und Silber dann entwickelte, behandeln die Kapitel '
             '„Gold durch die Geschichte" und „Silber durch die Geschichte".\n\n'
             'Eine Münze ist also kein neues Geld, sondern altes Geld in '
             'verbürgter Form. Der Stempel ersetzt die Waage, nicht das Metall. '
@@ -183,19 +184,19 @@ List<ProseChapter> _werteChaptersDe() => const [
       ),
       ProseSection(
         'Troy: zwölf Unzen aufs Pfund',
-        'Edelmetalle werden bis heute in Troy-Gewichten gewogen, und die sind '
-            'echt dozenal: Zwölf Troy-Unzen ergeben ein Troy-Pfund. Alle Stufen '
-            'sind ganzzahlige Vielfache des Grains — 1959 festgelegt auf '
-            '0,06479891 Gramm: 24 Grain sind ein Pennyweight, 480 Grain eine '
-            'Troy-Unze. Selbst die Feinheit zählt dozenal-nah: Die volle '
-            'Reinheit misst man in vierundzwanzig Teilen, zweimal zwölf.\n\n'
-            'Das Troy-Gewicht steht neben dem alltäglichen Avoirdupois-Gewicht, '
-            'und das stiftet eine hübsche Verwirrung: Eine Troy-Unze ist rund '
-            '9,7 Prozent schwerer als eine gewöhnliche Unze — aber das '
-            'Troy-Pfund ist leichter als das gewöhnliche Pfund, weil es nur '
-            'zwölf Unzen hat statt sechzehn. Die Zwölf ist hier also echt; dass '
-            'man daraus aber keine „natürliche" Geldbasis ableiten sollte, '
-            'steht am Ende dieses Blocks unter „Spekulatives".',
+        'Edelmetalle werden bis heute in Troy-Gewichten gewogen, und '
+            'die sind echt dozenal: Zwölf Troy-Unzen ergeben ein '
+            'Troy-Pfund. Alle Stufen sind ganzzahlige Vielfache des Grains '
+            '— 1959 festgelegt auf 0,06479891 Gramm: 24 Grain sind ein '
+            'Pennyweight, 480 Grain eine Troy-Unze. Selbst die Feinheit '
+            'zählt dozenal-nah: Die volle Reinheit misst man in '
+            'vierundzwanzig Teilen, zweimal zwölf.\n\n'
+            'Das Troy-Gewicht steht neben dem alltäglichen '
+            'Avoirdupois-Gewicht, und das stiftet eine hübsche Verwirrung: '
+            'Eine Troy-Unze ist rund 9,7 Prozent schwerer als eine '
+            'gewöhnliche Unze — aber das Troy-Pfund ist leichter als das '
+            'gewöhnliche Pfund, weil es nur zwölf Unzen hat statt sechzehn. '
+            'Die Zwölf ist hier also echt.',
         illustrationId: 'werte/troy-ladder',
       ),
     ],
@@ -231,7 +232,7 @@ List<ProseChapter> _werteChaptersDe() => const [
             'Goldschmuck aus alten Gräbern kommt blank ans Licht, als wäre er '
             'eben gefertigt.\n\n'
             'Völlig unangreifbar ist Gold aber nicht. In Königswasser, einer '
-            'Mischung aus Salz- und Salpetersäure, löst es sich auf. Man sagt '
+            'Mischung aus Salzsäure und Salpetersäure, löst es sich auf. Man sagt '
             'darum genauer: Gold läuft nicht an und oxidiert nicht — „chemisch '
             'völlig unangreifbar" wäre zu viel gesagt.',
       ),
@@ -256,19 +257,20 @@ List<ProseChapter> _werteChaptersDe() => const [
             'Ebenso lässt sich Gold zu feinsten Drähten ziehen. Diese '
             'Formbarkeit macht es zum Traum jedes Goldschmieds. Weil reines Gold '
             'für den täglichen Gebrauch oft zu weich ist, mischt man es mit '
-            'anderen Metallen — dazu mehr im Kapitel über den Feingehalt.',
+            'anderen Metallen — wie man den Goldanteil in Karat liest, steht im '
+            'Kapitel „Schmuck und Wertspeicher".',
       ),
       ProseSection(
         'Selten, aber nicht zu selten',
-        'Gold ist selten, aber nicht so selten, dass es niemand finden könnte. '
-            'Diese Mitte ist wichtig. Wäre Gold häufig wie Eisen, taugte es nicht '
-            'als Wertspeicher. Wäre es so selten, dass kaum jemand es je zu '
-            'Gesicht bekäme, taugte es nicht als Geld.\n\n'
-            'Wie viel Gold die Menschheit im Lauf der Geschichte gefördert hat, '
-            'lässt sich nur schätzen. Eine oft genannte Schätzung besagt, alles '
-            'je geförderte Gold zusammengenommen passe in einen Würfel von gut '
-            'zwanzig Metern Kante. Das ist eine grobe Schätzung, keine genaue '
-            'Zahl — sie soll nur ein Gefühl für die Größenordnung geben.',
+        'Gold ist selten, aber nicht so selten, dass es niemand finden '
+            'könnte. Diese Mitte ist wichtig. Wäre Gold häufig wie Eisen, '
+            'taugte es nicht als Wertspeicher. Wäre es so selten, dass kaum '
+            'jemand es je zu Gesicht bekäme, taugte es nicht als Geld.\n\n'
+            'Wie viel Gold die Menschheit im Lauf der Geschichte gefördert '
+            'hat, lässt sich nur schätzen. Einer oft genannten Faustzahl '
+            'zufolge passt alles je geförderte Gold zusammengenommen in '
+            'einen Würfel von gut zwanzig Metern Kante. Das ist eine grobe '
+            'Annäherung, keine genaue Zahl.',
       ),
       ProseSection(
         'Die warme Farbe',
@@ -312,7 +314,8 @@ List<ProseChapter> _werteChaptersDe() => const [
             'Flüssen, und muss nicht erst aus Erz geschmolzen werden. Man konnte '
             'es einfach aufheben und hämmern.\n\n'
             'Das älteste bekannte verarbeitete Gold stammt aus den Gräbern von '
-            'Warna am Schwarzen Meer, rund viereinhalbtausend Jahre vor unserer '
+            'Warna (Varna) am Schwarzen Meer, rund viereinhalbtausend Jahre vor '
+            'unserer '
             'Zeitrechnung. Dort lagen Menschen mit kunstvollem Goldschmuck — ein '
             'früher Hinweis, dass Gold schon damals Rang und Reichtum bedeutete.',
       ),
@@ -332,8 +335,9 @@ List<ProseChapter> _werteChaptersDe() => const [
         'Byzanz und der lange Solidus',
         'Das Römische Reich prägte Goldmünzen, doch ihr Feingehalt schwankte. '
             'Beständiger war der Solidus, eine Goldmünze, die Kaiser Konstantin '
-            'einführte und die das Oströmische Reich von Byzanz aus über viele '
-            'Jahrhunderte fast unverändert hielt.\n\n'
+            'einführte und die das Oströmische Reich von Byzanz aus über mehrere '
+            'Jahrhunderte bemerkenswert stabil hielt, ehe sie im späteren '
+            'Mittelalter abgewertet wurde.\n\n'
             'Ein Geld, das so lange seine Feinheit behielt, war eine seltene '
             'Leistung. Der Solidus wurde im halben Mittelmeerraum als '
             'verlässliches Handelsgeld angenommen. Sein Name lebt im Wort „Sold" '
@@ -357,7 +361,8 @@ List<ProseChapter> _werteChaptersDe() => const [
             'Schritt für Schritt wurde dieser Anker gelöst, und 1971 endete die '
             'Einlösbarkeit des US-Dollars in Gold ganz. Seither ist kein großes '
             'Geld mehr durch Gold gedeckt. Wie der Goldstandard im Einzelnen '
-            'funktionierte, gehört in ein eigenes Kapitel über das Geldwesen; '
+            'funktionierte, steht im eigenen Kapitel „Der Goldstandard und sein '
+            'Ende"; '
             'hier zählt nur der lange Faden von der ersten Münze bis zu seinem '
             'Ende.',
       ),
@@ -394,14 +399,15 @@ List<ProseChapter> _werteChaptersDe() => const [
     [
       ProseSection(
         'Ägypten: Fleisch der Götter',
-        'Im alten Ägypten galt Gold als göttlich. Man nannte es das „Fleisch '
-            'der Götter", denn es leuchtete wie die Sonne und lief niemals an — '
-            'es schien unsterblich. Die Totenmaske des Tutanchamun ist bis heute '
-            'das berühmteste Stück dieser Goldkunst.\n\n'
+        'Im alten Ägypten galt Gold als göttlich. Man nannte es das '
+            '„Fleisch der Götter", denn es leuchtete wie die Sonne und lief '
+            'niemals an — es schien unsterblich. Die Totenmaske des '
+            'Tutanchamun ist bis heute das berühmteste Stück dieser '
+            'Goldkunst.\n\n'
             'Gold gehörte vor allem den Göttern und dem König. Es schmückte '
-            'Tempel und Gräber und sollte den Toten ins ewige Leben begleiten. '
-            'Solche Bedeutungen sind Glaubensvorstellungen ihrer Zeit, doch sie '
-            'prägten, wie die Ägypter Gold gewannen und einsetzten.',
+            'Tempel und Gräber und sollte den Toten ins ewige Leben '
+            'begleiten. Diese Vorstellungen prägten, wie die Ägypter Gold '
+            'gewannen und einsetzten.',
       ),
       ProseSection(
         'Mesopotamien und der Nahe Osten',
@@ -426,15 +432,14 @@ List<ProseChapter> _werteChaptersDe() => const [
       ),
       ProseSection(
         'Westafrika und Mali: Mansa Musas Pilgerfahrt',
-        'Das mittelalterliche Reich Mali in Westafrika war reich an Gold. Sein '
-            'Herrscher Mansa Musa unternahm 1324 eine Pilgerfahrt nach Mekka und '
-            'kam durch Kairo. Dass er dort große Mengen Gold ausgab und '
-            'verschenkte, ist gut bezeugt.\n\n'
-            'Wie viel genau und wie lange, ist von Legenden umrankt — manche '
-            'Berichte sagen, sein Gold habe den Wert des Metalls in Kairo für '
-            'Jahre gedrückt. Der Kern ist verbürgt, das Ausmaß sagenhaft '
-            'übertrieben. Sicher ist: Malis Gold machte das Reich in der ganzen '
-            'damaligen Welt berühmt.',
+        'Das mittelalterliche Reich Mali in Westafrika war reich an '
+            'Gold. Sein Herrscher Mansa Musa unternahm 1324 eine '
+            'Pilgerfahrt nach Mekka und kam durch Kairo. Dass er dort große '
+            'Mengen Gold ausgab und verschenkte, ist gut bezeugt.\n\n'
+            'Manche Berichte sagen, sein Gold habe den Wert des Metalls in '
+            'Kairo für Jahre gedrückt; wie viel genau und wie lange, ist '
+            'von Legenden umrankt. Malis Gold machte das Reich in der '
+            'ganzen damaligen Welt berühmt.',
       ),
       ProseSection(
         'China: Maß und Zurückhaltung',
@@ -449,16 +454,16 @@ List<ProseChapter> _werteChaptersDe() => const [
       ),
       ProseSection(
         'Indien: die lebendige Goldkultur',
-        'In Indien ist Gold bis heute tief im Leben verankert. Zu Hochzeiten '
-            'und Festen wie Diwali wird Gold verschenkt und getragen; es gehört '
-            'zur Mitgift und gilt als Segen. Kaum eine Kultur verbindet Gold so '
-            'eng mit dem Familienleben.\n\n'
-            'Schätzungen zufolge liegt in indischen Haushalten und Tempeln eine '
-            'der größten privaten Goldmengen der Welt — vieles davon als Schmuck. '
-            'Der World Gold Council, der als Interessenvertretung der '
-            'Goldbranche selbst Partei ist, hebt diese Rolle Indiens immer wieder '
-            'hervor. Feste Zahlen dazu sind unsicher; sicher ist die '
-            'außergewöhnliche kulturelle Bedeutung.',
+        'In Indien ist Gold bis heute tief im Leben verankert. Zu '
+            'Hochzeiten und Festen wie Diwali wird Gold verschenkt und '
+            'getragen; es gehört zur Mitgift und gilt als Segen. Kaum eine '
+            'Kultur verbindet Gold so eng mit dem Familienleben.\n\n'
+            'Schätzungen zufolge liegt in indischen Haushalten und Tempeln '
+            'eine der größten privaten Goldmengen der Welt — überwiegend '
+            'getragen, nicht gehortet. Der World Gold Council, die '
+            'Interessenvertretung der Goldbranche, hebt diese Rolle Indiens '
+            'immer wieder hervor. Feste Zahlen dazu sind unsicher; '
+            'außergewöhnlich ist die kulturelle Bedeutung.',
       ),
     ],
     sources: [
@@ -509,7 +514,7 @@ List<ProseChapter> _werteChaptersDe() => const [
             'Auch sonst war Gold oft der letzte Notgroschen. In Kriegen und auf '
             'der Flucht ließ sich kleines, wertvolles Gold mitnehmen und überall '
             'eintauschen, wo Papiergeld nichts mehr galt. Diese Verlässlichkeit '
-            'in der Krise gehört zu Golds Ruf.',
+            'in der Krise gehört zum Ruf des Goldes.',
       ),
       ProseSection(
         'Feingehalt: Karat lesen',
@@ -536,14 +541,14 @@ List<ProseChapter> _werteChaptersDe() => const [
       ),
       ProseSection(
         'Warum Schmuck nie nur Schmuck ist',
-        'Mancher hält Gold für die beste aller Anlagen — krisenfest, knapp und '
-            'seit Jahrtausenden begehrt. Diese Sicht ist verbreitet, aber sie '
-            'hat eine Kehrseite: Gold zahlt keinen Zins und wirft keinen Ertrag '
-            'ab, und seine Lagerung sicher zu halten kostet etwas.\n\n'
-            'Darum ist Goldschmuck nie nur Schmuck und nie nur Anlage. Er ist '
-            'beides zugleich, und gerade darin liegt sein eigener Reiz: Man '
-            'trägt etwas Schönes und hält zugleich einen Wert in der Hand, der '
-            'über Generationen hinweg etwas gilt.',
+        'Mancher hält Gold für die beste aller Anlagen — krisenfest, '
+            'knapp und seit Jahrtausenden begehrt. Dem steht eine Kehrseite '
+            'gegenüber: Gold zahlt keinen Zins und wirft keinen Ertrag ab, '
+            'und seine Lagerung sicher zu halten kostet etwas.\n\n'
+            'Darum ist Goldschmuck nie nur Schmuck und nie nur Anlage. Er '
+            'ist beides zugleich, und gerade darin liegt sein eigener Reiz: '
+            'Man trägt etwas Schönes und hält zugleich einen Wert in der '
+            'Hand, der über Generationen hinweg etwas gilt.',
       ),
     ],
     sources: [
@@ -578,16 +583,18 @@ List<ProseChapter> _werteChaptersDe() => const [
       ),
       ProseSection(
         'Antike: nahe der Zwölf, aber streuend',
-        'In der Antike lag das Verhältnis oft im Bereich von etwa acht bis '
-            'dreizehn zu eins — meist nahe der Zwölf, in einzelnen frühen Fällen '
-            'aber deutlich darunter. In Ägypten, Babylon, Griechenland und Rom '
-            'finden sich Werte in dieser Größenordnung. Alle '
-            'diese Zahlen sind gerundete Größenordnungen, keine genauen Messwerte.\n\n'
-            'Wichtig ist, was dabei nicht stimmt: Dass die Ratio „früher immer '
-            'zwölf" gewesen sei, ist zu glatt. Die antiken Werte streuten je nach '
-            'Region und Zeit erheblich, und die Belege sind lückenhaft. Die '
-            'Geschichte des Verhältnisses über die Jahrtausende gehört ganz diesem '
-            'Kapitel; andere Kapitel verweisen darauf, statt sie zu wiederholen.',
+        'In der Antike lag das Verhältnis oft im Bereich von etwa acht '
+            'bis dreizehn zu eins — meist nahe der Zwölf, in einzelnen '
+            'frühen Fällen aber deutlich darunter. In Ägypten, Babylon, '
+            'Griechenland und Rom finden sich Werte in dieser '
+            'Größenordnung. Alle diese Zahlen sind gerundete '
+            'Größenordnungen, keine genauen Messwerte.\n\n'
+            'Dass die Ratio „früher immer zwölf" gewesen sei, trifft den '
+            'Befund nicht. Die antiken Werte streuten je nach Region und '
+            'Zeit erheblich, und die Belege sind lückenhaft. Die Geschichte '
+            'des Verhältnisses über die Jahrtausende gehört ganz diesem '
+            'Kapitel; andere Kapitel verweisen darauf, statt sie zu '
+            'wiederholen.',
       ),
       ProseSection(
         'Mittelalter und frühe Neuzeit',
@@ -601,17 +608,18 @@ List<ProseChapter> _werteChaptersDe() => const [
       ),
       ProseSection(
         'Die große Spreizung der Moderne',
-        'Im neunzehnten und zwanzigsten Jahrhundert spreizte sich das Verhältnis '
-            'weit auf. Nachdem das Silber entmünzt war und kein Metall mehr das '
-            'Geld deckte, war Silber vor allem ein Industriemetall, Gold blieb '
-            'Wertspeicher. In dieser Spanne liegt das Verhältnis seither oft '
-            'irgendwo zwischen fünfzig und neunzig zu eins.\n\n'
-            'Diese Spanne ist als grobe Größenordnung gemeint, nicht als '
-            'tagesgenauer Wert. Kurzzeitig kann die Ratio stark ausschlagen: '
-            'Anfang 1980 trieben die Brüder Hunt den Silberpreis auf knapp '
-            'fünfzig Dollar je Unze; am „Silbernen Donnerstag", dem 27. März '
-            '1980, brach er dann ein. Solch eine Spitze ist ein Ausnahmefall, '
-            'kein typischer Stand.',
+        'Im neunzehnten und zwanzigsten Jahrhundert spreizte sich das '
+            'Verhältnis weit auf. Nachdem das Silber entmünzt war und kein '
+            'Metall mehr das Geld deckte, war Silber vor allem ein '
+            'Industriemetall, Gold blieb Wertspeicher. In dieser Spanne '
+            'liegt das Verhältnis seither oft irgendwo zwischen fünfzig und '
+            'neunzig zu eins.\n\n'
+            'Diese Spanne ist eine grobe Größenordnung, kein tagesgenauer '
+            'Wert. Kurzzeitig kann die Ratio stark ausschlagen: Mitte '
+            'Januar 1980 trieben die Brüder Hunt den Silberpreis auf knapp '
+            'fünfzig Dollar je Unze; am „Silbernen Donnerstag", dem 27. '
+            'März 1980, brach er dann ein. Solch eine Spitze stand weit '
+            'über dem sonst üblichen Stand.',
       ),
       ProseSection(
         'So liest man die Ratio in der Kurve',
@@ -659,28 +667,29 @@ List<ProseChapter> _werteChaptersDe() => const [
     [
       ProseSection(
         'Bimetallismus und Greshams Gesetz',
-        'Lange standen Gold und Silber zugleich als Geld nebeneinander. Das nennt '
-            'man Bimetallismus. Damit beide als Münzen umliefen, legten Staaten ein '
-            'festes Verhältnis zwischen ihnen fest — etwa sechzehn zu eins.\n\n'
-            'Wich der freie Marktpreis von diesem festen Münzwert ab, geschah '
-            'Folgendes: Das Metall, das in der Münze unterbewertet war, war als '
-            'Rohmetall mehr wert. Die Leute hielten es zurück oder schmolzen es ein, '
-            'und im Umlauf blieb das überbewertete. Das ist Greshams Gesetz — '
-            'schlechtes Geld verdrängt gutes. Es gilt als empirische Faustregel '
-            'unter festen Münzkursen, nicht als Naturgesetz.',
+        'Lange standen Gold und Silber zugleich als Geld nebeneinander. '
+            'Das nennt man Bimetallismus. Damit beide als Münzen umliefen, '
+            'legten Staaten ein festes Verhältnis zwischen ihnen fest — '
+            'etwa sechzehn zu eins.\n\n'
+            'Wich der freie Marktpreis von diesem festen Münzwert ab, '
+            'geschah Folgendes: Das Metall, das in der Münze unterbewertet '
+            'war, war als Rohmetall mehr wert. Die Leute hielten es zurück '
+            'oder schmolzen es ein, und im Umlauf blieb das überbewertete. '
+            'Das ist Greshams Gesetz — schlechtes Geld verdrängt gutes. Es '
+            'zeigte sich als Faustregel unter festen Münzkursen.',
       ),
       ProseSection(
         'Die Münzgesetze und der „Crime of 1873"',
-        'Die USA legten 1792 ein Verhältnis von fünfzehn zu eins fest, 1834 dann '
-            'rund sechzehn zu eins. 1873 nahm ein Münzgesetz das Silber aus der '
-            'freien Ausprägung — die USA gingen damit faktisch zum Goldstandard '
-            'über.\n\n'
-            'Dass das Gesetz beschlossen wurde und später von der „Free Silver"-'
-            'Bewegung den Namen „Crime of 1873" erhielt, ist belegt. Ob dahinter '
-            'eine bewusste Verschwörung gegen das Silber stand, ist dagegen eine '
-            'attribuierte politische Meinung, kein gesicherter Befund. Die einen '
-            'sahen einen stillen Staatsstreich, die anderen einen technischen '
-            'Schritt einer ohnehin laufenden Entwicklung.',
+        'Die USA legten 1792 ein Verhältnis von fünfzehn zu eins fest, '
+            '1834 dann rund sechzehn zu eins. 1873 nahm ein Münzgesetz das '
+            'Silber aus der freien Ausprägung — die USA gingen damit '
+            'faktisch zum Goldstandard über.\n\n'
+            'Das Gesetz wurde beschlossen und erhielt später von der „Free '
+            'Silver"-Bewegung den Namen „Crime of 1873". Ob dahinter eine '
+            'bewusste Verschwörung gegen das Silber stand, sahen die '
+            'Zeitgenossen verschieden: die einen einen stillen '
+            'Staatsstreich, die anderen einen technischen Schritt einer '
+            'ohnehin laufenden Entwicklung.',
       ),
       ProseSection(
         'Silber wird Industriemetall, Gold bleibt Geld',
@@ -707,15 +716,15 @@ List<ProseChapter> _werteChaptersDe() => const [
         illustrationId: 'werte/crust-vs-money',
       ),
       ProseSection(
-        'Ein ehrlicher Vorbehalt zu den Ursachen',
-        'Keine einzelne Ursache erklärt die Verschiebung. Münzgesetze, Greshams '
-            'Gesetz, die neue Rolle des Silbers in der Industrie, Funde und '
-            'Förderung — alles wirkte zusammen. Wer eine einzige Schuldige sucht, '
-            'vereinfacht zu stark.\n\n'
-            'Die genannten Zahlen — Münzkurse, Förderung, Häufigkeit — sind als '
-            'Größenordnungen zu lesen. Und der „Crime of 1873" bleibt in dem Punkt '
-            'umstritten, der über das belegte Gesetz hinausgeht: Die Deutung als '
-            'Verschwörung ist Meinung, nicht Tatsache.',
+        'Mehrere Ursachen zugleich',
+        'Keine einzelne Ursache erklärt die Verschiebung. Münzgesetze, '
+            'Greshams Gesetz, die neue Rolle des Silbers in der Industrie, '
+            'Funde und Förderung wirkten zusammen. Die genannten Zahlen — '
+            'Münzkurse, Förderung, Häufigkeit — sind Größenordnungen.\n\n'
+            'Um den „Crime of 1873" gehen die Deutungen auseinander, sobald '
+            'sie über das belegte Gesetz hinausreichen: Die einen lesen ihn '
+            'als Verschwörung gegen das Silber, die anderen als nüchternen '
+            'Verwaltungsakt.',
       ),
     ],
     sources: [
@@ -755,47 +764,51 @@ List<ProseChapter> _werteChaptersDe() => const [
     'Die Ratio als Strategie und der Mythos der natürlichen Zahl',
     [
       ProseSection(
-        'Mean Reversion: ein Strategie-Glaube',
-        'Manche Anleger gehen davon aus, das Gold-Silber-Verhältnis kehre auf Dauer '
-            'zu einem Mittelwert zurück. Ist die Ratio hoch, kaufen sie Silber; ist '
-            'sie niedrig, kaufen sie Gold. Diese Idee heißt „Mean Reversion", '
-            'Rückkehr zum Mittel.\n\n'
-            'Das ist eine Anlage-Überzeugung, kein bewiesenes Gesetz. Ein '
-            'Verhältnis, das in einem Jahrhundert um zehn schwankte, kann in einem '
-            'anderen ganz woanders pendeln. Dieses Kapitel gibt keine Kauf- oder '
-            'Verkaufsempfehlung — es beschreibt nur, was Leute glauben.',
+        'Mean Reversion: eine Strategie',
+        'Manche Anleger gehen davon aus, das Gold-Silber-Verhältnis '
+            'kehre auf Dauer zu einem Mittelwert zurück. Ist die Ratio '
+            'hoch, kaufen sie Silber; ist sie niedrig, kaufen sie Gold. '
+            'Diese Idee heißt „Mean Reversion", Rückkehr zum Mittel.\n\n'
+            'Ein Verhältnis, das in einem Jahrhundert um zehn schwankte, '
+            'kann in einem anderen ganz woanders pendeln. Wo die einen '
+            'einen stabilen Mittelwert sehen, zu dem die Ratio '
+            'zurückfindet, sehen die anderen nur eine Reihe von Zahlen ohne '
+            'festen Anker.',
       ),
       ProseSection(
         'Die Krustenhäufigkeit gegen das Geldverhältnis',
-        'Dass Silber in der Erdkruste viel häufiger ist als Gold, ist im Kapitel '
-            '„Warum sich das Verhältnis verschob" erklärt. Daraus folgt aber kein '
-            '„natürliches" Geldverhältnis: Die Häufigkeit in der Kruste und der '
-            'Preis im Geldwesen sind zwei verschiedene Dinge.\n\n'
+        'Dass Silber in der Erdkruste viel häufiger ist als Gold, ist '
+            'im Kapitel „Warum sich das Verhältnis verschob" erklärt. Aus '
+            'der Häufigkeit in der Kruste folgt aber kein „natürliches" '
+            'Geldverhältnis: Die Häufigkeit im Gestein und der Preis im '
+            'Geldwesen sind zwei verschiedene Dinge.\n\n'
             'Der Preis hängt zusätzlich an Förderkosten, Industriebedarf, '
-            'Geldordnungen und Vertrauen. Die geologische Häufigkeit und das '
-            'Geldverhältnis in einen Topf zu werfen, führt in die Irre.',
+            'Geldordnungen und Vertrauen. Die geologische Häufigkeit ist '
+            'nur eine Zutat unter mehreren.',
       ),
       ProseSection(
         'Ist 16 (oder 12) eine „natürliche" Zahl?',
-        'Man hört, das Verhältnis sei „von Natur aus" sechzehn zu eins oder zwölf '
-            'zu eins. Das ist Folklore, kein Befund. Die runden Zahlen kamen aus '
-            'Münzgesetzen — sie waren politische und praktische Setzungen, keine '
-            'Naturkonstanten.\n\n'
-            'Dass Troy-Gewicht und alte Münzstückelungen dozenal gebaut sind, ist '
-            'belegt und steht in der Einheitentheorie. Die Zwölf war beim Teilen '
-            'nützlich. Daraus aber ein „natürliches" Wertverhältnis von Gold zu '
-            'Silber abzuleiten, ist ein Sprung, den die Belege nicht tragen.',
+        'Man hört, das Verhältnis sei „von Natur aus" sechzehn zu eins '
+            'oder zwölf zu eins. Die runden Zahlen kamen aus Münzgesetzen — '
+            'sie waren politische und praktische Setzungen.\n\n'
+            'Dass Troy-Gewicht und alte Münzstückelungen dozenal gebaut '
+            'sind, ist belegt und steht in der Einheitentheorie. Die Zwölf '
+            'war beim Teilen nützlich. Von dort führt jedoch kein Weg zu '
+            'einem festen Wertverhältnis von Gold zu Silber: Die '
+            'Münzordnung setzte die Zahl, die Natur gab sie nicht vor.',
       ),
       ProseSection(
         'Was die Ratio bedeutet — und was nicht',
-        'Die Ratio ist ein nützliches Maß, um Gold und Silber zu vergleichen, und '
-            'ein Stück Wirtschaftsgeschichte. Mehr ist sie nicht. Sie ist kein '
-            'verstecktes Naturgesetz und kein sicherer Wegweiser für die Zukunft.\n\n'
-            'Behauptungen, der Silbermarkt werde gezielt gedrückt, kursieren — sie '
-            'bleiben hier als umstritten und attribuiert markiert, nicht als '
-            'Tatsache. Und feste Verhältnisse zwischen Papier und physischem Metall, '
-            'wie sie manchmal genannt werden, sind kein gesicherter Wert. Wer die '
-            'Ratio liest, liest Geschichte und Gegenwart — keine Prophezeiung.',
+        'Die Ratio ist ein nützliches Maß, um Gold und Silber zu '
+            'vergleichen, und ein Stück Wirtschaftsgeschichte. Sie ist kein '
+            'verstecktes Naturgesetz und kein Wegweiser für die '
+            'Zukunft.\n\n'
+            'Manche sagen, der Silbermarkt werde gezielt gedrückt; andere '
+            'sehen darin nur das gewöhnliche Spiel von Angebot und '
+            'Nachfrage. Auch feste Verhältnisse zwischen Papier und '
+            'physischem Metall, wie sie manchmal genannt werden, gehen je '
+            'nach Quelle weit auseinander. Wer die Ratio liest, liest '
+            'Geschichte und Gegenwart.',
       ),
     ],
     sources: [
@@ -856,22 +869,17 @@ List<ProseChapter> _werteChaptersDe() => const [
       ),
       ProseSection(
         'Laurion, Potosí und die Silberschwemmen',
-        'Großes Silber kam immer aus großen Minen. Athen schöpfte sein Silber aus '
-            'den Gruben von Laurion und finanzierte damit auch seine Flotte. '
-            'Später lieferte das spanische Amerika gewaltige Mengen — vor allem der '
-            'Berg von Potosí im heutigen Bolivien.\n\n'
-            'Diese Silberschwemmen veränderten die Welt: Das amerikanische Silber '
-            'floss über Europa bis nach China und prägte den Handel ganzer '
-            'Jahrhunderte. Wie viel genau gefördert wurde, ist nur grob bekannt.',
-      ),
-      ProseSection(
-        'Ein ehrlicher Vorbehalt',
-        'Die Fördermengen von Laurion und Potosí sind umstritten. Überliefert '
-            'sind sie nur als Schätzungen, und die Quellen weichen stark '
-            'voneinander ab. Man kennt die Größenordnung, nicht die genaue Zahl.\n\n'
-            'Auch die Gleichung „Geld = Silber" sollte man nicht überdehnen. Sie '
-            'gilt für argent und plata, aber nicht für jede Sprache. Es ist ein '
-            'verbreitetes Muster, kein Naturgesetz.',
+        'Großes Silber kam immer aus großen Minen. Athen schöpfte sein '
+            'Silber aus den Gruben von Laurion und finanzierte damit auch '
+            'seine Flotte. Später lieferte das spanische Amerika gewaltige '
+            'Mengen — vor allem der Berg von Potosí im heutigen '
+            'Bolivien.\n\n'
+            'Diese Silberschwemmen veränderten die Welt: Das amerikanische '
+            'Silber floss über Europa bis nach China und prägte den Handel '
+            'ganzer Jahrhunderte. Die Fördermengen von Laurion und Potosí '
+            'sind nur als Schätzungen überliefert, und die Quellen weichen '
+            'stark voneinander ab. Man kennt die Größenordnung, nicht die '
+            'genaue Zahl.',
       ),
     ],
     sources: [
@@ -931,7 +939,7 @@ List<ProseChapter> _werteChaptersDe() => const [
             'auf der Vorderseite vieler Zellen bestehen aus Silberpaste; sie führen '
             'den erzeugten Strom ab. Mit dem Ausbau der Photovoltaik wächst dieser '
             'Bedarf.\n\n'
-            'Gleichzeit arbeitet die Industrie daran, je Zelle weniger Silber zu '
+            'Gleichzeitig arbeitet die Industrie daran, je Zelle weniger Silber zu '
             'verbrauchen. Dieses „Thrifting" — der sparsamere Einsatz pro Stück — '
             'läuft der steigenden Stückzahl entgegen. Wie sich beides am Ende '
             'verrechnet, ist offen.',
@@ -947,16 +955,16 @@ List<ProseChapter> _werteChaptersDe() => const [
             'gebrauchter Werkstoff mit echtem Nutzen.',
       ),
       ProseSection(
-        'Elektroautos, Robotik und die Zukunftsnachfrage — mit Vorbehalt',
-        'Mehr Elektronik bedeutet meist mehr Silber. Elektroautos enthalten '
-            'zahlreiche elektrische Kontakte, und auch Robotik und vernetzte Geräte '
-            'brauchen leitfähige Bauteile. Daraus leiten manche eine kräftig '
-            'steigende Nachfrage ab.\n\n'
-            'Hier ist Vorsicht geboten. Konkrete Mengenprognosen für die kommenden '
-            'Jahre stammen oft von interessierten Stellen wie dem Silver Institute, '
-            'einer Branchenvertretung. Die Richtung — eher mehr industrielle '
-            'Nachfrage — ist plausibel. Feste Tonnagen für die Zukunft sind '
-            'Schätzungen, keine gesicherten Zahlen.',
+        'Elektroautos, Robotik und die Zukunftsnachfrage',
+        'Mehr Elektronik bedeutet meist mehr Silber. Elektroautos '
+            'enthalten zahlreiche elektrische Kontakte, und auch Robotik '
+            'und vernetzte Geräte brauchen leitfähige Bauteile. Daraus '
+            'leiten manche eine kräftig steigende Nachfrage ab.\n\n'
+            'Die Richtung — eher mehr industrielle Nachfrage — ist '
+            'plausibel. Konkrete Mengenprognosen für die kommenden Jahre '
+            'stammen aber oft von der Branche selbst, etwa vom Silver '
+            'Institute, einer Branchenvertretung; feste Tonnagen für die '
+            'Zukunft sind Schätzungen.',
       ),
     ],
     sources: [
@@ -1032,15 +1040,16 @@ List<ProseChapter> _werteChaptersDe() => const [
             'als bei Gold, das fast nur von der Anlage getragen wird.',
       ),
       ProseSection(
-        'Ein ehrlicher Vorbehalt',
-        'Die genauen Anteile schwanken von Jahr zu Jahr. Wie viel Silber in die '
-            'Industrie geht und wie viel als Beifang anfällt, kennt man nur als '
-            'Größenordnung, nicht als feste Zahl.\n\n'
-            'Belegt ist, dass fein verteilte Anwendungen schlecht recycelt werden. '
-            'Die weitergehende These, das verbrauchte Industriesilber sei „für '
-            'immer weg" und über der Erde liege „kaum noch etwas", geht darüber '
-            'hinaus. Sie ist eine Knappheitsvermutung, kein gesicherter Befund — '
-            'und sollte als solche gelesen werden.',
+        'Wie viel weiß man genau',
+        'Die genauen Anteile schwanken von Jahr zu Jahr. Wie viel '
+            'Silber in die Industrie geht und wie viel als Beifang anfällt, '
+            'kennt man nur als Größenordnung, nicht als feste Zahl.\n\n'
+            'Fein verteilte Anwendungen werden schlecht recycelt. Ob das '
+            'verbrauchte Industriesilber damit „für immer weg" ist und über '
+            'der Erde „kaum noch etwas" liegt, sehen die Fachleute '
+            'verschieden: die einen halten den Schwund für entscheidend, '
+            'die anderen verweisen auf die großen Barren- und Münzbestände, '
+            'die jederzeit wieder einschmelzbar sind.',
       ),
     ],
     sources: [
@@ -1094,8 +1103,8 @@ List<ProseChapter> _werteChaptersDe() => const [
       ProseSection(
         'Warum Silber Gold übertreibt',
         'In vielen Phasen bewegt sich Silber in dieselbe Richtung wie Gold, aber '
-            'kräftiger. Steigt Gold, steigt Silber oft stärker; fällt Gold, fällt '
-            'Silber oft tiefer. Man sagt, Silber „übertreibt" die Bewegung des '
+            'kräftiger. Steigt Gold, legt Silber meist kräftiger zu; fällt Gold, '
+            'sinkt Silber tiefer. Man sagt, Silber „übertreibt" die Bewegung des '
             'Goldes.\n\n'
             'Ein Grund ist der kleine Markt: Schon mäßige Käufe oder Verkäufe '
             'bewegen den Silberpreis spürbar. Der zusätzliche Zug der Industrie '
@@ -1103,26 +1112,20 @@ List<ProseChapter> _werteChaptersDe() => const [
       ),
       ProseSection(
         'Münzen, Barren und Papier',
-        'Silber lässt sich auf mehrere Arten halten. Münzen und Barren sind das '
-            'Metall selbst, zum Anfassen. Daneben gibt es Papierformen — Fonds und '
-            'Terminkontrakte —, die Silber abbilden, ohne dass man es im Schrank '
-            'hat.\n\n'
-            'Physisches Silber ist sperriger und im Verhältnis zum Wert teurer zu '
-            'lagern als Gold, weil man für denselben Wert ein Vielfaches an Masse '
-            'braucht. Papierformen sind handlicher, bringen aber eigene Fragen mit '
-            'sich — mehr dazu im Kapitel über Papier und Metall.',
-      ),
-      ProseSection(
-        'Ein ehrlicher Vorbehalt',
-        'Dass Silber je Unze billiger ist und stärker schwankt, ist belegt. Was '
-            'darüber hinausgeht, ist Meinung. Die Aussage „Silber ist '
-            'unterbewertet und muss zu Gold aufholen" ist eine Anlagethese, kein '
-            'Fakt.\n\n'
-            'Besonders die Idee, das Gold-Silber-Verhältnis müsse zur alten Marke '
-            'nahe sechzehn zurückkehren, ist mit Vorsicht zu lesen. Dass dieses '
-            'Verhältnis keine natürliche Konstante ist, wird in den Kapiteln zum '
-            'Gold-Silber-Verhältnis erklärt; eine Rückkehr ist eine Erwartung, '
-            'keine Gewähr.',
+        'Silber lässt sich auf mehrere Arten halten. Münzen und Barren '
+            'sind das Metall selbst, zum Anfassen. Daneben gibt es '
+            'Papierformen — Fonds und Terminkontrakte —, die Silber '
+            'abbilden, ohne dass man es im Schrank hat.\n\n'
+            'Physisches Silber ist sperriger und im Verhältnis zum Wert '
+            'teurer zu lagern als Gold, weil man für denselben Wert ein '
+            'Vielfaches an Masse braucht. Papierformen sind handlicher, '
+            'bringen aber eigene Fragen mit sich — mehr dazu im Kapitel '
+            '„Papier gegen Metall: das Silber-Rätsel".\n\n'
+            'Manche halten Silber für unterbewertet und erwarten, dass es '
+            'zu Gold aufholt — besonders, dass das Gold-Silber-Verhältnis '
+            'zur alten Marke nahe sechzehn zurückkehrt. Dass dieses '
+            'Verhältnis keine natürliche Konstante ist, wird in den '
+            'Kapiteln zum Gold-Silber-Verhältnis erklärt.',
       ),
     ],
     sources: [
@@ -1162,27 +1165,26 @@ List<ProseChapter> _werteChaptersDe() => const [
       ),
       ProseSection(
         'Die Behauptung: viel Papier, wenig Metall',
-        'Aus diesem Bau folgt eine oft gehörte Behauptung: Es gebe viel mehr '
-            'Silber „auf Papier" als wirklich lieferbares Metall in den Lagern. Die '
-            'offenen Kontrakte überstiegen die sofort verfügbaren Bestände um ein '
-            'Vielfaches.\n\n'
-            'Daraus wird gefolgert, der Markt sitze auf Versprechen, die er nicht '
-            'einlösen könne, und ein Ansturm auf das Metall müsse ihn sprengen. '
-            'Diese Erzählung ist verbreitet — sie verdient aber eine genaue '
-            'Prüfung.',
+        'Aus diesem Bau folgt eine oft gehörte Behauptung: Es gebe viel '
+            'mehr Silber „auf Papier" als wirklich lieferbares Metall in '
+            'den Lagern. Die offenen Kontrakte überstiegen die sofort '
+            'verfügbaren Bestände um ein Vielfaches.\n\n'
+            'Daraus wird gefolgert, der Markt sitze auf Versprechen, die er '
+            'nicht einlösen könne, und ein Ansturm auf das Metall müsse ihn '
+            'sprengen.',
       ),
       ProseSection(
-        'Was dokumentiert ist — und was nicht',
-        'Dokumentiert ist: Die offenen Kontrakte können die sofort lieferbaren '
-            'registrierten Bestände übersteigen. Das ist für einen Terminmarkt '
-            'normal und kein Beweis für Betrug, weil eben fast alle Kontrakte vor '
-            'der Lieferung glattgestellt werden. Es muss nie für alle zugleich '
-            'Metall da sein.\n\n'
-            'Nicht dokumentiert ist die Schlussfolgerung, daraus folge zwingend ein '
-            'Crash oder ein Schwindel. Ein festes Verhältnis von „so-und-so-viel '
-            'Papier je Unze Metall garantiert den Kollaps" lässt sich nicht '
-            'belegen. Die Mechanik des Marktes und die Verschwörungsdeutung sind '
-            'zwei verschiedene Dinge.',
+        'Wie viel Metall hinter den Kontrakten liegt',
+        'Die offenen Kontrakte können die sofort lieferbaren '
+            'registrierten Bestände übersteigen. Für einen Terminmarkt ist '
+            'das der Normalfall, denn fast alle Kontrakte werden vor der '
+            'Lieferung glattgestellt; es muss nie für alle zugleich Metall '
+            'da sein.\n\n'
+            'Die einen lesen darin den Bau eines funktionierenden Marktes, '
+            'in dem Preise gehandelt und nicht Barren bewegt werden. Die '
+            'anderen lesen darin ein Versprechen, das im Ernstfall '
+            'zerbricht. Ein festes Verhältnis von „so-und-so-viel Papier je '
+            'Unze Metall" lässt sich für die zweite Lesart nicht beziffern.',
       ),
       ProseSection(
         'Die Hunt-Brüder 1980: ein echter Eckverlauf',
@@ -1197,25 +1199,28 @@ List<ProseChapter> _werteChaptersDe() => const [
       ),
       ProseSection(
         'Der „Silver Squeeze" 2021',
-        'Anfang 2021 riefen Anleger in sozialen Netzen dazu auf, gemeinsam Silber '
-            'zu kaufen und so einen „Squeeze" auszulösen — im Umfeld der '
-            'GameStop-Episode. Der Silberpreis stieg kurz an.\n\n'
-            'Ein nachhaltiger Engpass entstand daraus nicht. Ob die Aktion '
-            'überhaupt einen dauerhaften Effekt hatte, ist umstritten. Sie zeigt '
-            'eher, wie schnell sich solche Erzählungen verbreiten, als dass sie die '
-            'These vom leeren Lager bestätigt.',
+        'Anfang 2021 riefen Anleger in sozialen Netzen dazu auf, '
+            'gemeinsam Silber zu kaufen und so einen „Squeeze" auszulösen — '
+            'im Umfeld der GameStop-Episode. Der Silberpreis stieg kurz '
+            'an.\n\n'
+            'Ein nachhaltiger Engpass entstand daraus nicht. Die einen '
+            'sahen darin den Beweis, dass die Lager schwächer gefüllt sind '
+            'als gedacht; die anderen vor allem, wie schnell sich solche '
+            'Erzählungen verbreiten, ohne am Metall viel zu ändern.',
       ),
       ProseSection(
-        'Spekulatives (mit Vorsicht): Manipulation und das angebliche Verhältnis',
-        'Es gibt belegte Einzelfälle unsauberen Handels. Aufsichtsbehörden wie die '
-            'CFTC haben einzelne Banken wegen „Spoofing" — Scheinaufträgen zum '
-            'Täuschen — bestraft. Das sind dokumentierte Einzelfälle.\n\n'
-            'Daraus folgt aber nicht, dass „der Markt" dauerhaft und planmäßig '
-            'gedrückt werde. Die Behauptungen, der Silberpreis sei koordiniert '
-            'unterdrückt, ein bestimmtes Papier-zu-Metall-Verhältnis erzwinge den '
-            'Crash, oder die Lager seien leer und mehrfach verpfändet, sind '
-            'umstritten und spekulativ. Sie sollten als attribuierte Meinung gelesen '
-            'werden, nicht als Tatsache.',
+        'Manipulation und das angebliche Verhältnis',
+        'Es gibt belegte Einzelfälle unsauberen Handels. '
+            'Aufsichtsbehörden wie die CFTC haben einzelne Banken wegen '
+            '„Spoofing" — Scheinaufträgen zum Täuschen — bestraft. Das sind '
+            'dokumentierte Einzelfälle.\n\n'
+            'Darüber, was daraus folgt, gehen die Lesarten auseinander. Die '
+            'einen sehen darin die Spitze eines Eisbergs: den Silberpreis '
+            'koordiniert gedrückt, ein festes Papier-zu-Metall-Verhältnis, '
+            'das den Crash erzwinge, Lager, die leer und mehrfach '
+            'verpfändet seien. Die anderen sehen bestrafte Einzelfälle, aus '
+            'denen kein dauerhaftes, planmäßiges Drücken „des Marktes" '
+            'folgt.',
       ),
     ],
     sources: [
@@ -1302,7 +1307,8 @@ List<ProseChapter> _werteChaptersDe() => const [
             'schwankt über Jahre und Jahrzehnte deutlich. Auf eine Generation '
             'gesehen kann eine feste Menge Gold einmal viel und einmal wenig '
             'Korn kaufen.\n\n'
-            'Wer im falschen Jahr kaufte und im falschen verkaufte, verlor real, '
+            'Wer zum falschen Zeitpunkt kaufte und zum falschen wieder verkaufte, '
+            'verlor real, '
             'obwohl Gold „über die Jahrtausende" stabil ist. Die lange Linie '
             'beruhigt; die kurze kann hart sein. Gold ist ein Wertspeicher über '
             'Generationen, kein verlässlicher Maßstab von einem Jahr aufs '
@@ -1317,17 +1323,16 @@ List<ProseChapter> _werteChaptersDe() => const [
             'durchgezogener Linie —, zeigt das Kapitel „Die Preiskurve lesen".',
       ),
       ProseSection(
-        'Ein ehrlicher Vorbehalt',
-        'Die alten Werte sind grob, regional und oft nur als Größenordnung '
-            'überliefert. Antike Getreidepreise schwankten mit der Ernte und der '
-            'Gegend; ein Preis aus dem Niltal sagt wenig über denselben Tag in '
-            'Britannien. Wer aus solchen Zahlen eine genaue Kurve macht, gibt '
-            'eine Sicherheit vor, die die Quellen nicht hergeben.\n\n'
-            'Wer sagt, Gold sei „ewig stabil", sagt darum zu viel. Richtig ist '
-            'die zweiseitige Aussage: Über sehr lange Zeit bleibt die Kaufkraft '
-            'erstaunlich in derselben Größenordnung — mit großen Ausschlägen '
-            'dazwischen. Beide Hälften gehören genannt; nur zusammen sind sie '
-            'ehrlich.',
+        'Wie genau die alten Werte sind',
+        'Die alten Werte sind grob, regional und oft nur als '
+            'Größenordnung überliefert. Antike Getreidepreise schwankten '
+            'mit der Ernte und der Gegend; ein Preis aus dem Niltal sagt '
+            'wenig über denselben Tag in Britannien. Aus solchen Zahlen '
+            'lässt sich keine genaue Kurve ziehen, nur eine grobe '
+            'Linie.\n\n'
+            'Die Aussage hat darum zwei Hälften: Über sehr lange Zeit '
+            'bleibt die Kaufkraft des Goldes in Brotkorn erstaunlich in '
+            'derselben Größenordnung — mit großen Ausschlägen dazwischen.',
       ),
     ],
     sources: [
@@ -1374,15 +1379,14 @@ List<ProseChapter> _werteChaptersDe() => const [
       ),
       ProseSection(
         'Der klassische Goldstandard (etwa 1870 bis 1914)',
-        'In den Jahrzehnten vor dem Ersten Weltkrieg banden viele Länder ihr '
-            'Geld an Gold. Wechselkurse lagen damit weitgehend fest, und der '
-            'Handel über Grenzen wurde berechenbarer. Diese Zeit gilt vielen als '
-            'goldenes Zeitalter stabilen Geldes.\n\n'
-            'Stabil im Sinne von ruhig war sie aber nicht. Es gab Bankenpaniken, '
-            'lange Phasen fallender Preise und scharfe Rezessionen. Die feste '
-            'Goldbindung nahm den Regierungen ein Werkzeug aus der Hand, mit dem '
-            'sie auf Krisen hätten reagieren können — das ist kein Streitpunkt, '
-            'sondern eine Tatsache jener Jahre.',
+        'In den Jahrzehnten vor dem Ersten Weltkrieg banden viele '
+            'Länder ihr Geld an Gold. Wechselkurse lagen damit weitgehend '
+            'fest, und der Handel über Grenzen wurde berechenbarer. Diese '
+            'Zeit gilt vielen als goldenes Zeitalter stabilen Geldes.\n\n'
+            'Ruhig war sie aber nicht. Es gab Bankenpaniken, lange Phasen '
+            'fallender Preise und scharfe Rezessionen. Die feste '
+            'Goldbindung nahm den Regierungen ein Werkzeug aus der Hand, '
+            'mit dem sie auf Krisen hätten reagieren können.',
         illustrationId: 'werte/goldstandard-timeline',
       ),
       ProseSection(
@@ -1399,14 +1403,14 @@ List<ProseChapter> _werteChaptersDe() => const [
       ),
       ProseSection(
         'Der Nixon-Schock 1971',
-        'Mit der Zeit gab es im Ausland weit mehr Dollar als Gold in den '
-            'amerikanischen Tresoren, und immer mehr Länder wollten ihre Dollar '
-            'in Metall eintauschen. 1971 setzte Präsident Nixon die Einlösung '
-            'von Dollar in Gold aus. Damit endete die letzte Goldbindung des '
-            'Geldes.\n\n'
-            'Das ist die eine gesicherte Tatsache an diesem Tag: Der Dollar war '
-            'von da an nicht mehr in Gold einlösbar. Gedacht war der Schritt als '
-            'vorübergehend — geblieben ist er dauerhaft.',
+        'Mit der Zeit gab es im Ausland weit mehr Dollar als Gold in '
+            'den amerikanischen Tresoren, und immer mehr Länder wollten '
+            'ihre Dollar in Metall eintauschen. 1971 setzte Präsident Nixon '
+            'die Einlösung von Dollar in Gold aus. Damit endete die letzte '
+            'Goldbindung des Geldes.\n\n'
+            'Von da an war der Dollar nicht mehr in Gold einlösbar. Gedacht '
+            'war der Schritt als vorübergehend — geblieben ist er '
+            'dauerhaft.',
       ),
       ProseSection(
         'Was danach kam: das reine Papiergeld',
@@ -1420,15 +1424,18 @@ List<ProseChapter> _werteChaptersDe() => const [
             '„Hält Gold seinen Wert?" erklärt.',
       ),
       ProseSection(
-        'Ein ehrlicher Vorbehalt',
-        'Der klassische Goldstandard war kein Zeitalter reiner Ruhe — Paniken, '
-            'Deflation und Rezessionen gehören untrennbar dazu. Und Bretton Woods '
-            'war kein voller Goldstandard, sondern band nur den Dollar ans Gold.\n\n'
-            'Die Deutung, 1971 sei ein Wortbruch oder gar ein Diebstahl gewesen, '
-            'ist eine Position des Hartgeld-Lagers, keine Tatsache. Gesichert ist '
-            'allein das Ende der Dollar-Gold-Einlösung. Die genannten Werte '
-            '— 20,67 und 35,00 Dollar je Unze — sind historische Rechtsgrößen, '
-            'keine heutigen Preise.',
+        'Wortbruch oder geordnetes Ende?',
+        'Der klassische Goldstandard war kein Zeitalter reiner Ruhe — '
+            'Paniken, Deflation und Rezessionen gehören dazu. Und Bretton '
+            'Woods war kein voller Goldstandard, sondern band nur den '
+            'Dollar ans Gold.\n\n'
+            'Was 1971 geschah, sahen die Lager verschieden: dem '
+            'Hartgeld-Lager galt es als Wortbruch oder gar Diebstahl, '
+            'anderen als geordnetes Ende einer ohnehin nicht mehr haltbaren '
+            'Bindung. Aus dem Land floss mehr Dollar, als Gold im Tresor '
+            'lag — das war der Druck dahinter. Die Werte 20,67 und 35,00 '
+            'Dollar je Unze sind historische Rechtsgrößen, keine heutigen '
+            'Preise.',
       ),
     ],
     sources: [
@@ -1496,26 +1503,26 @@ List<ProseChapter> _werteChaptersDe() => const [
       ),
       ProseSection(
         'Die Repatriierungs-Debatten',
-        'Mehrfach haben Länder einen Teil ihres im Ausland gelagerten Goldes '
-            'wieder nach Hause geholt. Die Deutsche Bundesbank etwa verlegte '
-            'einen Anteil ihrer Bestände zurück nach Frankfurt und legte dazu '
-            'öffentlich Rechenschaft ab. Das ist ein belegter, politischer '
-            'Vorgang.\n\n'
-            'Davon strikt zu trennen ist der unbewiesene Verdacht, das Gold sei '
-            '„gar nicht da" oder heimlich mehrfach verliehen. Das eine ist '
-            'dokumentierte Politik, das andere eine Vermutung ohne Beleg — beides '
-            'darf man nicht in einen Topf werfen.',
+        'Mehrfach haben Länder einen Teil ihres im Ausland gelagerten '
+            'Goldes wieder nach Hause geholt. Die Deutsche Bundesbank etwa '
+            'verlegte einen Anteil ihrer Bestände zurück nach Frankfurt und '
+            'legte dazu öffentlich Rechenschaft ab.\n\n'
+            'Neben diesen Verlegungen kursiert der Verdacht, das Gold sei '
+            '„gar nicht da" oder heimlich mehrfach verliehen. Die '
+            'Verlegungen sind dokumentiert und mit Rechenschaft belegt; für '
+            'den Verdacht fehlt ein solcher Beleg.',
       ),
       ProseSection(
-        'Ein ehrlicher Vorbehalt',
-        'Welches Land wie viel Gold hält und in welcher Rangfolge, steht hier '
-            'bewusst nicht — solche Zahlen ändern sich und veralten. Es geht hier '
-            'nur um die dauerhaften Gründe: Vertrauen, Krisenreserve, kein '
-            'Ausfall einer Gegenpartei.\n\n'
-            'Die Deutung, Zentralbanken kauften Gold, um eine Leitwährung zu '
-            'stürzen, ist eine geopolitische Auslegung, keine Tatsache. Auch sie '
-            'gehört zu den Erzählungen, die man von den belegten Vorgängen '
-            'trennen muss.',
+        'Welches Land wie viel hält',
+        'Welches Land wie viel Gold hält und in welcher Rangfolge, '
+            'steht hier bewusst nicht — solche Zahlen ändern sich und '
+            'veralten. Es geht hier um die dauerhaften Gründe: Vertrauen, '
+            'Krisenreserve, kein Ausfall einer Gegenpartei.\n\n'
+            'Manche lesen die Goldkäufe der Zentralbanken geopolitisch — '
+            'als Versuch, eine Leitwährung zu schwächen. Andere sehen darin '
+            'schlicht die alte Suche nach einer Reserve, die keinem Staat '
+            'gehört. Beide Lesarten ranken sich um dieselben belegten '
+            'Käufe.',
       ),
     ],
     sources: [
@@ -1544,7 +1551,7 @@ List<ProseChapter> _werteChaptersDe() => const [
     'Gold als Schutz vor Inflation und Krise',
     [
       ProseSection(
-        'Die Versprechen: Hafen, Hedge, Versicherung',
+        'Die Versprechen: Hafen, Inflationsschutz, Versicherung',
         'Über Gold heißt es oft dreierlei: Es sei ein sicherer Hafen in der '
             'Krise, ein Schutz gegen Inflation und eine Art Versicherung für das '
             'Vermögen. Diese drei Versprechen klingen ähnlich, meinen aber '
@@ -1557,24 +1564,25 @@ List<ProseChapter> _werteChaptersDe() => const [
       ),
       ProseSection(
         'Was die lange Frist zeigt',
-        'Über sehr lange Zeiträume hat Gold seine Kaufkraft erstaunlich gut '
-            'gehalten — das ist im Kapitel „Hält Gold seinen Wert?" am Getreide '
-            'gezeigt.\n\n'
-            'Daraus folgt aber nicht, dass Gold jeden Geldwertverlust ausgleicht. '
-            'Der Schutz greift über sehr lange Horizonte, über die kaum ein '
-            'Mensch sein Geld anlegt. „Auf Dauer" und „in meinem Anlegerleben" '
-            'sind zwei verschiedene Fristen.',
+        'Über sehr lange Zeiträume hat Gold seine Kaufkraft erstaunlich '
+            'gut gehalten — das ist im Kapitel „Hält Gold seinen Wert?" am '
+            'Getreide gezeigt.\n\n'
+            'Daraus folgt aber nicht, dass Gold jeden Geldwertverlust '
+            'ausgleicht. Der Schutz greift über sehr lange Horizonte, über '
+            'die kaum ein Mensch sein Geld anlegt. „Auf Dauer" und „in '
+            'meinem Anlegerleben" sind zwei verschiedene Fristen.',
       ),
       ProseSection(
         'Was die kurze Frist zeigt',
-        'Über Jahre und Jahrzehnte kann Gold real an Wert verlieren. Es gab '
-            'lange Strecken, in denen Gold die Inflation nicht ausglich, und '
-            'andere, in denen es sie weit übertraf. Ein verlässlicher Gleichlauf '
-            'mit den Preisen von einem Jahr aufs nächste besteht nicht.\n\n'
-            'Auch der „sichere Hafen" ist von der Lage abhängig. In manchen '
-            'Krisen stieg Gold, während Aktien fielen. In Panik um Bargeld aber '
-            'verkauften viele auch ihr Gold, um an Liquidität zu kommen — dann '
-            'fiel es mit. Der Hafen ist also kein Naturgesetz.',
+        'Über Jahre und Jahrzehnte kann Gold real an Wert verlieren. Es '
+            'gab lange Strecken, in denen Gold die Inflation nicht '
+            'ausglich, und andere, in denen es sie weit übertraf. Ein '
+            'verlässlicher Gleichlauf mit den Preisen von einem Jahr aufs '
+            'nächste besteht nicht.\n\n'
+            'Auch der „sichere Hafen" hängt von der Lage ab. In manchen '
+            'Krisen stieg Gold, während Aktien fielen. In Panik um Bargeld '
+            'aber verkauften viele auch ihr Gold, um an Liquidität zu '
+            'kommen — dann fiel es mit.',
         illustrationId: 'werte/inflation-horizon',
       ),
       ProseSection(
@@ -1583,21 +1591,22 @@ List<ProseChapter> _werteChaptersDe() => const [
             'verteilt, nicht als Quelle hoher Erträge. Es bewegt sich oft anders '
             'als Aktien und Anleihen, und gerade das macht es als Mischung '
             'nützlich.\n\n'
-            'Ein Punkt gehört dabei ehrlich gesagt: Gold zahlt keine Zinsen und '
+            'Ein Punkt gehört dazu: Gold zahlt keine Zinsen und '
             'keine Dividende. Ein Barren liegt und vermehrt sich nicht von '
             'selbst. Wer Gold hält, setzt auf den Erhalt des Werts, nicht auf '
             'einen laufenden Ertrag.',
       ),
       ProseSection(
-        'Ein ehrlicher Vorbehalt',
-        'Der Satz „Gold schützt immer vor Inflation" ist zu stark. Richtig ist '
-            'nur die schwächere Form: Über sehr lange Zeit bleibt die Kaufkraft '
-            'in derselben Größenordnung, über Jahre und Jahrzehnte aber kann Gold '
-            'real verlieren. Beide Seiten gehören genannt.\n\n'
-            'Feste Renditezahlen, Korrelationen oder ein „richtiger" Goldanteil '
-            'im Vermögen stehen hier bewusst nicht — sie hängen von Zeitraum und '
-            'Lage ab. Und wer den Goldhandel bewirbt, etwa Branchenverbände, ist '
-            'Partei in eigener Sache; deren Zahlen liest man mit Vorsicht.',
+        'Schutz über welche Frist?',
+        'Der Satz „Gold schützt immer vor Inflation" trifft die Sache '
+            'nicht. Über sehr lange Zeit bleibt die Kaufkraft in derselben '
+            'Größenordnung; über Jahre und Jahrzehnte kann Gold real '
+            'verlieren. Welche der beiden Aussichten zählt, entscheidet die '
+            'Frist, über die man fragt.\n\n'
+            'Feste Renditezahlen, Korrelationen oder ein „richtiger" '
+            'Goldanteil im Vermögen stehen hier bewusst nicht — sie hängen '
+            'von Zeitraum und Lage ab. Wer den Goldhandel bewirbt, etwa '
+            'Branchenverbände, ist dabei Partei in eigener Sache.',
       ),
     ],
     sources: [
@@ -1644,7 +1653,8 @@ List<ProseChapter> _werteChaptersDe() => const [
       ),
       ProseSection(
         'Gold-ETFs: allokiert und nicht-allokiert',
-        'Viele Anleger halten Gold nicht selbst, sondern über einen Fonds, der '
+        'Viele Anleger halten Gold nicht selbst, sondern über einen '
+            'börsengehandelten Fonds — einen ETF —, der '
             'es für sie verwahrt. Hier scheidet sich allokiert von '
             'nicht-allokiert. Allokiert heißt: Bestimmte, nummerierte Barren sind '
             'dem Halter zugewiesen; ihm gehört das Metall.\n\n'
@@ -1656,14 +1666,14 @@ List<ProseChapter> _werteChaptersDe() => const [
       ),
       ProseSection(
         'Termingeschäfte: COMEX und Lieferung',
-        'An Terminbörsen wie der COMEX werden Gold-Kontrakte gehandelt, die '
-            'Lieferung zu einem späteren Tag versprechen. Die meisten dieser '
-            'Kontrakte enden aber nicht mit Metall, sondern werden vorher in Geld '
-            'ausgeglichen oder weitergerollt.\n\n'
-            'Dass die meisten Kontrakte in bar abgewickelt werden, ist kein '
-            'Missbrauch, sondern so vorgesehen: Die Börse dient vielen zur '
-            'Absicherung von Preisen, nicht zur Beschaffung von Barren. Wer '
-            'wirklich Metall will, kann die Lieferung verlangen.',
+        'An Terminbörsen wie der COMEX werden Gold-Kontrakte gehandelt, '
+            'die Lieferung zu einem späteren Tag versprechen. Die meisten '
+            'dieser Kontrakte enden aber nicht mit Metall, sondern werden '
+            'vorher in Geld ausgeglichen oder weitergerollt.\n\n'
+            'Dass die meisten Kontrakte in bar abgewickelt werden, ist so '
+            'vorgesehen: Die Börse dient vielen zur Absicherung von '
+            'Preisen, nicht zur Beschaffung von Barren. Wer wirklich Metall '
+            'will, kann die Lieferung verlangen.',
       ),
       ProseSection(
         'Der Londoner Markt (LBMA) und „Loco London"-Gold',
@@ -1679,28 +1689,30 @@ List<ProseChapter> _werteChaptersDe() => const [
       ),
       ProseSection(
         'Die Hebel- und Deckungs-Frage',
-        'Weil so viele Ansprüche auf Gold lauten, fragt man: Steht hinter jedem '
-            'Anspruch wirklich ein Barren? Nicht-allokierte Ansprüche können das '
-            'physische Metall übersteigen — um wie viel, hängt davon ab, was man '
-            'mitzählt; eine feste Zahl ist es nicht, und die genannten Vielfachen '
-            'sind umstritten.\n\n'
-            'Die Praxis der Wiederverpfändung gibt es: Dieselbe Sicherheit kann '
-            'durch mehrere Hände gehen. Daraus folgt aber nicht, dass das '
-            'Londoner oder COMEX-Gold massenhaft mehrfach verkauft sei. Das ist '
-            'ein Verdacht, kein nachgewiesener Befund.',
+        'Weil so viele Ansprüche auf Gold lauten, fragt man: Steht '
+            'hinter jedem Anspruch wirklich ein Barren? Nicht-allokierte '
+            'Ansprüche können das physische Metall übersteigen — um wie '
+            'viel, hängt davon ab, was man mitzählt. Die dazu genannten '
+            'Vielfachen gehen weit auseinander.\n\n'
+            'Die Praxis der Wiederverpfändung gibt es: Dieselbe Sicherheit '
+            'kann durch mehrere Hände gehen. Ob daraus folgt, dass das '
+            'Londoner oder COMEX-Gold massenhaft mehrfach verkauft sei, '
+            'sehen die Beobachter verschieden: die einen lesen darin einen '
+            'aufgeblähten Markt, die anderen die normale Mechanik des '
+            'Wertpapierhandels.',
         illustrationId: 'werte/allocated',
       ),
       ProseSection(
-        'Ein ehrlicher Vorbehalt',
-        'Belegt ist der Kern: allokiert bedeutet Eigentum am Metall, '
-            'nicht-allokiert eine Forderung mit Gegenparteirisiko. Belegt ist '
-            'auch, dass die meisten Terminkontrakte in bar enden — das ist '
-            'systemkonform, kein Skandal.\n\n'
-            'Nicht belegt ist dagegen das wiederkehrende „Es gibt zu wenig '
-            'physisches Gold, der Markt bricht zusammen". Einzelne Strafen wegen '
-            '„Spoofing" — vorgetäuschter Orders — sind dokumentiert; daraus folgt '
-            'aber nicht, dass der Goldpreis dauerhaft manipuliert wäre. Das eine '
-            'ist ein belegter Einzelfall, das andere eine pauschale Behauptung.',
+        'Was belegt ist und was behauptet wird',
+        'Allokiert bedeutet Eigentum am Metall, nicht-allokiert eine '
+            'Forderung mit Gegenparteirisiko. Die meisten Terminkontrakte '
+            'enden in bar — das gehört zur Anlage der Börse.\n\n'
+            'Dem steht das wiederkehrende „Es gibt zu wenig physisches '
+            'Gold, der Markt bricht zusammen" gegenüber. Einzelne Strafen '
+            'wegen „Spoofing" — vorgetäuschter Orders — sind dokumentiert; '
+            'die einen leiten daraus einen dauerhaft gedrückten Goldpreis '
+            'ab, die anderen sehen darin einzelne geahndete Fälle ohne '
+            'Wirkung auf den langen Trend.',
       ),
     ],
     sources: [
@@ -1784,31 +1796,34 @@ List<ProseChapter> _werteChaptersDe() => const [
       ),
       ProseSection(
         'Aufwand und Abraum: Energie, Wasser und der ökologische Preis',
-        'Aus armem Erz Gold zu holen, kostet viel. Für ein einziges Gramm müssen '
-            'oft Tonnen Gestein bewegt, gemahlen und behandelt werden. Das '
-            'verbraucht Energie und Wasser und hinterlässt große Mengen Abraum und '
-            'Schlamm.\n\n'
-            'Besonders schwierig ist der kleine, oft unregulierte Goldbergbau in '
-            'ärmeren Regionen. Dort wird das Gold vielfach mit Quecksilber '
-            'gebunden, das anschließend verdampft oder in Flüsse gelangt. Das '
-            'Quecksilber schädigt Menschen und Umwelt; das internationale '
-            'Minamata-Übereinkommen versucht, seinen Einsatz zurückzudrängen.\n\n'
-            'Das ist kein moralisches Urteil über das Metall, sondern eine '
-            'sachliche Bilanz: Jede gewonnene Unze hat einen Aufwand und eine '
-            'Spur. Wer Gold als Wert begreift, sollte diesen Preis mitdenken.',
+        'Aus armem Erz Gold zu holen, kostet viel. Für ein einziges '
+            'Gramm müssen oft Tonnen Gestein bewegt, gemahlen und behandelt '
+            'werden. Das verbraucht Energie und Wasser und hinterlässt '
+            'große Mengen Abraum und Schlamm.\n\n'
+            'Besonders schwierig ist der kleine, oft unregulierte '
+            'Goldbergbau in ärmeren Regionen. Dort wird das Gold vielfach '
+            'mit Quecksilber gebunden, das anschließend verdampft oder in '
+            'Flüsse gelangt. Das Quecksilber schädigt Menschen und Umwelt; '
+            'das internationale Minamata-Übereinkommen versucht, seinen '
+            'Einsatz zurückzudrängen.\n\n'
+            'Jede gewonnene Unze hat einen Aufwand und eine Spur. Wer Gold '
+            'als Wert begreift, hält diesen Preis mit in der Hand.',
       ),
       ProseSection(
-        'Ein ehrlicher Vorbehalt: „Peak Gold" und die Grenzen der Förderung',
-        'Immer wieder heißt es, die Welt habe den Höhepunkt der Goldförderung '
-            'erreicht oder bald überschritten — das sogenannte „Peak Gold". Das '
-            'ist eine umstrittene Prognose, keine feststehende Tatsache.\n\n'
-            'Denn was als abbauwürdig gilt, ist keine feste Größe. Steigt der '
-            'Preis oder verbessert sich die Technik, wird aus unrentablem Gestein '
-            'plötzlich eine Lagerstätte. Reichweiten-Angaben für Reserven sind '
-            'darum Modellrechnungen unter Annahmen, keine Ablaufdaten.\n\n'
-            'Richtig ist: Die leicht erreichbaren Vorkommen sind großteils '
-            'gefunden, und neue Funde werden im Schnitt tiefer und ärmer. Ob und '
-            'wann die Förderung wirklich dauerhaft sinkt, bleibt offen.',
+        '„Peak Gold" und die Grenzen der Förderung',
+        'Immer wieder heißt es, die Welt habe den Höhepunkt der '
+            'Goldförderung erreicht oder bald überschritten — das '
+            'sogenannte „Peak Gold". Die einen sehen die Förderung an einer '
+            'dauerhaften Grenze, die anderen halten den Höhepunkt für noch '
+            'nicht erreicht.\n\n'
+            'Denn was als abbauwürdig gilt, ist keine feste Größe. Steigt '
+            'der Preis oder verbessert sich die Technik, wird aus '
+            'unrentablem Gestein eine Lagerstätte. Reichweiten-Angaben für '
+            'Reserven sind Modellrechnungen unter Annahmen, keine '
+            'Ablaufdaten.\n\n'
+            'Die leicht erreichbaren Vorkommen sind großteils gefunden, und '
+            'neue Funde werden im Schnitt tiefer und ärmer. Ob und wann die '
+            'Förderung wirklich dauerhaft sinkt, bleibt offen.',
       ),
     ],
     sources: [
@@ -1843,15 +1858,16 @@ List<ProseChapter> _werteChaptersDe() => const [
     [
       ProseSection(
         'Das Metall geht nie verloren: warum Gold so gut zirkuliert',
-        'Gold rostet nicht, verbrennt nicht und löst sich nicht auf. Was einmal '
-            'gefördert wurde, ist fast immer noch da — als Schmuck, als Barren, in '
-            'einem Tresor oder in einem Gerät. Man kann es einschmelzen und neu '
-            'gießen, ohne dass es schlechter wird.\n\n'
-            'Es wird geschätzt, dass beinahe alles je geförderte Gold in irgendeiner '
-            'Form weiterexistiert. Diese viel zitierte Schätzung stammt unter '
-            'anderem vom World Gold Council, der als Branchenvertretung ein '
-            'eigenes Interesse hat. Die Größenordnung gilt aber als plausibel: Gold '
-            'verschwindet kaum, es wechselt nur die Gestalt.',
+        'Gold rostet nicht, verbrennt nicht und löst sich nicht auf. '
+            'Was einmal gefördert wurde, ist fast immer noch da — als '
+            'Schmuck, als Barren, in einem Tresor oder in einem Gerät. Man '
+            'kann es einschmelzen und neu gießen, ohne dass es schlechter '
+            'wird.\n\n'
+            'Nach einer viel zitierten Schätzung existiert beinahe alles je '
+            'geförderte Gold in irgendeiner Form weiter. Sie stammt unter '
+            'anderem vom World Gold Council, der Branchenvertretung der '
+            'Goldwirtschaft. Die Größenordnung trägt: Gold verschwindet '
+            'kaum, es wechselt nur die Gestalt.',
       ),
       ProseSection(
         'Die zweite Mine: Schmuckaltgold und Anlagebarren',
@@ -1875,15 +1891,16 @@ List<ProseChapter> _werteChaptersDe() => const [
             'verwertet. Urban Mining ist real, aber kein müheloses Geld.',
       ),
       ProseSection(
-        'Ein ehrlicher Vorbehalt: Recycling folgt dem Preis, nicht dem Bedarf',
-        'Wie viel Altmetall zurückkommt, hängt stark am Preis. Steigt er, geben '
-            'mehr Menschen ihr altes Gold her, und das Recycling springt an. '
-            'Fällt er, hält man das Stück lieber. Feste Anteile lassen sich darum '
-            'nicht angeben — die Werte schwanken erheblich.\n\n'
-            'Das Recycling folgt also dem Markt, nicht dem Bedarf der Industrie. '
-            'Es ist ein nützlicher Puffer und schont die Umwelt gegenüber dem '
-            'Neubergbau, ersetzt ihn aber nicht. Den Großteil des frischen '
-            'Angebots liefern weiterhin die Minen.',
+        'Recycling folgt dem Preis, nicht dem Bedarf',
+        'Wie viel Altmetall zurückkommt, hängt stark am Preis. Steigt '
+            'er, geben mehr Menschen ihr altes Gold her, und das Recycling '
+            'springt an. Fällt er, hält man das Stück lieber. Feste Anteile '
+            'lassen sich darum nicht angeben — die Werte schwanken von Jahr '
+            'zu Jahr erheblich.\n\n'
+            'Das Recycling folgt also dem Markt, nicht dem Bedarf der '
+            'Industrie. Es ist ein nützlicher Puffer und schont die Umwelt '
+            'gegenüber dem Neubergbau, ersetzt ihn aber nicht. Den Großteil '
+            'des frischen Angebots liefern weiterhin die Minen.',
       ),
     ],
     sources: [
@@ -1960,19 +1977,17 @@ List<ProseChapter> _werteChaptersDe() => const [
             'irgendwo ein realer Barren.',
       ),
       ProseSection(
-        'Ein ehrlicher Vorbehalt: Prüfungen, Gerüchte und was wirklich belegt ist',
-        'Um die großen Tresore ranken sich Erzählungen. Die bekannteste behauptet, '
-            'in Fort Knox liege gar kein Gold mehr und die Bestände würden '
-            'verheimlicht. Dafür gibt es keinen Beleg; es bleibt eine '
-            'unbewiesene Verschwörungserzählung.\n\n'
-            'Auch das Gerücht, dieselben Barren seien mehrfach verpfändet, gehört '
-            'in diesen Dunstkreis — eingeordnet ist es im Kapitel „Papiergold und '
-            'physisches Gold": Verhältniszahlen dazu sind Vermutung, kein '
-            'erwiesener Betrug.\n\n'
-            'Ehrlich bleibt darum: Über die großen Bestände gibt es amtliche '
-            'Angaben und gelegentliche Prüfungen, aber keine lückenlose '
-            'öffentliche Echtzeit-Kontrolle. Wer mehr Gewissheit behauptet — in '
-            'die eine wie in die andere Richtung —, behauptet zu viel.',
+        'Erzählungen und Belege um die großen Tresore',
+        'Um die großen Tresore ranken sich Erzählungen. Die bekannteste '
+            'behauptet, in Fort Knox liege gar kein Gold mehr und die '
+            'Bestände würden verheimlicht. Dafür gibt es keinen Beleg.\n\n'
+            'In denselben Dunstkreis gehört das Gerücht, dieselben Barren '
+            'seien mehrfach verpfändet — eingeordnet ist es im Kapitel '
+            '„Papiergold und physisches Gold". Verhältniszahlen dazu sind '
+            'nicht erwiesen.\n\n'
+            'Über die großen Bestände gibt es amtliche Angaben und '
+            'gelegentliche Prüfungen, aber keine lückenlose öffentliche '
+            'Echtzeit-Kontrolle.',
       ),
     ],
     sources: [
@@ -2042,23 +2057,23 @@ List<ProseChapter> _werteChaptersDe() => const [
       ),
       ProseSection(
         'Die Wasserstoff-Wette: Brennstoffzellen und Elektrolyseure',
-        'Platin steckt auch in Brennstoffzellen und in Geräten, die Wasser in '
-            'Wasserstoff spalten. Wenn der Verkehr eines Tages stärker auf '
-            'Wasserstoff setzt, könnte das eine neue, große Nachfrage schaffen.\n\n'
-            'Das ist eine Wette auf die Zukunft, kein Fakt. Ob und wie schnell die '
-            'Wasserstoffwirtschaft kommt, ist offen. Man sollte solche Aussichten '
-            'als Möglichkeit lesen, nicht als sichere Entwicklung.',
+        'Platin steckt auch in Brennstoffzellen und in Geräten, die '
+            'Wasser in Wasserstoff spalten. Wenn der Verkehr eines Tages '
+            'stärker auf Wasserstoff setzt, könnte das eine neue, große '
+            'Nachfrage schaffen.\n\n'
+            'Ob und wie schnell die Wasserstoffwirtschaft kommt, ist offen '
+            '— und damit auch, wie groß die zusätzliche Platinnachfrage '
+            'ausfiele.',
       ),
       ProseSection(
-        'Ein ehrlicher Vorbehalt: Edelmetall und Rohstoff zugleich',
-        'Platin und Palladium sind beides zugleich: edle Wertspeicher und '
-            'industrielle Rohstoffe. Das macht sie schwerer einzuschätzen als '
-            'Gold. Ihr Preis hängt stärker an Technik, Vorschriften und '
-            'Konjunktur.\n\n'
-            'Dazu kommt: Ihre Förderung sammelt sich auf wenige Regionen. Das ist '
-            'eine belegte Tatsache, kein Anlass für Spekulation über künftige '
-            'Ereignisse. Sie erklärt aber, warum diese beiden Metalle stärker '
-            'ausschlagen können als das breiter geförderte Gold.',
+        'Edelmetall und Rohstoff zugleich',
+        'Platin und Palladium sind beides zugleich: edle Wertspeicher '
+            'und industrielle Rohstoffe. Das macht sie schwerer '
+            'einzuschätzen als Gold. Ihr Preis hängt stärker an Technik, '
+            'Vorschriften und Konjunktur.\n\n'
+            'Dazu kommt: Ihre Förderung sammelt sich auf wenige Regionen. '
+            'Das erklärt, warum diese beiden Metalle stärker ausschlagen '
+            'können als das breiter geförderte Gold.',
       ),
     ],
     sources: [
@@ -2123,13 +2138,11 @@ List<ProseChapter> _werteChaptersDe() => const [
       ProseSection(
         'Warum kein großes Land zurückgekehrt ist',
         'Trotz aller Befürworter ist kein großes Land zum Goldstandard '
-            'zurückgekehrt. Befragt man die Mehrheit der Wirtschaftsfachleute, '
-            'lehnt sie eine Rückkehr ab. Das ist ein deutlicher Befund, aber kein '
-            'Beweis der Unmöglichkeit — Mehrheitsmeinungen können sich irren und '
-            'ändern.\n\n'
-            'Der praktische Grund ist Flexibilität: Heutige Staaten wollen ihre '
-            'Geldmenge steuern können, um Krisen abzufedern. Eine Goldbindung '
-            'verengt diesen Spielraum.',
+            'zurückgekehrt. Befragt man die Wirtschaftsfachleute, lehnt die '
+            'Mehrheit eine Rückkehr ab.\n\n'
+            'Der praktische Grund ist Flexibilität: Heutige Staaten wollen '
+            'ihre Geldmenge steuern können, um Krisen abzufedern. Eine '
+            'Goldbindung verengt diesen Spielraum.',
       ),
       ProseSection(
         'Gold als Anker neben dem Geld, nicht als Geld',
@@ -2142,15 +2155,14 @@ List<ProseChapter> _werteChaptersDe() => const [
             'weiter.',
       ),
       ProseSection(
-        'Ein ehrlicher Vorbehalt',
-        'Dies ist eine offene wirtschaftspolitische Frage, kein gelöstes Problem. '
-            'Beide Seiten haben ernste Argumente, und dieser Text fällt kein '
-            'Urteil. Wer behauptet, Gold werde das staatliche Geld bald ersetzen, '
-            'gibt eine Prognose oder eine Überzeugung wieder, keine Tatsache.\n\n'
-            'Und ein Verhältnis wie sechzehn oder zwölf zu eins ist kein '
-            'Naturgesetz, das eine Goldbindung „richtig" machte. Solche Zahlen '
-            'kamen aus Münzgesetzen, wie im Kapitel über das Gold-Silber-'
-            'Verhältnis steht. Dies ist keine Anlageberatung.',
+        'Eine offene Frage',
+        'Dies ist eine offene wirtschaftspolitische Frage. Die einen '
+            'erwarten, dass Gold das staatliche Geld eines Tages wieder '
+            'bindet oder ersetzt; die anderen sehen es dauerhaft als '
+            'Reserve neben dem Geld, nicht als das Geld selbst.\n\n'
+            'Ein Verhältnis wie sechzehn oder zwölf zu eins ist dabei kein '
+            'Naturgesetz. Solche Zahlen kamen aus Münzgesetzen, wie im '
+            'Kapitel über das Gold-Silber-Verhältnis steht.',
       ),
     ],
     sources: [
@@ -2179,13 +2191,12 @@ List<ProseChapter> _werteChaptersDe() => const [
     [
       ProseSection(
         'Woher das Bild „digitales Gold" kommt',
-        'Bitcoin wird oft „digitales Gold" genannt. Der Vergleich liegt nahe, '
-            'weil beide als knappe Wertspeicher gelten sollen, die kein Staat nach '
-            'Belieben vermehren kann. Das Bild ist eingängig — und es trägt nur '
-            'zum Teil.\n\n'
-            'Dieser Text bewertet weder Bitcoin noch Gold als Geldanlage. Er '
-            'vergleicht nur, wo die beiden sich ähneln und wo nicht. Das ist eine '
-            'Frage des Verstehens, keine Empfehlung.',
+        'Bitcoin wird oft „digitales Gold" genannt. Der Vergleich liegt '
+            'nahe, weil beide als knappe Wertspeicher gelten sollen, die '
+            'kein Staat nach Belieben vermehren kann. Das Bild ist '
+            'eingängig — und es trägt nur zum Teil.\n\n'
+            'Die folgenden Abschnitte vergleichen, wo Bitcoin und Gold sich '
+            'ähneln und wo nicht.',
       ),
       ProseSection(
         'Wo der Vergleich trägt: Knappheit',
@@ -2194,17 +2205,20 @@ List<ProseChapter> _werteChaptersDe() => const [
             'Gesamtmenge fest auf einundzwanzig Millionen Stück begrenzt — das ist '
             'eine nachprüfbare Eigenschaft des Protokolls.\n\n'
             'Aber programmierte Knappheit ist nicht dasselbe wie natürliche '
-            'Seltenheit. Goldes Grenze setzt die Geologie, die niemand ändern '
-            'kann. Bitcoins Grenze setzt eine Regel, die Menschen geschrieben '
+            'Seltenheit. Die Grenze des Goldes setzt die Geologie, die niemand '
+            'ändern '
+            'kann. Die Grenze des Bitcoins setzt eine Regel, die Menschen '
+            'geschrieben '
             'haben — fest, aber von Menschen gemacht.',
       ),
       ProseSection(
         'Wo er hinkt: Jahrtausende gegen Jahrzehnte',
         'Der größte Unterschied ist die Zeit. Gold ist seit Jahrtausenden Geld '
             'und Wertspeicher; über sehr lange Zeit hielt es grob seine Kaufkraft. '
-            'Bitcoin gibt es erst seit wenigen Jahrzehnten — seit 2009.\n\n'
+            'Bitcoin gibt es dagegen erst seit 2009.\n\n'
             'Wie sich etwas über drei Jahrtausende geschlagen hat, sagt mehr über '
-            'seine Beständigkeit aus als wenige Jahrzehnte. Bitcoin ist zudem als '
+            'seine Beständigkeit aus als die kurze Zeit, die es Bitcoin bislang '
+            'gibt. Bitcoin ist zudem als '
             'stark '
             'schwankend und energieintensiv dokumentiert. Ob es seinen Wert über '
             'Generationen hält, ist schlicht noch nicht erprobt.',
@@ -2219,15 +2233,14 @@ List<ProseChapter> _werteChaptersDe() => const [
             'die Welt schicken, hängt dafür aber an Rechnern und Stromnetzen.',
       ),
       ProseSection(
-        'Eine offene Debatte — kein Urteil',
-        'Manche sagen, Gold werde bald vom staatlichen Geld oder von Krypto '
-            'verdrängt. Andere halten Bitcoin für eine Blase und Gold für '
-            'unersetzlich. Beides sind Meinungen und Spekulationen, keine '
-            'Tatsachen — und dieser Text entscheidet den Streit nicht.\n\n'
-            'Der Werterechner kennt Gold, Silber, Platin und Palladium, weil das '
-            'Stoffe mit langer, belegter Geschichte sind. Ob „digitales Gold" '
-            'dieses Erbe einmal teilt, wird die Zukunft zeigen — versprechen kann '
-            'es niemand.',
+        'Eine offene Debatte',
+        'Manche sagen, Gold werde bald vom staatlichen Geld oder von '
+            'Krypto verdrängt. Andere halten Bitcoin für eine Blase und '
+            'Gold für unersetzlich.\n\n'
+            'Der Werterechner kennt Gold, Silber, Platin und Palladium, '
+            'weil das Stoffe mit langer, belegter Geschichte sind. Ob '
+            '„digitales Gold" dieses Erbe einmal teilt, wird die Zukunft '
+            'zeigen.',
       ),
     ],
     sources: [
@@ -2320,16 +2333,15 @@ List<ProseChapter> _werteChaptersDe() => const [
             'eingestellten Zahlbasis, dozenal oder dezimal.',
       ),
       ProseSection(
-        'Wie man ehrlich liest',
-        'Die Kurve ist keine amtliche Zeitreihe, sondern eine bewusst grobe, '
-            'belegte Rekonstruktion aus zitierten Quellen — in zwei Durchgängen '
-            'von recherchierenden und prüfenden Helfern zusammengetragen. Die '
-            'Quellen-Zeile im Diagramm listet sie auf.\n\n'
-            'Darum gilt: Die moderne Linie liest man als Daten, die antiken '
-            'Ringe als grobe Marken. Genauigkeit hinein-zu-lesen, wo nur '
-            'Größenordnungen stehen, führt in die Irre — das gilt gerade für die '
-            'ältesten Punkte. Das Bild zeigt eine lange Bewegung, keine '
-            'tagesgenaue Buchführung.',
+        'Daten und Marken',
+        'Die Kurve ist eine grobe, belegte Rekonstruktion aus zitierten '
+            'Quellen — in zwei Durchgängen von recherchierenden und '
+            'prüfenden Helfern zusammengetragen. Die Quellen-Zeile im '
+            'Diagramm listet sie auf.\n\n'
+            'Die moderne Linie beruht auf dichten Daten, die antiken Ringe '
+            'auf groben Marken. Für die ältesten Punkte stehen nur '
+            'Größenordnungen, keine tagesgenauen Werte. Das Bild zeigt eine '
+            'lange Bewegung.',
       ),
     ],
     sources: [
@@ -2360,94 +2372,83 @@ List<ProseChapter> _werteChaptersDe() => const [
     ],
   ),
   ProseChapter(
-    'Spekulatives (mit Vorsicht)',
+    'Strittige Deutungen',
     [
       ProseSection(
-        'Wo der Boden weich wird',
-        'Bis hierher ging es um Belegbares: Gewichte, Stoffe, Geschichte, Kurse. '
-            'Dieses Kapitel sammelt das, wo der Boden weich wird — die '
-            'umstrittenen, die unbeweisbaren, die geglaubten Behauptungen rund um '
-            'Geld und Metall. Sie gehören in einen Text über Wert, aber sie '
-            'gehören eigens markiert.\n\n'
-            'Die Regel hier ist einfach: Was belegt ist, steht als Tatsache; was '
-            'umstritten, attribuiert oder spekulativ ist, wird genau so genannt. '
-            'Manche dieser Fäden haben inzwischen ein eigenes Kapitel bekommen — '
-            'dort werden sie ausführlich behandelt, hier nur als das verbucht, was '
-            'sie sind: offene Fragen, keine Wahrheiten.',
+        'Wo die Belege enden',
+        'Bis hierher ging es um Gewichte, Stoffe, Geschichte und Kurse. '
+            'Dieses Kapitel sammelt die Behauptungen und Deutungen rund um '
+            'Geld und Metall, die in einen Text über Wert gehören.\n\n'
+            'Manche dieser Fäden haben inzwischen ein eigenes Kapitel '
+            'bekommen, das sie ausführlich behandelt; hier stehen sie als '
+            'offene Fragen.',
       ),
       ProseSection(
         'Sound Money',
-        'Manche halten metallgedecktes Geld für das ehrlichste, weil es sich '
-            'nicht beliebig vermehren lässt. Andere halten dagegen, dass eine '
-            'feste Geldmenge eine Wirtschaft erdrosseln kann. Das ist eine '
-            'umstrittene wirtschaftspolitische Frage, kein gesicherter Befund — '
-            'beide Seiten haben Argumente.\n\n'
-            'Ob das Geld zum Gold zurückkehren sollte, ist eine eigene große '
-            'Streitfrage; sie ist im Kapitel „Soll das Geld zurück zum Gold?" '
-            'mit beiden Seiten ausgebreitet und wird hier nicht erneut '
-            'verhandelt. Wichtig bleibt nur: Wer „Sound Money" sagt, gibt eine '
-            'Überzeugung wieder, keine bewiesene Lehre.',
+        'Manche halten metallgedecktes Geld für das ehrlichste, weil es '
+            'sich nicht beliebig vermehren lässt. Andere halten dagegen, '
+            'dass eine feste Geldmenge eine Wirtschaft erdrosseln kann. '
+            'Beide Seiten haben Argumente.\n\n'
+            'Ob das Geld zum Gold zurückkehren sollte, ist im Kapitel „Soll '
+            'das Geld zurück zum Gold?" mit beiden Seiten ausgebreitet und '
+            'wird hier nicht erneut verhandelt.',
       ),
       ProseSection(
         'Innerer Wert',
-        'Hat Gold einen „inneren" Wert, oder gilt es nur, weil alle sich darauf '
-            'geeinigt haben? Darüber streiten Philosophen und Ökonomen seit '
-            'langem. Edelmetalle haben einen Nutzwert in Schmuck und Industrie, '
-            'aber ihr Geldwert beruht zu großen Teilen auf Übereinkunft.\n\n'
-            'Die ältere Vorstellung, ein Ding trage seinen Wert in sich, gilt '
-            'heute als überholt; die meisten Ökonomen sehen Wert als etwas, das '
-            'erst im Tausch entsteht. Beweisen lässt sich keine der Seiten '
-            'endgültig — es ist eine Frage der Sichtweise, nicht der Messung. '
-            'Darum steht sie hier, unter Vorbehalt.',
+        'Hat Gold einen „inneren" Wert, oder gilt es nur, weil alle '
+            'sich darauf geeinigt haben? Darüber streiten Philosophen und '
+            'Ökonomen seit langem. Edelmetalle haben einen Nutzwert in '
+            'Schmuck und Industrie, aber ihr Geldwert beruht zu großen '
+            'Teilen auf Übereinkunft.\n\n'
+            'Die ältere Vorstellung, ein Ding trage seinen Wert in sich, '
+            'gilt heute als überholt; die meisten Ökonomen sehen Wert als '
+            'etwas, das erst im Tausch entsteht.',
       ),
       ProseSection(
         'Zwölf im Geld',
-        'Dass Troy-Gewicht und die alte £sd-Stückelung dozenal gebaut sind, ist '
-            'belegt. Der Sprung von dort zu „Zwölf ist die natürliche Geldbasis" '
-            'ist es nicht. Die Zwölf half beim Teilen (durch 2, 3, 4 und 6), aber '
-            'daneben standen die Zwanzig der Schillinge und die Sechzehn des '
-            'Avoirdupois. Zwölf war nützlich, nicht heilig — mehr dazu steht in '
-            'den Grundlagen der Theorie.\n\n'
+        'Dass Troy-Gewicht und die alte £sd-Stückelung dozenal gebaut '
+            'sind, ist belegt. Der Sprung von dort zu „Zwölf ist die '
+            'natürliche Geldbasis" ist es nicht. Die Zwölf half beim Teilen '
+            '(durch 2, 3, 4 und 6), aber daneben standen die Zwanzig der '
+            'Schillinge und die Sechzehn des Avoirdupois. Mehr dazu steht '
+            'in den Grundlagen der Theorie.\n\n'
             'Reizvoll ist der Gedanke trotzdem: Ein Maßstab, der sich glatt '
             'dritteln und vierteln lässt, passt gut zu einem Geld, das man '
-            'aufteilen muss. Doch aus „nützlich" wird hier gern „naturgegeben", '
-            'und das ist der Schritt zu viel. Die Zwölf ist eine kluge Wahl '
-            'gewesen, keine im Wesen des Geldes angelegte Notwendigkeit.',
+            'aufteilen muss. Die Zwölf war eine kluge Wahl beim Geld, so '
+            'wie sie es beim Messen war.',
       ),
       ProseSection(
         'Manipulation und das angebliche Verhältnis',
-        'Rund um Silber und Gold kreisen hartnäckige Erzählungen: Der Preis '
-            'werde planmäßig gedrückt, die Lager seien leer, ein festes '
-            'Papier-zu-Metall-Verhältnis erzwinge den Crash. Einzelne Strafen '
-            'wegen „Spoofing" — vorgetäuschter Orders — sind dokumentiert; daraus '
-            'folgt aber keine dauerhafte, koordinierte Unterdrückung des '
-            'Preises.\n\n'
-            'Diese Fäden sind ausführlich und mit ihren belegten Kernen in den '
-            'Kapiteln „Papier gegen Metall" und „Papiergold und physisches Gold" '
-            'eingeordnet; hier zählt nur das Etikett. Die belegten Einzelfälle '
-            'sind das eine, die pauschale Verschwörungsdeutung das andere. Wer '
-            'beides vermengt, macht aus einem Verdacht eine Tatsache, die er nicht '
-            'hat.\n\n'
-            'Ebenso umstritten ist die Erwartung, das Gold-Silber-Verhältnis '
-            'kehre zu einer alten Marke nahe sechzehn zurück. Dass diese Zahl '
-            'kein Naturgesetz ist, steht in den Kapiteln zum Verhältnis; eine '
-            'Rückkehr bleibt Anlagethese, nicht Gewähr.',
+        'Rund um Silber und Gold kreisen hartnäckige Erzählungen: Der '
+            'Preis werde planmäßig gedrückt, die Lager seien leer, ein '
+            'festes Papier-zu-Metall-Verhältnis erzwinge den Crash. '
+            'Einzelne Strafen wegen „Spoofing" — vorgetäuschter Orders — '
+            'sind dokumentiert; eine dauerhafte, koordinierte Unterdrückung '
+            'des Preises ist es nicht.\n\n'
+            'Diese Fäden sind mit ihren belegten Kernen in den Kapiteln '
+            '„Papier gegen Metall" und „Papiergold und physisches Gold" '
+            'eingeordnet. Die belegten Einzelfälle sind das eine, die '
+            'Verschwörungsdeutung das andere.\n\n'
+            'Die einen erwarten, das Gold-Silber-Verhältnis kehre zu einer '
+            'alten Marke nahe sechzehn zurück; die anderen halten dem '
+            'entgegen, dass diese Zahl kein Naturgesetz ist — das steht in '
+            'den Kapiteln zum Verhältnis.',
       ),
       ProseSection(
         'Was offen bleibt',
-        'Am Ende steht weniger Gewissheit, als mancher erwartet. Was eine Sache '
-            '„wirklich wert" ist, lässt sich nicht messen wie ihr Gewicht. Wert '
-            'entsteht zwischen Menschen, in Knappheit, Nutzen und Vertrauen — und '
-            'all das wandert mit der Zeit. Ein Rechner kann Mengen umrechnen; ob '
-            'sie ihren Wert halten, kann er nicht versprechen.\n\n'
+        'Am Ende steht weniger Gewissheit, als mancher erwartet. Was '
+            'eine Sache „wirklich wert" ist, lässt sich nicht messen wie '
+            'ihr Gewicht. Wert entsteht zwischen Menschen, in Knappheit, '
+            'Nutzen und Vertrauen — und all das wandert mit der Zeit. Ein '
+            'Rechner kann Mengen umrechnen; ob sie ihren Wert halten, kann '
+            'er nicht versprechen.\n\n'
             'Auch das Geld selbst bleibt eine offene Frage. Ob es an Metall '
-            'gebunden sein sollte, ob „digitales Gold" das alte Gold beerbt, ob '
-            'Silber zu Gold aufholt — diese Debatten sind in den eigenen Kapiteln '
-            '(„Soll das Geld zurück zum Gold?", „Gold und Bitcoin") aufgefächert, '
-            'und keine ist entschieden. Dieser Text fällt darüber bewusst kein '
-            'Urteil.\n\n'
-            'Wer den Wert von Gold und Silber versteht, versteht damit auch die '
-            'Grenzen dessen, was sich über Wert überhaupt wissen lässt.',
+            'gebunden sein sollte, ob „digitales Gold" das alte Gold '
+            'beerbt, ob Silber zu Gold aufholt — diese Debatten sind in den '
+            'eigenen Kapiteln („Soll das Geld zurück zum Gold?", „Gold und '
+            'Bitcoin") aufgefächert, und keine ist entschieden.\n\n'
+            'Wer den Wert von Gold und Silber versteht, versteht damit auch '
+            'die Grenzen dessen, was sich über Wert überhaupt wissen lässt.',
       ),
     ],
     sources: [
