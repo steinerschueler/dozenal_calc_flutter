@@ -10,6 +10,15 @@ import 'prose_chapter.dart';
 
 part 'de/werte_de.dart';
 part 'en/werte_en.dart';
+part 'ja/werte_ja.dart';
+part 'cy/werte_cy.dart';
+part 'zh/werte_zh.dart';
+part 'zh_Hant/werte_zh_Hant.dart';
+part 'ga/werte_ga.dart';
+part 'hi/werte_hi.dart';
+part 'ar/werte_ar.dart';
+part 'fa/werte_fa.dart';
+part 'ru/werte_ru.dart';
 part 'it/werte_it.dart';
 part 'es/werte_es.dart';
 part 'fr/werte_fr.dart';
@@ -24,5 +33,14 @@ List<ProseChapter> werteChapters(String langTag) {
   if (c.startsWith('fr')) return _werteChaptersFr();
   if (c.startsWith('es')) return _werteChaptersEs();
   if (c.startsWith('it')) return _werteChaptersIt();
+  if (c.startsWith('ru')) return _werteChaptersRu();
+  if (c.startsWith('fa')) return _werteChaptersFa();
+  if (c.startsWith('ar')) return _werteChaptersAr();
+  if (c.startsWith('hi')) return _werteChaptersHi();
+  if (c.startsWith('ga')) return _werteChaptersGa();
+  if (c.startsWith('zh') && c.contains('hant')) return _werteChaptersZhHant();
+  if (c.startsWith('zh')) return _werteChaptersZh();
+  if (c.startsWith('cy')) return _werteChaptersCy();
+  if (c.startsWith('ja')) return _werteChaptersJa();
   return _werteChaptersDe();
 }

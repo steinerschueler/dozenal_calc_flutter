@@ -37,7 +37,7 @@ void main() {
 
     test('every locale yields six asset-manual chapters (own or fallback)', () {
       for (final tag in _allTags) {
-        expect(assetManualChapters(tag).length, 6, reason: '$tag');
+        expect(assetManualChapters(tag).length, 6, reason: tag);
       }
     });
 
