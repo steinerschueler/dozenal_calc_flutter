@@ -370,6 +370,23 @@ class _PriceChartPainter extends CustomPainter {
     final baselinePaint = Paint()
       ..color = colors.textSecondary
       ..strokeWidth = 1.5;
+    // Y minor: 2/3/5 subdivisions per decade — faint gridlines (drawn under the
+    // decade lines), with ×2/×5 (÷2/÷5) labeled so values are readable between
+    // the decades on the log axis.
+    final minorPaint = Paint()
+      ..color = colors.hairline.withValues(alpha: 0.45)
+      ..strokeWidth = 0.5;
+    for (final v in logMinorTicks(viewport.lyMin, viewport.lyMax)) {
+      final mant = (v / pow10(log10(v).floorToDouble())).round();
+      if (mant != 2 && mant != 3 && mant != 5) continue;
+      final y = r.bottom - viewport.ny(v) * r.height;
+      if (y < r.top - 1 || y > r.bottom + 1) continue;
+      canvas.drawLine(Offset(r.left, y), Offset(r.right, y), minorPaint);
+      if (mant != 3) {
+        _label(canvas, _factorLabel(v), Offset(r.left - 4, y - 5),
+            colors.textFaint, size: 8, align: TextAlign.right);
+      }
+    }
     // Y: index decade ticks; the baseline (index 1 = oldest value) is the bold
     // "0" reference line.
     for (final v in logDecadeTicks(viewport.lyMin, viewport.lyMax)) {

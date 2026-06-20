@@ -119,6 +119,19 @@ void main() {
       final t = logDecadeTicks(0, 3); // 1..1000
       expect(t, [1, 10, 100, 1000]);
     });
+
+    test('logMinorTicks returns the 2..9 subdivisions, not the decades', () {
+      final t = logMinorTicks(0, 1); // within [1, 10]
+      expect(t.length, 8);
+      expect(t.first, closeTo(2, 1e-9));
+      expect(t.last, closeTo(9, 1e-9));
+      expect(t.any((v) => (v - 1).abs() < 1e-9), isFalse);
+      expect(t.any((v) => (v - 10).abs() < 1e-9), isFalse);
+      // Sub-decade values appear too (e.g. 0.5 = 5×10^-1, 0.2 = 2×10^-1).
+      final sub = logMinorTicks(-1, 0);
+      expect(sub.any((v) => (v - 0.5).abs() < 1e-9), isTrue);
+      expect(sub.any((v) => (v - 0.2).abs() < 1e-9), isTrue);
+    });
   });
 
   group('compiled dataset integrity', () {

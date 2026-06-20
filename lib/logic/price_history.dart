@@ -294,3 +294,23 @@ List<double> logDecadeTicks(double lyMin, double lyMax) {
   }
   return ticks;
 }
+
+/// Minor log tick VALUES within [lyMin, lyMax]: the 2…9 subdivisions of each
+/// decade (…, 0.2, 0.5, 2, 5, 20, …). A log axis only labels the decades, so
+/// the chart draws faint gridlines at these (a few labeled, e.g. ×2/×5) to make
+/// values between the decade lines readable. The 1-mantissa (the decade itself)
+/// is excluded — that's [logDecadeTicks].
+List<double> logMinorTicks(double lyMin, double lyMax) {
+  final lo = lyMin.floor();
+  final hi = lyMax.ceil();
+  final ticks = <double>[];
+  for (var k = lo; k <= hi; k++) {
+    final base = pow10(k.toDouble());
+    for (var m = 2; m <= 9; m++) {
+      final v = base * m;
+      final ly = log10(v);
+      if (ly >= lyMin - 1e-9 && ly <= lyMax + 1e-9) ticks.add(v);
+    }
+  }
+  return ticks;
+}

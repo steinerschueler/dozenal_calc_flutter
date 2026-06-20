@@ -248,6 +248,23 @@ class _PriceFigurePainter extends CustomPainter {
       ..color = colors.textSecondary
       ..strokeWidth = 1.5;
 
+    // Minor 2/3/5 subdivisions per decade — faint gridlines with ×2/×5 (÷2/÷5)
+    // labels so values are readable between the decade lines on the log axis.
+    final minorPaint = Paint()
+      ..color = colors.hairline.withValues(alpha: 0.45)
+      ..strokeWidth = 0.5;
+    for (final v in logMinorTicks(viewport.lyMin, viewport.lyMax)) {
+      final mant = (v / pow10(log10(v).floorToDouble())).round();
+      if (mant != 2 && mant != 3 && mant != 5) continue;
+      final y = r.bottom - viewport.ny(v) * r.height;
+      if (y < r.top - 1 || y > r.bottom + 1) continue;
+      canvas.drawLine(Offset(r.left, y), Offset(r.right, y), minorPaint);
+      if (mant != 3) {
+        _txt(canvas, _factor(v), Offset(r.left - 4, y - 5), colors.textFaint,
+            size: 8, align: TextAlign.right);
+      }
+    }
+
     for (final v in logDecadeTicks(viewport.lyMin, viewport.lyMax)) {
       final y = r.bottom - viewport.ny(v) * r.height;
       if (y < r.top - 1 || y > r.bottom + 1) continue;
