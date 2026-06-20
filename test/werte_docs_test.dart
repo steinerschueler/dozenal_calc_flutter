@@ -9,6 +9,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:dozenal_calc_flutter/l10n/app_localizations.dart';
 import 'package:dozenal_calc_flutter/manual/manual.dart';
 import 'package:dozenal_calc_flutter/theory/theory_blocks.dart';
+import 'package:dozenal_calc_flutter/theory/werte_illustrations.dart';
 import 'package:dozenal_calc_flutter/theory/werte_theory.dart';
 
 const _allTags = [
@@ -101,6 +102,43 @@ void main() {
       expect(werte.chapters.length, 27);
       // Carries imageId slots (werte/$i) through to the refs.
       expect(werte.chapters.last.imageId, isNotNull);
+    });
+  });
+
+  group('Wertetheorie inline figures', () {
+    List<String> taggedIds() => [
+          for (final c in werteChapters('de'))
+            for (final s in c.sections)
+              if (s.illustrationId != null) s.illustrationId!,
+        ];
+
+    test('exactly twelve sections carry a distinct illustration id', () {
+      final ids = taggedIds();
+      expect(ids.length, 12);
+      expect(ids.toSet().length, 12, reason: 'no figure is tagged twice');
+    });
+
+    test('every tagged id resolves to a figure; null/unknown does not', () {
+      for (final id in taggedIds()) {
+        expect(inlineTheoryIllustration(id), isNotNull,
+            reason: '$id should resolve to a figure');
+      }
+      expect(inlineTheoryIllustration(null), isNull);
+      expect(inlineTheoryIllustration('werte/does-not-exist'), isNull);
+    });
+
+    testWidgets('every tagged figure paints without exception', (tester) async {
+      for (final id in taggedIds().toSet()) {
+        await tester.pumpWidget(MaterialApp(
+          home: Scaffold(
+            body: SingleChildScrollView(
+              child: SizedBox(width: 360, child: inlineTheoryIllustration(id)),
+            ),
+          ),
+        ));
+        await tester.pump();
+        expect(tester.takeException(), isNull, reason: '$id should paint');
+      }
     });
   });
 }

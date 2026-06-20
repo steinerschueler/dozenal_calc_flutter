@@ -24,6 +24,7 @@ import 'theory/chapter_images.dart';
 import 'theory/prose_chapter.dart';
 import 'theory/theory_blocks.dart';
 import 'theory/theory_illustrations.dart';
+import 'theory/werte_illustrations.dart';
 
 class InfoListPage extends StatelessWidget {
   const InfoListPage({super.key});
@@ -754,9 +755,12 @@ class TheoryChapterPage extends StatelessWidget {
     if (appRef != null) children.add(AppRefCard(appRef));
     final customIllu = _customChapterIllustration(imageId);
     if (customIllu != null) children.add(customIllu);
-    children.addAll([
-      for (final s in prose ?? const <ProseSection>[]) _ProseBlock(s),
-    ]);
+    for (final s in prose ?? const <ProseSection>[]) {
+      children.add(_ProseBlock(s));
+      // Inline data figure right after this section's prose (if tagged).
+      final inlineIllu = inlineTheoryIllustration(s.illustrationId);
+      if (inlineIllu != null) children.add(inlineIllu);
+    }
     if (sources.isNotEmpty) children.add(_SourceList(sources: sources));
     return Scaffold(
       appBar: AppBar(

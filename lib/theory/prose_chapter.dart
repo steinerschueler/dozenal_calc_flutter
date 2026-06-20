@@ -5,11 +5,17 @@
 
 import '../l10n/app_localizations.dart';
 
-/// One section of a chapter: a bold heading + a body paragraph.
+/// One section of a chapter: a bold heading + a body paragraph, optionally
+/// followed by an inline illustration.
 class ProseSection {
   final String heading;
   final String body;
-  const ProseSection(this.heading, this.body);
+
+  /// Optional stable, language-neutral id of an illustration rendered right
+  /// after this section's prose (resolved by inlineTheoryIllustration in
+  /// theory/werte_illustrations.dart). Null → no inline illustration.
+  final String? illustrationId;
+  const ProseSection(this.heading, this.body, {this.illustrationId});
 }
 
 /// A cited source with a two-axis quality rating, distilled from the

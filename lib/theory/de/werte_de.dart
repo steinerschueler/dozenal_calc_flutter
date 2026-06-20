@@ -56,6 +56,7 @@ List<ProseChapter> _werteChaptersDe() => const [
             'ein nützliches Ordnungsschema, keine Naturgesetzmäßigkeit; '
             'Fachleute streiten darüber, welche der drei Aufgaben die '
             'wichtigste ist.',
+        illustrationId: 'werte/money-functions',
       ),
       ProseSection(
         'Was den Wert hält',
@@ -195,6 +196,7 @@ List<ProseChapter> _werteChaptersDe() => const [
             'zwölf Unzen hat statt sechzehn. Die Zwölf ist hier also echt; dass '
             'man daraus aber keine „natürliche" Geldbasis ableiten sollte, '
             'steht am Ende dieses Blocks unter „Spekulatives".',
+        illustrationId: 'werte/troy-ladder',
       ),
     ],
     sources: [
@@ -242,6 +244,7 @@ List<ProseChapter> _werteChaptersDe() => const [
             'Diese Dichte ist praktisch. Man kann Gold leicht von leichteren '
             'Fälschungen unterscheiden, indem man es wiegt und sein Volumen '
             'misst. Echtes Gold verrät sich durch sein Gewicht.',
+        illustrationId: 'werte/density',
       ),
       ProseSection(
         'Weich und formbar',
@@ -621,6 +624,7 @@ List<ProseChapter> _werteChaptersDe() => const [
             'Spreizung der Moderne also als langes Absinken, nicht als Anstieg. Die '
             'antiken Punkte stehen als einzelne Ringe nahe der Mitte, weil sie nur '
             'als Größenordnung bekannt sind.',
+        illustrationId: 'werte/ratio-curve',
       ),
     ],
     sources: [
@@ -700,6 +704,7 @@ List<ProseChapter> _werteChaptersDe() => const [
             'wie schwer es zu gewinnen ist, wofür man es braucht und welche Rolle '
             'es im Geldwesen spielt. Die geologische Häufigkeit ist nur eine '
             'Zutat unter mehreren.',
+        illustrationId: 'werte/crust-vs-money',
       ),
       ProseSection(
         'Ein ehrlicher Vorbehalt zu den Ursachen',
@@ -908,6 +913,7 @@ List<ProseChapter> _werteChaptersDe() => const [
             'sichtbaren Lichts zurück als jedes andere Metall. Darum sitzt es seit '
             'jeher hinter Spiegeln und Reflektoren. Diese Eigenschaften machen es '
             'für die Technik wertvoll, ganz unabhängig vom Schmuck.',
+        illustrationId: 'werte/conductivity',
       ),
       ProseSection(
         'Elektronik, Kontakte und Lötverbindungen',
@@ -993,6 +999,7 @@ List<ProseChapter> _werteChaptersDe() => const [
             'kaum verbraucht; das meiste je geförderte Gold liegt noch irgendwo. '
             'Silber dagegen wird zu einem guten Teil benutzt — und benutztes '
             'Silber ist oft fein verteilt.',
+        illustrationId: 'werte/demand-split',
       ),
       ProseSection(
         'Das meiste Silber ist Beifang',
@@ -1287,6 +1294,7 @@ List<ProseChapter> _werteChaptersDe() => const [
             'nah beieinanderliegen. Über zwei Jahrtausende blieb die Kaufkraft '
             'des Goldes in Brotkorn in derselben groben Größenordnung — etwas, '
             'das von kaum einer Währung gesagt werden kann.',
+        illustrationId: 'werte/purchasing-power',
       ),
       ProseSection(
         'Aber nicht von Jahr zu Jahr',
@@ -1375,6 +1383,7 @@ List<ProseChapter> _werteChaptersDe() => const [
             'Goldbindung nahm den Regierungen ein Werkzeug aus der Hand, mit dem '
             'sie auf Krisen hätten reagieren können — das ist kein Streitpunkt, '
             'sondern eine Tatsache jener Jahre.',
+        illustrationId: 'werte/goldstandard-timeline',
       ),
       ProseSection(
         'Bretton Woods: Gold über den Dollar',
@@ -1566,6 +1575,7 @@ List<ProseChapter> _werteChaptersDe() => const [
             'Krisen stieg Gold, während Aktien fielen. In Panik um Bargeld aber '
             'verkauften viele auch ihr Gold, um an Liquidität zu kommen — dann '
             'fiel es mit. Der Hafen ist also kein Naturgesetz.',
+        illustrationId: 'werte/inflation-horizon',
       ),
       ProseSection(
         'Gold im Portfolio: Diversifizierer, nicht Renditemotor',
@@ -1678,6 +1688,7 @@ List<ProseChapter> _werteChaptersDe() => const [
             'durch mehrere Hände gehen. Daraus folgt aber nicht, dass das '
             'Londoner oder COMEX-Gold massenhaft mehrfach verkauft sei. Das ist '
             'ein Verdacht, kein nachgewiesener Befund.',
+        illustrationId: 'werte/allocated',
       ),
       ProseSection(
         'Ein ehrlicher Vorbehalt',
@@ -2016,6 +2027,7 @@ List<ProseChapter> _werteChaptersDe() => const [
             'der Autoindustrie. Verkaufen sich viele Wagen, steigt die Nachfrage; '
             'stockt der Markt, fällt sie. Das macht diese Metalle deutlich '
             'konjunkturabhängiger als Gold.',
+        illustrationId: 'werte/catalyst',
       ),
       ProseSection(
         'Diesel gegen Benzin: weshalb Platin und Palladium tauschen können',
