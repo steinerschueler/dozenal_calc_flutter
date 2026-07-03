@@ -81,8 +81,9 @@ class AssetState extends ChangeNotifier {
   int _cursorTerm = 0;
   int _inputCursor = 0;
 
-  /// Phase-2 bridge hook (the main calculator's last answer). Null in v1 →
-  /// the Ans key stays inert.
+  /// Bridge hook (the main calculator's last answer), injected by the calc
+  /// scaffold. Null when the calculator runs standalone (tests) — the drill's
+  /// Ans key then greys out.
   double? Function()? calcAnsProvider;
   bool get calcAnsAvailable => _canInsertValue(calcAnsProvider?.call());
 
@@ -202,11 +203,12 @@ class AssetState extends ChangeNotifier {
     return currencies.first.key;
   }
 
-  /// The ≈ value line shown in value mode: the committed quantity converted to
-  /// [_valueTarget]. Null when value mode is off, no target/rate, or the
-  /// result is non-finite. Always approximate (rate-based) — the display
-  /// renders it with the "≈" prefix.
-  ConverterLine? get valueLine {
+  /// The value-mode number: the committed quantity converted to
+  /// [_valueTarget] via the injected rates. Null when value mode is off,
+  /// no target/rate is set, or the result is non-finite. Shared by
+  /// [valueLine] and (in value mode) [ansForBridge], so the bridge always
+  /// carries what the result line shows.
+  double? get _valueModeNumber {
     final r = rates;
     final g = _activeGenus;
     final target = _valueTarget;
@@ -224,9 +226,17 @@ class AssetState extends ChangeNotifier {
         return null;
     }
     final value = r.currencyFromPivot(pivot, target);
-    if (!value.isFinite) return null;
+    return value.isFinite ? value : null;
+  }
+
+  /// The ≈ value line shown in value mode. Null when [_valueModeNumber] is.
+  /// Always approximate (rate-based) — the display renders it with the "≈"
+  /// prefix.
+  ConverterLine? get valueLine {
+    final value = _valueModeNumber;
+    if (value == null) return null;
     return ConverterLine(formatBaseNum(value, base),
-        unit: currencySymbol(target));
+        unit: currencySymbol(_valueTarget!));
   }
 
   /// True for a genus that HAS a metric ↔ imperial axis (a metal). Drives the
@@ -311,10 +321,13 @@ class AssetState extends ChangeNotifier {
     );
   }
 
-  /// Phase-2 bridge value (the result-line number). Exposed now so the bridge
-  /// wiring can land without touching this class later.
+  /// What this calculator offers to the main calculator's bridge — the CONV
+  /// key's long-press option VAL and its tap-fallback: the result-line
+  /// number (in the `=`-cycled unit; the working unit before the first `=`;
+  /// in value mode the ≈ currency value — always what the user sees).
   double? get ansForBridge {
     if (_terms.isEmpty) return null;
+    if (_valueMode) return _valueModeNumber;
     final ladder = currentLadder;
     if (_resultStep >= 0 && _resultStep < ladder.length) {
       return ladder[_resultStep].fromBase(totalBase);

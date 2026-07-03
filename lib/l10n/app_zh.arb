@@ -168,6 +168,7 @@
   "a11yMemoryClear": "清除内存",
   "a11yLastAnswer": "上一个结果",
   "a11yConvAns": "插入单位换算器的结果",
+  "a11yAssetAns": "插入价值计算器的结果",
   "a11yPi": "圆周率",
   "a11yEuler": "欧拉数",
   "a11yGoldenRatio": "黄金比例",

@@ -1112,4 +1112,91 @@ void main() {
       expect(s.ansForBridge, isNull);
     });
   });
+
+  group('AssetAns bridge (value-calculator result → input)', () {
+    Digit dg(int v) => Digit(DozenalDigit.values[v]);
+
+    test('VAL inserts the asset value as digits in the active base', () {
+      final s = DozenalCalcState()..assetAnsProvider = () => 15.0;
+      s.handleClick(const AssetAns());
+      // 15 (decimal) = 13 in base 12.
+      expect(s.inputBuffer, [dg(1), dg(3)]);
+      expect(s.cursorPos, 2);
+    });
+
+    test('negative asset value inserts a unary minus (Sub)', () {
+      final s = DozenalCalcState()..assetAnsProvider = () => -3.0;
+      s.handleClick(const AssetAns());
+      expect(s.inputBuffer, [const Sub(), dg(3)]);
+    });
+
+    test('CONV falls back to the asset value when the converter is empty', () {
+      final s = DozenalCalcState()..assetAnsProvider = () => 15.0;
+      expect(s.convAnsValue, isNull);
+      s.handleClick(const ConvAns());
+      expect(s.inputBuffer, [dg(1), dg(3)]);
+    });
+
+    test('CONV prefers the converter when both hold a result', () {
+      final s = DozenalCalcState();
+      s.convAnsProvider = () => 5.0;
+      s.assetAnsProvider = () => 7.0;
+      s.handleClick(const ConvAns());
+      expect(s.inputBuffer, [dg(5)]);
+    });
+
+    test('VAL pulls the asset value even when both hold a result', () {
+      final s = DozenalCalcState();
+      s.convAnsProvider = () => 5.0;
+      s.assetAnsProvider = () => 7.0;
+      s.handleClick(const AssetAns());
+      expect(s.inputBuffer, [dg(7)]);
+    });
+
+    test('VAL is asset-exclusive: no fallback to the converter', () {
+      final s = DozenalCalcState()..convAnsProvider = () => 5.0;
+      s.handleClick(const AssetAns());
+      expect(s.inputBuffer, isEmpty); // nothing over there → no-op
+    });
+
+    test('Dez mode formats the asset value in base 10', () {
+      final s = DozenalCalcState()
+        ..handleClick(const Dez())
+        ..assetAnsProvider = () => 15.0;
+      s.handleClick(const AssetAns());
+      expect(s.inputBuffer, [dg(1), dg(5)]);
+    });
+
+    test('valueless VAL is a complete no-op: after-equals state survives', () {
+      // AssetAns is reachable through the CONV long-press popup, whose
+      // options carry no disabled gating — with nothing to pull it must
+      // not consume the after-equals state (the next operator still
+      // seeds Ans).
+      final s = DozenalCalcState()
+        ..handleClick(dg(2))
+        ..handleClick(const Add())
+        ..handleClick(dg(2))
+        ..handleClick(const Equals());
+      s.handleClick(const AssetAns()); // no provider → nothing pulled
+      s
+        ..handleClick(const Mul())
+        ..handleClick(dg(2))
+        ..handleClick(const Equals());
+      expect(s.errorMsg, isNull);
+      expect(s.lastAns, equals(Rational.fromInts(8))); // (2+2)×2
+    });
+
+    test('blocked while an error is showing (like CONV/Ans)', () {
+      final s = DozenalCalcState()
+        ..handleClick(dg(1))
+        ..handleClick(const Div())
+        ..handleClick(dg(0))
+        ..handleClick(const Equals());
+      expect(s.errorMsg, isNotNull);
+      s.assetAnsProvider = () => 5.0;
+      s.handleClick(const AssetAns());
+      expect(s.errorMsg, isNotNull); // still blocked
+      expect(s.inputBuffer, [dg(1), const Div(), dg(0)]); // untouched
+    });
+  });
 }

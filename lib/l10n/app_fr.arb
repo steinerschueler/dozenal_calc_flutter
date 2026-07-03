@@ -168,6 +168,7 @@
   "a11yMemoryClear": "effacer la mémoire",
   "a11yLastAnswer": "dernier résultat",
   "a11yConvAns": "Insérer le résultat du convertisseur d'unités",
+  "a11yAssetAns": "Insérer le résultat du calculateur de valeur",
   "a11yPi": "pi",
   "a11yEuler": "nombre d'Euler",
   "a11yGoldenRatio": "nombre d'or",

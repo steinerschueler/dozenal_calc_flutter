@@ -66,7 +66,8 @@ List<ManualChapter> _manualChaptersDe() => const [
       'Tasten mit einer kleinen Ecke unten rechts bieten bei langem '
       'Druck verwandte Funktionen an: x□ enthält x², log enthält ln, '
       'log₁₂ und eˣ, − enthält ±, STO enthält M+ und M−, n! enthält '
-      'nCr und nPr. Zum Auswählen den Finger auf die gewünschte Option '
+      'nCr und nPr, CONV enthält VAL (das Ergebnis des Werterechners). '
+      'Zum Auswählen den Finger auf die gewünschte Option '
       'gleiten lassen und loslassen — oder loslassen und die Option '
       'antippen. Ein Tipp daneben schließt das Feld.',
     ),
@@ -1082,9 +1083,9 @@ List<ManualChapter> _converterManualChaptersDe() => const [
     _P(
       'Wische auf dem Hauptrechner nach links, und der Einheitenrechner '
       'erscheint. Wische auf dem Einheitenrechner nach rechts, und du '
-      'bist zurück. Beim Wechsel zeigen zwei durchscheinende Karten kurz '
-      'an, auf welcher Seite du gerade bist — die goldumrandete Karte ist '
-      'die aktive Seite.',
+      'bist zurück. Beim Wechsel erscheinen unten kurz drei kleine '
+      'Punkte mit dem Namen der Seite — der helle Punkt zeigt, wo du '
+      'gerade bist.',
     ),
     _P(
       'Beide Rechner behalten ihre Eingaben beim Wechsel: Du kannst '
@@ -1220,7 +1221,9 @@ List<ManualChapter> _converterManualChaptersDe() => const [
       'eine Einheit. Umgekehrt holt die CONV-Taste im Erweiterungsfeld '
       'des Hauptrechners die Zahl aus der Ergebniszeile des '
       'Einheitenrechners. Werte reisen dabei als Zahl und erscheinen '
-      'automatisch in der Basis der Zielseite.',
+      'automatisch in der Basis der Zielseite. Hält der Einheitenrechner '
+      'gerade nichts, greift CONV auf das Ergebnis des Werterechners '
+      'zurück; ein langer Druck auf CONV bietet es als VAL auch direkt an.',
     ),
   ]),
 ];
@@ -1245,9 +1248,9 @@ List<ManualChapter> _assetManualChaptersDe() => const [
     _P(
       'Wische auf dem Hauptrechner zweimal nach links — über den '
       'Einheitenrechner hinweg — und der Werterechner erscheint. Nach '
-      'rechts wischen führt Schritt für Schritt zurück. Die zwei '
-      'durchscheinenden Karten beim Wechsel zeigen wieder, auf welcher '
-      'Seite du bist; die goldumrandete ist die aktive.',
+      'rechts wischen führt Schritt für Schritt zurück. Die kleinen '
+      'Punkte mit dem Seitennamen zeigen beim Wechsel wieder, wo du '
+      'bist; der helle Punkt ist die aktive Seite.',
     ),
     _P(
       'Wie die anderen Rechner behält der Werterechner seine Eingabe beim '
@@ -1322,7 +1325,9 @@ List<ManualChapter> _assetManualChaptersDe() => const [
       'der Speicher teilt sich den Platz mit dem Drill. STO merkt sich '
       'den Wert der Ergebniszeile, RCL fügt ihn ein, MC löscht ihn; Ans '
       'holt das letzte Ergebnis des Hauptrechners herüber. Grau heißt '
-      'leer oder nichts vorhanden.',
+      'leer oder nichts vorhanden. In die Gegenrichtung holt die '
+      'CONV-Taste des Hauptrechners den Wert der Ergebniszeile herüber '
+      '(ihr Langdruck-Feld: VAL).',
     ),
     _H('Wert, Rechnen und Löschen'),
     _P(

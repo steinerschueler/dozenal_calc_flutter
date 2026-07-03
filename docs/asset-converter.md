@@ -95,9 +95,13 @@ zurück). **Kein `setWorld`:** die Arbeits-Welt folgt der committeten
 Einheit (`tapMagnitude` setzt `_world = unit.world`); `worldToggleEnabled`
 steuert nur noch den Farbton der Einheitensymbole im Display (Währungen
 pinnen auf Zwölfer-Violett). Eigenes Speicherregister
-`memStore`/`memRecall`/`memClear` (in-memory, überlebt AC). Bridge-Felder
-(`calcAnsProvider`/`ansForBridge`) existieren, sind aber weiterhin inert
-(siehe Offene Punkte).
+`memStore`/`memRecall`/`memClear` (in-memory, überlebt AC). Die
+**Resultat-Brücke ist verdrahtet**: `calcAnsProvider` speist die
+Ans-Taste im Drill (zieht das Rechner-Resultat via `insertCalcAns`,
+negativ armiert die Term-Lücke), `ansForBridge` liefert den
+Ergebniszeilen-Wert an den Hauptrechner — dort erreichbar über die
+CONV-Taste (Tap-Fallback bei leerem Umrechner) bzw. deren
+Langdruck-Option **VAL** (`AssetAns`-Token).
 
 ## UI
 
@@ -123,9 +127,12 @@ pinnen auf Zwölfer-Violett). Eigenes Speicherregister
 
 ## Pager-Integration (`lib/main.dart`)
 
-`_CalcScaffoldState` besitzt zusätzlich `_assetState` (v1 ohne Bridge). PageView
-hat drei Kinder; `_pagerProgress` clampt auf `[0, 2]`; `_PagePeekOverlay` läuft
-eine 3-Karten-Reihe (Karte i leuchtet bei `progress ≈ i`); `_handleAssetKey`
+`_CalcScaffoldState` besitzt zusätzlich `_assetState` und verdrahtet die
+Resultat-Brücke in beide Richtungen (`_assetState.calcAnsProvider` ↔
+`_state.assetAnsProvider`). PageView
+hat drei Kinder; `_pagerProgress` clampt auf `[0, 2]`; `_PagePeekOverlay`
+zeigt den Punkte-Indikator mit drei Punkten (Label i blendet bei
+`progress ≈ i` ein); `_handleAssetKey`
 routet physische Tasten auf Seite 2; die globale „Zahlensystem"-Basis wird (wie
 beim Umrechner) in `_assetState.setBase` gespiegelt. Bei offenem Chart
 sperrt der Pager das Seiten-Wischen (`NeverScrollableScrollPhysics` auf
@@ -141,7 +148,8 @@ blättern.
 `assetRatesMetals`, `assetRatesReset`, `assetRatesResetAll`,
 `assetRatesSourceHint`) — **alle 14 Sprachen vollständig übersetzt**
 (Subagenten-Pipeline: Übersetzen + Review), Platzhalter `{date}`/`{pivot}`
-erhalten. Equals-Hinweis nutzt `converterEqualsHint`. Einheiten-/Währungs-
+erhalten. Equals-Hinweis nutzt `converterEqualsHint`; die VAL-Popup-Option
+der Brücke trägt `a11yAssetAns` (×14). Einheiten-/Währungs-
 symbole bleiben international.
 
 ## Wertmodus & Kurse (Phase 2)
@@ -224,5 +232,4 @@ programmatisch abgeleitet → eine Quelle der Wahrheit).
 
 Krypto/Rohstoff-Klassen
 (Krypto: f64 mit gedeckelter Anzeige) · Rhodium/Karat/Apothekereinheiten ·
-Result-Brücke Asset ↔ Hauptrechner · Breit-Layout-Feinschliff für lange
-Gattungs-Labels.
+Breit-Layout-Feinschliff für lange Gattungs-Labels.

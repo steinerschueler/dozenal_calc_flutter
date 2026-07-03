@@ -341,8 +341,9 @@ class _CalcScaffoldState extends State<_CalcScaffold> {
 
   /// The asset converter (precious metals & currencies) is page 3 of the
   /// pager. Like the unit converter its state lives here so input survives
-  /// page swipes. v1 has no result bridge (exact conversions only — prices /
-  /// rates are Phase 2), but it does follow the global numeral base.
+  /// page swipes; it follows the global numeral base and takes part in the
+  /// result bridge (its drill Ans key pulls the calc answer, the calc's
+  /// CONV key reaches its result via long-press VAL or the tap-fallback).
   final AssetState _assetState = AssetState();
 
   /// Rate table for the value calculator (Phase 2): baked snapshot + persisted
@@ -417,11 +418,14 @@ class _CalcScaffoldState extends State<_CalcScaffold> {
     super.initState();
     _state.addListener(_onStateChanged);
     // Result bridge: each calculator's "answer" key pulls the OTHER
-    // calculator's current result (converter Ans ← calc answer; calc CONV ←
-    // converter total). Values travel as doubles; each side formats them in
-    // its own active base.
+    // calculator's current result (converter/asset Ans ← calc answer;
+    // calc CONV ← converter total, falling back to the asset value; the
+    // CONV long-press option VAL ← asset value explicitly). Values travel
+    // as doubles; each side formats them in its own active base.
     _converterState.calcAnsProvider = () => _state.ansForBridge;
     _state.convAnsProvider = () => _converterState.ansForBridge;
+    _assetState.calcAnsProvider = () => _state.ansForBridge;
+    _state.assetAnsProvider = () => _assetState.ansForBridge;
     // Base/system decoupling: the global "Zahlensystem" (held by the calc
     // state, persisted via the settings page) drives the converter's digit
     // base too — initial value here, every later change via _onStateChanged.
@@ -452,8 +456,10 @@ class _CalcScaffoldState extends State<_CalcScaffold> {
   @override
   void dispose() {
     // The state itself is owned and disposed by _DozenalCalcAppState; the
-    // bridge provider must not dangle into the disposed converter state.
+    // bridge providers must not dangle into the disposed converter/asset
+    // states.
     _state.convAnsProvider = null;
+    _state.assetAnsProvider = null;
     _state.removeListener(_onStateChanged);
     _pagePeekTimer?.cancel();
     _pageController.removeListener(_onPagerScroll);
@@ -473,9 +479,15 @@ class _CalcScaffoldState extends State<_CalcScaffold> {
   }
 
   bool _isTokenDisabled(CalcToken token) {
-    // CONV (the converter bridge) greys out while the converter holds no
-    // result to pull — same affordance as the converter's Ans key.
-    if (token is ConvAns) return _state.convAnsValue == null;
+    // CONV (the bridge key) greys out only while NEITHER second calculator
+    // holds a result: its tap pulls the converter (falling back to the
+    // asset value), its long-press popup offers VAL explicitly. Disabling
+    // on the converter alone would also kill the long-press (disabled keys
+    // host no popup) and strand a live asset value.
+    if (token is ConvAns) {
+      return _state.convAnsValue == null && _state.assetAnsValue == null;
+    }
+    if (token is AssetAns) return _state.assetAnsValue == null;
     if (_state.numeralSystem != NumeralSystem.dez) return false;
     if (token is Digit) {
       return token.value == DozenalDigit.d10 || token.value == DozenalDigit.d11;
@@ -771,9 +783,9 @@ class _CalcScaffoldState extends State<_CalcScaffold> {
                 // Page-peek indicator: transient, never blocks input, and
                 // unmounts entirely after the fade so it leaves no invisible
                 // surfaces (hit tests, semantics, test finders) behind. The
-                // AnimatedBuilder re-renders the cards on every pager tick,
-                // so they glide along with the pages and settle with the
-                // pager's own deceleration.
+                // AnimatedBuilder re-renders the dot row on every pager
+                // tick, so the active dot glides along with the pages and
+                // settles with the pager's own deceleration.
                 if (_pagePeekMounted)
                   Positioned.fill(
                     child: IgnorePointer(
@@ -806,11 +818,13 @@ class _CalcScaffoldState extends State<_CalcScaffold> {
   }
 
   /// Page 0: the main calculator (display over keypad). Also listens to the
-  /// converter state so the CONV key's enabled state stays fresh while both
-  /// pages are visible mid-swipe.
+  /// converter AND asset states so the CONV key's enabled state (it reads
+  /// both bridge values since the asset bridge landed) stays fresh while
+  /// pages are visible mid-swipe — independent of the chart-physics
+  /// ListenableBuilder around the PageView.
   Widget _calcPage(CalcPrefsNotifier prefs) {
     return ListenableBuilder(
-      listenable: Listenable.merge([_state, _converterState]),
+      listenable: Listenable.merge([_state, _converterState, _assetState]),
       builder: (ctx, _) => Padding(
         padding: const EdgeInsets.all(12.0),
         child: LayoutBuilder(
@@ -873,14 +887,20 @@ class _CalcScaffoldState extends State<_CalcScaffold> {
   }
 }
 
-/// The page-peek indicator content: a translucent miniature card per pager
-/// page with faint page names — a minimap of the swipeable pages. [progress]
-/// is the CONTINUOUS pager position (0…1): the card pair glides with the
-/// pages (one swipe-width = one card-pitch) and the golden outline
-/// crossfades from the leaving to the arriving card, so the minimap tracks
-/// the finger and settles with the pager's own gentle deceleration. The
-/// host wraps it in IgnorePointer + ExcludeSemantics and fades it in/out;
-/// this widget is purely visual.
+/// The page-peek indicator content: three page dots with the arriving
+/// page's name above, on one quiet translucent pill. [progress] is the
+/// CONTINUOUS pager position (0…2): the active dot glides along the
+/// dot row and the
+/// page-name label crossfades from the leaving to the arriving page, so
+/// the indicator tracks the finger and settles with the pager's own
+/// gentle deceleration. The host wraps it in IgnorePointer +
+/// ExcludeSemantics and fades it in/out; this widget is purely visual.
+///
+/// Deliberately understated (the earlier design — large translucent
+/// miniature cards with a golden outline — read like a modal chooser and
+/// spent the app's sparse gold accent on a purely informational hint):
+/// palette text colours only, the familiar page-dots idiom, one quiet
+/// translucent pill so the hint stays readable over any keypad.
 class _PagePeekOverlay extends StatelessWidget {
   const _PagePeekOverlay({required this.progress});
 
@@ -888,81 +908,90 @@ class _PagePeekOverlay extends StatelessWidget {
   /// 2 = asset converter.
   final double progress;
 
+  static const double _dot = 7.0;
+  static const double _dotPitch = 18.0; // centre-to-centre
+
   @override
   Widget build(BuildContext context) {
     final l = AppLocalizations.of(context);
     final t = AppColors.of(context);
-    return LayoutBuilder(
-      builder: (ctx, c) {
-        final w = c.maxWidth;
-        final h = c.maxHeight;
-        // The cards are miniatures of the page itself — card aspect = body
-        // aspect, so a portrait screen shows upright cards and a landscape
-        // screen wide ones. Everything scales with the width, keeping the
-        // same composition (center card, gap, neighbour clipped ~40 %) at
-        // every size.
-        final rectW = w * 0.38;
-        final rectH = rectW * h / w;
-        final gap = w * 0.08;
-        final top = (h - rectH) / 2;
-        final centerLeft = (w - rectW) / 2;
+    final labels = [
+      l.pagerLabelMain,
+      l.infoListConverterEntry,
+      l.pagerLabelAsset,
+    ];
 
-        Widget card(String label, double outline) => Container(
-              width: rectW,
-              height: rectH,
-              decoration: BoxDecoration(
-                color: (t.isDark ? Colors.black : Colors.white)
-                    .withValues(alpha: 0.40),
-                borderRadius: BorderRadius.circular(6),
-                // Constant 2 dp border, alpha-crossfaded — the card never
-                // changes size, only its outline lights up.
-                border: Border.all(
-                  color: t.accentGold.withValues(alpha: 0.70 * outline),
-                  width: 2,
-                ),
-              ),
-              alignment: Alignment.center,
-              padding: const EdgeInsets.symmetric(horizontal: 10),
-              child: FittedBox(
-                fit: BoxFit.scaleDown,
-                child: Text(
-                  label,
-                  maxLines: 1,
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w600,
-                    color: t.textSecondary.withValues(alpha: 0.85),
-                  ),
-                ),
-              ),
-            );
+    // Label presence per page: 1 at its position, fading to 0 a full page
+    // away — the same crossfade the golden card-outline used to run.
+    double at(int i) => (1 - (progress - i).abs()).clamp(0.0, 1.0);
 
-        // One swipe-width of page travel = one card-pitch of minimap travel:
-        // every card shifts left as the next page scrolls in. The Stack's
-        // hard-edge clip cuts whatever leaves the screen. The golden outline
-        // of card i lights up as the pager nears position i (1 at i, fading
-        // to 0 a full page away), generalising the old two-card crossfade.
-        final pitch = rectW + gap;
-        final shift = pitch * progress;
-        final labels = [
-          l.pagerLabelMain,
-          l.infoListConverterEntry,
-          l.pagerLabelAsset,
-        ];
-        return Stack(
-          children: [
-            for (var i = 0; i < labels.length; i++)
-              Positioned(
-                top: top,
-                left: centerLeft + i * pitch - shift,
-                child: card(
-                  labels[i],
-                  (1 - (progress - i).abs()).clamp(0.0, 1.0),
-                ),
-              ),
-          ],
+    Widget dot(Color color) => Container(
+          width: _dot,
+          height: _dot,
+          decoration: BoxDecoration(color: color, shape: BoxShape.circle),
         );
-      },
+
+    final dotsW = _dot + (labels.length - 1) * _dotPitch;
+
+    return Align(
+      alignment: Alignment.bottomCenter,
+      child: Padding(
+        padding: const EdgeInsets.only(bottom: 28),
+        child: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+          decoration: BoxDecoration(
+            color: (t.isDark ? Colors.black : Colors.white)
+                .withValues(alpha: 0.45),
+            borderRadius: BorderRadius.circular(14),
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              // All three names stacked and crossfaded — the pill keeps a
+              // stable size while the text morphs between pages.
+              Stack(
+                alignment: Alignment.center,
+                children: [
+                  for (var i = 0; i < labels.length; i++)
+                    Opacity(
+                      opacity: at(i),
+                      child: Text(
+                        labels[i],
+                        maxLines: 1,
+                        style: TextStyle(
+                          fontSize: 13,
+                          fontWeight: FontWeight.w500,
+                          color: t.textSecondary,
+                        ),
+                      ),
+                    ),
+                ],
+              ),
+              const SizedBox(height: 7),
+              SizedBox(
+                width: dotsW,
+                height: _dot,
+                child: Stack(
+                  children: [
+                    for (var i = 0; i < labels.length; i++)
+                      Positioned(
+                        left: i * _dotPitch,
+                        child: dot(t.textMuted),
+                      ),
+                    // The active dot is a fourth dot drawn OVER the row at
+                    // the continuous pager position — one page of travel =
+                    // one dot-pitch, so it glides with the finger.
+                    Positioned(
+                      left: progress.clamp(0.0, 2.0) * _dotPitch,
+                      child: dot(t.textPrimary),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

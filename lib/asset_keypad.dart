@@ -301,7 +301,8 @@ class AssetKeypad extends StatelessWidget {
   }
 
   /// Op-key enablement. Operators/constants are always active (a grey reads as
-  /// "not wired"); Ans needs the (Phase-2) bridge, STO/RCL/MC the register.
+  /// "not wired"); Ans needs a live calc answer over the injected bridge,
+  /// STO/RCL/MC the register.
   bool _opActive(CalcToken t) {
     if (t is Ans) return state.calcAnsAvailable;
     if (t is Sto) return state.canMemStore;

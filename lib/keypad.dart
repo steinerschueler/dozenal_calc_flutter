@@ -174,14 +174,16 @@ const List<List<CalcToken?>> _hochFuncRows = [
 /// pattern that replaced the function page. Each host key offers its
 /// mathematically related secondary functions: x^□ the x² shortcut, log_□
 /// its special cases ln/log₁₂ and the inverse eˣ, − the sign toggle, STO the
-/// memory accumulators, n! the combinatorics built on factorials. Empty for
-/// keys without a popup. Public for the widget tests.
+/// memory accumulators, n! the combinatorics built on factorials, CONV the
+/// asset-calculator bridge (VAL). Empty for keys without a popup. Public for
+/// the widget tests.
 List<CalcToken> longPressOptionsFor(CalcToken token) => switch (token) {
   ExpTopRight() => const [Square()],
   LogBotRight() => const [Ln(), Log12(), ExpE()],
   Sub() => const [PlusMinus()],
   Sto() => const [MemPlus(), MemMinus()],
   Factorial() => const [NCr(), NPr()],
+  ConvAns() => const [AssetAns()],
   _ => const [],
 };
 
@@ -337,6 +339,7 @@ class _HochKeypad extends StatelessWidget {
           onTap: onTap,
           isArmed: isArmed,
           isSelected: isSelected,
+          isDisabled: isDisabled,
         ),
       ],
     );
@@ -521,6 +524,7 @@ class _MiddleSection extends StatelessWidget {
       onTap: onTap,
       isArmed: isArmed,
       isSelected: isSelected,
+      isDisabled: isDisabled,
     );
     return AnimatedSwitcher(
       duration: const Duration(milliseconds: 150),
@@ -572,6 +576,7 @@ class _OverlayPanel extends StatelessWidget {
   final TokenTapHandler onTap;
   final ArmedPredicate? isArmed;
   final SelectedPredicate? isSelected;
+  final DisabledPredicate? isDisabled;
 
   const _OverlayPanel({
     super.key,
@@ -582,6 +587,7 @@ class _OverlayPanel extends StatelessWidget {
     required this.onTap,
     this.isArmed,
     this.isSelected,
+    this.isDisabled,
   });
 
   void _go(int p) => onPageChanged?.call(p);
@@ -598,6 +604,7 @@ class _OverlayPanel extends StatelessWidget {
       onTap: onTap,
       isArmed: isArmed,
       isSelected: isSelected,
+      isDisabled: isDisabled,
     );
     // Two overlay pages: OLL (page 0, Sets 6–10) shows a right-edge arrow to
     // OLR (page 1, function keys), which shows a left-edge arrow back. The
@@ -791,6 +798,7 @@ class _RowsPanel extends StatelessWidget {
                   armed: isArmed?.call(tok) ?? false,
                   selected: isSelected?.call(tok) ?? false,
                   disabled: isDisabled?.call(tok) ?? false,
+                  isOptionDisabled: isDisabled,
                 ),
         ),
       );
@@ -1030,6 +1038,7 @@ class _BreitKeypad extends StatelessWidget {
                 armed: isArmed?.call(tokens[i]) ?? false,
                 selected: isSelected?.call(tokens[i]) ?? false,
                 disabled: isDisabled?.call(tokens[i]) ?? false,
+                isOptionDisabled: isDisabled,
               ),
             ),
           ],
@@ -1247,6 +1256,11 @@ class _TokenButton extends StatefulWidget {
   /// touch button and the keyboard stay in lockstep.
   final bool disabled;
 
+  /// Disabled predicate for the long-press popup options (e.g. VAL greys
+  /// while the asset calculator holds nothing) — the same "grey = empty"
+  /// affordance the keys themselves follow. Null keeps every option live.
+  final DisabledPredicate? isOptionDisabled;
+
   const _TokenButton({
     required this.token,
     required this.onTap,
@@ -1254,6 +1268,7 @@ class _TokenButton extends StatefulWidget {
     this.armed = false,
     this.selected = false,
     this.disabled = false,
+    this.isOptionDisabled,
   });
 
   @override
@@ -1373,6 +1388,7 @@ class _TokenButtonState extends State<_TokenButton> {
                           child: _PopupOption(
                             token: _options[i],
                             highlighted: hover == i,
+                            disabled: _optionDisabled(i),
                             onTap: () => _select(i),
                           ),
                         ),
@@ -1390,9 +1406,13 @@ class _TokenButtonState extends State<_TokenButton> {
     _popup = entry;
   }
 
+  bool _optionDisabled(int i) =>
+      widget.isOptionDisabled?.call(_options[i]) ?? false;
+
   void _onLongPressMoveUpdate(LongPressMoveUpdateDetails d) {
     if (_popup == null) return;
-    final next = _hitIndex(d.globalPosition);
+    var next = _hitIndex(d.globalPosition);
+    if (next != null && _optionDisabled(next)) next = null;
     if (next != _hover.value) {
       if (next != null && _haptics) HapticFeedback.lightImpact();
       _hover.value = next;
@@ -1417,6 +1437,9 @@ class _TokenButtonState extends State<_TokenButton> {
   }
 
   void _select(int i) {
+    // Greyed options are inert: no haptic, no dispatch, popup stays open —
+    // exactly like tapping a greyed key.
+    if (_optionDisabled(i)) return;
     final tok = _options[i];
     _removePopup();
     if (_haptics) HapticFeedback.lightImpact();
@@ -1492,10 +1515,15 @@ class _PopupOption extends StatelessWidget {
   final bool highlighted;
   final VoidCallback onTap;
 
+  /// Greyed and inert (same "grey = nothing to pull" affordance as the
+  /// keys, e.g. VAL while the asset calculator holds no result).
+  final bool disabled;
+
   const _PopupOption({
     required this.token,
     required this.highlighted,
     required this.onTap,
+    this.disabled = false,
   });
 
   @override
@@ -1503,7 +1531,8 @@ class _PopupOption extends StatelessWidget {
     final l = AppLocalizations.of(context);
     final t = AppColors.of(context);
     return Semantics(
-      button: true,
+      button: !disabled,
+      enabled: !disabled,
       label: _tokenSemanticLabel(token, l),
       excludeSemantics: true,
       child: GestureDetector(
@@ -1513,13 +1542,18 @@ class _PopupOption extends StatelessWidget {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(4),
             border: Border.all(
-              color: highlighted ? t.op : t.keyBorder,
-              width: highlighted ? 2 : 1,
+              color: disabled
+                  ? t.keyBorderDisabled
+                  : (highlighted ? t.op : t.keyBorder),
+              width: !disabled && highlighted ? 2 : 1,
             ),
           ),
           child: CustomPaint(
             size: Size.infinite,
-            painter: TokenKeyPainter(token: token, color: t.op),
+            painter: TokenKeyPainter(
+              token: token,
+              color: disabled ? t.digitDisabled : t.op,
+            ),
           ),
         ),
       ),
@@ -1604,6 +1638,7 @@ String _tokenSemanticLabel(CalcToken t, AppLocalizations l) => switch (t) {
   Dez() => l.a11yDecimalMode,
   Drg() => l.a11yAngleMode,
   ConvAns() => l.a11yConvAns,
+  AssetAns() => l.a11yAssetAns,
   Info() => l.a11yInfo,
   MemPlus() => l.a11yMemPlus,
   MemMinus() => l.a11yMemMinus,

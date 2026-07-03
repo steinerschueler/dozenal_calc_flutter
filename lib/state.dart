@@ -102,6 +102,18 @@ class DozenalCalcState extends ChangeNotifier {
     return v != null && v.isFinite ? v : null;
   }
 
+  /// Bridge to the asset (value) calculator — the CONV key's long-press
+  /// option VAL, and the CONV tap-fallback when the converter is empty.
+  /// Injected by the calc scaffold; null when no asset calculator is
+  /// attached (standalone state in tests).
+  double? Function()? assetAnsProvider;
+
+  /// The asset calculator's current result, or null when there is none.
+  double? get assetAnsValue {
+    final v = assetAnsProvider?.call();
+    return v != null && v.isFinite ? v : null;
+  }
+
   /// What this calculator offers to the converter's Ans key: the last
   /// computed result as a double ([lastResultF64] is kept in sync on the
   /// exact track too). Null when no live result is on screen (post-AC or
@@ -204,6 +216,18 @@ class DozenalCalcState extends ChangeNotifier {
         errorMsg = null;
         _ratCollapsed = false;
       }
+    }
+
+    // Bridge keys with nothing to pull are complete no-ops — in particular
+    // they must not consume the after-equals state. The keypad greys the
+    // keys AND the VAL popup option via the same predicate, but this guard
+    // is the state-level source of truth (call sites without the disabled
+    // predicate, tests, future key mappings). CONV itself stays enabled
+    // while EITHER second calculator holds a result (its tap falls back to
+    // the asset value).
+    if (token is AssetAns && assetAnsValue == null) return;
+    if (token is ConvAns && convAnsValue == null && assetAnsValue == null) {
+      return;
     }
 
     final isOperator =
@@ -366,8 +390,13 @@ class DozenalCalcState extends ChangeNotifier {
       overlayOpen = false;
       return;
     }
-    if (token is ConvAns) {
-      final v = convAnsValue;
+    if (token is ConvAns || token is AssetAns) {
+      // CONV pulls the unit converter's result and falls back to the asset
+      // calculator's when the converter holds none; VAL (the long-press
+      // option) pulls the asset value explicitly.
+      final v = token is AssetAns
+          ? assetAnsValue
+          : (convAnsValue ?? assetAnsValue);
       if (v != null) {
         // Insert as plain digits in the active base, like a history-recalled
         // f64 value. formatF64Result handles the near-integer snap and the
@@ -632,6 +661,7 @@ class DozenalCalcState extends ChangeNotifier {
       token is Mc ||
       token is Ans ||
       token is ConvAns ||
+      token is AssetAns ||
       token is MemPlus ||
       token is MemMinus;
 

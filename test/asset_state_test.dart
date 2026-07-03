@@ -259,6 +259,16 @@ void main() {
       s.equals();
       expect(s.valueMode, isTrue);
     });
+
+    test('the bridge carries the shown ≈ value in value mode', () {
+      commitGoldOzt(); // 1 oz t gold, base 10, snapshot rates injected
+      expect(s.ansForBridge, closeTo(1.0, 1e-9)); // ladder view: 1 oz t
+      s.enterValueMode();
+      s.setValueTarget('usd');
+      // The result line shows "≈ 2350 $" — the bridge must deliver that,
+      // not the hidden ladder quantity.
+      expect(s.ansForBridge, closeTo(2350.0, 1e-6));
+    });
   });
 
   test('AC resets the whole drill-down', () {
@@ -270,5 +280,46 @@ void main() {
     expect(s.drillLevel, AssetDrillLevel.classes);
     expect(s.termCount, 0);
     expect(s.pendingInput, '');
+  });
+
+  group('calc-answer bridge (the drill Ans key)', () {
+    test('calcAnsAvailable follows the injected provider', () {
+      expect(s.calcAnsAvailable, isFalse); // standalone: no provider
+      s.calcAnsProvider = () => 15.0;
+      expect(s.calcAnsAvailable, isTrue);
+      s.calcAnsProvider = () => null; // nothing live over there
+      expect(s.calcAnsAvailable, isFalse);
+    });
+
+    test('insertCalcAns sets the pending number in the active base', () {
+      s.calcAnsProvider = () => 15.0;
+      s.insertCalcAns();
+      expect(s.pendingInput, '13'); // 15 decimal = 13 in base 12
+    });
+
+    test('insertCalcAns formats in base 10 after setBase(10)', () {
+      s.setBase(10);
+      s.calcAnsProvider = () => 15.0;
+      s.insertCalcAns();
+      expect(s.pendingInput, '15');
+    });
+
+    test('negative answer arms the subtract gap, digits stay unsigned', () {
+      s.calcAnsProvider = () => -2.0;
+      s.insertCalcAns();
+      expect(s.pendingInput, '2');
+      expect(s.subtractArmed, isTrue);
+    });
+
+    test('ansForBridge offers the committed result-line value', () {
+      expect(s.ansForBridge, isNull); // nothing committed yet
+      s.tapClass(AssetClass.metal);
+      s.tapGenus(gold());
+      s.inputDigit(1);
+      s.inputDigit(3);
+      s.tapMagnitude(unit(gold(), 'oz t'));
+      // 13 (doz) oz t = 15 decimal — the bridge travels as a plain double.
+      expect(s.ansForBridge, closeTo(15.0, 1e-9));
+    });
   });
 }

@@ -68,7 +68,8 @@ List<ManualChapter> _manualChaptersIt() => const [
       "I tasti con un piccolo angolo in basso a destra offrono "
       "funzioni correlate con una pressione prolungata: x□ "
       "contiene x², log contiene ln, log₁₂ ed eˣ, − contiene ±, "
-      "STO contiene M+ e M−, n! contiene nCr e nPr. Per "
+      "STO contiene M+ e M−, n! contiene nCr e nPr, CONV contiene "
+      "VAL (il risultato della calcolatrice dei valori). Per "
       "scegliere, scorri il dito sull'opzione desiderata e "
       "rilascia — oppure rilascia e tocca l'opzione. Un tocco "
       "fuori chiude il pannello.",
@@ -1139,9 +1140,9 @@ List<ManualChapter> _converterManualChaptersIt() => const [
     _P(
       'Scorri verso sinistra sulla calcolatrice principale e appare il '
       'convertitore di unità. Scorri verso destra sul convertitore e sei '
-      'di ritorno. Al passaggio, due schede semitrasparenti indicano '
-      'brevemente su quale pagina ti trovi — la scheda con il bordo dorato '
-      'è la pagina attiva.',
+      'di ritorno. Al passaggio compaiono brevemente in basso tre '
+      'puntini con il nome della pagina — il puntino chiaro mostra dove '
+      'ti trovi.',
     ),
     _P(
       'Entrambe le calcolatrici conservano i loro input al passaggio: puoi '
@@ -1279,7 +1280,10 @@ List<ManualChapter> _converterManualChaptersIt() => const [
       'della calcolatrice principale recupera il numero dalla riga del '
       'risultato del convertitore di unità. I valori viaggiano come '
       'numero puro e appaiono automaticamente nella base della pagina di '
-      'destinazione.',
+      'destinazione. Se il convertitore di unità al momento non contiene '
+      'nulla, CONV ripiega sul risultato della calcolatrice dei valori; '
+      'una pressione prolungata su CONV lo offre anche direttamente '
+      'come VAL.',
     ),
   ]),
 ];
@@ -1298,9 +1302,8 @@ List<ManualChapter> _assetManualChaptersIt() => const [
       'Scorri due volte verso sinistra sulla calcolatrice principale — '
       'oltre il convertitore di unità — e appare la calcolatrice dei '
       'valori. Scorrendo verso destra torni indietro passo dopo passo. Al '
-      'passaggio, le due schede semitrasparenti indicano di nuovo su '
-      'quale pagina ti trovi; quella con il bordo dorato è la pagina '
-      'attiva.'
+      'passaggio, i puntini con il nome della pagina indicano di nuovo '
+      'dove ti trovi; il puntino chiaro è la pagina attiva.'
     ),
     _P(
       'Come le altre calcolatrici, la calcolatrice dei valori conserva il '
@@ -1377,7 +1380,10 @@ List<ManualChapter> _assetManualChaptersIt() => const [
       'la memoria condivide lo spazio con la navigazione. STO memorizza '
       'il valore della riga del risultato, RCL lo inserisce, MC lo '
       'cancella; Ans recupera l\'ultimo risultato della calcolatrice '
-      'principale. Grigio significa vuoto o nulla disponibile.'
+      'principale. Grigio significa vuoto o nulla disponibile. Nella '
+      'direzione opposta, il tasto CONV della calcolatrice principale '
+      'recupera il valore della riga del risultato (la sua opzione di '
+      'pressione prolungata: VAL).'
     ),
     _H('Valore, calcolare e cancellare'),
     _P(

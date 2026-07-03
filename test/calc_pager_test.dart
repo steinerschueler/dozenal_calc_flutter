@@ -160,6 +160,51 @@ void main() {
     ]);
   });
 
+  testWidgets(
+      'asset bridge round trip: calc → asset (Ans) → calc (CONV fallback)',
+      (tester) async {
+    await bootApp(tester, numeralSystem: 'doz'); // asserts dozenal digits
+
+    // 5 × 3 = → 13 (dozenal 13 = decimal 15).
+    await tester.sendKeyEvent(LogicalKeyboardKey.digit5);
+    await tester.sendKeyEvent(LogicalKeyboardKey.numpadMultiply);
+    await tester.sendKeyEvent(LogicalKeyboardKey.digit3);
+    await tester.sendKeyEvent(LogicalKeyboardKey.enter);
+    await tester.pump();
+
+    // Two left swipes → asset converter. The drill's Ans key (class level)
+    // pulls the calc answer as the pending number.
+    await swipePager(tester, -400);
+    await swipePager(tester, -400);
+    expect(find.byType(AssetKeypad), findsOneWidget);
+    await tester.tap(find.bySemanticsLabel('Ergebnis des Rechners einfügen'));
+    await tester.pump();
+    expect(assetInput(tester), '13');
+
+    // Commit as 13 oz t of gold (drill: class → genus → unit; the pending
+    // number survives the drill navigation).
+    await tester.tap(find.text('Precious metal'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Gold'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('oz t'));
+    await tester.pump();
+    expect(assetInput(tester), '13 oz t');
+
+    // Back on the calculator (two right swipes), the CONV tap falls back to
+    // the asset result — the unit converter holds nothing.
+    await swipePager(tester, 400);
+    await swipePager(tester, 400);
+    await tester
+        .tap(find.bySemanticsLabel("Insert the unit converter's result"));
+    await tester.pump();
+    final after = tester.widget<TwoLineDisplay>(find.byType(TwoLineDisplay));
+    expect(after.inputBuffer, [
+      const Digit(DozenalDigit.d1),
+      const Digit(DozenalDigit.d3),
+    ]);
+  });
+
   testWidgets('the info list carries both manuals; the converter nav entry '
       'is gone', (tester) async {
     await bootApp(tester);
@@ -235,11 +280,11 @@ void main() {
     expect(find.byType(AssetKeypad), findsNothing);
   });
 
-  testWidgets('page peek shows all three page cards', (tester) async {
+  testWidgets('page peek carries all three page names', (tester) async {
     await bootApp(tester);
     await swipePager(tester, -400); // pulse fires on the swipe
-    // The minimap renders one card per page (the asset card may be clipped
-    // off-screen but is still in the tree).
+    // The dots indicator stacks one crossfading name per page — all three
+    // stay in the tree (the inactive ones at opacity 0).
     expect(find.text('Main calculator'), findsOneWidget);
     expect(find.text('Unit converter'), findsOneWidget);
     expect(find.text('Value calculator'), findsOneWidget);

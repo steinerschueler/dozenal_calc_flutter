@@ -68,8 +68,9 @@ List<ManualChapter> _manualChaptersCy() => const [
       "swyddogaethau cysylltiedig gyda phwysiad hir: mae x□ yn "
       "cynnwys x², mae log yn cynnwys ln, log₁₂ ac eˣ, mae − yn "
       "cynnwys ±, mae STO yn cynnwys M+ ac M−, mae n! yn cynnwys "
-      "nCr ac nPr. I ddewis, llithrwch eich bys i'r opsiwn a "
-      "ddymunir a gollyngwch — neu gollyngwch a thapiwch yr "
+      "nCr ac nPr, ac mae CONV yn cynnwys VAL (canlyniad y "
+      "gyfrifiannell gwerth). I ddewis, llithrwch eich bys i'r "
+      "opsiwn a ddymunir a gollyngwch — neu gollyngwch a thapiwch yr "
       "opsiwn. Mae tap y tu allan yn cau'r naidlen.",
     ),
     _H("Gweithredwyr arbennig"),
@@ -1101,9 +1102,9 @@ List<ManualChapter> _converterManualChaptersCy() => const [
     _P(
       "Sweipiwch i'r chwith ar y brif gyfrifiannell, ac fe "
       "ymddengys y trawsnewidydd unedau. Sweipiwch i'r dde ar y "
-      "trawsnewidydd, ac rydych yn ôl. Wrth newid, mae dau gerdyn "
-      "tryloyw yn dangos am ennyd ar ba ochr yr ydych — y cerdyn ag "
-      "ymyl aur yw'r ochr weithredol.",
+      "trawsnewidydd, ac rydych yn ôl. Wrth newid, mae tri dot bach "
+      "gydag enw'r dudalen yn ymddangos am ennyd ar y gwaelod — mae'r "
+      "dot golau yn dangos ble'r ydych.",
     ),
     _P(
       "Mae'r ddwy gyfrifiannell yn cadw eu mewnbwn wrth newid: gallwch "
@@ -1242,7 +1243,10 @@ List<ManualChapter> _converterManualChaptersCy() => const [
       "CONV ym mhanel estynedig y brif gyfrifiannell yn cyrchu'r rhif "
       "o linell canlyniad y trawsnewidydd unedau. Mae gwerthoedd yn "
       "teithio fel rhif ac yn ymddangos yn awtomatig ym môn yr ochr "
-      "darged.",
+      "darged. Os nad oes dim yn y trawsnewidydd unedau ar hyn o "
+      "bryd, mae CONV yn troi at ganlyniad y gyfrifiannell gwerth; "
+      "mae pwysiad hir ar CONV hefyd yn ei gynnig yn uniongyrchol "
+      "fel VAL.",
     ),
   ]),
 ];
@@ -1261,8 +1265,8 @@ List<ManualChapter> _assetManualChaptersCy() => const [
       'Sweipiwch ddwywaith i\'r chwith ar y brif gyfrifiannell — heibio '
       'i\'r trawsnewidydd unedau — ac fe ymddengys y trawsnewidydd '
       'gwerth. Mae sweipio i\'r dde yn eich arwain yn ôl gam wrth gam. '
-      'Mae\'r ddau gerdyn tryloyw wrth newid yn dangos eto ar ba ochr yr '
-      'ydych; yr un ag ymyl aur yw\'r ochr weithredol.'
+      'Mae\'r dotiau bach gydag enw\'r dudalen wrth newid yn dangos eto '
+      'ble\'r ydych; y dot golau yw\'r dudalen weithredol.'
     ),
     _P(
       'Fel y cyfrifianellau eraill, mae\'r trawsnewidydd gwerth yn cadw '
@@ -1338,7 +1342,9 @@ List<ManualChapter> _assetManualChaptersCy() => const [
       'lle â\'r drilio. Mae STO yn cofio gwerth llinell y canlyniad, RCL '
       'yn ei fewnosod, MC yn ei glirio; mae Ans yn cyrchu canlyniad '
       'diwethaf y brif gyfrifiannell draw. Mae llwyd yn golygu gwag neu '
-      'ddim ar gael.'
+      'ddim ar gael. I\'r cyfeiriad arall, mae bysell CONV y brif '
+      'gyfrifiannell yn cyrchu gwerth llinell y canlyniad draw (ei '
+      'naidlen pwysiad hir: VAL).'
     ),
     _H('Gwerth, cyfrifo a chlirio'),
     _P(

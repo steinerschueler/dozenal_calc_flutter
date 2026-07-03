@@ -17,6 +17,7 @@ Widget _wrap(
   Size size,
   List<CalcToken> tapped, {
   bool overlayOpen = false,
+  DisabledPredicate? isDisabled,
 }) {
   return MaterialApp(
     localizationsDelegates: AppLocalizations.localizationsDelegates,
@@ -29,6 +30,7 @@ Widget _wrap(
           child: Keypad(
             onTap: tapped.add,
             overlayOpen: overlayOpen,
+            isDisabled: isDisabled,
             keypadMode: KeypadMode.overlay,
             keypadProfile: KeypadProfile.full,
           ),
@@ -52,7 +54,7 @@ void main() {
   const Size hochArea = Size(400, 700);
 
   group('longPressOptionsFor', () {
-    test('maps the five hosts to their related functions', () {
+    test('maps the six hosts to their related functions', () {
       expect(longPressOptionsFor(const ExpTopRight()), const [Square()]);
       expect(longPressOptionsFor(const LogBotRight()), const [
         Ln(),
@@ -65,6 +67,7 @@ void main() {
         MemMinus(),
       ]);
       expect(longPressOptionsFor(const Factorial()), const [NCr(), NPr()]);
+      expect(longPressOptionsFor(const ConvAns()), const [AssetAns()]);
     });
 
     test('returns empty for non-host tokens', () {
@@ -187,6 +190,101 @@ void main() {
       await tester.tap(find.bySemanticsLabel('minus'));
       await tester.pump();
       expect(tapped, const [Sub()]);
+    });
+
+    testWidgets('CONV hosts the asset bridge (VAL) in its popup', (
+      tester,
+    ) async {
+      final handle = tester.ensureSemantics();
+      final tapped = <CalcToken>[];
+      // CONV sits in Set 10 — the overlay page in Hoch mode.
+      await tester.pumpWidget(_wrap(hochArea, tapped, overlayOpen: true));
+
+      final gesture = await _holdKey(
+        tester,
+        "Insert the unit converter's result",
+      );
+      expect(
+        find.bySemanticsLabel("Insert the value calculator's result"),
+        findsOneWidget,
+      );
+
+      await gesture.moveTo(
+        tester.getCenter(
+          find.bySemanticsLabel("Insert the value calculator's result"),
+        ),
+      );
+      await tester.pump();
+      await gesture.up();
+      await tester.pump();
+      expect(tapped, const [AssetAns()]);
+      handle.dispose();
+    });
+
+    testWidgets('a fully disabled host offers no popup', (tester) async {
+      // Both bridge sources empty → CONV is greyed and must not open the
+      // VAL popup (disabled keys host nothing).
+      final handle = tester.ensureSemantics();
+      final tapped = <CalcToken>[];
+      await tester.pumpWidget(_wrap(
+        hochArea,
+        tapped,
+        overlayOpen: true,
+        isDisabled: (t) => t is ConvAns || t is AssetAns,
+      ));
+
+      final gesture = await tester.startGesture(
+        tester.getCenter(
+          find.bySemanticsLabel("Insert the unit converter's result"),
+        ),
+      );
+      await tester.pump(kLongPressTimeout + const Duration(milliseconds: 50));
+      expect(
+        find.bySemanticsLabel("Insert the value calculator's result"),
+        findsNothing,
+      );
+      await gesture.up();
+      await tester.pump();
+      expect(tapped, isEmpty);
+      handle.dispose();
+    });
+
+    testWidgets('a greyed popup option neither dispatches nor closes', (
+      tester,
+    ) async {
+      // Converter holds a value, asset does not: CONV stays enabled and
+      // hosts the popup, but VAL renders greyed and inert — the same
+      // "grey = nothing to pull" affordance as the keys.
+      final handle = tester.ensureSemantics();
+      final tapped = <CalcToken>[];
+      await tester.pumpWidget(_wrap(
+        hochArea,
+        tapped,
+        overlayOpen: true,
+        isDisabled: (t) => t is AssetAns,
+      ));
+
+      final gesture = await _holdKey(
+        tester,
+        "Insert the unit converter's result",
+      );
+      await gesture.up();
+      await tester.pump();
+      expect(
+        find.bySemanticsLabel("Insert the value calculator's result"),
+        findsOneWidget,
+      );
+
+      await tester.tap(
+        find.bySemanticsLabel("Insert the value calculator's result"),
+      );
+      await tester.pump();
+      expect(tapped, isEmpty); // inert: nothing dispatched…
+      expect(
+        find.bySemanticsLabel("Insert the value calculator's result"),
+        findsOneWidget, // …and the popup stays open
+      );
+      handle.dispose();
     });
   });
 

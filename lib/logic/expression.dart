@@ -591,6 +591,7 @@ String tokenMevalStr(CalcToken t) => switch (t) {
   Mc() ||
   Ans() ||
   ConvAns() ||
+  AssetAns() ||
   Doz() ||
   Dez() ||
   Drg() ||

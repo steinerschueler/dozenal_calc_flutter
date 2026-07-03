@@ -52,14 +52,16 @@ Test-Routing (für gezielte Edits):
   der Pending-Zahl beim Kategorienwechsel.
 - `calc_pager_test.dart` — Rechner↔Umrechner-Pager: Swipe in beide
   Richtungen, Tastatur-Routing nach aktiver Seite, Ans/CONV-Roundtrip
-  durchs UI, Info-Listen-Eintrag → Pager-Wechsel.
+  durchs UI (Umrechner UND Werterechner inkl. CONV-Fallback),
+  Info-Listen-Eintrag → Pager-Wechsel.
 - `converter_keypad_layout_test.dart` — Umrechner-Layout über Seitenverhältnisse.
 - `asset_convert_test.dart` + `asset_state_test.dart` — Werterechner (dritte
   Pager-Seite, Edelmetalle/Währungen): exakte Metall-/Währungsfaktoren bzw.
-  Klasse→Gattung→Einheit-Drilldown, `=`-Zyklus, Basis, Wertmodus. Dazu
+  Klasse→Gattung→Einheit-Drilldown, `=`-Zyklus, Basis, Wertmodus,
+  Resultat-Brücke (`insertCalcAns`/`ansForBridge` inkl. Wertmodus). Dazu
   `asset_keypad_layout_test.dart` (Höhen-Regime × Drill-Ebenen ×
   Seitenverhältnisse + Tile-Tap-Drilldown). `calc_pager_test.dart` deckt
-  zusätzlich die dritte Seite ab (Swipe, Tastatur-Routing, 3-Karten-Peek).
+  zusätzlich die dritte Seite ab (Swipe, Tastatur-Routing, 3-Punkte-Peek).
 - `cursor_tap_test.dart` — Tipp-Cursor (Hauptrechner-Hit-Test + `moveCursorTo`).
 - `recommendations_test.dart` — „Empfehlungen": Kapitel-Dispatcher plus
   Struktur-Treue aller 14 Sprachen (7 Kapitel, Pro-/Contra-Zählung je Rechner,
@@ -344,18 +346,24 @@ Payload-freie Varianten. Spiegelt das Rust-Enum und erlaubt erschöpfende
   die Doz/Dez-Tasten sind vom Keypad entfernt, die Basis-Umschaltung
   läuft nur noch über die Einstellungen-Seite (werterhaltend, gleicher
   `handleClick(Doz()/Dez())`-Pfad). CONV (`ConvAns`-Token) ist die
-  Brücken-Taste zum Einheitenrechner — siehe „Resultat-Brücke" im
+  Brücken-Taste zu den Zweitrechnern (Tap: Umrechner, mit Fallback auf
+  den Werterechner; Langdruck: VAL) — siehe „Resultat-Brücke" im
   Einheitenrechner-Abschnitt; im Profil „Einfach" fehlt sie wie alle
   erweiterten Sets (Ans/Speicher dort ebenfalls nicht erreichbar).
   **Langdruck-Popups:** ausgewählte Host-Tasten bieten bei langem Druck
   ein Akzent-Popup im Smartphone-Tastatur-Stil an. Host-Map ist die
   öffentliche Funktion `longPressOptionsFor(token)`:
   x^□ → {x²}; log_□ → {ln, log₁₂, eˣ}; − → {±}; STO → {M+, M−};
-  n! → {nCr, nPr}. Host-Tasten tragen eine kleine Ecke unten rechts
+  n! → {nCr, nPr}; CONV → {VAL} (`AssetAns`, die Asset-Brücke — siehe
+  Resultat-Brücke). Host-Tasten tragen eine kleine Ecke unten rechts
   (`_CornerMarkPainter`, Dreieck in `textMuted`, 6×6 dp bei
   right:3/bottom:3) und einen a11y-Hint (`a11yHoldMore`). Auswahl per
   **beiden** Gesten: Gleiten+Loslassen (Hit-Test in globalen
-  Koordinaten) oder Loslassen+Antippen. Die Schließen-Barrier ist ein
+  Koordinaten) oder Loslassen+Antippen. Popup-Optionen folgen demselben
+  Disabled-Gating wie die Tasten (`isOptionDisabled` = dasselbe
+  `_isTokenDisabled`-Prädikat): eine graue Option (z. B. VAL ohne
+  Asset-Wert) dispatcht nichts und lässt das Popup offen.
+  Die Schließen-Barrier ist ein
   **`Listener` mit translucent-Hit-Test** (OverlayEntry), KEIN opaker
   GestureDetector: Pointer-down außerhalb schließt das Popup UND der
   Tap wirkt normal auf die Taste darunter — die Barrier darf nie
@@ -694,20 +702,20 @@ Seitenwechsel. Die Swipe-Geste ist frei, weil beide Displays nur
 Tap/Langdruck/Vertikal-Drag belegen; in Breit-Layouts mit horizontalem
 Keypad-Scroll funktioniert der Seiten-Swipe auf der Display-Fläche.
 
-**Page-Peek-Indikator** (Swipe-Discoverability): durchscheinende
-Karten in Bildschirmmitte als **Miniaturen der Seite** (seit dem
-Werterechner eine 3-Karten-Reihe) — Karten-
-Seitenverhältnis = Body-Seitenverhältnis, also Hochformat-Karten im
-Portrait, breite Karten im Landscape; alles skaliert mit der Breite
-(Karte 0.38 w, Lücke 0.08 w, Nachbar ~40 % angeschnitten). Die aktuelle
-Karte zentriert mit **goldener Umrandung** (`accentGold` α 0.7, 2 dp),
-die Nachbar-Karte seitlich vom Rand angeschnitten — Seitennamen in
-18-pt-Semibold (`pagerLabelMain` ×14; Umrechner nutzt
-`infoListConverterEntry`). Die Karten **gleiten live mit dem Pager**:
-ein `AnimatedBuilder` am `PageController` bindet die Positionen an den
-kontinuierlichen `page`-Wert (eine Swipe-Breite = ein Karten-Pitch), die
-goldene Umrandung blendet per Alpha von der verlassenen zur ankommenden
-Karte über (konstante 2 dp, keine Layout-Sprünge), und das sanfte
+**Page-Peek-Indikator** (Swipe-Discoverability): ein dezenter
+**Punkte-Indikator** unten mittig — drei Punkte (einer pro Seite,
+`textMuted`) auf einem durchscheinenden Pill, darüber der Name der
+ankommenden Seite (13 pt `textSecondary`; `pagerLabelMain`/
+`infoListConverterEntry`/`pagerLabelAsset` ×14). Bewusst ohne Gold und
+ohne Karten-Optik: das frühere Design (große Miniatur-Karten mit
+2-dp-Goldrahmen in Bildschirmmitte) las sich wie ein modaler Dialog
+und verheizte den sparsamen Gold-Akzent für einen rein informativen
+Hinweis. Der Indikator **gleitet live mit dem Pager**: ein
+`AnimatedBuilder` am `PageController` zeichnet den aktiven Punkt
+(`textPrimary`) an der kontinuierlichen `page`-Position (eine
+Swipe-Breite = ein Punkt-Pitch), die drei Seitennamen liegen gestapelt
+und blenden per Alpha von der verlassenen zur ankommenden Seite über
+(stabile Pill-Größe, keine Layout-Sprünge), und das sanfte
 Ausrollen liefert die Pager-Physik selbst. Der Puls läuft über einen
 Controller-Listener (`_onPagerScroll`): jede Bewegung hält den Peek am
 Leben, der Hide-Timer zählt erst ab Stillstand; `_pulsePagePeek` ist
@@ -742,8 +750,16 @@ Seite formatiert in ihrer eigenen aktiven Basis:
   display-only `Negate` wird beim Einfügen zu unärem `Sub`, damit das
   Literal auf beiden Auswertungs-Schienen exakt bleibt. Im Fehlerzustand
   blockiert (`_isErrorBlocked` wie Ans/Rcl), nach `=` startet es einen
-  frischen Ausdruck; ausgegraut, wenn drüben nichts liegt
-  (`_isTokenDisabled` liest `convAnsValue`).
+  frischen Ausdruck. Seit der Asset-Brücke ist CONV eine
+  **Langdruck-Host-Taste**: Tap zieht den Umrechner und fällt auf den
+  Werterechner-Wert zurück, wenn der Umrechner leer ist; die
+  Popup-Option **VAL** (`AssetAns`-Token) zieht den Asset-Wert
+  explizit. Ausgegraut erst, wenn KEINER der beiden Zweitrechner etwas
+  liefert (`_isTokenDisabled` liest `convAnsValue` UND `assetAnsValue`
+  — Disabled-Gating allein auf dem Umrechner würde auch den Langdruck
+  töten, disabled Tasten hosten kein Popup). Wertlose Brücken-Tasten
+  sind komplette No-ops (Guard in `handleClick`), damit ein
+  VAL-Tipp ohne Asset-Wert den After-Equals-Zustand nicht konsumiert.
 Damit der Brücken-Flow „Ans → Kategorie → Magnitude" funktioniert,
 **überlebt die Pending-Zahl in `tapCategory` den Kategorienwechsel**
 (sie ist einheitenlos; nur committete Terme werden verworfen).
@@ -899,7 +915,7 @@ Vollständige Spezifikation + Roadmap:
   `memStore`/`memRecall`/`memClear` (in-memory, überlebt AC).
   Liefert `topLine`/`resultLine` als **`ConverterLine`** → `ConverterDisplay`
   unverändert wiederverwendet. Bridge-Felder (`calcAnsProvider`/
-  `ansForBridge`) vorhanden, aber **unverdrahtet** — siehe unten.
+  `ansForBridge`) sind seit der Brücken-Verdrahtung live — siehe unten.
 - `lib/asset_keypad.dart` — eigener Widget-Baum aus den geteilten
   `keypad_parts.dart`-Bausteinen, **ohne Overlay** (jede Taste liegt auf
   einer Fläche): die zwei rechten Tile-Spalten (8 Zellen) sind der
@@ -913,14 +929,16 @@ Vollständige Spezifikation + Roadmap:
   Labels in `lib/asset_labels.dart` (Währungs-Tiles = ISO-Code).
 - Verdrahtung in `main.dart`: `_assetState` + `_rateStore` im
   `_CalcScaffoldState`, drittes PageView-Kind, `_pagerProgress` clampt `[0,2]`,
-  `_PagePeekOverlay` als 3-Karten-Reihe, `_handleAssetKey` für physische
+  `_PagePeekOverlay` mit drei Punkten, `_handleAssetKey` für physische
   Tasten auf Seite 2, Basis-Sync via `_assetState.setBase`. Bei offenem
   Chart sperrt der Pager das Seiten-Wischen
   (`NeverScrollableScrollPhysics` auf `chartOpen`), sonst verlöre der
   Chart-Pan die Gesture-Arena. Die **Asset↔Hauptrechner-Brücke ist
-  bewusst noch nicht verdrahtet** (`_assetState.calcAnsProvider` bleibt
-  null, die Ans-Taste im Drill ist dauerhaft grau) — offener Punkt in
-  `docs/asset-converter.md`.
+  verdrahtet**: die Ans-Taste im Drill zieht das Rechner-Resultat
+  (`_assetState.calcAnsProvider`), der Hauptrechner erreicht den
+  Asset-Wert über CONV (Tap-Fallback bei leerem Umrechner) bzw. dessen
+  Langdruck-Option VAL (`_state.assetAnsProvider`) — Details im
+  Resultat-Brücke-Abschnitt des Einheitenrechners.
 - **Phase 2 (Werte/Kurse):** `lib/logic/rate_data.dart` (grober datierter
   Snapshot, Pivot USD), `lib/rate_store.dart` (`RateStore`, SharedPreferences-
   Overrides, pivot-geroutete Konversion), Wertmodus in `asset_state.dart`
@@ -1072,8 +1090,8 @@ liegt, dann hier:
   Asset-Rechner-Abschnitt). `displayHeightFor(bodyH)` aus `app_layout.dart`
   bleibt die einzige Größenrechnung (pro Seite). `_CalcScaffoldState`
   besitzt `ConverterState`, `AssetState` + `PageController` und verdrahtet die
-  Resultat-Brücken-Provider in beide Richtungen (nur Hauptrechner ↔
-  Umrechner; die Asset-Brücke ist noch unverdrahtet, siehe
+  Resultat-Brücken-Provider aller drei Rechner (Umrechner-Ans/CONV,
+  Asset-Ans/VAL inkl. CONV-Tap-Fallback — siehe Resultat-Brücke- und
   Werterechner-Abschnitt).
   (Der frühere `state.converterRequested`-Pfad ist entfernt — der Zugang zu
   den Folgeseiten läuft über Swipe + Page-Peek.)

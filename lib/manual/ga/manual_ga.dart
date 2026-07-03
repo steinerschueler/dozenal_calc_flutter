@@ -66,7 +66,8 @@ List<ManualChapter> _manualChaptersGa() => const [
       "Tugann eochracha le cúinne beag ag bun na láimhe deise "
       "feidhmeanna gaolmhara le brú fada: tá x² in x□, tá ln, "
       "log₁₂ agus eˣ in log, tá ± in −, tá M+ agus M− in STO, tá "
-      "nCr agus nPr in n!. Chun rogha a dhéanamh, sleamhnaigh do "
+      "nCr agus nPr in n!, agus tá VAL (toradh an áireamháin "
+      "luacha) in CONV. Chun rogha a dhéanamh, sleamhnaigh do "
       "mhéar chuig an rogha atá uait agus scaoil — nó scaoil agus "
       "tapáil an rogha. Dúnann cniogadh lasmuigh an fhuinneog.",
     ),
@@ -1130,9 +1131,9 @@ List<ManualChapter> _converterManualChaptersGa() => const [
     _P(
       'Svuáil ar chlé ar an bpríomháireamhán, agus taispeánfar an '
       'tiontaire aonad. Svuáil ar dheis ar an tiontaire aonad, agus tá '
-      'tú ar ais. Agus tú ag athrú, taispeánann dhá chárta '
-      'thréshoilseacha ar feadh meandair cén leathanach ar a bhfuil tú — is é '
-      'an cárta leis an imlíne órga an leathanach gníomhach.',
+      'tú ar ais. Agus tú ag athrú, nochtann trí phonc bheaga le hainm '
+      'an leathanaigh ar feadh meandair ag bun an scáileáin — '
+      'taispeánann an ponc geal cá bhfuil tú faoi láthair.',
     ),
     _P(
       'Coinníonn an dá áireamhán a n-ionchur agus tú ag athrú: is '
@@ -1276,7 +1277,10 @@ List<ManualChapter> _converterManualChaptersGa() => const [
       'CONV i bpainéal breisithe an phríomháireamháin an uimhir ó líne '
       'thoraidh an tiontaire aonad. Taistealaíonn luachanna mar '
       'uimhir, agus taispeántar iad go huathoibríoch i mbonn an '
-      'leathanaigh sprice.',
+      'leathanaigh sprice. Mura bhfuil aon rud sa tiontaire aonad '
+      'faoi láthair, téann CONV i muinín thoradh an áireamháin '
+      'luacha; le brú fada ar CONV tá sé ar fáil go díreach mar '
+      'VAL freisin.',
     ),
   ]),
 ];
@@ -1294,9 +1298,9 @@ List<ManualChapter> _assetManualChaptersGa() => const [
     _P(
       'Svuáil ar chlé ar an bpríomháireamhán faoi dhó — thar an tiontaire '
       'aonad — agus taispeánfar an t-áireamhán luacha. Tugann svuáil ar '
-      'dheis ar ais thú céim ar chéim. Taispeánann an dá chárta '
-      'thréshoilseacha ag an athrú arís cén leathanach ar a bhfuil tú; is '
-      'é an ceann leis an imlíne órga an leathanach gníomhach.'
+      'dheis ar ais thú céim ar chéim. Taispeánann na poncanna beaga le '
+      'hainm an leathanaigh ag an athrú arís cá bhfuil tú; is é an ponc '
+      'geal an leathanach gníomhach.'
     ),
     _P(
       'Cosúil leis na háireamháin eile, coinníonn an t-áireamhán luacha a '
@@ -1374,7 +1378,9 @@ List<ManualChapter> _assetManualChaptersGa() => const [
       'roinneann an chuimhne an spás leis an druileáil. Meabhraíonn STO '
       'luach líne an toraidh, cuireann RCL isteach é, glanann MC é; '
       'tugann Ans toradh deireanach an phríomháireamháin anall. '
-      'Ciallaíonn liath folamh nó nach bhfuil rud ar bith ann.'
+      'Ciallaíonn liath folamh nó nach bhfuil rud ar bith ann. Sa '
+      'treo eile, faigheann eochair CONV an phríomháireamháin luach '
+      'líne an toraidh anall (a póca brú fada: VAL).'
     ),
     _H('Luach, ríomh agus glanadh'),
     _P(

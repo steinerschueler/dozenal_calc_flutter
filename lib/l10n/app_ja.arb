@@ -168,6 +168,7 @@
   "a11yMemoryClear": "メモリーを消去",
   "a11yLastAnswer": "前回の結果",
   "a11yConvAns": "単位換算の結果を挿入",
+  "a11yAssetAns": "資産価値計算の結果を挿入",
   "a11yPi": "円周率",
   "a11yEuler": "ネイピア数",
   "a11yGoldenRatio": "黄金比",

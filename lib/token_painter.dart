@@ -256,6 +256,7 @@ String _tokenLabel(CalcToken t) {
   if (t is Dez) return 'Dez';
   if (t is Drg) return 'DRG';
   if (t is ConvAns) return 'CONV';
+  if (t is AssetAns) return 'VAL';
   if (t is Info) return 'Info';
   if (t is Close) return '…';
   if (t is MemPlus) return 'M+';

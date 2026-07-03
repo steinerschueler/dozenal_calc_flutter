@@ -260,9 +260,19 @@ final class Drg extends CalcToken {
 /// Bridge key between the two calculators: inserts the unit converter's
 /// current result into the main input as plain digits (the converter's
 /// mirror key is its Ans, which pulls the main calculator's last answer).
+/// When the converter holds no result, the tap falls back to the asset
+/// calculator's value, so the key stays alive for either bridge source.
 /// Action token — never enters a buffer itself.
 final class ConvAns extends CalcToken {
   const ConvAns();
+}
+
+/// Bridge to the asset (value) calculator: inserts its current result as
+/// plain digits. Lives as the long-press option (VAL) on the CONV key —
+/// the asset drill's mirror key is its Ans, which pulls the main
+/// calculator's last answer. Action token — never enters a buffer itself.
+final class AssetAns extends CalcToken {
+  const AssetAns();
 }
 
 final class Info extends CalcToken {

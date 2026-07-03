@@ -64,7 +64,8 @@ List<ManualChapter> _manualChaptersEn() => const [
       'Keys with a small corner mark at the bottom right offer '
       'related functions on a long press: x□ holds x², log holds '
       'ln, log₁₂ and eˣ, − holds ±, STO holds M+ and M−, n! holds '
-      'nCr and nPr. To choose, slide your finger onto the desired '
+      "nCr and nPr, CONV holds VAL (the value calculator's result). "
+      'To choose, slide your finger onto the desired '
       'option and release — or release and tap the option. A tap '
       'outside closes the popup.',
     ),
@@ -1072,8 +1073,8 @@ List<ManualChapter> _converterManualChaptersEn() => const [
     _P(
       'Swipe left on the main calculator and the unit converter appears. '
       'Swipe right on the unit converter and you are back. During the '
-      'switch two translucent cards briefly show which page you are on — '
-      'the gold-framed card is the active page.',
+      'switch three small dots with the page name briefly appear at the '
+      'bottom — the bright dot shows where you are.',
     ),
     _P(
       'Both calculators keep their input across the switch: you can swipe '
@@ -1204,7 +1205,9 @@ List<ManualChapter> _converterManualChaptersEn() => const [
       'value a unit. Conversely, the CONV key in the extension panel of '
       'the main calculator fetches the number from the result line of '
       'the unit converter. Values travel as a number and appear '
-      'automatically in the base of the destination page.',
+      'automatically in the base of the destination page. If the unit '
+      "converter holds nothing, CONV falls back to the value calculator's "
+      'result; a long press on CONV also offers it directly as VAL.',
     ),
   ]),
 ];
@@ -1222,9 +1225,9 @@ List<ManualChapter> _assetManualChaptersEn() => const [
     _P(
       'Swipe left twice on the main calculator — past the unit '
       'converter — and the value calculator appears. Swiping right takes '
-      'you back step by step. The two translucent cards during the '
-      'switch again show which page you are on; the gold-framed one is '
-      'the active page.',
+      'you back step by step. The small dots with the page name again '
+      'show where you are during the switch; the bright dot is the '
+      'active page.',
     ),
     _P(
       'Like the other calculators, the value calculator keeps its input '
@@ -1297,7 +1300,9 @@ List<ManualChapter> _assetManualChaptersEn() => const [
       'shares the space with the drill. STO remembers the value on the '
       'result line, RCL inserts it, MC clears it; Ans fetches the last '
       'result of the main calculator over. Grey means empty or nothing '
-      'available.',
+      "available. In the other direction the main calculator's CONV key "
+      'fetches the value of the result line over (its long-press option: '
+      'VAL).',
     ),
     _H('Value, calculating and clearing'),
     _P(

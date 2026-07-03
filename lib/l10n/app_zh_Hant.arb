@@ -168,6 +168,7 @@
   "a11yMemoryClear": "清除記憶體",
   "a11yLastAnswer": "上一個結果",
   "a11yConvAns": "插入單位換算器的結果",
+  "a11yAssetAns": "插入價值計算器的結果",
   "a11yPi": "圓周率",
   "a11yEuler": "歐拉數",
   "a11yGoldenRatio": "黃金比例",

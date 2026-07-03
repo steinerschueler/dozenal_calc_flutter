@@ -69,7 +69,8 @@ List<ManualChapter> _manualChaptersEs() => const [
       "Las teclas con una pequeña esquina abajo a la derecha "
       "ofrecen funciones relacionadas con una pulsación larga: x□ "
       "contiene x², log contiene ln, log₁₂ y eˣ, − contiene ±, "
-      "STO contiene M+ y M−, n! contiene nCr y nPr. Para elegir, "
+      "STO contiene M+ y M−, n! contiene nCr y nPr, CONV contiene "
+      "VAL (el resultado de la calculadora de valores). Para elegir, "
       "desliza el dedo hasta la opción deseada y suelta — o "
       "suelta y toca la opción. Un toque fuera cierra el panel.",
     ),
@@ -1120,9 +1121,9 @@ List<ManualChapter> _converterManualChaptersEs() => const [
     _P(
       'Desliza hacia la izquierda en la calculadora principal y aparece el '
       'conversor de unidades. Desliza hacia la derecha en el conversor y '
-      'estás de vuelta. Al cambiar, dos tarjetas translúcidas indican '
-      'brevemente en qué página estás — la tarjeta con borde dorado es la '
-      'página activa.',
+      'estás de vuelta. Al cambiar aparecen brevemente abajo tres puntos '
+      'pequeños con el nombre de la página — el punto claro muestra dónde '
+      'estás.',
     ),
     _P(
       'Ambas calculadoras conservan sus entradas al cambiar: puedes '
@@ -1261,7 +1262,10 @@ List<ManualChapter> _converterManualChaptersEs() => const [
       'de la calculadora principal trae el número de la línea de '
       'resultado del conversor de unidades. Los valores viajan como '
       'número y aparecen automáticamente en la base de la página de '
-      'destino.',
+      'destino. Si el conversor de unidades no contiene nada en ese '
+      'momento, CONV recurre al resultado de la calculadora de valores; '
+      'una pulsación larga sobre CONV también lo ofrece directamente '
+      'como VAL.',
     ),
   ]),
 ];
@@ -1280,9 +1284,8 @@ List<ManualChapter> _assetManualChaptersEs() => const [
       'Desliza dos veces hacia la izquierda en la calculadora principal — '
       'más allá del conversor de unidades — y aparece la calculadora de '
       'valores. Deslizar hacia la derecha te lleva de vuelta paso a paso. '
-      'Las dos tarjetas translúcidas que aparecen al cambiar indican de '
-      'nuevo en qué página estás; la que tiene el borde dorado es la '
-      'activa.'
+      'Los puntos pequeños con el nombre de la página vuelven a indicar '
+      'al cambiar dónde estás; el punto claro es la página activa.'
     ),
     _P(
       'Como las demás calculadoras, la calculadora de valores conserva su '
@@ -1359,7 +1362,9 @@ List<ManualChapter> _assetManualChaptersEs() => const [
       'la memoria comparte el espacio con la navegación por niveles. STO '
       'recuerda el valor de la línea de resultado, RCL lo inserta, MC lo '
       'borra; Ans trae el último resultado de la calculadora principal. '
-      'El gris significa vacío o no disponible.'
+      'El gris significa vacío o no disponible. En sentido contrario, '
+      'la tecla CONV de la calculadora principal trae el valor de la '
+      'línea de resultado (su opción de pulsación larga: VAL).'
     ),
     _H('Valor, calcular y borrar'),
     _P(

@@ -226,6 +226,7 @@
   "a11yMemoryClear": "Speicher löschen",
   "a11yLastAnswer": "Letztes Ergebnis",
   "a11yConvAns": "Ergebnis des Einheitenrechners einfügen",
+  "a11yAssetAns": "Ergebnis des Werterechners einfügen",
   "a11yPi": "Pi",
   "a11yEuler": "Eulersche Zahl",
   "a11yGoldenRatio": "Goldener Schnitt",

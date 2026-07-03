@@ -69,7 +69,8 @@ List<ManualChapter> _manualChaptersFr() => const [
       "Les touches marquées d'un petit coin en bas à droite "
       "offrent des fonctions apparentées par appui long : x□ "
       "contient x², log contient ln, log₁₂ et eˣ, − contient ±, "
-      "STO contient M+ et M−, n! contient nCr et nPr. Pour "
+      "STO contient M+ et M−, n! contient nCr et nPr, CONV contient "
+      "VAL (le résultat de la calculatrice de valeurs). Pour "
       "choisir, glissez le doigt sur l'option voulue et relâchez "
       "— ou relâchez puis touchez l'option. Un tap à côté ferme "
       "le panneau.",
@@ -1116,9 +1117,9 @@ List<ManualChapter> _converterManualChaptersFr() => const [
     _P(
       "Glissez vers la gauche sur la calculatrice principale et le "
       "convertisseur d'unités apparaît. Glissez vers la droite sur le "
-      "convertisseur et vous voilà de retour. Au changement, deux cartes "
-      "translucides indiquent brièvement sur quelle page vous vous "
-      "trouvez — la carte bordée d'or est la page active.",
+      "convertisseur et vous voilà de retour. Au changement, trois "
+      "petits points apparaissent brièvement en bas avec le nom de la "
+      "page — le point clair indique où vous vous trouvez.",
     ),
     _P(
       "Les deux calculatrices conservent leur saisie au changement : "
@@ -1262,7 +1263,10 @@ List<ManualChapter> _converterManualChaptersFr() => const [
       "touche CONV du panneau d'extension de la calculatrice principale "
       "récupère le nombre de la ligne de résultat du convertisseur "
       "d'unités. Les valeurs voyagent sous forme de nombre et "
-      "apparaissent automatiquement dans la base de la page d'arrivée.",
+      "apparaissent automatiquement dans la base de la page d'arrivée. "
+      "Si le convertisseur d'unités ne contient rien pour l'instant, "
+      "CONV se rabat sur le résultat de la calculatrice de valeurs ; "
+      "un appui long sur CONV le propose aussi directement comme VAL.",
     ),
   ]),
 ];
@@ -1281,9 +1285,9 @@ List<ManualChapter> _assetManualChaptersFr() => const [
       'Glissez deux fois vers la gauche sur la calculatrice principale — '
       'par-dessus le convertisseur d\'unités — et la calculatrice de '
       'valeurs apparaît. Glisser vers la droite ramène pas à pas en '
-      'arrière. Au changement, les deux cartes translucides indiquent de '
-      'nouveau sur quelle page vous vous trouvez ; celle bordée d\'or est '
-      'la page active.'
+      'arrière. Au changement, les petits points avec le nom de la page '
+      'indiquent de nouveau où vous vous trouvez ; le point clair est la '
+      'page active.'
     ),
     _P(
       'Comme les autres calculatrices, la calculatrice de valeurs '
@@ -1360,7 +1364,9 @@ List<ManualChapter> _assetManualChaptersFr() => const [
       'mémoire partage l\'emplacement avec la navigation. STO mémorise la '
       'valeur de la ligne de résultat, RCL la réinsère, MC l\'efface ; '
       'Ans ramène le dernier résultat de la calculatrice principale. '
-      'Grisé signifie vide ou rien de disponible.'
+      'Grisé signifie vide ou rien de disponible. Dans l\'autre sens, '
+      'la touche CONV de la calculatrice principale récupère la valeur '
+      'de la ligne de résultat (son option d\'appui long : VAL).'
     ),
     _H('Valeur, calcul et effacement'),
     _P(
