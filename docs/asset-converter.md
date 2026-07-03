@@ -4,13 +4,15 @@ Der **Werterechner** ist der dritte Rechner neben Haupt- und Einheitenrechner �
 **Seite 3 des horizontalen Pagers** (zweimal Links-Swipe vom Hauptrechner).
 Nutzer-sichtbarer Name „Werterechner" (`pagerLabelAsset`); der interne Code-/
 Dateinamensraum bleibt `asset` (umbrella für Metalle/Währungen/später
-Krypto/Rohstoff). Künftige Begleittexte: „Bedienung des Werterechners"
-(Handbuch) und „Wertetheorie" (analog zur Einheitentheorie). Im Design des Einheitenrechners,
+Krypto/Rohstoff). Begleittexte sind umgesetzt: „Bedienung des
+Werterechners" (Handbuch, `assetManualChapters`, 6 Kapitel) und
+„Wertetheorie" (`werteTheoryBlock`, 27 Kapitel), beide ×14 Sprachen.
+Im Design des Einheitenrechners,
 aber mit **drei** Hierarchien statt zwei:
 
 ```
 Klasse (AssetClass)  →  Gattung (AssetGenus)  →  Einheit (Unit)
-Edelmetall           →  Gold/Silber/Platin/   →  gr · dwt · oz · oz t · lb t · lb
+Edelmetall           →  Gold/Silber/Platin/   →  gr · dwt · oz t · lb t
                         Palladium                · g · kg
 Währung              →  USD/EUR/GBP/JPY/CHF/  →  $/¢ · €/ct · £/sh/d/p · ¥ · …
                         CAD/AUD
@@ -22,8 +24,10 @@ Prüfung). Diese Datei ist die laufende Spezifikation.
 
 ## Phasen
 
-- **Phase 1 (v1) — umgesetzt:** exakte Umrechnung. Troy-/avoirdupois-Gewichte
-  (metallunabhängig) und Währungs-Stückelungen. **Keine** Preise/Kurse.
+- **Phase 1 (v1) — umgesetzt:** exakte Umrechnung. Troy-Gewichte
+  (metallunabhängig; die avoirdupois-Einheiten wurden später bewusst
+  gestrichen, siehe Datenmodell) und Währungs-Stückelungen.
+  **Keine** Preise/Kurse.
 - **Phase 2 — umgesetzt:** Kurse & Werte. Grober, datierter Snapshot
   (`logic/rate_data.dart`, überschreibbar) + Kurs-Editor (`rates_page.dart`) +
   **Wertmodus mit Zielwährungs-Picker** („≈"-Wert, „Stand: Datum"). Erst hier
@@ -54,12 +58,16 @@ mit der Rohstoffklasse in einer späteren Phase.)
 - `kAssetCatalogue` / `generaOf(class)`.
 
 **Edelmetall — exakte Faktoren (Basis = kg, Anker grain = 0,06479891 g):**
-gr · dwt (24 gr) · oz avdp (437,5 gr) · oz t (480 gr = **31,1034768 g**) ·
-lb t (12 oz t = 5760 gr = **373,2417216 g**) · lb avdp (7000 gr). Alle vier
+gr · dwt (24 gr) · oz t (480 gr = **31,1034768 g**) ·
+lb t (12 oz t = 5760 gr = **373,2417216 g**) · g · kg. Die
+avoirdupois-Einheiten (oz = 437,5 gr, lb = 7000 gr) wurden aus der Leiter
+**gestrichen** — Gold kauft man nicht im avdp-Pfund, und die
+Breakdown-Kaskade ist ohnehin Troy-only. Alle vier
 Metalle teilen **dieselbe** Leiter (`_metalUnits`) — reine Gewichtsumrechnung ist
-metallunabhängig. Dozenal-Aufhänger: **12 troy oz = 1 troy lb**. Falle: troy oz
-ist 9,71 % schwerer als avdp oz, aber das troy-Pfund ist **leichter** (12 statt
-16 Unzen).
+metallunabhängig. Dozenal-Aufhänger: **12 troy oz = 1 troy lb**.
+(Hintergrund-Falle, für Theorie-Texte: troy oz
+ist 9,71 % schwerer als avdp oz, aber das troy-Pfund ist **leichter** —
+12 statt 16 Unzen.)
 
 **Währung — exakte Stückelungen (Basis = Haupteinheit, `singleWorld`):** GBP
 £/sh/d/p mit £sd-Breakdown (12 d = 1 sh, 240 d = 1 £ — nativ dozenal); USD/EUR/
@@ -78,12 +86,18 @@ kg-basierten Troy-Faktoren). `convert` wird aus `unit_convert.dart` reexportiert
 ## State (`lib/asset_state.dart`)
 
 `AssetState extends ChangeNotifier`, eng an `ConverterState` angelehnt (Compound-
-Terme, Skalar-Operatoren, Edit-Cursor, `=`-Zyklus, met/imp, `setBase`). Stellt
+Terme, Skalar-Operatoren, Edit-Cursor, `=`-Zyklus, `setBase`). Stellt
 `topLine`/`resultLine` als **`ConverterLine`** bereit → Display wiederverwendbar.
-Zusätzlich: Drill-down `drillLevel` (`classes`/`genera`/`units`) über
+Zusätzlich: Drill-down `drillLevel` (`classes`/`genera`/`units`/
+`valueTargets`) über
 `tapClass`/`tapGenus`/`tapMagnitude` (Tipp auf aktive Klasse/Gattung = eine Ebene
-zurück). `worldToggleEnabled` ist false für Währungen. Bridge-Felder
-(`calcAnsProvider`/`ansForBridge`) existieren, sind in v1 aber inert.
+zurück). **Kein `setWorld`:** die Arbeits-Welt folgt der committeten
+Einheit (`tapMagnitude` setzt `_world = unit.world`); `worldToggleEnabled`
+steuert nur noch den Farbton der Einheitensymbole im Display (Währungen
+pinnen auf Zwölfer-Violett). Eigenes Speicherregister
+`memStore`/`memRecall`/`memClear` (in-memory, überlebt AC). Bridge-Felder
+(`calcAnsProvider`/`ansForBridge`) existieren, sind aber weiterhin inert
+(siehe Offene Punkte).
 
 ## UI
 
@@ -93,10 +107,16 @@ zurück). `worldToggleEnabled` ist false für Währungen. Bridge-Felder
   geteilten Bausteinen in `keypad_parts.dart` (`PressableShell`, `DigitKey-/
   TokenKeyPainter`, **`LabelButton`/`SystemKey`/`showUnitInfoBox`** — beim Bau
   des Asset-Rechners aus `converter_keypad.dart` dorthin promotet, beide Keypads
-  teilen sie jetzt). Die zwei rechten Tile-Spalten (8 Zellen) sind ein 3-Ebenen-
-  Navigator; Op-Spalten (Set 1/2), System-Reihe und met/imp-Equals-Reihe wie im
-  Umrechner. Genus-Tiles tragen einen Langdruck-Hinweis (`assetValueHint`:
-  „Spotwert/Kurs folgt"). met/imp ist bei Währungen ausgegraut (`enabled`).
+  teilen sie jetzt). **Kein Overlay** — jede Taste liegt auf einer Fläche.
+  Die zwei rechten Tile-Spalten (8 Zellen) sind ein 3-Ebenen-Navigator;
+  auf der Einheiten-Ebene liegen **beide Einheitensysteme gleichzeitig**
+  nebeneinander (imperial/Troy Spalte A, metrisch Spalte B — keine
+  met/imp-Tasten). Auf der Klassen-Ebene füllt der Speicher
+  (STO/RCL/MC/Ans) das Set 3 und weicht nach Klassenwahl den Gattungen.
+  System-Reihe ist [AC · Del · `.` · Wert]; „Kurve" (links) und „Kurse"
+  (rechts) sind runde Tasten neben der Gleichtaste. Genus-Tiles tragen einen
+  Langdruck-Hinweis (`assetValueHint`: Kurzanleitung zum Wertmodus,
+  Kurse = grobe Richtwerte).
 - **Seite** (`lib/asset_page.dart`): `AssetBody` (im Pager) + `AssetPage`
   (Route-Wrapper für Tests/Preview). Labels via `lib/asset_labels.dart`
   (`assetClassLabel`/`assetGenusLabel`; Währungs-Tiles = ISO-Code).
@@ -105,9 +125,12 @@ zurück). `worldToggleEnabled` ist false für Währungen. Bridge-Felder
 
 `_CalcScaffoldState` besitzt zusätzlich `_assetState` (v1 ohne Bridge). PageView
 hat drei Kinder; `_pagerProgress` clampt auf `[0, 2]`; `_PagePeekOverlay` läuft
-eine 3-Karten-Schleife (Karte i leuchtet bei `progress ≈ i`); `_handleAssetKey`
+eine 3-Karten-Reihe (Karte i leuchtet bei `progress ≈ i`); `_handleAssetKey`
 routet physische Tasten auf Seite 2; die globale „Zahlensystem"-Basis wird (wie
-beim Umrechner) in `_assetState.setBase` gespiegelt.
+beim Umrechner) in `_assetState.setBase` gespiegelt. Bei offenem Chart
+sperrt der Pager das Seiten-Wischen (`NeverScrollableScrollPhysics` auf
+`chartOpen`), damit horizontales Pannen die Kurve schwenkt statt zu
+blättern.
 
 ## Lokalisierung
 
@@ -135,8 +158,9 @@ Picker**:
   `enterValueMode`/`setValueTarget`/`toggleValueMode`, `valueLine` („≈", über
   `rates`). Jede bearbeitende Aktion ruft `_leaveValueMode()` → zurück zur
   exakten Leiter.
-- `lib/asset_keypad.dart` — „Wert"/„Kurse"-Tasten in der Overlay-Bottom-Row
-  (Breit: eigene Spalte); im Wertmodus rendert der Drill die Währungs-Ziel-Tiles.
+- `lib/asset_keypad.dart` — „Wert" liegt in der System-Reihe
+  [AC · Del · `.` · Wert], „Kurse" als runde Taste neben der Gleichtaste;
+  im Wertmodus rendert der Drill die Währungs-Ziel-Tiles.
 - `lib/rates_page.dart` — Kurs-Editor (Stand-Kopf, editierbare Felder pro
   Währung/Metall, Reset pro Zeile + global), gepusht aus „Kurse".
 - `lib/converter_display.dart` — neuer `resultPrefix` („≈ " statt „= ").
@@ -178,18 +202,18 @@ programmatisch abgeleitet → eine Quelle der Wahrheit).
   über Lücken. Reihen-Tabs (Gold/Silber/Getreide) + „Quellen"-Link + ×-Schließen.
 - `lib/price_sources_page.dart` — Quellen & Methodik (Ehrlichkeits-Note +
   `kPriceSources` mit `openExternalLink`).
-- „Kurve"-Taste in `asset_keypad.dart` (Overlay-Bottom-Row-Slot; Breit in der
-  value/rates-Spalte). **Kein Netz, keine neue Dependency.**
+- „Kurve"-Taste in `asset_keypad.dart` (runde Taste neben der Gleichtaste,
+  Gegenstück zu „Kurse"). **Kein Netz, keine neue Dependency.**
 
 ## Tests
 
 - `test/asset_convert_test.dart` — exakte Faktoren + Breakdown + Bracket.
-- `test/asset_state_test.dart` — Drill-down, Commit, `=`-Zyklus, met/imp, Basis,
+- `test/asset_state_test.dart` — Drill-down, Commit, `=`-Zyklus, Basis,
   **Wertmodus** (Ziel-Picker, `valueLine`, „≈", Editier-Exit).
 - `test/rate_store_test.dart` — Konversionsmathematik + Override-Persistenz.
 - `test/rates_page_test.dart` — Editor rendert, Override schreibt/zurücksetzt.
 - `test/asset_keypad_layout_test.dart` — Höhen-Regime × Drill-Ebenen (inkl.
-  `valueTargets`/Overlay) × Seitenverhältnisse, plus Tile-Tap-Drilldown.
+  `valueTargets`) × Seitenverhältnisse, plus Tile-Tap-Drilldown.
 - `test/calc_pager_test.dart` — dritte Seite per Swipe, Tastatur-Routing,
   Page-Peek mit drei Karten.
 - `test/price_history_test.dart` — Chart-Mathematik (log10/Viewport/LTTB/Ticks)

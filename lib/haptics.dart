@@ -1,8 +1,8 @@
 // Persisted on/off preference for tap haptics on the keypad. Mirrors the
 // GlyphStyleNotifier / GlyphStyleScope shape: a ChangeNotifier behind an
 // InheritedNotifier so any descendant button can read the flag without
-// prop-drilling. Defaults to on; the toggle lives in the info list next to
-// the glyph-style switch. SharedPreferences key: haptics_enabled_v1.
+// prop-drilling. Defaults to on; the toggle lives on the settings page.
+// SharedPreferences key: haptics_enabled_v1.
 
 import 'package:flutter/widgets.dart';
 import 'package:shared_preferences/shared_preferences.dart';

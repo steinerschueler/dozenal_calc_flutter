@@ -6,8 +6,9 @@
 # tar the bundle, publish it as a GitHub release asset, and reference it here.
 # This is the common, accepted pattern for Flutter apps on Flathub.
 #
-# NOT yet submittable — see packaging/flatpak/README.md for the open TODOs
-# (bundle url+sha256, the metainfo screenshot, flatpak-builder test pass).
+# Status: SUBMITTED — PR flathub/flathub#8968 built green (aarch64 + x86_64
+# via the "bot, build" comment) and is in review. See packaging/flatpak/
+# README.md for the version-refresh recipe.
 app-id: app.weltanschauung.dozenal
 runtime: org.freedesktop.Platform
 runtime-version: '25.08'

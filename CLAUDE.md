@@ -20,7 +20,7 @@ flutter pub get
 flutter run                   # aktuelle Plattform
 flutter run -d chrome         # Web
 flutter analyze               # was CI ausführt
-flutter test                  # gesamte Suite (über 400 Tests)
+flutter test                  # gesamte Suite (über 500 Tests in 34 Dateien)
 flutter test test/rational_test.dart           # einzelne Datei
 flutter test --plain-name "parses 1/7"         # einzelner Test per Name
 ```
@@ -54,9 +54,9 @@ Test-Routing (für gezielte Edits):
   Richtungen, Tastatur-Routing nach aktiver Seite, Ans/CONV-Roundtrip
   durchs UI, Info-Listen-Eintrag → Pager-Wechsel.
 - `converter_keypad_layout_test.dart` — Umrechner-Layout über Seitenverhältnisse.
-- `asset_convert_test.dart` + `asset_state_test.dart` — Asset-Rechner (dritte
+- `asset_convert_test.dart` + `asset_state_test.dart` — Werterechner (dritte
   Pager-Seite, Edelmetalle/Währungen): exakte Metall-/Währungsfaktoren bzw.
-  Klasse→Gattung→Einheit-Drilldown, `=`-Zyklus, met/imp, Basis. Dazu
+  Klasse→Gattung→Einheit-Drilldown, `=`-Zyklus, Basis, Wertmodus. Dazu
   `asset_keypad_layout_test.dart` (Höhen-Regime × Drill-Ebenen ×
   Seitenverhältnisse + Tile-Tap-Drilldown). `calc_pager_test.dart` deckt
   zusätzlich die dritte Seite ab (Swipe, Tastatur-Routing, 3-Karten-Peek).
@@ -65,6 +65,32 @@ Test-Routing (für gezielte Edits):
   Struktur-Treue aller 14 Sprachen (7 Kapitel, Pro-/Contra-Zählung je Rechner,
   URL-Menge identisch zur deutschen Vorlage), übersetzte Titel,
   `RecChapterPage`-Rendering.
+- `rate_store_test.dart` + `rates_page_test.dart` — Werterechner Phase 2:
+  Snapshot-Defaults, pivot-geroutete Konversion, SharedPreferences-Overrides
+  bzw. Kurs-Editor (Override schreiben, Reset pro Zeile/global).
+- `price_history_test.dart` + `price_chart_test.dart` — Preiskurve:
+  log10/Viewport/LTTB/Ticks (reine Mathematik) bzw. Chart-Widget,
+  Quellen-Seite und der „Kurve"-Keypad-Swap.
+- `werte_docs_test.dart` — Struktur-Treue von Werterechner-Handbuch
+  (`assetManualChapters`, 6 Kapitel) und Wertetheorie über alle 14 Tags.
+- `manual_test.dart` — Handbuch-Dispatcher (`manualChapters` ×14) +
+  Render-Smoke der deutschen Kapitel.
+- `unit_descriptions_test.dart` — Langdruck-Einheiten-Beschreibungen:
+  jede Katalog-Einheit × jede Sprache, echte Übersetzung, DE-Fallback.
+- `unit_theory_count_test.dart` + `converter_intro_test.dart` —
+  Einheitentheorie-Seite: „Anzahl"-Karte bzw. Intro-Tab (Prosa + Quellen
+  ×14, echte Übersetzung, Fallback auf Deutsch).
+- `converter_display_test.dart` — Umrechner-Display-Glyphen:
+  custom/conventional/ohne Scope, Per-Zellen-Glyph-Gating (Ziffern ja,
+  Einheiten-Buchstaben nie) + Render-Smokes.
+- `function_keys_test.dart` — Funktionstasten-Block: M+/M−, x²/±,
+  ln/eˣ/log₁₂, nCr/nPr, wissenschaftliche Notation.
+- `result_format_test.dart` — Präsentations-Helfer aus
+  `logic/result_format.dart` (Clipboard-String, Cross-Base-Referenz).
+- `watch_parity_test.dart` — Dart-Hälfte des Watch-Paritäts-Netzes:
+  replayed `test/fixtures/watch_parity_fixtures.json` gegen `evalF64`;
+  Swift-Gegenstück `watch/Tests/CalculatorParityTests.swift` (nur mit
+  Xcode; Scope = Schnittmenge beider Auswerter).
 
 CI (`.github/workflows/ci.yml`) ist auf Flutter 3.41.8 stable festgenagelt
 und führt `analyze` + `test` aus. Das Flutter-SDK selbst pinnt sechs
@@ -131,7 +157,7 @@ werden programmatisch über Golden-Style-Tests in `tool/` erzeugt:
 ```bash
 flutter test tool/generate_icon.dart            # → assets/icon.png
 flutter test tool/generate_compass.dart         # → assets/compass.png
-flutter test tool/generate_feature_graphic.dart # → store/feature-graphic.png
+flutter test tool/generate_feature_graphic.dart # → assets/feature_graphic.png
 dart run flutter_launcher_icons                 # → Plattform-Icons
 dart run flutter_native_splash:create
 ```
@@ -142,13 +168,19 @@ neu generiert. Nach `flutter_launcher_icons` / `flutter_native_splash`
 auch die jeweils gepatchten Plattform-Resources (`android/app/src/main/res/`,
 `ios/Runner/Assets.xcassets/`, …) prüfen und mitnehmen.
 
-### Play-Store-Screenshots (Status: manueller Capture)
+### Store-Screenshots (per-Locale, im Repo)
 
-Keine per-Locale-Screenshots im Repo — die `tool/generate_screenshots.dart`-
-Pipeline wurde wegen unzuverlässigem `.ttc`-Font-Loading in flutter_test
-(CJK-Tofu) verworfen. Play Console nutzt das Default-Locale-Set für alle
-Sprachen. Falls per-Locale gewünscht: adb-Capture vom Gerät (siehe
-`docs/local/device-testing.md`, lokal/gitignored). Details + Begründung:
+`store/screenshots/` hält die per-Locale-Sets: `play/<locale>/` (11 Locales
+× 3 Phone-PNGs) und `play-tablet/<locale>/` (11 × 4) — fa/ga/cy haben keine
+Ordner und behalten in Play Console den Bestand; dazu `ios/`, `linux/` und
+die ungerahmten Captures in `raw/`. `tool/sync_play_listings.dart` synct
+die Play-Sets zusammen mit den Listings in die Play-Grafik-Slots.
+Erzeugung: adb-Capture vom Gerät (siehe `docs/local/device-testing.md`,
+lokal/gitignored) plus Rahmen-/Overlay-Pipeline in `tool/screenshots/`
+(`i18n.json` als Text-Quelle, Python+Swift; Vollanleitung
+[`docs/appstore-connect-pipeline.md`](docs/appstore-connect-pipeline.md)).
+Eine frühere flutter_test-Generator-Pipeline wurde wegen unzuverlässigem
+`.ttc`-Font-Loading (CJK-Tofu) verworfen — Details + Begründung:
 [`docs/store-listings.md`](docs/store-listings.md).
 
 ## Architektur
@@ -164,28 +196,41 @@ Jeder `=`-Druck startet **beide** Auswerter parallel — den exakten
 - `lib/logic/rational.dart` — exakte Rationals mit Periodenerkennung
   (`1/7` → `0.186A35` mit Überstrich + Punktmarker für den Periodenstart).
 - `lib/logic/rat_parser.dart` — Parser der Rational-Schiene. Kollabiert
-  nur bei nicht-rationalen Tokens (sin, log, …) oder Division durch null.
+  bei nicht-rationalen Tokens (sin, log, …), Division durch null und an
+  Größen-Caps: gebrochener Exponent, `^`-Ergebnis > 10M Bits
+  (`maxResultBits`), Fakultät > 3000 (`factorialCap` in `rational.dart`).
+  Zusätzlich droppt `state.dart` ein bereits berechnetes exaktes Resultat
+  > 20000 Bits (`_maxExactRenderBits`) auf f64, weil die
+  Digit-Extraktion ~O(n²) ist.
 - `lib/logic/expression.dart` — f64-Fallback-Auswerter und
   Ergebnisformatierung. Enthält auch `resolvePostfix`, das vor
   `withImplicitMuls` läuft und postfix-eingegebene Tokens (`n!`, `|x|`,
   `1/x`) in präfix-Funktionsaufrufe umordnet. Standard-Konvention:
   Postfix bindet stärker als unäres Minus, also `−3!` = `−(3!)`. Wenn
   der User `|−3| = 3` will, muss er klammern.
+- `lib/logic/result_format.dart` — reine Präsentations-Helfer:
+  `resultBufferToString` (Clipboard-Copy/Gleichheits-Check, droppt
+  Perioden-Marker), `compactRationalString`/`compactF64String`
+  (kompakte Cross-Base-Referenzklammer, 6 Nachkommastellen).
 
 Wenn die Rational-Schiene kollabiert, wird das f64-Resultat als **State B**
-mit `≈`-Suffix angezeigt. Wenn beide funktionieren, gewinnt die
-Rational-Schiene. `DozenalCalcState.isF64Fallback` steuert diese Anzeige.
+mit `≈`-Präfix (links vor dem Ergebnis) angezeigt. Wenn beide
+funktionieren, gewinnt die Rational-Schiene.
+`DozenalCalcState.isF64Fallback` steuert diese Anzeige.
 
 **Width-Truncation auf der Ergebnis-Zeile:** lange exakte Ergebnisse (z. B.
 `AB ⊕ BB` mit Periode-Länge 136 in Basis 12) würden rechts-bündig
 gerendert nach links aus dem Display laufen. `_paintResultLine` in
 `display.dart` läuft deshalb eine Drop-Schleife: solange `totalW +
-suffixW > rect.width`, wird das hinterste Token (= niederwertigste
+suffixW + approxW > rect.width` (ein etwaiges ≈-Präfix zählt mit), wird
+das hinterste Token (= niederwertigste
 Nachkomma-Stelle) verworfen, Periode-Overlay-Indices werden
 mit-geclampt. War vorher kein Suffix gesetzt, wird ein Baseline-`…`
-angehängt (semantisch wie State B: „mehr da, abgeschnitten"). State C
-gewinnt visuell über reine Width-Truncation, weil die Period-Info
-informativer ist als der reine Schnitt-Marker.
+angehängt. Die Semantik ist bewusst getrennt: `≈`-Präfix heißt
+approximativ (State B), Baseline-`…` heißt exakt, aber geclippt —
+f64-Fallback und Periode können laut Code-Kommentar nie kollidieren.
+State C gewinnt visuell über reine Width-Truncation, weil die
+Period-Info informativer ist als der reine Schnitt-Marker.
 
 ### State (`lib/state.dart`)
 
@@ -222,6 +267,20 @@ dreiteilig:
   + Re-Evaluation per Equals, ohne den ganzen Ausdruck neu tippen
   zu müssen.
 
+**Session-History (Tape):** jedes erfolgreiche `=` landet als
+`HistoryEntry` (Input + Resultat) in `history` (Cap 30; Dedup nur gegen
+den jüngsten Eintrag — wiederholtes `=` stapelt nicht; überlebt AC). UI in `main.dart`: Swipe-down auf dem
+Display öffnet ein Bottom-Sheet (`_showHistory`, ARB-Keys
+`historyTitle`/`historyEmpty` ×14) mit read-only-Display-Tiles
+(`showCursor: false`); Tipp auf einen Eintrag ruft `recallHistory`.
+Langdruck auf das Display kopiert das Resultat in die Zwischenablage
+(`_copyResult`).
+
+**Startup-Basis:** `DozenalCalcState` selbst startet in Basis 12 (doz),
+aber `_applyStartupPrefs` spielt beim Boot den CalcPrefs-Default **Dez**
+ein — eine frische Installation rechnet also dezimal, bis der User in
+den Einstellungen umschaltet.
+
 ### Tokens (`lib/tokens.dart`)
 
 `sealed class CalcToken` mit const-Singleton-Subklassen für
@@ -248,9 +307,11 @@ Payload-freie Varianten. Spiegelt das Rust-Enum und erlaubt erschöpfende
   die Hoch-Höhen-Regime `kKeypadTight-/ScrollThreshold` und — seit dem
   Asset-Rechner — die Tile-Bausteine `LabelButton`/`SystemKey`/
   `showUnitInfoBox` (vorher privat in `converter_keypad.dart`; `SystemKey`
-  hat jetzt ein `enabled`-Flag, das die met/imp-Tasten bei Ein-Welt-Gattungen
-  ausgraut). Die Keypads selbst bleiben bewusst getrennte Widget-Bäume:
-  gleiche Glyphen, verschiedene Semantik/Dispatches.
+  trägt ein `enabled`-Flag, wird aber seit dem Asset-Keypad-Umbau nur
+  noch von den met/imp-Tasten des Umrechners genutzt — der Werterechner
+  hat keine System-Tasten mehr). Die Keypads selbst bleiben bewusst
+  getrennte Widget-Bäume: gleiche Glyphen, verschiedene
+  Semantik/Dispatches.
 - `display.dart` — Zwei-Zeilen-Display, Überstrich-Rendering,
   Periode-Markierung. `TwoLineDisplay` skaliert sich adaptiv an seinen
   Container, funktioniert also vom Landscape-Phone (~60 dp) bis zum
@@ -267,6 +328,14 @@ Payload-freie Varianten. Spiegelt das Rust-Enum und erlaubt erschöpfende
   custom). Beide defaulten auf conventional (die Dozenal-Glyphen sind
   opt-in); Display und Keypad lassen sich getrennt auf die Glyphen umstellen
   (Settings-Zeilen „Glyphen-Stil" bzw. „Ziffern auf Tasten").
+  Display-Gesten-Hooks: Tap = Tipp-Cursor (`inputCursorPosForTap` →
+  `moveCursorTo`), Langdruck = Resultat-Copy, Swipe-down = History-Tape
+  (siehe State-Abschnitt); `showCursor: false` macht das Widget zum
+  read-only History-Tile.
+- `round_badge.dart` — Bausteine der Listen-Optik von Info-Liste und
+  Einstellungen: `RoundIconBadge`/`RoundFlagBadge` (30-dp-Farbscheiben
+  statt grauer Icons/Flaggen-Thumbnails; `BadgeHue`-Palette bewusst
+  außerhalb `AppColors`), `kBadgeDiameter`, `kSubItemIndent`.
 - `keypad.dart` — orientierungsgesteuertes Dispatch. `Keypad` nimmt
   zusätzlich `keypadMode` (Overlay/Scroll) und `keypadProfile`
   (Alle/Einfach) aus den Einstellungen entgegen (siehe
@@ -314,11 +383,13 @@ Payload-freie Varianten. Spiegelt das Rust-Enum und erlaubt erschöpfende
       Sets 1–4 + AC/Del/`.` — keine Expand-Taste, kein Erweiterungsfeld,
       keine EXP/DRG-Reihe (Winkelmodus dann über die
       Einstellungen-Seite). Scroll-Modus wird in „Einfach" ignoriert.
-  - **`_BreitKeypad`**: drei Konfigurationen in `_buildBreitContent` —
-    Einfach = 8 Spalten ohne Pfeiltaste und ohne dritte Gruppe;
-    Alle+Overlay = 13 Spalten mit Page-Pfeil (bisheriges Verhalten);
-    Alle+Scroll = 17 Spalten inline ohne Pfeil, Button-Sizing dann nur
-    über `rawH` (horizontaler Scroll absorbiert die Überbreite).
+  - **`_BreitKeypad`**: Konfigurationen in `_buildBreitContent` —
+    Einfach = 8 Spalten ohne dritte Gruppe; „Alle" = 13 Spalten inline.
+    Mit dem deaktivierten `_kFuncPageEnabled` gibt es keinen Page-Pfeil
+    und keine 17-Spalten-Variante (beides ist auf das Flag
+    konditioniert und derzeit unerreichbar); im Scroll-Modus läuft das
+    Button-Sizing nur über `rawH` (horizontaler Scroll absorbiert die
+    Überbreite).
   - **`_BreitKeypad`** (Landscape / Tablet): Inline-Layout mit allen zehn
     Sets nebeneinander, gegliedert in drei visuelle Blöcke: Zahlengitter,
     Sets 1–5 (Hauptoperationen + System), Sets 6–10 (erweiterte Funktionen).
@@ -355,19 +426,32 @@ Payload-freie Varianten. Spiegelt das Rust-Enum und erlaubt erschöpfende
 ### Info-Modal
 
 `info_pages.dart` (Navigator-Routen + reine Routing-Logik der `InfoListPage`).
-Der eigentliche Inhalt liegt in zwei Bäumen:
+Der eigentliche Inhalt liegt in drei Bäumen (plus `lib/recommendations/`,
+eigener Abschnitt unten):
 - **`lib/theory/`** — der Theorie-Stoff. `theory_blocks.dart` baut über
   `theoryBlocks(l, langTag)` die vier Blöcke (Grundlagen, Zwölf und die Welt,
   Dozenale Mathematik, Dozenale Gesellschaft) aus `TheoryChapterRef`-Prosa-
-  Kapiteln (Datenmodell `ProseChapter`/`ProseSection` in `prose_chapter.dart`).
-  Genre-Dateien `grundlagen_/math_/society_/world_/unit_theory.dart` mit je
-  einem per-Sprach-Part-Verzeichnis `lib/theory/<lang>/`. Custom-Illustrationen
-  hängen per `imageId` an (`_customChapterIllustration` in `info_pages.dart`).
+  Kapiteln (Datenmodell `ProseChapter`/`ProseSection` in `prose_chapter.dart`);
+  dazu separat `werteTheoryBlock` — die **Wertetheorie** des Werterechners
+  (27 Kapitel, Dispatcher `werte_theory.dart`). Genre-Dateien
+  `grundlagen_/math_/society_/world_/unit_theory.dart` + `werte_theory.dart`
+  mit je einem per-Sprach-Part-Verzeichnis `lib/theory/<lang>/`.
+  Illustrationen auf zwei Schienen: Kapitel-Kopfbilder per `imageId`
+  (`_customChapterIllustration` in `info_pages.dart`) und Inline-Figuren
+  nach einzelnen Sections per `ProseSection.illustrationId`
+  (`inlineTheoryIllustration` in `werte_illustrations.dart`).
 - **`lib/manual/`** — das Bedienhandbuch. `manual.dart` liefert
-  `manualChapters(langTag)` (Hauptrechner) und `converterManualChapters(langTag)`
-  (Umrechner) als `ManualChapter`-Widget-Listen; Inhalt in den per-Sprach-Part-
+  `manualChapters(langTag)` (Hauptrechner), `converterManualChapters(langTag)`
+  (Umrechner) und `assetManualChapters(langTag)` (Werterechner) als
+  `ManualChapter`-Widget-Listen; Inhalt in den per-Sprach-Part-
   Dateien `lib/manual/<lang>/manual_<lang>.dart`, geteilte Helfer `_H/_P/_Pre`,
   Illustrationen in `manual_illustrations.dart`.
+- **`lib/unit_descriptions/`** — lokalisierte Ein-Satz-Definitionen für
+  die Langdruck-Info-Box über den Einheiten-Tasten des Umrechners:
+  `unitDescription(category, symbol, langTag)` mit 14 Sprach-Parts und
+  **per-Symbol**-Deutsch-Fallback (feiner als der positionsweise
+  Kapitel-Fallback); konsumiert via `unitInfoOf` in `converter_page.dart`
+  → `showUnitInfoBox` (`keypad_parts.dart`).
 
 Die frühere `info_content.dart` mit ihren `info_content_<lang>.dart`-Parts und
 der `_chapter<Lang>`-Funktion ist vollständig hierher migriert und existiert
@@ -385,42 +469,47 @@ nicht mehr.
    vollständig übersetzt** (Subagenten-Pipeline: Übersetzen + Review);
    der positionsweise Deutsch-Fallback bleibt als Mechanik für
    künftige Kapitel bestehen.
-3. `_TheoryExpansion` — ausklappbar zu den drei Theorie-Blöcken
-   (Zwölf und die Welt, Dozenale Mathematik, Dozenale Gesellschaft)
-   **plus „Einheitentheorie"** (`infoListConversionsEntry` →
-   `ConversionsPage`) als viertem Eintrag — dorthin gezogen, als die
-   frühere `_UnitsExpansion` aufgelöst wurde. Einen
+3. „Bedienung des Werterechners" (`infoListAssetManual`) — dritte
+   Instanz derselben Expansion, gespeist aus `assetManualChapters`
+   (sechs Kapitel, „Der dritte Rechner" … „Kurve"; alle 14 Sprachen).
+4. `_TheoryExpansion` — ausklappbar zu sechs Zeilen: die vier
+   Theorie-Blöcke (Grundlagen, Zwölf und die Welt, Dozenale
+   Mathematik, Dozenale Gesellschaft), dann „Einheitentheorie"
+   (`infoListConversionsEntry` → `ConversionsPage`; dorthin gezogen,
+   als die frühere `_UnitsExpansion` aufgelöst wurde), zuletzt
+   „Wertetheorie" (`theoryBlockWerte` → `werteTheoryBlock`). Einen
    Navigations-Eintrag „Einheitenrechner" gibt es nicht mehr (Swipe +
    Page-Peek tragen den Zugang; der `requestConverter`-Pfad in
    state/main ist entfernt).
-4. `_RecommendationsExpansion` — ausklappbar; ein Kapitel pro
+5. `_RecommendationsExpansion` — ausklappbar; ein Kapitel pro
    Plattform mit Pros/Cons je Rechner (eigener Abschnitt
    „Empfehlungen" unten).
-5. **Einstellungen-Eintrag** — pusht `SettingsPage`
+6. **Einstellungen-Eintrag** — pusht `SettingsPage`
    (`settings_page.dart`, eigener Abschnitt unten). Die früher hier
    liegenden Quick-Toggles (Glyphen-Stil, Haptik) sind dorthin gezogen.
-6. `_LanguagePickerExpansion` — analoge Ausklapp-Struktur, Default
+7. `_LanguagePickerExpansion` — analoge Ausklapp-Struktur, Default
    collapsed, listet `kSupportedLanguages`.
-7. Sekundärseiten als Navigations-Items (Datenschutz, Lizenz, Spenden,
+8. Sekundärseiten als Navigations-Items (Datenschutz, Lizenz, Spenden,
    Feedback).
-8. `_VersionFooter` (Padding + Versions-Anzeige).
+9. `_VersionFooter` (Padding + Versions-Anzeige).
 
 Alle Top-Level-Items sind durch 1-dp-Dividers im Palette-Slot `divider`
 getrennt; keine größeren Gaps mehr (früher 24 dp vor dem Sprach-
 Picker als visueller Sektions-Marker — mit dem Theorie-Expansion-
 Container ist dieser Marker visuell redundant geworden).
 
-AppBar-Titel ist `infoListTitle` und reflektiert die Mischnatur der
-Seite (Theorie + alle anderen Items): DE „Theorie und Weiteres",
-EN „Theory and More", entsprechend lokalisiert in allen 14 Locales.
+AppBar-Titel ist `infoListTitle`: DE „Dozenal Calc Menü",
+EN „Dozenal Calc Menu", entsprechend lokalisiert in allen 14 Locales.
 
 Der Dispatch ist script-aware (zh-Hant vor zh): `manualChapters` /
-`converterManualChapters` wählen über `_ownManualChapters` /
-`_ownConverterManualChapters` per BCP-47-Präfix die Sprach-Funktion, die
+`converterManualChapters` / `assetManualChapters` wählen über ihre
+`_own…Chapters`-Helfer per BCP-47-Präfix die Sprach-Funktion, die
 Theorie analog über `worldChapters/mathChapters/societyChapters/
-grundlagenChapters(langTag)`. Per-Kapitel-Fallback auf Deutsch nach Position:
-eine Sprache zeigt ihre eigenen Kapitel so weit sie übersetzt sind, der Rest
-fällt auf Deutsch zurück.
+grundlagenChapters/werteChapters(langTag)`. Fallback auf Deutsch: die
+Handbücher mergen **per Kapitel nach Position** (eine Sprache zeigt ihre
+eigenen Kapitel so weit übersetzt, der Rest deutsch); die
+Theorie-Dispatcher fallen als **ganze Liste** zurück, wenn eine Sprache
+fehlt.
 
 Die Aussprache-Konvention für Dozenal-Zahlen (Magnituden quader/cuber/tesser/…,
 pro Sprache unterschiedliche Konnektoren und Mutationsregeln) lebt im
@@ -439,9 +528,12 @@ Sekundärseiten (aus `info_pages.dart` gepusht, alle über die Info-Liste —
 keine direkten Routen aus `main.dart`): `privacy_page.dart` +
 `license_page.dart` (laden `legal/<typ>.<code>.md` per Locale via
 `markdown_page.dart`), `feedback_dialog.dart` (`mailto:`-Composer, kein
-Netzwerk, Strings über ARB), `conversions_page.dart` (Live-Umrechnung in die
-Imperial-12-Einheiten — Zoll/Fuss, Pence/Schilling/Pfund, Dutzend/Gros,
-Zeit, 360°-Bruchteile — mit eigener Doz/Dez-Toggle und symbolischer Notation
+Netzwerk, Strings über ARB), `conversions_page.dart` (die
+**Einheitentheorie**-Seite, ausgebaut aus der alten
+Imperial-12-Umrechnungsliste: `DefaultTabController` mit Intro-Tab plus
+einem Tab je Theorie-Kategorie, Prosa aus `lib/theory/unit_theory.dart`
+mit Quellenlisten und Kapitel-Bildern, weiterhin inkl. Live-Umrechnung
+mit eigener Doz/Dez-Toggle und symbolischer Notation
 `ft/in/sh/d/£/min/h/°` statt Wörtern, damit die Bodies in allen Locales
 identisch bleiben), `converter_page.dart` (interaktiver Einheitenrechner —
 zweiter Rechner-Modus, eigener Abschnitt unten), `support_page.dart`
@@ -602,8 +694,9 @@ Seitenwechsel. Die Swipe-Geste ist frei, weil beide Displays nur
 Tap/Langdruck/Vertikal-Drag belegen; in Breit-Layouts mit horizontalem
 Keypad-Scroll funktioniert der Seiten-Swipe auf der Display-Fläche.
 
-**Page-Peek-Indikator** (Swipe-Discoverability): zwei durchscheinende
-Karten in Bildschirmmitte als **Miniaturen der Seite** — Karten-
+**Page-Peek-Indikator** (Swipe-Discoverability): durchscheinende
+Karten in Bildschirmmitte als **Miniaturen der Seite** (seit dem
+Werterechner eine 3-Karten-Reihe) — Karten-
 Seitenverhältnis = Body-Seitenverhältnis, also Hochformat-Karten im
 Portrait, breite Karten im Landscape; alles skaliert mit der Breite
 (Karte 0.38 w, Lücke 0.08 w, Nachbar ~40 % angeschnitten). Die aktuelle
@@ -621,7 +714,7 @@ Leben, der Hide-Timer zählt erst ab Stillstand; `_pulsePagePeek` ist
 Build-Phasen-sicher (Scroll-Callbacks können während des Layouts
 eintreffen → `SchedulerPhase`-Check + Post-Frame-Fallback) und setStatet
 nur beim Mounten, nicht pro Scroll-Tick. Puls bei jedem Landen (Boot, Intro-Schluss,
-Rückkehr aus „Theorie und Weiteres") und bei jedem Seitenwechsel
+Rückkehr aus dem Menü) und bei jedem Seitenwechsel
 (`_pulsePagePeek` in `_CalcScaffoldState`): 160 ms Fade-in, ~1050 ms Halt,
 420 ms Fade-out. `IgnorePointer` + `ExcludeSemantics`, und nach dem
 Ausblenden wird das Overlay komplett **unmounted** (`_pagePeekMounted`),
@@ -656,10 +749,12 @@ Damit der Brücken-Flow „Ans → Kategorie → Magnitude" funktioniert,
 (sie ist einheitenlos; nur committete Terme werden verworfen).
 
 **Physische Tastatur im Pager:** `_handleKey` routet nach aktiver Seite —
-auf Seite 1 mappt `_handleConverterKey` Ziffern/Punkt/+/−/=/Del/AC/Pfeile
-auf die Converter-Handler (Pfeile via `moveCaretLeft/Right`, zerstörungsfrei
-an den Rändern); alles andere wird geschluckt, damit kein Tastendruck
-unsichtbar den verdeckten Hauptrechner editiert.
+auf Seite 1 mappt `_handleConverterKey`
+Ziffern/Punkt/+/−/×/÷/^/=/Del/AC/Pfeile auf die Converter-Handler
+(Skalar-Operatoren via `inputScalarOp`, Pfeile via `moveCaretLeft/Right`,
+zerstörungsfrei an den Rändern), auf Seite 2 analog `_handleAssetKey`;
+alles andere wird geschluckt, damit kein Tastendruck unsichtbar den
+verdeckten Hauptrechner editiert.
 
 **Basis ⊗ System (entkoppelt seit dem Farb-Umbau):** Die frühere Kopplung
 „Doz = imperial in Basis 12 / Dez = metrisch in Basis 10" ist aufgelöst —
@@ -757,8 +852,10 @@ dem Hauptrechner, und seit der Basis/System-Entkopplung gilt auch die
 Settings-**Zahlensystem**-Zeile für beide Rechner (Sync siehe oben). Nur das
 **Einheitensystem** bleibt converter-lokal (met/imp-Tasten).
 
-Die alte statische `conversions_page.dart` bleibt vorerst parallel bestehen
-(soll später zu einem Theorie-Block werden).
+`conversions_page.dart` ist inzwischen zur **Einheitentheorie**-Seite
+ausgebaut (siehe Sekundärseiten im Info-Modal-Abschnitt) und über die
+Theorie-Expansion erreichbar — der frühere Plan „später Theorie-Block"
+ist damit umgesetzt.
 
 **Tipp-Cursor (beide Rechner):** Tippen auf die Eingabezeile positioniert den
 Bearbeitungs-Cursor (die rote Linie). Hauptrechner: `TwoLineDisplay`
@@ -771,12 +868,17 @@ Nutzer-sichtbarer Name **„Werterechner"** (`pagerLabelAsset`); interner Code-/
 Dateinamensraum bleibt `asset`. **Seite 3 des Pagers** (zweimal Links-Swipe),
 im Design des Einheitenrechners,
 aber mit **drei** Hierarchien: **Klasse → Gattung → Einheit** (Edelmetall →
-Gold → troy oz/g/kg; Währung → GBP → £/sh/d). **Phase 1** = exakte Umrechnung
-(Troy-/avoirdupois-Gewichte metallunabhängig; Währungs-Stückelungen wie £sd).
+Gold → gr/dwt/oz t/lb t bzw. g/kg; Währung → GBP → £/sh/d). **Phase 1** =
+exakte Umrechnung (Troy-Gewichte metallunabhängig — die
+avoirdupois-Einheiten oz/lb wurden bewusst gestrichen, Gold kauft man
+nicht im avdp-Pfund; Währungs-Stückelungen wie £sd).
 **Phase 2 (Werte/Kurse)** ist umgesetzt (Wertmodus + Zielwährungs-Picker, grober
 datierter Snapshot + Kurs-Editor) und **Phase 3 (historische Preiskurve)**
 ebenso („Kurve"-Taste ersetzt das Keypad durch einen Pan/Zoom-Custom-Paint-
 Chart — Gold/Silber/Weizen, Antike→heute, kuratierter belegter Datensatz).
+Dazu zwei Doku-Deliverables im Info-Modal: das Werterechner-Handbuch
+(`assetManualChapters`, 6 Kapitel) und der Wertetheorie-Block
+(`werteTheoryBlock`, 27 Kapitel) — beide ×14 Sprachen.
 Vollständige Spezifikation + Roadmap:
 [`docs/asset-converter.md`](docs/asset-converter.md).
 
@@ -787,24 +889,44 @@ Vollständige Spezifikation + Roadmap:
 - `lib/logic/asset_convert.dart` — `assetNextInLadder`/`assetBracketPartner`/
   `assetBreakdown` (Floor-Epsilon gegen f64-Undershoot), `convert` reexportiert.
 - `lib/asset_state.dart` — `AssetState`, eng an `ConverterState` (Compound-Terme,
-  Skalar-Ops, Cursor, `=`-Zyklus, met/imp, `setBase`); zusätzlich `drillLevel`
-  (`tapClass`/`tapGenus`/`tapMagnitude`, Tipp auf aktiven Header = zurück).
+  Skalar-Ops, Cursor, `=`-Zyklus, `setBase`); zusätzlich `drillLevel`
+  (`tapClass`/`tapGenus`/`tapMagnitude`, Tipp auf aktiven Header = zurück;
+  die Pending-Zahl überlebt `tapClass`, nur Terme werden verworfen).
+  **Kein `setWorld` mehr:** die Arbeits-Welt folgt der committeten Einheit
+  (`tapMagnitude` setzt `_world = unit.world`); `worldToggleEnabled`
+  steuert nur noch den Farbton der Einheitensymbole im Display
+  (Währungen pinnen auf Zwölfer-Violett). Eigenes **Speicherregister**
+  `memStore`/`memRecall`/`memClear` (in-memory, überlebt AC).
   Liefert `topLine`/`resultLine` als **`ConverterLine`** → `ConverterDisplay`
-  unverändert wiederverwendet. `worldToggleEnabled` false bei Währungen.
-  Bridge-Felder vorhanden, in v1 inert.
+  unverändert wiederverwendet. Bridge-Felder (`calcAnsProvider`/
+  `ansForBridge`) vorhanden, aber **unverdrahtet** — siehe unten.
 - `lib/asset_keypad.dart` — eigener Widget-Baum aus den geteilten
-  `keypad_parts.dart`-Bausteinen; die zwei rechten Tile-Spalten (8 Zellen) sind
-  ein 3-Ebenen-Navigator. `lib/asset_page.dart` (`AssetBody`/`AssetPage`),
+  `keypad_parts.dart`-Bausteinen, **ohne Overlay** (jede Taste liegt auf
+  einer Fläche): die zwei rechten Tile-Spalten (8 Zellen) sind der
+  3-Ebenen-Navigator, auf der Einheiten-Ebene liegen **beide
+  Einheitensysteme gleichzeitig** nebeneinander (imperial/Troy Spalte A,
+  metrisch Spalte B — keine met/imp-Tasten). Auf der Klassen-Ebene
+  füllt der Speicher (STO/RCL/MC/Ans) das Set 3 und weicht nach
+  Klassenwahl den Gattungen. System-Reihe ist [AC · Del · `.` · Wert];
+  „Kurve" (links) und „Kurse" (rechts) sind runde `_RoundKey`-Tasten
+  neben der Gleichtaste. `lib/asset_page.dart` (`AssetBody`/`AssetPage`),
   Labels in `lib/asset_labels.dart` (Währungs-Tiles = ISO-Code).
 - Verdrahtung in `main.dart`: `_assetState` + `_rateStore` im
   `_CalcScaffoldState`, drittes PageView-Kind, `_pagerProgress` clampt `[0,2]`,
-  `_PagePeekOverlay` als 3-Karten-Schleife, `_handleAssetKey` für physische
-  Tasten auf Seite 2, Basis-Sync via `_assetState.setBase`.
+  `_PagePeekOverlay` als 3-Karten-Reihe, `_handleAssetKey` für physische
+  Tasten auf Seite 2, Basis-Sync via `_assetState.setBase`. Bei offenem
+  Chart sperrt der Pager das Seiten-Wischen
+  (`NeverScrollableScrollPhysics` auf `chartOpen`), sonst verlöre der
+  Chart-Pan die Gesture-Arena. Die **Asset↔Hauptrechner-Brücke ist
+  bewusst noch nicht verdrahtet** (`_assetState.calcAnsProvider` bleibt
+  null, die Ans-Taste im Drill ist dauerhaft grau) — offener Punkt in
+  `docs/asset-converter.md`.
 - **Phase 2 (Werte/Kurse):** `lib/logic/rate_data.dart` (grober datierter
   Snapshot, Pivot USD), `lib/rate_store.dart` (`RateStore`, SharedPreferences-
   Overrides, pivot-geroutete Konversion), Wertmodus in `asset_state.dart`
-  (`drillLevel == valueTargets`, `valueLine` mit „≈"), „Wert"/„Kurse"-Tasten im
-  Keypad-Overlay, Kurs-Editor `lib/rates_page.dart`, `resultPrefix` („≈ ") im
+  (`drillLevel == valueTargets`, `valueLine` mit „≈"; jede Editier-Aktion
+  verlässt den Wertmodus), Kurs-Editor `lib/rates_page.dart`
+  (Overrides gold markiert, Reset pro Zeile/global), `resultPrefix` („≈ ") im
   geteilten `converter_display.dart`. **Opt-in-API nur als Doku**
   (`docs/asset-rates-api.md`) — ausgeliefertes Binary netzwerkfrei,
   `legal/privacy-*` unverändert.
@@ -927,7 +1049,8 @@ liegt, dann hier:
   Portierungen aus `src/input.rs::handle_keyboard`. Auf Pager-Seite 0
   mündet alles in `_state.handleClick(token)` — derselbe Pfad wie ein
   Tastendruck; auf Seite 1 (Umrechner) übersetzt `_handleConverterKey`
-  in die `ConverterState`-Handler (siehe Einheitenrechner-Abschnitt).
+  in die `ConverterState`-Handler (siehe Einheitenrechner-Abschnitt),
+  auf Seite 2 (Werterechner) analog `_handleAssetKey`.
 - **Intro-Gate:** `_maybeShowIntro` liest `_kIntroSeenFlag` (aktuell
   `intro_seen_v4`) aus `SharedPreferences` und pusht beim ersten Start
   `IntroPage`; danach wird das Flag gesetzt.
@@ -949,7 +1072,9 @@ liegt, dann hier:
   Asset-Rechner-Abschnitt). `displayHeightFor(bodyH)` aus `app_layout.dart`
   bleibt die einzige Größenrechnung (pro Seite). `_CalcScaffoldState`
   besitzt `ConverterState`, `AssetState` + `PageController` und verdrahtet die
-  Resultat-Brücken-Provider in beide Richtungen (Asset-Bridge erst Phase 2).
+  Resultat-Brücken-Provider in beide Richtungen (nur Hauptrechner ↔
+  Umrechner; die Asset-Brücke ist noch unverdrahtet, siehe
+  Werterechner-Abschnitt).
   (Der frühere `state.converterRequested`-Pfad ist entfernt — der Zugang zu
   den Folgeseiten läuft über Swipe + Page-Peek.)
   Splash-Feedback ist global via `NoSplash.splashFactory` aus, weil die

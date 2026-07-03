@@ -324,8 +324,10 @@ final class Sci extends CalcToken {
 
 // ---------------------------------------------------------------------------
 // NumeralSystem — selects whether digit input/output is interpreted in
-// base 12 (dozenal, the app's default) or base 10 (decimal). Mutually
-// exclusive; exactly one mode is active at any time.
+// base 12 (dozenal) or base 10 (decimal). Mutually exclusive; exactly one
+// mode is active at any time. DozenalCalcState starts in doz, but the
+// persisted CalcPrefs default (dez) is applied on startup — a fresh
+// install effectively boots decimal.
 // ---------------------------------------------------------------------------
 
 enum NumeralSystem { doz, dez }

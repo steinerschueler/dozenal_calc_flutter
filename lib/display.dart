@@ -4,9 +4,12 @@
 //   - Lower line: result_buffer (right-aligned, with overline + …-suffixes)
 //
 // Display states from CLAUDE.md "Display Conventions":
-//   A) Exact finite — no suffix
-//   B) Rounded f64 — `…` on the baseline
+//   A) Exact finite — no marker
+//   B) Rounded f64 — `≈` prefix left of the result
 //   C) Periodic, period > maxPeriodDisplay — `…` at overline height
+// (A baseline `…` appears only when width-truncation drops trailing
+// digits — "more there, clipped", deliberately distinct from the ≈ of
+// State B.)
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -32,7 +35,7 @@ class TwoLineDisplay extends StatelessWidget {
   /// True when the true period exceeds maxPeriodDisplay → render State-C `…`.
   final bool resultPeriodCapped;
 
-  /// True when the rational track collapsed → render State-B `…`.
+  /// True when the rational track collapsed → render the `≈` prefix (State B).
   final bool isF64Fallback;
 
   /// Error message to show in red across the result line (overrides tokens).

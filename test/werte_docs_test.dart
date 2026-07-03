@@ -1,7 +1,7 @@
-// Structure tests for the two new Werterechner text deliverables: the
+// Structure tests for the two Werterechner text deliverables: the
 // "Bedienung des Werterechners" manual (assetManualChapters) and the
-// "Wertetheorie" theory block (werteChapters / theoryBlocks). German and
-// English are authored; the other 12 languages fall back to German.
+// "Wertetheorie" theory block (werteChapters / theoryBlocks). All 14
+// languages are authored; the tests below are fallback-agnostic either way.
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';

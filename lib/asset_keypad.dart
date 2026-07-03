@@ -383,7 +383,7 @@ class AssetKeypad extends StatelessWidget {
       gold: header,
       softGold: !header && selected,
       onTap: () => state.tapGenus(g),
-      // Long-press note: v1 has no prices yet.
+      // Long-press note: how to get a money value (value mode + rate editor).
       info: (header || valueHint == null) ? null : (desc: valueHint!, more: ''),
     );
   }

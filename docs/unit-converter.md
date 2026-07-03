@@ -1,13 +1,15 @@
 # Einheitenrechner (Unit Converter) — Spezifikation & Umbauplan
 
-> **Status: ENTWURF zur Abnahme.** Noch kein Code. Diese Datei hält das
-> vereinbarte Design fest, bevor implementiert wird. Faktoren bekommen bei
-> der Umsetzung einen Verifikations-Pass (per Unit-Test festgenagelt).
+> **Status: UMGESETZT.** Ursprünglich der Entwurf zur Abnahme; inzwischen
+> ist alles implementiert (Fortschritts-Checkliste in §9, offene Ideen in
+> §10). Die Datei bleibt als Spezifikation/Referenz — bei Widersprüchen
+> gewinnt der Code bzw. CLAUDE.md.
 
 ## 1. Zweck & Einordnung
 
-Ein **zweiter Rechner-Modus** — ein vollwertiger Einheitenrechner. Er lebt in
-„Theorie und Weiteres" und **wiederverwendet die Bausteine** des Hauptrechners
+Ein **zweiter Rechner-Modus** — ein vollwertiger Einheitenrechner. Er ist
+Seite 2 des horizontalen Pagers (Links-Swipe vom Hauptrechner) und
+**wiederverwendet die Bausteine** des Hauptrechners
 (Tasten-Shells, Painter, Layout-Logik), ist aber ein **eigener Screen**. Das
 normale Keypad bleibt unangetastet — die Store-Screenshots bleiben gültig.
 
@@ -24,10 +26,10 @@ einer Welt-Kopplung — alle vier Kombinationen sind gültig.
   Basis-Farbe, Ziffern bleiben neutral, die `{ }`-Klammer leuchtet in der
   Farbe der Welt, die sie zeigt. Blau bleibt exklusiv den Funktions-Glyphen.
 
-> **Zukunft:** ein separater **Edelmetallrechner** ist geplant (baut auf der
-> Feinunze auf — daher Troy-Einheiten hier behalten).
-> Die bestehende `conversions_page.dart` bleibt **vorerst** parallel bestehen
-> und wird *später* zu einem reinen Theorie-Block umgestaltet.
+> **Inzwischen umgesetzt:** der separate Edelmetall-/Währungsrechner
+> existiert als **Werterechner** (Pager-Seite 3, `docs/asset-converter.md`),
+> und `conversions_page.dart` ist zur **Einheitentheorie**-Seite ausgebaut
+> (Tab-Layout, Prosa aus `lib/theory/unit_theory.dart`).
 
 ## 2. Zugang
 
@@ -161,7 +163,9 @@ der Pending-Eingabe, nicht auf Term-Ebene:
   in editierbare Ziffern (Gesamtwert in der Arbeits-Einheit, gleiches Idiom
   wie der Welt-Wechsel): `5 ft 3 in` → `×` → `53×` (doz) → `2` → `in`.
 - Dezimalpunkt-Guard pro Segment (`1.6×0.6` ist gültig); Basis-Wechsel
-  reformatiert segmentweise; Tasten dynamisch aktiv via `canScalarOp`.
+  reformatiert segmentweise; die Operator-Tasten sind **immer aktiv**
+  (auf leerer Eingabe stiller No-op — das frühere `canScalarOp`-Gating
+  wurde verworfen, Grau liest sich als „nicht verdrahtet").
 - Damit ist **ganz Set 1** aktiv.
 
 **`=`-Ausgaben.** `=` durchläuft die Ergebnis-Ansichten und wrappt:
@@ -359,7 +363,8 @@ temp °F↔°C, fuel mpg↔L/100km, price £sd↔£dez, count Basis↔Basis, tim
 - [x] **8** Verdrahtung in `InfoListPage` (Eintrag „Einheitenrechner",
       ARB-Key `infoListConverterEntry` in DE+EN, Rest fällt vorerst auf DE)
 - [x] fuel → **liquid** (US-Flüssigmaße); `space` auf rein kubisch bereinigt
-- [x] inaktive Op-Tasten ausgegraut (Set 1/2, Set 6/7, Drg)
+- [x] inaktive Op-Tasten ausgegraut (Set 1/2, Set 6/7, Drg) — *später
+      revidiert: Operatoren sind heute immer aktiv, siehe §4a*
 - [x] **Breakdown**-Daten (Kaskaden je Kategorie, temp affine) + `breakdown()`
       + Tests (imperial mixed-radix)
 - [x] **Compound-State**: Term-Liste + implizite/explizite Operatoren (+/−) +

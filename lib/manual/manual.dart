@@ -103,10 +103,11 @@ List<ManualChapter> _ownConverterManualChapters(String langTag) {
 
 /// The asset-converter (Werterechner) manual chapters in [langTag] — the third
 /// "Bedienung" section ("Bedienung des Werterechners"). Same per-chapter German
-/// fallback as [manualChapters]. German is currently the only authored set; the
-/// other languages fall back to German until translated — to add one, give it a
-/// branch in [_ownAssetManualChapters] (zh-Hant before zh) and a
-/// `_assetManualChapters<Lang>()` in its `manual_<lang>.dart` part.
+/// fallback as [manualChapters]. All 14 languages are authored; the fallback
+/// only covers chapters a language has not caught up with yet — to extend a
+/// language, grow its `_assetManualChapters<Lang>()` in its
+/// `manual_<lang>.dart` part (new languages get a branch in
+/// [_ownAssetManualChapters], zh-Hant before zh).
 List<ManualChapter> assetManualChapters(String langTag) {
   final de = _assetManualChaptersDe();
   final own = _ownAssetManualChapters(langTag);

@@ -7,7 +7,8 @@
 //   e.g. Edelmetall      →  Gold                  →  troy oz / g / kg
 //
 // v1 scope = EXACT conversions only (no prices/rates — those are Phase 2):
-//   - metal: a single troy/avoirdupois weight ladder, shared by every metal
+//   - metal: a single Troy + metric weight ladder (avoirdupois dropped —
+//     see the note above _metalUnits), shared by every metal
 //     genus. The genus (which metal) is mathematically inert for pure weight
 //     (a troy ounce of gold weighs the same as a troy ounce of silver); it
 //     becomes meaningful only when a spot price attaches in Phase 2.

@@ -3,8 +3,9 @@
 // but with THREE hierarchies — Klasse → Gattung → Einheit — instead of two.
 //
 // Exact layer (Phase 1):
-//   - metal genera share one troy/avoirdupois weight ladder; the genus is
-//     inert for pure weight (it gains meaning via the value mode).
+//   - metal genera share one Troy + metric weight ladder (avoirdupois was
+//     dropped); the genus is inert for pure weight (it gains meaning via
+//     the value mode).
 //   - currency genera each carry their own exact denomination ladder.
 //
 // Value layer (Phase 2, here): value mode converts the committed quantity into
@@ -13,8 +14,9 @@
 // historical price curve (Phase 3) does not.
 //
 // Interaction model mirrors ConverterState (compound terms, scalar-entry
-// operators, an edit caret, the `=` ladder/breakdown cycle, the met/imp world
-// toggle and the decoupled numeral base). The structural additions are the
+// operators, an edit caret, the `=` ladder/breakdown cycle and the decoupled
+// numeral base; unlike the unit converter there is no met/imp toggle — the
+// working world follows the committed unit). The structural additions are the
 // drill-down (tap a class → its genera; a genus → its unit ladder; a unit →
 // commit; the active header steps back) and the value mode + target picker.
 //

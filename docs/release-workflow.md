@@ -7,11 +7,14 @@ gebraucht. Die Build-Befehle selbst stehen in CLAUDE.md.
 ## Mehrsprachige Play-Console-Versionshinweise
 
 Abschließender Schritt nach jedem Release-Build: ein Block pro aktiv
-unterstützter Listing-Locale. Die App enthält **vierzehn** Sprachen, aber Play
-Console listet nur **sieben** als Release-Notes-Locale (DE, EN, FR, ES, IT, FA,
-RU). Die übrigen (GA, HI, ZH-Hans, ZH-Hant, CY, JA, AR) leben nur in der App —
-für sie werden keine Notes geschrieben. Persisch wird in Play Console nur als
-`fa-AF` gelistet (Googles einzige Farsi-Listing-Locale).
+unterstützter Listing-Locale. Die App enthält **vierzehn** Sprachen; Play
+Console hat für **zwölf** davon einen Release-Notes-Slot (DE, EN, FR, ES,
+IT, FA, RU, HI, ZH-Hans, ZH-Hant, JA, AR — Play-Tags de-DE/en-US/fr-FR/
+es-ES/it-IT/fa-AF/ru-RU/hi-IN/zh-CN/zh-TW/ja-JP/ar; maßgeblich ist die
+`_localeMap` in `tool/sync_play_listings.dart`). Nur Irisch (GA) und
+Walisisch (CY) haben keinen Slot — für sie werden keine Notes
+geschrieben. Persisch wird in Play Console nur als `fa-AF` gelistet
+(Googles einzige Farsi-Listing-Locale).
 
 Jeder Block: Tag-öffnen auf einer Zeile, Prosa als eine einzige lange Zeile
 darunter, Tag-schliessen auf einer Zeile. Leerzeile zwischen Blöcken. So
@@ -46,6 +49,26 @@ Beschreibung.
 <ru-RU>
 …
 </ru-RU>
+
+<hi-IN>
+…
+</hi-IN>
+
+<zh-CN>
+…
+</zh-CN>
+
+<zh-TW>
+…
+</zh-TW>
+
+<ja-JP>
+…
+</ja-JP>
+
+<ar>
+…
+</ar>
 ```
 
 Inhalt aus den tatsächlichen Build-Änderungen ableiten (nicht aus der
@@ -106,9 +129,9 @@ Release-Notes-Quelle ist die jeweils neueste `build<N>-release-notes.txt`
 (numerisch sortiert, nicht lexikografisch — `build11` vor `build2`). Die
 `<locale>...</locale>`-Blöcke landen in
 `android/app/src/main/play/release-notes/<play-locale>/default.txt`.
-Synchronisiert werden nur die sieben Play-Console-Release-Notes-Locales
-(DE/EN/FR/ES/IT/FA/RU); die übrigen sieben App-Sprachen (GA, HI, ZH-Hans,
-ZH-Hant, CY, JA, AR) haben in Play Console keinen Release-Notes-Slot.
+Synchronisiert werden die zwölf Play-Console-Release-Notes-Locales
+(DE/EN/FR/ES/IT/FA/RU/HI/ZH-Hans/ZH-Hant/JA/AR); nur GA und CY haben in
+Play Console keinen Release-Notes-Slot.
 
 App-Namen-Konvention pro Locale: siehe [`store-listings.md`](store-listings.md).
 

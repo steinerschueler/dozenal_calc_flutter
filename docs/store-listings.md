@@ -41,31 +41,41 @@ Die App-Namen leben an *zwei* Stellen, die parallel gepflegt werden müssen:
    `values/strings.xml` = „Dozenal Calc"). Manifest referenziert nur
    `@string/app_name`.
 
-## Play-Store-Screenshots (Status: manueller Capture)
+## Play-Store-Screenshots (Status: per-Locale im Repo)
 
-Per-Locale-Screenshots via `tool/generate_screenshots.dart` wurden einmal
-versucht (flutter_test + matchesGoldenFile + System-Font-Loading für 14
-Sprachen), aber wieder verworfen: das flutter_test-Environment lädt
-`.ttc`-Font-Collections nicht zuverlässig (NotoSansCJK-Regular.ttc ergab
-Tofu-Boxen für Chinesisch/Japanisch, auch mit korrekt registrierter
-fontFamilyFallback-Chain). Ein qualitativ schlechter Screenshot in der
-Muttersprache ist für Play-Store-UX schlimmer als gar kein lokalisierter
-Screenshot — Nutzer:innen würden sonst denken, die App selbst rendere so.
+**Aktueller Stand:** per-Locale-Screenshots liegen versioniert unter
+`store/screenshots/play/<locale>/` (11 Locales × 3 Phone-PNGs) und
+`store/screenshots/play-tablet/<locale>/` (11 × 4); dazu `ios/`, `linux/`
+und die ungerahmten Captures in `raw/`. `tool/sync_play_listings.dart`
+synct die Play-Sets zusammen mit den Listings in die Play-Grafik-Slots
+(`android/app/src/main/play/listings/<play-locale>/graphics/…`); fa, ga
+und cy haben keine Screenshot-Ordner und behalten in Play Console den
+Bestand. Die Rahmen-/Text-Overlay-Pipeline lebt in `tool/screenshots/`
+(`i18n.json` als Text-Quelle, Python + Swift-Text-Renderer für RTL/CJK/
+Devanagari) — Vollanleitung in `docs/appstore-connect-pipeline.md`.
 
-**Aktueller Stand:** keine per-Locale-Screenshots im Repo. Play Console fällt
-auf das Default-Locale-Set zurück (was du dort hochlädst), für alle Sprachen
-identisch.
-
-**Falls per-Locale-Screenshots später gewünscht sind**, ist der zuverlässigste
-Weg adb-Capture vom physischen Gerät:
+**Capture-Weg** ist adb vom physischen Gerät. Die raw/-Konvention ist
+**geräte-zuerst mit Locale im Dateinamen** (`raw/{android,android-tablet,
+iphone,ipad,macos,watch}/<name>-<locale>.png`) — genau dieses Layout liest
+die Rahmen-Pipeline hart ein (`tool/screenshots/produce_play.py`:
+`RAW = store/screenshots/raw/android`):
 
 ```bash
 adb -s <serial> shell input tap …          # zur gewünschten Seite navigieren
 adb -s <serial> shell screencap -p /sdcard/s.png
-adb -s <serial> pull /sdcard/s.png store/screenshots/<locale>/N-name.png
+adb -s <serial> pull /sdcard/s.png store/screenshots/raw/android/<name>-<locale>.png
 ```
 
 Pro Locale: in der App die Sprache umstellen (oder OS-Locale ändern), dann
 durchklicken und capturen. Funktioniert mit echten Android-Fonts inkl. CJK,
 ohne Font-Workarounds — die generelle adb-UI-Driving-Loop steht in
 `docs/local/device-testing.md` (lokal/gitignored, nicht im Repo).
+
+**Historie:** eine Generator-Pipeline via flutter_test
+(`tool/generate_screenshots.dart`, matchesGoldenFile + System-Font-Loading)
+wurde verworfen: das flutter_test-Environment lädt `.ttc`-Font-Collections
+nicht zuverlässig (NotoSansCJK-Regular.ttc ergab Tofu-Boxen für
+Chinesisch/Japanisch, auch mit korrekt registrierter
+fontFamilyFallback-Chain). Ein qualitativ schlechter Screenshot in der
+Muttersprache ist für Play-Store-UX schlimmer als gar kein lokalisierter
+Screenshot — Nutzer:innen würden sonst denken, die App selbst rendere so.
