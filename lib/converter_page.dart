@@ -70,8 +70,12 @@ class ConverterBody extends StatelessWidget {
                       // Pointer assembled from already-localized labels so
                       // the nav terms always match the app; only the
                       // lead-in (unitInfoMore) is translated per language.
-                      more: '${l.unitInfoMore} → ${l.infoListUnitsExpansion}'
-                          ' → ${l.conversionsTitle}'
+                      // Path mirrors the real nav: menu → theory expansion
+                      // → unit-theory entry; the final hop names the
+                      // category (a matching tab exists for the
+                      // kTheoryAreas categories).
+                      more: '${l.unitInfoMore} → ${l.infoListTheoryExpansion}'
+                          ' → ${l.infoListConversionsEntry}'
                           ' → ${converterCategoryLabel(cat, l)}',
                     ),
                   ),
