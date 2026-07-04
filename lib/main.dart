@@ -940,8 +940,10 @@ class _PagePeekOverlay extends StatelessWidget {
         child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
           decoration: BoxDecoration(
+            // Opaque enough that the bright equals glyph beneath cannot
+            // ghost through as a stray dash (device-found at alpha 0.45).
             color: (t.isDark ? Colors.black : Colors.white)
-                .withValues(alpha: 0.45),
+                .withValues(alpha: 0.80),
             borderRadius: BorderRadius.circular(14),
           ),
           child: Column(
