@@ -6,8 +6,9 @@ $ErrorActionPreference = 'Stop'
 Add-Type -AssemblyName System.Drawing
 $dir      = $PSScriptRoot
 $listing  = Join-Path $dir 'listing'
-$iconPath = 'C:\Users\ericn\dozenal_calc_flutter\assets\icon.png'
-$fontPath = 'C:\Users\ericn\dozenal_calc_flutter\assets\fonts\JetBrainsMono-Bold.ttf'
+$root     = Split-Path (Split-Path $dir -Parent) -Parent
+$iconPath = Join-Path $root 'assets\icon.png'
+$fontPath = Join-Path $root 'assets\fonts\JetBrainsMono-Bold.ttf'
 $bg = [System.Drawing.Color]::FromArgb(255,31,31,31)   # #1F1F1F
 
 function New-SquareLogo([int]$size, [string]$outPath) {
