@@ -40,8 +40,9 @@ List<ProseChapter> grundlagenChapters(String langTag) {
   if (c.startsWith('fa')) return _grundlagenChaptersFa();
   if (c.startsWith('ga')) return _grundlagenChaptersGa();
   if (c.startsWith('cy')) return _grundlagenChaptersCy();
-  if (c.startsWith('zh') && c.contains('hant'))
+  if (c.startsWith('zh') && c.contains('hant')) {
     return _grundlagenChaptersZhHant();
+  }
   if (c.startsWith('zh')) return _grundlagenChaptersZh();
   return _grundlagenChaptersDe();
 }

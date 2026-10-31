@@ -95,8 +95,9 @@ String _pubspecVersion() {
     r'^version:\s*([0-9]+\.[0-9]+\.[0-9]+)',
     multiLine: true,
   ).firstMatch(File('pubspec.yaml').readAsStringSync());
-  if (m == null)
+  if (m == null) {
     throw const FormatException('version not found in pubspec.yaml');
+  }
   return m.group(1)!;
 }
 
@@ -140,8 +141,9 @@ String _fenced(String md, String heading) {
   if (idx < 0) throw FormatException('Heading not found: $heading');
   final after = md.substring(idx);
   final open = RegExp(r'^```$', multiLine: true).firstMatch(after);
-  if (open == null)
+  if (open == null) {
     throw FormatException('Opening fence not found after $heading');
+  }
   final bodyStart = open.end + 1;
   final close = RegExp(
     r'^```$',
