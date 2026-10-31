@@ -2,7 +2,7 @@
 
 Referenz für das Editieren des Mathematik-Theoriekapitels in
 `lib/theory/<lang>/math_<lang>.dart` — die
-sprach-spezifische Aussprache-Konvention für Dozenal-Zahlen. Aus CLAUDE.md
+sprach-spezifische Aussprache-Konvention für Dozenal-Zahlen. Aus AGENTS.md
 (Info-Modal) ausgelagert, weil nur bei genau dieser Aufgabe gebraucht. **Vor
 Änderungen an Kapitel-2-Prosa hier nachschlagen.**
 

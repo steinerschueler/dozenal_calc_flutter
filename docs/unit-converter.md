@@ -3,7 +3,7 @@
 > **Status: UMGESETZT.** Ursprünglich der Entwurf zur Abnahme; inzwischen
 > ist alles implementiert (Fortschritts-Checkliste in §9, offene Ideen in
 > §10). Die Datei bleibt als Spezifikation/Referenz — bei Widersprüchen
-> gewinnt der Code bzw. CLAUDE.md.
+> gewinnt der Code bzw. docs/rechner-seiten.md.
 
 ## 1. Zweck & Einordnung
 

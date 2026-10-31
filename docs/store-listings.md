@@ -1,9 +1,9 @@
 # Store-Listings: App-Namen-Konvention + Screenshots
 
-Referenz für Play-Store-Listing-Arbeit (App-Namen, Screenshots). Aus CLAUDE.md
+Referenz für Play-Store-Listing-Arbeit (App-Namen, Screenshots). Aus docs/build-und-assets.md
 ausgelagert — nur beim Hinzufügen einer Sprache oder bei Listing-/Asset-Arbeit
 gebraucht. Der `sync_play_listings` / `publishListing` / `publishBundle`-
-Workflow bleibt in CLAUDE.md (Befehle → Automatisches Listing-Push).
+Workflow bleibt in docs/build-und-assets.md (Befehle → Automatisches Listing-Push).
 
 **iOS-Keywords** (App-Store-Connect-only, kein Play-Feld): siehe
 `docs/app-store-keywords.md` — pro-Locale-Keyword-Strings für alle 14 Sprachen.

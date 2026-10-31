@@ -1,8 +1,8 @@
 # Release-Workflow: Versionshinweise + Listing-Push
 
-Operations-Referenz für den Release-Zeitpunkt. Aus CLAUDE.md (Release-Builds /
+Operations-Referenz für den Release-Zeitpunkt. Aus docs/build-und-assets.md (Release-Builds /
 Automatisches Listing-Push) ausgelagert — nur beim Bauen+Veröffentlichen
-gebraucht. Die Build-Befehle selbst stehen in CLAUDE.md.
+gebraucht. Die Build-Befehle selbst stehen in docs/build-und-assets.md.
 
 ## Mehrsprachige Play-Console-Versionshinweise
 

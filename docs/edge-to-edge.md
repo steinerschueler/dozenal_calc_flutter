@@ -1,9 +1,9 @@
 # Edge-to-edge: Warum kein SystemChrome, welche Warnungen bleiben
 
-Hintergrund-Referenz zum Edge-to-edge-Abschnitt in CLAUDE.md. Ausgelagert,
+Hintergrund-Referenz zum Edge-to-edge-Abschnitt in AGENTS.md. Ausgelagert,
 weil nur beim Debuggen von Play-Console-„randlose Anzeige"/„nicht mehr
 unterstützte APIs"-Warnungen oder bei einem Flutter-Stable-Upgrade relevant.
-Die handlungsleitenden Regeln stehen in CLAUDE.md; hier liegt das *Warum*.
+Die handlungsleitenden Regeln stehen in AGENTS.md; hier liegt das *Warum*.
 
 ## Warum keine `SystemChrome.*`-Calls in `main.dart`
 

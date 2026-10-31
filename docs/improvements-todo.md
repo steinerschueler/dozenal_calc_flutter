@@ -151,7 +151,7 @@ Sprachen)** + SharedPreferences-Flag. (c) ist am billigsten, sobald Theorie pass
 `lib/app_theme.dart`, `ThemeNotifier` (`theme_mode_v1`,
 Dunkel/Hell/System) + `ThemeScope`, Settings-Zeile „Erscheinungsbild";
 alle Custom-Painter lesen die Palette (`AppColors.of` mit
-Dark-Fallback ohne Scope). Details: CLAUDE.md Theming-Abschnitt.
+Dark-Fallback ohne Scope). Details: docs/einstellungen-und-theming.md Theming-Abschnitt.
 
 **Problem (Ausgangslage):** Nur Dark-Theme; Farben waren als
 `const Color(...)` über die Custom-Painter verstreut.
