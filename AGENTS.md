@@ -111,4 +111,5 @@ Entwicklungs-Sandbox unter <https://github.com/Bawdyness/dozenal_calc>. Paket- u
 
 - Keine Analytics, keine Plattform-Berechtigungen, keine neuen Netzziele ohne `npf.toml` und Datenschutzerklärung.
 - Der Tablet-Emulator ist bei wiederholten Installs instabil: physisches Gerät nutzen oder den Emulator neu starten.
-- Der Web-Build lädt von Google-Hosts, siehe «Netzziele» in [docs/architektur.md](docs/architektur.md).
+- Web-Build: Nach `flutter build web --release` immer `python3 -I tool/fetch_web_fonts.py`, sonst fehlen Zeichen in
+  CJK und anderen Schriften. `web_bootstrap_test.dart` sichert die Konfiguration, der Nachweis ohne Google-Hosts ist ein Browser-Mitschnitt.

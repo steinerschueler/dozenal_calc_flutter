@@ -44,7 +44,11 @@ flutter build apk --release       # Android (signiert via android/key.properties
 flutter build appbundle --release # Android Play-Store-Bundle
 flutter build ios --release       # iOS (benötigt Xcode und Apple Developer)
 flutter build web --release       # statische Seite unter build/web
+python3 -I tool/fetch_web_fonts.py # danach: Ersatzschriften nach build/web/fonts
 ```
+
+Der Web-Build lädt alles von der eigenen Seite, Besucher kontaktieren keine Google-Hosts. Die Schriften belegen rund
+24 MB, der Browser holt nur die jeweils nötigen.
 
 ## Entwicklung
 
@@ -128,8 +132,7 @@ Lokalisierte Hybrid-Fassungen mit Kurzzusammenfassung in jeder Sprache und engli
 
 Dozenal Calc erhebt, speichert und übermittelt keinerlei Nutzerdaten. Die App läuft vollständig offline und fordert keine
 Plattform-Berechtigungen an. Die vollständige Datenschutzerklärung ist in der App ausgeliefert (Info →
-Datenschutzerklärung) und liegt unter [`legal/privacy-policy.de.md`](legal/privacy-policy.de.md). Für den Web-Build gilt
-die Ausnahme unter «Netzziele» in [docs/architektur.md](docs/architektur.md).
+Datenschutzerklärung) und liegt unter [`legal/privacy-policy.de.md`](legal/privacy-policy.de.md).
 
 ## Kontakt
 
