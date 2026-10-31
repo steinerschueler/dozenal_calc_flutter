@@ -1,9 +1,9 @@
 # Edge-to-edge: Warum kein SystemChrome, welche Warnungen bleiben
 
-Hintergrund-Referenz zum Edge-to-edge-Abschnitt in CLAUDE.md. Ausgelagert,
+Hintergrund-Referenz zum Edge-to-edge-Abschnitt in docs/android-nativ.md. Ausgelagert,
 weil nur beim Debuggen von Play-Console-„randlose Anzeige"/„nicht mehr
 unterstützte APIs"-Warnungen oder bei einem Flutter-Stable-Upgrade relevant.
-Die handlungsleitenden Regeln stehen in CLAUDE.md; hier liegt das *Warum*.
+Die handlungsleitenden Regeln stehen in AGENTS.md; hier liegt das *Warum*.
 
 ## Warum keine `SystemChrome.*`-Calls in `main.dart`
 
@@ -21,7 +21,7 @@ Calls.
 
 Die Play-Console-Warnungen »randlose Anzeige funktioniert möglicherweise
 nicht« und »nicht mehr unterstützte APIs« bleiben nach Build 10 sichtbar. Die
-geflaggten Stellen verweisen auf zwei Quellen außerhalb unseres Codes:
+geflaggten Stellen verweisen auf zwei Quellen ausserhalb unseres Codes:
 
 1. **`io.flutter.plugin.platform.e.a`** — obfuscated
    `PlatformPlugin.setSystemChromeSystemUIOverlayStyle`. Die Flutter-Engine

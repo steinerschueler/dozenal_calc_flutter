@@ -22,7 +22,7 @@ App ID `app.weltanschauung.dozenal` matches the Play/iOS/macOS/Flathub bundle ID
 
 ## The build recipe, in short
 
-- Pins Flutter to **3.41.8** (the version in `.github/workflows/ci.yml`) via the
+- Pins Flutter to **3.41.8** (the version matching the `v1.5.1` tag; raise it with the next tag) via the
   `flutter` srclib. **Keep this in lockstep with CI** when you bump Flutter.
 - Strips the non-Android Flutter targets (`ios linux macos web watch`).
 - Builds a **universal APK** (`flutter build apk --release`, both ABIs in one file).

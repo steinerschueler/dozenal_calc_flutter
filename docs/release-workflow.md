@@ -1,16 +1,16 @@
 # Release-Workflow: Versionshinweise + Listing-Push
 
-Operations-Referenz für den Release-Zeitpunkt. Aus CLAUDE.md (Release-Builds /
+Operations-Referenz für den Release-Zeitpunkt. Aus docs/build-und-assets.md (Release-Builds /
 Automatisches Listing-Push) ausgelagert — nur beim Bauen+Veröffentlichen
-gebraucht. Die Build-Befehle selbst stehen in CLAUDE.md.
+gebraucht. Die Build-Befehle selbst stehen in docs/build-und-assets.md.
 
 ## Mehrsprachige Play-Console-Versionshinweise
 
-Abschließender Schritt nach jedem Release-Build: ein Block pro aktiv
+Abschliessender Schritt nach jedem Release-Build: ein Block pro aktiv
 unterstützter Listing-Locale. Die App enthält **vierzehn** Sprachen; Play
 Console hat für **zwölf** davon einen Release-Notes-Slot (DE, EN, FR, ES,
 IT, FA, RU, HI, ZH-Hans, ZH-Hant, JA, AR — Play-Tags de-DE/en-US/fr-FR/
-es-ES/it-IT/fa-AF/ru-RU/hi-IN/zh-CN/zh-TW/ja-JP/ar; maßgeblich ist die
+es-ES/it-IT/fa-AF/ru-RU/hi-IN/zh-CN/zh-TW/ja-JP/ar; massgeblich ist die
 `_localeMap` in `tool/sync_play_listings.dart`). Nur Irisch (GA) und
 Walisisch (CY) haben keinen Slot — für sie werden keine Notes
 geschrieben. Persisch wird in Play Console nur als `fa-AF` gelistet
@@ -166,8 +166,8 @@ fastlane deliver --api_key_path ~/keys/appstore_api_key.json \
 - **Derselbe Text** geht an iOS und macOS; nur **Screenshots** unterscheiden
   sich (`fastlane/screenshots/ios/<locale>/` mit Apple-Watch-Shots, da die
   Watch-App in der iOS-App steckt; `…/osx/<locale>/` mit Mac-Shots). deliver
-  ordnet Screenshots per Pixelmaß dem Display-Typ zu. macOS-Größen: 1280×800 /
-  1440×900 / 2560×1600 / 2880×1800. Watch (Series-Größen): u. a. 416×496.
+  ordnet Screenshots per Pixelmass dem Display-Typ zu. macOS-Grössen: 1280×800 /
+  1440×900 / 2560×1600 / 2880×1800. Watch (Series-Grössen): u. a. 416×496.
 - **Credentials:** `~/keys/appstore_api_key.json` (aus `AuthKey_RMAP26R27U.p8`
   + Key-ID/Issuer gebaut), **nicht** im Repo — parallel zu den anderen Secrets.
 - `submit_for_review` ist im Deliverfile **aus** (DRAFT-Verhalten analog zum

@@ -1,39 +1,69 @@
 # Dozenal Calc
 
-Ein wissenschaftlicher Taschenrechner, der nativ in **Basis 12** (dozenal)
-rechnet — mit eigens gezeichneten Ziffernsymbolen, exakter
-Rational-Arithmetik mit Periodenerkennung und einem integrierten
-didaktischen Kapitelwerk zum Dozenalsystem.
+## Zweck
 
-Flutter-Port der ursprünglichen Rust + egui Implementierung unter
-[Bawdyness/dozenal_calc](https://github.com/Bawdyness/dozenal_calc).
-Dieses Repository:
+Ein wissenschaftlicher Taschenrechner, der nativ in **Basis 12** (dozenal) rechnet, mit eigens gezeichneten
+Ziffernsymbolen, exakter Rational-Arithmetik mit Periodenerkennung und einem integrierten didaktischen Kapitelwerk zum
+Dozenalsystem.
+
+Flutter-Port der ursprünglichen Rust- und egui-Implementierung unter
+[Bawdyness/dozenal_calc](https://github.com/Bawdyness/dozenal_calc). Dieses Repository:
 [steinerschueler/dozenal_calc_flutter](https://github.com/steinerschueler/dozenal_calc_flutter).
 
-## Funktionsumfang
+### Funktionsumfang
 
-- **Rechner** — zwölf eigene Ziffern-Glyphen, Addition / Subtraktion /
-  Multiplikation / Division / Exponentiation / Paralleladdition (⊕) /
-  Quadrat- und n-te Wurzel / Logarithmus / trigonometrische und
-  hyperbolische Funktionen. Der Ausdrucksparser läuft auf zwei Schienen
-  parallel: eine exakte `Rational`-Schiene auf `BigInt`-Basis, die
-  Periodizität bewahrt (z. B. `1/7` wird als `0.186A3` mit Überstrich +
-  Punktmarker dargestellt), und eine `f64`-Schiene, die die irrationalen
-  Fälle abfängt.
-- **Speicher** — ein Slot, `STO` / `RCL` / `MC`, mit exaktem
-  Rational-Round-Trip wenn möglich.
-- **Modi** — Winkel (`RAD` / `DEG` / `GRD`), Anzeige-Basis (Dozenal ↔
-  Dezimal zur Inspektion), Inversen-Umschaltung beim zweiten Tippen einer
-  beliebigen Trig-/Hyperbolik-Taste.
-- **Info-Bereich** — zwölf Kapitel mit Hintergrund: wie das Symbolsystem
-  funktioniert, warum die Basis 12 schönere Brüche als Basis 10 ergibt,
-  das regelmäßige Zwölfeck, der platonische Dodekaeder, Zodiak-Astronomie,
-  Fingerzählen, imperiale Einheiten, TGM. Die beiden Geometrie-Kapitel
-  enthalten benutzerdefinierte Illustrationen.
+- **Rechner:** zwölf eigene Ziffern-Glyphen, Addition, Subtraktion, Multiplikation, Division, Exponentiation,
+  Paralleladdition (⊕), Quadrat- und n-te Wurzel, Logarithmus, trigonometrische und hyperbolische Funktionen. Der
+  Ausdrucksparser läuft auf zwei Schienen: eine exakte `Rational`-Schiene auf `BigInt`-Basis, die Periodizität bewahrt
+  (`1/7` erscheint als `0.186A35` mit Überstrich und Punktmarker), und eine `f64`-Schiene für die irrationalen Fälle.
+- **Einheitenrechner und Werterechner:** Einheiten, Edelmetalle und Währungen als weitere Pager-Seiten, per Wischen
+  erreichbar. Ergebnisse wandern per Taste zwischen den Rechnern.
+- **Speicher:** ein Slot, `STO`, `RCL`, `MC`, mit exaktem Rational-Round-Trip, wenn möglich.
+- **Modi:** Winkel (`RAD`, `DEG`, `GRD`), Anzeige-Basis (Dozenal oder Dezimal), Inversen-Umschaltung beim zweiten Tippen
+  einer Trig- oder Hyperbolik-Taste.
+- **Info-Bereich:** Theorie-Kapitel mit Hintergrund: wie das Symbolsystem funktioniert, warum die Basis 12 schönere
+  Brüche als Basis 10 ergibt, das regelmässige Zwölfeck, der platonische Dodekaeder, Zodiak-Astronomie, Fingerzählen,
+  imperiale Einheiten, TGM, dazu Handbücher und Empfehlungen, teils mit eigenen Illustrationen.
 
-## Repo-Aufbau
+## Benutzung
 
+```bash
+flutter pub get
+flutter run                   # aktuelle Plattform
+flutter run -d chrome         # Web
 ```
+
+Konfiguration: Der Android-Release-Build liest `android/key.properties` mit dem Pfad zum Keystore (siehe Kommentare in
+`android/app/build.gradle.kts`). Ohne diese Datei fällt der Build auf Debug-Signing zurück, was für lokales Testen
+reicht, aber nicht für die Store-Ausgabe.
+
+Release-Builds:
+
+```bash
+flutter build apk --release       # Android (signiert via android/key.properties)
+flutter build appbundle --release # Android Play-Store-Bundle
+flutter build ios --release       # iOS (benötigt Xcode und Apple Developer)
+flutter build web --release       # statische Seite unter build/web
+```
+
+## Entwicklung
+
+- Prüfbefehl: `flutter analyze`
+- Tests: `flutter test`
+- Secrets-Prüfung: gitleaks läuft als pre-commit-Hook auf den gestagten Dateien.
+- Flutter-Version: dieselbe wie in `.github/workflows/ci.yml`, weil das SDK transitive Pakete pinnt.
+
+`flutter pub get` meldet transitive Abhängigkeiten (etwa `cli_util`, `test_api`, `xml`) mit
+neueren Versionen, die mit den aktuellen Constraints inkompatibel sind. Diese Pins kommen vom Flutter-SDK, nicht von
+`pubspec.yaml`, weshalb weder `flutter pub upgrade` noch `flutter pub upgrade --major-versions` sie auf dem
+Stable-Channel anhebt. Nach jedem Flutter-Minor-Stable-Release den Upgrade erneut versuchen und Prüfbefehl und Tests
+laufen lassen. Bis dahin ist die Warnung nur informativ.
+
+Weiter: [Architektur](docs/architektur.md), [Entwicklung](docs/entwicklung.md), [Änderungen](CHANGELOG.md).
+
+### Repo-Aufbau
+
+```text
 lib/
   state.dart              — DozenalCalcState (ChangeNotifier)
   display.dart            — TwoLineDisplay (adaptive Höhe, State A/B/C)
@@ -44,7 +74,7 @@ lib/
   app_layout.dart         — Display-Höhen-Formel + Tablet-Proportionen
   info_pages.dart         — Info-Modal-Navigation (Routing)
   theory/                 — Theorie-Kapitel (Prosa + Illustrationen)
-  manual/                 — Bedienhandbuch (Haupt- + Umrechner)
+  manual/                 — Bedienhandbuch (Haupt-, Umrechner, Werterechner)
   privacy_page.dart       — gebündelte Datenschutzerklärung
   license_page.dart       — gebündelte Lizenz (MIT)
   markdown_page.dart      — geteilte Markdown-Asset-Rendering-Komponente
@@ -57,7 +87,7 @@ lib/
                             Ergebnisformatierung
     dozenal_converter.dart
     dozenal_digit.dart
-test/                     — über 400 Tests über Logik, State und Layout
+test/                     — Tests über Logik, State und Layout
 tool/                     — Icon-, Kompass-, Feature-Graphic-Generatoren
 legal/                    — Datenschutzerklärung (.md + .html)
 assets/                   — icon.png, compass.png, feature_graphic.png
@@ -65,41 +95,7 @@ screenshots/              — Play-Store-Screenshots (Phone + Tablet)
 .github/workflows/ci.yml  — analyze + test bei Push / PR
 ```
 
-## Bauen & Ausführen
-
-```bash
-flutter pub get
-flutter run                   # aktuelle Plattform
-flutter run -d chrome         # Web
-flutter test                  # gesamte Suite
-```
-
-`flutter pub get` meldet sechs transitive Abhängigkeiten (`meta`,
-`vector_math`, `cli_util`, `matcher`, `test_api`, `xml`) mit neueren
-verfügbaren Versionen, die mit den aktuellen Constraints inkompatibel
-sind. Diese Pins kommen vom Flutter-SDK selbst, nicht von diesem
-`pubspec.yaml`, weshalb weder `flutter pub upgrade` noch
-`flutter pub upgrade --major-versions` sie auf dem Stable-Channel
-anhebt. Nach jedem Flutter-Minor-Stable-Release den Upgrade erneut
-versuchen und analyze + Tests laufen lassen; bis dahin ist die Warnung
-nur informativ.
-
-Release-Builds:
-
-```bash
-flutter build apk --release       # Android (signiert via android/key.properties)
-flutter build appbundle --release # Android Play-Store-Bundle
-flutter build ios --release       # iOS (benötigt Xcode + Apple Developer)
-flutter build web --release       # statische Seite unter build/web
-```
-
-Der Android-Release-Build erwartet einen vom Entwickler bereitgestellten
-Keystore unter dem in `android/key.properties` deklarierten Pfad — siehe
-Kommentare in `android/app/build.gradle.kts`. Ohne diese Datei fällt der
-Build auf Debug-Signing zurück, was für lokales Testen reicht, aber nicht
-für die Store-Distribution.
-
-## Icon- und Splash-Assets regenerieren
+### Icon- und Splash-Assets regenerieren
 
 Das 1024×1024-Quell-PNG unter `assets/icon.png` wird programmatisch erzeugt:
 
@@ -109,11 +105,9 @@ dart run flutter_launcher_icons             # → Plattform-Icons
 dart run flutter_native_splash:create       # → Plattform-Splash-Screens
 ```
 
-Das Kompass-Bild (`assets/compass.png`) ist für Marketing-/Hero-Kontexte
-gedacht und wird per `tool/generate_compass.dart` nach demselben Muster
-erzeugt. Das 1024×500 Play-Store-Feature-Graphic
-(`assets/feature_graphic.png`) wird per
-`tool/generate_feature_graphic.dart` erzeugt:
+Das Kompass-Bild (`assets/compass.png`) ist für Marketing- und Hero-Kontexte gedacht und entsteht per
+`tool/generate_compass.dart` nach demselben Muster. Das 1024×500 Play-Store-Feature-Graphic
+(`assets/feature_graphic.png`) entsteht per `tool/generate_feature_graphic.dart`:
 
 ```bash
 flutter test tool/generate_feature_graphic.dart
@@ -123,23 +117,20 @@ flutter test tool/generate_feature_graphic.dart
 
 Copyright (c) 2026 Eric Naville.
 
-Dieses Projekt steht unter der **MIT-Lizenz** — Volltext in
-[`LICENSE`](LICENSE). Kurz gesagt: du darfst das Werk für jeden Zweck
-nutzen, ändern und weitergeben (auch kommerziell); der Copyright-Hinweis
-und der MIT-Lizenztext müssen in abgeleiteten Werken erhalten bleiben.
+Dieses Projekt steht unter der **MIT-Lizenz**, Volltext in [`LICENSE`](LICENSE). Kurz gesagt: Du darfst das Werk für
+jeden Zweck nutzen, ändern und weitergeben, auch kommerziell. Der Copyright-Hinweis und der MIT-Lizenztext müssen in
+abgeleiteten Werken erhalten bleiben.
 
-Lokalisierte Hybrid-Fassungen mit Kurzzusammenfassung in jeder
-Sprache plus englischem MIT-Volltext liegen unter
+Lokalisierte Hybrid-Fassungen mit Kurzzusammenfassung in jeder Sprache und englischem MIT-Volltext liegen unter
 [`legal/license.<code>.md`](legal/) (vierzehn Sprachen).
 
 ## Datenschutz
 
-Dozenal Calc erhebt, speichert und übermittelt keinerlei Nutzerdaten.
-Die App läuft vollständig offline und fordert keine Plattform-Berechtigungen
-an. Die vollständige Datenschutzerklärung ist in der App ausgeliefert
-(Info → Datenschutzerklärung) und liegt unter
-[`legal/privacy-policy.de.md`](legal/privacy-policy.de.md).
+Dozenal Calc erhebt, speichert und übermittelt keinerlei Nutzerdaten. Die App läuft vollständig offline und fordert keine
+Plattform-Berechtigungen an. Die vollständige Datenschutzerklärung ist in der App ausgeliefert (Info →
+Datenschutzerklärung) und liegt unter [`legal/privacy-policy.de.md`](legal/privacy-policy.de.md). Für den Web-Build gilt
+die Ausnahme unter «Netzziele» in [docs/architektur.md](docs/architektur.md).
 
 ## Kontakt
 
-dozenal@weltanschauung.app
+<dozenal@weltanschauung.app>

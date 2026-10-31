@@ -17,7 +17,7 @@ AC, dedup bei wiederholtem `=`), Push am Ende von `calculateResult`,
 `recallHistory` wie `Ans` (exakt via `RatLit`, sonst Ziffern). **Einstieg
 (Produktentscheidung): Abwärts-Wisch auf dem Display** (`TwoLineDisplay.onSwipeDown`)
 → Bottom-Sheet mit den Rechnungen (neueste zuerst, je read-only `TwoLineDisplay`
-mit neuem `showCursor`-Flag), Tap = Recall + schließen. ARB
+mit neuem `showCursor`-Flag), Tap = Recall + schliessen. ARB
 `historyTitle`/`historyEmpty` (14 Sprachen). Ohne Persistenz (MVP).
 *Hinweis: Wisch-Geste ist bewusst undiscoverable — optionaler Folgeschritt:
 Erwähnung in „Bedienung des Rechners".*
@@ -38,9 +38,9 @@ diskoverbar, aber Platzkonkurrenz mit M-/DEG/DOZ-Indikatoren; (b) Swipe-Geste
 auf dem Display, kollisionsarm gegen Tap/Long-Press, aber undiskoverbar;
 (c) Eintrag „Verlauf" in der Info-Liste, sauber aber weit vom Rechner weg.
 UI dann via `showModalBottomSheet` (Einträge „Ausdruck = Ergebnis", Tap →
-recall + schließen).
+recall + schliessen).
 
-**Constraint:** Mittlerer-großer Aufwand. **Keine** Store-Screenshot-Änderung,
+**Constraint:** Mittlerer-grosser Aufwand. **Keine** Store-Screenshot-Änderung,
 solange der Einstieg nicht über eine neue Keypad-Taste läuft.
 
 ### 2. M+ / M− — ✅ erledigt (Logik + Hoch + Breit)
@@ -95,14 +95,14 @@ die Pfeile. Beide Pfeile (Hoch + Breit) haben Semantics-Labels
 (`a11yPageFunc`/`a11yPageSets`, 14 Sprachen). Inline-Anhängen (16 statt 13
 Spalten) war zuvor verworfen worden, weil es die Fit-Garantie bricht.
 
-**Problem (Ausgangslage):** Sehr große/kleine Zahlen sind weder eingebbar (`EXP`/`×10ⁿ`) noch
+**Problem (Ausgangslage):** Sehr grosse/kleine Zahlen sind weder eingebbar (`EXP`/`×10ⁿ`) noch
 lesbar (lange exakte Ergebnisse werden hart geschnitten).
 
 **Lösung:** `Exp`-Token (`×10ⁿ`, in Doz mit 10 = zwölf) + Lexer/Parser-
 Erweiterung in `expression.dart`; Ergebnis-Formatierung mit Mantisse +
 Exponent ab einer Stellen-Schwelle.
 
-**Constraint:** Neue Taste + Eval + Formatierung. Screenshots. Größer.
+**Constraint:** Neue Taste + Eval + Formatierung. Screenshots. Grösser.
 
 ---
 
@@ -151,7 +151,7 @@ Sprachen)** + SharedPreferences-Flag. (c) ist am billigsten, sobald Theorie pass
 `lib/app_theme.dart`, `ThemeNotifier` (`theme_mode_v1`,
 Dunkel/Hell/System) + `ThemeScope`, Settings-Zeile „Erscheinungsbild";
 alle Custom-Painter lesen die Palette (`AppColors.of` mit
-Dark-Fallback ohne Scope). Details: CLAUDE.md Theming-Abschnitt.
+Dark-Fallback ohne Scope). Details: docs/einstellungen-und-theming.md Theming-Abschnitt.
 
 **Problem (Ausgangslage):** Nur Dark-Theme; Farben waren als
 `const Color(...)` über die Custom-Painter verstreut.

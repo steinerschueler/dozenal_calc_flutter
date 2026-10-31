@@ -1,0 +1,14 @@
+# npf.toml – Projektsteckbrief
+schema = 2
+klasse = "oeffentlich"
+art = "app"
+sprachen = ["dart", "python"]  # python: tool/screenshots. Swift, Ruby und PowerShell haben noch kein Profil (CC-01).
+personendaten = "keine"
+phase = "aktiv"
+groesse = "gross"              # Flutter-App und eigenständige Watch-App: mehr als eine lauffähige Einheit
+abhaengig_von = []
+# Nur der Web-Build lädt von diesen Hosts (CanvasKit, Ersatzschriften), Details in docs/architektur.md.
+# Android, iOS, macOS, Windows, Linux und watchOS bauen sich ohne Netzziel.
+netz = ["www.gstatic.com", "fonts.gstatic.com"]
+
+[ausnahmen]
