@@ -34,7 +34,7 @@ Builds:
     # Pin Flutter to the exact version CI uses (.github/workflows/ci.yml).
     # Bump this in lockstep whenever the CI Flutter version changes.
     srclibs:
-      - flutter@3.41.8
+      - flutter@3.47.9
     # Drop the non-Android Flutter targets so only the Android build remains
     # in the tree the F-Droid scanner sees.
     rm:
