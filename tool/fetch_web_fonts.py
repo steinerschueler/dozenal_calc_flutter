@@ -20,7 +20,9 @@ FONT_SIGNATURES = (b"wOF2", b"wOFF", b"\x00\x01\x00\x00", b"OTTO", b"true")
 
 def font_paths(compiled_app: Path) -> list[str]:
     """Return the font paths named by the compiled app, without duplicates."""
-    return sorted(set(FONT_PATH_PATTERN.findall(compiled_app.read_text(errors="ignore"))))
+    return sorted(
+        set(FONT_PATH_PATTERN.findall(compiled_app.read_text(errors="ignore")))
+    )
 
 
 def download_font(font_path: str, target_dir: Path) -> None:
@@ -29,7 +31,7 @@ def download_font(font_path: str, target_dir: Path) -> None:
     if target.exists():
         return
     target.parent.mkdir(parents=True, exist_ok=True)
-    with urllib.request.urlopen(FONT_SOURCE_URL + font_path, timeout=60) as response:
+    with urllib.request.urlopen(FONT_SOURCE_URL + font_path, timeout=60) as response:  # noqa: S310
         content = response.read()
     if not content.startswith(FONT_SIGNATURES):
         raise ValueError(f"Keine Schriftdatei: {font_path}")
@@ -42,14 +44,24 @@ def download_font(font_path: str, target_dir: Path) -> None:
 def main() -> int:
     compiled_app = BUILD_DIR / "main.dart.js"
     if not compiled_app.exists():
-        print("build/web/main.dart.js fehlt: zuerst flutter build web ausführen.", file=sys.stderr)
+        print(
+            "build/web/main.dart.js fehlt: zuerst flutter build web ausführen.",
+            file=sys.stderr,
+        )
         return 1
     paths = font_paths(compiled_app)
     if not paths:
-        print("Keine Schriftpfade gefunden: Das Format von main.dart.js hat sich geändert.", file=sys.stderr)
+        print(
+            "Keine Schriftpfade gefunden: Das Format von main.dart.js hat sich geändert.",
+            file=sys.stderr,
+        )
         return 1
     with ThreadPoolExecutor(max_workers=DOWNLOAD_WORKERS) as pool:
-        list(pool.map(lambda font_path: download_font(font_path, BUILD_DIR / "fonts"), paths))
+        list(
+            pool.map(
+                lambda font_path: download_font(font_path, BUILD_DIR / "fonts"), paths
+            )
+        )
     print(f"{len(paths)} Schriften in {BUILD_DIR / 'fonts'}")
     return 0
 

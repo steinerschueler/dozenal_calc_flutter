@@ -1,3 +1,11 @@
 config:
   MD013: false
   MD041: false
+  MD024:
+    siblings_only: true # Keep a Changelog repeats Added, Changed and so on per version
+  MD036: false # older research notes use bold lines as labels
+  MD060: false # npf tables use the compact |---| form
+ignores:
+  - legal/**
+  - store/**
+  - ios/**

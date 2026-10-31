@@ -7,13 +7,14 @@ Aus dem früheren Gesamtdokument übernommen. Verweise wie «oben» oder «siehe
 flutter pub get
 flutter run                   # aktuelle Plattform
 flutter run -d chrome         # Web
-flutter analyze               # was CI ausführt
+pre-commit run --all-files    # Prüfbefehl (auch in der CI: format und Analyse)
 flutter test                  # gesamte Suite (592 Tests in 34 Dateien, Stand 31.10.2026)
 flutter test test/rational_test.dart           # einzelne Datei
 flutter test --plain-name "parses 1/7"         # einzelner Test per Name
 ```
 
 Test-Routing (für gezielte Edits):
+
 - `state_test.dart` — Orchestrator inkl. Handler-Pfade, mit Abstand die
   grösste Datei.
 - `rational_test.dart` + `rat_parser_test.dart` — exakte Rational-Schiene.
@@ -83,7 +84,7 @@ Test-Routing (für gezielte Edits):
   Xcode; Scope = Schnittmenge beider Auswerter).
 
 CI (`.github/workflows/ci.yml`) ist auf Flutter 3.47.9 stable festgenagelt
-und führt `pub get --enforce-lockfile`, `analyze` und `test` aus. Das Flutter-SDK selbst pinnt transitive Abhängigkeiten (etwa `cli_util`, `test_api`, `xml`) auf Versionen, die `pub outdated` flaggt — das ist
+und führt `pub get --enforce-lockfile`, `dart format`, `tool/analyze_changed.py` und `test` aus. Das Flutter-SDK selbst pinnt transitive Abhängigkeiten (etwa `cli_util`, `test_api`, `xml`) auf Versionen, die `pub outdated` flaggt — das ist
 erwartet, kein Bug. Nach jedem Flutter-Minor-Stable-Release erneut prüfen.
 
 ## Manuelles Testen auf physischem Gerät

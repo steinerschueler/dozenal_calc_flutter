@@ -29,10 +29,9 @@ Aus dem früheren Gesamtdokument übernommen. Verweise wie «oben» oder «siehe
   [ADR 0001](decisions/0001-eszett-in-app-texten.md).
 - Beim Portieren aus Rust die Rust-Funktions-/Struct-Namen in Kommentaren
   beibehalten — sie sind der Lookup-Schlüssel für Verhaltens-Querverweise.
-- **Lints:** `analysis_options.yaml` aktiviert nur das
-  `package:flutter_lints/flutter.yaml`-Standardset, keine projekt-spezifischen
-  Zusatzregeln. `flutter analyze` muss aber sauber bleiben — CI fängt
-  Verstösse.
+- **Lints:** `analysis_options.yaml` nutzt `very_good_analysis` in fester Version (CC-01, CC-04). Der Altbestand wird
+  Datei für Datei bereinigt: `tool/analyze_changed.py` lässt Fehler nirgends und Warnungen und Lint-Befunde in geänderten
+  Dateien nicht durch (CC-41). Die CI prüft dasselbe, dazu `dart format`.
 
 ## Umgebungs-Hinweise
 

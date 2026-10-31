@@ -52,9 +52,8 @@ Der Web-Build lädt alles von der eigenen Seite, Besucher kontaktieren keine Goo
 
 ## Entwicklung
 
-- Prüfbefehl: `flutter analyze`
-- Tests: `flutter test`
-- Secrets-Prüfung: gitleaks läuft als pre-commit-Hook auf den gestagten Dateien.
+- Prüfbefehl: `pre-commit run --all-files`. Lint-Befunde blockieren nur in geänderten Dateien (`tool/analyze_changed.py`).
+- Tests: `pre-commit run --all-files --hook-stage pre-push`
 - Flutter-Version: dieselbe wie in `.github/workflows/ci.yml`, weil das SDK transitive Pakete pinnt.
 
 `flutter pub get` meldet transitive Abhängigkeiten (etwa `cli_util`, `test_api`, `xml`) mit

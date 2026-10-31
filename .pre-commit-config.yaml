@@ -8,3 +8,50 @@ repos:
         entry: gitleaks protect --staged --redact --no-banner
         pass_filenames: false
         stages: [pre-commit]
+      - id: dart-format
+        name: dart format
+        language: system
+        entry: dart format --set-exit-if-changed
+        types: [dart]
+        stages: [pre-commit]
+      - id: dart-analyze-changed
+        name: dart analyze (geänderte Dateien, CC-41)
+        language: system
+        entry: python3 -I tool/analyze_changed.py
+        pass_filenames: false
+        types: [dart]
+        stages: [pre-commit]
+      # Older Python files in tool/screenshots follow when they change (CC-41).
+      - id: ruff-format
+        name: ruff format
+        language: system
+        entry: uvx ruff@0.17.2 format
+        files: ^tool/(analyze_changed|fetch_web_fonts)\.py$
+        stages: [pre-commit]
+      - id: ruff-check
+        name: ruff check
+        language: system
+        entry: uvx ruff@0.17.2 check --fix --select E,F,I,UP,B,C90,PL,BLE,S --line-length 120
+        files: ^tool/(analyze_changed|fetch_web_fonts)\.py$
+        stages: [pre-commit]
+      - id: mypy
+        name: mypy
+        language: system
+        entry: uvx mypy@2.4.0 --strict
+        files: ^tool/(analyze_changed|fetch_web_fonts)\.py$
+        stages: [pre-commit]
+      - id: flutter-test
+        name: flutter test
+        language: system
+        entry: flutter test --coverage
+        pass_filenames: false
+        stages: [pre-push]
+  - repo: https://github.com/DavidAnson/markdownlint-cli2
+    rev: v0.23.3
+    hooks:
+      - id: markdownlint-cli2
+        stages: [pre-commit]
+  - repo: https://github.com/commitizen-tools/commitizen
+    rev: v4.19.3
+    hooks:
+      - id: commitizen
