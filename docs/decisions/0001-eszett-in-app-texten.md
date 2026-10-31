@@ -1,5 +1,5 @@
 ---
-status: vorgeschlagen
+status: akzeptiert
 date: 2026-10-31
 ---
 
@@ -27,4 +27,3 @@ Texte bleiben Hochdeutsch: ARB, Theorie, Handbuch, Empfehlungen, `legal/` und `s
 
 - Das Eszett-Skript aus DOK-62 muss `legal/` und `store/` ausnehmen.
 - Ältere Dateien unter `docs/` enthalten noch Eszett. Sie werden umgestellt, wenn sie ohnehin geändert werden.
-- Dieser Entscheid wird akzeptiert oder verworfen, sobald Eric ihn gelesen hat.
