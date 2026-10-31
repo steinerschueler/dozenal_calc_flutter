@@ -1292,7 +1292,7 @@ List<ManualChapter> _assetManualChaptersGa() => const [
       't-áireamhán luacha. Tiontaíonn sé meáchain mhiotal lómhar agus '
       'sonraíochtaí airgeadraí go cruinn, déanann sé meastachán ar a '
       'luach in airgeadra tagartha, agus déanann sé comparáid idir mar a '
-      'sheas an luach sin thar na céadta bliain.'
+      'sheas an luach sin thar na céadta bliain.',
     ),
     _H('Anonn is anall'),
     _P(
@@ -1300,20 +1300,20 @@ List<ManualChapter> _assetManualChaptersGa() => const [
       'aonad — agus taispeánfar an t-áireamhán luacha. Tugann svuáil ar '
       'dheis ar ais thú céim ar chéim. Taispeánann na poncanna beaga le '
       'hainm an leathanaigh ag an athrú arís cá bhfuil tú; is é an ponc '
-      'geal an leathanach gníomhach.'
+      'geal an leathanach gníomhach.',
     ),
     _P(
       'Cosúil leis na háireamháin eile, coinníonn an t-áireamhán luacha a '
       'ionchur agus tú ag athrú leathanaigh. Tá an chuma chéanna air agus '
       'atá ar an tiontaire aonad — ach téann na colúin eochracha ar dheis '
-      'leibhéal amháin níos doimhne.'
+      'leibhéal amháin níos doimhne.',
     ),
   ]),
   ManualChapter('Aicme, cineál, aonad', [
     _P(
       'Cé go bhfuil dhá leibhéal ag an tiontaire aonad (catagóir agus '
       'aonad), tá trí cinn ag an áireamhán luacha: aicme, cineál agus '
-      'aonad. Tapálann tú do bhealach trí thiontú ó bharr go bun.'
+      'aonad. Tapálann tú do bhealach trí thiontú ó bharr go bun.',
     ),
     _H('Na trí leibhéal'),
     _P(
@@ -1322,14 +1322,14 @@ List<ManualChapter> _assetManualChaptersGa() => const [
       'cineálacha — i gcás miotail lómhair Ór, Airgead, Platanam agus '
       'Pallaidiam, mar shampla; i gcás airgeadra na giorrúcháin '
       'airgeadra. Tapáil cineál agus taispeánfar a aonaid. Glacann tapáil '
-      'ar aonad é mar théarma.'
+      'ar aonad é mar théarma.',
     ),
     _H('Leibhéal amháin ar ais'),
     _P(
       'Fanann an aicme nó an cineál roghnaithe ag barr an cholúin ar '
       'dheis — le himlíne órga — agus feidhmíonn sé mar fhillteán: tugann '
       'tapáil air leibhéal amháin níos airde thú. Mar sin ní léimeann aon '
-      'rud anonn is anall, agus feiceann tú i gcónaí cá bhfuil tú.'
+      'rud anonn is anall, agus feiceann tú i gcónaí cá bhfuil tú.',
     ),
     _H('An eochair ='),
     _P(
@@ -1337,7 +1337,7 @@ List<ManualChapter> _assetManualChaptersGa() => const [
       'chainníocht chéanna san aonad eile; i gcás na meáchan troy tagann '
       'an nodaireacht mheasctha ag an deireadh (mar shampla „1 lb t 2 oz '
       't 3 dwt"). Caitheann athrú aicme nó cineáil na téarmaí '
-      'críochnaithe i leataobh, ach fanann uimhir atá clóscríofa cheana.'
+      'críochnaithe i leataobh, ach fanann uimhir atá clóscríofa cheana.',
     ),
   ]),
   ManualChapter('Méadrach agus impiriúil ag an am céanna', [
@@ -1348,7 +1348,7 @@ List<ManualChapter> _assetManualChaptersGa() => const [
       'chéile: na haonaid troy impiriúla (gr, dwt, oz t, lb t) i gcolún '
       'amháin, na cinn mhéadracha (g, kg) sa cholún eile. Tapálann tú an '
       'ceann atá uait — leanann an domhan oibre an t-aonad ina ndearna tú '
-      'an iontráil dheireanach.'
+      'an iontráil dheireanach.',
     ),
     _H('Na dathanna'),
     _P(
@@ -1359,14 +1359,14 @@ List<ManualChapter> _assetManualChaptersGa() => const [
       'chórais, taispeánann an lúibín slabhrach an luach céanna sa chóras '
       'eile ina dhath sin, agus iompraíonn an comhartha DOZ/DEZ dath an '
       'bhoinn. Níl aon ais dhomhain ag airgeadraí — fanann a gcomharthaí '
-      'corcra.'
+      'corcra.',
     ),
     _H('Dosaenach nó deachúil'),
     _P(
       'Athraíonn tú bonn na bhfigiúr, mar atá leis na háireamháin eile, '
       'faoi Socruithe → Córas uimhreacha; baineann sé leis na trí '
       'áireamhán i gcomhpháirt agus tá sé neamhspleách ar chóras na '
-      'n-aonad.'
+      'n-aonad.',
     ),
   ]),
   ManualChapter('An chuimhne agus na heochracha eile', [
@@ -1380,7 +1380,7 @@ List<ManualChapter> _assetManualChaptersGa() => const [
       'tugann Ans toradh deireanach an phríomháireamháin anall. '
       'Ciallaíonn liath folamh nó nach bhfuil rud ar bith ann. Sa '
       'treo eile, faigheann eochair CONV an phríomháireamháin luach '
-      'líne an toraidh anall (a póca brú fada: VAL).'
+      'líne an toraidh anall (a póca brú fada: VAL).',
     ),
     _H('Luach, ríomh agus glanadh'),
     _P(
@@ -1389,13 +1389,13 @@ List<ManualChapter> _assetManualChaptersGa() => const [
       'eile). Ligeann na hoibreoirí scalaracha (× ÷ ⊕ ^ √ ㏒) don uimhir '
       'chlóscríofa féin a bheith ina ríomhadh beag, díreach mar atá sa '
       'tiontaire aonad. Glanann AC gach rud, baineann Del an carachtar '
-      'roimhe.'
+      'roimhe.',
     ),
   ]),
   ManualChapter('Luach: tiontú go hairgeadra', [
     _P(
       'Seachas an tiontú meáchain chruinn, is féidir leis an áireamhán '
-      'luacha luach airgid garbh a mheas.'
+      'luacha luach airgid garbh a mheas.',
     ),
     _H('An mód luacha'),
     _P(
@@ -1403,28 +1403,28 @@ List<ManualChapter> _assetManualChaptersGa() => const [
       't" óir. Anois éiríonn an eochair Luach gorm. Athraíonn tapáil '
       'uirthi an druileáil ina rogha airgeadraí sprice; tapáil ceann acu '
       'agus taispeánann líne an toraidh an luach le „≈" roimhe agus leid '
-      'bheag dhátaithe faoi.'
+      'bheag dhátaithe faoi.',
     ),
     _H('Na rátaí'),
     _P(
       'Is treoirluachanna garbha dátaithe iad na rátaí bunúsacha. '
       'Osclaíonn an eochair Rátaí ag bun na láimhe deise eagarthóir inar '
       'féidir leat aon ráta a fhorscríobh; cuireann athshocrú na '
-      'luachanna ionsuite ar ais.'
+      'luachanna ionsuite ar ais.',
     ),
     _H('Gan líonra'),
     _P(
       'Ní fhaigheann an aip aon rud ón idirlíon — ciallaíonn an „≈" '
       '„garbh, rátabhunaithe", ní „beo" riamh. Coinníonn tú féin na rátaí '
       'cothrom le dáta, mar shampla de réir Kitco do mhiotail nó an BCE '
-      'd\'airgeadraí.'
+      'd\'airgeadraí.',
     ),
   ]),
   ManualChapter('Cuar: an chomparáid stairiúil', [
     _P(
       'Cuireann an eochair Cuar — an ciorcal ar chlé in aice leis an '
       'mbarra cothroime — cairt in áit an eochaircheaptha; dúnann an × ag '
-      'an mbarr arís é.'
+      'an mbarr arís é.',
     ),
     _H('Na trí shraith'),
     _P(
@@ -1433,7 +1433,7 @@ List<ManualChapter> _assetManualChaptersGa() => const [
       'Tá gach sraith bunaithe ar a luach is sine ar a bhfuil eolas; '
       'luíonn sé sin mar líne nialais throm sa lár. Os cionn na líne '
       'ciallaíonn níos daoire, faoina bun níos saoire, gach ceann i '
-      'gcoinne óir.'
+      'gcoinne óir.',
     ),
     _H('Léamh agus bogadh'),
     _P(
@@ -1443,7 +1443,7 @@ List<ManualChapter> _assetManualChaptersGa() => const [
       'mar sin. Is é an banda scáthaithe timpeall na bpointí ársa an raon '
       'measta — is é an ársaíocht fáinní aonair (ord méide amháin), agus '
       'ní ritheann aon líne thar bhearna. Liostaíonn líne na bhfoinsí an '
-      'tacar sonraí.'
+      'tacar sonraí.',
     ),
   ]),
 ];

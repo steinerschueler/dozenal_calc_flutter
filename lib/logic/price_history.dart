@@ -42,8 +42,15 @@ class PricePoint {
 
   final String? label;
   final int? sourceId;
-  const PricePoint(this.year, this.value, this.era,
-      {this.valueLow, this.valueHigh, this.label, this.sourceId});
+  const PricePoint(
+    this.year,
+    this.value,
+    this.era, {
+    this.valueLow,
+    this.valueHigh,
+    this.label,
+    this.sourceId,
+  });
 
   bool get isAnchor => era != Era.modern;
   bool get hasBand => valueLow != null && valueHigh != null;
@@ -85,8 +92,8 @@ const double _tinyPositive = 1e-12;
 
 /// log10 with a floor so non-positive values can't blow up (prices are > 0,
 /// but the clamp keeps the transform total).
-double log10(double v) => math.log(v < _tinyPositive ? _tinyPositive : v) /
-    math.ln10;
+double log10(double v) =>
+    math.log(v < _tinyPositive ? _tinyPositive : v) / math.ln10;
 
 double pow10(double e) => math.pow(10, e).toDouble();
 
@@ -114,16 +121,21 @@ class ChartViewport {
 
   /// Pan by a fraction of the current spans (e.g. drag in normalized units).
   ChartViewport panned(double dxFrac, double dyFrac) => ChartViewport(
-        xMin + dxFrac * xSpan,
-        xMax + dxFrac * xSpan,
-        lyMin + dyFrac * lySpan,
-        lyMax + dyFrac * lySpan,
-      );
+    xMin + dxFrac * xSpan,
+    xMax + dxFrac * xSpan,
+    lyMin + dyFrac * lySpan,
+    lyMax + dyFrac * lySpan,
+  );
 
   /// Zoom around a focus given in normalized [0,1]×[0,1] viewport coords.
   /// [scale] > 1 zooms in. Clamped to a sane min/max span.
-  ChartViewport zoomed(double scale, double fx, double fy,
-      {double minXSpan = 1, double maxXSpan = 6000}) {
+  ChartViewport zoomed(
+    double scale,
+    double fx,
+    double fy, {
+    double minXSpan = 1,
+    double maxXSpan = 6000,
+  }) {
     final s = 1 / scale;
     var nxSpan = (xSpan * s).clamp(minXSpan, maxXSpan);
     final nlySpan = (lySpan * s).clamp(0.3, 14.0);
@@ -189,19 +201,29 @@ ChartViewport fitViewport(PriceSeries series) {
   var xMax = years.reduce(math.max).toDouble();
   if (xMax - xMin < 1) xMax = xMin + 1;
   final xPad = (xMax - xMin) * 0.03;
-  return _yFitted(xMin - xPad, xMax + xPad, _indexExtent(series, base, (_) => true));
+  return _yFitted(
+    xMin - xPad,
+    xMax + xPad,
+    _indexExtent(series, base, (_) => true),
+  );
 }
 
 /// Default initial view: the last [span] years (≈ a century) on X, Y fitted to
 /// that window in index space, with the baseline (0 line) always visible.
-ChartViewport defaultViewport(PriceSeries series,
-    {int nowYear = 2025, int span = 100}) {
+ChartViewport defaultViewport(
+  PriceSeries series, {
+  int nowYear = 2025,
+  int span = 100,
+}) {
   if (series.points.isEmpty) return const ChartViewport(0, 1, -1, 1);
   final base = baselineOf(series);
   final xMax = nowYear.toDouble();
   final xMin = (nowYear - span).toDouble();
   return _yFitted(
-      xMin, xMax, _indexExtent(series, base, (y) => y >= xMin && y <= xMax + 1));
+    xMin,
+    xMax,
+    _indexExtent(series, base, (y) => y >= xMin && y <= xMax + 1),
+  );
 }
 
 // ── LTTB downsampling (Largest-Triangle-Three-Buckets) ───────────────────────
@@ -235,7 +257,8 @@ List<PricePoint> lttbDownsample(List<PricePoint> data, int threshold) {
     var maxArea = -1.0;
     var nextA = rangeFrom;
     for (var j = rangeFrom; j < rangeTo; j++) {
-      final area = ((ax - avgX) * (log10(data[j].value) - ay) -
+      final area =
+          ((ax - avgX) * (log10(data[j].value) - ay) -
                   (ax - data[j].year) * (avgY - ay))
               .abs() *
           0.5;

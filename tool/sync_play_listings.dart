@@ -98,28 +98,25 @@ void _syncListings() {
     File('${outDir.path}/short-description.txt').writeAsStringSync(short);
     File('${outDir.path}/full-description.txt').writeAsStringSync(long);
     stdout.writeln(
-        'listing → ${entry.value.padRight(6)}  short=${short.length.toString().padLeft(3)}  long=${long.length}');
+      'listing → ${entry.value.padRight(6)}  short=${short.length.toString().padLeft(3)}  long=${long.length}',
+    );
     ok++;
   }
   stdout.writeln('synced $ok/${_localeMap.length} listings');
 }
 
 void _syncReleaseNotes() {
-  final files = Directory('.')
-      .listSync()
-      .whereType<File>()
-      .where((f) {
+  final files =
+      Directory('.').listSync().whereType<File>().where((f) {
         final name = f.uri.pathSegments.last;
         return name.startsWith('build') && name.endsWith('-release-notes.txt');
-      })
-      .toList()
-    ..sort((a, b) {
-      // Sort numerically by build number, not lexicographically — so build11
-      // doesn't sort after build2.
-      final aN = _buildNumber(a.path);
-      final bN = _buildNumber(b.path);
-      return bN.compareTo(aN);
-    });
+      }).toList()..sort((a, b) {
+        // Sort numerically by build number, not lexicographically — so build11
+        // doesn't sort after build2.
+        final aN = _buildNumber(a.path);
+        final bN = _buildNumber(b.path);
+        return bN.compareTo(aN);
+      });
   if (files.isEmpty) {
     stderr.writeln('WARN: no build<N>-release-notes.txt found, skipping notes');
     return;
@@ -139,8 +136,7 @@ void _syncReleaseNotes() {
     final outDir = Directory('$_playReleaseNotesDir/$tag');
     outDir.createSync(recursive: true);
     File('${outDir.path}/default.txt').writeAsStringSync(body);
-    stdout.writeln(
-        'notes   → ${tag.padRight(6)}  len=${body.length}');
+    stdout.writeln('notes   → ${tag.padRight(6)}  len=${body.length}');
     n++;
   }
   if (n == 0) {
@@ -158,24 +154,29 @@ void _syncShots(String srcRoot, String graphicsSub) {
   for (final entry in _screenshotLocaleMap.entries) {
     final srcDir = Directory('$srcRoot/${entry.key}');
     if (!srcDir.existsSync()) {
-      stderr.writeln('WARN: missing $srcRoot/${entry.key}, skipping ${entry.key}');
+      stderr.writeln(
+        'WARN: missing $srcRoot/${entry.key}, skipping ${entry.key}',
+      );
       continue;
     }
-    final outDir =
-        Directory('$_playListingsDir/${entry.value}/graphics/$graphicsSub');
+    final outDir = Directory(
+      '$_playListingsDir/${entry.value}/graphics/$graphicsSub',
+    );
     if (outDir.existsSync()) outDir.deleteSync(recursive: true);
     outDir.createSync(recursive: true);
-    final pngs = srcDir
-        .listSync()
-        .whereType<File>()
-        .where((f) => f.path.endsWith('.png'))
-        .toList()
-      ..sort((a, b) => a.path.compareTo(b.path));
+    final pngs =
+        srcDir
+            .listSync()
+            .whereType<File>()
+            .where((f) => f.path.endsWith('.png'))
+            .toList()
+          ..sort((a, b) => a.path.compareTo(b.path));
     for (final f in pngs) {
       f.copySync('${outDir.path}/${f.uri.pathSegments.last}');
     }
     stdout.writeln(
-        '$graphicsSub → ${entry.value.padRight(6)}  ${pngs.length} png');
+      '$graphicsSub → ${entry.value.padRight(6)}  ${pngs.length} png',
+    );
     n++;
   }
   stdout.writeln('synced $n locales → $graphicsSub');

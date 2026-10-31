@@ -33,7 +33,8 @@ List<RecChapter> _recChaptersGa() => const [
           'Dílseánach — níl aon léargas ar an gcód',
           'Gan aschur bonn a dó dhéag',
         ],
-        url: 'https://www.casio.com/intl/scientific-calculators/product.FX-5800P/',
+        url:
+            'https://www.casio.com/intl/scientific-calculators/product.FX-5800P/',
       ),
       RecCalc(
         'SwissMicros DM42n',
@@ -73,7 +74,8 @@ List<RecChapter> _recChaptersGa() => const [
           'Níos moille go sonrach ar oibríochtaí casta',
           'Gan bonn a dó dhéag',
         ],
-        url: 'https://www.casio.com/us/scientific-calculators/product.FX-991CW/',
+        url:
+            'https://www.casio.com/us/scientific-calculators/product.FX-991CW/',
       ),
     ],
     verdict:
@@ -290,10 +292,7 @@ List<RecChapter> _recChaptersGa() => const [
           'RPN, téip pháipéir, tiontuithe iomadúla',
           'Magic Variables, Handoff iOS/macOS',
         ],
-        cons: [
-          'Dílseánach, íoctha',
-          'Gan bonn a dó dhéag',
-        ],
+        cons: ['Dílseánach, íoctha', 'Gan bonn a dó dhéag'],
         url: 'https://pcalc.com/mac/',
       ),
       RecCalc(
@@ -307,10 +306,7 @@ List<RecChapter> _recChaptersGa() => const [
           'Cruinneas decimal-128',
           'Comhionann ar fud gach ardán',
         ],
-        cons: [
-          'Loighic RPN',
-          'Gan bonn a dó dhéag',
-        ],
+        cons: ['Loighic RPN', 'Gan bonn a dó dhéag'],
         url: 'https://thomasokken.com/free42/',
       ),
     ],
@@ -342,9 +338,7 @@ List<RecChapter> _recChaptersGa() => const [
           'Inneall is cumhachtaí, ríomhann freisin i mbonn a dó dhéag',
           'CLI inscriptáilte — ailíosanna, píopaí, leabharlanna feidhme féin',
         ],
-        cons: [
-          'Teastaíonn foghlaim leis an raon feidhme a mhaistiú',
-        ],
+        cons: ['Teastaíonn foghlaim leis an raon feidhme a mhaistiú'],
         url: 'https://qalculate.github.io/',
       ),
       RecCalc(
@@ -358,10 +352,7 @@ List<RecChapter> _recChaptersGa() => const [
           'Mód ríomhchláraitheora (bin/oct/hex)',
           'Comhtháite go maith i KDE Plasma',
         ],
-        cons: [
-          'Gan CAS',
-          'Gan bonn a dó dhéag',
-        ],
+        cons: ['Gan CAS', 'Gan bonn a dó dhéag'],
         url: 'https://apps.kde.org/kcalc/',
       ),
       RecCalc(
@@ -376,10 +367,7 @@ List<RecChapter> _recChaptersGa() => const [
           'Foinse oscailte, éasca a úsáid',
           'Aonaid agus airgeadraí ionsuite',
         ],
-        cons: [
-          'Níos laige ná Qalculate',
-          'Gan bonn a dó dhéag',
-        ],
+        cons: ['Níos laige ná Qalculate', 'Gan bonn a dó dhéag'],
         url: 'https://apps.gnome.org/Calculator/',
       ),
       RecCalc(
@@ -485,10 +473,7 @@ List<RecChapter> _recChaptersGa() => const [
           'Cruinneas decimal-128',
           'Comhionann ar fud gach ardán',
         ],
-        cons: [
-          'Loighic RPN (maolann Plus42 é sin)',
-          'Gan bonn a dó dhéag',
-        ],
+        cons: ['Loighic RPN (maolann Plus42 é sin)', 'Gan bonn a dó dhéag'],
         url: 'https://thomasokken.com/free42/',
       ),
     ],

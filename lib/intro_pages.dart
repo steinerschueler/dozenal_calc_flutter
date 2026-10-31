@@ -57,46 +57,49 @@ class _IntroSlide {
 const double _kIntroAspect = 720 / 1448;
 
 // The two round buttons in the equals row of v4_calc.png.
-const HighlightCircle _kInfoButton =
-    HighlightCircle(center: Offset(0.121, 0.956), radius: 0.036);
-const HighlightCircle _kHelpButton =
-    HighlightCircle(center: Offset(0.879, 0.956), radius: 0.036);
+const HighlightCircle _kInfoButton = HighlightCircle(
+  center: Offset(0.121, 0.956),
+  radius: 0.036,
+);
+const HighlightCircle _kHelpButton = HighlightCircle(
+  center: Offset(0.879, 0.956),
+  radius: 0.036,
+);
 
 // On v4_settings.png: the two glyph rows (Ziffern im Display + auf Tasten)
 // grouped into one box, and the number-system row below.
-const HighlightRect _kGlyphRows =
-    HighlightRect(rect: Rect.fromLTRB(0.035, 0.158, 0.965, 0.312));
-const HighlightRect _kNumberSystemRow =
-    HighlightRect(rect: Rect.fromLTRB(0.035, 0.632, 0.965, 0.707));
+const HighlightRect _kGlyphRows = HighlightRect(
+  rect: Rect.fromLTRB(0.035, 0.158, 0.965, 0.312),
+);
+const HighlightRect _kNumberSystemRow = HighlightRect(
+  rect: Rect.fromLTRB(0.035, 0.632, 0.965, 0.707),
+);
 
 /// The slide list depends on AppLocalizations for the per-slide prose, so it
 /// can't be a top-level const. Layout metadata (image, highlight rects/
 /// circles) stays const; only the text strings come from the current locale.
 List<_IntroSlide> _buildSlides(AppLocalizations l) => [
-      // 1 — the (i) button: opens the menu.
-      _IntroSlide(
-        image: 'assets/intro/v4_calc.png',
-        circles: const [_kInfoButton],
-        text: l.introSlide1,
-      ),
-      // 2 — the (?) button: re-opens this intro.
-      _IntroSlide(
-        image: 'assets/intro/v4_calc.png',
-        circles: const [_kHelpButton],
-        text: l.introSlide2,
-      ),
-      // 3 — swiping between the two calculators (swipe graphic baked in).
-      _IntroSlide(
-        image: 'assets/intro/v4_swipe.png',
-        text: l.introSlide3,
-      ),
-      // 4 — number system + glyph style in the settings.
-      _IntroSlide(
-        image: 'assets/intro/v4_settings.png',
-        rects: const [_kGlyphRows, _kNumberSystemRow],
-        text: l.introSlide4,
-      ),
-    ];
+  // 1 — the (i) button: opens the menu.
+  _IntroSlide(
+    image: 'assets/intro/v4_calc.png',
+    circles: const [_kInfoButton],
+    text: l.introSlide1,
+  ),
+  // 2 — the (?) button: re-opens this intro.
+  _IntroSlide(
+    image: 'assets/intro/v4_calc.png',
+    circles: const [_kHelpButton],
+    text: l.introSlide2,
+  ),
+  // 3 — swiping between the two calculators (swipe graphic baked in).
+  _IntroSlide(image: 'assets/intro/v4_swipe.png', text: l.introSlide3),
+  // 4 — number system + glyph style in the settings.
+  _IntroSlide(
+    image: 'assets/intro/v4_settings.png',
+    rects: const [_kGlyphRows, _kNumberSystemRow],
+    text: l.introSlide4,
+  ),
+];
 
 class IntroPage extends StatefulWidget {
   const IntroPage({super.key});
@@ -145,8 +148,10 @@ class _IntroPageState extends State<IntroPage> {
         actions: [
           TextButton(
             onPressed: () => Navigator.of(context).pop(),
-            child: Text(l.introSkip,
-                style: const TextStyle(color: Colors.white70)),
+            child: Text(
+              l.introSkip,
+              style: const TextStyle(color: Colors.white70),
+            ),
           ),
         ],
       ),

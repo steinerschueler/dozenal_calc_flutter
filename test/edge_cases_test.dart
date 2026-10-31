@@ -144,12 +144,13 @@ void main() {
     });
 
     test('tan of 90° in DEG mode (infinity)', () {
-      final s = DozenalCalcState() // default DEG
-        ..handleClick(const Tan())
-        ..handleClick(const ParenOpen())
-        ..handleClick(Digit(DozenalDigit.d7)) // 90 in doz = 7×12+6 = 90
-        ..handleClick(Digit(DozenalDigit.d6))
-        ..handleClick(const ParenClose());
+      final s =
+          DozenalCalcState() // default DEG
+            ..handleClick(const Tan())
+            ..handleClick(const ParenOpen())
+            ..handleClick(Digit(DozenalDigit.d7)) // 90 in doz = 7×12+6 = 90
+            ..handleClick(Digit(DozenalDigit.d6))
+            ..handleClick(const ParenClose());
       expect(() => s.handleClick(const Equals()), returnsNormally);
     });
 
@@ -164,8 +165,7 @@ void main() {
       expect(() => s.handleClick(const Equals()), returnsNormally);
     });
 
-    test('Mode-switch Doz→Dez with non-terminating fraction (1/3 in doz)',
-        () {
+    test('Mode-switch Doz→Dez with non-terminating fraction (1/3 in doz)', () {
       // doz 0.4 = 1/3 — non-terminating in base 10. Switch should
       // truncate, not crash.
       final s = DozenalCalcState()
@@ -212,8 +212,7 @@ void main() {
     });
 
     test('Backspace many times past empty', () {
-      final s = DozenalCalcState()
-        ..handleClick(Digit(DozenalDigit.d5));
+      final s = DozenalCalcState()..handleClick(Digit(DozenalDigit.d5));
       for (var i = 0; i < 10; i++) {
         expect(() => s.handleClick(const Del()), returnsNormally);
       }
@@ -246,8 +245,7 @@ void main() {
         const Equals(),
       ];
       for (var i = 0; i < 200; i++) {
-        expect(() => s.handleClick(tokens[i % tokens.length]),
-            returnsNormally);
+        expect(() => s.handleClick(tokens[i % tokens.length]), returnsNormally);
       }
     });
 
@@ -303,7 +301,10 @@ void main() {
       // magnitude bound dropped this to the f64 fallback at once — that
       // outcome is the real anti-freeze guarantee, so no flaky wall-clock
       // assertion is needed.
-      expect(s.errorMsg, 'OVERFLOW'); // not a division → overflow, not DIV BY ZERO
+      expect(
+        s.errorMsg,
+        'OVERFLOW',
+      ); // not a division → overflow, not DIV BY ZERO
     });
   });
 }

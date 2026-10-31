@@ -14,10 +14,7 @@ import 'license_page.dart' show openExternalLink;
 const String _feedbackEmail = 'dozenal@weltanschauung.app';
 
 Future<void> showFeedbackDialog(BuildContext context) async {
-  await showDialog(
-    context: context,
-    builder: (ctx) => const _FeedbackDialog(),
-  );
+  await showDialog(context: context, builder: (ctx) => const _FeedbackDialog());
 }
 
 class _FeedbackDialog extends StatefulWidget {
@@ -53,7 +50,8 @@ class _FeedbackDialogState extends State<_FeedbackDialog> {
     final change = _changeCtrl.text.trim().isEmpty
         ? l.feedbackNoAnswer
         : _changeCtrl.text.trim();
-    final body = '''${l.feedbackMailSubject}
+    final body =
+        '''${l.feedbackMailSubject}
 
 ${l.feedbackRatingLabel}: $ratingStr
 
@@ -70,7 +68,8 @@ ${l.feedbackMailBuildLabel}: ${pkg.buildNumber}
     final uri = Uri(
       scheme: 'mailto',
       path: _feedbackEmail,
-      query: 'subject=${Uri.encodeComponent(l.feedbackMailSubject)}'
+      query:
+          'subject=${Uri.encodeComponent(l.feedbackMailSubject)}'
           '&body=${Uri.encodeComponent(body)}',
     );
     if (!mounted) return;
@@ -101,13 +100,11 @@ ${l.feedbackMailBuildLabel}: ${pkg.buildNumber}
   }
 
   InputDecoration _fieldDecoration(AppColors t) => InputDecoration(
-        filled: true,
-        fillColor: t.cardFill,
-        border: OutlineInputBorder(
-          borderSide: BorderSide(color: t.cardBorder),
-        ),
-        contentPadding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
-      );
+    filled: true,
+    fillColor: t.cardFill,
+    border: OutlineInputBorder(borderSide: BorderSide(color: t.cardBorder)),
+    contentPadding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -120,10 +117,7 @@ ${l.feedbackMailBuildLabel}: ${pkg.buildNumber}
     );
     return AlertDialog(
       backgroundColor: t.appBarBg,
-      title: Text(
-        l.feedbackTitle,
-        style: TextStyle(color: t.textPrimary),
-      ),
+      title: Text(l.feedbackTitle, style: TextStyle(color: t.textPrimary)),
       content: SingleChildScrollView(
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -160,15 +154,9 @@ ${l.feedbackMailBuildLabel}: ${pkg.buildNumber}
       actions: [
         TextButton(
           onPressed: () => Navigator.of(context).pop(),
-          child: Text(
-            l.feedbackCancel,
-            style: TextStyle(color: t.textMuted),
-          ),
+          child: Text(l.feedbackCancel, style: TextStyle(color: t.textMuted)),
         ),
-        FilledButton(
-          onPressed: _send,
-          child: Text(l.feedbackSend),
-        ),
+        FilledButton(onPressed: _send, child: Text(l.feedbackSend)),
       ],
     );
   }

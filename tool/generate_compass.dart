@@ -34,10 +34,7 @@ void main() {
 
     const double size = 1024.0;
     final recorder = ui.PictureRecorder();
-    final canvas = Canvas(
-      recorder,
-      const Rect.fromLTWH(0, 0, size, size),
-    );
+    final canvas = Canvas(recorder, const Rect.fromLTWH(0, 0, size, size));
 
     // Transparent background — composites onto any host surface.
     // (For a solid-bg variant uncomment the drawRect below.)
@@ -91,10 +88,7 @@ void main() {
       final dx = math.sin(clockAngle);
       final dy = -math.cos(clockAngle);
 
-      final glyphCenter = Offset(
-        cx + dx * glyphRadius,
-        cy + dy * glyphRadius,
-      );
+      final glyphCenter = Offset(cx + dx * glyphRadius, cy + dy * glyphRadius);
 
       // Glyph in its natural (un-rotated) orientation. The arrow points
       // up/right/down/left per its inherent shape — at 1/4/7/10 o'clock
@@ -109,10 +103,7 @@ void main() {
       );
 
       // Label on the inner side: small digit text.
-      final labelCenter = Offset(
-        cx + dx * labelRadius,
-        cy + dy * labelRadius,
-      );
+      final labelCenter = Offset(cx + dx * labelRadius, cy + dy * labelRadius);
       final tp = TextPainter(
         text: TextSpan(
           text: '= ${p.$3}',
@@ -127,10 +118,7 @@ void main() {
       )..layout();
       tp.paint(
         canvas,
-        Offset(
-          labelCenter.dx - tp.width / 2,
-          labelCenter.dy - tp.height / 2,
-        ),
+        Offset(labelCenter.dx - tp.width / 2, labelCenter.dy - tp.height / 2),
       );
     }
 

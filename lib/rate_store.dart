@@ -40,8 +40,7 @@ class RateStore extends ChangeNotifier {
 
   bool hasCurrencyOverride(String key) => _curOverride.containsKey(key);
   bool hasMetalOverride(String key) => _metOverride.containsKey(key);
-  bool get hasAnyOverride =>
-      _curOverride.isNotEmpty || _metOverride.isNotEmpty;
+  bool get hasAnyOverride => _curOverride.isNotEmpty || _metOverride.isNotEmpty;
 
   // ── Conversion primitives (all route through the pivot) ────────────────
 

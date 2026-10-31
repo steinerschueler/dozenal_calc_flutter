@@ -40,31 +40,47 @@ void main() {
       const Digit(DozenalDigit.d3),
     ];
 
-    testWidgets('maps taps on the input line to the nearest gap',
-        (tester) async {
+    testWidgets('maps taps on the input line to the nearest gap', (
+      tester,
+    ) async {
       // far left → before first glyph
       expect(
-          inputCursorPosForTap(
-              const Offset(0, 20), size, buf, GlyphStyle.custom),
-          0);
+        inputCursorPosForTap(const Offset(0, 20), size, buf, GlyphStyle.custom),
+        0,
+      );
       // far right → after last glyph
       expect(
-          inputCursorPosForTap(
-              const Offset(10000, 20), size, buf, GlyphStyle.custom),
-          3);
+        inputCursorPosForTap(
+          const Offset(10000, 20),
+          size,
+          buf,
+          GlyphStyle.custom,
+        ),
+        3,
+      );
       // empty buffer → 0
       expect(
-          inputCursorPosForTap(
-              const Offset(50, 20), size, const [], GlyphStyle.custom),
-          0);
+        inputCursorPosForTap(
+          const Offset(50, 20),
+          size,
+          const [],
+          GlyphStyle.custom,
+        ),
+        0,
+      );
     });
 
     testWidgets('returns null for taps below the input line', (tester) async {
       // y = 110 is in the result line (lineH ≈ 56 for height 120)
       expect(
-          inputCursorPosForTap(
-              const Offset(50, 110), size, buf, GlyphStyle.custom),
-          isNull);
+        inputCursorPosForTap(
+          const Offset(50, 110),
+          size,
+          buf,
+          GlyphStyle.custom,
+        ),
+        isNull,
+      );
     });
   });
 }

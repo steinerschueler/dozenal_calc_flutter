@@ -32,7 +32,8 @@ List<RecChapter> _recChaptersRu() => const [
           'Проприетарный — исходный код закрыт',
           'Нет вывода в основании 12',
         ],
-        url: 'https://www.casio.com/intl/scientific-calculators/product.FX-5800P/',
+        url:
+            'https://www.casio.com/intl/scientific-calculators/product.FX-5800P/',
       ),
       RecCalc(
         'SwissMicros DM42n',
@@ -72,7 +73,8 @@ List<RecChapter> _recChaptersRu() => const [
           'Заметно медленнее при сложных операциях',
           'Нет основания 12',
         ],
-        url: 'https://www.casio.com/us/scientific-calculators/product.FX-991CW/',
+        url:
+            'https://www.casio.com/us/scientific-calculators/product.FX-991CW/',
       ),
     ],
     verdict:
@@ -286,10 +288,7 @@ List<RecChapter> _recChaptersRu() => const [
           'RPN, бумажная лента, множество конвертаций',
           'Magic Variables, Handoff iOS/macOS',
         ],
-        cons: [
-          'Проприетарный, платный',
-          'Нет основания 12',
-        ],
+        cons: ['Проприетарный, платный', 'Нет основания 12'],
         url: 'https://pcalc.com/mac/',
       ),
       RecCalc(
@@ -303,10 +302,7 @@ List<RecChapter> _recChaptersRu() => const [
           'Точность decimal-128',
           'Идентично на всех платформах',
         ],
-        cons: [
-          'RPN-логика',
-          'Нет основания 12',
-        ],
+        cons: ['RPN-логика', 'Нет основания 12'],
         url: 'https://thomasokken.com/free42/',
       ),
     ],
@@ -339,9 +335,7 @@ List<RecChapter> _recChaptersRu() => const [
           'Мощнейший движок, вычисляет в основании 12',
           'CLI поддаётся скриптингу — псевдонимы, конвейеры, собственные библиотеки функций',
         ],
-        cons: [
-          'Богатство функций требует времени на освоение',
-        ],
+        cons: ['Богатство функций требует времени на освоение'],
         url: 'https://qalculate.github.io/',
       ),
       RecCalc(
@@ -355,10 +349,7 @@ List<RecChapter> _recChaptersRu() => const [
           'Программистский режим (bin/oct/hex)',
           'Хорошо интегрирован в KDE Plasma',
         ],
-        cons: [
-          'Нет CAS',
-          'Нет основания 12',
-        ],
+        cons: ['Нет CAS', 'Нет основания 12'],
         url: 'https://apps.kde.org/kcalc/',
       ),
       RecCalc(
@@ -372,10 +363,7 @@ List<RecChapter> _recChaptersRu() => const [
           'Открытый код, прост в использовании',
           'Единицы и валюты встроены',
         ],
-        cons: [
-          'Слабее Qalculate',
-          'Нет основания 12',
-        ],
+        cons: ['Слабее Qalculate', 'Нет основания 12'],
         url: 'https://apps.gnome.org/Calculator/',
       ),
       RecCalc(
@@ -426,10 +414,7 @@ List<RecChapter> _recChaptersRu() => const [
           'Вычисляет в основании 12 (двенадцатеричном)',
           'Расширяется собственными функциями',
         ],
-        cons: [
-          'Менее «windows-нативный» лоск',
-          'Мощь требует освоения',
-        ],
+        cons: ['Менее «windows-нативный» лоск', 'Мощь требует освоения'],
         url: 'https://qalculate.github.io/',
       ),
       RecCalc(
@@ -481,10 +466,7 @@ List<RecChapter> _recChaptersRu() => const [
           'Точность decimal-128',
           'Идентично на всех платформах',
         ],
-        cons: [
-          'RPN-логика (Plus42 смягчает это)',
-          'Нет основания 12',
-        ],
+        cons: ['RPN-логика (Plus42 смягчает это)', 'Нет основания 12'],
         url: 'https://thomasokken.com/free42/',
       ),
     ],

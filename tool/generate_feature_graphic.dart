@@ -37,10 +37,7 @@ void main() {
     const double h = 500.0;
 
     final recorder = ui.PictureRecorder();
-    final canvas = Canvas(
-      recorder,
-      const Rect.fromLTWH(0, 0, w, h),
-    );
+    final canvas = Canvas(recorder, const Rect.fromLTWH(0, 0, w, h));
 
     // Background: dark with a subtle radial highlight at centre.
     canvas.drawRect(
@@ -73,18 +70,14 @@ void main() {
       ),
       textDirection: TextDirection.ltr,
     )..layout();
-    wordmark.paint(
-      canvas,
-      Offset((w - wordmark.width) / 2, h * 0.13),
-    );
+    wordmark.paint(canvas, Offset((w - wordmark.width) / 2, h * 0.13));
 
     // 12 dozenal glyphs in a horizontal row, centred mid-height. Each
     // composite digit needs ~4q vertical room (= cellSize). The single-
     // arrow anchors only need 2q. We size so that composites fit.
     const double glyphCellSize = 50.0;
     const double glyphGap = 22.0;
-    final totalGlyphRowWidth =
-        12 * glyphCellSize + 11 * glyphGap;
+    final totalGlyphRowWidth = 12 * glyphCellSize + 11 * glyphGap;
     final glyphRowStartX = (w - totalGlyphRowWidth) / 2 + glyphCellSize / 2;
     final glyphRowY = h * 0.55;
     for (var i = 0; i < 12; i++) {
@@ -116,10 +109,7 @@ void main() {
       ),
       textDirection: TextDirection.ltr,
     )..layout();
-    tagline.paint(
-      canvas,
-      Offset((w - tagline.width) / 2, h * 0.83),
-    );
+    tagline.paint(canvas, Offset((w - tagline.width) / 2, h * 0.83));
 
     final picture = recorder.endRecording();
     final image = await picture.toImage(w.toInt(), h.toInt());

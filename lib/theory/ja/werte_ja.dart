@@ -921,12 +921,7 @@ List<ProseChapter> _werteChaptersJa() => const [
         'R1',
         'A2',
       ),
-      Source(
-        'IMF — 準備データ',
-        'https://www.imf.org/en/Data',
-        'R1',
-        'A3',
-      ),
+      Source('IMF — 準備データ', 'https://www.imf.org/en/Data', 'R1', 'A3'),
       Source(
         'ワールド・ゴールド・カウンシル — 中央銀行統計(利害関係あり)',
         'https://www.gold.org/goldhub/data/monthly-central-bank-statistics',

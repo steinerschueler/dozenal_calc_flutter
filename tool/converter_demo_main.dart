@@ -19,49 +19,48 @@ void main() {
     ..inputDigit(0)
     ..inputDigit(0)
     ..tapCategory(UnitCategory.dist);
-  state.tapMagnitude(
-      state.magnitudeUnits.firstWhere((u) => u.symbol == 'ft'));
+  state.tapMagnitude(state.magnitudeUnits.firstWhere((u) => u.symbol == 'ft'));
 
-  runApp(MaterialApp(
-    debugShowCheckedModeBanner: false,
-    theme: ThemeData(brightness: Brightness.dark),
-    home: Scaffold(
-      backgroundColor: const Color(0xFF1A1A1A),
-      body: SafeArea(
-        child: Directionality(
-          textDirection: TextDirection.ltr,
-          child: Padding(
-            padding: const EdgeInsets.all(12),
-            child: LayoutBuilder(
-              builder: (ctx, c) {
-                final displayH = displayHeightFor(c.maxHeight);
-                return ListenableBuilder(
-                  listenable: state,
-                  builder: (ctx, _) => Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      SizedBox(
-                        height: displayH,
-                        child: ConverterDisplay(
-                          topLine: state.topLine,
-                          resultLine: state.resultLine,
-                          worldLabel: state.world == UnitWorld.imperial
-                              ? 'DOZ'
-                              : 'DEZ',
+  runApp(
+    MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(brightness: Brightness.dark),
+      home: Scaffold(
+        backgroundColor: const Color(0xFF1A1A1A),
+        body: SafeArea(
+          child: Directionality(
+            textDirection: TextDirection.ltr,
+            child: Padding(
+              padding: const EdgeInsets.all(12),
+              child: LayoutBuilder(
+                builder: (ctx, c) {
+                  final displayH = displayHeightFor(c.maxHeight);
+                  return ListenableBuilder(
+                    listenable: state,
+                    builder: (ctx, _) => Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        SizedBox(
+                          height: displayH,
+                          child: ConverterDisplay(
+                            topLine: state.topLine,
+                            resultLine: state.resultLine,
+                            worldLabel: state.world == UnitWorld.imperial
+                                ? 'DOZ'
+                                : 'DEZ',
+                          ),
                         ),
-                      ),
-                      const SizedBox(height: 14),
-                      Expanded(
-                        child: ConverterKeypad(state: state),
-                      ),
-                    ],
-                  ),
-                );
-              },
+                        const SizedBox(height: 14),
+                        Expanded(child: ConverterKeypad(state: state)),
+                      ],
+                    ),
+                  );
+                },
+              ),
             ),
           ),
         ),
       ),
     ),
-  ));
+  );
 }

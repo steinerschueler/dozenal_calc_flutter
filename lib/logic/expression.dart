@@ -741,7 +741,10 @@ class PeriodMeta {
   if (buf.length > maxResultDigits) {
     buf.removeRange(maxResultDigits, buf.length);
     if (start == null || start >= buf.length) {
-      return (buf: buf, meta: const PeriodMeta(start: null, len: 0, capped: true));
+      return (
+        buf: buf,
+        meta: const PeriodMeta(start: null, len: 0, capped: true),
+      );
     }
     return (
       buf: buf,
@@ -785,7 +788,11 @@ List<CalcToken> formatF64Result(double value, {int base = 12}) {
   final fracPart = v - v.floorToDouble();
   if (fracCount > 0 && fracPart > fracEpsilon) {
     buf.add(const Decimal());
-    for (final d in DozenalConverter.fracToDigits(fracPart, fracCount, base: base)) {
+    for (final d in DozenalConverter.fracToDigits(
+      fracPart,
+      fracCount,
+      base: base,
+    )) {
       buf.add(Digit(d));
     }
   }

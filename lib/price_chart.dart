@@ -66,7 +66,8 @@ class _PriceChartState extends State<PriceChart> {
   Offset _startFocal = Offset.zero;
   bool _moved = false;
   Rect _plotRect = Rect.zero;
-  DateTime? _lastTapAt; // manual double-tap detection (scale recognizer eats it)
+  DateTime?
+  _lastTapAt; // manual double-tap detection (scale recognizer eats it)
 
   // Tap-to-read selection.
   PricePoint? _selected;
@@ -85,16 +86,16 @@ class _PriceChartState extends State<PriceChart> {
 
   // Double-tap zooms fully out (oldest value at left, near the 0 baseline).
   void _resetView() => setState(() {
-        _viewport = fitViewport(_series);
-        _selected = null;
-      });
+    _viewport = fitViewport(_series);
+    _selected = null;
+  });
 
   Rect _computePlotRect(Size size) => Rect.fromLTRB(
-        _kPlotMargin.left,
-        _kPlotMargin.top,
-        size.width - _kPlotMargin.right,
-        size.height - _kPlotMargin.bottom,
-      );
+    _kPlotMargin.left,
+    _kPlotMargin.top,
+    size.width - _kPlotMargin.right,
+    size.height - _kPlotMargin.bottom,
+  );
 
   void _onScaleStart(ScaleStartDetails d) {
     _startVp = _viewport;
@@ -243,8 +244,10 @@ class _PriceChartState extends State<PriceChart> {
               minimumSize: const Size(0, 36),
               tapTargetSize: MaterialTapTargetSize.shrinkWrap,
             ),
-            child: Text(widget.sourcesLabel,
-                style: TextStyle(color: t.link, fontSize: 12)),
+            child: Text(
+              widget.sourcesLabel,
+              style: TextStyle(color: t.link, fontSize: 12),
+            ),
           ),
           if (widget.onClose != null)
             IconButton(
@@ -267,8 +270,9 @@ class _PriceChartState extends State<PriceChart> {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(6),
           border: Border.all(
-              color: active ? t.accentGold : t.keyBorder,
-              width: active ? 2 : 1),
+            color: active ? t.accentGold : t.keyBorder,
+            width: active ? 2 : 1,
+          ),
         ),
         child: Text(
           widget.seriesLabel(id),
@@ -314,14 +318,18 @@ class _PriceChartPainter extends CustomPainter {
     required this.reconstructedLabel,
   });
 
-  Rect _rect(Size size) => Rect.fromLTRB(plotMargin.left, plotMargin.top,
-      size.width - plotMargin.right, size.height - plotMargin.bottom);
+  Rect _rect(Size size) => Rect.fromLTRB(
+    plotMargin.left,
+    plotMargin.top,
+    size.width - plotMargin.right,
+    size.height - plotMargin.bottom,
+  );
 
   /// Screen position of a raw (year, value) — value is indexed to [baseline].
   Offset _screen(Rect r, num year, double value) => Offset(
-        r.left + viewport.nx(year) * r.width,
-        r.bottom - viewport.ny(value / baseline) * r.height,
-      );
+    r.left + viewport.nx(year) * r.width,
+    r.bottom - viewport.ny(value / baseline) * r.height,
+  );
 
   /// Label for an index tick value: "0" at the baseline, else ×factor / ÷factor.
   String _factorLabel(double index) {
@@ -330,12 +338,19 @@ class _PriceChartPainter extends CustomPainter {
     return '÷${formatBaseNum(1 / index, base)}';
   }
 
-  void _label(Canvas canvas, String text, Offset at, Color color,
-      {double size = 9, TextAlign align = TextAlign.left}) {
+  void _label(
+    Canvas canvas,
+    String text,
+    Offset at,
+    Color color, {
+    double size = 9,
+    TextAlign align = TextAlign.left,
+  }) {
     final tp = TextPainter(
       text: TextSpan(
-          text: text,
-          style: TextStyle(color: color, fontSize: size, fontFamily: 'monospace')),
+        text: text,
+        style: TextStyle(color: color, fontSize: size, fontFamily: 'monospace'),
+      ),
       textDirection: TextDirection.ltr,
       textAlign: align,
     )..layout();
@@ -383,8 +398,14 @@ class _PriceChartPainter extends CustomPainter {
       if (y < r.top - 1 || y > r.bottom + 1) continue;
       canvas.drawLine(Offset(r.left, y), Offset(r.right, y), minorPaint);
       if (mant != 3) {
-        _label(canvas, _factorLabel(v), Offset(r.left - 4, y - 5),
-            colors.textFaint, size: 8, align: TextAlign.right);
+        _label(
+          canvas,
+          _factorLabel(v),
+          Offset(r.left - 4, y - 5),
+          colors.textFaint,
+          size: 8,
+          align: TextAlign.right,
+        );
       }
     }
     // Y: index decade ticks; the baseline (index 1 = oldest value) is the bold
@@ -393,23 +414,40 @@ class _PriceChartPainter extends CustomPainter {
       final y = r.bottom - viewport.ny(v) * r.height;
       if (y < r.top - 1 || y > r.bottom + 1) continue;
       final isBaseline = (v - 1).abs() < 1e-9;
-      canvas.drawLine(Offset(r.left, y), Offset(r.right, y),
-          isBaseline ? baselinePaint : gridPaint);
-      _label(canvas, _factorLabel(v), Offset(r.left - 4, y - 5),
-          isBaseline ? colors.textSecondary : colors.textMuted,
-          align: TextAlign.right);
+      canvas.drawLine(
+        Offset(r.left, y),
+        Offset(r.right, y),
+        isBaseline ? baselinePaint : gridPaint,
+      );
+      _label(
+        canvas,
+        _factorLabel(v),
+        Offset(r.left - 4, y - 5),
+        isBaseline ? colors.textSecondary : colors.textMuted,
+        align: TextAlign.right,
+      );
     }
     // X: nice year ticks.
     for (final yr in niceTicks(viewport.xMin, viewport.xMax, maxTicks: 6)) {
       final x = r.left + viewport.nx(yr) * r.width;
       if (x < r.left - 1 || x > r.right + 1) continue;
       canvas.drawLine(Offset(x, r.top), Offset(x, r.bottom), gridPaint);
-      _label(canvas, _yearLabel(yr), Offset(x, r.bottom + 4), colors.textMuted,
-          align: TextAlign.center);
+      _label(
+        canvas,
+        _yearLabel(yr),
+        Offset(x, r.bottom + 4),
+        colors.textMuted,
+        align: TextAlign.center,
+      );
     }
     // Relationship caption (value axis).
-    _label(canvas, unitLabel, Offset(r.left + 2, r.top + 2),
-        colors.textSecondary, size: 10);
+    _label(
+      canvas,
+      unitLabel,
+      Offset(r.left + 2, r.top + 2),
+      colors.textSecondary,
+      size: 10,
+    );
 
     // ── Series ──
     canvas.save();
@@ -430,14 +468,19 @@ class _PriceChartPainter extends CustomPainter {
       }
       path.close();
       canvas.drawPath(
-          path, Paint()..color = colors.textMuted.withValues(alpha: 0.13));
+        path,
+        Paint()..color = colors.textMuted.withValues(alpha: 0.13),
+      );
     }
     final whisker = Paint()
       ..color = colors.textMuted.withValues(alpha: 0.5)
       ..strokeWidth = 1;
     for (final p in banded) {
-      canvas.drawLine(_screen(r, p.year, p.valueHigh!),
-          _screen(r, p.year, p.valueLow!), whisker);
+      canvas.drawLine(
+        _screen(r, p.year, p.valueHigh!),
+        _screen(r, p.year, p.valueLow!),
+        whisker,
+      );
     }
 
     // Lines only between adjacent MODERN points (never across eras/gaps).
@@ -450,8 +493,11 @@ class _PriceChartPainter extends CustomPainter {
       final a = series.points[i];
       final b = series.points[i + 1];
       if (a.era == Era.modern && b.era == Era.modern) {
-        canvas.drawLine(_screen(r, a.year, a.value),
-            _screen(r, b.year, b.value), linePaint);
+        canvas.drawLine(
+          _screen(r, a.year, a.value),
+          _screen(r, b.year, b.value),
+          linePaint,
+        );
       }
     }
 
@@ -462,17 +508,17 @@ class _PriceChartPainter extends CustomPainter {
         case Era.modern:
           canvas.drawCircle(at, 2.6, Paint()..color = colors.accentGold);
         case Era.sparse:
-          canvas.drawCircle(
-              at, 3.2, Paint()..color = colors.textSecondary);
+          canvas.drawCircle(at, 3.2, Paint()..color = colors.textSecondary);
         case Era.reconstructed:
           // Hollow ring — "Ankerpunkt, nur Größenordnung".
           canvas.drawCircle(
-              at,
-              4.2,
-              Paint()
-                ..color = colors.textMuted
-                ..style = PaintingStyle.stroke
-                ..strokeWidth = 1.6);
+            at,
+            4.2,
+            Paint()
+              ..color = colors.textMuted
+              ..style = PaintingStyle.stroke
+              ..strokeWidth = 1.6,
+          );
       }
     }
     canvas.restore();
@@ -481,12 +527,13 @@ class _PriceChartPainter extends CustomPainter {
     final sel = selected;
     if (sel != null) {
       canvas.drawCircle(
-          selectedAt,
-          5,
-          Paint()
-            ..color = colors.accentGold
-            ..style = PaintingStyle.stroke
-            ..strokeWidth = 2);
+        selectedAt,
+        5,
+        Paint()
+          ..color = colors.accentGold
+          ..style = PaintingStyle.stroke
+          ..strokeWidth = 2,
+      );
       final lines = <String>[
         '${_yearLabel(sel.year.toDouble())} · ${_factorLabel(sel.value / baseline)}',
         if (sel.label != null) sel.label!,
@@ -501,10 +548,11 @@ class _PriceChartPainter extends CustomPainter {
       for (final l in lines)
         TextPainter(
           text: TextSpan(
-              text: l,
-              style: TextStyle(color: colors.textPrimary, fontSize: 10)),
+            text: l,
+            style: TextStyle(color: colors.textPrimary, fontSize: 10),
+          ),
           textDirection: TextDirection.ltr,
-        )..layout()
+        )..layout(),
     ];
     final w = tps.fold(0.0, (m, tp) => m > tp.width ? m : tp.width) + 12;
     final h = tps.fold(0.0, (m, tp) => m + tp.height) + 8;
@@ -515,14 +563,16 @@ class _PriceChartPainter extends CustomPainter {
     if (top < r.top) top = at.dy + 10;
     final box = Rect.fromLTWH(left, top, w, h);
     canvas.drawRRect(
-        RRect.fromRectAndRadius(box, const Radius.circular(6)),
-        Paint()..color = colors.cardFill);
+      RRect.fromRectAndRadius(box, const Radius.circular(6)),
+      Paint()..color = colors.cardFill,
+    );
     canvas.drawRRect(
-        RRect.fromRectAndRadius(box, const Radius.circular(6)),
-        Paint()
-          ..color = colors.cardBorder
-          ..style = PaintingStyle.stroke
-          ..strokeWidth = 1);
+      RRect.fromRectAndRadius(box, const Radius.circular(6)),
+      Paint()
+        ..color = colors.cardBorder
+        ..style = PaintingStyle.stroke
+        ..strokeWidth = 1,
+    );
     var y = top + 4;
     for (final tp in tps) {
       tp.paint(canvas, Offset(left + 6, y));

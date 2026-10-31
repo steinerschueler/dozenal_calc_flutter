@@ -94,8 +94,9 @@ Locale resolveLocale(Locale? device, Iterable<Locale> supported) {
       }
     }
     if (device.languageCode == 'zh') {
-      final inferredScript =
-          {'TW', 'HK', 'MO'}.contains(device.countryCode) ? 'Hant' : null;
+      final inferredScript = {'TW', 'HK', 'MO'}.contains(device.countryCode)
+          ? 'Hant'
+          : null;
       if (inferredScript != null) {
         for (final s in supported) {
           if (s.languageCode == 'zh' && s.scriptCode == inferredScript) {

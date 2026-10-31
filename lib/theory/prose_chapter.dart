@@ -31,21 +31,21 @@ class Source {
 
 /// Localized label for a reliability tier (R1..R4, S).
 String reliabilityLabel(AppLocalizations l, String r) => switch (r) {
-      'R1' => l.sourceRelR1,
-      'R2' => l.sourceRelR2,
-      'R3' => l.sourceRelR3,
-      'R4' => l.sourceRelR4,
-      'S' => l.sourceRelS,
-      _ => r,
-    };
+  'R1' => l.sourceRelR1,
+  'R2' => l.sourceRelR2,
+  'R3' => l.sourceRelR3,
+  'R4' => l.sourceRelR4,
+  'S' => l.sourceRelS,
+  _ => r,
+};
 
 /// Localized label for an access tier (A1..A3).
 String accessLabel(AppLocalizations l, String a) => switch (a) {
-      'A1' => l.sourceAccA1,
-      'A2' => l.sourceAccA2,
-      'A3' => l.sourceAccA3,
-      _ => a,
-    };
+  'A1' => l.sourceAccA1,
+  'A2' => l.sourceAccA2,
+  'A3' => l.sourceAccA3,
+  _ => a,
+};
 
 /// A full prose chapter: a title, its sections, and its cited sources.
 class ProseChapter {
@@ -58,6 +58,10 @@ class ProseChapter {
   /// illustration (e.g. the dodecagon diagrams) so the id stays correct
   /// regardless of the chapter's position in its block.
   final String? imageId;
-  const ProseChapter(this.title, this.sections,
-      {this.sources = const [], this.imageId});
+  const ProseChapter(
+    this.title,
+    this.sections, {
+    this.sources = const [],
+    this.imageId,
+  });
 }

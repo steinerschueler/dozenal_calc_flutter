@@ -32,7 +32,8 @@ List<RecChapter> _recChaptersJa() => const [
           'プロプライエタリ — コードを確認する手段がない',
           '十二進法出力に非対応',
         ],
-        url: 'https://www.casio.com/intl/scientific-calculators/product.FX-5800P/',
+        url:
+            'https://www.casio.com/intl/scientific-calculators/product.FX-5800P/',
       ),
       RecCalc(
         'SwissMicros DM42n',
@@ -61,18 +62,10 @@ List<RecChapter> _recChaptersJa() => const [
         blurb:
             '現行の非プログラム型ClassWizで、プログラム機能が不要な方向けの'
             'リーズナブルでどこでも手に入る選択肢です。',
-        pros: [
-          '手頃な価格でほぼどこでも購入可能',
-          '自然表示、豊富な機能',
-          'コンパクトで頑丈',
-        ],
-        cons: [
-          'プログラム不可',
-          'プロプライエタリ',
-          '複雑な演算で若干処理が遅い',
-          '十二進法に非対応',
-        ],
-        url: 'https://www.casio.com/us/scientific-calculators/product.FX-991CW/',
+        pros: ['手頃な価格でほぼどこでも購入可能', '自然表示、豊富な機能', 'コンパクトで頑丈'],
+        cons: ['プログラム不可', 'プロプライエタリ', '複雑な演算で若干処理が遅い', '十二進法に非対応'],
+        url:
+            'https://www.casio.com/us/scientific-calculators/product.FX-991CW/',
       ),
     ],
     verdict:
@@ -102,11 +95,7 @@ List<RecChapter> _recChaptersJa() => const [
           '分数および循環小数の表示に対応',
           '継続的にメンテナンスされ、レイアウトをカスタマイズ可能',
         ],
-        cons: [
-          'プロプライエタリ — 自分のプロジェクトに活かせる学習的価値がない',
-          '全機能は有料',
-          '十二進法出力に非対応',
-        ],
+        cons: ['プロプライエタリ — 自分のプロジェクトに活かせる学習的価値がない', '全機能は有料', '十二進法出力に非対応'],
         url: 'https://play.google.com/store/apps/details?id=cz.hipercalc.pro',
       ),
       RecCalc(
@@ -177,11 +166,7 @@ List<RecChapter> _recChaptersJa() => const [
           '学習・参照のための理想的な対象',
           '履歴機能、シンプルなUI、トラッカーなし',
         ],
-        cons: [
-          'CASなし、プログラム機能なし',
-          '機能面ではHiPER/Qalculateの競合にならない',
-          '十二進法に非対応',
-        ],
+        cons: ['CASなし、プログラム機能なし', '機能面ではHiPER/Qalculateの競合にならない', '十二進法に非対応'],
         url: 'https://github.com/Darkempire78/OpenCalc',
       ),
     ],
@@ -232,11 +217,7 @@ List<RecChapter> _recChaptersJa() => const [
           'Decimal-128精度',
           'Plus42は代数方程式に対応',
         ],
-        cons: [
-          'RPN方式（Plus42が緩和してくれる）',
-          '十二進法に非対応',
-          'Plus42は有料',
-        ],
+        cons: ['RPN方式（Plus42が緩和してくれる）', '十二進法に非対応', 'Plus42は有料'],
         url: 'https://thomasokken.com/free42/',
       ),
     ],
@@ -264,10 +245,7 @@ List<RecChapter> _recChaptersJa() => const [
           '十二進法（duodecimal）でも計算できる',
           '自作関数で拡張可能、CLIはスクリプト対応',
         ],
-        cons: [
-          'PCalcほどMacネイティブなポリッシュはない',
-          '機能の豊富さには慣れが必要',
-        ],
+        cons: ['PCalcほどMacネイティブなポリッシュはない', '機能の豊富さには慣れが必要'],
         url: 'https://qalculate.github.io/',
       ),
       RecCalc(
@@ -282,10 +260,7 @@ List<RecChapter> _recChaptersJa() => const [
           'RPN、ペーパーテープ、豊富な単位変換',
           'Magic Variables、Handoff iOS/macOS',
         ],
-        cons: [
-          'プロプライエタリ、有料',
-          '十二進法に非対応',
-        ],
+        cons: ['プロプライエタリ、有料', '十二進法に非対応'],
         url: 'https://pcalc.com/mac/',
       ),
       RecCalc(
@@ -294,15 +269,8 @@ List<RecChapter> _recChaptersJa() => const [
         blurb:
             'macOSでも利用可能です — デスクトップ版は無料。DM42ハードウェアの'
             '演算コアと同じエンジンを使用しています。',
-        pros: [
-          'オープンソース（GPL）、デスクトップ版は無料',
-          'Decimal-128精度',
-          'プラットフォーム間で完全に同一',
-        ],
-        cons: [
-          'RPN方式',
-          '十二進法に非対応',
-        ],
+        pros: ['オープンソース（GPL）、デスクトップ版は無料', 'Decimal-128精度', 'プラットフォーム間で完全に同一'],
+        cons: ['RPN方式', '十二進法に非対応'],
         url: 'https://thomasokken.com/free42/',
       ),
     ],
@@ -333,9 +301,7 @@ List<RecChapter> _recChaptersJa() => const [
           '最強エンジン、十二進法でも計算できる',
           'CLIはスクリプト対応 — エイリアス、パイプ、自作関数ライブラリ',
         ],
-        cons: [
-          '豊富な機能を使いこなすには学習が必要',
-        ],
+        cons: ['豊富な機能を使いこなすには学習が必要'],
         url: 'https://qalculate.github.io/',
       ),
       RecCalc(
@@ -344,15 +310,8 @@ List<RecChapter> _recChaptersJa() => const [
         blurb:
             '関数モードとプログラマーモード、カスタマイズ可能なキーレイアウトを持つ'
             'KDE電卓です — しっかりとした基本機能を備えています。',
-        pros: [
-          'オープンソース、軽量',
-          'プログラマーモード（bin/oct/hex）',
-          'KDE Plasmaに深く統合されている',
-        ],
-        cons: [
-          'CASなし',
-          '十二進法に非対応',
-        ],
+        pros: ['オープンソース、軽量', 'プログラマーモード（bin/oct/hex）', 'KDE Plasmaに深く統合されている'],
+        cons: ['CASなし', '十二進法に非対応'],
         url: 'https://apps.kde.org/kcalc/',
       ),
       RecCalc(
@@ -362,14 +321,8 @@ List<RecChapter> _recChaptersJa() => const [
             '単位変換と通貨換算、さらに高度・財務・プログラマーモードを備えた'
             'GNOMEの標準電卓です。機能面ではQalculateに及びませんが、全体的に'
             'しっかりしています。',
-        pros: [
-          'オープンソース、使いやすい',
-          '単位変換と通貨換算を内蔵',
-        ],
-        cons: [
-          'Qalculateより機能が少ない',
-          '十二進法に非対応',
-        ],
+        pros: ['オープンソース、使いやすい', '単位変換と通貨換算を内蔵'],
+        cons: ['Qalculateより機能が少ない', '十二進法に非対応'],
         url: 'https://apps.gnome.org/Calculator/',
       ),
       RecCalc(
@@ -379,15 +332,8 @@ List<RecChapter> _recChaptersJa() => const [
             'かつての穴場アプリです。シンタックスハイライトと自動補完を持つ高速な'
             'キーボード中心の入力、高精度演算、スプレッドシートのような変数機能を'
             '備えています。安定していますが、長年新バージョンが出ていません。',
-        pros: [
-          'オープンソース、非常に高速なキーボード入力',
-          '高精度、インストール不要でポータブル',
-        ],
-        cons: [
-          '開発が停止しており将来性がない',
-          '機能面でQalculateに追い越されている',
-          '十二進法に非対応',
-        ],
+        pros: ['オープンソース、非常に高速なキーボード入力', '高精度、インストール不要でポータブル'],
+        cons: ['開発が停止しており将来性がない', '機能面でQalculateに追い越されている', '十二進法に非対応'],
         url: 'https://speedcrunch.org/',
       ),
     ],
@@ -411,15 +357,8 @@ List<RecChapter> _recChaptersJa() => const [
         blurb:
             'MacとLinuxと同じ強力なエンジンを持つ公式Windowsビルド（qalculate-qt）です。'
             '記号計算、任意精度、単位変換、プロット機能を備えています。',
-        pros: [
-          'オープンソース、最強エンジン',
-          '十二進法（duodecimal）でも計算できる',
-          '自作関数で拡張可能',
-        ],
-        cons: [
-          'Windowsネイティブなポリッシュには欠ける',
-          '機能の豊富さには慣れが必要',
-        ],
+        pros: ['オープンソース、最強エンジン', '十二進法（duodecimal）でも計算できる', '自作関数で拡張可能'],
+        cons: ['Windowsネイティブなポリッシュには欠ける', '機能の豊富さには慣れが必要'],
         url: 'https://qalculate.github.io/',
       ),
       RecCalc(
@@ -435,11 +374,7 @@ List<RecChapter> _recChaptersJa() => const [
           'プリインストール済みで馴染みやすい',
           'プログラマーモード（bin/oct/hex）',
         ],
-        cons: [
-          'CASなし、プログラム機能なし',
-          '精度に限界がある',
-          '十二進法に非対応',
-        ],
+        cons: ['CASなし、プログラム機能なし', '精度に限界がある', '十二進法に非対応'],
         url: 'https://github.com/microsoft/calculator',
       ),
       RecCalc(
@@ -449,15 +384,8 @@ List<RecChapter> _recChaptersJa() => const [
             'シンタックスハイライトと自動補完を持つ高速なキーボード中心の入力、'
             '高精度演算、インストール不要でポータブル — ただし長年新バージョンが'
             '出ていません。',
-        pros: [
-          'オープンソース、非常に高速なキーボード入力',
-          '高精度、ポータブル',
-        ],
-        cons: [
-          '開発が停止しており将来性がない',
-          '機能面でQalculateに追い越されている',
-          '十二進法に非対応',
-        ],
+        pros: ['オープンソース、非常に高速なキーボード入力', '高精度、ポータブル'],
+        cons: ['開発が停止しており将来性がない', '機能面でQalculateに追い越されている', '十二進法に非対応'],
         url: 'https://speedcrunch.org/',
       ),
       RecCalc(
@@ -466,15 +394,8 @@ List<RecChapter> _recChaptersJa() => const [
         blurb:
             'RPNファン向け: デスクトップ版は無料で、DM42ハードウェアの演算コアと'
             '同じエンジンを使用しています。',
-        pros: [
-          'オープンソース（GPL）、デスクトップ版は無料',
-          'Decimal-128精度',
-          'プラットフォーム間で完全に同一',
-        ],
-        cons: [
-          'RPN方式（Plus42が緩和してくれる）',
-          '十二進法に非対応',
-        ],
+        pros: ['オープンソース（GPL）、デスクトップ版は無料', 'Decimal-128精度', 'プラットフォーム間で完全に同一'],
+        cons: ['RPN方式（Plus42が緩和してくれる）', '十二進法に非対応'],
         url: 'https://thomasokken.com/free42/',
       ),
     ],

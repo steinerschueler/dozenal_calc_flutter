@@ -9,8 +9,20 @@ import 'package:dozenal_calc_flutter/logic/unit_data.dart';
 import 'package:dozenal_calc_flutter/theory/unit_theory.dart';
 
 const _allTags = [
-  'de', 'en', 'fr', 'es', 'it', 'ru', 'ga',
-  'hi', 'zh', 'zh-Hant', 'cy', 'ja', 'fa', 'ar',
+  'de',
+  'en',
+  'fr',
+  'es',
+  'it',
+  'ru',
+  'ga',
+  'hi',
+  'zh',
+  'zh-Hant',
+  'cy',
+  'ja',
+  'fa',
+  'ar',
 ];
 
 void main() {
@@ -26,19 +38,29 @@ void main() {
         expect(s.heading, isNotEmpty, reason: '$tag has an empty heading');
         expect(s.body, isNotEmpty, reason: '$tag has an empty body');
       }
-      expect(unitSources(UnitCategory.count, tag), isNotEmpty,
-          reason: '$tag has no count sources');
+      expect(
+        unitSources(UnitCategory.count, tag),
+        isNotEmpty,
+        reason: '$tag has no count sources',
+      );
     }
   });
 
   test('each non-German language is genuinely translated (not fallback)', () {
-    final deHeadings =
-        unitTheory(UnitCategory.count, 'de').map((s) => s.heading).toList();
+    final deHeadings = unitTheory(
+      UnitCategory.count,
+      'de',
+    ).map((s) => s.heading).toList();
     for (final tag in _allTags.where((t) => t != 'de')) {
-      final headings =
-          unitTheory(UnitCategory.count, tag).map((s) => s.heading).toList();
-      expect(headings, isNot(deHeadings),
-          reason: '$tag count headings should be translated, not German');
+      final headings = unitTheory(
+        UnitCategory.count,
+        tag,
+      ).map((s) => s.heading).toList();
+      expect(
+        headings,
+        isNot(deHeadings),
+        reason: '$tag count headings should be translated, not German',
+      );
     }
   });
 

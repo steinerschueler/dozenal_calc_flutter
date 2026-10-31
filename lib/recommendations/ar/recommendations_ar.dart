@@ -31,7 +31,8 @@ List<RecChapter> _recChaptersAr() => const [
           'مغلقة المصدر — لا إمكانية للاطلاع على الكود',
           'لا تدعم الأساس 12 في الإخراج',
         ],
-        url: 'https://www.casio.com/intl/scientific-calculators/product.FX-5800P/',
+        url:
+            'https://www.casio.com/intl/scientific-calculators/product.FX-5800P/',
       ),
       RecCalc(
         'SwissMicros DM42n',
@@ -70,7 +71,8 @@ List<RecChapter> _recChaptersAr() => const [
           'ملحوظ بطؤها عند العمليات المعقدة',
           'لا تدعم الأساس 12',
         ],
-        url: 'https://www.casio.com/us/scientific-calculators/product.FX-991CW/',
+        url:
+            'https://www.casio.com/us/scientific-calculators/product.FX-991CW/',
       ),
     ],
     verdict:
@@ -281,10 +283,7 @@ List<RecChapter> _recChaptersAr() => const [
           'RPN وشريط الورق وتحويلات كثيرة',
           'Magic Variables وHandoff بين iOS/macOS',
         ],
-        cons: [
-          'مغلقة المصدر ومدفوعة',
-          'لا تدعم الأساس 12',
-        ],
+        cons: ['مغلقة المصدر ومدفوعة', 'لا تدعم الأساس 12'],
         url: 'https://pcalc.com/mac/',
       ),
       RecCalc(
@@ -298,10 +297,7 @@ List<RecChapter> _recChaptersAr() => const [
           'دقة decimal-128',
           'متطابق عبر المنصات',
         ],
-        cons: [
-          'منطق RPN',
-          'لا يدعم الأساس 12',
-        ],
+        cons: ['منطق RPN', 'لا يدعم الأساس 12'],
         url: 'https://thomasokken.com/free42/',
       ),
     ],
@@ -332,9 +328,7 @@ List<RecChapter> _recChaptersAr() => const [
           'أقوى محرك، يحسب أيضاً في الأساس 12',
           'واجهة CLI قابلة للنصوص البرمجية — أسماء مستعارة، أنابيب، مكتبات دوال خاصة',
         ],
-        cons: [
-          'ثراء وظائفه يستلزم وقتاً للتعلم',
-        ],
+        cons: ['ثراء وظائفه يستلزم وقتاً للتعلم'],
         url: 'https://qalculate.github.io/',
       ),
       RecCalc(
@@ -348,10 +342,7 @@ List<RecChapter> _recChaptersAr() => const [
           'وضع المبرمج (bin/oct/hex)',
           'متكامل بشكل جيد مع KDE Plasma',
         ],
-        cons: [
-          'لا CAS',
-          'لا يدعم الأساس 12',
-        ],
+        cons: ['لا CAS', 'لا يدعم الأساس 12'],
         url: 'https://apps.kde.org/kcalc/',
       ),
       RecCalc(
@@ -361,14 +352,8 @@ List<RecChapter> _recChaptersAr() => const [
             'آلة GNOME الحاسبة الافتراضية مع وحدات وعملات وأوضاع متقدمة '
             'ومالية وبرمجية. أقل من Qalculate وظيفياً، لكنها متينة '
             'ومكتملة على جميع الأصعدة.',
-        pros: [
-          'مفتوح المصدر، سهل الاستخدام',
-          'وحدات وعملات مدمجة',
-        ],
-        cons: [
-          'أقل قوة من Qalculate',
-          'لا تدعم الأساس 12',
-        ],
+        pros: ['مفتوح المصدر، سهل الاستخدام', 'وحدات وعملات مدمجة'],
+        cons: ['أقل قوة من Qalculate', 'لا تدعم الأساس 12'],
         url: 'https://apps.gnome.org/Calculator/',
       ),
       RecCalc(
@@ -435,11 +420,7 @@ List<RecChapter> _recChaptersAr() => const [
           'مُثبَّتة مسبقاً ومألوفة',
           'وضع المبرمج (bin/oct/hex)',
         ],
-        cons: [
-          'لا CAS، ولا قابلية للبرمجة',
-          'دقة محدودة',
-          'لا تدعم الأساس 12',
-        ],
+        cons: ['لا CAS، ولا قابلية للبرمجة', 'دقة محدودة', 'لا تدعم الأساس 12'],
         url: 'https://github.com/microsoft/calculator',
       ),
       RecCalc(
@@ -471,10 +452,7 @@ List<RecChapter> _recChaptersAr() => const [
           'دقة decimal-128',
           'متطابق عبر المنصات',
         ],
-        cons: [
-          'منطق RPN (Plus42 يُلطّف ذلك)',
-          'لا يدعم الأساس 12',
-        ],
+        cons: ['منطق RPN (Plus42 يُلطّف ذلك)', 'لا يدعم الأساس 12'],
         url: 'https://thomasokken.com/free42/',
       ),
     ],

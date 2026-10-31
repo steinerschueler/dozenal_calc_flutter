@@ -8,9 +8,9 @@ import 'logic/asset_data.dart';
 
 /// Localized class label (Edelmetall / Währung).
 String assetClassLabel(AssetClass c, AppLocalizations l) => switch (c) {
-      AssetClass.metal => l.assetClassMetal,
-      AssetClass.currency => l.assetClassCurrency,
-    };
+  AssetClass.metal => l.assetClassMetal,
+  AssetClass.currency => l.assetClassCurrency,
+};
 
 /// Genus tile label: a translated metal name, or a currency's ISO code
 /// (uppercased key) which stays international like the unit symbols.

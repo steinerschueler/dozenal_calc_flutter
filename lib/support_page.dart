@@ -90,11 +90,7 @@ class _DonationCard extends StatelessWidget {
                     ),
                   ),
                   const Spacer(),
-                  Icon(
-                    Icons.open_in_new,
-                    size: 16,
-                    color: t.textMuted,
-                  ),
+                  Icon(Icons.open_in_new, size: 16, color: t.textMuted),
                 ],
               ),
               if (subtitle != null) ...[

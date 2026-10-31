@@ -835,84 +835,354 @@ List<Source> _unitSourcesGa(UnitCategory cat) {
   switch (cat) {
     case UnitCategory.count:
       return [
-        Source('Dozen — Wikipedia', 'https://en.wikipedia.org/wiki/Dozen', 'R2', 'A1'),
-        Source('Gross (unit) — Wikipedia', 'https://en.wikipedia.org/wiki/Gross_(unit)', 'R2', 'A1'),
-        Source('Great gross — Wikipedia', 'https://en.wikipedia.org/wiki/Great_gross', 'R2', 'A1'),
-        Source('Baker’s dozen — Wikipedia', 'https://en.wikipedia.org/wiki/Baker%27s_dozen', 'R2', 'A1'),
-        Source('Assize of Bread and Ale — Wikipedia', 'https://en.wikipedia.org/wiki/Assize_of_Bread_and_Ale', 'R2', 'A1'),
-        Source('dozen — Online Etymology Dictionary', 'https://www.etymonline.com/word/dozen', 'R2', 'A1'),
-        Source('gross — Online Etymology Dictionary', 'https://www.etymonline.com/word/gross', 'R2', 'A1'),
+        Source(
+          'Dozen — Wikipedia',
+          'https://en.wikipedia.org/wiki/Dozen',
+          'R2',
+          'A1',
+        ),
+        Source(
+          'Gross (unit) — Wikipedia',
+          'https://en.wikipedia.org/wiki/Gross_(unit)',
+          'R2',
+          'A1',
+        ),
+        Source(
+          'Great gross — Wikipedia',
+          'https://en.wikipedia.org/wiki/Great_gross',
+          'R2',
+          'A1',
+        ),
+        Source(
+          'Baker’s dozen — Wikipedia',
+          'https://en.wikipedia.org/wiki/Baker%27s_dozen',
+          'R2',
+          'A1',
+        ),
+        Source(
+          'Assize of Bread and Ale — Wikipedia',
+          'https://en.wikipedia.org/wiki/Assize_of_Bread_and_Ale',
+          'R2',
+          'A1',
+        ),
+        Source(
+          'dozen — Online Etymology Dictionary',
+          'https://www.etymonline.com/word/dozen',
+          'R2',
+          'A1',
+        ),
+        Source(
+          'gross — Online Etymology Dictionary',
+          'https://www.etymonline.com/word/gross',
+          'R2',
+          'A1',
+        ),
       ];
     case UnitCategory.dist:
       return [
-        Source('Measurement — MacTutor History of Mathematics', 'https://mathshistory.st-andrews.ac.uk/HistTopics/Measurement/', 'R1', 'A1'),
-        Source('Proportionate measurements (Vastu-Shastra) — wisdomlib.org', 'https://www.wisdomlib.org/hinduism/book/vastu-shastra-indian-architecture/d/doc1085304.html', 'R1', 'A1'),
-        Source('Cubit — Wikipedia', 'https://en.wikipedia.org/wiki/Cubit', 'R2', 'A1'),
-        Source('Ancient Mesopotamian units of measurement — Wikipedia', 'https://en.wikipedia.org/wiki/Ancient_Mesopotamian_units_of_measurement', 'R2', 'A1'),
-        Source('Ancient Roman units of measurement — Wikipedia', 'https://en.wikipedia.org/wiki/Ancient_Roman_units_of_measurement', 'R2', 'A1'),
-        Source('The nautical mile — IHO', 'https://ihr.iho.int/articles/the-nautical-mile/', 'R1', 'A2'),
+        Source(
+          'Measurement — MacTutor History of Mathematics',
+          'https://mathshistory.st-andrews.ac.uk/HistTopics/Measurement/',
+          'R1',
+          'A1',
+        ),
+        Source(
+          'Proportionate measurements (Vastu-Shastra) — wisdomlib.org',
+          'https://www.wisdomlib.org/hinduism/book/vastu-shastra-indian-architecture/d/doc1085304.html',
+          'R1',
+          'A1',
+        ),
+        Source(
+          'Cubit — Wikipedia',
+          'https://en.wikipedia.org/wiki/Cubit',
+          'R2',
+          'A1',
+        ),
+        Source(
+          'Ancient Mesopotamian units of measurement — Wikipedia',
+          'https://en.wikipedia.org/wiki/Ancient_Mesopotamian_units_of_measurement',
+          'R2',
+          'A1',
+        ),
+        Source(
+          'Ancient Roman units of measurement — Wikipedia',
+          'https://en.wikipedia.org/wiki/Ancient_Roman_units_of_measurement',
+          'R2',
+          'A1',
+        ),
+        Source(
+          'The nautical mile — IHO',
+          'https://ihr.iho.int/articles/the-nautical-mile/',
+          'R1',
+          'A2',
+        ),
       ];
     case UnitCategory.area:
       return [
-        Source('Babylonian numerals — MacTutor (St Andrews)', 'https://mathshistory.st-andrews.ac.uk/HistTopics/Babylonian_numerals/', 'R1', 'A1'),
-        Source('Acre — Wikipedia', 'https://en.wikipedia.org/wiki/Acre', 'R2', 'A1'),
-        Source('Hectare — Wikipedia', 'https://en.wikipedia.org/wiki/Hectare', 'R2', 'A1'),
-        Source('Jugerum — Wikipedia', 'https://en.wikipedia.org/wiki/Jugerum', 'R2', 'A1'),
-        Source('Mathematical accuracy of Aztec land surveys (Codex Vergara) — PNAS', 'https://www.pnas.org/doi/10.1073/pnas.1107737108', 'R1', 'A2'),
-        Source('Before the Melting Pot: Pre-Columbian Weights and Measures — NIST', 'https://www.nist.gov/blogs/taking-measure/melting-pot-pre-columbian-weights-and-measures', 'R1', 'A2'),
+        Source(
+          'Babylonian numerals — MacTutor (St Andrews)',
+          'https://mathshistory.st-andrews.ac.uk/HistTopics/Babylonian_numerals/',
+          'R1',
+          'A1',
+        ),
+        Source(
+          'Acre — Wikipedia',
+          'https://en.wikipedia.org/wiki/Acre',
+          'R2',
+          'A1',
+        ),
+        Source(
+          'Hectare — Wikipedia',
+          'https://en.wikipedia.org/wiki/Hectare',
+          'R2',
+          'A1',
+        ),
+        Source(
+          'Jugerum — Wikipedia',
+          'https://en.wikipedia.org/wiki/Jugerum',
+          'R2',
+          'A1',
+        ),
+        Source(
+          'Mathematical accuracy of Aztec land surveys (Codex Vergara) — PNAS',
+          'https://www.pnas.org/doi/10.1073/pnas.1107737108',
+          'R1',
+          'A2',
+        ),
+        Source(
+          'Before the Melting Pot: Pre-Columbian Weights and Measures — NIST',
+          'https://www.nist.gov/blogs/taking-measure/melting-pot-pre-columbian-weights-and-measures',
+          'R1',
+          'A2',
+        ),
       ];
     case UnitCategory.space:
       return [
-        Source('Before the Melting Pot: Pre-Columbian Weights and Measures — NIST', 'https://www.nist.gov/blogs/taking-measure/melting-pot-pre-columbian-weights-and-measures', 'R1', 'A1'),
-        Source('Ancient Mesopotamian units of measurement — Wikipedia', 'https://en.wikipedia.org/wiki/Ancient_Mesopotamian_units_of_measurement', 'R2', 'A1'),
-        Source('Hekat — Wikipedia', 'https://en.wikipedia.org/wiki/Hekat', 'R2', 'A1'),
-        Source('Medimnos — Wikipedia', 'https://en.wikipedia.org/wiki/Medimnos', 'R2', 'A1'),
-        Source('Ancient Roman units of measurement — Wikipedia', 'https://en.wikipedia.org/wiki/Ancient_Roman_units_of_measurement', 'R2', 'A1'),
-        Source('Jialiang — Wikipedia', 'https://en.wikipedia.org/wiki/Jialiang', 'R2', 'A1'),
+        Source(
+          'Before the Melting Pot: Pre-Columbian Weights and Measures — NIST',
+          'https://www.nist.gov/blogs/taking-measure/melting-pot-pre-columbian-weights-and-measures',
+          'R1',
+          'A1',
+        ),
+        Source(
+          'Ancient Mesopotamian units of measurement — Wikipedia',
+          'https://en.wikipedia.org/wiki/Ancient_Mesopotamian_units_of_measurement',
+          'R2',
+          'A1',
+        ),
+        Source(
+          'Hekat — Wikipedia',
+          'https://en.wikipedia.org/wiki/Hekat',
+          'R2',
+          'A1',
+        ),
+        Source(
+          'Medimnos — Wikipedia',
+          'https://en.wikipedia.org/wiki/Medimnos',
+          'R2',
+          'A1',
+        ),
+        Source(
+          'Ancient Roman units of measurement — Wikipedia',
+          'https://en.wikipedia.org/wiki/Ancient_Roman_units_of_measurement',
+          'R2',
+          'A1',
+        ),
+        Source(
+          'Jialiang — Wikipedia',
+          'https://en.wikipedia.org/wiki/Jialiang',
+          'R2',
+          'A1',
+        ),
       ];
     case UnitCategory.weight:
       return [
-        Source('Hanging in the Balance: Precision Weighing in Antiquity — Penn Museum', 'https://www.penn.museum/sites/expedition/hanging-in-the-balance-2/', 'R1', 'A1'),
-        Source('Avoirdupois — Wikipedia', 'https://en.wikipedia.org/wiki/Avoirdupois', 'R2', 'A1'),
-        Source('Troy weight — Wikipedia', 'https://en.wikipedia.org/wiki/Troy_weight', 'R2', 'A1'),
-        Source('Mina (unit) — Wikipedia', 'https://en.wikipedia.org/wiki/Mina_(unit)', 'R2', 'A1'),
-        Source('Cubical Weights — Harappa.com', 'https://www.harappa.com/blog/cubical-weights', 'R1', 'A2'),
-        Source('Legume Seeds for Weighing Gold in India — ResearchGate', 'https://www.researchgate.net/publication/344088688', 'R1', 'A2'),
+        Source(
+          'Hanging in the Balance: Precision Weighing in Antiquity — Penn Museum',
+          'https://www.penn.museum/sites/expedition/hanging-in-the-balance-2/',
+          'R1',
+          'A1',
+        ),
+        Source(
+          'Avoirdupois — Wikipedia',
+          'https://en.wikipedia.org/wiki/Avoirdupois',
+          'R2',
+          'A1',
+        ),
+        Source(
+          'Troy weight — Wikipedia',
+          'https://en.wikipedia.org/wiki/Troy_weight',
+          'R2',
+          'A1',
+        ),
+        Source(
+          'Mina (unit) — Wikipedia',
+          'https://en.wikipedia.org/wiki/Mina_(unit)',
+          'R2',
+          'A1',
+        ),
+        Source(
+          'Cubical Weights — Harappa.com',
+          'https://www.harappa.com/blog/cubical-weights',
+          'R1',
+          'A2',
+        ),
+        Source(
+          'Legume Seeds for Weighing Gold in India — ResearchGate',
+          'https://www.researchgate.net/publication/344088688',
+          'R1',
+          'A2',
+        ),
       ];
     case UnitCategory.time:
       return [
-        Source('Sexagesimal — Wikipedia', 'https://en.wikipedia.org/wiki/Sexagesimal', 'R2', 'A1'),
-        Source('Hour — Wikipedia', 'https://en.wikipedia.org/wiki/Hour', 'R2', 'A1'),
-        Source('Minute — Wikipedia', 'https://en.wikipedia.org/wiki/Minute', 'R2', 'A1'),
-        Source('Decimal time — Wikipedia', 'https://en.wikipedia.org/wiki/Decimal_time', 'R2', 'A1'),
-        Source('Babylonian numerals — MacTutor (St Andrews)', 'https://mathshistory.st-andrews.ac.uk/HistTopics/Babylonian_numerals/', 'R1', 'A3'),
-        Source('Telling Time in Ancient Egypt — Metropolitan Museum of Art', 'https://www.metmuseum.org/essays/telling-time-in-ancient-egypt', 'R1', 'A3'),
+        Source(
+          'Sexagesimal — Wikipedia',
+          'https://en.wikipedia.org/wiki/Sexagesimal',
+          'R2',
+          'A1',
+        ),
+        Source(
+          'Hour — Wikipedia',
+          'https://en.wikipedia.org/wiki/Hour',
+          'R2',
+          'A1',
+        ),
+        Source(
+          'Minute — Wikipedia',
+          'https://en.wikipedia.org/wiki/Minute',
+          'R2',
+          'A1',
+        ),
+        Source(
+          'Decimal time — Wikipedia',
+          'https://en.wikipedia.org/wiki/Decimal_time',
+          'R2',
+          'A1',
+        ),
+        Source(
+          'Babylonian numerals — MacTutor (St Andrews)',
+          'https://mathshistory.st-andrews.ac.uk/HistTopics/Babylonian_numerals/',
+          'R1',
+          'A3',
+        ),
+        Source(
+          'Telling Time in Ancient Egypt — Metropolitan Museum of Art',
+          'https://www.metmuseum.org/essays/telling-time-in-ancient-egypt',
+          'R1',
+          'A3',
+        ),
       ];
     case UnitCategory.angle:
       return [
-        Source('Babylonian mathematics — MacTutor (St Andrews)', 'https://mathshistory.st-andrews.ac.uk/HistTopics/Babylonian_mathematics/', 'R1', 'A1'),
-        Source('Why did the Babylonians use 360 degrees? — UNLV', 'https://www.physics.unlv.edu/~jeffery/astro/babylon/babylonian_360_degrees.html', 'R1', 'A1'),
-        Source('Hipparchus — MacTutor', 'https://mathshistory.st-andrews.ac.uk/Biographies/Hipparchus/', 'R1', 'A1'),
-        Source('Angles in the SI: the radian as an independent unit — arXiv', 'https://arxiv.org/pdf/2101.01578', 'R1', 'A1'),
-        Source('Decimal time — MacTutor', 'https://mathshistory.st-andrews.ac.uk/HistTopics/Decimal_time/', 'R1', 'A1'),
+        Source(
+          'Babylonian mathematics — MacTutor (St Andrews)',
+          'https://mathshistory.st-andrews.ac.uk/HistTopics/Babylonian_mathematics/',
+          'R1',
+          'A1',
+        ),
+        Source(
+          'Why did the Babylonians use 360 degrees? — UNLV',
+          'https://www.physics.unlv.edu/~jeffery/astro/babylon/babylonian_360_degrees.html',
+          'R1',
+          'A1',
+        ),
+        Source(
+          'Hipparchus — MacTutor',
+          'https://mathshistory.st-andrews.ac.uk/Biographies/Hipparchus/',
+          'R1',
+          'A1',
+        ),
+        Source(
+          'Angles in the SI: the radian as an independent unit — arXiv',
+          'https://arxiv.org/pdf/2101.01578',
+          'R1',
+          'A1',
+        ),
+        Source(
+          'Decimal time — MacTutor',
+          'https://mathshistory.st-andrews.ac.uk/HistTopics/Decimal_time/',
+          'R1',
+          'A1',
+        ),
       ];
     case UnitCategory.price:
       return [
-        Source('£sd — Wikipedia', 'https://en.wikipedia.org/wiki/%C2%A3sd', 'R2', 'A1'),
-        Source('Denarius — Wikipedia', 'https://en.wikipedia.org/wiki/Denarius', 'R2', 'A1'),
-        Source('Shekel — Wikipedia', 'https://en.wikipedia.org/wiki/Shekel', 'R2', 'A1'),
-        Source('Non-decimal currency — Wikipedia', 'https://en.wikipedia.org/wiki/Non-decimal_currency', 'R2', 'A1'),
-        Source('Charon\'s obol — Wikipedia', 'https://en.wikipedia.org/wiki/Charon\'s_obol', 'R2', 'A1'),
-        Source('Babylonian numerals — MacTutor (St Andrews)', 'https://mathshistory.st-andrews.ac.uk/HistTopics/Babylonian_numerals/', 'R1', 'A2'),
+        Source(
+          '£sd — Wikipedia',
+          'https://en.wikipedia.org/wiki/%C2%A3sd',
+          'R2',
+          'A1',
+        ),
+        Source(
+          'Denarius — Wikipedia',
+          'https://en.wikipedia.org/wiki/Denarius',
+          'R2',
+          'A1',
+        ),
+        Source(
+          'Shekel — Wikipedia',
+          'https://en.wikipedia.org/wiki/Shekel',
+          'R2',
+          'A1',
+        ),
+        Source(
+          'Non-decimal currency — Wikipedia',
+          'https://en.wikipedia.org/wiki/Non-decimal_currency',
+          'R2',
+          'A1',
+        ),
+        Source(
+          'Charon\'s obol — Wikipedia',
+          'https://en.wikipedia.org/wiki/Charon\'s_obol',
+          'R2',
+          'A1',
+        ),
+        Source(
+          'Babylonian numerals — MacTutor (St Andrews)',
+          'https://mathshistory.st-andrews.ac.uk/HistTopics/Babylonian_numerals/',
+          'R1',
+          'A2',
+        ),
       ];
     case UnitCategory.temp:
       return [
-        Source('Kelvin: History — NIST', 'https://www.nist.gov/si-redefinition/kelvin/kelvin-history', 'R1', 'A1'),
-        Source('Fahrenheit — Wikipedia', 'https://en.wikipedia.org/wiki/Fahrenheit', 'R2', 'A1'),
-        Source('Daniel Gabriel Fahrenheit — Wikipedia', 'https://en.wikipedia.org/wiki/Daniel_Gabriel_Fahrenheit', 'R2', 'A1'),
-        Source('Réaumur scale — Wikipedia', 'https://en.wikipedia.org/wiki/R%C3%A9aumur_scale', 'R2', 'A1'),
-        Source('Thermodynamic temperature — Wikipedia', 'https://en.wikipedia.org/wiki/Thermodynamic_temperature', 'R2', 'A1'),
-        Source('Rankine scale — Wikipedia', 'https://en.wikipedia.org/wiki/Rankine_scale', 'R2', 'A1'),
+        Source(
+          'Kelvin: History — NIST',
+          'https://www.nist.gov/si-redefinition/kelvin/kelvin-history',
+          'R1',
+          'A1',
+        ),
+        Source(
+          'Fahrenheit — Wikipedia',
+          'https://en.wikipedia.org/wiki/Fahrenheit',
+          'R2',
+          'A1',
+        ),
+        Source(
+          'Daniel Gabriel Fahrenheit — Wikipedia',
+          'https://en.wikipedia.org/wiki/Daniel_Gabriel_Fahrenheit',
+          'R2',
+          'A1',
+        ),
+        Source(
+          'Réaumur scale — Wikipedia',
+          'https://en.wikipedia.org/wiki/R%C3%A9aumur_scale',
+          'R2',
+          'A1',
+        ),
+        Source(
+          'Thermodynamic temperature — Wikipedia',
+          'https://en.wikipedia.org/wiki/Thermodynamic_temperature',
+          'R2',
+          'A1',
+        ),
+        Source(
+          'Rankine scale — Wikipedia',
+          'https://en.wikipedia.org/wiki/Rankine_scale',
+          'R2',
+          'A1',
+        ),
       ];
     default:
       return const [];

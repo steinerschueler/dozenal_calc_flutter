@@ -35,7 +35,8 @@ List<RecChapter> _recChaptersIt() => const [
           'Proprietaria — nessuna possibilità di esaminare il codice',
           'Nessun output in base dodici',
         ],
-        url: 'https://www.casio.com/intl/scientific-calculators/product.FX-5800P/',
+        url:
+            'https://www.casio.com/intl/scientific-calculators/product.FX-5800P/',
       ),
       RecCalc(
         'SwissMicros DM42n',
@@ -75,7 +76,8 @@ List<RecChapter> _recChaptersIt() => const [
           'Notevolmente più lenta nelle operazioni complesse',
           'Nessuna base dodici',
         ],
-        url: 'https://www.casio.com/us/scientific-calculators/product.FX-991CW/',
+        url:
+            'https://www.casio.com/us/scientific-calculators/product.FX-991CW/',
       ),
     ],
     verdict:
@@ -293,10 +295,7 @@ List<RecChapter> _recChaptersIt() => const [
           'RPN, nastro di carta, molte conversioni',
           'Magic Variables, Handoff iOS/macOS',
         ],
-        cons: [
-          'Proprietaria, a pagamento',
-          'Nessuna base dodici',
-        ],
+        cons: ['Proprietaria, a pagamento', 'Nessuna base dodici'],
         url: 'https://pcalc.com/mac/',
       ),
       RecCalc(
@@ -310,10 +309,7 @@ List<RecChapter> _recChaptersIt() => const [
           'Precisione decimal-128',
           'Identico su tutte le piattaforme',
         ],
-        cons: [
-          'Logica RPN',
-          'Nessuna base dodici',
-        ],
+        cons: ['Logica RPN', 'Nessuna base dodici'],
         url: 'https://thomasokken.com/free42/',
       ),
     ],
@@ -346,9 +342,7 @@ List<RecChapter> _recChaptersIt() => const [
           'Motore più potente, calcola anche in base dodici',
           'CLI scriptabile — alias, pipe, librerie di funzioni proprie',
         ],
-        cons: [
-          'La ricchezza di funzioni richiede un po’ di apprendimento',
-        ],
+        cons: ['La ricchezza di funzioni richiede un po’ di apprendimento'],
         url: 'https://qalculate.github.io/',
       ),
       RecCalc(
@@ -362,10 +356,7 @@ List<RecChapter> _recChaptersIt() => const [
           'Modalità programmatore (bin/ott/hex)',
           'Ben integrata in KDE Plasma',
         ],
-        cons: [
-          'Nessun CAS',
-          'Nessuna base dodici',
-        ],
+        cons: ['Nessun CAS', 'Nessuna base dodici'],
         url: 'https://apps.kde.org/kcalc/',
       ),
       RecCalc(
@@ -375,14 +366,8 @@ List<RecChapter> _recChaptersIt() => const [
             'La calcolatrice standard di GNOME con unità e valute, più modalità '
             'avanzata, finanziaria e programmatore. Funzionalmente al di sotto '
             'di Qalculate, ma solidissima.',
-        pros: [
-          'Open source, facile da usare',
-          'Unità e valute integrate',
-        ],
-        cons: [
-          'Meno potente di Qalculate',
-          'Nessuna base dodici',
-        ],
+        pros: ['Open source, facile da usare', 'Unità e valute integrate'],
+        cons: ['Meno potente di Qalculate', 'Nessuna base dodici'],
         url: 'https://apps.gnome.org/Calculator/',
       ),
       RecCalc(
@@ -487,10 +472,7 @@ List<RecChapter> _recChaptersIt() => const [
           'Precisione decimal-128',
           'Identico su tutte le piattaforme',
         ],
-        cons: [
-          'Logica RPN (Plus42 attenua l’impatto)',
-          'Nessuna base dodici',
-        ],
+        cons: ['Logica RPN (Plus42 attenua l’impatto)', 'Nessuna base dodici'],
         url: 'https://thomasokken.com/free42/',
       ),
     ],

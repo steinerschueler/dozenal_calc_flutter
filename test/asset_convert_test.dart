@@ -13,8 +13,7 @@ Unit _u(AssetGenus g, String symbol) => g.unitBySymbol(symbol)!;
 
 void main() {
   final gold = generaOf(AssetClass.metal).first;
-  final gbp =
-      generaOf(AssetClass.currency).firstWhere((g) => g.key == 'gbp');
+  final gbp = generaOf(AssetClass.currency).firstWhere((g) => g.key == 'gbp');
 
   group('precious-metal weight factors (exact, base = kg)', () {
     test('1 troy ounce = 31.1034768 g exactly', () {
@@ -38,21 +37,28 @@ void main() {
 
     test('the ladder is Troy + metric only (no avoirdupois oz/lb)', () {
       final syms = gold.units.map((u) => u.symbol).toSet();
-      expect(syms, containsAll(<String>['gr', 'dwt', 'oz t', 'lb t', 'g', 'kg']));
+      expect(
+        syms,
+        containsAll(<String>['gr', 'dwt', 'oz t', 'lb t', 'g', 'kg']),
+      );
       expect(syms, isNot(contains('oz'))); // avoirdupois ounce dropped
       expect(syms, isNot(contains('lb'))); // avoirdupois pound dropped
     });
 
     test('all four metals share the identical weight ladder', () {
       for (final m in generaOf(AssetClass.metal)) {
-        expect(convert(1, _u(m, 'oz t'), _u(m, 'g')), closeTo(31.1034768, 1e-9));
+        expect(
+          convert(1, _u(m, 'oz t'), _u(m, 'g')),
+          closeTo(31.1034768, 1e-9),
+        );
       }
     });
   });
 
   group('troy breakdown', () {
     test('1 troy lb + 2 oz t + 3 dwt cascades back exactly', () {
-      final total = _u(gold, 'lb t').toBase(1) +
+      final total =
+          _u(gold, 'lb t').toBase(1) +
           _u(gold, 'oz t').toBase(2) +
           _u(gold, 'dwt').toBase(3);
       final b = assetBreakdown(gold, total);
@@ -73,7 +79,8 @@ void main() {
     });
 
     test('GBP breakdown of £1 7sh 6d round-trips', () {
-      final total = _u(gbp, '£').toBase(1) +
+      final total =
+          _u(gbp, '£').toBase(1) +
           _u(gbp, 'sh').toBase(7) +
           _u(gbp, 'd').toBase(6);
       final b = assetBreakdown(gbp, total);
@@ -108,8 +115,11 @@ void main() {
           if (!g.hasBreakdown) continue;
           final units = g.breakdownUnits();
           for (var i = 1; i < units.length; i++) {
-            expect(units[i].a, lessThan(units[i - 1].a),
-                reason: '${g.key} breakdown not descending');
+            expect(
+              units[i].a,
+              lessThan(units[i - 1].a),
+              reason: '${g.key} breakdown not descending',
+            );
           }
         }
       }

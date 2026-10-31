@@ -128,7 +128,8 @@ List<ManualChapter> _ownAssetManualChapters(String langTag) {
   if (c.startsWith('ar')) return _assetManualChaptersAr();
   if (c.startsWith('hi')) return _assetManualChaptersHi();
   if (c.startsWith('ga')) return _assetManualChaptersGa();
-  if (c.startsWith('zh') && c.contains('hant')) return _assetManualChaptersZhHant();
+  if (c.startsWith('zh') && c.contains('hant'))
+    return _assetManualChaptersZhHant();
   if (c.startsWith('cy')) return _assetManualChaptersCy();
   if (c.startsWith('ja')) return _assetManualChaptersJa();
   if (c.startsWith('zh')) return _assetManualChaptersZh();

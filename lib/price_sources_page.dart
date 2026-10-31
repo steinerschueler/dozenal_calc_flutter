@@ -27,7 +27,11 @@ class PriceSourcesPage extends StatelessWidget {
           children: [
             Text(
               l.priceSourcesIntro,
-              style: TextStyle(color: t.textSecondary, fontSize: 13, height: 1.4),
+              style: TextStyle(
+                color: t.textSecondary,
+                fontSize: 13,
+                height: 1.4,
+              ),
             ),
             const SizedBox(height: 16),
             for (var i = 0; i < kPriceSources.length; i++)
@@ -49,8 +53,7 @@ class PriceSourcesPage extends StatelessWidget {
             style: TextStyle(color: t.textPrimary, fontSize: 13, height: 1.35),
           ),
           const SizedBox(height: 2),
-          Text(s.license,
-              style: TextStyle(color: t.textMuted, fontSize: 11)),
+          Text(s.license, style: TextStyle(color: t.textMuted, fontSize: 11)),
           if (s.url.isNotEmpty)
             GestureDetector(
               onTap: () => openExternalLink(context, s.url),
@@ -59,9 +62,10 @@ class PriceSourcesPage extends StatelessWidget {
                 child: Text(
                   s.url,
                   style: TextStyle(
-                      color: t.link,
-                      fontSize: 11,
-                      decoration: TextDecoration.underline),
+                    color: t.link,
+                    fontSize: 11,
+                    decoration: TextDecoration.underline,
+                  ),
                 ),
               ),
             ),

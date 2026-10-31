@@ -54,8 +54,13 @@ class _Seg {
   final double size;
   final FontWeight weight;
   final bool glyph;
-  const _Seg(this.text, this.color, this.size,
-      {this.weight = FontWeight.w400, this.glyph = true});
+  const _Seg(
+    this.text,
+    this.color,
+    this.size, {
+    this.weight = FontWeight.w400,
+    this.glyph = true,
+  });
 }
 
 /// A laid-out line: the [TextPainter] plus, per character, its digit value
@@ -86,15 +91,17 @@ class _LineLayout {
         digits.add(custom ? v : null);
         colors.add(s.color);
         final hide = custom && v != null;
-        spans.add(TextSpan(
-          text: ch,
-          style: TextStyle(
-            color: hide ? const Color(0x00000000) : s.color,
-            fontSize: s.size,
-            fontWeight: s.weight,
-            fontFamily: 'monospace',
+        spans.add(
+          TextSpan(
+            text: ch,
+            style: TextStyle(
+              color: hide ? const Color(0x00000000) : s.color,
+              fontSize: s.size,
+              fontWeight: s.weight,
+              fontFamily: 'monospace',
+            ),
           ),
-        ));
+        );
       }
     }
     final tp = TextPainter(
@@ -112,7 +119,8 @@ class _LineLayout {
       final v = digits[i];
       if (v == null) continue;
       final boxes = tp.getBoxesForSelection(
-          TextSelection(baseOffset: i, extentOffset: i + 1));
+        TextSelection(baseOffset: i, extentOffset: i + 1),
+      );
       if (boxes.isEmpty) continue;
       final b = boxes.first.toRect();
       final q = math.min(b.width, b.height) * 0.34;
@@ -229,8 +237,7 @@ class ConverterDisplay extends StatelessWidget {
                   // green belongs to the Ten world now, not to "result".
                   numberColor: t.displayText,
                   unitColor: unitColor,
-                  bracketColor:
-                      _bracketHue(resultLine?.bracketTenWorld, t),
+                  bracketColor: _bracketHue(resultLine?.bracketTenWorld, t),
                   numberSize: resultSize,
                   bracketSize: bracketSize * 1.05,
                   style: style,
@@ -277,8 +284,15 @@ List<_Seg> _splitByUnitRanges(
     if (start > pos) {
       segs.add(_Seg(text.substring(pos, start), neutral, size, weight: weight));
     }
-    segs.add(_Seg(text.substring(start, end), unitColor, size,
-        weight: weight, glyph: false));
+    segs.add(
+      _Seg(
+        text.substring(start, end),
+        unitColor,
+        size,
+        weight: weight,
+        glyph: false,
+      ),
+    );
     pos = end;
   }
   if (pos < text.length) {
@@ -297,18 +311,23 @@ List<_Seg> _resultSegs(
   required double numberSize,
   required double bracketSize,
   String prefix = '= ',
-}) =>
-    <_Seg>[
-      // The 'PREFIX value' run is neutral; breakdown strings carry their unit
-      // symbols inside `number`, coloured via the ranges (the prefix shifts the
-      // ranges by its length — '= ' for exact results, '≈ ' for value mode).
-      ..._splitByUnitRanges('$prefix${l.number}', l.unitRanges, numberColor,
-          unitColor, numberSize, offset: prefix.length),
-      if (l.unit != null)
-        _Seg(' ${l.unit}', unitColor, numberSize * 0.82, glyph: false),
-      if (l.bracket != null)
-        _Seg('  {${l.bracket}}', bracketColor, bracketSize, glyph: false),
-    ];
+}) => <_Seg>[
+  // The 'PREFIX value' run is neutral; breakdown strings carry their unit
+  // symbols inside `number`, coloured via the ranges (the prefix shifts the
+  // ranges by its length — '= ' for exact results, '≈ ' for value mode).
+  ..._splitByUnitRanges(
+    '$prefix${l.number}',
+    l.unitRanges,
+    numberColor,
+    unitColor,
+    numberSize,
+    offset: prefix.length,
+  ),
+  if (l.unit != null)
+    _Seg(' ${l.unit}', unitColor, numberSize * 0.82, glyph: false),
+  if (l.bracket != null)
+    _Seg('  {${l.bracket}}', bracketColor, bracketSize, glyph: false),
+];
 
 /// Test hook: the per-character glyph overlay cells for a result [line] in
 /// [style] (custom → the dozenal digit overlaid at that cell, null → stays
@@ -316,12 +335,14 @@ List<_Seg> _resultSegs(
 @visibleForTesting
 List<int?> debugResultGlyphCells(ConverterLine line, GlyphStyle style) =>
     _LineLayout.build(
-      _resultSegs(line,
-          numberColor: const Color(0xFFFFFFFF),
-          unitColor: const Color(0xFFFFFFFF),
-          bracketColor: const Color(0xFFFFFFFF),
-          numberSize: 20,
-          bracketSize: 14),
+      _resultSegs(
+        line,
+        numberColor: const Color(0xFFFFFFFF),
+        unitColor: const Color(0xFFFFFFFF),
+        bracketColor: const Color(0xFFFFFFFF),
+        numberSize: 20,
+        bracketSize: 14,
+      ),
       style,
     ).digits;
 
@@ -352,13 +373,15 @@ class _ResultLine extends StatelessWidget {
   Widget build(BuildContext context) {
     final l = line;
     if (l == null) return SizedBox(height: numberSize); // keep the row slot
-    final segs = _resultSegs(l,
-        numberColor: numberColor,
-        unitColor: unitColor,
-        bracketColor: bracketColor,
-        numberSize: numberSize,
-        bracketSize: bracketSize,
-        prefix: prefix);
+    final segs = _resultSegs(
+      l,
+      numberColor: numberColor,
+      unitColor: unitColor,
+      bracketColor: bracketColor,
+      numberSize: numberSize,
+      bracketSize: bracketSize,
+      prefix: prefix,
+    );
     final layout = _LineLayout.build(segs, style);
     return LayoutBuilder(
       builder: (ctx, c) {
@@ -366,8 +389,10 @@ class _ResultLine extends StatelessWidget {
         final w = layout.tp.width;
         final scale = (w > maxW && w > 0) ? maxW / w : 1.0; // scale down only
         return CustomPaint(
-          size: Size(maxW,
-              c.maxHeight.isFinite ? c.maxHeight : numberSize * 1.4),
+          size: Size(
+            maxW,
+            c.maxHeight.isFinite ? c.maxHeight : numberSize * 1.4,
+          ),
           painter: _LinePainter(
             layout: layout,
             scale: scale,
@@ -415,7 +440,12 @@ class _CaretInputLine extends StatelessWidget {
       // Same string, char for char, as the un-coloured version — only span
       // colours differ, so the caret/tap geometry stays exact.
       ..._splitByUnitRanges(
-          text, unitRanges, t.displayText, unitColor, numberSize),
+        text,
+        unitRanges,
+        t.displayText,
+        unitColor,
+        numberSize,
+      ),
       if (bracket != null)
         _Seg('  {$bracket}', bracketColor, bracketSize, glyph: false),
     ];
@@ -435,13 +465,16 @@ class _CaretInputLine extends StatelessWidget {
                   final pos = tp.getPositionForOffset(
                     Offset(textX.clamp(0.0, tp.width), tp.height / 2),
                   );
-                  final off =
-                      pos.offset > text.length ? text.length : pos.offset;
+                  final off = pos.offset > text.length
+                      ? text.length
+                      : pos.offset;
                   onTapChar!(off);
                 },
           child: CustomPaint(
             size: Size(
-                maxW, c.maxHeight.isFinite ? c.maxHeight : numberSize * 1.6),
+              maxW,
+              c.maxHeight.isFinite ? c.maxHeight : numberSize * 1.6,
+            ),
             painter: _LinePainter(
               layout: layout,
               scale: scale,
@@ -486,8 +519,10 @@ class _LinePainter extends CustomPainter {
     tp.paint(canvas, Offset.zero);
     layout.paintGlyphs(canvas);
     if (caret != null) {
-      final caretPos =
-          tp.getOffsetForCaret(TextPosition(offset: caret!), Rect.zero);
+      final caretPos = tp.getOffsetForCaret(
+        TextPosition(offset: caret!),
+        Rect.zero,
+      );
       canvas.drawLine(
         Offset(caretPos.dx, 1),
         Offset(caretPos.dx, tp.height - 1),

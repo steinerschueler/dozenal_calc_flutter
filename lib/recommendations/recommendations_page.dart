@@ -77,10 +77,7 @@ class _RecCalcCard extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 2),
-          Text(
-            calc.tag,
-            style: TextStyle(fontSize: 12, color: t.textMuted),
-          ),
+          Text(calc.tag, style: TextStyle(fontSize: 12, color: t.textMuted)),
           const SizedBox(height: 8),
           Text(
             calc.blurb,
@@ -197,11 +194,7 @@ class _VerdictBox extends StatelessWidget {
       ),
       child: Text(
         verdict,
-        style: TextStyle(
-          fontSize: 13.5,
-          height: 1.45,
-          color: t.textSecondary,
-        ),
+        style: TextStyle(fontSize: 13.5, height: 1.45, color: t.textSecondary),
       ),
     );
   }

@@ -116,8 +116,13 @@ class PowerTriangleFigure extends StatelessWidget {
     child: AspectRatio(
       aspectRatio: 1.35,
       child: CustomPaint(
-          painter: _PowerTrianglePainter(
-              AppColors.of(context), power, base, exponent)),
+        painter: _PowerTrianglePainter(
+          AppColors.of(context),
+          power,
+          base,
+          exponent,
+        ),
+      ),
     ),
   );
 }
@@ -689,7 +694,8 @@ class ParallelBarFigure extends StatelessWidget {
     child: AspectRatio(
       aspectRatio: 1.7,
       child: CustomPaint(
-          painter: _ParallelBarPainter(AppColors.of(context), lessThanBoth)),
+        painter: _ParallelBarPainter(AppColors.of(context), lessThanBoth),
+      ),
     ),
   );
 }
@@ -935,8 +941,16 @@ class RightTriangleFigure extends StatelessWidget {
     child: AspectRatio(
       aspectRatio: 1.6,
       child: CustomPaint(
-          painter: _RightTrianglePainter(AppColors.of(context), adjacent,
-              opposite, hypotenuse, sinRatio, cosRatio, tanRatio)),
+        painter: _RightTrianglePainter(
+          AppColors.of(context),
+          adjacent,
+          opposite,
+          hypotenuse,
+          sinRatio,
+          cosRatio,
+          tanRatio,
+        ),
+      ),
     ),
   );
 }
@@ -949,8 +963,15 @@ class _RightTrianglePainter extends CustomPainter {
   final String sinRatio;
   final String cosRatio;
   final String tanRatio;
-  _RightTrianglePainter(this.c, this.adjacent, this.opposite, this.hypotenuse,
-      this.sinRatio, this.cosRatio, this.tanRatio);
+  _RightTrianglePainter(
+    this.c,
+    this.adjacent,
+    this.opposite,
+    this.hypotenuse,
+    this.sinRatio,
+    this.cosRatio,
+    this.tanRatio,
+  );
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -1204,7 +1225,13 @@ class MemoryFlowFigure extends StatelessWidget {
     child: AspectRatio(
       aspectRatio: 1.7,
       child: CustomPaint(
-          painter: _MemoryFlowPainter(AppColors.of(context), result, store, input)),
+        painter: _MemoryFlowPainter(
+          AppColors.of(context),
+          result,
+          store,
+          input,
+        ),
+      ),
     ),
   );
 }
@@ -1316,8 +1343,14 @@ class _MemoryFlowPainter extends CustomPainter {
     });
 
     // --- Box labels.
-    void centerLabel(Rect r, String s, Color color, double dy,
-        {double size = 10, FontWeight weight = FontWeight.w500}) {
+    void centerLabel(
+      Rect r,
+      String s,
+      Color color,
+      double dy, {
+      double size = 10,
+      FontWeight weight = FontWeight.w500,
+    }) {
       _text(
         canvas,
         s,
@@ -1329,8 +1362,14 @@ class _MemoryFlowPainter extends CustomPainter {
     }
 
     centerLabel(boxes['res']!, result, c.textSecondary, -6);
-    centerLabel(boxes['mem']!, store, c.textPrimary, -9,
-        size: 11, weight: FontWeight.w600);
+    centerLabel(
+      boxes['mem']!,
+      store,
+      c.textPrimary,
+      -9,
+      size: 11,
+      weight: FontWeight.w600,
+    );
     centerLabel(boxes['mem']!, '(M)', c.textMuted, 4, size: 9);
     centerLabel(boxes['inp']!, input, c.textSecondary, -6);
 
@@ -1340,10 +1379,16 @@ class _MemoryFlowPainter extends CustomPainter {
       ..color = c.textMuted
       ..strokeWidth = 1.4
       ..strokeCap = StrokeCap.round;
-    canvas.drawLine(mc + const Offset(-3.5, -3.5), mc + const Offset(3.5, 3.5),
-        mcPaint);
-    canvas.drawLine(mc + const Offset(3.5, -3.5), mc + const Offset(-3.5, 3.5),
-        mcPaint);
+    canvas.drawLine(
+      mc + const Offset(-3.5, -3.5),
+      mc + const Offset(3.5, 3.5),
+      mcPaint,
+    );
+    canvas.drawLine(
+      mc + const Offset(3.5, -3.5),
+      mc + const Offset(-3.5, 3.5),
+      mcPaint,
+    );
     _text(canvas, 'MC', mc + const Offset(6, -5), c.textMuted, size: 8.5);
   }
 
@@ -1378,7 +1423,8 @@ class HistoryBandFigure extends StatelessWidget {
     child: AspectRatio(
       aspectRatio: 1.3,
       child: CustomPaint(
-          painter: _HistoryBandPainter(AppColors.of(context), swipe, newCap, tap)),
+        painter: _HistoryBandPainter(AppColors.of(context), swipe, newCap, tap),
+      ),
     ),
   );
 }
@@ -1411,8 +1457,14 @@ class _HistoryBandPainter extends CustomPainter {
       ..strokeCap = StrokeCap.round;
     canvas.drawLine(p(0.40, 0.04), p(0.40, 0.13), swipePaint);
     _arrowHead(canvas, p(0.40, 0.135), const Offset(0, 1), c.textMuted);
-    _text(canvas, swipe, Offset(w * 0.43, h * 0.04), c.textMuted,
-        size: 9, style: FontStyle.italic);
+    _text(
+      canvas,
+      swipe,
+      Offset(w * 0.43, h * 0.04),
+      c.textMuted,
+      size: 9,
+      style: FontStyle.italic,
+    );
 
     // --- Four entries, newest at top.
     const entries = <(double, String)>[
@@ -1429,15 +1481,12 @@ class _HistoryBandPainter extends CustomPainter {
       final isOld = i == entries.length - 1;
       canvas.drawRRect(
         rr,
-        Paint()
-          ..color = isNew ? _teal.withAlpha(0x18) : c.cardFill,
+        Paint()..color = isNew ? _teal.withAlpha(0x18) : c.cardFill,
       );
       canvas.drawRRect(
         rr,
         Paint()
-          ..color = isNew
-              ? _teal
-              : (isOld ? c.illusFaint : c.illusLine)
+          ..color = isNew ? _teal : (isOld ? c.illusFaint : c.illusLine)
           ..style = PaintingStyle.stroke
           ..strokeWidth = 1.2,
       );
@@ -1445,27 +1494,41 @@ class _HistoryBandPainter extends CustomPainter {
         canvas,
         entries[i].$2,
         Offset(w * 0.10, h * cy - h * 0.035),
-        isNew
-            ? c.textPrimary
-            : (isOld ? c.textMuted : c.textSecondary),
+        isNew ? c.textPrimary : (isOld ? c.textMuted : c.textSecondary),
         size: 9.5,
         weight: isNew ? FontWeight.w500 : FontWeight.w400,
       );
     }
 
     // --- "neu" capsule on the newest entry.
-    final cap = Rect.fromLTWH(w * 0.62, h * 0.28 - h * 0.028, w * 0.10, h * 0.056);
+    final cap = Rect.fromLTWH(
+      w * 0.62,
+      h * 0.28 - h * 0.028,
+      w * 0.10,
+      h * 0.056,
+    );
     canvas.drawRRect(
       RRect.fromRectAndRadius(cap, const Radius.circular(4)),
       Paint()..color = _teal.withAlpha(0x55),
     );
-    _text(canvas, newCap, Offset(cap.left + 5, cap.center.dy - 5), _teal,
-        size: 8);
+    _text(
+      canvas,
+      newCap,
+      Offset(cap.left + 5, cap.center.dy - 5),
+      _teal,
+      size: 8,
+    );
 
     // --- Tap arrow from entry 2 to the input field.
     straight(canvas, p(0.74, 0.44), p(0.88, 0.44), _blue);
-    _text(canvas, tap, Offset(w * 0.755, h * 0.44 - 14), _blue,
-        size: 9, style: FontStyle.italic);
+    _text(
+      canvas,
+      tap,
+      Offset(w * 0.755, h * 0.44 - 14),
+      _blue,
+      size: 9,
+      style: FontStyle.italic,
+    );
 
     // --- Small input field with a red caret (where the value lands).
     final inp = Rect.fromLTWH(w * 0.89, h * 0.40, w * 0.09, h * 0.09);
@@ -1526,7 +1589,8 @@ class UnitHyperbolaFigure extends StatelessWidget {
     child: AspectRatio(
       aspectRatio: 1.15,
       child: CustomPaint(
-          painter: _UnitHyperbolaPainter(AppColors.of(context), area)),
+        painter: _UnitHyperbolaPainter(AppColors.of(context), area),
+      ),
     ),
   );
 }
@@ -1568,10 +1632,22 @@ class _UnitHyperbolaPainter extends CustomPainter {
       ..strokeWidth = 1.0;
     _dashedLine(canvas, px(0, 0), px(1.9, 1.9), ap);
     _dashedLine(canvas, px(0, 0), px(1.9, -1.9), ap);
-    _text(canvas, 'y = x', px(1.85, 1.85) + const Offset(3, -7), c.textFaint,
-        size: 9, style: FontStyle.italic);
-    _text(canvas, 'y = −x', px(1.85, -1.85) + const Offset(3, 2), c.textFaint,
-        size: 9, style: FontStyle.italic);
+    _text(
+      canvas,
+      'y = x',
+      px(1.85, 1.85) + const Offset(3, -7),
+      c.textFaint,
+      size: 9,
+      style: FontStyle.italic,
+    );
+    _text(
+      canvas,
+      'y = −x',
+      px(1.85, -1.85) + const Offset(3, 2),
+      c.textFaint,
+      size: 9,
+      style: FontStyle.italic,
+    );
 
     // (3) Axes with arrowheads.
     final axis = Paint()
@@ -1581,7 +1657,14 @@ class _UnitHyperbolaPainter extends CustomPainter {
     canvas.drawLine(px(xMin, 0), xEnd, axis);
     canvas.drawLine(px(0, yMin), yEnd, axis);
     _arrowHead(canvas, xEnd, const Offset(1, 0), c.illusLine, len: 7, halfW: 3);
-    _arrowHead(canvas, yEnd, const Offset(0, -1), c.illusLine, len: 7, halfW: 3);
+    _arrowHead(
+      canvas,
+      yEnd,
+      const Offset(0, -1),
+      c.illusLine,
+      len: 7,
+      halfW: 3,
+    );
     _text(canvas, 'x', xEnd + const Offset(-8, 5), c.textMuted, size: 10);
     _text(canvas, 'y', yEnd + const Offset(5, 1), c.textMuted, size: 10);
 
@@ -1600,8 +1683,14 @@ class _UnitHyperbolaPainter extends CustomPainter {
       i == 0 ? cp.moveTo(p.dx, p.dy) : cp.lineTo(p.dx, p.dy);
     }
     canvas.drawPath(cp, curve);
-    _text(canvas, 'x²−y²=1', px(2.2, 1.55), c.textSecondary,
-        size: 9.5, style: FontStyle.italic);
+    _text(
+      canvas,
+      'x²−y²=1',
+      px(2.2, 1.55),
+      c.textSecondary,
+      size: 9.5,
+      style: FontStyle.italic,
+    );
 
     // (5) Projection lines for P.
     canvas.drawLine(
@@ -1612,39 +1701,83 @@ class _UnitHyperbolaPainter extends CustomPainter {
         ..strokeWidth = 2.0
         ..strokeCap = StrokeCap.round,
     );
-    _dashedLine(canvas, px(ct, 0), px(ct, st),
-        Paint()..color = _blue..strokeWidth = 1.8);
-    canvas.drawLine(px(0, 0), px(ct, st),
-        Paint()..color = c.illusLine..strokeWidth = 1.8);
+    _dashedLine(
+      canvas,
+      px(ct, 0),
+      px(ct, st),
+      Paint()
+        ..color = _blue
+        ..strokeWidth = 1.8,
+    );
+    canvas.drawLine(
+      px(0, 0),
+      px(ct, st),
+      Paint()
+        ..color = c.illusLine
+        ..strokeWidth = 1.8,
+    );
 
     // (6) Axis ticks at the projections.
     final tick = Paint()
       ..color = c.illusLine
       ..strokeWidth = 1.0;
     canvas.drawLine(
-        px(ct, 0) - const Offset(0, 3), px(ct, 0) + const Offset(0, 3), tick);
+      px(ct, 0) - const Offset(0, 3),
+      px(ct, 0) + const Offset(0, 3),
+      tick,
+    );
     canvas.drawLine(
-        px(0, st) - const Offset(3, 0), px(0, st) + const Offset(3, 0), tick);
+      px(0, st) - const Offset(3, 0),
+      px(0, st) + const Offset(3, 0),
+      tick,
+    );
 
     // (7) Point P.
     canvas.drawCircle(px(ct, st), 3.5, Paint()..color = c.textPrimary);
-    _text(canvas, 'P', px(ct, st) + const Offset(5, -14), c.textSecondary,
-        size: 10);
+    _text(
+      canvas,
+      'P',
+      px(ct, st) + const Offset(5, -14),
+      c.textSecondary,
+      size: 10,
+    );
 
     // (8) Projection labels.
-    _text(canvas, 'cosh t', px(ct / 2, 0) + const Offset(-16, 5), _teal,
-        size: 10);
-    _text(canvas, 'sinh t', px(ct, st / 2) + const Offset(6, -4), _blue,
-        size: 10);
+    _text(
+      canvas,
+      'cosh t',
+      px(ct / 2, 0) + const Offset(-16, 5),
+      _teal,
+      size: 10,
+    );
+    _text(
+      canvas,
+      'sinh t',
+      px(ct, st / 2) + const Offset(6, -4),
+      _blue,
+      size: 10,
+    );
 
     // (9) Sector-area label.
-    _text(canvas, area, px(0.42, 0.30), c.textSecondary,
-        size: 8.5, style: FontStyle.italic);
+    _text(
+      canvas,
+      area,
+      px(0.42, 0.30),
+      c.textSecondary,
+      size: 8.5,
+      style: FontStyle.italic,
+    );
 
     // (10) Unit marker on the radius.
     final mid = (px(0, 0) + px(ct, st)) / 2.0;
-    _text(canvas, '1', mid + const Offset(5, -10), c.textSecondary,
-        size: 10, style: FontStyle.italic);
+    _text(
+      canvas,
+      '1',
+      mid + const Offset(5, -10),
+      c.textSecondary,
+      size: 10,
+      style: FontStyle.italic,
+    );
   }
 
   @override
@@ -1665,7 +1798,9 @@ class HyperbolicCurvesFigure extends StatelessWidget {
     padding: const EdgeInsets.symmetric(vertical: 12),
     child: AspectRatio(
       aspectRatio: 1.25,
-      child: CustomPaint(painter: _HyperbolicCurvesPainter(AppColors.of(context))),
+      child: CustomPaint(
+        painter: _HyperbolicCurvesPainter(AppColors.of(context)),
+      ),
     ),
   );
 }
@@ -1719,15 +1854,31 @@ class _HyperbolicCurvesPainter extends CustomPainter {
       ..strokeWidth = 1.0;
     _dashedLine(canvas, px(xMin, 1.0), px(xMax, 1.0), ap, on: 6, off: 4);
     _dashedLine(canvas, px(xMin, -1.0), px(xMax, -1.0), ap, on: 6, off: 4);
-    _text(canvas, '1', px(xMin, 1.0) + const Offset(-10, -7), c.textFaint,
-        size: 9);
-    _text(canvas, '−1', px(xMin, -1.0) + const Offset(-14, -7), c.textFaint,
-        size: 9);
+    _text(
+      canvas,
+      '1',
+      px(xMin, 1.0) + const Offset(-10, -7),
+      c.textFaint,
+      size: 9,
+    );
+    _text(
+      canvas,
+      '−1',
+      px(xMin, -1.0) + const Offset(-14, -7),
+      c.textFaint,
+      size: 9,
+    );
 
     // (2) Curves, clipped to the plot rect.
     canvas.save();
     canvas.clipRect(
-        Rect.fromLTRB(plot.left - 1, plot.top - 1, plot.right + 1, plot.bottom + 1));
+      Rect.fromLTRB(
+        plot.left - 1,
+        plot.top - 1,
+        plot.right + 1,
+        plot.bottom + 1,
+      ),
+    );
     drawCurve(_cosh, _purple);
     drawCurve(_sinh, _teal);
     drawCurve(_tanh, _blue);
@@ -1741,7 +1892,14 @@ class _HyperbolicCurvesPainter extends CustomPainter {
     canvas.drawLine(px(xMin, 0), xEnd, axis);
     canvas.drawLine(px(0, yMin), yEnd, axis);
     _arrowHead(canvas, xEnd, const Offset(1, 0), c.illusLine, len: 7, halfW: 3);
-    _arrowHead(canvas, yEnd, const Offset(0, -1), c.illusLine, len: 7, halfW: 3);
+    _arrowHead(
+      canvas,
+      yEnd,
+      const Offset(0, -1),
+      c.illusLine,
+      len: 7,
+      halfW: 3,
+    );
     _text(canvas, 'x', xEnd + const Offset(-8, 5), c.textMuted, size: 10);
     _text(canvas, 'y', yEnd + const Offset(5, 1), c.textMuted, size: 10);
 
@@ -1751,9 +1909,17 @@ class _HyperbolicCurvesPainter extends CustomPainter {
       ..strokeWidth = 0.8;
     for (final yt in [-2.0, 2.0]) {
       canvas.drawLine(
-          px(0, yt) - const Offset(4, 0), px(0, yt) + const Offset(4, 0), hair);
-      _text(canvas, yt > 0 ? '2' : '−2',
-          px(0, yt) + Offset(yt > 0 ? -12 : -18, -5), c.textFaint, size: 8.5);
+        px(0, yt) - const Offset(4, 0),
+        px(0, yt) + const Offset(4, 0),
+        hair,
+      );
+      _text(
+        canvas,
+        yt > 0 ? '2' : '−2',
+        px(0, yt) + Offset(yt > 0 ? -12 : -18, -5),
+        c.textFaint,
+        size: 8.5,
+      );
     }
 
     // (4) cosh minimum (0,1).
@@ -1761,12 +1927,30 @@ class _HyperbolicCurvesPainter extends CustomPainter {
     _text(canvas, '(0, 1)', px(0, 1) + const Offset(5, -14), _purple, size: 9);
 
     // (5) Curve labels.
-    _text(canvas, 'cosh', px(1.7, yMax) + const Offset(-22, 4), _purple,
-        size: 9.5, weight: FontWeight.w500);
-    _text(canvas, 'sinh', px(1.82, 2.8) + const Offset(5, 0), _teal,
-        size: 9.5, weight: FontWeight.w500);
-    _text(canvas, 'tanh', px(1.9, 0.88) + const Offset(5, -5), _blue,
-        size: 9.5, weight: FontWeight.w500);
+    _text(
+      canvas,
+      'cosh',
+      px(1.7, yMax) + const Offset(-22, 4),
+      _purple,
+      size: 9.5,
+      weight: FontWeight.w500,
+    );
+    _text(
+      canvas,
+      'sinh',
+      px(1.82, 2.8) + const Offset(5, 0),
+      _teal,
+      size: 9.5,
+      weight: FontWeight.w500,
+    );
+    _text(
+      canvas,
+      'tanh',
+      px(1.9, 0.88) + const Offset(5, -5),
+      _blue,
+      size: 9.5,
+      weight: FontWeight.w500,
+    );
   }
 
   @override
@@ -1794,7 +1978,8 @@ class CatenaryFigure extends StatelessWidget {
     child: AspectRatio(
       aspectRatio: 1.6,
       child: CustomPaint(
-          painter: _CatenaryPainter(AppColors.of(context), catenary, parabola)),
+        painter: _CatenaryPainter(AppColors.of(context), catenary, parabola),
+      ),
     ),
   );
 }
@@ -1826,10 +2011,14 @@ class _CatenaryPainter extends CustomPainter {
       ..strokeCap = StrokeCap.round;
     canvas.drawLine(lp, Offset(lp.dx, plot.bottom), pole);
     canvas.drawLine(rp, Offset(rp.dx, plot.bottom), pole);
-    canvas.drawRect(Rect.fromCenter(center: lp, width: 8, height: 4),
-        Paint()..color = c.illusLine);
-    canvas.drawRect(Rect.fromCenter(center: rp, width: 8, height: 4),
-        Paint()..color = c.illusLine);
+    canvas.drawRect(
+      Rect.fromCenter(center: lp, width: 8, height: 4),
+      Paint()..color = c.illusLine,
+    );
+    canvas.drawRect(
+      Rect.fromCenter(center: rp, width: 8, height: 4),
+      Paint()..color = c.illusLine,
+    );
 
     // (2) Parabola y = 0.5x²+1 (thin, faint) — stays below the catenary.
     final parPath = Path();
@@ -1857,8 +2046,14 @@ class _CatenaryPainter extends CustomPainter {
         ..strokeWidth = 1.4
         ..strokeJoin = StrokeJoin.round,
     );
-    _text(canvas, parabola, px(1.4, 0.5 * 1.4 * 1.4 + 1.0) + const Offset(6, -2),
-        c.textFaint, size: 8.5, style: FontStyle.italic);
+    _text(
+      canvas,
+      parabola,
+      px(1.4, 0.5 * 1.4 * 1.4 + 1.0) + const Offset(6, -2),
+      c.textFaint,
+      size: 8.5,
+      style: FontStyle.italic,
+    );
 
     // (3) Catenary y = cosh x.
     final catPath = Path();
@@ -1897,13 +2092,23 @@ class _CatenaryPainter extends CustomPainter {
     canvas.drawCircle(rp, 3.5, Paint()..color = c.textPrimary);
 
     // (6) Ground reference line.
-    canvas.drawLine(Offset(plot.left, plot.bottom), Offset(plot.right, plot.bottom),
-        Paint()..color = c.hairline..strokeWidth = 0.8);
+    canvas.drawLine(
+      Offset(plot.left, plot.bottom),
+      Offset(plot.right, plot.bottom),
+      Paint()
+        ..color = c.hairline
+        ..strokeWidth = 0.8,
+    );
 
     // (7) Title.
-    _text(canvas, '$catenary  y = cosh x',
-        Offset(plot.left + plot.width * 0.22, plot.top + 4), c.textSecondary,
-        size: 10.5, weight: FontWeight.w500);
+    _text(
+      canvas,
+      '$catenary  y = cosh x',
+      Offset(plot.left + plot.width * 0.22, plot.top + 4),
+      c.textSecondary,
+      size: 10.5,
+      weight: FontWeight.w500,
+    );
 
     // (8) Difference marker at x = 1.5 (parabola sits below the chain).
     const xA = 1.5;
@@ -1912,10 +2117,22 @@ class _CatenaryPainter extends CustomPainter {
       ..color = c.illusDot
       ..strokeWidth = 1.2;
     canvas.drawLine(px(xA, yPar + 0.06), px(xA, yCat - 0.06), diff);
-    _arrowHead(canvas, px(xA, yCat), const Offset(0, -1), c.illusDot,
-        len: 5, halfW: 2);
-    _arrowHead(canvas, px(xA, yPar), const Offset(0, 1), c.illusDot,
-        len: 5, halfW: 2);
+    _arrowHead(
+      canvas,
+      px(xA, yCat),
+      const Offset(0, -1),
+      c.illusDot,
+      len: 5,
+      halfW: 2,
+    );
+    _arrowHead(
+      canvas,
+      px(xA, yPar),
+      const Offset(0, 1),
+      c.illusDot,
+      len: 5,
+      halfW: 2,
+    );
   }
 
   @override
@@ -1939,7 +2156,8 @@ class PascalTriangleFigure extends StatelessWidget {
     child: AspectRatio(
       aspectRatio: 1.35,
       child: CustomPaint(
-          painter: _PascalTrianglePainter(AppColors.of(context), title)),
+        painter: _PascalTrianglePainter(AppColors.of(context), title),
+      ),
     ),
   );
 }
@@ -1982,8 +2200,14 @@ class _PascalTrianglePainter extends CustomPainter {
             ..strokeWidth = 1.0,
         );
         final lbl = _rows[n][k];
-        _text(canvas, lbl, o - Offset(lbl.length * 3.5, 6), c.textSecondary,
-            size: 11, weight: FontWeight.w500);
+        _text(
+          canvas,
+          lbl,
+          o - Offset(lbl.length * 3.5, 6),
+          c.textSecondary,
+          size: 11,
+          weight: FontWeight.w500,
+        );
       }
     }
 
@@ -1997,9 +2221,14 @@ class _PascalTrianglePainter extends CustomPainter {
       ..strokeCap = StrokeCap.round;
     canvas.drawLine(parent1, child, faint);
     canvas.drawLine(parent2, child, faint);
-    _text(canvas, '4 + 6 = A',
-        Offset(cell(5, 2).dx + 14, (parent1.dy + child.dy) / 2 - 5),
-        c.textFaint, size: 8.5, style: FontStyle.italic);
+    _text(
+      canvas,
+      '4 + 6 = A',
+      Offset(cell(5, 2).dx + 14, (parent1.dy + child.dy) / 2 - 5),
+      c.textFaint,
+      size: 8.5,
+      style: FontStyle.italic,
+    );
 
     // 3. Highlighted entry (5 nCr 2 = A).
     final hCell = cell(5, 2);
@@ -2012,20 +2241,42 @@ class _PascalTrianglePainter extends CustomPainter {
         ..style = PaintingStyle.stroke
         ..strokeWidth = 1.8,
     );
-    _text(canvas, 'A', hCell - const Offset(4, 6), _teal,
-        size: 12, weight: FontWeight.w700);
-    _text(canvas, '5 nCr 2', Offset(hCell.dx + 16, hCell.dy - 6), c.textMuted,
-        size: 9);
+    _text(
+      canvas,
+      'A',
+      hCell - const Offset(4, 6),
+      _teal,
+      size: 12,
+      weight: FontWeight.w700,
+    );
+    _text(
+      canvas,
+      '5 nCr 2',
+      Offset(hCell.dx + 16, hCell.dy - 6),
+      c.textMuted,
+      size: 9,
+    );
 
     // 4. Row labels.
     for (var n = 0; n < 6; n++) {
-      _text(canvas, 'n=$n', Offset(w * 0.03, h * rowTop + n * rowH - 5),
-          c.textFaint, size: 8.5);
+      _text(
+        canvas,
+        'n=$n',
+        Offset(w * 0.03, h * rowTop + n * rowH - 5),
+        c.textFaint,
+        size: 8.5,
+      );
     }
 
     // 5. Title.
-    _text(canvas, title, Offset(w * 0.17, h * 0.03),
-        c.textMuted, size: 10, weight: FontWeight.w500);
+    _text(
+      canvas,
+      title,
+      Offset(w * 0.17, h * 0.03),
+      c.textMuted,
+      size: 10,
+      weight: FontWeight.w500,
+    );
   }
 
   @override
@@ -2056,7 +2307,8 @@ class ModuloClockFigure extends StatelessWidget {
     child: AspectRatio(
       aspectRatio: 1.0,
       child: CustomPaint(
-          painter: _ModuloClockPainter(AppColors.of(context), title, wrap, note)),
+        painter: _ModuloClockPainter(AppColors.of(context), title, wrap, note),
+      ),
     ),
   );
 }
@@ -2068,7 +2320,20 @@ class _ModuloClockPainter extends CustomPainter {
   final String note;
   _ModuloClockPainter(this.c, this.title, this.wrap, this.note);
 
-  static const _labels = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B'];
+  static const _labels = [
+    '0',
+    '1',
+    '2',
+    '3',
+    '4',
+    '5',
+    '6',
+    '7',
+    '8',
+    '9',
+    'A',
+    'B',
+  ];
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -2103,10 +2368,14 @@ class _ModuloClockPainter extends CustomPainter {
       );
       final isResult = i == 5;
       final lbl = _labels[i];
-      _text(canvas, lbl, onRing(i.toDouble(), r * 0.72) - Offset(lbl.length * 3.5, 5.5),
-          isResult ? _teal : c.textSecondary,
-          size: isResult ? 12 : 11,
-          weight: isResult ? FontWeight.w700 : FontWeight.w400);
+      _text(
+        canvas,
+        lbl,
+        onRing(i.toDouble(), r * 0.72) - Offset(lbl.length * 3.5, 5.5),
+        isResult ? _teal : c.textSecondary,
+        size: isResult ? 12 : 11,
+        weight: isResult ? FontWeight.w700 : FontWeight.w400,
+      );
     }
 
     // 3. Highlighted result dot at position 5.
@@ -2142,21 +2411,54 @@ class _ModuloClockPainter extends CustomPainter {
         ..strokeCap = StrokeCap.round,
     );
     final arcEnd = th(1.4);
-    final arcEndPt = Offset(cx + rArc * math.cos(arcEnd), cy + rArc * math.sin(arcEnd));
-    _arrowHead(canvas, arcEndPt, Offset(-math.sin(arcEnd), math.cos(arcEnd)), _orange,
-        len: 7, halfW: 3.0);
-    _text(canvas, wrap, Offset(cx + rArc * 0.42, cy - rArc * 0.92), _orange,
-        size: 9, style: FontStyle.italic);
+    final arcEndPt = Offset(
+      cx + rArc * math.cos(arcEnd),
+      cy + rArc * math.sin(arcEnd),
+    );
+    _arrowHead(
+      canvas,
+      arcEndPt,
+      Offset(-math.sin(arcEnd), math.cos(arcEnd)),
+      _orange,
+      len: 7,
+      halfW: 3.0,
+    );
+    _text(
+      canvas,
+      wrap,
+      Offset(cx + rArc * 0.42, cy - rArc * 0.92),
+      _orange,
+      size: 9,
+      style: FontStyle.italic,
+    );
 
     // 6. Formula labels.
-    _text(canvas, '15₁₂ mod 10₁₂ = 5', Offset(w * 0.20, h * 0.90),
-        c.textSecondary, size: 10.5, weight: FontWeight.w500);
-    _text(canvas, note, Offset(w * 0.21, h * 0.945),
-        c.textFaint, size: 8.5, style: FontStyle.italic);
+    _text(
+      canvas,
+      '15₁₂ mod 10₁₂ = 5',
+      Offset(w * 0.20, h * 0.90),
+      c.textSecondary,
+      size: 10.5,
+      weight: FontWeight.w500,
+    );
+    _text(
+      canvas,
+      note,
+      Offset(w * 0.21, h * 0.945),
+      c.textFaint,
+      size: 8.5,
+      style: FontStyle.italic,
+    );
 
     // 7. Title.
-    _text(canvas, title, Offset(w * 0.14, h * 0.03),
-        c.textMuted, size: 10, weight: FontWeight.w500);
+    _text(
+      canvas,
+      title,
+      Offset(w * 0.14, h * 0.03),
+      c.textMuted,
+      size: 10,
+      weight: FontWeight.w500,
+    );
   }
 
   @override
@@ -2187,8 +2489,13 @@ class DozenalPowersScaleFigure extends StatelessWidget {
     child: AspectRatio(
       aspectRatio: 2.2,
       child: CustomPaint(
-          painter: _DozenalPowersScalePainter(
-              AppColors.of(context), title, dozLabel, decLabel)),
+        painter: _DozenalPowersScalePainter(
+          AppColors.of(context),
+          title,
+          dozLabel,
+          decLabel,
+        ),
+      ),
     ),
   );
 }
@@ -2210,11 +2517,29 @@ class _DozenalPowersScalePainter extends CustomPainter {
     final x0 = w * 0.12, x1 = w * 0.88, yAxis = h * 0.50;
     double xi(int i) => x0 + i / 4.0 * (x1 - x0);
 
-    _text(canvas, title, Offset(w * 0.07, h * 0.06),
-        c.textMuted, size: 10, weight: FontWeight.w500);
-    _text(canvas, dozLabel, Offset(w * 0.01, yAxis - 24), c.textMuted, size: 8.5);
-    _text(canvas, decLabel, Offset(w * 0.01, yAxis + 14), c.textFaint,
-        size: 8.5, style: FontStyle.italic);
+    _text(
+      canvas,
+      title,
+      Offset(w * 0.07, h * 0.06),
+      c.textMuted,
+      size: 10,
+      weight: FontWeight.w500,
+    );
+    _text(
+      canvas,
+      dozLabel,
+      Offset(w * 0.01, yAxis - 24),
+      c.textMuted,
+      size: 8.5,
+    );
+    _text(
+      canvas,
+      decLabel,
+      Offset(w * 0.01, yAxis + 14),
+      c.textFaint,
+      size: 8.5,
+      style: FontStyle.italic,
+    );
 
     // Axis + arrow.
     canvas.drawLine(
@@ -2225,8 +2550,14 @@ class _DozenalPowersScalePainter extends CustomPainter {
         ..strokeWidth = 1.6
         ..strokeCap = StrokeCap.round,
     );
-    _arrowHead(canvas, Offset(x1 + 4, yAxis), const Offset(1, 0), c.illusLine,
-        len: 8, halfW: 3.0);
+    _arrowHead(
+      canvas,
+      Offset(x1 + 4, yAxis),
+      const Offset(1, 0),
+      c.illusLine,
+      len: 8,
+      halfW: 3.0,
+    );
 
     for (var i = 0; i < 5; i++) {
       final x = xi(i);
@@ -2239,18 +2570,40 @@ class _DozenalPowersScalePainter extends CustomPainter {
           ..strokeCap = StrokeCap.round,
       );
       if (i == 1 || i == 2) {
-        canvas.drawLine(Offset(x, yAxis - 8), Offset(x, yAxis - 44),
-            Paint()..color = c.hairline..strokeWidth = 0.8);
+        canvas.drawLine(
+          Offset(x, yAxis - 8),
+          Offset(x, yAxis - 44),
+          Paint()
+            ..color = c.hairline
+            ..strokeWidth = 0.8,
+        );
       }
       final pow = _pow[i];
-      _text(canvas, pow, Offset(x - pow.length * 3.0, yAxis - 44), c.textMuted,
-          size: 8.5);
+      _text(
+        canvas,
+        pow,
+        Offset(x - pow.length * 3.0, yAxis - 44),
+        c.textMuted,
+        size: 8.5,
+      );
       final doz = _doz[i];
-      _text(canvas, doz, Offset(x - doz.length * 3.8, yAxis - 28), c.textSecondary,
-          size: 11, weight: FontWeight.w600);
+      _text(
+        canvas,
+        doz,
+        Offset(x - doz.length * 3.8, yAxis - 28),
+        c.textSecondary,
+        size: 11,
+        weight: FontWeight.w600,
+      );
       final dec = _dec[i];
-      _text(canvas, dec, Offset(x - dec.length * 3.0, yAxis + 14), c.textFaint,
-          size: 8.5, style: FontStyle.italic);
+      _text(
+        canvas,
+        dec,
+        Offset(x - dec.length * 3.0, yAxis + 14),
+        c.textFaint,
+        size: 8.5,
+        style: FontStyle.italic,
+      );
     }
 
     // ×12 jump arc (i=1 → i=2), an upward bow landing on the next mark.
@@ -2269,13 +2622,24 @@ class _DozenalPowersScalePainter extends CustomPainter {
     );
     final jDir = (jEnd - jCtrl) / (jEnd - jCtrl).distance;
     _arrowHead(canvas, jEnd, jDir, _teal, len: 7, halfW: 2.8);
-    _text(canvas, '× 12', Offset((xi(1) + xi(2)) / 2 - 11, yAxis - 30), _teal,
-        size: 9.5, weight: FontWeight.w600);
+    _text(
+      canvas,
+      '× 12',
+      Offset((xi(1) + xi(2)) / 2 - 11, yAxis - 30),
+      _teal,
+      size: 9.5,
+      weight: FontWeight.w600,
+    );
     canvas.drawCircle(Offset(xi(2), yAxis), 5, Paint()..color = _teal);
 
     // EXP key mock.
     final btn = RRect.fromLTRBR(
-        w * 0.84, h * 0.62, w * 0.97, h * 0.84, const Radius.circular(4));
+      w * 0.84,
+      h * 0.62,
+      w * 0.97,
+      h * 0.84,
+      const Radius.circular(4),
+    );
     canvas.drawRRect(btn, Paint()..color = c.cardFill);
     canvas.drawRRect(
       btn,
@@ -2284,8 +2648,14 @@ class _DozenalPowersScalePainter extends CustomPainter {
         ..style = PaintingStyle.stroke
         ..strokeWidth = 1.0,
     );
-    _text(canvas, 'EXP', Offset(w * 0.874, h * 0.68), c.textSecondary,
-        size: 11, weight: FontWeight.w600);
+    _text(
+      canvas,
+      'EXP',
+      Offset(w * 0.874, h * 0.68),
+      c.textSecondary,
+      size: 11,
+      weight: FontWeight.w600,
+    );
     _text(canvas, '(Sci)', Offset(w * 0.872, h * 0.77), c.textFaint, size: 8);
   }
 
@@ -2308,7 +2678,10 @@ void _textCenteredAt(
   double size = 9,
 }) {
   final tp = TextPainter(
-    text: TextSpan(text: s, style: TextStyle(color: color, fontSize: size)),
+    text: TextSpan(
+      text: s,
+      style: TextStyle(color: color, fontSize: size),
+    ),
     textDirection: TextDirection.ltr,
   )..layout();
   tp.paint(canvas, Offset(centerX - tp.width / 2, top));
@@ -2339,7 +2712,12 @@ class KeyGlyphsFigure extends StatelessWidget {
       aspectRatio: 2.7,
       child: CustomPaint(
         painter: _KeyGlyphsPainter(
-            AppColors.of(context), square, power, root, logarithm),
+          AppColors.of(context),
+          square,
+          power,
+          root,
+          logarithm,
+        ),
       ),
     ),
   );
@@ -2351,8 +2729,7 @@ class _KeyGlyphsPainter extends CustomPainter {
   final String power;
   final String root;
   final String logarithm;
-  _KeyGlyphsPainter(
-      this.c, this.square, this.power, this.root, this.logarithm);
+  _KeyGlyphsPainter(this.c, this.square, this.power, this.root, this.logarithm);
 
   @override
   void paint(Canvas canvas, Size size) {

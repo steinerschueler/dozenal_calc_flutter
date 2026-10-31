@@ -33,7 +33,8 @@ List<RecChapter> _recChaptersCy() => const [
           'Perchnogol — dim cipolwg ar y cod',
           'Dim allbwn bôn 12',
         ],
-        url: 'https://www.casio.com/intl/scientific-calculators/product.FX-5800P/',
+        url:
+            'https://www.casio.com/intl/scientific-calculators/product.FX-5800P/',
       ),
       RecCalc(
         'SwissMicros DM42n',
@@ -74,7 +75,8 @@ List<RecChapter> _recChaptersCy() => const [
           'Sylweddol arafach ar weithrediadau cymhleth',
           'Dim bôn 12',
         ],
-        url: 'https://www.casio.com/us/scientific-calculators/product.FX-991CW/',
+        url:
+            'https://www.casio.com/us/scientific-calculators/product.FX-991CW/',
       ),
     ],
     verdict:
@@ -293,10 +295,7 @@ List<RecChapter> _recChaptersCy() => const [
           'RPN, tâp papur, llawer o drawsnewidiadau',
           'Magic Variables, Handoff iOS/macOS',
         ],
-        cons: [
-          'Perchnogol, ar dâl',
-          'Dim bôn 12',
-        ],
+        cons: ['Perchnogol, ar dâl', 'Dim bôn 12'],
         url: 'https://pcalc.com/mac/',
       ),
       RecCalc(
@@ -310,10 +309,7 @@ List<RecChapter> _recChaptersCy() => const [
           'Manwl gywirdeb Decimal-128',
           'Yn union yr un fath ar draws platfformau',
         ],
-        cons: [
-          'Rhesymeg RPN',
-          'Dim bôn 12',
-        ],
+        cons: ['Rhesymeg RPN', 'Dim bôn 12'],
         url: 'https://thomasokken.com/free42/',
       ),
     ],
@@ -345,9 +341,7 @@ List<RecChapter> _recChaptersCy() => const [
           'Y peiriant mwyaf pwerus, hefyd yn cyfrifo mewn bôn 12',
           'CLI sgriptadwy — aliaswyr, pibellau, eich llyfrgelloedd swyddogaethau chi',
         ],
-        cons: [
-          'Mae cyfoeth y nodweddion angen rhywfaint o ddysgu',
-        ],
+        cons: ['Mae cyfoeth y nodweddion angen rhywfaint o ddysgu'],
         url: 'https://qalculate.github.io/',
       ),
       RecCalc(
@@ -361,10 +355,7 @@ List<RecChapter> _recChaptersCy() => const [
           'Modd rhaglennwr (bin/oct/hex)',
           'Wedi’i integreiddio’n dda i KDE Plasma',
         ],
-        cons: [
-          'Dim CAS',
-          'Dim bôn 12',
-        ],
+        cons: ['Dim CAS', 'Dim bôn 12'],
         url: 'https://apps.kde.org/kcalc/',
       ),
       RecCalc(
@@ -378,10 +369,7 @@ List<RecChapter> _recChaptersCy() => const [
           'Ffynhonnell agored, hawdd ei ddefnyddio',
           'Unedau ac arian cyfredol wedi’u hymgorffori',
         ],
-        cons: [
-          'Llai pwerus na Qalculate',
-          'Dim bôn 12',
-        ],
+        cons: ['Llai pwerus na Qalculate', 'Dim bôn 12'],
         url: 'https://apps.gnome.org/Calculator/',
       ),
       RecCalc(
@@ -485,10 +473,7 @@ List<RecChapter> _recChaptersCy() => const [
           'Manwl gywirdeb Decimal-128',
           'Yn union yr un fath ar draws platfformau',
         ],
-        cons: [
-          'Rhesymeg RPN (mae Plus42 yn lliniaru hyn)',
-          'Dim bôn 12',
-        ],
+        cons: ['Rhesymeg RPN (mae Plus42 yn lliniaru hyn)', 'Dim bôn 12'],
         url: 'https://thomasokken.com/free42/',
       ),
     ],

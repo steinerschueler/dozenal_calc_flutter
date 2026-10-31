@@ -41,11 +41,9 @@ Unit? bracketPartner(UnitCategory category, Unit unit) {
     case UnitCategory.time:
       return null;
     case UnitCategory.temp:
-      return def.unitBySymbol(
-          unit.world == UnitWorld.imperial ? '°C' : '°F');
+      return def.unitBySymbol(unit.world == UnitWorld.imperial ? '°C' : '°F');
     case UnitCategory.price:
-      return def.unitBySymbol(
-          unit.world == UnitWorld.imperial ? '£dec' : '£');
+      return def.unitBySymbol(unit.world == UnitWorld.imperial ? '£dec' : '£');
     case UnitCategory.count:
       // Plain total: the other world's base unit (factor 1).
       return _baseUnitOf(def, other);
@@ -68,7 +66,9 @@ double? bracketValue(UnitCategory category, Unit unit, double value) {
 /// the sum stays exact. Returns empty parts for categories without a cascade.
 /// Imperial-world only (the metric world uses plain decimals).
 ({bool negative, List<(Unit unit, double value)> parts}) breakdown(
-    UnitCategory category, double totalSi) {
+  UnitCategory category,
+  double totalSi,
+) {
   final def = kUnitCatalogue[category]!;
   if (!def.hasBreakdown) return (negative: false, parts: const []);
   final units = def.breakdownUnits();

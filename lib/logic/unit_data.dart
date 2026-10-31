@@ -15,10 +15,22 @@ enum UnitWorld { imperial, metric }
 /// The 16 conversion categories. Order matches the keypad layout
 /// (Set 3/4 in the main view, Set 8/9 in the overlay).
 enum UnitCategory {
-  count, dist, area, space, // Set 3
-  weight, time, angle, price, // Set 4
-  temp, press, force, work, // Set 8
-  power, cook, liquid, moment, // Set 9
+  count,
+  dist,
+  area,
+  space, // Set 3
+  weight,
+  time,
+  angle,
+  price, // Set 4
+  temp,
+  press,
+  force,
+  work, // Set 8
+  power,
+  cook,
+  liquid,
+  moment, // Set 9
 }
 
 /// One unit on a category's ladder. Relationship to the category base value:
@@ -85,8 +97,7 @@ class CategoryDef {
   bool get hasBreakdown => breakdown.isNotEmpty;
 
   /// The breakdown cascade resolved to [Unit]s (largest → smallest).
-  List<Unit> breakdownUnits() =>
-      [for (final s in breakdown) unitBySymbol(s)!];
+  List<Unit> breakdownUnits() => [for (final s in breakdown) unitBySymbol(s)!];
 
   /// Units visible in [world]. For [singleWorld] categories the full list is
   /// returned regardless.

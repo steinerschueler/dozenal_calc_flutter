@@ -30,13 +30,13 @@ Future<void> _loadFont() async {
 }
 
 Widget _app() => MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(brightness: Brightness.dark, fontFamily: 'PreviewFont'),
-      locale: const Locale('de'),
-      localizationsDelegates: AppLocalizations.localizationsDelegates,
-      supportedLocales: AppLocalizations.supportedLocales,
-      home: const ConverterPage(),
-    );
+  debugShowCheckedModeBanner: false,
+  theme: ThemeData(brightness: Brightness.dark, fontFamily: 'PreviewFont'),
+  locale: const Locale('de'),
+  localizationsDelegates: AppLocalizations.localizationsDelegates,
+  supportedLocales: AppLocalizations.supportedLocales,
+  home: const ConverterPage(),
+);
 
 Future<void> _shoot(GlobalKey key, String name) async {
   final boundary =
@@ -44,15 +44,18 @@ Future<void> _shoot(GlobalKey key, String name) async {
   final image = await boundary.toImage(pixelRatio: 2.0);
   final bytes = await image.toByteData(format: ui.ImageByteFormat.png);
   final dir = Directory('tool/preview')..createSync(recursive: true);
-  File('${dir.path}/converter_$name.png')
-      .writeAsBytesSync(bytes!.buffer.asUint8List());
+  File(
+    '${dir.path}/converter_$name.png',
+  ).writeAsBytesSync(bytes!.buffer.asUint8List());
 }
 
 void main() {
   setUpAll(_loadFont);
 
-  Future<({GlobalKey key, SemanticsHandle handle, Future<void> Function(Finder) tap})>
-      boot(WidgetTester tester) async {
+  Future<
+    ({GlobalKey key, SemanticsHandle handle, Future<void> Function(Finder) tap})
+  >
+  boot(WidgetTester tester) async {
     tester.view.physicalSize = const Size(390, 760);
     tester.view.devicePixelRatio = 1.0;
     addTearDown(tester.view.resetPhysicalSize);
@@ -65,6 +68,7 @@ void main() {
       await tester.tap(f);
       await tester.pump(const Duration(milliseconds: 180));
     }
+
     return (key: key, handle: handle, tap: tap);
   }
 
@@ -117,17 +121,22 @@ void main() {
     addTearDown(tester.view.resetDevicePixelRatio);
     final handle = tester.ensureSemantics();
     final key = GlobalKey();
-    await tester.pumpWidget(RepaintBoundary(
-      key: key,
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(brightness: Brightness.dark, fontFamily: 'PreviewFont'),
-        locale: const Locale('de'),
-        localizationsDelegates: AppLocalizations.localizationsDelegates,
-        supportedLocales: AppLocalizations.supportedLocales,
-        home: const ConversionsPage(),
+    await tester.pumpWidget(
+      RepaintBoundary(
+        key: key,
+        child: MaterialApp(
+          debugShowCheckedModeBanner: false,
+          theme: ThemeData(
+            brightness: Brightness.dark,
+            fontFamily: 'PreviewFont',
+          ),
+          locale: const Locale('de'),
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          supportedLocales: AppLocalizations.supportedLocales,
+          home: const ConversionsPage(),
+        ),
       ),
-    ));
+    );
     await tester.pump(const Duration(milliseconds: 300));
     // default tab = Anzahl (count) → shows the new title + count theory
     await _shoot(key, 'theory_count');
@@ -147,6 +156,7 @@ void main() {
       await tester.tap(f);
       await tester.pump(const Duration(milliseconds: 150));
     }
+
     await tap(find.text('Länge'));
     await tap(find.bySemanticsLabel('Ziffer 5'));
     await tap(find.text('ft'));

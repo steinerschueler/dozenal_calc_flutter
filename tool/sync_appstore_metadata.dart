@@ -65,7 +65,8 @@ void main(List<String> argv) {
       exitCode = 1;
       continue;
     }
-    final note = notes[e.value] ?? notes[e.key] ?? notes[e.value.split('-').first];
+    final note =
+        notes[e.value] ?? notes[e.key] ?? notes[e.value.split('-').first];
 
     final dir = Directory('$_outDir/${e.value}')..createSync(recursive: true);
     File('${dir.path}/name.txt').writeAsStringSync(name);
@@ -78,19 +79,24 @@ void main(List<String> argv) {
     } else {
       stderr.writeln('WARN: no release notes for ${e.value}');
     }
-    stdout.writeln('  ${e.value.padRight(8)}  '
-        'kw=${keywords.length.toString().padLeft(3)}  '
-        'desc=${description.length.toString().padLeft(4)}  '
-        'notes=${note?.length ?? 0}');
+    stdout.writeln(
+      '  ${e.value.padRight(8)}  '
+      'kw=${keywords.length.toString().padLeft(3)}  '
+      'desc=${description.length.toString().padLeft(4)}  '
+      'notes=${note?.length ?? 0}',
+    );
     ok++;
   }
   stdout.writeln('synced $ok/${_localeMap.length} locales → $_outDir');
 }
 
 String _pubspecVersion() {
-  final m = RegExp(r'^version:\s*([0-9]+\.[0-9]+\.[0-9]+)', multiLine: true)
-      .firstMatch(File('pubspec.yaml').readAsStringSync());
-  if (m == null) throw const FormatException('version not found in pubspec.yaml');
+  final m = RegExp(
+    r'^version:\s*([0-9]+\.[0-9]+\.[0-9]+)',
+    multiLine: true,
+  ).firstMatch(File('pubspec.yaml').readAsStringSync());
+  if (m == null)
+    throw const FormatException('version not found in pubspec.yaml');
   return m.group(1)!;
 }
 
@@ -107,8 +113,10 @@ Map<String, String> _parseWhatsNew(String version) {
   final out = <String, String>{};
   // `## Lang — codes` followed by a fenced ``` block.
   final re = RegExp(
-      r'^##[^\n]*?—\s*([^\n]+?)\s*\n+```\n(.*?)\n```',
-      multiLine: true, dotAll: true);
+    r'^##[^\n]*?—\s*([^\n]+?)\s*\n+```\n(.*?)\n```',
+    multiLine: true,
+    dotAll: true,
+  );
   for (final m in re.allMatches(md)) {
     final codes = m.group(1)!.split('/').map((s) => s.trim());
     final body = m.group(2)!.trimRight();
@@ -132,9 +140,13 @@ String _fenced(String md, String heading) {
   if (idx < 0) throw FormatException('Heading not found: $heading');
   final after = md.substring(idx);
   final open = RegExp(r'^```$', multiLine: true).firstMatch(after);
-  if (open == null) throw FormatException('Opening fence not found after $heading');
+  if (open == null)
+    throw FormatException('Opening fence not found after $heading');
   final bodyStart = open.end + 1;
-  final close = RegExp(r'^```$', multiLine: true).firstMatch(after.substring(bodyStart));
+  final close = RegExp(
+    r'^```$',
+    multiLine: true,
+  ).firstMatch(after.substring(bodyStart));
   if (close == null) throw FormatException('Unterminated fence after $heading');
   return after.substring(bodyStart, bodyStart + close.start).trimRight();
 }

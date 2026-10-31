@@ -15,7 +15,8 @@ const Map<UnitCategory, Map<String, String>> _unitDescDe = {
     'thousand': 'Tausend — zehn Hundert, also 1000 Stück.',
   },
   UnitCategory.dist: {
-    'in': 'Zoll — imperiales Längenmaß; zwölf Zoll ergeben einen Fuß (2,54 cm).',
+    'in':
+        'Zoll — imperiales Längenmaß; zwölf Zoll ergeben einen Fuß (2,54 cm).',
     'ft': 'Fuß — imperiales Längenmaß aus zwölf Zoll (30,48 cm).',
     'yd': 'Yard — drei Fuß (0,9144 m).',
     'mi': 'Meile — 1760 Yard, das gängige imperiale Wegmaß (1,609 km).',
@@ -28,22 +29,33 @@ const Map<UnitCategory, Map<String, String>> _unitDescDe = {
     'km': 'Kilometer — tausend Meter.',
   },
   UnitCategory.area: {
-    'sq in': 'Quadratzoll — die Fläche eines Quadrats mit einem Zoll Seitenlänge.',
-    'sq ft': 'Quadratfuß — Fläche eines Quadrats mit einem Fuß Seite; 144 Quadratzoll.',
-    'sq yd': 'Quadratyard — Fläche eines Quadrats mit einem Yard Seite; neun Quadratfuß.',
+    'sq in':
+        'Quadratzoll — die Fläche eines Quadrats mit einem Zoll Seitenlänge.',
+    'sq ft':
+        'Quadratfuß — Fläche eines Quadrats mit einem Fuß Seite; 144 Quadratzoll.',
+    'sq yd':
+        'Quadratyard — Fläche eines Quadrats mit einem Yard Seite; neun Quadratfuß.',
     'acre': 'Acre — altes Feldmaß, 4840 Quadratyard (etwa 4047 m²).',
-    'sq mi': 'Quadratmeile — Fläche eines Quadrats mit einer Meile Seite; 640 Acre.',
-    'cm²': 'Quadratzentimeter — Fläche eines Quadrats mit einem Zentimeter Seite.',
-    'm²': 'Quadratmeter — SI-Einheit der Fläche; ein Quadrat mit einem Meter Seite.',
+    'sq mi':
+        'Quadratmeile — Fläche eines Quadrats mit einer Meile Seite; 640 Acre.',
+    'cm²':
+        'Quadratzentimeter — Fläche eines Quadrats mit einem Zentimeter Seite.',
+    'm²':
+        'Quadratmeter — SI-Einheit der Fläche; ein Quadrat mit einem Meter Seite.',
     'ha': 'Hektar — 10000 Quadratmeter, ein Quadrat mit 100 m Seitenlänge.',
-    'km²': 'Quadratkilometer — Fläche eines Quadrats mit einem Kilometer Seite.',
+    'km²':
+        'Quadratkilometer — Fläche eines Quadrats mit einem Kilometer Seite.',
   },
   UnitCategory.space: {
     'cu in': 'Kubikzoll — Volumen eines Würfels mit einem Zoll Kantenlänge.',
-    'cu ft': 'Kubikfuß — Volumen eines Würfels mit einem Fuß Kante; 1728 Kubikzoll.',
-    'cu yd': 'Kubikyard — Volumen eines Würfels mit einem Yard Kante; 27 Kubikfuß.',
-    'cm³': 'Kubikzentimeter — Volumen eines Würfels mit 1 cm Kante (ein Milliliter).',
-    'm³': 'Kubikmeter — SI-Einheit des Volumens; ein Würfel mit einem Meter Kante.',
+    'cu ft':
+        'Kubikfuß — Volumen eines Würfels mit einem Fuß Kante; 1728 Kubikzoll.',
+    'cu yd':
+        'Kubikyard — Volumen eines Würfels mit einem Yard Kante; 27 Kubikfuß.',
+    'cm³':
+        'Kubikzentimeter — Volumen eines Würfels mit 1 cm Kante (ein Milliliter).',
+    'm³':
+        'Kubikmeter — SI-Einheit des Volumens; ein Würfel mit einem Meter Kante.',
   },
   UnitCategory.weight: {
     'oz': 'Unze — imperiales Gewichtsmaß, ein Sechzehntel Pfund (28,35 g).',
@@ -51,7 +63,8 @@ const Map<UnitCategory, Map<String, String>> _unitDescDe = {
     'st': 'Stone — britisches Körpergewichtsmaß, 14 Pfund (6,35 kg).',
     'cwt': 'Hundredweight — US-Zentner zu 100 Pfund (45,36 kg).',
     'ton': 'Short ton — US-Tonne zu 2000 Pfund (907,2 kg).',
-    'oz t': 'Feinunze (Troy) — Gewicht für Edelmetalle, etwas schwerer als die normale Unze (31,1 g).',
+    'oz t':
+        'Feinunze (Troy) — Gewicht für Edelmetalle, etwas schwerer als die normale Unze (31,1 g).',
     'g': 'Gramm — ein Tausendstel Kilogramm.',
     'kg': 'Kilogramm — SI-Basiseinheit der Masse.',
     't': 'Tonne — tausend Kilogramm.',
@@ -67,55 +80,78 @@ const Map<UnitCategory, Map<String, String>> _unitDescDe = {
     '°': 'Grad — ein Dreihundertsechzigstel einer vollen Umdrehung.',
     '′': 'Bogenminute — ein Sechzigstel eines Grads.',
     '″': 'Bogensekunde — ein Sechzigstel einer Bogenminute.',
-    'sign': 'Zeichen — ein Tierkreiszeichen, 30°, ein Zwölftel des Vollkreises.',
+    'sign':
+        'Zeichen — ein Tierkreiszeichen, 30°, ein Zwölftel des Vollkreises.',
     'turn': 'Umdrehung — der volle Kreis, 360° bzw. 2π.',
-    'gon': 'Gon (Neugrad) — ein Vierhundertstel der vollen Umdrehung; der rechte Winkel misst 100 Gon.',
-    'rad': 'Radiant — SI-Winkelmaß; der Winkel, dessen Kreisbogen so lang ist wie der Radius.',
+    'gon':
+        'Gon (Neugrad) — ein Vierhundertstel der vollen Umdrehung; der rechte Winkel misst 100 Gon.',
+    'rad':
+        'Radiant — SI-Winkelmaß; der Winkel, dessen Kreisbogen so lang ist wie der Radius.',
   },
   UnitCategory.price: {
-    'd': 'Penny (alt, „d" für denarius) — im alten britischen Geld ein Zwölftel Schilling.',
-    'sh': 'Schilling — im alten britischen Geld ein Zwanzigstel Pfund, zwölf Pence.',
+    'd':
+        'Penny (alt, „d" für denarius) — im alten britischen Geld ein Zwölftel Schilling.',
+    'sh':
+        'Schilling — im alten britischen Geld ein Zwanzigstel Pfund, zwölf Pence.',
     '£': 'Pfund Sterling — die britische Hauptwährungseinheit.',
-    'guinea': 'Guinee — historische Münze zu einem Pfund und einem Schilling (21 Schilling).',
-    'p': 'Penny (neu) — ein Hundertstel Pfund seit der Dezimalisierung von 1971.',
+    'guinea':
+        'Guinee — historische Münze zu einem Pfund und einem Schilling (21 Schilling).',
+    'p':
+        'Penny (neu) — ein Hundertstel Pfund seit der Dezimalisierung von 1971.',
     '£dec': 'Pfund (dezimal) — das heutige Pfund zu 100 (neuen) Pence.',
   },
   UnitCategory.temp: {
-    '°F': 'Grad Fahrenheit — Skala mit Wasser-Gefrierpunkt bei 32° und Siedepunkt bei 212°.',
-    '°R': 'Grad Rankine — absolute Skala mit Fahrenheit-Schrittweite; 0 ist der absolute Nullpunkt.',
-    '°C': 'Grad Celsius — Skala mit Wasser-Gefrierpunkt 0° und Siedepunkt 100°.',
-    'K': 'Kelvin — SI-Basiseinheit der Temperatur, gezählt ab dem absoluten Nullpunkt.',
+    '°F':
+        'Grad Fahrenheit — Skala mit Wasser-Gefrierpunkt bei 32° und Siedepunkt bei 212°.',
+    '°R':
+        'Grad Rankine — absolute Skala mit Fahrenheit-Schrittweite; 0 ist der absolute Nullpunkt.',
+    '°C':
+        'Grad Celsius — Skala mit Wasser-Gefrierpunkt 0° und Siedepunkt 100°.',
+    'K':
+        'Kelvin — SI-Basiseinheit der Temperatur, gezählt ab dem absoluten Nullpunkt.',
   },
   UnitCategory.press: {
-    'psi': 'Pfund pro Quadratzoll — imperiales Druckmaß (ein lbf auf einer Quadratzoll-Fläche).',
-    'inHg': 'Zoll Quecksilbersäule — der Druck, der eine Quecksilbersäule einen Zoll hoch hält.',
+    'psi':
+        'Pfund pro Quadratzoll — imperiales Druckmaß (ein lbf auf einer Quadratzoll-Fläche).',
+    'inHg':
+        'Zoll Quecksilbersäule — der Druck, der eine Quecksilbersäule einen Zoll hoch hält.',
     'Pa': 'Pascal — SI-Einheit des Drucks; ein Newton pro Quadratmeter.',
     'kPa': 'Kilopascal — tausend Pascal.',
     'bar': 'Bar — 100000 Pascal, nahe dem mittleren Luftdruck auf Meereshöhe.',
-    'atm': 'Standardatmosphäre — der mittlere Luftdruck auf Meereshöhe (101325 Pascal).',
-    'mmHg': 'Millimeter Quecksilbersäule (Torr) — Druck einer einen Millimeter hohen Quecksilbersäule.',
+    'atm':
+        'Standardatmosphäre — der mittlere Luftdruck auf Meereshöhe (101325 Pascal).',
+    'mmHg':
+        'Millimeter Quecksilbersäule (Torr) — Druck einer einen Millimeter hohen Quecksilbersäule.',
   },
   UnitCategory.force: {
     'lbf': 'Pound-force — die Gewichtskraft eines Pfunds (4,448 N).',
-    'pdl': 'Poundal — imperiale Krafteinheit, die ein Pfund mit 1 ft/s² beschleunigt (0,138 N).',
-    'N': 'Newton — SI-Einheit der Kraft; beschleunigt ein Kilogramm mit 1 m/s².',
+    'pdl':
+        'Poundal — imperiale Krafteinheit, die ein Pfund mit 1 ft/s² beschleunigt (0,138 N).',
+    'N':
+        'Newton — SI-Einheit der Kraft; beschleunigt ein Kilogramm mit 1 m/s².',
     'kN': 'Kilonewton — tausend Newton.',
     'kgf': 'Kilopond — die Gewichtskraft eines Kilogramms (9,807 N).',
-    'dyn': 'Dyn — CGS-Krafteinheit; beschleunigt ein Gramm mit 1 cm/s² (10⁻⁵ N).',
+    'dyn':
+        'Dyn — CGS-Krafteinheit; beschleunigt ein Gramm mit 1 cm/s² (10⁻⁵ N).',
   },
   UnitCategory.work: {
-    'BTU': 'British Thermal Unit — Wärme, die ein Pfund Wasser um 1 °F erwärmt (1055 J).',
-    'ft·lbf': 'Foot-pound — Arbeit, ein Pound-force über einen Fuß zu bewegen (1,356 J).',
+    'BTU':
+        'British Thermal Unit — Wärme, die ein Pfund Wasser um 1 °F erwärmt (1055 J).',
+    'ft·lbf':
+        'Foot-pound — Arbeit, ein Pound-force über einen Fuß zu bewegen (1,356 J).',
     'J': 'Joule — SI-Einheit der Energie; ein Newton über einen Meter.',
     'kJ': 'Kilojoule — tausend Joule.',
-    'Wh': 'Wattstunde — Energie einer Leistung von einem Watt über eine Stunde (3600 J).',
-    'kWh': 'Kilowattstunde — tausend Wattstunden, die übliche Stromrechnungs-Einheit.',
+    'Wh':
+        'Wattstunde — Energie einer Leistung von einem Watt über eine Stunde (3600 J).',
+    'kWh':
+        'Kilowattstunde — tausend Wattstunden, die übliche Stromrechnungs-Einheit.',
     'cal': 'Kalorie — Wärme, die ein Gramm Wasser um 1 °C erwärmt (4,184 J).',
     'kcal': 'Kilokalorie — tausend Kalorien; die „Kalorie" der Ernährung.',
   },
   UnitCategory.power: {
     'hp': 'Pferdestärke (mechanisch, imperial) — etwa 745,7 Watt.',
-    'BTU/h': 'BTU pro Stunde — Leistungsmaß vor allem in der Klima- und Heiztechnik (0,293 W).',
+    'BTU/h':
+        'BTU pro Stunde — Leistungsmaß vor allem in der Klima- und Heiztechnik (0,293 W).',
     'W': 'Watt — SI-Einheit der Leistung; ein Joule pro Sekunde.',
     'kW': 'Kilowatt — tausend Watt.',
     'PS': 'Pferdestärke (metrisch) — 735,5 Watt.',
@@ -139,10 +175,14 @@ const Map<UnitCategory, Map<String, String>> _unitDescDe = {
     'L': 'Liter — metrisches Volumenmaß, ein Kubikdezimeter.',
   },
   UnitCategory.moment: {
-    'lbf·ft': 'Pound-foot — Drehmoment eines Pound-force an einem ein Fuß langen Hebel (1,356 N·m).',
-    'lbf·in': 'Pound-inch — Drehmoment eines Pound-force an einem ein Zoll langen Hebel (0,113 N·m).',
-    'N·m': 'Newtonmeter — SI-Einheit des Drehmoments; ein Newton an einem ein Meter langen Hebel.',
+    'lbf·ft':
+        'Pound-foot — Drehmoment eines Pound-force an einem ein Fuß langen Hebel (1,356 N·m).',
+    'lbf·in':
+        'Pound-inch — Drehmoment eines Pound-force an einem ein Zoll langen Hebel (0,113 N·m).',
+    'N·m':
+        'Newtonmeter — SI-Einheit des Drehmoments; ein Newton an einem ein Meter langen Hebel.',
     'kN·m': 'Kilonewtonmeter — tausend Newtonmeter.',
-    'kgf·m': 'Kilopondmeter — Drehmoment eines Kilopond an einem ein Meter langen Hebel (9,807 N·m).',
+    'kgf·m':
+        'Kilopondmeter — Drehmoment eines Kilopond an einem ein Meter langen Hebel (9,807 N·m).',
   },
 };

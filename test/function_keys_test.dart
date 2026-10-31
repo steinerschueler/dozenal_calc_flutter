@@ -229,8 +229,10 @@ void main() {
         ..handleClick(const Equals());
       expect(s.errorMsg, isNull);
       // sqrt(sin(36°))
-      expect((s.lastResultF64 - math.sqrt(math.sin(36 * math.pi / 180))).abs(),
-          lessThan(1e-9));
+      expect(
+        (s.lastResultF64 - math.sqrt(math.sin(36 * math.pi / 180))).abs(),
+        lessThan(1e-9),
+      );
     });
 
     test('√4! evaluates to sqrt(24)', () {
@@ -281,19 +283,25 @@ void main() {
       expect(s.resultText, 'A0');
     });
 
-    test('reciprocal is exact: 4 1/x = 0.3 dozenal (¼), period kept for 1/7', () {
-      final quarter = run([d(4), const Reciprocal()]);
-      expect(quarter.isF64Fallback, isFalse);
-      expect(quarter.resultText, '0.3'); // ¼ = 0.3 dozenal
+    test(
+      'reciprocal is exact: 4 1/x = 0.3 dozenal (¼), period kept for 1/7',
+      () {
+        final quarter = run([d(4), const Reciprocal()]);
+        expect(quarter.isF64Fallback, isFalse);
+        expect(quarter.resultText, '0.3'); // ¼ = 0.3 dozenal
 
-      final seventh = run([d(7), const Reciprocal()]);
-      expect(seventh.isF64Fallback, isFalse);
-      expect(seventh.resultPeriodStart, isNotNull); // 1/7 periodic, exact
-    });
+        final seventh = run([d(7), const Reciprocal()]);
+        expect(seventh.isF64Fallback, isFalse);
+        expect(seventh.resultPeriodStart, isNotNull); // 1/7 periodic, exact
+      },
+    );
 
     test('abs is exact: (−5)|x| = 5', () {
       final s = run([
-        const ParenOpen(), const Sub(), d(5), const ParenClose(),
+        const ParenOpen(),
+        const Sub(),
+        d(5),
+        const ParenClose(),
         const AbsVal(),
       ]);
       expect(s.isF64Fallback, isFalse);

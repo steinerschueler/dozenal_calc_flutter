@@ -1278,7 +1278,7 @@ List<ManualChapter> _assetManualChaptersFr() => const [
       'calculatrice : la calculatrice de valeurs. Elle convertit '
       'exactement les poids des métaux précieux et les coupures des '
       'monnaies, estime leur valeur dans une monnaie de référence et '
-      'compare comment cette valeur s\'est maintenue au fil des siècles.'
+      'compare comment cette valeur s\'est maintenue au fil des siècles.',
     ),
     _H('Aller et revenir'),
     _P(
@@ -1287,20 +1287,20 @@ List<ManualChapter> _assetManualChaptersFr() => const [
       'valeurs apparaît. Glisser vers la droite ramène pas à pas en '
       'arrière. Au changement, les petits points avec le nom de la page '
       'indiquent de nouveau où vous vous trouvez ; le point clair est la '
-      'page active.'
+      'page active.',
     ),
     _P(
       'Comme les autres calculatrices, la calculatrice de valeurs '
       'conserve sa saisie au changement de page. L\'aspect est le même '
       'que celui du convertisseur d\'unités — seules les colonnes de '
-      'touches de droite mènent un niveau plus bas.'
+      'touches de droite mènent un niveau plus bas.',
     ),
   ]),
   ManualChapter('Classe, genre, unité', [
     _P(
       'Alors que le convertisseur d\'unités connaît deux niveaux '
       '(catégorie et unité), la calculatrice de valeurs en a trois : '
-      'classe, genre et unité. Une conversion se tape de haut en bas.'
+      'classe, genre et unité. Une conversion se tape de haut en bas.',
     ),
     _H('Les trois niveaux'),
     _P(
@@ -1309,14 +1309,14 @@ List<ManualChapter> _assetManualChaptersFr() => const [
       'genres apparaissent — pour les métaux précieux par exemple Or, '
       'Argent, Platine et Palladium ; pour les monnaies les codes des '
       'devises. Si vous touchez un genre, ses unités apparaissent. Un '
-      'appui sur une unité la reprend comme terme.'
+      'appui sur une unité la reprend comme terme.',
     ),
     _H('Revenir d\'un niveau'),
     _P(
       'La classe ou le genre choisi reste affiché en haut de la colonne '
       'de droite — bordé d\'or — et sert de retour : un appui dessus mène '
       'un niveau plus haut. Ainsi rien ne saute en tous sens, vous voyez '
-      'toujours où vous vous trouvez.'
+      'toujours où vous vous trouvez.',
     ),
     _H('La touche ='),
     _P(
@@ -1324,7 +1324,7 @@ List<ManualChapter> _assetManualChaptersFr() => const [
       'la même grandeur dans l\'unité suivante ; pour les poids troy, la '
       'notation mixte vient en dernier (par exemple « 1 lb t 2 oz t 3 dwt '
       '»). Un changement de classe ou de genre abandonne les termes '
-      'achevés, mais un nombre déjà tapé reste en place.'
+      'achevés, mais un nombre déjà tapé reste en place.',
     ),
   ]),
   ManualChapter('Métrique et impérial à la fois', [
@@ -1335,7 +1335,7 @@ List<ManualChapter> _assetManualChaptersFr() => const [
       'simultanément : les unités troy impériales (gr, dwt, oz t, lb t) '
       'dans une colonne, les métriques (g, kg) dans l\'autre. Vous '
       'touchez simplement celle voulue — le monde de travail se règle '
-      'selon l\'unité dans laquelle vous avez saisi en dernier.'
+      'selon l\'unité dans laquelle vous avez saisi en dernier.',
     ),
     _H('Les couleurs'),
     _P(
@@ -1346,13 +1346,13 @@ List<ManualChapter> _assetManualChaptersFr() => const [
       'système, l\'accolade montre la même valeur dans l\'autre système '
       'dans sa couleur, le signe DOZ/DEZ la couleur de la base. Les '
       'monnaies n\'ont pas d\'axe de mondes — leurs symboles restent '
-      'violets.'
+      'violets.',
     ),
     _H('Duodécimal ou décimal'),
     _P(
       'La base numérique se change, comme pour les autres calculatrices, '
       'sous Réglages → Base numérique ; elle vaut pour les trois '
-      'calculatrices à la fois et est indépendante du système d\'unités.'
+      'calculatrices à la fois et est indépendante du système d\'unités.',
     ),
   ]),
   ManualChapter('La mémoire et les autres touches', [
@@ -1366,7 +1366,7 @@ List<ManualChapter> _assetManualChaptersFr() => const [
       'Ans ramène le dernier résultat de la calculatrice principale. '
       'Grisé signifie vide ou rien de disponible. Dans l\'autre sens, '
       'la touche CONV de la calculatrice principale récupère la valeur '
-      'de la ligne de résultat (son option d\'appui long : VAL).'
+      'de la ligne de résultat (son option d\'appui long : VAL).',
     ),
     _H('Valeur, calcul et effacement'),
     _P(
@@ -1374,13 +1374,13 @@ List<ManualChapter> _assetManualChaptersFr() => const [
       'dès qu\'un terme est posé (voir le chapitre suivant). Les '
       'opérateurs scalaires (× ÷ ⊕ ^ √ ㏒) permettent au nombre tapé '
       'd\'être lui-même un petit calcul, comme dans le convertisseur '
-      'd\'unités. AC efface tout, Del le caractère qui précède.'
+      'd\'unités. AC efface tout, Del le caractère qui précède.',
     ),
   ]),
   ManualChapter('Valeur : convertir en une monnaie', [
     _P(
       'Au-delà de la conversion exacte des poids, la calculatrice de '
-      'valeurs peut estimer une valeur monétaire approximative.'
+      'valeurs peut estimer une valeur monétaire approximative.',
     ),
     _H('Le mode valeur'),
     _P(
@@ -1389,28 +1389,28 @@ List<ManualChapter> _assetManualChaptersFr() => const [
       'dessus transforme la navigation en une sélection de monnaies '
       'cibles ; si vous en touchez une, la ligne de résultat affiche la '
       'valeur précédée d\'un « ≈ » et suivie d\'une petite indication '
-      'datée en dessous.'
+      'datée en dessous.',
     ),
     _H('Les cours'),
     _P(
       'Les cours sous-jacents sont des valeurs indicatives approximatives '
       'et datées. La touche Cours en bas à droite ouvre un éditeur dans '
       'lequel vous pouvez remplacer chaque cours ; une réinitialisation '
-      'rétablit les valeurs intégrées.'
+      'rétablit les valeurs intégrées.',
     ),
     _H('Pas de réseau'),
     _P(
       'L\'application ne récupère rien sur Internet — le « ≈ » signifie « '
       'approximatif, fondé sur les cours », jamais « en direct ». Vous '
       'tenez les cours à jour vous-même, par exemple d\'après Kitco pour '
-      'les métaux ou la BCE pour les monnaies.'
+      'les métaux ou la BCE pour les monnaies.',
     ),
   ]),
   ManualChapter('Courbe : la comparaison historique', [
     _P(
       'La touche Courbe — le cercle de gauche à côté de la barre '
       'd\'égalité — remplace le clavier par un graphique ; le × en haut '
-      'le referme.'
+      'le referme.',
     ),
     _H('Les trois séries'),
     _P(
@@ -1419,7 +1419,7 @@ List<ManualChapter> _assetManualChaptersFr() => const [
       'en nourriture. Chaque série est rapportée à sa plus ancienne '
       'valeur connue ; celle-ci se trouve au centre comme une ligne zéro '
       'en gras. Au-dessus de la ligne signifie plus cher, en dessous '
-      'moins cher, chaque fois relativement à l\'or.'
+      'moins cher, chaque fois relativement à l\'or.',
     ),
     _H('Lire et déplacer'),
     _P(
@@ -1429,7 +1429,7 @@ List<ManualChapter> _assetManualChaptersFr() => const [
       'points de l\'Antiquité est la plage estimée — l\'Antiquité se '
       'compose d\'anneaux isolés (ordres de grandeur seulement), aucune '
       'ligne ne court par-dessus une lacune. La ligne des sources liste '
-      'le jeu de données.'
+      'le jeu de données.',
     ),
   ]),
 ];

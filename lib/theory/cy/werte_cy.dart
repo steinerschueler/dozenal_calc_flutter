@@ -1601,12 +1601,7 @@ List<ProseChapter> _werteChaptersCy() => const [
         'R1',
         'A2',
       ),
-      Source(
-        'IMF — data cronfeydd',
-        'https://www.imf.org/en/Data',
-        'R1',
-        'A3',
-      ),
+      Source('IMF — data cronfeydd', 'https://www.imf.org/en/Data', 'R1', 'A3'),
       Source(
         'World Gold Council — ystadegau banciau canolog (â diddordeb)',
         'https://www.gold.org/goldhub/data/monthly-central-bank-statistics',

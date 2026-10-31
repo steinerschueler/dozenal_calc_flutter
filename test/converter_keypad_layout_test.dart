@@ -14,10 +14,10 @@ import 'package:dozenal_calc_flutter/l10n/app_localizations.dart';
 import 'package:dozenal_calc_flutter/logic/unit_data.dart';
 
 Widget _pageApp() => MaterialApp(
-      localizationsDelegates: AppLocalizations.localizationsDelegates,
-      supportedLocales: AppLocalizations.supportedLocales,
-      home: const ConverterPage(),
-    );
+  localizationsDelegates: AppLocalizations.localizationsDelegates,
+  supportedLocales: AppLocalizations.supportedLocales,
+  home: const ConverterPage(),
+);
 
 Widget _keypad(double height, {bool overlayOpen = false, bool active = false}) {
   final state = ConverterState();
@@ -50,8 +50,9 @@ void main() {
         await tester.pumpWidget(_keypad(h, overlayOpen: true));
         expect(tester.takeException(), isNull);
       });
-      testWidgets('builds at height $h (dist active, 7 magnitudes)',
-          (tester) async {
+      testWidgets('builds at height $h (dist active, 7 magnitudes)', (
+        tester,
+      ) async {
         await tester.pumpWidget(_keypad(h, active: true));
         expect(tester.takeException(), isNull);
       });
@@ -72,8 +73,9 @@ void main() {
     ];
 
     for (final s in sizes) {
-      testWidgets('ConverterPage builds at ${s.width}×${s.height}',
-          (tester) async {
+      testWidgets('ConverterPage builds at ${s.width}×${s.height}', (
+        tester,
+      ) async {
         await tester.binding.setSurfaceSize(s);
         addTearDown(() => tester.binding.setSurfaceSize(null));
         await tester.pumpWidget(_pageApp());

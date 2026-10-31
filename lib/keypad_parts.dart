@@ -133,8 +133,8 @@ class _PressableShellState extends State<PressableShell> {
               color: widget.gold
                   ? t.accentGold
                   : widget.selected
-                      ? t.op
-                      : (_inactive ? t.keyBorderDisabled : t.keyBorder),
+                  ? t.op
+                  : (_inactive ? t.keyBorderDisabled : t.keyBorder),
               width: widget.gold || widget.selected ? 2 : 1,
             ),
           ),
@@ -310,7 +310,11 @@ class _LabelButtonState extends State<LabelButton> {
               if (rb is! RenderBox) return;
               final anchor = rb.localToGlobal(Offset.zero) & rb.size;
               showUnitInfoBox(
-                  context, anchor, widget.info!.desc, widget.info!.more);
+                context,
+                anchor,
+                widget.info!.desc,
+                widget.info!.more,
+              );
             },
       child: ConstrainedBox(
         constraints: const BoxConstraints(minHeight: minTouchTarget),
@@ -429,10 +433,10 @@ class _SystemKeyState extends State<SystemKey> {
                   color: !enabled
                       ? t.inertKey
                       : (_pressed
-                          ? t.opPressed
-                          : (widget.active
-                              ? hue
-                              : hue.withValues(alpha: 0.55))),
+                            ? t.opPressed
+                            : (widget.active
+                                  ? hue
+                                  : hue.withValues(alpha: 0.55))),
                   fontSize: 15,
                   fontWeight: FontWeight.w600,
                 ),
@@ -450,7 +454,11 @@ class _SystemKeyState extends State<SystemKey> {
 /// barrier dismisses it on the next outside pointer-down (the same tap still
 /// acts on the key beneath — smartphone-keyboard convention).
 void showUnitInfoBox(
-    BuildContext context, Rect anchor, String desc, String more) {
+  BuildContext context,
+  Rect anchor,
+  String desc,
+  String more,
+) {
   final overlay = Overlay.of(context);
   final t = AppColors.of(context);
   final media = MediaQuery.of(context);
@@ -496,14 +504,20 @@ void showUnitInfoBox(
                   Text(
                     desc,
                     style: TextStyle(
-                        color: t.textPrimary, fontSize: 13, height: 1.35),
+                      color: t.textPrimary,
+                      fontSize: 13,
+                      height: 1.35,
+                    ),
                   ),
                   if (more.isNotEmpty) ...[
                     const SizedBox(height: 8),
                     Text(
                       more,
                       style: TextStyle(
-                          color: t.textMuted, fontSize: 11, height: 1.3),
+                        color: t.textMuted,
+                        fontSize: 11,
+                        height: 1.3,
+                      ),
                     ),
                   ],
                 ],

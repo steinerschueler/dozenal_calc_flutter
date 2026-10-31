@@ -76,7 +76,10 @@ class ConverterKeypad extends StatelessWidget {
   /// "more in the unit theory" pointer line. Null → no long-press box (e.g.
   /// the preview harness without localizations).
   final ({String desc, String more}) Function(
-      UnitCategory category, String symbol)? unitInfoOf;
+    UnitCategory category,
+    String symbol,
+  )?
+  unitInfoOf;
 
   /// Small localized hint inside the equals bar (between the `=` glyph and
   /// the bottom edge): repeated taps cycle the displayed unit. Null → no
@@ -171,11 +174,26 @@ class ConverterKeypad extends StatelessWidget {
           // Doz/Dez removed (base is the global setting now; the unit system
           // sits on the met/imp keys in the equals row) — their old slots
           // stay empty so Drg/Close keep their positions.
-          ? _panel(const ValueKey('overlay'), kSet6, kSet7, _set8, _set9,
+          ? _panel(
+              const ValueKey('overlay'),
+              kSet6,
+              kSet7,
+              _set8,
+              _set9,
               bottomRow: const [null, null, Drg(), Close()],
-              tight: tight, fixedHeights: fixedHeights)
-          : _panel(const ValueKey('main'), kSet1, kSet2, _set3, _set4,
-              bottomRow: _systemRow, tight: tight, fixedHeights: fixedHeights),
+              tight: tight,
+              fixedHeights: fixedHeights,
+            )
+          : _panel(
+              const ValueKey('main'),
+              kSet1,
+              kSet2,
+              _set3,
+              _set4,
+              bottomRow: _systemRow,
+              tight: tight,
+              fixedHeights: fixedHeights,
+            ),
     );
   }
 
@@ -202,13 +220,13 @@ class ConverterKeypad extends StatelessWidget {
         : Expanded(flex: flex, child: child);
 
     Widget fourCellRow(List<Widget> cells) => Row(
-          children: [
-            for (var i = 0; i < cells.length; i++) ...[
-              if (i > 0) const SizedBox(width: 8),
-              Expanded(child: cells[i]),
-            ],
-          ],
-        );
+      children: [
+        for (var i = 0; i < cells.length; i++) ...[
+          if (i > 0) const SizedBox(width: 8),
+          Expanded(child: cells[i]),
+        ],
+      ],
+    );
 
     return Column(
       key: key,
@@ -217,16 +235,21 @@ class ConverterKeypad extends StatelessWidget {
       children: [
         for (var r = 0; r < 4; r++) ...[
           if (r > 0) SizedBox(height: rowGap),
-          rowWrap(fourCellRow([
-            _opCell(opColA[r]),
-            _opCell(opColB[r]),
-            cellsA[r],
-            cellsB[r],
-          ])),
+          rowWrap(
+            fourCellRow([
+              _opCell(opColA[r]),
+              _opCell(opColB[r]),
+              cellsA[r],
+              cellsB[r],
+            ]),
+          ),
         ],
         SizedBox(height: bottomGap),
-        rowWrap(fourCellRow(
-            [for (final t in bottomRow) t == null ? _emptyCell() : _opCell(t)])),
+        rowWrap(
+          fourCellRow([
+            for (final t in bottomRow) t == null ? _emptyCell() : _opCell(t),
+          ]),
+        ),
       ],
     );
   }
@@ -239,7 +262,8 @@ class ConverterKeypad extends StatelessWidget {
   ) {
     final active = state.activeCategory;
     final inThisPanel =
-        active != null && (catColA.contains(active) || catColB.contains(active));
+        active != null &&
+        (catColA.contains(active) || catColB.contains(active));
 
     if (!inThisPanel || !state.magnitudesExpanded) {
       return (
@@ -348,8 +372,8 @@ class ConverterKeypad extends StatelessWidget {
               color: !active
                   ? t.inertKey
                   : (pressed
-                      ? (isAc ? t.acPressed : t.opPressed)
-                      : (isAc ? t.ac : t.op)),
+                        ? (isAc ? t.acPressed : t.opPressed)
+                        : (isAc ? t.ac : t.op)),
             ),
           );
         },
@@ -511,14 +535,17 @@ class ConverterKeypad extends StatelessWidget {
     final rawW = w.isFinite
         ? (w - 10 * interBlockGap - 2 * groupGapBase) / 13
         : tabletButtonSize;
-    final buttonSize =
-        math.min(rawH, rawW).clamp(breitMinTouchTarget, tabletButtonSize);
+    final buttonSize = math
+        .min(rawH, rawW)
+        .clamp(breitMinTouchTarget, tabletButtonSize);
 
     final baseNaturalWidth =
         13 * buttonSize + 10 * interBlockGap + 2 * groupGapBase;
     final hSlack = w.isFinite ? math.max(0.0, w - baseNaturalWidth) : 0.0;
-    final groupGap =
-        (groupGapBase + hSlack / 2).clamp(groupGapBase, maxGroupGap);
+    final groupGap = (groupGapBase + hSlack / 2).clamp(
+      groupGapBase,
+      maxGroupGap,
+    );
     final contentWidth = 13 * buttonSize + 10 * interBlockGap + 2 * groupGap;
 
     final content = _buildBreitContent(
@@ -563,35 +590,35 @@ class ConverterKeypad extends StatelessWidget {
 
     // A vertical block of (up to) four cells, padded to four for alignment.
     Widget column(List<Widget> children) => Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            for (var i = 0; i < 4; i++) ...[
-              if (i > 0) const SizedBox(height: tabletColGap),
-              cell(i < children.length ? children[i] : const SizedBox()),
-            ],
-          ],
-        );
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        for (var i = 0; i < 4; i++) ...[
+          if (i > 0) const SizedBox(height: tabletColGap),
+          cell(i < children.length ? children[i] : const SizedBox()),
+        ],
+      ],
+    );
 
     Widget opColumn(List<CalcToken> tokens) =>
         column([for (final t in tokens) _opCell(t)]);
 
     Widget digitGrid() => Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            for (var r = 0; r < kDigitGridRows.length; r++) ...[
-              if (r > 0) const SizedBox(height: tabletDigitGap),
-              Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  for (var c = 0; c < kDigitGridRows[r].length; c++) ...[
-                    if (c > 0) const SizedBox(width: tabletDigitGap),
-                    cell(_digitCell(kDigitGridRows[r][c])),
-                  ],
-                ],
-              ),
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        for (var r = 0; r < kDigitGridRows.length; r++) ...[
+          if (r > 0) const SizedBox(height: tabletDigitGap),
+          Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              for (var c = 0; c < kDigitGridRows[r].length; c++) ...[
+                if (c > 0) const SizedBox(width: tabletDigitGap),
+                cell(_digitCell(kDigitGridRows[r][c])),
+              ],
             ],
-          ],
-        );
+          ),
+        ],
+      ],
+    );
 
     final cells34 = _buildCategoryColumns(_set3, _set4);
     final cells89 = _buildCategoryColumns(_set8, _set9);
@@ -599,15 +626,11 @@ class ConverterKeypad extends StatelessWidget {
     Widget gap() => const SizedBox(width: tabletColGap);
     final dividerHeight = 4 * buttonSize + 3 * interBlockGap;
     Widget bigGap() => SizedBox(
-          width: groupGap,
-          child: Center(
-            child: Container(
-              width: 1,
-              height: dividerHeight,
-              color: t.hairline,
-            ),
-          ),
-        );
+      width: groupGap,
+      child: Center(
+        child: Container(width: 1, height: dividerHeight, color: t.hairline),
+      ),
+    );
 
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
@@ -715,4 +738,3 @@ bool _isActiveOp(CalcToken t) =>
 
 // Shared building blocks (LabelButton, SystemKey, showUnitInfoBox) live in
 // keypad_parts.dart so the unit and asset keypads can't drift apart.
-

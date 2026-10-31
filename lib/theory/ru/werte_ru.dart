@@ -1586,12 +1586,7 @@ List<ProseChapter> _werteChaptersRu() => const [
         'R1',
         'A2',
       ),
-      Source(
-        'IMF — reserves data',
-        'https://www.imf.org/en/Data',
-        'R1',
-        'A3',
-      ),
+      Source('IMF — reserves data', 'https://www.imf.org/en/Data', 'R1', 'A3'),
       Source(
         'World Gold Council — central bank statistics (заинтересованная сторона)',
         'https://www.gold.org/goldhub/data/monthly-central-bank-statistics',

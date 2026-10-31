@@ -53,8 +53,14 @@ class _InputLayout {
   final int? pendingEnd;
   final List<int> boundaries;
   final List<(int, int)> unitRanges;
-  _InputLayout(this.text, this.caret, this.pendingStart, this.pendingEnd,
-      this.boundaries, this.unitRanges);
+  _InputLayout(
+    this.text,
+    this.caret,
+    this.pendingStart,
+    this.pendingEnd,
+    this.boundaries,
+    this.unitRanges,
+  );
 }
 
 class AssetState extends ChangeNotifier {
@@ -94,7 +100,8 @@ class AssetState extends ChangeNotifier {
 
   void memStore() {
     final v =
-        ansForBridge ?? (_input.isEmpty ? null : parseScalarEntry(_input, base));
+        ansForBridge ??
+        (_input.isEmpty ? null : parseScalarEntry(_input, base));
     if (v == null || !v.isFinite) return;
     _memory = v;
     notifyListeners();
@@ -194,8 +201,7 @@ class AssetState extends ChangeNotifier {
   }
 
   String _defaultValueTarget() {
-    final src =
-        _activeClass == AssetClass.currency ? _activeGenus?.key : null;
+    final src = _activeClass == AssetClass.currency ? _activeGenus?.key : null;
     final currencies = generaOf(AssetClass.currency);
     for (final g in currencies) {
       if (g.key != src) return g.key;
@@ -212,7 +218,10 @@ class AssetState extends ChangeNotifier {
     final r = rates;
     final g = _activeGenus;
     final target = _valueTarget;
-    if (!_valueMode || r == null || g == null || target == null ||
+    if (!_valueMode ||
+        r == null ||
+        g == null ||
+        target == null ||
         _terms.isEmpty) {
       return null;
     }
@@ -235,8 +244,10 @@ class AssetState extends ChangeNotifier {
   ConverterLine? get valueLine {
     final value = _valueModeNumber;
     if (value == null) return null;
-    return ConverterLine(formatBaseNum(value, base),
-        unit: currencySymbol(_valueTarget!));
+    return ConverterLine(
+      formatBaseNum(value, base),
+      unit: currencySymbol(_valueTarget!),
+    );
   }
 
   /// True for a genus that HAS a metric ↔ imperial axis (a metal). Drives the
@@ -259,8 +270,7 @@ class AssetState extends ChangeNotifier {
   /// metric together; there is no met/imp filter any more). Currencies return
   /// their full denomination list as before.
   List<Unit> get currentLadder => _activeGenus?.units ?? const [];
-  List<Unit> get magnitudeUnits =>
-      _genusExpanded ? currentLadder : const [];
+  List<Unit> get magnitudeUnits => _genusExpanded ? currentLadder : const [];
 
   bool isClassActive(AssetClass c) => _activeClass == c;
   bool isGenusActive(AssetGenus g) => _activeGenus?.key == g.key;
@@ -345,7 +355,8 @@ class AssetState extends ChangeNotifier {
   void inputDigit(int value) {
     if (value >= base) return;
     _leaveValueMode();
-    _input = _input.substring(0, _inputCursor) +
+    _input =
+        _input.substring(0, _inputCursor) +
         _digitChar(value) +
         _input.substring(_inputCursor);
     _inputCursor++;
@@ -364,11 +375,13 @@ class AssetState extends ChangeNotifier {
     }
     if (_input.substring(segStart, segEnd).contains('.')) return;
     if (_inputCursor == segStart) {
-      _input = '${_input.substring(0, _inputCursor)}0.'
+      _input =
+          '${_input.substring(0, _inputCursor)}0.'
           '${_input.substring(_inputCursor)}';
       _inputCursor += 2;
     } else {
-      _input = '${_input.substring(0, _inputCursor)}.'
+      _input =
+          '${_input.substring(0, _inputCursor)}.'
           '${_input.substring(_inputCursor)}';
       _inputCursor++;
     }
@@ -393,9 +406,8 @@ class AssetState extends ChangeNotifier {
     final next = _inputCursor < _input.length ? _input[_inputCursor] : null;
     if (prev == null || isScalarOpChar(prev) || prev == '-') return;
     if (next != null && isScalarOpChar(next)) return;
-    _input = _input.substring(0, _inputCursor) +
-        ch +
-        _input.substring(_inputCursor);
+    _input =
+        _input.substring(0, _inputCursor) + ch + _input.substring(_inputCursor);
     _inputCursor++;
     notifyListeners();
   }
@@ -403,7 +415,8 @@ class AssetState extends ChangeNotifier {
   void del() {
     _leaveValueMode();
     if (_input.isNotEmpty && _inputCursor > 0) {
-      _input = _input.substring(0, _inputCursor - 1) +
+      _input =
+          _input.substring(0, _inputCursor - 1) +
           _input.substring(_inputCursor);
       _inputCursor--;
     } else if (_input.isEmpty && _heldUnit != null) {
@@ -575,8 +588,11 @@ class AssetState extends ChangeNotifier {
       return;
     }
 
-    final term = _Term(parseScalarEntry(_input, base), unit,
-        subtract: _pendingSubtract);
+    final term = _Term(
+      parseScalarEntry(_input, base),
+      unit,
+      subtract: _pendingSubtract,
+    );
     _terms = [
       ..._terms.sublist(0, _cursorTerm),
       term,
@@ -671,8 +687,9 @@ class AssetState extends ChangeNotifier {
         ..._terms.sublist(1),
       ];
     }
-    _resultStep =
-        _terms.isEmpty ? -1 : _resultStep.clamp(0, _resultViewCount - 1);
+    _resultStep = _terms.isEmpty
+        ? -1
+        : _resultStep.clamp(0, _resultViewCount - 1);
   }
 
   String _digitChar(int v) =>
@@ -767,7 +784,13 @@ class AssetState extends ChangeNotifier {
       caret = 0;
     }
     return _InputLayout(
-        text, caret, pendingStart, pendingEnd, boundaries, unitRanges);
+      text,
+      caret,
+      pendingStart,
+      pendingEnd,
+      boundaries,
+      unitRanges,
+    );
   }
 
   ConverterLine _breakdownLine() {

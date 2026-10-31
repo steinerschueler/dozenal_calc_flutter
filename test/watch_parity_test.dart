@@ -33,13 +33,15 @@ import 'package:dozenal_calc_flutter/tokens.dart' show AngleMode;
 /// leaving operators and parentheses untouched, so the base-10 [evalF64] sees
 /// the same magnitudes the watch's base-12 parser would.
 String litsToBase10(String expr) => expr.replaceAllMapped(
-      RegExp(r'[0-9AaBb.]+'),
-      (m) => parseBaseNum(m.group(0)!, 12).toString(),
-    );
+  RegExp(r'[0-9AaBb.]+'),
+  (m) => parseBaseNum(m.group(0)!, 12).toString(),
+);
 
 void main() {
   test('Flutter evaluator matches the shared watch-parity fixtures', () {
-    final raw = File('test/fixtures/watch_parity_fixtures.json').readAsStringSync();
+    final raw = File(
+      'test/fixtures/watch_parity_fixtures.json',
+    ).readAsStringSync();
     final fixtures = (json.decode(raw) as List).cast<Map<String, dynamic>>();
     expect(fixtures, isNotEmpty, reason: 'fixture file is empty');
 
@@ -51,7 +53,8 @@ void main() {
       expect(
         (v! - expected).abs(),
         lessThan(1e-9),
-        reason: 'parity drift on "$expr": evalF64 gave $v, fixture expects $expected',
+        reason:
+            'parity drift on "$expr": evalF64 gave $v, fixture expects $expected',
       );
     }
   });

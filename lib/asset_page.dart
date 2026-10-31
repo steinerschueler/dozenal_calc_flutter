@@ -57,8 +57,7 @@ class AssetBody extends StatelessWidget {
                     height: displayH,
                     child: ConverterDisplay(
                       topLine: state.topLine,
-                      resultLine:
-                          inValue ? state.valueLine : state.resultLine,
+                      resultLine: inValue ? state.valueLine : state.resultLine,
                       resultPrefix: inValue ? '≈ ' : '= ',
                       worldLabel: state.base == 12 ? 'DOZ' : 'DEZ',
                       baseIsTen: state.base == 10,
@@ -66,7 +65,8 @@ class AssetBody extends StatelessWidget {
                       // imperial axis, so their unit symbols must not flip hue
                       // with a leftover (disabled) world toggle — pin them to
                       // the Twelve-world violet (the duodecimal-money theme).
-                      systemIsTen: state.worldToggleEnabled &&
+                      systemIsTen:
+                          state.worldToggleEnabled &&
                           state.world == UnitWorld.metric,
                       inputCaret: state.inputLayout.caret,
                       onInputTapChar: state.handleInputTapAtChar,
@@ -96,9 +96,10 @@ class AssetBody extends StatelessWidget {
                               eraReconstructedLabel: l.priceEraAnchor,
                               onClose: state.toggleChart,
                               onSourcesTap: () => Navigator.of(ctx).push(
-                                  MaterialPageRoute(
-                                      builder: (_) =>
-                                          const PriceSourcesPage())),
+                                MaterialPageRoute(
+                                  builder: (_) => const PriceSourcesPage(),
+                                ),
+                              ),
                             )
                           : AssetKeypad(
                               key: const ValueKey('keypad'),
@@ -112,8 +113,10 @@ class AssetBody extends StatelessWidget {
                                   ? null
                                   : () => Navigator.of(ctx).push(
                                       MaterialPageRoute(
-                                          builder: (_) =>
-                                              RatesPage(store: state.rates!))),
+                                        builder: (_) =>
+                                            RatesPage(store: state.rates!),
+                                      ),
+                                    ),
                               classLabelOf: (c) => assetClassLabel(c, l),
                               genusLabelOf: (g) => assetGenusLabel(g, l),
                             ),
@@ -131,17 +134,17 @@ class AssetBody extends StatelessWidget {
 
 /// Localized toggle label for a price-chart series (short tab name).
 String _seriesLabel(PriceSeriesId id, AppLocalizations l) => switch (id) {
-      PriceSeriesId.gold => l.priceSeriesGold,
-      PriceSeriesId.silver => l.priceSeriesSilver,
-      PriceSeriesId.wheat => l.priceSeriesWheat,
-    };
+  PriceSeriesId.gold => l.priceSeriesGold,
+  PriceSeriesId.silver => l.priceSeriesSilver,
+  PriceSeriesId.wheat => l.priceSeriesWheat,
+};
 
 /// Localized relationship caption (gold-referenced) for the value axis.
 String _seriesRelLabel(PriceSeriesId id, AppLocalizations l) => switch (id) {
-      PriceSeriesId.gold => l.priceRelGold,
-      PriceSeriesId.silver => l.priceRelSilver,
-      PriceSeriesId.wheat => l.priceRelWheat,
-    };
+  PriceSeriesId.gold => l.priceRelGold,
+  PriceSeriesId.silver => l.priceRelSilver,
+  PriceSeriesId.wheat => l.priceRelWheat,
+};
 
 /// Standalone route wrapper (widget tests, preview): owns a private AssetState.
 class AssetPage extends StatefulWidget {

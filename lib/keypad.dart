@@ -1449,7 +1449,8 @@ class _TokenButtonState extends State<_TokenButton> {
   @override
   Widget build(BuildContext context) {
     final l = AppLocalizations.of(context);
-    final hasPopup = !widget.disabled &&
+    final hasPopup =
+        !widget.disabled &&
         widget.onTokenTap != null &&
         longPressOptionsFor(widget.token).isNotEmpty;
     return ConstrainedBox(
@@ -1766,7 +1767,9 @@ class _RoundIconButton extends StatelessWidget {
       child: InkWell(
         customBorder: const CircleBorder(),
         onTap: onPressed,
-        child: Center(child: Icon(icon, size: size * 0.5, color: t.link)),
+        child: Center(
+          child: Icon(icon, size: size * 0.5, color: t.link),
+        ),
       ),
     );
     return SizedBox(

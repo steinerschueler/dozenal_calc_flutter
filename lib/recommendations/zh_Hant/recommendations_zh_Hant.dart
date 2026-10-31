@@ -20,18 +20,10 @@ List<RecChapter> _recChaptersZhHant() => const [
             '可程式口袋計算機，具備公式記憶體與自然顯示功能。'
             '針對反覆出現的木工計算公式（榫槽深度、斜接幾何），'
             '可儲存附參數的程式以便隨時調用。',
-        pros: [
-          '小巧便攜，適合放入口袋',
-          '可程式，附公式函式庫',
-          '熟悉的代數輸入方式，支援度/分/秒',
-          '性價比極佳',
-        ],
-        cons: [
-          '在歐洲通常只能透過進口取得',
-          '專有軟體——無法查看原始碼',
-          '不支援十二進制輸出',
-        ],
-        url: 'https://www.casio.com/intl/scientific-calculators/product.FX-5800P/',
+        pros: ['小巧便攜，適合放入口袋', '可程式，附公式函式庫', '熟悉的代數輸入方式，支援度/分/秒', '性價比極佳'],
+        cons: ['在歐洲通常只能透過進口取得', '專有軟體——無法查看原始碼', '不支援十二進制輸出'],
+        url:
+            'https://www.casio.com/intl/scientific-calculators/product.FX-5800P/',
       ),
       RecCalc(
         'SwissMicros DM42n',
@@ -45,11 +37,7 @@ List<RecChapter> _recChaptersZhHant() => const [
           '極高精度（34 位十進制有效數字）',
           '質感如傳家之寶，具 USB-C 大容量儲存',
         ],
-        cons: [
-          '僅支援 RPN——需要適應期',
-          '旗艦級售價，有時難以購得',
-          'BASE 功能不支援十二進制',
-        ],
+        cons: ['僅支援 RPN——需要適應期', '旗艦級售價，有時難以購得', 'BASE 功能不支援十二進制'],
         url: 'https://www.swissmicros.com/product/model-dm42n',
       ),
       RecCalc(
@@ -58,18 +46,10 @@ List<RecChapter> _recChaptersZhHant() => const [
         blurb:
             '現行款不可程式 ClassWiz——價格實惠、幾乎隨處可買到，'
             '適合不需要可程式性的使用者。',
-        pros: [
-          '價格實惠，幾乎隨處可購得',
-          '自然顯示，功能齊全',
-          '小巧耐用',
-        ],
-        cons: [
-          '不可程式',
-          '專有軟體',
-          '執行複雜運算時明顯較慢',
-          '不支援十二進制',
-        ],
-        url: 'https://www.casio.com/us/scientific-calculators/product.FX-991CW/',
+        pros: ['價格實惠，幾乎隨處可購得', '自然顯示，功能齊全', '小巧耐用'],
+        cons: ['不可程式', '專有軟體', '執行複雜運算時明顯較慢', '不支援十二進制'],
+        url:
+            'https://www.casio.com/us/scientific-calculators/product.FX-991CW/',
       ),
     ],
     verdict:
@@ -91,16 +71,8 @@ List<RecChapter> _recChaptersZhHant() => const [
         blurb:
             '科學計算機，具備符號代數、繪圖、方程式及微積分功能。'
             '廣泛使用，持續維護，並針對不同螢幕尺寸提供對應版面。',
-        pros: [
-          '功能豐富（CAS、繪圖、高位數精度）',
-          '支援分數與循環小數顯示',
-          '持續維護，版面可自訂',
-        ],
-        cons: [
-          '專有軟體——對自身專案無學習參考價值',
-          '完整功能需付費解鎖',
-          '不支援十二進制輸出',
-        ],
+        pros: ['功能豐富（CAS、繪圖、高位數精度）', '支援分數與循環小數顯示', '持續維護，版面可自訂'],
+        cons: ['專有軟體——對自身專案無學習參考價值', '完整功能需付費解鎖', '不支援十二進制輸出'],
         url: 'https://play.google.com/store/apps/details?id=cz.hipercalc.pro',
       ),
       RecCalc(
@@ -115,11 +87,7 @@ List<RecChapter> _recChaptersZhHant() => const [
           'Decimal-128 精度',
           'Plus42 支援代數方程式',
         ],
-        cons: [
-          'RPN 邏輯（Plus42 已有所緩解）',
-          'BASE 功能不支援十二進制',
-          '行動版需付費（桌面版免費）',
-        ],
+        cons: ['RPN 邏輯（Plus42 已有所緩解）', 'BASE 功能不支援十二進制', '行動版需付費（桌面版免費）'],
         url: 'https://thomasokken.com/plus42/',
       ),
     ],
@@ -161,16 +129,8 @@ List<RecChapter> _recChaptersZhHant() => const [
             '精簡、維護良好的計算機，完全以 Kotlin 撰寫。功能雖非頂尖，'
             '但程式碼易讀且架構清晰——值得關注的是其有文件記錄的內部數字'
             '從 Double 遷移至 BigDecimal 的過程，恰好就是十二進制計算機同樣需要解決的精度問題。',
-        pros: [
-          '開源（GPL-3.0），Kotlin 程式碼整潔',
-          '理想的學習與參考對象',
-          '支援歷史紀錄，介面簡潔，無追蹤器',
-        ],
-        cons: [
-          '無 CAS，不可程式化',
-          '功能上無法與 HiPER/Qalculate 競爭',
-          '不支援十二進制',
-        ],
+        pros: ['開源（GPL-3.0），Kotlin 程式碼整潔', '理想的學習與參考對象', '支援歷史紀錄，介面簡潔，無追蹤器'],
+        cons: ['無 CAS，不可程式化', '功能上無法與 HiPER/Qalculate 競爭', '不支援十二進制'],
         url: 'https://github.com/Darkempire78/OpenCalc',
       ),
     ],
@@ -193,18 +153,8 @@ List<RecChapter> _recChaptersZhHant() => const [
             '自 1990 年代起被視為 Apple 平台的基準之作：'
             '豐富的單位換算、頂級 RPN 輸入、深度可自訂性（主題、按鍵版面、紙帶）。'
             '支援 iPhone、iPad、Apple Watch 及 Apple TV。',
-        pros: [
-          '頂級、高度成熟的工具',
-          '可選 RPN 模式，歷史紀錄可編輯',
-          '豐富的單位換算與常數',
-          '提供免費精簡版供入門體驗',
-        ],
-        cons: [
-          '專有軟體——無學習參考價值',
-          '需付費',
-          '功能繁多，初期可能令人不知所措',
-          '不支援十二進制',
-        ],
+        pros: ['頂級、高度成熟的工具', '可選 RPN 模式，歷史紀錄可編輯', '豐富的單位換算與常數', '提供免費精簡版供入門體驗'],
+        cons: ['專有軟體——無學習參考價值', '需付費', '功能繁多，初期可能令人不知所措', '不支援十二進制'],
         url: 'https://pcalc.com/',
       ),
       RecCalc(
@@ -219,11 +169,7 @@ List<RecChapter> _recChaptersZhHant() => const [
           'Decimal-128 精度',
           'Plus42 支援代數方程式',
         ],
-        cons: [
-          'RPN 邏輯（Plus42 已有所緩解）',
-          '不支援十二進制',
-          'Plus42 需付費',
-        ],
+        cons: ['RPN 邏輯（Plus42 已有所緩解）', '不支援十二進制', 'Plus42 需付費'],
         url: 'https://thomasokken.com/free42/',
       ),
     ],
@@ -245,15 +191,8 @@ List<RecChapter> _recChaptersZhHant() => const [
         blurb:
             '桌面級強力工具（同時支援 Windows 與 Linux）：符號運算、任意精度、'
             '單位換算、繪圖。可透過 Homebrew 安裝；CLI「qalc」與 Linux 版行為完全一致。',
-        pros: [
-          '開源，最強大引擎（CAS、單位換算、精確分數）',
-          '支援十二進制（十二進位）運算',
-          '可擴充自訂函式，CLI 可腳本化',
-        ],
-        cons: [
-          '相較 PCalc，Mac 原生質感略遜',
-          '強大功能需花時間熟悉',
-        ],
+        pros: ['開源，最強大引擎（CAS、單位換算、精確分數）', '支援十二進制（十二進位）運算', '可擴充自訂函式，CLI 可腳本化'],
+        cons: ['相較 PCalc，Mac 原生質感略遜', '強大功能需花時間熟悉'],
         url: 'https://qalculate.github.io/',
       ),
       RecCalc(
@@ -268,10 +207,7 @@ List<RecChapter> _recChaptersZhHant() => const [
           '支援 RPN、紙帶、豐富單位換算',
           'Magic Variables，Handoff iOS/macOS',
         ],
-        cons: [
-          '專有軟體，需付費',
-          '不支援十二進制',
-        ],
+        cons: ['專有軟體，需付費', '不支援十二進制'],
         url: 'https://pcalc.com/mac/',
       ),
       RecCalc(
@@ -280,15 +216,8 @@ List<RecChapter> _recChaptersZhHant() => const [
         blurb:
             '同樣支援 macOS——桌面版免費。'
             '與 DM42 硬體運算核心採用相同引擎。',
-        pros: [
-          '開源（GPL），桌面版免費',
-          'Decimal-128 精度',
-          '跨平台完全一致',
-        ],
-        cons: [
-          'RPN 邏輯',
-          '不支援十二進制',
-        ],
+        pros: ['開源（GPL），桌面版免費', 'Decimal-128 精度', '跨平台完全一致'],
+        cons: ['RPN 邏輯', '不支援十二進制'],
         url: 'https://thomasokken.com/free42/',
       ),
     ],
@@ -311,30 +240,16 @@ List<RecChapter> _recChaptersZhHant() => const [
             'GTK 與 Qt 圖形介面加上 CLI「qalc」。完整 libqalculate 功能集：'
             '符號運算、任意精度、不確定度傳播、繪圖。'
             '「qalc」可腳本化（運算式作為參數或從檔案讀取），並已收錄於各大主流發行版。',
-        pros: [
-          '開源，各大發行版均可取得',
-          '最強大引擎，支援十二進制運算',
-          'CLI 可腳本化——別名、管道、自訂函式庫',
-        ],
-        cons: [
-          '豐富功能需投入時間學習',
-        ],
+        pros: ['開源，各大發行版均可取得', '最強大引擎，支援十二進制運算', 'CLI 可腳本化——別名、管道、自訂函式庫'],
+        cons: ['豐富功能需投入時間學習'],
         url: 'https://qalculate.github.io/',
       ),
       RecCalc(
         'KCalc',
         tag: 'GPL · KDE 標準',
-        blurb:
-            'KDE 計算機，具備科學模式與程式設計師模式，以及可自訂按鍵版面——扎實的基本配備。',
-        pros: [
-          '開源，輕量',
-          '程式設計師模式（bin/oct/hex）',
-          '與 KDE Plasma 整合良好',
-        ],
-        cons: [
-          '無 CAS',
-          '不支援十二進制',
-        ],
+        blurb: 'KDE 計算機，具備科學模式與程式設計師模式，以及可自訂按鍵版面——扎實的基本配備。',
+        pros: ['開源，輕量', '程式設計師模式（bin/oct/hex）', '與 KDE Plasma 整合良好'],
+        cons: ['無 CAS', '不支援十二進制'],
         url: 'https://apps.kde.org/kcalc/',
       ),
       RecCalc(
@@ -343,14 +258,8 @@ List<RecChapter> _recChaptersZhHant() => const [
         blurb:
             'GNOME 標準計算機，內建單位換算與貨幣功能，並提供進階、財務及程式設計師模式。'
             '功能上略遜於 Qalculate，但全面扎實。',
-        pros: [
-          '開源，操作簡便',
-          '內建單位換算與貨幣',
-        ],
-        cons: [
-          '功能不及 Qalculate 強大',
-          '不支援十二進制',
-        ],
+        pros: ['開源，操作簡便', '內建單位換算與貨幣'],
+        cons: ['功能不及 Qalculate 強大', '不支援十二進制'],
         url: 'https://apps.gnome.org/Calculator/',
       ),
       RecCalc(
@@ -359,15 +268,8 @@ List<RecChapter> _recChaptersZhHant() => const [
         blurb:
             '昔日的秘密利器：快速的鍵盤導向輸入、語法高亮與自動補全、'
             '高精度、如試算表般的變數支援。穩定——但多年來已無新版本。',
-        pros: [
-          '開源，鍵盤輸入極為快速',
-          '高精度，免安裝可攜帶使用',
-        ],
-        cons: [
-          '開發停滯——無未來展望',
-          '功能上已被 Qalculate 超越',
-          '不支援十二進制',
-        ],
+        pros: ['開源，鍵盤輸入極為快速', '高精度，免安裝可攜帶使用'],
+        cons: ['開發停滯——無未來展望', '功能上已被 Qalculate 超越', '不支援十二進制'],
         url: 'https://speedcrunch.org/',
       ),
     ],
@@ -390,15 +292,8 @@ List<RecChapter> _recChaptersZhHant() => const [
         blurb:
             '官方 Windows 建置版（qalculate-qt），搭載與 Mac 及 Linux 版相同的強大引擎：'
             '符號運算、任意精度、單位換算、繪圖。',
-        pros: [
-          '開源，最強大引擎',
-          '支援十二進制（十二進位）運算',
-          '可擴充自訂函式',
-        ],
-        cons: [
-          '相較原生 Windows 應用程式，精緻度略遜',
-          '強大功能需花時間熟悉',
-        ],
+        pros: ['開源，最強大引擎', '支援十二進制（十二進位）運算', '可擴充自訂函式'],
+        cons: ['相較原生 Windows 應用程式，精緻度略遜', '強大功能需花時間熟悉'],
         url: 'https://qalculate.github.io/',
       ),
       RecCalc(
@@ -413,11 +308,7 @@ List<RecChapter> _recChaptersZhHant() => const [
           '預裝且為人熟知',
           '程式設計師模式（bin/oct/hex）',
         ],
-        cons: [
-          '無 CAS，不可程式化',
-          '精度有限',
-          '不支援十二進制',
-        ],
+        cons: ['無 CAS，不可程式化', '精度有限', '不支援十二進制'],
         url: 'https://github.com/microsoft/calculator',
       ),
       RecCalc(
@@ -426,31 +317,16 @@ List<RecChapter> _recChaptersZhHant() => const [
         blurb:
             '快速的鍵盤導向輸入、語法高亮與自動補全、高精度、免安裝可攜帶使用——'
             '但多年來已無新版本。',
-        pros: [
-          '開源，鍵盤輸入極為快速',
-          '高精度，可攜帶使用',
-        ],
-        cons: [
-          '開發停滯——無未來展望',
-          '功能上已被 Qalculate 超越',
-          '不支援十二進制',
-        ],
+        pros: ['開源，鍵盤輸入極為快速', '高精度，可攜帶使用'],
+        cons: ['開發停滯——無未來展望', '功能上已被 Qalculate 超越', '不支援十二進制'],
         url: 'https://speedcrunch.org/',
       ),
       RecCalc(
         'Free42 / Plus42',
         tag: 'GPL-2.0 · RPN (HP-42S)',
-        blurb:
-            '適合 RPN 愛好者：桌面版免費，與 DM42 硬體運算核心採用相同引擎。',
-        pros: [
-          '開源（GPL），桌面版免費',
-          'Decimal-128 精度',
-          '跨平台完全一致',
-        ],
-        cons: [
-          'RPN 邏輯（Plus42 已有所緩解）',
-          '不支援十二進制',
-        ],
+        blurb: '適合 RPN 愛好者：桌面版免費，與 DM42 硬體運算核心採用相同引擎。',
+        pros: ['開源（GPL），桌面版免費', 'Decimal-128 精度', '跨平台完全一致'],
+        cons: ['RPN 邏輯（Plus42 已有所緩解）', '不支援十二進制'],
         url: 'https://thomasokken.com/free42/',
       ),
     ],

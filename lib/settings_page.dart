@@ -287,10 +287,7 @@ class _SegmentRow extends StatelessWidget {
     final hues = optionColors;
     return ListTile(
       leading: RoundIconBadge(icon: icon, color: color),
-      title: Text(
-        title,
-        style: TextStyle(fontSize: 14, color: t.textPrimary),
-      ),
+      title: Text(title, style: TextStyle(fontSize: 14, color: t.textPrimary)),
       trailing: ToggleButtons(
         isSelected: [
           for (var i = 0; i < labels.length; i++) i == selectedIndex,

@@ -21,8 +21,13 @@ void main() {
     });
 
     test('eval_mul_div_precedence: 1 + 2 * 3 = 7', () {
-      final result =
-          evalRational([r(1), const RatAdd(), r(2), const RatMul(), r(3)])!;
+      final result = evalRational([
+        r(1),
+        const RatAdd(),
+        r(2),
+        const RatMul(),
+        r(3),
+      ])!;
       expect(result, equals(Rational.fromInts(7)));
     });
 
@@ -45,8 +50,12 @@ void main() {
     });
 
     test('eval_unary_minus: -5 + 3 = -2', () {
-      final result =
-          evalRational([const RatSub(), r(5), const RatAdd(), r(3)])!;
+      final result = evalRational([
+        const RatSub(),
+        r(5),
+        const RatAdd(),
+        r(3),
+      ])!;
       expect(result, equals(Rational.fromInts(-2)));
     });
 

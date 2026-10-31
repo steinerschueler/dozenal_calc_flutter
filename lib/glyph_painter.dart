@@ -46,10 +46,24 @@ void paintDozenalDigitAt(
       _arrow(canvas, paint, center, Offset(-q, 0), Offset(q, -q), Offset(q, q));
       break;
     case DozenalDigit.d7:
-      _arrow(canvas, paint, center, Offset(q, 0), Offset(-q, -q), Offset(-q, q));
+      _arrow(
+        canvas,
+        paint,
+        center,
+        Offset(q, 0),
+        Offset(-q, -q),
+        Offset(-q, q),
+      );
       break;
     case DozenalDigit.d10:
-      _arrow(canvas, paint, center, Offset(0, q), Offset(-q, -q), Offset(q, -q));
+      _arrow(
+        canvas,
+        paint,
+        center,
+        Offset(0, q),
+        Offset(-q, -q),
+        Offset(q, -q),
+      );
       break;
 
     // --- Composite digits: top + bottom element, each at radius q ---

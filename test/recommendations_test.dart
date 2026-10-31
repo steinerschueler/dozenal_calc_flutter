@@ -9,8 +9,20 @@ import 'package:dozenal_calc_flutter/recommendations/recommendations.dart';
 import 'package:dozenal_calc_flutter/recommendations/recommendations_page.dart';
 
 const _allTags = [
-  'de', 'en', 'fr', 'es', 'it', 'ru', 'ga',
-  'hi', 'zh', 'zh-Hant', 'cy', 'ja', 'fa', 'ar',
+  'de',
+  'en',
+  'fr',
+  'es',
+  'it',
+  'ru',
+  'ga',
+  'hi',
+  'zh',
+  'zh-Hant',
+  'cy',
+  'ja',
+  'fa',
+  'ar',
 ];
 
 void main() {
@@ -32,11 +44,15 @@ void main() {
     for (final tag in _allTags) {
       final ch = recommendationChapters(tag);
       expect(ch.length, 7, reason: '$tag chapter count');
-      expect(
-        ch.map((c) => c.calcs.length).toList(),
-        [3, 2, 2, 2, 3, 4, 4],
-        reason: '$tag calc counts per chapter',
-      );
+      expect(ch.map((c) => c.calcs.length).toList(), [
+        3,
+        2,
+        2,
+        2,
+        3,
+        4,
+        4,
+      ], reason: '$tag calc counts per chapter');
     }
   });
 
@@ -51,8 +67,7 @@ void main() {
           expect(c.blurb, isNotEmpty, reason: '$tag/${c.name} blurb');
           expect(c.pros, isNotEmpty, reason: '$tag/${c.name} pros');
           expect(c.cons, isNotEmpty, reason: '$tag/${c.name} cons');
-          expect(c.url, startsWith('https://'),
-              reason: '$tag/${c.name} url');
+          expect(c.url, startsWith('https://'), reason: '$tag/${c.name} url');
         }
       }
     }
@@ -63,20 +78,28 @@ void main() {
     // catches a translator dropping/adding a bullet or altering a link.
     final de = recommendationChapters('de');
     final deUrls = [
-      for (final ch in de) for (final c in ch.calcs) c.url,
+      for (final ch in de)
+        for (final c in ch.calcs) c.url,
     ];
     for (final tag in _allTags) {
       final ch = recommendationChapters(tag);
       final urls = [
-        for (final c in ch) for (final x in c.calcs) x.url,
+        for (final c in ch)
+          for (final x in c.calcs) x.url,
       ];
       expect(urls, deUrls, reason: '$tag URL set must match German verbatim');
       for (var i = 0; i < de.length; i++) {
         for (var j = 0; j < de[i].calcs.length; j++) {
-          expect(ch[i].calcs[j].pros.length, de[i].calcs[j].pros.length,
-              reason: '$tag ch$i calc$j pros count');
-          expect(ch[i].calcs[j].cons.length, de[i].calcs[j].cons.length,
-              reason: '$tag ch$i calc$j cons count');
+          expect(
+            ch[i].calcs[j].pros.length,
+            de[i].calcs[j].pros.length,
+            reason: '$tag ch$i calc$j pros count',
+          );
+          expect(
+            ch[i].calcs[j].cons.length,
+            de[i].calcs[j].cons.length,
+            reason: '$tag ch$i calc$j cons count',
+          );
         }
       }
     }
@@ -87,8 +110,11 @@ void main() {
     // chapter ("Physisch") must be translated away from the German string.
     final dePhysical = recommendationChapters('de').first.title; // 'Physisch'
     for (final tag in _allTags.where((t) => t != 'de')) {
-      expect(recommendationChapters(tag).first.title, isNot(dePhysical),
-          reason: '$tag should translate the "Physical" chapter title');
+      expect(
+        recommendationChapters(tag).first.title,
+        isNot(dePhysical),
+        reason: '$tag should translate the "Physical" chapter title',
+      );
     }
   });
 

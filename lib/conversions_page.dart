@@ -34,8 +34,9 @@ enum _NumSys { dez, doz }
 class _ConversionsPageState extends State<ConversionsPage> {
   int _value = 144;
   _NumSys _system = _NumSys.dez;
-  late final TextEditingController _controller =
-      TextEditingController(text: _format(_value, _system));
+  late final TextEditingController _controller = TextEditingController(
+    text: _format(_value, _system),
+  );
 
   @override
   void dispose() {
@@ -275,8 +276,10 @@ class _ConversionsPageState extends State<ConversionsPage> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(l.conversionsInputLabel,
-              style: TextStyle(color: t.textMuted, fontSize: 12)),
+          Text(
+            l.conversionsInputLabel,
+            style: TextStyle(color: t.textMuted, fontSize: 12),
+          ),
           const SizedBox(height: 8),
           Directionality(
             textDirection: TextDirection.ltr,
@@ -304,7 +307,9 @@ class _ConversionsPageState extends State<ConversionsPage> {
                       filled: true,
                       fillColor: t.inputFill,
                       contentPadding: const EdgeInsets.symmetric(
-                          horizontal: 10, vertical: 10),
+                        horizontal: 10,
+                        vertical: 10,
+                      ),
                       border: OutlineInputBorder(
                         borderSide: BorderSide(color: t.cardBorder),
                       ),
@@ -475,9 +480,7 @@ class _SystemToggle extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
           decoration: BoxDecoration(
             color: active ? t.cardBorder : Colors.transparent,
-            border: Border.all(
-              color: active ? t.textFaint : t.cardBorder,
-            ),
+            border: Border.all(color: active ? t.textFaint : t.cardBorder),
             borderRadius: BorderRadius.circular(6),
           ),
           child: Text(
@@ -552,10 +555,7 @@ class _UnitSourceList extends StatelessWidget {
                   const SizedBox(height: 2),
                   Text(
                     '${reliabilityLabel(l, s.reliability)} · ${accessLabel(l, s.access)}',
-                    style: TextStyle(
-                      color: t.textFaint,
-                      fontSize: 11,
-                    ),
+                    style: TextStyle(color: t.textFaint, fontSize: 11),
                   ),
                 ],
               ),
