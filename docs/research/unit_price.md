@@ -9,6 +9,7 @@ Die ältesten standardisierten Wertsysteme der Geschichte waren Gewichtssysteme,
 Das **Sexagesimalsystem** (Basis 60) entstand bei den Sumerern und wurde von den Babyloniern übernommen. Belege reichen rund 4500 Jahre zurück, also in die Mitte des 3. Jahrtausends v. Chr. Der Grund für die 60: Sie ist eine besonders teilerreiche Zahl. Sie hat die Teiler 1, 2, 3, 4, 5, 6, 10, 12, 15, 20, 30 und 60. Das macht sie ideal für die Bruchrechnung im Handel. Aus diesem System stammen direkt unsere heutige Zeitteilung (60 Minuten, 60 Sekunden) und die Winkelteilung (360 Grad). Die 360 ergibt sich, weil der babylonische Kalender rund 360 Tage hatte. So wanderte die Sonne ungefähr ein Grad pro Tag. Der Himmelsbezug ist also unmittelbar.
 
 Die mesopotamische Gewichts- und Geldhierarchie war sexagesimal aufgebaut:
+
 - 1 Talent (akkadisch *biltu*, sumerisch *gu*) = 60 Minen, rund 30 kg
 - 1 Mine (*manû*) = 60 Schekel, rund 500 g
 - 1 Schekel (sumerisch *gín*, akkadisch *šiqlu*)
@@ -26,6 +27,7 @@ Die Funktionsweise: Waren wurden gegen genormte Steine abgewogen. Oft wechselte 
 ### Antikes Griechenland: Drachme, Obolos, Talent
 
 Die Hierarchie nach attischem Standard (Athen):
+
 - 1 attisches Talent = 60 Minen, rund 25,8 kg Silber
 - 1 Mine = 100 Drachmen
 - 1 Drachme = 6 Obolen
@@ -81,6 +83,7 @@ Die **Guinea** (21 Schilling = 1 Pfund und 1 Schilling, also £1,05) hatte einen
 Slang: "bob" = Schilling, "tanner" = Sixpence, "quid" = Pfund.
 
 Redewendungen aus dem alten Geld:
+
 - *"Penny wise and pound foolish"* – am Kleinen sparen, am Grossen verschwenden (belegt bei Joseph Addison, *The Spectator* 1712; früher bei Francis Meres 1598).
 - *"Look after the pennies and the pounds will look after themselves."*
 - *"Not the full shilling"* / *"ninepence in the shilling"* – geistig nicht ganz da (es fehlen 3 von 12 Pence).
@@ -90,6 +93,7 @@ Redewendungen aus dem alten Geld:
 ### Europa: lokale £sd-Varianten
 
 Das karolingische System verbreitete sich mit lokalen Namen, alle im Verhältnis 1:20:240:
+
 - Frankreich: livre / sou (sol) / denier
 - Italien: lira / soldo / denaro
 - Heiliges Römisches Reich / Deutschland: Pfund / Schilling / Pfennig
@@ -107,6 +111,7 @@ Der deutschsprachige Raum war stark regional fragmentiert (Heiliges Römisches R
 - **Gold:** Dukaten rund 3½ Taler; Carolin rund 6 Taler.
 
 Etymologie und Bildmotive einiger Münznamen:
+
 - **Florin** (Florenz, ab 1252): benannt nach der Lilie (lateinisch *flos*, das *Giglio bottonato* im Florenz-Wappen). Auf der Rückseite Johannes der Täufer, der Stadtpatron.
 - **Gulden/Guilder:** von mittelhochdeutsch *guldin pfenninc* ("Goldpfennig"), bei Einführung wertgleich mit dem Florentiner Goldflorin (daher oft synonym).
 - **Dukaten** (Venedig, ab 1284): von mittellateinisch *ducalis* ("herzoglich", Münze des Dogen), am Florin orientiert.
@@ -194,6 +199,7 @@ Die 12 ist die Brückenzahl zwischen Geldsystem (12 Pence pro Schilling, 12 Mona
 ### Geld: nur noch zwei nominell nicht-dezimale Währungen
 
 Heute sind weltweit nur noch zwei Währungen nominell nicht-dezimal unterteilt:
+
 - **Mauretanien:** 1 Ouguiya = 5 Khoums
 - **Madagaskar:** 1 Ariary = 5 Iraimbilanja
 
@@ -202,6 +208,7 @@ Beide sind nur theoretisch nicht-dezimal. Die Untereinheiten sind wertmässig pr
 ### Handel: Dutzend, Gros, Grossgros leben weiter
 
 Base 12 überlebt real im Handel:
+
 - **Dutzend** = 12 (von altfranzösisch *douzaine*).
 - **Gros** = 144 = 12² ("grosses Dutzend", von *grosse douzaine*, früh 15. Jahrhundert).
 - **Grossgros / great gross** = 1728 = 12³.
@@ -260,186 +267,186 @@ Bewertung nach zwei Achsen. Zuverlässigkeit: R1 = wissenschaftlich/primär, R2 
 
 ### £sd, karolingisches System, Rom
 
-- [R2·A1] £sd — Wikipedia — https://en.wikipedia.org/wiki/%C2%A3sd — im Volltext per WebFetch gegen Snippets gegengeprüft; Kernquelle für Charlemagne-Reform, 240-denarii-Prägung, Offa, libra pondo, 1387.
-- [R2·A2] Carolingian monetary system — Wikipedia — https://en.wikipedia.org/wiki/Carolingian_monetary_system — Verhältnisse 12/20/240, libra/solidus als Recheneinheiten.
-- [R2·A2] Carolingian pound — Wikipedia — https://en.wikipedia.org/wiki/Carolingian_pound — Pfundgewicht rund 408 g.
-- [R2·A1] Denarius — Wikipedia — https://en.wikipedia.org/wiki/Denarius — im Volltext gelesen; Einführung 211 v. Chr., dēnī, Silbergehaltsverfall.
-- [R2·A2] Aureus — Wikipedia — https://en.wikipedia.org/wiki/Aureus — augusteische Hierarchie, Gewichtsstandards.
-- [R3·A2] Pounds, Shillings and Pence — Royal Mint Museum — https://www.royalmintmuseum.org.uk/journal/history/pounds-shillings-and-pence/ — institutionelle Bildungsseite.
-- [R3·A2] Origins of pounds, shillings and pence — RetroWow — https://www.retrowow.co.uk/retro_britain/old_money/origins_of_lsd.html — populär, konsistent mit Wikipedia.
-- [R2·A3] Pound sterling — Wikipedia — https://en.wikipedia.org/wiki/Pound_sterling — Hintergrund.
-- [R2·A3] Denarius (Etymologie) — etymonline — https://www.etymonline.com/word/denarius — Wortherkunft.
-- [R3·A2] Augustan Monetary System — Encyclopedia of Money (Blog) — https://encyclopedia-of-money.blogspot.com/2010/01/augustan-monetary-system.html — Sekundärzusammenfassung, mit Vorsicht.
-- [R3·A2] History of Roman Coin Denominations — Numiscurio — https://numiscurio.com/history-of-roman-coin-denominations/ — Händlerseite.
+- [R2·A1] £sd — Wikipedia — <https://en.wikipedia.org/wiki/%C2%A3sd> — im Volltext per WebFetch gegen Snippets gegengeprüft; Kernquelle für Charlemagne-Reform, 240-denarii-Prägung, Offa, libra pondo, 1387.
+- [R2·A2] Carolingian monetary system — Wikipedia — <https://en.wikipedia.org/wiki/Carolingian_monetary_system> — Verhältnisse 12/20/240, libra/solidus als Recheneinheiten.
+- [R2·A2] Carolingian pound — Wikipedia — <https://en.wikipedia.org/wiki/Carolingian_pound> — Pfundgewicht rund 408 g.
+- [R2·A1] Denarius — Wikipedia — <https://en.wikipedia.org/wiki/Denarius> — im Volltext gelesen; Einführung 211 v. Chr., dēnī, Silbergehaltsverfall.
+- [R2·A2] Aureus — Wikipedia — <https://en.wikipedia.org/wiki/Aureus> — augusteische Hierarchie, Gewichtsstandards.
+- [R3·A2] Pounds, Shillings and Pence — Royal Mint Museum — <https://www.royalmintmuseum.org.uk/journal/history/pounds-shillings-and-pence/> — institutionelle Bildungsseite.
+- [R3·A2] Origins of pounds, shillings and pence — RetroWow — <https://www.retrowow.co.uk/retro_britain/old_money/origins_of_lsd.html> — populär, konsistent mit Wikipedia.
+- [R2·A3] Pound sterling — Wikipedia — <https://en.wikipedia.org/wiki/Pound_sterling> — Hintergrund.
+- [R2·A3] Denarius (Etymologie) — etymonline — <https://www.etymonline.com/word/denarius> — Wortherkunft.
+- [R3·A2] Augustan Monetary System — Encyclopedia of Money (Blog) — <https://encyclopedia-of-money.blogspot.com/2010/01/augustan-monetary-system.html> — Sekundärzusammenfassung, mit Vorsicht.
+- [R3·A2] History of Roman Coin Denominations — Numiscurio — <https://numiscurio.com/history-of-roman-coin-denominations/> — Händlerseite.
 
 ### Decimal Day 1971 und Dezimalisierungsdebatte
 
-- [R2·A2] Decimal Day — Wikipedia — https://en.wikipedia.org/wiki/Decimal_Day — Datum, 240→100, Faktor 2,4, Halsbury, Übergangskosten.
-- [R3·A2] The History of Decimalisation in Britain — Historic UK — https://www.historic-uk.com/HistoryUK/HistoryofBritain/Decimalisation-in-Britain/ — Qualitätsbildungsseite.
-- [R3·A2] Decimalisation — NatWest Group Heritage — https://www.natwestgroup.com/heritage/subjects/decimalisation.html — institutionelles Archiv.
-- [R3·A2] Decimalisation / The story of decimalisation — Royal Mint — https://www.royalmint.com/discover/decimalisation/the-story-of-decimalisation/ — institutionell.
-- [R3·A3] 50 years since decimalisation — The Conversation — https://theconversation.com/50-years-since-decimalisation-the-uks-currency-change-was-not-driven-by-europeanisation-155163 — akademisch-journalistisch.
-- [R2·A2] Shillings to pounds converter — Bank of England — https://www.bankofengland.co.uk/education/education-resources/shillings-to-pounds-converter — Primär-Institution, Bildungstool.
-- [R3·A3] UK Decimalisation — BullionByPost — https://www.bullionbypost.co.uk/index/collectible-coins/decimalisation/ — Händlerseite.
+- [R2·A2] Decimal Day — Wikipedia — <https://en.wikipedia.org/wiki/Decimal_Day> — Datum, 240→100, Faktor 2,4, Halsbury, Übergangskosten.
+- [R3·A2] The History of Decimalisation in Britain — Historic UK — <https://www.historic-uk.com/HistoryUK/HistoryofBritain/Decimalisation-in-Britain/> — Qualitätsbildungsseite.
+- [R3·A2] Decimalisation — NatWest Group Heritage — <https://www.natwestgroup.com/heritage/subjects/decimalisation.html> — institutionelles Archiv.
+- [R3·A2] Decimalisation / The story of decimalisation — Royal Mint — <https://www.royalmint.com/discover/decimalisation/the-story-of-decimalisation/> — institutionell.
+- [R3·A3] 50 years since decimalisation — The Conversation — <https://theconversation.com/50-years-since-decimalisation-the-uks-currency-change-was-not-driven-by-europeanisation-155163> — akademisch-journalistisch.
+- [R2·A2] Shillings to pounds converter — Bank of England — <https://www.bankofengland.co.uk/education/education-resources/shillings-to-pounds-converter> — Primär-Institution, Bildungstool.
+- [R3·A3] UK Decimalisation — BullionByPost — <https://www.bullionbypost.co.uk/index/collectible-coins/decimalisation/> — Händlerseite.
 
 ### Mesopotamien, Schekel, Sexagesimal
 
-- [R2·A1] Shekel — Wikipedia — https://en.wikipedia.org/wiki/Shekel — im Volltext gelesen; Schekel als Gewicht, Streuung 7–17 g.
-- [S·A2] Shekel — Grokipedia — https://grokipedia.com/page/Shekel — KI-Wiki, Gewichtsangabe 8,3–8,4 g widerspricht Wikipedia; nur als Indikator.
-- [S·A2] Mina (unit) — Grokipedia — https://grokipedia.com/page/Mina_(unit) — KI-Wiki.
-- [S·A2] Ancient Mesopotamian units of measurement — Grokipedia — https://grokipedia.com/page/Ancient_Mesopotamian_units_of_measurement — KI-Wiki.
-- [R2·A3] Sexagesimal — Wikipedia — https://en.wikipedia.org/wiki/Sexagesimal — Teilerstruktur der 60.
-- [R2·A3] Babylonian mathematics — Wikipedia — https://en.wikipedia.org/wiki/Babylonian_mathematics — Hintergrund.
-- [R2·A3] Sexagesimal number system — Britannica — https://www.britannica.com/science/sexagesimal-number-system — etablierte Enzyklopädie.
-- [R1·A2] Babylonian numerals — MacTutor (St Andrews) — https://mathshistory.st-andrews.ac.uk/HistTopics/Babylonian_numerals/ — wissenschaftliche Mathematikgeschichte.
+- [R2·A1] Shekel — Wikipedia — <https://en.wikipedia.org/wiki/Shekel> — im Volltext gelesen; Schekel als Gewicht, Streuung 7–17 g.
+- [S·A2] Shekel — Grokipedia — <https://grokipedia.com/page/Shekel> — KI-Wiki, Gewichtsangabe 8,3–8,4 g widerspricht Wikipedia; nur als Indikator.
+- [S·A2] Mina (unit) — Grokipedia — <https://grokipedia.com/page/Mina_(unit)> — KI-Wiki.
+- [S·A2] Ancient Mesopotamian units of measurement — Grokipedia — <https://grokipedia.com/page/Ancient_Mesopotamian_units_of_measurement> — KI-Wiki.
+- [R2·A3] Sexagesimal — Wikipedia — <https://en.wikipedia.org/wiki/Sexagesimal> — Teilerstruktur der 60.
+- [R2·A3] Babylonian mathematics — Wikipedia — <https://en.wikipedia.org/wiki/Babylonian_mathematics> — Hintergrund.
+- [R2·A3] Sexagesimal number system — Britannica — <https://www.britannica.com/science/sexagesimal-number-system> — etablierte Enzyklopädie.
+- [R1·A2] Babylonian numerals — MacTutor (St Andrews) — <https://mathshistory.st-andrews.ac.uk/HistTopics/Babylonian_numerals/> — wissenschaftliche Mathematikgeschichte.
 
 ### Ägypten
 
-- [R2·A2] Deben (unit) — Wikipedia — https://en.wikipedia.org/wiki/Deben_(unit) — Gewichtsgeld, Recheneinheit.
-- [R3·A2] Ancient Egyptian Money / The deben — ancientegyptianfacts.com — https://ancientegyptianfacts.com/ancient-egyptian-money.html — populär.
-- [R1·A3] Weight in Ancient Egypt — UCL Digital Egypt — https://www.ucl.ac.uk/museums-static/digitalegypt/weights/weight.html — universitäres Projekt.
-- [R2·A2] Amduat — Wikipedia — https://en.wikipedia.org/wiki/Amduat — 12 Nachtstunden, Ra, Apep.
-- [R3·A2] Book of Gates: Hour Twelve — Ancient Egypt Online — https://ancientegyptonline.co.uk/bookgates12/ — populär.
-- [R2·A2] Duat — Wikipedia — https://en.wikipedia.org/wiki/Duat — Unterwelt-Struktur.
+- [R2·A2] Deben (unit) — Wikipedia — <https://en.wikipedia.org/wiki/Deben_(unit)> — Gewichtsgeld, Recheneinheit.
+- [R3·A2] Ancient Egyptian Money / The deben — ancientegyptianfacts.com — <https://ancientegyptianfacts.com/ancient-egyptian-money.html> — populär.
+- [R1·A3] Weight in Ancient Egypt — UCL Digital Egypt — <https://www.ucl.ac.uk/museums-static/digitalegypt/weights/weight.html> — universitäres Projekt.
+- [R2·A2] Amduat — Wikipedia — <https://en.wikipedia.org/wiki/Amduat> — 12 Nachtstunden, Ra, Apep.
+- [R3·A2] Book of Gates: Hour Twelve — Ancient Egypt Online — <https://ancientegyptonline.co.uk/bookgates12/> — populär.
+- [R2·A2] Duat — Wikipedia — <https://en.wikipedia.org/wiki/Duat> — Unterwelt-Struktur.
 
 ### Griechenland
 
-- [R2·A2] Ancient drachma — Wikipedia — https://en.wikipedia.org/wiki/Ancient_drachma — Drachme/Obolos/Talent.
-- [R2·A2] Drachma — Britannica Money — https://www.britannica.com/money/drachma — etablierte Referenz.
-- [R2·A2] Ancient Greek coinage — Wikipedia — https://en.wikipedia.org/wiki/Ancient_Greek_coinage — Gewichtsstandards regional.
-- [R2·A1] Charon's obol — Wikipedia — https://en.wikipedia.org/wiki/Charon's_obol — im Volltext gelesen; 5–10 %, christliche Übernahme, ägyptische Parallele.
-- [R3·A2] Exposing the Shady Secrets of Charon's Obols — Ancient Origins — https://www.ancient-origins.net/.../charons-obols-005867 — populär, mit Vorsicht.
-- [R3·A2] Charon's Obol — Coins for the Dead — CoinWeek — https://coinweek.com/ancient-charons-obol-coins-dead/ — numismatisch-populär.
+- [R2·A2] Ancient drachma — Wikipedia — <https://en.wikipedia.org/wiki/Ancient_drachma> — Drachme/Obolos/Talent.
+- [R2·A2] Drachma — Britannica Money — <https://www.britannica.com/money/drachma> — etablierte Referenz.
+- [R2·A2] Ancient Greek coinage — Wikipedia — <https://en.wikipedia.org/wiki/Ancient_Greek_coinage> — Gewichtsstandards regional.
+- [R2·A1] Charon's obol — Wikipedia — <https://en.wikipedia.org/wiki/Charon's_obol> — im Volltext gelesen; 5–10 %, christliche Übernahme, ägyptische Parallele.
+- [R3·A2] Exposing the Shady Secrets of Charon's Obols — Ancient Origins — <https://www.ancient-origins.net/.../charons-obols-005867> — populär, mit Vorsicht.
+- [R3·A2] Charon's Obol — Coins for the Dead — CoinWeek — <https://coinweek.com/ancient-charons-obol-coins-dead/> — numismatisch-populär.
 
 ### Deutschsprachiger Raum: Gulden, Kreuzer, Taler, Dukaten
 
-- [R2·A2] Kreuzer — Wikipedia — https://en.wikipedia.org/wiki/Kreuzer — Meran 1271, Doppelkreuz, 60 Kreuzer = 1 Gulden.
-- [R2·A2] South German gulden — Wikipedia — https://en.wikipedia.org/wiki/South_German_gulden — 60-Kreuzer-Struktur.
-- [R2·A2] Reichsthaler — Wikipedia — https://en.wikipedia.org/wiki/Reichsthaler — Nord/Süd-Groschen vs. Kreuzer.
-- [R2·A2] Thaler — Wikipedia — https://en.wikipedia.org/wiki/Thaler — Joachimsthal, 1518, Dollar-Wurzel.
-- [R2·A2] German Coinage Act — Wikipedia — https://en.wikipedia.org/wiki/German_Coinage_Act — Standardisierung 19. Jh.
-- [R2·A2] Maria Theresa thaler — Wikipedia — https://en.wikipedia.org/wiki/Maria_Theresa_thaler — Handelswährung, gesetzliches Zahlungsmittel.
-- [R3·A3] The Maria Theresa Thaler in Ethiopia and Beyond — Anglo-Ethiopian Society — https://www.anglo-ethiopian.org/publications/articles.php?...mariatheresa.php — Fachvereinigung.
-- [R4·A3] Maria Theresa Thalers — Axiom Bullion — https://axiombullion.org/maria-theresa-thalers-...html — Händlerseite, SEO.
-- [R3·A2] From Taler to Mark — CoinsWeekly — https://new.coinsweekly.com/article-of-the-week/from-taler-to-mark.../ — numismatisches Fachmedium.
-- [R3·A2] How The Word 'Dollar' Derives From 'Joachimsthaler' — Dictionary.com — https://www.dictionary.com/articles/dollar-joachimsthaler-origin — populär, seriös.
-- [R3·A2] Wer den Pfennig nicht ehrt — Collins German-English Dictionary — https://www.collinsdictionary.com/.../wer-den-pfennig-nicht-ehrt... — Wörterbuch.
-- [R2·A2] Guilder — Wikipedia — https://en.wikipedia.org/wiki/Guilder — guldin pfenninc, Florin-Wertgleichheit.
-- [R2·A2] Ducat — Wikipedia — https://en.wikipedia.org/wiki/Ducat — ducalis, Venedig 1284.
-- [R3·A2] Sign of the lily – Gold florin of Florence — Deutsche Bundesbank — https://www.bundesbank.de/en/bundesbank/numismatics/selected-objects/sign-of-the-lily-616530 — Zentralbank, numismatisch.
-- [R3·A3] Holy Roman Empire: Money — Pierre Marteau — http://pierre-marteau.com/wiki/index.php?title=Holy_Roman_Empire:Money — Fachwiki, mit Vorsicht.
-- [R3·A3] Currencies Gulden, Thaler, Groschen, Kreuzer — Numista-Forum — https://en.numista.com/forum/topic38941.html — Sammlerforum.
+- [R2·A2] Kreuzer — Wikipedia — <https://en.wikipedia.org/wiki/Kreuzer> — Meran 1271, Doppelkreuz, 60 Kreuzer = 1 Gulden.
+- [R2·A2] South German gulden — Wikipedia — <https://en.wikipedia.org/wiki/South_German_gulden> — 60-Kreuzer-Struktur.
+- [R2·A2] Reichsthaler — Wikipedia — <https://en.wikipedia.org/wiki/Reichsthaler> — Nord/Süd-Groschen vs. Kreuzer.
+- [R2·A2] Thaler — Wikipedia — <https://en.wikipedia.org/wiki/Thaler> — Joachimsthal, 1518, Dollar-Wurzel.
+- [R2·A2] German Coinage Act — Wikipedia — <https://en.wikipedia.org/wiki/German_Coinage_Act> — Standardisierung 19. Jh.
+- [R2·A2] Maria Theresa thaler — Wikipedia — <https://en.wikipedia.org/wiki/Maria_Theresa_thaler> — Handelswährung, gesetzliches Zahlungsmittel.
+- [R3·A3] The Maria Theresa Thaler in Ethiopia and Beyond — Anglo-Ethiopian Society — <https://www.anglo-ethiopian.org/publications/articles.php?...mariatheresa.php> — Fachvereinigung.
+- [R4·A3] Maria Theresa Thalers — Axiom Bullion — <https://axiombullion.org/maria-theresa-thalers-...html> — Händlerseite, SEO.
+- [R3·A2] From Taler to Mark — CoinsWeekly — <https://new.coinsweekly.com/article-of-the-week/from-taler-to-mark.../> — numismatisches Fachmedium.
+- [R3·A2] How The Word 'Dollar' Derives From 'Joachimsthaler' — Dictionary.com — <https://www.dictionary.com/articles/dollar-joachimsthaler-origin> — populär, seriös.
+- [R3·A2] Wer den Pfennig nicht ehrt — Collins German-English Dictionary — <https://www.collinsdictionary.com/.../wer-den-pfennig-nicht-ehrt>... — Wörterbuch.
+- [R2·A2] Guilder — Wikipedia — <https://en.wikipedia.org/wiki/Guilder> — guldin pfenninc, Florin-Wertgleichheit.
+- [R2·A2] Ducat — Wikipedia — <https://en.wikipedia.org/wiki/Ducat> — ducalis, Venedig 1284.
+- [R3·A2] Sign of the lily – Gold florin of Florence — Deutsche Bundesbank — <https://www.bundesbank.de/en/bundesbank/numismatics/selected-objects/sign-of-the-lily-616530> — Zentralbank, numismatisch.
+- [R3·A3] Holy Roman Empire: Money — Pierre Marteau — <http://pierre-marteau.com/wiki/index.php?title=Holy_Roman_Empire:Money> — Fachwiki, mit Vorsicht.
+- [R3·A3] Currencies Gulden, Thaler, Groschen, Kreuzer — Numista-Forum — <https://en.numista.com/forum/topic38941.html> — Sammlerforum.
 
 ### Britische Münznamen, Slang, Redewendungen
 
-- [R2·A2] Guinea (coin) — Wikipedia — https://en.wikipedia.org/wiki/Guinea_(coin) — 21 Schilling, Honorare, Auktionen.
-- [R3·A2] 'Old Money' in the English Language — Britannia Coin Company — https://britanniacoincompany.com/blog/old-money-in-the-english-language/ — Händlerblog.
-- [R3·A3] UsefulNotes/Old British Money — TV Tropes — https://tvtropes.org/pmwiki/pmwiki.php/UsefulNotes/OldBritishMoney — populär, mit Vorsicht.
-- [R3·A2] Penny wise and pound foolish — Dictionary.com — https://www.dictionary.com/browse/penny-wise-and-pound-foolish — Wörterbuch.
-- [R4·A3] Why are Horses Priced in Guineas? — horseracingnoise.com — https://horseracingnoise.com/ — Blog.
+- [R2·A2] Guinea (coin) — Wikipedia — <https://en.wikipedia.org/wiki/Guinea_(coin)> — 21 Schilling, Honorare, Auktionen.
+- [R3·A2] 'Old Money' in the English Language — Britannia Coin Company — <https://britanniacoincompany.com/blog/old-money-in-the-english-language/> — Händlerblog.
+- [R3·A3] UsefulNotes/Old British Money — TV Tropes — <https://tvtropes.org/pmwiki/pmwiki.php/UsefulNotes/OldBritishMoney> — populär, mit Vorsicht.
+- [R3·A2] Penny wise and pound foolish — Dictionary.com — <https://www.dictionary.com/browse/penny-wise-and-pound-foolish> — Wörterbuch.
+- [R4·A3] Why are Horses Priced in Guineas? — horseracingnoise.com — <https://horseracingnoise.com/> — Blog.
 
 ### Münzgewichte (Troy, Grain, Pennyweight)
 
-- [R2·A2] Troy weight — Wikipedia — https://en.wikipedia.org/wiki/Troy_weight — Grain/Pennyweight/Unze, Troyes.
-- [R2·A2] Pennyweight — Wikipedia — https://en.wikipedia.org/wiki/Pennyweight — dwt = denarius.
-- [R3·A3] The Pennyweight — LBMA — https://www.lbma.org.uk/wonders-of-gold/items/the-pennyweight — Branchenverband.
+- [R2·A2] Troy weight — Wikipedia — <https://en.wikipedia.org/wiki/Troy_weight> — Grain/Pennyweight/Unze, Troyes.
+- [R2·A2] Pennyweight — Wikipedia — <https://en.wikipedia.org/wiki/Pennyweight> — dwt = denarius.
+- [R3·A3] The Pennyweight — LBMA — <https://www.lbma.org.uk/wonders-of-gold/items/the-pennyweight> — Branchenverband.
 
 ### Indien
 
-- [R2·A2] Coins of the Indian rupee — Wikipedia — https://en.wikipedia.org/wiki/Coins_of_the_Indian_rupee — 16 Anna, Dezimalisierung 1957.
-- [R2·A2] Indian anna — Wikipedia — https://en.wikipedia.org/wiki/Indian_anna — Anna/Pice/Pie.
-- [R2·A2] History of the rupee — Wikipedia — https://en.wikipedia.org/wiki/History_of_the_rupee — Hintergrund.
-- [R2·A3] Decimal Coinage – a Fascinating History — PIB India — https://www.pib.gov.in/newsite/erelcontent.aspx?relid=26527 — Regierungs-Pressestelle.
+- [R2·A2] Coins of the Indian rupee — Wikipedia — <https://en.wikipedia.org/wiki/Coins_of_the_Indian_rupee> — 16 Anna, Dezimalisierung 1957.
+- [R2·A2] Indian anna — Wikipedia — <https://en.wikipedia.org/wiki/Indian_anna> — Anna/Pice/Pie.
+- [R2·A2] History of the rupee — Wikipedia — <https://en.wikipedia.org/wiki/History_of_the_rupee> — Hintergrund.
+- [R2·A3] Decimal Coinage – a Fascinating History — PIB India — <https://www.pib.gov.in/newsite/erelcontent.aspx?relid=26527> — Regierungs-Pressestelle.
 
 ### China und Japan
 
-- [R2·A2] Chinese cash (currency unit) — Wikipedia — https://en.wikipedia.org/wiki/Chinese_cash_(currency_unit) — wén, Tael, Schnüre.
-- [R2·A2] String of cash coins (currency unit) — Wikipedia — https://en.wikipedia.org/wiki/String_of_cash_coins_(currency_unit) — 1000-Stück-Norm, Praxisabweichung.
-- [R2·A2] History of Chinese currency — Wikipedia — https://en.wikipedia.org/wiki/History_of_Chinese_currency — Reform 1889.
-- [R2·A2] Candareen — Wikipedia — https://en.wikipedia.org/wiki/Candareen — Tael/Mace/Candareen/Li.
-- [R2·A2] Japanese mon (currency) — Wikipedia — https://en.wikipedia.org/wiki/Japanese_mon_(currency) — Mon/Kan.
-- [R2·A2] Japanese yen — Wikipedia — https://en.wikipedia.org/wiki/Japanese_yen — Currency Act 1871.
-- [R2·A2] Earthly Branches — Wikipedia — https://en.wikipedia.org/wiki/Earthly_Branches — 12 Zweige, shichen, Jupiter, Jiazi.
-- [R3·A2] The 12 Earthly Branches — Imperial Harvest — https://imperialharvest.com/blog/12-earthly-branches/ — populär.
-- [R4·A3] The History of Japanese Coinage — currencyhistoryhub.com — https://currencyhistoryhub.com/history-japanese-coinage-wado-kaichin/ — Blog.
+- [R2·A2] Chinese cash (currency unit) — Wikipedia — <https://en.wikipedia.org/wiki/Chinese_cash_(currency_unit)> — wén, Tael, Schnüre.
+- [R2·A2] String of cash coins (currency unit) — Wikipedia — <https://en.wikipedia.org/wiki/String_of_cash_coins_(currency_unit)> — 1000-Stück-Norm, Praxisabweichung.
+- [R2·A2] History of Chinese currency — Wikipedia — <https://en.wikipedia.org/wiki/History_of_Chinese_currency> — Reform 1889.
+- [R2·A2] Candareen — Wikipedia — <https://en.wikipedia.org/wiki/Candareen> — Tael/Mace/Candareen/Li.
+- [R2·A2] Japanese mon (currency) — Wikipedia — <https://en.wikipedia.org/wiki/Japanese_mon_(currency)> — Mon/Kan.
+- [R2·A2] Japanese yen — Wikipedia — <https://en.wikipedia.org/wiki/Japanese_yen> — Currency Act 1871.
+- [R2·A2] Earthly Branches — Wikipedia — <https://en.wikipedia.org/wiki/Earthly_Branches> — 12 Zweige, shichen, Jupiter, Jiazi.
+- [R3·A2] The 12 Earthly Branches — Imperial Harvest — <https://imperialharvest.com/blog/12-earthly-branches/> — populär.
+- [R4·A3] The History of Japanese Coinage — currencyhistoryhub.com — <https://currencyhistoryhub.com/history-japanese-coinage-wado-kaichin/> — Blog.
 
 ### Islamische Welt und Osmanen
 
-- [R2·A2] Gold dinar — Wikipedia — https://en.wikipedia.org/wiki/Gold_dinar — Reform Abd al-Malik 696/697.
-- [S·A2] Gold dinar — Grokipedia — https://grokipedia.com/page/Gold_dinar — KI-Wiki, nur Indikator.
-- [R3·A2] Aniconic Gold/Silver Coins of Abd al-Malik — islamic-awareness.org — https://www.islamic-awareness.org/history/islam/coins/dinar2.html — themenspezifisch, mit Vorsicht.
-- [R2·A2] Kuruş — Wikipedia — https://en.wikipedia.org/wiki/Kuru%C5%9F — 40 Para, 1688.
-- [R2·A2] Para (currency) — Wikipedia — https://en.wikipedia.org/wiki/Para_(currency) — Para/Akçe, schwankende Verhältnisse.
+- [R2·A2] Gold dinar — Wikipedia — <https://en.wikipedia.org/wiki/Gold_dinar> — Reform Abd al-Malik 696/697.
+- [S·A2] Gold dinar — Grokipedia — <https://grokipedia.com/page/Gold_dinar> — KI-Wiki, nur Indikator.
+- [R3·A2] Aniconic Gold/Silver Coins of Abd al-Malik — islamic-awareness.org — <https://www.islamic-awareness.org/history/islam/coins/dinar2.html> — themenspezifisch, mit Vorsicht.
+- [R2·A2] Kuruş — Wikipedia — <https://en.wikipedia.org/wiki/Kuru%C5%9F> — 40 Para, 1688.
+- [R2·A2] Para (currency) — Wikipedia — <https://en.wikipedia.org/wiki/Para_(currency)> — Para/Akçe, schwankende Verhältnisse.
 
 ### Afrika (Kaurigeld)
 
-- [R3·A3] Cowries, the currency that powered West Africa — ADP ReThinkQ — https://rethinkq.adp.com/artifact-cowries-west-africa/ — populär.
-- [R2·A3] Cowrie Shells and Trade Power — Smithsonian NMAAHC — https://nmaahc.si.edu/cowrie-shells-and-trade-power — Museumsinstitution.
-- [R2·A2] Shell money — Wikipedia — https://en.wikipedia.org/wiki/Shell_money — Cypraea moneta, Mengen.
+- [R3·A3] Cowries, the currency that powered West Africa — ADP ReThinkQ — <https://rethinkq.adp.com/artifact-cowries-west-africa/> — populär.
+- [R2·A3] Cowrie Shells and Trade Power — Smithsonian NMAAHC — <https://nmaahc.si.edu/cowrie-shells-and-trade-power> — Museumsinstitution.
+- [R2·A2] Shell money — Wikipedia — <https://en.wikipedia.org/wiki/Shell_money> — Cypraea moneta, Mengen.
 
 ### Mesoamerika
 
-- [R2·A2] Quachtli — Wikipedia — https://en.wikipedia.org/wiki/Quachtli — Baumwoll-Mäntel, Tlapa-Register.
-- [S·A2] Aztec Money — Grokipedia — https://grokipedia.com/page/aztec_money — KI-Wiki; Zahlen gegen Wikipedia gespiegelt.
-- [R3·A3] Beanz meanz money! — Mexicolore — https://www.mexicolore.co.uk/maya/chocolate/beanz-meanz-money — Bildungsseite.
-- [R2·A2] Maya numerals — Wikipedia — https://en.wikipedia.org/wiki/Maya_numerals — Vigesimal.
-- [R2·A2] Vigesimal — Wikipedia — https://en.wikipedia.org/wiki/Vigesimal — Maya/Aztek-Potenzen, quatre-vingts.
+- [R2·A2] Quachtli — Wikipedia — <https://en.wikipedia.org/wiki/Quachtli> — Baumwoll-Mäntel, Tlapa-Register.
+- [S·A2] Aztec Money — Grokipedia — <https://grokipedia.com/page/aztec_money> — KI-Wiki; Zahlen gegen Wikipedia gespiegelt.
+- [R3·A3] Beanz meanz money! — Mexicolore — <https://www.mexicolore.co.uk/maya/chocolate/beanz-meanz-money> — Bildungsseite.
+- [R2·A2] Maya numerals — Wikipedia — <https://en.wikipedia.org/wiki/Maya_numerals> — Vigesimal.
+- [R2·A2] Vigesimal — Wikipedia — <https://en.wikipedia.org/wiki/Vigesimal> — Maya/Aztek-Potenzen, quatre-vingts.
 
 ### Spanischer Dollar / US-Dollar
 
-- [R2·A2] Spanish dollar — Wikipedia — https://en.wikipedia.org/wiki/Spanish_dollar — 8 Reales, Coinage Act 1857.
-- [R2·A2] Spanish colonial real — Wikipedia — https://en.wikipedia.org/wiki/Spanish_colonial_real — Stückelung.
-- [R3·A2] History of Coins: Two-Bits… — CoinWeek — https://coinweek.com/history-of-coins-two-bits-four-bits-six-bits-eight/ — numismatisch-populär.
-- [R3·A3] Pieces Of Eight — Encyclopedia.com — https://www.encyclopedia.com/.../pieces-eight — Enzyklopädie-Aggregat.
+- [R2·A2] Spanish dollar — Wikipedia — <https://en.wikipedia.org/wiki/Spanish_dollar> — 8 Reales, Coinage Act 1857.
+- [R2·A2] Spanish colonial real — Wikipedia — <https://en.wikipedia.org/wiki/Spanish_colonial_real> — Stückelung.
+- [R3·A2] History of Coins: Two-Bits… — CoinWeek — <https://coinweek.com/history-of-coins-two-bits-four-bits-six-bits-eight/> — numismatisch-populär.
+- [R3·A3] Pieces Of Eight — Encyclopedia.com — <https://www.encyclopedia.com/.../pieces-eight> — Enzyklopädie-Aggregat.
 
 ### Dutzend / Gros / Duodezimal / nicht-dezimale Währung heute
 
-- [R2·A1] Non-decimal currency — Wikipedia — https://en.wikipedia.org/wiki/Non-decimal_currency — im Volltext per WebFetch; Mauretanien/Madagaskar, Teilbarkeitsargument.
-- [R2·A2] Gross (unit) — Wikipedia — https://en.wikipedia.org/wiki/Gross_(unit) — 144, great gross 1728.
-- [R2·A2] Dozen — Wikipedia — https://en.wikipedia.org/wiki/Dozen — douzaine.
-- [R2·A2] Duodecimal — Wikipedia — https://en.wikipedia.org/wiki/Duodecimal — Teilbarkeit, Ifrah-Hypothese (selbst als "speculatively" gekennzeichnet).
-- [R3·A3] A Dozen, a Gross, and a Score — GetAcademy — https://getacademy.blog/dozen-gross-score-explained — Bildungsblog.
-- [R3·A3] How Many Items Are in a Gross? — GetAcademy — https://getacademy.blog/items-in-gross-measurement — Bildungsblog.
-- [R3·A3] Unlock the Dozens! — WonderLearning — https://wonderlearning.blog/unlock-dozens-how-many-gross-bakers-dozen — Bildungsblog.
-- [R3·A3] How 10 Fingers Became 12 Hours — EarthDate — https://www.earthdate.org/episodes/how-10-fingers-became-12-hours — wissenschaftskommunikativ.
+- [R2·A1] Non-decimal currency — Wikipedia — <https://en.wikipedia.org/wiki/Non-decimal_currency> — im Volltext per WebFetch; Mauretanien/Madagaskar, Teilbarkeitsargument.
+- [R2·A2] Gross (unit) — Wikipedia — <https://en.wikipedia.org/wiki/Gross_(unit)> — 144, great gross 1728.
+- [R2·A2] Dozen — Wikipedia — <https://en.wikipedia.org/wiki/Dozen> — douzaine.
+- [R2·A2] Duodecimal — Wikipedia — <https://en.wikipedia.org/wiki/Duodecimal> — Teilbarkeit, Ifrah-Hypothese (selbst als "speculatively" gekennzeichnet).
+- [R3·A3] A Dozen, a Gross, and a Score — GetAcademy — <https://getacademy.blog/dozen-gross-score-explained> — Bildungsblog.
+- [R3·A3] How Many Items Are in a Gross? — GetAcademy — <https://getacademy.blog/items-in-gross-measurement> — Bildungsblog.
+- [R3·A3] Unlock the Dozens! — WonderLearning — <https://wonderlearning.blog/unlock-dozens-how-many-gross-bakers-dozen> — Bildungsblog.
+- [R3·A3] How 10 Fingers Became 12 Hours — EarthDate — <https://www.earthdate.org/episodes/how-10-fingers-became-12-hours> — wissenschaftskommunikativ.
 
 ### Bibel-Numismatik
 
-- [R2·A2] Thirty pieces of silver — Wikipedia — https://en.wikipedia.org/wiki/Thirty_pieces_of_silver — Tyros-Schekel.
-- [R3·A2] Coins of the Bible: Shekel of Tyre — Bible.ca — https://www.bible.ca/coins/...Tyrian-Shekel...htm — themenspezifisch, mit Vorsicht.
-- [R3·A2] The Tyrian Shekel — Zak's Antiquities — https://zaksantiquities.com/educational-guide/the-tyrian-shekel-.../ — Händler-Bildungsseite.
-- [R3·A2] Currency and Scripture: Coins in the New Testament — Danny The Digger — https://dannythedigger.com/coins-in-the-new-testament/ — populär.
+- [R2·A2] Thirty pieces of silver — Wikipedia — <https://en.wikipedia.org/wiki/Thirty_pieces_of_silver> — Tyros-Schekel.
+- [R3·A2] Coins of the Bible: Shekel of Tyre — Bible.ca — <https://www.bible.ca/coins/...Tyrian-Shekel...htm> — themenspezifisch, mit Vorsicht.
+- [R3·A2] The Tyrian Shekel — Zak's Antiquities — <https://zaksantiquities.com/educational-guide/the-tyrian-shekel-.../> — Händler-Bildungsseite.
+- [R3·A2] Currency and Scripture: Coins in the New Testament — Danny The Digger — <https://dannythedigger.com/coins-in-the-new-testament/> — populär.
 
 ### Symbolik der Zwölf (gemischte Zuverlässigkeit)
 
-- [R3·A1] The Number 12 – An Exploration across Cultures — Pragyata — https://pragyata.com/the-number-12-an-exploration-across-cultures/ — im Volltext gelesen; populär-kulturvergleichend, mit Vorsicht.
-- [R2·A2] Adityas — Wikipedia — https://en.wikipedia.org/wiki/Adityas — 12 Sonnengottheiten.
-- [R3·A2] Twelve Adityas — Wisdomlib — https://www.wisdomlib.org/concept/twelve-adityas — Fachportal.
-- [R2·A2] Pratītyasamutpāda — Wikipedia — https://en.wikipedia.org/wiki/Prat%C4%ABtyasamutp%C4%81da — 12 Nidanas.
-- [R3·A2] Twelve links of dependent origination — Encyclopedia of Buddhism — https://encyclopediaofbuddhism.org/wiki/Twelve_links_of_dependent_origination — Fachwiki.
-- [R2·A2] The number twelve — Britannica — https://www.britannica.com/science/the-number-twelve — etablierte Referenz.
-- [S·A2] The Divine Number 12 — humanreligions.info — https://www.humanreligions.info/twelve.html — esoterisch/aggregierend; Odin/Mithraismus-Thesen nur als Deutung.
+- [R3·A1] The Number 12 – An Exploration across Cultures — Pragyata — <https://pragyata.com/the-number-12-an-exploration-across-cultures/> — im Volltext gelesen; populär-kulturvergleichend, mit Vorsicht.
+- [R2·A2] Adityas — Wikipedia — <https://en.wikipedia.org/wiki/Adityas> — 12 Sonnengottheiten.
+- [R3·A2] Twelve Adityas — Wisdomlib — <https://www.wisdomlib.org/concept/twelve-adityas> — Fachportal.
+- [R2·A2] Pratītyasamutpāda — Wikipedia — <https://en.wikipedia.org/wiki/Prat%C4%ABtyasamutp%C4%81da> — 12 Nidanas.
+- [R3·A2] Twelve links of dependent origination — Encyclopedia of Buddhism — <https://encyclopediaofbuddhism.org/wiki/Twelve_links_of_dependent_origination> — Fachwiki.
+- [R2·A2] The number twelve — Britannica — <https://www.britannica.com/science/the-number-twelve> — etablierte Referenz.
+- [S·A2] The Divine Number 12 — humanreligions.info — <https://www.humanreligions.info/twelve.html> — esoterisch/aggregierend; Odin/Mithraismus-Thesen nur als Deutung.
 - [S·A2] Mysticalnumbers / IERE / Awakening the Universe — diverse — populär/esoterisch, nur als Deutungstradition.
 
 ### Zahlbasen-Ursprünge und Französisch
 
-- [R3·A3] Why French Numbers Use Base-20 — numbersinfrench.com — https://numbersinfrench.com/history/ — populär.
+- [R3·A3] Why French Numbers Use Base-20 — numbersinfrench.com — <https://numbersinfrench.com/history/> — populär.
 
 ### Frankreich (Livre/Franc)
 
-- [R2·A2] French livre — Wikipedia — https://en.wikipedia.org/wiki/French_livre — livre/sol/denier.
-- [R2·A2] Livre tournois — Wikipedia — https://en.wikipedia.org/wiki/Livre_tournois — Recheneinheit.
-- [R2·A2] French franc — Wikipedia — https://en.wikipedia.org/wiki/French_franc — Dezimalisierung 1795.
+- [R2·A2] French livre — Wikipedia — <https://en.wikipedia.org/wiki/French_livre> — livre/sol/denier.
+- [R2·A2] Livre tournois — Wikipedia — <https://en.wikipedia.org/wiki/Livre_tournois> — Recheneinheit.
+- [R2·A2] French franc — Wikipedia — <https://en.wikipedia.org/wiki/French_franc> — Dezimalisierung 1795.
 
 ### Spekulativ / pseudohistorisch
 
-- [S·A1] Does the Ishango Bone Indicate Knowledge of the Base 12? (Pletser/Huylebrouck) — arXiv — https://arxiv.org/abs/1204.1019 — frei verfügbarer Preprint, vertritt selbst die spekulative These.
-- [R2·A3] Ishango bone — Wikipedia — https://en.wikipedia.org/wiki/Ishango_bone — referiert konkurrierende, skeptische Deutungen.
-- [S·A3] A straightforward explanation for the base 12 (Diagramm) — ResearchGate — https://www.researchgate.net/figure/...fig2_222106237 — nur Abbildung.
-- [R4·A3] Decimalisation: How Britain Changed Its Money — MyCoinage Blog — https://mycoinage.co.uk/blog/decimalisation-how-britain-changed-its-money-in-1971 — Händlerblog; "decimal diddlers"-Mythos referiert.
-- [R3·A3] Decimal Day 1971 — PCGS — https://www.pcgs.com/news/decimal-day-1971-... — numismatisch, Mythos referiert.
-- [S·A3] The Hidden Base-12 Heritage in the Dodecagon's Name — dozenalmath.com — https://www.dozenalmath.com/post/ancient-civilization-hidden-base-12-heritage... — Advocacy-Blog, nicht neutral.
-- [S·A3] The number 60 in Ancient Mathematics — deepsymbol.com — https://deepsymbol.com/the-number-60-in-ancient-mathematics/ — Esoterik/Symbolik.
-- [S·A3] Sacred Geometry in Ancient Civilizations — FasterCapital — https://fastercapital.com/topics/sacred-geometry-in-ancient-civilizations.html — nicht-akademisch, SEO.
-- [R4·A3] Dozenal Society of America — https://dozenal.org/ — Interessenorganisation, pro-dozenal, nicht neutral (Sachinhalte zu Teilbarkeit aber solide).
-- [S·A3] Carolingian monetary system — Grokipedia — https://grokipedia.com/page/Carolingian_monetary_system — KI-Wiki, nur Indikator.
+- [S·A1] Does the Ishango Bone Indicate Knowledge of the Base 12? (Pletser/Huylebrouck) — arXiv — <https://arxiv.org/abs/1204.1019> — frei verfügbarer Preprint, vertritt selbst die spekulative These.
+- [R2·A3] Ishango bone — Wikipedia — <https://en.wikipedia.org/wiki/Ishango_bone> — referiert konkurrierende, skeptische Deutungen.
+- [S·A3] A straightforward explanation for the base 12 (Diagramm) — ResearchGate — <https://www.researchgate.net/figure/...fig2_222106237> — nur Abbildung.
+- [R4·A3] Decimalisation: How Britain Changed Its Money — MyCoinage Blog — <https://mycoinage.co.uk/blog/decimalisation-how-britain-changed-its-money-in-1971> — Händlerblog; "decimal diddlers"-Mythos referiert.
+- [R3·A3] Decimal Day 1971 — PCGS — <https://www.pcgs.com/news/decimal-day-1971->... — numismatisch, Mythos referiert.
+- [S·A3] The Hidden Base-12 Heritage in the Dodecagon's Name — dozenalmath.com — <https://www.dozenalmath.com/post/ancient-civilization-hidden-base-12-heritage>... — Advocacy-Blog, nicht neutral.
+- [S·A3] The number 60 in Ancient Mathematics — deepsymbol.com — <https://deepsymbol.com/the-number-60-in-ancient-mathematics/> — Esoterik/Symbolik.
+- [S·A3] Sacred Geometry in Ancient Civilizations — FasterCapital — <https://fastercapital.com/topics/sacred-geometry-in-ancient-civilizations.html> — nicht-akademisch, SEO.
+- [R4·A3] Dozenal Society of America — <https://dozenal.org/> — Interessenorganisation, pro-dozenal, nicht neutral (Sachinhalte zu Teilbarkeit aber solide).
+- [S·A3] Carolingian monetary system — Grokipedia — <https://grokipedia.com/page/Carolingian_monetary_system> — KI-Wiki, nur Indikator.

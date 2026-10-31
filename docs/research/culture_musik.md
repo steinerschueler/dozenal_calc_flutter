@@ -219,91 +219,91 @@ Bewertet nach zwei Achsen. Zuverlässigkeit: R1 wissenschaftlich/primär, R2 eta
 
 ### Mathematischer Kern (warum zwölf, ¹²√2)
 
-- [R2·A1] Why 12 notes to the Octave? — Univ. Waterloo (M. Rubinstein) — https://www.math.uwaterloo.ca/~mrubinst/tuning/12.html — Universitätsseite; Kernbeleg für Kettenbruch-Näherung 7/12 und log₂(3/2) = 0,584962; im Volltext gelesen.
-- [R2·A3] Well v.s. equal temperament — Univ. Waterloo — https://www.math.uwaterloo.ca/~mrubinst/tuning/tuning.html — mitteltönig gegen gleichstufig; indirekt.
-- [R2·A1] 12 equal temperament — Wikipedia — https://en.wikipedia.org/wiki/12_equal_temperament — ¹²√2 ≈ 1,05946, Cent-Tabelle, Zhu 1584; im Volltext gelesen.
-- [R2·A3] Equal temperament — Wikipedia — https://en.wikipedia.org/wiki/Equal_temperament — Überblick, Durchsetzung seit dem 18. Jh.; indirekt.
-- [R2·A3] Twelfth root of two — Wikipedia — https://en.wikipedia.org/wiki/Twelfth_root_of_two — exakter Wert, Zhu/Stevin/Mersenne; indirekt.
-- [R2·A2] Equal temperament — Britannica — https://www.britannica.com/art/equal-temperament — etablierte Referenz; nur teilweise.
-- [R3·A1] Why are there only 12 notes in Western music? — Classic FM — https://www.classicfm.com/discover-music/music-theory/why-are-there-only-12-notes-in-western-music/ — seriös populär; "Konvergenz von Bequemlichkeit, Wissenschaft, Hörerpräferenz"; im Volltext gelesen.
-- [R4·A3] How did Western music settle on a 12 note scale — microtonal.miraheze.org — https://microtonal.miraheze.org/wiki/How_did_Western_music_settle_on_a_12_note_scale — Wiki-Community; indirekt.
-- [R2·A3] Circle of fifths and roots of two — John D. Cook (Blog) — https://www.johndcook.com/blog/2009/09/30/perfect-fifths-equal-temperament/ — fachlich solider Mathe-Blog; indirekt.
+- [R2·A1] Why 12 notes to the Octave? — Univ. Waterloo (M. Rubinstein) — <https://www.math.uwaterloo.ca/~mrubinst/tuning/12.html> — Universitätsseite; Kernbeleg für Kettenbruch-Näherung 7/12 und log₂(3/2) = 0,584962; im Volltext gelesen.
+- [R2·A3] Well v.s. equal temperament — Univ. Waterloo — <https://www.math.uwaterloo.ca/~mrubinst/tuning/tuning.html> — mitteltönig gegen gleichstufig; indirekt.
+- [R2·A1] 12 equal temperament — Wikipedia — <https://en.wikipedia.org/wiki/12_equal_temperament> — ¹²√2 ≈ 1,05946, Cent-Tabelle, Zhu 1584; im Volltext gelesen.
+- [R2·A3] Equal temperament — Wikipedia — <https://en.wikipedia.org/wiki/Equal_temperament> — Überblick, Durchsetzung seit dem 18. Jh.; indirekt.
+- [R2·A3] Twelfth root of two — Wikipedia — <https://en.wikipedia.org/wiki/Twelfth_root_of_two> — exakter Wert, Zhu/Stevin/Mersenne; indirekt.
+- [R2·A2] Equal temperament — Britannica — <https://www.britannica.com/art/equal-temperament> — etablierte Referenz; nur teilweise.
+- [R3·A1] Why are there only 12 notes in Western music? — Classic FM — <https://www.classicfm.com/discover-music/music-theory/why-are-there-only-12-notes-in-western-music/> — seriös populär; "Konvergenz von Bequemlichkeit, Wissenschaft, Hörerpräferenz"; im Volltext gelesen.
+- [R4·A3] How did Western music settle on a 12 note scale — microtonal.miraheze.org — <https://microtonal.miraheze.org/wiki/How_did_Western_music_settle_on_a_12_note_scale> — Wiki-Community; indirekt.
+- [R2·A3] Circle of fifths and roots of two — John D. Cook (Blog) — <https://www.johndcook.com/blog/2009/09/30/perfect-fifths-equal-temperament/> — fachlich solider Mathe-Blog; indirekt.
 
 ### Pythagoreische Stimmung, Komma, Quintenzirkel
 
-- [R2·A1] Pythagorean comma — Wikipedia — https://en.wikipedia.org/wiki/Pythagorean_comma — 531441:524288 = 23,46 Cent, Euklid-Erstnennung; im Volltext gelesen.
-- [R2·A1] Pythagorean tuning — Wikipedia — https://en.wikipedia.org/wiki/Pythagorean_tuning — Intervall-Verhältnisse, syntonisches Komma; im Volltext gelesen.
-- [R2·A1] Circle of fifths — Wikipedia — https://en.wikipedia.org/wiki/Circle_of_fifths — vollständige Sequenz, enharmonische Äquivalenz; im Volltext gelesen.
-- [R1·A3] The Circle of Fifths and the Comma of Pythagoras — Univ. Zürich (P. Saha) — https://www.physik.uzh.ch/~psaha/misc/commas/ — Universitätsseite; indirekt.
-- [R1·A3] THE PYTHAGOREAN COMMA — Dartmouth (L. Polansky, PDF) — https://eamusic.dartmouth.edu/~larry/owt/pythagorean_comma.pdf — Universitäts-PDF; indirekt.
-- [R2·A2] Andreas Werckmeister — Wikipedia — https://en.wikipedia.org/wiki/Andreas_Werckmeister — Begriffsprägung "wohltemperiert"; nur teilweise.
-- [R1·A2] Werckmeister, Musicalische Temperatur, 1691 — TMG (huma-num) — https://tmg.huma-num.fr/en/content/werckmeister-andreas-musicalische-temperatur-1691 — wissenschaftliche Edition; nur teilweise.
-- [R2·A2] Johann David Heinichen — Wikipedia — https://en.wikipedia.org/wiki/Johann_David_Heinichen — Quintenzirkel 1711; nur teilweise.
-- [R2·A3] Well temperament — Wikipedia — https://en.wikipedia.org/wiki/Well_temperament — ungleiche Komma-Verteilung; indirekt.
-- [S·A2] Pythagorean tuning / comma — Grokipedia — https://grokipedia.com/page/Pythagorean_comma — KI-generiertes Wiki, mit Vorsicht zu behandeln; nur teilweise.
+- [R2·A1] Pythagorean comma — Wikipedia — <https://en.wikipedia.org/wiki/Pythagorean_comma> — 531441:524288 = 23,46 Cent, Euklid-Erstnennung; im Volltext gelesen.
+- [R2·A1] Pythagorean tuning — Wikipedia — <https://en.wikipedia.org/wiki/Pythagorean_tuning> — Intervall-Verhältnisse, syntonisches Komma; im Volltext gelesen.
+- [R2·A1] Circle of fifths — Wikipedia — <https://en.wikipedia.org/wiki/Circle_of_fifths> — vollständige Sequenz, enharmonische Äquivalenz; im Volltext gelesen.
+- [R1·A3] The Circle of Fifths and the Comma of Pythagoras — Univ. Zürich (P. Saha) — <https://www.physik.uzh.ch/~psaha/misc/commas/> — Universitätsseite; indirekt.
+- [R1·A3] THE PYTHAGOREAN COMMA — Dartmouth (L. Polansky, PDF) — <https://eamusic.dartmouth.edu/~larry/owt/pythagorean_comma.pdf> — Universitäts-PDF; indirekt.
+- [R2·A2] Andreas Werckmeister — Wikipedia — <https://en.wikipedia.org/wiki/Andreas_Werckmeister> — Begriffsprägung "wohltemperiert"; nur teilweise.
+- [R1·A2] Werckmeister, Musicalische Temperatur, 1691 — TMG (huma-num) — <https://tmg.huma-num.fr/en/content/werckmeister-andreas-musicalische-temperatur-1691> — wissenschaftliche Edition; nur teilweise.
+- [R2·A2] Johann David Heinichen — Wikipedia — <https://en.wikipedia.org/wiki/Johann_David_Heinichen> — Quintenzirkel 1711; nur teilweise.
+- [R2·A3] Well temperament — Wikipedia — <https://en.wikipedia.org/wiki/Well_temperament> — ungleiche Komma-Verteilung; indirekt.
+- [S·A2] Pythagorean tuning / comma — Grokipedia — <https://grokipedia.com/page/Pythagorean_comma> — KI-generiertes Wiki, mit Vorsicht zu behandeln; nur teilweise.
 
 ### Bach-Mythos / historische Stimmungen
 
-- [R2·A3] The Well-Tempered Clavier — Wikipedia — https://en.wikipedia.org/wiki/The_Well-Tempered_Clavier — well, nicht equal; indirekt.
-- [R2·A2] Bach Temperament — Wikipedia — https://en.wikipedia.org/wiki/Bach_Temperament — offene Debatte um Bachs Stimmung; nur teilweise.
-- [R3·A2] The Ongoing Quest for Bach's Temperament — Juilliard Journal — https://journal.juilliard.edu/journal/ongoing-quest-bachs-temperament — Fach-Journal; nur teilweise.
-- [R3·A3] Happy Birthday, Well-Tempered Clavier — JSTOR Daily — https://daily.jstor.org/happy-birthday-well-tempered-clavier/ — seriös populär; indirekt.
-- [R3·A3] An Introduction to Historical Tunings — Kyle Gann — https://www.kylegann.com/histune.html — anerkannte Fach-Autorenseite; indirekt.
-- [R3·A3] Historical Tuning — Unequal Temperaments — Daniel Adam Maltz — https://www.danieladammaltz.com/tcp/historical-tuning-rediscover-classical-sound-world — Fachpraktiker; indirekt.
+- [R2·A3] The Well-Tempered Clavier — Wikipedia — <https://en.wikipedia.org/wiki/The_Well-Tempered_Clavier> — well, nicht equal; indirekt.
+- [R2·A2] Bach Temperament — Wikipedia — <https://en.wikipedia.org/wiki/Bach_Temperament> — offene Debatte um Bachs Stimmung; nur teilweise.
+- [R3·A2] The Ongoing Quest for Bach's Temperament — Juilliard Journal — <https://journal.juilliard.edu/journal/ongoing-quest-bachs-temperament> — Fach-Journal; nur teilweise.
+- [R3·A3] Happy Birthday, Well-Tempered Clavier — JSTOR Daily — <https://daily.jstor.org/happy-birthday-well-tempered-clavier/> — seriös populär; indirekt.
+- [R3·A3] An Introduction to Historical Tunings — Kyle Gann — <https://www.kylegann.com/histune.html> — anerkannte Fach-Autorenseite; indirekt.
+- [R3·A3] Historical Tuning — Unequal Temperaments — Daniel Adam Maltz — <https://www.danieladammaltz.com/tcp/historical-tuning-rediscover-classical-sound-world> — Fachpraktiker; indirekt.
 
 ### China / Zhu Zaiyu
 
-- [R3·A1] The Twelve-tone Equal Temperament / Zhu Zaiyu — chinesethought.cn — https://www.chinesethought.cn/EN/shuyu_show.aspx?shuyu_id=4648 — institutionelle Übersichtsseite; im Volltext gelesen.
+- [R3·A1] The Twelve-tone Equal Temperament / Zhu Zaiyu — chinesethought.cn — <https://www.chinesethought.cn/EN/shuyu_show.aspx?shuyu_id=4648> — institutionelle Übersichtsseite; im Volltext gelesen.
 
 ### Schönberg / Zwölftontechnik
 
-- [R2·A1] Twelve-tone technique — Wikipedia — https://en.wikipedia.org/wiki/Twelve-tone_technique — Schönberg-Zitat, Hauer 1919, Reihen-Prinzip; im Volltext gelesen.
-- [R3·A3] Schoenberg Develops His Twelve-Tone System — EBSCO Research Starters — https://www.ebsco.com/research-starters/history/schoenberg-develops-his-twelve-tone-system — Referenz-Datenbank; indirekt.
-- [R3·A3] Serialism and Dodecaphony before Schönberg's Opus 23 — M. Krzyzaniak — https://michaelkrzyzaniak.com/Research/EarlySerialism/ — Forscher-Seite; indirekt.
-- [R3·A3] Twelve-Tone Technique — Lumen Learning (Music 101) — https://courses.lumenlearning.com/suny-musicapp-medieval-modern/chapter/twelve-tone-technique/ — Lehrmaterial; indirekt.
+- [R2·A1] Twelve-tone technique — Wikipedia — <https://en.wikipedia.org/wiki/Twelve-tone_technique> — Schönberg-Zitat, Hauer 1919, Reihen-Prinzip; im Volltext gelesen.
+- [R3·A3] Schoenberg Develops His Twelve-Tone System — EBSCO Research Starters — <https://www.ebsco.com/research-starters/history/schoenberg-develops-his-twelve-tone-system> — Referenz-Datenbank; indirekt.
+- [R3·A3] Serialism and Dodecaphony before Schönberg's Opus 23 — M. Krzyzaniak — <https://michaelkrzyzaniak.com/Research/EarlySerialism/> — Forscher-Seite; indirekt.
+- [R3·A3] Twelve-Tone Technique — Lumen Learning (Music 101) — <https://courses.lumenlearning.com/suny-musicapp-medieval-modern/chapter/twelve-tone-technique/> — Lehrmaterial; indirekt.
 
 ### Indien (Shruti)
 
-- [R2·A1] Śruti — Encyclopædia Britannica — https://www.britannica.com/art/sruti — 22-Shruti-Grunddefinition; im Volltext gelesen (inhaltlich dünn).
-- [R2·A3] Shruti (music) — Wikipedia — https://en.wikipedia.org/wiki/Shruti_(music) — Überblick; indirekt.
-- [R1·A3] The Notion of Twenty-Two Shrutis — IAS/Resonance — https://www.ias.ac.in/article/fulltext/reso/020/06/0515-0531 — wissenschaftliche Zeitschrift; indirekt.
-- [R1·A3] The Idea of 22 Śrutis — S. Kak (PDF, LSU) — https://www.ece.lsu.edu/kak/shruti.pdf — akademischer Aufsatz; indirekt.
-- [R1·A3] The Sounds of Music III — Indian Classical (arXiv 1910.06375) — https://arxiv.org/pdf/1910.06375 — Preprint; indirekt.
-- [R1·A3] ShrutiSense (arXiv 2508.01498) — https://arxiv.org/html/2508.01498v1 — Preprint; indirekt.
-- [R3·A3] Understanding Shrutis — Serenade Magazine — https://serenademagazine.com/understanding-microtones-in-indian-classical-music--an-analysis-of-shrutis-and-their-importance-in-ragas/ — Fachmagazin; indirekt.
-- [R3·A3] Decoding the shruti — scroll.in — https://scroll.in/article/824326/ — seriös populär; indirekt.
+- [R2·A1] Śruti — Encyclopædia Britannica — <https://www.britannica.com/art/sruti> — 22-Shruti-Grunddefinition; im Volltext gelesen (inhaltlich dünn).
+- [R2·A3] Shruti (music) — Wikipedia — <https://en.wikipedia.org/wiki/Shruti_(music)> — Überblick; indirekt.
+- [R1·A3] The Notion of Twenty-Two Shrutis — IAS/Resonance — <https://www.ias.ac.in/article/fulltext/reso/020/06/0515-0531> — wissenschaftliche Zeitschrift; indirekt.
+- [R1·A3] The Idea of 22 Śrutis — S. Kak (PDF, LSU) — <https://www.ece.lsu.edu/kak/shruti.pdf> — akademischer Aufsatz; indirekt.
+- [R1·A3] The Sounds of Music III — Indian Classical (arXiv 1910.06375) — <https://arxiv.org/pdf/1910.06375> — Preprint; indirekt.
+- [R1·A3] ShrutiSense (arXiv 2508.01498) — <https://arxiv.org/html/2508.01498v1> — Preprint; indirekt.
+- [R3·A3] Understanding Shrutis — Serenade Magazine — <https://serenademagazine.com/understanding-microtones-in-indian-classical-music--an-analysis-of-shrutis-and-their-importance-in-ragas/> — Fachmagazin; indirekt.
+- [R3·A3] Decoding the shruti — scroll.in — <https://scroll.in/article/824326/> — seriös populär; indirekt.
 
 ### Arabische Welt / Türkei (Maqam, Makam)
 
-- [R2·A3] Arabic maqam — Wikipedia — https://en.wikipedia.org/wiki/Arabic_maqam — 24-Vierteltöne, Praxis variabel; indirekt.
-- [R2·A3] Arab tone system — Wikipedia — https://en.wikipedia.org/wiki/Arab_tone_system — 24-TET-Modell; indirekt.
-- [R2·A3] Turkish makam — Wikipedia — https://en.wikipedia.org/wiki/Turkish_makam — 53 Kommata, AEU-System; indirekt.
-- [R1·A3] The Fuzzy Boundaries of Intonation in Maqam (PDF) — maqamlessons.com — https://www.maqamlessons.com/analysis/media/FuzzyBoundaries_MaqamIntonation2009.pdf — fachlicher Aufsatz; indirekt.
-- [R4·A3] Makams and Cents — babayagamusic.com — https://babayagamusic.com/Music/Makams-and-Cents.htm — Praktiker-Seite; indirekt.
-- [R4·A3] Kanun (Qanun) Complete Guide — Salamuzik — https://salamuzik.com/blogs/news/kanun-qanun-complete-guide-history-mandal-system-and-buying — Händler-Blog; indirekt.
+- [R2·A3] Arabic maqam — Wikipedia — <https://en.wikipedia.org/wiki/Arabic_maqam> — 24-Vierteltöne, Praxis variabel; indirekt.
+- [R2·A3] Arab tone system — Wikipedia — <https://en.wikipedia.org/wiki/Arab_tone_system> — 24-TET-Modell; indirekt.
+- [R2·A3] Turkish makam — Wikipedia — <https://en.wikipedia.org/wiki/Turkish_makam> — 53 Kommata, AEU-System; indirekt.
+- [R1·A3] The Fuzzy Boundaries of Intonation in Maqam (PDF) — maqamlessons.com — <https://www.maqamlessons.com/analysis/media/FuzzyBoundaries_MaqamIntonation2009.pdf> — fachlicher Aufsatz; indirekt.
+- [R4·A3] Makams and Cents — babayagamusic.com — <https://babayagamusic.com/Music/Makams-and-Cents.htm> — Praktiker-Seite; indirekt.
+- [R4·A3] Kanun (Qanun) Complete Guide — Salamuzik — <https://salamuzik.com/blogs/news/kanun-qanun-complete-guide-history-mandal-system-and-buying> — Händler-Blog; indirekt.
 
 ### Indonesien (Gamelan) / Thailand
 
-- [R2·A3] Gamelan — Wikipedia — https://en.wikipedia.org/wiki/Gamelan — Slendro/Pelog, keine Standardstimmung; indirekt.
-- [R2·A3] Pelog — Wikipedia — https://en.wikipedia.org/wiki/Pelog — 7 ungleiche Töne; indirekt.
-- [R3·A3] Pelog — Xenharmonic Wiki — https://en.xen.wiki/w/Pelog — fachliche Community-Referenz; indirekt.
-- [R1·A3] On the Spirit of Tuning — Univ. of Michigan CSEAS — https://ii.umich.edu/cseas/news-events/news/search-news/spirit-of-tuning.html — Universitätsseite, fehlende Oktav-Äquivalenz; indirekt.
-- [R3·A3] Gamelan (music) — EBSCO Research Starters — https://www.ebsco.com/research-starters/music/gamelan-music — Referenz-Datenbank; indirekt.
-- [R2·A3] Music of Thailand — Wikipedia — https://en.wikipedia.org/wiki/Music_of_Thailand — 7-TET; indirekt.
-- [R1·A3] The Myth of Equidistance in Thai Tuning — Garzoli (AAWM, PDF) — https://iftawm.org/journal/oldsite/articles/2015b/Garzoli_AAWM_Vol_4_2.pdf — Fachjournal; indirekt.
+- [R2·A3] Gamelan — Wikipedia — <https://en.wikipedia.org/wiki/Gamelan> — Slendro/Pelog, keine Standardstimmung; indirekt.
+- [R2·A3] Pelog — Wikipedia — <https://en.wikipedia.org/wiki/Pelog> — 7 ungleiche Töne; indirekt.
+- [R3·A3] Pelog — Xenharmonic Wiki — <https://en.xen.wiki/w/Pelog> — fachliche Community-Referenz; indirekt.
+- [R1·A3] On the Spirit of Tuning — Univ. of Michigan CSEAS — <https://ii.umich.edu/cseas/news-events/news/search-news/spirit-of-tuning.html> — Universitätsseite, fehlende Oktav-Äquivalenz; indirekt.
+- [R3·A3] Gamelan (music) — EBSCO Research Starters — <https://www.ebsco.com/research-starters/music/gamelan-music> — Referenz-Datenbank; indirekt.
+- [R2·A3] Music of Thailand — Wikipedia — <https://en.wikipedia.org/wiki/Music_of_Thailand> — 7-TET; indirekt.
+- [R1·A3] The Myth of Equidistance in Thai Tuning — Garzoli (AAWM, PDF) — <https://iftawm.org/journal/oldsite/articles/2015b/Garzoli_AAWM_Vol_4_2.pdf> — Fachjournal; indirekt.
 
 ### Mikrotonalität / Alternativen / Messung
 
-- [R3·A3] The many microtonal tuning systems around the world — The Microtone Fox (Medium) — https://medium.com/@themicrotonefox/the-many-microtonal-tuning-systems-around-the-world-29a3a1612fa7 — fachlich engagierter Blog; indirekt.
-- [R2·A3] Microtonal music — Wikipedia — https://en.wikipedia.org/wiki/Microtonal_music — Überblick; indirekt.
-- [R2·A3] 31 equal temperament — Wikipedia — https://en.wikipedia.org/wiki/31_equal_temperament — bessere Terz-Näherung; indirekt.
-- [R2·A1] Cent (music) — Wikipedia — https://en.wikipedia.org/wiki/Cent_(music) — Ellis, Formel c = 1200·log₂; im Volltext gelesen.
-- [R3·A3] Cent — Xenharmonic Wiki — https://en.xen.wiki/w/Cent — Cent-Werte Quinte/Terz; indirekt.
-- [R4·A3] perfect 5th — tonalsoft — http://www.tonalsoft.com/enc/p/perfect-5th.aspx — Enzyklopädie-Wiki; indirekt.
-- [R1·A3] The Harmonic Series (PDF) — anneloeswolters.com — https://anneloeswolters.com/wp-content/uploads/2019/08/overtone_series_1.pdf — Lehr-PDF; indirekt.
+- [R3·A3] The many microtonal tuning systems around the world — The Microtone Fox (Medium) — <https://medium.com/@themicrotonefox/the-many-microtonal-tuning-systems-around-the-world-29a3a1612fa7> — fachlich engagierter Blog; indirekt.
+- [R2·A3] Microtonal music — Wikipedia — <https://en.wikipedia.org/wiki/Microtonal_music> — Überblick; indirekt.
+- [R2·A3] 31 equal temperament — Wikipedia — <https://en.wikipedia.org/wiki/31_equal_temperament> — bessere Terz-Näherung; indirekt.
+- [R2·A1] Cent (music) — Wikipedia — <https://en.wikipedia.org/wiki/Cent_(music)> — Ellis, Formel c = 1200·log₂; im Volltext gelesen.
+- [R3·A3] Cent — Xenharmonic Wiki — <https://en.xen.wiki/w/Cent> — Cent-Werte Quinte/Terz; indirekt.
+- [R4·A3] perfect 5th — tonalsoft — <http://www.tonalsoft.com/enc/p/perfect-5th.aspx> — Enzyklopädie-Wiki; indirekt.
+- [R1·A3] The Harmonic Series (PDF) — anneloeswolters.com — <https://anneloeswolters.com/wp-content/uploads/2019/08/overtone_series_1.pdf> — Lehr-PDF; indirekt.
 
 ### Symbolik der Zahl Zwölf (kulturell, nicht musiktheoretisch)
 
-- [S·A3] The Symbolism of the Number 12 in History and Art — traineemock.com — https://traineemock.com/blog/the-symbolism-of-the-number-12-in-history-and-art/ — SEO-Blog; nur kulturelle Aufladung, nicht kausal; indirekt.
-- [S·A3] Symbolism & Meaning Of Twelve (12) — Symbolopedia — https://symbolopedia.com/symbolism-meaning-of-twelve-12/ — Numerologie-Seite; indirekt.
-- [S·A3] The Meaning of Number 12 — midsouthpresbytery.org — https://www.midsouthpresbytery.org/the-meaning-of-number-12/ — religiös-symbolisch; indirekt.
+- [S·A3] The Symbolism of the Number 12 in History and Art — traineemock.com — <https://traineemock.com/blog/the-symbolism-of-the-number-12-in-history-and-art/> — SEO-Blog; nur kulturelle Aufladung, nicht kausal; indirekt.
+- [S·A3] Symbolism & Meaning Of Twelve (12) — Symbolopedia — <https://symbolopedia.com/symbolism-meaning-of-twelve-12/> — Numerologie-Seite; indirekt.
+- [S·A3] The Meaning of Number 12 — midsouthpresbytery.org — <https://www.midsouthpresbytery.org/the-meaning-of-number-12/> — religiös-symbolisch; indirekt.

@@ -12,7 +12,7 @@ nachgerechnet.
 
 ## 0. Die Tabelle (Basis 12, selbst gerechnet)
 
-```
+```text
 ×    1   2   3   4   5   6   7   8   9   A   B  10
 1    1   2   3   4   5   6   7   8   9   A   B  10
 2    2   4   6   8   A  10  12  14  16  18  1A  20
@@ -120,12 +120,13 @@ Sieben-Reihe voll durchlaufen (Primitivwurzel) — hier nur die sichtbare Folge 
 
 Zuverlässigkeit **R1**/**R2**/**R3**; Zugang **A1**/**A2**/**A3**.
 
-- **[R2·A1]** Duodecimal — Wikipedia — https://en.wikipedia.org/wiki/Duodecimal — Einmaleins, Teilbarkeit und Muster in Basis 12.
-- **[R2·A1]** Multiplication table — Wikipedia — https://en.wikipedia.org/wiki/Multiplication_table — Muster der Reihen, Diagonale der Quadrate, Symmetrie.
-- **[R2·A2]** Multiplicative group of integers modulo n — Wikipedia — https://en.wikipedia.org/wiki/Multiplicative_group_of_integers_modulo_n — warum die zu 12 teilerfremden Reihen alle Endziffern durchlaufen.
-- **[R3·A2]** Dozenal Society of America — Manuale — https://dozenal.org — dozenale Kopfrechentechniken (PDF-Manuale; Beleg-Kandidat, nicht im Volltext geprüft).
+- **[R2·A1]** Duodecimal — Wikipedia — <https://en.wikipedia.org/wiki/Duodecimal> — Einmaleins, Teilbarkeit und Muster in Basis 12.
+- **[R2·A1]** Multiplication table — Wikipedia — <https://en.wikipedia.org/wiki/Multiplication_table> — Muster der Reihen, Diagonale der Quadrate, Symmetrie.
+- **[R2·A2]** Multiplicative group of integers modulo n — Wikipedia — <https://en.wikipedia.org/wiki/Multiplicative_group_of_integers_modulo_n> — warum die zu 12 teilerfremden Reihen alle Endziffern durchlaufen.
+- **[R3·A2]** Dozenal Society of America — Manuale — <https://dozenal.org> — dozenale Kopfrechentechniken (PDF-Manuale; Beleg-Kandidat, nicht im Volltext geprüft).
 
 ### Eigene Verifikation (R1·A1)
+
 - Python (Basis 12): vollständige 12×12-Tabelle; Endziffer-Zyklen 2/3/4/6; Elfer-Reihe
   (Ziffernsummen alle = B, Spiegelmuster); B·n = 10·n − n (B·7 = 65); 5er-/7er-Endziffern
   durchlaufen alle zwölf; Quadrate 1…100; 100 = 144. Reproduzierbar.

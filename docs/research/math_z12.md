@@ -75,7 +75,7 @@ Halbtöne der gleichstufigen Stimmung die Elemente von ℤ/12ℤ (C = 0, … H =
 Transposition = Addition mod 12. Die **reine Quinte** ist 7 Halbtöne. Wiederholtes +7 mod
 12 (selbst gerechnet):
 
-```
+```text
 0 → 7 → 2 → 9 → 4 → B → 6 → 1 → 8 → 3 → A → 5 → 0
 ```
 
@@ -210,35 +210,40 @@ Zuverlässigkeit **R1** (wissenschaftlich/primär) · **R2** (etablierte Referen
 (indirekt).
 
 ### Gruppentheorie / modulare Arithmetik (R1–R2)
-- **[R2·A1]** Modular arithmetic — Wikipedia — https://en.wikipedia.org/wiki/Modular_arithmetic — Kongruenz, ℤ/nℤ-Ring, Uhr-Beispiel, Gauss 1801.
-- **[R2·A1]** Cyclic group — Wikipedia — https://en.wikipedia.org/wiki/Cyclic_group — Erzeuger, ord(k)=n/ggT, eine Untergruppe je Teiler.
-- **[R2·A1]** Subgroups of cyclic groups — Wikipedia — https://en.wikipedia.org/wiki/Subgroups_of_cyclic_groups — sechs Untergruppen von ℤ/12ℤ.
-- **[R2·A1]** Multiplicative group of integers modulo n — Wikipedia — https://en.wikipedia.org/wiki/Multiplicative_group_of_integers_modulo_n — (ℤ/12ℤ)×={1,5,7,11}, CRT, ≅ C₂×C₂, Tabelle n=12/24.
-- **[R2·A1]** Klein four-group — Wikipedia — https://en.wikipedia.org/wiki/Klein_four-group — V₄=C₂×C₂, Exponent 2.
-- **[R2·A1]** Lagrange's theorem (group theory) — Wikipedia — https://en.wikipedia.org/wiki/Lagrange%27s_theorem_(group_theory) — Gegenbeispiel A₄.
-- **[R2·A1]** Euler's totient function — Wikipedia — https://en.wikipedia.org/wiki/Euler%27s_totient_function — φ(12)=4.
-- **[R2·A1]** Group (mathematics) — Wikipedia — https://en.wikipedia.org/wiki/Group_(mathematics) — vier Axiome.
-- **[R2·A2]** „What is special about the divisors of 24?" — arXiv:1104.5052 — https://arxiv.org/pdf/1104.5052 — Teiler von 24 = n mit Exponent-2-Einheitengruppe; Snippet/CRT.
-- **[R1·A2]** Keith Conrad, Orders of Units in Modular Arithmetic (UConn) — https://kconrad.math.uconn.edu/blurbs/ugradnumthy/ordersmodm.pdf — Ordnungen, Euler-Satz; PDF binär, Standardstoff.
+
+- **[R2·A1]** Modular arithmetic — Wikipedia — <https://en.wikipedia.org/wiki/Modular_arithmetic> — Kongruenz, ℤ/nℤ-Ring, Uhr-Beispiel, Gauss 1801.
+- **[R2·A1]** Cyclic group — Wikipedia — <https://en.wikipedia.org/wiki/Cyclic_group> — Erzeuger, ord(k)=n/ggT, eine Untergruppe je Teiler.
+- **[R2·A1]** Subgroups of cyclic groups — Wikipedia — <https://en.wikipedia.org/wiki/Subgroups_of_cyclic_groups> — sechs Untergruppen von ℤ/12ℤ.
+- **[R2·A1]** Multiplicative group of integers modulo n — Wikipedia — <https://en.wikipedia.org/wiki/Multiplicative_group_of_integers_modulo_n> — (ℤ/12ℤ)×={1,5,7,11}, CRT, ≅ C₂×C₂, Tabelle n=12/24.
+- **[R2·A1]** Klein four-group — Wikipedia — <https://en.wikipedia.org/wiki/Klein_four-group> — V₄=C₂×C₂, Exponent 2.
+- **[R2·A1]** Lagrange's theorem (group theory) — Wikipedia — <https://en.wikipedia.org/wiki/Lagrange%27s_theorem_(group_theory)> — Gegenbeispiel A₄.
+- **[R2·A1]** Euler's totient function — Wikipedia — <https://en.wikipedia.org/wiki/Euler%27s_totient_function> — φ(12)=4.
+- **[R2·A1]** Group (mathematics) — Wikipedia — <https://en.wikipedia.org/wiki/Group_(mathematics)> — vier Axiome.
+- **[R2·A2]** „What is special about the divisors of 24?" — arXiv:1104.5052 — <https://arxiv.org/pdf/1104.5052> — Teiler von 24 = n mit Exponent-2-Einheitengruppe; Snippet/CRT.
+- **[R1·A2]** Keith Conrad, Orders of Units in Modular Arithmetic (UConn) — <https://kconrad.math.uconn.edu/blurbs/ugradnumthy/ordersmodm.pdf> — Ordnungen, Euler-Satz; PDF binär, Standardstoff.
 
 ### Musiktheorie (R1–R2)
-- **[R2·A1]** Circle of fifths — Wikipedia — https://en.wikipedia.org/wiki/Circle_of_fifths — 12-Schritt-Folge, Diletski/Heinichen.
-- **[R2·A1]** Pitch class — Wikipedia — https://en.wikipedia.org/wiki/Pitch_class — Tonklassen 0–11, Transposition = +k mod 12, Babbitt/Forte.
-- **[R2·A1]** Interval (music) — Wikipedia — https://en.wikipedia.org/wiki/Interval_(music) — Quinte 7, Quart 5, Tritonus 6 Halbtöne.
+
+- **[R2·A1]** Circle of fifths — Wikipedia — <https://en.wikipedia.org/wiki/Circle_of_fifths> — 12-Schritt-Folge, Diletski/Heinichen.
+- **[R2·A1]** Pitch class — Wikipedia — <https://en.wikipedia.org/wiki/Pitch_class> — Tonklassen 0–11, Transposition = +k mod 12, Babbitt/Forte.
+- **[R2·A1]** Interval (music) — Wikipedia — <https://en.wikipedia.org/wiki/Interval_(music)> — Quinte 7, Quart 5, Tritonus 6 Halbtöne.
 - **[R1·A2]** Dmitri Tymoczko, *A Geometry of Music* (OUP 2011) — ℤ/12ℤ als Standardmodell; Paywall, über Rezensionen.
 
 ### Geschichte (R1–R2)
-- **[R1·A2]** Disquisitiones Arithmeticae — Wikipedia — https://en.wikipedia.org/wiki/Disquisitiones_Arithmeticae — Kongruenznotation, 1801.
-- **[R2·A1]** Group theory — MacTutor — https://mathshistory.st-andrews.ac.uk/HistTopics/Development_group_theory/ — Galois 1831, Cayley 1854.
-- **[R2·A1]** Évariste Galois — MacTutor — https://mathshistory.st-andrews.ac.uk/Biographies/Galois/ — Lebensdaten, Liouville 1846.
+
+- **[R1·A2]** Disquisitiones Arithmeticae — Wikipedia — <https://en.wikipedia.org/wiki/Disquisitiones_Arithmeticae> — Kongruenznotation, 1801.
+- **[R2·A1]** Group theory — MacTutor — <https://mathshistory.st-andrews.ac.uk/HistTopics/Development_group_theory/> — Galois 1831, Cayley 1854.
+- **[R2·A1]** Évariste Galois — MacTutor — <https://mathshistory.st-andrews.ac.uk/Biographies/Galois/> — Lebensdaten, Liouville 1846.
 
 ### Primzahlen, hoch zusammengesetzte Zahlen, Anwendungen (R2)
-- **[R2·A1]** Duodecimal — Wikipedia — https://en.wikipedia.org/wiki/Duodecimal — Primzahlreste Basis 12.
-- **[R2·A1]** Dirichlet's theorem on arithmetic progressions — Wikipedia — https://en.wikipedia.org/wiki/Dirichlet%27s_theorem_on_arithmetic_progressions — ∞ Primzahlen je teilerfremder Restklasse.
-- **[R2·A1]** Highly composite number — Wikipedia — https://en.wikipedia.org/wiki/Highly_composite_number — 12 hoch zusammengesetzt (Ramanujan 1915).
-- **[R2·A1]** Zeller's congruence — Wikipedia — https://en.wikipedia.org/wiki/Zeller%27s_congruence — Wochentag mod 7.
+
+- **[R2·A1]** Duodecimal — Wikipedia — <https://en.wikipedia.org/wiki/Duodecimal> — Primzahlreste Basis 12.
+- **[R2·A1]** Dirichlet's theorem on arithmetic progressions — Wikipedia — <https://en.wikipedia.org/wiki/Dirichlet%27s_theorem_on_arithmetic_progressions> — ∞ Primzahlen je teilerfremder Restklasse.
+- **[R2·A1]** Highly composite number — Wikipedia — <https://en.wikipedia.org/wiki/Highly_composite_number> — 12 hoch zusammengesetzt (Ramanujan 1915).
+- **[R2·A1]** Zeller's congruence — Wikipedia — <https://en.wikipedia.org/wiki/Zeller%27s_congruence> — Wochentag mod 7.
 
 ### Eigene Verifikation (R1·A1)
+
 - Python/BigInt: Erzeuger, Ordnungen, Untergruppen, Einheiten mod 12 & 24, Quadrate,
   Exponent-2-Liste (Teiler von 24), Quintenzirkel-Folge, Primzahl-Endziffern ≤ 200 —
   alle reproduzierbar nachgerechnet, mit Wikipedia abgeglichen.

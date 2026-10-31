@@ -5,6 +5,7 @@ Ich synthetisiere die vier Recherche-Blöcke zu einem Dossier. Da der Output das
 Im Zentrum stehen zwei der fünf platonischen Körper: das **Ikosaeder** und das **Dodekaeder**. Beide tragen die Zahl Zwölf in sich, nur an verschiedenen Stellen.
 
 **Das Ikosaeder** hat:
+
 - **12 Ecken** — an jeder treffen sich fünf gleichseitige Dreiecke.
 - **20 dreieckige Flächen**.
 - **30 Kanten**.
@@ -12,6 +13,7 @@ Im Zentrum stehen zwei der fünf platonischen Körper: das **Ikosaeder** und das
 Kontrolle mit Eulers Polyederformel: Ecken − Kanten + Flächen = 12 − 30 + 20 = 2. Das stimmt.
 
 **Das Dodekaeder** ist der duale Körper zum Ikosaeder. Es hat:
+
 - **12 fünfeckige Flächen** (Pentagone).
 - **20 Ecken**.
 - **30 Kanten**.
@@ -19,6 +21,7 @@ Kontrolle mit Eulers Polyederformel: Ecken − Kanten + Flächen = 12 − 30 + 2
 Die Dualität ist exakt: Setzt man die Ecken des einen Körpers auf die Flächenmitten des anderen, gehen die beiden Körper ineinander über. Ecken des einen entsprechen Flächen des anderen. Deshalb teilen sie **dieselbe Symmetrie**. Die "Zwölf-Symmetrie" ist also in beiden Körpern dieselbe Struktur — einmal als 12 Ecken (Ikosaeder), einmal als 12 Flächen (Dodekaeder).
 
 **Die Symmetriegruppe** (für genaue Leser): Die reine Rotationsgruppe hat **60 Operationen**. Mit Spiegelungen sind es **120**. Das ist mehr als bei jedem anderen platonischen Körper. Die Drehachsen verteilen sich so:
+
 - **6 fünfzählige Achsen** — durch gegenüberliegende Ikosaeder-Ecken (bzw. Dodekaeder-Flächen).
 - **10 dreizählige Achsen** — durch gegenüberliegende Ikosaeder-Flächen (bzw. Dodekaeder-Ecken).
 - **15 zweizählige Achsen** — durch gegenüberliegende Kantenmitten.
@@ -64,6 +67,7 @@ $$T = h^2 + hk + k^2 \qquad (h, k \text{ nichtnegative ganze Zahlen})$$
 T nimmt nur bestimmte Werte an: **1, 3, 4, 7, 9, 12, 13, 16, 19, 21, 25, …**
 
 Für jedes solche Kapsid gilt, unabhängig von der Grösse:
+
 - **Immer genau 12 Pentamere** — sie sitzen an den 12 Ecken des Ikosaeders. Das ist exakt die Euler-Zwölf wie beim Fussball und beim Fulleren: Zwölf fünfzählige "Defekte" schliessen die gekrümmte Hülle.
 - **10 · (T − 1) Hexamere**.
 - **Untereinheiten gesamt: 60 · T**.
@@ -110,6 +114,7 @@ Ernst Haeckel (1834–1919) ist die Schlüsselfigur. Er begegnete den Radiolarie
 Sein Hauptwerk ist der **"Report on the Radiolaria collected by H.M.S. Challenger during the years 1873–1876"** (1887): drei Textbände und 140 Tafeln. Je nach Zählweise dokumentierte er über 4.000 Arten, davon ein grosser Teil neu für die Wissenschaft. (Die genaue Artenzahl schwankt zwischen den Quellen — z. B. "über 3.500 neu von über 4.000" gegenüber "2.775 neue polycystine Arten" — weil unterschiedlich gezählt wird.)
 
 **Berühmte geometrische Beispiele:**
+
 - **Circogonia icosahedra** — Skelett in Form eines regulären **Ikosaeders**, mit 12 Stacheln an den 12 Ecken und 20 Flächen. Das Paradebeispiel der ikosaedrischen Zwölf-Symmetrie im Leben. Es erscheint als "Fig. 1" auf einer Tafel in Haeckels **"Kunstformen der Natur"** (in Lieferungen 1899–1904, 100 Tafeln; Lithograf: Adolf Giltsch).
 - **Circorrhegma dodecahedra** — Skelett in Form eines regulären **Dodekaeders**: 12 fünfeckige Flächen, 20 Ecken. Hier erscheint die Zwölf direkt als Flächenzahl.
 - **Aulonia hexagona** — siehe nächster Punkt.
@@ -144,6 +149,7 @@ Haeckels Tafeln prägten den Jugendstil (Art Nouveau). Der Architekt **René Bin
 ### Buckminster Fuller → Fullerene → Caspar-Klug
 
 Eine produktive Kette verbindet Architektur, Biologie und Chemie:
+
 - Fullers **geodätische Kuppeln** (Pentagone plus Hexagone, Expo '67 Montreal) inspirierten Caspar und Klug zu ihrer Virus-Theorie.
 - Dieselbe Form erkannten die Chemiker **Kroto, Smalley und Curl** 1985 im Molekül **C₆₀** — einem abgestumpften Ikosaeder (12 Fünfecke, 20 Sechsecke, Fussballform). Sie benannten es **Buckminsterfullerene** ("Buckyballs") nach Fuller. Nobelpreis Chemie 1996.
 
@@ -180,66 +186,73 @@ Die Zwölf-Symmetrie hängt mathematisch sauber am Goldenen Schnitt φ = (√5 +
 Bewertung nach zwei Achsen. **Zuverlässigkeit:** R1 = wissenschaftlich/primär, R2 = etablierte Referenz, R3 = seriös populär, R4 = schwach, S = spekulativ. **Zugang:** A1 = Volltext gelesen, A2 = teilweise (Snippet/Paywall), A3 = nur indirekt.
 
 ### Geometrie & Dualität (Ikosaeder/Dodekaeder, Symmetriegruppe, Goldener Schnitt)
-- [R2·A1] Icosahedral symmetry — Wikipedia — https://en.wikipedia.org/wiki/Icosahedral_symmetry — Gruppenordnung 60/120, A₅, Achsen 6/10/15, Konjugationsklassen.
-- [R2·A2] Regular icosahedron — Wikipedia — https://en.wikipedia.org/wiki/Regular_icosahedron — 12 Ecken/20 Flächen/30 Kanten, Dualität zum Dodekaeder.
-- [R2·A3] Polyhedra — Max-Planck-Institut für Radioastronomie (P. Freire) — https://www3.mpifr-bonn.mpg.de/staff/pfreire/polyhedra/polyhedra.htm — Symmetrieachsen, Dualität.
-- [R3·A2] Phi in the Icosahedron — orchidpalms — http://www.orchidpalms.com/polyhedra/icosa/phi.htm — φ-Koordinaten der 12 Ecken.
-- [R3·A2] The Golden Geometry of Solids — R. Knott (Univ. Surrey) — https://r-knott.surrey.ac.uk/fibonacci/phi3DGeom.html — φ-basierte Polyeder-Koordinaten.
+
+- [R2·A1] Icosahedral symmetry — Wikipedia — <https://en.wikipedia.org/wiki/Icosahedral_symmetry> — Gruppenordnung 60/120, A₅, Achsen 6/10/15, Konjugationsklassen.
+- [R2·A2] Regular icosahedron — Wikipedia — <https://en.wikipedia.org/wiki/Regular_icosahedron> — 12 Ecken/20 Flächen/30 Kanten, Dualität zum Dodekaeder.
+- [R2·A3] Polyhedra — Max-Planck-Institut für Radioastronomie (P. Freire) — <https://www3.mpifr-bonn.mpg.de/staff/pfreire/polyhedra/polyhedra.htm> — Symmetrieachsen, Dualität.
+- [R3·A2] Phi in the Icosahedron — orchidpalms — <http://www.orchidpalms.com/polyhedra/icosa/phi.htm> — φ-Koordinaten der 12 Ecken.
+- [R3·A2] The Golden Geometry of Solids — R. Knott (Univ. Surrey) — <https://r-knott.surrey.ac.uk/fibonacci/phi3DGeom.html> — φ-basierte Polyeder-Koordinaten.
 
 ### Radiolarien, Haeckel & Aulonia/Euler
-- [R2·A1] Radiolaria — Wikipedia — https://en.wikipedia.org/wiki/Radiolaria — Kieselsäure/Strontiumsulfat, Circogonia icosahedra, Turing-Muster, offene Fragen.
-- [R2·A1] Patterns in nature — Wikipedia — https://en.wikipedia.org/wiki/Patterns_in_nature — Aulonia hexagona, Euler, 12 Pentagone, D'Arcy Thompson.
-- [R1·A1] Report on the Radiolaria (H.M.S. Challenger), Haeckel 1887 — Project Gutenberg — https://www.gutenberg.org/files/44525/44525-h/44525-h.htm (Tafeln: /files/44527/) — Primärquelle.
-- [R1·A1] Report on the Radiolaria — Internet Archive (Scan) — https://archive.org/details/reportonradiolar00haecrich — Primärquelle.
-- [R2·A1] Kunstformen der Natur — Wikipedia — https://en.wikipedia.org/wiki/Kunstformen_der_Natur — Tafeln 1899–1904, Giltsch, Circogonia.
-- [R3·A1] Reticulated Geodesic Constructions — George Hart — https://www.georgehart.com/radiolaria/radiolaria.html — Euler, geodätische Triangulation.
-- [R1·A2] The protists of Ernst Haeckel's Kunstformen der Natur — ScienceDirect — https://www.sciencedirect.com/science/article/abs/pii/S1434461024000610 — nur Abstract.
-- [R1·A2] Art Forms in Nature: radiolaria from Haeckel and Blaschka to 3D nanotomography — PubMed — https://pubmed.ncbi.nlm.nih.gov/30868435/ — nur Abstract.
-- [R1·A3] Morphology of the Radiolaria — UCMP Berkeley — https://ucmp.berkeley.edu/protista/radiolaria/radmm.html — Seifenfilm-Analogie.
-- [R1·A2] Radiolaria-like Silica … Dynamic Self-Organization — J. Phys. Chem. C — https://pubs.acs.org/doi/10.1021/jp075667n — nur Abstract (Paywall).
-- [R3·A2] Ernst Haeckel's Radiolaria (1862) — Public Domain Review — https://publicdomainreview.org/collection/ernst-haeckel-s-radiolaria-1862/ — Bildmaterial/Kontext.
-- [R3·A2] Haeckel's Radiolaria — Kronecker Wallis — https://www.kroneckerwallis.com/haeckels-radiolaria-the-most-beautiful-microscopic-creatures/ — populäre Übersicht.
-- [R3·A2] Geometry and Pattern in Nature 3 — Microscopy-UK — http://www.microscopy-uk.org.uk/mag/artfeb05/cbdiatoms.html — Euler/Pentagon-Argument.
-- [R3·A2] D'Arcy Thompson — Biography — MacTutor (St Andrews) — https://mathshistory.st-andrews.ac.uk/Biographies/Thompson_DArcy/ — On Growth and Form, Aulonia-Korrektur.
-- [S·A3] The Geometry of Diatoms & Radiolaria — Cosmic-Core — https://www.cosmic-core.org/free/article-190-zoology-part-1-the-geometry-of-diatoms-radiolaria/ — esoterisch gefärbt; nur zum Faktenabgleich, nicht zur Interpretation.
+
+- [R2·A1] Radiolaria — Wikipedia — <https://en.wikipedia.org/wiki/Radiolaria> — Kieselsäure/Strontiumsulfat, Circogonia icosahedra, Turing-Muster, offene Fragen.
+- [R2·A1] Patterns in nature — Wikipedia — <https://en.wikipedia.org/wiki/Patterns_in_nature> — Aulonia hexagona, Euler, 12 Pentagone, D'Arcy Thompson.
+- [R1·A1] Report on the Radiolaria (H.M.S. Challenger), Haeckel 1887 — Project Gutenberg — <https://www.gutenberg.org/files/44525/44525-h/44525-h.htm> (Tafeln: /files/44527/) — Primärquelle.
+- [R1·A1] Report on the Radiolaria — Internet Archive (Scan) — <https://archive.org/details/reportonradiolar00haecrich> — Primärquelle.
+- [R2·A1] Kunstformen der Natur — Wikipedia — <https://en.wikipedia.org/wiki/Kunstformen_der_Natur> — Tafeln 1899–1904, Giltsch, Circogonia.
+- [R3·A1] Reticulated Geodesic Constructions — George Hart — <https://www.georgehart.com/radiolaria/radiolaria.html> — Euler, geodätische Triangulation.
+- [R1·A2] The protists of Ernst Haeckel's Kunstformen der Natur — ScienceDirect — <https://www.sciencedirect.com/science/article/abs/pii/S1434461024000610> — nur Abstract.
+- [R1·A2] Art Forms in Nature: radiolaria from Haeckel and Blaschka to 3D nanotomography — PubMed — <https://pubmed.ncbi.nlm.nih.gov/30868435/> — nur Abstract.
+- [R1·A3] Morphology of the Radiolaria — UCMP Berkeley — <https://ucmp.berkeley.edu/protista/radiolaria/radmm.html> — Seifenfilm-Analogie.
+- [R1·A2] Radiolaria-like Silica … Dynamic Self-Organization — J. Phys. Chem. C — <https://pubs.acs.org/doi/10.1021/jp075667n> — nur Abstract (Paywall).
+- [R3·A2] Ernst Haeckel's Radiolaria (1862) — Public Domain Review — <https://publicdomainreview.org/collection/ernst-haeckel-s-radiolaria-1862/> — Bildmaterial/Kontext.
+- [R3·A2] Haeckel's Radiolaria — Kronecker Wallis — <https://www.kroneckerwallis.com/haeckels-radiolaria-the-most-beautiful-microscopic-creatures/> — populäre Übersicht.
+- [R3·A2] Geometry and Pattern in Nature 3 — Microscopy-UK — <http://www.microscopy-uk.org.uk/mag/artfeb05/cbdiatoms.html> — Euler/Pentagon-Argument.
+- [R3·A2] D'Arcy Thompson — Biography — MacTutor (St Andrews) — <https://mathshistory.st-andrews.ac.uk/Biographies/Thompson_DArcy/> — On Growth and Form, Aulonia-Korrektur.
+- [S·A3] The Geometry of Diatoms & Radiolaria — Cosmic-Core — <https://www.cosmic-core.org/free/article-190-zoology-part-1-the-geometry-of-diatoms-radiolaria/> — esoterisch gefärbt; nur zum Faktenabgleich, nicht zur Interpretation.
 
 ### Virus-Kapside & Caspar-Klug
-- [R3·A1] Why Are Viral Capsids Icosahedral? — Asimov Press — https://www.asimov.press/p/viral-capsids — Crick/Watson, Caspar/Klug, 60T, Quasi-Äquivalenz, Twarock, ~70 %.
-- [R1·A1] Icosahedral capsids, Caspar and Klug — ViralZone (SIB/Expasy) — https://viralzone.expasy.org/8577 — T-Formel, T-Werte, 5:3:2-Achsen, 60 Untereinheiten.
-- [R1·A2] Minimal Design Principles for Icosahedral Virus Capsids — PMC8939845 (ACS Nano) — https://pmc.ncbi.nlm.nih.gov/articles/PMC8939845/ — 12 Pentamere, 10(T−1) Hexamere, 10T+2, 60T, Virus-Beispiele.
-- [R1·A1] Quasisymmetry in Icosahedral Viruses — PDB-101 (RCSB) — https://pdb101.rcsb.org/motm/200 — HK97 T=7, HIV-Fulleren-Kegel, 12 Pentamere.
-- [R1·A1] Principles of Virus Structural Organization — PMC3767311 (NIH) — https://pmc.ncbi.nlm.nih.gov/articles/PMC3767311/ — Kapsid-Architektur, Selbstassemblierung.
-- [R3·A1] The Illuminating Geometry of Viruses — Quanta Magazine — https://www.quantamagazine.org/the-illuminating-geometry-of-viruses-20170719/ — Twarock, Tiling-Theorie.
-- [R1·A1] Virus Structure: From Crick and Watson to a New Conjecture — arXiv 0707.3690 — https://arxiv.org/pdf/0707.3690 — Geschichte, Tiling-Verallgemeinerung.
-- [R2·A2] Principles of Virus Architecture — UCT Medical Virology — https://health.uct.ac.za/medical-virology/teaching/principles-virus-architecture — 5:3:2-Symmetrie, Vielfaches von 60.
-- [R2·A2] Viral Symmetry and Genetic Economy — RockEDU (Rockefeller) — https://rockedu.rockefeller.edu/component/viral-symmetry-and-genetic-economy/ — Crick-Watson, identische Proteine.
-- [R1·A2] Assembly and Architecture of HIV — PMC6743068 — https://pmc.ncbi.nlm.nih.gov/articles/PMC6743068/ — kegelförmiges HIV-Kapsid (Ausnahme).
-- [R4·A2] Viral Morphology: Structure and Shapes — BNS Institute — https://bns.institute/applied-sciences/viral-morphology-structure-shapes/ — Klassen ikosaedrisch/helikal/komplex.
+
+- [R3·A1] Why Are Viral Capsids Icosahedral? — Asimov Press — <https://www.asimov.press/p/viral-capsids> — Crick/Watson, Caspar/Klug, 60T, Quasi-Äquivalenz, Twarock, ~70 %.
+- [R1·A1] Icosahedral capsids, Caspar and Klug — ViralZone (SIB/Expasy) — <https://viralzone.expasy.org/8577> — T-Formel, T-Werte, 5:3:2-Achsen, 60 Untereinheiten.
+- [R1·A2] Minimal Design Principles for Icosahedral Virus Capsids — PMC8939845 (ACS Nano) — <https://pmc.ncbi.nlm.nih.gov/articles/PMC8939845/> — 12 Pentamere, 10(T−1) Hexamere, 10T+2, 60T, Virus-Beispiele.
+- [R1·A1] Quasisymmetry in Icosahedral Viruses — PDB-101 (RCSB) — <https://pdb101.rcsb.org/motm/200> — HK97 T=7, HIV-Fulleren-Kegel, 12 Pentamere.
+- [R1·A1] Principles of Virus Structural Organization — PMC3767311 (NIH) — <https://pmc.ncbi.nlm.nih.gov/articles/PMC3767311/> — Kapsid-Architektur, Selbstassemblierung.
+- [R3·A1] The Illuminating Geometry of Viruses — Quanta Magazine — <https://www.quantamagazine.org/the-illuminating-geometry-of-viruses-20170719/> — Twarock, Tiling-Theorie.
+- [R1·A1] Virus Structure: From Crick and Watson to a New Conjecture — arXiv 0707.3690 — <https://arxiv.org/pdf/0707.3690> — Geschichte, Tiling-Verallgemeinerung.
+- [R2·A2] Principles of Virus Architecture — UCT Medical Virology — <https://health.uct.ac.za/medical-virology/teaching/principles-virus-architecture> — 5:3:2-Symmetrie, Vielfaches von 60.
+- [R2·A2] Viral Symmetry and Genetic Economy — RockEDU (Rockefeller) — <https://rockedu.rockefeller.edu/component/viral-symmetry-and-genetic-economy/> — Crick-Watson, identische Proteine.
+- [R1·A2] Assembly and Architecture of HIV — PMC6743068 — <https://pmc.ncbi.nlm.nih.gov/articles/PMC6743068/> — kegelförmiges HIV-Kapsid (Ausnahme).
+- [R4·A2] Viral Morphology: Structure and Shapes — BNS Institute — <https://bns.institute/applied-sciences/viral-morphology-structure-shapes/> — Klassen ikosaedrisch/helikal/komplex.
 
 ### Fullerene, geodätische Kuppeln (kulturelle Kette)
-- [R2·A2] Buckminsterfullerene — Wikipedia — https://en.wikipedia.org/wiki/Buckminsterfullerene — C₆₀, abgestumpfter Ikosaeder, 12 Pentagone.
-- [R2·A2] Discovery of Fullerenes — ACS Landmark — https://www.acs.org/education/whatischemistry/landmarks/fullerenes.html — Kroto/Smalley/Curl, Nobelpreis 1996.
-- [R3·A2] What is a geodesic dome? — Stanford (Fuller Collection) — https://exhibits.stanford.edu/bucky/feature/what-is-a-geodesic-dome — 12 Pentagone + Hexagone.
-- [R3·A2] Buckminsterfullerene — Buckminster Fuller Institute — https://www.bfi.org/about-fuller/big-ideas/buckminsterfullerene/ — C₆₀, Euler.
-- [R3·A2] The drawings that inspired Art Nouveau — Pixartprinting — https://www.pixartprinting.co.uk/blog/drawings-ernst-haeckel/ — Haeckel → Jugendstil, René Binet.
+
+- [R2·A2] Buckminsterfullerene — Wikipedia — <https://en.wikipedia.org/wiki/Buckminsterfullerene> — C₆₀, abgestumpfter Ikosaeder, 12 Pentagone.
+- [R2·A2] Discovery of Fullerenes — ACS Landmark — <https://www.acs.org/education/whatischemistry/landmarks/fullerenes.html> — Kroto/Smalley/Curl, Nobelpreis 1996.
+- [R3·A2] What is a geodesic dome? — Stanford (Fuller Collection) — <https://exhibits.stanford.edu/bucky/feature/what-is-a-geodesic-dome> — 12 Pentagone + Hexagone.
+- [R3·A2] Buckminsterfullerene — Buckminster Fuller Institute — <https://www.bfi.org/about-fuller/big-ideas/buckminsterfullerene/> — C₆₀, Euler.
+- [R3·A2] The drawings that inspired Art Nouveau — Pixartprinting — <https://www.pixartprinting.co.uk/blog/drawings-ernst-haeckel/> — Haeckel → Jugendstil, René Binet.
 
 ### Quasikristalle
-- [R2·A1] Quasicrystal — Wikipedia — https://en.wikipedia.org/wiki/Quasicrystal — Shechtman 1982, Restriktionstheorem, Penrose, Levine/Steinhardt, Goldener Schnitt.
-- [R2·A1] The Nobel Prize in Chemistry 2011 – Popular information — NobelPrize.org — https://www.nobelprize.org/prizes/chemistry/2011/popular-information/ — Shechtman 8.4.1982, Pauling-Kontroverse.
-- [R1·A1] Collisions in outer space produced an icosahedral phase in the Khatyrka meteorite — PMC5144682 (NIH) — https://pmc.ncbi.nlm.nih.gov/articles/PMC5144682/ — Ikosaedrit Al₆₃Cu₂₄Fe₁₃, Bindi/Steinhardt, Tschukotka.
-- [R1·A2] High-resolution synchrotron X-ray study of icosahedrite — IUCr — https://journals.iucr.org/m/issues/2025/04/00/gq5018/index.html — nur Abstract.
-- [R1·A2] New perspectives on forbidden symmetries, quasicrystals, and Penrose tilings — PNAS (Steinhardt et al.) — https://www.pnas.org/doi/10.1073/pnas.93.25.14267 — nur Abstract.
-- [R3·A2] Discovery of Quasicrystals — APS Physics — https://physics.aps.org/story/v28/st14 — Entdeckungsgeschichte.
-- [R3·A2] Blog: Quasicrystals and a Nobel — Lindau Nobel Laureate Meetings — https://www.lindau-nobel.org/blog-adversity-quasicrystals-and-a-nobel-the-forbidden-fivefold-symmetry-that-was/ — Pauling-Zitat, Kontext.
+
+- [R2·A1] Quasicrystal — Wikipedia — <https://en.wikipedia.org/wiki/Quasicrystal> — Shechtman 1982, Restriktionstheorem, Penrose, Levine/Steinhardt, Goldener Schnitt.
+- [R2·A1] The Nobel Prize in Chemistry 2011 – Popular information — NobelPrize.org — <https://www.nobelprize.org/prizes/chemistry/2011/popular-information/> — Shechtman 8.4.1982, Pauling-Kontroverse.
+- [R1·A1] Collisions in outer space produced an icosahedral phase in the Khatyrka meteorite — PMC5144682 (NIH) — <https://pmc.ncbi.nlm.nih.gov/articles/PMC5144682/> — Ikosaedrit Al₆₃Cu₂₄Fe₁₃, Bindi/Steinhardt, Tschukotka.
+- [R1·A2] High-resolution synchrotron X-ray study of icosahedrite — IUCr — <https://journals.iucr.org/m/issues/2025/04/00/gq5018/index.html> — nur Abstract.
+- [R1·A2] New perspectives on forbidden symmetries, quasicrystals, and Penrose tilings — PNAS (Steinhardt et al.) — <https://www.pnas.org/doi/10.1073/pnas.93.25.14267> — nur Abstract.
+- [R3·A2] Discovery of Quasicrystals — APS Physics — <https://physics.aps.org/story/v28/st14> — Entdeckungsgeschichte.
+- [R3·A2] Blog: Quasicrystals and a Nobel — Lindau Nobel Laureate Meetings — <https://www.lindau-nobel.org/blog-adversity-quasicrystals-and-a-nobel-the-forbidden-fivefold-symmetry-that-was/> — Pauling-Zitat, Kontext.
 
 ### Haeckel-Idealisierung / Embryo-Kontroverse (Vorbehalte)
-- [R1·A2] The enthusiastic observer — Haeckel as artist — Current Biology (ScienceDirect) — https://www.sciencedirect.com/science/article/pii/S0960982219315313 — Idealisierung, Symmetrie über Genauigkeit.
-- [R1·A1] Haeckel's embryos: fraud not proven — R. J. Richards (PDF, U Chicago) — https://home.uchicago.edu/~rjr6/articles/Haeckel--fraud%20not%20proven.pdf — Embryo-Streit, "fraud not proven".
-- [R2·A2] Haeckel's embryos: the images that would not go away — Univ. of Cambridge — https://www.cam.ac.uk/research/features/haeckels-embryos-the-images-that-would-not-go-away — Kontroverse-Überblick.
-- [R3·A2] Accuracy in embryo illustrations — NCSE — https://ncse.ngo/accuracy-embryo-illustrations — Genauigkeitsdebatte.
+
+- [R1·A2] The enthusiastic observer — Haeckel as artist — Current Biology (ScienceDirect) — <https://www.sciencedirect.com/science/article/pii/S0960982219315313> — Idealisierung, Symmetrie über Genauigkeit.
+- [R1·A1] Haeckel's embryos: fraud not proven — R. J. Richards (PDF, U Chicago) — <https://home.uchicago.edu/~rjr6/articles/Haeckel--fraud%20not%20proven.pdf> — Embryo-Streit, "fraud not proven".
+- [R2·A2] Haeckel's embryos: the images that would not go away — Univ. of Cambridge — <https://www.cam.ac.uk/research/features/haeckels-embryos-the-images-that-would-not-go-away> — Kontroverse-Überblick.
+- [R3·A2] Accuracy in embryo illustrations — NCSE — <https://ncse.ngo/accuracy-embryo-illustrations> — Genauigkeitsdebatte.
 
 ### Goldener-Schnitt-Mythos (Pseudowissenschaft-Abgrenzung)
-- [R3·A2] Myth-busting the Golden Ratio — EUSci (Univ. of Edinburgh) — https://eusci.org.uk/2020/07/29/myth-busting-the-golden-ratio/ — entlarvt φ-Universalismus.
-- [R3·A2] The Golden Ratio — Richard Dawkins Foundation — https://richarddawkins.net/2014/01/the-golden-ratio/ — Muster-Wahrnehmung statt kosmischer Bedeutung.
+
+- [R3·A2] Myth-busting the Golden Ratio — EUSci (Univ. of Edinburgh) — <https://eusci.org.uk/2020/07/29/myth-busting-the-golden-ratio/> — entlarvt φ-Universalismus.
+- [R3·A2] The Golden Ratio — Richard Dawkins Foundation — <https://richarddawkins.net/2014/01/the-golden-ratio/> — Muster-Wahrnehmung statt kosmischer Bedeutung.
 
 **Hinweise zur Verlässlichkeit:** Die quantitativen Kernaussagen (Polyeder-Kennzahlen, Gruppenordnung 60/120, T-Formel, 12 Pentamere / 10(T−1) Hexamere / 60T) sind über mindestens zwei unabhängige Quellen (Wikipedia plus ViralZone/PMC) kreuzverifiziert. Die Originalarbeiten von Caspar-Klug (1962) und Crick-Watson (1956) wurden nicht im Volltext gelesen, sondern über mehrere Sekundärquellen bestätigt. Haeckels Artenzahlen schwanken je nach Zählweise (alle Radiolarien vs. nur Polycystinea). Die Frage, ob Haeckel bei den Embryo-Zeichnungen vorsätzlich fälschte, ist **wissenschaftlich umstritten** und betrifft *nicht* die Radiolarien-Tafeln. Die Selbstorganisations-Hypothese für Radiolarien ist gut gestützt, aber kein abgeschlossenes Modell für jede Art.

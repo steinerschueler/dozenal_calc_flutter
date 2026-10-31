@@ -8,7 +8,7 @@ flutter pub get
 flutter run                   # aktuelle Plattform
 flutter run -d chrome         # Web
 pre-commit run --all-files    # Prüfbefehl (auch in der CI: format und Analyse)
-flutter test                  # gesamte Suite (592 Tests in 34 Dateien, Stand 31.10.2026)
+flutter test                  # gesamte Suite (593 Tests in 35 Dateien, Stand 31.10.2026)
 flutter test test/rational_test.dart           # einzelne Datei
 flutter test --plain-name "parses 1/7"         # einzelner Test per Name
 ```

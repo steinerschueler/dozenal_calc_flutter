@@ -108,6 +108,7 @@ Mit der Französischen Revolution wurde das Wirrwarr historischer Masse durch ei
 **Bigha** — von Sanskrit *vigraha* („Teilung"); traditionell in Nord- und Ostindien, Bangladesch und Nepal. Entspricht grob der Fläche, die ein Bauer bzw. ein Ochsengespann in bestimmter Zeit bestellen konnte. **Kein Standardwert** — stark regional variabel, von ~632 m² bis ~2.529 m². Systematische Vermessung zur Steuererhebung unter **Sher Shah Suri (1540–1545)** und später Akbar formalisiert; die Mughal-Verwaltung mass in *gaz* und *bigha*.
 
 Regionale Werte (Auswahl):
+
 - Assam ~1.340 m² (14.400 sq ft, 5 Katha)
 - Bihar / Patna ~2.529 m² (27.225 sq ft, 20 Katha)
 - Himachal Pradesh ~809 m² (8.712 sq ft; 5 Bigha = 1 Acre)
@@ -125,6 +126,7 @@ Unterteilungen wechseln je Region: *Katha, Biswa, Dhur, Nali, Lessa*; 5–20 pro
 ### Ostasien: Mu (China), Tsubo (Japan), Pyeong (Korea)
 
 **Mu (畝/亩) — China** — Hauptflächeneinheit, seit über 2.000 Jahren (bis Qin-Dynastie, 221–206 v. Chr. zurückreichend), abgeleitet von der Längeneinheit *bu* (Doppelschritt).
+
 - Frühe Zhou-Zeit: mu = 100 Quadrat-bu (*xiaomu*/kleines mu).
 - Um 350 v. Chr. (Shang-Yang-Reform) Einführung des mu zu **240 Quadrat-bu** (*damu*/grosses mu). Der antike Schreiber Deng Zhan: „früher machten 100 bu ein mu, jetzt machen 240 bu ein mu."
 - Grösse schwankte dynastieabhängig: ~161,7 m² (Zhou) bis ~414–461 m² (Qin/Han bis Qing).
@@ -148,6 +150,7 @@ Unterteilungen wechseln je Region: *Katha, Biswa, Dhur, Nali, Lessa*; 5–20 pro
 **Desyatina (десятина) — Russland** — 15. Jh. bis frühes 20. Jh.; ursprünglich „was ein Neuner-Ochsengespann an einem Tag pflügt". Amtlich (*kazyonnaya*) = 10.925,4 m² (= 2.400 Quadrat-Saschen ≈ 1,0925 ha ≈ 2,7 Acre); Gutsbesitzer-Variante (*vladelcheskaya*) = 14.567,2 m². Zentral für Landverteilung, Steuer und Leibeigenschaft im Zarenreich. Der Name klingt an *desyat'* („zehn") / den Kirchenzehnt an. Abgeschafft, als die Sowjetunion am 21. Juli 1925 das metrische System übernahm.
 
 **Iberisch / Lateinamerika:**
+
 - **Fanega** — Spanien und Lateinamerika; abgeleitet vom Getreidehohlmass *fanega* (so viel Land, wie man mit einer Fanega Saatgut besäen kann — ein **aussaatbasiertes** Mass, andere Logik als das Pflug-Tag-Mass). Wurzeln bis in die Römerzeit; regional ~3.000–7.000 m².
 - **Cuerda** — Puerto Rico ~3.930 m² (0,393 ha); Wert je Land sehr unterschiedlich.
 - **Manzana** — 100 × 100 Varas ≈ 7.000 m², traditionell in Spanien/Lateinamerika; das Wort heisst wörtlich „Häuserblock/Apfel" — ein urbaner Bezug.
@@ -284,6 +287,7 @@ Georges Ifrah führt den Ursprung der Basis 12 **spekulativ** auf das Abzählen 
 ### (a) Warum Basis 60? — konkurrierende Theorien (gemischt)
 
 Die MacTutor-Quelle (St Andrews) listet und bewertet die Theorien:
+
 - **Theons Teilbarkeits-Theorie** (60 = kleinste Zahl teilbar durch 1–5): vom Autor als „zu gelehrt" eingestuft — wohl nachträgliche Rationalisierung. **Spekulativ/anachronistisch.**
 - **Neugebauers Masse-Fusions-Theorie** (zwei Völker mit Basis 12 + Basis 5 bzw. 10 + 6 verschmelzen; Drittelung der Masse als Treiber): „könnte korrekt sein". **Ernsthafte, aber unbewiesene Hypothese.**
 - **Astronomische Theorie** (60 aus 360-Tage-Jahr): „weit hergeholt" verworfen, da die Sumerer wussten, dass das Jahr länger als 360 Tage ist. **Verworfen.**
@@ -321,128 +325,134 @@ Mehrere Detailwerte (Feddan-Zwischenwerte, jerib, einzelne römische Einheiten) 
 ### Quellen einzeln
 
 **Normungsgremium / Universität / Primär (R1):**
-- `[R1·A1]` Babylonian numerals — MacTutor (Univ. St Andrews) — https://mathshistory.st-andrews.ac.uk/HistTopics/Babylonian_numerals/ — universitäre Mathematikgeschichte, listet und bewertet die Basis-60-Theorien.
-- `[R1·A2]` Mathematical accuracy of Aztec land surveys (Codex Vergara) — PNAS — https://www.pnas.org/doi/10.1073/pnas.1107737108 — Peer-Review-Studie zur Acolhua-Flächenarithmetik.
-- `[R1·A2]` Before the Melting Pot: Pre-Columbian Weights and Measures — NIST — https://www.nist.gov/blogs/taking-measure/melting-pot-pre-columbian-weights-and-measures — Normungsgremium, mesoamerikanische Masse.
-- `[R1·A2]` The Vara: A Standard of Length with a Not-So-Standard History — NIST — https://www.nist.gov/blogs/taking-measure/vara-standard-length-not-so-standard-history — Normungsgremium, iberische Vara.
-- `[R1·A3]` Theories on the Origins of the Sexagesimal System (Y. Shane Wang, MAA HOM-SIGMAA 2024, PDF) — https://old.maa.org/sites/default/files/images/upload_library/46/HOMSIGMAA/2024-Y_Shane_Wang.pdf — Fachvereinigung MAA; nur als Suchtreffer gesehen.
-- `[R1·A2]` Roman Weights and Measures: Jugerum (Smith's Dictionary, 1875) — LacusCurtius — https://penelope.uchicago.edu/Thayer/E/Roman/Texts/secondary/SMIGRA*/Jugerum.html — klassisches Standardwerk, Univ. Chicago gehostet.
+
+- `[R1·A1]` Babylonian numerals — MacTutor (Univ. St Andrews) — <https://mathshistory.st-andrews.ac.uk/HistTopics/Babylonian_numerals/> — universitäre Mathematikgeschichte, listet und bewertet die Basis-60-Theorien.
+- `[R1·A2]` Mathematical accuracy of Aztec land surveys (Codex Vergara) — PNAS — <https://www.pnas.org/doi/10.1073/pnas.1107737108> — Peer-Review-Studie zur Acolhua-Flächenarithmetik.
+- `[R1·A2]` Before the Melting Pot: Pre-Columbian Weights and Measures — NIST — <https://www.nist.gov/blogs/taking-measure/melting-pot-pre-columbian-weights-and-measures> — Normungsgremium, mesoamerikanische Masse.
+- `[R1·A2]` The Vara: A Standard of Length with a Not-So-Standard History — NIST — <https://www.nist.gov/blogs/taking-measure/vara-standard-length-not-so-standard-history> — Normungsgremium, iberische Vara.
+- `[R1·A3]` Theories on the Origins of the Sexagesimal System (Y. Shane Wang, MAA HOM-SIGMAA 2024, PDF) — <https://old.maa.org/sites/default/files/images/upload_library/46/HOMSIGMAA/2024-Y_Shane_Wang.pdf> — Fachvereinigung MAA; nur als Suchtreffer gesehen.
+- `[R1·A2]` Roman Weights and Measures: Jugerum (Smith's Dictionary, 1875) — LacusCurtius — <https://penelope.uchicago.edu/Thayer/E/Roman/Texts/secondary/SMIGRA*/Jugerum.html> — klassisches Standardwerk, Univ. Chicago gehostet.
 
 **Etablierte Referenz (R2):**
-- `[R2·A1]` Acre — Wikipedia — https://en.wikipedia.org/wiki/Acre — Kernquelle für Acre-Geschichte, Fussreform, Varianten, moderne Verbreitung.
-- `[R2·A1]` Hectare — Wikipedia — https://en.wikipedia.org/wiki/Hectare — Ar/Hektar 1795, SI-Status.
-- `[R2·A1]` Ancient Mesopotamian units of measurement — Wikipedia — https://en.wikipedia.org/wiki/Ancient_Mesopotamian_units_of_measurement — sar/iku/bur.
-- `[R2·A1]` Ancient Egyptian units of measurement — Wikipedia — https://en.wikipedia.org/wiki/Ancient_Egyptian_units_of_measurement — setat/khet/remen.
-- `[R2·A1]` Jugerum — Wikipedia — https://en.wikipedia.org/wiki/Jugerum — iugerum/heredium/centuria.
-- `[R2·A2]` Bigha — Wikipedia — https://en.wikipedia.org/wiki/Bigha — Etymologie, regionale Werte, pucca/kaccha.
-- `[R2·A1]` Tlalcuahuitl — Wikipedia — https://en.wikipedia.org/wiki/Tlalcuahuitl — aztekische Bruchteil-Einheiten.
-- `[R2·A2]` Mu (land) — Wikipedia — https://en.wikipedia.org/wiki/Mu_(land) — mu-Geschichte, 240-bu-Reform, moderne Werte.
-- `[R2·A1]` Stremma — Wikipedia — https://en.wikipedia.org/wiki/Stremma — byzantinisch/modern, Calque-Bezug zum Dunam.
-- `[R2·A1]` Dunam — Wikipedia — https://en.wikipedia.org/wiki/Dunam — dönmek-Etymologie, 1928-Standardisierung, politischer Kontext.
-- `[R2·A1]` Carucate — Wikipedia — https://en.wikipedia.org/wiki/Carucate — Pflugland, Domesday.
-- `[R2·A2]` Imperial units | History, Measurements, & Facts — Britannica — https://www.britannica.com/topic/Imperial-unit — imperiales System.
-- `[R2·A2]` Furlong — Wikipedia — https://en.wikipedia.org/wiki/Furlong — Furchenlänge, Chain-Erfindung.
-- `[R2·A2]` Oxgang — Wikipedia — https://en.wikipedia.org/wiki/Oxgang — Bovate/Virgate.
-- `[R2·A2]` Imperial and US customary measurement systems — Wikipedia — https://en.wikipedia.org/wiki/Imperial_and_US_customary_measurement_systems — Systemübersicht.
-- `[R2·A2]` Are | Definition & Facts — Britannica — https://www.britannica.com/science/are — Ar-Definition.
-- `[R2·A1]` Centuria (unit of measure) — Wikipedia — https://en.wikipedia.org/wiki/Centuria_(unit_of_measure) — römische Centuriation.
-- `[R2·A2]` Plethron — Wikipedia — https://en.wikipedia.org/wiki/Plethron — griechisches Pendant zum Acre.
-- `[R2·A2]` Ancient Greek units of measurement — Wikipedia — https://en.wikipedia.org/wiki/Ancient_Greek_units_of_measurement — plethron/aroura/stadion.
-- `[R2·A2]` Mou | History, Conversion & Usage — Britannica — https://www.britannica.com/science/mou — mu-Querprüfung.
-- `[R2·A2]` Feddan — Wikipedia — https://en.wikipedia.org/wiki/Feddan — faddān-Etymologie, 1830, Kirat-Teilung.
-- `[R2·A2]` Rai, ngan, and tarang wa — Wikipedia — https://en.wikipedia.org/wiki/Rai,_ngan,_and_tarang_wa — Sukhothai-Ursprung, 1923, Persistenz.
-- `[R2·A2]` Thai units of measurement — Wikipedia — https://en.wikipedia.org/wiki/Thai_units_of_measurement — Systemkontext.
-- `[R2·A1]` Morgen (Einheit) — Wikipedia (de) — https://de.wikipedia.org/wiki/Morgen_(Einheit) — regionale Werte, 1869-Standard.
-- `[R2·A1]` Tagewerk — Wikipedia (de) — https://de.wikipedia.org/wiki/Tagewerk — Etymologie, Schweizer Tagwan, Freskomalerei.
-- `[R2·A2]` Joch (Einheit) — Wikipedia (de) — https://de.wikipedia.org/wiki/Joch_(Einheit) — Joch/Juchart.
-- `[R2·A2]` Morgen — Wikipedia (en) — https://en.wikipedia.org/wiki/Morgen — Südafrika-Wert, Spannweite.
-- `[R2·A1]` Pyeong — Wikipedia — https://en.wikipedia.org/wiki/Pyeong — Kolonialgeschichte, Verbot, Alltagspersistenz.
-- `[R2·A2]` Dessiatin (Desyatina) — Wikipedia — https://en.wikipedia.org/wiki/Dessiatin — russisches Mass, 1925-Abschaffung.
-- `[R2·A2]` Public Land Survey System — Wikipedia — https://en.wikipedia.org/wiki/Public_Land_Survey_System — Township/Section/quarter section.
-- `[R2·A2]` French Revolutionary units — Wikipedia — https://en.wikipedia.org/wiki/French_Revolutionary_units — metrische Einführung.
-- `[R2·A2]` Japanese units of measurement — Wikipedia — https://en.wikipedia.org/wiki/Japanese_units_of_measurement — tsubo/tan/chō.
-- `[R2·A2]` Fanega — Wikipedia — https://en.wikipedia.org/wiki/Fanega — aussaatbasiertes Mass.
-- `[R2·A2]` Cuerda — Wikipedia — https://en.wikipedia.org/wiki/Cuerda — Puerto-Rico-Wert.
-- `[R2·A2]` Spanish customary units — Wikipedia — https://en.wikipedia.org/wiki/Spanish_customary_units — vara/manzana.
-- `[R2·A1]` God's Acre — Wikipedia — https://en.wikipedia.org/wiki/God%27s_Acre — Gottesacker, Herrnhuter.
-- `[R2·A2]` Forty acres and a mule — Wikipedia — https://en.wikipedia.org/wiki/Forty_acres_and_a_mule — Reconstruction-Idiom.
-- `[R2·A2]` Rod (unit) — Wikipedia — https://en.wikipedia.org/wiki/Rod_(unit) — perch/pole.
-- `[R2·A2]` Hide (unit) — Wikipedia — https://en.wikipedia.org/wiki/Hide_(unit) — terra unius familiae.
-- `[R2·A1]` Well-field system — Wikipedia — https://en.wikipedia.org/wiki/Well-field_system — jingtian, Mencius.
-- `[R2·A2]` Duodecimal — Wikipedia — https://en.wikipedia.org/wiki/Duodecimal — Teilbarkeit, Ifrah-Fingerzählung.
-- `[R2·A1]` Sexagesimal — Wikipedia — https://en.wikipedia.org/wiki/Sexagesimal — 60er-Teilbarkeit, Überleben in Zeit/Winkel.
-- `[R2·A1]` Pseudoscientific metrology — Wikipedia — https://en.wikipedia.org/wiki/Pseudoscientific_metrology — Mainstream-Kritik an Pyramiden-Zoll, Megalithic Yard, Stecchini (siehe S-Block unten).
-- `[R2·A3]` Megalithic yard — Wikipedia — https://en.wikipedia.org/wiki/Megalithic_yard — Kritik Ruggles/Heggie.
-- `[R2·A2]` Mile | Distance, Length, & Speed — Britannica — https://www.britannica.com/science/mile — statute mile, 1593.
-- `[R2·A2]` Mile — Wikipedia — https://en.wikipedia.org/wiki/Mile — mille passus, Furlong-Kompromiss.
-- `[R2·A2]` Muhammad Ali of Egypt — Wikipedia — https://en.wikipedia.org/wiki/Muhammad_Ali_of_Egypt — Reform-Kontext Feddan-Standardisierung 1830.
-- `[R2·A3]` Hectare | Britannica — https://www.britannica.com/science/hectare — Querprüfung Hektar.
-- `[R2·A3]` Are | Definition — Britannica — https://www.britannica.com/science/are — Querprüfung Ar.
-- `[R2·A3]` Mount Meru (Buddhism) — Wikipedia — https://en.wikipedia.org/wiki/Mount_Meru_(Buddhism) — sakrale Raumgeometrie (Kontext, nicht Mass).
-- `[R2·A3]` History of measurement systems in India — Wikipedia — https://en.wikipedia.org/wiki/History_of_measurement_systems_in_India — Kontext bigha.
-- `[R2·A3]` History of the metric system — Wikipedia — https://en.wikipedia.org/wiki/History_of_the_metric_system — Ent-Sakralisierung.
+
+- `[R2·A1]` Acre — Wikipedia — <https://en.wikipedia.org/wiki/Acre> — Kernquelle für Acre-Geschichte, Fussreform, Varianten, moderne Verbreitung.
+- `[R2·A1]` Hectare — Wikipedia — <https://en.wikipedia.org/wiki/Hectare> — Ar/Hektar 1795, SI-Status.
+- `[R2·A1]` Ancient Mesopotamian units of measurement — Wikipedia — <https://en.wikipedia.org/wiki/Ancient_Mesopotamian_units_of_measurement> — sar/iku/bur.
+- `[R2·A1]` Ancient Egyptian units of measurement — Wikipedia — <https://en.wikipedia.org/wiki/Ancient_Egyptian_units_of_measurement> — setat/khet/remen.
+- `[R2·A1]` Jugerum — Wikipedia — <https://en.wikipedia.org/wiki/Jugerum> — iugerum/heredium/centuria.
+- `[R2·A2]` Bigha — Wikipedia — <https://en.wikipedia.org/wiki/Bigha> — Etymologie, regionale Werte, pucca/kaccha.
+- `[R2·A1]` Tlalcuahuitl — Wikipedia — <https://en.wikipedia.org/wiki/Tlalcuahuitl> — aztekische Bruchteil-Einheiten.
+- `[R2·A2]` Mu (land) — Wikipedia — <https://en.wikipedia.org/wiki/Mu_(land)> — mu-Geschichte, 240-bu-Reform, moderne Werte.
+- `[R2·A1]` Stremma — Wikipedia — <https://en.wikipedia.org/wiki/Stremma> — byzantinisch/modern, Calque-Bezug zum Dunam.
+- `[R2·A1]` Dunam — Wikipedia — <https://en.wikipedia.org/wiki/Dunam> — dönmek-Etymologie, 1928-Standardisierung, politischer Kontext.
+- `[R2·A1]` Carucate — Wikipedia — <https://en.wikipedia.org/wiki/Carucate> — Pflugland, Domesday.
+- `[R2·A2]` Imperial units | History, Measurements, & Facts — Britannica — <https://www.britannica.com/topic/Imperial-unit> — imperiales System.
+- `[R2·A2]` Furlong — Wikipedia — <https://en.wikipedia.org/wiki/Furlong> — Furchenlänge, Chain-Erfindung.
+- `[R2·A2]` Oxgang — Wikipedia — <https://en.wikipedia.org/wiki/Oxgang> — Bovate/Virgate.
+- `[R2·A2]` Imperial and US customary measurement systems — Wikipedia — <https://en.wikipedia.org/wiki/Imperial_and_US_customary_measurement_systems> — Systemübersicht.
+- `[R2·A2]` Are | Definition & Facts — Britannica — <https://www.britannica.com/science/are> — Ar-Definition.
+- `[R2·A1]` Centuria (unit of measure) — Wikipedia — <https://en.wikipedia.org/wiki/Centuria_(unit_of_measure)> — römische Centuriation.
+- `[R2·A2]` Plethron — Wikipedia — <https://en.wikipedia.org/wiki/Plethron> — griechisches Pendant zum Acre.
+- `[R2·A2]` Ancient Greek units of measurement — Wikipedia — <https://en.wikipedia.org/wiki/Ancient_Greek_units_of_measurement> — plethron/aroura/stadion.
+- `[R2·A2]` Mou | History, Conversion & Usage — Britannica — <https://www.britannica.com/science/mou> — mu-Querprüfung.
+- `[R2·A2]` Feddan — Wikipedia — <https://en.wikipedia.org/wiki/Feddan> — faddān-Etymologie, 1830, Kirat-Teilung.
+- `[R2·A2]` Rai, ngan, and tarang wa — Wikipedia — <https://en.wikipedia.org/wiki/Rai,_ngan,_and_tarang_wa> — Sukhothai-Ursprung, 1923, Persistenz.
+- `[R2·A2]` Thai units of measurement — Wikipedia — <https://en.wikipedia.org/wiki/Thai_units_of_measurement> — Systemkontext.
+- `[R2·A1]` Morgen (Einheit) — Wikipedia (de) — <https://de.wikipedia.org/wiki/Morgen_(Einheit)> — regionale Werte, 1869-Standard.
+- `[R2·A1]` Tagewerk — Wikipedia (de) — <https://de.wikipedia.org/wiki/Tagewerk> — Etymologie, Schweizer Tagwan, Freskomalerei.
+- `[R2·A2]` Joch (Einheit) — Wikipedia (de) — <https://de.wikipedia.org/wiki/Joch_(Einheit)> — Joch/Juchart.
+- `[R2·A2]` Morgen — Wikipedia (en) — <https://en.wikipedia.org/wiki/Morgen> — Südafrika-Wert, Spannweite.
+- `[R2·A1]` Pyeong — Wikipedia — <https://en.wikipedia.org/wiki/Pyeong> — Kolonialgeschichte, Verbot, Alltagspersistenz.
+- `[R2·A2]` Dessiatin (Desyatina) — Wikipedia — <https://en.wikipedia.org/wiki/Dessiatin> — russisches Mass, 1925-Abschaffung.
+- `[R2·A2]` Public Land Survey System — Wikipedia — <https://en.wikipedia.org/wiki/Public_Land_Survey_System> — Township/Section/quarter section.
+- `[R2·A2]` French Revolutionary units — Wikipedia — <https://en.wikipedia.org/wiki/French_Revolutionary_units> — metrische Einführung.
+- `[R2·A2]` Japanese units of measurement — Wikipedia — <https://en.wikipedia.org/wiki/Japanese_units_of_measurement> — tsubo/tan/chō.
+- `[R2·A2]` Fanega — Wikipedia — <https://en.wikipedia.org/wiki/Fanega> — aussaatbasiertes Mass.
+- `[R2·A2]` Cuerda — Wikipedia — <https://en.wikipedia.org/wiki/Cuerda> — Puerto-Rico-Wert.
+- `[R2·A2]` Spanish customary units — Wikipedia — <https://en.wikipedia.org/wiki/Spanish_customary_units> — vara/manzana.
+- `[R2·A1]` God's Acre — Wikipedia — <https://en.wikipedia.org/wiki/God%27s_Acre> — Gottesacker, Herrnhuter.
+- `[R2·A2]` Forty acres and a mule — Wikipedia — <https://en.wikipedia.org/wiki/Forty_acres_and_a_mule> — Reconstruction-Idiom.
+- `[R2·A2]` Rod (unit) — Wikipedia — <https://en.wikipedia.org/wiki/Rod_(unit)> — perch/pole.
+- `[R2·A2]` Hide (unit) — Wikipedia — <https://en.wikipedia.org/wiki/Hide_(unit)> — terra unius familiae.
+- `[R2·A1]` Well-field system — Wikipedia — <https://en.wikipedia.org/wiki/Well-field_system> — jingtian, Mencius.
+- `[R2·A2]` Duodecimal — Wikipedia — <https://en.wikipedia.org/wiki/Duodecimal> — Teilbarkeit, Ifrah-Fingerzählung.
+- `[R2·A1]` Sexagesimal — Wikipedia — <https://en.wikipedia.org/wiki/Sexagesimal> — 60er-Teilbarkeit, Überleben in Zeit/Winkel.
+- `[R2·A1]` Pseudoscientific metrology — Wikipedia — <https://en.wikipedia.org/wiki/Pseudoscientific_metrology> — Mainstream-Kritik an Pyramiden-Zoll, Megalithic Yard, Stecchini (siehe S-Block unten).
+- `[R2·A3]` Megalithic yard — Wikipedia — <https://en.wikipedia.org/wiki/Megalithic_yard> — Kritik Ruggles/Heggie.
+- `[R2·A2]` Mile | Distance, Length, & Speed — Britannica — <https://www.britannica.com/science/mile> — statute mile, 1593.
+- `[R2·A2]` Mile — Wikipedia — <https://en.wikipedia.org/wiki/Mile> — mille passus, Furlong-Kompromiss.
+- `[R2·A2]` Muhammad Ali of Egypt — Wikipedia — <https://en.wikipedia.org/wiki/Muhammad_Ali_of_Egypt> — Reform-Kontext Feddan-Standardisierung 1830.
+- `[R2·A3]` Hectare | Britannica — <https://www.britannica.com/science/hectare> — Querprüfung Hektar.
+- `[R2·A3]` Are | Definition — Britannica — <https://www.britannica.com/science/are> — Querprüfung Ar.
+- `[R2·A3]` Mount Meru (Buddhism) — Wikipedia — <https://en.wikipedia.org/wiki/Mount_Meru_(Buddhism)> — sakrale Raumgeometrie (Kontext, nicht Mass).
+- `[R2·A3]` History of measurement systems in India — Wikipedia — <https://en.wikipedia.org/wiki/History_of_measurement_systems_in_India> — Kontext bigha.
+- `[R2·A3]` History of the metric system — Wikipedia — <https://en.wikipedia.org/wiki/History_of_the_metric_system> — Ent-Sakralisierung.
 
 **Seriös populär / Bildungsseiten (R3):**
-- `[R3·A1]` Imperial Measures of Area — theedkins.co.uk — https://www.theedkins.co.uk/jo/units/area.htm — Bildungsseite, vollständige imperiale Flächen-Faktoren.
-- `[R3·A1]` Bigha: Traditional Land Measurement Unit Explained — Aavas — https://www.aavas.in/blog/bigha — Finanz-Bildungsseite, regionale Bigha-Werte.
-- `[R3·A2]` Bigha, A Traditional Unit of Land Measurement — Vajiram & Ravi — https://vajiramandravi.com/current-affairs/bigha/ — Bildungsportal.
-- `[R3·A2]` Medieval field measurements — The History Jar — https://thehistoryjar.com/2020/07/22/medieval-field-measurements/ — Geschichts-Blog (sorgfältig).
-- `[R3·A2]` How the Ancient Greeks Pioneered Units of Measurement — GreekReporter — https://greekreporter.com/2026/04/09/ancient-greek-units-of-measurement/ — Qualitätsmedium.
-- `[R3·A2]` On idioms … „God's-Acre" — OUPblog (Oxford University Press) — https://blog.oup.com/2014/11/gods-acre-idiomatic-expression-origin/ — Verlagsblog OUP.
-- `[R3·A2]` Why we should use base 12 — ScienceABC — https://www.scienceabc.com/eyeopeners/why-we-should-already-use-base-12-instead-of-base-10 — populärwissenschaftlich.
-- `[R3·A2]` Acre — Etymonline — https://www.etymonline.com/word/acre — etymologische Referenz.
-- `[R3·A2]` acre — Wiktionary — https://en.wiktionary.org/wiki/acre — Etymologie.
-- `[R3·A2]` Ploughing with oxen and the size of the acre — Sizes — https://www.sizes.com/units/acre_dig2.htm — Mass-Referenzseite.
-- `[R3·A2]` jugerum — Sizes — https://www.sizes.com/units/jugerum.htm — Mass-Referenz.
-- `[R3·A3]` What is the unit called a feddan? — Sizes — https://www.sizes.com/units/feddan.htm — Fetch 403 blockiert, nur Snippet.
-- `[R3·A3]` What is the unit called a Morgen? — Sizes — https://www.sizes.com/units/morgen.htm — Mass-Referenz.
-- `[R3·A2]` What is the unit called a hide? — Sizes — https://www.sizes.com/units/hide.htm — Mass-Referenz.
-- `[R3·A1]` Bigha — wisdomlib.org — https://www.wisdomlib.org/definition/bigha — vigraha-Etymologie, Dharmasutra-Kontext.
-- `[R3·A2]` Tsubo — Japanese Wiki Corpus — https://www.japanesewiki.com/history/Tsubo... — tsubo = 2 Tatami.
-- `[R3·A3]` Land Measurement in Bihar — Bajaj Finserv — https://www.bajajfinserv.in/land-measurement-in-bihar — Finanz-Bildungsseite.
-- `[R3·A3]` Understanding Thai Land Measurements — Lakeside Property Pattaya — https://lakesidepropertypattaya.com/.../understanding-thai-land-measurements-rai-ngan-and-square-wah/ — Immobilien-Bildungsseite.
-- `[R3·A2]` How the French Revolution created the metric system — National Geographic — https://www.nationalgeographic.com/history/history-magazine/article/french-revolution-toppled-king-forged-metric-system — Qualitätsmedium.
-- `[R3·A2]` How Did the French Revolution Lead to the Metric System — Fluke — https://www.fluke.com/en-us/learn/blog/metrology/how-french-revolution-led-to-development-metric-system — Messtechnik-Hersteller-Bildungsblog.
-- `[R3·A2]` Why Did Sumerians Use the Sexagesimal System? — Nagaitoshiya — https://www.nagaitoshiya.com/en/2013/sexagesimal/ — Bildungs-Essay.
-- `[R3·A2]` Hide: Land to Support a Family — Brewminate — https://brewminate.com/.../hide-land-to-support-a-family-in-early-medieval-anglo-saxon-england/ — Geschichts-Magazin.
-- `[R3·A2]` Yoke — Bible Study Tools Dictionary — https://www.biblestudytools.com/dictionary/yoke/ — Bibel-Lexikon (tzemed).
-- `[R3·A2]` NETBible: Acre — https://classic.net.bible.org/dictionary.php?word=Acre — Bibel-Lexikon.
-- `[R3·A2]` King James Bible Dictionary — Yoke — https://kingjamesbibledictionary.com/Dictionary/yoke — Bibel-Lexikon.
-- `[R3·A2]` Yoke (unit of measurement) — Wikipedia — https://en.wikipedia.org/wiki/Yoke_(unit_of_measurement) — Joch-Mass-Übersicht.
-- `[R3·A3]` 1911 Encyclopædia Britannica/Morgen — Wikisource — https://en.wikisource.org/wiki/1911_Encyclop%C3%A6dia_Britannica/Morgen — historische Enzyklopädie.
-- `[R3·A3]` Hide — Encyclopædia Britannica 1911 (Wikisource) — https://en.wikisource.org/wiki/Page:EB1911_-_Volume_13.djvu/466 — historische Enzyklopädie.
-- `[R3·A3]` The Mythology of Mount Meru — ThaiCyclopedia — https://thaicyclopedia.com/the-mythology-of-mount-meru-the-cosmic-pillar-of-existence/ — Bildungsseite.
-- `[R3·A3]` Why is a Mile 5280 Feet? — Convert Feet To — https://convertfeetto.com/why-is-a-mile-5280-feet/ — Bildungs-/SEO-Seite.
-- `[R3·A2]` French Metric System: History, Units, and Everyday Uses — PCSM — https://www.pcsm-idf.fr/en/standards/french-metric-system/ — Bildungsseite.
-- `[R3·A3]` Units of area — EBSCO Research Starters — https://www.ebsco.com/research-starters/earth-and-atmospheric-sciences/units-area — Bildungsdatenbank.
-- `[R3·A3]` Measurements — University of Nottingham (Manuscripts & Special Collections) — https://www.nottingham.ac.uk/manuscriptsandspecialcollections/researchguidance/weightsandmeasures/measurements.aspx — universitäre Bildungsseite (Snippet).
-- `[R3·A3]` What Are the Imperial Units for Area? — House of Math — https://www.houseofmath.com/encyclopedia/.../what-are-the-imperial-units-for-area — Bildungsseite.
-- `[R3·A3]` US Customary Area — Maths Is Fun — https://www.mathsisfun.com/measure/us-standard-area.html — Bildungsseite.
+
+- `[R3·A1]` Imperial Measures of Area — theedkins.co.uk — <https://www.theedkins.co.uk/jo/units/area.htm> — Bildungsseite, vollständige imperiale Flächen-Faktoren.
+- `[R3·A1]` Bigha: Traditional Land Measurement Unit Explained — Aavas — <https://www.aavas.in/blog/bigha> — Finanz-Bildungsseite, regionale Bigha-Werte.
+- `[R3·A2]` Bigha, A Traditional Unit of Land Measurement — Vajiram & Ravi — <https://vajiramandravi.com/current-affairs/bigha/> — Bildungsportal.
+- `[R3·A2]` Medieval field measurements — The History Jar — <https://thehistoryjar.com/2020/07/22/medieval-field-measurements/> — Geschichts-Blog (sorgfältig).
+- `[R3·A2]` How the Ancient Greeks Pioneered Units of Measurement — GreekReporter — <https://greekreporter.com/2026/04/09/ancient-greek-units-of-measurement/> — Qualitätsmedium.
+- `[R3·A2]` On idioms … „God's-Acre" — OUPblog (Oxford University Press) — <https://blog.oup.com/2014/11/gods-acre-idiomatic-expression-origin/> — Verlagsblog OUP.
+- `[R3·A2]` Why we should use base 12 — ScienceABC — <https://www.scienceabc.com/eyeopeners/why-we-should-already-use-base-12-instead-of-base-10> — populärwissenschaftlich.
+- `[R3·A2]` Acre — Etymonline — <https://www.etymonline.com/word/acre> — etymologische Referenz.
+- `[R3·A2]` acre — Wiktionary — <https://en.wiktionary.org/wiki/acre> — Etymologie.
+- `[R3·A2]` Ploughing with oxen and the size of the acre — Sizes — <https://www.sizes.com/units/acre_dig2.htm> — Mass-Referenzseite.
+- `[R3·A2]` jugerum — Sizes — <https://www.sizes.com/units/jugerum.htm> — Mass-Referenz.
+- `[R3·A3]` What is the unit called a feddan? — Sizes — <https://www.sizes.com/units/feddan.htm> — Fetch 403 blockiert, nur Snippet.
+- `[R3·A3]` What is the unit called a Morgen? — Sizes — <https://www.sizes.com/units/morgen.htm> — Mass-Referenz.
+- `[R3·A2]` What is the unit called a hide? — Sizes — <https://www.sizes.com/units/hide.htm> — Mass-Referenz.
+- `[R3·A1]` Bigha — wisdomlib.org — <https://www.wisdomlib.org/definition/bigha> — vigraha-Etymologie, Dharmasutra-Kontext.
+- `[R3·A2]` Tsubo — Japanese Wiki Corpus — <https://www.japanesewiki.com/history/Tsubo>... — tsubo = 2 Tatami.
+- `[R3·A3]` Land Measurement in Bihar — Bajaj Finserv — <https://www.bajajfinserv.in/land-measurement-in-bihar> — Finanz-Bildungsseite.
+- `[R3·A3]` Understanding Thai Land Measurements — Lakeside Property Pattaya — <https://lakesidepropertypattaya.com/.../understanding-thai-land-measurements-rai-ngan-and-square-wah/> — Immobilien-Bildungsseite.
+- `[R3·A2]` How the French Revolution created the metric system — National Geographic — <https://www.nationalgeographic.com/history/history-magazine/article/french-revolution-toppled-king-forged-metric-system> — Qualitätsmedium.
+- `[R3·A2]` How Did the French Revolution Lead to the Metric System — Fluke — <https://www.fluke.com/en-us/learn/blog/metrology/how-french-revolution-led-to-development-metric-system> — Messtechnik-Hersteller-Bildungsblog.
+- `[R3·A2]` Why Did Sumerians Use the Sexagesimal System? — Nagaitoshiya — <https://www.nagaitoshiya.com/en/2013/sexagesimal/> — Bildungs-Essay.
+- `[R3·A2]` Hide: Land to Support a Family — Brewminate — <https://brewminate.com/.../hide-land-to-support-a-family-in-early-medieval-anglo-saxon-england/> — Geschichts-Magazin.
+- `[R3·A2]` Yoke — Bible Study Tools Dictionary — <https://www.biblestudytools.com/dictionary/yoke/> — Bibel-Lexikon (tzemed).
+- `[R3·A2]` NETBible: Acre — <https://classic.net.bible.org/dictionary.php?word=Acre> — Bibel-Lexikon.
+- `[R3·A2]` King James Bible Dictionary — Yoke — <https://kingjamesbibledictionary.com/Dictionary/yoke> — Bibel-Lexikon.
+- `[R3·A2]` Yoke (unit of measurement) — Wikipedia — <https://en.wikipedia.org/wiki/Yoke_(unit_of_measurement)> — Joch-Mass-Übersicht.
+- `[R3·A3]` 1911 Encyclopædia Britannica/Morgen — Wikisource — <https://en.wikisource.org/wiki/1911_Encyclop%C3%A6dia_Britannica/Morgen> — historische Enzyklopädie.
+- `[R3·A3]` Hide — Encyclopædia Britannica 1911 (Wikisource) — <https://en.wikisource.org/wiki/Page:EB1911_-_Volume_13.djvu/466> — historische Enzyklopädie.
+- `[R3·A3]` The Mythology of Mount Meru — ThaiCyclopedia — <https://thaicyclopedia.com/the-mythology-of-mount-meru-the-cosmic-pillar-of-existence/> — Bildungsseite.
+- `[R3·A3]` Why is a Mile 5280 Feet? — Convert Feet To — <https://convertfeetto.com/why-is-a-mile-5280-feet/> — Bildungs-/SEO-Seite.
+- `[R3·A2]` French Metric System: History, Units, and Everyday Uses — PCSM — <https://www.pcsm-idf.fr/en/standards/french-metric-system/> — Bildungsseite.
+- `[R3·A3]` Units of area — EBSCO Research Starters — <https://www.ebsco.com/research-starters/earth-and-atmospheric-sciences/units-area> — Bildungsdatenbank.
+- `[R3·A3]` Measurements — University of Nottingham (Manuscripts & Special Collections) — <https://www.nottingham.ac.uk/manuscriptsandspecialcollections/researchguidance/weightsandmeasures/measurements.aspx> — universitäre Bildungsseite (Snippet).
+- `[R3·A3]` What Are the Imperial Units for Area? — House of Math — <https://www.houseofmath.com/encyclopedia/.../what-are-the-imperial-units-for-area> — Bildungsseite.
+- `[R3·A3]` US Customary Area — Maths Is Fun — <https://www.mathsisfun.com/measure/us-standard-area.html> — Bildungsseite.
 - `[R3·A3]` Pakistan/Sri-Lanka-Koexistenz (in Acre-Wikipedia referenziert) — siehe Acre-Quelle oben.
 
 **Schwach (R4):**
-- `[R4·A2]` Mu, traditional Chinese unit — Baidu Baike (EN) — https://baike.baidu.com/en/item/Mu — nutzergeneriertes Lexikon.
-- `[R4·A3]` Geography and cartography in medieval Islam — Islam Wiki (Fandom) — https://islam.fandom.com/wiki/Geography_and_cartography_in_medieval_Islam — Fandom-Wiki.
-- `[R4·A3]` Understanding Ancient Egyptian Land Division — NuOrderTech — https://nuordertech.com/ancient-egyptian-land-division/ — Firmen-/SEO-Blog.
-- `[R4·A3]` Dozenal Divisibility Rules — Dozenal Society of America — https://dozenal.org/.../dozenal-divisibility-rules.html — Interessenverband (zur Sache aber sachkundig).
-- `[R4·A3]` jingtian zhi 井田制 — ChinaKnowledge — http://www.chinaknowledge.de/History/Terms/jingtian.html — Server nicht erreichbar (ECONNREFUSED), nicht gelesen.
-- `[R4·A2]` Jerib — Grokipedia — https://grokipedia.com/page/jerib — KI-generiert, ohne Peer-/Redaktion.
-- `[R4·A2]` Feddan — Grokipedia — https://grokipedia.com/page/Feddan — KI-generiert, Fetch 403 blockiert.
-- `[R4·A2]` Ancient Roman units of measurement — Grokipedia — https://grokipedia.com/page/Ancient_Roman_units_of_measurement — KI-generiert.
-- `[R4·A2]` Jugerum — Grokipedia — https://grokipedia.com/page/Jugerum — KI-generiert.
-- `[R4·A3]` Ancient Mesopotamian units — Grokipedia — https://grokipedia.com/page/Ancient_Mesopotamian_units_of_measurement — KI-generiert.
-- `[R4·A3]` Hectare — Grokipedia — https://grokipedia.com/page/Hectare — KI-generiert.
-- `[R4·A3]` Dunam — Grokipedia — https://grokipedia.com/page/Dunam — KI-generiert.
-- `[R4·A3]` feddan (UltimateLexicon) — https://ultimatelexicon.com/definitions/f/feddan/ — Fetch 404, nur Snippet.
+
+- `[R4·A2]` Mu, traditional Chinese unit — Baidu Baike (EN) — <https://baike.baidu.com/en/item/Mu> — nutzergeneriertes Lexikon.
+- `[R4·A3]` Geography and cartography in medieval Islam — Islam Wiki (Fandom) — <https://islam.fandom.com/wiki/Geography_and_cartography_in_medieval_Islam> — Fandom-Wiki.
+- `[R4·A3]` Understanding Ancient Egyptian Land Division — NuOrderTech — <https://nuordertech.com/ancient-egyptian-land-division/> — Firmen-/SEO-Blog.
+- `[R4·A3]` Dozenal Divisibility Rules — Dozenal Society of America — <https://dozenal.org/.../dozenal-divisibility-rules.html> — Interessenverband (zur Sache aber sachkundig).
+- `[R4·A3]` jingtian zhi 井田制 — ChinaKnowledge — <http://www.chinaknowledge.de/History/Terms/jingtian.html> — Server nicht erreichbar (ECONNREFUSED), nicht gelesen.
+- `[R4·A2]` Jerib — Grokipedia — <https://grokipedia.com/page/jerib> — KI-generiert, ohne Peer-/Redaktion.
+- `[R4·A2]` Feddan — Grokipedia — <https://grokipedia.com/page/Feddan> — KI-generiert, Fetch 403 blockiert.
+- `[R4·A2]` Ancient Roman units of measurement — Grokipedia — <https://grokipedia.com/page/Ancient_Roman_units_of_measurement> — KI-generiert.
+- `[R4·A2]` Jugerum — Grokipedia — <https://grokipedia.com/page/Jugerum> — KI-generiert.
+- `[R4·A3]` Ancient Mesopotamian units — Grokipedia — <https://grokipedia.com/page/Ancient_Mesopotamian_units_of_measurement> — KI-generiert.
+- `[R4·A3]` Hectare — Grokipedia — <https://grokipedia.com/page/Hectare> — KI-generiert.
+- `[R4·A3]` Dunam — Grokipedia — <https://grokipedia.com/page/Dunam> — KI-generiert.
+- `[R4·A3]` feddan (UltimateLexicon) — <https://ultimatelexicon.com/definitions/f/feddan/> — Fetch 404, nur Snippet.
 
 **Populärmedien zu Aztekenmathematik (R3, indirekt):**
-- `[R3·A3]` Aztec Math Used Hearts and Arrows — Scientific American — https://www.scientificamerican.com/article/aztec-math-uses-hearts-and-arrows/ — Qualitätsmedium, nur referenziert.
-- `[R3·A3]` How Aztecs Did the Math — Science/AAAS — https://www.science.org/content/article/how-aztecs-did-math — Wissenschaftsmedium, nur referenziert.
-- `[R3·A3]` 'Codex Corner': Aztec zero — Mexicolore — https://www.mexicolore.co.uk/aztecs/writing/codex-corner-aztec-zero — Bildungsseite, nur referenziert.
+
+- `[R3·A3]` Aztec Math Used Hearts and Arrows — Scientific American — <https://www.scientificamerican.com/article/aztec-math-uses-hearts-and-arrows/> — Qualitätsmedium, nur referenziert.
+- `[R3·A3]` How Aztecs Did the Math — Science/AAAS — <https://www.science.org/content/article/how-aztecs-did-math> — Wissenschaftsmedium, nur referenziert.
+- `[R3·A3]` 'Codex Corner': Aztec zero — Mexicolore — <https://www.mexicolore.co.uk/aztecs/writing/codex-corner-aztec-zero> — Bildungsseite, nur referenziert.
 
 **Spekulativ / pseudowissenschaftlich (S):**
-- `[R4S·A3]` The Integration of the Megalithic Yard — matrixofcreation.com — https://matrixofcreation.com/2022/06/16/the-integration-of-the-megalithic-yard/ — Befürworter-Seite des Megalithic Yard, selbst spekulativ.
-- `[R4S·A3]` Does the Ishango Bone Indicate Knowledge of the Base 12? — arXiv-Preprint — https://arxiv.org/pdf/1204.1019 — nicht peer-reviewter Preprint, spekulative Einzel-Interpretation.
+
+- `[R4S·A3]` The Integration of the Megalithic Yard — matrixofcreation.com — <https://matrixofcreation.com/2022/06/16/the-integration-of-the-megalithic-yard/> — Befürworter-Seite des Megalithic Yard, selbst spekulativ.
+- `[R4S·A3]` Does the Ishango Bone Indicate Knowledge of the Base 12? — arXiv-Preprint — <https://arxiv.org/pdf/1204.1019> — nicht peer-reviewter Preprint, spekulative Einzel-Interpretation.
 - `[R2S·A1]` (Gegen-Quelle) Pseudoscientific metrology — Wikipedia — siehe R2 oben — liefert die Mainstream-Widerlegung der pseudowissenschaftlichen Metrologie (Pyramiden-Zoll, Stecchini, Megalithic Yard).
 
 ### Verlässlichkeits-Hinweis

@@ -34,7 +34,7 @@ einmal durchlaufen. Eine Primzahl p mit dieser Eigenschaft heisst **full-reptend
 
 ## Selbst nachgerechnet: lange Division von 1/7 in Basis 12
 
-```
+```text
 Schritt 1: 1 × 12 = 12.  12 ÷ 7 = 1, Rest 5.   → Ziffer 1
 Schritt 2: 5 × 12 = 60.  60 ÷ 7 = 8, Rest 4.   → Ziffer 8
 Schritt 3: 4 × 12 = 48.  48 ÷ 7 = 6, Rest 6.   → Ziffer 6
@@ -47,7 +47,7 @@ Schritt 7: Rest wieder 1 → Periode endet, Länge 6
 Ergebnis: **1/7 = 0;186A35** (Periode 186A35, Länge 6 = 7 − 1). Maximal, weil 12 eine
 Primitivwurzel mod 7 ist:
 
-```
+```text
 12^1 ≡ 5,  12^2 ≡ 4,  12^3 ≡ 6,  12^4 ≡ 2,  12^5 ≡ 3,  12^6 ≡ 1  (mod 7)
 ```
 
@@ -60,7 +60,7 @@ Alle sechs Reste {1,…,6} kommen genau einmal vor — die Definition einer Prim
 Die Periode-Ziffern **186A35** bilden eine **zyklische Zahl**: multipliziert mit 1…6
 entstehen Rotationen derselben Ziffernfolge (alle Produkte verifiziert):
 
-```
+```text
 186A35 × 1 = 186A35      1/7 = 0;186A35
 186A35 × 2 = 35186A      2/7 = 0;35186A
 186A35 × 3 = 5186A3      3/7 = 0;5186A3
@@ -86,13 +86,13 @@ Teilt man die Periode einer full-reptend prime mit gerader Länge in der Mitte, 
 sich die Hälften zur höchsten Ziffer (Midy, 1836; gilt in jeder Basis, b^n − 1 statt
 10^n − 1):
 
-```
+```text
 186 + A35 = BBB        (246 + 1481 = 1727 = 12³ − 1)
 ```
 
 Erweiterter Midysatz, Zweierpakete (k = 2):
 
-```
+```text
 18 + 6A + 35 = BB      (20 + 82 + 41 = 143 = 12² − 1)
 ```
 
@@ -252,48 +252,48 @@ Referenz) · **R3** (seriös populär) · **R4** (schwach); Zugang **A1** (Vollt
 ### Zahlentheorie (R1–R2)
 
 - **[R2·A1]** Full reptend prime — Wikipedia (en) —
-  https://en.wikipedia.org/wiki/Full_reptend_prime — Definition, Äquivalenz mit
+  <https://en.wikipedia.org/wiki/Full_reptend_prime> — Definition, Äquivalenz mit
   Primitivwurzel, Periode = p−1, Basis-12-Endziffer 5/7, OEIS A019340, Artin.
 - **[R2·A1]** Cyclic number — Wikipedia (en) —
-  https://en.wikipedia.org/wiki/Cyclic_number — Formel (b^(p−1)−1)/p,
+  <https://en.wikipedia.org/wiki/Cyclic_number> — Formel (b^(p−1)−1)/p,
   Multiplikationseigenschaft, 142857, Basis-12-Beispiele 2497 und 186A35.
-- **[R2·A1]** 142857 — Wikipedia (en) — https://en.wikipedia.org/wiki/142857 —
+- **[R2·A1]** 142857 — Wikipedia (en) — <https://en.wikipedia.org/wiki/142857> —
   Rotationen, ×7 = 999999, 142 + 857 = 999.
 - **[R2·A1]** Midy's theorem — Wikipedia (en) —
-  https://en.wikipedia.org/wiki/Midy%27s_theorem — Satz, Basis-b-Verallgemeinerung,
+  <https://en.wikipedia.org/wiki/Midy%27s_theorem> — Satz, Basis-b-Verallgemeinerung,
   erweiterter Midysatz, Midy 1836.
 - **[R2·A1]** Multiplicative order — Wikipedia (en) —
-  https://en.wikipedia.org/wiki/Multiplicative_order — ord_n(a), Teilbarkeit durch φ(n).
+  <https://en.wikipedia.org/wiki/Multiplicative_order> — ord_n(a), Teilbarkeit durch φ(n).
 - **[R2·A1]** Primitive root modulo n — Wikipedia (en) —
-  https://en.wikipedia.org/wiki/Primitive_root_modulo_n — Definition, Gauss 1801.
+  <https://en.wikipedia.org/wiki/Primitive_root_modulo_n> — Definition, Gauss 1801.
 - **[R2·A1]** Artin's conjecture on primitive roots — Wikipedia (en) —
-  https://en.wikipedia.org/wiki/Artin%27s_conjecture_on_primitive_roots — C ≈ 0,3739558,
+  <https://en.wikipedia.org/wiki/Artin%27s_conjecture_on_primitive_roots> — C ≈ 0,3739558,
   Hooley 1967 (GRH), Heath-Brown 1986, Status offen.
 - **[R2·A1]** Repeating decimal — Wikipedia (en) —
-  https://en.wikipedia.org/wiki/Repeating_decimal — Periodenlänge = ord_b(p), Fermat.
+  <https://en.wikipedia.org/wiki/Repeating_decimal> — Periodenlänge = ord_b(p), Fermat.
 - **[R1·A2]** Keith Conrad, »Orders of Units in Modular Arithmetic« (UConn) —
-  https://kconrad.math.uconn.edu/blurbs/ugradnumthy/ordersmodm.pdf — Vollbeweis
+  <https://kconrad.math.uconn.edu/blurbs/ugradnumthy/ordersmodm.pdf> — Vollbeweis
   Periodenlänge = ord_b(p); PDF binär, Inhalt über Snippet/Quellenkenntnis.
 - **[R1·A2]** Lewittes & Leschiner, »Midy's Theorem for Periodic Decimals«
-  (arXiv:math/0605182, 2006) — https://arxiv.org/pdf/math/0605182 — Basis-b-
+  (arXiv:math/0605182, 2006) — <https://arxiv.org/pdf/math/0605182> — Basis-b-
   Verallgemeinerung; PDF binär, über Abstract/Snippet abgesichert.
 - **[R1·A3]** Moree, »Artin's Primitive Root Conjecture — a survey«
   (arXiv:math/0412262) — Gauss-Kontext, Artin-Konstante, offenes Problem (indirekt).
 
 ### Dozenal-spezifisch & Folgen (R2–R3)
 
-- **[R2·A1]** Duodecimal — Wikipedia (en) — https://en.wikipedia.org/wiki/Duodecimal —
+- **[R2·A1]** Duodecimal — Wikipedia (en) — <https://en.wikipedia.org/wiki/Duodecimal> —
   Periodentabelle Basis 12, explizit 1/7 = 0;186A35.
 - **[R2·A1]** Zyklische Zahl / Lange Primzahl — Wikipedia (de) —
-  https://de.wikipedia.org/wiki/Zyklische_Zahl ·
-  https://de.wikipedia.org/wiki/Lange_Primzahl — deutsche Terminologie (Conway/Guy),
+  <https://de.wikipedia.org/wiki/Zyklische_Zahl> ·
+  <https://de.wikipedia.org/wiki/Lange_Primzahl> — deutsche Terminologie (Conway/Guy),
   186A35, Artin-Konstante.
-- **[R2·A2]** OEIS A019340 — Primes with primitive root 12 — https://oeis.org/A019340 —
+- **[R2·A2]** OEIS A019340 — Primes with primitive root 12 — <https://oeis.org/A019340> —
   full-reptend primes Basis 12; Server 403, Erstglieder über HandWiki gesichert.
-- **[R3·A2]** OEIS A246489 — Duodecimal period of 1/(n-ter Prim) — https://oeis.org/A246489 —
+- **[R3·A2]** OEIS A246489 — Duodecimal period of 1/(n-ter Prim) — <https://oeis.org/A246489> —
   bestätigt Periodenlängen (p=5:4; 7:6; 11:1; 13:2; 17:16; 19:6; 23:11; 29:4; 31:30); 403,
   über Snippet bestätigt.
-- **[R3·A2]** Full-reptend prime — HandWiki — https://handwiki.org/wiki/Full_reptend_prime —
+- **[R3·A2]** Full-reptend prime — HandWiki — <https://handwiki.org/wiki/Full_reptend_prime> —
   bestätigt Endziffer-5/7 und Basis-12-Liste; enthielt irreführende »no such prime«-
   Formulierung (im Dossier korrigiert).
 
@@ -310,4 +310,5 @@ Referenz) · **R3** (seriös populär) · **R4** (schwach); Zugang **A1** (Vollt
   Midy 186 + A35 = BBB und 18 + 6A + 35 = BB; full-reptend-Liste bis 200; Python/BigInt,
   für dieses Dossier reproduzierbar nachgerechnet. Werte stimmen mit OEIS A246489 überein.
 </content>
+
 </invoke>

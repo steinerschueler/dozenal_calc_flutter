@@ -251,60 +251,60 @@ Bewertung nach zwei Achsen. **Zuverlässigkeit:** R1 = wissenschaftlich/primär,
 
 ### Etymologie (elf, zwölf, dreizehn, Dutzend, Gros)
 
-- [R2·A1] Eleven — Etymology, Origin & Meaning (Etymonline) — https://www.etymonline.com/word/eleven — etablierte etymologische Referenz; Wurzel *\*leikʷ-* ohne Hedging als gesichert dargestellt.
-- [R2·A1] Twelve — Etymology, Origin & Meaning (Etymonline) — https://www.etymonline.com/word/twelve — wie oben; Kognatenliste vollständig.
-- [R2·A1] Thirteen — Etymology (Etymonline) — https://www.etymonline.com/word/thirteen — Beleg für das regelmässige „-zehn/-teen"-Muster ab 13.
-- [R3·A1] Oneteen, twoteen? The origins of 'eleven' and 'twelve' (Danny Bate) — https://dannybate.com/2024/11/30/oneteen-twoteen-the-origins-of-eleven-and-twelve/ — Fachblog eines Linguisten; nennt die alternative Wurzel *\*līban-* und markiert die Häufigkeits-These ausdrücklich als unsicher. Die vorsichtigste Quelle.
-- [R2·A1] Dutzend (DWDS) — https://www.dwds.de/wb/Dutzend — Datierung der Entlehnung (14. Jh.) und des auslautenden -d (15. Jh.).
-- [R2·A1] Dozen (Wikipedia, en) — https://en.wikipedia.org/wiki/Dozen — Gros = 144, Grossgros = 1.728, „small gross / great hundred" = 120.
-- [R2·A1] Gros (Wikipedia, de) — https://de.wikipedia.org/wiki/Gros — Etymologie *grossus*, „grosses Gros" = 1.728, regionale Namen.
-- [R2·A2] -teen — Etymology of the Suffix (Etymonline) — https://www.etymonline.com/word/-teen — nur indirekt herangezogen.
-- [R3·A3] Why is 12 of Something Called „a Dozen"? (Mental Floss) — https://www.mentalfloss.com/language/words/why-is-12-called-a-dozen — populäre Bestätigung des duodecim-Wegs.
-- [R4·A3] Ever Wondered Why 11 and 12 Aren't Part of the Teens? (Reader's Digest) — https://www.rd.com/article/teen-numbers/ — populär, niedrige Tiefe.
-- [R4·A3] Why Do We Say „Eleven" and „Twelve"… (IFLScience) — https://www.iflscience.com/why-do-we-say-eleven-and-twelve-instead-of-oneteen-and-twoteen-79572 — populär; liest die Sonderform teils als Zwölfer-Indiz (mit Vorsicht zu lesen).
+- [R2·A1] Eleven — Etymology, Origin & Meaning (Etymonline) — <https://www.etymonline.com/word/eleven> — etablierte etymologische Referenz; Wurzel *\*leikʷ-* ohne Hedging als gesichert dargestellt.
+- [R2·A1] Twelve — Etymology, Origin & Meaning (Etymonline) — <https://www.etymonline.com/word/twelve> — wie oben; Kognatenliste vollständig.
+- [R2·A1] Thirteen — Etymology (Etymonline) — <https://www.etymonline.com/word/thirteen> — Beleg für das regelmässige „-zehn/-teen"-Muster ab 13.
+- [R3·A1] Oneteen, twoteen? The origins of 'eleven' and 'twelve' (Danny Bate) — <https://dannybate.com/2024/11/30/oneteen-twoteen-the-origins-of-eleven-and-twelve/> — Fachblog eines Linguisten; nennt die alternative Wurzel *\*līban-* und markiert die Häufigkeits-These ausdrücklich als unsicher. Die vorsichtigste Quelle.
+- [R2·A1] Dutzend (DWDS) — <https://www.dwds.de/wb/Dutzend> — Datierung der Entlehnung (14. Jh.) und des auslautenden -d (15. Jh.).
+- [R2·A1] Dozen (Wikipedia, en) — <https://en.wikipedia.org/wiki/Dozen> — Gros = 144, Grossgros = 1.728, „small gross / great hundred" = 120.
+- [R2·A1] Gros (Wikipedia, de) — <https://de.wikipedia.org/wiki/Gros> — Etymologie *grossus*, „grosses Gros" = 1.728, regionale Namen.
+- [R2·A2] -teen — Etymology of the Suffix (Etymonline) — <https://www.etymonline.com/word/-teen> — nur indirekt herangezogen.
+- [R3·A3] Why is 12 of Something Called „a Dozen"? (Mental Floss) — <https://www.mentalfloss.com/language/words/why-is-12-called-a-dozen> — populäre Bestätigung des duodecim-Wegs.
+- [R4·A3] Ever Wondered Why 11 and 12 Aren't Part of the Teens? (Reader's Digest) — <https://www.rd.com/article/teen-numbers/> — populär, niedrige Tiefe.
+- [R4·A3] Why Do We Say „Eleven" and „Twelve"… (IFLScience) — <https://www.iflscience.com/why-do-we-say-eleven-and-twelve-instead-of-oneteen-and-twoteen-79572> — populär; liest die Sonderform teils als Zwölfer-Indiz (mit Vorsicht zu lesen).
 
 ### Duodezimal- und Sexagesimal-Systeme, Fingerglied-Zählung
 
-- [R2·A1] Duodecimal (Wikipedia, en) — https://en.wikipedia.org/wiki/Duodecimal — zentrale Quelle: Ifrah-These (ausdrücklich „speculatively"), Phalangen-Zählung, Sprachen mit Basis 12 (Janji, Chepang u. a.), 12 = 2²×3, terminierende Brüche, Daten der Basis-12-Gesellschaften.
-- [R1·A3] Theories on the Origins of the Sexagesimal System (Y. Shane Wang, MAA, PDF) — https://old.maa.org/sites/default/files/images/upload_library/46/HOMSIGMAA/2024-Y_Shane_Wang.pdf — wissenschaftlicher Überblick über die konkurrierenden Hypothesen zur Basis 60.
-- [R2·A1] Sexagesimal (Wikipedia, en) — https://en.wikipedia.org/wiki/Sexagesimal — sumerisch-babylonischer Ursprung, zwölf Teiler von 60; betont, dass die Ursprünge nicht einheitlich/punktuell sind; führt die Fingerglied-Theorie nicht an.
-- [R2·A3] Babylonian numerals (MacTutor) — https://mathshistory.st-andrews.ac.uk/HistTopics/Babylonian_numerals/ — etablierte mathematikhistorische Referenz zur Basis 60.
-- [R3·A1] How 10 Fingers Became 12 Hours (EarthDate) — https://www.earthdate.org/episodes/how-10-fingers-became-12-hours — populärwissenschaftlich, aber sauber: 12 Segmente → 60, ägyptische 12-Stunden-Teilung, 360°.
-- [R2·A3] Finger-counting (Wikipedia, en) — https://en.wikipedia.org/wiki/Finger-counting — Regionenliste der Daumen-an-Glied-Technik, Daumen als Zeiger.
-- [R3·A3] Why Did Sumerians Use the Sexagesimal System? (Nagaitoshiya) — https://www.nagaitoshiya.com/en/2013/sexagesimal/ — asiatische Verbreitung der Fingerglied-Zählung.
-- [R4·A3] Counting on fingers leads naturally also to base-60 (k2p blog) — https://ktwop.com/2017/08/19/counting-on-fingers-leads-naturally-also-to-base-60/ — Blog; 12 × 5 = 60-Mechanik.
-- [S·A3] Does the Ishango Bone Indicate Knowledge of the Base 12? (arXiv 1204.1019) — https://arxiv.org/pdf/1204.1019 — prähistorische Basis-12-Spekulation, mit grosser Vorsicht zu zitieren.
+- [R2·A1] Duodecimal (Wikipedia, en) — <https://en.wikipedia.org/wiki/Duodecimal> — zentrale Quelle: Ifrah-These (ausdrücklich „speculatively"), Phalangen-Zählung, Sprachen mit Basis 12 (Janji, Chepang u. a.), 12 = 2²×3, terminierende Brüche, Daten der Basis-12-Gesellschaften.
+- [R1·A3] Theories on the Origins of the Sexagesimal System (Y. Shane Wang, MAA, PDF) — <https://old.maa.org/sites/default/files/images/upload_library/46/HOMSIGMAA/2024-Y_Shane_Wang.pdf> — wissenschaftlicher Überblick über die konkurrierenden Hypothesen zur Basis 60.
+- [R2·A1] Sexagesimal (Wikipedia, en) — <https://en.wikipedia.org/wiki/Sexagesimal> — sumerisch-babylonischer Ursprung, zwölf Teiler von 60; betont, dass die Ursprünge nicht einheitlich/punktuell sind; führt die Fingerglied-Theorie nicht an.
+- [R2·A3] Babylonian numerals (MacTutor) — <https://mathshistory.st-andrews.ac.uk/HistTopics/Babylonian_numerals/> — etablierte mathematikhistorische Referenz zur Basis 60.
+- [R3·A1] How 10 Fingers Became 12 Hours (EarthDate) — <https://www.earthdate.org/episodes/how-10-fingers-became-12-hours> — populärwissenschaftlich, aber sauber: 12 Segmente → 60, ägyptische 12-Stunden-Teilung, 360°.
+- [R2·A3] Finger-counting (Wikipedia, en) — <https://en.wikipedia.org/wiki/Finger-counting> — Regionenliste der Daumen-an-Glied-Technik, Daumen als Zeiger.
+- [R3·A3] Why Did Sumerians Use the Sexagesimal System? (Nagaitoshiya) — <https://www.nagaitoshiya.com/en/2013/sexagesimal/> — asiatische Verbreitung der Fingerglied-Zählung.
+- [R4·A3] Counting on fingers leads naturally also to base-60 (k2p blog) — <https://ktwop.com/2017/08/19/counting-on-fingers-leads-naturally-also-to-base-60/> — Blog; 12 × 5 = 60-Mechanik.
+- [S·A3] Does the Ishango Bone Indicate Knowledge of the Base 12? (arXiv 1204.1019) — <https://arxiv.org/pdf/1204.1019> — prähistorische Basis-12-Spekulation, mit grosser Vorsicht zu zitieren.
 - [R3·A3] Georges Ifrah, The Universal History of Numbers — Primärquelle der Fingerglied-These; nur sekundär referiert, kein Volltext.
 
 ### Vigesimal-Systeme (Französisch, Dänisch u. a.)
 
-- [R2·A1] Vigesimal (Wikipedia, en) — https://en.wikipedia.org/wiki/Vigesimal — Französisch, Dänisch, Keltisch, lateinische Etymologie; stellt ausdrücklich klar, dass Dänisch „nicht vigesimal" im strengen Sinn ist.
-- [R3·A1] Who gave Denmark its insanely complex numbering system? (The Local DK) — https://www.thelocal.dk/20210630/who-gave-denmark-its-insanely-complex-numbering-system — Datierung (vor ~1300 dezimal, Flensburger Stadtrecht ~1300), eigenständige mittelalterliche Innovation.
-- [R2·A2] Appendix:Danish numerals (Wiktionary) — https://en.wiktionary.org/wiki/Appendix:Danish_numerals — Aufschlüsselung 50/60/70/80/90.
-- [R3·A3] How did the French end up with their 'crazy' numbers? (The Local FR) — https://www.thelocal.fr/20190320/so-how-did-the-french-end-up-with-their-crazy-numbers — keltische Substrat-Spur, Vennemann-These (nur Snippet).
-- [R4·A3] The Vigesimal Origin / Why French Numbers Use Base-20 (numbersinfrench.com) — https://numbersinfrench.com/history/ — SEO-nahe Seite; Grundfakten zu *quatre-vingts*.
+- [R2·A1] Vigesimal (Wikipedia, en) — <https://en.wikipedia.org/wiki/Vigesimal> — Französisch, Dänisch, Keltisch, lateinische Etymologie; stellt ausdrücklich klar, dass Dänisch „nicht vigesimal" im strengen Sinn ist.
+- [R3·A1] Who gave Denmark its insanely complex numbering system? (The Local DK) — <https://www.thelocal.dk/20210630/who-gave-denmark-its-insanely-complex-numbering-system> — Datierung (vor ~1300 dezimal, Flensburger Stadtrecht ~1300), eigenständige mittelalterliche Innovation.
+- [R2·A2] Appendix:Danish numerals (Wiktionary) — <https://en.wiktionary.org/wiki/Appendix:Danish_numerals> — Aufschlüsselung 50/60/70/80/90.
+- [R3·A3] How did the French end up with their 'crazy' numbers? (The Local FR) — <https://www.thelocal.fr/20190320/so-how-did-the-french-end-up-with-their-crazy-numbers> — keltische Substrat-Spur, Vennemann-These (nur Snippet).
+- [R4·A3] The Vigesimal Origin / Why French Numbers Use Base-20 (numbersinfrench.com) — <https://numbersinfrench.com/history/> — SEO-nahe Seite; Grundfakten zu *quatre-vingts*.
 - [S·A3] Theo Vennemann, Vasconic-Substrat-Hypothese — nur sekundär referiert; umstrittene Minderheitsposition, kein Konsens.
 
 ### Redewendungen
 
-- [R2·A2] Baker's dozen origin (Word Histories) — https://wordhistories.net/2017/08/23/bakers-dozen-origin/ — saubere Erstbeleg-Datierung; warnt vor Detail-Anekdoten.
-- [R3·A3] Why Is a Baker's Dozen 13? (Britannica) — https://www.britannica.com/story/why-is-a-bakers-dozen-13 — Assize of Bread and Ale, Standard-Erklärung.
-- [R3·A3] Baker's dozen (The Phrase Finder) — https://www.phrases.org.uk/meanings/Bakers-dozen.html — Bedeutung und Herkunft.
-- [R3·A3] Nineteen to the dozen (World Wide Words, Michael Quinion) — https://www.worldwidewords.org/qa-nin2.html — seriöse Wortgeschichte; markiert die „19"-Herkunft als ungeklärt.
-- [R2·A3] Daily dozen (Merriam-Webster) — https://www.merriam-webster.com/dictionary/daily%20dozen — Walter-Camp-Herkunft.
-- [R3·A3] A Dime a Dozen (Grammarist / Wikipedia) — https://grammarist.com/idiom/a-dime-a-dozen/ — Datierung und Bedeutungswandel.
-- [R4·A3] Talk Nineteen to the Dozen (Idioms Online) — https://www.idioms.online/talk-nineteen-to-the-dozen/ — populär, niedrige Tiefe.
+- [R2·A2] Baker's dozen origin (Word Histories) — <https://wordhistories.net/2017/08/23/bakers-dozen-origin/> — saubere Erstbeleg-Datierung; warnt vor Detail-Anekdoten.
+- [R3·A3] Why Is a Baker's Dozen 13? (Britannica) — <https://www.britannica.com/story/why-is-a-bakers-dozen-13> — Assize of Bread and Ale, Standard-Erklärung.
+- [R3·A3] Baker's dozen (The Phrase Finder) — <https://www.phrases.org.uk/meanings/Bakers-dozen.html> — Bedeutung und Herkunft.
+- [R3·A3] Nineteen to the dozen (World Wide Words, Michael Quinion) — <https://www.worldwidewords.org/qa-nin2.html> — seriöse Wortgeschichte; markiert die „19"-Herkunft als ungeklärt.
+- [R2·A3] Daily dozen (Merriam-Webster) — <https://www.merriam-webster.com/dictionary/daily%20dozen> — Walter-Camp-Herkunft.
+- [R3·A3] A Dime a Dozen (Grammarist / Wikipedia) — <https://grammarist.com/idiom/a-dime-a-dozen/> — Datierung und Bedeutungswandel.
+- [R4·A3] Talk Nineteen to the Dozen (Idioms Online) — <https://www.idioms.online/talk-nineteen-to-the-dozen/> — populär, niedrige Tiefe.
 
 ### Symbolik der Zwölf (kritisch zu lesen)
 
-- [S·A3] The Divine Number 12: 12 Gods, 12 Disciples, 12 Tribes and the Zodiac (humanreligions.info) — https://www.humanreligions.info/twelve.html — Meinungsseite; Einzelfakten brauchbar, Gesamtdeutung interpretativ.
-- [S·A3] The Number 12 — An Exploration across Cultures (Pragyata) — https://pragyata.com/the-number-12-an-exploration-across-cultures/ — weltanschaulich gefärbt; nur für Einzelfakten.
-- [S·A3] Number 12 in the Bible (deluxeastrology) — https://deluxeastrology.com/blog/biblical-significance-of-number-12/ — astrologisch; liefert die sechs Teiler korrekt, sonst mit Vorsicht.
+- [S·A3] The Divine Number 12: 12 Gods, 12 Disciples, 12 Tribes and the Zodiac (humanreligions.info) — <https://www.humanreligions.info/twelve.html> — Meinungsseite; Einzelfakten brauchbar, Gesamtdeutung interpretativ.
+- [S·A3] The Number 12 — An Exploration across Cultures (Pragyata) — <https://pragyata.com/the-number-12-an-exploration-across-cultures/> — weltanschaulich gefärbt; nur für Einzelfakten.
+- [S·A3] Number 12 in the Bible (deluxeastrology) — <https://deluxeastrology.com/blog/biblical-significance-of-number-12/> — astrologisch; liefert die sechs Teiler korrekt, sonst mit Vorsicht.
 
 ### Musik-Kontext (12-Ton-Stimmung)
 
-- [R2·A2] 12 equal temperament (Wikipedia, en) — https://en.wikipedia.org/wiki/12_equal_temperament — bestätigt: die Zwölfteilung der Oktave ist Konvention, nicht naturgegeben (Erstdruck der exakten Lösung in China, Zhu Zaiyu).
+- [R2·A2] 12 equal temperament (Wikipedia, en) — <https://en.wikipedia.org/wiki/12_equal_temperament> — bestätigt: die Zwölfteilung der Oktave ist Konvention, nicht naturgegeben (Erstdruck der exakten Lösung in China, Zhu Zaiyu).
 
 ### Weitere Zähl-/Mengenmasse
 
-- [R3·A2] Schock (Wiktionary / DWDS) — https://de.wiktionary.org/wiki/Schock — Schock = 60 = fünf Dutzend, seit dem 13. Jh. belegt; Etymologie ungeklärt.
+- [R3·A2] Schock (Wiktionary / DWDS) — <https://de.wiktionary.org/wiki/Schock> — Schock = 60 = fünf Dutzend, seit dem 13. Jh. belegt; Etymologie ungeklärt.

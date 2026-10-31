@@ -8,6 +8,7 @@ Aus dem früheren Gesamtdokument übernommen. Verweise wie «oben» oder «siehe
 `info_pages.dart` (Navigator-Routen + reine Routing-Logik der `InfoListPage`).
 Der eigentliche Inhalt liegt in drei Bäumen (plus `lib/recommendations/`,
 eigener Abschnitt unten):
+
 - **`lib/theory/`** — der Theorie-Stoff. `theory_blocks.dart` baut über
   `theoryBlocks(l, langTag)` die vier Blöcke (Grundlagen, Zwölf und die Welt,
   Dozenale Mathematik, Dozenale Gesellschaft) aus `TheoryChapterRef`-Prosa-
@@ -38,6 +39,7 @@ der `_chapter<Lang>`-Funktion ist vollständig hierher migriert und existiert
 nicht mehr.
 
 **Layout der Info-Liste** (`InfoListPage`) — seit dem Texte-Umbau:
+
 1. „Bedienung des Hauptrechners" (`chapterTitle01`) — Handbuch-
    Expansion (`_ManualSectionExpansion`, parametrisiert statt
    dupliziert): App-Hilfe, kein Theorie-Stoff.

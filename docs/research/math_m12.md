@@ -143,24 +143,28 @@ behandelt Raumsymmetrie (Ikosaedergruppe), nicht M₁₂.
 Zuverlässigkeit **R1**/**R2**/**R3**; Zugang **A1**/**A2**/**A3**.
 
 ### Gruppen & Steiner-Systeme (R1–R2)
-- **[R2·A1]** Mathieu group M12 — Wikipedia — https://en.wikipedia.org/wiki/Mathieu_group_M12 — |M₁₂|=95040, scharf 5-transitiv, Aut(S(5,6,12)), M₁₁-Stabilisator.
-- **[R2·A1]** Mathieu group — Wikipedia — https://en.wikipedia.org/wiki/Mathieu_group — fünf Mathieu-Gruppen, Mathieu 1861/1873, Witt 1938, Miller-Zweifel.
-- **[R2·A1]** Steiner system — Wikipedia — https://en.wikipedia.org/wiki/Steiner_system — S(t,k,n), S(5,6,12) 132 Hexaden, Eindeutigkeit, Aut = M₁₂.
-- **[R2·A1]** Sporadic group — Wikipedia — https://en.wikipedia.org/wiki/Sporadic_group — 26 sporadische Gruppen, Mathieu erste Generation, Monster.
-- **[R2·A1]** Multiply transitive group / Jordan — Wikipedia — https://en.wikipedia.org/wiki/Multiply_transitive_group — scharf k-transitiv, Jordan-Klassifikation (nur M₁₁, M₁₂ als Ausnahmen).
-- **[R2·A1]** Classification of finite simple groups — Wikipedia — https://en.wikipedia.org/wiki/Classification_of_finite_simple_groups — Umfang, Abschluss ~2004.
+
+- **[R2·A1]** Mathieu group M12 — Wikipedia — <https://en.wikipedia.org/wiki/Mathieu_group_M12> — |M₁₂|=95040, scharf 5-transitiv, Aut(S(5,6,12)), M₁₁-Stabilisator.
+- **[R2·A1]** Mathieu group — Wikipedia — <https://en.wikipedia.org/wiki/Mathieu_group> — fünf Mathieu-Gruppen, Mathieu 1861/1873, Witt 1938, Miller-Zweifel.
+- **[R2·A1]** Steiner system — Wikipedia — <https://en.wikipedia.org/wiki/Steiner_system> — S(t,k,n), S(5,6,12) 132 Hexaden, Eindeutigkeit, Aut = M₁₂.
+- **[R2·A1]** Sporadic group — Wikipedia — <https://en.wikipedia.org/wiki/Sporadic_group> — 26 sporadische Gruppen, Mathieu erste Generation, Monster.
+- **[R2·A1]** Multiply transitive group / Jordan — Wikipedia — <https://en.wikipedia.org/wiki/Multiply_transitive_group> — scharf k-transitiv, Jordan-Klassifikation (nur M₁₁, M₁₂ als Ausnahmen).
+- **[R2·A1]** Classification of finite simple groups — Wikipedia — <https://en.wikipedia.org/wiki/Classification_of_finite_simple_groups> — Umfang, Abschluss ~2004.
 - **[R2·A2]** Conway & Sloane, *Sphere Packings, Lattices and Groups* (SPLAG) — Mathieu-Gruppen, Golay-Code, Standardreferenz; Paywall/Bibliothek.
 
 ### Geschichte (R2)
-- **[R2·A1]** Émile Mathieu — Wikipedia / MacTutor — https://en.wikipedia.org/wiki/%C3%89mile_L%C3%A9onard_Mathieu — Leben, 1861/1873.
-- **[R2·A1]** Ernst Witt — Wikipedia — https://en.wikipedia.org/wiki/Ernst_Witt — Witt 1938, Konstruktion via Steiner-Systeme.
+
+- **[R2·A1]** Émile Mathieu — Wikipedia / MacTutor — <https://en.wikipedia.org/wiki/%C3%89mile_L%C3%A9onard_Mathieu> — Leben, 1861/1873.
+- **[R2·A1]** Ernst Witt — Wikipedia — <https://en.wikipedia.org/wiki/Ernst_Witt> — Witt 1938, Konstruktion via Steiner-Systeme.
 
 ### Nische (R2–R3)
+
 - **[R3·A1]** Mathematical blackjack / MINIMOG — yetanothermathblog + SageMath-Doku — Conway, Curtis 1984, Conway & Ryba; Spielregeln aus Hexaden.
 - **[R3·A2]** Mongean shuffle generiert M₁₂ — mehrere Quellen, als „berichtet" geführt (nicht selbst verifiziert).
-- **[R2·A2]** Ternary Golay code — Wikipedia — https://en.wikipedia.org/wiki/Ternary_Golay_code — Verbindung zu M₁₂.
+- **[R2·A2]** Ternary Golay code — Wikipedia — <https://en.wikipedia.org/wiki/Ternary_Golay_code> — Verbindung zu M₁₂.
 
 ### Eigene Verifikation (R1·A1)
+
 - Python/Bash: C(12,5)=792, C(6,5)=6 → 132 Hexaden; |M₁₂|=12·11·10·9·8=95040=2⁶·3³·5·11;
   Basis 12: 95040=47000, 132=B0; Index 12!/95040 = 5040 = 7!; |M₁₁|=7920. Reproduzierbar.
 </content>

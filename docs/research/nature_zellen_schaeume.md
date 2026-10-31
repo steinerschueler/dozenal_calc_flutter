@@ -165,75 +165,76 @@ Bewertung nach Zuverlässigkeit (R1 = primär/wissenschaftlich, R2 = etablierte 
 
 ### Plateaus Gesetze und Grundlagen
 
-- [R2·A1] Plateau's laws — Wikipedia — https://en.wikipedia.org/wiki/Plateau%27s_laws — Volltext gelesen; Winkel 120°/109,47° und Taylor-1976-Beweis bestätigt.
-- [R2·A1] Joseph Plateau — Wikipedia — https://en.wikipedia.org/wiki/Joseph_Plateau — Volltext; Biografie, Werk 1873, Erblindung, Phenakistiskop.
-- [R3·A1] Soft-Matter Wiki (Harvard), Plateau's laws — http://soft-matter.seas.harvard.edu/index.php/Plateau's_laws — Lehrmaterial; bestätigt Plateau/Taylor.
+- [R2·A1] Plateau's laws — Wikipedia — <https://en.wikipedia.org/wiki/Plateau%27s_laws> — Volltext gelesen; Winkel 120°/109,47° und Taylor-1976-Beweis bestätigt.
+- [R2·A1] Joseph Plateau — Wikipedia — <https://en.wikipedia.org/wiki/Joseph_Plateau> — Volltext; Biografie, Werk 1873, Erblindung, Phenakistiskop.
+- [R3·A1] Soft-Matter Wiki (Harvard), Plateau's laws — <http://soft-matter.seas.harvard.edu/index.php/Plateau's_laws> — Lehrmaterial; bestätigt Plateau/Taylor.
 
 ### Kelvin-Problem und Tetrakaidekaeder
 
-- [R2·A2] Truncated octahedron — Wikipedia — https://en.wikipedia.org/wiki/Truncated_octahedron — Snippet; Zahlen 14/24/36, Diederwinkel 125,26°/109,47°.
-- [R2·A1] Bitruncated cubic honeycomb — Wikipedia — https://en.wikipedia.org/wiki/Bitruncated_cubic_honeycomb — Volltext; Stapelung der Kelvin-Zelle.
-- [R3·A1] Tetrakaidecahedron (Kelvin Cell) — Harvard Soft-Matter — http://soft-matter.seas.harvard.edu/index.php/Tetrakaidecahedron_(Kelvin_Cell) — Volltext; Kelvin-Zelle, gekrümmte Flächen.
-- [R2·A3] Kelvin's Conjecture — Wolfram MathWorld — https://mathworld.wolfram.com/KelvinsConjecture.html — nur indirekt (HTTP 403); per Snippet gegengeprüft.
+- [R2·A2] Truncated octahedron — Wikipedia — <https://en.wikipedia.org/wiki/Truncated_octahedron> — Snippet; Zahlen 14/24/36, Diederwinkel 125,26°/109,47°.
+- [R2·A1] Bitruncated cubic honeycomb — Wikipedia — <https://en.wikipedia.org/wiki/Bitruncated_cubic_honeycomb> — Volltext; Stapelung der Kelvin-Zelle.
+- [R3·A1] Tetrakaidecahedron (Kelvin Cell) — Harvard Soft-Matter — <http://soft-matter.seas.harvard.edu/index.php/Tetrakaidecahedron_(Kelvin_Cell)> — Volltext; Kelvin-Zelle, gekrümmte Flächen.
+- [R2·A3] Kelvin's Conjecture — Wolfram MathWorld — <https://mathworld.wolfram.com/KelvinsConjecture.html> — nur indirekt (HTTP 403); per Snippet gegengeprüft.
 
 ### Weaire-Phelan und Water Cube
 
-- [R2·A1] Weaire–Phelan structure — Wikipedia — https://en.wikipedia.org/wiki/Weaire%E2%80%93Phelan_structure — Volltext; 12/14 Flächen, 1:3, 13,5, 0,3 %, offener Optimalitäts-Status, Water Cube.
-- [R1·A2] A counter-example to Kelvin's conjecture (Weaire & Phelan, 1994) — Phil. Mag. Lett. — https://www.semanticscholar.org/paper/728f2832384454680531d12e40a3b40ca1ce19df — nur Abstract/Metadaten.
-- [R1·A3] A new counter-example to Kelvin's conjecture — Phil. Mag. Lett. 89(8) — https://www.tandfonline.com/doi/abs/10.1080/09500830903022651 — Paywall; bestätigt offenen Status.
-- [R3·A1] Kelvin's bubble burst again — plus.maths.org — https://plus.maths.org/content/kelvins-bubble-burst-again — Volltext (Block 3).
-- [R2·A1] Water Cube — Wikipedia — https://en.wikipedia.org/wiki/Water_Cube — Volltext; ETFE-Kissen, Schaum-Schnitt.
-- [R2·A1] National Aquatics Center (Water Cube) — Arup — https://www.arup.com/en-us/projects/national-aquatics-center-water-cube/ — Volltext; Bau- und Ingenieursdaten.
+- [R2·A1] Weaire–Phelan structure — Wikipedia — <https://en.wikipedia.org/wiki/Weaire%E2%80%93Phelan_structure> — Volltext; 12/14 Flächen, 1:3, 13,5, 0,3 %, offener Optimalitäts-Status, Water Cube.
+- [R1·A2] A counter-example to Kelvin's conjecture (Weaire & Phelan, 1994) — Phil. Mag. Lett. — <https://www.semanticscholar.org/paper/728f2832384454680531d12e40a3b40ca1ce19df> — nur Abstract/Metadaten.
+- [R1·A3] A new counter-example to Kelvin's conjecture — Phil. Mag. Lett. 89(8) — <https://www.tandfonline.com/doi/abs/10.1080/09500830903022651> — Paywall; bestätigt offenen Status.
+- [R3·A1] Kelvin's bubble burst again — plus.maths.org — <https://plus.maths.org/content/kelvins-bubble-burst-again> — Volltext (Block 3).
+- [R2·A1] Water Cube — Wikipedia — <https://en.wikipedia.org/wiki/Water_Cube> — Volltext; ETFE-Kissen, Schaum-Schnitt.
+- [R2·A1] National Aquatics Center (Water Cube) — Arup — <https://www.arup.com/en-us/projects/national-aquatics-center-water-cube/> — Volltext; Bau- und Ingenieursdaten.
 
 ### Reale Schaumstatistik (Matzke, Schranken)
 
-- [R1·A2] The Three-Dimensional Shape of Bubbles in Foam (Matzke, 1946) — Am. J. Botany — https://bsapubs.onlinelibrary.wiley.com/doi/10.1002/j.1537-2197.1946.tb10347.x — Abstract/Metadaten, Volltext paywalled; 600 Zellen, Mittel nahe 14.
-- [R1·A1] The structure of foam cells: Isotropic Plateau polyhedra — Cond. Matter J. Club — https://www.condmatjclub.org/wp-content/uploads/2007/06/jccm_may05_02.pdf — Volltext; mittlere Flächenzahl 13,7.
-- [R1·A2] The number of faces in a minimal foam (Kusner & Sullivan) — Proc. R. Soc. A — https://royalsocietypublishing.org/doi/10.1098/rspa.1992.0177 — Abstract; Schranke 13,397.
-- [R1·A2] Structure of Random Monodisperse Foam (Kraynik et al.) — https://www.scribd.com/document/76488681 — teilweise; Matzke-Zelle 1-10-2, Nachbarzahlen 13,1/13,75.
-- [R1·A1] Cell topology during coarsening of 3D dry foams (RSC, 2024) — https://pubs.rsc.org/en/content/articlehtml/2024/sm/d4sm00555d — Volltext; Dodekaeder-Anteil ~16,6 %.
-- [R3·A3] Foams and Honeycombs — American Scientist — https://www.americanscientist.org/article/foams-and-honeycombs — nur indirekt (Redirect-Schleife); Matzke und „≈14" per Snippet.
+- [R1·A2] The Three-Dimensional Shape of Bubbles in Foam (Matzke, 1946) — Am. J. Botany — <https://bsapubs.onlinelibrary.wiley.com/doi/10.1002/j.1537-2197.1946.tb10347.x> — Abstract/Metadaten, Volltext paywalled; 600 Zellen, Mittel nahe 14.
+- [R1·A1] The structure of foam cells: Isotropic Plateau polyhedra — Cond. Matter J. Club — <https://www.condmatjclub.org/wp-content/uploads/2007/06/jccm_may05_02.pdf> — Volltext; mittlere Flächenzahl 13,7.
+- [R1·A2] The number of faces in a minimal foam (Kusner & Sullivan) — Proc. R. Soc. A — <https://royalsocietypublishing.org/doi/10.1098/rspa.1992.0177> — Abstract; Schranke 13,397.
+- [R1·A2] Structure of Random Monodisperse Foam (Kraynik et al.) — <https://www.scribd.com/document/76488681> — teilweise; Matzke-Zelle 1-10-2, Nachbarzahlen 13,1/13,75.
+- [R1·A1] Cell topology during coarsening of 3D dry foams (RSC, 2024) — <https://pubs.rsc.org/en/content/articlehtml/2024/sm/d4sm00555d> — Volltext; Dodekaeder-Anteil ~16,6 %.
+- [R3·A3] Foams and Honeycombs — American Scientist — <https://www.americanscientist.org/article/foams-and-honeycombs> — nur indirekt (Redirect-Schleife); Matzke und „≈14" per Snippet.
 
 ### Biologische Zellen / Epithelien
 
-- [R2·A1] Lewis' law — Wikipedia — https://en.wikipedia.org/wiki/Lewis%27_law — Volltext; Lewis-Gesetz, ~6 Nachbarn.
-- [R1·A1] Minimisation of surface energy drives apical epithelial organisation (bioRxiv) — https://www.biorxiv.org/content/10.1101/590729v1.full — Volltext-Preprint.
-- [R1·A2] Aboav-Weaire's law in epithelia (bioRxiv) — https://www.biorxiv.org/content/10.1101/591461v1.full — Abstract; mittlere Nachbarzahl nahe 6.
-- [R1·A1] Topological Progression in Proliferating Epithelia (PMC) — https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3818423/ — Volltext.
-- [R1·A2] Lewis (1928), Anatomical Record (Wiley) — https://onlinelibrary.wiley.com/doi/10.1002/ar.1090380305 — Paywall; Titel/Metadaten.
+- [R2·A1] Lewis' law — Wikipedia — <https://en.wikipedia.org/wiki/Lewis%27_law> — Volltext; Lewis-Gesetz, ~6 Nachbarn.
+- [R1·A1] Minimisation of surface energy drives apical epithelial organisation (bioRxiv) — <https://www.biorxiv.org/content/10.1101/590729v1.full> — Volltext-Preprint.
+- [R1·A2] Aboav-Weaire's law in epithelia (bioRxiv) — <https://www.biorxiv.org/content/10.1101/591461v1.full> — Abstract; mittlere Nachbarzahl nahe 6.
+- [R1·A1] Topological Progression in Proliferating Epithelia (PMC) — <https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3818423/> — Volltext.
+- [R1·A2] Lewis (1928), Anatomical Record (Wiley) — <https://onlinelibrary.wiley.com/doi/10.1002/ar.1090380305> — Paywall; Titel/Metadaten.
 
 ### Gashydrate / Klathrate
 
-- [R2·A1] Clathrate hydrate — Wikipedia — https://en.wikipedia.org/wiki/Clathrate_hydrate — Volltext; Käfige 5¹², 5¹²6², 5¹²6⁴, Strukturen sI/sII/sH.
-- [R1·A1] Clathrate hydrates — London South Bank Univ. Water-Site — https://water.lsbu.ac.uk/water/clathrate_hydrates.html — Volltext; Käfig-Geometrie.
-- [R1·A1] Gas Hydrate Structure — Janda Lab, UC Irvine — https://ps.uci.edu/group/kcjanda/research/gas-hydrate-structure — Volltext; Käfigzahlen.
+- [R2·A1] Clathrate hydrate — Wikipedia — <https://en.wikipedia.org/wiki/Clathrate_hydrate> — Volltext; Käfige 5¹², 5¹²6², 5¹²6⁴, Strukturen sI/sII/sH.
+- [R1·A1] Clathrate hydrates — London South Bank Univ. Water-Site — <https://water.lsbu.ac.uk/water/clathrate_hydrates.html> — Volltext; Käfig-Geometrie.
+- [R1·A1] Gas Hydrate Structure — Janda Lab, UC Irvine — <https://ps.uci.edu/group/kcjanda/research/gas-hydrate-structure> — Volltext; Käfigzahlen.
 
 ### Kugelpackung, Kusszahl, Honeycomb-Vermutung
 
-- [R2·A1] Kissing number — Wikipedia — https://en.wikipedia.org/wiki/Kissing_number — Volltext; Kusszahl 12, „Plätze-Tausch"-Spiel.
-- [R2·A1] Kepler conjecture — Wikipedia — https://en.wikipedia.org/wiki/Kepler_conjecture — Volltext; Kepler 1611, Hales 1998/2014, ~74 %.
-- [R2·A1] Honeycomb conjecture — Wikipedia — https://en.wikipedia.org/wiki/Honeycomb_conjecture — Volltext; Varro/Pappus, Fejes Tóth 1943, Hales 1999.
-- [R2·A1] Dodecahedron — Wikipedia — https://en.wikipedia.org/wiki/Dodecahedron — Snippet/teilweise; 12/20/30, 108°-Argument, kein Raumfüller.
-- [R2·A3] Kissing number — Wolfram MathWorld — https://mathworld.wolfram.com/KissingNumber.html — nur indirekt (Snippet).
-- [R2·A1] Kepler and the Rhombic Dodecahedron — MAA — https://old.maa.org/press/periodicals/convergence/kepler-and-the-rhombic-dodecahedron-stacking-cannonballs — Volltext; Granatapfel, FCC-Voronoi.
-- [R1·A1] Sphere Packings — Iowa State, Chem 571 (PDF) — https://faculty.sites.iastate.edu/gmiller/files/inline-files/01-Structures-SpherePackings.pdf — Volltext; 12 Nachbarn, 0,7405.
-- [R1·A1] The Strong Dodecahedral Conjecture (Hales et al.) — https://arxiv.org/pdf/1110.0402 — Volltext-PDF.
-- [R1·A3] A Proof of Fejes Tóth's Conjecture on Sphere Packings with Kissing Number Twelve — arXiv 1209.6043 — https://arxiv.org/pdf/1209.6043 — nur indirekt.
-- [R4·A3] Rhombic dodecahedron — Grokipedia — https://grokipedia.com/page/Rhombic_dodecahedron — nur indirekt; 12 Flächen, FCC-Voronoi (Sekundärquelle, mit Vorsicht).
-- [R3·A3] Face-centered Cubic Constructions — George Hart — http://georgehart.com/rp/FCC.html — nur indirekt (Snippet).
+- [R2·A1] Kissing number — Wikipedia — <https://en.wikipedia.org/wiki/Kissing_number> — Volltext; Kusszahl 12, „Plätze-Tausch"-Spiel.
+- [R2·A1] Kepler conjecture — Wikipedia — <https://en.wikipedia.org/wiki/Kepler_conjecture> — Volltext; Kepler 1611, Hales 1998/2014, ~74 %.
+- [R2·A1] Honeycomb conjecture — Wikipedia — <https://en.wikipedia.org/wiki/Honeycomb_conjecture> — Volltext; Varro/Pappus, Fejes Tóth 1943, Hales 1999.
+- [R2·A1] Dodecahedron — Wikipedia — <https://en.wikipedia.org/wiki/Dodecahedron> — Snippet/teilweise; 12/20/30, 108°-Argument, kein Raumfüller.
+- [R2·A3] Kissing number — Wolfram MathWorld — <https://mathworld.wolfram.com/KissingNumber.html> — nur indirekt (Snippet).
+- [R2·A1] Kepler and the Rhombic Dodecahedron — MAA — <https://old.maa.org/press/periodicals/convergence/kepler-and-the-rhombic-dodecahedron-stacking-cannonballs> — Volltext; Granatapfel, FCC-Voronoi.
+- [R1·A1] Sphere Packings — Iowa State, Chem 571 (PDF) — <https://faculty.sites.iastate.edu/gmiller/files/inline-files/01-Structures-SpherePackings.pdf> — Volltext; 12 Nachbarn, 0,7405.
+- [R1·A1] The Strong Dodecahedral Conjecture (Hales et al.) — <https://arxiv.org/pdf/1110.0402> — Volltext-PDF.
+- [R1·A3] A Proof of Fejes Tóth's Conjecture on Sphere Packings with Kissing Number Twelve — arXiv 1209.6043 — <https://arxiv.org/pdf/1209.6043> — nur indirekt.
+- [R4·A3] Rhombic dodecahedron — Grokipedia — <https://grokipedia.com/page/Rhombic_dodecahedron> — nur indirekt; 12 Flächen, FCC-Voronoi (Sekundärquelle, mit Vorsicht).
+- [R3·A3] Face-centered Cubic Constructions — George Hart — <http://georgehart.com/rp/FCC.html> — nur indirekt (Snippet).
 
 ### Bienen / Emergenz (kulturelle Echos)
 
-- [R3·A2] Bees don't do math — hexagonal honeycombs emerge naturally — NBC News — https://www.nbcnews.com/sciencemain/bees-dont-do-math-hexagonal-honeycombs-emerge-naturally-6c10677058 — teilweise; Wabe als emergente Physik.
-- [R1·A2] The hexagonal shape of honeycomb cells depends on construction behavior of bees — Scientific Reports — https://www.nature.com/articles/srep28341 — teilweise; Diskussion Verhalten vs. Physik.
+- [R3·A2] Bees don't do math — hexagonal honeycombs emerge naturally — NBC News — <https://www.nbcnews.com/sciencemain/bees-dont-do-math-hexagonal-honeycombs-emerge-naturally-6c10677058> — teilweise; Wabe als emergente Physik.
+- [R1·A2] The hexagonal shape of honeycomb cells depends on construction behavior of bees — Scientific Reports — <https://www.nature.com/articles/srep28341> — teilweise; Diskussion Verhalten vs. Physik.
 
 ### Pseudowissenschaft (zur Abgrenzung)
 
-- [R3·A2] Myth-busting the Golden Ratio — Univ. of Edinburgh EUSci — https://eusci.org.uk/2020/07/29/myth-busting-the-golden-ratio/ — teilweise; widerlegt φ-Mystik.
-- [R1·A2] The golden ratio — dispelling the myth — NCBI/PMC — https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10792139/ — teilweise.
-- [R4·A1] Dodecahedron in nature — pomegranate seeds — The Smart Happy Project — https://thesmarthappyproject.com/dodecahedron-in-nature-pomegranate-seeds/ — Volltext; Populärquelle, mit Vorbehalt.
+- [R3·A2] Myth-busting the Golden Ratio — Univ. of Edinburgh EUSci — <https://eusci.org.uk/2020/07/29/myth-busting-the-golden-ratio/> — teilweise; widerlegt φ-Mystik.
+- [R1·A2] The golden ratio — dispelling the myth — NCBI/PMC — <https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10792139/> — teilweise.
+- [R4·A1] Dodecahedron in nature — pomegranate seeds — The Smart Happy Project — <https://thesmarthappyproject.com/dodecahedron-in-nature-pomegranate-seeds/> — Volltext; Populärquelle, mit Vorbehalt.
 
 **Unsicherheiten (ehrlich markiert):**
+
 1. Weaire-Phelan-Jahr: Entdeckung 1993, Veröffentlichung 1994 — beide korrekt je nach Bezug.
 2. „13,39" stammt aus Kusners unterer Schranke (13,397), nicht aus Coxeters Originalwert (13,564); beide nahe 14.
 3. Der oft kursierende Wert „14,14" ist in den eingesehenen Quellen nicht eindeutig belegt; belastbar ist nur: Mittelwert rund 13,4 bis 14, Schwerpunkt nahe 14.

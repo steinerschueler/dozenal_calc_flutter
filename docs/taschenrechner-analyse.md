@@ -301,46 +301,46 @@ Roter Faden der Serie: Qalculate!/libqalculate taucht auf vier von sechs Plattfo
 
 ## 15. Quellenverzeichnis (abgerufen am 12.06.2026)
 
-- [Q1] Google Play: HiPER Calc Pro – https://play.google.com/store/apps/details?id=cz.hipercalc.pro
-- [Q2] Soft112: HiPER Calc Pro 11.3.3, Changelog – https://hiper-calc-pro.soft112.com/
-- [Q3] GitHub: jherkenhoff/qalculate-android (README, Hinweis zu Google-Verifikation) – https://github.com/jherkenhoff/qalculate-android
-- [Q4] F-Droid-Metadaten (GitLab): com.jherkenhoff.qalculate.yml (Lizenz GPL-2.0-only) – https://gitlab.com/fdroid/fdroiddata/-/blob/master/metadata/com.jherkenhoff.qalculate.yml
-- [Q5] F-Droid: Qalculate! – https://f-droid.org/packages/com.jherkenhoff.qalculate/
-- [Q6] GitHub: qalculate-android README (Build mit NDK/SWIG, libqalculate-android) – https://github.com/jherkenhoff/qalculate-android/blob/main/README.md
-- [Q7] Projektbeschreibung OpenCalc (Kotlin) – https://github.com/Darkempire78/OpenCalc
-- [Q8] GitHub: OpenCalc Pull Requests / Repo-Statistik – https://github.com/Darkempire78/OpenCalc/pulls
-- [Q9] GitHub: OpenCalc Releases, v3.0.0 (BigDecimal statt Double) – https://github.com/Darkempire78/OpenCalc/releases
-- [Q10] Thomas Okken: Free42 (GPL v2, Version 3.3.12, Plattformen) – https://thomasokken.com/free42/
-- [Q11] Thomas Okken: Plus42 (GPL v2, algebraische Erweiterungen) – https://thomasokken.com/plus42/
-- [Q12] Codeberg: thomasokken (Repo-Aktivität Free42/Plus42, Januar 2026) – https://codeberg.org/thomasokken
-- [Q13] F-Droid: Calculator++ (Version 2.3.3, Nov. 2023) – https://f-droid.org/packages/org.solovyev.android.calculator/
-- [Q14] Best Overall Apps: Best Calculator App 2026 (PCalc-Einordnung, Preis) – https://bestoverallapps.com/categories/best-calculator-app-for-most-people/
-- [Q15] iMore: Best calculator apps for iPad – https://www.imore.com/best-calculator-apps-ipad
-- [Q16] appPicker: Best iPhone scientific calculator apps – https://www.apppicker.com/best-of/the-best-iphone-apps-for-scientific-calculators
-- [Q17] Apple App Store: Free42 – https://apps.apple.com/us/app/free42/id337692629
-- [Q18] AlternativeTo: Qalculate! (Plattformen Mac/Windows/Linux, Open Source) – https://alternativeto.net/software/qalculate-for-android
-- [Q19] Worldmetrics: Best Calculator Software 2026 (PCalc Magic Variables, Numi, KCalc) – https://worldmetrics.org/best/calculator-software/
-- [Q20] UpdateStar: SpeedCrunch 0.12 (Release 29.06.2018, Featureliste) – https://speedcrunch.updatestar.com/en
-- [Q21] GitHub: speedcrunch/SpeedCrunch Releases (letztes Tag 0.11, 2014) – https://github.com/speedcrunch/SpeedCrunch/releases
-- [Q22] lo4d: SpeedCrunch für Windows (GPL, portabel) – https://speedcrunch.en.lo4d.com/windows
-- [Q23] lo4d: Free42 für Windows (Version 3.3.11, 2026) – https://free42.en.lo4d.com/windows
-- [Q24] AlternativeTo: HiPER Scientific Calculator (Windows/Android, Freemium) – https://alternativeto.net/software/scientific-calculator/
-- [Q25] Manpage qalc (Konvertierungen duo/duodecimal, inbase/outbase, Skripting) – https://qalculate.github.io/manual/qalc.html bzw. https://www.mankier.com/1/qalc
-- [Q26] openSUSE PackageHub: qalculate 4.8.1 (Changelog inkl. Duodezimal-Symbole) – https://packagehub.suse.com/packages/qalculate/4_8_1-bp156_1_2/
-- [Q27] GitHub: qalculate-gtk ChangeLog (doz/dozenal-Konvertierung, konfigurierbare Ziffernsymbole A/B) – https://github.com/Qalculate/qalculate-gtk/blob/master/ChangeLog
-- [Q28] Manpage qalc: Option „duodecimal symbols/duosyms" – https://www.mankier.com/1/qalc
-- [Q29] GitHub Issue: Duodecimal input (qalculate-gtk #135) – https://github.com/Qalculate/qalculate-gtk/issues/135
-- [Q30] Wikipedia: Duodecimal (Unicode U+218A/U+218B, Pitman-Ziffern) – https://en.wikipedia.org/wiki/Duodecimal
-- [Q31] eBay: fx-5800P neu aus Südkorea, USD 90 inkl. Einfuhr – https://www.ebay.de/itm/157117185904
-- [Q32] eBay: fx-5800P neu aus Südkorea, USD 86.44 – https://www.ebay.de/itm/305860746046
-- [Q33] eBay: fx-5800P aus Indien, £225 – https://www.ebay.de/itm/395768528058
-- [Q34] eBay: fx-5800P aus Australien, ca. EUR 70 – https://www.ebay.de/itm/155154581053
-- [Q35] SwissMicros Produktseite DM42n (Specs, „Out of stock") – https://www.swissmicros.com/product/model-dm42n
-- [Q36] magazin Mehatronika: SwissMicros DM42n Review (DMCP + Free42, Modellfamilie) – https://magazinmehatronika.com/en/swissmicros-dm42n-review/
-- [Q37] Amazon-Produktseite DM42n (316L-Stahl, USB-C Mass Storage) – https://www.amazon.com/SwissMicros-DM42-Calculator-High-Resolution-Mathematicians/dp/B07B4W13GW
-- [Q38] CalculatorSource: SwissMicros-Preise (DM42/DM32/DM41X) – https://calculatorsource.com/collections/swissmicros
-- [Q39] Wikipedia: HP 35s (eingestellt 2021, Gebrauchtpreise) – https://en.wikipedia.org/wiki/HP_35s
-- [Q40] hpcalc.org: HP 35s Scientific Calculator – https://commerce.hpcalc.org/35s.php
-- [Q41] Wikipedia: Casio FX-502P/FX-602P/FX-603P – https://en.wikipedia.org/wiki/Casio_FX-602P_series
+- [Q1] Google Play: HiPER Calc Pro – <https://play.google.com/store/apps/details?id=cz.hipercalc.pro>
+- [Q2] Soft112: HiPER Calc Pro 11.3.3, Changelog – <https://hiper-calc-pro.soft112.com/>
+- [Q3] GitHub: jherkenhoff/qalculate-android (README, Hinweis zu Google-Verifikation) – <https://github.com/jherkenhoff/qalculate-android>
+- [Q4] F-Droid-Metadaten (GitLab): com.jherkenhoff.qalculate.yml (Lizenz GPL-2.0-only) – <https://gitlab.com/fdroid/fdroiddata/-/blob/master/metadata/com.jherkenhoff.qalculate.yml>
+- [Q5] F-Droid: Qalculate! – <https://f-droid.org/packages/com.jherkenhoff.qalculate/>
+- [Q6] GitHub: qalculate-android README (Build mit NDK/SWIG, libqalculate-android) – <https://github.com/jherkenhoff/qalculate-android/blob/main/README.md>
+- [Q7] Projektbeschreibung OpenCalc (Kotlin) – <https://github.com/Darkempire78/OpenCalc>
+- [Q8] GitHub: OpenCalc Pull Requests / Repo-Statistik – <https://github.com/Darkempire78/OpenCalc/pulls>
+- [Q9] GitHub: OpenCalc Releases, v3.0.0 (BigDecimal statt Double) – <https://github.com/Darkempire78/OpenCalc/releases>
+- [Q10] Thomas Okken: Free42 (GPL v2, Version 3.3.12, Plattformen) – <https://thomasokken.com/free42/>
+- [Q11] Thomas Okken: Plus42 (GPL v2, algebraische Erweiterungen) – <https://thomasokken.com/plus42/>
+- [Q12] Codeberg: thomasokken (Repo-Aktivität Free42/Plus42, Januar 2026) – <https://codeberg.org/thomasokken>
+- [Q13] F-Droid: Calculator++ (Version 2.3.3, Nov. 2023) – <https://f-droid.org/packages/org.solovyev.android.calculator/>
+- [Q14] Best Overall Apps: Best Calculator App 2026 (PCalc-Einordnung, Preis) – <https://bestoverallapps.com/categories/best-calculator-app-for-most-people/>
+- [Q15] iMore: Best calculator apps for iPad – <https://www.imore.com/best-calculator-apps-ipad>
+- [Q16] appPicker: Best iPhone scientific calculator apps – <https://www.apppicker.com/best-of/the-best-iphone-apps-for-scientific-calculators>
+- [Q17] Apple App Store: Free42 – <https://apps.apple.com/us/app/free42/id337692629>
+- [Q18] AlternativeTo: Qalculate! (Plattformen Mac/Windows/Linux, Open Source) – <https://alternativeto.net/software/qalculate-for-android>
+- [Q19] Worldmetrics: Best Calculator Software 2026 (PCalc Magic Variables, Numi, KCalc) – <https://worldmetrics.org/best/calculator-software/>
+- [Q20] UpdateStar: SpeedCrunch 0.12 (Release 29.06.2018, Featureliste) – <https://speedcrunch.updatestar.com/en>
+- [Q21] GitHub: speedcrunch/SpeedCrunch Releases (letztes Tag 0.11, 2014) – <https://github.com/speedcrunch/SpeedCrunch/releases>
+- [Q22] lo4d: SpeedCrunch für Windows (GPL, portabel) – <https://speedcrunch.en.lo4d.com/windows>
+- [Q23] lo4d: Free42 für Windows (Version 3.3.11, 2026) – <https://free42.en.lo4d.com/windows>
+- [Q24] AlternativeTo: HiPER Scientific Calculator (Windows/Android, Freemium) – <https://alternativeto.net/software/scientific-calculator/>
+- [Q25] Manpage qalc (Konvertierungen duo/duodecimal, inbase/outbase, Skripting) – <https://qalculate.github.io/manual/qalc.html> bzw. <https://www.mankier.com/1/qalc>
+- [Q26] openSUSE PackageHub: qalculate 4.8.1 (Changelog inkl. Duodezimal-Symbole) – <https://packagehub.suse.com/packages/qalculate/4_8_1-bp156_1_2/>
+- [Q27] GitHub: qalculate-gtk ChangeLog (doz/dozenal-Konvertierung, konfigurierbare Ziffernsymbole A/B) – <https://github.com/Qalculate/qalculate-gtk/blob/master/ChangeLog>
+- [Q28] Manpage qalc: Option „duodecimal symbols/duosyms" – <https://www.mankier.com/1/qalc>
+- [Q29] GitHub Issue: Duodecimal input (qalculate-gtk #135) – <https://github.com/Qalculate/qalculate-gtk/issues/135>
+- [Q30] Wikipedia: Duodecimal (Unicode U+218A/U+218B, Pitman-Ziffern) – <https://en.wikipedia.org/wiki/Duodecimal>
+- [Q31] eBay: fx-5800P neu aus Südkorea, USD 90 inkl. Einfuhr – <https://www.ebay.de/itm/157117185904>
+- [Q32] eBay: fx-5800P neu aus Südkorea, USD 86.44 – <https://www.ebay.de/itm/305860746046>
+- [Q33] eBay: fx-5800P aus Indien, £225 – <https://www.ebay.de/itm/395768528058>
+- [Q34] eBay: fx-5800P aus Australien, ca. EUR 70 – <https://www.ebay.de/itm/155154581053>
+- [Q35] SwissMicros Produktseite DM42n (Specs, „Out of stock") – <https://www.swissmicros.com/product/model-dm42n>
+- [Q36] magazin Mehatronika: SwissMicros DM42n Review (DMCP + Free42, Modellfamilie) – <https://magazinmehatronika.com/en/swissmicros-dm42n-review/>
+- [Q37] Amazon-Produktseite DM42n (316L-Stahl, USB-C Mass Storage) – <https://www.amazon.com/SwissMicros-DM42-Calculator-High-Resolution-Mathematicians/dp/B07B4W13GW>
+- [Q38] CalculatorSource: SwissMicros-Preise (DM42/DM32/DM41X) – <https://calculatorsource.com/collections/swissmicros>
+- [Q39] Wikipedia: HP 35s (eingestellt 2021, Gebrauchtpreise) – <https://en.wikipedia.org/wiki/HP_35s>
+- [Q40] hpcalc.org: HP 35s Scientific Calculator – <https://commerce.hpcalc.org/35s.php>
+- [Q41] Wikipedia: Casio FX-502P/FX-602P/FX-603P – <https://en.wikipedia.org/wiki/Casio_FX-602P_series>
 
 *Hinweis zur Quellenqualität: [Q14], [Q19], [Q24] sind Sekundär-/Vergleichsportale – für die Artikel nach Möglichkeit durch Primärquellen (Herstellerseiten, App-Store-Einträge) ersetzen.*

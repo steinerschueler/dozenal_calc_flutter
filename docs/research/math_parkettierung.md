@@ -52,6 +52,7 @@ Basis 12 die Brüche 1/3, 1/4, 1/6 abbrechend (glatt).
 
 Elegante Schreibweise (ägyptische Stammbrüche): treffen sich k Vielecke an einer Ecke, gilt
 Σ 1/nᵢ = (k−2)/2; für k=3 also Σ 1/nᵢ = 1/2:
+
 - 3.12.12: 1/3 + 1/12 + 1/12 = 1/2 ✓
 - 4.6.12: 1/4 + 1/6 + 1/12 = 1/2 ✓
 
@@ -85,6 +86,7 @@ Kantenlänge s = 2r·sin(15°) ≈ 0,5176 r. An den 12 Kanten abwechselnd Quadra
 und Sechsecke (ungerade Kanten), 6 + 6. **Outward-Normale** an Kante k = Radialrichtung durch
 die Kantenmitte (mid − center, normiert) — perpendikulär zur Kante, weil die Mittelsenkrechte
 jeder Sehne durch den Mittelpunkt läuft.
+
 - Quadrat an Kante (a,b): Ecken a, b, b+u·s, a+u·s.
 - Sechseck an Kante (a,b): Zentrum hc = mid + u·(s·√3/2); sechs Ecken bei Radius s um hc,
   Startwinkel zu a, Schrittrichtung so, dass die zweite Ecke b trifft.
@@ -133,19 +135,22 @@ beide hier nur als Ein-Satz-Verweise.
 Zuverlässigkeit **R1**/**R2**/**R3**; Zugang **A1**/**A2**/**A3**.
 
 ### Parkettierungen — Klassifikation & Geometrie (R1–R2)
-- **[R2·A1]** Euclidean tilings by convex regular polygons — Wikipedia — https://en.wikipedia.org/wiki/Euclidean_tilings_by_convex_regular_polygons — alle 11 uniformen, genau 2 mit Zwölfeck.
-- **[R2·A1]** Truncated hexagonal tiling (3.12.12) — Wikipedia — https://en.wikipedia.org/wiki/Truncated_hexagonal_tiling — Konfiguration, Konstruktion, Asanoha.
-- **[R2·A1]** Truncated trihexagonal tiling (4.6.12) — Wikipedia — https://en.wikipedia.org/wiki/Truncated_trihexagonal_tiling — Konfiguration, Alternativnamen, tr{3,6}.
-- **[R2·A1]** Regular polygon — Wikipedia — https://en.wikipedia.org/wiki/Regular_polygon — Innenwinkel-Formel.
+
+- **[R2·A1]** Euclidean tilings by convex regular polygons — Wikipedia — <https://en.wikipedia.org/wiki/Euclidean_tilings_by_convex_regular_polygons> — alle 11 uniformen, genau 2 mit Zwölfeck.
+- **[R2·A1]** Truncated hexagonal tiling (3.12.12) — Wikipedia — <https://en.wikipedia.org/wiki/Truncated_hexagonal_tiling> — Konfiguration, Konstruktion, Asanoha.
+- **[R2·A1]** Truncated trihexagonal tiling (4.6.12) — Wikipedia — <https://en.wikipedia.org/wiki/Truncated_trihexagonal_tiling> — Konfiguration, Alternativnamen, tr{3,6}.
+- **[R2·A1]** Regular polygon — Wikipedia — <https://en.wikipedia.org/wiki/Regular_polygon> — Innenwinkel-Formel.
 - **[R1·A3]** Grünbaum & Shephard, *Tilings and Patterns* (1987) — Standardwerk; Vollständigkeit der 11, Term „archimedisch" für Parkettierungen.
-- **[R3·A1]** John Baez, „Archimedean Tilings and Egyptian Fractions" — https://math.ucr.edu/home/baez/egyptian.html — Reziprokbedingung Σ1/n = 1/2.
+- **[R3·A1]** John Baez, „Archimedean Tilings and Egyptian Fractions" — <https://math.ucr.edu/home/baez/egyptian.html> — Reziprokbedingung Σ1/n = 1/2.
 
 ### Geschichte & Kultur (R2–R3)
-- **[R1·A3]** Kepler, *Harmonices Mundi*, Buch II (1619) — https://archive.org/details/ioanniskepplerih00kepl — Erst-Klassifikation; über Sekundärliteratur.
-- **[R2·A1]** Islamic geometric patterns / Girih — Wikipedia — https://en.wikipedia.org/wiki/Islamic_geometric_patterns — 12-zählige Sterne (Konya 1220, Bagdad 1230).
-- **[R2·A2]** Johannes Kepler — MacTutor — https://mathshistory.st-andrews.ac.uk/Biographies/Kepler/ — Harmonices Mundi als Parkettierungs-Quelle.
+
+- **[R1·A3]** Kepler, *Harmonices Mundi*, Buch II (1619) — <https://archive.org/details/ioanniskepplerih00kepl> — Erst-Klassifikation; über Sekundärliteratur.
+- **[R2·A1]** Islamic geometric patterns / Girih — Wikipedia — <https://en.wikipedia.org/wiki/Islamic_geometric_patterns> — 12-zählige Sterne (Konya 1220, Bagdad 1230).
+- **[R2·A2]** Johannes Kepler — MacTutor — <https://mathshistory.st-andrews.ac.uk/Biographies/Kepler/> — Harmonices Mundi als Parkettierungs-Quelle.
 
 ### Eigene Verifikation (R1·A1)
+
 - Python: Innenwinkel 60/90/120/150; erschöpfende 360°-Suche → nur (3,12) und (4,6) mit
   Zwölfeck; Reziprok 1/3+1/12+1/12 = 1/4+1/6+1/12 = 1/2; s = 2r·sin15°; Quadrat-/Sechseck-
   Anschluss bündig (< 10⁻⁸). Reproduzierbar.

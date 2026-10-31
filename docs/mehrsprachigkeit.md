@@ -74,6 +74,7 @@ Widgets automatisch. Zwei Eigenheiten in dieser App:
   `lib/manual/manual.dart`.
 
 Direction-aware Bauteile, die korrekt sein müssen:
+
 - `_NavChevron` in `info_pages.dart` — wählt `chevron_left` in RTL,
   `chevron_right` in LTR (ListTile-Trailing zeigt richtig zum Detail).
 - `EdgeInsetsDirectional.fromSTEB` statt `EdgeInsets.fromLTRB` überall,

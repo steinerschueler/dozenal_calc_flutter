@@ -178,6 +178,7 @@ Hälfte 60 Drehungen und 60 Dreh-Spiegelungen. Zum Vergleich: Würfel/Oktaeder 4
 Tetraeder 24.
 
 Die 60 Drehungen verteilen sich auf drei Achstypen plus Identität:
+
 - **6 fünfzählige Achsen** durch je ein Paar gegenüberliegender Flächenmitten →
   je 4 Drehungen (72°, 144°, 216°, 288°) = 24.
 - **10 dreizählige Achsen** durch gegenüberliegende Ecken → je 2 (120°, 240°) =
@@ -317,95 +318,96 @@ Referenz) · R3 (seriös populär) · R4 (schwach) · S (spekulativ); Zugang A1
 ### Geometrie, Topologie, Masse (R1–R2)
 
 - **[R2·A1]** Regular dodecahedron — Wikipedia (en) —
-  https://en.wikipedia.org/wiki/Regular_dodecahedron —
+  <https://en.wikipedia.org/wiki/Regular_dodecahedron> —
   Flächen/Kanten/Ecken, Schläfli {5,3}, Diederwinkel 2·arctan(φ), exakte
   Massformeln und Radien, Eckkoordinaten mit φ, fünf einbeschriebene Würfel,
   Dualität, Symmetriegruppe Iₕ. Primärquelle.
 - **[R2·A1]** Dodekaeder — Wikipedia (de) —
-  https://de.wikipedia.org/wiki/Dodekaeder —
+  <https://de.wikipedia.org/wiki/Dodekaeder> —
   Deutsche Massangaben (Volumen ≈ 7,663·a³, Oberfläche ≈ 20,646·a²,
   Umkugel ≈ 1,401·a, Inkugel ≈ 1,114·a, Diederwinkel ≈ 116,56°).
 - **[R2·A1]** Platonic solid — Wikipedia (en) —
-  https://en.wikipedia.org/wiki/Platonic_solid —
+  <https://en.wikipedia.org/wiki/Platonic_solid> —
   Vollständige Klassifikation (1/p+1/q>1/2), Tabelle aller fünf Körper,
   Dualität, Symmetriegruppen-Ordnungen, historische Attributionen, Timaios.
 - **[R1·A1]** Euler's polyhedron formula — Plus Maths (Cambridge) —
-  https://plus.maths.org/content/eulers-polyhedron-formula —
+  <https://plus.maths.org/content/eulers-polyhedron-formula> —
   Cauchys Beweis Schritt für Schritt; 200 Jahre Beweisgeschichte.
 - **[R2·A2]** Euler characteristic — Wikipedia (en) —
-  https://en.wikipedia.org/wiki/Euler_characteristic —
+  <https://en.wikipedia.org/wiki/Euler_characteristic> —
   Maurolico 1537, Legendre 1794, Cauchy 1811, Descartes' Winkeldefekt.
 - **[R1·A1]** Platonic Solids: Why Five? — MathsIsFun —
-  https://www.mathsisfun.com/geometry/platonic-solids-why-five.html —
+  <https://www.mathsisfun.com/geometry/platonic-solids-why-five.html> —
   Volltext-Ableitung pF=2K, qE=2K, kombiniert mit Euler; alle fünf Lösungen.
 - **[R2·A1]** Angular defect — Wikipedia (en) —
-  https://en.wikipedia.org/wiki/Angular_defect —
+  <https://en.wikipedia.org/wiki/Angular_defect> —
   Winkeldefekt des Dodekaeders 360°−3·108° = 36°.
 
 ### Goldener Schnitt im Fünfeck und Körper (R2)
 
 - **[R2·A1]** Golden ratio — Wikipedia (en) —
-  https://en.wikipedia.org/wiki/Golden_ratio —
+  <https://en.wikipedia.org/wiki/Golden_ratio> —
   φ = (1+√5)/2, φ² = φ+1, φ = 2cos(36°), Diagonale/Seite = φ im Fünfeck.
 - **[R2·A1]** Ron Knott — *The Golden Geometry of Solids (Phi in 3D)*,
   University of Surrey —
-  https://r-knott.surrey.ac.uk/Fibonacci/phi3DGeom.html —
+  <https://r-knott.surrey.ac.uk/Fibonacci/phi3DGeom.html> —
   Eckkoordinaten via φ, fünf einbeschriebene Würfel, drei goldene Rechtecke.
 - **[R2·A1]** Matematicas Visuales — *The Diagonal of a Regular Pentagon and the
   Golden Ratio* —
-  http://www.matematicasvisuales.com/english/html/geometry/goldenratio/pentagondiagonal.html —
+  <http://www.matematicasvisuales.com/english/html/geometry/goldenratio/pentagondiagonal.html> —
   Beweis über ähnliche Dreiecke (goldene Gnomone), φ² = φ+1.
 
 ### Symmetrie und Gruppenstruktur (R2)
 
 - **[R2·A1]** Icosahedral symmetry — Wikipedia (en) —
-  https://en.wikipedia.org/wiki/Icosahedral_symmetry —
+  <https://en.wikipedia.org/wiki/Icosahedral_symmetry> —
   Iₕ Ordnung 120, Zerlegung der 60 Drehungen (6/10/15 Achsen), I ≅ A₅,
   Iₕ ≅ A₅×ℤ₂, Coxeter H₃ [5,3], Inkompatibilität mit Translationssymmetrie.
 
 ### Fussball / Euler-Zwölf (R1–R2)
 
 - **[R2·A1]** Truncated icosahedron — Wikipedia (en) —
-  https://en.wikipedia.org/wiki/Truncated_icosahedron —
+  <https://en.wikipedia.org/wiki/Truncated_icosahedron> —
   12 Fünfecke + 20 Sechsecke, 32/60/90, archimedisch (nicht platonisch),
   Telstar 1970, C₆₀.
 - **[R1·A2]** The Topology and Combinatorics of Soccer Balls — American
   Scientist —
-  https://www.americanscientist.org/article/the-topology-and-combinatorics-of-soccer-balls —
+  <https://www.americanscientist.org/article/the-topology-and-combinatorics-of-soccer-balls> —
   Euler-Beweis für genau 12 Fünfecke, unabhängig von der Sechseck-Zahl.
 
 ### D12 / Anschauung (R3)
 
 - **[R3·A2]** D12 — RPG Museum (Fandom) —
-  https://rpgmuseum.fandom.com/wiki/D12 —
+  <https://rpgmuseum.fandom.com/wiki/D12> —
   Standardform regulärer Dodekaeder, 1/12-Wahrscheinlichkeit, Einsatz in D&D.
 - **[R3·A2]** d12 dice — DiceEnvy —
-  https://diceenvy.com/pages/d12-dice —
+  <https://diceenvy.com/pages/d12-dice> —
   Haptische Qualitäten, Rollverhalten, kugelnahe Gestalt.
 
 ### Geschichte (R1–R2)
 
 - **[R1·A2]** Euler's Polyhedral Formula — AMS Feature Column —
-  https://www.ams.org/publicoutreach/feature-column/fcarc-eulers-formula —
+  <https://www.ams.org/publicoutreach/feature-column/fcarc-eulers-formula> —
   Zeitleiste (Brief an Goldbach 1750, Arbeiten 1758, Legendre 1794, Cauchy
   1811), Maurolico 1537; Zugriff teils 403, Kernaussagen via Snippets.
 - **[R2·A2]** Euclid's Elements, Book XIII, Prop. 18 — D. Joyce, Clark
   University —
-  http://aleph0.clarku.edu/~djoyce/elements/bookXIII/propXIII18.html —
+  <http://aleph0.clarku.edu/~djoyce/elements/bookXIII/propXIII18.html> —
   Winkelargument, „keine weiteren Körper"; Abruf TLS-Fehler, anderweitig gestützt.
 
 ### Terminologie 2D vs. 3D (R2)
 
 - **[R2·A1]** Zwölfeck — Wikipedia (de) —
-  https://de.wikipedia.org/wiki/Zw%C3%B6lfeck —
+  <https://de.wikipedia.org/wiki/Zw%C3%B6lfeck> —
   Dodekagon = 2D-Polygon mit 12 Seiten; Abgrenzung zum Dodekaeder.
 
 ### Nicht zitiert / redundant abgesichert
 
 - **[R1·A3]** Regular Dodecahedron — Wolfram MathWorld —
-  https://mathworld.wolfram.com/RegularDodecahedron.html —
+  <https://mathworld.wolfram.com/RegularDodecahedron.html> —
   HTTP 403; Massformeln/Koordinaten via Wikipedia redundant abgesichert.
 - **[R2·A2]** CALCETRA / redcrab-software / SmartConversion —
   Volumen (15+7√5)/4·a³ und Oberfläche 3√(25+10√5)·a² numerisch gegengeprüft.
 </content>
+
 </invoke>

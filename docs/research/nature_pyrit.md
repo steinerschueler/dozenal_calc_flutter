@@ -133,6 +133,7 @@ Wichtige Kenndaten (gesichert): Raumgruppe **Pa3̄ (Nr. 205)**, Gitterparameter 
 **Mythos 6: „Hippasos wurde für den Verrat des Dodekaeders ertränkt."** Diese oft erzählte Geschichte ist spätantik, in den Quellen widersprüchlich und historisch nicht gesichert. Antike Berichte sind uneinheitlich (Ausschluss vs. Ertrinken) und beziehen sich teils auf das Dodekaeder, teils auf die Entdeckung des Irrationalen — beides wird in der populären Erzählung oft vermischt. Als Legende zu behandeln.
 
 **Vorbehalt 7: Verwechslungs-Sammlung.**
+
 - Pyrit ≠ Markasit (gleiche Formel FeS₂, aber orthorhombisch — anderes Polymorph).
 - Pyrit ≠ Gold („Katzengold").
 - **Pentagondodekaeder (Pyritoeder) ≠ reguläres Dodekaeder (Platon) ≠ römisches Bronze-Dodekaeder** — drei verschiedene Dinge, die alle zwölf fünfeckige Flächen haben.
@@ -149,53 +150,53 @@ Bewertung nach Zuverlässigkeit (R1 = wissenschaftlich/primär, R2 = etablierte 
 
 ### Kristallographie & Mineralstruktur (R1–R2)
 
-- **[R1·A1]** Understanding the Surfaces and Crystal Growth of Pyrite FeS₂ (*Materials Research* / SciELO Brazil) — http://www.scielo.br/j/mr/a/WCvkdSk35gt6Kxbfw5JVJtH/?lang=en — Wichtigste mechanistische Quelle: quantitative Oberflächenenergien ((001) 1,04 J/m², (210) 1,65 J/m²), Anlagerungsenergie, Wulff-Konstruktion, Streifung als Anisotropie-Beleg.
-- **[R1·A2]** Murowchick & Barnes, *Effects of temperature and degree of supersaturation on pyrite morphology* (American Mineralogist 72, 1987), GeoScienceWorld — https://pubs.geoscienceworld.org/msa/ammin/article-abstract/72/11-12/1241/41984/ — Nur Abstract zugänglich (Volltext 403): Sequenz Würfel→Oktaeder→Pyritoeder mit Temperatur/Übersättigung.
-- **[R1·A2]** AIP Advances — Crystalline structure and magnetic properties of pyrite FeS₂ — https://pubs.aip.org/aip/adv/article/11/1/015131/ — Nur Abstract/Snippet: a = 5,418 Å, Fe–S = 2,262 Å, S–S = 2,177 Å, fcc-Fe-Untergitter, Z = 4.
-- **[R1·A3]** Materials Project mp-226 (FeS₂, Pa-3, 205) — https://next-gen.materialsproject.org/materials/mp-226 — Indirekt (Snippet): bestätigt Raumgruppe Pa3̄ (205).
-- **[R1·A2]** Why Pyrite Crystals Have Different Shapes (PDF, Univ. Wisconsin–Madison) — https://minds.wisconsin.edu/bitstream/handle/1793/48105/PyriteShapes.pdf — Abruf-Timeout, Kernaussagen (S-arm→Würfel, S-reich→Pyritoeder/Oktaeder) über Snippets gestützt.
-- **[R2·A1]** Bonding in TiS₂, MoS₂, and Pyrite Structures — Chemistry LibreTexts — https://chem.libretexts.org/Bookshelves/Inorganic_Chemistry/Introduction_to_Inorganic_Chemistry_(Wikibook)/08:_Ionic_and_Covalent_Solids/8.06 — NaCl-Ableitung, S₂-Hanteln entlang ⟨111⟩, S–S-Abstand, Oktaederkoordination, schlechte Spaltbarkeit.
-- **[R1·A3]** Preparation, Structure, Orientation of Pyrite FeS₂{100} Surfaces (J. Phys. Chem. C) — https://pubs.acs.org/doi/abs/10.1021/jp5005924 — Indirekt: 2×1-Oberflächensymmetrie, Striationen als Beleg der Zweizähligkeit.
+- **[R1·A1]** Understanding the Surfaces and Crystal Growth of Pyrite FeS₂ (*Materials Research* / SciELO Brazil) — <http://www.scielo.br/j/mr/a/WCvkdSk35gt6Kxbfw5JVJtH/?lang=en> — Wichtigste mechanistische Quelle: quantitative Oberflächenenergien ((001) 1,04 J/m², (210) 1,65 J/m²), Anlagerungsenergie, Wulff-Konstruktion, Streifung als Anisotropie-Beleg.
+- **[R1·A2]** Murowchick & Barnes, *Effects of temperature and degree of supersaturation on pyrite morphology* (American Mineralogist 72, 1987), GeoScienceWorld — <https://pubs.geoscienceworld.org/msa/ammin/article-abstract/72/11-12/1241/41984/> — Nur Abstract zugänglich (Volltext 403): Sequenz Würfel→Oktaeder→Pyritoeder mit Temperatur/Übersättigung.
+- **[R1·A2]** AIP Advances — Crystalline structure and magnetic properties of pyrite FeS₂ — <https://pubs.aip.org/aip/adv/article/11/1/015131/> — Nur Abstract/Snippet: a = 5,418 Å, Fe–S = 2,262 Å, S–S = 2,177 Å, fcc-Fe-Untergitter, Z = 4.
+- **[R1·A3]** Materials Project mp-226 (FeS₂, Pa-3, 205) — <https://next-gen.materialsproject.org/materials/mp-226> — Indirekt (Snippet): bestätigt Raumgruppe Pa3̄ (205).
+- **[R1·A2]** Why Pyrite Crystals Have Different Shapes (PDF, Univ. Wisconsin–Madison) — <https://minds.wisconsin.edu/bitstream/handle/1793/48105/PyriteShapes.pdf> — Abruf-Timeout, Kernaussagen (S-arm→Würfel, S-reich→Pyritoeder/Oktaeder) über Snippets gestützt.
+- **[R2·A1]** Bonding in TiS₂, MoS₂, and Pyrite Structures — Chemistry LibreTexts — <https://chem.libretexts.org/Bookshelves/Inorganic_Chemistry/Introduction_to_Inorganic_Chemistry_(Wikibook)/08:_Ionic_and_Covalent_Solids/8.06> — NaCl-Ableitung, S₂-Hanteln entlang ⟨111⟩, S–S-Abstand, Oktaederkoordination, schlechte Spaltbarkeit.
+- **[R1·A3]** Preparation, Structure, Orientation of Pyrite FeS₂{100} Surfaces (J. Phys. Chem. C) — <https://pubs.acs.org/doi/abs/10.1021/jp5005924> — Indirekt: 2×1-Oberflächensymmetrie, Striationen als Beleg der Zweizähligkeit.
 
 ### Geometrie des Pyritoeders / Dodekaeders (R1–R3)
 
-- **[R2·A1]** Pyritohedron — Wikipedia (en) — https://en.wikipedia.org/wiki/Pyritohedron — Volltext: 12/30(24+6)/20, Flächenwinkel 121,6°/106,6°/102,6°, Diederwinkel 126,87°, Tₕ vs. Ih, h-Parameter-Familie.
-- **[R2·A1]** Dodecahedron — Wikipedia (en) — https://en.wikipedia.org/wiki/Dodecahedron — Volltext: regulär vs. Pyritoeder, Tₕ-Symmetrie, Miller {210}, keine fünfzählige Achse, Tetartoid.
-- **[R3·A1]** Pyrite – Pyritohedron — Wood Crystal Models — https://woodcrystalmodels.com/posts/pyrite-pyritohedron/ — Volltext: unregelmässige Fünfecke, „Fünffach-Symmetrie ist eine Illusion".
-- **[R3·A2]** Matematicas Visuales / Mindat-Glossar pyritohedron — https://www.matematicasvisuales.com/english/html/geometry/space/pyritohedron.html ; https://www.mindat.org/glossary/pyritohedron — Snippet: {210}, Diederwinkel 2·arctan(2), Substitution „2 → φ".
-- **[R2·A2]** Wolfram MathWorld — Pyritohedron — https://mathworld.wolfram.com/Pyritohedron.html — Volltext 403, über Snippets abgesichert (unregelmässige Pentagone, keine 5-zählige Achse).
+- **[R2·A1]** Pyritohedron — Wikipedia (en) — <https://en.wikipedia.org/wiki/Pyritohedron> — Volltext: 12/30(24+6)/20, Flächenwinkel 121,6°/106,6°/102,6°, Diederwinkel 126,87°, Tₕ vs. Ih, h-Parameter-Familie.
+- **[R2·A1]** Dodecahedron — Wikipedia (en) — <https://en.wikipedia.org/wiki/Dodecahedron> — Volltext: regulär vs. Pyritoeder, Tₕ-Symmetrie, Miller {210}, keine fünfzählige Achse, Tetartoid.
+- **[R3·A1]** Pyrite – Pyritohedron — Wood Crystal Models — <https://woodcrystalmodels.com/posts/pyrite-pyritohedron/> — Volltext: unregelmässige Fünfecke, „Fünffach-Symmetrie ist eine Illusion".
+- **[R3·A2]** Matematicas Visuales / Mindat-Glossar pyritohedron — <https://www.matematicasvisuales.com/english/html/geometry/space/pyritohedron.html> ; <https://www.mindat.org/glossary/pyritohedron> — Snippet: {210}, Diederwinkel 2·arctan(2), Substitution „2 → φ".
+- **[R2·A2]** Wolfram MathWorld — Pyritohedron — <https://mathworld.wolfram.com/Pyritohedron.html> — Volltext 403, über Snippets abgesichert (unregelmässige Pentagone, keine 5-zählige Achse).
 
 ### Mineral-Übersicht & Mineralogie (R2)
 
-- **[R2·A1]** Pyrit — Wikipedia (de) — https://de.wikipedia.org/wiki/Pyrit — Volltext: Klasse disdodekaedrisch 2/m3̄, Pa3̄ (205), a = 5,42 Å, Z = 4, Trachten {100}/{210}/{111} + {110}/{221}/{321}, Eisernes Kreuz, Haidinger 1845, Fundorte, Dichte/Härte.
-- **[R2·A1]** Pyrite — Wikipedia (en) — https://en.wikipedia.org/wiki/Pyrite — Volltext: Klasse diploidal/m3̄, a = 541,87 pm, Striationen, Geschichte, Feuermachen, Wheellock, Navajún.
-- **[R2·A2]** Britannica — Pyrite — https://www.britannica.com/science/pyrite — Indirekt: Etymologie, fool's gold, Feuerschlag-Nutzung.
-- **[R2·A3]** Pyrite — Baidu Baike (en) — https://baike.baidu.com/en/item/Pyrite/933696 — Snippet: S₂-Hanteln entlang Raumdiagonalen, 4 FeS₂/Zelle, schlechte Spaltbarkeit.
-- **[R2·A3]** Pyrite — Mindat (min-3314) — https://www.mindat.org/min-3314.html — HTTP 403, nicht gelesen; Inhalte anderweitig redundant abgedeckt.
+- **[R2·A1]** Pyrit — Wikipedia (de) — <https://de.wikipedia.org/wiki/Pyrit> — Volltext: Klasse disdodekaedrisch 2/m3̄, Pa3̄ (205), a = 5,42 Å, Z = 4, Trachten {100}/{210}/{111} + {110}/{221}/{321}, Eisernes Kreuz, Haidinger 1845, Fundorte, Dichte/Härte.
+- **[R2·A1]** Pyrite — Wikipedia (en) — <https://en.wikipedia.org/wiki/Pyrite> — Volltext: Klasse diploidal/m3̄, a = 541,87 pm, Striationen, Geschichte, Feuermachen, Wheellock, Navajún.
+- **[R2·A2]** Britannica — Pyrite — <https://www.britannica.com/science/pyrite> — Indirekt: Etymologie, fool's gold, Feuerschlag-Nutzung.
+- **[R2·A3]** Pyrite — Baidu Baike (en) — <https://baike.baidu.com/en/item/Pyrite/933696> — Snippet: S₂-Hanteln entlang Raumdiagonalen, 4 FeS₂/Zelle, schlechte Spaltbarkeit.
+- **[R2·A3]** Pyrite — Mindat (min-3314) — <https://www.mindat.org/min-3314.html> — HTTP 403, nicht gelesen; Inhalte anderweitig redundant abgedeckt.
 
 ### Geschichte der Kristallographie (R1–R2)
 
-- **[R2·A2]** René-Just Haüy and the birth of crystallography — IUCr — https://www.iucr.org/news/newsletter/etc/articles?issue=155353 — Teilweise: Haüy, Gesetz der rationalen Indizes, reguläres Dodekaeder nicht-kristallin.
-- **[R2·A2]** Jean-Baptiste Romé de l'Isle, *Cristallographie* (1783) — Univ. Illinois X-ray Exhibit — https://xray-exhibit.scs.illinois.edu/books/romdelisle.php — Teilweise: Goniometrie, Pseudo-Ikosaeder.
+- **[R2·A2]** René-Just Haüy and the birth of crystallography — IUCr — <https://www.iucr.org/news/newsletter/etc/articles?issue=155353> — Teilweise: Haüy, Gesetz der rationalen Indizes, reguläres Dodekaeder nicht-kristallin.
+- **[R2·A2]** Jean-Baptiste Romé de l'Isle, *Cristallographie* (1783) — Univ. Illinois X-ray Exhibit — <https://xray-exhibit.scs.illinois.edu/books/romdelisle.php> — Teilweise: Goniometrie, Pseudo-Ikosaeder.
 
 ### Fundorte (R2–R4)
 
-- **[R2·A2]** Ampliación a Victoria Mine, Navajún — Mindat — https://www.mindat.org/loc-7116.html — Snippet: Würfel-Morphologie, Pyritoeder selten.
-- **[R3·A1]** Piritas de Navajún — „El yacimiento" (offizielle Minenseite) — https://piritasdenavajun.com/en/el-yacimiento/ — Volltext: Lage, hydrothermale Genese, Urbión/Enciso, Wealden-Mergel, Grösse bis ~20 cm.
-- **[R4·A2]** McDougall Minerals — The Pyrite of Navajún — https://www.mcdougallminerals.com/blog/the-pyrite-of-navajun-spain/ — Händler-Snippet: Konzession 1965, „world's best cubic crystals"; Folklore-Angaben unbelegt.
-- **[R4·A2]** Natural History Curiosities — Pyrite cubes from Navajún — https://www.naturalhistorycuriosities.com/minerals/wonderful-pyrite-cubes-from-navajun-spain/ — Snippet: grösster Kristall >19 cm/9,5 kg; enthält unbelegte „Magie"-Folklore (S).
-- **[R3·A2]** Rock & Gem — Pyrite Suns & Coal Mining; turnstone.ca — https://www.rockngem.com/pyrite-suns-coal-mining/ ; https://turnstone.ca/rom172py.htm — Teilweise: Sparta-Sonnen, Herrin-Flöz, ~300 Mio. Jahre.
-- **[R3·A2]** Frank Ruehlicke — PYRITE: Iron Cross Twins — Mindat-Artikel — https://www.mindat.org/article.php/3872/PYRITE+-+Iron+Cross+Twins — Teilweise: Eisernes Kreuz aus zwei Pentagondodekaedern, 90°-Kanten.
+- **[R2·A2]** Ampliación a Victoria Mine, Navajún — Mindat — <https://www.mindat.org/loc-7116.html> — Snippet: Würfel-Morphologie, Pyritoeder selten.
+- **[R3·A1]** Piritas de Navajún — „El yacimiento" (offizielle Minenseite) — <https://piritasdenavajun.com/en/el-yacimiento/> — Volltext: Lage, hydrothermale Genese, Urbión/Enciso, Wealden-Mergel, Grösse bis ~20 cm.
+- **[R4·A2]** McDougall Minerals — The Pyrite of Navajún — <https://www.mcdougallminerals.com/blog/the-pyrite-of-navajun-spain/> — Händler-Snippet: Konzession 1965, „world's best cubic crystals"; Folklore-Angaben unbelegt.
+- **[R4·A2]** Natural History Curiosities — Pyrite cubes from Navajún — <https://www.naturalhistorycuriosities.com/minerals/wonderful-pyrite-cubes-from-navajun-spain/> — Snippet: grösster Kristall >19 cm/9,5 kg; enthält unbelegte „Magie"-Folklore (S).
+- **[R3·A2]** Rock & Gem — Pyrite Suns & Coal Mining; turnstone.ca — <https://www.rockngem.com/pyrite-suns-coal-mining/> ; <https://turnstone.ca/rom172py.htm> — Teilweise: Sparta-Sonnen, Herrin-Flöz, ~300 Mio. Jahre.
+- **[R3·A2]** Frank Ruehlicke — PYRITE: Iron Cross Twins — Mindat-Artikel — <https://www.mindat.org/article.php/3872/PYRITE+-+Iron+Cross+Twins> — Teilweise: Eisernes Kreuz aus zwei Pentagondodekaedern, 90°-Kanten.
 
 ### Etymologie, Geschichte, Kulturgeschichte (R2–R3)
 
-- **[R3·A2]** etymonline — pyrite; The Conversation — fool's gold — https://www.etymonline.com/word/pyrite ; https://theconversation.com/not-so-foolish-after-all-fools-gold-... — Teilweise: Etymologie, Dioskurides, John Smith.
-- **[R3·A3]** Wiktionary — pyrite — https://en.wiktionary.org/wiki/pyrite — Indirekt: Etymologie *pyr*.
+- **[R3·A2]** etymonline — pyrite; The Conversation — fool's gold — <https://www.etymonline.com/word/pyrite> ; <https://theconversation.com/not-so-foolish-after-all-fools-gold->... — Teilweise: Etymologie, Dioskurides, John Smith.
+- **[R3·A3]** Wiktionary — pyrite — <https://en.wiktionary.org/wiki/pyrite> — Indirekt: Etymologie *pyr*.
 
 ### Kulturelle Echos & Dodekaeder-Symbolik (R2–S)
 
-- **[R2·A1]** Roman dodecahedron — Wikipedia; Live Science — https://en.wikipedia.org/wiki/Roman_dodecahedron ; https://www.livescience.com/archaeology/romans/roman-dodecahedron-... — Volltext/indirekt: 120+ Stücke, 2.–4. Jh., Bronze, >50 Theorien, Zweck ungeklärt.
-- **[R2·A3]** Plato's Model of the Universe and the Dodecahedron (UMass, G. Zabel) — https://www.faculty.umb.edu/gary_zabel/Courses/Phil%20281b/PlatoSolid.htm — Snippet: Timaios, Dodekaeder = Kosmos/Quintessenz, Tierkreis.
-- **[R2·A2]** Hippasus — Wikipedia; Britannica — https://en.wikipedia.org/wiki/Hippasus ; https://www.britannica.com/biography/Hippasus-of-Metapontum — Teilweise: Quellen-Widersprüche, Legende (Grundlage für Mythos 6).
-- **[R3·A2]** Fool's Gold — Azimuth (John Baez) / week247 — https://johncarlosbaez.wordpress.com/2011/09/12/fools-gold/ ; https://math.ucr.edu/home/baez/week247.html — Teilweise: Pythagoreer/Dodekaeder-Hypothese, Quasikristalle.
-- **[S·A3]** Diverse esoterische/kommerzielle „Sacred Geometry"-Seiten (theenlightenmentjourney, thalira, lucky-culture, healing-sounds) — z. B. https://healing-sounds.com/blogs/crystals/octahedral-pyrite-forms — Nur als Beleg für die *Existenz* von Symbolzuschreibungen herangezogen, **nicht** als Sachbeleg; pseudowissenschaftliche Deutungen markiert.
+- **[R2·A1]** Roman dodecahedron — Wikipedia; Live Science — <https://en.wikipedia.org/wiki/Roman_dodecahedron> ; <https://www.livescience.com/archaeology/romans/roman-dodecahedron->... — Volltext/indirekt: 120+ Stücke, 2.–4. Jh., Bronze, >50 Theorien, Zweck ungeklärt.
+- **[R2·A3]** Plato's Model of the Universe and the Dodecahedron (UMass, G. Zabel) — <https://www.faculty.umb.edu/gary_zabel/Courses/Phil%20281b/PlatoSolid.htm> — Snippet: Timaios, Dodekaeder = Kosmos/Quintessenz, Tierkreis.
+- **[R2·A2]** Hippasus — Wikipedia; Britannica — <https://en.wikipedia.org/wiki/Hippasus> ; <https://www.britannica.com/biography/Hippasus-of-Metapontum> — Teilweise: Quellen-Widersprüche, Legende (Grundlage für Mythos 6).
+- **[R3·A2]** Fool's Gold — Azimuth (John Baez) / week247 — <https://johncarlosbaez.wordpress.com/2011/09/12/fools-gold/> ; <https://math.ucr.edu/home/baez/week247.html> — Teilweise: Pythagoreer/Dodekaeder-Hypothese, Quasikristalle.
+- **[S·A3]** Diverse esoterische/kommerzielle „Sacred Geometry"-Seiten (theenlightenmentjourney, thalira, lucky-culture, healing-sounds) — z. B. <https://healing-sounds.com/blogs/crystals/octahedral-pyrite-forms> — Nur als Beleg für die *Existenz* von Symbolzuschreibungen herangezogen, **nicht** als Sachbeleg; pseudowissenschaftliche Deutungen markiert.

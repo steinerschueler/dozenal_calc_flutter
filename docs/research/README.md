@@ -14,6 +14,7 @@ Vor den drei thematischen Gattungen steht ein **Grundlagen**-Teil; danach gehör
 jedes neue Thema **bewusst und trennscharf** in genau eine Gattung.
 
 ### Grundlagen (erster Block in der Theorie)
+
 *Die grundlegenden Ideen des Zwölfersystems — der Einstieg vor den thematischen
 Blöcken.* Enthält: **Was ist das Dozenalsystem?** und **Zwölf Glieder an der Hand**
 (die anthropologische Herkunft des Zählens in Zwölfern — *warum* überhaupt Zwölf).
@@ -27,6 +28,7 @@ Zwei-Schienen-Auswertung, Funktionen …). Faustregel: grundlegende *Ideen* → 
 *Bedienung* der Features → App-Hilfe.
 
 ### 1. Zwölf und die Welt
+
 *Wo die Zwölf in der Welt auftaucht — nicht als menschliche Konstruktion, sondern
 als Vorgefundenes.* Umfasst die **naturwissenschaftlichen, theistischen,
 künstlerisch-kulturellen, biologischen und historischen** Artikel.
@@ -35,6 +37,7 @@ Schäume (Biologie), Quasikristalle (Physik), Musik, Kunst, Sprache, Bauen, Kale
 (Kultur), Tierkreis (Astronomie/Mythos).
 
 ### 2. Dozenale Mathematik
+
 *Die mathematische Struktur der Zwölf selbst.* Umfasst die abstrakt-mathematischen
 Themen: **Dodekaeder, Dodekagon (Zwölfeck), Fibonacci, Goldener Schnitt, Pi,
 Einheitskreis & 360°** — und möglichst **weitere, weniger allgemein bekannte**
@@ -42,6 +45,7 @@ Themen (Teiler/Brüche/Perioden, Stellenwertsysteme, …). Anspruch: über das
 Schulwissen hinausgehen, das Eigentümliche der Zwölf zeigen.
 
 ### 3. Dozenale Gesellschaft
+
 *Der lebendige, zeitgenössische Dozenalismus.* **Nicht nur** die Dozenal Society,
 sondern **alle gegenwärtigen Strömungen, Werkzeuge, Trends und Projekte**, die
 etwas für die **Implementierung** des Dozenalismus tun: Gesellschaften & Bewegung,
@@ -82,6 +86,7 @@ Legende: Dossier = `docs/research/*.md` vorhanden · Prosa = als `ProseChapter`
 verdrahtet (`lib/theory/<lang>/<block>_<lang>.dart`).
 
 ### Grundlagen
+
 | Thema | Dossier | Prosa |
 |---|---|---|
 | Bedienung des Rechners (standalone App-Hilfe, NICHT im Grundlagen-Block) | — | (Legacy; *geplant:* Verweis auf Grundlagen + Erklärung der schwierigeren Rechner-Fähigkeiten) |
@@ -89,6 +94,7 @@ verdrahtet (`lib/theory/<lang>/<block>_<lang>.dart`).
 | Zwölf Glieder an der Hand | ✅ (grundlagen_glieder) | ✅ (14 Sprachen) |
 
 ### Zwölf und die Welt
+
 | Thema | Dossier | Prosa |
 |---|---|---|
 | Pyrit, Granat, Kugelpackung, Quasikristalle, Viren/Radiolarien, Zellen/Schäume | ✅ (nature_*) | ✅ |
@@ -97,6 +103,7 @@ verdrahtet (`lib/theory/<lang>/<block>_<lang>.dart`).
 | *Ideen:* Uhr/Zeitmessung, Monate/Jahr, Theologie der Zwölf (12 Apostel/Stämme), … | ❌ | ❌ |
 
 ### Dozenale Mathematik
+
 | Thema | Dossier | Prosa |
 |---|---|---|
 | Teiler/Brüche/Perioden, Zahlenbasen, Geschichte der Stellenwertsysteme, „Wie dieser Rechner rechnet" | teils (math_*) | ✅ |
@@ -112,6 +119,7 @@ verdrahtet (`lib/theory/<lang>/<block>_<lang>.dart`).
 | *Ideen:* siehe `math_chapter_ideas.md` (Reguläre/3-glatte Zahlen + Babylon, Pentominoes, Kuboktaeder, Gruppen der Ordnung 12 …) | ❌ | ❌ |
 
 ### Dozenale Gesellschaft
+
 | Thema | Dossier | Prosa |
 |---|---|---|
 | Bewegung, neue Ziffern, Do/Gro/Mo, TGM/Gesellschaften/Werkzeuge, Dozecal, Rapoports Rechner | teils (society_*) | ✅ |

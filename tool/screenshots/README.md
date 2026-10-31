@@ -5,6 +5,7 @@ Sprachen aus Roh-Captures + Übersetzungen. Vollständige Erklärung + Vorausset
 Upload via `fastlane deliver`: **[`../../docs/appstore-connect-pipeline.md`](../../docs/appstore-connect-pipeline.md)**.
 
 ## Dateien
+
 - `i18n.json` — Marketing-Texte (Intro-/Umrechner-Schlagzeile, Rechner-Titel + 13 Funktions-
   Punkte) in 11 Sprachen. **Single source of truth** für die Overlay-Texte.
 - `render_text.swift` — CoreText/AppKit-Text-Renderer (formt Arabisch-RTL, Devanagari, CJK,
@@ -15,6 +16,7 @@ Upload via `fastlane deliver`: **[`../../docs/appstore-connect-pipeline.md`](../
   App-Store-Mass.
 
 ## Konventionen / Annahmen
+
 - **Staging in `/tmp`** (alles ephemeral, nicht im Repo): Roh-Captures nach `/tmp/raw_*` bzw.
   `/tmp/frame_work*` aufbereiten; Output nach `/tmp/framed/<platform>/<locale>/`; Renderer als
   `/tmp/render_text`. Die Skripte sind **Templates** dieses Laufs (Build 16) — Pfade ggf. anpassen.

@@ -48,6 +48,7 @@ In der islamischen Geometrie (girih) gehören das Dodekagon und der zwölfzackig
 Bei Fensterrosen ist Vorsicht geboten: Sie kommen sehr oft in acht, sechzehn, vierundzwanzig oder anderen Teilungen vor; eine reine Zwölfer-Teilung ist seltener, als die Symbolik nahelegt. Ursprünglich war die Acht-Teilung verbreitet, doch die symbolträchtige Zwölfzahl wurde rasch beliebter.
 
 **Notre-Dame de Paris (präzise Zählung):**
+
 - Die **Südrose** (1260, etwa 13 m Durchmesser) hat 84 Felder in vier Kreisen; die zwölf Apostel sind in den ersten beiden Kreisen angeordnet. Die Felderzahl ist um die Zahlen 4, 12 und 24 organisiert. Dies ist die eigentliche Apostel-Rose.
 - Die **Westrose** (um 1225) hat 24 Strahlen; der innerste Kreis zeigt die zwölf Stämme Israels.
 - Die **Nordrose** (um 1250, 12,9 m) ist um 16 Propheten innen und 32 Könige aussen organisiert, also nicht primär eine Zwölfer-Struktur. **Korrektur:** Die Nordrose ist kein sauberes Zwölf-Beispiel.
@@ -77,6 +78,7 @@ An romanischen und gotischen Kathedralportalen erscheinen oft die zwölf Tierkre
 - **Abtei Saint-Denis, Nordrose.** Sie zeigt Gott den Schöpfer, umgeben von den Schöpfungstagen, der Himmelsordnung (Tierkreis) und der Erdordnung (Monatsarbeiten). **Hinweis:** Dieses Beispiel stammt aus einer Such-Zusammenfassung und liess sich im Volltext nicht vollständig bestätigen; vor Verwendung gegen Fachliteratur prüfen.
 
 **Astronomische Uhren** machen die Zwölf doppelt zur Ordnungsgrösse, zeitlich (Stunden, Monate) und räumlich (Tierkreis):
+
 - **Prag, Altstädter Rathaus (Orloj).** Der älteste Teil von 1410, von Mikuláš von Kadaň und Jan Šindel; die älteste noch laufende astronomische Uhr der Welt. Sie hat einen Tierkreisring mit zwölf Zeichen, eine Kalenderscheibe mit zwölf Monatsmedaillons und den stündlichen „Apostelgang" mit den zwölf Apostel-Figuren (die Figuren wurden bei der Überholung 1787 bis 1791 ergänzt).
 - **Strassburg, Münster.** Am rechten Westportal zwölf Tierkreiszeichen mit zwölf Monatsarbeiten. Drei aufeinanderfolgende astronomische Uhren: 14. Jahrhundert, 16. Jahrhundert (Dasypodius/Habrecht) und die heutige von Jean-Baptiste Schwilgué (1838 bis 1843), heliozentrisch und mit ewigem Kalender.
 - **Rostock, St. Marien (1472)** als reine Tierkreisuhr und **Münster, Dom (1540/42)** mit Innenkreis aus zwölf Monatsarbeiten-Medaillons.
@@ -155,98 +157,98 @@ Bewertung nach Zuverlässigkeit (R1 wissenschaftlich/primär, R2 etablierte Refe
 
 ### Zwölfeckige Grundrisse, Türme, Kapellen
 
-- [R2·A1] Mauritiusrotunde — Wikipedia — https://de.wikipedia.org/wiki/Mauritiusrotunde — bestes architektonisch-theologisches Beispiel, Masse und zwölf Apostelfiguren bestätigt.
-- [R2·A1] Iglesia de la Vera Cruz, Segovia — Wikipedia — https://en.wikipedia.org/wiki/Iglesia_de_la_Vera_Cruz,_Segovia — Datum 1208, Dodekagon, Urheberschafts-Korrektur (Orden vom Heiligen Grab).
-- [R2·A1] Kölner Dom — Wikipedia — https://de.wikipedia.org/wiki/K%C3%B6lner_Dom — Zwölfeck-Herleitung des Chorkapellenkranzes wörtlich bestätigt.
-- [R3·A1] Philip Steadman, „Sacred polygons" — https://www.philipsteadman.com/blog/sacred-polygons/ — Alberti-Polygonkanon inkl. Zwölfeck.
-- [R2·A1] Dodecagon — Wikipedia — https://en.wikipedia.org/wiki/Dodecagon — Torre del Oro, Vera Cruz, Spello, Münzen.
-- [R2·A1] Torre del Oro — Wikipedia — https://en.wikipedia.org/wiki/Torre_del_Oro — säkularer zwölfeckiger Wehrturm.
-- [R3·A2] itinerartis, „Vera Cruz Segovia" — https://itinerartis.com/vera-cruz-segovia/ — populär, Templer-Mythos kritisch zu lesen.
-- [R4·A3] sacred-destinations, „Vera Cruz Church" — http://www.sacred-destinations.com/spain/segovia-vera-cruz-templar-church — touristisch, Templer-Zuschreibung unkritisch.
+- [R2·A1] Mauritiusrotunde — Wikipedia — <https://de.wikipedia.org/wiki/Mauritiusrotunde> — bestes architektonisch-theologisches Beispiel, Masse und zwölf Apostelfiguren bestätigt.
+- [R2·A1] Iglesia de la Vera Cruz, Segovia — Wikipedia — <https://en.wikipedia.org/wiki/Iglesia_de_la_Vera_Cruz,_Segovia> — Datum 1208, Dodekagon, Urheberschafts-Korrektur (Orden vom Heiligen Grab).
+- [R2·A1] Kölner Dom — Wikipedia — <https://de.wikipedia.org/wiki/K%C3%B6lner_Dom> — Zwölfeck-Herleitung des Chorkapellenkranzes wörtlich bestätigt.
+- [R3·A1] Philip Steadman, „Sacred polygons" — <https://www.philipsteadman.com/blog/sacred-polygons/> — Alberti-Polygonkanon inkl. Zwölfeck.
+- [R2·A1] Dodecagon — Wikipedia — <https://en.wikipedia.org/wiki/Dodecagon> — Torre del Oro, Vera Cruz, Spello, Münzen.
+- [R2·A1] Torre del Oro — Wikipedia — <https://en.wikipedia.org/wiki/Torre_del_Oro> — säkularer zwölfeckiger Wehrturm.
+- [R3·A2] itinerartis, „Vera Cruz Segovia" — <https://itinerartis.com/vera-cruz-segovia/> — populär, Templer-Mythos kritisch zu lesen.
+- [R4·A3] sacred-destinations, „Vera Cruz Church" — <http://www.sacred-destinations.com/spain/segovia-vera-cruz-templar-church> — touristisch, Templer-Zuschreibung unkritisch.
 - [R1·A3] Heribert Sutter, „Form und Ikonologie spanischer Zentralbauten" — (Dissertation, nur als Literaturhinweis) — massgebliche Studie zu Torres del Río, Segovia, Eunate; vor Verwendung beschaffen.
-- [R3·A3] Quadralectic Architecture, „The circular church plan" — https://quadralectics.wordpress.com/ — Eunate als Achteck (Korrektiv), Snippet.
+- [R3·A3] Quadralectic Architecture, „The circular church plan" — <https://quadralectics.wordpress.com/> — Eunate als Achteck (Korrektiv), Snippet.
 
 ### Himmlisches Jerusalem, zwölf Tore und Grundsteine
 
-- [R1·A1] Raumbilder der Himmelsstadt (Diss., Uni Heidelberg, PDF) — https://archiv.ub.uni-heidelberg.de/volltextserver/28704/3/Raumbilder_Text_Konrad-Schineller.pdf — wissenschaftliche Synthese zur bildlichen und baulichen Umsetzung.
-- [R1·A1] Jerusalem in Brindisi (Aufsatz, Uni Heidelberg, PDF) — https://journals.ub.uni-heidelberg.de/index.php/rjbh/article/download/95003/89781 — Formentreue der Jerusalem-Kopien.
-- [R2·A1] Offenbarung 21 (Bibeltext) — https://www.bible.com/de/bible/73/REV.21.1-25.HFA — biblische Grundlage, zwölf Tore und Grundsteine.
-- [R2·A2] WiBiLex, „Jerusalem, himmlisches" — https://www.bibelwissenschaft.de/ressourcen/wibilex/altes-testament/jerusalem-himmlisches — wissenschaftliches Bibellexikon.
-- [R2·A2] Neues Jerusalem — Wikipedia — https://de.wikipedia.org/wiki/Neues_Jerusalem — Würfelform, Einfluss auf Sakralarchitektur.
-- [R3·A1] Barbarossaleuchter (himmlischesjerusalem.de) — https://himmlischesjerusalem.de/2021/06/16/barbarossaleuchter-aachen-1165-1170/ — Inschrift und Begründung „acht statt zwölf".
-- [R3·A2] himmlischesjerusalem.de (Themenportal) — https://himmlischesjerusalem.de — Sammlung zum Motiv, populär aber sachkundig.
-- [R3·A1] GotQuestions, „Twelve gates in Revelation 21" — https://www.gotquestions.org/twelve-gates-Revelation.html — devotional, Symbolik der zwölf Tore.
-- [R4·A3] kathPedia, „Himmlisches Jerusalem" — https://kathpedia.de/index.php/Himmlisches_Jerusalem — TLS-Fehler beim Abruf, indirekt.
+- [R1·A1] Raumbilder der Himmelsstadt (Diss., Uni Heidelberg, PDF) — <https://archiv.ub.uni-heidelberg.de/volltextserver/28704/3/Raumbilder_Text_Konrad-Schineller.pdf> — wissenschaftliche Synthese zur bildlichen und baulichen Umsetzung.
+- [R1·A1] Jerusalem in Brindisi (Aufsatz, Uni Heidelberg, PDF) — <https://journals.ub.uni-heidelberg.de/index.php/rjbh/article/download/95003/89781> — Formentreue der Jerusalem-Kopien.
+- [R2·A1] Offenbarung 21 (Bibeltext) — <https://www.bible.com/de/bible/73/REV.21.1-25.HFA> — biblische Grundlage, zwölf Tore und Grundsteine.
+- [R2·A2] WiBiLex, „Jerusalem, himmlisches" — <https://www.bibelwissenschaft.de/ressourcen/wibilex/altes-testament/jerusalem-himmlisches> — wissenschaftliches Bibellexikon.
+- [R2·A2] Neues Jerusalem — Wikipedia — <https://de.wikipedia.org/wiki/Neues_Jerusalem> — Würfelform, Einfluss auf Sakralarchitektur.
+- [R3·A1] Barbarossaleuchter (himmlischesjerusalem.de) — <https://himmlischesjerusalem.de/2021/06/16/barbarossaleuchter-aachen-1165-1170/> — Inschrift und Begründung „acht statt zwölf".
+- [R3·A2] himmlischesjerusalem.de (Themenportal) — <https://himmlischesjerusalem.de> — Sammlung zum Motiv, populär aber sachkundig.
+- [R3·A1] GotQuestions, „Twelve gates in Revelation 21" — <https://www.gotquestions.org/twelve-gates-Revelation.html> — devotional, Symbolik der zwölf Tore.
+- [R4·A3] kathPedia, „Himmlisches Jerusalem" — <https://kathpedia.de/index.php/Himmlisches_Jerusalem> — TLS-Fehler beim Abruf, indirekt.
 
 ### Fensterrosen, Tierkreis und Monatszyklen
 
-- [R2·A1] Rose window — Wikipedia — https://en.wikipedia.org/wiki/Rose_window — Notre-Dame-Zählung, Zwölf-Symbolik.
-- [R2·A1] Friends of Notre-Dame de Paris, „Rose Windows" — https://www.friendsofnotredamedeparis.org/cathedral/artifacts/rose-windows/ — präzise Felderzahlen der Südrose.
-- [R2·A1] Radfenster — Wikipedia — https://de.wikipedia.org/wiki/Radfenster — Chartres-Westrose zwölfspeichig, Masse und Aufbau.
-- [R2·A2] Fensterrose — Wikipedia — https://de.wikipedia.org/wiki/Fensterrose — Saint-Denis-Beispiel nur indirekt, nicht im Volltext bestätigt.
-- [R1·A3] RDK Labor, „Fensterrose" — http://www.rdklabor.de/wiki/Fensterrose — fachwissenschaftliches Reallexikon, indirekt.
-- [R3·A1] abelard.org, „Lausanne rose window" — https://www.abelard.org/france/lausanne-cathedral-rose.php — Imago-Mundi-Programm, Vier/Acht-Gerüst mit eingebetteter Zwölf.
-- [R3·A1] Astrology and Art, „Strasbourg Cathedral and astronomical time" — https://astrologyandart.wordpress.com/2014/03/05/strasbourg-cathedral-and-astronomical-time/ — drei Strassburger Uhren, Tierkreis/Monatsarbeiten.
-- [R3·A2] Astrology and Art, „Labours of the Months" — https://astrologyandart.wordpress.com/tag/labours-of-the-months/ — Chartres, Amiens, Münster, Lausanne.
-- [R3·A2] DailyArt Magazine, „Zodiac in Medieval Art" — https://www.dailyartmagazine.com/zodiac-medieval-art/ — populäre Übersicht.
-- [R2·A2] medart.pitt.edu, „Chartres Zodiac Window" — http://www.medart.pitt.edu/image/France/Chartres/ — kunsthistorische Bilddatenbank.
-- [R2·A2] Vanderbilt diglib, „Chartres zodiac, west façade" — https://diglib.library.vanderbilt.edu/act-imagelink.pl?RC=26359 — Bilddatenbank.
-- [S·A2] chartres.geometrycode.com, „Rose Windows" — https://chartres.geometrycode.com/ — esoterisch gefärbt, als Rezeption lesen.
-- [R3·A3] italien.news, „San Zeno Maggiore" — https://italien.news/en/travel/veneto/verona/basilica-of-san-zeno-maggiore/ — Korrektiv: sechs Speichen (Rad des Glücks), Snippet.
-- [R2·A2] notredamedeparis.fr, „The Stained Glass Windows" — https://www.notredamedeparis.fr/en/understand/architecture/the-stained-glass-windows/ — offizielle Kathedral-Seite.
+- [R2·A1] Rose window — Wikipedia — <https://en.wikipedia.org/wiki/Rose_window> — Notre-Dame-Zählung, Zwölf-Symbolik.
+- [R2·A1] Friends of Notre-Dame de Paris, „Rose Windows" — <https://www.friendsofnotredamedeparis.org/cathedral/artifacts/rose-windows/> — präzise Felderzahlen der Südrose.
+- [R2·A1] Radfenster — Wikipedia — <https://de.wikipedia.org/wiki/Radfenster> — Chartres-Westrose zwölfspeichig, Masse und Aufbau.
+- [R2·A2] Fensterrose — Wikipedia — <https://de.wikipedia.org/wiki/Fensterrose> — Saint-Denis-Beispiel nur indirekt, nicht im Volltext bestätigt.
+- [R1·A3] RDK Labor, „Fensterrose" — <http://www.rdklabor.de/wiki/Fensterrose> — fachwissenschaftliches Reallexikon, indirekt.
+- [R3·A1] abelard.org, „Lausanne rose window" — <https://www.abelard.org/france/lausanne-cathedral-rose.php> — Imago-Mundi-Programm, Vier/Acht-Gerüst mit eingebetteter Zwölf.
+- [R3·A1] Astrology and Art, „Strasbourg Cathedral and astronomical time" — <https://astrologyandart.wordpress.com/2014/03/05/strasbourg-cathedral-and-astronomical-time/> — drei Strassburger Uhren, Tierkreis/Monatsarbeiten.
+- [R3·A2] Astrology and Art, „Labours of the Months" — <https://astrologyandart.wordpress.com/tag/labours-of-the-months/> — Chartres, Amiens, Münster, Lausanne.
+- [R3·A2] DailyArt Magazine, „Zodiac in Medieval Art" — <https://www.dailyartmagazine.com/zodiac-medieval-art/> — populäre Übersicht.
+- [R2·A2] medart.pitt.edu, „Chartres Zodiac Window" — <http://www.medart.pitt.edu/image/France/Chartres/> — kunsthistorische Bilddatenbank.
+- [R2·A2] Vanderbilt diglib, „Chartres zodiac, west façade" — <https://diglib.library.vanderbilt.edu/act-imagelink.pl?RC=26359> — Bilddatenbank.
+- [S·A2] chartres.geometrycode.com, „Rose Windows" — <https://chartres.geometrycode.com/> — esoterisch gefärbt, als Rezeption lesen.
+- [R3·A3] italien.news, „San Zeno Maggiore" — <https://italien.news/en/travel/veneto/verona/basilica-of-san-zeno-maggiore/> — Korrektiv: sechs Speichen (Rad des Glücks), Snippet.
+- [R2·A2] notredamedeparis.fr, „The Stained Glass Windows" — <https://www.notredamedeparis.fr/en/understand/architecture/the-stained-glass-windows/> — offizielle Kathedral-Seite.
 
 ### Astronomische Uhren
 
-- [R2·A1] Prager Rathausuhr — Wikipedia — https://de.wikipedia.org/wiki/Prager_Rathausuhr — Datierung 1410, Tierkreis, Apostelgang.
-- [R2·A2] Prague astronomical clock — Wikipedia (en) — https://en.wikipedia.org/wiki/Prague_astronomical_clock — Erbauer, älteste laufende Uhr.
-- [R2·A1] Astronomische Uhr — Wikipedia (de) — https://de.wikipedia.org/wiki/Astronomische_Uhr — Strassburg, Prag, Rostock, Münster mit Datierung.
-- [R2·A1] Astronomical clock — Wikipedia (en) — https://en.wikipedia.org/wiki/Astronomical_clock — internationaler Überblick.
-- [R2·A1] Strassburger Münster — Wikipedia — https://de.wikipedia.org/wiki/Stra%C3%9Fburger_M%C3%BCnster — drei Uhren, Datierung.
-- [R3·A2] astro.com, „Astrologie in der Kunst" — https://www.astro.com/astrologie/aa_article210301_g.htm — Portal-Tympana, kosmologische Deutung; interpretierend.
-- [R3·A2] Marienkirche Rostock, astronomische Uhr — http://marienkirche-rostock.de/sehenswertes/astronomische-uhr — Tierkreisuhr 1472.
-- [R3·A2] MünsterWiki, „Astronomische Uhr" — https://wiki.muenster.org/index.php/Astronomische_Uhr — lokale Referenz.
+- [R2·A1] Prager Rathausuhr — Wikipedia — <https://de.wikipedia.org/wiki/Prager_Rathausuhr> — Datierung 1410, Tierkreis, Apostelgang.
+- [R2·A2] Prague astronomical clock — Wikipedia (en) — <https://en.wikipedia.org/wiki/Prague_astronomical_clock> — Erbauer, älteste laufende Uhr.
+- [R2·A1] Astronomische Uhr — Wikipedia (de) — <https://de.wikipedia.org/wiki/Astronomische_Uhr> — Strassburg, Prag, Rostock, Münster mit Datierung.
+- [R2·A1] Astronomical clock — Wikipedia (en) — <https://en.wikipedia.org/wiki/Astronomical_clock> — internationaler Überblick.
+- [R2·A1] Strassburger Münster — Wikipedia — <https://de.wikipedia.org/wiki/Stra%C3%9Fburger_M%C3%BCnster> — drei Uhren, Datierung.
+- [R3·A2] astro.com, „Astrologie in der Kunst" — <https://www.astro.com/astrologie/aa_article210301_g.htm> — Portal-Tympana, kosmologische Deutung; interpretierend.
+- [R3·A2] Marienkirche Rostock, astronomische Uhr — <http://marienkirche-rostock.de/sehenswertes/astronomische-uhr> — Tierkreisuhr 1472.
+- [R3·A2] MünsterWiki, „Astronomische Uhr" — <https://wiki.muenster.org/index.php/Astronomische_Uhr> — lokale Referenz.
 
 ### Zwölf Säulen, Apostel-Bezüge
 
-- [R2·A1] Christliche Symbolik/Säule — Wikisource — https://de.wikisource.org/wiki/Christliche_Symbolik/S%C3%A4ule — Suger, zwölf Mittelsäulen als Apostel.
-- [R2·A1] Catholic Encyclopedia, „Iconostasis" — https://www.newadvent.org/cathen/07626a.htm — Hagia-Sophia-Zwölfsäulen.
-- [R2·A1] Zwölf-Apostel-Kirche (Frankenthal) — Wikipedia — https://de.wikipedia.org/wiki/Zw%C3%B6lf-Apostel-Kirche_(Frankenthal) — zwölf ovale Säulen, modernes Beispiel.
-- [R2·A1] Baptisterium (Pisa) — Wikipedia (de) — https://de.wikipedia.org/wiki/Baptisterium_(Pisa) — innerer Kranz aus 12 Pfeilern, Zahlensymbolik 4/8/12.
-- [R2·A1] Pisa Baptistery — Wikipedia (en) — https://en.wikipedia.org/wiki/Pisa_Baptistery — „zwölf" nicht genannt; runder Bau, oktogonales Becken (Widerspruch zur de-Version).
-- [R3·A2] italyguides, „Baptistery of St. John, Pisa" — https://www.italyguides.it/en/tuscany/pisa/ — touristisch, Quelle der „12 Säulen"-Behauptung.
-- [R3·A1] Tempietto di Bramante — Wikipedia — https://de.m.wikipedia.org/wiki/Tempietto_di_Bramante — Korrektiv: 16 Säulen.
-- [R2·A2] Romanesque architecture — Wikipedia — https://en.wikipedia.org/wiki/Romanesque_architecture — bis zu zwölf Gewändesäulen als Konvention, Snippet.
+- [R2·A1] Christliche Symbolik/Säule — Wikisource — <https://de.wikisource.org/wiki/Christliche_Symbolik/S%C3%A4ule> — Suger, zwölf Mittelsäulen als Apostel.
+- [R2·A1] Catholic Encyclopedia, „Iconostasis" — <https://www.newadvent.org/cathen/07626a.htm> — Hagia-Sophia-Zwölfsäulen.
+- [R2·A1] Zwölf-Apostel-Kirche (Frankenthal) — Wikipedia — <https://de.wikipedia.org/wiki/Zw%C3%B6lf-Apostel-Kirche_(Frankenthal)> — zwölf ovale Säulen, modernes Beispiel.
+- [R2·A1] Baptisterium (Pisa) — Wikipedia (de) — <https://de.wikipedia.org/wiki/Baptisterium_(Pisa)> — innerer Kranz aus 12 Pfeilern, Zahlensymbolik 4/8/12.
+- [R2·A1] Pisa Baptistery — Wikipedia (en) — <https://en.wikipedia.org/wiki/Pisa_Baptistery> — „zwölf" nicht genannt; runder Bau, oktogonales Becken (Widerspruch zur de-Version).
+- [R3·A2] italyguides, „Baptistery of St. John, Pisa" — <https://www.italyguides.it/en/tuscany/pisa/> — touristisch, Quelle der „12 Säulen"-Behauptung.
+- [R3·A1] Tempietto di Bramante — Wikipedia — <https://de.m.wikipedia.org/wiki/Tempietto_di_Bramante> — Korrektiv: 16 Säulen.
+- [R2·A2] Romanesque architecture — Wikipedia — <https://en.wikipedia.org/wiki/Romanesque_architecture> — bis zu zwölf Gewändesäulen als Konvention, Snippet.
 
 ### Islamische Geometrie
 
-- [R2·A1] Islamic geometric patterns — Wikipedia — https://en.wikipedia.org/wiki/Islamic_geometric_patterns — Zwölfstern, girih, Konya 1220, Bagdad 1230, Alhambra.
-- [R1·A1] Craig S. Kaplan, „Islamic Star Patterns" (PhD, PDF) — https://cs.uwaterloo.ca/~csk/other/phd/kaplan_diss_starpatterns_print.pdf — fachliche Vertiefung zu Zwölf-Polygonen.
+- [R2·A1] Islamic geometric patterns — Wikipedia — <https://en.wikipedia.org/wiki/Islamic_geometric_patterns> — Zwölfstern, girih, Konya 1220, Bagdad 1230, Alhambra.
+- [R1·A1] Craig S. Kaplan, „Islamic Star Patterns" (PhD, PDF) — <https://cs.uwaterloo.ca/~csk/other/phd/kaplan_diss_starpatterns_print.pdf> — fachliche Vertiefung zu Zwölf-Polygonen.
 
 ### Dodekaeder, Platon, geodätische Kuppeln
 
-- [R2·A1] Geodätische Kuppel — Wikipedia (de) — https://de.wikipedia.org/wiki/Geod%C3%A4tische_Kuppel — Bauersfeld/Jena 1922/26, Polyederbasis, Bauwerksliste.
-- [R2·A1] Geodesic dome — Wikipedia (en) — https://en.wikipedia.org/wiki/Geodesic_dome — Bauersfeld als Erfinder, Fuller-Patent, zwölf Pentagone.
-- [R2·A1] Montreal Biosphere — Wikipedia — https://en.wikipedia.org/wiki/Montreal_Biosphere — ikosaedrisch, kein Dodekaeder.
-- [R2·A2] Timaios — Wikipedia (de) — https://de.wikipedia.org/wiki/Timaios — Dodekaeder als Weltall/Quintessenz, zwölf Flächen und Sternbilder.
-- [R1·A2] Stanford Encyclopedia of Philosophy, „Plato's Timaeus" — https://plato.stanford.edu/entries/plato-timaeus/ — philosophische Primärreferenz.
-- [R2·A1] Wolfram MathWorld, „Geodesic Dome" — https://mathworld.wolfram.com/GeodesicDome.html — mathematische Definition.
-- [R3·A1] Geodätische Kuppel, Platonische Körper (katharinengymnasium.de) — https://www.katharinengymnasium.de/wolf/web/platonischeKoerper/platonischeKoerper.html — didaktische Übersicht.
-- [R1·A1] „Art, Mathematics and Architecture… the Platonic Solids" (academia.edu, PDF) — https://www.academia.edu/11308110/ — Dodekaeder als Universum/Äther in der Renaissance-Architektur.
-- [R3·A2] Smithsonian, „Architectural Genius of the Geodesic Dome" — https://www.smithsonianmag.com/smithsonian-institution/the-architectural-genius-of-the-geodesic-dome-180982492/ — populär, seriös.
-- [R3·A2] Buckminster Fuller Institute, „Domes" — https://www.bfi.org/about-fuller/geodesic-domes/ — institutionell, Snippet.
-- [R4·A2] faircompanies, „Geodesic domes: the failed dream" — https://faircompanies.com/articles/geodesic-domes-the-failed-dream-of-living-light-on-the-land/ — Praxis-Vorbehalte.
-- [R4·A3] New Atlas, „mini-dome Dodeca homes" — https://newatlas.com/tiny-houses/mini-dome-dodeca-homes/ — echtes Dodekaeder-Design im Kleinmassstab.
-- [R3·A2] Ingenieurporträt R. B. Fuller (db 2/02, PDF) — https://www.bauberufe.eu/images/doks/buckminsterfuller.pdf — Fachzeitschrift.
+- [R2·A1] Geodätische Kuppel — Wikipedia (de) — <https://de.wikipedia.org/wiki/Geod%C3%A4tische_Kuppel> — Bauersfeld/Jena 1922/26, Polyederbasis, Bauwerksliste.
+- [R2·A1] Geodesic dome — Wikipedia (en) — <https://en.wikipedia.org/wiki/Geodesic_dome> — Bauersfeld als Erfinder, Fuller-Patent, zwölf Pentagone.
+- [R2·A1] Montreal Biosphere — Wikipedia — <https://en.wikipedia.org/wiki/Montreal_Biosphere> — ikosaedrisch, kein Dodekaeder.
+- [R2·A2] Timaios — Wikipedia (de) — <https://de.wikipedia.org/wiki/Timaios> — Dodekaeder als Weltall/Quintessenz, zwölf Flächen und Sternbilder.
+- [R1·A2] Stanford Encyclopedia of Philosophy, „Plato's Timaeus" — <https://plato.stanford.edu/entries/plato-timaeus/> — philosophische Primärreferenz.
+- [R2·A1] Wolfram MathWorld, „Geodesic Dome" — <https://mathworld.wolfram.com/GeodesicDome.html> — mathematische Definition.
+- [R3·A1] Geodätische Kuppel, Platonische Körper (katharinengymnasium.de) — <https://www.katharinengymnasium.de/wolf/web/platonischeKoerper/platonischeKoerper.html> — didaktische Übersicht.
+- [R1·A1] „Art, Mathematics and Architecture… the Platonic Solids" (academia.edu, PDF) — <https://www.academia.edu/11308110/> — Dodekaeder als Universum/Äther in der Renaissance-Architektur.
+- [R3·A2] Smithsonian, „Architectural Genius of the Geodesic Dome" — <https://www.smithsonianmag.com/smithsonian-institution/the-architectural-genius-of-the-geodesic-dome-180982492/> — populär, seriös.
+- [R3·A2] Buckminster Fuller Institute, „Domes" — <https://www.bfi.org/about-fuller/geodesic-domes/> — institutionell, Snippet.
+- [R4·A2] faircompanies, „Geodesic domes: the failed dream" — <https://faircompanies.com/articles/geodesic-domes-the-failed-dream-of-living-light-on-the-land/> — Praxis-Vorbehalte.
+- [R4·A3] New Atlas, „mini-dome Dodeca homes" — <https://newatlas.com/tiny-houses/mini-dome-dodeca-homes/> — echtes Dodekaeder-Design im Kleinmassstab.
+- [R3·A2] Ingenieurporträt R. B. Fuller (db 2/02, PDF) — <https://www.bauberufe.eu/images/doks/buckminsterfuller.pdf> — Fachzeitschrift.
 
 ### Vorbehalte: römische Dodekaeder, Sacred Geometry, Mythen
 
-- [R2·A1] Roman dodecahedron — Wikipedia — https://en.wikipedia.org/wiki/Roman_dodecahedron — Zweck unbekannt, 50+ widerlegte Theorien.
-- [R3·A2] Live Science, „A mysterious 12-sided object" — https://www.livescience.com/archaeology/romans/ — populär, seriös.
-- [R3·A2] Smithsonian Magazine, „Another Mysterious Roman Dodecahedron" — https://www.smithsonianmag.com/smart-news/ — populär, seriös.
-- [R2·A1] Sacred geometry — Wikipedia — https://en.wikipedia.org/wiki/Sacred_geometry — „procedural conventions"-Kritik.
-- [R3·A2] Triskele Heritage, „Mediaeval Mythbusting: The Pentagram" — https://triskeleheritage.triskelepublishing.com/mediaeval-mythbusting-blog-11-pentagram/ — Pentagramm-Bedeutung überschätzt.
-- [S·A2] fr-macon.net, „Sacred Geometry of Cathedrals" — https://www.fr-macon.net/en/masonic-symbolism/numbers-geometry/sacred-geometry-cathedrals/ — freimaurerisch, nur als Rezeptionsbeleg.
-- [R3·A1] Semper Excelsius, „Why baptismal fonts are octagonal" — https://semper-excelsius.com/2018/07/15/baptismal-font-in-octagon-shape/ — Achteck-Symbolik (Korrektiv).
-- [R3·A2] Aleteia, „Why baptismal fonts have eight sides" — https://aleteia.org/2022/01/09/why-many-baptismal-fonts-have-eight-sides/ — Achteck-Symbolik.
-- [S·A2] Ex Utopia, „Occult Psychogeography of Hawksmoor's London Churches" — https://www.exutopia.com/an-occult-psychogeography-of-hawksmoors-london-churches/ — explizit als Mythos/Rezeption.
-- [S·A2] „Hawksmoor's Churches: Myth and Architecture" (wreview.org, PDF) — http://www.wreview.org/ — literarische Legende, nicht baulich belegt.
+- [R2·A1] Roman dodecahedron — Wikipedia — <https://en.wikipedia.org/wiki/Roman_dodecahedron> — Zweck unbekannt, 50+ widerlegte Theorien.
+- [R3·A2] Live Science, „A mysterious 12-sided object" — <https://www.livescience.com/archaeology/romans/> — populär, seriös.
+- [R3·A2] Smithsonian Magazine, „Another Mysterious Roman Dodecahedron" — <https://www.smithsonianmag.com/smart-news/> — populär, seriös.
+- [R2·A1] Sacred geometry — Wikipedia — <https://en.wikipedia.org/wiki/Sacred_geometry> — „procedural conventions"-Kritik.
+- [R3·A2] Triskele Heritage, „Mediaeval Mythbusting: The Pentagram" — <https://triskeleheritage.triskelepublishing.com/mediaeval-mythbusting-blog-11-pentagram/> — Pentagramm-Bedeutung überschätzt.
+- [S·A2] fr-macon.net, „Sacred Geometry of Cathedrals" — <https://www.fr-macon.net/en/masonic-symbolism/numbers-geometry/sacred-geometry-cathedrals/> — freimaurerisch, nur als Rezeptionsbeleg.
+- [R3·A1] Semper Excelsius, „Why baptismal fonts are octagonal" — <https://semper-excelsius.com/2018/07/15/baptismal-font-in-octagon-shape/> — Achteck-Symbolik (Korrektiv).
+- [R3·A2] Aleteia, „Why baptismal fonts have eight sides" — <https://aleteia.org/2022/01/09/why-many-baptismal-fonts-have-eight-sides/> — Achteck-Symbolik.
+- [S·A2] Ex Utopia, „Occult Psychogeography of Hawksmoor's London Churches" — <https://www.exutopia.com/an-occult-psychogeography-of-hawksmoors-london-churches/> — explizit als Mythos/Rezeption.
+- [S·A2] „Hawksmoor's Churches: Myth and Architecture" (wreview.org, PDF) — <http://www.wreview.org/> — literarische Legende, nicht baulich belegt.

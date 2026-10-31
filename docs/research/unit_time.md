@@ -17,6 +17,7 @@ Bemerkenswert: Sekunden und Minuten als *praktische Alltagseinheiten* setzten si
 Die **Ägypter** teilten als Erste den Tageskreis in 24 Stunden: **12 Tag- und 12 Nachtstunden.** Die Nachtstunden wurden über **Dekane** bestimmt — 36 Sterngruppen (eine pro 10-Tage-„Woche" des ägyptischen Zivilkalenders), die nacheinander am Horizont aufgingen und als „Sternenuhr" dienten.
 
 Zur Mechanik der 12 Nachtstunden gibt es in den Quellen leicht abweichende Darstellungen (hier ausdrücklich als Detail-Unsicherheit markiert):
+
 - Eine Darstellung: Pro Nacht markierte das Aufgehen von **11 Dekanen** die Übergänge und teilte die Nacht in 12 Abschnitte.
 - Eine andere: Pro Nacht waren **18 der 36 Dekane** sichtbar, je 3 entfielen auf die Dämmerungsphasen, sodass 12 Dekane die volle Dunkelheit massen.
 - Eine dritte: Zur Zeit des heliakischen Aufgangs des Sirius (Neujahr, nahe Sommersonnenwende, kürzeste Nächte) waren nur 12 Dekane in der Nacht sichtbar; der Tag wurde in 10 Stunden plus je eine Dämmerungsstunde morgens und abends geteilt → 12 Tagstunden.
@@ -32,6 +33,7 @@ Gemeinsamer, gesicherter Kern: Die 36 Dekane lieferten den Rahmen, und die Nacht
 **Mechanische Umsetzung (deutlich später):** Den ersten Minutenzeiger baute **Jost Bürgi** 1577 für Tycho Brahe; praxistauglich für Uhren wurde der Minutenzeiger nach **Thomas Tompions** Erfindung der Unruh-Spiralfeder (1675).
 
 **Moderne Standardisierung der Sekunde:**
+
 - Bis 1956: 1/86.400 des **mittleren Sonnentags** (formal von der British Association 1862 adoptiert; in CGS/MKS übernommen).
 - 1952/1956–1967: **Ephemeridensekunde** = 1/31.556.925,9747 des **tropischen Jahres für 1900** (IAU 1952; SI 1960).
 - Seit **1967**: SI-Definition über **Caesium-133** — die ungestörte Grundzustands-Hyperfeinübergangsfrequenz = exakt **9.192.631.770 Hz** (so gewählt, dass sie der Ephemeridensekunde entspricht).
@@ -135,6 +137,7 @@ Die Germanen begannen den Tag bei Sonnenuntergang und zählten nach **Nächten s
 ### Wochentagsnamen weltweit
 
 Aus der Planeten-Zuordnung entstanden mehrere Namensschemata:
+
 - **Romanische Sprachen** (Planetengötter, aus dem Latein): span. *lunes, martes, miércoles, jueves, viernes;* ital. *lunedì … venerdì;* franz. *lundi … vendredi.*
 - **Germanische Sprachen** (*interpretatio germanica*): Tuesday ← Tiw/Týr (Mars), Wednesday ← Woden/Odin (Merkur), Thursday ← Thor (Jupiter), Friday ← Frigg (Venus). Deutsch: Mittwoch = „Mitte der Woche", Samstag ← Sabbat, Sonnabend = „Sonntag-Abend".
 - **Numerierte Systeme:** Portugiesisch *segunda-feira … sexta-feira* (2.–6. Tag); slawisch (Russisch) *среда* = „Mitte", *воскресенье* = „Auferstehung"; Griechisch, Hebräisch, Arabisch zählen mit Sabbat als Fixpunkt; Irisch *Céadaoin* = „erstes Fasten", *Déardaoin* = „zwischen den Fasten".
@@ -225,6 +228,7 @@ Die zwölf Erdzweige tragen Yin-Yang-Polaritäten, Fünf-Elemente-, Himmelsricht
 **Basis-12-Bezug (der stärkste „Dozenal"-Befund aus belastbarer Quelle):** Die Teiler-Asymmetrie (12: sechs Teiler inkl. 2 und 3; 10: nur vier, ohne 3) und die daraus folgende glatte Darstellung von 1/3, 1/4, 3/4. Direkt aus dem Volltext des Duodecimal-Wikipedia-Artikels. Die historische 12/24-Stunden-Teilung, das Dutzend/Gros und das römische *uncia*-System sind lebende Reste eines duodezimalen Denkens im Zeitwesen.
 
 **Gescheiterte Dezimalisierungsversuche:**
+
 - **Französische Revolutionszeit:** Dekret vom 5. Oktober 1793 — Tag in 10 Stunden, je 100 Minuten, je 100 Sekunden (100.000 Dezimalsekunden statt 86.400 SI-Sekunden; 1 Dezimalstunde = 144 konventionelle Minuten, 1 Dezimalsekunde = 0,864 s). Verbindliche Einführung ab 22. September 1794; Aussetzung der Pflicht bereits 7. April 1795 (~17 Monate). Gründe für das Scheitern: Gewohnheit/Verwirrung, Kosten des Uhren-Austauschs, Widerstand der Uhrmacher, **kein praktischer Nutzen.** Anders als beim metrischen Masssystem (das uneinheitliche Standards vereinheitlichte) waren Uhren ohnehin schon kompatibel. Der Kalender (12 Monate × 3 *décades* à 10 Tage + 5–6 Zusatztage) war zudem bei Arbeitern unbeliebt (1 Ruhetag in 10 statt in 7) und kollidierte mit dem Sonntag; Kalender 1805 abgeschafft. Laplace nutzte Dezimalzeit weiter für Astronomie.
 - **Commission de décimalisation du temps (1897):** Vorschlag, die Stunde zur Basiseinheit metrischer Zeit zu machen — abgelehnt.
 - **Swatch Internet Time (1998):** Tag in 1.000 „.beats" (je 86,4 s), @000 = Mitternacht (CET) — Marketing-Kuriosum ohne Durchsetzung.
@@ -258,126 +262,126 @@ Format: `[R·A] Titel — URL — Begründung`.
 
 ### R1 — wissenschaftlich/primär
 
-- `[R1·A3]` Babylonian numerals — MacTutor (Univ. St Andrews) — https://mathshistory.st-andrews.ac.uk/HistTopics/Babylonian_numerals/ — Mathematikgeschichts-Standardreferenz zum Sexagesimalsystem.
-- `[R1·A3]` Decimal time — MacTutor — https://mathshistory.st-andrews.ac.uk/HistTopics/Decimal_time/ — Univ.-Quelle zur franz. Dezimalzeit.
-- `[R1·A3]` Telling Time in Ancient Egypt — Metropolitan Museum of Art — https://www.metmuseum.org/essays/telling-time-in-ancient-egypt — Museums-Essay zu Dekanen/Stunden.
-- `[R1·A3]` The Calendar System — Living Maya Time, Smithsonian NMAI — https://maya.nmai.si.edu/calendar/calendar-system — Museums-Primärdarstellung Maya-Kalender.
-- `[R1·A3]` A Walk Through Time – Early Clocks — NIST — https://www.nist.gov/pml/time-and-frequency-division/popular-links/walk-through-time/walk-through-time-early-clocks — Normungsgremium, frühe Zeitmessung.
-- `[R1·A3]` Writing with SI Units / Writing SI metric system units — NIST — https://www.nist.gov/pml/owm/writing-si-metric-system-units — SI-Status von Sekunde/Minute/Stunde.
-- `[R1·A3]` Telling time in Tokugawa Japan — Physics Today — https://pubs.aip.org/physicstoday/article/72/6/57/848927/ — Fachzeitschrift (AIP) zu Wadokei/Temporalstunden.
-- `[R1·A3]` The Development of the Babylonian Zodiac — MAA Journal (PDF) — https://www.maajournal.com/index.php/maa/article/download/652/583 — Peer-Review-Journal zum babylonischen Tierkreis.
-- `[R1·A3]` The 360 and 364 Day Year in Ancient Mesopotamia — Wayne Horowitz (PDF) — http://www.hgsitebuilder.com/files/writeable/uploads/.../the360and364dayyearinancientmesopotamia.pdf — Assyriologe; idealisiertes vs. reales Jahr. (Hosting-URL schwach, Autor/Inhalt R1.)
-- `[R1·A3]` babylonian_360_degrees — UNLV Physics (Jeffery) — https://www.physics.unlv.edu/~jeffery/astro/babylon/babylonian_360_degrees.html — Universitäts-Lehrmaterial zu 360°.
+- `[R1·A3]` Babylonian numerals — MacTutor (Univ. St Andrews) — <https://mathshistory.st-andrews.ac.uk/HistTopics/Babylonian_numerals/> — Mathematikgeschichts-Standardreferenz zum Sexagesimalsystem.
+- `[R1·A3]` Decimal time — MacTutor — <https://mathshistory.st-andrews.ac.uk/HistTopics/Decimal_time/> — Univ.-Quelle zur franz. Dezimalzeit.
+- `[R1·A3]` Telling Time in Ancient Egypt — Metropolitan Museum of Art — <https://www.metmuseum.org/essays/telling-time-in-ancient-egypt> — Museums-Essay zu Dekanen/Stunden.
+- `[R1·A3]` The Calendar System — Living Maya Time, Smithsonian NMAI — <https://maya.nmai.si.edu/calendar/calendar-system> — Museums-Primärdarstellung Maya-Kalender.
+- `[R1·A3]` A Walk Through Time – Early Clocks — NIST — <https://www.nist.gov/pml/time-and-frequency-division/popular-links/walk-through-time/walk-through-time-early-clocks> — Normungsgremium, frühe Zeitmessung.
+- `[R1·A3]` Writing with SI Units / Writing SI metric system units — NIST — <https://www.nist.gov/pml/owm/writing-si-metric-system-units> — SI-Status von Sekunde/Minute/Stunde.
+- `[R1·A3]` Telling time in Tokugawa Japan — Physics Today — <https://pubs.aip.org/physicstoday/article/72/6/57/848927/> — Fachzeitschrift (AIP) zu Wadokei/Temporalstunden.
+- `[R1·A3]` The Development of the Babylonian Zodiac — MAA Journal (PDF) — <https://www.maajournal.com/index.php/maa/article/download/652/583> — Peer-Review-Journal zum babylonischen Tierkreis.
+- `[R1·A3]` The 360 and 364 Day Year in Ancient Mesopotamia — Wayne Horowitz (PDF) — <http://www.hgsitebuilder.com/files/writeable/uploads/.../the360and364dayyearinancientmesopotamia.pdf> — Assyriologe; idealisiertes vs. reales Jahr. (Hosting-URL schwach, Autor/Inhalt R1.)
+- `[R1·A3]` babylonian_360_degrees — UNLV Physics (Jeffery) — <https://www.physics.unlv.edu/~jeffery/astro/babylon/babylonian_360_degrees.html> — Universitäts-Lehrmaterial zu 360°.
 
 ### R2 — etablierte Referenz
 
-- `[R2·A1]` Sexagesimal — Wikipedia — https://en.wikipedia.org/wiki/Sexagesimal — Volltext gelesen; trägt Teiler-Fakten, Neugebauer-Vorbehalt, Ekari-Hinweis.
-- `[R2·A1]` Duodecimal — Wikipedia — https://en.wikipedia.org/wiki/Duodecimal — Volltext gelesen; Teiler-Asymmetrie, Ifrah-Fingerzählung, Dutzend/Gros.
-- `[R2·A1]` Decimal time — Wikipedia — https://en.wikipedia.org/wiki/Decimal_time — Volltext gelesen; franz. Dezimalzeit-Daten, Swatch, Commission 1897.
-- `[R2·A1]` Hour — Wikipedia — https://en.wikipedia.org/wiki/Hour — Volltext; saisonale/äquinoktiale Stunden, Hipparch.
-- `[R2·A1]` Minute — Wikipedia — https://en.wikipedia.org/wiki/Minute — Volltext; Etymologie, al-Bīrūnī, Bürgi/Tompion.
-- `[R2·A1]` Second — Wikipedia — https://en.wikipedia.org/wiki/Second — Volltext; SI-Definitionsgeschichte, Caesium-133.
-- `[R2·A1]` Week — Wikipedia — https://en.wikipedia.org/wiki/Week — Volltext; Babylon/Sabbat/Planetenwoche, alternative Wochenlängen.
-- `[R2·A1]` Lunisolar calendar — Wikipedia — https://en.wikipedia.org/wiki/Lunisolar_calendar — Volltext; Interkalation, metonischer Zyklus.
-- `[R2·A1]` Names of the days of the week — Wikipedia — https://en.wikipedia.org/wiki/Names_of_the_days_of_the_week — Volltext; Namensschemata weltweit, Albanisch-Sonderfall.
-- `[R2·A1]` Planetary hours — Wikipedia — https://en.wikipedia.org/wiki/Planetary_hours — Volltext; chaldäische Ordnung, 24-mod-7-Mechanik.
-- `[R2·A1]` Traditional Chinese timekeeping — Wikipedia — https://en.wikipedia.org/wiki/Traditional_Chinese_timekeeping — Volltext; shí/kè/gēng, Erdzweige.
-- `[R2·A1]` Hindu units of time — Wikipedia — https://en.wikipedia.org/wiki/Hindu_units_of_time — Volltext; truti→kalpa-Hierarchie, Yugas.
-- `[R2·A1]` Maya calendar — Wikipedia — https://en.wikipedia.org/wiki/Maya_calendar — Volltext; Tzolk'in/Haab'/Wayeb', 13/20-Symbolik.
-- `[R2·A1]` Decan — Wikipedia — https://en.wikipedia.org/wiki/Decan — Volltext; Dekane, diagonale Sterntafeln, Sargdeckel.
-- `[R2·A3]` Mesoamerican Long Count calendar — Wikipedia — https://en.wikipedia.org/wiki/Mesoamerican_Long_Count_calendar — Long Count, Schöpfungsdatum, Null.
-- `[R2·A3]` Roman calendar — Wikipedia — https://en.wikipedia.org/wiki/Roman_calendar — Numa, Kalenden/Nonen/Iden, Monatsnamen.
-- `[R2·A3]` Julian calendar — Wikipedia — https://en.wikipedia.org/wiki/Julian_calendar — Caesar/Sosigenes-Reform.
-- `[R2·A3]` Gregorian calendar — Wikipedia — https://en.wikipedia.org/wiki/Gregorian_calendar — Schaltjahr-Regel, *Inter gravissimas*.
-- `[R2·A3]` Islamic calendar — Wikipedia — https://en.wikipedia.org/wiki/Islamic_calendar — Hijri-Struktur, Hilal, heilige Monate.
-- `[R2·A3]` History of timekeeping devices in Egypt — Wikipedia — https://en.wikipedia.org/wiki/History_of_timekeeping_devices_in_Egypt — Schatten-/Wasseruhren.
-- `[R2·A3]` Synodic day — Wikipedia — https://en.wikipedia.org/wiki/Synodic_day — siderischer vs. synodischer Tag.
-- `[R2·A3]` Lunar month — Wikipedia — https://en.wikipedia.org/wiki/Lunar_month — synodisch/siderisch.
-- `[R2·A3]` Water clock — Wikipedia — https://en.wikipedia.org/wiki/Water_clock — Klepsydra-Geschichte.
-- `[R2·A3]` Turret clock — Wikipedia — https://en.wikipedia.org/wiki/Turret_clock — mechanische Turmuhren 14. Jh.
-- `[R2·A3]` Canonical hours — Wikipedia — https://en.wikipedia.org/wiki/Canonical_hours — Benediktsregel, acht Gebetszeiten.
-- `[R2·A3]` Japanese clock — Wikipedia — https://en.wikipedia.org/wiki/Japanese_clock — Wadokei, futei jihō.
-- `[R2·A3]` Time in Ethiopia — Wikipedia — https://en.wikipedia.org/wiki/Time_in_Ethiopia — Tageszählung ab Sonnenaufgang.
-- `[R2·A3]` Decimal time / Metric time / French Republican calendar — Wikipedia — https://en.wikipedia.org/wiki/Metric_time ; https://en.wikipedia.org/wiki/French_Republican_calendar — Dezimal-/Revolutionskalender.
-- `[R2·A3]` Earthly Branches — Wikipedia — https://en.wikipedia.org/wiki/Earthly_Branches — 12 Erdzweige, Doppelstunden.
-- `[R2·A3]` Sexagenary cycle — Wikipedia — https://en.wikipedia.org/wiki/Sexagenary_cycle — 60er-Zyklus China.
-- `[R2·A3]` Zodiac — Wikipedia — https://en.wikipedia.org/wiki/Zodiac — Tierkreis, 12×30°.
-- `[R2·A3]` Early Germanic calendars — Wikipedia — https://en.wikipedia.org/wiki/Early_Germanic_calendars — Nachtrechnung, Mondmonat.
-- `[R2·A3]` Zoroastrian calendar — Wikipedia — https://en.wikipedia.org/wiki/Zoroastrian_calendar — 30-Tage-Monate, Sīrōzah.
-- `[R2·A3]` Fortnight — Wikipedia — https://en.wikipedia.org/wiki/Fortnight — fortnight/sennight.
-- `[R2·A3]` Jiffy (time) — Wikipedia — https://en.wikipedia.org/wiki/Jiffy_(time) — Etymologie „jiffy".
-- `[R2·A3]` Decan / 12-hour clock / Finger-counting / Duodecimal — Britannica — https://www.britannica.com/topic/12-hour-clock ; https://www.britannica.com/science/week ; https://www.britannica.com/science/sexagesimal-number-system ; https://www.britannica.com/topic/Gregorian-calendar ; https://www.britannica.com/science/Roman-republican-calendar ; https://www.britannica.com/topic/yuga ; https://www.britannica.com/art/canonical-hours ; https://www.britannica.com/topic/Jewish-religious-year/The-Sabbath — etablierte Enzyklopädie, mehrere Lemmata (Snippet-Zugriff).
-- `[R2·A3]` month — Wiktionary / Etymonline (month, o'clock) — https://en.wiktionary.org/wiki/month ; https://www.etymonline.com/word/month ; https://www.etymonline.com/word/o%27clock — etablierte etymologische Referenzen.
-- `[R2·A3]` Hindu units of time measurement (Surya Siddhanta) — Scribd-Dokument — https://www.scribd.com/document/251551788/Hindu-Units-of-Time-Measurement — Primärtext-Wiedergabe (Hosting schwach).
+- `[R2·A1]` Sexagesimal — Wikipedia — <https://en.wikipedia.org/wiki/Sexagesimal> — Volltext gelesen; trägt Teiler-Fakten, Neugebauer-Vorbehalt, Ekari-Hinweis.
+- `[R2·A1]` Duodecimal — Wikipedia — <https://en.wikipedia.org/wiki/Duodecimal> — Volltext gelesen; Teiler-Asymmetrie, Ifrah-Fingerzählung, Dutzend/Gros.
+- `[R2·A1]` Decimal time — Wikipedia — <https://en.wikipedia.org/wiki/Decimal_time> — Volltext gelesen; franz. Dezimalzeit-Daten, Swatch, Commission 1897.
+- `[R2·A1]` Hour — Wikipedia — <https://en.wikipedia.org/wiki/Hour> — Volltext; saisonale/äquinoktiale Stunden, Hipparch.
+- `[R2·A1]` Minute — Wikipedia — <https://en.wikipedia.org/wiki/Minute> — Volltext; Etymologie, al-Bīrūnī, Bürgi/Tompion.
+- `[R2·A1]` Second — Wikipedia — <https://en.wikipedia.org/wiki/Second> — Volltext; SI-Definitionsgeschichte, Caesium-133.
+- `[R2·A1]` Week — Wikipedia — <https://en.wikipedia.org/wiki/Week> — Volltext; Babylon/Sabbat/Planetenwoche, alternative Wochenlängen.
+- `[R2·A1]` Lunisolar calendar — Wikipedia — <https://en.wikipedia.org/wiki/Lunisolar_calendar> — Volltext; Interkalation, metonischer Zyklus.
+- `[R2·A1]` Names of the days of the week — Wikipedia — <https://en.wikipedia.org/wiki/Names_of_the_days_of_the_week> — Volltext; Namensschemata weltweit, Albanisch-Sonderfall.
+- `[R2·A1]` Planetary hours — Wikipedia — <https://en.wikipedia.org/wiki/Planetary_hours> — Volltext; chaldäische Ordnung, 24-mod-7-Mechanik.
+- `[R2·A1]` Traditional Chinese timekeeping — Wikipedia — <https://en.wikipedia.org/wiki/Traditional_Chinese_timekeeping> — Volltext; shí/kè/gēng, Erdzweige.
+- `[R2·A1]` Hindu units of time — Wikipedia — <https://en.wikipedia.org/wiki/Hindu_units_of_time> — Volltext; truti→kalpa-Hierarchie, Yugas.
+- `[R2·A1]` Maya calendar — Wikipedia — <https://en.wikipedia.org/wiki/Maya_calendar> — Volltext; Tzolk'in/Haab'/Wayeb', 13/20-Symbolik.
+- `[R2·A1]` Decan — Wikipedia — <https://en.wikipedia.org/wiki/Decan> — Volltext; Dekane, diagonale Sterntafeln, Sargdeckel.
+- `[R2·A3]` Mesoamerican Long Count calendar — Wikipedia — <https://en.wikipedia.org/wiki/Mesoamerican_Long_Count_calendar> — Long Count, Schöpfungsdatum, Null.
+- `[R2·A3]` Roman calendar — Wikipedia — <https://en.wikipedia.org/wiki/Roman_calendar> — Numa, Kalenden/Nonen/Iden, Monatsnamen.
+- `[R2·A3]` Julian calendar — Wikipedia — <https://en.wikipedia.org/wiki/Julian_calendar> — Caesar/Sosigenes-Reform.
+- `[R2·A3]` Gregorian calendar — Wikipedia — <https://en.wikipedia.org/wiki/Gregorian_calendar> — Schaltjahr-Regel, *Inter gravissimas*.
+- `[R2·A3]` Islamic calendar — Wikipedia — <https://en.wikipedia.org/wiki/Islamic_calendar> — Hijri-Struktur, Hilal, heilige Monate.
+- `[R2·A3]` History of timekeeping devices in Egypt — Wikipedia — <https://en.wikipedia.org/wiki/History_of_timekeeping_devices_in_Egypt> — Schatten-/Wasseruhren.
+- `[R2·A3]` Synodic day — Wikipedia — <https://en.wikipedia.org/wiki/Synodic_day> — siderischer vs. synodischer Tag.
+- `[R2·A3]` Lunar month — Wikipedia — <https://en.wikipedia.org/wiki/Lunar_month> — synodisch/siderisch.
+- `[R2·A3]` Water clock — Wikipedia — <https://en.wikipedia.org/wiki/Water_clock> — Klepsydra-Geschichte.
+- `[R2·A3]` Turret clock — Wikipedia — <https://en.wikipedia.org/wiki/Turret_clock> — mechanische Turmuhren 14. Jh.
+- `[R2·A3]` Canonical hours — Wikipedia — <https://en.wikipedia.org/wiki/Canonical_hours> — Benediktsregel, acht Gebetszeiten.
+- `[R2·A3]` Japanese clock — Wikipedia — <https://en.wikipedia.org/wiki/Japanese_clock> — Wadokei, futei jihō.
+- `[R2·A3]` Time in Ethiopia — Wikipedia — <https://en.wikipedia.org/wiki/Time_in_Ethiopia> — Tageszählung ab Sonnenaufgang.
+- `[R2·A3]` Decimal time / Metric time / French Republican calendar — Wikipedia — <https://en.wikipedia.org/wiki/Metric_time> ; <https://en.wikipedia.org/wiki/French_Republican_calendar> — Dezimal-/Revolutionskalender.
+- `[R2·A3]` Earthly Branches — Wikipedia — <https://en.wikipedia.org/wiki/Earthly_Branches> — 12 Erdzweige, Doppelstunden.
+- `[R2·A3]` Sexagenary cycle — Wikipedia — <https://en.wikipedia.org/wiki/Sexagenary_cycle> — 60er-Zyklus China.
+- `[R2·A3]` Zodiac — Wikipedia — <https://en.wikipedia.org/wiki/Zodiac> — Tierkreis, 12×30°.
+- `[R2·A3]` Early Germanic calendars — Wikipedia — <https://en.wikipedia.org/wiki/Early_Germanic_calendars> — Nachtrechnung, Mondmonat.
+- `[R2·A3]` Zoroastrian calendar — Wikipedia — <https://en.wikipedia.org/wiki/Zoroastrian_calendar> — 30-Tage-Monate, Sīrōzah.
+- `[R2·A3]` Fortnight — Wikipedia — <https://en.wikipedia.org/wiki/Fortnight> — fortnight/sennight.
+- `[R2·A3]` Jiffy (time) — Wikipedia — <https://en.wikipedia.org/wiki/Jiffy_(time)> — Etymologie „jiffy".
+- `[R2·A3]` Decan / 12-hour clock / Finger-counting / Duodecimal — Britannica — <https://www.britannica.com/topic/12-hour-clock> ; <https://www.britannica.com/science/week> ; <https://www.britannica.com/science/sexagesimal-number-system> ; <https://www.britannica.com/topic/Gregorian-calendar> ; <https://www.britannica.com/science/Roman-republican-calendar> ; <https://www.britannica.com/topic/yuga> ; <https://www.britannica.com/art/canonical-hours> ; <https://www.britannica.com/topic/Jewish-religious-year/The-Sabbath> — etablierte Enzyklopädie, mehrere Lemmata (Snippet-Zugriff).
+- `[R2·A3]` month — Wiktionary / Etymonline (month, o'clock) — <https://en.wiktionary.org/wiki/month> ; <https://www.etymonline.com/word/month> ; <https://www.etymonline.com/word/o%27clock> — etablierte etymologische Referenzen.
+- `[R2·A3]` Hindu units of time measurement (Surya Siddhanta) — Scribd-Dokument — <https://www.scribd.com/document/251551788/Hindu-Units-of-Time-Measurement> — Primärtext-Wiedergabe (Hosting schwach).
 
 ### R3 — seriös populär (Qualitätsmedien / Bildungsseiten)
 
-- `[R3·A2]` Origins of the days of the week — Live Science — https://www.livescience.com/45432-days-of-the-week.html — Wissenschaftsjournalismus.
-- `[R3·A2]` Why are there 7 days in a week? Thank the Babylonians — Astronomy.com — https://www.astronomy.com/science/why-are-there-7-days-in-a-week-thank-the-babylonians/ — Fachmagazin Astronomie.
-- `[R3·A2]` The Origin Of O'clock — Merriam-Webster — https://www.merriam-webster.com/wordplay/the-origin-of-oclock — Wörterbuch-Redaktion.
-- `[R3·A2]` Seasonal Time System — Seiko Museum Ginza — https://museum.seiko.co.jp/en/knowledge/relation_16/ — Firmen-/Fachmuseum, Temporalstunden.
-- `[R3·A2]` Chinese day: double hours — Sizes.com — https://www.sizes.com/time/daychinese.htm — etablierte Masseinheiten-Referenz.
-- `[R3·A2]` Ishtakala — Vedic Time Keeping — DrikPanchang — https://www.drikpanchang.com/utilities/vedic-time/vedic-time-ishtakala.html — fachlich solide Panchang-Seite.
-- `[R3·A2]` Why are there 24 hours in a day and 60 minutes in an hour? — BSTC UNESCO — https://bstcunesco.com/en/why-are-there-24-hours-in-a-day-and-60-minutes-in-an-hour/ — Bildungsseite.
-- `[R3·A2]` That time France tried to make decimal time a thing — Engadget — https://www.engadget.com/...-decimal-time-...html — Tech-Medium, Dezimalzeit.
-- `[R3·A2]` How 10 Fingers Became 12 Hours — EarthDate — https://www.earthdate.org/episodes/how-10-fingers-became-12-hours — Bildungs-/Wissenschaftsformat (Univ. Texas).
-- `[R3·A2]` The Islamic calendar: how does it work — Middle East Eye — https://www.middleeasteye.net/discover/islamic-calendar-how-does-it-work-and-how-does-it-differ — Qualitätsmedium.
-- `[R3·A2]` No. 1376: Frère Jacques — Engines of Our Ingenuity (Univ. Houston) — https://engines.egr.uh.edu/episode/1376 — Univ.-Bildungsformat.
-- `[R3·A2]` Ethiopian Time — AddisToday — https://addistoday.com/tools/ethiopian-time/ — landeskundliche Erklärseite.
-- `[R3·A2]` 24 Solar Terms / Chinese Calendar 60-Year Cycle — TravelChinaGuide — https://www.travelchinaguide.com/intro/focus/solar-term.htm ; https://www.travelchinaguide.com/intro/astrology/60year-cycle.htm — populäre Landeskunde.
-- `[R3·A2]` Chinese Calendar: Lunar Dates and Solar Terms — StudyCLI — https://studycli.org/chinese-zodiac/chinese-calendar/ — Bildungsseite.
-- `[R3·A2]` Telling time in German / halb und Viertel — Preply, Gymglish/Wunderbla, SmarterGerman — https://preply.com/en/blog/telling-time-in-german/ ; https://www.gymglish.com/en/wunderbla/german-grammar/telling-the-time-using-halb-and-viertel ; https://smartergerman.com/blog/tell-the-time-in-german/ — Sprachlern-Seiten.
-- `[R3·A2]` 15 Idioms for Periods of Time — Daily Writing Tips — https://www.dailywritingtips.com/15-idioms-for-periods-of-time/ — Sprach-Redaktion.
-- `[R3·A2]` idioms: in a jiffy — Language Portal of Canada — https://nos-langues.canada.ca/en/writing-tips-plus/idioms-in-a-jiffy — staatliches Sprachportal.
-- `[R3·A2]` Round about sennight — The Grammarphobia Blog — https://grammarphobia.com/blog/2015/05/sennight.html — solide Sprach-Redaktion.
-- `[R3·A2]` Glances on Calendars and Almanacs in Islamic Civilisation — Muslim Heritage — https://muslimheritage.com/calendars-almanacs-islamic-civ/ — wissenschaftsnahe Bildungsplattform; muwaqqit/Zeittafeln.
-- `[R3·A2]` French Republican Calendar — World History Encyclopedia — https://www.worldhistory.org/French_Republican_Calendar/ — redaktionelle Geschichtsplattform.
-- `[R3·A2]` The Mayan Calendar / Early Roman Calendar — WebExhibits — https://www.webexhibits.org/calendars/calendar-mayan.html ; https://www.webexhibits.org/calendars/calendar-roman.html — Bildungsprojekt.
-- `[R3·A2]` The Julian Calendar — Encyclopaedia Romana (Univ. Chicago, Hosting) — https://penelope.uchicago.edu/encyclopaedia_romana/calendar/juliancalendar.html — universitär gehostete Referenz.
-- `[R3·A2]` What Does the Number 7 Mean in the Bible? — BibleProject — https://bibleproject.com/podcasts/significance-7/ — theol. Bildungsformat (konfessionell, mit Vorsicht).
-- `[R3·A2]` E. P. Thompson, Time, Work-Discipline, and Industrial Capitalism (PDF, Univ. Minnesota Hosting) — http://tems.umn.edu/pdf/EPThompson-PastPresent.pdf — Standard-Aufsatz (Past & Present); eigentlich R1, hier nur snippet/indirekt.
-- `[R3·A2]` Timekeeping in Edo Period — Wadokei.org — https://wadokei.org/edo-period-timekeeping/ — Themen-Spezialseite.
-- `[R3·A2]` Rokuyo — times of day — https://rokuyo.org/rokuyo/times-of-day.html — Themen-Spezialseite.
+- `[R3·A2]` Origins of the days of the week — Live Science — <https://www.livescience.com/45432-days-of-the-week.html> — Wissenschaftsjournalismus.
+- `[R3·A2]` Why are there 7 days in a week? Thank the Babylonians — Astronomy.com — <https://www.astronomy.com/science/why-are-there-7-days-in-a-week-thank-the-babylonians/> — Fachmagazin Astronomie.
+- `[R3·A2]` The Origin Of O'clock — Merriam-Webster — <https://www.merriam-webster.com/wordplay/the-origin-of-oclock> — Wörterbuch-Redaktion.
+- `[R3·A2]` Seasonal Time System — Seiko Museum Ginza — <https://museum.seiko.co.jp/en/knowledge/relation_16/> — Firmen-/Fachmuseum, Temporalstunden.
+- `[R3·A2]` Chinese day: double hours — Sizes.com — <https://www.sizes.com/time/daychinese.htm> — etablierte Masseinheiten-Referenz.
+- `[R3·A2]` Ishtakala — Vedic Time Keeping — DrikPanchang — <https://www.drikpanchang.com/utilities/vedic-time/vedic-time-ishtakala.html> — fachlich solide Panchang-Seite.
+- `[R3·A2]` Why are there 24 hours in a day and 60 minutes in an hour? — BSTC UNESCO — <https://bstcunesco.com/en/why-are-there-24-hours-in-a-day-and-60-minutes-in-an-hour/> — Bildungsseite.
+- `[R3·A2]` That time France tried to make decimal time a thing — Engadget — <https://www.engadget.com/...-decimal-time-...html> — Tech-Medium, Dezimalzeit.
+- `[R3·A2]` How 10 Fingers Became 12 Hours — EarthDate — <https://www.earthdate.org/episodes/how-10-fingers-became-12-hours> — Bildungs-/Wissenschaftsformat (Univ. Texas).
+- `[R3·A2]` The Islamic calendar: how does it work — Middle East Eye — <https://www.middleeasteye.net/discover/islamic-calendar-how-does-it-work-and-how-does-it-differ> — Qualitätsmedium.
+- `[R3·A2]` No. 1376: Frère Jacques — Engines of Our Ingenuity (Univ. Houston) — <https://engines.egr.uh.edu/episode/1376> — Univ.-Bildungsformat.
+- `[R3·A2]` Ethiopian Time — AddisToday — <https://addistoday.com/tools/ethiopian-time/> — landeskundliche Erklärseite.
+- `[R3·A2]` 24 Solar Terms / Chinese Calendar 60-Year Cycle — TravelChinaGuide — <https://www.travelchinaguide.com/intro/focus/solar-term.htm> ; <https://www.travelchinaguide.com/intro/astrology/60year-cycle.htm> — populäre Landeskunde.
+- `[R3·A2]` Chinese Calendar: Lunar Dates and Solar Terms — StudyCLI — <https://studycli.org/chinese-zodiac/chinese-calendar/> — Bildungsseite.
+- `[R3·A2]` Telling time in German / halb und Viertel — Preply, Gymglish/Wunderbla, SmarterGerman — <https://preply.com/en/blog/telling-time-in-german/> ; <https://www.gymglish.com/en/wunderbla/german-grammar/telling-the-time-using-halb-and-viertel> ; <https://smartergerman.com/blog/tell-the-time-in-german/> — Sprachlern-Seiten.
+- `[R3·A2]` 15 Idioms for Periods of Time — Daily Writing Tips — <https://www.dailywritingtips.com/15-idioms-for-periods-of-time/> — Sprach-Redaktion.
+- `[R3·A2]` idioms: in a jiffy — Language Portal of Canada — <https://nos-langues.canada.ca/en/writing-tips-plus/idioms-in-a-jiffy> — staatliches Sprachportal.
+- `[R3·A2]` Round about sennight — The Grammarphobia Blog — <https://grammarphobia.com/blog/2015/05/sennight.html> — solide Sprach-Redaktion.
+- `[R3·A2]` Glances on Calendars and Almanacs in Islamic Civilisation — Muslim Heritage — <https://muslimheritage.com/calendars-almanacs-islamic-civ/> — wissenschaftsnahe Bildungsplattform; muwaqqit/Zeittafeln.
+- `[R3·A2]` French Republican Calendar — World History Encyclopedia — <https://www.worldhistory.org/French_Republican_Calendar/> — redaktionelle Geschichtsplattform.
+- `[R3·A2]` The Mayan Calendar / Early Roman Calendar — WebExhibits — <https://www.webexhibits.org/calendars/calendar-mayan.html> ; <https://www.webexhibits.org/calendars/calendar-roman.html> — Bildungsprojekt.
+- `[R3·A2]` The Julian Calendar — Encyclopaedia Romana (Univ. Chicago, Hosting) — <https://penelope.uchicago.edu/encyclopaedia_romana/calendar/juliancalendar.html> — universitär gehostete Referenz.
+- `[R3·A2]` What Does the Number 7 Mean in the Bible? — BibleProject — <https://bibleproject.com/podcasts/significance-7/> — theol. Bildungsformat (konfessionell, mit Vorsicht).
+- `[R3·A2]` E. P. Thompson, Time, Work-Discipline, and Industrial Capitalism (PDF, Univ. Minnesota Hosting) — <http://tems.umn.edu/pdf/EPThompson-PastPresent.pdf> — Standard-Aufsatz (Past & Present); eigentlich R1, hier nur snippet/indirekt.
+- `[R3·A2]` Timekeeping in Edo Period — Wadokei.org — <https://wadokei.org/edo-period-timekeeping/> — Themen-Spezialseite.
+- `[R3·A2]` Rokuyo — times of day — <https://rokuyo.org/rokuyo/times-of-day.html> — Themen-Spezialseite.
 
 ### R4 — schwach (Blog / SEO / selbstpubliziert)
 
-- `[R4·A2]` The Ancient Babylonian Origins Of Modern Time — Klockit Blog — https://www.klockit.com/blog/the-ancient-babylonian-origins-of-modern-time.html — Händler-Blog.
-- `[R4·A2]` Sumerians Invented the System of Time 5,000 Years Ago — Ancient Origins — https://www.ancient-origins.net/.../sumerian-time-007341 — populär, teils sensationalistisch.
-- `[R4·A2]` Sexagesimal Number System — Mathematical Mysteries — https://mathematicalmysteries.org/sexagesimal-number-system/ — Hobby-Mathe-Blog.
-- `[R4·A2·S]` Sumerian Numbers: Cosmic Order and Numerology — 333 Numerology — https://333numerology.com/...-numerology/ — Numerologie-Seite (spekulativ).
-- `[R4·A2]` The Mystery of the Sexagesimal System — Visit Iraq Now — https://visitiraqnow.com/articles/... — Tourismus-Content.
-- `[R4·A2]` Why Does An Hour Have 60 Minutes? — Soldat Watch — https://soldatwatch.com/blogs/journal/... — Händler-Blog.
-- `[R4·A2]` The Invention of the Seven-Day Week — History Rise — https://historyrise.com/...-week-babylon-rome-and-religion/ — Geschichtsblog.
-- `[R4·A2]` Our 7-Day Week … Babylonians — Ancient Pages — https://www.ancientpages.com/2016/11/07/... — Populärgeschichte.
-- `[R4·A2]` How Did We End Up With 24 Hours In A Day? — SNGLRTY — https://www.snglrtywatch.com/all/24-hours-in-a-day/ — Uhren-Händler-Blog.
-- `[R4·A2]` Ancient Egyptians First Divided the Day into 24 Hours — historyandmystery.org — https://historyandmystery.org/...-24-hours/ — Populärblog.
-- `[R4·A2]` Duodecimal Number System (Base 12 vs 10) — ScienceABC — https://www.scienceabc.com/...-base-12-instead-of-base-10 — populärwissenschaftlich.
-- `[R4·A2]` Duodecimal Finger Counting: Counting to 60 on One Hand — phillosoph (Blogspot) — http://phillosoph.blogspot.com/2015/11/... — Privat-Blog.
-- `[R4·A2]` The Origin of the Zodiac — Seven Stars Astrology — https://sevenstarsastrology.com/babylonian-zodiac/ — Astrologie-Blog.
-- `[R4·A2·S]` Planetary Hours: The Ancient System / Planetary Days and Hours in Hellenistic Astrology — Thalira, AstroAcademic — https://thalira.com/...; https://astroacademic.net/... — Astrologie-Seiten (spekulativ-esoterisch).
-- `[R4·A2]` The Twelve Hours of the Night — History and Myths — https://www.historyandmyths.com/...egyptian-underworld.html — Populärblog.
-- `[R4·A2]` Time and Hours in Ancient Egypt — Ancient Egypt Tours — https://ancientegypttours.com/time-and-hours-in-ancient-egypt/ — Reiseanbieter-Content.
-- `[R4·A3]` Significance of Ra's daily journey — World History Edu — https://worldhistoryedu.com/...underworld/ — Content-Seite.
-- `[R4·A2]` Why Does Islam Follow The Lunar Calendar? — UKIM — https://www.ukim.org/...lunar-calendar/ — konfessionelle Organisationsseite.
-- `[R4·A2]` Understanding the Islamic Lunar Calendar — Get Quranic — https://www.getquranic.com/islamic-calendar/ — konfessionelle Lernseite.
-- `[R4·A2·S]` Zoroastrian calendar / Traditional Chinese timekeeping — Grokipedia — https://grokipedia.com/page/Zoroastrian_calendar ; https://grokipedia.com/page/Traditional_Chinese_timekeeping — KI-generierte Enzyklopädie (unvalidiert).
-- `[R4·A2]` The Zoroastrian Calendar … — History Rise — https://historyrise.com/the-zoroastrian-calendar-...observance/ — Geschichtsblog.
-- `[R4·A2]` Hindu Units of Time: A Clear Explanation — Poojn.in — https://www.poojn.in/post/35350/... — religiöse Content-Seite.
-- `[R4·A2]` Vedic Time System — Veda Wikidot — http://veda.wikidot.com/vedic-time-system — Wiki-Hosting (unredigiert).
-- `[R4·A2]` Time in Hindu Cosmology — Hindu Website — https://www.hinduwebsite.com/hinduism/h_time.asp — konfessionelle Content-Seite.
-- `[R4·A2]` The 12 Earthly Branches — Imperial Harvest — https://imperialharvest.com/blog/12-earthly-branches/ — Feng-Shui-Händler-Blog.
-- `[R4·A2]` The Maya Calendar System … — MyMayanSign — https://mymayansign.com/blog/...cycles/ — Astrologie-Content.
-- `[R4·A2]` Traditional Chinese Timekeeping — Encyclopedia MDPI — https://encyclopedia.pub/entry/31901 — nutzergenerierte Enzyklopädie.
-- `[R4·A2]` Norse Gods are the Days of the Week — Norhalla — https://www.norhalla.com/...days-of-the-week — Themen-Blog.
-- `[R4·A2]` The Viking Lunar Calendar — Skjalden — https://skjalden.com/the-viking-lunar-calendar-...days/ — Populärseite.
-- `[R4·A2]` Historical Heathenry & the Seven-day Week — Aldsidu — https://www.aldsidu.com/post/...seven-day-week — Themen-Blog.
-- `[R4·A2]` The length of time it takes to say a paternoster — shredsandpatches (Tumblr) — https://shredsandpatches.tumblr.com/post/188118507878/ — Tumblr-Post (mit substanziellen Belegen).
+- `[R4·A2]` The Ancient Babylonian Origins Of Modern Time — Klockit Blog — <https://www.klockit.com/blog/the-ancient-babylonian-origins-of-modern-time.html> — Händler-Blog.
+- `[R4·A2]` Sumerians Invented the System of Time 5,000 Years Ago — Ancient Origins — <https://www.ancient-origins.net/.../sumerian-time-007341> — populär, teils sensationalistisch.
+- `[R4·A2]` Sexagesimal Number System — Mathematical Mysteries — <https://mathematicalmysteries.org/sexagesimal-number-system/> — Hobby-Mathe-Blog.
+- `[R4·A2·S]` Sumerian Numbers: Cosmic Order and Numerology — 333 Numerology — <https://333numerology.com/...-numerology/> — Numerologie-Seite (spekulativ).
+- `[R4·A2]` The Mystery of the Sexagesimal System — Visit Iraq Now — <https://visitiraqnow.com/articles/>... — Tourismus-Content.
+- `[R4·A2]` Why Does An Hour Have 60 Minutes? — Soldat Watch — <https://soldatwatch.com/blogs/journal/>... — Händler-Blog.
+- `[R4·A2]` The Invention of the Seven-Day Week — History Rise — <https://historyrise.com/...-week-babylon-rome-and-religion/> — Geschichtsblog.
+- `[R4·A2]` Our 7-Day Week … Babylonians — Ancient Pages — <https://www.ancientpages.com/2016/11/07/>... — Populärgeschichte.
+- `[R4·A2]` How Did We End Up With 24 Hours In A Day? — SNGLRTY — <https://www.snglrtywatch.com/all/24-hours-in-a-day/> — Uhren-Händler-Blog.
+- `[R4·A2]` Ancient Egyptians First Divided the Day into 24 Hours — historyandmystery.org — <https://historyandmystery.org/...-24-hours/> — Populärblog.
+- `[R4·A2]` Duodecimal Number System (Base 12 vs 10) — ScienceABC — <https://www.scienceabc.com/...-base-12-instead-of-base-10> — populärwissenschaftlich.
+- `[R4·A2]` Duodecimal Finger Counting: Counting to 60 on One Hand — phillosoph (Blogspot) — <http://phillosoph.blogspot.com/2015/11/>... — Privat-Blog.
+- `[R4·A2]` The Origin of the Zodiac — Seven Stars Astrology — <https://sevenstarsastrology.com/babylonian-zodiac/> — Astrologie-Blog.
+- `[R4·A2·S]` Planetary Hours: The Ancient System / Planetary Days and Hours in Hellenistic Astrology — Thalira, AstroAcademic — <https://thalira.com/>...; <https://astroacademic.net/>... — Astrologie-Seiten (spekulativ-esoterisch).
+- `[R4·A2]` The Twelve Hours of the Night — History and Myths — <https://www.historyandmyths.com/...egyptian-underworld.html> — Populärblog.
+- `[R4·A2]` Time and Hours in Ancient Egypt — Ancient Egypt Tours — <https://ancientegypttours.com/time-and-hours-in-ancient-egypt/> — Reiseanbieter-Content.
+- `[R4·A3]` Significance of Ra's daily journey — World History Edu — <https://worldhistoryedu.com/...underworld/> — Content-Seite.
+- `[R4·A2]` Why Does Islam Follow The Lunar Calendar? — UKIM — <https://www.ukim.org/...lunar-calendar/> — konfessionelle Organisationsseite.
+- `[R4·A2]` Understanding the Islamic Lunar Calendar — Get Quranic — <https://www.getquranic.com/islamic-calendar/> — konfessionelle Lernseite.
+- `[R4·A2·S]` Zoroastrian calendar / Traditional Chinese timekeeping — Grokipedia — <https://grokipedia.com/page/Zoroastrian_calendar> ; <https://grokipedia.com/page/Traditional_Chinese_timekeeping> — KI-generierte Enzyklopädie (unvalidiert).
+- `[R4·A2]` The Zoroastrian Calendar … — History Rise — <https://historyrise.com/the-zoroastrian-calendar-...observance/> — Geschichtsblog.
+- `[R4·A2]` Hindu Units of Time: A Clear Explanation — Poojn.in — <https://www.poojn.in/post/35350/>... — religiöse Content-Seite.
+- `[R4·A2]` Vedic Time System — Veda Wikidot — <http://veda.wikidot.com/vedic-time-system> — Wiki-Hosting (unredigiert).
+- `[R4·A2]` Time in Hindu Cosmology — Hindu Website — <https://www.hinduwebsite.com/hinduism/h_time.asp> — konfessionelle Content-Seite.
+- `[R4·A2]` The 12 Earthly Branches — Imperial Harvest — <https://imperialharvest.com/blog/12-earthly-branches/> — Feng-Shui-Händler-Blog.
+- `[R4·A2]` The Maya Calendar System … — MyMayanSign — <https://mymayansign.com/blog/...cycles/> — Astrologie-Content.
+- `[R4·A2]` Traditional Chinese Timekeeping — Encyclopedia MDPI — <https://encyclopedia.pub/entry/31901> — nutzergenerierte Enzyklopädie.
+- `[R4·A2]` Norse Gods are the Days of the Week — Norhalla — <https://www.norhalla.com/...days-of-the-week> — Themen-Blog.
+- `[R4·A2]` The Viking Lunar Calendar — Skjalden — <https://skjalden.com/the-viking-lunar-calendar-...days/> — Populärseite.
+- `[R4·A2]` Historical Heathenry & the Seven-day Week — Aldsidu — <https://www.aldsidu.com/post/...seven-day-week> — Themen-Blog.
+- `[R4·A2]` The length of time it takes to say a paternoster — shredsandpatches (Tumblr) — <https://shredsandpatches.tumblr.com/post/188118507878/> — Tumblr-Post (mit substanziellen Belegen).
 - `[R4·A2]` The Origin of the Zodiac / The Mystery of the Sexagesimal System — Seven Stars Astrology / Visit Iraq Now (s. o.).
 
 ### Spekulativ / pseudowissenschaftlich (S)
 
-- `[R4·A3·S]` Why Base 60 — John Frederic Sweeney (vixra.org-Preprint) — https://vixra.org/pdf/1407.0062v1.pdf — nicht peer-reviewt, numerologisch.
-- `[R3·A3·S]` 8. The Year of 360 Days — Immanuel Velikovsky — https://heritage-history.com/index.php?c=read&author=velikovsky&book=collision&story=year — Katastrophismus, wissenschaftlich abgelehnt.
-- `[R3·A3·S]` Does the Ishango Bone Indicate Knowledge of the Base 12? — arXiv-Preprint — https://arxiv.org/pdf/1204.1019 — Preprint (nicht abschliessend peer-reviewt), Minderheitsthese.
+- `[R4·A3·S]` Why Base 60 — John Frederic Sweeney (vixra.org-Preprint) — <https://vixra.org/pdf/1407.0062v1.pdf> — nicht peer-reviewt, numerologisch.
+- `[R3·A3·S]` 8. The Year of 360 Days — Immanuel Velikovsky — <https://heritage-history.com/index.php?c=read&author=velikovsky&book=collision&story=year> — Katastrophismus, wissenschaftlich abgelehnt.
+- `[R3·A3·S]` Does the Ishango Bone Indicate Knowledge of the Base 12? — arXiv-Preprint — <https://arxiv.org/pdf/1204.1019> — Preprint (nicht abschliessend peer-reviewt), Minderheitsthese.
 
 **Hinweis zur Belastbarkeit:** Vierzehn Wikipedia-Kernartikel wurden im Volltext (A1) gelesen und tragen die zentralen, gesicherten Fakten. Britannica- und R1-Quellen wurden überwiegend nur per Snippet/indirekt (A2/A3) gesichtet — bei wörtlichen Zitaten ist eine Volltext-Prüfung ratsam. Die grössten verbleibenden Unsicherheiten: (1) keine einzelne gesicherte Ursprungserklärung für Basis 60 (Neugebauer-Vorbehalt); (2) Finger-Zähl-Theorie als populärste, aber unbeweisbare Brücke zwischen 12 und 60; (3) Detail-Abweichungen bei der ägyptischen Dekan-Mechanik der 12 Nachtstunden und bei den kleinsten vedischen Zeiteinheiten; (4) babylonische Zahlensymbolik (Anu = 60) nur aus schwachen Sekundärquellen.

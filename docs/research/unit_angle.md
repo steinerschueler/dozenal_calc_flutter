@@ -173,6 +173,7 @@ Radiant, Gon und mil sind historisch bewusst religions- und symbolfrei — das a
 ### Grad, Bogenminute, Bogensekunde
 
 1° = 60′ = 3600″. Heute aktiv genutzt in:
+
 - **Astronomie:** Parallaxe und Sterndistanzen, scheinbare Objektgrössen (Mond ≈ 30′; Hubble löst etwa 0,05″ auf).
 - **GPS und Navigation:** Breite und Länge in Grad-Minute-Sekunde (DMS) oder Grad-Minute-Dezimal. Entscheidende Kopplung: **1 Bogenminute Breite = 1 Seemeile = 1,852 km** — der Hauptgrund, warum die sexagesimale Teilung in See- und Luftfahrt überlebt.
 
@@ -269,165 +270,165 @@ Bewertung nach zwei Achsen. **Zuverlässigkeit:** R1 = wissenschaftlich/primär,
 
 ### Babylon, Sexagesimal, 360°
 
-- [R1·A1] Babylonian mathematics — MacTutor (St Andrews) — https://mathshistory.st-andrews.ac.uk/HistTopics/Babylonian_mathematics/ — akademische Aufbereitung des Sexagesimalsystems.
-- [R1·A1] Why did the Babylonians use 360 degrees? — UNLV (J. Jeffery) — https://www.physics.unlv.edu/~jeffery/astro/babylon/babylonian_360_degrees.html — nennt drei Theorien und sagt explizit „we do NOT know for sure".
-- [R1·A3] Babylonian Astronomers and Angular Measure — UNLV (J. Jeffery) — https://www.physics.unlv.edu/~jeffery/astro/babylon/angle.html — nur als Suchtreffer erfasst.
-- [R2·A1] Babylonian astronomy — Wikipedia — https://en.wikipedia.org/wiki/Babylonian_astronomy — Übersichtsartikel.
-- [R2·A1] Sexagesimal — Wikipedia — https://en.wikipedia.org/wiki/Sexagesimal — Teilbarkeit und Geschichte.
-- [R2·A1] Degree (angle) — Wikipedia — https://en.wikipedia.org/wiki/Degree_(angle) — zentrale Grad-Referenz, per Volltext gefetcht.
-- [R2·A2] Babylonian mathematics — Wikipedia — https://en.wikipedia.org/wiki/Babylonian_mathematics — nur indirekt.
-- [R2·A2] Sexagesimal number system — Britannica — https://www.britannica.com/science/sexagesimal-number-system — Anriss.
-- [R2·A3] Otto E. Neugebauer — Wikipedia — https://en.wikipedia.org/wiki/Otto_E._Neugebauer — Kontext zur „kein belegtes Motiv"-Position.
-- [R3·A1] Why Are There 360 Degrees In A Circle? — IFLScience — https://www.iflscience.com/why-are-there-360-degrees-in-a-circle-instead-of-something-useful-like-100-68919 — Zeitzonen-Beispiel.
-- [R3·A1] Why Is A Full Circle 360 Degrees? — ScienceABC — https://www.scienceabc.com/pure-sciences/why-is-a-full-circle-360-degrees-instead-of-something-more-convenient-like-100.html — populärwissenschaftlich.
-- [R3·A1] Why Are There 360 Degrees in a Circle? — Biology Insights — https://biologyinsights.com/why-are-there-360-degrees-in-a-circle/ — populärwissenschaftlich.
-- [R3·A2] Why Are There 360 Degrees in a Circle? — Time — https://time.com/5813871/history-360-degrees-circle/ — nennt Neugebauer-Kontext.
-- [R3·A2] Why a Circle Has 360 Degrees — History Today — https://www.historytoday.com/archive/history-matters/why-circle-has-360-degrees — Archiv-Anriss/Paywall.
-- [R4·A3] Why 360 Degrees in a Circle — Astronoo — https://astronoo.com/en/articles/circle-360-degrees.html — nur Snippet.
-- [R4·A3] Sumerians Invented the System of Time — Ancient Origins — https://www.ancient-origins.net/history-ancient-traditions/sumerian-time-007341 — populär, mit Vorsicht.
-- [R4·A1] The Ancient Babylonian Origins of Modern Time — Klockit — https://www.klockit.com/blog/the-ancient-babylonian-origins-of-modern-time.html — Firmenblog, illustrativ.
+- [R1·A1] Babylonian mathematics — MacTutor (St Andrews) — <https://mathshistory.st-andrews.ac.uk/HistTopics/Babylonian_mathematics/> — akademische Aufbereitung des Sexagesimalsystems.
+- [R1·A1] Why did the Babylonians use 360 degrees? — UNLV (J. Jeffery) — <https://www.physics.unlv.edu/~jeffery/astro/babylon/babylonian_360_degrees.html> — nennt drei Theorien und sagt explizit „we do NOT know for sure".
+- [R1·A3] Babylonian Astronomers and Angular Measure — UNLV (J. Jeffery) — <https://www.physics.unlv.edu/~jeffery/astro/babylon/angle.html> — nur als Suchtreffer erfasst.
+- [R2·A1] Babylonian astronomy — Wikipedia — <https://en.wikipedia.org/wiki/Babylonian_astronomy> — Übersichtsartikel.
+- [R2·A1] Sexagesimal — Wikipedia — <https://en.wikipedia.org/wiki/Sexagesimal> — Teilbarkeit und Geschichte.
+- [R2·A1] Degree (angle) — Wikipedia — <https://en.wikipedia.org/wiki/Degree_(angle)> — zentrale Grad-Referenz, per Volltext gefetcht.
+- [R2·A2] Babylonian mathematics — Wikipedia — <https://en.wikipedia.org/wiki/Babylonian_mathematics> — nur indirekt.
+- [R2·A2] Sexagesimal number system — Britannica — <https://www.britannica.com/science/sexagesimal-number-system> — Anriss.
+- [R2·A3] Otto E. Neugebauer — Wikipedia — <https://en.wikipedia.org/wiki/Otto_E._Neugebauer> — Kontext zur „kein belegtes Motiv"-Position.
+- [R3·A1] Why Are There 360 Degrees In A Circle? — IFLScience — <https://www.iflscience.com/why-are-there-360-degrees-in-a-circle-instead-of-something-useful-like-100-68919> — Zeitzonen-Beispiel.
+- [R3·A1] Why Is A Full Circle 360 Degrees? — ScienceABC — <https://www.scienceabc.com/pure-sciences/why-is-a-full-circle-360-degrees-instead-of-something-more-convenient-like-100.html> — populärwissenschaftlich.
+- [R3·A1] Why Are There 360 Degrees in a Circle? — Biology Insights — <https://biologyinsights.com/why-are-there-360-degrees-in-a-circle/> — populärwissenschaftlich.
+- [R3·A2] Why Are There 360 Degrees in a Circle? — Time — <https://time.com/5813871/history-360-degrees-circle/> — nennt Neugebauer-Kontext.
+- [R3·A2] Why a Circle Has 360 Degrees — History Today — <https://www.historytoday.com/archive/history-matters/why-circle-has-360-degrees> — Archiv-Anriss/Paywall.
+- [R4·A3] Why 360 Degrees in a Circle — Astronoo — <https://astronoo.com/en/articles/circle-360-degrees.html> — nur Snippet.
+- [R4·A3] Sumerians Invented the System of Time — Ancient Origins — <https://www.ancient-origins.net/history-ancient-traditions/sumerian-time-007341> — populär, mit Vorsicht.
+- [R4·A1] The Ancient Babylonian Origins of Modern Time — Klockit — <https://www.klockit.com/blog/the-ancient-babylonian-origins-of-modern-time.html> — Firmenblog, illustrativ.
 
 ### Bogenminute/-sekunde, Etymologie
 
-- [R2·A1] Minute and second of arc — Wikipedia — https://en.wikipedia.org/wiki/Minute_and_second_of_arc — markiert 360-Tage-Herleitung selbst mit „failed verification".
-- [R2·A1] Minute — Etymonline — https://www.etymonline.com/word/minute — Wortgeschichte pars minuta prima.
-- [R3·A1] Arcminute: Definition, Uses in Astronomy & Mapping — spacestudy.blog — https://spacestudy.blog/arcminute-definition-uses/ — heutige Verwendung.
-- [R3·A3] Minutes, Seconds and the Geometry of Time — Saturday Evening Post — https://www.saturdayeveningpost.com/2019/09/in-a-word-minutes-seconds-and-the-geometry-of-time/ — nur Snippet.
-- [R4·A3] Why is it Called a Minute? — gloomba — https://www.gloomba.com/en/why-is-it-called-a-minute/ — populär, nur Snippet.
+- [R2·A1] Minute and second of arc — Wikipedia — <https://en.wikipedia.org/wiki/Minute_and_second_of_arc> — markiert 360-Tage-Herleitung selbst mit „failed verification".
+- [R2·A1] Minute — Etymonline — <https://www.etymonline.com/word/minute> — Wortgeschichte pars minuta prima.
+- [R3·A1] Arcminute: Definition, Uses in Astronomy & Mapping — spacestudy.blog — <https://spacestudy.blog/arcminute-definition-uses/> — heutige Verwendung.
+- [R3·A3] Minutes, Seconds and the Geometry of Time — Saturday Evening Post — <https://www.saturdayeveningpost.com/2019/09/in-a-word-minutes-seconds-and-the-geometry-of-time/> — nur Snippet.
+- [R4·A3] Why is it Called a Minute? — gloomba — <https://www.gloomba.com/en/why-is-it-called-a-minute/> — populär, nur Snippet.
 
 ### Griechenland, Indien, Islam (Astronomie/Trigonometrie)
 
-- [R1·A1] Hipparchus — MacTutor — https://mathshistory.st-andrews.ac.uk/Biographies/Hipparchus/ — akademische Biografie.
-- [R2·A1] Hipparchus — Wikipedia — https://en.wikipedia.org/wiki/Hipparchus — Sehnentafel, 360°-Übernahme.
-- [R2·A1] Āryabhaṭa's sine table — Wikipedia — https://en.wikipedia.org/wiki/%C4%80ryabha%E1%B9%ADa's_sine_table — 3438/21600, jya.
-- [R2·A1] Nakshatra — Wikipedia — https://en.wikipedia.org/wiki/Nakshatra — 27 × 13°20′.
-- [R2·A3] Aryabhata — Wikipedia — https://en.wikipedia.org/wiki/Aryabhata — nur Snippet.
-- [R2·A2] Surya Siddhanta — Wikipedia — https://en.wikipedia.org/wiki/Surya_Siddhanta — Standardkreis.
-- [R2·A3] al-Khwarizmi — MacTutor — https://mathshistory.st-andrews.ac.uk/Biographies/Al-Khwarizmi/ — nur Snippet.
-- [R2·A3] Muhammad ibn Musa al-Khwarizmi — Wikipedia — https://en.wikipedia.org/wiki/Muhammad_ibn_Musa_al-Khwarizmi — nur Snippet.
-- [R2·A3] Trigonometry — India and the Islamic World — Britannica — https://www.britannica.com/science/trigonometry/India-and-the-Islamic-world — nur Snippet.
-- [R1·A2] Determining the Qibla Direction — arXiv 2512.03271 — https://arxiv.org/html/2512.03271v1 — akademisch, teilweise.
-- [R3·A2] Sine, Cosine and the Measurement of the Earth — Muslim Heritage — https://muslimheritage.com/sine-cosine-measurement-earth/ — nur Snippet.
-- [R3·A1] The Beginnings of Trigonometry — Rutgers (Hunt) — https://sites.math.rutgers.edu/~cherlin/History/Papers2000/hunt.html — Studienarbeit, ordnet Sehnen-Geometrie ein.
-- [R3·A2] Why are there 27 Nakshatras — Kulture Katha — https://kulturekatha.com/2020/05/30/ — populär.
-- [R4·A3] 12 Rashis — astrodevam — https://www.astrodevam.com/knowledge-bank/zodiac-sign-rashi.html — populär-astrologisch.
-- [R4·A2] Zero Points of Vedic Astronomy — R. R. M. Roy (Medium) — https://rajarammohanroy.medium.com/zero-points-of-vedic-astronomy-f45a2413abc7 — selbstpubliziert.
+- [R1·A1] Hipparchus — MacTutor — <https://mathshistory.st-andrews.ac.uk/Biographies/Hipparchus/> — akademische Biografie.
+- [R2·A1] Hipparchus — Wikipedia — <https://en.wikipedia.org/wiki/Hipparchus> — Sehnentafel, 360°-Übernahme.
+- [R2·A1] Āryabhaṭa's sine table — Wikipedia — <https://en.wikipedia.org/wiki/%C4%80ryabha%E1%B9%ADa's_sine_table> — 3438/21600, jya.
+- [R2·A1] Nakshatra — Wikipedia — <https://en.wikipedia.org/wiki/Nakshatra> — 27 × 13°20′.
+- [R2·A3] Aryabhata — Wikipedia — <https://en.wikipedia.org/wiki/Aryabhata> — nur Snippet.
+- [R2·A2] Surya Siddhanta — Wikipedia — <https://en.wikipedia.org/wiki/Surya_Siddhanta> — Standardkreis.
+- [R2·A3] al-Khwarizmi — MacTutor — <https://mathshistory.st-andrews.ac.uk/Biographies/Al-Khwarizmi/> — nur Snippet.
+- [R2·A3] Muhammad ibn Musa al-Khwarizmi — Wikipedia — <https://en.wikipedia.org/wiki/Muhammad_ibn_Musa_al-Khwarizmi> — nur Snippet.
+- [R2·A3] Trigonometry — India and the Islamic World — Britannica — <https://www.britannica.com/science/trigonometry/India-and-the-Islamic-world> — nur Snippet.
+- [R1·A2] Determining the Qibla Direction — arXiv 2512.03271 — <https://arxiv.org/html/2512.03271v1> — akademisch, teilweise.
+- [R3·A2] Sine, Cosine and the Measurement of the Earth — Muslim Heritage — <https://muslimheritage.com/sine-cosine-measurement-earth/> — nur Snippet.
+- [R3·A1] The Beginnings of Trigonometry — Rutgers (Hunt) — <https://sites.math.rutgers.edu/~cherlin/History/Papers2000/hunt.html> — Studienarbeit, ordnet Sehnen-Geometrie ein.
+- [R3·A2] Why are there 27 Nakshatras — Kulture Katha — <https://kulturekatha.com/2020/05/30/> — populär.
+- [R4·A3] 12 Rashis — astrodevam — <https://www.astrodevam.com/knowledge-bank/zodiac-sign-rashi.html> — populär-astrologisch.
+- [R4·A2] Zero Points of Vedic Astronomy — R. R. M. Roy (Medium) — <https://rajarammohanroy.medium.com/zero-points-of-vedic-astronomy-f45a2413abc7> — selbstpubliziert.
 
 ### China
 
-- [R2·A2] Chinese astronomy — Wikipedia — https://en.wikipedia.org/wiki/Chinese_astronomy — du-Teilung, 28 Xiu.
-- [R2·A2] Twenty-Eight Mansions — Wikipedia — https://en.wikipedia.org/wiki/Twenty-Eight_Mansions — Mondhäuser.
-- [R2·A3] Luopan — Wikipedia — https://en.wikipedia.org/wiki/Luopan — 24 Berge.
-- [R2·A3] History of the compass — Wikipedia — https://en.wikipedia.org/wiki/History_of_the_compass — Shen Kuo, Deklination.
-- [R3·A3] Pingzhou Table Talks — History of Information — https://historyofinformation.com/detail.php?entryid=270 — Zhu Yu, nur Snippet.
-- [R2·A3] Zhu Yu (author) — Wikipedia — https://en.wikipedia.org/wiki/Zhu_Yu_(author) — nur Snippet.
-- [R4·A3] Ancient Chinese Astronomy — Explorable — https://explorable.com/chinese-astronomy — populär.
-- [R4·A1] syho's library, Chinese Astronomy — Oocities — https://www.oocities.org/syho_real/astronomy/chineseastronomy.html — Hobby-Seite, 365,25-du, mit Vorsicht.
-- [S·A3] Chinese constellations — Grokipedia — https://grokipedia.com/page/Chinese_constellations — KI-Wiki, ungesichert.
+- [R2·A2] Chinese astronomy — Wikipedia — <https://en.wikipedia.org/wiki/Chinese_astronomy> — du-Teilung, 28 Xiu.
+- [R2·A2] Twenty-Eight Mansions — Wikipedia — <https://en.wikipedia.org/wiki/Twenty-Eight_Mansions> — Mondhäuser.
+- [R2·A3] Luopan — Wikipedia — <https://en.wikipedia.org/wiki/Luopan> — 24 Berge.
+- [R2·A3] History of the compass — Wikipedia — <https://en.wikipedia.org/wiki/History_of_the_compass> — Shen Kuo, Deklination.
+- [R3·A3] Pingzhou Table Talks — History of Information — <https://historyofinformation.com/detail.php?entryid=270> — Zhu Yu, nur Snippet.
+- [R2·A3] Zhu Yu (author) — Wikipedia — <https://en.wikipedia.org/wiki/Zhu_Yu_(author)> — nur Snippet.
+- [R4·A3] Ancient Chinese Astronomy — Explorable — <https://explorable.com/chinese-astronomy> — populär.
+- [R4·A1] syho's library, Chinese Astronomy — Oocities — <https://www.oocities.org/syho_real/astronomy/chineseastronomy.html> — Hobby-Seite, 365,25-du, mit Vorsicht.
+- [S·A3] Chinese constellations — Grokipedia — <https://grokipedia.com/page/Chinese_constellations> — KI-Wiki, ungesichert.
 
 ### Mesoamerika (Maya)
 
-- [R2·A3] Mesoamerican Long Count calendar — Wikipedia — https://en.wikipedia.org/wiki/Mesoamerican_Long_Count_calendar — tun = 360 kin.
-- [R2·A3] Maya calendar — Wikipedia — https://en.wikipedia.org/wiki/Maya_calendar — Hierarchie, Vigesimal.
+- [R2·A3] Mesoamerican Long Count calendar — Wikipedia — <https://en.wikipedia.org/wiki/Mesoamerican_Long_Count_calendar> — tun = 360 kin.
+- [R2·A3] Maya calendar — Wikipedia — <https://en.wikipedia.org/wiki/Maya_calendar> — Hierarchie, Vigesimal.
 
 ### Ägypten, Uhr, 24 Stunden, Zifferblatt
 
-- [R2·A1] Decan — Wikipedia — https://en.wikipedia.org/wiki/Decan — 36 Dekane, Nacht zu 12.
-- [R2·A2] 12-hour clock — Britannica — https://www.britannica.com/topic/12-hour-clock — 12-Stunden-Herkunft.
-- [R3·A3] Telling Time in Ancient Egypt — Met Museum — https://www.metmuseum.org/essays/telling-time-in-ancient-egypt — Snippet.
-- [R3·A3] Why a minute is 60 seconds — Scientific American — https://www.scientificamerican.com/article/experts-time-division-days-hours-minutes/ — Snippet.
-- [R4·A3] How the 12-hour display came about — BOTTA Blog — https://botta-design.de/en/blogs/wissen/wie-es-zur-12-stunden-anzeige-fur-die-uhr-kam — Firmenblog.
+- [R2·A1] Decan — Wikipedia — <https://en.wikipedia.org/wiki/Decan> — 36 Dekane, Nacht zu 12.
+- [R2·A2] 12-hour clock — Britannica — <https://www.britannica.com/topic/12-hour-clock> — 12-Stunden-Herkunft.
+- [R3·A3] Telling Time in Ancient Egypt — Met Museum — <https://www.metmuseum.org/essays/telling-time-in-ancient-egypt> — Snippet.
+- [R3·A3] Why a minute is 60 seconds — Scientific American — <https://www.scientificamerican.com/article/experts-time-division-days-hours-minutes/> — Snippet.
+- [R4·A3] How the 12-hour display came about — BOTTA Blog — <https://botta-design.de/en/blogs/wissen/wie-es-zur-12-stunden-anzeige-fur-die-uhr-kam> — Firmenblog.
 
 ### Kompass, Windrose, Himmelsrichtungen
 
-- [R2·A1] Points of the compass / Boxing the compass — Wikipedia — https://en.wikipedia.org/wiki/Points_of_the_compass — 32 Punkte à 11,25°.
-- [R2·A1] Compass rose — Wikipedia — https://en.wikipedia.org/wiki/Compass_rose — Geschichte der Rose.
-- [R2·A1] Bearing (navigation) — Wikipedia — https://en.wikipedia.org/wiki/Bearing_(navigation) — heutiges 360°-Bearing.
-- [R2·A2] Classical compass winds — Wikipedia — https://en.wikipedia.org/wiki/Classical_compass_winds — antike Windgötter.
-- [R2·A2] Cardinal direction — Wikipedia — https://en.wikipedia.org/wiki/Cardinal_direction — inkl. Bantu/Maya.
-- [R1·A2] Terms for Cardinal Directions in Eastern Bantu Languages — ResearchGate — https://www.researchgate.net/publication/331470650 — akademisch, teilweise.
-- [R3·A1] What Is Boxing The Compass? — Maritime Page — https://maritimepage.com/what-is-boxing-the-compass-32-compass-points-explained/ — Erklärung der 32 Punkte.
-- [R3·A2] Introduction to the 24 Directions — iching10 — https://iching10.com/24-directions/ — Luopan-Richtungen.
-- [R3·A3] The Compass Rose: History, Culture, Meaning — Club Nàutic Estartit — https://cnestartit.com/en/the-compass-rose-history-culture-and-meaning-of-an-essential-mediterranean-symbol/ — Snippet.
-- [R3·A3] Are We Lost? — LitHub — https://lithub.com/are-we-lost-how-ancient-cultures-across-the-globe-found-their-way-around/ — Snippet.
-- [R3·A2] box the compass — The Village Idiom — https://www.thevillageidiom.org/idioms/box-the-compass-idiom-meaning-and-origin/ — Redewendung.
-- [R3·A2] Compass — Idioms (TheFreeDictionary) — https://idioms.thefreedictionary.com/compass — Redewendungen.
+- [R2·A1] Points of the compass / Boxing the compass — Wikipedia — <https://en.wikipedia.org/wiki/Points_of_the_compass> — 32 Punkte à 11,25°.
+- [R2·A1] Compass rose — Wikipedia — <https://en.wikipedia.org/wiki/Compass_rose> — Geschichte der Rose.
+- [R2·A1] Bearing (navigation) — Wikipedia — <https://en.wikipedia.org/wiki/Bearing_(navigation)> — heutiges 360°-Bearing.
+- [R2·A2] Classical compass winds — Wikipedia — <https://en.wikipedia.org/wiki/Classical_compass_winds> — antike Windgötter.
+- [R2·A2] Cardinal direction — Wikipedia — <https://en.wikipedia.org/wiki/Cardinal_direction> — inkl. Bantu/Maya.
+- [R1·A2] Terms for Cardinal Directions in Eastern Bantu Languages — ResearchGate — <https://www.researchgate.net/publication/331470650> — akademisch, teilweise.
+- [R3·A1] What Is Boxing The Compass? — Maritime Page — <https://maritimepage.com/what-is-boxing-the-compass-32-compass-points-explained/> — Erklärung der 32 Punkte.
+- [R3·A2] Introduction to the 24 Directions — iching10 — <https://iching10.com/24-directions/> — Luopan-Richtungen.
+- [R3·A3] The Compass Rose: History, Culture, Meaning — Club Nàutic Estartit — <https://cnestartit.com/en/the-compass-rose-history-culture-and-meaning-of-an-essential-mediterranean-symbol/> — Snippet.
+- [R3·A3] Are We Lost? — LitHub — <https://lithub.com/are-we-lost-how-ancient-cultures-across-the-globe-found-their-way-around/> — Snippet.
+- [R3·A2] box the compass — The Village Idiom — <https://www.thevillageidiom.org/idioms/box-the-compass-idiom-meaning-and-origin/> — Redewendung.
+- [R3·A2] Compass — Idioms (TheFreeDictionary) — <https://idioms.thefreedictionary.com/compass> — Redewendungen.
 
 ### Arabische Lehnwörter (Azimut, Zenit, Nadir)
 
-- [R2·A3] azimuth — Wiktionary — https://en.wiktionary.org/wiki/azimuth — Etymologie.
-- [R2·A3] Zenith — Wikipedia — https://en.wikipedia.org/wiki/Zenith — Etymologie.
-- [R4·A3] 50 Words of Arabic Origin — ABL — https://www.ablrecruitment.com/50-words-of-arabic-origin/ — populär.
+- [R2·A3] azimuth — Wiktionary — <https://en.wiktionary.org/wiki/azimuth> — Etymologie.
+- [R2·A3] Zenith — Wikipedia — <https://en.wikipedia.org/wiki/Zenith> — Etymologie.
+- [R4·A3] 50 Words of Arabic Origin — ABL — <https://www.ablrecruitment.com/50-words-of-arabic-origin/> — populär.
 
 ### Radiant
 
-- [R2·A1] Radian — Wikipedia — https://en.wikipedia.org/wiki/Radian — Begriffsgeschichte 1873/Belfast.
-- [R1·A1] Dimensionless Units in the SI — arXiv 1409.2794 — https://arxiv.org/pdf/1409.2794 — akademisch, SI-Status.
-- [R1·A1] Angles in the SI: treating the radian as an independent unit — arXiv 2101.01578 — https://arxiv.org/pdf/2101.01578 — akademisch.
-- [R3·A1] Degrees or radians — why you should always use radians — UBC Math Wiki — https://wiki.math.ubc.ca/mathbook/M102/Course_notes/Degrees_or_radians_-_why_you_should_always_use_radians — Lehrmaterial.
-- [R4·A2] The History of Radians — WordPress — https://historyofanglemeasurement.wordpress.com/2017/05/21/blog-post-title-2/ — Blog, teilweise.
+- [R2·A1] Radian — Wikipedia — <https://en.wikipedia.org/wiki/Radian> — Begriffsgeschichte 1873/Belfast.
+- [R1·A1] Dimensionless Units in the SI — arXiv 1409.2794 — <https://arxiv.org/pdf/1409.2794> — akademisch, SI-Status.
+- [R1·A1] Angles in the SI: treating the radian as an independent unit — arXiv 2101.01578 — <https://arxiv.org/pdf/2101.01578> — akademisch.
+- [R3·A1] Degrees or radians — why you should always use radians — UBC Math Wiki — <https://wiki.math.ubc.ca/mathbook/M102/Course_notes/Degrees_or_radians_-_why_you_should_always_use_radians> — Lehrmaterial.
+- [R4·A2] The History of Radians — WordPress — <https://historyofanglemeasurement.wordpress.com/2017/05/21/blog-post-title-2/> — Blog, teilweise.
 
 ### Gon/Neugrad und Dezimalzeit
 
-- [R2·A1] Gradian — Wikipedia — https://en.wikipedia.org/wiki/Gradian — Geschichte, 400-Teilung.
-- [R2·A1] Decimal time — Wikipedia — https://en.wikipedia.org/wiki/Decimal_time — Dekret 1793.
-- [R1·A1] Decimal time — MacTutor — https://mathshistory.st-andrews.ac.uk/HistTopics/Decimal_time/ — akademisch.
-- [R2·A1] The decimal clock — IMCCE (Observatoire) — https://abbadia.imcce.fr/en/deci-en.html — nennt „keine /4-Teilung" als Hauptgrund.
-- [R3·A1] Gradians — Angle — unitsandconversions.com — https://unitsandconversions.com/angle/gradian — Definition.
-- [R3·A1] Gradians conversion — metric-conversions.org — https://www.metric-conversions.org/angle/gradians-conversion.htm — Umrechnung.
-- [R3·A1] French Abandoned Their Decimal Calendar — Mental Floss — https://www.mentalfloss.com/article/90426/ — populär.
-- [R2·A2] French units of measurement — Wikipedia — https://en.wikipedia.org/wiki/French_units_of_measurement — teilweise.
-- [S·A1] Gradian — Grokipedia — https://grokipedia.com/page/Gradian — KI-Wiki, ungesichert.
+- [R2·A1] Gradian — Wikipedia — <https://en.wikipedia.org/wiki/Gradian> — Geschichte, 400-Teilung.
+- [R2·A1] Decimal time — Wikipedia — <https://en.wikipedia.org/wiki/Decimal_time> — Dekret 1793.
+- [R1·A1] Decimal time — MacTutor — <https://mathshistory.st-andrews.ac.uk/HistTopics/Decimal_time/> — akademisch.
+- [R2·A1] The decimal clock — IMCCE (Observatoire) — <https://abbadia.imcce.fr/en/deci-en.html> — nennt „keine /4-Teilung" als Hauptgrund.
+- [R3·A1] Gradians — Angle — unitsandconversions.com — <https://unitsandconversions.com/angle/gradian> — Definition.
+- [R3·A1] Gradians conversion — metric-conversions.org — <https://www.metric-conversions.org/angle/gradians-conversion.htm> — Umrechnung.
+- [R3·A1] French Abandoned Their Decimal Calendar — Mental Floss — <https://www.mentalfloss.com/article/90426/> — populär.
+- [R2·A2] French units of measurement — Wikipedia — <https://en.wikipedia.org/wiki/French_units_of_measurement> — teilweise.
+- [S·A1] Gradian — Grokipedia — <https://grokipedia.com/page/Gradian> — KI-Wiki, ungesichert.
 
 ### Militärischer mil / Strich
 
-- [R2·A1] Milliradian — Wikipedia — https://en.wikipedia.org/wiki/Milliradian — NATO 6400, UdSSR 6000, Schweden 6300.
-- [R2·A2] Strich (Winkeleinheit) — Wikipedia (de) — https://de.wikipedia.org/wiki/Strich_(Winkeleinheit) — teilweise.
-- [R3·A1] MIL vs MRAD vs NATO-MIL — Wndsn — https://mil.wndsn.com/?d=2._principles/MIL_vs_MRAD_vs_NATO-MIL.txt — Fachseite.
-- [R3·A2] Kompassmuseum – Teilungssysteme — https://compassmuseum.com/diverstext/divisions_d.htm — teilweise.
-- [R3·A2] Milliradians (NATO/USSR) — metric-conversions.org — https://www.metric-conversions.org/angle/milliradians-nato-conversion.htm — teilweise.
-- [R1·A2] ДЕЛЕНИЕ УГЛОМЕРА — russ. Verteidigungsministerium — http://encyclopedia.mil.ru/encyclopedia/dictionary/details_rvsn.htm?id=3620@morfDictionary — Primärquelle russisch, teilweise.
+- [R2·A1] Milliradian — Wikipedia — <https://en.wikipedia.org/wiki/Milliradian> — NATO 6400, UdSSR 6000, Schweden 6300.
+- [R2·A2] Strich (Winkeleinheit) — Wikipedia (de) — <https://de.wikipedia.org/wiki/Strich_(Winkeleinheit)> — teilweise.
+- [R3·A1] MIL vs MRAD vs NATO-MIL — Wndsn — <https://mil.wndsn.com/?d=2._principles/MIL_vs_MRAD_vs_NATO-MIL.txt> — Fachseite.
+- [R3·A2] Kompassmuseum – Teilungssysteme — <https://compassmuseum.com/diverstext/divisions_d.htm> — teilweise.
+- [R3·A2] Milliradians (NATO/USSR) — metric-conversions.org — <https://www.metric-conversions.org/angle/milliradians-nato-conversion.htm> — teilweise.
+- [R1·A2] ДЕЛЕНИЕ УГЛОМЕРА — russ. Verteidigungsministerium — <http://encyclopedia.mil.ru/encyclopedia/dictionary/details_rvsn.htm?id=3620@morfDictionary> — Primärquelle russisch, teilweise.
 
 ### Dezimalgrad, Fingerzählung, Basis-12
 
-- [R2·A1] Decimal degrees — Wikipedia — https://en.wikipedia.org/wiki/Decimal_degrees — DD vs DMS.
-- [R2·A1] Finger-counting — Wikipedia — https://en.wikipedia.org/wiki/Finger-counting — 12-Phalangen-Methode.
-- [R2·A1] Duodecimal — Wikipedia — https://en.wikipedia.org/wiki/Duodecimal — nennt Ifrah ausdrücklich „speculatively".
-- [R4·A1] Duodecimal Finger Counting — phillosoph.blogspot — http://phillosoph.blogspot.com/2015/11/duodecimal-finger-counting-counting-to.html — Blog, illustrativ.
+- [R2·A1] Decimal degrees — Wikipedia — <https://en.wikipedia.org/wiki/Decimal_degrees> — DD vs DMS.
+- [R2·A1] Finger-counting — Wikipedia — <https://en.wikipedia.org/wiki/Finger-counting> — 12-Phalangen-Methode.
+- [R2·A1] Duodecimal — Wikipedia — <https://en.wikipedia.org/wiki/Duodecimal> — nennt Ifrah ausdrücklich „speculatively".
+- [R4·A1] Duodecimal Finger Counting — phillosoph.blogspot — <http://phillosoph.blogspot.com/2015/11/duodecimal-finger-counting-counting-to.html> — Blog, illustrativ.
 
 ### Mythos, Religion, Symbolik
 
 - [R2·A1] Decan — Wikipedia (s. o.) — Dekane als Gottheiten.
-- [R2·A1] Guardians of the directions — Wikipedia — https://en.wikipedia.org/wiki/Guardians_of_the_directions — Dikpalas.
-- [R2·A2] Lokapala — Britannica — https://www.britannica.com/topic/lokapala — teilweise.
-- [R2·A2] Qibla — Wikipedia — https://en.wikipedia.org/wiki/Qibla — Qibla-Berechnung.
+- [R2·A1] Guardians of the directions — Wikipedia — <https://en.wikipedia.org/wiki/Guardians_of_the_directions> — Dikpalas.
+- [R2·A2] Lokapala — Britannica — <https://www.britannica.com/topic/lokapala> — teilweise.
+- [R2·A2] Qibla — Wikipedia — <https://en.wikipedia.org/wiki/Qibla> — Qibla-Berechnung.
 - [R2·A2] Twenty-Eight Mansions — Wikipedia (s. o.) — vier kosmische Tiere.
-- [R2·A2] Names of the days of the week — Wikipedia — https://en.wikipedia.org/wiki/Names_of_the_days_of_the_week — 7 Planeten.
-- [R1·A1] Brute Norse: How many dead warriors can you fit in Valhalla? — https://www.brutenorse.com/blog/2017/07/how-many-dead-warriors-can-you-fit-in.html — wissenschaftlich-skeptische Einordnung der 432.000-Parallele.
-- [R1·A2] Subhash Kak, Babylonian and Indian Astronomy: Early Connections — arXiv physics/0301078 — https://arxiv.org/pdf/physics/0301078 — akademisch, teilweise.
-- [R1·A3] Subhash Kak, Time Cycles in Indian Cosmology — arXiv 0708.0427 — https://arxiv.org/pdf/0708.0427 — PDF binär, indirekt.
-- [R3·A1] Skjalden: Important Numbers in Norse Mythology — https://skjalden.com/important-numbers-norse-mythology/ — populär, solide.
-- [R3·A2] Grímnismál 23 — germanicmythology.com — http://www.germanicmythology.com/PoeticEdda/GRM23.html — Primärtext-Übersetzung.
-- [R3·A2] Islamic Sacred Geography (D. A. King) — Muslim Heritage — https://muslimheritage.com/islamic-sacred-geography/ — teilweise.
-- [R3·A2] The Kaaba and the Sacred Geography of Islam — Muslim Heritage — https://muslimheritage.com/sacred-geography/ — teilweise.
-- [R3·A2] Four Directions / Medicine Wheel — St. Joseph's Indian School — https://www.stjo.org/native-american-culture/native-american-beliefs/four-directions/ — teilweise.
-- [R3·A2] Cardinal Symbolism: Native American Wisdom — TokenRock — https://www.tokenrock.com/articles/cardinal-symbolism-taking-direction-from-native-american-wisdom/ — teilweise.
-- [R3·A2] Cardinal directions: Significance and symbolism — Wisdomlib — https://www.wisdomlib.org/concept/cardinal-directions — teilweise.
-- [R3·A2] Origins of the Days of the Week — daysoftheweek.org — https://daysoftheweek.org/origins/ — teilweise.
-- [R3·A2] The 28 Lunar Mansions and Four Divine Beasts — FateClick — https://www.fateclick.com/chinese-astrology/i-ching/the-twenty-eight-lunar-mansions-and-the-four-divine-beasts-in-taoism — teilweise.
-- [R4·A2] The Numbered Deities of Babylon — Mathemagical Music — https://mathemagicalmusic.weebly.com/the-numbered-deities-of-babylon.html — populär, mit Vorsicht.
-- [R4·A2] The Symbolism of the Number 12 — deepsymbol — https://deepsymbol.com/the-symbolism-of-the-number-12/ — populär.
-- [R4·A2] Significance of the Number 12 — sharpfluidics — https://www.sharpfluidics.com/the-significance-of-the-number-12-in-history-and-mythology/ — populär.
-- [R4·A2] Egyptian Decans — ZodiacRoots — https://zodiacroots.com/egyptian-decans/ — populär-astrologisch.
-- [R4·A3] The Significance of Sacred Numbers in Mesopotamian Beliefs — Babylonian Mythology — https://babylonian.mythologyworldwide.com/the-significance-of-sacred-numbers-in-mesopotamian-beliefs/ — populär, Fetch fehlgeschlagen.
-- [S·A2] Qibla compass — Grokipedia — https://grokipedia.com/page/Qibla_compass — KI-Wiki, ungesichert.
+- [R2·A2] Names of the days of the week — Wikipedia — <https://en.wikipedia.org/wiki/Names_of_the_days_of_the_week> — 7 Planeten.
+- [R1·A1] Brute Norse: How many dead warriors can you fit in Valhalla? — <https://www.brutenorse.com/blog/2017/07/how-many-dead-warriors-can-you-fit-in.html> — wissenschaftlich-skeptische Einordnung der 432.000-Parallele.
+- [R1·A2] Subhash Kak, Babylonian and Indian Astronomy: Early Connections — arXiv physics/0301078 — <https://arxiv.org/pdf/physics/0301078> — akademisch, teilweise.
+- [R1·A3] Subhash Kak, Time Cycles in Indian Cosmology — arXiv 0708.0427 — <https://arxiv.org/pdf/0708.0427> — PDF binär, indirekt.
+- [R3·A1] Skjalden: Important Numbers in Norse Mythology — <https://skjalden.com/important-numbers-norse-mythology/> — populär, solide.
+- [R3·A2] Grímnismál 23 — germanicmythology.com — <http://www.germanicmythology.com/PoeticEdda/GRM23.html> — Primärtext-Übersetzung.
+- [R3·A2] Islamic Sacred Geography (D. A. King) — Muslim Heritage — <https://muslimheritage.com/islamic-sacred-geography/> — teilweise.
+- [R3·A2] The Kaaba and the Sacred Geography of Islam — Muslim Heritage — <https://muslimheritage.com/sacred-geography/> — teilweise.
+- [R3·A2] Four Directions / Medicine Wheel — St. Joseph's Indian School — <https://www.stjo.org/native-american-culture/native-american-beliefs/four-directions/> — teilweise.
+- [R3·A2] Cardinal Symbolism: Native American Wisdom — TokenRock — <https://www.tokenrock.com/articles/cardinal-symbolism-taking-direction-from-native-american-wisdom/> — teilweise.
+- [R3·A2] Cardinal directions: Significance and symbolism — Wisdomlib — <https://www.wisdomlib.org/concept/cardinal-directions> — teilweise.
+- [R3·A2] Origins of the Days of the Week — daysoftheweek.org — <https://daysoftheweek.org/origins/> — teilweise.
+- [R3·A2] The 28 Lunar Mansions and Four Divine Beasts — FateClick — <https://www.fateclick.com/chinese-astrology/i-ching/the-twenty-eight-lunar-mansions-and-the-four-divine-beasts-in-taoism> — teilweise.
+- [R4·A2] The Numbered Deities of Babylon — Mathemagical Music — <https://mathemagicalmusic.weebly.com/the-numbered-deities-of-babylon.html> — populär, mit Vorsicht.
+- [R4·A2] The Symbolism of the Number 12 — deepsymbol — <https://deepsymbol.com/the-symbolism-of-the-number-12/> — populär.
+- [R4·A2] Significance of the Number 12 — sharpfluidics — <https://www.sharpfluidics.com/the-significance-of-the-number-12-in-history-and-mythology/> — populär.
+- [R4·A2] Egyptian Decans — ZodiacRoots — <https://zodiacroots.com/egyptian-decans/> — populär-astrologisch.
+- [R4·A3] The Significance of Sacred Numbers in Mesopotamian Beliefs — Babylonian Mythology — <https://babylonian.mythologyworldwide.com/the-significance-of-sacred-numbers-in-mesopotamian-beliefs/> — populär, Fetch fehlgeschlagen.
+- [S·A2] Qibla compass — Grokipedia — <https://grokipedia.com/page/Qibla_compass> — KI-Wiki, ungesichert.
 
 ### Spekulativ / alternativ
 
-- [S·A1] The Great Year of the World (R. Carlson) — Graham Hancock — https://grahamhancock.com/carlsonr2/ — prominent alternativhistorisch, stark umstritten.
-- [S·A1] Sacred Geometry and the Blueprint of Civilization — Ancient360 — https://ancient360.eu/sacred-geometry-ancient-civilizations/ — unwissenschaftlich.
-- [S·A1] Ancient Legacy – 360 and Pi — World-Mysteries Blog — https://blog.world-mysteries.com/science/ancient-legacy-360-and-pi/ — spekulativ.
-- [S·A1] Sacred Geometry — Ancient-Wisdom — http://www.ancient-wisdom.com/sacredgeometry.htm — spekulativ.
-- [S·A1] Precession of the Equinoxes — Cosmic-Core — https://www.cosmic-core.org/free/article-257- — esoterisch.
-- [S·A1] Does the Ishango Bone Indicate Knowledge of the Base 12? — arXiv 1204.1019 — https://arxiv.org/pdf/1204.1019 — Preprint, Einzelmeinung, nicht Konsens.
-- [R3·A1] What significance does 360 hold — Physics Forums — https://www.physicsforums.com/threads/what-significance-does-360-hold-in-degrees-and-mathematics.80069/ — Forum, gemischte Qualität.
+- [S·A1] The Great Year of the World (R. Carlson) — Graham Hancock — <https://grahamhancock.com/carlsonr2/> — prominent alternativhistorisch, stark umstritten.
+- [S·A1] Sacred Geometry and the Blueprint of Civilization — Ancient360 — <https://ancient360.eu/sacred-geometry-ancient-civilizations/> — unwissenschaftlich.
+- [S·A1] Ancient Legacy – 360 and Pi — World-Mysteries Blog — <https://blog.world-mysteries.com/science/ancient-legacy-360-and-pi/> — spekulativ.
+- [S·A1] Sacred Geometry — Ancient-Wisdom — <http://www.ancient-wisdom.com/sacredgeometry.htm> — spekulativ.
+- [S·A1] Precession of the Equinoxes — Cosmic-Core — <https://www.cosmic-core.org/free/article-257-> — esoterisch.
+- [S·A1] Does the Ishango Bone Indicate Knowledge of the Base 12? — arXiv 1204.1019 — <https://arxiv.org/pdf/1204.1019> — Preprint, Einzelmeinung, nicht Konsens.
+- [R3·A1] What significance does 360 hold — Physics Forums — <https://www.physicsforums.com/threads/what-significance-does-360-hold-in-degrees-and-mathematics.80069/> — Forum, gemischte Qualität.

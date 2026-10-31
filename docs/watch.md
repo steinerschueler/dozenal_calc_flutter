@@ -7,7 +7,7 @@ Intro oder Overlays.
 
 ## Aufbau
 
-```
+```text
 watch/
   project.yml                 # xcodegen-Projektdefinition
   Sources/
@@ -21,6 +21,7 @@ watch/
 Uhrzeit sitzt oben rechts; links-bündig hält die Eingabe frei davon und von der
 runden Ecke). Darunter ein `TabView` im `.page`-Stil mit drei horizontal
 gewischten Seiten:
+
 - **links** (`tag 0`): Lizenz (MIT) + kurzer Datenschutz-Text.
 - **mitte** (`tag 1`, Start): Glyphenblock, 3×4 = die zwölf Ziffern.
 - **rechts** (`tag 2`): Funktionsblock, 12 Tasten in drei Sets à vier
@@ -95,8 +96,9 @@ Aktuelle Milderung: die `TabView` wird einen Runloop nach `onAppear` per
 Zellgrösse aus einem äusseren `GeometryReader` zu setzen (nie grösser als die
 Seite, daher nie abgeschnitten); aktuell bewusst zurückgestellt zugunsten der
 voll ausfüllenden Variante. Referenzen:
-- https://developer.apple.com/forums/thread/711572
-- https://www.hackingwithswift.com/forums/swiftui/tabview-with-tabviewstyle-page-not-behaving-as-expected-when-app-loads/18636
+
+- <https://developer.apple.com/forums/thread/711572>
+- <https://www.hackingwithswift.com/forums/swiftui/tabview-with-tabviewstyle-page-not-behaving-as-expected-when-app-loads/18636>
 
 ## Auslieferung: eingebettet in die iOS-App (ab Build 16)
 
@@ -118,6 +120,7 @@ Target schon da, passiert nichts. Re-run nach einem `flutter create`/Projekt-
 Reset.
 
 Eigene Dateien des eingebetteten Targets (nicht die des Standalone-Projekts):
+
 - `ios/watch/Info.plist` — Companion-Variante: `WKApplication` +
   `WKCompanionAppBundleIdentifier = app.weltanschauung.dozenal`, **kein**
   `WKWatchOnly`. Version über `$(MARKETING_VERSION)`/`$(CURRENT_PROJECT_VERSION)`.

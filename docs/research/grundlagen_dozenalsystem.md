@@ -306,64 +306,64 @@ mit dem annotiert, was sie belegt. (Interne Repo-Dossiers wie `math_basen.md` od
 ### Grundlagen des Stellenwertsystems und Basis 12
 
 - **[R2·A1]** Wikipedia (en): *Positional notation* —
-  https://en.wikipedia.org/wiki/Positional_notation — Volltext gelesen: Stellenwert-Formel,
+  <https://en.wikipedia.org/wiki/Positional_notation> — Volltext gelesen: Stellenwert-Formel,
   Radixpunkt, »10« bedeutet die Basis selbst, Null als Platzhalter. Belegt: Grundprinzip.
 
-- **[R2·A1]** Wikipedia (en): *Duodecimal* — https://en.wikipedia.org/wiki/Duodecimal —
+- **[R2·A1]** Wikipedia (en): *Duodecimal* — <https://en.wikipedia.org/wiki/Duodecimal> —
   Volltext gelesen (mehrfach): Primfaktorisierung 12 = 2² × 3, Terminierungsbedingung,
   Bruch-Vergleich, transdezimale Ziffern, Pitman 1857, Unicode 8.0 (2015), A/B-Notation,
   Andrews 1934/35, Aitken-Zitat, DSA/DSGB, historische Nutzung (Römer, Babylonier,
   Charlemagne), Sprachen mit nativer Basis 12. Haupt-Kreuzreferenz des Dossiers.
 
 - **[R2·A1]** Wikipedia (en): *Repeating decimal* —
-  https://en.wikipedia.org/wiki/Repeating_decimal — Volltext gelesen: Fundamentaltheorem
+  <https://en.wikipedia.org/wiki/Repeating_decimal> — Volltext gelesen: Fundamentaltheorem
   (»terminiert genau dann, wenn alle Primfaktoren des Nenners auch Primfaktoren der Basis
   sind«), Periodenlänge = multiplikative Ordnung. Belegt: Abbruch-Kriterium.
 
 ### Mathematik der Teilbarkeit (hochzusammengesetzte Zahlen)
 
 - **[R1·A2]** Ramanujan, S.: *Highly Composite Numbers*, Proc. London Math. Soc. 14
-  (1915) — https://link.springer.com/article/10.1023/A:1009764017495 — Abstract/Snippet
+  (1915) — <https://link.springer.com/article/10.1023/A:1009764017495> — Abstract/Snippet
   (Paywall): Definition hochzusammengesetzter und superior hochzusammengesetzter Zahlen.
   Belegt: wissenschaftliche Grundlage des Begriffs.
 
 - **[R2·A1]** Wikipedia (en): *Highly composite number* —
-  https://en.wikipedia.org/wiki/Highly_composite_number — Volltext gelesen: Definition,
+  <https://en.wikipedia.org/wiki/Highly_composite_number> — Volltext gelesen: Definition,
   12 hat 6 Teiler, Folge der HCN, Verbindung zu Masssystemen. Belegt: 12 als HCN.
 
 - **[R2·A1]** Wikipedia (en): *Superior highly composite number* —
-  https://en.wikipedia.org/wiki/Superior_highly_composite_number — Volltext gelesen:
+  <https://en.wikipedia.org/wiki/Superior_highly_composite_number> — Volltext gelesen:
   Folge 2, 6, 12, 60, 120, 360 mit Primfaktorisierungen. Belegt: 12 und 60 superior HCN.
 
 ### Notation / transdezimale Ziffern / Unicode
 
 - **[R3·A2]** Numerals Wiki (Fandom): *List of numeral proposals for different number
-  bases* — https://numerals.fandom.com/wiki/List_of_numeral_proposals_for_different_number_bases —
+  bases* — <https://numerals.fandom.com/wiki/List_of_numeral_proposals_for_different_number_bases> —
   Snippet: vollständige Liste der historischen Notationsvorschläge (Pitman, Andrews,
   Dwiggins, A/B, T/E). Belegt: Breite des Notations-Ökosystems.
 
 - **[R3·A2]** Dozensonline-Forum: *Pitman Glyphs Are Now In Unicode* —
-  https://www.tapatalk.com/groups/dozensonline/viewtopic.php?t=1324 — Snippet: Aufnahme in
+  <https://www.tapatalk.com/groups/dozensonline/viewtopic.php?t=1324> — Snippet: Aufnahme in
   Unicode 8.0 (2015); Font-Unterstützung anfangs lückenhaft (leere Rechtecke). Belegt:
   Vorbehalt 9 (Unicode-Aufnahme vs. reale Font-Unterstützung).
 
 ### Dozenale Gesellschaften (DSA / DSGB)
 
 - **[R2·A1]** Dozenal Society of America — *Foundation and First Generation* —
-  https://dozenal.org/drupal/content/foundation-and-first-generation.html — Volltext
+  <https://dozenal.org/drupal/content/foundation-and-first-generation.html> — Volltext
   gelesen: Gründung 1944, Ralph Beard, Bulletin-Start 1945, Terminus »transdecimal«.
   Belegt: Gründungsdetails der DSA.
 
 - **[R2·A1]** Dozenal Society of America — *About Us* —
-  https://dozenal.org/drupal/content/about-us.html — Volltext gelesen: Selbstbeschreibung
+  <https://dozenal.org/drupal/content/about-us.html> — Volltext gelesen: Selbstbeschreibung
   als »voluntary nonprofit educational corporation«. Belegt: Mission der DSA.
 
 - **[R2·A2]** Zirkel, Gene: *A History of the DSA* (Duodecimal Bulletin WN 97) —
-  https://dozenal.org/article-zirkel-history-of-dsa.pdf — Teilweise (Snippet): Gründer,
+  <https://dozenal.org/article-zirkel-history-of-dsa.pdf> — Teilweise (Snippet): Gründer,
   DSGB-Gründung 1959, Aitken, Brian Bishop. Belegt: Gründungschronologie.
 
 - **[R3·A2]** Dozenal Society of Great Britain — *About Us* —
-  http://www.dozenalsociety.org.uk/pdfs/AboutUs.pdf — Teilweise: Gründung 1959, Ziel
+  <http://www.dozenalsociety.org.uk/pdfs/AboutUs.pdf> — Teilweise: Gründung 1959, Ziel
   »Aufmerksamkeit auf die Vorteile von Basis 12«. Belegt: DSGB-Gründungsdatum.
 
 - **[R2·A2]** Aitken, A. C.: *The Case Against Decimalisation* (1962) — zitiert via
@@ -376,54 +376,54 @@ mit dem annotiert, was sie belegt. (Interne Repo-Dossiers wie `math_basen.md` od
 
 ### Historische Spuren (Handel, Mass, Zeit)
 
-- **[R2·A1]** Wikipedia (en): *Dozen* — https://en.wikipedia.org/wiki/Dozen — Volltext
+- **[R2·A1]** Wikipedia (en): *Dozen* — <https://en.wikipedia.org/wiki/Dozen> — Volltext
   gelesen: Etymologie (frz. *douzaine* < lat. *duodecim*), Teilbarkeit als Grund, ≈ 12
   Mondmonate. Belegt: Herkunft und Begründung des Dutzends.
 
-- **[R2·A1]** Wikipedia (en): *Gross (unit)* — https://en.wikipedia.org/wiki/Gross_(unit) —
+- **[R2·A1]** Wikipedia (en): *Gross (unit)* — <https://en.wikipedia.org/wiki/Gross_(unit)> —
   Volltext gelesen: 144 = 12², »grosse douzaine«, Herkunft 15. Jh., Grossgross 1728 = 12³.
   Belegt: Gross / Grossgross.
 
 - **[R2·A1]** Wikipedia (en): *Ancient Roman units of measurement* —
-  https://en.wikipedia.org/wiki/Ancient_Roman_units_of_measurement — Volltext gelesen:
+  <https://en.wikipedia.org/wiki/Ancient_Roman_units_of_measurement> — Volltext gelesen:
   *uncia* = »ein Zwölftel« (Fuss und Pfund), Ableitung von *inch* und *ounce*. Belegt:
   römisches Duodezimal-Brucherbe.
 
-- **[R2·A1]** Wikipedia (en): *12-hour clock* — https://en.wikipedia.org/wiki/12-hour_clock —
+- **[R2·A1]** Wikipedia (en): *12-hour clock* — <https://en.wikipedia.org/wiki/12-hour_clock> —
   Volltext gelesen: ägyptische Sonnenuhren, Dekane als Nacht-Zwölfteilung, römische
   Übernahme. Belegt: Herkunft der 12-Stunden-Teilung.
 
-- **[R2·A1]** Wikipedia (en): *Sexagesimal* — https://en.wikipedia.org/wiki/Sexagesimal —
+- **[R2·A1]** Wikipedia (en): *Sexagesimal* — <https://en.wikipedia.org/wiki/Sexagesimal> —
   Volltext gelesen: Ursprung bei den Sumerern, 60 als superior HCN, Erbe in
   Stunden/Minuten/Grad. Belegt: babylonische Basis 60 (nicht 12), Vorbehalt 5.
 
 ### Ursprungs-Hypothese (Fingerglied-Zählung)
 
 - **[R2·A2]** Ifrah, Georges: *The Universal History of Numbers* (2000), S. 48 — via
-  https://en.wikipedia.org/wiki/Finger-counting — Belegt: Fingerglied-Methode (Daumen
+  <https://en.wikipedia.org/wiki/Finger-counting> — Belegt: Fingerglied-Methode (Daumen
   tippt drei Glieder je Finger = 12) und ihr Fortleben in Asien. Hypothesen-Quelle, nicht
   per Volltext verifiziert.
 
 - **[R2·A1]** Wikipedia (en): *Finger-counting* —
-  https://en.wikipedia.org/wiki/Finger-counting — Volltext gelesen: mechanische
+  <https://en.wikipedia.org/wiki/Finger-counting> — Volltext gelesen: mechanische
   Beschreibung der phalangischen Methode, geographische Verbreitung. Belegt: Existenz und
   Verbreitung der Methode (als Hypothese zum Ursprung).
 
 ### Historischer Kontext (Metrik-Entscheidung 1790)
 
 - **[R3·A1]** Metric Views: *Why ten and not twelve?* —
-  https://metricviews.uk/2016/10/10/why-ten-and-not-twelve/ — Volltext gelesen:
+  <https://metricviews.uk/2016/10/10/why-ten-and-not-twelve/> — Volltext gelesen:
   französischer Revolutionsausschuss 1790, Kaufleute für Basis 12, Geodäten für Basis 10,
   Argument »globaler Wechsel des Zählsystems undurchführbar«. Belegt: Entscheidung 1790.
 
 ### Argument-Literatur (pro und contra)
 
 - **[R3·A1]** eev.ee (fuzzy notepad): *The case for base twelve* (2016) —
-  https://eev.ee/blog/2016/04/26/the-case-for-base-twelve/ — Volltext gelesen:
+  <https://eev.ee/blog/2016/04/26/the-case-for-base-twelve/> — Volltext gelesen:
   Pro-Argumente, ehrliche Selbst-Relativierung, »who cares about fifths?«-Passage (Beleg
   für abtuende Rhetorik), Kompaktheits-Hinweis. Belegt: Vorbehalt 2.
 
 - **[R3·A1]** Hexnet: *An Argument For Dozenalism* —
-  https://hexnet.org/content/argument-dozenalism — Volltext gelesen: Teiler-Argument,
+  <https://hexnet.org/content/argument-dozenalism> — Volltext gelesen: Teiler-Argument,
   historische Massspuren, ehrliches Einräumen von 1/5 als periodisch, soziale
   Adoptionsbarriere. Belegt: Pro-Contra-Bilanz.

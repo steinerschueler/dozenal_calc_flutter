@@ -3,6 +3,9 @@ config:
   MD041: false
   MD024:
     siblings_only: true # Keep a Changelog repeats Added, Changed and so on per version
+  MD004: false # older notes wrap lines with a leading + meaning plus
+  MD026: false # headings like "Die Zahl 12!" need their punctuation
+  MD029: false # numbered rows carry real numbers with prose in between
   MD036: false # older research notes use bold lines as labels
   MD060: false # npf tables use the compact |---| form
 ignores:
