@@ -13,7 +13,7 @@ Die mesopotamische Gewichts- und Geldhierarchie war sexagesimal aufgebaut:
 - 1 Mine (*manû*) = 60 Schekel, rund 500 g
 - 1 Schekel (sumerisch *gín*, akkadisch *šiqlu*)
 
-Der Schekel war ursprünglich ein Gewicht. Erst sekundär wurde er zur Geld- und Recheneinheit. Sein genaues Gewicht ist in der Literatur **umstritten**. Eine statistische Auswertung von über 260 Artefakten (u. a. aus Nippur) nennt rund 8,3 bis 8,4 g, kalibriert auf das Durchschnittsgewicht von Gerstenkörnern (1 Schekel = 180 Gerstenkörner). Die englische Wikipedia nennt dagegen rund 9,6 bis 9,8 g, bei großer regionaler und zeitlicher Streuung (7 bis 17 g). Beide Quellen stimmen darin überein, dass der Schekel ein an das Gerstenkorn gebundenes Naturmaß war. Eine einzige gesicherte Grammzahl gibt es nicht. Als gesicherter Kern gilt: rund 8 bis 9 g, am Gerstenkorn-Gewicht ausgerichtet.
+Der Schekel war ursprünglich ein Gewicht. Erst sekundär wurde er zur Geld- und Recheneinheit. Sein genaues Gewicht ist in der Literatur **umstritten**. Eine statistische Auswertung von über 260 Artefakten (u. a. aus Nippur) nennt rund 8,3 bis 8,4 g, kalibriert auf das Durchschnittsgewicht von Gerstenkörnern (1 Schekel = 180 Gerstenkörner). Die englische Wikipedia nennt dagegen rund 9,6 bis 9,8 g, bei grosser regionaler und zeitlicher Streuung (7 bis 17 g). Beide Quellen stimmen darin überein, dass der Schekel ein an das Gerstenkorn gebundenes Naturmass war. Eine einzige gesicherte Grammzahl gibt es nicht. Als gesicherter Kern gilt: rund 8 bis 9 g, am Gerstenkorn-Gewicht ausgerichtet.
 
 Die Mine erscheint in Sumer um 3000 v. Chr. Die Standardisierung erfolgte in der Ur-III-Dynastie (etwa 2112 bis 2004 v. Chr.). Der Schekel als Geldeinheit ist unter anderem im Codex Hammurabi (etwa 1700 v. Chr.) belegt.
 
@@ -21,7 +21,7 @@ Die Mine erscheint in Sumer um 3000 v. Chr. Die Standardisierung erfolgte in der
 
 Vor etwa 500 v. Chr. gab es in Ägypten keine Münzen. Werte wurden in **Deben** abgewogen (für Gold, Silber, am häufigsten Kupfer; 1 Kupfer-Deben rund 90 bis 91 g) und in der kleineren Einheit **Kite** (für Gold und Silber).
 
-Die Funktionsweise: Waren wurden gegen genormte Steine abgewogen. Oft wechselte gar kein Metall den Besitzer. Der Deben diente dann als reine Recheneinheit. Das ist für die 18. Dynastie belegt. Später ersetzten Metallklumpen, oft zu Ringen geformt, die Steine. Silber war in Ägypten knapp. Das Wort für Silber (*hedj*) bedeutete schließlich annähernd "Geld". Weitere Werteinheiten waren Senyu, Hin und Khar.
+Die Funktionsweise: Waren wurden gegen genormte Steine abgewogen. Oft wechselte gar kein Metall den Besitzer. Der Deben diente dann als reine Recheneinheit. Das ist für die 18. Dynastie belegt. Später ersetzten Metallklumpen, oft zu Ringen geformt, die Steine. Silber war in Ägypten knapp. Das Wort für Silber (*hedj*) bedeutete schliesslich annähernd "Geld". Weitere Werteinheiten waren Senyu, Hin und Khar.
 
 ### Antikes Griechenland: Drachme, Obolos, Talent
 
@@ -31,7 +31,7 @@ Die Hierarchie nach attischem Standard (Athen):
 - 1 Drachme = 6 Obolen
 - 1 Obolos = 8 Chalkoi
 
-Der Name "Drachme" stammt von griechisch *drássomai* ("greifen"). Ursprünglich war eine Drachme eine Handvoll von sechs Obeloi. *Obelós* bedeutet Bratspieß oder Metallstab. Eisenspieße dienten schon um 1100 v. Chr. als vormünzliche Geldform. Die Geldeinheit leitet sich also wörtlich aus dem ab, was eine Hand fassen kann.
+Der Name "Drachme" stammt von griechisch *drássomai* ("greifen"). Ursprünglich war eine Drachme eine Handvoll von sechs Obeloi. *Obelós* bedeutet Bratspiess oder Metallstab. Eisenspiesse dienten schon um 1100 v. Chr. als vormünzliche Geldform. Die Geldeinheit leitet sich also wörtlich aus dem ab, was eine Hand fassen kann.
 
 Die Münzdrachme erscheint um das 6. Jahrhundert v. Chr. Sie wog attisch rund 4,3 g Silber, regional aber stark schwankend (korinthischer Stater 8,6 g, äginetischer Didrachmon 12,2 g). Mine und Talent wurden nie geprägt. Sie blieben reine Gewichts- und Recheneinheiten für Getreide und Edelmetall.
 
@@ -42,13 +42,13 @@ Der **Denarius** wurde um 211 v. Chr. eingeführt (Zweiter Punischer Krieg). Er 
 Die kaiserzeitliche augusteische Hierarchie blieb über zwei Jahrhunderte stabil:
 1 Aureus (Gold) = 25 Denare = 100 Sesterzen = 400 Asse.
 
-Caesar standardisierte den Aureus auf 1/40 römisches Pfund (rund 8 g). Unter Augustus wog der Denar rund 3,9 g, unter Nero (ab 64 n. Chr.) rund 3,4 bis 3,5 g. Der Silbergehalt des Denars sank von über 90 Prozent (1. Jh.) auf unter 60 Prozent (200 n. Chr.) und schließlich auf rund 5 Prozent (300 n. Chr.). Diese Münzverschlechterung gehört zur Reichskrise des 3. Jahrhunderts.
+Caesar standardisierte den Aureus auf 1/40 römisches Pfund (rund 8 g). Unter Augustus wog der Denar rund 3,9 g, unter Nero (ab 64 n. Chr.) rund 3,4 bis 3,5 g. Der Silbergehalt des Denars sank von über 90 Prozent (1. Jh.) auf unter 60 Prozent (200 n. Chr.) und schliesslich auf rund 5 Prozent (300 n. Chr.). Diese Münzverschlechterung gehört zur Reichskrise des 3. Jahrhunderts.
 
 Die Bedeutung des Denars reicht weit: Das "d" in £sd stammt von ihm. Ebenso die Wörter Dinar und Denar sowie die romanischen Wörter für "Geld" (italienisch *denaro*, spanisch *dinero*, portugiesisch *dinheiro*, slowenisch *denar*).
 
 ### Das karolingische System libra/solidus/denarius
 
-Dies ist der historische Kern der europäischen 12er- und 20er-Geldlogik. Karl der Große reformierte das Münzwesen um 793/794. Denare zirkulierten im Frankenreich schon ab rund 771.
+Dies ist der historische Kern der europäischen 12er- und 20er-Geldlogik. Karl der Grosse reformierte das Münzwesen um 793/794. Denare zirkulierten im Frankenreich schon ab rund 771.
 
 - Das karolingische Pfund (*libra*) wog rund 408 g reines Silber. Daraus wurden 240 Denare geprägt.
 - Die Verhältnisse: 1 libra = 20 solidi = 240 denarii; 1 solidus = 12 denarii.
@@ -76,12 +76,12 @@ Die nicht-dezimale 12/20-Struktur ist kein religiöses, sondern ein metrologisch
 
 Neben den drei Grundeinheiten gab es zahlreiche Zwischenmünzen: farthing (¼ d), ha'penny, threepenny bit, groat (4 d), florin (2 s), crown und half-crown, sovereign.
 
-Die **Guinea** (21 Schilling = 1 Pfund und 1 Schilling, also £1,05) hatte einen aristokratischen Beiklang. Honorare, Land, Pferde, Kunst, Maßschneiderei und Luxuswaren wurden bis nach 1971 in Guineas notiert. Barrister-Honorare wurden in Guineas berechnet: Der Anwalt bekam die Pfund, sein Gehilfe (clerk) traditionell den zusätzlichen Schilling. Rennpferd-Auktionen notieren bis heute in Guineas. Der Käufer zahlt die Guinea-Summe, der Verkäufer erhält nur die Pfund-Zahl. Die 5-Prozent-Differenz ist die Auktionskommission.
+Die **Guinea** (21 Schilling = 1 Pfund und 1 Schilling, also £1,05) hatte einen aristokratischen Beiklang. Honorare, Land, Pferde, Kunst, Massschneiderei und Luxuswaren wurden bis nach 1971 in Guineas notiert. Barrister-Honorare wurden in Guineas berechnet: Der Anwalt bekam die Pfund, sein Gehilfe (clerk) traditionell den zusätzlichen Schilling. Rennpferd-Auktionen notieren bis heute in Guineas. Der Käufer zahlt die Guinea-Summe, der Verkäufer erhält nur die Pfund-Zahl. Die 5-Prozent-Differenz ist die Auktionskommission.
 
 Slang: "bob" = Schilling, "tanner" = Sixpence, "quid" = Pfund.
 
 Redewendungen aus dem alten Geld:
-- *"Penny wise and pound foolish"* – am Kleinen sparen, am Großen verschwenden (belegt bei Joseph Addison, *The Spectator* 1712; früher bei Francis Meres 1598).
+- *"Penny wise and pound foolish"* – am Kleinen sparen, am Grossen verschwenden (belegt bei Joseph Addison, *The Spectator* 1712; früher bei Francis Meres 1598).
 - *"Look after the pennies and the pounds will look after themselves."*
 - *"Not the full shilling"* / *"ninepence in the shilling"* – geistig nicht ganz da (es fehlen 3 von 12 Pence).
 - *"Spend a penny"* – auf die Toilette gehen (von münzbetriebenen öffentlichen Toiletten).
@@ -114,7 +114,7 @@ Etymologie und Bildmotive einiger Münznamen:
 
 Deutsches Sprichwort: *"Wer den Pfennig nicht ehrt, ist des Talers nicht wert."*
 
-**Maria-Theresien-Taler:** Erstprägung 1741, ab dem Todesjahr 1780 stets mit dem Datum 1780 weitergeprägt. Wegen konstantem Gewicht und hohem, fälschungssicherem Silbergehalt wurde er zur Handelswährung im Levante-Raum, in Arabien und Ostafrika. Gesetzliches Zahlungsmittel war er u. a. in Saudi-Arabien bis 1928, Äthiopien bis 1945 (dort "Talari"), Jemen bis 1962 und Oman bis 1970. Geprägt wurde er auch in London, Paris und Rom; die British East India Company produzierte große Mengen. Er war ein Vorläufer u. a. des saudischen Riyal und des äthiopischen Birr und belegt, wie sich eine wertstabile Silbermünze lange gegen dezimale Papierwährungen hielt.
+**Maria-Theresien-Taler:** Erstprägung 1741, ab dem Todesjahr 1780 stets mit dem Datum 1780 weitergeprägt. Wegen konstantem Gewicht und hohem, fälschungssicherem Silbergehalt wurde er zur Handelswährung im Levante-Raum, in Arabien und Ostafrika. Gesetzliches Zahlungsmittel war er u. a. in Saudi-Arabien bis 1928, Äthiopien bis 1945 (dort "Talari"), Jemen bis 1962 und Oman bis 1970. Geprägt wurde er auch in London, Paris und Rom; die British East India Company produzierte grosse Mengen. Er war ein Vorläufer u. a. des saudischen Riyal und des äthiopischen Birr und belegt, wie sich eine wertstabile Silbermünze lange gegen dezimale Papierwährungen hielt.
 
 Der **maltesische Scudo** (Souveräner Malteserorden, bis heute nominell existent) folgt ebenfalls einem 12/20-System: 1 scudo = 12 tarì = 240 grani.
 
@@ -136,29 +136,29 @@ Im **Osmanischen Reich** galt: 1 Kuruş = 40 Para = 120 Akçe (ab Einführung de
 
 ### Afrika: Kaurimuschel-Geld
 
-**Kaurimuscheln** (cowrie) waren die wichtigste Handelswährung Westafrikas, eine Leitwährung bis ins 18. Jahrhundert. Erstmals belegt sie Ibn Battuta im 14. Jahrhundert (Mali-Reich); vermutlich seit dem 8. Jahrhundert durch arabische Händler eingeführt. Die Muscheln (vor allem *Cypraea moneta* von den Malediven) waren haltbar, fälschungssicher und natürlich knapp. Sie wurden zu Strängen und Bündeln aufgereiht, bei Großzahlungen in Körben gewogen. Die Werte schwankten stark (etwa 1820 rund 32.000 Muscheln pro Silberdollar). Zwischen 1500 und 1875 wurden mindestens 30 Milliarden Kauris in die Bucht von Benin importiert (rund 44 Prozent des dortigen Handelswerts), auch verstrickt in den Sklavenhandel.
+**Kaurimuscheln** (cowrie) waren die wichtigste Handelswährung Westafrikas, eine Leitwährung bis ins 18. Jahrhundert. Erstmals belegt sie Ibn Battuta im 14. Jahrhundert (Mali-Reich); vermutlich seit dem 8. Jahrhundert durch arabische Händler eingeführt. Die Muscheln (vor allem *Cypraea moneta* von den Malediven) waren haltbar, fälschungssicher und natürlich knapp. Sie wurden zu Strängen und Bündeln aufgereiht, bei Grosszahlungen in Körben gewogen. Die Werte schwankten stark (etwa 1820 rund 32.000 Muscheln pro Silberdollar). Zwischen 1500 und 1875 wurden mindestens 30 Milliarden Kauris in die Bucht von Benin importiert (rund 44 Prozent des dortigen Handelswerts), auch verstrickt in den Sklavenhandel.
 
 ### Mesoamerika: Kakaobohnen und Quachtli (vigesimal)
 
-Das Aztekenreich (1325 bis 1521) kannte mehrere Warengelder. **Kakaobohnen** dienten als Kleingeld auf Märkten (etwa in Tlatelolco), gezählt mit genormten Behältern (Schildkrötenpanzer, Kürbisse). Ein Großgebinde von 8000 Bohnen war 1 Xiquipilli (20 × 20 × 20 = 8000, also vigesimale Logik). **Quachtli** (genormte Baumwoll-Mäntel) waren höherwertiges Geld, unter anderem für Sklavenkäufe; im Tlapa-Tributregister galt etwa 1 Quachtli = 20 Gummikuchen. Für den Edelhandel diente Goldstaub in Federkielen. Das Vigesimalsystem (Basis 20, Körperbezug Finger und Zehen) prägt die gesamte Stückelung.
+Das Aztekenreich (1325 bis 1521) kannte mehrere Warengelder. **Kakaobohnen** dienten als Kleingeld auf Märkten (etwa in Tlatelolco), gezählt mit genormten Behältern (Schildkrötenpanzer, Kürbisse). Ein Grossgebinde von 8000 Bohnen war 1 Xiquipilli (20 × 20 × 20 = 8000, also vigesimale Logik). **Quachtli** (genormte Baumwoll-Mäntel) waren höherwertiges Geld, unter anderem für Sklavenkäufe; im Tlapa-Tributregister galt etwa 1 Quachtli = 20 Gummikuchen. Für den Edelhandel diente Goldstaub in Federkielen. Das Vigesimalsystem (Basis 20, Körperbezug Finger und Zehen) prägt die gesamte Stückelung.
 
 ### Spanischer Dollar und der US-Dollar
 
-Der **Real de a ocho** (Peso, "Stück zu acht") = 8 Reales wurde nach der spanischen Münzreform von 1497 autorisiert (rund 25,563 g Feinsilber). Er war die erste faktische Weltwährung. Die Münze ließ sich physisch in 8 Teile zerlegen; ein Achtel war ein "bit", zwei Achtel "two bits" = ein Vierteldollar. Daher heißt das US-Quarter umgangssprachlich bis heute "two bits".
+Der **Real de a ocho** (Peso, "Stück zu acht") = 8 Reales wurde nach der spanischen Münzreform von 1497 autorisiert (rund 25,563 g Feinsilber). Er war die erste faktische Weltwährung. Die Münze liess sich physisch in 8 Teile zerlegen; ein Achtel war ein "bit", zwei Achtel "two bits" = ein Vierteldollar. Daher heisst das US-Quarter umgangssprachlich bis heute "two bits".
 
 Der US-Dollar baute auf dem spanischen Dollar auf. Der Coinage Act 1792 definierte ihn als 371,25 grain (24,057 g) Feinsilber, basierend auf dem gewogenen Durchschnitt abgenutzter spanischer Dollars (von Alexander Hamilton im Treasury wiegen lassen). Der spanische Dollar blieb in den USA gesetzliches Zahlungsmittel bis zum Coinage Act 1857.
 
 ### Münzgewichte: Troy-Gewicht, Grain, Pennyweight
 
-Das **Troy-Gewichtssystem** für Edelmetalle und Münzen baut auf dem **Grain** (Weizenkorn, kleinste Einheit) auf: 24 Grains = 1 Pennyweight (dwt), 20 Pennyweight = 1 Troy-Unze, 12 Troy-Unzen = 1 Troy-Pfund. Das "d" in dwt steht erneut für *denarius*. Im Mittelalter war ein englischer Penny gewichtsmäßig und monetär buchstäblich 1/240 eines Pfunds Sterlingsilber. Der Name "troy" leitet sich vermutlich von der Messestadt Troyes (Frankreich) ab. Nach 1527 ersetzten Troy-Gewichte die älteren "Tower"-Gewichte.
+Das **Troy-Gewichtssystem** für Edelmetalle und Münzen baut auf dem **Grain** (Weizenkorn, kleinste Einheit) auf: 24 Grains = 1 Pennyweight (dwt), 20 Pennyweight = 1 Troy-Unze, 12 Troy-Unzen = 1 Troy-Pfund. Das "d" in dwt steht erneut für *denarius*. Im Mittelalter war ein englischer Penny gewichtsmässig und monetär buchstäblich 1/240 eines Pfunds Sterlingsilber. Der Name "troy" leitet sich vermutlich von der Messestadt Troyes (Frankreich) ab. Nach 1527 ersetzten Troy-Gewichte die älteren "Tower"-Gewichte.
 
 ### Dezimalisierung in Commonwealth und Europa
 
-- Russland war das erste Land, das dezimalisierte: Rubel = 100 Kopeken, 1701/1704 unter Peter dem Großen.
+- Russland war das erste Land, das dezimalisierte: Rubel = 100 Kopeken, 1701/1704 unter Peter dem Grossen.
 - Frankreich: Die livre tournois (20 sous / 240 deniers, überwiegend Recheneinheit) wurde 1795 (Gesetz vom 7. April) durch den Franc ersetzt (10 décimes / 100 centimes), parallel zur Metrisierung. 1803 folgte der "Franc germinal".
 - Australien: 14. Februar 1966.
 - Neuseeland: 10. Juli 1967.
-- Großbritannien und Irland: 15. Februar 1971.
+- Grossbritannien und Irland: 15. Februar 1971.
 - Malta: 1972.
 - Nigeria: 1. Januar 1973, die letzte Nation, die £sd aufgab.
 
@@ -170,7 +170,7 @@ Das **Troy-Gewichtssystem** für Edelmetalle und Münzen baut auf dem **Grain** 
 
 **Der Zinsgroschen / Tribute Penny** (Denarius): Im Neuen Testament (Mt 22,19–21) fragt Jesus nach dem "tribute penny", wahrscheinlich ein römischer Denarius mit dem Bild des Kaisers Tiberius: "Gebt dem Kaiser, was des Kaisers ist." Die Münze als Träger des Herrscherbildes (*imago*) wird zum theologischen Lehrstück über weltliche gegen göttliche Autorität.
 
-**Die dreißig Silberlinge** (Judas) und der **Tyros-Schekel**: Die 30 Silberlinge für Judas waren wahrscheinlich Tyros-Schekel (Tetradrachmen von Tyros, rund 14 g, 94 Prozent Silber), zugleich die offizielle Tempelsteuer-Münze. Jeder jüdische Mann über 20 zahlte einen halben Schekel. Die Ironie: Der Tyros-Schekel trug den Kopf des phönizischen Gottes Melqart (dem griechischen Herakles gleichgesetzt) und einen Adler. Eine Münze mit heidnischer Gottheit wurde so zum Preis des Verrats und zugleich zur "heiligen" Tempelwährung. Produktion von 125 v. Chr. bis 66 n. Chr. (erster jüdischer Krieg).
+**Die dreissig Silberlinge** (Judas) und der **Tyros-Schekel**: Die 30 Silberlinge für Judas waren wahrscheinlich Tyros-Schekel (Tetradrachmen von Tyros, rund 14 g, 94 Prozent Silber), zugleich die offizielle Tempelsteuer-Münze. Jeder jüdische Mann über 20 zahlte einen halben Schekel. Die Ironie: Der Tyros-Schekel trug den Kopf des phönizischen Gottes Melqart (dem griechischen Herakles gleichgesetzt) und einen Adler. Eine Münze mit heidnischer Gottheit wurde so zum Preis des Verrats und zugleich zur "heiligen" Tempelwährung. Produktion von 125 v. Chr. bis 66 n. Chr. (erster jüdischer Krieg).
 
 Münzbilder mit religiösen Motiven sind verbreitet: die Lilie und Johannes der Täufer (Florin), das Doppelkreuz (Kreuzer), der heilige Joachim als Namensgeber des Tals (Taler).
 
@@ -197,23 +197,23 @@ Heute sind weltweit nur noch zwei Währungen nominell nicht-dezimal unterteilt:
 - **Mauretanien:** 1 Ouguiya = 5 Khoums
 - **Madagaskar:** 1 Ariary = 5 Iraimbilanja
 
-Beide sind nur theoretisch nicht-dezimal. Die Untereinheiten sind wertmäßig praktisch bedeutungslos; entsprechende Münzen sind nicht mehr im Umlauf.
+Beide sind nur theoretisch nicht-dezimal. Die Untereinheiten sind wertmässig praktisch bedeutungslos; entsprechende Münzen sind nicht mehr im Umlauf.
 
-### Handel: Dutzend, Gros, Großgros leben weiter
+### Handel: Dutzend, Gros, Grossgros leben weiter
 
 Base 12 überlebt real im Handel:
 - **Dutzend** = 12 (von altfranzösisch *douzaine*).
-- **Gros** = 144 = 12² ("großes Dutzend", von *grosse douzaine*, früh 15. Jahrhundert).
-- **Großgros / great gross** = 1728 = 12³.
+- **Gros** = 144 = 12² ("grosses Dutzend", von *grosse douzaine*, früh 15. Jahrhundert).
+- **Grossgros / great gross** = 1728 = 12³.
 - **Schock** = 60.
 
-Das Gros war jahrhundertelang eine universelle Handelseinheit. Ein "Gros" bedeutete in London wie in New York dieselbe Menge, was Verträge und Preise vereinfachte. Viele Waren werden im Großhandel bis heute "per gross" gehandelt und bepreist. Der Grund ist durchgehend die Teilbarkeit: Ein Gros lässt sich in viele gleiche Lose splitten, was faire Aufteilung in Märkten und Werkstätten erlaubt.
+Das Gros war jahrhundertelang eine universelle Handelseinheit. Ein "Gros" bedeutete in London wie in New York dieselbe Menge, was Verträge und Preise vereinfachte. Viele Waren werden im Grosshandel bis heute "per gross" gehandelt und bepreist. Der Grund ist durchgehend die Teilbarkeit: Ein Gros lässt sich in viele gleiche Lose splitten, was faire Aufteilung in Märkten und Werkstätten erlaubt.
 
-Das **Bäckerdutzend** (baker's dozen) von 13 hat einen handelsrechtlichen Ursprung: Im mittelalterlichen England drohten Bäckern bei Untergewicht harte Strafen (Geldbußen, Auspeitschung, *Assize of Bread*). Sie gaben deshalb ein Stück zu. Das ist reine Handelspraxis, keine religiöse Symbolik, trotz gelegentlicher "Teufels-Dutzend"-Legenden.
+Das **Bäckerdutzend** (baker's dozen) von 13 hat einen handelsrechtlichen Ursprung: Im mittelalterlichen England drohten Bäckern bei Untergewicht harte Strafen (Geldbussen, Auspeitschung, *Assize of Bread*). Sie gaben deshalb ein Stück zu. Das ist reine Handelspraxis, keine religiöse Symbolik, trotz gelegentlicher "Teufels-Dutzend"-Legenden.
 
-### Zeit, Winkel und Maße
+### Zeit, Winkel und Masse
 
-Base 60 überlebt in der Zeit (60 Sekunden, 60 Minuten) und im Winkel (360 Grad, Kreis = 6 × 60). Base 12 überlebt in der 12-Stunden-Uhr, den 12 Monaten und im imperialen Maß (12 Zoll = 1 Fuß). Rennpferd-Auktionen rechnen in Guineas weiter (siehe oben). Die Maria-Theresien-Taler-Prägung wurde noch im 20. Jahrhundert fortgeführt.
+Base 60 überlebt in der Zeit (60 Sekunden, 60 Minuten) und im Winkel (360 Grad, Kreis = 6 × 60). Base 12 überlebt in der 12-Stunden-Uhr, den 12 Monaten und im imperialen Mass (12 Zoll = 1 Fuss). Rennpferd-Auktionen rechnen in Guineas weiter (siehe oben). Die Maria-Theresien-Taler-Prägung wurde noch im 20. Jahrhundert fortgeführt.
 
 ## Inkompatibilität zum Dezimalen / Basis-12-Bezug
 
@@ -235,8 +235,8 @@ Argumente pro Dezimalisierung waren einfachere Buchhaltung, weniger Rechenfehler
 
 ### Wiederkehrende Muster über alle Systeme
 
-- **Recheneinheit gegen geprägte Münze:** In nahezu allen frühen Systemen (Mesopotamien, Ägypten, Mine/Talent in Griechenland, karolingisch libra/solidus) existierten die großen Einheiten nur als abstrakte Rechengröße. Geprägt war meist nur die kleinste Einheit (Denar, Schekel, Drachme).
-- **Naturkalibrierung:** Die kleinsten Einheiten waren oft an Naturobjekte gebunden – Gerstenkorn (Schekel, später das englische "grain"-Gewicht), Handvoll und Bratspieß (Drachme/Obolos).
+- **Recheneinheit gegen geprägte Münze:** In nahezu allen frühen Systemen (Mesopotamien, Ägypten, Mine/Talent in Griechenland, karolingisch libra/solidus) existierten die grossen Einheiten nur als abstrakte Rechengrösse. Geprägt war meist nur die kleinste Einheit (Denar, Schekel, Drachme).
+- **Naturkalibrierung:** Die kleinsten Einheiten waren oft an Naturobjekte gebunden – Gerstenkorn (Schekel, später das englische "grain"-Gewicht), Handvoll und Bratspiess (Drachme/Obolos).
 - **Zahlbasen mit Himmels- oder Körperbezug:** 60 (Mesopotamien, astronomisch), 12 (Mondmonate, Fingerglieder), 20 (Mesoamerika, Finger und Zehen).
 - **Kontinuitätskette:** Mesopotamien → Griechenland → Rom (*denarius*) → islamische Welt (*Dinar/Dirham*) und karolingisches Europa (*libra/solidus/denarius*) → britisches £sd → bis 1971/1973.
 
@@ -248,7 +248,7 @@ Argumente pro Dezimalisierung waren einfachere Buchhaltung, weniger Rechenfehler
 
 **B. Ishango-Knochen als "Base-12-Werkzeug" (stark umstritten).** Die Hypothese: Der prähistorische Ishango-Knochen (Grenze Kongo/Uganda, rund 20.000 Jahre alt) sei ein Zählwerkzeug in Base 12 mit Subbasen 3 und 4. Vorgeschlagen von Dirk Huylebrouck und Vladimir Pletser (arXiv 1204.1019). Kritik: Es gibt konkurrierende Deutungen (arithmetisches Spiel, Kalender, Primzahlen). Die Base-12-Lesart ist eine Interpretation einzelner Autoren, kein Konsens, und als Minderheitsdeutung zu kennzeichnen.
 
-**C. "Dezimalisierung verursachte Inflation" (Mythos, widerlegt).** Die zeitgenössische Behauptung: Beim Decimal Day 1971 sei alles auf-, nie abgerundet worden, Händler hätten versteckt die Preise erhöht ("decimal diddlers", Kampagne der *Sun*). Status: weitgehend widerlegt. Die UK-Inflation lag aus unabhängigen Gründen bei rund 9 Prozent; sie war in den Monaten vor der Umstellung eher etwas höher. Die kolportierten Betrugsfälle waren größtenteils unbelegt. Als populärer Mythos zu markieren, nicht als ökonomische Tatsache.
+**C. "Dezimalisierung verursachte Inflation" (Mythos, widerlegt).** Die zeitgenössische Behauptung: Beim Decimal Day 1971 sei alles auf-, nie abgerundet worden, Händler hätten versteckt die Preise erhöht ("decimal diddlers", Kampagne der *Sun*). Status: weitgehend widerlegt. Die UK-Inflation lag aus unabhängigen Gründen bei rund 9 Prozent; sie war in den Monaten vor der Umstellung eher etwas höher. Die kolportierten Betrugsfälle waren grösstenteils unbelegt. Als populärer Mythos zu markieren, nicht als ökonomische Tatsache.
 
 **D. Esoterik / "sacred geometry": Base 12/60 als Spur einer verlorenen Hochkultur (Pseudohistorie).** Die Behauptung: 12 Tierkreiszeichen, 12 Monate und der 360-Grad-Kreis seien Überreste einer Zeit, als Base 12 die ganze Gesellschaft strukturierte, teils verknüpft mit "sacred geometry" und versunkenen Hochkulturen. Der dokumentierte Teil (Babylonier teilten den Tierkreis in 360 Grad und 12 Zeichen zu je 30 Grad; Tag in 2 × 12 Stunden) ist solide. Die Deutung einer umfassenden base-12-Gesellschaftsordnung oder esoterischen "Blaupause" geht über die Evidenz hinaus. Diese Quellen (FasterCapital, deepsymbol, dozenalmath-Blog) sind nicht peer-reviewt und teils advocacy- oder SEO-getrieben.
 

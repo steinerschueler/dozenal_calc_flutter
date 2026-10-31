@@ -12,7 +12,7 @@ müssen** — siehe [`../../../tool/screenshots/`](../../../tool/screenshots/) u
 - `ipad/` — iPad Pro 13″, **2064×2752** (für den 12,9″-Slot auf 2048×2732 skaliert). Gleiche Motive;
   **Reihenfolge weicht ab: `ja` wurde zuletzt aufgenommen** (Dateinamen sind sprechend, Reihenfolge egal).
 - `watch/` — Apple Watch Series 11 46 mm, **416×496**. `glyphs` (Ziffern-Tastatur, `10−2=A`) +
-  `functions` (Funktionstasten). Werden **nicht** gerahmt (App Store verlangt exakt diese Größe).
+  `functions` (Funktionstasten). Werden **nicht** gerahmt (App Store verlangt exakt diese Grösse).
 - `macos/` — macOS-Fenster, 1824×1488. `intro` (englisch) + `calc-1over15` + `converter`.
   macOS wird je Sprache nur mit **übersetztem Overlay** über dieselbe englische Fenster-Aufnahme komponiert.
 

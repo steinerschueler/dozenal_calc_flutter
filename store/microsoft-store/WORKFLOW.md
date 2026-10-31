@@ -136,7 +136,7 @@ Import-Fehler — die übrigen brauchen nur noch den Öffnen+Speichern-Schritt.
   - **System requirements** Memory / Processor / Graphics / Video Memory /
     DirectX → **Not specified** (App hat keine besonderen Anforderungen).
   - **Minimum hardware:** möglichst **leer** lassen (App ist per Touch/Tastatur
-    bedienbar; „Maus = Pflicht" würde reine Touch-Geräte ausschließen).
+    bedienbar; „Maus = Pflicht" würde reine Touch-Geräte ausschliessen).
 - **Age ratings:** Fragebogen ausfüllen → „Everyone".
 - **Search terms** (max 7/Sprache, je ≤ 30 Zeichen): siehe `README.md`.
 
@@ -149,7 +149,7 @@ Bei der Submission meldet Partner Center die **restricted capability
 einem Textfeld. **Das ist normal und erwartet** — das `msix`-Tool fügt
 `runFullTrust` automatisch hinzu, weil Flutter-Desktop-Apps klassische
 Win32-Prozesse sind, die als MSIX verpackt werden. **Nicht entfernen** (sonst
-läuft die App nicht). Approval wird für Desktop-Apps routinemäßig erteilt.
+läuft die App nicht). Approval wird für Desktop-Apps routinemässig erteilt.
 
 Fertiger Begründungstext (Englisch, zum Einfügen ins Feld „Why do you need the
 runFullTrust capability…"):
@@ -179,14 +179,14 @@ restricted behavior.
 
 ## 4. Bild-Spezifikationen (Referenz)
 
-| Bild | Feld | Maß | Hinweis |
+| Bild | Feld | Mass | Hinweis |
 |---|---|---|---|
 | Desktop-Screenshot | `DesktopScreenshot1..20` | ≥ 1366×768, .png | unsere: 1854×1048 |
 | 9:16 Poster art | `StoreLogo720x1080` | exakt 720×1080 | Haupt-Logo Win10/11, Xbox-Pflicht |
 | 1:1 Box art | `StoreLogo1080x1080` | exakt 1080×1080 | Fallback-Logo |
 | 1:1 App tile icon | `StoreLogo300x300` | exakt 300×300 | überschreibt Paket-Icon |
 
-Alle: .png, < 50 MB. Store-Logos brauchen **exakte** Maße; Screenshots nur ein
+Alle: .png, < 50 MB. Store-Logos brauchen **exakte** Masse; Screenshots nur ein
 Minimum. Quelle der Bilder: `store/screenshots/linux/*.png` (Desktop) bzw.
 generiert aus `assets/icon.png`.
 

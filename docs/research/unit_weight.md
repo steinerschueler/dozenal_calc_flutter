@@ -2,14 +2,14 @@
 
 ### Das durchgehende Muster
 
-Eine klare Linie zieht sich durch die gesamte Geschichte des Wägens. Maße entstanden aus zwei Quellen: aus **Naturbezügen** (Samenkörner, Getreidekörner) für die kleinsten Einheiten und aus **Arbeits- und Handelsbezügen** (Tragelasten, Münzgewichte) für die großen Einheiten. Staatliche Standardisierung kam fast überall spät und nur stockend.
+Eine klare Linie zieht sich durch die gesamte Geschichte des Wägens. Masse entstanden aus zwei Quellen: aus **Naturbezügen** (Samenkörner, Getreidekörner) für die kleinsten Einheiten und aus **Arbeits- und Handelsbezügen** (Tragelasten, Münzgewichte) für die grossen Einheiten. Staatliche Standardisierung kam fast überall spät und nur stockend.
 
 Auffällig ist die Zweiteilung der Zählbasis. Im mesopotamisch-semitischen Raum dominierte die **Basis 60** (sexagesimal). Bei Römern und Ägyptern herrschte **duodezimal oder dezimal**. Im Industal arbeitete man **binär**. Diese Basen prägen bis heute die "krummen" Umrechnungsfaktoren der alten Gewichtssysteme.
 
 Drei Querschnitt-Befunde fassen die Ursprünge zusammen:
 
-- **Naturbezug der Kleineinheiten.** Grain (Gersten- oder Weizenkorn), Karat (Johannisbrotsamen), Ratti (Gunja-Samen), Kakaobohne — die kleinsten Maße sind fast überall Samen oder Körner.
-- **Arbeits- und Handelsbezug der Großeinheiten.** Talent und Maund entsprechen einer Tragelast. Die Tonne kommt vom Weinfass. Stone, Wollsack und Hundredweight stammen aus dem Wollhandel.
+- **Naturbezug der Kleineinheiten.** Grain (Gersten- oder Weizenkorn), Karat (Johannisbrotsamen), Ratti (Gunja-Samen), Kakaobohne — die kleinsten Masse sind fast überall Samen oder Körner.
+- **Arbeits- und Handelsbezug der Grosseinheiten.** Talent und Maund entsprechen einer Tragelast. Die Tonne kommt vom Weinfass. Stone, Wollsack und Hundredweight stammen aus dem Wollhandel.
 - **Münzgewicht ist gleich Massegewicht.** Schekel, Drachme, Dirham/Mithqal, Pennyweight und Tola waren zugleich Münz- und Gewichtseinheiten. Geld war ursprünglich gewogenes Metall.
 
 ### Mesopotamien: Schekel, Mine, Talent (das sexagesimale Fundament)
@@ -58,7 +58,7 @@ Die frühesten Belege stammen aus der 2. Dynastie, vom Fundort Buto im Nildelta:
 
 Bemerkenswert standardisiert. Die Gewichte waren würfelförmig und bestanden aus **Chert** (Hornstein).
 
-- Die Kleineinheiten folgten binärer Verdopplung: 1 : 2 : 4 : 8 : 16 : 32 : 64; die größeren Einheiten waren dezimal gestaffelt
+- Die Kleineinheiten folgten binärer Verdopplung: 1 : 2 : 4 : 8 : 16 : 32 : 64; die grösseren Einheiten waren dezimal gestaffelt
 - Das kleinste Gewicht ≈ **0,856 g**; das häufigste ≈ **13,7 g** (16. Stufe)
 
 Über fünf Grabungsschichten — rund 500 Jahre — gibt es keine signifikante Abweichung. Das spricht für eine starke zentrale Kontrolle.
@@ -68,14 +68,14 @@ Bemerkenswert standardisiert. Die Gewichte waren würfelförmig und bestanden au
 - 8 Chalkoi = 1 Obol; 6 Oboloi = 1 Drachme; 100 Drachmen = 1 Mine; 60 Minen = 1 attisches Talent
 - Drachme ≈ **4,3 g** (Obol ≈ 0,72 g); attisches Talent ≈ **25,8 kg** Silber
 
-Die Etymologie ist naturnah und arbeitsbezogen: *drachme* bedeutet "Handvoll" (von sechs *oboloi*, dünnen Metallspießen — einer frühen Geldform um 1100 v. Chr.); *obol* heißt "Bratspieß". Minen und Talente wurden nie geprägt; sie blieben reine Gewichtsmaße. Eine Vereinheitlichung gab es nicht: Athen, Korinth und Ägina hatten je eigene Standards (äginetische Mine 623,7 g, attische Mine 436,6 g).
+Die Etymologie ist naturnah und arbeitsbezogen: *drachme* bedeutet "Handvoll" (von sechs *oboloi*, dünnen Metallspiessen — einer frühen Geldform um 1100 v. Chr.); *obol* heisst "Bratspiess". Minen und Talente wurden nie geprägt; sie blieben reine Gewichtsmasse. Eine Vereinheitlichung gab es nicht: Athen, Korinth und Ägina hatten je eigene Standards (äginetische Mine 623,7 g, attische Mine 436,6 g).
 
 ### Rom: Libra und Uncia (die duodezimale Wurzel von "pound" und "ounce")
 
 Hier liegt die Wurzel der englischen Gewichtswörter.
 
 - Die *Libra* (lateinisch "Waage") ≈ **328,9 g**, geteilt in 12 *unciae* zu je ≈ **27,29 g**
-- Die *uncia* (von *unus*, "eins") ist wörtlich der "Zwölftel-Teil"; sie ist Vorfahr sowohl der englischen *ounce* (Gewicht) als auch des *inch* (Zwölftel des Fußes)
+- Die *uncia* (von *unus*, "eins") ist wörtlich der "Zwölftel-Teil"; sie ist Vorfahr sowohl der englischen *ounce* (Gewicht) als auch des *inch* (Zwölftel des Fusses)
 - Das Kürzel **"lb"** stammt von *libra*. "Pound" kommt von *libra pondo* ("Gewicht in Libra gemessen"); *pondo* ist der Ablativ von *pondus* ("Gewicht")
 
 Das System war überwiegend duodezimal: *sextans, uncia, semuncia, sextula* und weitere. Das *Aes grave* ("schweres Bronze") ab etwa 270 v. Chr. nutzte den *As* = 12 römische Unzen = 1 Libra. Das Gewicht des As sank stetig — vom Libralstandard (329 g) auf einen "leichten" Standard von rund 10 Unzen, bis 289 v. Chr. auf 1/24 Libra.
@@ -85,7 +85,7 @@ Das System war überwiegend duodezimal: *sextans, uncia, semuncia, sextula* und 
 - Das Jin (斤, "Catty") existiert seit der Zhou-Dynastie; das Liang (兩, "Tael") = 1/16 Jin
 - Qin/Han: 1 Jin = 16 Liang = 1/120 Dan; das Verhältnis blieb über die Dynastien stabil, der Absolutwert schwankte
 - Liang historisch ~14 bis 42 g; der Qing-Standard ≈ **37,3 g** (im 19. Jahrhundert weltweit im Handel als "Tael" verbreitet)
-- Die Qin-Reichseinigung standardisierte Maße und Gewichte reichsweit (*duliangheng*)
+- Die Qin-Reichseinigung standardisierte Masse und Gewichte reichsweit (*duliangheng*)
 - Metrische Reform 1959: Jin = **500 g**, Liang = **50 g** (nun 1/10 Jin)
 
 ### Indien: Ratti, Masha, Tola, Seer, Maund (samen- und münzbasiert)
@@ -101,19 +101,19 @@ Eine Verschmelzung arabischer, griechischer, römisch-byzantinischer, mesopotami
 
 - **Dinar/Mithqal** ≈ **4,25 g** (Goldmünzgewicht)
 - Lehrmeinung: 10 Dirham = Gewicht von 7 Mithqal/Dinar → **Dirham ≈ 2,975 g** (Spanne 2,82–2,97 g, abgeleitet von der byzantinischen Silbermünze)
-- Vom Dirham leiten sich alle größeren Maße ab: **Ratl (Rotl)**, Qadah, Saʿ. Der Ratl im Bagdad des 10. Jahrhunderts ≈ ein Pfund; regional von 8 Unzen bis 8 Pfund
+- Vom Dirham leiten sich alle grösseren Masse ab: **Ratl (Rotl)**, Qadah, Saʿ. Der Ratl im Bagdad des 10. Jahrhunderts ≈ ein Pfund; regional von 8 Unzen bis 8 Pfund
 
-Die Standardisierung kam früh in islamischer Zeit (das koranische Gebot ehrlichen Maßes wirkte hier direkt). Glasgewichte für Dirham und Mithqal sind ab der zweiten Hälfte des 8. Jahrhunderts belegt.
+Die Standardisierung kam früh in islamischer Zeit (das koranische Gebot ehrlichen Masses wirkte hier direkt). Glasgewichte für Dirham und Mithqal sind ab der zweiten Hälfte des 8. Jahrhunderts belegt.
 
 ### Mesoamerika (Azteken, Maya): Stückzahl statt Gewicht
 
 Hier gab es **kein Wägesystem** im Sinne der Alten Welt. Bezahlt wurde nach Stückzahl und nach Standard-Tüchern.
 
 - **Kakaobohnen** dienten als Kleingeld: ein Sklave kostete 100 Bohnen, ein Truthahn 20 Bohnen
-- Das Standardmaß **Xiquipilli** = 8.000 Bohnen (das Sackzeichen wurde zugleich zum Zahlsymbol für 8.000)
-- Das **Quachtli** = eine Standardbahn Baumwolltuch (für Großzahlungen)
+- Das Standardmass **Xiquipilli** = 8.000 Bohnen (das Sackzeichen wurde zugleich zum Zahlsymbol für 8.000)
+- Das **Quachtli** = eine Standardbahn Baumwolltuch (für Grosszahlungen)
 
-Das Quachtli fiel nach der spanischen Eroberung rasch außer Gebrauch — es lag nahe am spanischen *tomín*, einem Edelmetall-Massemaß.
+Das Quachtli fiel nach der spanischen Eroberung rasch ausser Gebrauch — es lag nahe am spanischen *tomín*, einem Edelmetall-Massemass.
 
 ### Das Korn (Grain/Gran): der gemeinsame Naturbaustein
 
@@ -129,7 +129,7 @@ Ein mittelalterlicher Erlass (13. Jahrhundert) bestimmte: "ein englischer Penny 
 - Etymologie: italienisch *carato* ← arabisch *qīrāṭ* ← griechisch *kerátion* ("Johannisbrotbaum-Samen", *Ceratonia siliqua*). Der Samen wiegt rund 0,2 g; mediterrane Händler nutzten ihn für Kleinwägungen von Edelsteinen. Tradition: 1 Johannisbrotsamen = 4 Weizenkörner = 3 Gerstenkörner.
 - Ab den 1570er Jahren für Diamanten verwendet. Vor der Vereinheitlichung existierten **23 Karat-Standards** (187,00–215,99 mg) — von Zypern (187 mg) bis Livorno (215,99 mg).
 - 1871 "internationales Karat" 205 mg (Pariser Juweliere) → 1877 von den Diamanthändlern angenommen.
-- **Metrisches Karat = 200 mg** (= 1/5 g): vorgeschlagen vom CIPM, einstimmig angenommen auf der **4. Generalkonferenz für Maß und Gewicht, Paris, Oktober 1907**. Frankreich machte es 1908 verbindlich, die USA ab 1.7.1913, UK 1914. Unterteilt in 100 Punkte zu je 2 mg.
+- **Metrisches Karat = 200 mg** (= 1/5 g): vorgeschlagen vom CIPM, einstimmig angenommen auf der **4. Generalkonferenz für Mass und Gewicht, Paris, Oktober 1907**. Frankreich machte es 1908 verbindlich, die USA ab 1.7.1913, UK 1914. Unterteilt in 100 Punkte zu je 2 mg.
 
 *Mythos-Hinweis:* Die verbreitete Begründung, der Johannisbrotsamen sei besonders gewichtskonstant gewesen, ist **nachweislich falsch** — seine Masse streut etwa so stark wie bei anderen Samen. Die Karob-Herleitung des Namens ist plausibel; die Konstanz-Begründung ist ein Mythos (siehe Abschnitt "Spekulative Quellen").
 
@@ -177,9 +177,9 @@ Alle Pfund-Varianten stammen aus der Libra-Tradition:
 - **Tower Pound** ≈ 350 g (5.400 Troy-Grains), englische Münzprägung, sächsischen Ursprungs, 1527 abgeschafft
 - **Merchants' Pound** = 6.750 Grains (15 Tower-Unzen)
 - **London Pound** = 7.200 Troy-Grains (Hanse-Einfluss)
-- Französische **Livre poids de marc** ≈ 489,5 g; preußisches **Pfund** 467,711 g (1816), **Zollpfund** = 500 g (1854); russischer **Funt** ≈ 409,5 g; portugiesischer **Arrátel** ≈ 457,8 g (1499, unter Manuel I.)
+- Französische **Livre poids de marc** ≈ 489,5 g; preussisches **Pfund** 467,711 g (1816), **Zollpfund** = 500 g (1854); russischer **Funt** ≈ 409,5 g; portugiesischer **Arrátel** ≈ 457,8 g (1499, unter Manuel I.)
 
-Die **Tonne** kommt vom *Tun*, dem größten Weinfass (~954 l, knapp 1 m³, das gefüllt etwa eine "long ton" wog — ein Arbeits- und Handelsbezug). Das Wort ist keltisch/gälisch (altirisch *tonn* = Haut/Weinschlauch) → lateinisch *tunna*. Die Schreibung **"tonne"** ist in Frankreich seit 1842 belegt; im Englischen wurde sie ab 1877 für die **metrische Tonne = 1.000 kg** übernommen (zur Unterscheidung von Long und Short Ton).
+Die **Tonne** kommt vom *Tun*, dem grössten Weinfass (~954 l, knapp 1 m³, das gefüllt etwa eine "long ton" wog — ein Arbeits- und Handelsbezug). Das Wort ist keltisch/gälisch (altirisch *tonn* = Haut/Weinschlauch) → lateinisch *tunna*. Die Schreibung **"tonne"** ist in Frankreich seit 1842 belegt; im Englischen wurde sie ab 1877 für die **metrische Tonne = 1.000 kg** übernommen (zur Unterscheidung von Long und Short Ton).
 
 *Hypothesen-Konkurrenz beim Avoirdupois-Ursprung:* Neben der älteren These eines französischen Ursprungs gibt es die neuere These einer Ableitung vom Florentiner Gewichtssystem. Beides bleibt ungeklärt.
 
@@ -194,7 +194,7 @@ Die historischen Gewichtssysteme lassen sich nach ihrer Zählbasis ordnen:
 - **Basis 60 (sexagesimal):** Mesopotamien, hebräisch-biblisch, griechisches Talent (Schekel–Mine–Talent)
 - **Basis 12 (duodezimal):** Rom (Libra/Uncia → ounce/pound), Troy-Pfund (12 Unzen), Karat-Feinheit (24 = 2×12)
 - **Basis 16:** China (Jin/Liang), Avoirdupois (16 oz je Pfund, = 2⁴)
-- **Basis 10 (dezimal):** Ägypten, Industal-Großgewichte
+- **Basis 10 (dezimal):** Ägypten, Industal-Grossgewichte
 - **Binär:** Industal-Kleingewichte
 
 ### Europa
@@ -203,7 +203,7 @@ Die historischen Gewichtssysteme lassen sich nach ihrer Zählbasis ordnen:
 
 Der **Zentner** ist in Deutschland = 100 Pfund à 500 g = **50 kg** — anders als der angloamerikanische Hundredweight. In Österreich und der Schweiz gilt teils der metrische Zentner oder der Doppelzentner (= 100 kg).
 
-Im preußisch-mitteldeutschen Raum galt: 1 Zollpfund = 30 **Lot** = 300 **Quentchen**. Das "Quäntchen" lebt als Redewendung weiter.
+Im preussisch-mitteldeutschen Raum galt: 1 Zollpfund = 30 **Lot** = 300 **Quentchen**. Das "Quäntchen" lebt als Redewendung weiter.
 
 **Iberische Halbinsel.** Die **Libra** (kastilisch ≈ 0,46 kg); die **Arroba** = 25 Libras ≈ 11,5 kg (heute noch bei Wein und im Stierkampf präsent; zugleich der spanisch-portugiesische Name des **@-Zeichens**); der **Quintal** = 100 Libras ≈ 46 kg (über Spanien und Frankreich Ursprung des metrischen *Quintal* = 100 kg).
 
@@ -219,7 +219,7 @@ Im preußisch-mitteldeutschen Raum galt: 1 Zollpfund = 30 **Lot** = 300 **Quentc
 
 **China heute.** Hierarchie: 10 Mace (qián 錢) = 1 Tael (liang 兩); 16 Tael = 1 Catty (jin 斤); 100 Catty = 1 Picul (dan 擔). Das Tael diente für Edelmetalle, Arznei, Tee und Seide. Etymologie: "tael" kam über das Portugiesische von malaiisch *tahil* ("Gewicht"); "catty" von malaiisch *kati*. Das Mace als Zehntel-Tael wurde in der Tang-Dynastie (618–907) eingeführt, eng an die Kupfermünze gekoppelt (Tang-Mace ≈ 4,13 g). Diese Begriffe (tael, catty, picul, mace, candareen) gingen über den Kolonialhandel ins Englische ein. Metrisierung: Republik 1929, dann VR China 1959. Das heutige jin ≈ 500 g ("Markt-Pfund").
 
-**Japan — Shakkanhō.** Die Basis-Masseeinheit **kan** = 3,75 kg; das **momme/monme** = 1/1000 kan = **3,75 g**. Das System ist chinesischen Ursprungs (Tang-Maße, 701 übernommen). 1924 durch die Metrik ersetzt, ab 31. März 1966 amtlich verboten — mit **einer Ausnahme**: Das momme bleibt per Gesetz für **Perlen** zugelassen und ist bis heute die **internationale Einheit im Perlenhandel**.
+**Japan — Shakkanhō.** Die Basis-Masseeinheit **kan** = 3,75 kg; das **momme/monme** = 1/1000 kan = **3,75 g**. Das System ist chinesischen Ursprungs (Tang-Masse, 701 übernommen). 1924 durch die Metrik ersetzt, ab 31. März 1966 amtlich verboten — mit **einer Ausnahme**: Das momme bleibt per Gesetz für **Perlen** zugelassen und ist bis heute die **internationale Einheit im Perlenhandel**.
 
 ### Südasien
 
@@ -227,7 +227,7 @@ Im preußisch-mitteldeutschen Raum galt: 1 Zollpfund = 30 **Lot** = 300 **Quentc
 
 ### Angelsächsische Welt heute
 
-Das **Stone** (= 14 lb ≈ 6,35 kg) ist in UK und Irland weiterhin das übliche Maß für das **Körpergewicht** von Menschen ("11 stone 4"), außerdem im Boxen und Ringen sowie im Pferderennsport (Traglast). In den USA ist es dagegen unüblich (dort Pfund). Offiziell ist das Stone in UK seit 1985 nicht mehr als Handelseinheit anerkannt, lebt im Alltag aber fort. Es ist 1/8 eines Long Hundredweight.
+Das **Stone** (= 14 lb ≈ 6,35 kg) ist in UK und Irland weiterhin das übliche Mass für das **Körpergewicht** von Menschen ("11 stone 4"), ausserdem im Boxen und Ringen sowie im Pferderennsport (Traglast). In den USA ist es dagegen unüblich (dort Pfund). Offiziell ist das Stone in UK seit 1985 nicht mehr als Handelseinheit anerkannt, lebt im Alltag aber fort. Es ist 1/8 eines Long Hundredweight.
 
 Die **doppelte Hundredweight-Definition** (UK 112 lb vs. US 100 lb) ist eine klassische Falle im transatlantischen Handel. Ebenso die Asymmetrie der Tonne (Long Ton 2.240 lb vs. Short Ton 2.000 lb).
 
@@ -237,24 +237,24 @@ Die **doppelte Hundredweight-Definition** (UK 112 lb vs. US 100 lb) ist eine kla
 
 ### Das übergreifende Motiv: die Waage als kosmisches Symbol
 
-Quer durch fast alle Traditionen ist das **Wägen** nicht nur ein technischer, sondern ein moralisch-kosmischer Akt. Gewicht steht für den Wert von Seele, Tat und Charakter. Daraus folgt die enge Kopplung von Gewichtsmaßen mit Gerechtigkeit, göttlichem Gericht und kosmischem Gleichgewicht.
+Quer durch fast alle Traditionen ist das **Wägen** nicht nur ein technischer, sondern ein moralisch-kosmischer Akt. Gewicht steht für den Wert von Seele, Tat und Charakter. Daraus folgt die enge Kopplung von Gewichtsmassen mit Gerechtigkeit, göttlichem Gericht und kosmischem Gleichgewicht.
 
-- **Ägyptisches Totengericht (Psychostasie).** Im Totenbuch (Spruch 125) wird das Herz des Verstorbenen in der "Halle der vollständigen Wahrheit" gegen die **Feder der Maat** (Wahrheit, Weltordnung) gewogen — überwacht von Thot und Anubis vor 42 Totenrichtern. Ist das Herz schwerer als die Feder, frisst die "große Fresserin" Ammit die Seele.
+- **Ägyptisches Totengericht (Psychostasie).** Im Totenbuch (Spruch 125) wird das Herz des Verstorbenen in der "Halle der vollständigen Wahrheit" gegen die **Feder der Maat** (Wahrheit, Weltordnung) gewogen — überwacht von Thot und Anubis vor 42 Totenrichtern. Ist das Herz schwerer als die Feder, frisst die "grosse Fresserin" Ammit die Seele.
 - **Griechische Kerostasie.** Bei Homer (Ilias) hält Zeus eine **goldene Waage**, um im Zweikampf (Achilles–Hektor) die Schicksalsfäden/Keres zu wägen — eine Vorform der Seelenwägung.
 - **Christliche Übernahme.** Beim Jüngsten Gericht vollzieht der **Erzengel Michael** die Seelenwägung — strukturell identisch mit der ägyptischen Herzwägung. Das Alte Testament kennt das Motiv bereits (Hiob, Daniel).
 - **Islamische Mizan (al-Mīzān).** Die Waage am Tag der Auferstehung wiegt die Taten. Der Koran betont, dass nicht einmal das "Gewicht eines Senfkorns" übersehen wird. Klassische Kommentatoren deuten Mizan dreifach: als kosmisches Gleichgewicht der Schöpfung, als ethisches Gleichgewicht des Menschen und als reale Gerichtswaage.
 
-### Maßeinheit als Gerechtigkeitssymbol: Libra und das Sternzeichen Waage
+### Masseinheit als Gerechtigkeitssymbol: Libra und das Sternzeichen Waage
 
-Lateinisch *libra* bedeutet "Waage, Gleichgewicht". Das Sternzeichen **Waage (Libra, ♎)** wurde um 100 n. Chr. von den Römern benannt — das einzige Tierkreiszeichen, das nach einem **abstrakten Objekt** (nicht einem Lebewesen) benannt ist. Für die Römer war es Sinnbild der Gerechtigkeit: die Waage der Astraea/Justitia. In der babylonischen Astronomie hieß das Sternbild ZIB.BA.AN.NA — "Waage des Himmels".
+Lateinisch *libra* bedeutet "Waage, Gleichgewicht". Das Sternzeichen **Waage (Libra, ♎)** wurde um 100 n. Chr. von den Römern benannt — das einzige Tierkreiszeichen, das nach einem **abstrakten Objekt** (nicht einem Lebewesen) benannt ist. Für die Römer war es Sinnbild der Gerechtigkeit: die Waage der Astraea/Justitia. In der babylonischen Astronomie hiess das Sternbild ZIB.BA.AN.NA — "Waage des Himmels".
 
-Damit trägt das Gewichtsmaß denselben Namen wie das Gleichgewichts- und Gerechtigkeitssymbol. Das Pfund-Kürzel "lb" und das Währungszeichen £ leiten sich beide von *libra* ab.
+Damit trägt das Gewichtsmass denselben Namen wie das Gleichgewichts- und Gerechtigkeitssymbol. Das Pfund-Kürzel "lb" und das Währungszeichen £ leiten sich beide von *libra* ab.
 
-Die Waage ist Attribut zahlreicher Gerechtigkeitsgöttinnen: **Dike** (strafende Gerechtigkeit, mit Waage und Lorbeerkranz), **Themis** (oberste Ordnung), **Nemesis** (ausgleichende Gerechtigkeit), **Iustitia/Justitia** (römisch, mit Waage als Symbol des Maßes).
+Die Waage ist Attribut zahlreicher Gerechtigkeitsgöttinnen: **Dike** (strafende Gerechtigkeit, mit Waage und Lorbeerkranz), **Themis** (oberste Ordnung), **Nemesis** (ausgleichende Gerechtigkeit), **Iustitia/Justitia** (römisch, mit Waage als Symbol des Masses).
 
 ### Der "heilige Schekel" und das Gebot der gerechten Waage
 
-Der "Schekel des Heiligtums" ist ein biblischer Standard-Maßstab für kultische Zwecke. Der **halbe Schekel** (Machzit HaSchekel, Exodus 30,13) ist Kopfsteuer und "Sühne für die Seele": Reicher wie Armer geben genau gleich viel — ein Symbol der Gleichheit aller vor Gott.
+Der "Schekel des Heiligtums" ist ein biblischer Standard-Massstab für kultische Zwecke. Der **halbe Schekel** (Machzit HaSchekel, Exodus 30,13) ist Kopfsteuer und "Sühne für die Seele": Reicher wie Armer geben genau gleich viel — ein Symbol der Gleichheit aller vor Gott.
 
 Ehrliches Wiegen ist in der hebräischen Bibel direkt göttliches Gebot:
 
@@ -262,7 +262,7 @@ Ehrliches Wiegen ist in der hebräischen Bibel direkt göttliches Gebot:
 - Sprüche 11,1: "Eine falsche Waage ist dem HERRN ein Gräuel, aber volles Gewicht ist sein Wohlgefallen."
 - Sprüche 20,23: "Ungleiche Gewichte sind dem HERRN ein Gräuel."
 
-Der Hintergrund: Betrüger nutzten beim Verkauf leichte und beim Einkauf schwere Steine als Gewichte. Auch der Koran fordert vollständiges Maß (Sure 83, al-Mutaffifin, "die das Maß verkürzen") als religiöse Pflicht.
+Der Hintergrund: Betrüger nutzten beim Verkauf leichte und beim Einkauf schwere Steine als Gewichte. Auch der Koran fordert vollständiges Mass (Sure 83, al-Mutaffifin, "die das Mass verkürzen") als religiöse Pflicht.
 
 ### Mene Tekel: Gewichtseinheiten als göttliches Urteil
 
@@ -272,19 +272,19 @@ Verwandt ist die Wendung "weighed in the balance and found wanting" (Daniel 5,27
 
 ### Das Talent: von der Gewichtseinheit zur Begabung
 
-Das griechische *tálanton* bedeutet "Waage, Gewicht" und zugleich "Traglast eines Mannes". Das **Gleichnis von den anvertrauten Talenten** (Matthäus 25) hat diese Münz- und Gewichtseinheit zur heutigen Bedeutung **"Begabung, Talent"** umgemünzt — in vielen europäischen Sprachen. Ein wirtschaftlicher Maßstab: ein Segelschiff entsprach etwa einem Talent.
+Das griechische *tálanton* bedeutet "Waage, Gewicht" und zugleich "Traglast eines Mannes". Das **Gleichnis von den anvertrauten Talenten** (Matthäus 25) hat diese Münz- und Gewichtseinheit zur heutigen Bedeutung **"Begabung, Talent"** umgemünzt — in vielen europäischen Sprachen. Ein wirtschaftlicher Massstab: ein Segelschiff entsprach etwa einem Talent.
 
 ### Natürliche Samen als "gottgegebene" Normale
 
-Die kleinsten Gewichtseinheiten leiten sich von Pflanzensamen ab, deren Gleichmäßigkeit fast als naturgegeben-heilig galt.
+Die kleinsten Gewichtseinheiten leiten sich von Pflanzensamen ab, deren Gleichmässigkeit fast als naturgegeben-heilig galt.
 
 - **Karat / Johannisbrotbaum.** Eine Legende besagt, Johannes der Täufer habe sich in der Wüste von den Schoten dieses Baums ernährt — daher der Name "Johannisbrotbaum" (englisch teils "St. John's bread"). (*Die Konstanz-Begründung ist ein Mythos, siehe unten.*)
-- **Gran / Gerstenkorn.** Das Gerstenkorn war wegen seiner geringen natürlichen Größenstreuung Basis vieler alter Längen- und Gewichtsmaße.
+- **Gran / Gerstenkorn.** Das Gerstenkorn war wegen seiner geringen natürlichen Grössenstreuung Basis vieler alter Längen- und Gewichtsmasse.
 - **Indien — Ratti/Gunja.** Die Gunja-Samen ("rosary beads") haben im Hinduismus spirituelle Bedeutung und werden in Ritualen verwendet.
 
 ### Die chinesische Schnellwaage: Sterne als moralisches System
 
-Eines der reichsten Symbolsysteme. Die traditionelle Balkenwaage (杆秤) trägt **16 Markierungen ("Sterne")**, die am Himmel verankert sind: **Großer Wagen (Beidou, 7 Sterne) + Südlicher Wagen (Nandou, 6 Sterne) + drei Sterne Fu-Lu-Shou** (Glück, Wohlstand, Langlebigkeit) = 16. Das entspricht den 16 Tael je Jin.
+Eines der reichsten Symbolsysteme. Die traditionelle Balkenwaage (杆秤) trägt **16 Markierungen ("Sterne")**, die am Himmel verankert sind: **Grosser Wagen (Beidou, 7 Sterne) + Südlicher Wagen (Nandou, 6 Sterne) + drei Sterne Fu-Lu-Shou** (Glück, Wohlstand, Langlebigkeit) = 16. Das entspricht den 16 Tael je Jin.
 
 Eine Legende erzählt: Ursprünglich gab es 13 Sterne; nach der Reichseinigung soll Qin Shihuang die drei Fu-Lu-Shou-Sterne hinzugefügt haben. Die moralische Mahnung an Händler: Wer einen Kunden um 1 Tael betrügt, **verliert Glück**; um 2 Tael → verliert Wohlstand; um 3 Tael → verliert Lebensjahre. Damit ist konfuzianische Ethik direkt in ein Messwerkzeug eingebaut.
 
@@ -292,7 +292,7 @@ Eine Legende erzählt: Ursprünglich gab es 13 Sterne; nach der Reichseinigung s
 
 ### Literarische und sprachliche Bilder
 
-- **"A pound of flesh"** — aus Shakespeares *Der Kaufmann von Venedig* (1596): Shylock fordert ein Pfund Fleisch als Pfand. Heute: eine rücksichtslose, formal rechtmäßige, aber unzumutbare Forderung.
+- **"A pound of flesh"** — aus Shakespeares *Der Kaufmann von Venedig* (1596): Shylock fordert ein Pfund Fleisch als Pfand. Heute: eine rücksichtslose, formal rechtmässige, aber unzumutbare Forderung.
 - **"ein Quäntchen Glück", "etwas auf die Goldwaage legen", "Pfundskerl", "zentnerschwer"** (Deutsch).
 - **"пуд соли съесть"** (Russisch) — gemeinsam ein Pud Salz essen = enge, erprobte Vertrautheit.
 
@@ -312,13 +312,13 @@ Bemerkenswert: Chinas Zentralbank stellte ihre Bullion-Münzen ab 2016 auf ganzz
 - **Karat als Goldfeinheit** ist eine eigene Bedeutung (24er-Skala): 24 Karat = reines Gold (999), 18 Karat = 750er (75 %), 14 Karat = 585er (58,5 %), 8 Karat = 333er. Mit der Metrik wechselte man auf Tausendstel-Angaben. Im Deutschen wird oft unterschieden: "Karat" für Edelsteinmasse, "Karat/kt" für Goldfeinheit (englisch *carat* vs. *karat*).
 - Das japanische **momme** (3,75 g) ist bis heute die internationale Einheit im **Perlenhandel**.
 
-### Alltagsmaße im angelsächsischen Raum
+### Alltagsmasse im angelsächsischen Raum
 
 - Das **Stone** für das Körpergewicht (UK, Irland).
-- Pfund und Unze (Avoirdupois) im US-Alltag, in unterschiedlichem Maß auch in UK, Kanada, Irland und ehemaligen Kolonien.
+- Pfund und Unze (Avoirdupois) im US-Alltag, in unterschiedlichem Mass auch in UK, Kanada, Irland und ehemaligen Kolonien.
 - Long Ton, Short Ton und metrische Tonne nebeneinander — eine fortlaufende Quelle von Umrechnungsfehlern.
 
-### Fortlebende Namen ohne das alte Maß
+### Fortlebende Namen ohne das alte Mass
 
 - Die israelische Währung **Schekel** trägt den Namen des antiken Wäge-Gewichts.
 - Das deutsche **Pfund** (500 g) lebt umgangssprachlich weiter.
@@ -346,7 +346,7 @@ In Basis 12 terminieren mehr Alltagsbrüche sauber (Werte in Basis 12 notiert):
 
 In Basis 10 ist 1/3 = 0,333… periodisch; in Basis 12 endet es glatt bei 0,4. Umgekehrt terminiert 1/5 in Dezimal (0,2), wird in Basis 12 aber periodisch. Die Dozenal-Gesellschaft argumentiert, Faktoren von 3 träten in realen Teilungsproblemen häufiger auf als Faktoren von 5.
 
-### Warum die alten Maße "dezimal-inkompatibel" sind
+### Warum die alten Masse "dezimal-inkompatibel" sind
 
 Die historischen Gewichtssysteme sind nach drei Prinzipien gebaut, nie nach Zehnerpotenzen:
 
@@ -360,10 +360,10 @@ Bemerkenswert ist der **Kontrast innerhalb des imperialen Systems selbst**: Avoi
 
 ### Basis-12- und Basis-60-Spuren bis heute
 
-- 12 Zoll je Fuß, 12 Troy-Unzen je Pfund
+- 12 Zoll je Fuss, 12 Troy-Unzen je Pfund
 - 24 Stunden, 60 Minuten, 60 Sekunden (direkt aus dem babylonischen Sexagesimalsystem)
 - 12 Monate, 12 Tierkreiszeichen, 360°-Kreis
-- 12 Pence je Schilling (vor 1971), Dutzend / Gros (144 = 12²) / Großgros (1728 = 12³)
+- 12 Pence je Schilling (vor 1971), Dutzend / Gros (144 = 12²) / Grossgros (1728 = 12³)
 - chinesische 12 Erdzweige, babylonische 12-Stunden-Tagteilung
 
 ---
@@ -380,11 +380,11 @@ Bemerkenswert ist der **Kontrast innerhalb des imperialen Systems selbst**: Avoi
 
 **(SPEKULATIV, Wertung) Aitkens Effizienz-Schätzung.** Der Mathematiker A. C. Aitken behauptete, die Effizienz des Dezimalsystems liege "bei etwa 65 oder weniger, wenn man dem Duodezimalsystem 100 zuweist". Das ist eine wertende Schätzung, kein gemessener Fakt.
 
-**(WIDERLEGT) Karobsamen-Konstanz.** Die traditionelle Begründung, das Karat beruhe auf der angeblich extrem gleichmäßigen Masse von Johannisbrotsamen, ist nachweislich unzutreffend — die Massenstreuung ist so groß wie bei anderen Samen. Die Karob-Herleitung des *Namens* ist plausibel; die Konstanz-Begründung ist ein Mythos.
+**(WIDERLEGT) Karobsamen-Konstanz.** Die traditionelle Begründung, das Karat beruhe auf der angeblich extrem gleichmässigen Masse von Johannisbrotsamen, ist nachweislich unzutreffend — die Massenstreuung ist so gross wie bei anderen Samen. Die Karob-Herleitung des *Namens* ist plausibel; die Konstanz-Begründung ist ein Mythos.
 
 **(ETYMOLOGISCH UNSICHER) Troy ← Troyes vs. "tron".** Der Ursprung des Troy-Gewichts ist nicht gesichert: Marktstadt Troyes (Mehrheitsmeinung) oder "tron" (Waage/Markt). Wikipedia bezeichnet die Herkunft ausdrücklich als "uncertain".
 
-**(HYPOTHESEN-KONKURRENZ) Avoirdupois-Ursprung: Frankreich vs. Florenz.** Ältere These: französischer Ursprung. Neuere These: Ableitung vom Florentiner Gewichtssystem. Beides ist nicht abschließend geklärt.
+**(HYPOTHESEN-KONKURRENZ) Avoirdupois-Ursprung: Frankreich vs. Florenz.** Ältere These: französischer Ursprung. Neuere These: Ableitung vom Florentiner Gewichtssystem. Beides ist nicht abschliessend geklärt.
 
 ---
 
@@ -404,7 +404,7 @@ Bemerkenswert ist der **Kontrast innerhalb des imperialen Systems selbst**: Avoi
 - [R2·A2] Tonne — Wikipedia — https://en.wikipedia.org/wiki/Tonne — Snippet; metrische Tonne, Schreibweise.
 - [R2·A2] Ton — Etymonline — https://www.etymonline.com/word/ton — Tun→Ton-Herleitung.
 - [R2·A2] Tun — Etymonline — https://www.etymonline.com/word/tun — Fass-Ursprung.
-- [R2·A2] Tun (unit) — Wikipedia — https://en.wikipedia.org/wiki/Tun_(unit) — Fass-Hohlmaß.
+- [R2·A2] Tun (unit) — Wikipedia — https://en.wikipedia.org/wiki/Tun_(unit) — Fass-Hohlmass.
 - [R3·A2] The Stone: England's Enduring Weight Unit — unit-converter.net — https://www.unit-converter.net/blog/2025-05-15-history-of-the-stone/ — Bildungs-Blog.
 - [R2·A3] Imperial units — Britannica — https://www.britannica.com/topic/Imperial-unit — Übersicht.
 - [R1·A3] Weights — University of Nottingham (Manuscripts & Special Collections) — https://www.nottingham.ac.uk/manuscriptsandspecialcollections/researchguidance/weightsandmeasures/weights.aspx — Universitäts-Forschungsguide.
@@ -438,7 +438,7 @@ Bemerkenswert ist der **Kontrast innerhalb des imperialen Systems selbst**: Avoi
 - [R2·A1] Shekel — Wikipedia (EN) — https://en.wikipedia.org/wiki/Shekel — Volltext; Etymologie, halber Schekel, moderne Währung.
 - [R2·A2] Gerah — Wikipedia — https://en.wikipedia.org/wiki/Gerah — kleinste biblische Einheit.
 - [R2·A2] Biblical and Talmudic units of measurement — Wikipedia — https://en.wikipedia.org/wiki/Biblical_and_Talmudic_units_of_measurement — biblische Gewichte.
-- [R2·A3] Maße und Gewichte in der Bibel — Wikipedia (DE) — https://de.wikipedia.org/wiki/Ma%C3%9Fe_und_Gewichte_in_der_Bibel — referenziert.
+- [R2·A3] Masse und Gewichte in der Bibel — Wikipedia (DE) — https://de.wikipedia.org/wiki/Ma%C3%9Fe_und_Gewichte_in_der_Bibel — referenziert.
 - [R2·A2] Mina | Britannica — https://www.britannica.com/science/mina-unit-of-weight — Mina-Wert.
 - [R1·A1] Hanging in the Balance: Precision Weighing in Antiquity — Penn Museum / Expedition Magazine — https://www.penn.museum/sites/expedition/hanging-in-the-balance-2/ — Museums-Fachartikel; Ur-Bruchgewichte, 0,14-g-Gewicht.
 - [R2·A2] Measures of weight — BiblicalTraining — https://www.biblicaltraining.org/library/measures-of-weight — Bildungsseite.
@@ -479,7 +479,7 @@ Bemerkenswert ist der **Kontrast innerhalb des imperialen Systems selbst**: Avoi
 
 - [R2·A2] Indian units of measurement — Wikipedia — https://en.wikipedia.org/wiki/Indian_units_of_measurement — Ratti/Masha/Tola/Seer/Maund.
 - [R2·A2] Masha (mass) — Wikipedia — https://en.wikipedia.org/wiki/Masha_(mass) — Masha-Wert.
-- [R2·A2] Indische Maße und Gewichte — Wikipedia (DE) — https://de.wikipedia.org/wiki/Indische_Ma%C3%9Fe_und_Gewichte — Seer/Maund/Tola.
+- [R2·A2] Indische Masse und Gewichte — Wikipedia (DE) — https://de.wikipedia.org/wiki/Indische_Ma%C3%9Fe_und_Gewichte — Seer/Maund/Tola.
 - [R1·A2] Historical Note: Traditional Use of Legume Seeds for Weighing Gold in India — ResearchGate — https://www.researchgate.net/publication/344088688 — Fachpublikation (nur Abstract).
 - [R2·A2] Obsolete Russian units of measurement — Wikipedia — https://en.wikipedia.org/wiki/Obsolete_Russian_units_of_measurement — Pud/Funt-Werte.
 - [R2·A2] Zolotnik — Wikipedia — https://en.wikipedia.org/wiki/Zolotnik — Solotnik, Punzierungsstandard.
@@ -521,7 +521,7 @@ Bemerkenswert ist der **Kontrast innerhalb des imperialen Systems selbst**: Avoi
 - [R2·A1] Grain (unit) — Wikipedia — https://en.wikipedia.org/wiki/Grain_(unit) — Volltext; 64,79891 mg, Penny-Erlass, drei Systeme.
 - [R2·A2] Gran (Einheit) — Wikipedia (DE) — https://de.wikipedia.org/wiki/Gran_(Einheit) — Apotheker-Basiseinheit.
 - [R2·A2] Gerstenkorn (Einheit) — Wikipedia (DE) — https://de.wikipedia.org/wiki/Gerstenkorn_(Einheit) — Korn-Basis von Längen/Gewichten.
-- [R2·A3] Geschichte der Maße und Gewichte — Wikipedia (DE) — https://de.wikipedia.org/wiki/Geschichte_der_Ma%C3%9Fe_und_Gewichte — Übersicht, referenziert.
+- [R2·A3] Geschichte der Masse und Gewichte — Wikipedia (DE) — https://de.wikipedia.org/wiki/Geschichte_der_Ma%C3%9Fe_und_Gewichte — Übersicht, referenziert.
 
 ### Islamische Münzgewichte
 

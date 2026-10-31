@@ -35,7 +35,7 @@ hat. Einmalig einrichten:
    Plattform-Menü bzw. **„(+)"** → **macOS hinzufügen** (Universal Purchase;
    möglich, weil die Bundle-ID `app.weltanschauung.dozenal` mit der iOS-App
    übereinstimmt).
-2. Danach den macOS-Upload erneut anstoßen (das `.pkg` liegt fertig in
+2. Danach den macOS-Upload erneut anstossen (das `.pkg` liegt fertig in
    `build/macos/pkg/`):
    ```bash
    xcrun altool --validate-app -f "build/macos/pkg/Dozenal Calc.pkg" -t macos \
@@ -75,7 +75,7 @@ in App Store Connect an. Sag mir Bescheid, dann pushe ich.
 4. **Apple-Watch-Screenshot**: liegt bereit in
    `fastlane/screenshots/ios/<locale>/01_watch_keypad_416x496.png` (416×496,
    Series-11-46 mm; zeigt `10−2 = A`). deliver lädt ihn in den „Apple Watch"-
-   Slot. Weitere Größen optional.
+   Slot. Weitere Grössen optional.
 5. **Zur Prüfung einreichen**.
 
 ## 3. macOS-Version 1.3.0 (Plattform-Tab macOS)

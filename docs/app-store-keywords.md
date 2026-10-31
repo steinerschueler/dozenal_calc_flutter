@@ -9,7 +9,7 @@ das pro Locale nicht mehr passiert.
 
 - **Nur iOS.** Google Play hat **kein** Keywords-Feld — dort läuft ASO über die
   lange Beschreibung + die „Tags" (siehe `docs/store-listings.md` und die
-  `store/play-store/listing.*.md`). Diese Datei betrifft ausschließlich den App Store.
+  `store/play-store/listing.*.md`). Diese Datei betrifft ausschliesslich den App Store.
 - **Max. 100 Zeichen**, kommagetrennt. **Keine Leerzeichen nach den Kommas** —
   Leerzeichen zählen mit, also spart `a,b` gegenüber `a, b` pro Komma ein Zeichen.
 - **Pro Lokalisierung getrennt.** Jede App-Store-Sprache hat ihr eigenes

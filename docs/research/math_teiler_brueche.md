@@ -6,17 +6,17 @@ Ein **Stellenwertsystem** (Positionssystem) ordnet jeder Ziffer einen Wert zu, d
 
 Die **Basis** (Radix) ist die Anzahl der verfügbaren Ziffern und zugleich der Faktor zwischen benachbarten Stellen. Basis 10 nutzt die Ziffern 0–9. Basis 12 nutzt zwölf Ziffern: 0–9 plus zwei zusätzliche Symbole für Zehn und Elf. In diesem Text schreiben wir **A für Zehn** und **B für Elf**. „10" in Basis 12 bedeutet also Zwölf.
 
-Ein **Teiler** *t* einer Zahl *n* ist eine ganze Zahl, für die *n*/*t* wieder ganzzahlig ist. Die Anzahl der Teiler heißt d(n).
+Ein **Teiler** *t* einer Zahl *n* ist eine ganze Zahl, für die *n*/*t* wieder ganzzahlig ist. Die Anzahl der Teiler heisst d(n).
 - Teiler von **12**: 1, 2, 3, 4, 6, 12 → d(12) = 6.
 - Teiler von **10**: 1, 2, 5, 10 → d(10) = 4.
 
 Eine **hochzusammengesetzte Zahl** (highly composite number) ist eine positive ganze Zahl, die mehr Teiler hat als jede kleinere positive Zahl. 12 ist hochzusammengesetzt: alle kleineren Zahlen haben weniger Teiler (d(6)=4, d(8)=4, d(10)=4, d(11)=2). Die ersten hochzusammengesetzten Zahlen sind 1, 2, 4, 6, 12, 24, 36, 48, 60, 120, 180, 240, 360. Bemerkenswert: 10 ist **nicht** darunter, 12 aber schon.
 
-Eine **abundante Zahl** (Überfluss-Zahl) ist eine Zahl, deren Summe der echten Teiler größer ist als sie selbst. 12 ist die *kleinste* abundante Zahl: 1+2+3+4+6 = 16 > 12. Hochzusammengesetzt und abundant sind verschiedene Eigenschaften, fallen bei 12 aber zusammen.
+Eine **abundante Zahl** (Überfluss-Zahl) ist eine Zahl, deren Summe der echten Teiler grösser ist als sie selbst. 12 ist die *kleinste* abundante Zahl: 1+2+3+4+6 = 16 > 12. Hochzusammengesetzt und abundant sind verschiedene Eigenschaften, fallen bei 12 aber zusammen.
 
 Ein Bruch **bricht ab** (terminiert), wenn seine Stellendarstellung nach endlich vielen Nachkommastellen endet (z. B. 1/4 = 0.25 in Basis 10). Er ist **periodisch**, wenn sich ab einer Stelle ein Ziffernblock unendlich wiederholt (z. B. 1/3 = 0.333…). Die **Periodenlänge** ist die Länge dieses sich wiederholenden Blocks.
 
-Die **multiplikative Ordnung von b modulo n** ist die kleinste positive ganze Zahl *k*, für die bᵏ ≡ 1 (mod n) gilt — gleichbedeutend mit der kleinsten Zahl *k*, für die *n* den Wert bᵏ − 1 teilt. Sie ist nur definiert, wenn ggT(b, n) = 1 ist (Basis und Nenner teilerfremd). Diese Größe ist der Schlüssel zur Periodenlänge (siehe unten).
+Die **multiplikative Ordnung von b modulo n** ist die kleinste positive ganze Zahl *k*, für die bᵏ ≡ 1 (mod n) gilt — gleichbedeutend mit der kleinsten Zahl *k*, für die *n* den Wert bᵏ − 1 teilt. Sie ist nur definiert, wenn ggT(b, n) = 1 ist (Basis und Nenner teilerfremd). Diese Grösse ist der Schlüssel zur Periodenlänge (siehe unten).
 
 ### Warum 12 mehr Teiler hat als 10
 
@@ -28,9 +28,9 @@ Die Teileranzahl errechnet sich aus den Exponenten der Primfaktoren über die Fo
 - d(10) = (1+1)(1+1) = 4.
 - d(12) = (2+1)(1+1) = 6.
 
-12 „verschwendet" keinen Primfaktor an die große, seltene Primzahl 5. Stattdessen investiert es in kleine Primzahlen (eine zusätzliche 2 und eine 3), die viel häufiger als Teiler auftreten. Deshalb ist 12 durch 1, 2, 3, 4 und 6 teilbar — insbesondere durch **3 und 4**, an denen die 10 scheitert.
+12 „verschwendet" keinen Primfaktor an die grosse, seltene Primzahl 5. Stattdessen investiert es in kleine Primzahlen (eine zusätzliche 2 und eine 3), die viel häufiger als Teiler auftreten. Deshalb ist 12 durch 1, 2, 3, 4 und 6 teilbar — insbesondere durch **3 und 4**, an denen die 10 scheitert.
 
-Wichtig: Es geht um die Primfaktor-Struktur, nicht um die Größe. Größe allein bringt keine Teilbarkeit. 16 ist größer als 12, hat aber nur die Teiler 1, 2, 4, 8, 16, weil es nur die eine Primzahl 2 enthält.
+Wichtig: Es geht um die Primfaktor-Struktur, nicht um die Grösse. Grösse allein bringt keine Teilbarkeit. 16 ist grösser als 12, hat aber nur die Teiler 1, 2, 4, 8, 16, weil es nur die eine Primzahl 2 enthält.
 
 ## Beispiele & Verfahren (mit Tabellen)
 
@@ -70,7 +70,7 @@ Zählt man die periodischen Stammbrüche im Bereich der Nenner 2 bis 12, so erge
 - **Basis 10: sechs** periodische (Nenner 3, 6, 7, 9, 11, 12).
 - **Basis 12: vier** periodische (Nenner 5, 7, 11, 12).
 
-Also zwei weniger in Basis 12. Diese Zählung gilt exakt für den Bereich 2–12; die in der Literatur kursierende Pauschalaussage „sechs periodische Brüche weniger" hängt vom betrachteten Nenner-Bereich ab und ist als Größenordnung, nicht als feste Konstante zu lesen (siehe Vorbehalte).
+Also zwei weniger in Basis 12. Diese Zählung gilt exakt für den Bereich 2–12; die in der Literatur kursierende Pauschalaussage „sechs periodische Brüche weniger" hängt vom betrachteten Nenner-Bereich ab und ist als Grössenordnung, nicht als feste Konstante zu lesen (siehe Vorbehalte).
 
 ### Periodenlänge = Ordnung der Basis modulo Nenner
 
@@ -78,9 +78,9 @@ Also zwei weniger in Basis 12. Diese Zählung gilt exakt für den Bereich 2–12
 
 **Begründungskette:** Die Multiplikation mit *b* verschiebt das Komma um eine Stelle. Die Periode wiederholt sich genau dann, wenn bᵏ·(a/n) wieder denselben Nachkomma-Rest hat, also wenn bᵏ ≡ 1 (mod n). Nach dem **Satz von Euler** gilt b^φ(n) ≡ 1 (mod n), wobei φ die eulersche Phi-Funktion ist. Daraus folgt, dass *k* stets ein Teiler von φ(n) ist. Für einen Primnenner *p* ist φ(p) = p−1, deshalb teilt die Periode immer p−1.
 
-**Maximale Periode (Full-Reptend-Primzahl):** Erreicht die Periode den Höchstwert p−1, so ist *b* eine **Primitivwurzel** modulo *p*. Solche Primzahlen heißen Full-Reptend-Primzahlen bezüglich der Basis *b*. Klassisches Beispiel in Basis 10: 1/7 = 0.142857 hat Periode 6 = 7−1, weil 10 eine Primitivwurzel modulo 7 ist. Die Ziffern bilden einen zyklischen Block: 2/7 = 0.285714, 3/7 = 0.428571 usw. sind reine Rotationen desselben Blocks.
+**Maximale Periode (Full-Reptend-Primzahl):** Erreicht die Periode den Höchstwert p−1, so ist *b* eine **Primitivwurzel** modulo *p*. Solche Primzahlen heissen Full-Reptend-Primzahlen bezüglich der Basis *b*. Klassisches Beispiel in Basis 10: 1/7 = 0.142857 hat Periode 6 = 7−1, weil 10 eine Primitivwurzel modulo 7 ist. Die Ziffern bilden einen zyklischen Block: 2/7 = 0.285714, 3/7 = 0.428571 usw. sind reine Rotationen desselben Blocks.
 
-**Gemischte Nenner (vorperiodisch):** Enthält der Nenner sowohl Primfaktoren der Basis als auch dazu teilerfremde Faktoren, so beginnt die Darstellung mit einem nicht-periodischen Vorlauf, gefolgt von der Periode. Faktorisiert man den Nenner als (Basis-Faktoren)·m, so ist die **Vorlauflänge** gleich dem größten Exponenten der Basis-Primfaktoren, und die **Periodenlänge** gleich der Ordnung von *b* modulo *m*. Beispiel in Basis 12: 1/10 = 1/(2·5) hat Vorlauf 1 und dann die Vierer-Periode der Fünf → `0.1` gefolgt von `[2497]`, also `0.1[2497]`.
+**Gemischte Nenner (vorperiodisch):** Enthält der Nenner sowohl Primfaktoren der Basis als auch dazu teilerfremde Faktoren, so beginnt die Darstellung mit einem nicht-periodischen Vorlauf, gefolgt von der Periode. Faktorisiert man den Nenner als (Basis-Faktoren)·m, so ist die **Vorlauflänge** gleich dem grössten Exponenten der Basis-Primfaktoren, und die **Periodenlänge** gleich der Ordnung von *b* modulo *m*. Beispiel in Basis 12: 1/10 = 1/(2·5) hat Vorlauf 1 und dann die Vierer-Periode der Fünf → `0.1` gefolgt von `[2497]`, also `0.1[2497]`.
 
 ### Worked Examples (eigenständig nachgerechnet)
 
@@ -163,7 +163,7 @@ Mit der **IBM System/360** (angekündigt am 7. April 1964) wurde das 8-Bit-Byte 
 
 ### Die dozenale Bewegung
 
-**Frühe Befürworter.** **Georges-Louis Leclerc, Comte de Buffon** (18. Jh.) plädierte für eine universelle Einführung von Basis 12 für Maße und Münzen. Später folgten **George Bernard Shaw**, **Herbert Spencer** und **H. G. Wells**. (Joshua Jordaine 1687 wird gelegentlich als früher englischer Traktat genannt, ließ sich in den zugänglichen Quellen aber nur indirekt belegen. Eine oft kolportierte Rolle von **Joseph Priestley** ließ sich nicht belegen — siehe Vorbehalte.)
+**Frühe Befürworter.** **Georges-Louis Leclerc, Comte de Buffon** (18. Jh.) plädierte für eine universelle Einführung von Basis 12 für Masse und Münzen. Später folgten **George Bernard Shaw**, **Herbert Spencer** und **H. G. Wells**. (Joshua Jordaine 1687 wird gelegentlich als früher englischer Traktat genannt, liess sich in den zugänglichen Quellen aber nur indirekt belegen. Eine oft kolportierte Rolle von **Joseph Priestley** liess sich nicht belegen — siehe Vorbehalte.)
 
 **Isaac Pitman, 1857** schlug Basis 12 vor (Artikel „Reckoning Reform") und führte transdezimale Symbole ein: die durch 180°-Drehung aus Ziffern abgeleiteten **Pitman-Ziffern** (↊ für Zehn, ↋ für Elf). Sie sind bis heute die Notation der britischen Gesellschaft.
 
@@ -179,34 +179,34 @@ Basis 12 und ihre Verwandten sind kulturell tief verankert, auch ohne dass tats�
 
 - **Zeit:** 12-Stunden-Zifferblatt, 24 Stunden pro Tag, 12 Monate, 60 Minuten (Basis 60). Der Vorteil: leichte Teilung in Hälften, Drittel und Viertel.
 - **Winkel:** 360° als Vielfaches von 12 — teilbar durch sehr viele kleine Zahlen.
-- **Handel und Maße:** Dutzend (12), Gros (144), Großgros (1728); 12 Zoll pro Fuß, 12 Troy-Unzen pro Troy-Pfund; Eier und Backwaren im Dutzend (erleichtert Inventur und Aufteilung).
+- **Handel und Masse:** Dutzend (12), Gros (144), Grossgros (1728); 12 Zoll pro Fuss, 12 Troy-Unzen pro Troy-Pfund; Eier und Backwaren im Dutzend (erleichtert Inventur und Aufteilung).
 - **Musiktheorie:** 12 Halbtöne pro Oktave.
 
 Welche Basis wofür (breiter Konsens):
 - **Basis 10** bleibt Standard für allgemeine Arithmetik — vor allem aus kultureller Trägheit und weil der Mensch zehn Finger hat.
 - **Basis 2, 8, 16** dominieren in der Informatik (Zweierpotenzen, Hardware-Nähe).
-- **Basis 12 und 60** prägen Zeit, Winkel und traditionelle Maße, weil dort das Teilen in Drittel und Viertel praktisch zählt.
+- **Basis 12 und 60** prägen Zeit, Winkel und traditionelle Masse, weil dort das Teilen in Drittel und Viertel praktisch zählt.
 
-Die Dozenal Society of America und die Dozenal Society of Great Britain fördern weiterhin das dozenale Rechnen. In der Praxis rechnet jedoch niemand durchgängig dozenal; verbreitet ist nur die *Zwölfer-Gruppierung* von Größen, nicht das vollständige Stellenwertsystem zur Basis 12.
+Die Dozenal Society of America und die Dozenal Society of Great Britain fördern weiterhin das dozenale Rechnen. In der Praxis rechnet jedoch niemand durchgängig dozenal; verbreitet ist nur die *Zwölfer-Gruppierung* von Grössen, nicht das vollständige Stellenwertsystem zur Basis 12.
 
 ## Missverständnisse & ehrliche Vorbehalte
 
-**„Imperial gegen metrisch" ist das falsche Schlachtfeld.** Die eigentliche Stärke einer Basis ist ihre *interne Konsistenz* (welche Brüche abbrechen, wie Teilbarkeitstests aussehen), nicht der Streit Imperial gegen metrisch. Die Dozenal-Vorteile werden oft fälschlich mit „dann passt das Imperial-System besser" verwechselt. Tatsächlich könnte man ein metrisches System genauso gut dozenal aufbauen. Es ist eine Eigenschaft der *Basis*, nicht des *Maßsystems*.
+**„Imperial gegen metrisch" ist das falsche Schlachtfeld.** Die eigentliche Stärke einer Basis ist ihre *interne Konsistenz* (welche Brüche abbrechen, wie Teilbarkeitstests aussehen), nicht der Streit Imperial gegen metrisch. Die Dozenal-Vorteile werden oft fälschlich mit „dann passt das Imperial-System besser" verwechselt. Tatsächlich könnte man ein metrisches System genauso gut dozenal aufbauen. Es ist eine Eigenschaft der *Basis*, nicht des *Masssystems*.
 
 **Basis 12 ist schlechter durch 5 teilbar — ein echter, oft verschwiegener Nachteil.** 1/5 wird in Basis 12 periodisch (0.[2497], Periode 4), in Basis 10 dagegen endlich (0.2). Auch der Teilbarkeitstest durch 5 ist in Basis 12 umständlich. Für Währung, Prozente und Fünfer-Schritte ist das spürbar. Pro-Dozenal-Texte sprechen diese Schwäche häufig nicht offen an.
 
 **Periodische Brüche sind seltener, aber tendenziell länger.** Der Vorteil (weniger periodische Brüche) hat als Kehrseite, dass die auftretenden Perioden tendenziell länger sind. Wer nur „weniger Perioden" zitiert, erzählt die halbe Wahrheit.
 
-**„Mehr Teiler ist immer besser" ist falsch zu Ende gedacht.** Sonst wäre Basis 60 oder 120 vorzuziehen — beide haben objektiv noch bessere Teilbarkeit als 12. Es gibt jedoch einen Trade-off zwischen Teilbarkeit und Lernaufwand: Eine zu kleine Basis erzeugt lange Zahldarstellungen (binär braucht viele Stellen), eine zu große Basis eine riesige Einmaleins-Tafel (Basis 60 bräuchte 60 Symbole und eine 60×60-Tabelle). 12 gilt als begründeter Kompromiss — nur zwei Extra-Symbole, kleines Einmaleins, aber 2 und 3 als Primfaktoren. Dass 12 der „Sweet Spot" sei, ist die Standard-Position der Dozenal-Gesellschaften: plausibel, aber eine Abwägung, kein Beweis.
+**„Mehr Teiler ist immer besser" ist falsch zu Ende gedacht.** Sonst wäre Basis 60 oder 120 vorzuziehen — beide haben objektiv noch bessere Teilbarkeit als 12. Es gibt jedoch einen Trade-off zwischen Teilbarkeit und Lernaufwand: Eine zu kleine Basis erzeugt lange Zahldarstellungen (binär braucht viele Stellen), eine zu grosse Basis eine riesige Einmaleins-Tafel (Basis 60 bräuchte 60 Symbole und eine 60×60-Tabelle). 12 gilt als begründeter Kompromiss — nur zwei Extra-Symbole, kleines Einmaleins, aber 2 und 3 als Primfaktoren. Dass 12 der „Sweet Spot" sei, ist die Standard-Position der Dozenal-Gesellschaften: plausibel, aber eine Abwägung, kein Beweis.
 
 **Umstellung ist teuer.** Die Sonderzeichen ↊/↋ sind schwer zu tippen, Font-Unterstützung fehlt vielerorts. Bestehende Lehrbücher, Software und kulturelle Gewohnheiten umzustellen wäre ein enormer Aufwand. Die Dozenal-Vorteile sind real, aber inkrementell, nicht revolutionär. Viele Befürworter verstehen ihre Texte selbst eher als Gedankenexperiment denn als Handlungsaufruf.
 
 **Hinweise zur Genauigkeit und zu Quellenfehlern:**
 - Der häufig zitierte eev.ee-Blog gibt 1/5 in Basis 12 fälschlich als „0.[249]" an — er lässt die 7 weg. Die korrekte Periode ist vierstellig „2497", bestätigt durch Wikipedia und unabhängige Rechnung. Dieses Dossier folgt der verifizierten Version.
 - Die exakten Ordnungswerte „Ordnung von 12 mod 5 = 4" und „mod 7 = 6" wurden direkt aus der Definition nachgerechnet und über die belegten Periodenlängen gegengeprüft. Keine Einzelquelle führte eine fertige „Ordnung von 12 mod n"-Tabelle im Volltext.
-- Die Pauschalaussage „sechs periodische Stammbrüche weniger / zehn kürzere Perioden" wird in den Quellen nicht einheitlich definiert und hängt vom Nenner-Bereich ab. Als grobe Größenordnung verlässlich, als präzise Konstante nicht.
+- Die Pauschalaussage „sechs periodische Stammbrüche weniger / zehn kürzere Perioden" wird in den Quellen nicht einheitlich definiert und hängt vom Nenner-Bereich ab. Als grobe Grössenordnung verlässlich, als präzise Konstante nicht.
 - Pitmans Publikationsorgan wird als „Reckoning Reform" bezeichnet; ältere Sekundärquellen nennen abweichend „Bedfordshire Independent". Das Datum 1857 ist konsistent.
-- Joseph Priestley als Basis-12-Befürworter ließ sich nicht belegen (gesichert sind nur Buffon, Pitman, Shaw, Spencer, Wells).
+- Joseph Priestley als Basis-12-Befürworter liess sich nicht belegen (gesichert sind nur Buffon, Pitman, Shaw, Spencer, Wells).
 
 ## Quellen (Tier-System)
 
@@ -222,12 +222,12 @@ Bewertung nach zwei Achsen. **Zuverlässigkeit:** R1 = wissenschaftlich/primär,
 - [R1·A2] Multiplicative order — Wikipedia / Wolfram MathWorld — https://en.wikipedia.org/wiki/Multiplicative_order — Definition „kleinstes k mit aᵏ ≡ 1 (mod n)". Teilweise (Snippet).
 - [R1·A2] Orders of Units in Modular Arithmetic — Keith Conrad (UConn) — https://kconrad.math.uconn.edu/blurbs/ugradnumthy/ordersmodm.pdf — Begründung Ordnung/Periode, Primitivwurzel-Fall, Ordnung teilt φ(n). PDF beim Abruf nicht maschinenlesbar; Aussage über Wikipedia doppelt belegt.
 - [R1·A2] Full Reptend Prime — Wolfram MathWorld — https://mathworld.wolfram.com/FullReptendPrime.html — maximale Periode p−1 ↔ Primitivwurzel. Nur Snippet.
-- [R1·A2] eJMT v16n3: Repeating Decimal Expansions in Different Bases — https://ejmt.mathandtech.org/Contents/eJMT_v16n3p4.pdf — Perioden in verschiedenen Basen, „warum nicht größere Basis". PDF binär nicht lesbar; Inhalt durch Wikipedia redundant abgedeckt.
+- [R1·A2] eJMT v16n3: Repeating Decimal Expansions in Different Bases — https://ejmt.mathandtech.org/Contents/eJMT_v16n3p4.pdf — Perioden in verschiedenen Basen, „warum nicht grössere Basis". PDF binär nicht lesbar; Inhalt durch Wikipedia redundant abgedeckt.
 - [R1·A3] OEIS A246004 (dozenale Periodenlängen von 1/p) — https://oeis.org/A246004 — Katalog der Periodenlängen. Direktabruf HTTP 403; Werte selbst per Programm reproduziert.
 - [R1·A3] OEIS A002326 (multiplikative Ordnung von 2 mod 2n+1) — https://oeis.org/A002326 — Ordnungs-Maschinerie. Nur Snippet.
 - [R4·A1] The case for base twelve — eev.ee / fuzzy notepad — https://eev.ee/blog/2016/04/26/the-case-for-base-twelve/ — praktische Argumentation, abbrechende Brüche, Prozent-Argument. Achtung: enthält Tippfehler bei 1/5 (lässt die 7 weg).
 - [R4·A1] Duodecimal: The Base-12 Counting System — duodecimal.net — http://duodecimal.net/archives/duodecimal/duodecimal.html — „terminates iff", Konversionsbeispiel 12345.6₁₂ = 24677.5₁₀, Stellenwert-Tabellen.
-- [R4·A1] Should We Use Base 12 Instead Of Base 10? — ScienceABC — https://www.scienceabc.com/eyeopeners/why-we-should-already-use-base-12-instead-of-base-10.html — Nachteil bei der 5, Umstellungs-Argument, „warum nicht größere Basis".
+- [R4·A1] Should We Use Base 12 Instead Of Base 10? — ScienceABC — https://www.scienceabc.com/eyeopeners/why-we-should-already-use-base-12-instead-of-base-10.html — Nachteil bei der 5, Umstellungs-Argument, „warum nicht grössere Basis".
 - [R3·A2] Base 12: An Introduction — Built In — https://builtin.com/data-science/base-12 — populäre Einführung, kulturelle Anwendungen. Nur Snippet.
 - [R4·A3] Grokipedia „Duodecimal" + dcode Repetend-Rechner — https://grokipedia.com/page/Duodecimal , https://www.dcode.fr/number-repeating-decimal — Kreuzbestätigung Periode 1/5 (4) und 1/7 (6). Nur Snippet.
 - [R1·A3] Dozenal Society of Great Britain — Reciprocals — http://www.dozenalsociety.org.uk/pdfs/reciprocals.pdf — Reziproken-Muster. Kein Zugang (ECONNREFUSED); inhaltlich durch eigene Rechnung ersetzt.

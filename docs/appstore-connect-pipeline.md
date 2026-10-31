@@ -20,7 +20,7 @@ Build → Signieren → Upload, **Listing-Texte in N Sprachen ohne Copy-Paste**,
 - Bei Bild-/Rahmen-Arbeit: `swiftc` (kommt mit Xcode) für den CoreText-Text-Renderer.
 - **App-Store-Connect-API-Key** (App Store Connect → Users and Access → Integrations →
   App Store Connect API → Key mit Rolle *App Manager*/*Admin*): `.p8`-Datei, **Key-ID**,
-  **Issuer-ID**. Liegt als Geheimnis **außerhalb des Repos** (z. B. `~/keys/AuthKey_<KEYID>.p8`).
+  **Issuer-ID**. Liegt als Geheimnis **ausserhalb des Repos** (z. B. `~/keys/AuthKey_<KEYID>.p8`).
 - Für `altool`: die `.p8` auch nach `~/.appstoreconnect/private_keys/` kopieren.
 - Für fastlane: einen kombinierten Key als JSON bauen (nicht ins Repo):
   ```bash
@@ -60,7 +60,7 @@ Upload mit `-t macos`. Verifizieren: `codesign -d --entitlements - <app>` zeigt 
 
 ---
 
-## 2. Listing-Texte in N Sprachen — OHNE Copy-Paste (der große Zeitgewinn)
+## 2. Listing-Texte in N Sprachen — OHNE Copy-Paste (der grosse Zeitgewinn)
 
 **Prinzip:** *Eine* menschenlesbare Quelle pro Sprache → ein Sync-Skript → die per-Locale-
 Textdateien, die `fastlane deliver` erwartet → **ein** Push für alle Sprachen.
@@ -98,7 +98,7 @@ Textdateien, die `fastlane deliver` erwartet → **ein** Push für alle Sprachen
 ## 3. Gerahmte, lokalisierte Marketing-Screenshots
 
 **Stack:** echte Roh-Captures + Geräterahmen (frameit) + lokalisierter Text (CoreText) +
-ImageMagick-Komposition auf **exaktes App-Store-Maß**.
+ImageMagick-Komposition auf **exaktes App-Store-Mass**.
 
 1. **Roh-Captures** (Mensch oder via `xcrun simctl io <udid> screenshot`): pro Sprache die
    gewünschten App-Screens. Intro je Sprache zeigen: App-Locale setzen + Onboarding-Flag löschen
@@ -112,20 +112,20 @@ ImageMagick-Komposition auf **exaktes App-Store-Maß**.
    native macOS-Engine): `NSAttributedString` + `NSParagraphStyle.alignment = .natural`
    (→ RTL automatisch) + System-Font (Glyph-Fallback je Schrift automatisch), als transparentes
    PNG. Einmal `swiftc -O render_text.swift -o render_text`, dann pro String aufrufen.
-4. **Komposition** auf Canvas in **exakter App-Store-Größe** (= das Endmaß; das Hintergrund-
-   Canvas bestimmt die Ausgabegröße). Übersetzungen aus einer `i18n.json` (alle Sprachen).
+4. **Komposition** auf Canvas in **exakter App-Store-Grösse** (= das Endmass; das Hintergrund-
+   Canvas bestimmt die Ausgabegrösse). Übersetzungen aus einer `i18n.json` (alle Sprachen).
    Layout-Hinweise: hohe Phones → Liste oben / Gerät unten (Geräteposition **adaptiv** unter dem
    gemessenen Textblock, sonst Überlappung); quadratische Tablets → mehrspaltige Liste; macOS
    Querformat → Fenster + Text seitlich; RTL spiegeln.
 5. **Alpha entfernen** (App Store lehnt Transparenz ab): auf opakem Canvas komponieren bzw.
    `magick … -alpha remove -alpha off`. Verifizieren mit `sips -g hasAlpha`.
 
-**Maße & Slots (Stand 2026):**
-| Slot | Größe | Hinweis |
+**Masse & Slots (Stand 2026):**
+| Slot | Grösse | Hinweis |
 |---|---|---|
 | iPhone 6,9″ | 1320×2868 | aktueller Pflicht-Slot |
 | iPad 12,9″ | 2048×2732 | 13″-Captures (2064×2752) darauf skalieren |
-| Apple Watch | 416×496 | **NICHT rahmen** — exakt diese Größe, sprachneutral |
+| Apple Watch | 416×496 | **NICHT rahmen** — exakt diese Grösse, sprachneutral |
 | macOS | 2880×1800 | Querformat 16:10 |
 
 **macOS billig lokalisieren:** App-Fenster **einmal** (z. B. englisch) capturen; den übersetzten
@@ -134,7 +134,7 @@ Marketing-Bildern üblich). Alternativ Fallback nutzen: Sprachen ohne eigene mac
 zeigen automatisch die der Primärsprache.
 
 **Upload-Layout:** Ordnernamen = ASC-Locale-Codes. **iPhone + iPad + Watch alle zusammen** in
-`fastlane/screenshots/ios/<loc>/` (deliver sortiert per Pixelmaß in die Geräte-Slots); macOS
+`fastlane/screenshots/ios/<loc>/` (deliver sortiert per Pixelmass in die Geräte-Slots); macOS
 getrennt in `fastlane/screenshots/osx/<loc>/`.
 ```bash
 fastlane deliver --api_key_path ~/keys/appstore_api_key.json \

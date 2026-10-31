@@ -83,7 +83,7 @@ xcrun --sdk watchsimulator swiftc -typecheck \
 ## Bekanntes Problem: `.page`-TabView-Erstrender-Zoom
 
 Beim allerersten Layout dimensioniert die watchOS-`.page`-`TabView` ihre
-Startseite falsch (zu groß): direkt nach dem Start ist die unterste Glyphen-
+Startseite falsch (zu gross): direkt nach dem Start ist die unterste Glyphen-
 Reihe abgeschnitten, die Ecktasten berühren die Uhr-Rundung. **Einmal hin- und
 zurückwischen korrigiert es** (neuer Layout-Pass mit dann bekannter Geometrie).
 Kein offizieller Apple-Fix; die Community behandelt es als Timing-Problem (die
@@ -92,7 +92,7 @@ Kein offizieller Apple-Fix; die Community behandelt es als Timing-Problem (die
 Aktuelle Milderung: die `TabView` wird einen Runloop nach `onAppear` per
 `.id`-Wechsel neu aufgebaut — beseitigt es meist, aber nicht garantiert.
 **Deterministisch zoomfrei** wäre, die Tasten mit fester, leicht konservativer
-Zellgröße aus einem äußeren `GeometryReader` zu setzen (nie größer als die
+Zellgrösse aus einem äusseren `GeometryReader` zu setzen (nie grösser als die
 Seite, daher nie abgeschnitten); aktuell bewusst zurückgestellt zugunsten der
 voll ausfüllenden Variante. Referenzen:
 - https://developer.apple.com/forums/thread/711572

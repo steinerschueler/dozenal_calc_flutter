@@ -6,7 +6,7 @@
 **Verifikation:** Alle Zahlen per Python/Bash nachgerechnet. Merge aus drei Recherche-
 Dossiers (m12_a Steiner/Konstruktion · m12_b Geschichte/Nische · m12_c Zahlen/Vorbehalte).
 
-> Methodik gemäß `docs/research/README.md`. Maßstab `nature_pyrit.md`,
+> Methodik gemäss `docs/research/README.md`. Massstab `nature_pyrit.md`,
 > `math_zyklische_zahlen.md`. **Hohe didaktische Hürde** — die Prosa vermittelt das
 > Staunen, nicht die volle Konstruktion.
 
@@ -17,12 +17,12 @@ Dossiers (m12_a Steiner/Konstruktion · m12_b Geschichte/Nische · m12_c Zahlen/
 Unter den 12! = 479 001 600 Umordnungen eines Dutzends gibt es eine winzige Auswahl von
 genau **95 040**, die eine fast unglaubliche Eigenschaft hat: **Wähle fünf der zwölf
 Punkte in einer Reihenfolge und sage, wohin jeder soll — dann gibt es unter den 95 040
-genau eine Umordnung, die das leistet. Nicht zwei, nicht null: genau eine.** Das heißt
+genau eine Umordnung, die das leistet. Nicht zwei, nicht null: genau eine.** Das heisst
 *scharf 5-transitiv*.
 
-Daraus folgt die Größe direkt: für das Bild des ersten Punktes 12 Wahlen, dann 11, 10, 9,
+Daraus folgt die Grösse direkt: für das Bild des ersten Punktes 12 Wahlen, dann 11, 10, 9,
 8 — und der Rest ist festgelegt. **|M₁₂| = 12·11·10·9·8 = 95 040** = 2⁶·3³·5·11 (in Basis
-12: 47000). Diese Gruppe heißt **Mathieu-Gruppe M₁₂**.
+12: 47000). Diese Gruppe heisst **Mathieu-Gruppe M₁₂**.
 
 Schöner Nebenfakt: Der Index in der vollen Umordnungsgruppe ist [S₁₂ : M₁₂] =
 479 001 600 / 95 040 = **5040 = 7!**.
@@ -49,12 +49,12 @@ t-Auswahl in genau einem Block. S(5,6,12) ist der berühmteste kleine Fall.
 ## 3. Warum gerade die Zwölf — der Satz von Jordan
 
 Das eigentliche Staunen ist nicht, *dass* M₁₂ symmetrisch ist, sondern *wie selten* solche
-Gruppen sind. **Camille Jordan (1872):** Außer den „erwartbaren" Beispielen
+Gruppen sind. **Camille Jordan (1872):** Ausser den „erwartbaren" Beispielen
 (symmetrische/alternierende Gruppen) ist die *einzige* scharf 5-transitive Gruppe **M₁₂ auf
 12 Punkten**. Scharf 4-transitiv gibt es als Ausnahme nur **M₁₁ auf 11 Punkten**. Es gibt
 keine scharf 6-transitive Ausnahme.
 
-Anders gesagt: Genau auf 11 und 12 Punkten existieren diese außergewöhnlich perfekten
+Anders gesagt: Genau auf 11 und 12 Punkten existieren diese aussergewöhnlich perfekten
 Symmetrien — sonst nirgends (jenseits der trivialen Familien). Die Zwölf ist also eine von
 einer Handvoll Zahlen, die so etwas tragen. Das ist ein mathematisches, kein mystisches
 Faktum.
@@ -72,7 +72,7 @@ zerlegen (so wie Primzahlen sich nicht in Faktoren zerlegen). Einfache Gruppen s
 sporadischen Gruppen**, fast ein Jahrhundert vor dem Rest. Die fünf Mathieu-Gruppen (M₁₁,
 M₁₂, M₂₂, M₂₃, M₂₄) bilden die „erste Generation"; die Reihe der sporadischen Gruppen
 gipfelt im riesigen **Monster**. Ihre vollständige Klassifikation (abgeschlossen ~2004) ist
-eines der größten Gemeinschaftswerke der Mathematik (zehntausende Seiten).
+eines der grössten Gemeinschaftswerke der Mathematik (zehntausende Seiten).
 
 Historische Ehrlichkeit: Mathieus Originalbeweise wurden **angezweifelt** — G. A. Miller
 behauptete 1898 sogar, M₂₄ existiere nicht. Erst **Ernst Witt** lieferte 1938 die
@@ -105,7 +105,7 @@ Rechner-Tutorial. Höchstens lassen sich die Kennzahlen in Basis 12 darstellen: 
 und 24 Punkten (M₁₁, M₂₂, M₂₃, M₂₄). Die 12 ist *eine* von wenigen Trägern, nicht die
 einzige; die Konstruktion lebt von der scharfen 5-Transitivität, nicht von Dozenal-Mystik.
 
-**Irrtum 2: »einfach« heißt »leicht«.** „Einfach" ist ein Fachbegriff: keine nichttrivialen
+**Irrtum 2: »einfach« heisst »leicht«.** „Einfach" ist ein Fachbegriff: keine nichttrivialen
 Normalteiler. M₁₂ ist alles andere als leicht.
 
 **Irrtum 3: »Steiner hat S(5,6,12) gebaut.«** Der Name ehrt Jakob Steiner, doch die
@@ -120,7 +120,7 @@ ganz anderes — eine Permutationsgruppe auf 12 abstrakten Punkten, keine Raumsy
 lang umstritten (Miller 1898), bis Witt 1938 Klarheit schuf.
 
 **Vorbehalt 6: Der Eindeutigkeits- und Klassifikationsrahmen ist tief.** Die Aussage
-„M₁₂ ist die einzige scharf 5-transitive Ausnahme" ruht letztlich auf großer Theorie
+„M₁₂ ist die einzige scharf 5-transitive Ausnahme" ruht letztlich auf grosser Theorie
 (Jordan; im vollen Umfang auf der Klassifikation endlicher einfacher Gruppen). Die Prosa
 berichtet das Ergebnis, nicht den Beweis.
 

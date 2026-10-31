@@ -1,8 +1,8 @@
-# Forschungs-Dossier: Das regelmäßige Zwölfeck (Dodekagon)
+# Forschungs-Dossier: Das regelmässige Zwölfeck (Dodekagon)
 
 **Gattung:** Dozenale Mathematik · Thema „Dodekagon".
 **Zweck:** Konsolidiert die drei Legacy-Kapitel (cases 3–5 in `info_content_de.dart`):
-„Was ist ein regelmäßiges Zwölfeck?", „Winkel & Diagonalen", „Fläche & Verhältnisse"
+„Was ist ein regelmässiges Zwölfeck?", „Winkel & Diagonalen", „Fläche & Verhältnisse"
 zu einem bequellten Mathematik-Kapitel auf dem Standard der neueren Theorie-Kapitel.
 
 **Abgrenzung zu „Die Zwölf im Bauen" / „Die Zwölf in der Kunst" (Welt-Block):** Dort
@@ -12,7 +12,7 @@ Deutung. Dieses Mathematik-Kapitel behandelt die **Geometrie der Form** und nur 
 **knappen** Anwendungsabschnitt zum Zwölfeck als physische Form (Münze, Zifferblatt-
 Geometrie, Parkettierung), bewusst ohne die Architektur-Beispiele zu wiederholen.
 
-Index-Konvention: Diagonalen heißen d₂…d₆, wobei der Index k die Zahl der
+Index-Konvention: Diagonalen heissen d₂…d₆, wobei der Index k die Zahl der
 **Verbindungsschritte** entlang des Umkreises zählt (k = 1 ist die Seite, k = 6 der
 Durchmesser); „d₂ überspringt eine Ecke" usw. Seitenlänge durchweg s, Umkreisradius R,
 Inkreisradius (Apothema) r.
@@ -21,22 +21,22 @@ Inkreisradius (Apothema) r.
 
 ## 1. Definition, Winkel und Symmetrie
 
-Ein regelmäßiges Zwölfeck (Dodekagon; griechisch *dōdeka* = zwölf, *gōnía* =
+Ein regelmässiges Zwölfeck (Dodekagon; griechisch *dōdeka* = zwölf, *gōnía* =
 Winkel/Ecke) ist ein konvexes Vieleck mit zwölf gleich langen Seiten und zwölf gleich
-großen Innenwinkeln. Alle zwölf Ecken liegen gleichmäßig verteilt auf einem
+grossen Innenwinkeln. Alle zwölf Ecken liegen gleichmässig verteilt auf einem
 gemeinsamen Umkreis, je 360°/12 = 30° voneinander entfernt.
 
 **Innenwinkel = 150°.** Aus der allgemeinen Formel (n−2)·180°/n folgt für n = 12:
-10·180°/12 = 150°. Gleichwertig über den Außenwinkel: zwölf gleiche Außenwinkel
-ergeben zusammen 360°, also 30° je Ecke; Innen- plus Außenwinkel sind 180°, somit
+10·180°/12 = 150°. Gleichwertig über den Aussenwinkel: zwölf gleiche Aussenwinkel
+ergeben zusammen 360°, also 30° je Ecke; Innen- plus Aussenwinkel sind 180°, somit
 150°. Die Summe aller Innenwinkel beträgt 12·150° = 1800°.
 
-Dozenal: 150° = 106°doz (1·144 + 0·12 + 6), der Außenwinkel 30° = 26°doz. Alle im
+Dozenal: 150° = 106°doz (1·144 + 0·12 + 6), der Aussenwinkel 30° = 26°doz. Alle im
 Zwölfeck auftretenden Winkel sind ganzzahlige Vielfache von 15° = 13°doz.
 
 **Symmetrie.** Das Zwölfeck hat 24 Symmetrien: 12 Drehungen (0°, 30°, …, 330°) und
 12 Spiegelungen (6 Achsen durch gegenüberliegende Ecken, 6 durch gegenüberliegende
-Seitenmitten). Sie bilden die Diedergruppe D₁₂ (Ordnung 2·12 = 24). Jedes regelmäßige
+Seitenmitten). Sie bilden die Diedergruppe D₁₂ (Ordnung 2·12 = 24). Jedes regelmässige
 n-Eck hat genau 2n Symmetrien.
 
 ---
@@ -51,11 +51,11 @@ Das Zwölfeck ist mit Zirkel und Lineal exakt konstruierbar. Praktisch:
 3. Jeden der sechs Bögen halbieren.
 4. Die zwölf so erzeugten Punkte sind die Ecken des Zwölfecks.
 
-**Theoretische Grundlage (Satz von Gauß–Wantzel):** Ein regelmäßiges n-Eck ist genau
+**Theoretische Grundlage (Satz von Gauss–Wantzel):** Ein regelmässiges n-Eck ist genau
 dann konstruierbar, wenn n = 2ᵏ · p₁ · … · pₜ ist, mit k ≥ 0 und paarweise
 verschiedenen Fermat-Primzahlen p₁…pₜ. Die fünf bekannten Fermat-Primzahlen sind 3,
 5, 17, 257, 65537. Für das Zwölfeck gilt 12 = 2² × 3; da 3 eine Fermat-Primzahl ist
-(F₀ = 3), ist es konstruierbar. Gauß bewies 1796 die Hinlänglichkeit (veröffentlicht
+(F₀ = 3), ist es konstruierbar. Gauss bewies 1796 die Hinlänglichkeit (veröffentlicht
 1801 in den *Disquisitiones Arithmeticae*); den Beweis der Notwendigkeit lieferte
 Pierre Wantzel 1837.
 
@@ -68,12 +68,12 @@ weitere reguläre Vielecke auf **demselben Umkreis**:
 
 | Verbinde jede … Ecke | Ergebnis               | Ecken |
 |----------------------|------------------------|-------|
-| 2.                   | regelmäßiges Sechseck  | 6     |
+| 2.                   | regelmässiges Sechseck  | 6     |
 | 3.                   | Quadrat                | 4     |
 | 4.                   | gleichseitiges Dreieck | 3     |
 
-**Allgemeines Prinzip:** In ein regelmäßiges n-Eck lässt sich genau dann ein
-regelmäßiges m-Eck mit denselben Umkreis-Punkten einbeschreiben, wenn m ein Teiler von
+**Allgemeines Prinzip:** In ein regelmässiges n-Eck lässt sich genau dann ein
+regelmässiges m-Eck mit denselben Umkreis-Punkten einbeschreiben, wenn m ein Teiler von
 n ist; man verbindet dann jede (n/m)-te Ecke. (Die Aussage betrifft Eck-Teilmengen auf
 gemeinsamem Umkreis, nicht beliebige Einbettungen.)
 
@@ -188,14 +188,14 @@ nach dem Vorbild des Threepence gestaltet. Wichtig: Zwölfecke sind **keine** Ku
 konstanter Breite — das sind die siebenseitigen Reuleaux-Formen (britische 20p/50p).
 Zwölfeckige Münzen werden über Gewicht, Durchmesser und Leitfähigkeit erkannt.
 
-**Zifferblatt.** Die zwölf Stundenmarken einer Analoguhr bilden ein regelmäßiges
+**Zifferblatt.** Die zwölf Stundenmarken einer Analoguhr bilden ein regelmässiges
 Zwölfeck: 30° pro Schritt (= 26°doz), zwölffache Drehsymmetrie. Die Einteilung des
 Kreises in 360° = 12 × 30° und die zwölf Stunden hängen geometrisch zusammen;
 Kompassrosen nutzen denselben 30°-Raster.
 
-**Parkettierung.** Ein regelmäßiges Zwölfeck **parkettiert die Ebene nicht allein**:
+**Parkettierung.** Ein regelmässiges Zwölfeck **parkettiert die Ebene nicht allein**:
 150° geht nicht ganzzahlig in 360° auf (150°·2 = 300°, 150°·3 = 450°). Mit Partnern
-schon — in zwei der elf archimedischen (halbregelmäßigen) Parkettierungen: 3.12.12
+schon — in zwei der elf archimedischen (halbregelmässigen) Parkettierungen: 3.12.12
 (Dreieck + zwei Zwölfecke: 60°+150°+150° = 360°) und 4.6.12 (Quadrat + Sechseck +
 Zwölfeck: 90°+120°+150° = 360°). Solche 12-zähligen Muster sind eine Grundlage
 islamischer Geometrie-Ornamentik; ihre genauere kultur- und baugeschichtliche
@@ -209,7 +209,7 @@ Einordnung steht im Welt-Block.
 (3√2+√6)/2 ≈ 3,346, hergeleitet aus chord(4) = 2R·sin(60°). Die verschachtelte Form
 √(2+√3) gilt für d₂, **nicht** für d₄. Eines der drei Recherche-Blöcke gab abweichend
 d₄ = √6 ≈ 2,449 und d₆ = 2 an — diese Werte waren dort selbst als „zu verifizieren"
-markiert und sind falsch; verworfen. Maßgeblich sind die in zwei unabhängigen Blöcken
+markiert und sind falsch; verworfen. Massgeblich sind die in zwei unabhängigen Blöcken
 und mehreren Rechner-Quellen (RedCrab, CalculatorAtoz) übereinstimmenden Werte oben.
 
 **2. „d₂ = √(2+√3)" vs. „d₂ = (√6+√2)/2".** Beide Schreibweisen bezeichnen denselben
@@ -258,8 +258,8 @@ Paywall) · A3 (nur indirekt).
   Subpolygone (2{6}, 3{4}, 4{3}), archimedische Parkettierungen 3.12.12 und 4.6.12,
   Zerlegung in 15 Rhomben, Münz- und Architekturbeispiele.
 - **[R2·A1]** Constructible polygon — Wikipedia (en) —
-  https://en.wikipedia.org/wiki/Constructible_polygon — Satz von Gauß–Wantzel,
-  Fermat-Primzahlen 3/5/17/257/65537, 12 = 2²×3, Gauß 1796 / Wantzel 1837.
+  https://en.wikipedia.org/wiki/Constructible_polygon — Satz von Gauss–Wantzel,
+  Fermat-Primzahlen 3/5/17/257/65537, 12 = 2²×3, Gauss 1796 / Wantzel 1837.
 - **[R2·A1]** Dihedral group — Wikipedia (en) —
   https://en.wikipedia.org/wiki/Dihedral_group — Dih_n Ordnung 2n, 12 Drehungen + 12
   Spiegelungen für das Zwölfeck.
@@ -304,7 +304,7 @@ Paywall) · A3 (nur indirekt).
 
 - **[R2·A1]** Brass threepence — Wikipedia (en) —
   https://en.wikipedia.org/wiki/Brass_threepence — zwölfseitig ab 1937, Tast-
-  Erkennbarkeit, erstes nicht-rundes Umlaufstück Großbritanniens.
+  Erkennbarkeit, erstes nicht-rundes Umlaufstück Grossbritanniens.
 - **[R2·A2]** Royal Mint — The 12-Sided £1 Coin — https://www.royalmint.com/new-pound-coin/
   — zwölfseitiges Pfund ab 2017, Fälschungsabwehr, Vorbild Threepence.
 - **[R2·A1]** Dodecagonal coin — Wikipedia (en) —

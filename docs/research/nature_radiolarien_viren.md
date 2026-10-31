@@ -25,7 +25,7 @@ Die Dualität ist exakt: Setzt man die Ecken des einen Körpers auf die Flächen
 
 Die fünfzähligen Achsen sind das Besondere. Fünfzählige Drehsymmetrie passt nicht in ein periodisches Kristallgitter (deshalb gibt es keine fünfzähligen Kristalle im klassischen Sinn). In geschlossenen, gekrümmten Hüllen tritt sie aber frei auf.
 
-**Der Ikosaeder kommt der Kugel am nächsten** — unter allen platonischen Körpern hat er das größte Volumen pro Oberfläche. Für eine Schutz- oder Speicherhülle ist das die effizienteste Form.
+**Der Ikosaeder kommt der Kugel am nächsten** — unter allen platonischen Körpern hat er das grösste Volumen pro Oberfläche. Für eine Schutz- oder Speicherhülle ist das die effizienteste Form.
 
 ---
 
@@ -35,27 +35,27 @@ Die wiederkehrende Zwölf hat keine einzelne, geheimnisvolle Ursache. Sie folgt 
 
 ### Der topologische Kern: Eulers Polyedersatz
 
-Dies ist der tiefste Grund für die Zahl Zwölf und der rote Faden, der Viren, Radiolarien und sogar den Fußball verbindet.
+Dies ist der tiefste Grund für die Zahl Zwölf und der rote Faden, der Viren, Radiolarien und sogar den Fussball verbindet.
 
 Eulers Satz für geschlossene Körper lautet: **Ecken − Kanten + Flächen = 2**.
 
-Daraus folgt: Man kann eine Kugel **nicht** lückenlos und geschlossen allein mit Sechsecken überziehen. Ein reines Sechseck-Netz bleibt flach. Um es zu einer geschlossenen Hülle zu krümmen, braucht es **genau zwölf Fünfecke**. Die Zahl der Sechsecke ist dabei beliebig, die Zahl der Fünfecke ist zwingend zwölf. Jedes Fünfeck erzwingt ein Stück Krümmung. Zwölf davon schließen die Kugel.
+Daraus folgt: Man kann eine Kugel **nicht** lückenlos und geschlossen allein mit Sechsecken überziehen. Ein reines Sechseck-Netz bleibt flach. Um es zu einer geschlossenen Hülle zu krümmen, braucht es **genau zwölf Fünfecke**. Die Zahl der Sechsecke ist dabei beliebig, die Zahl der Fünfecke ist zwingend zwölf. Jedes Fünfeck erzwingt ein Stück Krümmung. Zwölf davon schliessen die Kugel.
 
-Genau dieses Prinzip steckt im **Fußball** (12 fünfeckige Felder, 20 sechseckige), in **geodätischen Kuppeln** und im **Fullerenmolekül C₆₀**. Und, wie sich zeigt, auch in Virus-Kapsiden und in manchen Radiolarien-Gittern.
+Genau dieses Prinzip steckt im **Fussball** (12 fünfeckige Felder, 20 sechseckige), in **geodätischen Kuppeln** und im **Fullerenmolekül C₆₀**. Und, wie sich zeigt, auch in Virus-Kapsiden und in manchen Radiolarien-Gittern.
 
 ### Virus-Kapside: drei zusammenwirkende Gründe
 
 Etwa **70 % aller bekannten Virus-Kapside sind ikosaedrisch** — ein Fall konvergenter Evolution über nicht verwandte Virenfamilien hinweg.
 
-**1. Genetische Sparsamkeit** (Crick und Watson, 1956). Ein Virusgenom ist winzig und kann nur wenige Proteine kodieren. Statt ein großes, einzigartiges Hüllprotein zu bauen, baut das Virus seine Hülle aus **vielen identischen Kopien eines kleinen Proteins**. Ein kurzes Gen kodiert einen Baustein, der vielfach wiederverwendet wird. Crick und Watson nannten das "genetische Ökonomie". Die maximale Zahl streng gleichwertiger Positionen auf einem Ikosaeder ist **60** (20 Dreiecksflächen mal 3 Proteine = 60 = Ordnung der Rotationsgruppe).
+**1. Genetische Sparsamkeit** (Crick und Watson, 1956). Ein Virusgenom ist winzig und kann nur wenige Proteine kodieren. Statt ein grosses, einzigartiges Hüllprotein zu bauen, baut das Virus seine Hülle aus **vielen identischen Kopien eines kleinen Proteins**. Ein kurzes Gen kodiert einen Baustein, der vielfach wiederverwendet wird. Crick und Watson nannten das "genetische Ökonomie". Die maximale Zahl streng gleichwertiger Positionen auf einem Ikosaeder ist **60** (20 Dreiecksflächen mal 3 Proteine = 60 = Ordnung der Rotationsgruppe).
 
-**2. Geometrische Effizienz.** Der Ikosaeder kommt der Kugel am nächsten → größtes Innenvolumen pro Oberfläche → maximaler Stauraum für das Genom bei minimalem Protein-Aufwand.
+**2. Geometrische Effizienz.** Der Ikosaeder kommt der Kugel am nächsten → grösstes Innenvolumen pro Oberfläche → maximaler Stauraum für das Genom bei minimalem Protein-Aufwand.
 
 **3. Physikalische Selbstorganisation.** Die Untereinheiten lagern sich **spontan** zusammen und fallen in den Zustand minimaler freier Energie. Die Bindungen sind nicht-kovalent und reversibel, was die Montage fehlerarm macht. Caspar und Klug prägten dafür den Begriff "self-assembly". Kein zentraler Bauleiter ist nötig — die Form folgt aus den lokalen Bindungsregeln gleicher Bausteine.
 
 ### Die Caspar-Klug-Theorie (1962) und die Triangulationszahl T
 
-Viele Kapside haben **mehr als 60** Untereinheiten. Donald Caspar und Aaron Klug erklärten das 1962 mit der **Quasi-Äquivalenz**: Identische Proteine besetzen geometrisch *ähnliche, aber nicht exakt gleiche* Umgebungen — als **Pentamere** (Fünferringe) oder **Hexamere** (Sechserringe). Sie ließen sich ausdrücklich von Buckminster Fullers geodätischen Kuppeln inspirieren.
+Viele Kapside haben **mehr als 60** Untereinheiten. Donald Caspar und Aaron Klug erklärten das 1962 mit der **Quasi-Äquivalenz**: Identische Proteine besetzen geometrisch *ähnliche, aber nicht exakt gleiche* Umgebungen — als **Pentamere** (Fünferringe) oder **Hexamere** (Sechserringe). Sie liessen sich ausdrücklich von Buckminster Fullers geodätischen Kuppeln inspirieren.
 
 Die **Triangulationszahl** ist:
 
@@ -63,8 +63,8 @@ $$T = h^2 + hk + k^2 \qquad (h, k \text{ nichtnegative ganze Zahlen})$$
 
 T nimmt nur bestimmte Werte an: **1, 3, 4, 7, 9, 12, 13, 16, 19, 21, 25, …**
 
-Für jedes solche Kapsid gilt, unabhängig von der Größe:
-- **Immer genau 12 Pentamere** — sie sitzen an den 12 Ecken des Ikosaeders. Das ist exakt die Euler-Zwölf wie beim Fußball und beim Fulleren: Zwölf fünfzählige "Defekte" schließen die gekrümmte Hülle.
+Für jedes solche Kapsid gilt, unabhängig von der Grösse:
+- **Immer genau 12 Pentamere** — sie sitzen an den 12 Ecken des Ikosaeders. Das ist exakt die Euler-Zwölf wie beim Fussball und beim Fulleren: Zwölf fünfzählige "Defekte" schliessen die gekrümmte Hülle.
 - **10 · (T − 1) Hexamere**.
 - **Untereinheiten gesamt: 60 · T**.
 - **Kapsomere gesamt: 10T + 2**.
@@ -83,7 +83,7 @@ Radiolarien sind einzellige Meeresprotisten (etwa 0,1–0,2 mm). Ihr Skelett bes
 
 Wie eine Zelle ohne Nervensystem solch präzise Geometrie erzeugt, ist **nicht vollständig geklärt**. Es gibt mehrere sich ergänzende Hypothesen:
 
-- **Schaum-/Seifenblasen-Modell.** Das Protoplasma ist von gleich großen Bläschen umgeben. An ihren Berührungsflächen lagert sich die Kieselsäure ab — ähnlich wie an den Stegen eines Seifenschaums. Dichte, gleich große Bläschen ergeben von selbst eine regelmäßige, wabenartige Hülle. (Plausibel und teilweise im Labor gestützt, aber kein vollständiges Modell für jede Art.)
+- **Schaum-/Seifenblasen-Modell.** Das Protoplasma ist von gleich grossen Bläschen umgeben. An ihren Berührungsflächen lagert sich die Kieselsäure ab — ähnlich wie an den Stegen eines Seifenschaums. Dichte, gleich grosse Bläschen ergeben von selbst eine regelmässige, wabenartige Hülle. (Plausibel und teilweise im Labor gestützt, aber kein vollständiges Modell für jede Art.)
 - **Zytoskelett als Schablone.** Innere Proteinfilamente bilden ein Gerüst, an dem die Kieselsäure abgeschieden wird.
 - **Turing-Muster auf der Kugel.** Computer-Simulationen von Reaktions-Diffusions-Vorgängen (nach Alan Turing) reproduzieren manche Radiolarien-Lochmuster verblüffend gut. Das spricht für selbstorganisierende, chemisch-physikalische Musterbildung statt eines genauen "Bauplans".
 
@@ -95,7 +95,7 @@ Der gemeinsame Gedanke: **Selbstorganisation gleicher Bausteine** unter Krümmun
 |---|---|---|
 | Virus-Kapsid | minimale genetische Information + Energieminimierung + Selbstorganisation; Quasi-Äquivalenz | 12 Pentamere zwingend (Euler) |
 | Radiolarien-Skelett | selbstorganisierende Biomineralisierung auf gekrümmter, geschlossener Fläche | 12 fünfzählige Defekte zur Krümmung (Euler) |
-| Fußball, Kuppel, Fulleren C₆₀ | gleiche Bausteine auf geschlossener Kugel | 12 Fünfecke (Euler) |
+| Fussball, Kuppel, Fulleren C₆₀ | gleiche Bausteine auf geschlossener Kugel | 12 Fünfecke (Euler) |
 
 Der gemeinsame Nenner ist **kein Plan und keine heilige Zahl**, sondern: Wenn gleichartige Bausteine durch lokale Regeln eine geschlossene, energetisch günstige Hülle bilden, erzwingt die Topologie (Euler) die Zwölf und die Ikosaeder-Symmetrie. Es ist der billigste, stabilste und am leichtesten selbstorganisierende Weg zu einer geschlossenen Schale.
 
@@ -107,7 +107,7 @@ Der gemeinsame Nenner ist **kein Plan und keine heilige Zahl**, sondern: Wenn gl
 
 Ernst Haeckel (1834–1919) ist die Schlüsselfigur. Er begegnete den Radiolarien erstmals 1859/60 auf einer Forschungsreise nach **Messina** (Sizilien). Dieses Erlebnis lenkte ihn zur Zoologie. Daraus entstand seine erste Radiolarien-Monografie 1862.
 
-Sein Hauptwerk ist der **"Report on the Radiolaria collected by H.M.S. Challenger during the years 1873–1876"** (1887): drei Textbände und 140 Tafeln. Je nach Zählweise dokumentierte er über 4.000 Arten, davon ein großer Teil neu für die Wissenschaft. (Die genaue Artenzahl schwankt zwischen den Quellen — z. B. "über 3.500 neu von über 4.000" gegenüber "2.775 neue polycystine Arten" — weil unterschiedlich gezählt wird.)
+Sein Hauptwerk ist der **"Report on the Radiolaria collected by H.M.S. Challenger during the years 1873–1876"** (1887): drei Textbände und 140 Tafeln. Je nach Zählweise dokumentierte er über 4.000 Arten, davon ein grosser Teil neu für die Wissenschaft. (Die genaue Artenzahl schwankt zwischen den Quellen — z. B. "über 3.500 neu von über 4.000" gegenüber "2.775 neue polycystine Arten" — weil unterschiedlich gezählt wird.)
 
 **Berühmte geometrische Beispiele:**
 - **Circogonia icosahedra** — Skelett in Form eines regulären **Ikosaeders**, mit 12 Stacheln an den 12 Ecken und 20 Flächen. Das Paradebeispiel der ikosaedrischen Zwölf-Symmetrie im Leben. Es erscheint als "Fig. 1" auf einer Tafel in Haeckels **"Kunstformen der Natur"** (in Lieferungen 1899–1904, 100 Tafeln; Lithograf: Adolf Giltsch).
@@ -131,7 +131,7 @@ Ein dritter Strang zeigt: Auch tote Materie kann ikosaedrische Symmetrie tragen.
 
 - **Dan Shechtman** beobachtete am **8. April 1982** in einer Aluminium-Mangan-Legierung ein Beugungsmuster mit "verbotener" fünf-/zehnzähliger (ikosaedrischer) Symmetrie. Er musste lange gegen Widerstand ankämpfen, unter anderem von **Linus Pauling** ("There is no such thing as quasicrystals, only quasi-scientists"). **Chemie-Nobelpreis 2011.**
 - **Penrose-Kacheln** (Roger Penrose, 1974) sind das 2D-Modell: zwei Kacheltypen, die die Ebene nur nicht-periodisch füllen und lokale Fünfzähligkeit zeigen.
-- **Natürliche Quasikristalle:** **Luca Bindi** und **Paul Steinhardt** fanden Fragmente in einem Meteoriten vom Fluss Chatyrka (Korjak-Berge, Tschukotka, Fernost-Russland). Das Mineral heißt **Ikosaedrit** (nach dem Ikosaeder), Formel Al₆₃Cu₂₄Fe₁₃ — der erste in der Natur gefundene Quasikristall.
+- **Natürliche Quasikristalle:** **Luca Bindi** und **Paul Steinhardt** fanden Fragmente in einem Meteoriten vom Fluss Chatyrka (Korjak-Berge, Tschukotka, Fernost-Russland). Das Mineral heisst **Ikosaedrit** (nach dem Ikosaeder), Formel Al₆₃Cu₂₄Fe₁₃ — der erste in der Natur gefundene Quasikristall.
 
 ---
 
@@ -145,7 +145,7 @@ Haeckels Tafeln prägten den Jugendstil (Art Nouveau). Der Architekt **René Bin
 
 Eine produktive Kette verbindet Architektur, Biologie und Chemie:
 - Fullers **geodätische Kuppeln** (Pentagone plus Hexagone, Expo '67 Montreal) inspirierten Caspar und Klug zu ihrer Virus-Theorie.
-- Dieselbe Form erkannten die Chemiker **Kroto, Smalley und Curl** 1985 im Molekül **C₆₀** — einem abgestumpften Ikosaeder (12 Fünfecke, 20 Sechsecke, Fußballform). Sie benannten es **Buckminsterfullerene** ("Buckyballs") nach Fuller. Nobelpreis Chemie 1996.
+- Dieselbe Form erkannten die Chemiker **Kroto, Smalley und Curl** 1985 im Molekül **C₆₀** — einem abgestumpften Ikosaeder (12 Fünfecke, 20 Sechsecke, Fussballform). Sie benannten es **Buckminsterfullerene** ("Buckyballs") nach Fuller. Nobelpreis Chemie 1996.
 
 So gehorchen Kuppel, Virus, Aulonia und Fulleren demselben Euler-"12-Fünfeck"-Zwang.
 
@@ -159,7 +159,7 @@ Die Zwölf-Symmetrie hängt mathematisch sauber am Goldenen Schnitt φ = (√5 +
 
 **1. "Aulonia hexagona ist ein perfekter Sechseck-Ball" — falsch.** Das ist der wichtigste Punkt. Ein rein hexagonales, geschlossenes Kugelgitter widerspricht Eulers Satz. Das echte Skelett enthält die nötigen Fünfecke. Aulonia ist ein Lehr-Beispiel *für* die Zwölf, nicht gegen sie.
 
-**2. Haeckels Tafeln waren teils idealisiert.** Haeckel bevorzugte in *Kunstformen der Natur* **Symmetrie und Harmonie gegenüber natürlicher Unregelmäßigkeit**. Echte Skelette zeigen Variation und "Defekte". Man darf die Tafeln nicht als 1:1-Beleg dafür lesen, dass Radiolarien perfekte platonische Körper sind. (Hinweis: Der schärfere *Fälschungsvorwurf* betrifft Haeckels **Embryo-Zeichnungen**, nicht die Radiolarien; ob das vorsätzlicher Betrug oder bloße Idealisierung war, ist bis heute **wissenschaftlich umstritten**. Die Radiolarien-Arbeit gilt als deutlich genauer.)
+**2. Haeckels Tafeln waren teils idealisiert.** Haeckel bevorzugte in *Kunstformen der Natur* **Symmetrie und Harmonie gegenüber natürlicher Unregelmässigkeit**. Echte Skelette zeigen Variation und "Defekte". Man darf die Tafeln nicht als 1:1-Beleg dafür lesen, dass Radiolarien perfekte platonische Körper sind. (Hinweis: Der schärfere *Fälschungsvorwurf* betrifft Haeckels **Embryo-Zeichnungen**, nicht die Radiolarien; ob das vorsätzlicher Betrug oder blosse Idealisierung war, ist bis heute **wissenschaftlich umstritten**. Die Radiolarien-Arbeit gilt als deutlich genauer.)
 
 **3. Ikosaedrische Radiolarien sind die Ausnahme, nicht die Regel.** Die meisten Radiolarien sind nicht platonisch geformt. Die geometrisch reinen Beispiele sind selten und gerade deshalb berühmt.
 
@@ -169,7 +169,7 @@ Die Zwölf-Symmetrie hängt mathematisch sauber am Goldenen Schnitt φ = (√5 +
 
 **6. "Heilige Geometrie" und Goldener-Schnitt-Überdehnung — Pseudowissenschaft.** Die mathematische φ-Verbindung zum Ikosaeder ist *echt*. **Nicht** belegt ist die populäre Behauptung, der Goldene Schnitt sei ein "universelles Designprinzip in aller Natur" oder habe "kosmische Bedeutung". Aussagen wie "Radiolarien beweisen platonische Ideale" oder "die Zahl 12 ist heilig, weil Viren und Radiolarien sie nutzen" sind **abzulehnen**. Die Zwölf ist hier eine **topologische Konsequenz** (Euler-Satz), kein numerologisches Geheimnis.
 
-**7. Quasikristalle sind keine klassischen Kristalle.** Sie haben langreichweitige *Orientierungsordnung ohne* periodische Wiederholung. Gerade ihre Nicht-Periodizität bei fünfzähliger Symmetrie machte die Entdeckung revolutionär. Sie gehören außerdem in die **Festkörperphysik, nicht in die Biologie** — sie sind hier nur die dritte, unabhängige Illustration dafür, *warum* fünf-/ikosaedrische Symmetrie überhaupt in der Natur auftauchen kann, kein biologischer Mechanismus von Viren oder Radiolarien.
+**7. Quasikristalle sind keine klassischen Kristalle.** Sie haben langreichweitige *Orientierungsordnung ohne* periodische Wiederholung. Gerade ihre Nicht-Periodizität bei fünfzähliger Symmetrie machte die Entdeckung revolutionär. Sie gehören ausserdem in die **Festkörperphysik, nicht in die Biologie** — sie sind hier nur die dritte, unabhängige Illustration dafür, *warum* fünf-/ikosaedrische Symmetrie überhaupt in der Natur auftauchen kann, kein biologischer Mechanismus von Viren oder Radiolarien.
 
 **8. Vorsicht mit der "Selbstorganisation"-Erzählung bei Radiolarien.** Die Seifenschaum-Analogie ist plausibel und teilweise im Labor gestützt, aber kein vollständig geschlossenes Modell für jede Art. Biologische Steuerung (organische Matrix, Biomineralisation) spielt mit. Als elegante Hypothese mit Evidenz lesen, nicht als bewiesenes Universalgesetz.
 

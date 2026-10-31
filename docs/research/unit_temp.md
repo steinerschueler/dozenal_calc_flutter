@@ -18,7 +18,7 @@ Wichtige Einschränkung: Galilei baute kein Thermometer im heutigen Sinn. Das Ge
 
 **Robert Fludd (um 1617)** baute auf Basis der Philon-Übersetzungen ein eigenes Luftthermometer.
 
-**Ferdinando II. de’ Medici (um 1654) — das erste Flüssigkeitsthermometer.** Der Großherzog der Toskana fertigte versiegelte (geschlossene) Glasröhren mit Alkohol-Füllung, Kolben und Stiel. Das war das erste Thermometer modernen Typs. Die Versiegelung machte das Instrument **unabhängig vom Luftdruck**, der die früheren offenen Bauformen verfälscht hatte.
+**Ferdinando II. de’ Medici (um 1654) — das erste Flüssigkeitsthermometer.** Der Grossherzog der Toskana fertigte versiegelte (geschlossene) Glasröhren mit Alkohol-Füllung, Kolben und Stiel. Das war das erste Thermometer modernen Typs. Die Versiegelung machte das Instrument **unabhängig vom Luftdruck**, der die früheren offenen Bauformen verfälscht hatte.
 
 **Die Idee der Fixpunkte.** Eine Skala braucht reproduzierbare Bezugspunkte. Sonst sind die Werte zweier Thermometer nicht vergleichbar.
 - Christiaan Huygens schlug 1665 vor, Schmelz- und Siedepunkt des Wassers als feste Referenz zu nehmen.
@@ -44,7 +44,7 @@ Fahrenheit besuchte Rømer 1708 in Kopenhagen und übernahm dessen Ansatz weitge
 
 **William Thomson, Lord Kelvin (1824–1907).** Schottischer Physiker. Definierte 1848 in der Arbeit *On an Absolute Thermometric Scale* die erste absolute, substanzunabhängige Skala (Details im Wissenschafts-Abschnitt).
 
-**William John Macquorn Rankine (1820–1872).** Schottischer Ingenieur und Physiker. Schlug 1859 die absolute Skala mit Fahrenheit-Gradgröße vor.
+**William John Macquorn Rankine (1820–1872).** Schottischer Ingenieur und Physiker. Schlug 1859 die absolute Skala mit Fahrenheit-Gradgrösse vor.
 
 ### Fahrenheits ursprüngliche Teilung
 
@@ -78,13 +78,13 @@ Die Umkehrung in die heutige Form (0 = Gefrieren, 100 = Sieden) wird mehreren Pe
 
 [UMSTRITTEN: Die genaue Zuschreibung der Umkehrung ist wegen der mehreren parallelen Urheber nicht eindeutig.]
 
-Über ein Jahrhundert hieß die Skala **„Centigrade"** (lat. „hundert Schritte"). Die 9. Generalkonferenz für Maß und Gewicht (CGPM) führte 1948 offiziell **„Grad Celsius"** ein — unter anderem, um Verwechslungen mit der französischen Winkeleinheit „grade/gon" zu vermeiden. Seit 2019 ist Celsius über das Kelvin definiert; der absolute Nullpunkt liegt bei exakt −273,15 °C.
+Über ein Jahrhundert hiess die Skala **„Centigrade"** (lat. „hundert Schritte"). Die 9. Generalkonferenz für Mass und Gewicht (CGPM) führte 1948 offiziell **„Grad Celsius"** ein — unter anderem, um Verwechslungen mit der französischen Winkeleinheit „grade/gon" zu vermeiden. Seit 2019 ist Celsius über das Kelvin definiert; der absolute Nullpunkt liegt bei exakt −273,15 °C.
 
 ### Die Rankine-Skala (1859)
 
-William Rankine schlug 1859 eine absolute Skala mit Fahrenheit-Gradgröße vor — gewissermaßen das „absolute Fahrenheit" für die angloamerikanische Ingenieurwelt.
+William Rankine schlug 1859 eine absolute Skala mit Fahrenheit-Gradgrösse vor — gewissermassen das „absolute Fahrenheit" für die angloamerikanische Ingenieurwelt.
 - Nullpunkt = absoluter Nullpunkt (0 °R = 0 K).
-- Gradgröße = Fahrenheit-Grad. Umrechnung: 1 K = 1,8 °R; °R = °F + 459,67.
+- Gradgrösse = Fahrenheit-Grad. Umrechnung: 1 K = 1,8 °R; °R = °F + 459,67.
 - Eckwerte: Wasser gefriert bei 491,67 °R (= 32 °F), siedet bei ca. 671,64 °R (≈ 212 °F).
 
 ## Kulturen weltweit (historisch & heute)
@@ -93,7 +93,7 @@ William Rankine schlug 1859 eine absolute Skala mit Fahrenheit-Gradgröße vor �
 
 Die 100-Grad-Symmetrie der Celsius-Skala passte ideal zum metrischen System, das Frankreich Ende des 18. Jahrhunderts entwickelte. Frankreich übernahm Celsius in den 1790er Jahren im Zuge der Metrik-Einführung und trieb dessen weltweite Verbreitung voran.
 
-Großbritannien begann in den 1960er Jahren mit der Metrisierung. Das UK Met Office stellte 1961 auf Celsius um, um konsistent mit Kontinentaleuropa zu sein. Fast alle früheren Fahrenheit-Länder folgten in den späten 1960er und 1970er Jahren — **außer den USA**.
+Grossbritannien begann in den 1960er Jahren mit der Metrisierung. Das UK Met Office stellte 1961 auf Celsius um, um konsistent mit Kontinentaleuropa zu sein. Fast alle früheren Fahrenheit-Länder folgten in den späten 1960er und 1970er Jahren — **ausser den USA**.
 
 ### Warum die USA bei Fahrenheit blieben
 
@@ -125,15 +125,15 @@ Réaumur war im 18. und 19. Jahrhundert in **Frankreich, Deutschland und Russlan
 
 Der allgemeine Mechanismus: Eine Skala hält sich, solange Messgeräte, Lehrbücher, Behördenpraxis und Rezepturen darauf geeicht sind. Réaumur wich erst, als die Metrik staatlich durchgesetzt wurde (Frankreich) oder politische Brüche die Standardisierung erzwangen (Sowjetrussland).
 
-**Überlebende Nischen heute** [SCHWACH BELEGT]: Réaumur soll sich in spezialisierten Lebensmittel-Handwerken halten — Milchtemperatur bei der Käseproduktion (Italien, Schweiz) und Zucker-/Sirupkochen (Niederlande). Vorsicht: Die enge Verbindung „Réaumur = Käse/Zucker" ist als überlebende Nische kolportiert, ließ sich in dieser Recherche aber nicht als breite, dokumentierte Industriepraxis erhärten.
+**Überlebende Nischen heute** [SCHWACH BELEGT]: Réaumur soll sich in spezialisierten Lebensmittel-Handwerken halten — Milchtemperatur bei der Käseproduktion (Italien, Schweiz) und Zucker-/Sirupkochen (Niederlande). Vorsicht: Die enge Verbindung „Réaumur = Käse/Zucker" ist als überlebende Nische kolportiert, liess sich in dieser Recherche aber nicht als breite, dokumentierte Industriepraxis erhärten.
 
 **Rankine** lebt heute fast nur noch in einigen US-Ingenieur-Disziplinen fort (Thermodynamik, Verbrennungs- und Kraftwerkstechnik).
 
 ### Kulturelle Wahrnehmung und Sprachbilder
 
-- **Intuition der Skalen.** Im Celsius-Raum sind die Eckpunkte an Naturphänomene gekoppelt (0 = Eis, 100 = kochendes Wasser) — leicht merkbar und praktisch fürs Kochen und für Frostwarnungen. Fahrenheit-Nutzer empfinden die feinere Stufung als alltagsnäher: 0–100 °F deckt grob die Spanne von „sehr kalt" bis „sehr heiß" menschlichen Wetters ab, sodass „100 ist heiß, 0 ist eiskalt" als Faustregel funktioniert. Beide Wahrnehmungen sind kulturell geprägt, nicht objektiv „besser". [Diese Wertung ist verbreitet, aber kein physikalisches Argument.]
+- **Intuition der Skalen.** Im Celsius-Raum sind die Eckpunkte an Naturphänomene gekoppelt (0 = Eis, 100 = kochendes Wasser) — leicht merkbar und praktisch fürs Kochen und für Frostwarnungen. Fahrenheit-Nutzer empfinden die feinere Stufung als alltagsnäher: 0–100 °F deckt grob die Spanne von „sehr kalt" bis „sehr heiss" menschlichen Wetters ab, sodass „100 ist heiss, 0 ist eiskalt" als Faustregel funktioniert. Beide Wahrnehmungen sind kulturell geprägt, nicht objektiv „besser". [Diese Wertung ist verbreitet, aber kein physikalisches Argument.]
 - **Russische Besonderheit.** Wegen Réaumur und harter Winter ist die Wendung „Grad Frost" (градусы мороза) tief verankert. Kälte wird positiv als „Frostgrade" gezählt, nicht als negative Temperatur.
-- **Sprachbilder aus der Thermometrie.** „Siedepunkt" für den Moment, in dem jemand vor Wut „überkocht"; „absoluter Nullpunkt" als Bild für das Allerwenigste; im Deutschen „auf dem Gefrierpunkt" für erkaltete Beziehungen, „kochen vor Wut", „jemandem wird es heiß oder kalt".
+- **Sprachbilder aus der Thermometrie.** „Siedepunkt" für den Moment, in dem jemand vor Wut „überkocht"; „absoluter Nullpunkt" als Bild für das Allerwenigste; im Deutschen „auf dem Gefrierpunkt" für erkaltete Beziehungen, „kochen vor Wut", „jemandem wird es heiss oder kalt".
 
 ## Mythos, Religion & Symbolik (Feuer/Eis/Hitze/Kälte)
 
@@ -149,13 +149,13 @@ Hier sind Hitze und Kälte keine Strafe, sondern **polare Schöpfungsprinzipien*
 
 Die populäre Vorstellung setzt die christliche Hölle mit Feuer gleich. **Dantes Inferno** kehrt das im Tiefsten um: Der **neunte (unterste) Kreis, Cocytus**, ist ein gefrorener See. Verräter stecken im Eis, ihre Tränen gefrieren in den Augenhöhlen. Vier Ringe (Caina, Antenora, Ptolomea, Judecca) ordnen die Verratstypen. **Satan** steckt hüfttief im Eis im Zentrum; seine Flügelschläge erzeugen den eisigen Wind, der das Eis erhält.
 
-**Symbolik:** Verrat ist das Erfrieren menschlicher Wärme (Liebe, Vertrauen). Kälte steht für moralische Erstarrung und Isolation, nicht Hitze. Der tiefste Punkt der Sünde ist nicht der heißeste, sondern der kälteste.
+**Symbolik:** Verrat ist das Erfrieren menschlicher Wärme (Liebe, Vertrauen). Kälte steht für moralische Erstarrung und Isolation, nicht Hitze. Der tiefste Punkt der Sünde ist nicht der heisseste, sondern der kälteste.
 
-### Heiße und kalte Höllen im Buddhismus
+### Heisse und kalte Höllen im Buddhismus
 
 Die buddhistische Kosmologie kennt beide Pole als abgestufte Strafgrade:
-- **Acht heiße Höllen** (Uṣṇa-naraka / 八熱地獄): brennender Boden, Eisenberge, kochende Kessel, Klingenwälder.
-- **Acht kalte Höllen** (Śīta-naraka / 八寒地獄): gefrorene Leeren, in denen die Kälte den Körper zerreißt; ihre Namen beziehen sich oft auf Blasen und Risse auf erfrierender Haut.
+- **Acht heisse Höllen** (Uṣṇa-naraka / 八熱地獄): brennender Boden, Eisenberge, kochende Kessel, Klingenwälder.
+- **Acht kalte Höllen** (Śīta-naraka / 八寒地獄): gefrorene Leeren, in denen die Kälte den Körper zerreisst; ihre Namen beziehen sich oft auf Blasen und Risse auf erfrierender Haut.
 
 Der Weg dieser Vorstellung: indisches **Naraka** → chinesisches **Diyu** → japanisches **Jigoku**. In Diyu und Jigoku werden Sünder vor dem Richter **Yama** abgeurteilt und unter anderem in Ölkesseln gesotten. Hitze und Kälte sind hier präzise abgestufte Strafen für unterschiedliche Vergehen.
 
@@ -172,7 +172,7 @@ In vielen Religionen ist Feuer nicht Strafe, sondern das Reinigende und Göttlic
 
 ### Was Temperatur physikalisch ist
 
-In der kinetischen Theorie ist die absolute Temperatur proportional zur **mittleren kinetischen Energie** der ungeordneten Bewegung der Teilchen. Heißer bedeutet: Die Teilchen bewegen sich im Mittel schneller. Das ist die physikalische Grundlage dafür, dass eine *absolute* Skala überhaupt möglich ist.
+In der kinetischen Theorie ist die absolute Temperatur proportional zur **mittleren kinetischen Energie** der ungeordneten Bewegung der Teilchen. Heisser bedeutet: Die Teilchen bewegen sich im Mittel schneller. Das ist die physikalische Grundlage dafür, dass eine *absolute* Skala überhaupt möglich ist.
 
 ### Der absolute Nullpunkt
 
@@ -187,7 +187,7 @@ Wichtige Feinheit: Die thermische kinetische Energie geht gegen null, aber quant
 
 ### Kelvin (1848)
 
-William Thomson, Lord Kelvin, definierte 1848 in *On an Absolute Thermometric Scale* eine absolute, substanzunabhängige Skala auf Basis von Carnots Theorie. Er legte den Nullpunkt beim absoluten Nullpunkt fest (damals −273 °C, heute −273,15 °C). Die Gradgröße entspricht dem Celsius-Grad, aber die Null liegt am tiefstmöglichen Punkt.
+William Thomson, Lord Kelvin, definierte 1848 in *On an Absolute Thermometric Scale* eine absolute, substanzunabhängige Skala auf Basis von Carnots Theorie. Er legte den Nullpunkt beim absoluten Nullpunkt fest (damals −273 °C, heute −273,15 °C). Die Gradgrösse entspricht dem Celsius-Grad, aber die Null liegt am tiefstmöglichen Punkt.
 
 ### Warum eine absolute Skala — Intervall vs. Verhältnis
 
@@ -196,7 +196,7 @@ Das ist der zentrale wissenschaftliche Punkt.
 - **Celsius, Fahrenheit, Réaumur sind Intervallskalen** mit willkürlich verschobenem Nullpunkt. 0 °C oder 0 °F bedeuten *nicht* „keine Wärmeenergie". Man kann **Differenzen** vergleichen (von 10 auf 20 °C ist dasselbe Intervall wie von 20 auf 30 °C). Aber **Verhältnisse sind bedeutungslos**: „20 °C ist doppelt so warm wie 10 °C" ist physikalisch falsch.
 - **Kelvin und Rankine sind Verhältnisskalen** mit echtem Nullpunkt. Hier gilt: 200 K hat tatsächlich die doppelte mittlere thermische Energie wie 100 K.
 
-Für die Thermodynamik ist das unverzichtbar. Größen wie die Entropieänderung (ΔS = ∫ dQ/T) oder die Gasgesetze erfordern eine Division durch T. Ein willkürlicher Nullpunkt würde negative oder unsinnige Werte erzeugen. Genau das war Kelvins Innovation: den Nullpunkt an die physikalische Untergrenze statt an einen Wasser-Phasenübergang zu legen.
+Für die Thermodynamik ist das unverzichtbar. Grössen wie die Entropieänderung (ΔS = ∫ dQ/T) oder die Gasgesetze erfordern eine Division durch T. Ein willkürlicher Nullpunkt würde negative oder unsinnige Werte erzeugen. Genau das war Kelvins Innovation: den Nullpunkt an die physikalische Untergrenze statt an einen Wasser-Phasenübergang zu legen.
 
 ### Offizielle Einführung und SI-Definition
 
@@ -228,7 +228,7 @@ Zusammenfassend, nach Bereichen:
 - **Industrie und Technik:** Celsius bzw. Kelvin für Spezifikationen. Rankine nur noch in einigen US-Ingenieur-Disziplinen.
 - **Réaumur:** praktisch ausgestorben, allenfalls handwerkliche Nischen [schwach belegt].
 
-**Verbreitetes Komfort-Argument für Fahrenheit** [WERTUNG, kein Faktum]: Der Bereich 0–100 °F deckt grob den bewohnbaren Außentemperatur-Bereich ab und wirkt dadurch „menschlich"; der kleinere Grad (180 statt 100 Grad zwischen Gefrier- und Siedepunkt) erlaubt feinere Auflösung ohne Dezimalstellen. Gegenargument: Celsius bindet sich direkt an die Wasser-Phasenübergänge und ist dadurch praktischer für Kochen und Frost. Beide Positionen sind Konvention und Gewohnheit, kein objektiver Vorzug.
+**Verbreitetes Komfort-Argument für Fahrenheit** [WERTUNG, kein Faktum]: Der Bereich 0–100 °F deckt grob den bewohnbaren Aussentemperatur-Bereich ab und wirkt dadurch „menschlich"; der kleinere Grad (180 statt 100 Grad zwischen Gefrier- und Siedepunkt) erlaubt feinere Auflösung ohne Dezimalstellen. Gegenargument: Celsius bindet sich direkt an die Wasser-Phasenübergänge und ist dadurch praktischer für Kochen und Frost. Beide Positionen sind Konvention und Gewohnheit, kein objektiver Vorzug.
 
 ## Verhältnis zu Dezimal und Basis 12 (ehrlich: warum Teilbarkeits-Argumente hier kaum greifen)
 
@@ -242,7 +242,7 @@ Daraus folgt:
 - Man kann **Differenzen** sinnvoll bilden, aber **keine echten Verhältnisse**.
 - Halbiert oder drittelt man eine Temperatur-*Zahl*, hat das **keine physikalische Bedeutung**. „Halb so warm" existiert auf einer Intervallskala nicht.
 
-Genau hier verliert das zentrale Dozenal-Verkaufsargument seinen Anker. Bei **Längen und Gewichten** zählt die Teilbarkeit der Einheit: Ein Fuß in 12 Zoll oder ein Dutzend lässt sich glatt in Drittel und Viertel teilen — das ist ein realer Vorteil von Basis 12. Bei **Temperatur** gibt es dieses „Aufteilen einer Menge" nicht. Eine Temperatur ist kein teilbarer Bestand, sondern eine Position auf einer Skala mit willkürlichem Ursprung.
+Genau hier verliert das zentrale Dozenal-Verkaufsargument seinen Anker. Bei **Längen und Gewichten** zählt die Teilbarkeit der Einheit: Ein Fuss in 12 Zoll oder ein Dutzend lässt sich glatt in Drittel und Viertel teilen — das ist ein realer Vorteil von Basis 12. Bei **Temperatur** gibt es dieses „Aufteilen einer Menge" nicht. Eine Temperatur ist kein teilbarer Bestand, sondern eine Position auf einer Skala mit willkürlichem Ursprung.
 
 ### Wo Teilbarkeit doch andockt: die Intervall-Unterteilung
 
@@ -273,7 +273,7 @@ Die folgenden Punkte kursieren in Populärtexten, sind aber unsicher, umstritten
 
 **[VERBREITETE LEGENDE — schwach belegt] „0 °F = kältester Danzig-Winter 1708/1709".** Mehrere Quellen (u. a. Einstein-Online) behaupten, Fahrenheit habe als 0 die tiefste in seiner Heimatstadt Danzig im Winter 1708/09 gemessene Lufttemperatur gewählt. Dem widerspricht die reproduzierbare Sole-Mischung (Eis/Wasser/Salmiak), die Wikipedia und die Cohen/Boerhaave-Linie als 0-Definition stützen. Behandeln als Legende oder Vereinfachung.
 
-**[MYTHOS — unbelegt] „96 °F war die Körpertemperatur von Fahrenheits kranker Ehefrau".** Diese in Populärtexten kursierende Geschichte ließ sich in den durchsuchten Quellen *nicht* belegen. Gesichert ist nur: Der Körpertemperatur-Fixpunkt lag mit ~96 °F leicht neben dem heutigen Wert (98,6 °F), weshalb die spätere Neukalibrierung ihn verschob. Als spekulativ kennzeichnen.
+**[MYTHOS — unbelegt] „96 °F war die Körpertemperatur von Fahrenheits kranker Ehefrau".** Diese in Populärtexten kursierende Geschichte liess sich in den durchsuchten Quellen *nicht* belegen. Gesichert ist nur: Der Körpertemperatur-Fixpunkt lag mit ~96 °F leicht neben dem heutigen Wert (98,6 °F), weshalb die spätere Neukalibrierung ihn verschob. Als spekulativ kennzeichnen.
 
 **[VERBREITETE WERTUNG — kein Faktum] „Fahrenheit ist fürs Wetter ‚besser/menschlicher'".** Häufig vorgebracht (0–100 = bewohnbarer Bereich, feinere Auflösung), aber eine Wertung, kein objektiver Vorzug. Celsius-Befürworter kontern mit der direkten Wasser-Bindung. Als Meinungs-/Komfortargument markieren.
 
@@ -283,9 +283,9 @@ Bewertung nach zwei Achsen. Zuverlässigkeit: R1 = wissenschaftlich/primär, R2 
 
 ### Primär & wissenschaftlich (R1)
 
-- [R1·A1] Kelvin: History — NIST — https://www.nist.gov/si-redefinition/kelvin/kelvin-history — Volltext gefetcht; 1848-Arbeit, absoluter Nullpunkt, Tripelpunkt, CGPM 1954. Maßgebliche Behördenquelle. [Hinweis: Boltzmann-2019-Teil nicht in dieser Seite enthalten.]
+- [R1·A1] Kelvin: History — NIST — https://www.nist.gov/si-redefinition/kelvin/kelvin-history — Volltext gefetcht; 1848-Arbeit, absoluter Nullpunkt, Tripelpunkt, CGPM 1954. Massgebliche Behördenquelle. [Hinweis: Boltzmann-2019-Teil nicht in dieser Seite enthalten.]
 - [R1·A3] Kelvin: Present Realization / Boltzmann Constant — NIST — https://www.nist.gov/si-redefinition/kelvin/kelvin-boltzmann-constant — k = 1,380649 × 10⁻²³ J/K, Realisierung der Definition.
-- [R1·A3] SI Brochure, 9th edition (2019), Appendix 2 (Kelvin) — BIPM — https://www.bipm.org/documents/20126/41489682/SI-App2-kelvin.pdf — maßgebliche Primärquelle für die 2019er-Definition; nur als Treffer gelistet, nicht geöffnet. Für eine zitierfähige Endfassung direkt prüfen.
+- [R1·A3] SI Brochure, 9th edition (2019), Appendix 2 (Kelvin) — BIPM — https://www.bipm.org/documents/20126/41489682/SI-App2-kelvin.pdf — massgebliche Primärquelle für die 2019er-Definition; nur als Treffer gelistet, nicht geöffnet. Für eine zitierfähige Endfassung direkt prüfen.
 - [R1·A2] The Instrument That Never Was: Inventing, Manufacturing, and Branding Réaumur's Thermometer During the Enlightenment — Annals of Science — https://www.tandfonline.com/doi/abs/10.1080/00033790.2011.609073 — nur Abstract (Paywall). Wissenschaftlicher Aufsatz zur Réaumur-Geschichte.
 
 ### Etablierte Referenz (R2)
@@ -341,7 +341,7 @@ Bewertung nach zwei Achsen. Zuverlässigkeit: R1 = wissenschaftlich/primär, R2 
 - [R3·A3] Fahrenheit scale — Einstein-Online — https://www.einstein-online.info/en/explandict/fahrenheit-scale/ — Volltext der Kurz-Definition; Quelle für die Danzig-1708/09-Erzählung (selbst seriös, Inhalt aber strittig).
 - [R3·A3] Weather, Temperature and Idioms — Woodward English — https://www.woodwardenglish.com/weather-temperature-and-idioms/ — indirekt.
 - [R3·A3] 11 German Idioms for Talking About the Weather — Chatterbug — https://blog.chatterbug.com/en/german-idioms-weather/ — indirekt.
-- [R3·A3] Temperature scales: Kelvin, Celsius, Fahrenheit, Rankine — solar-energy.technology — https://solar-energy.technology/thermodynamics/.../scales — indirekt; Rankine-Gradgröße.
+- [R3·A3] Temperature scales: Kelvin, Celsius, Fahrenheit, Rankine — solar-energy.technology — https://solar-energy.technology/thermodynamics/.../scales — indirekt; Rankine-Gradgrösse.
 
 ### Schwach (R4)
 

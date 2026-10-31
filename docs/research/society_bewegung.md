@@ -6,9 +6,9 @@ Die Idee, statt der Basis 10 lieber die Basis 12 zu verwenden, ist alt. Als orga
 
 **Georges-Louis Leclerc, Comte de Buffon (1707–1788).** Der französische Naturforscher Buffon gilt als einer der ersten prominenten Befürworter der Zwölferbasis. Die Datierung schwankt in den Quellen: oft wird "1777" genannt. Sein enzyklopädisches Hauptwerk *Histoire naturelle* erschien ab 1749.
 
-*Unsicher:* Diese Zuschreibung erscheint fast wortgleich in mehreren Nachschlagewerken (Wikipedia, ProofWiki, MathWorld), aber eine genaue Primärstelle (welches Werk, welche Seite, welches Jahr) ließ sich nicht finden. Die Behauptung wandert von Sekundärquelle zu Sekundärquelle. Sie ist plausibel, weil Buffon sich mit Maßreformen befasste, sollte aber nicht als gesichert dargestellt werden. Die Idee, dass die zwei zusätzlichen Symbole von **Buffon und d'Alembert** stammen, wird von der Dozenal Society of America genannt.
+*Unsicher:* Diese Zuschreibung erscheint fast wortgleich in mehreren Nachschlagewerken (Wikipedia, ProofWiki, MathWorld), aber eine genaue Primärstelle (welches Werk, welche Seite, welches Jahr) liess sich nicht finden. Die Behauptung wandert von Sekundärquelle zu Sekundärquelle. Sie ist plausibel, weil Buffon sich mit Massreformen befasste, sollte aber nicht als gesichert dargestellt werden. Die Idee, dass die zwei zusätzlichen Symbole von **Buffon und d'Alembert** stammen, wird von der Dozenal Society of America genannt.
 
-*Umstritten:* Ein Suchauszug behauptet, Buffon und Laplace hätten ein Basis-12-System vorgeschlagen, das in der Französischen Revolution gegen die Dezimalisten unterlegen sei. Diese Darstellung ließ sich in keiner verlässlichen Quelle bestätigen und widerspricht der nüchterneren Zuschreibung. Sie ist als unbelegt zu behandeln.
+*Umstritten:* Ein Suchauszug behauptet, Buffon und Laplace hätten ein Basis-12-System vorgeschlagen, das in der Französischen Revolution gegen die Dezimalisten unterlegen sei. Diese Darstellung liess sich in keiner verlässlichen Quelle bestätigen und widerspricht der nüchterneren Zuschreibung. Sie ist als unbelegt zu behandeln.
 
 **Isaac Pitman (1857).** Der Erfinder der Pitman-Kurzschrift bewarb ab Mitte der 1850er die dozenale Zählung bei seinen Schülern. 1857 führte er Symbole für Zehn und Elf ein, gebildet durch eine 180-Grad-Drehung der arabischen Ziffern 2 und 3. Er veröffentlichte den Beitrag "A Reckoning Reform" im *Bedfordshire Independent* (24. November 1857). Diese "Pitman-Ziffern" werden bis heute von der britischen Gesellschaft genutzt und wurden 2015 in Unicode 8.0 aufgenommen. Diese Angaben sind gut belegt.
 
@@ -16,9 +16,9 @@ Die Idee, statt der Basis 10 lieber die Basis 12 zu verwenden, ist alt. Als orga
 
 **George Bernard Shaw (1856–1950).** Der Schriftsteller soll die dozenale Schreibweise lobend kommentiert haben. *Unsicher:* Die Zuschreibung wird wiederholt genannt, aber ohne klare Primärstelle. Sie geht im Kern auf eine Sekundärquelle zurück (Martin Gardner, 1984).
 
-**H. G. Wells (1866–1946).** Die in der Aufgabenstellung genannte Zuschreibung an Wells ließ sich **nicht bestätigen.** *Spekulativ/kolportiert:* Trotz gezielter Suche fand sich kein belastbarer Primärbeleg, dass Wells die Basis 12 befürwortete. Die durchsuchten Wells-Quellen (Wikipedia, Britannica) erwähnen keine Basis-12-Befürwortung. Diese Zuschreibung sollte ohne Primärbeleg nicht behauptet werden.
+**H. G. Wells (1866–1946).** Die in der Aufgabenstellung genannte Zuschreibung an Wells liess sich **nicht bestätigen.** *Spekulativ/kolportiert:* Trotz gezielter Suche fand sich kein belastbarer Primärbeleg, dass Wells die Basis 12 befürwortete. Die durchsuchten Wells-Quellen (Wikipedia, Britannica) erwähnen keine Basis-12-Befürwortung. Diese Zuschreibung sollte ohne Primärbeleg nicht behauptet werden.
 
-**John Quincy Adams (1767–1848).** Der US-Politiker (Außenminister, später Präsident, Autor des "Report on Weights and Measures") wird in mehreren Übersichten ebenfalls als historischer Befürworter genannt. *Unsicher:* nur in Sekundär-Übersichten belegt, keine eingesehene Primärstelle.
+**John Quincy Adams (1767–1848).** Der US-Politiker (Aussenminister, später Präsident, Autor des "Report on Weights and Measures") wird in mehreren Übersichten ebenfalls als historischer Befürworter genannt. *Unsicher:* nur in Sekundär-Übersichten belegt, keine eingesehene Primärstelle.
 
 *Muster zur Vorsicht:* Die Liste prominenter Namen (Buffon, Shaw, Spencer, Adams) ist ein klassischer Fall einer "Zitat-Kaskade". Eine Sekundärquelle — vor allem Martin Gardner in *The Sixth Book of Mathematical Games from Scientific American* (1984) — nennt sie, und alle späteren Quellen übernehmen die ganze Reihe gemeinsam. Das spricht nicht gegen die Kernfälle (Spencer, Pitman), mahnt aber zur Vorsicht bei Shaw und besonders bei Wells.
 
@@ -32,7 +32,7 @@ Die Idee, statt der Basis 10 lieber die Basis 12 zu verwenden, ist alt. Als orga
 
 Wegen der starken Resonanz folgten weitere Artikel: "Revolving Numbers" (Februar 1935) und "The Dark Ages of Arithmetic" (Juli 1935). *Teilweise belegt:* Die Existenz von Folgeartikeln 1935 ist gut gestützt, die exakten Titel stammen aus Suchauszügen.
 
-**Das Buch.** *New Numbers: How Acceptance of a Duodecimal (12) Base Would Simplify Mathematics* erschien 1935 bei Harcourt, Brace. Eine zweite, erweiterte Auflage folgte 1944 (Essential Books) mit Korrekturen und Nomenklaturänderungen. Eine britische Ausgabe bei Faber and Faber wurde größtenteils bei einem Luftangriff im Zweiten Weltkrieg zerstört. Das Buch gilt als das erste buchlange Werk zur Basis 12 in den USA und wohl als erst zweites in englischer Sprache überhaupt (Vorläufer war Thomas Leech, 1866). Andrews' eigener Symbolvorschlag war ein kursives X (vom römischen Zehner) und ein gerundetes E für die Elf.
+**Das Buch.** *New Numbers: How Acceptance of a Duodecimal (12) Base Would Simplify Mathematics* erschien 1935 bei Harcourt, Brace. Eine zweite, erweiterte Auflage folgte 1944 (Essential Books) mit Korrekturen und Nomenklaturänderungen. Eine britische Ausgabe bei Faber and Faber wurde grösstenteils bei einem Luftangriff im Zweiten Weltkrieg zerstört. Das Buch gilt als das erste buchlange Werk zur Basis 12 in den USA und wohl als erst zweites in englischer Sprache überhaupt (Vorläufer war Thomas Leech, 1866). Andrews' eigener Symbolvorschlag war ein kursives X (vom römischen Zehner) und ein gerundetes E für die Elf.
 
 *Hinweis zur Datierung:* Die Aufgabenstellung nennt "1934/35". Genau ist: Artikel 1934, Buch 1935.
 
@@ -42,25 +42,25 @@ Wegen der starken Resonanz folgten weitere Artikel: "Revolving Numbers" (Februar
 
 Aus der Resonanz auf Andrews' Artikel entstand zuerst eine "round robin"-Briefkette: A schreibt an B, B ergänzt und gibt an C weiter. Frühe Korrespondenten waren Andrews, George S. Terry, F. Howard Seely, F. Morton Smith und Charles Q. De France.
 
-**Ralph "Whiskers" Beard**, ein Manager einer Telefongesellschaft, stieß 1941 dazu. Er taufte die Gruppe scherzhaft "Duodecimal Society of America" und trieb 1944 die formale Gründung voran. George Terry stiftete das Gründungskapital von etwa 5000 Dollar. *Teilweise belegt:* der Betrag wird in den Quellen scherzhaft als "almost 3 great gross dollars" angegeben — "great gross" ist selbst ein dozenaler Insider-Witz.
+**Ralph "Whiskers" Beard**, ein Manager einer Telefongesellschaft, stiess 1941 dazu. Er taufte die Gruppe scherzhaft "Duodecimal Society of America" und trieb 1944 die formale Gründung voran. George Terry stiftete das Gründungskapital von etwa 5000 Dollar. *Teilweise belegt:* der Betrag wird in den Quellen scherzhaft als "almost 3 great gross dollars" angegeben — "great gross" ist selbst ein dozenaler Insider-Witz.
 
 Die formale Inkorporierung als steuerbefreite, gemeinnützige Bildungsorganisation erfolgte am 16. Juli 1944. Es gab fünf Charter-Gründer, die zugleich den ersten Vorstand bildeten: F. Emerson Andrews, George S. Terry, F. Howard Seely, Ralph H. Beard und F. Morton Smith. Das erste Treffen fand am 5. April 1944 in Andrews' Büro in New York City statt. Dort wurde Terry zum Board Chairman, Andrews zum Präsidenten, Beard zum Sekretär-Schatzmeister und Bulletin-Herausgeber sowie Seely zum Vizepräsidenten gewählt.
 
-**Namenswechsel.** Die Organisation hieß zunächst Duodecimal Society of America und wurde später (in den 1970er-Jahren) in **Dozenal Society of America (DSA)** umbenannt. Begründung: das Wort "duodecimal" enthält selbst die dezimal-geprägte Wurzel "decimal"; "dozenal" ist neutraler. *Unsicher:* Ein exaktes Umbenennungsjahr nennt die DSA-eigene Webseite nicht ausdrücklich.
+**Namenswechsel.** Die Organisation hiess zunächst Duodecimal Society of America und wurde später (in den 1970er-Jahren) in **Dozenal Society of America (DSA)** umbenannt. Begründung: das Wort "duodecimal" enthält selbst die dezimal-geprägte Wurzel "decimal"; "dozenal" ist neutraler. *Unsicher:* Ein exaktes Umbenennungsjahr nennt die DSA-eigene Webseite nicht ausdrücklich.
 
 ### Dozenal Society of Great Britain (1959)
 
-Die britische Schwestergesellschaft wurde 1959 gegründet, maßgeblich durch **Brian Bishop** (Acting Secretary und Editor). Die DSA unterstützte die britischen "Pioniere" mit Andrews' Artikel und ihren Aufnahmetests. Im Oktober 1959 hatte die DSGB etwa 15 Mitglieder. Ein prominentes Gründungs- und Frühmitglied war Professor **A. C. (Alexander Craig) Aitken**, ein berühmter Mathematiker und Rechenkünstler. *Teilweise belegt:* Wikipedia nennt Aitken klar als entschiedenen Befürworter, aber nicht explizit als Gründer; die Gründer-Rolle stammt aus DSGB-eigenen Darstellungen.
+Die britische Schwestergesellschaft wurde 1959 gegründet, massgeblich durch **Brian Bishop** (Acting Secretary und Editor). Die DSA unterstützte die britischen "Pioniere" mit Andrews' Artikel und ihren Aufnahmetests. Im Oktober 1959 hatte die DSGB etwa 15 Mitglieder. Ein prominentes Gründungs- und Frühmitglied war Professor **A. C. (Alexander Craig) Aitken**, ein berühmter Mathematiker und Rechenkünstler. *Teilweise belegt:* Wikipedia nennt Aitken klar als entschiedenen Befürworter, aber nicht explizit als Gründer; die Gründer-Rolle stammt aus DSGB-eigenen Darstellungen.
 
 Aitken veröffentlichte "Twelves and Tens" (*The Listener*, 25. Januar 1962) und *The Case Against Decimalisation* (1962). Ihm wird die Behauptung zugeschrieben, die Effizienz des Dezimalsystems liege gegenüber dem Duodezimalsystem "bei etwa 65 oder weniger" (auf einer Skala von 100). Dies ist eine subjektive Bewertung, kein Messergebnis.
 
-In den 1960ern übernahm **Shaun Ferguson** die Sekretär- und Redakteursrolle von Bishop. Der internationale Anstoß kam unter anderem über Frankreich: **Jean Essig**, ein französischer Regierungsbeamter, veröffentlichte 1955 *Douze, notre dix futur*. Essig lud 1960 zur "First International Duodecimal Conference" auf sein Anwesen in der Normandie (27./28. September 1960); teil nahmen DSA-Präsident Kingsland Camp und Brian Bishop.
+In den 1960ern übernahm **Shaun Ferguson** die Sekretär- und Redakteursrolle von Bishop. Der internationale Anstoss kam unter anderem über Frankreich: **Jean Essig**, ein französischer Regierungsbeamter, veröffentlichte 1955 *Douze, notre dix futur*. Essig lud 1960 zur "First International Duodecimal Conference" auf sein Anwesen in der Normandie (27./28. September 1960); teil nahmen DSA-Präsident Kingsland Camp und Brian Bishop.
 
 ### Das "Duodecimal Bulletin", Mitglieder und Förderer
 
 Das *Duodecimal Bulletin* (ISSN 0046-0826) ist das langlaufende offizielle Journal der **amerikanischen** Gesellschaft (DSA), nicht der britischen — das ist eine häufige Verwechslung. Beard gab 1945 die erste Ausgabe heraus; sie listete über ein Dutzend "Aspiranten". Das Bulletin wird nach fortlaufender "Whole Number" gezählt und erscheint bis heute. In der Frühzeit mussten Aufnahme-Aspiranten vier Tests in dozenaler Arithmetik bestehen.
 
-Die britische Frühpublikation hieß "The Duodecimal Newscast" (etwa 1959–1966). Daraus wurde unter Editor Shaun Ferguson 1969 der "Duodecimal Review", 1980 (Editor Don Hammond) der "Dozenal Review" und 1981 das "Dozenal Journal". *Teilweise belegt:* die genaue Titel- und Jahreschronologie stammt aus Suchauszügen.
+Die britische Frühpublikation hiess "The Duodecimal Newscast" (etwa 1959–1966). Daraus wurde unter Editor Shaun Ferguson 1969 der "Duodecimal Review", 1980 (Editor Don Hammond) der "Dozenal Review" und 1981 das "Dozenal Journal". *Teilweise belegt:* die genaue Titel- und Jahreschronologie stammt aus Suchauszügen.
 
 **Bekannte Ehrenmitglieder und Förderer der DSA** (Auswahl): Der Science-Fiction-Autor **Isaac Asimov** wurde "in Anerkennung der öffentlichen Befürwortung des Dozenalismus" geehrt. Weitere: Dr. Anton Glaser (Autor von "A History of Binary and Other Nondecimal Numeration", 1970), Charles W. Trigg, Bruce A. M. Moon, sowie die britischen Mitglieder Arthur Whillock, Shaun Ferguson und Donald Hammond. Hammond starb 1993, danach übernahm Whillock das Sekretariat der DSGB. Der aktuelle DSA-Präsident ist Donald P. Goodman III.
 
@@ -68,7 +68,7 @@ Die britische Frühpublikation hieß "The Duodecimal Newscast" (etwa 1959–1966
 
 "Little Twelvetoes" ist ein Lied aus der US-Lehrserie *Schoolhouse Rock!*, Segment *Multiplication Rock*. Es wurde von **Bob Dorough** geschrieben und gesungen und erstmals am 31. März 1973 ausgestrahlt.
 
-Inhalt: Ein freundlicher Außerirdischer mit zwölf Zehen veranschaulicht, dass jemand mit zwölf "digits" zwei zusätzliche Ziffern erfunden hätte. Das Lied führt die Ziffern "dek" (Zehn) und "el" (Elf) ein und schreibt Zwölf als "doh" (gesprochen "…nine, dek, el, doe"). Es verwendet die Dwiggins-Glyphen für Zehn und Elf.
+Inhalt: Ein freundlicher Ausserirdischer mit zwölf Zehen veranschaulicht, dass jemand mit zwölf "digits" zwei zusätzliche Ziffern erfunden hätte. Das Lied führt die Ziffern "dek" (Zehn) und "el" (Elf) ein und schreibt Zwölf als "doh" (gesprochen "…nine, dek, el, doe"). Es verwendet die Dwiggins-Glyphen für Zehn und Elf.
 
 *Rezeption:* Das Segment lief seltener als andere Multiplication-Rock-Folgen, weil der Zwölferstoff als zu schwierig für Grundschulkinder galt. Es fehlte zusammen mit "The Good Eleven" auf den ursprünglichen VHS-Ausgaben von 1987. Trotzdem hat es bei vielen einen bleibenden Eindruck hinterlassen und ist heute das wohl bekannteste popkulturelle Dozenal-Artefakt.
 
@@ -76,9 +76,9 @@ Inhalt: Ein freundlicher Außerirdischer mit zwölf Zehen veranschaulicht, dass 
 
 ### Die Grundidee
 
-In der Basis 12 wird mit zwölf Ziffern statt zehn gerechnet. Man braucht also zwei zusätzliche Zeichen für die Werte Zehn und Elf. Die Zwölf wird zur "10" der Basis: sie heißt ein "dozen" (Dutzend). Hundertvierundvierzig (12²) heißt "gross" (Gros), und 1728 (12³) heißt "great gross" (Großgros).
+In der Basis 12 wird mit zwölf Ziffern statt zehn gerechnet. Man braucht also zwei zusätzliche Zeichen für die Werte Zehn und Elf. Die Zwölf wird zur "10" der Basis: sie heisst ein "dozen" (Dutzend). Hundertvierundvierzig (12²) heisst "gross" (Gros), und 1728 (12³) heisst "great gross" (Grossgros).
 
-Der mathematische Vorteil ist unstrittig: Zwölf hat vier Teiler (2, 3, 4, 6), zehn nur zwei (2, 5). Das ergibt mehr "glatte" Brüche. In Basis 12 ist zum Beispiel 1/3 = 0,4 und 1/4 = 0,3 — beides ohne unendliche Periode. Das erleichtert das Dritteln von Maßen und ergibt einfachere Teilbarkeitsregeln.
+Der mathematische Vorteil ist unstrittig: Zwölf hat vier Teiler (2, 3, 4, 6), zehn nur zwei (2, 5). Das ergibt mehr "glatte" Brüche. In Basis 12 ist zum Beispiel 1/3 = 0,4 und 1/4 = 0,3 — beides ohne unendliche Periode. Das erleichtert das Dritteln von Massen und ergibt einfachere Teilbarkeitsregeln.
 
 ### Die Ziffern für Zehn und Elf (Glyphen-Varianten)
 
@@ -96,7 +96,7 @@ Es gibt keinen einzigen Standard. Die DSA selbst endorsiert offiziell keine best
 
 ### Aussprache und Stellen-Namen
 
-**Klassische DSA-Aussprache.** Die Ziffern heißen meist 0–9 plus "dek" (Zehn) und "el" (Elf). Die Stellennamen lehnen sich an englische Dutzend-Begriffe an: do (dozen), gro (gross), mo (great gross).
+**Klassische DSA-Aussprache.** Die Ziffern heissen meist 0–9 plus "dek" (Zehn) und "el" (Elf). Die Stellennamen lehnen sich an englische Dutzend-Begriffe an: do (dozen), gro (gross), mo (great gross).
 
 **Systematic Dozenal Nomenclature (SDN).** Dies ist der moderne, systematische Standard, entwickelt in der Online-Community und von der DSA veröffentlicht. Er baut Zahlwörter aus latein-/griechischstämmigen Ziffernwurzeln plus Exponent-Markern.
 
@@ -109,14 +109,14 @@ Exponent-Marker:
 
 Beispiele: die Dozenalzahl 56 spricht sich "five unqua six"; 0;7834 spricht sich "zero dit seven eight three four". SDN existiert auch in lokalisierten Fassungen (etwa mit Hindi-Wurzeln).
 
-### TGM — ein kohärentes dozenales Maßsystem
+### TGM — ein kohärentes dozenales Masssystem
 
-TGM ist ein vollständiges dozenales Maßsystem, erfunden von **Tom Pendlebury** (DSGB). Der Name ist ein Akronym der drei Basiseinheiten **Tim, Grafut, Maz.** Anders als das metrische System beginnt TGM bei der Zeit und leitet alles kohärent über die mittlere Erdbeschleunigung ab.
+TGM ist ein vollständiges dozenales Masssystem, erfunden von **Tom Pendlebury** (DSGB). Der Name ist ein Akronym der drei Basiseinheiten **Tim, Grafut, Maz.** Anders als das metrische System beginnt TGM bei der Zeit und leitet alles kohärent über die mittlere Erdbeschleunigung ab.
 
-| Einheit | Größe | Definition (gerundet) |
+| Einheit | Grösse | Definition (gerundet) |
 |---|---|---|
 | Tim | Zeit | 12⁻⁴ Stunde ≈ 0,17361 s (Fundamentaleinheit) |
-| Grafut ("Gravity foot") | Länge | über die Erdgravitation definiert; ≈ 11⅝ Zoll, knapp unter einem Fuß |
+| Grafut ("Gravity foot") | Länge | über die Erdgravitation definiert; ≈ 11⅝ Zoll, knapp unter einem Fuss |
 | Maz | Masse | Masse von 1 Volm luftfreien Wassers bei Dichtemaximum |
 
 Abgeleitet sind unter anderem Surf (Fläche), Volm (Volumen), Vlos (Geschwindigkeit), Gee (Beschleunigung, ≈ Erdgravitation), Denz (Dichte) und Mag (Kraft). *Teilweise belegt:* weitere Einheiten (Energie "Werg", Leistung "Pov", Temperatur, Druck) sind namentlich belegt, ihre exakten Definitionen stehen nur im vollständigen TGM-Booklet, das maschinell nicht voll lesbar war.
@@ -135,14 +135,14 @@ Beide Gesellschaften bestehen fort, sind aber klein und ehrenamtlich. Belastbare
 
 ### Online-Community
 
-Das zentrale Diskussionsforum der Bewegung ist **Dozensonline**, gehostet auf Tapatalk. Themen sind Zahlensysteme, Maße und Gewichte sowie Mathematik. Es ist weiterhin aktiv. Dort entstanden unter anderem die SDN-Nomenklatur und die laufende "Symbols Debate". Daneben gibt es ein Dozenal-Wiki und informelle Communities (Reddit, Hexnet u. a.). Belastbare Mitgliederzahlen ließen sich nicht finden — die Community ist klein und nischig.
+Das zentrale Diskussionsforum der Bewegung ist **Dozensonline**, gehostet auf Tapatalk. Themen sind Zahlensysteme, Masse und Gewichte sowie Mathematik. Es ist weiterhin aktiv. Dort entstanden unter anderem die SDN-Nomenklatur und die laufende "Symbols Debate". Daneben gibt es ein Dozenal-Wiki und informelle Communities (Reddit, Hexnet u. a.). Belastbare Mitgliederzahlen liessen sich nicht finden — die Community ist klein und nischig.
 
 ### Apps und Werkzeuge
 
 Die Recherche fand eine überraschend lebendige Werkzeug-Landschaft:
 
 - **DozenCalc** (Android, F-Droid), von DSA-Präsident Donald Goodman III.
-- Goodmans umfangreiche **dozenal-Programmsuite** (RPN-Rechner, Maß-Konverter, GNU-date-Ersatz, Pretty-Printer), als Open Source.
+- Goodmans umfangreiche **dozenal-Programmsuite** (RPN-Rechner, Mass-Konverter, GNU-date-Ersatz, Pretty-Printer), als Open Source.
 - **Dozenal RPN Calculator** (Android, Entwickler "Unum Designum"): klassischer 4-Ebenen-Stack-RPN-Rechner in Basis 12 und Basis 10 mit wissenschaftlichen Funktionen; nutzt die Pitman-Symbole. Erstveröffentlichung 1. Juli 2020, zuletzt aktualisiert Dezember 2025.
 - **Online-Konverter** (Allen Peacock) und ein **Dozenal & Decimal Scientific Calculator** (Paul Rapoport), beide über die DSA verlinkt.
 - Die **Dozenal Suite** (dozenal.ca, iOS/macOS) mit Alltags-Apps: DozClock (dozenale Uhr/Kalender), DozWeather, DozAlarm, DozTimer, DozStopwatch.
@@ -154,7 +154,7 @@ Diese Recherche steht im direkten Kontext eines eigenen Projekts (ein Flutter-Po
 
 ### Wie die Bewegung wahrgenommen wird
 
-Vorherrschend ist eine respektvolle Neugier gegenüber einer Nischen-Liebhaberei. In der Mathematik und in der Öffentlichkeit gilt Basis 12 überwiegend als interessantes Gedankenexperiment und liebenswerte Kuriosität, nicht als ernsthafter Reformkandidat. In Popularmedien (Gizmodo, ScienceABC, Built In) erscheint die Idee regelmäßig als faszinierendes "Was-wäre-wenn".
+Vorherrschend ist eine respektvolle Neugier gegenüber einer Nischen-Liebhaberei. In der Mathematik und in der Öffentlichkeit gilt Basis 12 überwiegend als interessantes Gedankenexperiment und liebenswerte Kuriosität, nicht als ernsthafter Reformkandidat. In Popularmedien (Gizmodo, ScienceABC, Built In) erscheint die Idee regelmässig als faszinierendes "Was-wäre-wenn".
 
 ### Die Pro-Argumente (weitgehend unstrittig)
 
@@ -173,7 +173,7 @@ Die Kernerklärung ist nicht mathematisch, sondern ökonomisch und historisch: *
 
 ### Gedankenexperiment oder Handlungsaufruf?
 
-Die Bewegung ist rhetorisch ein Handlungsaufruf (die Satzung spricht von "promote adoption"), faktisch und im Selbstverständnis ihrer Schlüsselfiguren aber überwiegend ein didaktisches Gedankenexperiment. Sie zeigt, dass die Wahl der Zahlenbasis nicht zwingend ist, fördert Zahlensinn und Aha-Effekte — ohne ernsthaft eine globale Umstellung zu erwarten. Es gibt einen schmalen aktivistischen Flügel (TGM-Maßsystem, eigene Apps, Notations-Standardisierung), aber der Grundton bleibt "intellektuelle Erkundung" mehr als "Kampagne".
+Die Bewegung ist rhetorisch ein Handlungsaufruf (die Satzung spricht von "promote adoption"), faktisch und im Selbstverständnis ihrer Schlüsselfiguren aber überwiegend ein didaktisches Gedankenexperiment. Sie zeigt, dass die Wahl der Zahlenbasis nicht zwingend ist, fördert Zahlensinn und Aha-Effekte — ohne ernsthaft eine globale Umstellung zu erwarten. Es gibt einen schmalen aktivistischen Flügel (TGM-Masssystem, eigene Apps, Notations-Standardisierung), aber der Grundton bleibt "intellektuelle Erkundung" mehr als "Kampagne".
 
 ### Zusammenfassung der Unsicherheits-Kennzeichnung
 
@@ -217,7 +217,7 @@ Bewertung nach zwei Achsen. **Zuverlässigkeit:** R1 = wissenschaftlich/primär,
 - [R2·A3] Definition:Duodecimal System/Historical Note — ProofWiki — https://proofwiki.org/wiki/Definition:Duodecimal_System/Historical_Note — Wiederholt dieselbe Befürworter-Kaskade; 403, nur Snippets.
 - [R3·A3] H. G. Wells — Wikipedia — https://en.wikipedia.org/wiki/H._G._Wells — Negativbefund: keine Basis-12-Befürwortung erwähnt.
 
-### System, Nomenklatur, Maße (SDN, TGM, Glyphen)
+### System, Nomenklatur, Masse (SDN, TGM, Glyphen)
 
 - [R1·A1] Symbols, Symbols … Symbols — DSA — https://dozenal.org/drupal/content/symbols-symbols-%C2%A2-symbols.html — Symbol-Chronologie (Sextil/Hash, Dwiggins, Pitman).
 - [R2·A1] SDN-Kurzfassung — gorpub — https://gorpub.freeshell.org/dozenal/sdnbrief.html — Wurzeln nil…lev, -qua-/-cia-, uncia, "dit", Aussprache-Beispiele.

@@ -2,7 +2,7 @@ Die vier Blöcke decken dasselbe Material aus überlappenden Winkeln ab. Ich syn
 
 ## Die Form und ihre Geometrie (Zwölf-Bezug)
 
-Die **Kusszahl** (englisch *kissing number*, auch *Newton-Zahl* oder Kontaktzahl) beantwortet eine einfache Frage: Wie viele gleich große Kugeln können eine zentrale Kugel gleichzeitig berühren, ohne sich gegenseitig zu durchdringen? Im dreidimensionalen Raum ist die Antwort **genau zwölf**. Man schreibt sie als k(3) = 12.
+Die **Kusszahl** (englisch *kissing number*, auch *Newton-Zahl* oder Kontaktzahl) beantwortet eine einfache Frage: Wie viele gleich grosse Kugeln können eine zentrale Kugel gleichzeitig berühren, ohne sich gegenseitig zu durchdringen? Im dreidimensionalen Raum ist die Antwort **genau zwölf**. Man schreibt sie als k(3) = 12.
 
 Zur Einordnung die bewiesenen Kusszahlen in anderen Dimensionen:
 
@@ -19,9 +19,9 @@ In allen übrigen Dimensionen ist die exakte Kusszahl bis heute unbekannt; man k
 
 **Woher kommen die zwölf?** In der dichtesten Packung liegt jede Kugel in einer hexagonalen Ebene. Dort hat sie sechs Nachbarn in der eigenen Schicht, drei in den Mulden der Schicht darüber und drei in den Mulden darunter: 6 + 3 + 3 = 12. Das ist der unmittelbare geometrische Mechanismus.
 
-**Die entscheidende Feinheit — die Anordnung ist nicht starr.** Setzt man die zwölf Außenkugeln symmetrisch auf die Ecken eines regulären **Ikosaeders**, beträgt ihr Winkelabstand vom Zentrum aus etwa 63,43° statt der minimal nötigen 60°. Zwischen je zwei benachbarten Außenkugeln bleibt dann noch etwas mehr als zehn Prozent eines Radius Spielraum. Dieser Platz reicht sogar aus, dass zwei der zwölf Außenkugeln durch eine kontinuierliche Bewegung ihre Plätze tauschen können, ohne den Kontakt zur Mittelkugel zu verlieren. Genau dieser sichtbare Leerraum ist der Grund, warum die Frage „passt vielleicht doch eine dreizehnte hinein?" über Jahrhunderte offenblieb: Der Platz reicht fast, aber eben doch nicht.
+**Die entscheidende Feinheit — die Anordnung ist nicht starr.** Setzt man die zwölf Aussenkugeln symmetrisch auf die Ecken eines regulären **Ikosaeders**, beträgt ihr Winkelabstand vom Zentrum aus etwa 63,43° statt der minimal nötigen 60°. Zwischen je zwei benachbarten Aussenkugeln bleibt dann noch etwas mehr als zehn Prozent eines Radius Spielraum. Dieser Platz reicht sogar aus, dass zwei der zwölf Aussenkugeln durch eine kontinuierliche Bewegung ihre Plätze tauschen können, ohne den Kontakt zur Mittelkugel zu verlieren. Genau dieser sichtbare Leerraum ist der Grund, warum die Frage „passt vielleicht doch eine dreizehnte hinein?" über Jahrhunderte offenblieb: Der Platz reicht fast, aber eben doch nicht.
 
-(Hinweis zur Geometrie der Berührpunkte: In der dichten fcc-Packung bilden die zwölf Nachbarzentren ein **Kuboktaeder**, in der hcp-Packung ein **Antikuboktaeder** — die ikosaedrische Anordnung mit dem größten Spiel ist eine dritte, noch lockerere Variante.)
+(Hinweis zur Geometrie der Berührpunkte: In der dichten fcc-Packung bilden die zwölf Nachbarzentren ein **Kuboktaeder**, in der hcp-Packung ein **Antikuboktaeder** — die ikosaedrische Anordnung mit dem grössten Spiel ist eine dritte, noch lockerere Variante.)
 
 ### Die Voronoi-Zelle: das Rhombendodekaeder
 
@@ -59,7 +59,7 @@ In beiden Fällen gilt: Koordinationszahl = 12 und Packungsdichte = **π / √18
 
 Hier sind zwei verschiedene physikalische Treiber zu unterscheiden. Der Bezug zur Zwölf ist bei beiden vorhanden, aber unterschiedlich exakt.
 
-**(a) Energieminimierung bei Kristallen — die solide Erklärung.** Die metallische Bindung (delokalisierte Elektronen, positive Atomrümpfe) ist weitgehend ungerichtet und bevorzugt möglichst viele nahe Nachbarn. Jeder Kontakt senkt die potentielle Energie. Dichteste Packung maximiert die Zahl anziehender Nachbarkontakte (zwölf) und minimiert so die Gesamtenergie. Thermodynamisch ist die tatsächliche Kristallstruktur das Minimum der freien Energie unter den gegebenen Bedingungen (Atomgröße, Bindungstyp, Elektronenstruktur, Temperatur, Druck). Welche der dichten Varianten konkret gewählt wird (fcc, hcp oder die weniger dichte bcc-Struktur), entscheidet die Elektronenstruktur. Dies ist die gut gesicherte Erklärung für die Zwölf.
+**(a) Energieminimierung bei Kristallen — die solide Erklärung.** Die metallische Bindung (delokalisierte Elektronen, positive Atomrümpfe) ist weitgehend ungerichtet und bevorzugt möglichst viele nahe Nachbarn. Jeder Kontakt senkt die potentielle Energie. Dichteste Packung maximiert die Zahl anziehender Nachbarkontakte (zwölf) und minimiert so die Gesamtenergie. Thermodynamisch ist die tatsächliche Kristallstruktur das Minimum der freien Energie unter den gegebenen Bedingungen (Atomgrösse, Bindungstyp, Elektronenstruktur, Temperatur, Druck). Welche der dichten Varianten konkret gewählt wird (fcc, hcp oder die weniger dichte bcc-Struktur), entscheidet die Elektronenstruktur. Dies ist die gut gesicherte Erklärung für die Zwölf.
 
 **(b) Oberflächenspannung bei Schäumen — verwandt, aber begrifflich getrennt.** Bei Seifenschäumen treibt die Oberflächenspannung die Minimierung der gesamten Grenzfläche. Daraus folgen die **Plateauschen Gesetze** (nach Joseph Plateau): Filme treffen sich stets zu dritt entlang einer Kante unter exakt 120°, und Kanten treffen sich zu viert in einem Knoten unter dem Tetraederwinkel von etwa 109,47°. Dieses Schaum-Problem ist mit dem Kugelpackungsproblem verwandt, aber nicht dasselbe — und gerade hier ist die Zwölf irreführend (siehe Abschnitt Vorbehalte).
 
@@ -67,25 +67,25 @@ Hier sind zwei verschiedene physikalische Treiber zu unterscheiden. Der Bezug zu
 
 ### Der Newton-Gregory-Streit (1694) und seine Klärung (1953)
 
-Im Mai 1694 (überliefert wird der 4. Mai) diskutierten **Isaac Newton** und der Astronom **David Gregory** in Cambridge die Frage, ob eine Kugel dreizehn andere gleich große berühren könne. Der Anlass war astronomisch: die Verteilung von Fixsternen um eine zentrale Sonne. Newton vertrat (korrekt) die Zahl 12, Gregory hielt 13 für möglich.
+Im Mai 1694 (überliefert wird der 4. Mai) diskutierten **Isaac Newton** und der Astronom **David Gregory** in Cambridge die Frage, ob eine Kugel dreizehn andere gleich grosse berühren könne. Der Anlass war astronomisch: die Verteilung von Fixsternen um eine zentrale Sonne. Newton vertrat (korrekt) die Zahl 12, Gregory hielt 13 für möglich.
 
-Gregorys Argument war eine Flächenabschätzung: Projiziert man die umgebenden Kugeln als „Schatten" auf eine Hüllkugel, scheint rein flächenmäßig Platz für fast 15 Kugeln zu sein. Der Trugschluss: Diese Schatten lassen sich nicht lückenlos kacheln. Zusammen mit dem oben beschriebenen Wackelspielraum schien 13 plausibel.
+Gregorys Argument war eine Flächenabschätzung: Projiziert man die umgebenden Kugeln als „Schatten" auf eine Hüllkugel, scheint rein flächenmässig Platz für fast 15 Kugeln zu sein. Der Trugschluss: Diese Schatten lassen sich nicht lückenlos kacheln. Zusammen mit dem oben beschriebenen Wackelspielraum schien 13 plausibel.
 
 Newton hatte recht, doch ein strenger Beweis fehlte über zweieinhalb Jahrhunderte:
 - **Reinhold Hoppe (1874)** lieferte einen Beweisversuch zugunsten Newtons, der jedoch lückenhaft war.
 - Der erste vollständige, korrekte Beweis, dass k(3) = 12 gilt, stammt erst von **Kurt Schütte und Bartel Leendert van der Waerden (1953)** — rund 260 Jahre nach dem Disput. Ihr Kern: 13 Punkte auf einer Kugel mit paarweisem Mindest-Winkelabstand von 60° können nicht koexistieren, während die ikosaedrische 12-Punkt-Anordnung mit ~63,43° Abstand bequem hineinpasst.
 - Spätere, einfachere Beweise folgten, u. a. von **John Leech (1956)** und über die moderne Delsarte-Methode (Oleg Musin).
 
-*Historische Vorsicht:* Der Mathematiker Bill Casselman wies darauf hin, dass die übliche Erzählung (Newton = 12, Gregory = 13) historisch nicht in allen Details quellenmäßig belegt ist.
+*Historische Vorsicht:* Der Mathematiker Bill Casselman wies darauf hin, dass die übliche Erzählung (Newton = 12, Gregory = 13) historisch nicht in allen Details quellenmässig belegt ist.
 
 ### Die Keplersche Vermutung und ihr Beweis (Thomas Hales)
 
-**Ursprung — die Kanonenkugeln.** Im späten 16. Jahrhundert (Studie um 1591) beauftragte Sir **Walter Raleigh** seinen Berater **Thomas Harriot**, die Zahl der zu einer Pyramide gestapelten Kanonenkugeln zu berechnen — ein praktisches Problem der Schiffsbewaffnung. Harriot löste das Abzählproblem mühelos und stieß auf die tiefere Frage: Welche Anordnung verbraucht am wenigsten Raum? Harriot vertrat zudem eine frühe Atomtheorie und korrespondierte ab 1606 mit **Johannes Kepler** (gemeinsames Interesse: Optik). Aus dieser Korrespondenz erwuchs Keplers Beschäftigung mit Kugelanordnungen.
+**Ursprung — die Kanonenkugeln.** Im späten 16. Jahrhundert (Studie um 1591) beauftragte Sir **Walter Raleigh** seinen Berater **Thomas Harriot**, die Zahl der zu einer Pyramide gestapelten Kanonenkugeln zu berechnen — ein praktisches Problem der Schiffsbewaffnung. Harriot löste das Abzählproblem mühelos und stiess auf die tiefere Frage: Welche Anordnung verbraucht am wenigsten Raum? Harriot vertrat zudem eine frühe Atomtheorie und korrespondierte ab 1606 mit **Johannes Kepler** (gemeinsames Interesse: Optik). Aus dieser Korrespondenz erwuchs Keplers Beschäftigung mit Kugelanordnungen.
 
-**Die Vermutung.** Kepler formulierte sie 1611 in seiner Schrift *Strena seu de nive sexangula* („Vom sechseckigen Schnee"). Aussage: Keine Anordnung gleich großer Kugeln erreicht eine höhere mittlere Dichte als fcc bzw. hcp, also π/√18 ≈ 74,05 %. Kepler beschrieb die Zwölfer-Nachbarschaft bereits direkt. Die Anschauung lieferten ihm eng gepackte Granatapfelkerne; im Alltag bilden gestapeltes Obst und Kanonenkugel-Pyramiden spontan dieselbe Anordnung.
+**Die Vermutung.** Kepler formulierte sie 1611 in seiner Schrift *Strena seu de nive sexangula* („Vom sechseckigen Schnee"). Aussage: Keine Anordnung gleich grosser Kugeln erreicht eine höhere mittlere Dichte als fcc bzw. hcp, also π/√18 ≈ 74,05 %. Kepler beschrieb die Zwölfer-Nachbarschaft bereits direkt. Die Anschauung lieferten ihm eng gepackte Granatapfelkerne; im Alltag bilden gestapeltes Obst und Kanonenkugel-Pyramiden spontan dieselbe Anordnung.
 
 **Der Weg zum Beweis:**
-- **1831 – Carl Friedrich Gauß:** Beweis für den Spezialfall der regulären Gitterpackungen (nicht für unregelmäßige Anordnungen).
+- **1831 – Carl Friedrich Gauss:** Beweis für den Spezialfall der regulären Gitterpackungen (nicht für unregelmässige Anordnungen).
 - **1900 – David Hilbert:** Aufnahme in sein 18. Problem.
 - **1953 – László Fejes Tóth:** zeigte, dass das Problem prinzipiell durch endliche (sehr umfangreiche) Fallprüfung lösbar ist — die konzeptionelle Grundlage für einen Computerbeweis.
 - **1998 – Thomas C. Hales** (mit seinem Doktoranden **Samuel P. Ferguson**): Ankündigung des Beweises, ein Beweis durch Fallunterscheidung (proof by exhaustion) mit umfangreichen Computer-Rechnungen.
@@ -108,15 +108,15 @@ Die Geometrie hat reale Folgen: fcc-Metalle (Kupfer, Gold) sind in der Regel duk
 
 Begrifflich getrennt vom Kugelpackungsproblem, aber eng verwandt, ist das Problem der minimalen Trennfläche bei gegebenem Volumen:
 
-- **Bienenwaben-Satz (2D):** Die Vermutung, dass das regelmäßige Sechseckraster unter allen flächengleichen Parkettierungen der Ebene den geringsten Gesamtumfang hat, wurde **1999 von Thomas Hales** bewiesen (publiziert 2001). Schon Varro (36 v. Chr.) und Pappos von Alexandria hatten die Sechseck-Effizienz thematisiert.
+- **Bienenwaben-Satz (2D):** Die Vermutung, dass das regelmässige Sechseckraster unter allen flächengleichen Parkettierungen der Ebene den geringsten Gesamtumfang hat, wurde **1999 von Thomas Hales** bewiesen (publiziert 2001). Schon Varro (36 v. Chr.) und Pappos von Alexandria hatten die Sechseck-Effizienz thematisiert.
 - **Kelvin-Problem (3D, 1887):** Lord **Kelvin** (William Thomson) fragte nach der raumfüllenden Zerlegung in Zellen gleichen Volumens mit minimaler Gesamtfläche und schlug den abgestumpften Oktaeder (Tetrakaidekaeder, 14 Flächen) mit leicht gekrümmten Kanten vor.
-- **Weaire-Phelan-Struktur (1993):** **Denis Weaire und Robert Phelan** (Trinity College Dublin) fanden per Simulation eine um etwa 0,3 % flächenärmere Lösung aus zwei gleich-volumigen Zelltypen — einem unregelmäßigen Pentagondodekaeder (12 Fünfecke, „Pyritoeder") und einem 14-Flächner (12 Fünfecke + 2 Sechsecke), im Verhältnis 1 : 3.
+- **Weaire-Phelan-Struktur (1993):** **Denis Weaire und Robert Phelan** (Trinity College Dublin) fanden per Simulation eine um etwa 0,3 % flächenärmere Lösung aus zwei gleich-volumigen Zelltypen — einem unregelmässigen Pentagondodekaeder (12 Fünfecke, „Pyritoeder") und einem 14-Flächner (12 Fünfecke + 2 Sechsecke), im Verhältnis 1 : 3.
 - **Beijing „Water Cube" (2008):** Der Architekt **Tristram Carfrae** (Arup) nutzte die Weaire-Phelan-Struktur für die Fassade des Nationalen Schwimmzentrums Peking der Olympischen Spiele 2008 (rund 4000 ETFE-Kissen).
 
 ## Bedeutung & kulturelle Echos
 
 Die Zahl Zwölf erscheint in diesem Themenkreis dreifach und kausal verkettet — es ist stets dieselbe Zwölf aus drei Blickwinkeln:
-1. **Kusszahl 12** — maximale Zahl gleich großer Kugeln, die eine berühren können.
+1. **Kusszahl 12** — maximale Zahl gleich grosser Kugeln, die eine berühren können.
 2. **Koordinationszahl 12** in fcc und hcp — jedes Atom hat zwölf nächste Nachbarn.
 3. **12 Flächen** des Rhombendodekaeders, der Voronoi-Zelle des fcc-Gitters — eine Fläche je Kontaktnachbar.
 
@@ -126,7 +126,7 @@ Natürliche und gebaute Echos dieser Geometrie:
 - **Obststapel** im Marktstand (Orangen, Äpfel) und **Kanonenkugel-Pyramiden** realisieren makroskopisch die fcc-Packung.
 - Der **Granat** als Mineral kristallisiert oft direkt in Rhombendodekaeder-Form — der knappe Querverweis auf dieselbe Zwölf-Flächen-Geometrie.
 
-Zur Einordnung in die größere Mathematikgeschichte: Außer in den Dimensionen 1, 2, 3, 8 und 24 ist die dichteste Kugelpackung bis heute unbekannt. **Maryna Viazovska** löste 2016 die Dimensionen 8 (E8-Gitter) und — mit Mitautoren — 24 (Leech-Gitter) und erhielt dafür 2022 die Fields-Medaille.
+Zur Einordnung in die grössere Mathematikgeschichte: Ausser in den Dimensionen 1, 2, 3, 8 und 24 ist die dichteste Kugelpackung bis heute unbekannt. **Maryna Viazovska** löste 2016 die Dimensionen 8 (E8-Gitter) und — mit Mitautoren — 24 (Leech-Gitter) und erhielt dafür 2022 die Fields-Medaille.
 
 ## Vorbehalte & verbreitete Irrtümer (was man NICHT überdeuten darf)
 
@@ -136,7 +136,7 @@ Dies ist der kritische Teil. Mehrere populäre „Zwölf-überall"-Erzählungen 
 
 **2. Ungeordnete (zufällige) Kugelpackungen haben ~6 Kontakte, NICHT 12.** Schüttet man Kugeln zufällig zusammen („random close packing"), erreicht man eine Packungsdichte von nur etwa 0,64 (nicht 0,74) und eine mittlere Kontaktzahl von z ≈ 6, nicht 12. Diese Sechs folgt aus dem mechanischen Stabilitätskriterium (Isostatik) z = 2·d, in 3D also 6. Die Zwölf gilt nur für die geordnete, kristalline dichteste Packung.
 
-**3. Die Kusszahl 12 gilt NUR für gleich große Kugeln.** Bei unterschiedlichen Radien können sehr viele kleine Kugeln eine große berühren — die Zahl ist dann nicht 12. Die gesamte Kepler- und Kusszahl-Theorie setzt identische Kugeln (Monodispersität) voraus.
+**3. Die Kusszahl 12 gilt NUR für gleich grosse Kugeln.** Bei unterschiedlichen Radien können sehr viele kleine Kugeln eine grosse berühren — die Zahl ist dann nicht 12. Die gesamte Kepler- und Kusszahl-Theorie setzt identische Kugeln (Monodispersität) voraus.
 
 **4. Kelvins Lösung ist nicht optimal — und Weaire-Phelan ist nicht bewiesen optimal.** Kelvins Tetrakaidekaeder galt über ein Jahrhundert als beste Lösung, ist es aber nicht (Weaire-Phelan ist um 0,3 % besser). Aber auch die Weaire-Phelan-Struktur ist nicht bewiesen optimal — numerische Experimente legen es nahe, ein Beweis fehlt. Das Kelvin-Problem ist offen.
 
@@ -161,7 +161,7 @@ Bewertung nach Zuverlässigkeit (R1 primär/wissenschaftlich, R2 etablierte Refe
 - [R3·A3] The Difficulties of Kissing in Three Dimensions (Casselman, Notices of the AMS, 2004) — historische Vorsicht zur Newton/Gregory-Erzählung; nur sekundär referenziert.
 
 ### Keplersche Vermutung, Hales, Flyspeck
-- [R2·A1] Kepler conjecture — Wikipedia — https://en.wikipedia.org/wiki/Kepler_conjecture — π/√18 ≈ 0,74048, Kepler 1611, Harriot/Raleigh, Gauß 1831, Hilbert 18, Hales 1998, Fejes Tóth 1953, „99 %", Flyspeck 2014, Publikation 2017.
+- [R2·A1] Kepler conjecture — Wikipedia — https://en.wikipedia.org/wiki/Kepler_conjecture — π/√18 ≈ 0,74048, Kepler 1611, Harriot/Raleigh, Gauss 1831, Hilbert 18, Hales 1998, Fejes Tóth 1953, „99 %", Flyspeck 2014, Publikation 2017.
 - [R2·A1] Kepler Conjecture — Wolfram MathWorld — https://mathworld.wolfram.com/KeplerConjecture.html — Bestätigung Dichte/Daten.
 - [R3·A1] Mathematical mysteries: Kepler's conjecture — plus.maths.org — https://plus.maths.org/content/mathematical-mysteries-keplers-conjecture — Harriot-Geschichte, Stapelproblem.
 - [R3·A1] The Flyspeck project is complete — The Aperiodical — https://aperiodical.com/2014/09/the-flyspeck-project-is-complete-we-know-how-to-stack-balls/ — Abschluss 10.8.2014, HOL Light/Isabelle, 21 Mitarbeiter.

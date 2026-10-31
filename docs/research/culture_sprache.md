@@ -1,14 +1,14 @@
 # Die Zwölf in der Sprache
 
-Die Zahl Zwölf hat in vielen Sprachen besondere Spuren hinterlassen. Schon die Wörter „elf" und „zwölf" verraten, dass beim Zählen früher die Finger eine Rolle spielten. Dieses Kapitel sammelt, was die Sprachwissenschaft dazu sicher weiß — und trennt es ehrlich von dem, was nur plausibel klingt.
+Die Zahl Zwölf hat in vielen Sprachen besondere Spuren hinterlassen. Schon die Wörter „elf" und „zwölf" verraten, dass beim Zählen früher die Finger eine Rolle spielten. Dieses Kapitel sammelt, was die Sprachwissenschaft dazu sicher weiss — und trennt es ehrlich von dem, was nur plausibel klingt.
 
 ## Grundlagen & Geschichte
 
-### „Elf" und „zwölf": die zwei Ausreißer
+### „Elf" und „zwölf": die zwei Ausreisser
 
 Im Deutschen folgen fast alle Zahlwörter zwischen 13 und 19 einem klaren Muster: „dreizehn", „vierzehn", „fünfzehn". Sie sind durchsichtige Verbindungen aus einem Einer und dem Wort „zehn". Nur „elf" und „zwölf" tanzen aus der Reihe. Sie sind keine „einzehn" oder „zweizehn".
 
-Der Grund liegt in ihrer hohen Herkunft. „Elf" geht auf das urgermanische *\*ainalif-* zurück (auch *\*ainlif-*), „zwölf" auf *\*twalif-*. Das erste Glied ist klar: *\*ain* heißt „eins", *\*twa* heißt „zwei". Das zweite Glied *-lif-* bedeutet so viel wie „übrig" oder „übrig geblieben". Wörtlich heißt „elf" also „eins übrig" und „zwölf" „zwei übrig" — gemeint ist: eins beziehungsweise zwei übrig nach den zehn Fingern.
+Der Grund liegt in ihrer hohen Herkunft. „Elf" geht auf das urgermanische *\*ainalif-* zurück (auch *\*ainlif-*), „zwölf" auf *\*twalif-*. Das erste Glied ist klar: *\*ain* heisst „eins", *\*twa* heisst „zwei". Das zweite Glied *-lif-* bedeutet so viel wie „übrig" oder „übrig geblieben". Wörtlich heisst „elf" also „eins übrig" und „zwölf" „zwei übrig" — gemeint ist: eins beziehungsweise zwei übrig nach den zehn Fingern.
 
 Man kann sich das bildlich vorstellen: Wer eine Herde in Zehnergruppen abzählt, behält am Ende einen Rest. „Eins ist übrig", „zwei sind übrig".
 
@@ -25,9 +25,9 @@ Beide Wege führen zur selben Bedeutung: „übrig". Über das *Ergebnis* — �
 
 Die Sonderformen finden sich in allen germanischen Sprachen wieder. Für „elf": altsächsisch *elleban*, altfriesisch *andlova*, niederländisch *elf*, althochdeutsch *einlif*, gotisch *ainlif*, altnordisch *ellivu*. Für „zwölf": altsächsisch *twelif*, altnordisch *tolf*, niederländisch *twaalf*, althochdeutsch *zwelif*, gotisch *twalif*.
 
-### Der einzige Verwandte außerhalb des Germanischen: Litauisch
+### Der einzige Verwandte ausserhalb des Germanischen: Litauisch
 
-Dieselbe Bauweise — Einer plus „übrig" — gibt es in keiner anderen indogermanischen Sprachgruppe außer einer: dem Litauischen. Dort bildet das Element *-lika* („übrig", verwandt mit *liekas* „extra, übrig" und *likti* „bleiben") sogar die ganze Reihe von 11 bis 19:
+Dieselbe Bauweise — Einer plus „übrig" — gibt es in keiner anderen indogermanischen Sprachgruppe ausser einer: dem Litauischen. Dort bildet das Element *-lika* („übrig", verwandt mit *liekas* „extra, übrig" und *likti* „bleiben") sogar die ganze Reihe von 11 bis 19:
 
 - *vienuolika* (11) — „eins übrig"
 - *dvylika* (12) — „zwei übrig"
@@ -35,9 +35,9 @@ Dieselbe Bauweise — Einer plus „übrig" — gibt es in keiner anderen indoge
 - *keturiolika* (14) — „vier übrig"
 - und so weiter bis 19.
 
-Das Litauische ist hier also konsequenter als das Germanische. Im Germanischen brach das „übrig"-Muster schon nach der Zwölf ab und wich dem regelmäßigen „-zehn".
+Das Litauische ist hier also konsequenter als das Germanische. Im Germanischen brach das „übrig"-Muster schon nach der Zwölf ab und wich dem regelmässigen „-zehn".
 
-### Das regelmäßige Muster ab „dreizehn"
+### Das regelmässige Muster ab „dreizehn"
 
 Ab 13 wechselt das Germanische auf ein durchsichtiges, additives Schema: Einer plus „zehn".
 
@@ -48,9 +48,9 @@ Das Suffix „-zehn" (englisch „-teen") stammt direkt vom Wort „zehn". Damit
 
 ### Warum brach das Muster gerade nach 12 ab?
 
-Eine verbreitete Vermutung lautet: Elf und zwölf waren im Alltag die häufigsten Zahlen oberhalb der Zehn. Deshalb hielten sich ihre alten Formen, während 13 bis 19 später nach dem regelmäßigen Muster neu gebildet wurden.
+Eine verbreitete Vermutung lautet: Elf und zwölf waren im Alltag die häufigsten Zahlen oberhalb der Zehn. Deshalb hielten sich ihre alten Formen, während 13 bis 19 später nach dem regelmässigen Muster neu gebildet wurden.
 
-Diese „Häufigkeits-These" ist plausibel, aber **nicht gesichert**. Der Linguist Danny Bate weist ausdrücklich darauf hin, dass auch reiner Zufall im Spiel sein könnte, oder dass das Urgermanische die „übrig"-Bildung einst für mehr Zahlen besaß und nur 11 und 12 übrig blieben. Hier endet das gesicherte Wissen, und die Forschung lässt die Frage offen.
+Diese „Häufigkeits-These" ist plausibel, aber **nicht gesichert**. Der Linguist Danny Bate weist ausdrücklich darauf hin, dass auch reiner Zufall im Spiel sein könnte, oder dass das Urgermanische die „übrig"-Bildung einst für mehr Zahlen besass und nur 11 und 12 übrig blieben. Hier endet das gesicherte Wissen, und die Forschung lässt die Frage offen.
 
 ### „Dutzend" — der lateinische Weg zur Zwölf
 
@@ -65,24 +65,24 @@ Das auslautende „-d" der heutigen deutschen Form trat erst im 15. Jahrhundert 
 
 Die lateinische Wurzel *duodecim* lebt in vielen Sprachen weiter: spanisch *docena*, niederländisch *dozijn*, dänisch *dusin*, russisch *djužina*, englisch *dozen*, deutsch *Dutzend*.
 
-### „Gros" und „Großgros"
+### „Gros" und „Grossgros"
 
-Aus dem Handel stammen zwei größere Zwölfer-Einheiten:
+Aus dem Handel stammen zwei grössere Zwölfer-Einheiten:
 
 - Ein **Gros** = 12 Dutzend = 12 × 12 = **144** Stück.
-- Ein **Großgros** (auch „großes Gros") = 12 Gros = 12 × 12 × 12 = **1.728** Stück.
+- Ein **Grossgros** (auch „grosses Gros") = 12 Gros = 12 × 12 × 12 = **1.728** Stück.
 
-Das Wort kommt von französisch *grosse (douzaine)* „großes Dutzend", zu lateinisch *grossus* „dick, groß". Es stammt aus dem Großhandel (*en gros* „im Großen", im Gegensatz zu *en détail* „im Einzelnen"). Regionale Namen sind unter anderem spanisch *gruesa* und dänisch *tylt*. Im Duodezimalsystem ist das Großgros (1.728) genau das, was im Dezimalsystem die „Tausend" ist — die dritte Potenz der Basis.
+Das Wort kommt von französisch *grosse (douzaine)* „grosses Dutzend", zu lateinisch *grossus* „dick, gross". Es stammt aus dem Grosshandel (*en gros* „im Grossen", im Gegensatz zu *en détail* „im Einzelnen"). Regionale Namen sind unter anderem spanisch *gruesa* und dänisch *tylt*. Im Duodezimalsystem ist das Grossgros (1.728) genau das, was im Dezimalsystem die „Tausend" ist — die dritte Potenz der Basis.
 
 ## Kulturen weltweit
 
-### Zwölf in Maßen, Münzen und Zeit
+### Zwölf in Massen, Münzen und Zeit
 
-Die Zwölf steckt bis heute in vielen westlichen Maß- und Alltagssystemen — als praktisches Handelssystem, nicht als reines Zählsystem:
+Die Zwölf steckt bis heute in vielen westlichen Mass- und Alltagssystemen — als praktisches Handelssystem, nicht als reines Zählsystem:
 
-- 12 Zoll (inches) = 1 Fuß; 12 Troy-Unzen = 1 Troy-Pfund.
+- 12 Zoll (inches) = 1 Fuss; 12 Troy-Unzen = 1 Troy-Pfund.
 - 12 Monate im Jahr; 24 (= 12 × 2) Stunden am Tag.
-- Im britischen Vor-Dezimal-Geld: 12 Pence = 1 Schilling. Die Pfund-Schilling-Penny-Struktur geht auf Karl den Großen (780er Jahre) zurück.
+- Im britischen Vor-Dezimal-Geld: 12 Pence = 1 Schilling. Die Pfund-Schilling-Penny-Struktur geht auf Karl den Grossen (780er Jahre) zurück.
 - Die Römer rechneten ganzzahlig dezimal, nutzten aber für **Brüche** ein Zwölfersystem: die *uncia* (ein Zwölftel). Aus ihr gingen sowohl das englische *ounce* (Unze) als auch *inch* (Zoll) hervor.
 
 ### Sprachen, die wirklich in Zwölfern zählen
@@ -94,7 +94,7 @@ Echte Zwölfer-Zählsysteme in lebenden Sprachen sind selten, aber sie existiere
 
 Diese Sprachen zählen *tatsächlich* duodezimal — anders als das Germanische, das trotz „elf" und „zwölf" im Grunde dezimal bleibt. Wikipedia hält ausdrücklich fest: „Sprachen mit Duodezimal-Zahlsystemen sind selten."
 
-Aus dem Altnordischen ist außerdem ein dezimal-duodezimales Mischzählen bekannt — das sogenannte „große Hundert" (= 120) statt 100.
+Aus dem Altnordischen ist ausserdem ein dezimal-duodezimales Mischzählen bekannt — das sogenannte „grosse Hundert" (= 120) statt 100.
 
 ### Die Sechziger-Zählung der Sumerer und Babylonier
 
@@ -113,7 +113,7 @@ Wichtig zur Einordnung: Mesopotamien rechnete *sexagesimal* (Basis 60), nicht re
 
 ### Das deutsche „Schock" = 60
 
-Auch das Deutsche kannte ein eigenes Zählmaß für 60: das **Schock** (= fünf Dutzend). Das Wort (mittelhochdeutsch *schoc(h)*) ist seit dem 13. Jahrhundert belegt. Seine genaue Herkunft ist *ungeklärt* — vielleicht zu einem Wort für „das Zusammengestoßene". Es war vor allem in Sachsen, Böhmen und Schlesien gebräuchlich.
+Auch das Deutsche kannte ein eigenes Zählmass für 60: das **Schock** (= fünf Dutzend). Das Wort (mittelhochdeutsch *schoc(h)*) ist seit dem 13. Jahrhundert belegt. Seine genaue Herkunft ist *ungeklärt* — vielleicht zu einem Wort für „das Zusammengestossene". Es war vor allem in Sachsen, Böhmen und Schlesien gebräuchlich.
 
 ### Vigesimal-Reste: das Zählen in Zwanzigern
 
@@ -126,7 +126,7 @@ Neben Zwölf und Sechzig gibt es in europäischen Sprachen Spuren eines **Zwanzi
 - *quatre-vingt-dix* (90) = „vier-zwanzig-zehn";
 - 97 = *quatre-vingt-dix-sept* = „vier-zwanzig-zehn-sieben" (4 × 20 + 10 + 7).
 
-Belgisches und Schweizer Französisch sind hier regelmäßiger: *septante* (70), *octante* oder *huitante* (80), *nonante* (90).
+Belgisches und Schweizer Französisch sind hier regelmässiger: *septante* (70), *octante* oder *huitante* (80), *nonante* (90).
 
 **Dänisch.** Das Dänische hat das wohl verblüffendste System, mit einer „halb"-Logik. Grundbaustein ist *-sindstyve* „mal zwanzig":
 
@@ -136,7 +136,7 @@ Belgisches und Schweizer Französisch sind hier regelmäßiger: *septante* (70),
 - *halvfjerds* (70) = 3½ × 20;
 - *halvfems* (90) = 4½ × 20.
 
-Die „halb"-Konstruktion bedeutet dabei „die Hälfte hin zum nächsten Vielfachen": *halvtredje* heißt „zweieinhalb" (wörtlich „das dritte halb"), nicht „die Hälfte von drei". Diese Formen sind altnordischen Ursprungs und für Außenstehende oft kaum durchschaubar.
+Die „halb"-Konstruktion bedeutet dabei „die Hälfte hin zum nächsten Vielfachen": *halvtredje* heisst „zweieinhalb" (wörtlich „das dritte halb"), nicht „die Hälfte von drei". Diese Formen sind altnordischen Ursprungs und für Aussenstehende oft kaum durchschaubar.
 
 Zur Geschichte des dänischen Systems: Vor etwa 1300 zählte das Dänische dezimal. Die frühesten vigesimalen Belege stehen im Flensburger Stadtrecht um 1300. Das System breitete sich von Westdänemark nach Osten aus, bis es um 1400 Schonen erreichte. Es war wahrscheinlich eine *eigenständige* sprachinterne Neuerung des Mittelalters, keine direkte Entlehnung.
 
@@ -152,7 +152,7 @@ Zur Geschichte des dänischen Systems: Vor etwa 1300 zählte das Dänische dezim
 
 Die meistzitierte Erklärung für die Basis 12 und ihre Verbindung zur Basis 60 ist eine Zähltechnik mit der Hand:
 
-Der **Daumen** einer Hand tastet nacheinander die **drei Glieder (Phalangen)** der vier übrigen Finger ab. Vier Finger mal drei Glieder ergibt **12** — eine Hand zählt also bis zwölf. Üblicher Startpunkt ist das äußerste Glied des kleinen Fingers.
+Der **Daumen** einer Hand tastet nacheinander die **drei Glieder (Phalangen)** der vier übrigen Finger ab. Vier Finger mal drei Glieder ergibt **12** — eine Hand zählt also bis zwölf. Üblicher Startpunkt ist das äusserste Glied des kleinen Fingers.
 
 Der Sprung zur 60 entsteht so: Während eine Hand wiederholt bis zwölf zählt, merkt die andere Hand mit ihren fünf Fingern, wie viele volle Dutzende erreicht sind. Fünf Finger mal zwölf ergibt **60**. Damit erklärt dieselbe Technik gleichzeitig die Basis 12 und die Basis 60.
 
@@ -166,7 +166,7 @@ Wie sicher diese Erklärung ist, behandelt der Abschnitt „Vorbehalte & verbrei
 
 Der sachlichste Grund für die Sonderstellung der Zwölf ist ihre **Teilbarkeit**. Zwölf hat sechs Teiler: 1, 2, 3, 4, 6 und 12. Die Zehn hat nur vier: 1, 2, 5 und 10.
 
-Praktisch heißt das: Eine Menge von zwölf lässt sich ohne Rest in Hälften, Drittel, Viertel und Sechstel teilen. Eine Menge von zehn nicht. Für Handel und Maßwesen ist das ein großer Vorteil — und genau der Grund, warum sich „Dutzend" und „Gros" lange neben dem Dezimalsystem gehalten haben.
+Praktisch heisst das: Eine Menge von zwölf lässt sich ohne Rest in Hälften, Drittel, Viertel und Sechstel teilen. Eine Menge von zehn nicht. Für Handel und Masswesen ist das ein grosser Vorteil — und genau der Grund, warum sich „Dutzend" und „Gros" lange neben dem Dezimalsystem gehalten haben.
 
 In Basis 12 zeigt sich derselbe Vorteil bei den Brüchen: Ein Drittel, ein Halb, zwei Drittel und drei Viertel haben kurze, *endliche* Darstellungen. In Basis 10 dagegen wird ein Drittel zur unendlichen Periode 0,333… Genau diese Eigenschaft macht sich dieser Rechner zunutze.
 
@@ -187,13 +187,13 @@ Wichtig ist hier die Vorsicht in der Deutung: Die *einzelnen* Fakten (12 Apostel
 
 Die Zwölf lebt in zahlreichen Redewendungen weiter — auf Deutsch wie auf Englisch.
 
-**Baker's dozen (= 13).** Das englische „Bäcker-Dutzend" meint *dreizehn* statt zwölf. Hintergrund ist das mittelalterliche englische Brotgesetz (*Assize of Bread and Ale*), das Strafen für zu leichte Brote vorsah. Um auf der sicheren Seite zu sein, legten Bäcker pro Dutzend ein dreizehntes Brot dazu (das „vantage loaf"). Heute steht die Wendung für Großzügigkeit — „ein bisschen mehr als erwartet". Ein früher Beleg findet sich bei Thomas Nashe (1596).
+**Baker's dozen (= 13).** Das englische „Bäcker-Dutzend" meint *dreizehn* statt zwölf. Hintergrund ist das mittelalterliche englische Brotgesetz (*Assize of Bread and Ale*), das Strafen für zu leichte Brote vorsah. Um auf der sicheren Seite zu sein, legten Bäcker pro Dutzend ein dreizehntes Brot dazu (das „vantage loaf"). Heute steht die Wendung für Grosszügigkeit — „ein bisschen mehr als erwartet". Ein früher Beleg findet sich bei Thomas Nashe (1596).
 
-**A dime a dozen.** Das amerikanische „ein Groschen das Dutzend" geht auf reale Werbepreise zurück (ein Dutzend für zehn Cent). Seit den 1930er Jahren bedeutet es übertragen „spottbillig, allerweltsmäßig häufig".
+**A dime a dozen.** Das amerikanische „ein Groschen das Dutzend" geht auf reale Werbepreise zurück (ein Dutzend für zehn Cent). Seit den 1930er Jahren bedeutet es übertragen „spottbillig, allerweltsmässig häufig".
 
 **Nineteen to the dozen.** Diese britische Wendung („neunzehn aufs Dutzend") beschreibt sehr schnelles, pausenloses Reden. Warum gerade die 19, ist sprachlich ungeklärt.
 
-**Half a dozen (= 6).** Die Wendung „six of one, half a dozen of the other" („sechs von dem einen, ein halbes Dutzend vom anderen") bedeutet: Zwei Optionen sind gleichwertig, es macht keinen Unterschied. Die deutsche Entsprechung ist sinngemäß „gehupft wie gesprungen".
+**Half a dozen (= 6).** Die Wendung „six of one, half a dozen of the other" („sechs von dem einen, ein halbes Dutzend vom anderen") bedeutet: Zwei Optionen sind gleichwertig, es macht keinen Unterschied. Die deutsche Entsprechung ist sinngemäss „gehupft wie gesprungen".
 
 **Daily dozen.** Die „zwölf täglichen Übungen" — ein Satz Gymnastikübungen, geprägt vom Yale-Footballtrainer Walter Camp um 1918.
 
@@ -209,7 +209,7 @@ Dieser Abschnitt trennt das gesicherte Wissen ehrlich von dem, was nur plausibel
 
 ### Irrtum: „Elf und zwölf sind Reste eines germanischen Zwölfersystems"
 
-Das ist die wohl verbreitetste falsche Schlussfolgerung. Tatsächlich deutet die Bildung gerade auf ein **Zehnersystem** hin: „eins/zwei *über zehn* übrig" setzt die Zehn als Bezugsgröße voraus. Auch das durchsichtig dezimale Muster ab 13 spricht dagegen. Die etymologische Fachliteratur und der Linguist Danny Bate stützen eine Basis-12-Herleitung *nicht*. Sicher ist nur die Bedeutung „eins/zwei übrig"; dass daraus duodezimales *Rechnen* folgte, ist Spekulation.
+Das ist die wohl verbreitetste falsche Schlussfolgerung. Tatsächlich deutet die Bildung gerade auf ein **Zehnersystem** hin: „eins/zwei *über zehn* übrig" setzt die Zehn als Bezugsgrösse voraus. Auch das durchsichtig dezimale Muster ab 13 spricht dagegen. Die etymologische Fachliteratur und der Linguist Danny Bate stützen eine Basis-12-Herleitung *nicht*. Sicher ist nur die Bedeutung „eins/zwei übrig"; dass daraus duodezimales *Rechnen* folgte, ist Spekulation.
 
 ### Unsicher: die genaue „-lif-"-Wurzel
 
@@ -220,7 +220,7 @@ Wie oben erwähnt, ist die exakte indogermanische Wurzel des Glieds *-lif-* nich
 Hier ist besondere Vorsicht geboten, denn diese Geschichte wird oft als gesicherte Tatsache erzählt. Sie ist es nicht.
 
 - Georges Ifrahs Herleitung ist **ausdrücklich spekulativ**. Dass die Zähltechnik heute irgendwo existiert, beweist nicht, dass sie historisch der Ursprung der Basen 12 und 60 war.
-- Für die Basis 60 gibt es **mehrere konkurrierende Hypothesen**, von denen keine bewiesen ist: die hohe Teilbarkeit von 60 (Theon von Alexandria), die Verschmelzung zweier älterer Maß- und Gewichtssysteme (Otto Neugebauer), oder geometrisch-astronomische Gründe (60° im gleichseitigen Dreieck, ein 360-Tage-Jahr).
+- Für die Basis 60 gibt es **mehrere konkurrierende Hypothesen**, von denen keine bewiesen ist: die hohe Teilbarkeit von 60 (Theon von Alexandria), die Verschmelzung zweier älterer Mass- und Gewichtssysteme (Otto Neugebauer), oder geometrisch-astronomische Gründe (60° im gleichseitigen Dreieck, ein 360-Tage-Jahr).
 - Die Wikipedia-Seite zum Sexagesimalsystem führt die Fingerglied-Theorie gar nicht an und betont, die Ursprünge seien „nicht so einfach, einheitlich oder zeitlich punktuell, wie oft dargestellt".
 
 Die Fingerglied-Erklärung ist also *eine* plausible Hypothese unter mehreren — kein gesicherter Befund.
@@ -253,11 +253,11 @@ Bewertung nach zwei Achsen. **Zuverlässigkeit:** R1 = wissenschaftlich/primär,
 
 - [R2·A1] Eleven — Etymology, Origin & Meaning (Etymonline) — https://www.etymonline.com/word/eleven — etablierte etymologische Referenz; Wurzel *\*leikʷ-* ohne Hedging als gesichert dargestellt.
 - [R2·A1] Twelve — Etymology, Origin & Meaning (Etymonline) — https://www.etymonline.com/word/twelve — wie oben; Kognatenliste vollständig.
-- [R2·A1] Thirteen — Etymology (Etymonline) — https://www.etymonline.com/word/thirteen — Beleg für das regelmäßige „-zehn/-teen"-Muster ab 13.
+- [R2·A1] Thirteen — Etymology (Etymonline) — https://www.etymonline.com/word/thirteen — Beleg für das regelmässige „-zehn/-teen"-Muster ab 13.
 - [R3·A1] Oneteen, twoteen? The origins of 'eleven' and 'twelve' (Danny Bate) — https://dannybate.com/2024/11/30/oneteen-twoteen-the-origins-of-eleven-and-twelve/ — Fachblog eines Linguisten; nennt die alternative Wurzel *\*līban-* und markiert die Häufigkeits-These ausdrücklich als unsicher. Die vorsichtigste Quelle.
 - [R2·A1] Dutzend (DWDS) — https://www.dwds.de/wb/Dutzend — Datierung der Entlehnung (14. Jh.) und des auslautenden -d (15. Jh.).
-- [R2·A1] Dozen (Wikipedia, en) — https://en.wikipedia.org/wiki/Dozen — Gros = 144, Großgros = 1.728, „small gross / great hundred" = 120.
-- [R2·A1] Gros (Wikipedia, de) — https://de.wikipedia.org/wiki/Gros — Etymologie *grossus*, „großes Gros" = 1.728, regionale Namen.
+- [R2·A1] Dozen (Wikipedia, en) — https://en.wikipedia.org/wiki/Dozen — Gros = 144, Grossgros = 1.728, „small gross / great hundred" = 120.
+- [R2·A1] Gros (Wikipedia, de) — https://de.wikipedia.org/wiki/Gros — Etymologie *grossus*, „grosses Gros" = 1.728, regionale Namen.
 - [R2·A2] -teen — Etymology of the Suffix (Etymonline) — https://www.etymonline.com/word/-teen — nur indirekt herangezogen.
 - [R3·A3] Why is 12 of Something Called „a Dozen"? (Mental Floss) — https://www.mentalfloss.com/language/words/why-is-12-called-a-dozen — populäre Bestätigung des duodecim-Wegs.
 - [R4·A3] Ever Wondered Why 11 and 12 Aren't Part of the Teens? (Reader's Digest) — https://www.rd.com/article/teen-numbers/ — populär, niedrige Tiefe.
@@ -273,7 +273,7 @@ Bewertung nach zwei Achsen. **Zuverlässigkeit:** R1 = wissenschaftlich/primär,
 - [R2·A3] Finger-counting (Wikipedia, en) — https://en.wikipedia.org/wiki/Finger-counting — Regionenliste der Daumen-an-Glied-Technik, Daumen als Zeiger.
 - [R3·A3] Why Did Sumerians Use the Sexagesimal System? (Nagaitoshiya) — https://www.nagaitoshiya.com/en/2013/sexagesimal/ — asiatische Verbreitung der Fingerglied-Zählung.
 - [R4·A3] Counting on fingers leads naturally also to base-60 (k2p blog) — https://ktwop.com/2017/08/19/counting-on-fingers-leads-naturally-also-to-base-60/ — Blog; 12 × 5 = 60-Mechanik.
-- [S·A3] Does the Ishango Bone Indicate Knowledge of the Base 12? (arXiv 1204.1019) — https://arxiv.org/pdf/1204.1019 — prähistorische Basis-12-Spekulation, mit großer Vorsicht zu zitieren.
+- [S·A3] Does the Ishango Bone Indicate Knowledge of the Base 12? (arXiv 1204.1019) — https://arxiv.org/pdf/1204.1019 — prähistorische Basis-12-Spekulation, mit grosser Vorsicht zu zitieren.
 - [R3·A3] Georges Ifrah, The Universal History of Numbers — Primärquelle der Fingerglied-These; nur sekundär referiert, kein Volltext.
 
 ### Vigesimal-Systeme (Französisch, Dänisch u. a.)
@@ -305,6 +305,6 @@ Bewertung nach zwei Achsen. **Zuverlässigkeit:** R1 = wissenschaftlich/primär,
 
 - [R2·A2] 12 equal temperament (Wikipedia, en) — https://en.wikipedia.org/wiki/12_equal_temperament — bestätigt: die Zwölfteilung der Oktave ist Konvention, nicht naturgegeben (Erstdruck der exakten Lösung in China, Zhu Zaiyu).
 
-### Weitere Zähl-/Mengenmaße
+### Weitere Zähl-/Mengenmasse
 
 - [R3·A2] Schock (Wiktionary / DWDS) — https://de.wiktionary.org/wiki/Schock — Schock = 60 = fünf Dutzend, seit dem 13. Jh. belegt; Etymologie ungeklärt.

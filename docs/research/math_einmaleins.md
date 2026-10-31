@@ -6,7 +6,7 @@
 **Verifikation:** Vollständige 12×12-Tabelle und alle Muster per Python in Basis 12
 nachgerechnet.
 
-> Methodik gemäß `docs/research/README.md`. Maßstab `nature_pyrit.md`.
+> Methodik gemäss `docs/research/README.md`. Massstab `nature_pyrit.md`.
 
 ---
 
@@ -79,7 +79,7 @@ kehrt hier wieder: genau diese Reihen sind die „vollen" — und genau deshalb 
 
 Die Diagonale der Tabelle sind die Quadratzahlen: 1, 4, 9, 14, 21, 30, 41, 54, 69, 84, A1,
 **100**. Das letzte ist zwölf mal zwölf = ein **Gross** (144 dezimal), das in Basis 12 glatt
-„100" heißt — wie hundert im Zehnersystem. Schon hier zeigt sich, wie rund die Zwölf ihre
+„100" heisst — wie hundert im Zehnersystem. Schon hier zeigt sich, wie rund die Zwölf ihre
 eigene Quadratzahl schreibt.
 
 Praktisch sind in Basis 12 auch das **Verdoppeln und Halbieren** bequem, weil zwölf gerade
@@ -91,7 +91,7 @@ ist (Hälfte von 10 ist 6; Hälfte von 6 ist 3).
 
 **Irrtum 1: »Das Einmaleins ist in Basis 12 insgesamt leichter.«** Nur teilweise. Die
 Teiler-Reihen (2,3,4,6) sind leichter, dafür sind Fünf und Sieben schwerer als im
-Zehnersystem. Die Tabelle ist auch größer (12×12 statt 10×10).
+Zehnersystem. Die Tabelle ist auch grösser (12×12 statt 10×10).
 
 **Irrtum 2: »Die Ziffern der Elfer-Reihe summieren sich zu zehn.«** Nein, zu **elf** (= B),
 weil B die Basis minus eins ist. Im Zehnersystem ist es die Neun.

@@ -6,7 +6,7 @@
 **Datum:** 2026-06-10
 **Verifikation:** Alle Regeln und Beispiele per Python in Basis 12 nachgerechnet.
 
-> Methodik gemäß `docs/research/README.md`. Maßstab `nature_pyrit.md`.
+> Methodik gemäss `docs/research/README.md`. Massstab `nature_pyrit.md`.
 
 ---
 
@@ -47,7 +47,7 @@ Wie die Neunerprobe taugt die Elfer-Probe als **Rechenkontrolle** („Elfer wegs
 Stimmt eine Multiplikation, müssen die Quersummen-Reste der Faktoren multipliziert den
 Quersummen-Rest des Ergebnisses ergeben (mod B).
 
-**Achtung, Stolperstein:** In Basis 10 heißt „Elferprobe" die *alternierende* Quersumme
+**Achtung, Stolperstein:** In Basis 10 heisst „Elferprobe" die *alternierende* Quersumme
 (weil dort 11 = Basis+1). In Basis 12 ist die Elf = Basis−1, daher prüft sie die *einfache*
 Quersumme. Derselbe Name, andere Mechanik — der Wechsel der Basis vertauscht die Rollen.
 
@@ -80,7 +80,7 @@ Die Zwölf tauscht die leichte Fünf-Probe gegen leichte Drei-, Vier- und Sechs-
 
 ## Vorbehalte & verbreitete Irrtümer
 
-**Irrtum 1: »Elferprobe heißt überall alternierende Quersumme.«** Nein — das gilt in Basis
+**Irrtum 1: »Elferprobe heisst überall alternierende Quersumme.«** Nein — das gilt in Basis
 10. In Basis 12 prüft die *einfache* Quersumme die Elf; die *alternierende* prüft die
 Dreizehn. Die Mechanik hängt an der Basis (11 = Basis−1, 13 = Basis+1), nicht am Namen.
 

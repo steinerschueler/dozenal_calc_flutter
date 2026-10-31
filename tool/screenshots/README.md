@@ -12,13 +12,13 @@ Upload via `fastlane deliver`: **[`../../docs/appstore-connect-pipeline.md`](../
   `xcrun swiftc -O tool/screenshots/render_text.swift -o /tmp/render_text`.
 - `produce_ios.py` / `produce_ipad.py` / `produce_macos.py` — Komposition pro Plattform
   (Geräterahmen aus `~/.fastlane/frameit/latest/` + Text + ImageMagick), Ausgabe auf exaktes
-  App-Store-Maß.
+  App-Store-Mass.
 
 ## Konventionen / Annahmen
 - **Staging in `/tmp`** (alles ephemeral, nicht im Repo): Roh-Captures nach `/tmp/raw_*` bzw.
   `/tmp/frame_work*` aufbereiten; Output nach `/tmp/framed/<platform>/<locale>/`; Renderer als
   `/tmp/render_text`. Die Skripte sind **Templates** dieses Laufs (Build 16) — Pfade ggf. anpassen.
-- Endmaße: iPhone 1320×2868 · iPad 2048×2732 · macOS 2880×1800. Watch (416×496) wird **nicht**
+- Endmasse: iPhone 1320×2868 · iPad 2048×2732 · macOS 2880×1800. Watch (416×496) wird **nicht**
   gerahmt (separat, nackt).
 - Upload-Ordner = ASC-Locale-Codes; iPhone+iPad+Watch zusammen unter `fastlane/screenshots/ios/`,
   macOS unter `fastlane/screenshots/osx/`. `fastlane/{metadata,screenshots}` sind gitignored.

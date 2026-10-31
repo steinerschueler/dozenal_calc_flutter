@@ -98,3 +98,20 @@ fastlane/test_output/
 
 # Lokaler Audit-Bericht (Code-Review-Artefakt, nicht Teil der App).
 /AUDIT-REPORT.md
+
+# npf (STR-30)
+.env
+.env.*
+!.env.example
+.claude/settings.local.json
+.claude/settings.local.vorher.json
+*.jks
+*.keystore
+*.p12
+*.p8
+.venv/
+.uv/
+node_modules/
+target/
+__pycache__/
+.coverage

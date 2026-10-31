@@ -8,8 +8,8 @@
 Division in Basis 12, Python/BigInt). Merge aus drei unabhängigen Recherche-Dossiers
 (zyklisch_a/b/c), deren Zahlenwerte sich vollständig decken.
 
-> Methodik gemäß `docs/research/README.md`: Dossier vor Prosa, Tier-System, ehrliche
-> Vorbehalte. Maßstab ist `nature_pyrit.md`.
+> Methodik gemäss `docs/research/README.md`: Dossier vor Prosa, Tier-System, ehrliche
+> Vorbehalte. Massstab ist `nature_pyrit.md`.
 
 ---
 
@@ -27,7 +27,7 @@ Kleinen Fermatschen Satz teilt k stets p − 1.
 Die Periode ist damit höchstens p − 1 Stellen lang. Sie ist genau dann **maximal**
 (= p − 1), wenn b eine **Primitivwurzel mod p** ist, d. h. wenn die Potenzen
 b, b², …, b^(p−1) modulo p alle p − 1 von null verschiedenen Reste {1, …, p−1} genau
-einmal durchlaufen. Eine Primzahl p mit dieser Eigenschaft heißt **full-reptend prime**
+einmal durchlaufen. Eine Primzahl p mit dieser Eigenschaft heisst **full-reptend prime**
 (volle Reptend-Primzahl; bei Conway & Guy »long prime«, deutsch »lange Primzahl«).
 
 ---
@@ -167,7 +167,7 @@ Quadrat ist, gilt sie auch für b = 12 — aber **unbewiesen**.
 - Heath-Brown (1986): bedingungslos ist mindestens eine von {2, 3, 5} für unendlich viele
   Primzahlen Primitivwurzel — aber *welche*, bleibt offen; für b = 12 speziell unbekannt.
 
-Empirisch (bis 100): ~35 % — passt zur prognostizierten Größenordnung, beweist sie nicht.
+Empirisch (bis 100): ~35 % — passt zur prognostizierten Grössenordnung, beweist sie nicht.
 
 ---
 
@@ -265,7 +265,7 @@ Referenz) · **R3** (seriös populär) · **R4** (schwach); Zugang **A1** (Vollt
 - **[R2·A1]** Multiplicative order — Wikipedia (en) —
   https://en.wikipedia.org/wiki/Multiplicative_order — ord_n(a), Teilbarkeit durch φ(n).
 - **[R2·A1]** Primitive root modulo n — Wikipedia (en) —
-  https://en.wikipedia.org/wiki/Primitive_root_modulo_n — Definition, Gauß 1801.
+  https://en.wikipedia.org/wiki/Primitive_root_modulo_n — Definition, Gauss 1801.
 - **[R2·A1]** Artin's conjecture on primitive roots — Wikipedia (en) —
   https://en.wikipedia.org/wiki/Artin%27s_conjecture_on_primitive_roots — C ≈ 0,3739558,
   Hooley 1967 (GRH), Heath-Brown 1986, Status offen.

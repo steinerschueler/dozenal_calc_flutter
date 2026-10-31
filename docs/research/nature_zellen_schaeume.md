@@ -12,7 +12,7 @@ Dieser Körper ist fast kugelrund. Er ist kompakt. Seine Winkel passen gut zu de
 
 ### Das Tetrakaidekaeder (die Vierzehn)
 
-Der zweite Hauptdarsteller hat **vierzehn Flächen**. Er heißt **Tetrakaidekaeder**. Es gibt zwei wichtige Varianten:
+Der zweite Hauptdarsteller hat **vierzehn Flächen**. Er heisst **Tetrakaidekaeder**. Es gibt zwei wichtige Varianten:
 
 - **Kelvins Form** (abgestumpftes Oktaeder): 6 Quadrate und 8 Sechsecke. 14 Flächen, 24 Ecken, 36 Kanten. (Probe nach Euler: 14 − 36 + 24 = 2.)
 - **Die Schaum-Form** (in der Weaire-Phelan-Struktur und in Gas-Käfigen): 12 Fünfecke und 2 Sechsecke.
@@ -29,9 +29,9 @@ Zwei verschiedene Prinzipien führen zu Zell-Mustern. Beide schaffen Zwölfen un
 
 ### Prinzip A: Wenig Fläche (Seifenfilme und Zellen)
 
-Jede Trennwand kostet Energie. Eine Seifenhaut will klein sein. Eine Schaumblase will mit wenig Wand viel Raum umschließen. Das System sucht die kleinste Gesamtfläche.
+Jede Trennwand kostet Energie. Eine Seifenhaut will klein sein. Eine Schaumblase will mit wenig Wand viel Raum umschliessen. Das System sucht die kleinste Gesamtfläche.
 
-**Plateaus Gesetze** beschreiben, wie sich Seifenfilme dabei treffen. Der belgische Physiker Joseph Plateau (1801–1883) fand sie durch Versuche. Bemerkenswert: Er war dabei schon erblindet und ließ sich die Versuche beschreiben. Die vier Regeln:
+**Plateaus Gesetze** beschreiben, wie sich Seifenfilme dabei treffen. Der belgische Physiker Joseph Plateau (1801–1883) fand sie durch Versuche. Bemerkenswert: Er war dabei schon erblindet und liess sich die Versuche beschreiben. Die vier Regeln:
 
 1. Filme sind glatte, durchgehende Flächen.
 2. Jeder Film hat überall die gleiche mittlere Krümmung.
@@ -48,24 +48,24 @@ Diese Winkel sind der wahre Grund für die Form der Zellen. Das Dodekaeder ist n
 
 ### Prinzip B: Dichtes Packen (Kristalle und Kugeln)
 
-Das zweite Prinzip ist anders. Bei gleich großen, geordneten Kugeln packt die Natur so dicht wie möglich.
+Das zweite Prinzip ist anders. Bei gleich grossen, geordneten Kugeln packt die Natur so dicht wie möglich.
 
-- Eine Kugel kann von genau **zwölf** gleich großen Kugeln berührt werden. Diese Zahl heißt **Kusszahl**. In drei Dimensionen ist sie 12.
+- Eine Kugel kann von genau **zwölf** gleich grossen Kugeln berührt werden. Diese Zahl heisst **Kusszahl**. In drei Dimensionen ist sie 12.
 - Die dichteste Packung erreicht rund **74 %** Raumfüllung (genau π/√18 ≈ 0,7405).
 - Jede Kugel hat dann **zwölf** nächste Nachbarn (Koordinationszahl 12).
 - Die zugehörige Zelle ist das **Rhombendodekaeder** mit zwölf Rauten-Flächen. Jede Fläche zeigt zu einem der zwölf Nachbarn.
 
-Hier ist die Zwölf exakt und sicher. Aber Achtung: Das gilt nur für gleich große, geordnete Kugeln (Kristall), nicht für ungeordneten Schaum.
+Hier ist die Zwölf exakt und sicher. Aber Achtung: Das gilt nur für gleich grosse, geordnete Kugeln (Kristall), nicht für ungeordneten Schaum.
 
 ## Entdeckung, Forschung & berühmte Beispiele
 
 ### Plateau (19. Jahrhundert)
 
-Joseph Plateau veröffentlichte sein großes Werk über Flüssigkeiten 1873. Er gilt nebenbei als Pionier des bewegten Bildes (Phenakistiskop, 1832).
+Joseph Plateau veröffentlichte sein grosses Werk über Flüssigkeiten 1873. Er gilt nebenbei als Pionier des bewegten Bildes (Phenakistiskop, 1832).
 
 ### Kelvins Problem (1887)
 
-Lord Kelvin fragte: Wie teilt man den Raum in gleich große Zellen mit der kleinsten Gesamt-Trennfläche? Seine Antwort war das vierzehnflächige Tetrakaidekaeder (6 Quadrate, 8 Sechsecke). Er bog die Flächen leicht, damit Plateaus 120°-Regel passt. Seine Vermutung, das sei die beste Lösung, hielt über 100 Jahre.
+Lord Kelvin fragte: Wie teilt man den Raum in gleich grosse Zellen mit der kleinsten Gesamt-Trennfläche? Seine Antwort war das vierzehnflächige Tetrakaidekaeder (6 Quadrate, 8 Sechsecke). Er bog die Flächen leicht, damit Plateaus 120°-Regel passt. Seine Vermutung, das sei die beste Lösung, hielt über 100 Jahre.
 
 ### Weaire-Phelan (1993/1994)
 
@@ -84,7 +84,7 @@ Das Nationale Schwimmzentrum für die Olympischen Spiele 2008 trägt die Weaire-
 
 ### Matzkes Messung (1946)
 
-Der Botaniker Edwin Matzke baute mit einer Spritze einen Schaum aus 1.900 gleich großen Blasen, Blase für Blase. Dann vermaß er die 600 Zellen in der Mitte. Ergebnis:
+Der Botaniker Edwin Matzke baute mit einer Spritze einen Schaum aus 1.900 gleich grossen Blasen, Blase für Blase. Dann vermass er die 600 Zellen in der Mitte. Ergebnis:
 
 - Die **mittlere Flächenzahl lag nahe 14** (genauer oft mit ~13,7 angegeben).
 - Die häufigste Fläche war das **Fünfeck**.
@@ -106,7 +106,7 @@ Alle Werte liegen zwischen rund 13,4 und 14. Die Zwölf wird von unten geradezu 
 Der Morphologe Frederic Thomas Lewis untersuchte 1928 die Haut der Gurke. Bei flächigen Zellverbänden (Epithelien) ist die Geometrie zweidimensional. Dort gelten andere Zahlen:
 
 - Die **mittlere Seitenzahl ist genau sechs**. Das folgt zwingend aus der Euler-Formel, nicht aus Energie.
-- **Lewis' Gesetz:** Größere Zellen haben mehr Nachbarn. Die Fläche wächst linear mit der Nachbarzahl.
+- **Lewis' Gesetz:** Grössere Zellen haben mehr Nachbarn. Die Fläche wächst linear mit der Nachbarzahl.
 - **Aboav-Weaire-Gesetz:** Eine Zelle mit vielen Seiten grenzt im Mittel an Zellen mit wenigen Seiten.
 
 Hier ist die Leitzahl also die **Sechs**, nicht die Zwölf. Die Sechs ist das 2D-Gegenstück zur 3D-Vierzehn. Beide kommen aus Euler plus Plateau.
@@ -116,10 +116,10 @@ Hier ist die Leitzahl also die **Sechs**, nicht die Zwölf. Die Sechs ist das 2D
 In Gashydraten (zum Beispiel Methanhydrat am Meeresboden) bilden Wassermoleküle Käfige um Gasmoleküle. Hier ist die Zwölf real und allgegenwärtig:
 
 - Der **kleine Käfig** ist ein Pentagondodekaeder: 12 Fünfecke, aus 20 Wassermolekülen (Notation 5¹²). Er kommt in allen bekannten Klathrat-Strukturen vor.
-- **Struktur I:** 46 Wassermoleküle, 2 kleine Käfige (5¹²) und 6 große Käfige (5¹²6², also 14 Flächen). Gäste: Methan, CO₂.
-- **Struktur II:** 136 Wassermoleküle, 16 kleine Käfige und 8 große (5¹²6⁴, 16 Flächen).
+- **Struktur I:** 46 Wassermoleküle, 2 kleine Käfige (5¹²) und 6 grosse Käfige (5¹²6², also 14 Flächen). Gäste: Methan, CO₂.
+- **Struktur II:** 136 Wassermoleküle, 16 kleine Käfige und 8 grosse (5¹²6⁴, 16 Flächen).
 
-Auch hier: Das Dodekaeder füllt den Raum nicht allein. Es braucht immer einen größeren Partner-Käfig. Bemerkenswert: Die Klathrat-Struktur I ist topologisch dieselbe wie die Weaire-Phelan-Schaumstruktur.
+Auch hier: Das Dodekaeder füllt den Raum nicht allein. Es braucht immer einen grösseren Partner-Käfig. Bemerkenswert: Die Klathrat-Struktur I ist topologisch dieselbe wie die Weaire-Phelan-Schaumstruktur.
 
 ### Der Kepler-Strang (Kugelpackung)
 
@@ -140,7 +140,7 @@ Auch hier: Das Dodekaeder füllt den Raum nicht allein. Es braucht immer einen g
 Dies ist der wichtigste Abschnitt. Der Bezug zur Zwölf ist echt, aber begrenzt.
 
 **Irrtum 1: „Schaumzellen sind im Mittel zwölfflächige Dodekaeder."**
-Falsch. Der Mittelwert liegt bei rund **13,7 bis 14** Flächen. Die mathematischen Schranken (≥13,4 bzw. ≥14) schließen die 12 sogar aus. Das perfekte Pentagondodekaeder ist in echtem Schaum selten oder fehlt ganz. Wahr ist nur: Fünfeck-Flächen sind häufig. Aber „viele Fünfecke" heißt nicht „die Zelle ist ein Dodekaeder".
+Falsch. Der Mittelwert liegt bei rund **13,7 bis 14** Flächen. Die mathematischen Schranken (≥13,4 bzw. ≥14) schliessen die 12 sogar aus. Das perfekte Pentagondodekaeder ist in echtem Schaum selten oder fehlt ganz. Wahr ist nur: Fünfeck-Flächen sind häufig. Aber „viele Fünfecke" heisst nicht „die Zelle ist ein Dodekaeder".
 
 **Irrtum 2: „Kelvin hat das Raumfüllungs-Problem gelöst."**
 Falsch. Kelvins Form war 104 Jahre lang die beste Vermutung, ist aber nicht optimal. Weaire-Phelan ist 0,3 % besser. Und selbst Weaire-Phelan ist nicht bewiesen optimal. Das Problem ist offen.
@@ -152,7 +152,7 @@ Falsch im Schaum, richtig nur im Kristall. Im ungeordneten Schaum: rund 14. In d
 Falsch. In 2D (Epithel, Bienenwabe) ist die Leitzahl 6, und das Effizienz-Resultat ist bewiesen. In 3D ist die Leitzahl rund 14, und das Optimum ist ungelöst. Populärtexte vermischen beides oft. Das ist unzulässig.
 
 **Irrtum 5: „Kusszahl 12 ist eine feste, magische Zwölf."**
-Nur teilweise. Die 12 gilt nur für gleich große Kugeln. Und in 3D ist so viel Spiel, dass die zwölf äußeren Kugeln ihre Plätze tauschen können, ohne den Kontakt zu verlieren. Die Anordnung ist also nicht einmal starr — anders als die feste Sechs in 2D.
+Nur teilweise. Die 12 gilt nur für gleich grosse Kugeln. Und in 3D ist so viel Spiel, dass die zwölf äusseren Kugeln ihre Plätze tauschen können, ohne den Kontakt zu verlieren. Die Anordnung ist also nicht einmal starr — anders als die feste Sechs in 2D.
 
 **Irrtum 6 (Pseudowissenschaft): „Sacred Geometry, Goldener Schnitt, Dodekaeder-Mystik."**
 Hat hier keine Grundlage. Das Auftreten des Dodekaeders in Klathraten und in Weaire-Phelan hat physikalische und chemische Gründe (Plateau-Winkel, Wasserstoffbrücken), keine numerologischen. Der Goldene Schnitt ist irrational; „exakt 1,618" ist schon arithmetisch falsch.

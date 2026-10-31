@@ -1,42 +1,40 @@
-# Flathub submission — Dozenal Calc
+# Flathub-Einreichung: Dozenal Calc
 
-Files for publishing the Linux build on [Flathub](https://flathub.org):
+Dateien für die Veröffentlichung des Linux-Builds auf [Flathub](https://flathub.org):
 
-- `app.weltanschauung.dozenal.yml` — flatpak-builder manifest (ships the
-  pre-built `flutter build linux --release` bundle).
-- `app.weltanschauung.dozenal.metainfo.xml` — AppStream metadata (required).
-- `app.weltanschauung.dozenal.desktop` — desktop entry.
-- `app.weltanschauung.dozenal-{512,256,128,64}.png` — hicolor icons.
+- `app.weltanschauung.dozenal.yml`: flatpak-builder-Manifest, liefert das vorgebaute Bundle von
+  `flutter build linux --release` aus.
+- `app.weltanschauung.dozenal.metainfo.xml`: AppStream-Metadaten (Pflicht).
+- `app.weltanschauung.dozenal.desktop`: Desktop-Eintrag.
+- `app.weltanschauung.dozenal-{512,256,128,64}.png`: hicolor-Icons.
 
-App ID `app.weltanschauung.dozenal` matches the Android/iOS/macOS bundle ID and
-the owned domain `weltanschauung.app` (Flathub may ask to verify ownership).
+Die App-ID `app.weltanschauung.dozenal` entspricht der Bundle-ID von Android, iOS und macOS und der eigenen Domain
+`weltanschauung.app`. Flathub kann einen Nachweis des Besitzes verlangen.
 
-## Status: submitted — PR in review
+## Stand der Einreichung
 
-All pre-submission TODOs are done:
+Alle Vorarbeiten sind erledigt:
 
-1. **[DONE] Bundle published + manifest pinned.** The pre-built bundle is the
-   `dozenal-calc-1.5.1-linux-x64.tar.gz` asset on the
-   [v1.5.1 release](https://github.com/steinerschueler/dozenal_calc_flutter/releases/tag/v1.5.1);
-   `app.weltanschauung.dozenal.yml` references it with its sha256.
-2. **[DONE] Metainfo screenshots.** The `<screenshots>` block is active and
-   points at raw GitHub URLs under `store/screenshots/linux/`.
-3. **[DONE] Build verified.** Flathub's builder compiled the manifest green
-   for aarch64 + x86_64 (triggered via the `bot, build` PR comment).
-4. **[DONE] Submitted.** PR **flathub/flathub#8968** (base `new-pr`) is in
-   review; builds and updates run on Flathub's infrastructure after
-   acceptance.
+1. **Bundle veröffentlicht, Manifest gepinnt.** Das vorgebaute Bundle ist das Asset `dozenal-calc-1.5.1-linux-x64.tar.gz`
+   im [Release v1.5.1](https://github.com/steinerschueler/dozenal_calc_flutter/releases/tag/v1.5.1).
+   `app.weltanschauung.dozenal.yml` verweist mit seinem sha256 darauf.
+2. **Screenshots in der Metainfo.** Der Block `<screenshots>` ist aktiv und zeigt auf raw-GitHub-Adressen unter
+   `store/screenshots/linux/`.
+3. **Build geprüft.** Der Builder von Flathub hat das Manifest für aarch64 und x86_64 grün gebaut, ausgelöst über den
+   PR-Kommentar `bot, build`.
+4. **Eingereicht.** PR **flathub/flathub#8968** (Base `new-pr`) liegt im Review. Builds und Updates laufen nach der Annahme
+   auf der Infrastruktur von Flathub.
 
-## Version refresh (next release)
+## Version aktualisieren (nächstes Release)
 
 ```bash
 flutter build linux --release
 tar czf dozenal-calc-<ver>-linux-x64.tar.gz -C build/linux/x64/release bundle
-sha256sum dozenal-calc-<ver>-linux-x64.tar.gz   # → update url + sha256
+sha256sum dozenal-calc-<ver>-linux-x64.tar.gz   # → url und sha256 anpassen
 ```
 
-Optional local test build (needs flatpak tooling — not on the current host;
-runtime version must match the manifest, currently 25.08):
+Optionaler lokaler Testbuild. Er braucht die Flatpak-Werkzeuge, die auf dem aktuellen Rechner fehlen. Die Runtime-Version
+muss zum Manifest passen, derzeit 25.08:
 
 ```bash
 sudo apt install flatpak flatpak-builder

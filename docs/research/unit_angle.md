@@ -11,7 +11,7 @@ Der gesamte heutige Apparat aus 360°-Vollkreis, Bogenminute und Bogensekunde is
 - **Kalenderbezug:** Das babylonische Jahr wurde näherungsweise mit etwa 360 Tagen angesetzt (das echte Jahr hat 365,25 Tage). Die Sonne wandert dabei knapp 1° pro Tag — eine bequeme Eins-zu-eins-Entsprechung von Tag und Grad.
 - **Teilbarkeit und Sexagesimal:** 360 = 6 × 60, ist hervorragend teilbar (24 Teiler) und fügt sich nahtlos ins Basis-60-System.
 
-**Wichtiger Vorbehalt:** Das genaue „Warum 360" ist nicht sicher belegt. Der Wissenschaftshistoriker **Otto Neugebauer** (*The Exact Sciences in Antiquity*, 1957/1969) betonte, dass die Babylonier selbst nie überliefert haben, *warum* genau 360 gewählt wurde. Die „360-Tage-Jahr"-Erklärung bleibt eine plausible Rekonstruktion, kein belegtes Motiv. Die englische Wikipedia markiert die reine 360-Tage-Herleitung sogar mit „failed verification". Eine universitäre Quelle (UNLV) nennt drei Theorien — Sonnenjahr, Basis-60-Kompatibilität, reine Teilbarkeit — und schreibt ausdrücklich, dass man es „nicht sicher weiß". Anzumerken ist auch: streng sexagesimal wäre 60°, nicht 360° gewesen; die Wahl ist also ein Kompromiss.
+**Wichtiger Vorbehalt:** Das genaue „Warum 360" ist nicht sicher belegt. Der Wissenschaftshistoriker **Otto Neugebauer** (*The Exact Sciences in Antiquity*, 1957/1969) betonte, dass die Babylonier selbst nie überliefert haben, *warum* genau 360 gewählt wurde. Die „360-Tage-Jahr"-Erklärung bleibt eine plausible Rekonstruktion, kein belegtes Motiv. Die englische Wikipedia markiert die reine 360-Tage-Herleitung sogar mit „failed verification". Eine universitäre Quelle (UNLV) nennt drei Theorien — Sonnenjahr, Basis-60-Kompatibilität, reine Teilbarkeit — und schreibt ausdrücklich, dass man es „nicht sicher weiss". Anzumerken ist auch: streng sexagesimal wäre 60°, nicht 360° gewesen; die Wahl ist also ein Kompromiss.
 
 **Die UŠ-Einheit und die Zeit-Winkel-Verbindung.** Die Babylonier kannten eine kombinierte Zeit- und Winkeleinheit. Ein Sonnentag = 12 *bēru* = 360 *UŠ*. Ein *bēru* (Doppelstunde) wurde in 30 *UŠ* unterteilt; 1 UŠ entspricht 4 Minuten Zeit bzw. 1° Himmelsdrehung. Im 5. Jh. v. Chr. wurde die Ekliptik in 12 gleiche Abschnitte (Tierkreiszeichen) zu je 30 Teilen geteilt — wieder 360. Daraus stammt die Zuordnung der 12 Tierkreiszeichen zu je 30°.
 
@@ -43,14 +43,14 @@ Diese Doppelnutzung erklärt, warum Zeit und Winkel dieselben Wörter (Minute, S
 
 Eine zentrale Wanderbewegung der Mathematik führt über vier Kulturen:
 
-- **Griechenland:** die *volle Sehne* (chord) als trigonometrische Grundgröße.
+- **Griechenland:** die *volle Sehne* (chord) als trigonometrische Grundgrösse.
 - **Indien:** **Aryabhata** (476–550 n. Chr.) gab im *Aryabhatiya* die **erste Sinustafel** der Geschichte: 24 Werte in Schritten von 3°45′ (= 3,75°) von 0° bis 90°. Er nutzte statt der vollen Sehne die *halbe* Sehne — *ardha-jya*, später verkürzt zu *jya*/*jiva* (Sanskrit „Bogensehne"). Aryabhata wählte als Radius **3438**, weil der Kreisumfang in Bogenminuten gemessen wird: 360° = 360 × 60 = **21.600 Bogenminuten**, und 21.600 / 2π ≈ 3438. Sein Sinus war also keine Verhältniszahl, sondern eine *Länge* (halbe Sehne in Bogenminuten-Einheiten).
 - **Islamische Welt:** Über das Arabische (*jiba*, missverstanden als *jaib* „Bucht, Busen") wurde aus *jya* das lateinische *sinus* — unser Wort „Sinus".
 
-### Bogenmaß (Radiant)
+### Bogenmass (Radiant)
 
-- **Konzept:** Roger Cotes beschrieb das Bogenmaß der Sache nach (er starb 1716); die erste publizierte Umrechnung eines Radianten in Grad stammt von Robert Smith (1722, *Harmonia mensurarum*). Ein früher Vorgriff: al-Kashis „Durchmesserteile" (um 1400), wobei ein Durchmesserteil = 1/60 Radiant.
-- **Formalisierung:** Euler nutzte das Bogenmaß 1765 implizit (ω = v/r).
+- **Konzept:** Roger Cotes beschrieb das Bogenmass der Sache nach (er starb 1716); die erste publizierte Umrechnung eines Radianten in Grad stammt von Robert Smith (1722, *Harmonia mensurarum*). Ein früher Vorgriff: al-Kashis „Durchmesserteile" (um 1400), wobei ein Durchmesserteil = 1/60 Radiant.
+- **Formalisierung:** Euler nutzte das Bogenmass 1765 implizit (ω = v/r).
 - **Der Begriff „radian":** Thomas Muir (St Andrews) schwankte 1869 zwischen *rad/radial/radian*; James Thomson (Bruder von Lord Kelvin) verwendete „radian" ab 1871. **Gedruckt erstmals am 5. Juni 1873** in Prüfungsfragen am Queen's College Belfast. Muir übernahm „radian" 1874.
 - **Definition:** 1 Radiant ist der Winkel, bei dem die Bogenlänge gleich dem Radius ist; der volle Kreis hat 2π Radiant. Heute ist der Radiant die SI-Einheit.
 
@@ -94,13 +94,13 @@ China entwickelte **unabhängig** eine andere Kreisteilung. Die Grundeinheit war
 - **al-Khwarizmi** (ca. 780–850) verarbeitete indische und griechische Quellen (*Zij al-Sindhind*, um 820), erstellte frühe Sinustafeln und verbesserte das planisphärische Astrolabium. Über seine lateinischen Übersetzungen (12. Jh.) gelangte die Trigonometrie nach Europa.
 - **al-Battani** (ca. 858–929, lat. Albategnius) korrigierte ptolemäische Werte, nutzte konsequent Sinus statt Sehnen, führte Tangens und Kotangens ein und gab gradweise Tafeln an. Kopernikus zitierte ihn noch.
 - **Abu al-Wafa** (940–998) führte die Tangensfunktion formal ein.
-- **al-Kashi** (um 1400) verwendete „Durchmesserteile" (1/60 Radiant) — ein früher Vorgriff aufs Bogenmaß.
+- **al-Kashi** (um 1400) verwendete „Durchmesserteile" (1/60 Radiant) — ein früher Vorgriff aufs Bogenmass.
 
 Das **Astrolabium** wurde hier verfeinert, mit gradweise (360°) graduierten Skalen. Die religiöse Pflicht der Qibla-Bestimmung trieb die sphärische Trigonometrie zur eigenständigen Disziplin. **Arabische Lehnwörter** prägen bis heute das westliche Richtungsvokabular: **Azimut** (< *as-sumūt*, „die Richtungen"), **Zenit** (< *samt ar-ra's*, „Richtung des Scheitels"), **Nadir** (< *nazīr*, „Gegenrichtung").
 
 ### Mesoamerika (Maya): 360 aus ganz anderer Wurzel
 
-Die Maya rechneten **vigesimal** (Basis 20), nicht sexagesimal. In der Long-Count-Kalenderhierarchie ist die dritte Stufe jedoch eine bewusste Ausnahme: Statt 20 × 20 = 400 wurde *18 winal* (20-Tage-Perioden) = **360 kin** (Tage) als *tun* gesetzt — weil 360 näher am Sonnenjahr (etwa 365 Tage) liegt. Die Hierarchie: kin (1 Tag), winal (20), tun (360), katun (7200), baktun (144.000). Dies ist **kein Winkelmaß**, sondern eine kalendarische 360-Teilung — ein bemerkenswertes, unabhängiges Auftreten der Zahl 360, über ein völlig anderes Zahlensystem, aber durch dieselbe astronomische Realität (Jahreslänge) motiviert. Die Maya verstanden zudem Ost und West zuerst (Sonnenauf- und -untergang) und erst danach Nord und Süd.
+Die Maya rechneten **vigesimal** (Basis 20), nicht sexagesimal. In der Long-Count-Kalenderhierarchie ist die dritte Stufe jedoch eine bewusste Ausnahme: Statt 20 × 20 = 400 wurde *18 winal* (20-Tage-Perioden) = **360 kin** (Tage) als *tun* gesetzt — weil 360 näher am Sonnenjahr (etwa 365 Tage) liegt. Die Hierarchie: kin (1 Tag), winal (20), tun (360), katun (7200), baktun (144.000). Dies ist **kein Winkelmass**, sondern eine kalendarische 360-Teilung — ein bemerkenswertes, unabhängiges Auftreten der Zahl 360, über ein völlig anderes Zahlensystem, aber durch dieselbe astronomische Realität (Jahreslänge) motiviert. Die Maya verstanden zudem Ost und West zuerst (Sonnenauf- und -untergang) und erst danach Nord und Süd.
 
 ### Rom und mittelalterliches Europa
 
@@ -108,7 +108,7 @@ Die Römer übernahmen die ägyptisch-babylonische 12-Stunden-Tag/Nacht-Einteilu
 
 ### Kompass und Himmelsrichtungen (Windrose)
 
-Die **Windrose** wurzelt in der mittelmeerischen Antike: zunächst 8 Hauptwinde, durch fortgesetztes Halbieren auf 16, dann 32 Punkte. Jeder der **32 Kompasspunkte** misst genau **11,25°** (= 360/32): 4 Hauptwinde, 4 Zwischenwinde, 8 Halb- und 16 Viertelwinde. Das Aufsagen aller 32 Punkte im Uhrzeigersinn hieß „boxing the compass" und war eine Pflicht-Fertigkeit am Steuer. Bis ins 18. Jh. wurde auf 128 Richtungen verfeinert. Die 32-Punkt-Rose erschien 1375 öffentlich auf der Weltkarte des mallorquinischen Kartografen Abraham Cresques und war vom 16. bis 19. Jh. Standard auf Seekarten.
+Die **Windrose** wurzelt in der mittelmeerischen Antike: zunächst 8 Hauptwinde, durch fortgesetztes Halbieren auf 16, dann 32 Punkte. Jeder der **32 Kompasspunkte** misst genau **11,25°** (= 360/32): 4 Hauptwinde, 4 Zwischenwinde, 8 Halb- und 16 Viertelwinde. Das Aufsagen aller 32 Punkte im Uhrzeigersinn hiess „boxing the compass" und war eine Pflicht-Fertigkeit am Steuer. Bis ins 18. Jh. wurde auf 128 Richtungen verfeinert. Die 32-Punkt-Rose erschien 1375 öffentlich auf der Weltkarte des mallorquinischen Kartografen Abraham Cresques und war vom 16. bis 19. Jh. Standard auf Seekarten.
 
 **Mediterrane Windnamen** (mittelalterlich, länderübergreifend): Tramontana (N), Greco (NO), Levante (O), Sirocco (SO), Ostro (S), Libeccio (SW), Ponente (W), Maestro (NW) — bis heute in italienischer und spanischer Wetter- und Alltagssprache präsent. **Arabische Navigatoren** (Rotes Meer, Indischer Ozean) nutzten bereits vor Ende des 10. Jh. eine 32-Punkte-**Sidereal**-Rose (sternbasiert).
 
@@ -126,7 +126,7 @@ Die babylonische Astronomie war kein säkulares Unterfangen, sondern Omen-Wissen
 
 ### Die Sieben (Planeten → Wochentage)
 
-Die sieben mit bloßem Auge sichtbaren Wandelsterne (Sonne, Mond, Mars, Merkur, Jupiter, Venus, Saturn) wurden je einem Gott zugeordnet und begründeten die 7-Tage-Woche. Das System lief von Sumerern über Babylonier und hellenistische Astrologie bis nach Rom (dies Solis, Lunae, Martis …) und prägt unsere Wochentagsnamen (nordisch: Tyr, Odin/Wotan, Thor, Frigg für Dienstag bis Freitag).
+Die sieben mit blossem Auge sichtbaren Wandelsterne (Sonne, Mond, Mars, Merkur, Jupiter, Venus, Saturn) wurden je einem Gott zugeordnet und begründeten die 7-Tage-Woche. Das System lief von Sumerern über Babylonier und hellenistische Astrologie bis nach Rom (dies Solis, Lunae, Martis …) und prägt unsere Wochentagsnamen (nordisch: Tyr, Odin/Wotan, Thor, Frigg für Dienstag bis Freitag).
 
 ### Ägypten: Dekane als Gottheiten
 
@@ -152,7 +152,7 @@ Die Vier-Richtungen-Ordnung ist eines der breitesten religiösen Symbolfelder ü
 
 - **Hinduismus — Dikpalas/Lokapalas:** Ost = Indra, Süd = Yama, West = Varuna, Nord = Kubera; plus Zwischenrichtungen (NO = Ishana, SO = Agni, NW = Vayu, SW = Nirṛti); erweitert auf zehn mit Brahma (Zenit) und Vishnu (Nadir). In der Vastu-Architektur bestimmt diese Ordnung die Ausrichtung.
 - **Buddhismus:** Vier Himmelskönige in Mandala-Ritualen.
-- **China — Vier Symbole:** Azurdrache (Ost), Schwarze Schildkröte (Nord), Weißer Tiger (West), Roter Vogel (Süd), verbunden mit den 28 Mondhäusern und dem Taoismus.
+- **China — Vier Symbole:** Azurdrache (Ost), Schwarze Schildkröte (Nord), Weisser Tiger (West), Roter Vogel (Süd), verbunden mit den 28 Mondhäusern und dem Taoismus.
 - **Indigene Traditionen (Lakota):** Das **Medizinrad** ordnet den vier Richtungen Farben, Winde und Bedeutungen zu („Calling in the Four Directions").
 - **Griechisch-römisch — Windgötter:** Boreas (N), Notos (S), Euros (O), Zephyros (W); am Turm der Winde in Athen (1. Jh. v. Chr.) als Figuren. Aristoteles erweiterte auf zehn Winde — die Wurzel der Windrose.
 
@@ -173,7 +173,7 @@ Radiant, Gon und mil sind historisch bewusst religions- und symbolfrei — das a
 ### Grad, Bogenminute, Bogensekunde
 
 1° = 60′ = 3600″. Heute aktiv genutzt in:
-- **Astronomie:** Parallaxe und Sterndistanzen, scheinbare Objektgrößen (Mond ≈ 30′; Hubble löst etwa 0,05″ auf).
+- **Astronomie:** Parallaxe und Sterndistanzen, scheinbare Objektgrössen (Mond ≈ 30′; Hubble löst etwa 0,05″ auf).
 - **GPS und Navigation:** Breite und Länge in Grad-Minute-Sekunde (DMS) oder Grad-Minute-Dezimal. Entscheidende Kopplung: **1 Bogenminute Breite = 1 Seemeile = 1,852 km** — der Hauptgrund, warum die sexagesimale Teilung in See- und Luftfahrt überlebt.
 
 ### Dezimalgrad versus DMS
@@ -245,11 +245,11 @@ Alles in diesem Abschnitt ist als **spekulativ oder umstritten** zu behandeln un
 
 ### Geometrie-/Sehnen-Hypothese [umstritten, aber semi-seriös diskutiert]
 
-Ein regelmäßiges, dem Kreis einbeschriebenes Sechseck hat sechs Seiten gleich der Radiuslänge; teilt man jeden der sechs Bögen sexagesimal (×60), ergibt sich 6 × 60 = 360. Diese „Hexagon/Sehnen"-Erklärung ist im Umlauf, wird aber von Historikern wie Otto Neugebauer eher zurückgewiesen, da die Grad-Teilung älter zu sein scheint als die griechische Sehnen-Geometrie. Status: plausible nachträgliche Rationalisierung, kein gesicherter historischer Ursprung.
+Ein regelmässiges, dem Kreis einbeschriebenes Sechseck hat sechs Seiten gleich der Radiuslänge; teilt man jeden der sechs Bögen sexagesimal (×60), ergibt sich 6 × 60 = 360. Diese „Hexagon/Sehnen"-Erklärung ist im Umlauf, wird aber von Historikern wie Otto Neugebauer eher zurückgewiesen, da die Grad-Teilung älter zu sein scheint als die griechische Sehnen-Geometrie. Status: plausible nachträgliche Rationalisierung, kein gesicherter historischer Ursprung.
 
 ### „Sacred Geometry" und Präzessions-Zahlen [spekulativ / pseudoarchäologie-nah]
 
-Behauptung: 360, 72, 108, 25.920 („Großes Jahr") seien als „heilige Zahlen" der Erd-Präzession (72 Jahre pro Grad → 25.920 Jahre voller Zyklus) bewusst in antiken Bauten, Mythen und Texten „kodiert" worden, teils verbunden mit der These einer verlorenen Vor-Zivilisation. Reine Hypothese, von der Mainstream-Akademie als unbelegt zurückgewiesen. (Die Zahl 432.000 ist genau ein Sechstel von 25.920 × 100, was solche Spekulationen befeuert.)
+Behauptung: 360, 72, 108, 25.920 („Grosses Jahr") seien als „heilige Zahlen" der Erd-Präzession (72 Jahre pro Grad → 25.920 Jahre voller Zyklus) bewusst in antiken Bauten, Mythen und Texten „kodiert" worden, teils verbunden mit der These einer verlorenen Vor-Zivilisation. Reine Hypothese, von der Mainstream-Akademie als unbelegt zurückgewiesen. (Die Zahl 432.000 ist genau ein Sechstel von 25.920 × 100, was solche Spekulationen befeuert.)
 
 ### Ishango-Knochen und prähistorische Basis-12 [spekulativ, Einzelmeinung]
 

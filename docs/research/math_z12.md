@@ -9,8 +9,8 @@ Quintenzirkel-Folge, Primzahlreste) per Python/BigInt selbst nachgerechnet. Merg
 drei unabhängigen Recherche-Dossiers (z12_a algebraisch · z12_b Brücken · z12_c
 Geschichte/Vorbehalte); die Zahlenwerte decken sich vollständig.
 
-> Methodik gemäß `docs/research/README.md`: Dossier vor Prosa, Tier-System, ehrliche
-> Vorbehalte. Maßstab `nature_pyrit.md` und `math_zyklische_zahlen.md`.
+> Methodik gemäss `docs/research/README.md`: Dossier vor Prosa, Tier-System, ehrliche
+> Vorbehalte. Massstab `nature_pyrit.md` und `math_zyklische_zahlen.md`.
 
 ---
 
@@ -22,7 +22,7 @@ Element, ein Inverses zu jedem Element. Mehr nicht.
 
 Die Menge {0, 1, …, 11} mit der Addition modulo 12 (a ⊕ b = (a+b) mod 12) ist eine
 solche Gruppe — die **Stundenaddition** der Uhr. Neutral ist 0 (= „12 Uhr"), invers zu
-a ist 12 − a (5 + 7 = 0). Diese Gruppe heißt **ℤ/12ℤ**.
+a ist 12 − a (5 + 7 = 0). Diese Gruppe heisst **ℤ/12ℤ**.
 
 ---
 
@@ -58,7 +58,7 @@ Gegenbeispiel A₄ hat keine Untergruppe der Ordnung 6).
 | 2 | {0, 6} | Durchmesser-Linie |
 | 3 | {0, 4, 8} | gleichseitiges Dreieck |
 | 4 | {0, 3, 6, 9} | Quadrat |
-| 6 | {0, 2, 4, 6, 8, A} | regelmäßiges Sechseck |
+| 6 | {0, 2, 4, 6, 8, A} | regelmässiges Sechseck |
 | 12 | alles | das volle Zifferblatt |
 
 Eine „Dezimaluhr" ℤ/10ℤ hätte nur Teiler 1, 2, 5, 10 — keine Untergruppe der Ordnung 3
@@ -79,10 +79,10 @@ Transposition = Addition mod 12. Die **reine Quinte** ist 7 Halbtöne. Wiederhol
 0 → 7 → 2 → 9 → 4 → B → 6 → 1 → 8 → 3 → A → 5 → 0
 ```
 
-Alle zwölf Töne, bevor der Kreis sich schließt — **weil ggT(7, 12) = 1**, also 7 ein
+Alle zwölf Töne, bevor der Kreis sich schliesst — **weil ggT(7, 12) = 1**, also 7 ein
 Erzeuger ist. Die **Quart** (5 Halbtöne, ggT(5,12)=1) erzeugt denselben Zirkel rückwärts.
 
-Gegenbeispiele (Akkorde = Untergruppen): große Terz 4 → {0,4,8} (übermäßiger Dreiklang,
+Gegenbeispiele (Akkorde = Untergruppen): grosse Terz 4 → {0,4,8} (übermässiger Dreiklang,
 Ordnung 3); Tritonus 6 → {0,6} (Ordnung 2); kleine Terz 3 → {0,3,6,9} (verminderter
 Vierklang, Ordnung 4).
 
@@ -117,7 +117,7 @@ dieselbe Bedingung ggT(·, 12) = 1, dreimal gelesen:
 |------|------------------------|
 | Gruppe | additive Erzeuger von ℤ/12ℤ |
 | Uhr | Schrittweiten, die alle 12 Felder treffen |
-| Musik | Quint/Quart/Halbton/große Sept — erzeugen den ganzen Tonkreis |
+| Musik | Quint/Quart/Halbton/grosse Sept — erzeugen den ganzen Tonkreis |
 | Primziffern | einzig mögliche Endziffern für Primzahlen > 3 |
 
 ---
@@ -134,9 +134,9 @@ ihr eigener Kehrwert: 5² = 25 ≡ 1, 7² = 49 ≡ 1, 11² = 121 ≡ 1 (mod 12).
 Ordnung 4, in der jedes Element zum Quadrat 1 ergibt, ist die **Klein-Vierergruppe**
 C₂×C₂. Grund (CRT, 12 = 4·3): (ℤ/12ℤ)× ≅ (ℤ/4ℤ)× × (ℤ/3ℤ)× ≅ C₂ × C₂.
 
-**Präzisierung (ein verbreiteter Fehler):** Es ist **nicht** wahr, dass 12 die größte Zahl
+**Präzisierung (ein verbreiteter Fehler):** Es ist **nicht** wahr, dass 12 die grösste Zahl
 mit „elementar-abelscher Einheitengruppe vom Exponenten 2" ist — das ist **n = 24**
-((ℤ/24ℤ)× ≅ C₂×C₂×C₂). Die korrekte Sonderstellung der 12: sie ist die größte Zahl, deren
+((ℤ/24ℤ)× ≅ C₂×C₂×C₂). Die korrekte Sonderstellung der 12: sie ist die grösste Zahl, deren
 Einheitengruppe **genau** die Klein-Vierergruppe C₂×C₂ ist (Ordnung 4 *und* Exponent 2).
 Die n mit Exponent-2-Einheitengruppe sind genau die Teiler von 24: {1,2,3,4,6,8,12,24}.
 
@@ -180,10 +180,10 @@ prominenten Vertreter.
 Diedergruppe D₁₂ (24 Elemente, nicht abelsch). Nur die *Drehungen* des Zwölfecks sind
 isomorph zu ℤ/12ℤ.
 
-**Irrtum 7: »12 ist die größte Zahl mit Exponent-2-Einheitengruppe.«** Das ist 24 (siehe
-Abschnitt 7); 12 ist die größte mit Einheitengruppe = C₂×C₂.
+**Irrtum 7: »12 ist die grösste Zahl mit Exponent-2-Einheitengruppe.«** Das ist 24 (siehe
+Abschnitt 7); 12 ist die grösste mit Einheitengruppe = C₂×C₂.
 
-**Vorbehalt 8: Der Quintenzirkel schließt sich nur in der gleichstufigen Stimmung exakt**
+**Vorbehalt 8: Der Quintenzirkel schliesst sich nur in der gleichstufigen Stimmung exakt**
 (in reiner Stimmung bleibt das pythagoreische Komma, ~23,46 Cent). Die Gruppentheorie gilt
 für das *Modell* der Tonklassen, nicht für die physikalischen Schwingungen.
 
@@ -197,7 +197,7 @@ Punkte.
 
 »Teiler, Brüche und Perioden« führt die Teilerstruktur der 12 ein; dieses Kapitel macht
 daraus eine *Gruppenstruktur* und trennt Modulo von Basis. »Zyklische Zahlen« behandelt
-die *multiplikative* Seite (Primitivwurzeln, Perioden 1/p) — hier geht es ausschließlich
+die *multiplikative* Seite (Primitivwurzeln, Perioden 1/p) — hier geht es ausschliesslich
 um die *additive* Gruppe. »Klang in Zwölfteln« (Welt-Block) behandelt Akustik/Stimmung;
 hier nur die Algebra des Quintenzirkels.
 
