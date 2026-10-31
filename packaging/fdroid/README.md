@@ -22,7 +22,7 @@ App ID `app.weltanschauung.dozenal` matches the Play/iOS/macOS/Flathub bundle ID
 
 ## The build recipe, in short
 
-- Pins Flutter to **3.47.9** (the version in `.github/workflows/ci.yml`) via the
+- Pins Flutter to **3.41.8** (the version matching the `v1.5.1` tag; raise it with the next tag) via the
   `flutter` srclib. **Keep this in lockstep with CI** when you bump Flutter.
 - Strips the non-Android Flutter targets (`ios linux macos web watch`).
 - Builds a **universal APK** (`flutter build apk --release`, both ABIs in one file).
@@ -51,8 +51,8 @@ App ID `app.weltanschauung.dozenal` matches the Play/iOS/macOS/Flathub bundle ID
 
 ## Known tuning points (flag for the reviewers if CI complains)
 
-- **Flutter srclib ref:** if `flutter@3.47.9` isn't resolvable as-is, the fallback is
-  `flutter@stable` plus a `prebuild` step `git -C $$flutter$$ checkout 3.47.9`.
+- **Flutter srclib ref:** if `flutter@3.41.8` isn't resolvable as-is, the fallback is
+  `flutter@stable` plus a `prebuild` step `git -C $$flutter$$ checkout 3.41.8`.
 - **Auto-update of versionCode:** `UpdateCheckMode: Tags` + `AutoUpdateMode: Version`
   detects new `vX.Y.Z` tags, but Flutter keeps its versionCode in `pubspec.yaml`
   (`version: X.Y.Z+N`), which F-Droid's auto-updater doesn't always parse. If it

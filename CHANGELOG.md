@@ -17,7 +17,7 @@ Git-Historie zusammengefasst. Nur `v1.5.1` ist als Git-Tag vorhanden.
 
 - Der Page-Peek ist ein dezenter Punkte-Indikator, der mit dem Wischen mitgleitet.
 - Das Keypad des Werterechners kommt ohne Overlay aus und zeigt beide Einheitensysteme gleichzeitig.
-- CI und F-Droid-Rezept nutzen Flutter 3.47.9, die CI prüft das Lockfile streng.
+- Die CI nutzt Flutter 3.47.9 und prüft das Lockfile streng.
 - Die KI-Anweisungen sind thematisch nach `docs/` aufgeteilt.
 
 ### Fixed

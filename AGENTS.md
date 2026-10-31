@@ -1,12 +1,12 @@
 # Dozenal Calc
 
 Flutter-Port eines Rust- und egui-Wissenschaftsrechners, der in Basis 12 rechnet. Der Rust-Prototyp bleibt die
-Entwicklungs-Sandbox unter <https://github.com/Bawdyness/dozenal_calc>. Paket- und GitHub-Name ändert nur A-067.
+Entwicklungs-Sandbox unter <https://github.com/Bawdyness/dozenal_calc>. Paket- und GitHub-Name bleiben, bis das npf-Backlog (A-067) sie ändert.
 
 ## Prüfen
 
 - Vor «erledigt»: `flutter analyze` und `flutter test`, Ergebnis nennen. Die CI führt dieselben Schritte aus.
-- `pre-commit run --all-files` deckt heute nur gitleaks ab und ersetzt die beiden Befehle nicht.
+- Der pre-commit-Hook prüft nur gestagte Dateien mit gitleaks und ersetzt die beiden Befehle nicht.
 - Einzeln: `flutter test test/rational_test.dart`, `flutter test --plain-name "parses 1/7"`.
 - Welche Testdatei zu welchem Bereich gehört: [docs/entwicklung.md](docs/entwicklung.md).
 
@@ -35,10 +35,10 @@ Entwicklungs-Sandbox unter <https://github.com/Bawdyness/dozenal_calc>. Paket- u
 
 ## Flutter-Version
 
-- CI, Lockfile und F-Droid-Rezept nutzen dieselbe Flutter-Version (heute 3.47.9). Das SDK pinnt transitive Pakete,
+- CI und Lockfile nutzen dieselbe Flutter-Version (heute 3.47.9). Das SDK pinnt transitive Pakete,
   deshalb schreibt `flutter pub get` mit einer anderen Version `pubspec.lock` um.
 - Die CI läuft mit `--enforce-lockfile` und schlägt bei Abweichung fehl. Beim Wechsel der Version zusammen ändern:
-  `.github/workflows/ci.yml`, `pubspec.lock` und `packaging/fdroid/`.
+  `.github/workflows/ci.yml` und `pubspec.lock`. Das F-Droid-Rezept baut einen Tag und folgt erst mit dem nächsten Tag.
 - Dass `flutter pub outdated` die vom SDK gepinnten Pakete meldet, ist erwartet und kein Fehler.
 
 ## Sprache

@@ -50,10 +50,10 @@ flutter build web --release       # statische Seite unter build/web
 
 - Prüfbefehl: `flutter analyze`
 - Tests: `flutter test`
-- Secrets-Prüfung: `pre-commit run --all-files`
+- Secrets-Prüfung: gitleaks läuft als pre-commit-Hook auf den gestagten Dateien.
 - Flutter-Version: dieselbe wie in `.github/workflows/ci.yml`, weil das SDK transitive Pakete pinnt.
 
-`flutter pub get` meldet transitive Abhängigkeiten (`meta`, `vector_math`, `cli_util`, `matcher`, `test_api`, `xml`) mit
+`flutter pub get` meldet transitive Abhängigkeiten (etwa `cli_util`, `test_api`, `xml`) mit
 neueren Versionen, die mit den aktuellen Constraints inkompatibel sind. Diese Pins kommen vom Flutter-SDK, nicht von
 `pubspec.yaml`, weshalb weder `flutter pub upgrade` noch `flutter pub upgrade --major-versions` sie auf dem
 Stable-Channel anhebt. Nach jedem Flutter-Minor-Stable-Release den Upgrade erneut versuchen und Prüfbefehl und Tests

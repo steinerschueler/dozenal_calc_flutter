@@ -1,5 +1,8 @@
 # Distribution
 
+Aus dem früheren Gesamtdokument übernommen. Verweise wie «oben» oder «siehe …-Abschnitt» meinen die Themenseiten, die
+[architektur.md](architektur.md) auflistet.
+
 ## Native Begleit-Apps (macOS, watchOS)
 
 Neben den Flutter-Zielen (Android, iOS/iPadOS, Web) gibt es zwei native
@@ -95,8 +98,8 @@ massgebliche Leitfaden. Identität: Store ID `9N4M1XLPLP0N`, Package
 Paketierung in **`packaging/fdroid/`** (eigene `README.md`): F-Droid baut **aus dem
 Quellcode** auf eigenen Servern — also ein Bau-Rezept, kein Artefakt. Metadata
 `app.weltanschauung.dozenal.yml`: MIT, Science & Education, baut den **`v1.5.1`-Tag**
-als **universelles APK** (`flutter build apk --release`), Flutter auf **3.47.9**
-gepinnt (= CI-Version, im Lockstep halten) via `flutter`-srclib; F-Droid **signiert
+als **universelles APK** (`flutter build apk --release`), Flutter auf **3.41.8**
+gepinnt (passend zum Tag `v1.5.1`, mit dem nächsten Tag anheben) via `flutter`-srclib; F-Droid **signiert
 selbst** (fehlende `key.properties` daher unkritisch). Sauberer Kandidat: keine
 proprietären Deps, keine Anti-Features (kein Google/Firebase/Tracking/Netz). **Noch
 offen:** Rezept lokal mit `fdroid build` testen, dann MR gegen

@@ -54,7 +54,8 @@ Massgebend ist `netz` in `npf.toml`.
 | iOS, macOS, Windows, Linux, watchOS | keine | Der Code öffnet keine Verbindung. Die macOS-Release-Entitlements enthalten nur die Sandbox. |
 | Web | `www.gstatic.com`, `fonts.gstatic.com` | `flutter build web --release` mit 3.47.9 enthält beide Adressen, für CanvasKit und Ersatzschriften. |
 
-Der Code nutzt keinen HTTP-Client und kein `Image.network`. Quellen- und Empfehlungslinks öffnet `openExternalLink` nach
+Der Code in `lib/` nutzt keinen HTTP-Client und kein `Image.network`. Im Web holt `package_info_plus` `version.json` vom
+eigenen Host der Seite. Quellen- und Empfehlungslinks öffnet `openExternalLink` nach
 einem Tipp im Browser des Geräts. Der Feedback-Dialog öffnet `mailto:`. Die Anfrage stellt jeweils die fremde App, darum
 stehen diese Adressen nicht unter `netz`.
 
@@ -68,6 +69,10 @@ Entwicklungswerkzeuge in `tool/` und `android/` (Gradle Play Publisher) laufen n
 - [Rechner-Seiten](rechner-seiten.md)
 - [Intro, Sprachen, RTL](mehrsprachigkeit.md)
 - [Android nativ](android-nativ.md)
+- [Build und Assets](build-und-assets.md)
+- [Distribution](distribution.md)
+- [Entwicklung und Tests](entwicklung.md)
+- [Konventionen](konventionen.md)
 
 ## Projekt
 

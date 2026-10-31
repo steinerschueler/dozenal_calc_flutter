@@ -1,5 +1,8 @@
 # Entwicklung
 
+Aus dem früheren Gesamtdokument übernommen. Verweise wie «oben» oder «siehe …-Abschnitt» meinen die Themenseiten, die
+[architektur.md](architektur.md) auflistet.
+
 ```bash
 flutter pub get
 flutter run                   # aktuelle Plattform
@@ -80,9 +83,7 @@ Test-Routing (für gezielte Edits):
   Xcode; Scope = Schnittmenge beider Auswerter).
 
 CI (`.github/workflows/ci.yml`) ist auf Flutter 3.47.9 stable festgenagelt
-und führt `pub get --enforce-lockfile`, `analyze` und `test` aus. Das Flutter-SDK selbst pinnt sechs
-transitive Abhängigkeiten (`meta`, `vector_math`, `cli_util`, `matcher`,
-`test_api`, `xml`) auf Versionen, die `pub outdated` flaggt — das ist
+und führt `pub get --enforce-lockfile`, `analyze` und `test` aus. Das Flutter-SDK selbst pinnt transitive Abhängigkeiten (etwa `cli_util`, `test_api`, `xml`) auf Versionen, die `pub outdated` flaggt — das ist
 erwartet, kein Bug. Nach jedem Flutter-Minor-Stable-Release erneut prüfen.
 
 ## Manuelles Testen auf physischem Gerät

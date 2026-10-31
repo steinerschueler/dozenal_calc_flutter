@@ -1,5 +1,8 @@
 # Einstellungen und Theming
 
+Aus dem früheren Gesamtdokument übernommen. Verweise wie «oben» oder «siehe …-Abschnitt» meinen die Themenseiten, die
+[architektur.md](architektur.md) auflistet.
+
 ## Einstellungen (`lib/settings_page.dart`)
 
 Eigene Seite, erreichbar über die Info-Liste. Bündelt die Quick-Toggles

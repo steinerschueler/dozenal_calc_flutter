@@ -285,7 +285,7 @@ Roter Faden der Serie: Qalculate!/libqalculate taucht auf vier von sechs Plattfo
 3. **Testaufgaben aus Abschnitt 10 real durchführen**, wo möglich (Software frei verfügbar); Resultate als eigene Messungen kennzeichnen. Hardware-Tests nur für tatsächlich vorhandene Geräte behaupten.
 4. **Dozenal-Kasten** in jedem Artikel: Testaufgabe 5 als wiederkehrendes Element; im Android-Artikel zusätzlich Ausblick auf Dozenal Calc (transparent als eigenes Projekt deklarieren).
 5. **Keine wörtlichen Zitate** aus Quellen übernehmen; paraphrasieren und verlinken.
-6. **Zielsprache Deutsch (Hochdeutsch):** durchgängig ß (kein Schweizer ss) — einheitlich mit der gesamten App. Siehe AGENTS.md, Abschnitt „Konventionen".
+6. **Zielsprache Deutsch (Hochdeutsch):** durchgängig Eszett (kein Schweizer Doppel-s) — einheitlich mit der gesamten App. Siehe docs/konventionen.md, Abschnitt „Konventionen".
 
 ## 14. Offene Rechercheaufträge
 

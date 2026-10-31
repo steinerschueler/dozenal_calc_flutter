@@ -1,5 +1,8 @@
 # Rechner-Seiten
 
+Aus dem früheren Gesamtdokument übernommen. Verweise wie «oben» oder «siehe …-Abschnitt» meinen die Themenseiten, die
+[architektur.md](architektur.md) auflistet.
+
 ## Einheitenrechner (zweiter Rechner-Modus)
 
 Vollständiger Umrechner, seit dem Pager-Umbau **Seite 2 eines horizontalen

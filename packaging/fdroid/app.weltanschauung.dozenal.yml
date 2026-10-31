@@ -31,10 +31,10 @@ Builds:
   - versionName: 1.5.1
     versionCode: 19
     commit: v1.5.1
-    # Pin Flutter to the exact version CI uses (.github/workflows/ci.yml).
-    # Bump this in lockstep whenever the CI Flutter version changes.
+    # Pin Flutter to the version matching this tag's pubspec.lock.
+    # Raise it together with the next tag, not with every CI change.
     srclibs:
-      - flutter@3.47.9
+      - flutter@3.41.8
     # Drop the non-Android Flutter targets so only the Android build remains
     # in the tree the F-Droid scanner sees.
     rm:

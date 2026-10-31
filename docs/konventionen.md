@@ -1,5 +1,8 @@
 # Konventionen
 
+Aus dem früheren Gesamtdokument übernommen. Verweise wie «oben» oder «siehe …-Abschnitt» meinen die Themenseiten, die
+[architektur.md](architektur.md) auflistet.
+
 - **Branch-Trennung (HART):** Arbeit am **Dozenal Calc** (diese App, Rechner, Theorie, Einheitenrechner, l10n, Store)
   läuft auf `master`, Riskantes über einen kurzlebigen Branch (GIT-22), und **niemals** auf `bidozenal-foundation`. Die
   Branch `bidozenal-foundation` gehört allein der separaten **Basis-24-«Bidozenal»-App** (Fundament in `docs/bidozenal.md`)
@@ -16,7 +19,7 @@
   aber juristisch zählt die englische Originalfassung. Vorgängiger
   CC-BY-NC-SA-Stand wurde bewusst aufgegeben — MIT ist OSI-konform,
   CC ist nicht für Software empfohlen.
-- **Keine Analytics, kein Netzwerk, keine Plattform-Berechtigungen.** Die
+- **Keine Analytics, kein Netzwerk, keine Plattform-Berechtigungen.** Ausnahme ist der Web-Build, siehe «Netzziele» in [architektur.md](architektur.md). Die
   Datenschutzerklärung ist im App-Bundle (`legal/privacy-policy.de.md`,
   gerendert via `privacy_page.dart`), die App ist deutsch-zuerst.
 - **Deutsche Rechtschreibung der App (HART):** App-Texte schreiben durchgängig Hochdeutsch mit Eszett (U+00DF), niemals

@@ -1,5 +1,8 @@
 # Android nativ
 
+Aus dem früheren Gesamtdokument übernommen. Verweise wie «oben» oder «siehe …-Abschnitt» meinen die Themenseiten, die
+[architektur.md](architektur.md) auflistet.
+
 ## Edge-to-edge (Android 15) und Native-Activity
 
 Ab `targetSdk 35` ist edge-to-edge der Default. Die alten XML-Attribute

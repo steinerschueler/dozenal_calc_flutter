@@ -1,5 +1,8 @@
 # Build und Assets
 
+Aus dem früheren Gesamtdokument übernommen. Verweise wie «oben» oder «siehe …-Abschnitt» meinen die Themenseiten, die
+[architektur.md](architektur.md) auflistet.
+
 ## Release-Builds
 
 ```bash

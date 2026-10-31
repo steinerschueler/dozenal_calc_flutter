@@ -16,7 +16,7 @@ normale Keypad bleibt unangetastet — die Store-Screenshots bleiben gültig.
 Leitidee (seit dem Farb-Umbau **entkoppelt**): zwei unabhängige Achsen statt
 einer Welt-Kopplung — alle vier Kombinationen sind gültig.
 - **Einheitensystem** (imperial ↔ metrisch): converter-lokal über die
-  met/imp-Tasten in der Equals-Reihe. Imperiale Maße bleiben die
+  met/imp-Tasten in der Equals-Reihe. Imperiale Masse bleiben die
   12-freundlichen (12 in = 1 ft = „10" dozenal).
 - **Zahlbasis** (12 ↔ 10): global über die Settings-Zeile „Zahlensystem"
   (gilt für beide Rechner; `ConverterState.setBase` synct werterhaltend).
@@ -118,10 +118,10 @@ Display weg, die 7 Kategorietasten wieder da. `dist` bleibt **goldig umrandet**
 - **Magnitudentaste** setzt die **Eingabe-Einheit** (was die getippte Zahl
   bedeutet).
 - **`=`** schickt das Ergebnis **durch die Magnituden** der aktuellen Welt —
-  jeder Druck zeigt dieselbe Größe in der nächsten Einheit (wrappt am Ende).
+  jeder Druck zeigt dieselbe Grösse in der nächsten Einheit (wrappt am Ende).
 
 ### Metrische/imperiale Klammer `{ }`
-- Zeigt die gleiche Größe im **Gegen-System**, **wechselnd** zur gerade
+- Zeigt die gleiche Grösse im **Gegen-System**, **wechselnd** zur gerade
   gezeigten Einheit (Doz: ft → `{m}`, mi → `{km}`; Dez: m → `{ft}`, km → `{mi}`).
 - Erscheint in **beiden** Display-Zeilen — Eingabe **und** Ausgabe.
 
@@ -154,7 +154,7 @@ Magnitude („3 in") → … Die Summe ist der laufende Gesamtwert (intern SI).
 - **−** wird immer angezeigt (auch zwischen verschiedenen Magnituden:
   `5 ft − 3 in`).
 
-**Skalar-Operatoren (× und ÷, nachgerüstet):** Eine Größe mal/geteilt durch
+**Skalar-Operatoren (× und ÷, nachgerüstet):** Eine Grösse mal/geteilt durch
 eine **einheitslose Zahl** bleibt in ihrer Kategorie — deshalb leben × ÷ in
 der Pending-Eingabe, nicht auf Term-Ebene:
 - `3 × 2` → `ft` committet 6 ft; Auswertung strikt links-nach-rechts beim
@@ -171,11 +171,11 @@ der Pending-Eingabe, nicht auf Term-Ebene:
 **`=`-Ausgaben.** `=` durchläuft die Ergebnis-Ansichten und wrappt:
 1. der Gesamtwert in **je einer Einheit** der Leiter (wie bisher), dann
 2. (nur imperiale/Doz-Welt, nur Kategorien mit Kaskade) der **Breakdown**:
-   höchste volle Zahl je Magnitude, größte zuerst, Rest kaskadiert
+   höchste volle Zahl je Magnitude, grösste zuerst, Rest kaskadiert
    (`1 yd 2 ft 5 in`). Metrische Welt: kein Breakdown (Dezimalzahl).
 
 **Breakdown-Kaskaden (imperial):**
-| Kategorie | groß → klein |
+| Kategorie | gross → klein |
 |---|---|
 | dist | mi, yd, ft, in |
 | weight | ton, cwt, st, lb, oz |
@@ -191,12 +191,12 @@ der Pending-Eingabe, nicht auf Term-Ebene:
 **Sonderfall temp (affin).** Temperaturen darf man nicht summieren → temp
 bleibt **einterm** (jede Magnitude ersetzt den Term), kein Breakdown.
 
-> `space` ist damit rein kubisch (cu in/ft/yd · cm³/m³); die Flüssigmaße leben
+> `space` ist damit rein kubisch (cu in/ft/yd · cm³/m³); die Flüssigmasse leben
 > in `liquid`. (Vorher hatte `space` auch fl oz/pint/… — entfernt.)
 
 ## 5. Architektur (SI als Drehscheibe)
 
-Jede Eingabe wird in eine **SI-Größe** umgerechnet und gespeichert. Jede
+Jede Eingabe wird in eine **SI-Grösse** umgerechnet und gespeichert. Jede
 Magnitude trägt einen **Faktor zu SI**. Umrechnung innerhalb der Leiter =
 durch Ziel-Faktor teilen. Klammer = SI-Wert, gerendert in der **Partner-
 Einheit** des Gegen-Systems. Damit ist die Logik für 15 der 16 Kategorien
@@ -231,7 +231,7 @@ Design-Entscheidung.
   acre·4046.8564 {ha}, sq mi·2589988.11 {km²}
 - Dez: cm²·0.0001 {sq in}, m²·1 {sq ft}, ha·10000 {acre}, km²·1e6 {sq mi}
 
-**space** — Kubikvolumen (SI: L) — rein geometrisch (Flüssigmaße: siehe `liquid`)
+**space** — Kubikvolumen (SI: L) — rein geometrisch (Flüssigmasse: siehe `liquid`)
 - Doz: cu in·0.016387064, cu ft·28.316846592, cu yd·764.554857984
 - Dez: cm³·0.001, m³·1000
 
@@ -282,13 +282,13 @@ Design-Entscheidung.
 - Doz: hp·745.6999 {kW}, BTU/h·0.2930711 {W}
 - Dez: W·1 {hp}, kW·1000 {hp}, PS·735.49875 {hp}
 
-**cook** — Küchenmaße (SI: mL) — US customary
+**cook** — Küchenmasse (SI: mL) — US customary
 - Doz: tsp·4.92892 {mL}, tbsp·14.7868 {mL}, fl oz·29.5735 {mL},
   cup·236.588 {mL}, pint·473.176 {mL}
 - Dez: mL·1 {tsp}, L·1000 {cup}
 
-**liquid** — Flüssigvolumen (SI: L) — US-Flüssigmaße (getrennt von `space`
-Kubik-Volumen und `cook` Rezeptmaßen)
+**liquid** — Flüssigvolumen (SI: L) — US-Flüssigmasse (getrennt von `space`
+Kubik-Volumen und `cook` Rezeptmassen)
 - Doz: fl oz·0.0295735 {mL}, gill·0.118294 {mL}, pint·0.473176 {mL},
   quart·0.946353 {L}, gallon·3.785412 {L}
 - Dez: mL·0.001 {fl oz}, L·1 {quart}
@@ -300,7 +300,7 @@ Kubik-Volumen und `cook` Rezeptmaßen)
 ## 7. Doz/Dez-Verhalten (Welt-Umschalter)
 
 > **Überholt durch die Basis/System-Entkopplung** (siehe §1/§2): Die feste
-> Kopplung „ein Toggle für beides" erwies sich als zu großer Einschnitt —
+> Kopplung „ein Toggle für beides" erwies sich als zu grosser Einschnitt —
 > wer dozenal rechnen will, war auf imperiale Einheiten festgelegt.
 
 Heutiges Verhalten, zwei getrennte Schalter:
@@ -362,7 +362,7 @@ temp °F↔°C, fuel mpg↔L/100km, price £sd↔£dez, count Basis↔Basis, tim
 - [x] **7** `lib/converter_page.dart`
 - [x] **8** Verdrahtung in `InfoListPage` (Eintrag „Einheitenrechner",
       ARB-Key `infoListConverterEntry` in DE+EN, Rest fällt vorerst auf DE)
-- [x] fuel → **liquid** (US-Flüssigmaße); `space` auf rein kubisch bereinigt
+- [x] fuel → **liquid** (US-Flüssigmasse); `space` auf rein kubisch bereinigt
 - [x] inaktive Op-Tasten ausgegraut (Set 1/2, Set 6/7, Drg) — *später
       revidiert: Operatoren sind heute immer aktiv, siehe §4a*
 - [x] **Breakdown**-Daten (Kaskaden je Kategorie, temp affine) + `breakdown()`

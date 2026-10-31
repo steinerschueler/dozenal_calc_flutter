@@ -1,5 +1,8 @@
 # Info-Modal und Empfehlungen
 
+Aus dem früheren Gesamtdokument übernommen. Verweise wie «oben» oder «siehe …-Abschnitt» meinen die Themenseiten, die
+[architektur.md](architektur.md) auflistet.
+
 ## Info-Modal
 
 `info_pages.dart` (Navigator-Routen + reine Routing-Logik der `InfoListPage`).

@@ -1,5 +1,8 @@
 # Intro, Sprachen, RTL
 
+Aus dem früheren Gesamtdokument übernommen. Verweise wie «oben» oder «siehe …-Abschnitt» meinen die Themenseiten, die
+[architektur.md](architektur.md) auflistet.
+
 ## Intro
 
 Onboarding-PageView beim ersten Start, gesperrt über einen
