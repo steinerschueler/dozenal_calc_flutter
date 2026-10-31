@@ -19,7 +19,7 @@ Aus dem früheren Gesamtdokument übernommen. Verweise wie «oben» oder «siehe
   aber juristisch zählt die englische Originalfassung. Vorgängiger
   CC-BY-NC-SA-Stand wurde bewusst aufgegeben — MIT ist OSI-konform,
   CC ist nicht für Software empfohlen.
-- **Keine Analytics, kein Netzwerk, keine Plattform-Berechtigungen.** Ausnahme ist der Web-Build, siehe «Netzziele» in [architektur.md](architektur.md). Die
+- **Keine Analytics, kein Netzwerk, keine Plattform-Berechtigungen.** Die
   Datenschutzerklärung ist im App-Bundle (`legal/privacy-policy.de.md`,
   gerendert via `privacy_page.dart`), die App ist deutsch-zuerst.
 - **Deutsche Rechtschreibung der App (HART):** App-Texte schreiben durchgängig Hochdeutsch mit Eszett (U+00DF), niemals

@@ -9,7 +9,6 @@ flowchart LR
   nutzer[Nutzerin oder Nutzer] --> app[Dozenal Calc]
   app -->|Einstellungen, Kurs-Overrides| geraet[(Gerätespeicher)]
   app -->|Link oder mailto, nur nach Tipp| extern[Browser oder Mail-App des Geräts]
-  web[Nur Web-Build] -->|CanvasKit, Ersatzschriften| google[www.gstatic.com, fonts.gstatic.com]
   stores[Play, App Store, Microsoft Store, Flathub] -->|liefern aus| app
 ```
 
@@ -52,14 +51,15 @@ Massgebend ist `netz` in `npf.toml`.
 |---|---|---|
 | Android, Release | keine | Das Release-Manifest verlangt kein `INTERNET`, nur Debug und Profile (Flutter-Werkzeuge). |
 | iOS, macOS, Windows, Linux, watchOS | keine | Der Code öffnet keine Verbindung. Die macOS-Release-Entitlements enthalten nur die Sandbox. |
-| Web | `www.gstatic.com`, `fonts.gstatic.com` | `flutter build web --release` mit 3.47.9 enthält beide Adressen, für CanvasKit und Ersatzschriften. |
+| Web | keine | CanvasKit und Ersatzschriften liegen auf der eigenen Seite (`web/flutter_bootstrap.js`). Browser-Mitschnitt in acht Sprachen ohne Abruf von Google-Hosts durch die App. |
 
 Der Code in `lib/` nutzt keinen HTTP-Client und kein `Image.network`. Im Web holt `package_info_plus` `version.json` vom
 eigenen Host der Seite. Quellen- und Empfehlungslinks öffnet `openExternalLink` nach
 einem Tipp im Browser des Geräts. Der Feedback-Dialog öffnet `mailto:`. Die Anfrage stellt jeweils die fremde App, darum
 stehen diese Adressen nicht unter `netz`.
 
-Entwicklungswerkzeuge in `tool/` und `android/` (Gradle Play Publisher) laufen nur auf der Arbeitsmaschine.
+Entwicklungswerkzeuge in `tool/` und `android/` (Gradle Play Publisher) laufen nur auf der Arbeitsmaschine. Das gilt auch
+für `tool/fetch_web_fonts.py`, das die Schriften beim Bauen von `fonts.gstatic.com` holt.
 
 ## Weitere Teile
 

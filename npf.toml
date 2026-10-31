@@ -7,8 +7,7 @@ personendaten = "keine"
 phase = "aktiv"
 groesse = "gross"              # Flutter-App und eigenständige Watch-App: mehr als eine lauffähige Einheit
 abhaengig_von = []
-# Nur der Web-Build lädt von diesen Hosts (CanvasKit, Ersatzschriften), Details in docs/architektur.md.
-# Android, iOS, macOS, Windows, Linux und watchOS bauen sich ohne Netzziel.
-netz = ["www.gstatic.com", "fonts.gstatic.com"]
+# Kein ausgelieferter Build kontaktiert fremde Hosts, auch der Web-Build nicht. Details in docs/architektur.md.
+netz = []
 
 [ausnahmen]

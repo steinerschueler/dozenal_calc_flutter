@@ -9,6 +9,7 @@ Aus dem früheren Gesamtdokument übernommen. Verweise wie «oben» oder «siehe
 flutter build apk --release
 JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64 flutter build appbundle --release
 flutter build web --release
+python3 -I tool/fetch_web_fonts.py   # Ersatzschriften (Noto, Roboto) nach build/web/fonts
 ```
 
 Der Play-Store-Appbundle-Build braucht explizit Java 17 (Java 21 auf dieser
