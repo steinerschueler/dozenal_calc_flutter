@@ -32,7 +32,7 @@ Entwicklungs-Sandbox unter <https://github.com/Bawdyness/dozenal_calc>. Paket- u
 
 - `bidozenal-foundation` gehört allein der Basis-24-App und nimmt nie Dozenal-Calc-Code auf, und umgekehrt. Vor jedem
   Commit `git branch --show-current` prüfen.
-- Dozenal-Calc-Arbeit läuft auf `master`, Riskantes über einen kurzlebigen Branch (GIT-22).
+- Dozenal-Calc-Arbeit läuft auf `main`, Riskantes über einen kurzlebigen Branch (GIT-22).
 - `docs/local/` bleibt gitignoriert: Gerätedaten und Persönliches kommen nie in versionierte Dateien.
 
 ## Flutter-Version
