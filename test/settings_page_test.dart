@@ -2,10 +2,6 @@
 // drive their notifiers, and the calc-state rows (numeral system / angle
 // mode) appear only when a CalcStateScope is present.
 
-import 'package:flutter/material.dart';
-import 'package:flutter_test/flutter_test.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-
 import 'package:dozenal_calc_flutter/app_theme.dart';
 import 'package:dozenal_calc_flutter/calc_prefs.dart';
 import 'package:dozenal_calc_flutter/calc_scope.dart';
@@ -15,6 +11,9 @@ import 'package:dozenal_calc_flutter/logic/glyph_style.dart';
 import 'package:dozenal_calc_flutter/settings_page.dart';
 import 'package:dozenal_calc_flutter/state.dart';
 import 'package:dozenal_calc_flutter/tokens.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_test/flutter_test.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 Widget _wrap({
   required CalcPrefsNotifier prefs,

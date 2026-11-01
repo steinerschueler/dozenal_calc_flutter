@@ -6,7 +6,7 @@
 // repeats. German is the reference; other languages fall back to German until
 // translated. Same shape as world/math/society_theory.dart.
 
-import 'prose_chapter.dart';
+import 'package:dozenal_calc_flutter/theory/prose_chapter.dart';
 
 part 'de/werte_de.dart';
 part 'en/werte_en.dart';

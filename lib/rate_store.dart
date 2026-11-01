@@ -6,10 +6,9 @@
 // All rates route through the snapshot's pivot currency. Every rate-based
 // value is "≈" (rates are approximate + dated), never exact.
 
+import 'package:dozenal_calc_flutter/logic/rate_data.dart';
 import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
-import 'logic/rate_data.dart';
 
 class RateStore extends ChangeNotifier {
   static const _curPrefix = 'rate_ovr_cur_';

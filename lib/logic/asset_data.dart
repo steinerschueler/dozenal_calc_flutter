@@ -22,7 +22,7 @@
 // dependent commodity conversions that must carry a "≈" suffix, arrives with
 // the commodity class in a later phase and will extend this file then.)
 
-import 'unit_data.dart';
+import 'package:dozenal_calc_flutter/logic/unit_data.dart';
 
 const UnitWorld _imp = UnitWorld.imperial;
 const UnitWorld _met = UnitWorld.metric;
@@ -35,6 +35,14 @@ enum AssetClass { metal, currency }
 /// [CategoryDef]. For metals every genus points at the *same* [units] list;
 /// for currencies each has its own.
 class AssetGenus {
+  const AssetGenus({
+    required this.key,
+    required this.assetClass,
+    required this.units,
+    this.breakdown = const [],
+    this.singleWorld = false,
+  });
+
   /// English key used as the l10n lookup key (and the keypad fallback label).
   final String key;
 
@@ -52,14 +60,6 @@ class AssetGenus {
   /// met/imp keys are inert. True for every currency (money has no metric vs
   /// imperial axis) and reserved for future single-world metal cases.
   final bool singleWorld;
-
-  const AssetGenus({
-    required this.key,
-    required this.assetClass,
-    required this.units,
-    this.breakdown = const [],
-    this.singleWorld = false,
-  });
 
   bool get hasBreakdown => breakdown.isNotEmpty;
 
@@ -125,8 +125,8 @@ const List<AssetGenus> _currencies = [
     key: 'usd',
     assetClass: AssetClass.currency,
     singleWorld: true,
-    units: [Unit('\$', _imp, 1), Unit('¢', _imp, 0.01)], // $ , ¢
-    breakdown: ['\$', '¢'],
+    units: [Unit(r'$', _imp, 1), Unit('¢', _imp, 0.01)], // $ , ¢
+    breakdown: [r'$', '¢'],
   ),
   AssetGenus(
     key: 'eur',
@@ -165,15 +165,15 @@ const List<AssetGenus> _currencies = [
     key: 'cad',
     assetClass: AssetClass.currency,
     singleWorld: true,
-    units: [Unit('C\$', _imp, 1), Unit('¢', _imp, 0.01)],
-    breakdown: ['C\$', '¢'],
+    units: [Unit(r'C$', _imp, 1), Unit('¢', _imp, 0.01)],
+    breakdown: [r'C$', '¢'],
   ),
   AssetGenus(
     key: 'aud',
     assetClass: AssetClass.currency,
     singleWorld: true,
-    units: [Unit('A\$', _imp, 1), Unit('¢', _imp, 0.01)],
-    breakdown: ['A\$', '¢'],
+    units: [Unit(r'A$', _imp, 1), Unit('¢', _imp, 0.01)],
+    breakdown: [r'A$', '¢'],
   ),
 ];
 

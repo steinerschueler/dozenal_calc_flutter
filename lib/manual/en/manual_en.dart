@@ -150,7 +150,7 @@ List<ManualChapter> _manualChaptersEn() => const [
       'exponent lies behind them? Root and logarithm are thus the two inverses '
       'of raising to a power.',
     ),
-    PowerTriangleFigure(power: 'Power', base: 'Base', exponent: 'Exponent'),
+    PowerTriangleFigure(power: 'Power', base: 'Base'),
     _H('Powers: repeated multiplication'),
     _P(
       'The power b^e means, to begin with, nothing more than multiplying b by '
@@ -460,7 +460,6 @@ List<ManualChapter> _manualChaptersEn() => const [
     RightTriangleFigure(
       adjacent: 'Adjacent',
       opposite: 'Opposite',
-      hypotenuse: 'Hypotenuse',
       sinRatio: 'sin θ = Opp / Hyp',
       cosRatio: 'cos θ = Adj / Hyp',
       tanRatio: 'tan θ = Opp / Adj',
@@ -795,7 +794,7 @@ List<ManualChapter> _manualChaptersEn() => const [
     _H('Kinship with trigonometry'),
     _P(
       'Both families are woven from the same material: the exponential function. '
-      'Euler\'s formula writes the circular functions quite analogously — '
+      "Euler's formula writes the circular functions quite analogously — "
       'cos t = (eⁱᵗ + e⁻ⁱᵗ)/2, sin t = (eⁱᵗ − e⁻ⁱᵗ)/(2i). The pattern is the '
       'same; only for the circular functions the exponential runs on the '
       'imaginary axis (argument i·t), for the hyperbolic ones on the real axis '
@@ -815,7 +814,7 @@ List<ManualChapter> _manualChaptersEn() => const [
       'The addition theorems run in parallel too: '
       'sinh(a+b) = sinh a·cosh b + cosh a·sinh b, exactly as for the sine. For '
       'the cosine, by contrast, a sign flips — cos(a+b) has a minus, cosh(a+b) a '
-      'plus. This is Osborn\'s rule: every trigonometric identity becomes '
+      "plus. This is Osborn's rule: every trigonometric identity becomes "
       'hyperbolic by replacing sin→sinh, cos→cosh and flipping the sign wherever '
       'a product of two sine factors appears. A wrong sign almost always sits at '
       'exactly this spot.',
@@ -941,14 +940,14 @@ List<ManualChapter> _manualChaptersEn() => const [
       '49), for instance, 49 nCr 6 gives ≈48245A0 — a good fourteen million '
       'possibilities for one ticket.',
     ),
-    _H('Pascal\'s triangle'),
+    _H("Pascal's triangle"),
     _P(
       'Arrange the values nCr row by row and a pattern appears: in row n stand, '
       'one after another, n nCr 0, n nCr 1, …, n nCr n. Each number is the sum '
       'of the two above it — so the triangle grows entirely without factorials. '
       'The edges are all ones, and it is symmetric (n nCr r = n nCr (n−r)).',
     ),
-    PascalTriangleFigure(title: 'Pascal\'s triangle'),
+    PascalTriangleFigure(title: "Pascal's triangle"),
     _P(
       'In base twelve the triangle looks almost as usual — only in row 5 an "A" '
       'appears instead of ten. The same numbers are, by the way, the '
@@ -1000,7 +999,6 @@ List<ManualChapter> _manualChaptersEn() => const [
     ),
     DozenalPowersScaleFigure(
       title: 'Powers of twelve — 1 EXP n',
-      dozLabel: 'Doz.',
       decLabel: 'Dec.',
     ),
     _P(
@@ -1231,7 +1229,7 @@ List<ManualChapter> _assetManualChaptersEn() => const [
     ),
     _P(
       'Like the other calculators, the value calculator keeps its input '
-      'across the switch. The look is the same as the unit converter\'s — '
+      "across the switch. The look is the same as the unit converter's — "
       'only the right-hand key columns lead one level deeper.',
     ),
   ]),
@@ -1281,7 +1279,7 @@ List<ManualChapter> _assetManualChaptersEn() => const [
       'digits), green for the world of ten (metric units and decimal '
       'digits). The unit symbol carries the colour of its system, the '
       'curly brace shows the same value in the other system in that '
-      'system\'s colour, the DOZ/DEZ indicator the colour of the base. '
+      "system's colour, the DOZ/DEZ indicator the colour of the base. "
       'Currencies have no world axis — their symbols stay violet.',
     ),
     _H('Dozenal or decimal'),

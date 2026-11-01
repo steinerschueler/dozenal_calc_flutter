@@ -3,12 +3,11 @@
 // the system-mode brightness resolution, the scope-less AppColors.of
 // fallback, and a light-mode smoke test of the whole app.
 
+import 'package:dozenal_calc_flutter/app_theme.dart';
+import 'package:dozenal_calc_flutter/main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
-import 'package:dozenal_calc_flutter/app_theme.dart';
-import 'package:dozenal_calc_flutter/main.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();

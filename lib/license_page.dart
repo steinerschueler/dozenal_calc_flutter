@@ -3,11 +3,10 @@
 // — this file only configures asset path + labels. Also exports
 // openExternalLink, which both legal pages and the feedback dialog reuse.
 
+import 'package:dozenal_calc_flutter/l10n/app_localizations.dart';
+import 'package:dozenal_calc_flutter/markdown_page.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
-
-import 'l10n/app_localizations.dart';
-import 'markdown_page.dart';
 
 /// Opens [href] in the user's default browser. On failure, shows a
 /// SnackBar so the tap doesn't silently do nothing. Shared by the legal

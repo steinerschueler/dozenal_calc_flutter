@@ -2,29 +2,28 @@
 // Pure routing. Chapter content lives in lib/theory/ (theory blocks) and
 // lib/manual/ (the calculator manual).
 
+import 'package:dozenal_calc_flutter/app_theme.dart';
+import 'package:dozenal_calc_flutter/conversions_page.dart';
+import 'package:dozenal_calc_flutter/feedback_dialog.dart';
+import 'package:dozenal_calc_flutter/l10n/app_localizations.dart';
+import 'package:dozenal_calc_flutter/language_options.dart';
+import 'package:dozenal_calc_flutter/license_page.dart';
+import 'package:dozenal_calc_flutter/locale_notifier.dart';
+import 'package:dozenal_calc_flutter/manual/manual.dart';
+import 'package:dozenal_calc_flutter/privacy_page.dart';
+import 'package:dozenal_calc_flutter/recommendations/recommendations.dart';
+import 'package:dozenal_calc_flutter/recommendations/recommendations_page.dart';
+import 'package:dozenal_calc_flutter/round_badge.dart';
+import 'package:dozenal_calc_flutter/settings_page.dart';
+import 'package:dozenal_calc_flutter/support_page.dart';
+import 'package:dozenal_calc_flutter/theory/chapter_image_view.dart';
+import 'package:dozenal_calc_flutter/theory/chapter_images.dart';
+import 'package:dozenal_calc_flutter/theory/prose_chapter.dart';
+import 'package:dozenal_calc_flutter/theory/theory_blocks.dart';
+import 'package:dozenal_calc_flutter/theory/theory_illustrations.dart';
+import 'package:dozenal_calc_flutter/theory/werte_illustrations.dart';
 import 'package:flutter/material.dart';
 import 'package:package_info_plus/package_info_plus.dart';
-
-import 'app_theme.dart';
-import 'conversions_page.dart';
-import 'feedback_dialog.dart';
-import 'l10n/app_localizations.dart';
-import 'language_options.dart';
-import 'manual/manual.dart';
-import 'license_page.dart';
-import 'locale_notifier.dart';
-import 'privacy_page.dart';
-import 'recommendations/recommendations.dart';
-import 'recommendations/recommendations_page.dart';
-import 'round_badge.dart';
-import 'settings_page.dart';
-import 'support_page.dart';
-import 'theory/chapter_image_view.dart';
-import 'theory/chapter_images.dart';
-import 'theory/prose_chapter.dart';
-import 'theory/theory_blocks.dart';
-import 'theory/theory_illustrations.dart';
-import 'theory/werte_illustrations.dart';
 
 class InfoListPage extends StatelessWidget {
   const InfoListPage({super.key});
@@ -101,9 +100,9 @@ class InfoListPage extends StatelessWidget {
                 style: TextStyle(fontSize: 14, color: t.textSecondary),
               ),
               trailing: const _NavChevron(),
-              onTap: () => Navigator.of(
-                context,
-              ).push(MaterialPageRoute(builder: (_) => const SettingsPage())),
+              onTap: () => Navigator.of(context).push(
+                MaterialPageRoute<void>(builder: (_) => const SettingsPage()),
+              ),
             ),
             Divider(color: t.divider, height: 1),
             const _LanguagePickerExpansion(),
@@ -118,9 +117,9 @@ class InfoListPage extends StatelessWidget {
                 style: TextStyle(fontSize: 14, color: t.textSecondary),
               ),
               trailing: const _NavChevron(),
-              onTap: () => Navigator.of(
-                context,
-              ).push(MaterialPageRoute(builder: (_) => const PrivacyPage())),
+              onTap: () => Navigator.of(context).push(
+                MaterialPageRoute<void>(builder: (_) => const PrivacyPage()),
+              ),
             ),
             Divider(color: t.divider, height: 1),
             ListTile(
@@ -133,9 +132,9 @@ class InfoListPage extends StatelessWidget {
                 style: TextStyle(fontSize: 14, color: t.textSecondary),
               ),
               trailing: const _NavChevron(),
-              onTap: () => Navigator.of(
-                context,
-              ).push(MaterialPageRoute(builder: (_) => const AppLicensePage())),
+              onTap: () => Navigator.of(context).push(
+                MaterialPageRoute<void>(builder: (_) => const AppLicensePage()),
+              ),
             ),
             Divider(color: t.divider, height: 1),
             ListTile(
@@ -148,9 +147,9 @@ class InfoListPage extends StatelessWidget {
                 style: TextStyle(fontSize: 14, color: t.textSecondary),
               ),
               trailing: const _NavChevron(),
-              onTap: () => Navigator.of(
-                context,
-              ).push(MaterialPageRoute(builder: (_) => const SupportPage())),
+              onTap: () => Navigator.of(context).push(
+                MaterialPageRoute<void>(builder: (_) => const SupportPage()),
+              ),
             ),
             Divider(color: t.divider, height: 1),
             ListTile(
@@ -291,7 +290,7 @@ class _ManualSectionExpansionState extends State<_ManualSectionExpansion> {
                         ),
                         trailing: const _NavChevron(),
                         onTap: () => Navigator.of(context).push(
-                          MaterialPageRoute(
+                          MaterialPageRoute<void>(
                             builder: (_) => ManualChapterPage(c),
                           ),
                         ),
@@ -309,8 +308,8 @@ class _ManualSectionExpansionState extends State<_ManualSectionExpansion> {
 /// Renders a single manual chapter — its title in the AppBar and its body
 /// widgets (prose + inline illustrations) in a scroll view.
 class ManualChapterPage extends StatelessWidget {
-  final ManualChapter chapter;
   const ManualChapterPage(this.chapter, {super.key});
+  final ManualChapter chapter;
 
   @override
   Widget build(BuildContext context) {
@@ -398,7 +397,7 @@ class _TheoryExpansionState extends State<_TheoryExpansion> {
                             : null,
                         trailing: const _NavChevron(),
                         onTap: () => Navigator.of(context).push(
-                          MaterialPageRoute(
+                          MaterialPageRoute<void>(
                             builder: (_) => TheoryBlockPage(block: block),
                           ),
                         ),
@@ -422,7 +421,7 @@ class _TheoryExpansionState extends State<_TheoryExpansion> {
                       ),
                       trailing: const _NavChevron(),
                       onTap: () => Navigator.of(context).push(
-                        MaterialPageRoute(
+                        MaterialPageRoute<void>(
                           builder: (_) => const ConversionsPage(),
                         ),
                       ),
@@ -443,7 +442,7 @@ class _TheoryExpansionState extends State<_TheoryExpansion> {
                       ),
                       trailing: const _NavChevron(),
                       onTap: () => Navigator.of(context).push(
-                        MaterialPageRoute(
+                        MaterialPageRoute<void>(
                           builder: (_) => TheoryBlockPage(block: werteBlock),
                         ),
                       ),
@@ -516,7 +515,9 @@ class _RecommendationsExpansionState extends State<_RecommendationsExpansion> {
                         ),
                         trailing: const _NavChevron(),
                         onTap: () => Navigator.of(context).push(
-                          MaterialPageRoute(builder: (_) => RecChapterPage(c)),
+                          MaterialPageRoute<void>(
+                            builder: (_) => RecChapterPage(c),
+                          ),
                         ),
                       ),
                     ],
@@ -638,9 +639,8 @@ class _NavChevron extends StatelessWidget {
 /// [TheoryChapterPage]. An in-progress block (no chapters yet) shows a short
 /// placeholder.
 class TheoryBlockPage extends StatelessWidget {
+  const TheoryBlockPage({required this.block, super.key});
   final TheoryBlock block;
-
-  const TheoryBlockPage({super.key, required this.block});
 
   @override
   Widget build(BuildContext context) {
@@ -686,7 +686,7 @@ class TheoryBlockPage extends StatelessWidget {
                       ),
                       trailing: const _NavChevron(),
                       onTap: () => Navigator.of(context).push(
-                        MaterialPageRoute(
+                        MaterialPageRoute<void>(
                           builder: (_) =>
                               TheoryChapterPage.fromRef(block.chapters[i]),
                         ),
@@ -703,14 +703,9 @@ class TheoryBlockPage extends StatelessWidget {
 /// Renders a single theory chapter: a heading + body prose sections, with an
 /// optional head image or custom-painted illustration keyed by [imageId].
 class TheoryChapterPage extends StatelessWidget {
-  final String title;
-  final List<ProseSection>? prose;
-  final List<Source> sources;
-  final String? imageId;
-
   const TheoryChapterPage({
-    super.key,
     required this.title,
+    super.key,
     this.prose,
     this.sources = const [],
     this.imageId,
@@ -721,6 +716,10 @@ class TheoryChapterPage extends StatelessWidget {
       prose = ref.prose,
       sources = ref.sources,
       imageId = ref.imageId;
+  final String title;
+  final List<ProseSection>? prose;
+  final List<Source> sources;
+  final String? imageId;
 
   @override
   Widget build(BuildContext context) {
@@ -781,8 +780,8 @@ Widget? _customChapterIllustration(String? id) {
 
 /// One prose section (bold heading + body), styled like the unit-theory page.
 class _ProseBlock extends StatelessWidget {
-  final ProseSection section;
   const _ProseBlock(this.section);
+  final ProseSection section;
 
   @override
   Widget build(BuildContext context) {
@@ -819,8 +818,8 @@ class _ProseBlock extends StatelessWidget {
 /// is a tappable link (opens in the browser); below it the two-axis rating is
 /// shown in words (e.g. "etablierte Referenz · Volltext gelesen").
 class _SourceList extends StatelessWidget {
-  final List<Source> sources;
   const _SourceList({required this.sources});
+  final List<Source> sources;
 
   @override
   Widget build(BuildContext context) {

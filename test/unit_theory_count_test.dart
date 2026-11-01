@@ -3,10 +3,9 @@
 // language must be genuinely translated (not a silent German fallback), and an
 // unknown locale must still fall back to German so the tab is never empty.
 
-import 'package:flutter_test/flutter_test.dart';
-
 import 'package:dozenal_calc_flutter/logic/unit_data.dart';
 import 'package:dozenal_calc_flutter/theory/unit_theory.dart';
+import 'package:flutter_test/flutter_test.dart';
 
 const _allTags = [
   'de',

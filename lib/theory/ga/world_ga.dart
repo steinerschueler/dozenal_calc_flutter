@@ -1,3 +1,6 @@
+// Prose wraps inside words and CJK has no spaces, so this lint almost only reports false positives.
+// ignore_for_file: missing_whitespace_between_adjacent_strings
+
 // Próschta na gcaibidil dúlra "An Dódéag agus an Domhan" as Gaeilge. cuid de
 // ../world_theory.dart. Driogtha as docs/research/nature_*.md in abairtí atá
 // simplí d'aon ghnó (níos éasca le haistriú). Guth: luaigh an eolaíocht, agus
@@ -57,7 +60,7 @@ List<ProseChapter> _worldChaptersGa() => const [
         'Tagann an t-ainm ón bhfocal Gréigise don tine: nuair a bhuailtear pírít '
             'in aghaidh cruach, scaipeann sé spréacha. Mar sin baineann an chloch '
             'le huirlisí is sine na daonnachta — fiú Ötzi, an mumaí oighearshrutha, '
-            'd\'iompair sé é chun tine a dhéanamh.\n\n'
+            "d'iompair sé é chun tine a dhéanamh.\n\n"
             'Chuir a loinnir órga fíor-ór i gcéill go minic, mar sin "ór na '
             'n-amadán". Níos déanaí sholáthair pírít an t-amhábhar do '
             'shuilfarach. Tagann na ciúbanna is áille ar domhan — chomh géar le '
@@ -239,7 +242,7 @@ List<ProseChapter> _worldChaptersGa() => const [
             'i gclúdach leis an tsiméadracht íosacaeadrach seo go díreach. Is é an '
             'chúis ná barainneacht: níl ach beagán faisnéise oidhreachtúla ag '
             'víreas. In ionad próitéin chlúdaigh mhór uathúil a thógáil, tógann sé '
-            'a bhlaosc as a lán cóipeanna d\'aon bhloc tógála beag amháin. '
+            "a bhlaosc as a lán cóipeanna d'aon bhloc tógála beag amháin. "
             'Feistíonn na bloic tógála seo le chéile uathu féin, sa staid is '
             'cobhsaí.\n\n'
             'Léirigh na taighdeoirí Caspar agus Klug in 1962 conas a oibríonn sé '
@@ -300,7 +303,7 @@ List<ProseChapter> _worldChaptersGa() => const [
         'A1',
       ),
       Source(
-        'Haeckel\'s embryos: fraud not proven — R. J. Richards (U Chicago)',
+        "Haeckel's embryos: fraud not proven — R. J. Richards (U Chicago)",
         'https://home.uchicago.edu/~rjr6/articles/Haeckel--fraud%20not%20proven.pdf',
         'R1',
         'A1',
@@ -360,7 +363,7 @@ List<ProseChapter> _worldChaptersGa() => const [
             'dheichchodach "thoirmiscthe". Scríobh sé "10 Fold???" ina leabhar '
             'nótaí. Ciallaíonn pointí géara ord — ach measadh an tsiméadracht seo '
             'dodhéanta. Ba chosúil gur contrárthacht an dá rud le chéile.\n\n'
-            'D\'fhulaing Shechtman magadh ar feadh blianta. D\'iarr a cheannaire '
+            "D'fhulaing Shechtman magadh ar feadh blianta. D'iarr a cheannaire "
             'saotharlainne air imeacht. Rinne an poitigéir cáiliúil Linus Pauling '
             'magadh: "Níl a leithéid de rud ann agus leathchriostail, níl ann ach '
             'leath-eolaithe." Ach sheas na tomhais an fód. In 1992 d\'athraigh na '
@@ -372,7 +375,7 @@ List<ProseChapter> _worldChaptersGa() => const [
         'Ar feadh i bhfad measadh gur saorga amháin a bhí sna leathchriostail. '
             'Ansin fuair foireann taighdeoirí an chéad cheann nádúrtha — gráinní '
             'bídeacha i ndreigít as Oirthear na Sibéire, thart ar 4.5 billiún '
-            'bliain d\'aois, a tháinig chun cinn le linn imbhuailte i gcóras '
+            "bliain d'aois, a tháinig chun cinn le linn imbhuailte i gcóras "
             'gréine luath. Tugtar "íosacaeadrít" go cuí ar an mianra.\n\n'
             'Agus bhí an duine chun tosaigh ar an dúlra fiú, gan fhios dó: chomh '
             'luath leis an 13ú go dtí an 15ú haois leag máistir-thógálaithe '
@@ -451,7 +454,7 @@ List<ProseChapter> _worldChaptersGa() => const [
       ),
       ProseSection(
         'Kelvin, Weaire-Phelan agus an Water Cube',
-        'D\'fhiafraigh an Tiarna Kelvin in 1887: conas a roinntear an spás ina '
+        "D'fhiafraigh an Tiarna Kelvin in 1887: conas a roinntear an spás ina "
             'cheallaí comhmhéide leis an mballa iomlán is lú? Ba é a fhreagra ná '
             'corp le ceithre fhíor déag. Ar feadh breis is céad bliain measadh '
             'gurbh é sin an réiteach ab fhearr.\n\n'
@@ -539,7 +542,7 @@ List<ProseChapter> _worldChaptersGa() => const [
       ),
       ProseSection(
         'Newton in aghaidh Gregory',
-        'Níl sé sin chomh follasach sin in aon chor. In 1694 d\'áitigh Isaac '
+        "Níl sé sin chomh follasach sin in aon chor. In 1694 d'áitigh Isaac "
             'Newton agus an réalteolaí David Gregory: dúirt Newton dó dhéag, '
             'mheas Gregory go raibh fiú trí déag indéanta. Is é an chúis leis an '
             'amhras: má leagtar na dhá sféar déag sheachtracha go scaoilte, fanann '
@@ -673,8 +676,8 @@ List<ProseChapter> _worldChaptersGa() => const [
         'Ag tús an 20ú haois rinne Arnold Schönberg na dhá nóta déag ina '
             'gclár. Ina theicníc dháréag-nótach tá na dhá leathnóta déag ar fad '
             'comhionann: ordaíonn cumadóireacht iad i sraith nach dtugtar fabhar '
-            'd\'aon nóta inti, agus scaoileann sí ar an gcaoi sin lár cnagtha '
-            'mór-mion atá ar eolas go maith d\'aon ghnó. Níor éirigh sí riamh '
+            "d'aon nóta inti, agus scaoileann sí ar an gcaoi sin lár cnagtha "
+            "mór-mion atá ar eolas go maith d'aon ghnó. Níor éirigh sí riamh "
             'ina ceol tromlaigh, ach mhúnlaigh sí cumadóireacht an 20ú haois fiú '
             'go dtí ceol scannán.',
       ),
@@ -785,7 +788,7 @@ List<ProseChapter> _worldChaptersGa() => const [
             'Mheánoirthear.\n\n'
             'Níl an bunús seo cruthaithe go cinnte áfach. Tá sé ina bhotún '
             'freisin gur iarsmaí de chóras dó dhéag ársa iad "elf" agus "zwölf" — '
-            'níl iontu ach dhá fhocal a d\'fhan sean i dteanga dheachúlach.',
+            "níl iontu ach dhá fhocal a d'fhan sean i dteanga dheachúlach.",
       ),
     ],
     sources: [
@@ -995,7 +998,7 @@ List<ProseChapter> _worldChaptersGa() => const [
         'A1',
       ),
       Source(
-        'Dürer\'s solid (Truncated triangular trapezohedron) — Wikipedia',
+        "Dürer's solid (Truncated triangular trapezohedron) — Wikipedia",
         'https://en.wikipedia.org/wiki/Truncated_triangular_trapezohedron',
         'R2',
         'A1',
@@ -1035,7 +1038,7 @@ List<ProseChapter> _worldChaptersGa() => const [
             'chur isteach ó am go chéile — gach dhá nó trí bliana ar an meán.\n\n'
             'Tá an riail dhea-chumtha dó sin an-sean: tá naoi mbliana déag '
             'ghréine beagnach go díreach 235 mí ghealaí (dhá ghnáthbhliain déag de '
-            'dhá mhí déag móide seacht mbliana de thrí mhí déag). D\'úsáid na '
+            "dhá mhí déag móide seacht mbliana de thrí mhí déag). D'úsáid na "
             'Bablónaigh an timthriall seo cheana thart ar 500 RC; in Aithin '
             'thug Meton isteach é in 432 RC — foghlamtha ó na Bablónaigh is dócha.',
       ),
@@ -1186,7 +1189,7 @@ List<ProseChapter> _worldChaptersGa() => const [
             'taithíocha ag nascadh horoscóip bhreithe le próifílí '
             'pearsantachta cuí; bhí an nós imeachta comhaontaithe '
             'roimh ré leis na hастралaithe. Ní bhfuaireadar i bhfad '
-            'níos minice ná mar a d\'fhaighfí le randamacht. Tháinig '
+            "níos minice ná mar a d'fhaighfí le randamacht. Tháinig "
             'imscrúduithe níos déanaí, mar shampla ar dhaoine a rugadh '
             'beagnach ag an am céanna, agus roinnt léirmheasanna ar '
             'go leor staidéar, ar an toradh céanna. Dá bhrí sin níl '

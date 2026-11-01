@@ -1,3 +1,6 @@
+// Prose wraps inside words and CJK has no spaces, so this lint almost only reports false positives.
+// ignore_for_file: missing_whitespace_between_adjacent_strings
+
 // “十二与世界”自然篇章的简体中文散文。属于
 // ../world_theory.dart。从 docs/research/nature_*.md 中
 // 提炼为刻意简洁的句子（更易翻译）。基调：陈述
@@ -298,7 +301,7 @@ List<ProseChapter> _worldChaptersZh() => const [
         'A1',
       ),
       Source(
-        'Haeckel\'s embryos: fraud not proven — R. J. Richards (U Chicago)',
+        "Haeckel's embryos: fraud not proven — R. J. Richards (U Chicago)",
         'https://home.uchicago.edu/~rjr6/articles/Haeckel--fraud%20not%20proven.pdf',
         'R1',
         'A1',
@@ -974,7 +977,7 @@ List<ProseChapter> _worldChaptersZh() => const [
         'A1',
       ),
       Source(
-        'Dürer\'s solid (Truncated triangular trapezohedron) — Wikipedia',
+        "Dürer's solid (Truncated triangular trapezohedron) — Wikipedia",
         'https://en.wikipedia.org/wiki/Truncated_triangular_trapezohedron',
         'R2',
         'A1',

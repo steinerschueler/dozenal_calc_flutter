@@ -17,16 +17,22 @@
 //     insert at the caret; a magnitude commits a term at the cursor's slot;
 //     Del removes at the caret / the term before a boundary.
 
+import 'package:dozenal_calc_flutter/logic/base_num.dart';
+import 'package:dozenal_calc_flutter/logic/unit_convert.dart';
+import 'package:dozenal_calc_flutter/logic/unit_data.dart';
 import 'package:flutter/foundation.dart';
-
-import 'logic/base_num.dart';
-import 'logic/unit_data.dart';
-import 'logic/unit_convert.dart';
 
 /// One rendered display line: a number (or composed expression / breakdown
 /// string), an optional trailing unit, and an optional { } cross-world bracket.
 @immutable
 class ConverterLine {
+  const ConverterLine(
+    this.number, {
+    this.unit,
+    this.bracket,
+    this.bracketTenWorld,
+    this.unitRanges = const [],
+  });
   final String number;
   final String? unit;
   final String? bracket; // already "value symbol", e.g. "43.89 m"
@@ -40,14 +46,6 @@ class ConverterLine {
   /// Non-empty for the expression line and the breakdown line, where symbols
   /// live inside the composed string; plain numbers have none.
   final List<(int, int)> unitRanges;
-
-  const ConverterLine(
-    this.number, {
-    this.unit,
-    this.bracket,
-    this.bracketTenWorld,
-    this.unitRanges = const [],
-  });
 }
 
 /// A committed (number, unit) term plus the operator joining it to the previous
@@ -57,22 +55,16 @@ class ConverterLine {
 /// promoted successor's flag so a now-deleted gap can't silently flip the total.
 @immutable
 class _Term {
+  const _Term(this.value, this.unit, {this.subtract = false});
   final double value;
   final Unit unit;
   final bool subtract;
-  const _Term(this.value, this.unit, {this.subtract = false});
 }
 
 /// Rendered input text plus the char offsets the display needs: the caret
 /// position, the pending number's char range, each term boundary's offset,
 /// and the unit-symbol ranges (system-hue colouring).
 class _InputLayout {
-  final String text;
-  final int caret;
-  final int? pendingStart;
-  final int? pendingEnd;
-  final List<int> boundaries;
-  final List<(int, int)> unitRanges;
   _InputLayout(
     this.text,
     this.caret,
@@ -81,6 +73,12 @@ class _InputLayout {
     this.boundaries,
     this.unitRanges,
   );
+  final String text;
+  final int caret;
+  final int? pendingStart;
+  final int? pendingEnd;
+  final List<int> boundaries;
+  final List<(int, int)> unitRanges;
 }
 
 class ConverterState extends ChangeNotifier {

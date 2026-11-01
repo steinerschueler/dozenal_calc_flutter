@@ -3,8 +3,8 @@
 // the class labels are translated. Kept separate (like unit_labels.dart) so the
 // keypad and any theory page can share them without a circular import.
 
-import 'l10n/app_localizations.dart';
-import 'logic/asset_data.dart';
+import 'package:dozenal_calc_flutter/l10n/app_localizations.dart';
+import 'package:dozenal_calc_flutter/logic/asset_data.dart';
 
 /// Localized class label (Edelmetall / Währung).
 String assetClassLabel(AssetClass c, AppLocalizations l) => switch (c) {

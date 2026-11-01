@@ -17,63 +17,63 @@ List<ProseChapter> _worldChaptersFr() => const [
         'La pyrite est le minéral disulfure de fer, populairement appelé « or '
             'des chats » ou « or des fous ». Elle pousse le plus souvent en cube '
             'net, mais peut aussi former une figure étonnante : un corps à douze '
-            'faces pentagonales. Les minéralogistes l\'appellent le '
-            '« pyritoèdre » — c\'est la signature de cette pierre.\n\n'
+            "faces pentagonales. Les minéralogistes l'appellent le "
+            "« pyritoèdre » — c'est la signature de cette pierre.\n\n"
             'À première vue, cela ressemble au célèbre dodécaèdre de la '
             'géométrie grecque (dodeka = douze). De fait, la construction '
-            'concorde même : douze faces, trente arêtes, vingt sommets. Qu\'une '
-            'pierre inerte prenne d\'elle-même une forme aussi pure de douze a '
-            'fasciné les humains depuis l\'Antiquité.',
+            "concorde même : douze faces, trente arêtes, vingt sommets. Qu'une "
+            "pierre inerte prenne d'elle-même une forme aussi pure de douze a "
+            "fasciné les humains depuis l'Antiquité.",
       ),
       ProseSection(
-        'Pourquoi ce n\'est pas un dodécaèdre parfait',
-        'Et pourtant le pyritoèdre n\'est pas un véritable dodécaèdre régulier. '
+        "Pourquoi ce n'est pas un dodécaèdre parfait",
+        "Et pourtant le pyritoèdre n'est pas un véritable dodécaèdre régulier. "
             'Ses douze pentagones sont légèrement déformés, pas équilatéraux. '
             'Ses arêtes ont deux longueurs différentes. Et il lui manque la '
-            'vraie symétrie d\'ordre cinq du solide platonicien.\n\n'
+            "vraie symétrie d'ordre cinq du solide platonicien.\n\n"
             'Derrière cela se cache une raison claire. Un cristal ne peut '
             'disposer ses faces que selon des rapports entiers. Or le dodécaèdre '
-            'idéal exigerait le nombre d\'or, un nombre infini, non entier, '
-            'qu\'un réseau cristallin ne permet pas. Il se forme donc '
-            'l\'approximation lisse la plus simple, le rapport deux pour un. Il '
+            "idéal exigerait le nombre d'or, un nombre infini, non entier, "
+            "qu'un réseau cristallin ne permet pas. Il se forme donc "
+            "l'approximation lisse la plus simple, le rapport deux pour un. Il "
             'en résulte le pyritoèdre : douze faces, mais pas la perfection '
             'platonicienne.',
       ),
       ProseSection(
         'Pourquoi la nature bâtit cette forme',
-        'La forme extérieure d\'un cristal reflète ses atomes intérieurs. Dans '
+        "La forme extérieure d'un cristal reflète ses atomes intérieurs. Dans "
             'la pyrite, le soufre ne se tient pas isolé, mais en petits '
             'haltères de deux atomes chacun. Ces haltères sont orientés et '
-            '« brisent » en partie la pleine symétrie cubique. C\'est seulement '
+            "« brisent » en partie la pleine symétrie cubique. C'est seulement "
             'ainsi que le dodécaèdre peut apparaître.\n\n'
             'Quelle forme apparaît finalement dépend de la croissance : les '
             'faces qui poussent vite disparaissent, les lentes subsistent. Selon '
             'les conditions, la pyrite devient ainsi cube, octaèdre ou justement '
-            'pyritoèdre. Les traces d\'impuretés et le rythme de croissance ont '
+            "pyritoèdre. Les traces d'impuretés et le rythme de croissance ont "
             'leur mot à dire.',
       ),
       ProseSection(
         'Pierre à feu et or des fous',
         'Le nom vient du mot grec pour feu : quand on frappe la pyrite contre '
-            'de l\'acier, des étincelles jaillissent. La pierre compte ainsi '
-            'parmi les plus anciens outils de l\'humanité — même Ötzi, la momie '
+            "de l'acier, des étincelles jaillissent. La pierre compte ainsi "
+            "parmi les plus anciens outils de l'humanité — même Ötzi, la momie "
             'des glaciers, en portait sur lui pour faire du feu.\n\n'
-            'Son éclat doré simulait souvent l\'or véritable, d\'où « or des '
+            "Son éclat doré simulait souvent l'or véritable, d'où « or des "
             'fous ». Plus tard, la pyrite fournit la matière première de '
-            'l\'acide sulfurique. Les plus beaux cubes du monde — d\'une netteté '
+            "l'acide sulfurique. Les plus beaux cubes du monde — d'une netteté "
             'de lame et réfléchissants, comme faits à la machine — viennent de '
             'Navajún en Espagne, où ils ont lentement poussé dans une marne '
             'tendre.',
       ),
       ProseSection(
         'Le dodécaèdre comme symbole',
-        'Le dodécaèdre a de forts échos culturels. Dans l\'Antiquité, Platon '
+        "Le dodécaèdre a de forts échos culturels. Dans l'Antiquité, Platon "
             'attribua quatre des cinq solides parfaits aux éléments et donna le '
             'dodécaèdre régulier au cosmos tout entier ; on associait volontiers '
             'ses douze faces aux douze signes du zodiaque.\n\n'
             'Il existe même la conjecture que les pythagoriciens auraient '
-            'd\'abord imaginé le dodécaèdre idéal à la vue de cristaux de pyrite '
-            '— plausible, mais non établi. La vraie symétrie d\'ordre cinq, que '
+            "d'abord imaginé le dodécaèdre idéal à la vue de cristaux de pyrite "
+            "— plausible, mais non établi. La vraie symétrie d'ordre cinq, que "
             'le pyritoèdre ne fait que suggérer, ne se rencontre dans la nature '
             'que dans les quasi-cristaux, un chapitre bien plus récent.',
       ),
@@ -122,45 +122,45 @@ List<ProseChapter> _worldChaptersFr() => const [
     [
       ProseSection(
         'Le dodécaèdre rhombique',
-        'Le grenat n\'est pas un minéral unique, mais toute une famille — le '
+        "Le grenat n'est pas un minéral unique, mais toute une famille — le "
             'plus souvent rouge, dur et sans clivage. Sa forme préférée dans la '
             'nature est un corps à douze faces, mais cette fois ce ne sont pas '
             'des pentagones, mais douze losanges identiques. Cette forme '
-            's\'appelle le dodécaèdre rhombique.\n\n'
-            'Peu d\'autres corps sont aussi étroitement liés à un minéral, au '
-            'point qu\'on le nomme simplement « grenatoèdre ». Il est en outre '
-            'remplisseur d\'espace : une multitude de tels corps remplit '
-            'l\'espace sans lacune — c\'est la même forme qui constitue le fond '
-            'des alvéoles des abeilles, comme l\'avait déjà remarqué Johannes '
+            "s'appelle le dodécaèdre rhombique.\n\n"
+            "Peu d'autres corps sont aussi étroitement liés à un minéral, au "
+            "point qu'on le nomme simplement « grenatoèdre ». Il est en outre "
+            "remplisseur d'espace : une multitude de tels corps remplit "
+            "l'espace sans lacune — c'est la même forme qui constitue le fond "
+            "des alvéoles des abeilles, comme l'avait déjà remarqué Johannes "
             'Kepler.',
       ),
       ProseSection(
         'Pourquoi douze losanges',
         'Le grenat croît dans le système cristallin cubique, qui permettrait à '
-            'vrai dire aussi le cube et l\'octaèdre. Mais chez le grenat, ce '
+            "vrai dire aussi le cube et l'octaèdre. Mais chez le grenat, ce "
             'sont précisément ces faces qui poussent trop vite et disparaissent. '
             'Restent les faces lentes — et ce sont exactement les douze qui '
-            'forment le dodécaèdre rhombique. C\'est pourquoi un grenat n\'est '
+            "forment le dodécaèdre rhombique. C'est pourquoi un grenat n'est "
             'presque jamais cubique, mais arrondi et à douze faces comme une '
             'graine.\n\n'
-            'La symétrie du cristal permet cette forme, mais ne l\'impose pas ; '
-            'laquelle des formes permises apparaît, c\'est seulement la '
+            "La symétrie du cristal permet cette forme, mais ne l'impose pas ; "
+            "laquelle des formes permises apparaît, c'est seulement la "
             'croissance qui en décide.',
       ),
       ProseSection(
         'De la grenade au papier de verre',
         'Le nom vient du mot latin pour « grenu » — via la grenade, dont les '
             'grains rouges ressemblent aux cristaux. Les grenats rouges étaient '
-            'les pierres préférées de l\'Antiquité tardive : des plaquettes de '
-            'grenat serties d\'or ornent des pièces d\'apparat comme le trésor '
+            "les pierres préférées de l'Antiquité tardive : des plaquettes de "
+            "grenat serties d'or ornent des pièces d'apparat comme le trésor "
             'de Sutton Hoo ; les pierres venaient par le commerce lointain du '
-            'Sri Lanka et de l\'Inde.\n\n'
-            'Économiquement, une propriété plus sobre est aujourd\'hui plus '
+            "Sri Lanka et de l'Inde.\n\n"
+            "Économiquement, une propriété plus sobre est aujourd'hui plus "
             'importante encore : le grenat est très dur et se brise en arêtes '
-            'vives. C\'est pourquoi il se trouve dans le papier de verre, dans '
-            'l\'abrasif de sablage et même dans le jet d\'eau qui découpe '
-            'l\'acier. La belle gemme est en même temps une bête de somme de '
-            'l\'industrie.',
+            "vives. C'est pourquoi il se trouve dans le papier de verre, dans "
+            "l'abrasif de sablage et même dans le jet d'eau qui découpe "
+            "l'acier. La belle gemme est en même temps une bête de somme de "
+            "l'industrie.",
       ),
       ProseSection(
         'Trois dodécaèdres différents',
@@ -168,9 +168,9 @@ List<ProseChapter> _worldChaptersFr() => const [
             '• Le dodécaèdre rhombique du grenat a douze losanges.\n'
             '• Le pyritoèdre de la pyrite a douze pentagones déformés.\n'
             '• Le dodécaèdre régulier de Platon a douze pentagones parfaits.\n\n'
-            'Seul le solide platonicien a une vraie symétrie d\'ordre cinq — et '
-            'c\'est justement elle qui est impossible dans un cristal, parce que '
-            'les pentagones ne s\'emboîtent pas sans lacune. C\'est pourquoi '
+            "Seul le solide platonicien a une vraie symétrie d'ordre cinq — et "
+            "c'est justement elle qui est impossible dans un cristal, parce que "
+            "les pentagones ne s'emboîtent pas sans lacune. C'est pourquoi "
             'aucun cristal ordinaire ne forme un dodécaèdre parfait ; le grenat '
             'et la pyrite atteignent le nombre douze, chacun à sa manière.',
       ),
@@ -213,51 +213,51 @@ List<ProseChapter> _worldChaptersFr() => const [
     [
       ProseSection(
         'Le douze, deux fois',
-        'Deux solides parfaits portent le douze en eux. L\'icosaèdre a vingt '
+        "Deux solides parfaits portent le douze en eux. L'icosaèdre a vingt "
             'faces triangulaires qui se rejoignent en douze sommets. Le '
             'dodécaèdre a douze faces pentagonales. Les deux sont des '
-            '« jumeaux » : si l\'on pose les sommets de l\'un sur les centres '
-            'des faces de l\'autre, ils se transforment l\'un en l\'autre. Ils '
+            "« jumeaux » : si l'on pose les sommets de l'un sur les centres "
+            "des faces de l'autre, ils se transforment l'un en l'autre. Ils "
             'partagent la même symétrie.\n\n'
-            'Parmi ces corps, l\'icosaèdre est celui qui se rapproche le plus '
-            'd\'une sphère — il enferme le plus grand volume pour la plus petite '
-            'surface. Pour une enveloppe protectrice, c\'est la forme la plus '
-            'économe. C\'est précisément pourquoi cette géométrie réapparaît '
+            "Parmi ces corps, l'icosaèdre est celui qui se rapproche le plus "
+            "d'une sphère — il enferme le plus grand volume pour la plus petite "
+            "surface. Pour une enveloppe protectrice, c'est la forme la plus "
+            "économe. C'est précisément pourquoi cette géométrie réapparaît "
             'dans le plus infime du vivant.',
       ),
       ProseSection(
         'Pourquoi il en faut exactement douze',
         'Derrière cela se cache une règle simple et contraignante de la '
             'géométrie. On ne peut pas recouvrir une sphère sans lacune avec '
-            'seulement des hexagones — un réseau d\'hexagones purs reste plat. '
+            "seulement des hexagones — un réseau d'hexagones purs reste plat. "
             'Pour le courber en une sphère fermée, il faut exactement douze '
-            'pentagones. Le nombre d\'hexagones est quelconque, celui des '
+            "pentagones. Le nombre d'hexagones est quelconque, celui des "
             'pentagones est toujours douze.\n\n'
             'Le même principe se trouve dans le ballon de football classique '
             '(douze pièces pentagonales), dans les dômes géodésiques et dans la '
             'molécule de carbone C₆₀. Le douze est ici une conséquence '
-            'inévitable du fait qu\'une surface se referme en sphère.',
+            "inévitable du fait qu'une surface se referme en sphère.",
       ),
       ProseSection(
         'Virus : douze pentagones, toujours',
         'Environ sept virus sur dix logent leur patrimoine génétique dans une '
             'enveloppe ayant exactement cette symétrie icosaédrique. La raison '
-            'en est l\'économie : un virus n\'a que peu d\'information '
-            'héréditaire. Au lieu de construire une grande protéine d\'enveloppe '
-            'unique, il bâtit sa coque à partir de nombreuses copies d\'un seul '
-            'petit élément. Ces éléments s\'assemblent d\'eux-mêmes, dans l\'état '
+            "en est l'économie : un virus n'a que peu d'information "
+            "héréditaire. Au lieu de construire une grande protéine d'enveloppe "
+            "unique, il bâtit sa coque à partir de nombreuses copies d'un seul "
+            "petit élément. Ces éléments s'assemblent d'eux-mêmes, dans l'état "
             'le plus stable.\n\n'
             'Les chercheurs Caspar et Klug montrèrent en 1962 comment cela '
             'fonctionne aussi pour de plus grandes enveloppes : les éléments '
             'forment des anneaux de cinq et de six. Peu importe la taille du '
             'virus — il y a toujours exactement douze anneaux de cinq aux douze '
-            'sommets. De nouveau le douze d\'Euler, exactement comme pour le '
+            "sommets. De nouveau le douze d'Euler, exactement comme pour le "
             'ballon de football. Caspar et Klug furent inspirés par les dômes de '
-            'l\'architecte Buckminster Fuller. Tous les virus ne sont cependant '
+            "l'architecte Buckminster Fuller. Tous les virus ne sont cependant "
             'pas icosaédriques : certains sont en bâtonnet ou bâtis autrement.',
       ),
       ProseSection(
-        'Radiolaires : la géométrie d\'une seule cellule',
+        "Radiolaires : la géométrie d'une seule cellule",
         'Les radiolaires sont de minuscules organismes marins unicellulaires '
             'qui bâtissent des squelettes filigranes en silice — du verre, en '
             'quelque sorte. Certaines espèces atteignent avec une précision '
@@ -267,11 +267,11 @@ List<ProseChapter> _worldChaptersFr() => const [
             'Pour ses planches artistiques, Haeckel choisit les exemplaires les '
             'plus beaux et les plus symétriques ; beaucoup de radiolaires ne '
             'sont en réalité que platoniciens par approximation. Comment une '
-            'cellule sans cerveau bâtit même une telle géométrie n\'est pas '
+            "cellule sans cerveau bâtit même une telle géométrie n'est pas "
             'tout à fait élucidé à ce jour — le verre se dépose probablement sur '
             'les parois de bulles de taille égale, comme sur les jonctions '
-            'd\'une mousse de savon. Les planches de Haeckel marquèrent plus '
-            'tard jusqu\'à l\'Art nouveau.',
+            "d'une mousse de savon. Les planches de Haeckel marquèrent plus "
+            "tard jusqu'à l'Art nouveau.",
       ),
     ],
     sources: [
@@ -306,7 +306,7 @@ List<ProseChapter> _worldChaptersFr() => const [
         'A1',
       ),
       Source(
-        'Haeckel\'s embryos: fraud not proven — R. J. Richards (U Chicago)',
+        "Haeckel's embryos: fraud not proven — R. J. Richards (U Chicago)",
         'https://home.uchicago.edu/~rjr6/articles/Haeckel--fraud%20not%20proven.pdf',
         'R1',
         'A1',
@@ -318,32 +318,32 @@ List<ProseChapter> _worldChaptersFr() => const [
     [
       ProseSection(
         'Le cinq interdit',
-        'Un cristal ordinaire est bâti à partir d\'une plus petite unité qui se '
+        "Un cristal ordinaire est bâti à partir d'une plus petite unité qui se "
             'répète sans fin par translation. De cette répétition découle une '
             'règle stricte : seules sont permises les symétries de rotation '
-            'd\'ordre deux, trois, quatre et six. Un axe d\'ordre cinq est '
+            "d'ordre deux, trois, quatre et six. Un axe d'ordre cinq est "
             'interdit.\n\n'
             'La raison en est intuitive : on peut paver une surface sans lacune '
             'avec des triangles, des carrés ou des hexagones — mais jamais avec '
-            'des pentagones réguliers. Il reste toujours des lacunes. C\'est '
+            "des pentagones réguliers. Il reste toujours des lacunes. C'est "
             'pourquoi un cristal normal ne peut porter ni vrai motif de cinq ni '
-            'vrai icosaèdre. La pyrite et le grenat avaient certes l\'air d\'avoir '
-            'douze faces — mais c\'est justement à eux que manque la vraie '
-            'symétrie d\'ordre cinq.',
+            "vrai icosaèdre. La pyrite et le grenat avaient certes l'air d'avoir "
+            "douze faces — mais c'est justement à eux que manque la vraie "
+            "symétrie d'ordre cinq.",
       ),
       ProseSection(
-        'Comment ils contournent l\'interdit',
-        'L\'interdit ne vaut que parce que le cristal se répète. Mais que se '
+        "Comment ils contournent l'interdit",
+        "L'interdit ne vaut que parce que le cristal se répète. Mais que se "
             'passe-t-il si une structure est ordonnée tout en ne se répétant '
             'jamais exactement ? Ce sont précisément les quasi-cristaux. Ils '
             'sont strictement ordonnés, et pourtant aucune translation ne les '
             'fait coïncider avec eux-mêmes.\n\n'
-            'Ce qui rend cela possible, c\'est une mesure irrationnelle — de '
-            'nouveau le nombre d\'or. Si une structure contient deux longueurs '
-            'dont le rapport est le nombre d\'or, elles ne se retrouvent jamais '
+            "Ce qui rend cela possible, c'est une mesure irrationnelle — de "
+            "nouveau le nombre d'or. Si une structure contient deux longueurs "
+            "dont le rapport est le nombre d'or, elles ne se retrouvent jamais "
             'dans la même cadence. Le célèbre motif de Penrose le montre dans le '
             'plan : deux formes de tuiles qui remplissent le sol sans jamais se '
-            'répéter, avec un ordre d\'ordre cinq. C\'est seulement le renoncement '
+            "répéter, avec un ordre d'ordre cinq. C'est seulement le renoncement "
             'à la répétition qui permet le cinq interdit.',
       ),
       ProseSection(
@@ -351,43 +351,43 @@ List<ProseChapter> _worldChaptersFr() => const [
         'Ici la boucle se referme. La pyrite et le grenat « jouent » avec des '
             'dodécaèdres, mais restent des cristaux qui se répètent — leur allure '
             'de dodécaèdre est trompeuse. Le quasi-cristal porte la vraie '
-            'symétrie icosaédrique, parce qu\'il renonce à la répétition.\n\n'
+            "symétrie icosaédrique, parce qu'il renonce à la répétition.\n\n"
             'Le point mathématique derrière cela : la symétrie de la pyrite est '
             'exactement une partie de la pleine symétrie icosaédrique — '
             'justement la partie qui tient encore dans un réseau qui se répète. '
-            'Dans le vrai dodécaèdre, le nombre d\'or se cache dans les faces ; '
-            'la pyrite le remplace par le nombre lisse deux. C\'est pourquoi la '
-            'pyrite a « presque » l\'air d\'un dodécaèdre, mais ne peut jamais '
-            'avoir d\'axe d\'ordre cinq.',
+            "Dans le vrai dodécaèdre, le nombre d'or se cache dans les faces ; "
+            "la pyrite le remplace par le nombre lisse deux. C'est pourquoi la "
+            "pyrite a « presque » l'air d'un dodécaèdre, mais ne peut jamais "
+            "avoir d'axe d'ordre cinq.",
       ),
       ProseSection(
         'Shechtman contre le monde',
         'Le 8 avril 1982, le chercheur en matériaux Dan Shechtman vit dans un '
             'alliage aluminium-manganèse une figure de diffraction à symétrie '
-            '« interdite » d\'ordre dix. Dans son carnet, il écrivit « 10 '
-            'Fold??? ». Des points nets signifient de l\'ordre — mais cette '
+            "« interdite » d'ordre dix. Dans son carnet, il écrivit « 10 "
+            "Fold??? ». Des points nets signifient de l'ordre — mais cette "
             'symétrie passait pour impossible. Les deux ensemble semblaient une '
             'contradiction.\n\n'
             'Shechtman récolta des années de moqueries. Le chef de son '
             'laboratoire lui demanda de partir. Le célèbre chimiste Linus '
-            'Pauling raillait : « Il n\'existe pas de quasi-cristaux, seulement '
+            "Pauling raillait : « Il n'existe pas de quasi-cristaux, seulement "
             'des quasi-scientifiques. » Pourtant les mesures tinrent bon. En '
             '1992, les cristallographes changèrent même la définition de '
             '« cristal ». En 2011, Shechtman reçut le prix Nobel de chimie.',
       ),
       ProseSection(
-        'Venus de l\'espace et de l\'Alhambra',
+        "Venus de l'espace et de l'Alhambra",
         'Longtemps, les quasi-cristaux passèrent pour purement artificiels. '
             'Puis une équipe de chercheurs trouva le premier naturel — de '
             'minuscules grains dans une météorite de Sibérie orientale, vieille '
-            'd\'environ 4,5 milliards d\'années, née d\'une collision dans le '
-            'jeune système solaire. Le minéral s\'appelle à propos '
+            "d'environ 4,5 milliards d'années, née d'une collision dans le "
+            "jeune système solaire. Le minéral s'appelle à propos "
             '« icosaédrite ».\n\n'
-            'Et l\'humain avait même devancé la nature sans le savoir : dès le '
+            "Et l'humain avait même devancé la nature sans le savoir : dès le "
             'XIIIᵉ au XVᵉ siècle, des bâtisseurs islamiques en Perse posaient '
             'des motifs de carreaux (girih) qui suivent exactement cet ordre '
-            'd\'ordre cinq non répétitif. Ici, dans les quasi-cristaux et les '
-            'motifs de Penrose, le nombre d\'or est vraiment à l\'œuvre.',
+            "d'ordre cinq non répétitif. Ici, dans les quasi-cristaux et les "
+            "motifs de Penrose, le nombre d'or est vraiment à l'œuvre.",
       ),
     ],
     sources: [
@@ -433,11 +433,11 @@ List<ProseChapter> _worldChaptersFr() => const [
     'Cellules et mousses : le douze et le quatorze caché',
     [
       ProseSection(
-        'Quand la nature divise l\'espace en cellules',
-        'Les mousses de savon, les alvéoles d\'abeilles et les cellules '
+        "Quand la nature divise l'espace en cellules",
+        "Les mousses de savon, les alvéoles d'abeilles et les cellules "
             'vivantes doivent toutes résoudre le même problème : diviser '
-            'l\'espace en chambres, avec le moins de cloison possible. Le douze '
-            'y apparaît — mais il n\'est pas le seul nombre principal.\n\n'
+            "l'espace en chambres, avec le moins de cloison possible. Le douze "
+            "y apparaît — mais il n'est pas le seul nombre principal.\n\n"
             'La plus belle forme de douze est le dodécaèdre pentagonal : douze '
             'faces pentagonales, presque rondes comme une boule. Il apparaît '
             'comme bulle de mousse isolée et comme cage dans le gaz gelé. Mais '
@@ -446,20 +446,20 @@ List<ProseChapter> _worldChaptersFr() => const [
       ProseSection(
         'Les règles de la pellicule de savon',
         'Une pellicule de savon veut être petite, car chaque paroi coûte de '
-            'l\'énergie. Le physicien belge aveugle Joseph Plateau trouva au '
+            "l'énergie. Le physicien belge aveugle Joseph Plateau trouva au "
             'XIXᵉ siècle les règles : trois pellicules se rencontrent toujours '
             'sous exactement 120 degrés, quatre arêtes en un point sous environ '
             '109 degrés. Tout autre agencement se défait aussitôt.\n\n'
             'Il en découle pourquoi les pentagones sont si fréquents : leur '
             'angle de 108 degrés est proche des 120 requis. Mais douze '
-            'pentagones purs ne remplissent pas l\'espace — le dodécaèdre '
-            'pentagonal laisse des lacunes. Pour diviser l\'espace sans lacune, '
+            "pentagones purs ne remplissent pas l'espace — le dodécaèdre "
+            "pentagonal laisse des lacunes. Pour diviser l'espace sans lacune, "
             'chaque cellule a besoin en moyenne de plus de douze voisins. Ainsi '
             'naît le quatorze.',
       ),
       ProseSection(
         'Kelvin, Weaire-Phelan et le Water Cube',
-        'Lord Kelvin demanda en 1887 : comment divise-t-on l\'espace en '
+        "Lord Kelvin demanda en 1887 : comment divise-t-on l'espace en "
             'cellules de taille égale avec la plus petite paroi totale ? Sa '
             'réponse fut un corps à quatorze faces. Pendant plus de cent ans, '
             'cela passa pour la meilleure solution.\n\n'
@@ -467,17 +467,17 @@ List<ProseChapter> _worldChaptersFr() => const [
             'une structure meilleure de 0,3 pour cent — faite de deux types de '
             'cellules, en moyenne 13,5 faces. Elle devint visible sur la façade '
             'en forme de bulles du « Water Cube » de Pékin en 2008. Elle non '
-            'plus n\'est pas prouvée optimale ; le problème reste ouvert à ce '
+            "plus n'est pas prouvée optimale ; le problème reste ouvert à ce "
             'jour.',
       ),
       ProseSection(
         'Où le douze siège vraiment',
         'Il existe un lieu où la forme de douze est réelle et partout : dans les '
-            'hydrates de gaz. Au fond de la mer, des molécules d\'eau enferment '
+            "hydrates de gaz. Au fond de la mer, des molécules d'eau enferment "
             'des molécules de gaz dans des cages — et la petite cage est '
             'exactement un dodécaèdre pentagonal de douze pentagones, bâti à '
-            'partir de vingt molécules d\'eau.\n\n'
-            'Mais même ici, le dodécaèdre ne peut remplir l\'espace seul. Il lui '
+            "partir de vingt molécules d'eau.\n\n"
+            "Mais même ici, le dodécaèdre ne peut remplir l'espace seul. Il lui "
             'faut toujours une cage partenaire plus grande à côté. Cette '
             'structure de glace est, dans sa construction, la même que la mousse '
             'de Weaire-Phelan.',
@@ -489,7 +489,7 @@ List<ProseChapter> _worldChaptersFr() => const [
             'quatorze faces ; des bornes mathématiques excluent même le douze. '
             'Le dodécaèdre pentagonal parfait est rare — fréquentes ne sont que '
             'les faces pentagonales prises isolément.\n\n'
-            'Dans le plan, par exemple dans l\'alvéole d\'abeille ou dans une '
+            "Dans le plan, par exemple dans l'alvéole d'abeille ou dans une "
             'couche de cellules cutanées, le nombre directeur est le six, non le '
             'douze.',
       ),
@@ -534,52 +534,52 @@ List<ProseChapter> _worldChaptersFr() => const [
     ],
   ),
   ProseChapter(
-    'L\'empilement de sphères : douze voisins',
+    "L'empilement de sphères : douze voisins",
     [
       ProseSection(
         'Douze qui se touchent',
         'Une question simple : combien de sphères de taille égale peuvent '
-            'toucher en même temps une sphère centrale ? Dans l\'espace, la '
-            'réponse est exactement douze. Ce nombre s\'appelle le nombre de '
+            "toucher en même temps une sphère centrale ? Dans l'espace, la "
+            "réponse est exactement douze. Ce nombre s'appelle le nombre de "
             'baisers.\n\n'
-            'On le voit à l\'étal de fruits et à la pile de boulets de canon : '
-            'chaque sphère, dans l\'arrangement le plus dense, a six voisines '
+            "On le voit à l'étal de fruits et à la pile de boulets de canon : "
+            "chaque sphère, dans l'arrangement le plus dense, a six voisines "
             'dans sa propre couche, trois dans les creux au-dessus et trois en '
             'dessous — ensemble douze. Un douze exact : pas de « presque », pas '
             'de « en moyenne », mais exactement douze.',
       ),
       ProseSection(
         'Newton contre Gregory',
-        'Ce n\'est pas si évident que cela. En 1694, Isaac Newton et '
-            'l\'astronome David Gregory se disputèrent : Newton disait douze, '
+        "Ce n'est pas si évident que cela. En 1694, Isaac Newton et "
+            "l'astronome David Gregory se disputèrent : Newton disait douze, "
             'Gregory tenait même treize pour possible. La raison du doute : si '
-            'l\'on dispose lâchement les douze sphères extérieures, il reste '
-            'entre elles encore du jeu — bien dix pour cent d\'un rayon. Deux '
-            'd\'entre elles peuvent même échanger leurs places sans perdre le '
-            'contact. On dirait qu\'une treizième devrait pouvoir y entrer.\n\n'
-            'Elle n\'y entre pas. Newton avait raison — mais une preuve '
-            'rigoureuse ne fut établie qu\'en 1953, près de 260 ans plus tard.',
+            "l'on dispose lâchement les douze sphères extérieures, il reste "
+            "entre elles encore du jeu — bien dix pour cent d'un rayon. Deux "
+            "d'entre elles peuvent même échanger leurs places sans perdre le "
+            "contact. On dirait qu'une treizième devrait pouvoir y entrer.\n\n"
+            "Elle n'y entre pas. Newton avait raison — mais une preuve "
+            "rigoureuse ne fut établie qu'en 1953, près de 260 ans plus tard.",
       ),
       ProseSection(
         'La conjecture de Kepler et les grenades',
         'Derrière cela se tient une question plus grande : comment empile-t-on '
             'les sphères le plus densément ? Dès 1590 environ, Walter Raleigh fit '
-            'calculer par son conseiller Thomas Harriot l\'empilement des '
+            "calculer par son conseiller Thomas Harriot l'empilement des "
             'boulets de canon. En 1611, Johannes Kepler énonça la conjecture : '
-            'l\'empilement le plus dense remplit environ 74 pour cent de '
-            'l\'espace, avec douze voisins par sphère. Son image pour cela '
+            "l'empilement le plus dense remplit environ 74 pour cent de "
+            "l'espace, avec douze voisins par sphère. Son image pour cela "
             'étaient des grains de grenade serrés les uns contre les autres.\n\n'
-            'Aussi simple que sonne l\'énoncé — sa preuve ne fut établie qu\'en '
-            '1998 (Thomas Hales), et c\'est seulement en 2014 qu\'un ordinateur '
+            "Aussi simple que sonne l'énoncé — sa preuve ne fut établie qu'en "
+            "1998 (Thomas Hales), et c'est seulement en 2014 qu'un ordinateur "
             'la vérifia sans lacune. Kepler avait eu raison pendant plus de '
             'quatre cents ans.',
       ),
       ProseSection(
         'Le même douze, trois fois',
-        'C\'est toujours le même douze, vu de trois côtés. Douze sphères '
+        "C'est toujours le même douze, vu de trois côtés. Douze sphères "
             'touchent la centrale. Chaque atome dans de nombreux métaux — '
             'cuivre, or, argent, aluminium — a douze plus proches voisins. Et si '
-            'l\'on divise l\'espace selon « qui est le plus proche ? », chaque '
+            "l'on divise l'espace selon « qui est le plus proche ? », chaque "
             'sphère reçoit une cellule à douze faces.\n\n'
             'Cette cellule est le dodécaèdre rhombique — exactement la forme à '
             'douze losanges du grenat du chapitre précédent. Les grains de '
@@ -588,9 +588,9 @@ List<ProseChapter> _worldChaptersFr() => const [
       ),
       ProseSection(
         'Ce que le douze présuppose',
-        'Le douze ne vaut que pour des sphères de taille égale. Si l\'on verse '
+        "Le douze ne vaut que pour des sphères de taille égale. Si l'on verse "
             'simplement des sphères au hasard, elles se touchent en moyenne '
-            'seulement six environ — le douze le plus dense exige l\'empilement '
+            "seulement six environ — le douze le plus dense exige l'empilement "
             'ordonné. Et les douze sphères extérieures ne sont pas rigides : '
             'elles ont un peu de jeu.',
       ),
@@ -638,28 +638,28 @@ List<ProseChapter> _worldChaptersFr() => const [
     'Le douze dans la musique',
     [
       ProseSection(
-        'Pourquoi l\'octave a douze pas',
+        "Pourquoi l'octave a douze pas",
         'Deux sons dans le rapport de fréquence 2 pour 1 sonnent comme le même '
-            'son, seulement plus haut — c\'est l\'octave. L\'intervalle le plus '
-            'pur ensuite est la quinte, dans le rapport 3 pour 2. Mais si l\'on '
+            "son, seulement plus haut — c'est l'octave. L'intervalle le plus "
+            "pur ensuite est la quinte, dans le rapport 3 pour 2. Mais si l'on "
             'empile une suite de quintes pures, on ne retombe jamais exactement '
             'sur le son de départ.\n\n'
-            'Les mathématiques disent à quel point on s\'en approche : ce n\'est '
-            'qu\'après douze quintes que l\'on atteint presque exactement sept '
-            'octaves. C\'est pourquoi on divise l\'octave en douze demi-tons '
+            "Les mathématiques disent à quel point on s'en approche : ce n'est "
+            "qu'après douze quintes que l'on atteint presque exactement sept "
+            "octaves. C'est pourquoi on divise l'octave en douze demi-tons "
             'égaux — la quinte en enjambe alors sept. Douze est la plus petite '
-            'division qui atteint déjà très bien l\'importante quinte tout en '
-            'restant maniable. Ce n\'est donc pas un hasard, mais rien de '
-            '« donné par la nature » non plus : d\'autres divisions seraient '
+            "division qui atteint déjà très bien l'importante quinte tout en "
+            "restant maniable. Ce n'est donc pas un hasard, mais rien de "
+            "« donné par la nature » non plus : d'autres divisions seraient "
             'possibles.',
       ),
       ProseSection(
         'Le comma pythagoricien',
         'Le calcul ne tombe pas tout à fait juste. Douze quintes pures sont un '
-            'petit peu plus grandes que sept octaves — l\'écart s\'appelle le '
+            "petit peu plus grandes que sept octaves — l'écart s'appelle le "
             'comma pythagoricien, environ un quart de demi-ton, nettement '
             'audible.\n\n'
-            'En accord pur, le cercle des quintes n\'est donc pas du tout un '
+            "En accord pur, le cercle des quintes n'est donc pas du tout un "
             'cercle, mais une spirale qui dépasse de peu. Déjà il y a plus de '
             'deux mille ans, ce comma était connu — chez les Grecs comme dans '
             'la Chine ancienne.',
@@ -669,13 +669,13 @@ List<ProseChapter> _worldChaptersFr() => const [
         'La solution actuelle répartit cet écart uniformément : chacun des '
             'douze demi-tons est exactement de taille égale. Le facteur de pas '
             'est la racine douzième de 2 (environ 1,0595) — appliquée douze fois, '
-            'elle donne exactement l\'octave. Ainsi chaque intervalle sauf '
-            'l\'octave est un tout petit peu impur, mais égal dans toutes les '
-            'tonalités ; on peut passer librement d\'une tonalité à l\'autre.\n\n'
+            "elle donne exactement l'octave. Ainsi chaque intervalle sauf "
+            "l'octave est un tout petit peu impur, mais égal dans toutes les "
+            "tonalités ; on peut passer librement d'une tonalité à l'autre.\n\n"
             'Une erreur répandue : « Le Clavier bien tempéré » de Bach ne '
             'désignait pas ce tempérament égal, mais « bien jouable dans toutes '
             'les tonalités » — chaque tonalité gardait encore son propre '
-            'caractère. Le premier calcul correct de l\'égalité des pas vient de '
+            "caractère. Le premier calcul correct de l'égalité des pas vient de "
             'Zhu Zaiyu (Chine, 1584) ; en Europe, on y parvint indépendamment.',
       ),
       ProseSection(
@@ -683,25 +683,25 @@ List<ProseChapter> _worldChaptersFr() => const [
         'Au début du XXᵉ siècle, Arnold Schönberg fit des douze sons un '
             'programme. Dans sa technique dodécaphonique, les douze demi-tons '
             'sont tous égaux en droits : une composition les ordonne en une '
-            'série dans laquelle aucun son n\'est privilégié, et dissout ainsi '
+            "série dans laquelle aucun son n'est privilégié, et dissout ainsi "
             'consciemment le centre familier majeur-mineur. Elle ne devint '
             'jamais une musique de masse, mais marqua la composition du XXᵉ '
             'siècle jusque dans la musique de film.',
       ),
       ProseSection(
-        'D\'autres cultures divisent autrement',
-        'Le douze est la solution occidentale, pas la seule. L\'Inde connaît en '
+        "D'autres cultures divisent autrement",
+        "Le douze est la solution occidentale, pas la seule. L'Inde connaît en "
             'théorie 22 fins degrés (shruti), parmi lesquels on choisit en '
             'pratique douze sons. La musique arabe décrit souvent son système '
             'avec 24 quarts de ton, la turque même avec 53 fins commas. Le '
-            'gamelan javanais divise l\'octave en cinq ou sept degrés inégaux — '
+            "gamelan javanais divise l'octave en cinq ou sept degrés inégaux — "
             'et accorde chaque ensemble de façon propre, souvent sans octave '
             'pure. La Thaïlande utilise sept pas égaux.\n\n'
             'Cette diversité est la meilleure preuve : le douze est un très bon '
-            'compromis, pas une loi de la nature. Le fait qu\'il y ait en même '
+            "compromis, pas une loi de la nature. Le fait qu'il y ait en même "
             'temps douze signes du zodiaque et douze mois a soutenu '
-            'culturellement le nombre — mais ce n\'est pas la musique qui l\'a '
-            'causé ; c\'était l\'acoustique de la quinte.',
+            "culturellement le nombre — mais ce n'est pas la musique qui l'a "
+            "causé ; c'était l'acoustique de la quinte.",
       ),
     ],
     sources: [
@@ -768,12 +768,12 @@ List<ProseChapter> _worldChaptersFr() => const [
             'Au-dessus se tiennent la grosse (douze douzaines = 144) et la '
             'grande grosse (douze grosses = 1728), toutes deux du commerce de '
             'gros (« en gros »). Dans le monde de douze, la grande grosse est '
-            'exactement ce qu\'est le mille dans le système décimal — le '
+            "exactement ce qu'est le mille dans le système décimal — le "
             'troisième échelon de la base.',
       ),
       ProseSection(
         'Qui compte vraiment par douzaines',
-        'Malgré « elf » et « zwölf », l\'allemand compte au fond de façon '
+        "Malgré « elf » et « zwölf », l'allemand compte au fond de façon "
             'décimale. Les langues qui comptent vraiment de façon continue par '
             'douzaines sont rares — sont attestées quelques langues du centre du '
             'Nigeria et le chepang au Népal. Du vieux norrois, on connaît en '
@@ -787,14 +787,14 @@ List<ProseChapter> _worldChaptersFr() => const [
       ),
       ProseSection(
         'La main comme racine possible',
-        'D\'où viennent le douze et le soixante, on l\'explique souvent par une '
+        "D'où viennent le douze et le soixante, on l'explique souvent par une "
             'technique de comptage de la main : le pouce égrène les trois '
             'phalanges des quatre autres doigts — cela fait douze par main. Si '
-            'l\'autre main compte les douzaines pleines, on arrive à soixante. '
-            'Cette technique est attestée jusqu\'à aujourd\'hui dans des parties '
-            'de l\'Asie et du Proche-Orient.\n\n'
-            'Cette origine n\'est cependant pas prouvée avec certitude. Que '
-            '« elf » et « zwölf » soient des restes d\'un ancien système de douze '
+            "l'autre main compte les douzaines pleines, on arrive à soixante. "
+            "Cette technique est attestée jusqu'à aujourd'hui dans des parties "
+            "de l'Asie et du Proche-Orient.\n\n"
+            "Cette origine n'est cependant pas prouvée avec certitude. Que "
+            "« elf » et « zwölf » soient des restes d'un ancien système de douze "
             'est aussi une erreur — ce ne sont que deux mots restés anciens dans '
             'une langue décimale.',
       ),
@@ -834,37 +834,37 @@ List<ProseChapter> _worldChaptersFr() => const [
     ],
   ),
   ProseChapter(
-    'Le douze dans l\'architecture',
+    "Le douze dans l'architecture",
     [
       ProseSection(
         'Le douze comme idée de construction',
-        'Le douze apparaît dans l\'architecture sous trois figures : comme forme '
+        "Le douze apparaît dans l'architecture sous trois figures : comme forme "
             'de plan (le dodécagone régulier pour les tours et les chapelles), '
             'comme ordre figuré (douze apôtres, portes, mois, signes du zodiaque '
             'sur les portails et les fenêtres) et comme idée cosmique (le '
             'dodécaèdre comme « forme du Tout »). Déjà le théoricien de la '
             'Renaissance Alberti citait le dodécagone parmi les formes idéales '
             'de temple.\n\n'
-            'Ici, de la rigueur s\'impose : le plan central médiéval le plus '
-            'fréquent n\'est pas le dodécagone, mais l\'octogone (les '
+            "Ici, de la rigueur s'impose : le plan central médiéval le plus "
+            "fréquent n'est pas le dodécagone, mais l'octogone (les "
             'baptistères, comme signe du « huitième jour »). Qui cherche le '
-            'douze doit compter avec précision — beaucoup d\'édifices ronds sont '
+            "douze doit compter avec précision — beaucoup d'édifices ronds sont "
             'en vérité à huit ou six côtés.',
       ),
       ProseSection(
         'La Jérusalem céleste',
         'La racine de presque toutes les références chrétiennes au douze est '
-            'l\'Apocalypse de Jean : la cité céleste a douze portes (trois vers '
+            "l'Apocalypse de Jean : la cité céleste a douze portes (trois vers "
             'chaque point cardinal) portant les noms des douze tribus et repose '
             'sur douze fondations portant les noms des douze apôtres. Les '
-            'bâtisseurs médiévaux comprenaient les églises comme l\'image '
+            "bâtisseurs médiévaux comprenaient les églises comme l'image "
             'terrestre de cette cité.\n\n'
-            'De vrais édifices à douze côtés existent : l\'église romane de la '
+            "De vrais édifices à douze côtés existent : l'église romane de la "
             'Vera Cruz à Ségovie (consacrée en 1208), la rotonde Saint-Maurice '
-            'de Constance avec douze figures d\'apôtres aux angles, ou la '
+            "de Constance avec douze figures d'apôtres aux angles, ou la "
             'couronne de colonnes du Saint-Sépulcre à Jérusalem. (La Vera Cruz '
             'est souvent attribuée aux Templiers — des recherches plus récentes '
-            'nomment l\'ordre du Saint-Sépulcre.)',
+            "nomment l'ordre du Saint-Sépulcre.)",
       ),
       ProseSection(
         'Rosaces, zodiaque et horloges',
@@ -875,7 +875,7 @@ List<ProseChapter> _worldChaptersFr() => const [
             'dans ses anneaux.\n\n'
             'Fiablement douze sont les cycles du calendrier : à Chartres et '
             'Amiens, les douze signes du zodiaque côtoient les douze « travaux '
-            'des mois » — le cours du ciel à côté de l\'année paysanne. Le même '
+            "des mois » — le cours du ciel à côté de l'année paysanne. Le même "
             'douze porte le cadran des grandes horloges astronomiques.',
       ),
       ProseSection(
@@ -885,10 +885,10 @@ List<ProseChapter> _worldChaptersFr() => const [
             'signes du zodiaque. Cette idée agit jusque dans la modernité — et '
             'tout sobrement dans la coupole géodésique, qui a impérativement '
             'besoin de douze nœuds pentagonaux pour se refermer.\n\n'
-            'L\'honnêteté l\'exige : les énigmatiques dodécaèdres romains en '
+            "L'honnêteté l'exige : les énigmatiques dodécaèdres romains en "
             'bronze ont certes douze faces, mais leur fonction est inconnue à ce '
-            'jour, et une symbolique des nombres n\'est pas établie. Et certaine '
-            '« géométrie sacrée » de l\'architecture est interprétée plus '
+            "jour, et une symbolique des nombres n'est pas établie. Et certaine "
+            "« géométrie sacrée » de l'architecture est interprétée plus "
             'fortement que ce que les sources autorisent.',
       ),
     ],
@@ -932,17 +932,17 @@ List<ProseChapter> _worldChaptersFr() => const [
     ],
   ),
   ProseChapter(
-    'Le douze dans l\'art',
+    "Le douze dans l'art",
     [
       ProseSection(
         'Le dodécaèdre comme symbole du ciel',
-        'Dans l\'art, le douze est avant tout l\'histoire d\'un corps : le '
+        "Dans l'art, le douze est avant tout l'histoire d'un corps : le "
             'dodécaèdre avec ses douze faces pentagonales. Depuis Platon, il '
             'passait pour le symbole du ciel, pour le « cinquième être » à côté '
             'des quatre éléments.\n\n'
             'Cette interprétation tire une ligne ininterrompue de la Renaissance '
-            'jusqu\'à la modernité — via Pacioli et Léonard, Kepler, Escher '
-            'jusqu\'à Dalí. Là où le dodécaèdre apparaît, c\'est presque '
+            "jusqu'à la modernité — via Pacioli et Léonard, Kepler, Escher "
+            "jusqu'à Dalí. Là où le dodécaèdre apparaît, c'est presque "
             'toujours « le cosmos » qui est visé.',
       ),
       ProseSection(
@@ -950,19 +950,19 @@ List<ProseChapter> _worldChaptersFr() => const [
         'Pour le livre de Luca Pacioli sur la « divine proportion » (imprimé en '
             '1509), Léonard de Vinci dessina les cinq solides platoniciens — '
             'dont le dodécaèdre — pour la première fois aussi bien pleins que '
-            'comme modèle d\'arêtes transparent. Ce sont les premières images de '
+            "comme modèle d'arêtes transparent. Ce sont les premières images de "
             'polyèdres spatialement convaincantes, précurseurs des modèles '
-            'filaires d\'aujourd\'hui.\n\n'
-            'Une erreur tenace mérite d\'être corrigée : le célèbre corps de '
-            'pierre dans la « Melencolia I » de Dürer n\'est pas un dodécaèdre, '
+            "filaires d'aujourd'hui.\n\n"
+            "Une erreur tenace mérite d'être corrigée : le célèbre corps de "
+            "pierre dans la « Melencolia I » de Dürer n'est pas un dodécaèdre, "
             'mais un corps propre à huit faces seulement. De vrais dodécaèdres '
             'se trouvent en revanche chez M. C. Escher — par exemple dans '
-            '« Gravitation », où de douze pointes d\'un dodécaèdre étoilé '
+            "« Gravitation », où de douze pointes d'un dodécaèdre étoilé "
             'rampent douze tortues.',
       ),
       ProseSection(
         'Dalí et le douze',
-        'L\'œuvre du douze la plus explicite de la modernité est « Le Sacrement '
+        "L'œuvre du douze la plus explicite de la modernité est « Le Sacrement "
             'de la Cène » de Salvador Dalí (1955). La scène se déroule dans un '
             'dodécaèdre à demi transparent, dont les fenêtres pentagonales '
             'planent au-dessus du Christ.\n\n'
@@ -974,15 +974,15 @@ List<ProseChapter> _worldChaptersFr() => const [
       ),
       ProseSection(
         'Images de calendrier et ornements',
-        'Le plus fréquemment, le douze dans l\'art est tout simplement le '
-            'calendrier. Le livre d\'heures « Très Riches Heures » (vers 1415) '
-            'montre douze images des mois avec les travaux de l\'année, '
-            'surmontées chacune d\'un morceau de ciel avec les signes du '
+        "Le plus fréquemment, le douze dans l'art est tout simplement le "
+            "calendrier. Le livre d'heures « Très Riches Heures » (vers 1415) "
+            "montre douze images des mois avec les travaux de l'année, "
+            "surmontées chacune d'un morceau de ciel avec les signes du "
             'zodiaque — le bord extérieur divise proprement les 360 degrés en '
             'douze champs de trente degrés. De tels « travaux des mois » forment '
-            'un genre figuré propre, des mosaïques romaines jusqu\'aux '
+            "un genre figuré propre, des mosaïques romaines jusqu'aux "
             'cathédrales.\n\n'
-            'L\'art islamique forme un fil propre : ses ornements girih '
+            "L'art islamique forme un fil propre : ses ornements girih "
             'connaissent les étoiles à douze branches, de Konya à Ispahan — pure '
             'géométrie au lieu de figures. Et tout à fait sans signification '
             'transmise se tiennent à côté les dodécaèdres romains en bronze à '
@@ -1009,7 +1009,7 @@ List<ProseChapter> _worldChaptersFr() => const [
         'A1',
       ),
       Source(
-        'Dürer\'s solid (Truncated triangular trapezohedron) — Wikipedia',
+        "Dürer's solid (Truncated triangular trapezohedron) — Wikipedia",
         'https://en.wikipedia.org/wiki/Truncated_triangular_trapezohedron',
         'R2',
         'A1',
@@ -1037,43 +1037,43 @@ List<ProseChapter> _worldChaptersFr() => const [
             'peu près douze cycles lunaires — mais seulement à peu près. Un cycle '
             'lunaire dure environ 29,5 jours ; calculé exactement, cela fait '
             'environ 12,37 mois lunaires par an.\n\n'
-            'Douze mois lunaires ne donnent donc qu\'environ 354 jours — environ '
-            'onze jours de moins que l\'année solaire. Ce petit écart est la '
+            "Douze mois lunaires ne donnent donc qu'environ 354 jours — environ "
+            "onze jours de moins que l'année solaire. Ce petit écart est la "
             'cause de presque toutes les astuces de calendrier du monde. Correct '
             'est donc « environ douze », pas « exactement douze ».',
       ),
       ProseSection(
         'Le mois intercalaire et le cycle de dix-neuf ans',
-        'Qui veut aligner les mois sur la lune et garder malgré tout l\'année '
+        "Qui veut aligner les mois sur la lune et garder malgré tout l'année "
             'dans les saisons doit de temps en temps intercaler un treizième '
             'mois — en moyenne tous les deux à trois ans.\n\n'
             'La règle élégante pour cela est très ancienne : dix-neuf années '
             'solaires font presque exactement 235 mois lunaires (douze années '
             'ordinaires de douze mois plus sept années de treize). Les '
             'Babyloniens utilisaient déjà ce cycle vers 500 av. J.-C. ; à '
-            'Athènes, Méton l\'introduisit en 432 av. J.-C. — appris sans doute '
+            "Athènes, Méton l'introduisit en 432 av. J.-C. — appris sans doute "
             'des Babyloniens.',
       ),
       ProseSection(
         'Des calendriers du monde entier',
         'De la même constante — environ 12,37 cycles lunaires — naquirent trois '
-            'stratégies qui vivent côte à côte jusqu\'à aujourd\'hui.\n\n'
+            "stratégies qui vivent côte à côte jusqu'à aujourd'hui.\n\n"
             'Les calendriers juif, chinois et hindou sont luni-solaires : douze '
-            'mois, treize dans l\'année embolismique. Le calendrier islamique '
-            'est un pur calendrier lunaire sans mois intercalaire — c\'est '
+            "mois, treize dans l'année embolismique. Le calendrier islamique "
+            "est un pur calendrier lunaire sans mois intercalaire — c'est "
             'pourquoi le ramadan se déplace lentement à travers toutes les '
             'saisons. Le cycle chinois attribue aux années douze animaux (les '
-            'branches terrestres), vaguement liés à la révolution d\'environ '
+            "branches terrestres), vaguement liés à la révolution d'environ "
             'douze ans de Jupiter. Et notre calendrier grégorien est un pur '
             'calendrier solaire : ses douze noms de mois ne sont plus que des '
-            'restes de noms de l\'ancien cours lunaire, depuis que César détacha '
-            'l\'année du lien lunaire en 46 av. J.-C.',
+            "restes de noms de l'ancien cours lunaire, depuis que César détacha "
+            "l'année du lien lunaire en 46 av. J.-C.",
       ),
       ProseSection(
         'Douze, mais pas obligatoire',
-        'Aussi naturel que paraisse le douze — obligatoire, il ne l\'est pas. '
+        "Aussi naturel que paraisse le douze — obligatoire, il ne l'est pas. "
             'Les années luni-solaires ont de toute façon treize mois dans '
-            'l\'année embolismique. Et il y eut et il y a de vrais calendriers à '
+            "l'année embolismique. Et il y eut et il y a de vrais calendriers à "
             'treize mois : le calendrier celtique de Coligny, le calendrier igbo '
             'traditionnel au Nigeria avec treize mois de 28 jours chacun, et des '
             'propositions de réforme modernes à 13 × 28 jours — qui tombent même '
@@ -1081,8 +1081,8 @@ List<ProseChapter> _worldChaptersFr() => const [
             'Le douze est donc avant tout un choix culturel, soutenu par sa bonne '
             'divisibilité et par son rôle de nombre de la complétude (douze '
             'tribus, douze apôtres, douze dieux). Certaine dérivation populaire '
-            'reste incertaine : que les douze nuits compensent l\'écart '
-            'lune-soleil n\'est attesté que depuis le XVIᵉ siècle, et l\'origine '
+            "reste incertaine : que les douze nuits compensent l'écart "
+            "lune-soleil n'est attesté que depuis le XVIᵉ siècle, et l'origine "
             'jupitérienne du cycle chinois est supposée, non prouvée.',
       ),
     ],
@@ -1130,36 +1130,36 @@ List<ProseChapter> _worldChaptersFr() => const [
     [
       ProseSection(
         'Pourquoi justement douze au ciel',
-        'Le douze au ciel vient d\'abord de la lune. En une année solaire '
+        "Le douze au ciel vient d'abord de la lune. En une année solaire "
             'tiennent environ douze cycles lunaires — mais seulement environ. '
             'Un cycle lunaire dure environ 29,5 jours, une année solaire '
             '365,24 jours ; calculé exactement, cela fait environ 12,37 mois '
-            'lunaires par an. Douze d\'entre eux ne donnent que quelque 354 jours, '
+            "lunaires par an. Douze d'entre eux ne donnent que quelque 354 jours, "
             'soit environ onze jours de trop peu.\n\n'
             'Les Babyloniens en firent une mesure du ciel. Ils divisèrent la '
-            'trajectoire annuelle apparente du soleil, l\'écliptique, en douze '
+            "trajectoire annuelle apparente du soleil, l'écliptique, en douze "
             'sections égales de 30 degrés chacune — et créèrent ainsi le premier '
             'système de coordonnées célestes connu. Le modèle était leur '
             'calendrier administratif de douze mois de 30 jours chacun, soit '
-            '360 jours au total. C\'est la même arithmétique que pour le cercle '
+            "360 jours au total. C'est la même arithmétique que pour le cercle "
             'complet : 12 fois 30 donne 360, et 360 est un nombre commode et '
             'bien divisible. Les douze signes sont donc calculés, '
             'pas comptés.',
       ),
       ProseSection(
         'De la constellation au signe',
-        'Un précurseur plus ancien montre que le douze n\'était pas fixé d\'emblée. '
-            'Le catalogue d\'étoiles babylonien MUL.APIN, compilé vers '
+        "Un précurseur plus ancien montre que le douze n'était pas fixé d'emblée. "
+            "Le catalogue d'étoiles babylonien MUL.APIN, compilé vers "
             '1000 av. J.-C., recense le long du chemin de la lune encore dix-sept '
             'ou dix-huit constellations — inégales en taille, simplement observées. '
-            'Ce n\'est qu\'à la fin du Vᴱ siècle av. J.-C. que cela devint '
-            'douze signes égaux de 30 degrés. C\'est l\'étape décisive : '
+            "Ce n'est qu'à la fin du Vᴱ siècle av. J.-C. que cela devint "
+            "douze signes égaux de 30 degrés. C'est l'étape décisive : "
             'des constellations inégales naquirent des sections égales et '
             'calculées.\n\n'
             'De Babylone, le système parvint aux Grecs — via Eudoxe de Cnide '
             'au IVᴱ siècle av. J.-C. — et fut ensuite fixé en tradition '
             'durable par Ptolémée (IIᴱ siècle apr. J.-C.). Ptolémée ancra '
-            'le point zéro à l\'équinoxe de printemps, donc au jour de l\'équinoxe '
+            "le point zéro à l'équinoxe de printemps, donc au jour de l'équinoxe "
             'vernal, et non à une étoile fixe. Précisément ce choix devient plus '
             'tard important. Les douze signes égaux sont depuis lors une '
             'convention, pas un reflet du ciel.',
@@ -1169,30 +1169,30 @@ List<ProseChapter> _worldChaptersFr() => const [
         'Qui regarde attentivement trouve trois discordances entre les douze '
             'signes nets et le vrai ciel. Premièrement, les constellations sont '
             'très inégales en taille : le Lion occupe environ 44 degrés de '
-            'l\'écliptique, la Balance seulement environ 7 — les signes, en '
+            "l'écliptique, la Balance seulement environ 7 — les signes, en "
             'revanche, sont tous égaux, 30 degrés chacun.\n\n'
-            'Deuxièmement, il n\'y en a pas douze, mais treize. Le soleil '
+            "Deuxièmement, il n'y en a pas douze, mais treize. Le soleil "
             'traverse aussi Ophiuchus (le Serpentaire), pendant environ trois '
             'semaines par an. Il était déjà connu de Ptolémée, mais ne fut '
             'jamais intégré au système des douze signes — parce que ce dernier '
-            'a besoin de douze parties égales, pas d\'une liste de toutes les '
+            "a besoin de douze parties égales, pas d'une liste de toutes les "
             'constellations.\n\n'
-            'Troisièmement, tout a dérivé. L\'axe terrestre oscille lentement '
+            "Troisièmement, tout a dérivé. L'axe terrestre oscille lentement "
             'comme une toupie, un tour en environ 25 800 ans (précession). '
-            'L\'équinoxe de printemps se déplace ainsi en arrière à travers les '
-            'constellations, d\'environ un degré tous les 72 ans. Il y a environ '
+            "L'équinoxe de printemps se déplace ainsi en arrière à travers les "
+            "constellations, d'environ un degré tous les 72 ans. Il y a environ "
             'deux mille ans, il se trouvait dans la constellation du Bélier ; '
-            'aujourd\'hui, il est dans les Poissons. Le signe et la constellation '
+            "aujourd'hui, il est dans les Poissons. Le signe et la constellation "
             '« Bélier » diffèrent à présent de presque un signe entier.',
       ),
       ProseSection(
-        'L\'astronomie n\'est pas l\'astrologie',
-        'Jusqu\'ici, tout est astronomie : la division du ciel en douze '
+        "L'astronomie n'est pas l'astrologie",
+        "Jusqu'ici, tout est astronomie : la division du ciel en douze "
             'est mathématiques — environ douze cycles lunaires, 12 fois 30 '
-            'degrés, un nombre bien divisible. Autre chose est l\'astrologie, '
-            'c\'est-à-dire l\'affirmation que la position du soleil et des '
+            "degrés, un nombre bien divisible. Autre chose est l'astrologie, "
+            "c'est-à-dire l'affirmation que la position du soleil et des "
             'planètes à la naissance détermine le caractère ou le destin '
-            'd\'un individu.\n\n'
+            "d'un individu.\n\n"
             'Cette affirmation a été testée scientifiquement. Dans une '
             'expérience en double aveugle de Shawn Carlson (1985), des '
             'astrologues expérimentés devaient associer des horoscopes de '
@@ -1200,32 +1200,32 @@ List<ProseChapter> _worldChaptersFr() => const [
             'la procédure avait été préalablement convenue avec des '
             'astrologues. Ils ne réussirent pas mieux que le hasard. Des '
             'études ultérieures, notamment sur des personnes nées presque '
-            'simultanément, et plusieurs méta-analyses d\'un grand nombre '
-            'd\'études aboutirent au même résultat. L\'interprétation '
-            'astrologique n\'a donc pas de fondement empirique, et aucun '
-            'mécanisme d\'action n\'est connu non plus.\n\n'
-            'L\'astronome Carl Sagan refusa néanmoins de signer une condamnation '
-            'catégorique de l\'astrologie — non par croyance, mais parce qu\'il '
-            'estimait qu\'il faut tester et réfuter plutôt que condamner de '
+            "simultanément, et plusieurs méta-analyses d'un grand nombre "
+            "d'études aboutirent au même résultat. L'interprétation "
+            "astrologique n'a donc pas de fondement empirique, et aucun "
+            "mécanisme d'action n'est connu non plus.\n\n"
+            "L'astronome Carl Sagan refusa néanmoins de signer une condamnation "
+            "catégorique de l'astrologie — non par croyance, mais parce qu'il "
+            "estimait qu'il faut tester et réfuter plutôt que condamner de "
             'haut. En ce sens, on peut retenir sobrement : la division en douze '
-            'est de la bonne astronomie ; l\'interprétation des signes n\'a '
+            "est de la bonne astronomie ; l'interprétation des signes n'a "
             'pas résisté au test.',
       ),
       ProseSection(
         'Un second système duodécimal : la Chine',
         'Que douze animaux au ciel ne soient pas une invention isolée le '
             'montre la Chine — et ce, indépendamment du zodiaque babylonien. '
-            'Ici, ce n\'est pas la lune qui fixe le nombre, mais la planète '
+            "Ici, ce n'est pas la lune qui fixe le nombre, mais la planète "
             'Jupiter : elle fait le tour du ciel en environ 11,86 ans. '
             'Les astronomes chinois arrondirent à douze ans et divisèrent '
             'le cercle céleste en douze stations, une par an.\n\n'
             'De là naquit le cycle de douze ans avec ses douze animaux — '
-            'rat, bœuf, tigre, et ainsi de suite. Contrairement à l\'Occident, '
-            'il s\'agit de l\'année de naissance, non du mois. Parce que '
+            "rat, bœuf, tigre, et ainsi de suite. Contrairement à l'Occident, "
+            "il s'agit de l'année de naissance, non du mois. Parce que "
             'la révolution de Jupiter ne mesure pas exactement douze ans, '
             'les astronomes introduisirent plus tard un Jupiter fictif au '
             'mouvement idéalement régulier. Deux cultures, deux observations '
-            'différentes — la lune d\'un côté, Jupiter de l\'autre — et toutes '
+            "différentes — la lune d'un côté, Jupiter de l'autre — et toutes "
             'deux aboutissent au douze. (Les douze mois eux-mêmes sont traités '
             'dans le chapitre « Le douze dans le calendrier ».)',
       ),

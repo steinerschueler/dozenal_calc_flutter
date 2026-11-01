@@ -13,17 +13,16 @@
 /// points at the source page (e.g. the Wikimedia Commons File: page) and is made
 /// tappable in the credit line.
 class TheoryImage {
-  final String asset;
-  final String author;
-  final String license;
-  final String sourceUrl;
-
   const TheoryImage(
     this.asset, {
     required this.author,
     required this.license,
     required this.sourceUrl,
   });
+  final String asset;
+  final String author;
+  final String license;
+  final String sourceUrl;
 }
 
 /// id → image. Filled in once the research picks are downloaded and bundled.
@@ -119,12 +118,12 @@ const Map<String, TheoryImage> kTheoryImages = {
     author: 'Gottfried Wilhelm Leibniz (drawing, 1710)',
     license: 'Public Domain',
     sourceUrl:
-        'https://commons.wikimedia.org/wiki/File:Leibniz\'s_drawing_of_his_calculating_machine.jpg',
+        "https://commons.wikimedia.org/wiki/File:Leibniz's_drawing_of_his_calculating_machine.jpg",
   ),
   'society/0': TheoryImage(
     'assets/theory/society_0.webp',
     author:
-        'Unidentified photographer (work predates Spencer\'s death, 8 Dec 1903)',
+        "Unidentified photographer (work predates Spencer's death, 8 Dec 1903)",
     license: 'Public Domain',
     sourceUrl: 'https://commons.wikimedia.org/wiki/File:Herbert_Spencer.jpg',
   ),
@@ -151,7 +150,7 @@ const Map<String, TheoryImage> kTheoryImages = {
   'unit/area': TheoryImage(
     'assets/theory/unit_area.webp',
     author:
-        'Limbourg brothers and Barthélemy d\'Eyck (c. 1412–1416, additions c. 1440)',
+        "Limbourg brothers and Barthélemy d'Eyck (c. 1412–1416, additions c. 1440)",
     license: 'Public Domain',
     sourceUrl:
         'https://commons.wikimedia.org/wiki/File:Les_Tr%C3%A8s_Riches_Heures_du_duc_de_Berry_mars.jpg',
@@ -208,6 +207,15 @@ TheoryImage? theoryImageFor(String? id) =>
 /// icon, used nominatively to identify and link to it — not a decorative image,
 /// so it is exempt from the Public-Domain rule that governs [TheoryImage].
 class AppRef {
+  const AppRef(
+    this.icon, {
+    required this.name,
+    required this.maker,
+    required this.genre,
+    required this.url,
+    this.web = false,
+    this.iconNeedsBacking = false,
+  });
   final String icon; // bundled asset (the referenced app's/tool's icon)
   final String name;
   final String maker;
@@ -221,16 +229,6 @@ class AppRef {
   /// Whether the icon has transparency and needs a white backing so a dark
   /// glyph stays visible on the dark card (e.g. a transparent favicon).
   final bool iconNeedsBacking;
-
-  const AppRef(
-    this.icon, {
-    required this.name,
-    required this.maker,
-    required this.genre,
-    required this.url,
-    this.web = false,
-    this.iconNeedsBacking = false,
-  });
 }
 
 /// id → referenced app/tool. Keyed like [kTheoryImages] by stable chapter id.

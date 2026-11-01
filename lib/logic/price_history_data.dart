@@ -15,7 +15,7 @@
 // are discrete dots, never joined by a line; lines connect only adjacent modern
 // points; gaps stay gaps; no decimal over-precision. Caveats: sources screen.
 
-import 'price_history.dart';
+import 'package:dozenal_calc_flutter/logic/price_history.dart';
 
 /// Freely-citable sources (public-domain / CC-BY / citable academic facts).
 /// Points reference these by index via [PricePoint.sourceId].

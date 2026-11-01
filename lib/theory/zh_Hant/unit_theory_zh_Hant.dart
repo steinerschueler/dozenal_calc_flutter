@@ -1,3 +1,6 @@
+// Prose wraps inside words and CJK has no spaces, so this lint almost only reports false positives.
+// ignore_for_file: missing_whitespace_between_adjacent_strings
+
 // 繁體中文單位理論文章。part of ../unit_theory.dart。
 // 內文以簡短、淺白的句子撰寫（較易翻譯）。內容萃取自
 // docs/research/ 中的研究檔案。
@@ -831,43 +834,43 @@ List<Source> _unitSourcesZhHant(UnitCategory cat) {
   switch (cat) {
     case UnitCategory.count:
       return [
-        Source(
+        const Source(
           'Dozen — Wikipedia',
           'https://en.wikipedia.org/wiki/Dozen',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Gross (unit) — Wikipedia',
           'https://en.wikipedia.org/wiki/Gross_(unit)',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Great gross — Wikipedia',
           'https://en.wikipedia.org/wiki/Great_gross',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Baker’s dozen — Wikipedia',
           'https://en.wikipedia.org/wiki/Baker%27s_dozen',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Assize of Bread and Ale — Wikipedia',
           'https://en.wikipedia.org/wiki/Assize_of_Bread_and_Ale',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'dozen — Online Etymology Dictionary',
           'https://www.etymonline.com/word/dozen',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'gross — Online Etymology Dictionary',
           'https://www.etymonline.com/word/gross',
           'R2',
@@ -876,37 +879,37 @@ List<Source> _unitSourcesZhHant(UnitCategory cat) {
       ];
     case UnitCategory.dist:
       return [
-        Source(
+        const Source(
           'Measurement — MacTutor History of Mathematics',
           'https://mathshistory.st-andrews.ac.uk/HistTopics/Measurement/',
           'R1',
           'A1',
         ),
-        Source(
+        const Source(
           'Proportionate measurements (Vastu-Shastra) — wisdomlib.org',
           'https://www.wisdomlib.org/hinduism/book/vastu-shastra-indian-architecture/d/doc1085304.html',
           'R1',
           'A1',
         ),
-        Source(
+        const Source(
           'Cubit — Wikipedia',
           'https://en.wikipedia.org/wiki/Cubit',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Ancient Mesopotamian units of measurement — Wikipedia',
           'https://en.wikipedia.org/wiki/Ancient_Mesopotamian_units_of_measurement',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Ancient Roman units of measurement — Wikipedia',
           'https://en.wikipedia.org/wiki/Ancient_Roman_units_of_measurement',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'The nautical mile — IHO',
           'https://ihr.iho.int/articles/the-nautical-mile/',
           'R1',
@@ -915,37 +918,37 @@ List<Source> _unitSourcesZhHant(UnitCategory cat) {
       ];
     case UnitCategory.area:
       return [
-        Source(
+        const Source(
           'Babylonian numerals — MacTutor (St Andrews)',
           'https://mathshistory.st-andrews.ac.uk/HistTopics/Babylonian_numerals/',
           'R1',
           'A1',
         ),
-        Source(
+        const Source(
           'Acre — Wikipedia',
           'https://en.wikipedia.org/wiki/Acre',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Hectare — Wikipedia',
           'https://en.wikipedia.org/wiki/Hectare',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Jugerum — Wikipedia',
           'https://en.wikipedia.org/wiki/Jugerum',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Mathematical accuracy of Aztec land surveys (Codex Vergara) — PNAS',
           'https://www.pnas.org/doi/10.1073/pnas.1107737108',
           'R1',
           'A2',
         ),
-        Source(
+        const Source(
           'Before the Melting Pot: Pre-Columbian Weights and Measures — NIST',
           'https://www.nist.gov/blogs/taking-measure/melting-pot-pre-columbian-weights-and-measures',
           'R1',
@@ -954,37 +957,37 @@ List<Source> _unitSourcesZhHant(UnitCategory cat) {
       ];
     case UnitCategory.space:
       return [
-        Source(
+        const Source(
           'Before the Melting Pot: Pre-Columbian Weights and Measures — NIST',
           'https://www.nist.gov/blogs/taking-measure/melting-pot-pre-columbian-weights-and-measures',
           'R1',
           'A1',
         ),
-        Source(
+        const Source(
           'Ancient Mesopotamian units of measurement — Wikipedia',
           'https://en.wikipedia.org/wiki/Ancient_Mesopotamian_units_of_measurement',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Hekat — Wikipedia',
           'https://en.wikipedia.org/wiki/Hekat',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Medimnos — Wikipedia',
           'https://en.wikipedia.org/wiki/Medimnos',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Ancient Roman units of measurement — Wikipedia',
           'https://en.wikipedia.org/wiki/Ancient_Roman_units_of_measurement',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Jialiang — Wikipedia',
           'https://en.wikipedia.org/wiki/Jialiang',
           'R2',
@@ -993,37 +996,37 @@ List<Source> _unitSourcesZhHant(UnitCategory cat) {
       ];
     case UnitCategory.weight:
       return [
-        Source(
+        const Source(
           'Hanging in the Balance: Precision Weighing in Antiquity — Penn Museum',
           'https://www.penn.museum/sites/expedition/hanging-in-the-balance-2/',
           'R1',
           'A1',
         ),
-        Source(
+        const Source(
           'Avoirdupois — Wikipedia',
           'https://en.wikipedia.org/wiki/Avoirdupois',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Troy weight — Wikipedia',
           'https://en.wikipedia.org/wiki/Troy_weight',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Mina (unit) — Wikipedia',
           'https://en.wikipedia.org/wiki/Mina_(unit)',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Cubical Weights — Harappa.com',
           'https://www.harappa.com/blog/cubical-weights',
           'R1',
           'A2',
         ),
-        Source(
+        const Source(
           'Legume Seeds for Weighing Gold in India — ResearchGate',
           'https://www.researchgate.net/publication/344088688',
           'R1',
@@ -1032,37 +1035,37 @@ List<Source> _unitSourcesZhHant(UnitCategory cat) {
       ];
     case UnitCategory.time:
       return [
-        Source(
+        const Source(
           'Sexagesimal — Wikipedia',
           'https://en.wikipedia.org/wiki/Sexagesimal',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Hour — Wikipedia',
           'https://en.wikipedia.org/wiki/Hour',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Minute — Wikipedia',
           'https://en.wikipedia.org/wiki/Minute',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Decimal time — Wikipedia',
           'https://en.wikipedia.org/wiki/Decimal_time',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Babylonian numerals — MacTutor (St Andrews)',
           'https://mathshistory.st-andrews.ac.uk/HistTopics/Babylonian_numerals/',
           'R1',
           'A3',
         ),
-        Source(
+        const Source(
           'Telling Time in Ancient Egypt — Metropolitan Museum of Art',
           'https://www.metmuseum.org/essays/telling-time-in-ancient-egypt',
           'R1',
@@ -1071,31 +1074,31 @@ List<Source> _unitSourcesZhHant(UnitCategory cat) {
       ];
     case UnitCategory.angle:
       return [
-        Source(
+        const Source(
           'Babylonian mathematics — MacTutor (St Andrews)',
           'https://mathshistory.st-andrews.ac.uk/HistTopics/Babylonian_mathematics/',
           'R1',
           'A1',
         ),
-        Source(
+        const Source(
           'Why did the Babylonians use 360 degrees? — UNLV',
           'https://www.physics.unlv.edu/~jeffery/astro/babylon/babylonian_360_degrees.html',
           'R1',
           'A1',
         ),
-        Source(
+        const Source(
           'Hipparchus — MacTutor',
           'https://mathshistory.st-andrews.ac.uk/Biographies/Hipparchus/',
           'R1',
           'A1',
         ),
-        Source(
+        const Source(
           'Angles in the SI: the radian as an independent unit — arXiv',
           'https://arxiv.org/pdf/2101.01578',
           'R1',
           'A1',
         ),
-        Source(
+        const Source(
           'Decimal time — MacTutor',
           'https://mathshistory.st-andrews.ac.uk/HistTopics/Decimal_time/',
           'R1',
@@ -1104,37 +1107,37 @@ List<Source> _unitSourcesZhHant(UnitCategory cat) {
       ];
     case UnitCategory.price:
       return [
-        Source(
+        const Source(
           '£sd — Wikipedia',
           'https://en.wikipedia.org/wiki/%C2%A3sd',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Denarius — Wikipedia',
           'https://en.wikipedia.org/wiki/Denarius',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Shekel — Wikipedia',
           'https://en.wikipedia.org/wiki/Shekel',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Non-decimal currency — Wikipedia',
           'https://en.wikipedia.org/wiki/Non-decimal_currency',
           'R2',
           'A1',
         ),
-        Source(
-          'Charon\'s obol — Wikipedia',
-          'https://en.wikipedia.org/wiki/Charon\'s_obol',
+        const Source(
+          "Charon's obol — Wikipedia",
+          "https://en.wikipedia.org/wiki/Charon's_obol",
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Babylonian numerals — MacTutor (St Andrews)',
           'https://mathshistory.st-andrews.ac.uk/HistTopics/Babylonian_numerals/',
           'R1',
@@ -1143,37 +1146,37 @@ List<Source> _unitSourcesZhHant(UnitCategory cat) {
       ];
     case UnitCategory.temp:
       return [
-        Source(
+        const Source(
           'Kelvin: History — NIST',
           'https://www.nist.gov/si-redefinition/kelvin/kelvin-history',
           'R1',
           'A1',
         ),
-        Source(
+        const Source(
           'Fahrenheit — Wikipedia',
           'https://en.wikipedia.org/wiki/Fahrenheit',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Daniel Gabriel Fahrenheit — Wikipedia',
           'https://en.wikipedia.org/wiki/Daniel_Gabriel_Fahrenheit',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Réaumur scale — Wikipedia',
           'https://en.wikipedia.org/wiki/R%C3%A9aumur_scale',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Thermodynamic temperature — Wikipedia',
           'https://en.wikipedia.org/wiki/Thermodynamic_temperature',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Rankine scale — Wikipedia',
           'https://en.wikipedia.org/wiki/Rankine_scale',
           'R2',

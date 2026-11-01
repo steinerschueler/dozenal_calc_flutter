@@ -125,7 +125,7 @@ List<UnitTheorySection> _unitTheoryGa(UnitCategory cat) {
               'bhanlámh ón uillinn go barr na méire le fáil ar bheagnach gach '
               'ilchríoch — is í an cholainn an fhréamh choiteann.\n\n'
               'I go leor cultúr measadh an cholainn mar thomhas naofa, an duine '
-              'mar íomhá d\'ord an domhain. Tomhaiseadh teampaill na hÉigipte, '
+              "mar íomhá d'ord an domhain. Tomhaiseadh teampaill na hÉigipte, "
               'tógáil na hairce sa Bhíobla agus teampaill Hiondúcha i mbanlámha.\n\n'
               'Choinnigh an teanga na tomhais freisin. Ba é brí bhunaidh „Tabhair '
               'orlach dóibh, agus glacfaidh siad míle" ná „… agus glacfaidh siad '
@@ -180,13 +180,13 @@ List<UnitTheorySection> _unitTheoryGa(UnitCategory cat) {
           'Talamh mar Shaothar',
           'Tomhaistear achair trí fhad a nascadh le fad. Ach níor as céimseata a '
               'tháinig na seantomhais talún, ach as saothar. Bhí gort chomh mór '
-              'leis an méid a d\'fhéadfaí a shaothrú in aon lá amháin.\n\n'
+              "leis an méid a d'fhéadfaí a shaothrú in aon lá amháin.\n\n"
               'Tugtar „Morgen" (maidin) sa Ghearmáinis air mar gur threabhadh é '
               'roimh nóin. Ba é an „acra" sa Bhéarla an t-achar a chuireadh foireann '
               'ocht ndamh i gcrích in aon lá. Tagann an „iugerum" Rómhánach ó '
               '„iugum", cuing na ndamh. Ciallaíonn an „feddan" Arabach cuing damh '
               'freisin. An smaoineamh céanna i ngach áit: is saothar é an talamh.\n\n'
-              'San tseanÉigipt b\'éigean na goirt a aththomhas tar éis gach tuile '
+              "San tseanÉigipt b'éigean na goirt a aththomhas tar éis gach tuile "
               'Níle, mar scrios an t-uisce na teorainneacha. Shín na tomhasóirí '
               'rópaí snaidhmthe; thug na Gréagaigh „síneadóirí rópaí" orthu ina '
               'dhiaidh sin. I Mesopotám ba é an „sar" an bunthomhas — cearnóg de '
@@ -199,10 +199,10 @@ List<UnitTheorySection> _unitTheoryGa(UnitCategory cat) {
               'na treabhadóireachta: clais fhada, lána caol. Mar sin faightear 43 '
               '560 troigh chearnach nó 4840 slat chearnach.\n\n'
               'Cén fáth an uimhir chama 4840 seo? Is timpiste staire é. Nuair a '
-              'ghiorraigh Sasana an troigh sa 13ú haois, d\'fhan an tslat thomhais '
+              "ghiorraigh Sasana an troigh sa 13ú haois, d'fhan an tslat thomhais "
               'agus an furlong gan athrú i dteorainneacha na ngabháltas. Dá bharr '
               'sin léim an acra ó 4000 sean-shlat chearnach go 4840 slat chearnach '
-              'nua. Ní d\'aon ghnó atá an uimhir chama mar sin, ach iarsma de '
+              "nua. Ní d'aon ghnó atá an uimhir chama mar sin, ach iarsma de "
               'leasú tomhais.',
         ),
         UnitTheorySection(
@@ -226,8 +226,8 @@ List<UnitTheorySection> _unitTheoryGa(UnitCategory cat) {
               'dhá orlach déag 144. Scríofa i mbonn a dó dhéag is „100" cothrom é. '
               'Is naoi dtroigh chearnach é slat chearnach.\n\n'
               'Ag na tomhais talún mhóra briseann an t-ord. Ní oireann an acra '
-              'lena 4840 slat chearnach d\'aon bhonn simplí. Tarlaíonn sé sin mar '
-              'gur as an saothar a d\'fhás na tomhais talún, ní as an áireamh.\n\n'
+              "lena 4840 slat chearnach d'aon bhonn simplí. Tarlaíonn sé sin mar "
+              "gur as an saothar a d'fhás na tomhais talún, ní as an áireamh.\n\n"
               'Mar sin féin fanann pointe praiticiúil: is 3333,33… méadar cearnach '
               'é trian heicteáir — uimhir chama. Trian feddan áfach is ocht gKirat '
               'cothrom é. San áit a roinntear go minic ina dtrian, tá buntáiste ag '
@@ -248,8 +248,8 @@ List<UnitTheorySection> _unitTheoryGa(UnitCategory cat) {
           'An tSoitheach ar dTús, an Ciúb ina Dhiaidh',
           'Tomhaistear toirt trí thrí fhad a nascadh — ciúb. Ach is ar éigean a '
               'thosaigh sé mar sin in aon áit. I dtosach bhí an soitheach: crúsca '
-              'líonta, mála gráin, ladar ola. Thomhais daoine an méid a d\'fhéadfaí '
-              'a ithe, a iompar nó a thrádáil, ní an méid a d\'fhéadfaí a áireamh.\n\n'
+              "líonta, mála gráin, ladar ola. Thomhais daoine an méid a d'fhéadfaí "
+              "a ithe, a iompar nó a thrádáil, ní an méid a d'fhéadfaí a áireamh.\n\n"
               'Ba mhéid bia an tagairt go hiondúil. Ba é an „choinix" Gréagach '
               'ciondáil laethúil gráin d\'oibrí. Ba é an „Koku" Seapánach an méid '
               'ríse a itheann duine in aon bhliain — timpeall 180 lítear. Ba é an '
@@ -309,7 +309,7 @@ List<UnitTheorySection> _unitTheoryGa(UnitCategory cat) {
               'áit a roinntear go minic ina dtrian, tá buntáiste ag an dó dhéag.\n\n'
               'An admháil ionraic: ní bhaineann an t-ord álainn seo ach leis na '
               'tomhais chiúbacha a díorthaíodh ó fhaid. Ní leanann na seantomhais '
-              'toirte — Bushel, galún, Scheffel — aon bhonn glan. D\'fhás siad as '
+              "toirte — Bushel, galún, Scheffel — aon bhonn glan. D'fhás siad as "
               'málaí agus bairillí, ní as an áireamh, agus meascann siad céimeanna '
               'a dó, a trí agus cinn an-chama.',
         ),
@@ -350,7 +350,7 @@ List<UnitTheorySection> _unitTheoryGa(UnitCategory cat) {
         UnitTheorySection(
           'Ón nGrán go dtí an tUalach',
           'Bhí dhá fhréamh ag meáchain i ngach áit. Tháinig na tomhais is lú ó '
-              'shíolta agus ó ghráinní, na cinn mhóra ón méid a d\'fhéadfadh duine '
+              "shíolta agus ó ghráinní, na cinn mhóra ón méid a d'fhéadfadh duine "
               'nó ainmhí a iompar.\n\n'
               'Is grán eorna go litriúil é an „grain" Sasanach, timpeall 65 '
               'milleagram. Tagann „carat" na seodóirí ó shíol an chrainn '
@@ -371,7 +371,7 @@ List<UnitTheorySection> _unitTheoryGa(UnitCategory cat) {
               '„libra" a tháinig an giorrúchán „lb" don phunt agus an comhartha „£" '
               'don phunt Briotanach. Ón „uncia" — go litriúil „an dóú cuid déag" — '
               'a tháinig an „unsa" chomh maith leis an „orlach".\n\n'
-              'As an bhfréamh seo d\'fhás dhá chóras éagsúla. Roinneann an punt '
+              "As an bhfréamh seo d'fhás dhá chóras éagsúla. Roinneann an punt "
               '„Avoirdupois" den ghnáthshaol ina 16 unsa — uimhir is féidir a '
               'leathadh arís agus arís eile. Choinnigh an punt „Troy" de thrádáil '
               'an mhiotail lómhair an dá unsa dhéag Rómhánacha. Tá unsa Troy (an '
@@ -413,7 +413,7 @@ List<UnitTheorySection> _unitTheoryGa(UnitCategory cat) {
           'A Dó Dhéag sa Mheáchan — agus admháil',
           'Tá an dó dhéag go háirithe sa chóras Troy: dhá unsa dhéag sa phunt, '
               'agus áirítear fíneáltacht an óir i 24 carat (a dó dhéag faoi dhó). '
-              'Tá a leithéid d\'uimhreacha coitianta, mar tá sé roinnteoir ag an dó '
+              "Tá a leithéid d'uimhreacha coitianta, mar tá sé roinnteoir ag an dó "
               'dhéag — is féidir a leathadh, a roinnt ina trí agus ina cheathrú go '
               'glan. Is ceathair go glan trian an dó dhéag; is 3,33… trian an '
               'deich.\n\n'
@@ -474,11 +474,11 @@ List<UnitTheorySection> _unitTheoryGa(UnitCategory cat) {
           'Níor rith an clog mar an gcéanna i ngach áit. Roinn an tSín an lá ina '
               'dhá uair dhúbailte déag, ainmnithe i ndiaidh ainmhithe — bhí uair na '
               'francaí timpeall mheán oíche. Roinn an tSeapáin an lá agus an oíche '
-              'ina sé chuid an ceann, a d\'fhás níos faide agus níos giorra leis na '
-              'séasúir; b\'éigean do chloig speisialta é sin a athshocrú.\n\n'
+              "ina sé chuid an ceann, a d'fhás níos faide agus níos giorra leis na "
+              "séasúir; b'éigean do chloig speisialta é sin a athshocrú.\n\n"
               'Leanann an féilire Ioslamach an ghealach amháin agus tá sé aon lá '
               'déag níos giorra ná an bhliain ghrianda — dá bharr sin gluaiseann '
-              'Ramadán go mall trí na séasúir uile. D\'fhigh na Mayánaigh roinnt '
+              "Ramadán go mall trí na séasúir uile. D'fhigh na Mayánaigh roinnt "
               'timthriallta le chéile, ina measc ciorcal naofa de 260 lá. San '
               'Aetóip tosaíonn an lá fós ag éirí na gréine: an rud is „a sé a '
               'chlog" ann, is meán lae é in áiteanna eile.\n\n'
@@ -588,7 +588,7 @@ List<UnitTheorySection> _unitTheoryGa(UnitCategory cat) {
               'dragan san oirthear, tíogar san iarthar. Tugann roth leighis na '
               'Lakota dath agus brí do gach treo. Agus san Ioslam cuireann treo na '
               'hurnaí ord ar an domhan iomlán thart ar an gCaaba.\n\n'
-              'D\'aon ghnó gan a leithéid de shiombalachas a tháinig na tomhais is '
+              "D'aon ghnó gan a leithéid de shiombalachas a tháinig na tomhais is "
               'óige: leanann an raidian an mhatamaitic amháin, an gon Réabhlóid na '
               'Fraince, an stríoc mhíleata an bhalaistíocht amháin.',
         ),
@@ -598,7 +598,7 @@ List<UnitTheorySection> _unitTheoryGa(UnitCategory cat) {
               'trian, ceathrú, séú ciorcail uimhreacha céime cothroma uile. Ní '
               'fhéadfadh ciorcal de chéad chuid é sin — ba é 33,33… an trian.\n\n'
               'Triaileadh go deachúlach é. I Réabhlóid na Fraince tháinig an ciorcal '
-              'de 400 gon. D\'fhan sé ina nideoige ag na tomhasóirí, mar tá níos lú '
+              "de 400 gon. D'fhan sé ina nideoige ag na tomhasóirí, mar tá níos lú "
               'roinnteoirí ag 400 ná ag 360. Theip ar an deachúlam freisin — i '
               'measc rudaí eile, mar nárbh fhéidir é a roinnt ina cheathrú go '
               'glan.\n\n'
@@ -643,7 +643,7 @@ List<UnitTheorySection> _unitTheoryGa(UnitCategory cat) {
               'Chuir Séarlas Mór ord nua air: punt airgid (libra) = 20 scilling '
               '(solidus) = 240 pingin (denarius), is é sin dhá phingin déag ar an '
               'scilling. Anseo freisin ní raibh ina bhonn fíor ach an phingin; '
-              'd\'fhóin punt agus scilling don áireamh. Mhair an córas seo breis is '
+              "d'fhóin punt agus scilling don áireamh. Mhair an córas seo breis is "
               'míle bliain.\n\n'
               'Ghlac Sasana leis mar phunt, scilling, pingin — an „£sd". Is L '
               'maisithe é an comhartha „£" do „libra", an mheá. Mar sin crochann an '
@@ -659,7 +659,7 @@ List<UnitTheorySection> _unitTheoryGa(UnitCategory cat) {
               'airgead san Araib agus san Aetóip é fós san 20ú haois.\n\n'
               'In áiteanna eile bhí cuma an-difriúil ar an airgead. In Iarthar na '
               'hAfraice íocadh le sliogáin chabhróg ar feadh na gcéadta bliain. '
-              'D\'úsáid na hAisteacaigh pónairí cócó mar airgead beag agus '
+              "D'úsáid na hAisteacaigh pónairí cócó mar airgead beag agus "
               'fallaingí caighdeánacha mar airgead mór — comhaireamh ina '
               'bhfichidí. Ríomh an India an rúipí ina 16 Anna, shnáthaigh an tSín '
               'boinn le poll ina sreanga.\n\n'
@@ -671,7 +671,7 @@ List<UnitTheorySection> _unitTheoryGa(UnitCategory cat) {
           'Airgead, Creideamh agus Siombail',
           'Ba mhinic a bhí boinn níos mó ná modh íocaíochta. Chuir na Gréagaigh '
               'bonn i mbéal an mhairbh — táille an bháid do Charón, a iompraíonn an '
-              't-anam thar abhainn na marbh. Gan bhonn d\'fhan sé ar an mbruach.\n\n'
+              "t-anam thar abhainn na marbh. Gan bhonn d'fhan sé ar an mbruach.\n\n"
               'Sa Tiomna Nua coinníonn Íosa denar in airde le híomhá an Impire: '
               '„Tugaigí don Impire an rud is leis an Impire." Is dócha gur seicil '
               'as Tír na nGall iad na tríocha bonn airgid de Iúdás — boinn le dia '
@@ -695,7 +695,7 @@ List<UnitTheorySection> _unitTheoryGa(UnitCategory cat) {
               'Londain mar i Nua-Eabhrac.\n\n'
               'An admháil ionraic: níorbh córas dáréagúil glan é an seanairgead. Is '
               'loighic fhiche (méara agus méara na gcos) an fiche scilling sa phunt. '
-              'Agus in 1971 d\'aistrigh an Bhreatain Mhór go céad pingin — le roinnt '
+              "Agus in 1971 d'aistrigh an Bhreatain Mhór go céad pingin — le roinnt "
               'mearbhaill, ach go buan. Inniu ríomhann beagnach an domhan iomlán go '
               'deachúlach.',
         ),
@@ -733,7 +733,7 @@ List<UnitTheorySection> _unitTheoryGa(UnitCategory cat) {
           'Difríonn na scálaí aithnidiúla go háirithe san áit a leagann siad an '
               'náid.\n\n'
               'Leag Daniel Fahrenheit a náid timpeall 1724 ag an bpointe ba fhuaire '
-              'a d\'fhéadfadh sé a dhéanamh go cinnte: meascán de oighear, uisce '
+              "a d'fhéadfadh sé a dhéanamh go cinnte: meascán de oighear, uisce "
               'agus salann. Leag sé pointe reo an uisce ghlain ag 32, teocht an '
               'choirp ag 96. Mar sin níor thit gnáthgheimhrí faoi náid. Níos déanaí '
               'calabraíodh an scála as an nua ar phointe reo (32) agus pointe '
@@ -741,15 +741,15 @@ List<UnitTheorySection> _unitTheoryGa(UnitCategory cat) {
               'Roghnaigh Réaumur 0 agus 80. Leag Celsius áfach 0 agus 100 ag an reo '
               'agus an fiuchadh — agus leag sé an scála droim ar ais ar dtús fiú '
               '(ba é 0 an pointe fiuchta). Ní dhearna ach tar éis a bháis a cuireadh '
-              'ina cruth reatha í. D\'oir an roinnt chruinn 100 go foirfe don chóras '
+              "ina cruth reatha í. D'oir an roinnt chruinn 100 go foirfe don chóras "
               'mhéadrach nua.',
         ),
         UnitTheorySection(
           'Cén Fáth a dTomhaiseann an Domhan go Difriúil',
           'Úsáideann beagnach an domhan iomlán Celsius inniu — tháinig sé leis an '
               'gcóras méadrach. Is iad na heisceachtaí móra na Stáit Aontaithe agus '
-              'roinnt tíortha atá ceangailte go dlúth leo, a d\'fhan le Fahrenheit. '
-              'Rinne dlí ó 1975 an t-athrú deonach ann, agus mar sin d\'fhan an '
+              "roinnt tíortha atá ceangailte go dlúth leo, a d'fhan le Fahrenheit. "
+              "Rinne dlí ó 1975 an t-athrú deonach ann, agus mar sin d'fhan an "
               'tseanchaoi.\n\n'
               'Tá seanscálaí diongbháilte. Bhí Réaumur forleathan sa 18ú agus sa '
               '19ú haois sa Fhrainc, sa Ghearmáin agus sa Rúis agus mhair sé go '
@@ -835,43 +835,43 @@ List<Source> _unitSourcesGa(UnitCategory cat) {
   switch (cat) {
     case UnitCategory.count:
       return [
-        Source(
+        const Source(
           'Dozen — Wikipedia',
           'https://en.wikipedia.org/wiki/Dozen',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Gross (unit) — Wikipedia',
           'https://en.wikipedia.org/wiki/Gross_(unit)',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Great gross — Wikipedia',
           'https://en.wikipedia.org/wiki/Great_gross',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Baker’s dozen — Wikipedia',
           'https://en.wikipedia.org/wiki/Baker%27s_dozen',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Assize of Bread and Ale — Wikipedia',
           'https://en.wikipedia.org/wiki/Assize_of_Bread_and_Ale',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'dozen — Online Etymology Dictionary',
           'https://www.etymonline.com/word/dozen',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'gross — Online Etymology Dictionary',
           'https://www.etymonline.com/word/gross',
           'R2',
@@ -880,37 +880,37 @@ List<Source> _unitSourcesGa(UnitCategory cat) {
       ];
     case UnitCategory.dist:
       return [
-        Source(
+        const Source(
           'Measurement — MacTutor History of Mathematics',
           'https://mathshistory.st-andrews.ac.uk/HistTopics/Measurement/',
           'R1',
           'A1',
         ),
-        Source(
+        const Source(
           'Proportionate measurements (Vastu-Shastra) — wisdomlib.org',
           'https://www.wisdomlib.org/hinduism/book/vastu-shastra-indian-architecture/d/doc1085304.html',
           'R1',
           'A1',
         ),
-        Source(
+        const Source(
           'Cubit — Wikipedia',
           'https://en.wikipedia.org/wiki/Cubit',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Ancient Mesopotamian units of measurement — Wikipedia',
           'https://en.wikipedia.org/wiki/Ancient_Mesopotamian_units_of_measurement',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Ancient Roman units of measurement — Wikipedia',
           'https://en.wikipedia.org/wiki/Ancient_Roman_units_of_measurement',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'The nautical mile — IHO',
           'https://ihr.iho.int/articles/the-nautical-mile/',
           'R1',
@@ -919,37 +919,37 @@ List<Source> _unitSourcesGa(UnitCategory cat) {
       ];
     case UnitCategory.area:
       return [
-        Source(
+        const Source(
           'Babylonian numerals — MacTutor (St Andrews)',
           'https://mathshistory.st-andrews.ac.uk/HistTopics/Babylonian_numerals/',
           'R1',
           'A1',
         ),
-        Source(
+        const Source(
           'Acre — Wikipedia',
           'https://en.wikipedia.org/wiki/Acre',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Hectare — Wikipedia',
           'https://en.wikipedia.org/wiki/Hectare',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Jugerum — Wikipedia',
           'https://en.wikipedia.org/wiki/Jugerum',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Mathematical accuracy of Aztec land surveys (Codex Vergara) — PNAS',
           'https://www.pnas.org/doi/10.1073/pnas.1107737108',
           'R1',
           'A2',
         ),
-        Source(
+        const Source(
           'Before the Melting Pot: Pre-Columbian Weights and Measures — NIST',
           'https://www.nist.gov/blogs/taking-measure/melting-pot-pre-columbian-weights-and-measures',
           'R1',
@@ -958,37 +958,37 @@ List<Source> _unitSourcesGa(UnitCategory cat) {
       ];
     case UnitCategory.space:
       return [
-        Source(
+        const Source(
           'Before the Melting Pot: Pre-Columbian Weights and Measures — NIST',
           'https://www.nist.gov/blogs/taking-measure/melting-pot-pre-columbian-weights-and-measures',
           'R1',
           'A1',
         ),
-        Source(
+        const Source(
           'Ancient Mesopotamian units of measurement — Wikipedia',
           'https://en.wikipedia.org/wiki/Ancient_Mesopotamian_units_of_measurement',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Hekat — Wikipedia',
           'https://en.wikipedia.org/wiki/Hekat',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Medimnos — Wikipedia',
           'https://en.wikipedia.org/wiki/Medimnos',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Ancient Roman units of measurement — Wikipedia',
           'https://en.wikipedia.org/wiki/Ancient_Roman_units_of_measurement',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Jialiang — Wikipedia',
           'https://en.wikipedia.org/wiki/Jialiang',
           'R2',
@@ -997,37 +997,37 @@ List<Source> _unitSourcesGa(UnitCategory cat) {
       ];
     case UnitCategory.weight:
       return [
-        Source(
+        const Source(
           'Hanging in the Balance: Precision Weighing in Antiquity — Penn Museum',
           'https://www.penn.museum/sites/expedition/hanging-in-the-balance-2/',
           'R1',
           'A1',
         ),
-        Source(
+        const Source(
           'Avoirdupois — Wikipedia',
           'https://en.wikipedia.org/wiki/Avoirdupois',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Troy weight — Wikipedia',
           'https://en.wikipedia.org/wiki/Troy_weight',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Mina (unit) — Wikipedia',
           'https://en.wikipedia.org/wiki/Mina_(unit)',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Cubical Weights — Harappa.com',
           'https://www.harappa.com/blog/cubical-weights',
           'R1',
           'A2',
         ),
-        Source(
+        const Source(
           'Legume Seeds for Weighing Gold in India — ResearchGate',
           'https://www.researchgate.net/publication/344088688',
           'R1',
@@ -1036,37 +1036,37 @@ List<Source> _unitSourcesGa(UnitCategory cat) {
       ];
     case UnitCategory.time:
       return [
-        Source(
+        const Source(
           'Sexagesimal — Wikipedia',
           'https://en.wikipedia.org/wiki/Sexagesimal',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Hour — Wikipedia',
           'https://en.wikipedia.org/wiki/Hour',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Minute — Wikipedia',
           'https://en.wikipedia.org/wiki/Minute',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Decimal time — Wikipedia',
           'https://en.wikipedia.org/wiki/Decimal_time',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Babylonian numerals — MacTutor (St Andrews)',
           'https://mathshistory.st-andrews.ac.uk/HistTopics/Babylonian_numerals/',
           'R1',
           'A3',
         ),
-        Source(
+        const Source(
           'Telling Time in Ancient Egypt — Metropolitan Museum of Art',
           'https://www.metmuseum.org/essays/telling-time-in-ancient-egypt',
           'R1',
@@ -1075,31 +1075,31 @@ List<Source> _unitSourcesGa(UnitCategory cat) {
       ];
     case UnitCategory.angle:
       return [
-        Source(
+        const Source(
           'Babylonian mathematics — MacTutor (St Andrews)',
           'https://mathshistory.st-andrews.ac.uk/HistTopics/Babylonian_mathematics/',
           'R1',
           'A1',
         ),
-        Source(
+        const Source(
           'Why did the Babylonians use 360 degrees? — UNLV',
           'https://www.physics.unlv.edu/~jeffery/astro/babylon/babylonian_360_degrees.html',
           'R1',
           'A1',
         ),
-        Source(
+        const Source(
           'Hipparchus — MacTutor',
           'https://mathshistory.st-andrews.ac.uk/Biographies/Hipparchus/',
           'R1',
           'A1',
         ),
-        Source(
+        const Source(
           'Angles in the SI: the radian as an independent unit — arXiv',
           'https://arxiv.org/pdf/2101.01578',
           'R1',
           'A1',
         ),
-        Source(
+        const Source(
           'Decimal time — MacTutor',
           'https://mathshistory.st-andrews.ac.uk/HistTopics/Decimal_time/',
           'R1',
@@ -1108,37 +1108,37 @@ List<Source> _unitSourcesGa(UnitCategory cat) {
       ];
     case UnitCategory.price:
       return [
-        Source(
+        const Source(
           '£sd — Wikipedia',
           'https://en.wikipedia.org/wiki/%C2%A3sd',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Denarius — Wikipedia',
           'https://en.wikipedia.org/wiki/Denarius',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Shekel — Wikipedia',
           'https://en.wikipedia.org/wiki/Shekel',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Non-decimal currency — Wikipedia',
           'https://en.wikipedia.org/wiki/Non-decimal_currency',
           'R2',
           'A1',
         ),
-        Source(
-          'Charon\'s obol — Wikipedia',
-          'https://en.wikipedia.org/wiki/Charon\'s_obol',
+        const Source(
+          "Charon's obol — Wikipedia",
+          "https://en.wikipedia.org/wiki/Charon's_obol",
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Babylonian numerals — MacTutor (St Andrews)',
           'https://mathshistory.st-andrews.ac.uk/HistTopics/Babylonian_numerals/',
           'R1',
@@ -1147,37 +1147,37 @@ List<Source> _unitSourcesGa(UnitCategory cat) {
       ];
     case UnitCategory.temp:
       return [
-        Source(
+        const Source(
           'Kelvin: History — NIST',
           'https://www.nist.gov/si-redefinition/kelvin/kelvin-history',
           'R1',
           'A1',
         ),
-        Source(
+        const Source(
           'Fahrenheit — Wikipedia',
           'https://en.wikipedia.org/wiki/Fahrenheit',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Daniel Gabriel Fahrenheit — Wikipedia',
           'https://en.wikipedia.org/wiki/Daniel_Gabriel_Fahrenheit',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Réaumur scale — Wikipedia',
           'https://en.wikipedia.org/wiki/R%C3%A9aumur_scale',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Thermodynamic temperature — Wikipedia',
           'https://en.wikipedia.org/wiki/Thermodynamic_temperature',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Rankine scale — Wikipedia',
           'https://en.wikipedia.org/wiki/Rankine_scale',
           'R2',

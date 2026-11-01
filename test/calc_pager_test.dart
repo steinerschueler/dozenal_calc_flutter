@@ -6,11 +6,6 @@
 // every set is inline: the converter's Ans key (Set 6) and the main keypad's
 // CONV key (Set 10) are visible without opening an overlay.
 
-import 'package:flutter/services.dart';
-import 'package:flutter/widgets.dart';
-import 'package:flutter_test/flutter_test.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-
 import 'package:dozenal_calc_flutter/asset_keypad.dart';
 import 'package:dozenal_calc_flutter/asset_page.dart';
 import 'package:dozenal_calc_flutter/converter_display.dart';
@@ -20,6 +15,10 @@ import 'package:dozenal_calc_flutter/info_pages.dart';
 import 'package:dozenal_calc_flutter/logic/dozenal_digit.dart';
 import 'package:dozenal_calc_flutter/main.dart';
 import 'package:dozenal_calc_flutter/tokens.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter/widgets.dart';
+import 'package:flutter_test/flutter_test.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
   /// Lets the transient page-peek indicator (1050 ms hold + fade) finish and

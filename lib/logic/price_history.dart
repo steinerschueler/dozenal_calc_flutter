@@ -17,10 +17,10 @@ enum PriceSeriesId { gold, silver, wheat }
 /// Points reference these by index (see [PricePoint.sourceId] / the sources
 /// screen). Only freely-citable / public-domain / CC-BY sources are included.
 class PriceSource {
+  const PriceSource(this.citation, this.license, this.url);
   final String citation;
   final String license;
   final String url;
-  const PriceSource(this.citation, this.license, this.url);
 }
 
 /// Confidence band of a data point — drives the line/area shading.
@@ -31,6 +31,15 @@ enum Era { reconstructed, sparse, modern }
 /// [era] is `reconstructed` or `sparse`, which the chart renders as discrete
 /// dots (never joined by a line — see the honesty model).
 class PricePoint {
+  const PricePoint(
+    this.year,
+    this.value,
+    this.era, {
+    this.valueLow,
+    this.valueHigh,
+    this.label,
+    this.sourceId,
+  });
   final int year;
   final double value;
   final Era era;
@@ -42,15 +51,6 @@ class PricePoint {
 
   final String? label;
   final int? sourceId;
-  const PricePoint(
-    this.year,
-    this.value,
-    this.era, {
-    this.valueLow,
-    this.valueHigh,
-    this.label,
-    this.sourceId,
-  });
 
   bool get isAnchor => era != Era.modern;
   bool get hasBand => valueLow != null && valueHigh != null;
@@ -59,6 +59,12 @@ class PricePoint {
 /// One series: ordered points, its unit and the source ids backing it. Antiquity
 /// reference points live inline as [PricePoint]s with a non-modern [Era].
 class PriceSeries {
+  const PriceSeries({
+    required this.id,
+    required this.unit,
+    required this.points,
+    this.sourceIds = const [],
+  });
   final PriceSeriesId id;
 
   /// Unit label shown on the value axis (e.g. "USD/oz t", "Au/Ag", "g Ag/L").
@@ -69,13 +75,6 @@ class PriceSeries {
 
   /// Indices into the dataset's source list.
   final List<int> sourceIds;
-
-  const PriceSeries({
-    required this.id,
-    required this.unit,
-    required this.points,
-    this.sourceIds = const [],
-  });
 
   int get minYear => points.isEmpty ? 0 : points.first.year;
   int get maxYear => points.isEmpty ? 0 : points.last.year;
@@ -103,12 +102,11 @@ double pow10(double e) => math.pow(10, e).toDouble();
 /// object — every pan/zoom produces a NEW instance (so the chart's
 /// shouldRepaint can compare by identity/fields).
 class ChartViewport {
+  const ChartViewport(this.xMin, this.xMax, this.lyMin, this.lyMax);
   final double xMin; // year
   final double xMax;
   final double lyMin; // log10(value)
   final double lyMax;
-
-  const ChartViewport(this.xMin, this.xMax, this.lyMin, this.lyMax);
 
   double get xSpan => xMax - xMin;
   double get lySpan => lyMax - lyMin;
@@ -137,7 +135,7 @@ class ChartViewport {
     double maxXSpan = 6000,
   }) {
     final s = 1 / scale;
-    var nxSpan = (xSpan * s).clamp(minXSpan, maxXSpan);
+    final nxSpan = (xSpan * s).clamp(minXSpan, maxXSpan);
     final nlySpan = (lySpan * s).clamp(0.3, 14.0);
     final focusYear = xMin + fx * xSpan;
     final focusLy = lyMin + fy * lySpan;
@@ -197,7 +195,7 @@ ChartViewport fitViewport(PriceSeries series) {
   if (series.points.isEmpty) return const ChartViewport(0, 1, -1, 1);
   final base = baselineOf(series);
   final years = [for (final p in series.points) p.year];
-  var xMin = years.reduce(math.min).toDouble();
+  final xMin = years.reduce(math.min).toDouble();
   var xMax = years.reduce(math.max).toDouble();
   if (xMax - xMin < 1) xMax = xMin + 1;
   final xPad = (xMax - xMin) * 0.03;
@@ -239,11 +237,12 @@ List<PricePoint> lttbDownsample(List<PricePoint> data, int threshold) {
   final bucketSize = (n - 2) / (threshold - 2);
   var a = 0;
   for (var i = 0; i < threshold - 2; i++) {
-    var avgStart = ((i + 1) * bucketSize).floor() + 1;
+    final avgStart = ((i + 1) * bucketSize).floor() + 1;
     var avgEnd = ((i + 2) * bucketSize).floor() + 1;
     if (avgEnd > n) avgEnd = n;
     final avgLen = avgEnd - avgStart;
-    var avgX = 0.0, avgY = 0.0;
+    var avgX = 0.0;
+    var avgY = 0.0;
     for (var j = avgStart; j < avgEnd; j++) {
       avgX += data[j].year;
       avgY += log10(data[j].value);

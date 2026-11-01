@@ -9,16 +9,15 @@
 
 import 'dart:math' as math;
 
+import 'package:dozenal_calc_flutter/app_layout.dart';
+import 'package:dozenal_calc_flutter/app_theme.dart';
+import 'package:dozenal_calc_flutter/glyph_painter.dart';
+import 'package:dozenal_calc_flutter/haptics.dart';
+import 'package:dozenal_calc_flutter/logic/glyph_style.dart';
+import 'package:dozenal_calc_flutter/token_painter.dart';
+import 'package:dozenal_calc_flutter/tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
-import 'app_layout.dart';
-import 'app_theme.dart';
-import 'glyph_painter.dart';
-import 'haptics.dart';
-import 'logic/glyph_style.dart';
-import 'token_painter.dart';
-import 'tokens.dart';
 
 // ---------------------------------------------------------------------------
 // Hoch-mode height regimes (dp of available keypad height).
@@ -70,6 +69,17 @@ const List<CalcToken> kSet7 = [ConstPi(), ConstE(), ConstPhi(), ConstSqrt2()];
 /// [onTap]) show the dimmed border and swallow input. A 44 dp minimum
 /// height is enforced here; callers may add their own outer constraints.
 class PressableShell extends StatefulWidget {
+  const PressableShell({
+    required this.builder,
+    super.key,
+    this.onTap,
+    this.selected = false,
+    this.gold = false,
+    this.disabled = false,
+    this.onLongPressStart,
+    this.onLongPressMoveUpdate,
+    this.onLongPressEnd,
+  });
   final VoidCallback? onTap;
   final Widget Function(BuildContext ctx, bool pressed) builder;
   final bool selected;
@@ -80,18 +90,6 @@ class PressableShell extends StatefulWidget {
   final GestureLongPressStartCallback? onLongPressStart;
   final GestureLongPressMoveUpdateCallback? onLongPressMoveUpdate;
   final GestureLongPressEndCallback? onLongPressEnd;
-
-  const PressableShell({
-    super.key,
-    this.onTap,
-    required this.builder,
-    this.selected = false,
-    this.gold = false,
-    this.disabled = false,
-    this.onLongPressStart,
-    this.onLongPressMoveUpdate,
-    this.onLongPressEnd,
-  });
 
   @override
   State<PressableShell> createState() => _PressableShellState();
@@ -154,15 +152,14 @@ class _PressableShellState extends State<PressableShell> {
 /// settings-page "Ziffern auf Tasten" preference. Font size chosen so the
 /// conventional digit's visual height roughly matches the 2q glyph box.
 class DigitKeyPainter extends CustomPainter {
-  final DozenalDigit digit;
-  final GlyphStyle style;
-  final Color color;
-
   DigitKeyPainter({
     required this.digit,
     required this.color,
     this.style = GlyphStyle.custom,
   });
+  final DozenalDigit digit;
+  final GlyphStyle style;
+  final Color color;
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -204,10 +201,9 @@ class DigitKeyPainter extends CustomPainter {
 /// Token-key painter: thin CustomPainter wrapper around [paintTokenAt], the
 /// single source of every operator/function glyph.
 class TokenKeyPainter extends CustomPainter {
+  TokenKeyPainter({required this.token, required this.color});
   final CalcToken token;
   final Color color;
-
-  TokenKeyPainter({required this.token, required this.color});
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -216,7 +212,6 @@ class TokenKeyPainter extends CustomPainter {
       token,
       rect: Rect.fromLTWH(0, 0, size.width, size.height),
       color: color,
-      strokeWidth: 2.0,
     );
   }
 
@@ -239,6 +234,16 @@ class TokenKeyPainter extends CustomPainter {
 /// [softGold] the fainter selected-sub-unit frame. Optional [info] adds a
 /// long-press box (one-sentence description + a "more in the theory" pointer).
 class LabelButton extends StatefulWidget {
+  const LabelButton({
+    required this.label,
+    required this.colorOf,
+    required this.onTap,
+    super.key,
+    this.gold = false,
+    this.softGold = false,
+    this.info,
+    this.enabled = true,
+  });
   final String label;
 
   /// Resolves the label colour from the active palette (called in build, so
@@ -260,17 +265,6 @@ class LabelButton extends StatefulWidget {
   /// When false the tile is inert: no tap, no haptics, no long-press, and it
   /// reports `button: false` to a11y (callers also grey it via [colorOf]).
   final bool enabled;
-
-  const LabelButton({
-    super.key,
-    required this.label,
-    required this.colorOf,
-    this.gold = false,
-    this.softGold = false,
-    required this.onTap,
-    this.info,
-    this.enabled = true,
-  });
 
   @override
   State<LabelButton> createState() => _LabelButtonState();
@@ -354,22 +348,21 @@ class _LabelButtonState extends State<LabelButton> {
 /// violet); the active system also gets a 2 dp ring in its own hue.
 /// [enabled] greys it out (e.g. currencies have no metric/imperial axis).
 class SystemKey extends StatefulWidget {
+  const SystemKey({
+    required this.label,
+    required this.semanticLabel,
+    required this.tenWorld,
+    required this.active,
+    required this.onTap,
+    super.key,
+    this.enabled = true,
+  });
   final String label;
   final String semanticLabel;
   final bool tenWorld;
   final bool active;
   final bool enabled;
   final VoidCallback onTap;
-
-  const SystemKey({
-    super.key,
-    required this.label,
-    required this.semanticLabel,
-    required this.tenWorld,
-    required this.active,
-    required this.onTap,
-    this.enabled = true,
-  });
 
   @override
   State<SystemKey> createState() => _SystemKeyState();

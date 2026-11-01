@@ -10,10 +10,9 @@
 
 import 'dart:math' as math;
 
+import 'package:dozenal_calc_flutter/app_theme.dart';
+import 'package:dozenal_calc_flutter/l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
-
-import '../app_theme.dart';
-import '../l10n/app_localizations.dart';
 
 // ---------------------------------------------------------------------------
 // Chapter-4 illustration: dodecagon + inscribed triangle/square/hexagon.
@@ -92,8 +91,8 @@ class Chapter4Illustration extends StatelessWidget {
 }
 
 class Chapter4Painter extends CustomPainter {
-  final AppColors colors;
   Chapter4Painter({this.colors = AppColors.dark});
+  final AppColors colors;
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -231,8 +230,8 @@ class Chapter5Illustration extends StatelessWidget {
 }
 
 class Chapter5Painter extends CustomPainter {
-  final AppColors colors;
   Chapter5Painter({this.colors = AppColors.dark});
+  final AppColors colors;
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -312,8 +311,8 @@ class ParkettierungIllustration extends StatelessWidget {
 }
 
 class ParkettierungPainter extends CustomPainter {
-  final AppColors colors;
   const ParkettierungPainter({this.colors = AppColors.dark});
+  final AppColors colors;
 
   @override
   void paint(Canvas canvas, Size size) {

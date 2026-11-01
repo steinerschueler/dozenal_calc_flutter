@@ -6,11 +6,10 @@
 // publication path that currently isn't accessible from a Linux-only
 // build environment.
 
+import 'package:dozenal_calc_flutter/app_theme.dart';
+import 'package:dozenal_calc_flutter/l10n/app_localizations.dart';
+import 'package:dozenal_calc_flutter/license_page.dart' show openExternalLink;
 import 'package:flutter/material.dart';
-
-import 'app_theme.dart';
-import 'l10n/app_localizations.dart';
-import 'license_page.dart' show openExternalLink;
 
 class SupportPage extends StatelessWidget {
   const SupportPage({super.key});
@@ -55,15 +54,14 @@ class SupportPage extends StatelessWidget {
 }
 
 class _DonationCard extends StatelessWidget {
-  final String title;
-  final String? subtitle;
-  final String url;
-
   const _DonationCard({
     required this.title,
     required this.subtitle,
     required this.url,
   });
+  final String title;
+  final String? subtitle;
+  final String url;
 
   @override
   Widget build(BuildContext context) {

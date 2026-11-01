@@ -4,7 +4,7 @@
 // distilled from docs/research/math_*.md; the app-internals chapter is written
 // from the source (logic/rational.dart, logic/expression.dart, state.dart).
 
-import 'prose_chapter.dart';
+import 'package:dozenal_calc_flutter/theory/prose_chapter.dart';
 
 part 'de/math_de.dart';
 part 'en/math_en.dart';

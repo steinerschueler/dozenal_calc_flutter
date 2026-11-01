@@ -3,33 +3,32 @@
 
 import 'dart:async';
 
+import 'package:dozenal_calc_flutter/app_layout.dart';
+import 'package:dozenal_calc_flutter/app_theme.dart';
+import 'package:dozenal_calc_flutter/asset_page.dart';
+import 'package:dozenal_calc_flutter/asset_state.dart';
+import 'package:dozenal_calc_flutter/calc_prefs.dart';
+import 'package:dozenal_calc_flutter/calc_scope.dart';
+import 'package:dozenal_calc_flutter/converter_page.dart';
+import 'package:dozenal_calc_flutter/converter_state.dart';
+import 'package:dozenal_calc_flutter/display.dart';
+import 'package:dozenal_calc_flutter/haptics.dart';
+import 'package:dozenal_calc_flutter/info_pages.dart';
+import 'package:dozenal_calc_flutter/intro_pages.dart';
+import 'package:dozenal_calc_flutter/keypad.dart';
+import 'package:dozenal_calc_flutter/l10n/app_localizations.dart';
+import 'package:dozenal_calc_flutter/locale_notifier.dart';
+import 'package:dozenal_calc_flutter/logic/base_num.dart';
+import 'package:dozenal_calc_flutter/logic/dozenal_digit.dart';
+import 'package:dozenal_calc_flutter/logic/glyph_style.dart';
+import 'package:dozenal_calc_flutter/rate_store.dart';
+import 'package:dozenal_calc_flutter/state.dart';
+import 'package:dozenal_calc_flutter/tokens.dart';
 import 'package:flutter/foundation.dart' show defaultTargetPlatform, kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
-import 'app_layout.dart';
-import 'app_theme.dart';
-import 'asset_page.dart';
-import 'asset_state.dart';
-import 'calc_prefs.dart';
-import 'calc_scope.dart';
-import 'converter_page.dart';
-import 'converter_state.dart';
-import 'display.dart';
-import 'haptics.dart';
-import 'info_pages.dart';
-import 'intro_pages.dart';
-import 'keypad.dart';
-import 'l10n/app_localizations.dart';
-import 'locale_notifier.dart';
-import 'logic/base_num.dart';
-import 'logic/dozenal_digit.dart';
-import 'logic/glyph_style.dart';
-import 'rate_store.dart';
-import 'state.dart';
-import 'tokens.dart';
 
 /// SharedPreferences key for the "user has seen the intro" flag. Bump the
 /// version suffix when the intro changes substantially enough to warrant
@@ -446,7 +445,7 @@ class _CalcScaffoldState extends State<_CalcScaffold> {
       if (!mounted) return;
       await Navigator.of(
         context,
-      ).push(MaterialPageRoute(builder: (_) => const IntroPage()));
+      ).push(MaterialPageRoute<void>(builder: (_) => const IntroPage()));
       await prefs.setBool(_kIntroSeenFlag, true);
       if (mounted) _focusNode.requestFocus();
     }
@@ -516,14 +515,14 @@ class _CalcScaffoldState extends State<_CalcScaffold> {
   }
 
   void _openIntro() {
-    Navigator.of(
-      context,
-    ).push(MaterialPageRoute(builder: (_) => const IntroPage())).then((_) {
-      if (mounted) {
-        _focusNode.requestFocus();
-        _pulsePagePeek(); // closing the intro lands on the main calculator
-      }
-    });
+    Navigator.of(context)
+        .push(MaterialPageRoute<void>(builder: (_) => const IntroPage()))
+        .then((_) {
+          if (mounted) {
+            _focusNode.requestFocus();
+            _pulsePagePeek(); // closing the intro lands on the main calculator
+          }
+        });
   }
 
   /// Result-history tape (#1), opened by swiping down on the display. Lists the
@@ -625,16 +624,16 @@ class _CalcScaffoldState extends State<_CalcScaffold> {
   }
 
   void _openInfo() {
-    Navigator.of(
-      context,
-    ).push(MaterialPageRoute(builder: (_) => const InfoListPage())).then((_) {
-      // After returning from Info, refocus so the keyboard listener is live
-      // again — and re-hint the pager (landing moment).
-      if (mounted) {
-        _focusNode.requestFocus();
-        _pulsePagePeek();
-      }
-    });
+    Navigator.of(context)
+        .push(MaterialPageRoute<void>(builder: (_) => const InfoListPage()))
+        .then((_) {
+          // After returning from Info, refocus so the keyboard listener is live
+          // again — and re-hint the pager (landing moment).
+          if (mounted) {
+            _focusNode.requestFocus();
+            _pulsePagePeek();
+          }
+        });
   }
 
   KeyEventResult _handleKey(FocusNode node, KeyEvent event) {

@@ -3,11 +3,12 @@
 // Mathematik", "Dozenale Gesellschaft". One file per language and block holds
 // the prose; this file holds the data types and their localized labels.
 
-import '../l10n/app_localizations.dart';
+import 'package:dozenal_calc_flutter/l10n/app_localizations.dart';
 
 /// One section of a chapter: a bold heading + a body paragraph, optionally
 /// followed by an inline illustration.
 class ProseSection {
+  const ProseSection(this.heading, this.body, {this.illustrationId});
   final String heading;
   final String body;
 
@@ -15,18 +16,17 @@ class ProseSection {
   /// after this section's prose (resolved by inlineTheoryIllustration in
   /// theory/werte_illustrations.dart). Null → no inline illustration.
   final String? illustrationId;
-  const ProseSection(this.heading, this.body, {this.illustrationId});
 }
 
 /// A cited source with a two-axis quality rating, distilled from the
 /// `## Quellen (Tier-System)` block of the research dossier in docs/research/.
 /// [reliability] is one of 'R1'..'R4','S'; [access] is one of 'A1'..'A3'.
 class Source {
+  const Source(this.title, this.url, this.reliability, this.access);
   final String title;
   final String url;
   final String reliability;
   final String access;
-  const Source(this.title, this.url, this.reliability, this.access);
 }
 
 /// Localized label for a reliability tier (R1..R4, S).
@@ -49,6 +49,12 @@ String accessLabel(AppLocalizations l, String a) => switch (a) {
 
 /// A full prose chapter: a title, its sections, and its cited sources.
 class ProseChapter {
+  const ProseChapter(
+    this.title,
+    this.sections, {
+    this.sources = const [],
+    this.imageId,
+  });
   final String title;
   final List<ProseSection> sections;
   final List<Source> sources;
@@ -58,10 +64,4 @@ class ProseChapter {
   /// illustration (e.g. the dodecagon diagrams) so the id stays correct
   /// regardless of the chapter's position in its block.
   final String? imageId;
-  const ProseChapter(
-    this.title,
-    this.sections, {
-    this.sources = const [],
-    this.imageId,
-  });
 }

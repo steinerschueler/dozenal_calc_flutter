@@ -3,20 +3,19 @@
 // overflows across the height regimes, the three drill levels and a matrix of
 // extreme Android aspect ratios.
 
-import 'package:flutter/material.dart';
-import 'package:flutter_test/flutter_test.dart';
-
 import 'package:dozenal_calc_flutter/asset_keypad.dart';
 import 'package:dozenal_calc_flutter/asset_page.dart';
 import 'package:dozenal_calc_flutter/asset_state.dart';
 import 'package:dozenal_calc_flutter/l10n/app_localizations.dart';
 import 'package:dozenal_calc_flutter/logic/asset_data.dart';
 import 'package:dozenal_calc_flutter/rate_store.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_test/flutter_test.dart';
 
-Widget _pageApp() => MaterialApp(
+Widget _pageApp() => const MaterialApp(
   localizationsDelegates: AppLocalizations.localizationsDelegates,
   supportedLocales: AppLocalizations.supportedLocales,
-  home: const AssetPage(),
+  home: AssetPage(),
 );
 
 enum _Drill {

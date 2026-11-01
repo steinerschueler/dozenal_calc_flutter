@@ -155,9 +155,9 @@ String formatBaseNum(double value, int base, {int fracDigits = 6}) {
       : value;
 
   final neg = snapped < 0;
-  var v = snapped.abs();
-  var intPart = v.floorToDouble();
-  var frac = v - intPart;
+  final v = snapped.abs();
+  final intPart = v.floorToDouble();
+  final frac = v - intPart;
 
   final sb = StringBuffer();
 
@@ -189,7 +189,7 @@ String formatBaseNum(double value, int base, {int fracDigits = 6}) {
       f -= d;
       if (f < 1e-9) break;
     }
-    var fs = fb.toString().replaceAll(RegExp(r'0+$'), '');
+    final fs = fb.toString().replaceAll(RegExp(r'0+$'), '');
     if (fs.isNotEmpty) {
       sb.write('.');
       sb.write(fs);

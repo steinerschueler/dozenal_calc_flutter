@@ -12,11 +12,10 @@ import 'dart:io';
 import 'dart:math' as math;
 import 'dart:ui' as ui;
 
+import 'package:dozenal_calc_flutter/glyph_painter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-
-import 'package:dozenal_calc_flutter/glyph_painter.dart';
 
 const String _fontFamily = 'CompassLiberation';
 
@@ -32,7 +31,7 @@ void main() {
   test('generate compass image', () async {
     await _loadFont();
 
-    const double size = 1024.0;
+    const size = 1024.0;
     final recorder = ui.PictureRecorder();
     final canvas = Canvas(recorder, const Rect.fromLTWH(0, 0, size, size));
 
@@ -43,14 +42,14 @@ void main() {
     //   Paint()..color = const Color(0xFF1F1F1F),
     // );
 
-    final cx = size / 2;
-    final cy = size / 2;
-    final outerR = size * 0.40;
+    const cx = size / 2;
+    const cy = size / 2;
+    const outerR = size * 0.40;
 
     // Subtle dashed-ish clock-face circle (a continuous stroke is fine for
     // a marketing asset; the visual cue is "compass / clock").
     canvas.drawCircle(
-      Offset(cx, cy),
+      const Offset(cx, cy),
       outerR,
       Paint()
         ..color = const Color(0xFF6E6E6E)
@@ -60,7 +59,7 @@ void main() {
 
     // Center dot.
     canvas.drawCircle(
-      Offset(cx, cy),
+      const Offset(cx, cy),
       size * 0.012,
       Paint()..color = const Color(0xFF6E6E6E),
     );
@@ -74,9 +73,9 @@ void main() {
       (DozenalDigit.d4, 10.0, '4'),
     ];
 
-    final glyphRadius = outerR;
-    final labelRadius = outerR * 0.55;
-    final glyphQ = size * 0.06; // half-extent of the anchor arrow
+    const glyphRadius = outerR;
+    const labelRadius = outerR * 0.55;
+    const glyphQ = size * 0.06; // half-extent of the anchor arrow
 
     for (final p in placements) {
       // Convert clock-hour to math-angle: 12 o'clock = top = -π/2 in
@@ -107,8 +106,8 @@ void main() {
       final tp = TextPainter(
         text: TextSpan(
           text: '= ${p.$3}',
-          style: TextStyle(
-            color: const Color(0xFFB0B0B0),
+          style: const TextStyle(
+            color: Color(0xFFB0B0B0),
             fontSize: size * 0.038,
             fontFamily: _fontFamily,
             fontWeight: FontWeight.w700,

@@ -8,132 +8,132 @@ part of '../manual.dart';
 
 List<ManualChapter> _manualChaptersGa() => const [
   ManualChapter('Ag tosú', [
-    _H("Na figiúir"),
+    _H('Na figiúir'),
     _P(
-      "Úsáideann an t-áireamhán seo siombailí dá chuid féin do gach "
-      "dáréag figiúr. Tá ceithre fhigiúr ancaire ina mbarra ríme "
-      "stílithe ag taispeáint sna ceithre treo cardiacha — 1 (suas), "
-      "4 (ar chlé), 7 (ar dheis), A (síos). Roinneann siad an ciorcal "
-      "uimhreach ina cheithre ghrúpa de thrí, cosúil leis na huaireanta "
-      "12, 3, 6 agus 9 ar aghaidh chloig.",
+      'Úsáideann an t-áireamhán seo siombailí dá chuid féin do gach '
+      'dáréag figiúr. Tá ceithre fhigiúr ancaire ina mbarra ríme '
+      'stílithe ag taispeáint sna ceithre treo cardiacha — 1 (suas), '
+      '4 (ar chlé), 7 (ar dheis), A (síos). Roinneann siad an ciorcal '
+      'uimhreach ina cheithre ghrúpa de thrí, cosúil leis na huaireanta '
+      '12, 3, 6 agus 9 ar aghaidh chloig.',
     ),
     _P(
-      "Tá gach figiúr eile eatarthu tógtha ó leathchiorcail agus "
-      "ciorcail iomlána. Is ciorcal simplí an náid, agus is leathchiorcal "
-      "os cionn ciorcail iomláin B (= aon déag).",
+      'Tá gach figiúr eile eatarthu tógtha ó leathchiorcail agus '
+      'ciorcail iomlána. Is ciorcal simplí an náid, agus is leathchiorcal '
+      'os cionn ciorcail iomláin B (= aon déag).',
     ),
     _DigitLegend(),
-    _H("Bunúsach"),
+    _H('Bunúsach'),
     _P(
-      "Iontráil uimhreacha agus oibreoirí cosúil le háireamhán póca "
-      "gnáth. Brúigh an eochair leathan = ag an mbun chun an toradh a "
-      "ríomh. Glanann AC (i ndearg foláirimh) an t-ionchur agus an "
-      "toradh ar fad ; baineann Del an carachtar ar chlé an chúrsóra.",
+      'Iontráil uimhreacha agus oibreoirí cosúil le háireamhán póca '
+      'gnáth. Brúigh an eochair leathan = ag an mbun chun an toradh a '
+      'ríomh. Glanann AC (i ndearg foláirimh) an t-ionchur agus an '
+      'toradh ar fad ; baineann Del an carachtar ar chlé an chúrsóra.',
     ),
-    _H("Cabhair agus teoiric"),
+    _H('Cabhair agus teoiric'),
     _P(
-      "Ar chlé agus ar dheis na heochrach =, suíonn dhá chnaipe "
-      "ciorclacha: osclaíonn (i) an dáréag caibidil teoirice seo, "
-      "athchasann (?) an turas tapa leis na marcóirí dearga. Osclaíonn "
-      "an turas go huathoibríoch ar an chéad tús.",
+      'Ar chlé agus ar dheis na heochrach =, suíonn dhá chnaipe '
+      'ciorclacha: osclaíonn (i) an dáréag caibidil teoirice seo, '
+      'athchasann (?) an turas tapa leis na marcóirí dearga. Osclaíonn '
+      'an turas go huathoibríoch ar an chéad tús.',
     ),
-    _H("Cúrsóir agus loingseoireacht"),
+    _H('Cúrsóir agus loingseoireacht'),
     _P(
-      "Is é an barra dearg sa réimse ionchuir an cúrsóir. Bain úsáid "
-      "as ◀ agus ▶ chun é a bhogadh, carachtair a chur isteach nó a "
-      "scriosadh i lár foirmle. Tar éis ríomhadh, bogann an cúrsóir "
-      "isteach sa réimse toraidh — bogann na saigheada an cúrsóir "
-      "toraidh ansin. Chomh luath agus a thosaíonn tú ionchur nua, "
-      "léimeann an cúrsóir ar ais chuig an réimse ionchuir.",
+      'Is é an barra dearg sa réimse ionchuir an cúrsóir. Bain úsáid '
+      'as ◀ agus ▶ chun é a bhogadh, carachtair a chur isteach nó a '
+      'scriosadh i lár foirmle. Tar éis ríomhadh, bogann an cúrsóir '
+      'isteach sa réimse toraidh — bogann na saigheada an cúrsóir '
+      'toraidh ansin. Chomh luath agus a thosaíonn tú ionchur nua, '
+      'léimeann an cúrsóir ar ais chuig an réimse ionchuir.',
     ),
-    _H("Leanúint ar ríomhadh"),
+    _H('Leanúint ar ríomhadh'),
     _P(
-      "Tar éis ríomhadh, is féidir leat leanúint go díreach le "
-      "hoibreoir. Iontráil + 5 = mar shampla, agus úsáideann an "
-      "t-áireamhán an toradh deireanach go huathoibríoch mar an chéad "
-      "operand. Chun ríomhadh ar fad nua a thosú, brúigh AC ar dtús.",
+      'Tar éis ríomhadh, is féidir leat leanúint go díreach le '
+      'hoibreoir. Iontráil + 5 = mar shampla, agus úsáideann an '
+      't-áireamhán an toradh deireanach go huathoibríoch mar an chéad '
+      'operand. Chun ríomhadh ar fad nua a thosú, brúigh AC ar dtús.',
     ),
     _H("Brú dúbailte d'fheidhmeanna inbhéartacha"),
     _P(
-      "Athraíonn an dara brú ar eochair feidhme í chuig a "
-      "inbhéartach: éiríonn sin ina sin⁻¹, cos ina cos⁻¹, agus mar "
-      "sin de. Baineann an riail chéanna leis na feidhmeanna "
-      "hipearbólacha sa phána síneadh. Léiríonn ponc beag órga ar an "
-      "eochair go ndéanfaidh an chéad bhrú eile inbhéartú.",
+      'Athraíonn an dara brú ar eochair feidhme í chuig a '
+      'inbhéartach: éiríonn sin ina sin⁻¹, cos ina cos⁻¹, agus mar '
+      'sin de. Baineann an riail chéanna leis na feidhmeanna '
+      'hipearbólacha sa phána síneadh. Léiríonn ponc beag órga ar an '
+      'eochair go ndéanfaidh an chéad bhrú eile inbhéartú.',
     ),
-    _H("Brú fada le haghaidh tuilleadh"),
+    _H('Brú fada le haghaidh tuilleadh'),
     _P(
-      "Tugann eochracha le cúinne beag ag bun na láimhe deise "
-      "feidhmeanna gaolmhara le brú fada: tá x² in x□, tá ln, "
-      "log₁₂ agus eˣ in log, tá ± in −, tá M+ agus M− in STO, tá "
-      "nCr agus nPr in n!, agus tá VAL (toradh an áireamháin "
-      "luacha) in CONV. Chun rogha a dhéanamh, sleamhnaigh do "
-      "mhéar chuig an rogha atá uait agus scaoil — nó scaoil agus "
-      "tapáil an rogha. Dúnann cniogadh lasmuigh an fhuinneog.",
+      'Tugann eochracha le cúinne beag ag bun na láimhe deise '
+      'feidhmeanna gaolmhara le brú fada: tá x² in x□, tá ln, '
+      'log₁₂ agus eˣ in log, tá ± in −, tá M+ agus M− in STO, tá '
+      'nCr agus nPr in n!, agus tá VAL (toradh an áireamháin '
+      'luacha) in CONV. Chun rogha a dhéanamh, sleamhnaigh do '
+      'mhéar chuig an rogha atá uait agus scaoil — nó scaoil agus '
+      'tapáil an rogha. Dúnann cniogadh lasmuigh an fhuinneog.',
     ),
-    _H("Oibreoirí speisialta"),
+    _H('Oibreoirí speisialta'),
     _P(
-      "Cearnaíonn x² an uimhir roimhe. Ríomhann √ an fhréamh chearnach; "
-      "má sheasann uimhir ar a chlé, úsáidtear an uimhir sin mar céim "
-      "na fréimhe: tugann 3√8 fréamh chiúbach 8, is é sin 2. Ríomhann "
-      "log logartam ina bhfuil an uimhir ar chlé mar argóint agus an "
-      "uimhir ar dheis mar bhonn: is é 8 log 2 logartam 8 le bonn 2, is "
-      "é sin 3. Ríomhann ⊕ an "
-      "suim chomhthreomhar: a ⊕ b = (a·b)/(a+b), úsáideach do "
-      "fhriotaí comhthreomhara.",
+      'Cearnaíonn x² an uimhir roimhe. Ríomhann √ an fhréamh chearnach; '
+      'má sheasann uimhir ar a chlé, úsáidtear an uimhir sin mar céim '
+      'na fréimhe: tugann 3√8 fréamh chiúbach 8, is é sin 2. Ríomhann '
+      'log logartam ina bhfuil an uimhir ar chlé mar argóint agus an '
+      'uimhir ar dheis mar bhonn: is é 8 log 2 logartam 8 le bonn 2, is '
+      'é sin 3. Ríomhann ⊕ an '
+      'suim chomhthreomhar: a ⊕ b = (a·b)/(a+b), úsáideach do '
+      'fhriotaí comhthreomhara.',
     ),
-    _H("Pána síneadh"),
+    _H('Pána síneadh'),
     _P(
-      "Osclaíonn an eochair … ag bun na láimhe deise an pána síneadh "
-      "le feidhmeanna breise: cuimhne, tairisigh (π, e, φ, √2), "
-      "feidhmeanna hipearbólacha, oibreoirí ardleibhéil, chomh "
-      "maith le EXP agus DRG. Dúnann an eochair chéanna é, nó cniogadh lasmuigh "
-      "den phána. Ar tháibléid tá na tacair go léir le feiceáil le "
-      "chéile pé scéal é — níl forshrac ann.",
+      'Osclaíonn an eochair … ag bun na láimhe deise an pána síneadh '
+      'le feidhmeanna breise: cuimhne, tairisigh (π, e, φ, √2), '
+      'feidhmeanna hipearbólacha, oibreoirí ardleibhéil, chomh '
+      'maith le EXP agus DRG. Dúnann an eochair chéanna é, nó cniogadh lasmuigh '
+      'den phána. Ar tháibléid tá na tacair go léir le feiceáil le '
+      'chéile pé scéal é — níl forshrac ann.',
     ),
     _Pre(
-      "  6 — Cuimhne:       STO   RCL   MC    Ans\n"
-      "  7 — Tairisigh:     π     e     φ     √2\n"
-      "  8 — Hipearbólach:  sinh  cosh  tanh  coth\n"
-      "  9 — Ardleibhéil:   n!    |x|   1/x   mod\n"
-      "  10 — Móid:         EXP   DRG   …",
+      '  6 — Cuimhne:       STO   RCL   MC    Ans\n'
+      '  7 — Tairisigh:     π     e     φ     √2\n'
+      '  8 — Hipearbólach:  sinh  cosh  tanh  coth\n'
+      '  9 — Ardleibhéil:   n!    |x|   1/x   mod\n'
+      '  10 — Móid:         EXP   DRG   …',
     ),
-    _H("Cuimhne"),
+    _H('Cuimhne'),
     _P(
-      "Stórálann STO an toradh reatha, cuireann RCL an luach stóráilte "
-      "isteach san ionchur, glanann MC an chuimhne. Léiríonn M beag "
-      "ar an taispeáint go bhfuil rud éigin stóráilte. Cuireann Ans "
-      "toradh an ríomhaidh deireanaigh isteach — stóráiltear luachanna "
-      "réasúnacha cruinne go hiomlán, caomhnaítear an phriacúlacht.",
+      'Stórálann STO an toradh reatha, cuireann RCL an luach stóráilte '
+      'isteach san ionchur, glanann MC an chuimhne. Léiríonn M beag '
+      'ar an taispeáint go bhfuil rud éigin stóráilte. Cuireann Ans '
+      'toradh an ríomhaidh deireanaigh isteach — stóráiltear luachanna '
+      'réasúnacha cruinne go hiomlán, caomhnaítear an phriacúlacht.',
     ),
-    _H("Líne na tréimhse"),
+    _H('Líne na tréimhse'),
     _P(
-      "Nuair is codán peiriadach an toradh, marcálann an t-áireamhán "
-      "na figiúir athrá le líne os a gcionn. Sampla: tugann 1/5 "
-      "0.2497 le líne os cionn na ceithre figiúr ar fad. Le haghaidh "
-      "tréimhsí níos faide ná cúig fhigiúr, taispeántar ach an chéad "
-      "chúig, agus ina dhiaidh sin …",
+      'Nuair is codán peiriadach an toradh, marcálann an t-áireamhán '
+      'na figiúir athrá le líne os a gcionn. Sampla: tugann 1/5 '
+      '0.2497 le líne os cionn na ceithre figiúr ar fad. Le haghaidh '
+      'tréimhsí níos faide ná cúig fhigiúr, taispeántar ach an chéad '
+      'chúig, agus ina dhiaidh sin …',
     ),
-    _H("Córas uimhrithe: Doz / Dez"),
+    _H('Córas uimhrithe: Doz / Dez'),
     _P(
-      "Athraíonn tú an córas uimhrithe sna socruithe, ar fáil "
-      "tríd an eochair (i): ríomhann dosaenach i mbonn 12 "
-      "(réamhshocrú), deachúil i mbonn 10. Taispeántar an córas "
-      "gníomhach ag barr na láimhe deise den taispeáint.",
+      'Athraíonn tú an córas uimhrithe sna socruithe, ar fáil '
+      'tríd an eochair (i): ríomhann dosaenach i mbonn 12 '
+      '(réamhshocrú), deachúil i mbonn 10. Taispeántar an córas '
+      'gníomhach ag barr na láimhe deise den taispeáint.',
     ),
     _P(
-      "Ag aistriú, déantar an uimhir reatha le feiceáil a thiontú go "
-      "huathoibríoch chuig an gcóras eile. Éiríonn « 10 » i nDoz ina "
-      "« 12 » i nDez. I mód Dez éiríonn na siombailí do 10 agus 11 "
-      "neamhghníomhach (liath), mar ní bhíonn siad ann mar fhigiúir "
-      "aonair i mbonn 10 — le haghaidh Doz, ach aistrigh ar ais.",
+      'Ag aistriú, déantar an uimhir reatha le feiceáil a thiontú go '
+      'huathoibríoch chuig an gcóras eile. Éiríonn « 10 » i nDoz ina '
+      '« 12 » i nDez. I mód Dez éiríonn na siombailí do 10 agus 11 '
+      'neamhghníomhach (liath), mar ní bhíonn siad ann mar fhigiúir '
+      'aonair i mbonn 10 — le haghaidh Doz, ach aistrigh ar ais.',
     ),
-    _H("Mód uillinne"),
+    _H('Mód uillinne'),
     _P(
       "Athraíonn DRG mód na huillinne d'fheidhmeanna triantánaíochta: "
-      "DEG → RAD → GRD → DEG. Taispeántar an mód reatha ag barr na "
-      "láimhe deise den taispeáint, díreach os cionn an táscaire "
-      "Doz/Dez. Réamhshocrú: DEG.",
+      'DEG → RAD → GRD → DEG. Taispeántar an mód reatha ag barr na '
+      'láimhe deise den taispeáint, díreach os cionn an táscaire '
+      'Doz/Dez. Réamhshocrú: DEG.',
     ),
   ]),
   ManualChapter('Easpónaint, Fréamhacha & Logartaim', [
@@ -153,7 +153,7 @@ List<ManualChapter> _manualChaptersGa() => const [
       'an t-easpónant ar eolas, cad é an bonn a bhí ann? Freagraíonn an '
       'logartam: tá an bonn agus an toradh ar eolas, cén t-easpónant atá '
       'taobh thiar de? Mar sin, is iad an fhréamh agus an logartam an dá '
-      'inbhéartach d\'ardú le cumhacht.',
+      "inbhéartach d'ardú le cumhacht.",
     ),
     PowerTriangleFigure(power: 'Cumhacht', base: 'Bonn', exponent: 'Easpónant'),
     _H('Cumhachtaí: iolrú arís agus arís eile'),
@@ -422,11 +422,11 @@ List<ManualChapter> _manualChaptersGa() => const [
     ),
     _H('Ar an áireamhán seo'),
     _P(
-      "Suíonn an eochair ⊕ i measc na glifanna oibreora i Set 2, in aice le "
-      "x^□, √ agus log. Iontráil tú a ⊕ b cosúil le ríomhadh gnáth: ar dtús "
-      "a, ansin ⊕, ansin b, ansin =. Murab ionann le fréamh agus logartam, "
-      "ríomhann ⊕ go cruinn — ritheann sé ar an rian codánach le braite "
-      "tréimhse agus dá bhrí sin ní thaispeánann sé \"≈\".",
+      'Suíonn an eochair ⊕ i measc na glifanna oibreora i Set 2, in aice le '
+      'x^□, √ agus log. Iontráil tú a ⊕ b cosúil le ríomhadh gnáth: ar dtús '
+      'a, ansin ⊕, ansin b, ansin =. Murab ionann le fréamh agus logartam, '
+      'ríomhann ⊕ go cruinn — ritheann sé ar an rian codánach le braite '
+      'tréimhse agus dá bhrí sin ní thaispeánann sé "≈".',
     ),
     _Pre(
       'Ionchur          Toradh      (deachúil)\n'
@@ -475,7 +475,7 @@ List<ManualChapter> _manualChaptersGa() => const [
     ),
     _P(
       'Ó na trí thaobh seo cruthaítear trí chothromán atá i gcónaí mar '
-      'an gcéanna d\'uillinn ar leith — neamhspleách ar mhéid an triantáin: '
+      "an gcéanna d'uillinn ar leith — neamhspleách ar mhéid an triantáin: "
       'sin = os comhair/hipitéis, cosán = cóngarach/hipitéis, '
       'tadhgán = os comhair/cóngarach = sin/cos. Is é an cotadhgán '
       'coipriosclach an tadhgán. Cuimsíonn an nathán cuimhne SOH-CAH-TOA na '
@@ -587,11 +587,11 @@ List<ManualChapter> _manualChaptersGa() => const [
     ),
     _H('Uillinn i mBonn Dó Dhéag'),
     _P(
-      "Breathnaíonn fiú na luachanna ciorcal-iomlán eolach coimhthíoch i "
-      "ndosaenach: scríobhann tú 360° mar \"260\" (2·144 + 6·12), 400 gradian "
-      "\"294\". Ní éalaíonn ach an raidián ón gceist — is tairiseach 2π, "
-      "neamhspleách ar an gcóras uimhrithe; seachnaíonn cibé a oibríonn i "
-      "RAD an gaiste go hiomlán.",
+      'Breathnaíonn fiú na luachanna ciorcal-iomlán eolach coimhthíoch i '
+      'ndosaenach: scríobhann tú 360° mar "260" (2·144 + 6·12), 400 gradian '
+      '"294". Ní éalaíonn ach an raidián ón gceist — is tairiseach 2π, '
+      'neamhspleách ar an gcóras uimhrithe; seachnaíonn cibé a oibríonn i '
+      'RAD an gaiste go hiomlán.',
     ),
     _P(
       'Go bhfuil 360 cuid ag an gciorcal iomlán oireann go maith don dó '
@@ -839,14 +839,14 @@ List<ManualChapter> _manualChaptersGa() => const [
     HyperbolicCurvesFigure(),
     _H('Gaol leis an triantánaíocht'),
     _P(
-      "Tá an dá theaghlach ceilte ón ábhar céanna: an fheidhm easpónantach. "
-      "Scríobhann foirmle Euler na feidhmeanna ciorclach go hanalagach — "
-      "cos t = (eⁱᵗ + e⁻ⁱᵗ)/2, sin t = (eⁱᵗ − e⁻ⁱᵗ)/(2i). Tá an patrún "
-      "mar an gcéanna; ach ní ritheann an fheidhm easpónantach don cheann "
-      "ciorclach ach ar an ais shamhailteach (argóint i·t), don cheann "
-      "hipearbólach ar an ais réadach (argóint x). Má tá uimhreacha casta fós "
-      "coimhthíoch duit, is féidir leat an smaoineamh seo a scipeáil — is é "
-      "an rud tábhachtach amháin: is í an aon fheidhm chéanna í ina croí.",
+      'Tá an dá theaghlach ceilte ón ábhar céanna: an fheidhm easpónantach. '
+      'Scríobhann foirmle Euler na feidhmeanna ciorclach go hanalagach — '
+      'cos t = (eⁱᵗ + e⁻ⁱᵗ)/2, sin t = (eⁱᵗ − e⁻ⁱᵗ)/(2i). Tá an patrún '
+      'mar an gcéanna; ach ní ritheann an fheidhm easpónantach don cheann '
+      'ciorclach ach ar an ais shamhailteach (argóint i·t), don cheann '
+      'hipearbólach ar an ais réadach (argóint x). Má tá uimhreacha casta fós '
+      'coimhthíoch duit, is féidir leat an smaoineamh seo a scipeáil — is é '
+      'an rud tábhachtach amháin: is í an aon fheidhm chéanna í ina croí.',
     ),
     _P(
       'Go geoiméadrach is é an aon tógáil chéanna é — pointe ar chuar, '
@@ -875,7 +875,7 @@ List<ManualChapter> _manualChaptersGa() => const [
       '— ach an cuar y = a·cosh(x/a). Le crochóir éadrom tá cosúlacht idir '
       'an dá cheann; le crochóir doimhin éiríonn an difríocht soiléir: fásann '
       'an caténaire níos tapúla ná aon phaireabóla. Mar mhalairt — mar stua '
-      'cosh oscailte síos — déanann sé cur síos ar an gcruth idéalach d\'arsa '
+      "cosh oscailte síos — déanann sé cur síos ar an gcruth idéalach d'arsa "
       'súnta a ritheann a lód go hiomlán trí chomhbhrú.',
     ),
     CatenaryFigure(catenary: 'Caténaire', parabola: 'Pairéabóla'),
@@ -992,7 +992,7 @@ List<ManualChapter> _manualChaptersGa() => const [
       'uimhreacha (sé as 49), mar shampla, tugann 49 nCr 6 ≈48245A0 — breis '
       'agus ceithre mhilliún déag féidearthacht do thicéad amháin.',
     ),
-    _H("Triantán Pascal"),
+    _H('Triantán Pascal'),
     _P(
       'Socraigh na luachanna nCr líne ar líne agus feictear patrún: i líne n '
       'tá, ceann i ndiaidh a chéile, n nCr 0, n nCr 1, …, n nCr n. Is é gach '
@@ -1000,7 +1000,7 @@ List<ManualChapter> _manualChaptersGa() => const [
       'fhachtóiriúil. Is aon-uimhreacha iad na heagannaigh, agus tá sé '
       'siméadrach (n nCr r = n nCr (n−r)).',
     ),
-    PascalTriangleFigure(title: "Triantán Pascal"),
+    PascalTriangleFigure(title: 'Triantán Pascal'),
     _P(
       'I mbonn dó dhéag breathnaíonn an triantán beagnach mar is gnáth — ach '
       'amháin go n-i líne 5 feictear "A" in ionad deich. Is iad na huimhreacha '
@@ -1054,7 +1054,6 @@ List<ManualChapter> _manualChaptersGa() => const [
     ),
     DozenalPowersScaleFigure(
       title: 'Cumhachtaí dó dhéag — 1 EXP n',
-      dozLabel: 'Doz.',
       decLabel: 'Deach.',
     ),
     _P(
@@ -1265,7 +1264,7 @@ List<ManualChapter> _converterManualChaptersGa() => const [
     _H('Na tairisigh'),
     _P(
       'Cuireann π, e, φ agus √2 a luach mar fhigiúir in áit na '
-      'huimhreach ag an gcúrsóir — áisiúil d\'imlínte agus do '
+      "huimhreach ag an gcúrsóir — áisiúil d'imlínte agus do "
       'chóimheasa: tugann "3" "×" "π" "ft" imlíne ciorcail le '
       'trastomhas 3 troigh.',
     ),
@@ -1417,7 +1416,7 @@ List<ManualChapter> _assetManualChaptersGa() => const [
       'Ní fhaigheann an aip aon rud ón idirlíon — ciallaíonn an „≈" '
       '„garbh, rátabhunaithe", ní „beo" riamh. Coinníonn tú féin na rátaí '
       'cothrom le dáta, mar shampla de réir Kitco do mhiotail nó an BCE '
-      'd\'airgeadraí.',
+      "d'airgeadraí.",
     ),
   ]),
   ManualChapter('Cuar: an chomparáid stairiúil', [

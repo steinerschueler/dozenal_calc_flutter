@@ -2,8 +2,8 @@
 // keypad (converter_page) and the unit-theory page (conversions_page). Kept
 // separate to avoid a circular import between those two.
 
-import 'l10n/app_localizations.dart';
-import 'logic/unit_data.dart';
+import 'package:dozenal_calc_flutter/l10n/app_localizations.dart';
+import 'package:dozenal_calc_flutter/logic/unit_data.dart';
 
 /// Localized label for a unit category (Set 3/4/8/9 tiles, theory tabs).
 String converterCategoryLabel(UnitCategory c, AppLocalizations l) {

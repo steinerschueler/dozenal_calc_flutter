@@ -1,3 +1,6 @@
+// Prose wraps inside words and CJK has no spaces, so this lint almost only reports false positives.
+// ignore_for_file: missing_whitespace_between_adjacent_strings
+
 // English prose for the "Twelve and the World" nature chapters. This is a
 // `part of ../world_theory.dart`. Distilled from docs/research/nature_*.md in
 // deliberately simple sentences (easier to translate). Voice: state the
@@ -40,7 +43,7 @@ List<ProseChapter> _worldChaptersEn() => const [
       ),
       ProseSection(
         'Why nature builds this shape',
-        'A crystal\'s outer shape mirrors its inner atoms. In '
+        "A crystal's outer shape mirrors its inner atoms. In "
             'pyrite the sulfur does not sit alone, but in little '
             'dumbbells of two atoms each. These dumbbells are aligned and '
             '"break" the full cubic symmetry a little. Only that '
@@ -51,7 +54,7 @@ List<ProseChapter> _worldChaptersEn() => const [
             'a pyritohedron. Trace substances and growth speed have a say in it.',
       ),
       ProseSection(
-        'Flint and fool\'s gold',
+        "Flint and fool's gold",
         'The name comes from the Greek word for fire: strike pyrite '
             'against steel and it sprays sparks. That makes the stone one of the '
             'oldest tools of humankind — even Ötzi, the '
@@ -139,7 +142,7 @@ List<ProseChapter> _worldChaptersEn() => const [
             'the slow faces — and those are precisely the twelve that form the '
             'rhombic dodecahedron. That is why a garnet is almost never '
             'cube-shaped, but rounded and twelve-faced like a seed kernel.\n\n'
-            'The crystal\'s symmetry permits this shape, but does '
+            "The crystal's symmetry permits this shape, but does "
             'not force it; which of the allowed shapes appears is decided '
             'only by growth.',
       ),
@@ -162,7 +165,7 @@ List<ProseChapter> _worldChaptersEn() => const [
         'Three bodies with twelve faces look alike:\n\n'
             '• The rhombic dodecahedron of garnet has twelve rhombi.\n'
             '• The pyritohedron of pyrite has twelve distorted pentagons.\n'
-            '• Plato\'s regular dodecahedron has twelve perfect '
+            "• Plato's regular dodecahedron has twelve perfect "
             'pentagons.\n\n'
             'Only the Platonic solid has true fivefold symmetry — and '
             'that is exactly what is impossible in a crystal, because '
@@ -263,7 +266,7 @@ List<ProseChapter> _worldChaptersEn() => const [
             'only approximately Platonic. How a cell without a brain builds such '
             'geometry at all is not entirely settled to this day — '
             'presumably the glass is deposited along the walls of equally '
-            'sized bubbles, as on the struts of a soap foam. Haeckel\'s '
+            "sized bubbles, as on the struts of a soap foam. Haeckel's "
             'plates later even shaped Art Nouveau.',
       ),
     ],
@@ -299,7 +302,7 @@ List<ProseChapter> _worldChaptersEn() => const [
         'A1',
       ),
       Source(
-        'Haeckel\'s embryos: fraud not proven — R. J. Richards (U Chicago)',
+        "Haeckel's embryos: fraud not proven — R. J. Richards (U Chicago)",
         'https://home.uchicago.edu/~rjr6/articles/Haeckel--fraud%20not%20proven.pdf',
         'R1',
         'A1',
@@ -547,7 +550,7 @@ List<ProseChapter> _worldChaptersEn() => const [
             'came only in 1953, almost 260 years later.',
       ),
       ProseSection(
-        'Kepler\'s conjecture and the pomegranates',
+        "Kepler's conjecture and the pomegranates",
         'Behind this stands a larger question: how do you pack spheres most densely? '
             'As early as around 1590, Walter Raleigh had his adviser Thomas Harriot '
             'calculate the stacking of cannonballs. In 1611 Johannes '
@@ -645,7 +648,7 @@ List<ProseChapter> _worldChaptersEn() => const [
       ),
       ProseSection(
         'Equal temperament',
-        'Today\'s solution spreads this gap evenly: each of the twelve '
+        "Today's solution spreads this gap evenly: each of the twelve "
             'semitones is exactly the same size. The step factor is the twelfth '
             'root of 2 (about 1.0595) — applied twelve times it gives exactly '
             'the octave. So every interval except the octave is a little '
@@ -841,7 +844,7 @@ List<ProseChapter> _worldChaptersEn() => const [
         'On the cathedrals the twelve appears above all in the pictorial program. The '
             'Gothic rose windows are readily called twelve-part — often, though, '
             'they are eight-, sixteen-, or twenty-four-part; the '
-            'apostle rose of Paris\'s Notre-Dame orders the twelve into its rings.\n\n'
+            "apostle rose of Paris's Notre-Dame orders the twelve into its rings.\n\n"
             'Reliably twelvefold are the calendar cycles: at Chartres and '
             'Amiens the twelve zodiac signs stand beside the twelve '
             '"labors of the months" — the course of the heavens beside the farming year. The same '
@@ -920,7 +923,7 @@ List<ProseChapter> _worldChaptersEn() => const [
             'Leonardo da Vinci drew the five Platonic solids — '
             'among them the dodecahedron — for the first time both solid and as a '
             'transparent edge model. They are the first spatially '
-            'convincing polyhedron pictures, forerunners of today\'s '
+            "convincing polyhedron pictures, forerunners of today's "
             'wireframe models.\n\n'
             'A stubborn error deserves correcting: the famous '
             'stone body in Dürer\'s "Melencolia I" is no dodecahedron, but '
@@ -976,7 +979,7 @@ List<ProseChapter> _worldChaptersEn() => const [
         'A1',
       ),
       Source(
-        'Dürer\'s solid (Truncated triangular trapezohedron) — Wikipedia',
+        "Dürer's solid (Truncated triangular trapezohedron) — Wikipedia",
         'https://en.wikipedia.org/wiki/Truncated_triangular_trapezohedron',
         'R2',
         'A1',
@@ -1135,7 +1138,7 @@ List<ProseChapter> _worldChaptersEn() => const [
             'year. It was known to Ptolemy already, but was never incorporated '
             'into the twelve-sign system — because that system needs exactly '
             'twelve equal parts, not a list of all constellations.\n\n'
-            'Third, everything has shifted. The Earth\'s axis wobbles slowly like '
+            "Third, everything has shifted. The Earth's axis wobbles slowly like "
             'a spinning top, one full turn in about 25,800 years (precession). '
             'This causes the vernal point to migrate backwards through the '
             'constellations, about one degree every 72 years. Around two thousand '
@@ -1176,7 +1179,7 @@ List<ProseChapter> _worldChaptersEn() => const [
             'year.\n\n'
             'From this came the twelve-year cycle with its twelve animals — Rat, '
             'Ox, Tiger, and so on. Unlike in the West, this concerns the birth '
-            'year, not the birth month. Because Jupiter\'s orbit does not measure '
+            "year, not the birth month. Because Jupiter's orbit does not measure "
             'exactly twelve years, astronomers later introduced a hypothetical '
             'counter-Jupiter with an ideally uniform motion. Two cultures, two '
             'different observations — the moon here, Jupiter there — and both '

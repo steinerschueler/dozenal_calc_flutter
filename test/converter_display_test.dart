@@ -3,13 +3,12 @@
 // render in both custom (dozenal glyphs overlaid on invisible digit cells) and
 // conventional (ASCII) modes, plus without a scope (fallback to custom).
 
-import 'package:flutter/material.dart';
-import 'package:flutter_test/flutter_test.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-
 import 'package:dozenal_calc_flutter/converter_display.dart';
 import 'package:dozenal_calc_flutter/converter_state.dart';
 import 'package:dozenal_calc_flutter/logic/glyph_style.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_test/flutter_test.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 Widget _host(GlyphStyleNotifier n) => MaterialApp(
   home: Scaffold(

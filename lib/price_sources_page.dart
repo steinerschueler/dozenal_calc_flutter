@@ -3,13 +3,12 @@
 // license, tappable URL) under an honesty/method note. Pushed from the chart's
 // "Quellen" link. Mirrors the source-list pattern in conversions_page.dart.
 
+import 'package:dozenal_calc_flutter/app_theme.dart';
+import 'package:dozenal_calc_flutter/l10n/app_localizations.dart';
+import 'package:dozenal_calc_flutter/license_page.dart' show openExternalLink;
+import 'package:dozenal_calc_flutter/logic/price_history.dart';
+import 'package:dozenal_calc_flutter/logic/price_history_data.dart';
 import 'package:flutter/material.dart';
-
-import 'app_theme.dart';
-import 'l10n/app_localizations.dart';
-import 'license_page.dart' show openExternalLink;
-import 'logic/price_history.dart';
-import 'logic/price_history_data.dart';
 
 class PriceSourcesPage extends StatelessWidget {
   const PriceSourcesPage({super.key});

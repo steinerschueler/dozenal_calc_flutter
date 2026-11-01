@@ -130,8 +130,8 @@ List<UnitTheorySection> _unitTheoryEn(UnitCategory cat) {
               'of the ark, and Hindu temples were measured in cubits.\n\n'
               'Language too has preserved the measures. “Give them an inch, and '
               'they take a mile” originally meant “… and they take an '
-              'ell.” A “stone\'s throw” is a short distance. The '
-              'sailor\'s leadsman\'s call “mark twain” (two fathoms deep) became the '
+              "ell.” A “stone's throw” is a short distance. The "
+              "sailor's leadsman's call “mark twain” (two fathoms deep) became the "
               'pen name of Mark Twain.',
         ),
         UnitTheorySection(
@@ -208,7 +208,7 @@ List<UnitTheorySection> _unitTheoryEn(UnitCategory cat) {
         ),
         UnitTheorySection(
           'Area Measures around the World',
-          'Today the hectare (10,000 square meters) is the world\'s '
+          "Today the hectare (10,000 square meters) is the world's "
               'most widespread land measure. Yet old measures live on stubbornly. In '
               'Thailand the rai even appears in the official land register. In India '
               'and Bangladesh land is traded in bigha. In Korea '
@@ -273,12 +273,12 @@ List<UnitTheorySection> _unitTheoryEn(UnitCategory cat) {
               'koku of rice yield. From ten thousand koku upward a lord ranked as a “daimyō,” '
               'as a prince. Even the pay of the samurai and the size of ships '
               'were counted in koku.\n\n'
-              'In Rome the soldier\'s ration was allotted in “modii,” a '
+              "In Rome the soldier's ration was allotted in “modii,” a "
               'dry measure of just under nine liters. In Mesopotamia, Egypt, and '
               'China rulers controlled the measures through calibrated standard vessels. '
               'The most famous is the Chinese “jialiang” from the time around '
               'the year zero: a single bronze casting that embodies five '
-              'volume units at once. It stood before the emperor\'s halls '
+              "volume units at once. It stood before the emperor's halls "
               'as a sign of the unity and justice of his rule.',
         ),
         UnitTheorySection(
@@ -333,7 +333,7 @@ List<UnitTheorySection> _unitTheoryEn(UnitCategory cat) {
               'globe.\n\n'
               'The metric system too carries this spirit, only secular: instead of '
               'from a ruler it derives its measure from the earth itself. '
-              'The meter is a fraction of the earth\'s circumference, the cubic meter its '
+              "The meter is a fraction of the earth's circumference, the cubic meter its "
               'space — measure from nature instead of from power.',
         ),
         UnitTheorySection(
@@ -458,16 +458,16 @@ List<UnitTheorySection> _unitTheoryEn(UnitCategory cat) {
         ),
         UnitTheorySection(
           'Moon, Sun, and Week',
-          'The day comes from the earth\'s rotation, the month from the moon, the year from '
+          "The day comes from the earth's rotation, the month from the moon, the year from "
               'the sun. These three do not fit together cleanly, and that '
               'explains almost every calendar entanglement.\n\n'
               'The week has seven days — presumably after the four phases of the moon '
               'of about seven days each. Later each day was assigned one of '
               'the seven visible heavenly bodies. This series lives on in many '
-              'languages: in English “Saturday” is Saturn\'s day, in the '
-              'Romance languages “lundi/lunes” the moon\'s day. The Germanic peoples replaced '
+              "languages: in English “Saturday” is Saturn's day, in the "
+              "Romance languages “lundi/lunes” the moon's day. The Germanic peoples replaced "
               'the Roman gods with their own — from the day of Jupiter came '
-              'Thor\'s day, “Thursday.”\n\n'
+              "Thor's day, “Thursday.”\n\n"
               'Old ways of counting echo too: the English “fortnight” '
               '(fourteen nights) recalls that the Germanic peoples reckoned in nights '
               'rather than days.',
@@ -483,7 +483,7 @@ List<UnitTheorySection> _unitTheoryEn(UnitCategory cat) {
               'shorter than the solar year — that is why Ramadan slowly wanders '
               'through all the seasons. The Maya interlocked several '
               'cycles at once, among them a sacred round of 260 days. In Ethiopia '
-              'the day still begins at sunrise: what is “six o\'clock” there '
+              "the day still begins at sunrise: what is “six o'clock” there "
               'is noon elsewhere.\n\n'
               'Many of these old rhythms live on — in festivals, prayer times, '
               'and lucky days — while everyday life everywhere follows the Gregorian '
@@ -501,7 +501,7 @@ List<UnitTheorySection> _unitTheoryEn(UnitCategory cat) {
               'in a circle — mighty world ages, the “yugas,” come '
               'and pass away again and again, a single day of the creator god '
               'lasts billions of years. Many cultures also feared the '
-              'surplus days at the year\'s end as a dangerous “time between.”',
+              "surplus days at the year's end as a dangerous “time between.”",
         ),
         UnitTheorySection(
           'Why Not Decimal — and the Twelve Connection',
@@ -578,7 +578,7 @@ List<UnitTheorySection> _unitTheoryEn(UnitCategory cat) {
               'drove the art of angles forward.\n\n'
               'At sea the wind rose was divided: four main winds, then eight, then '
               '32 points of 11¼ degrees each. To recite all 32 around the circle — “boxing '
-              'the compass” — belonged to the helmsman\'s craft. The '
+              "the compass” — belonged to the helmsman's craft. The "
               'Mediterranean wind names Tramontana, Levante, Scirocco live on '
               'to this day in the language of weather.',
         ),
@@ -608,7 +608,7 @@ List<UnitTheorySection> _unitTheoryEn(UnitCategory cat) {
               'the circle of 400 gon. It remained a niche of surveyors, for '
               '400 has fewer divisors than 360. Decimal time too failed — '
               'among other things because it could not be cleanly quartered.\n\n'
-              'The honest caveat: the 360 is not compulsory. China\'s '
+              "The honest caveat: the 360 is not compulsory. China's "
               '365-division proves it. And in higher mathematics the '
               'radian wins, because there it does not depend on divisibility, but on '
               'simple formulas. So the world of twelve is strong, but not '
@@ -680,8 +680,8 @@ List<UnitTheorySection> _unitTheoryEn(UnitCategory cat) {
           'Coins were often more than a means of payment. The Greeks laid a '
               'coin in the mouth of the dead — the ferry fare for Charon, who brings the soul '
               'across the river of the dead. Without a coin it stayed on the bank.\n\n'
-              'In the New Testament Jesus holds up a denarius with the emperor\'s image: '
-              '“Render to the emperor what is the emperor\'s.” The thirty pieces of silver '
+              "In the New Testament Jesus holds up a denarius with the emperor's image: "
+              "“Render to the emperor what is the emperor's.” The thirty pieces of silver "
               'of Judas were probably shekels from Tyre — of all things '
               'coins with a pagan god on them, and at the same time the official '
               'temple currency.\n\n'
@@ -777,7 +777,7 @@ List<UnitTheorySection> _unitTheoryEn(UnitCategory cat) {
               'In the Norse legend the world arises out of the tension '
               'between the fire realm Muspelheim and the ice realm Niflheim — '
               'cold here is not an evil, but a creative force. '
-              'Hell is usually imagined as fire, yet in Dante\'s '
+              "Hell is usually imagined as fire, yet in Dante's "
               'Inferno the deepest circle is a frozen lake: betrayal is the '
               'cooling of all human warmth. Buddhism knows both '
               'hot and cold hells, graded by guilt.\n\n'
@@ -813,7 +813,7 @@ List<UnitTheorySection> _unitTheoryEn(UnitCategory cat) {
               'divided into thirds — “half as warm” does not exist on such a scale. The '
               'beautiful divisibility of twelve runs into the void here.\n\n'
               'Only in one place does divisibility thinking sit after all: in the '
-              'division of the scale itself. Fahrenheit\'s 96 and the 64 steps '
+              "division of the scale itself. Fahrenheit's 96 and the 64 steps "
               'down to the ice can often be halved. But whether one divides the display '
               'into 10, 12, or 100 steps is pure cosmetics. The '
               'temperature is the honest counterexample: here the choice of '
@@ -822,12 +822,12 @@ List<UnitTheorySection> _unitTheoryEn(UnitCategory cat) {
         ),
         UnitTheorySection(
           'Speculative (with Caution)',
-          'Legends cluster around Fahrenheit\'s scale. One holds that the 96 was '
+          "Legends cluster around Fahrenheit's scale. One holds that the 96 was "
               'the fever temperature of his sick wife — for this there is '
               'no proof. Another says the zero was the coldest winter '
               'of his home town Danzig; more likely is the '
               'reproducible ice-salt mixture.\n\n'
-              'Even Fahrenheit\'s own explanation of his fixed points counts as '
+              "Even Fahrenheit's own explanation of his fixed points counts as "
               'partly embellished after the fact — much of it he simply took from '
               'the older scale of the astronomer Rømer. Lovely stories, but '
               'to be read with caution.',
@@ -845,43 +845,43 @@ List<Source> _unitSourcesEn(UnitCategory cat) {
   switch (cat) {
     case UnitCategory.count:
       return [
-        Source(
+        const Source(
           'Dozen — Wikipedia',
           'https://en.wikipedia.org/wiki/Dozen',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Gross (unit) — Wikipedia',
           'https://en.wikipedia.org/wiki/Gross_(unit)',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Great gross — Wikipedia',
           'https://en.wikipedia.org/wiki/Great_gross',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Baker’s dozen — Wikipedia',
           'https://en.wikipedia.org/wiki/Baker%27s_dozen',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Assize of Bread and Ale — Wikipedia',
           'https://en.wikipedia.org/wiki/Assize_of_Bread_and_Ale',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'dozen — Online Etymology Dictionary',
           'https://www.etymonline.com/word/dozen',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'gross — Online Etymology Dictionary',
           'https://www.etymonline.com/word/gross',
           'R2',
@@ -890,37 +890,37 @@ List<Source> _unitSourcesEn(UnitCategory cat) {
       ];
     case UnitCategory.dist:
       return [
-        Source(
+        const Source(
           'Measurement — MacTutor History of Mathematics',
           'https://mathshistory.st-andrews.ac.uk/HistTopics/Measurement/',
           'R1',
           'A1',
         ),
-        Source(
+        const Source(
           'Proportionate measurements (Vastu-Shastra) — wisdomlib.org',
           'https://www.wisdomlib.org/hinduism/book/vastu-shastra-indian-architecture/d/doc1085304.html',
           'R1',
           'A1',
         ),
-        Source(
+        const Source(
           'Cubit — Wikipedia',
           'https://en.wikipedia.org/wiki/Cubit',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Ancient Mesopotamian units of measurement — Wikipedia',
           'https://en.wikipedia.org/wiki/Ancient_Mesopotamian_units_of_measurement',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Ancient Roman units of measurement — Wikipedia',
           'https://en.wikipedia.org/wiki/Ancient_Roman_units_of_measurement',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'The nautical mile — IHO',
           'https://ihr.iho.int/articles/the-nautical-mile/',
           'R1',
@@ -929,37 +929,37 @@ List<Source> _unitSourcesEn(UnitCategory cat) {
       ];
     case UnitCategory.area:
       return [
-        Source(
+        const Source(
           'Babylonian numerals — MacTutor (St Andrews)',
           'https://mathshistory.st-andrews.ac.uk/HistTopics/Babylonian_numerals/',
           'R1',
           'A1',
         ),
-        Source(
+        const Source(
           'Acre — Wikipedia',
           'https://en.wikipedia.org/wiki/Acre',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Hectare — Wikipedia',
           'https://en.wikipedia.org/wiki/Hectare',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Jugerum — Wikipedia',
           'https://en.wikipedia.org/wiki/Jugerum',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Mathematical accuracy of Aztec land surveys (Codex Vergara) — PNAS',
           'https://www.pnas.org/doi/10.1073/pnas.1107737108',
           'R1',
           'A2',
         ),
-        Source(
+        const Source(
           'Before the Melting Pot: Pre-Columbian Weights and Measures — NIST',
           'https://www.nist.gov/blogs/taking-measure/melting-pot-pre-columbian-weights-and-measures',
           'R1',
@@ -968,37 +968,37 @@ List<Source> _unitSourcesEn(UnitCategory cat) {
       ];
     case UnitCategory.space:
       return [
-        Source(
+        const Source(
           'Before the Melting Pot: Pre-Columbian Weights and Measures — NIST',
           'https://www.nist.gov/blogs/taking-measure/melting-pot-pre-columbian-weights-and-measures',
           'R1',
           'A1',
         ),
-        Source(
+        const Source(
           'Ancient Mesopotamian units of measurement — Wikipedia',
           'https://en.wikipedia.org/wiki/Ancient_Mesopotamian_units_of_measurement',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Hekat — Wikipedia',
           'https://en.wikipedia.org/wiki/Hekat',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Medimnos — Wikipedia',
           'https://en.wikipedia.org/wiki/Medimnos',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Ancient Roman units of measurement — Wikipedia',
           'https://en.wikipedia.org/wiki/Ancient_Roman_units_of_measurement',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Jialiang — Wikipedia',
           'https://en.wikipedia.org/wiki/Jialiang',
           'R2',
@@ -1007,37 +1007,37 @@ List<Source> _unitSourcesEn(UnitCategory cat) {
       ];
     case UnitCategory.weight:
       return [
-        Source(
+        const Source(
           'Hanging in the Balance: Precision Weighing in Antiquity — Penn Museum',
           'https://www.penn.museum/sites/expedition/hanging-in-the-balance-2/',
           'R1',
           'A1',
         ),
-        Source(
+        const Source(
           'Avoirdupois — Wikipedia',
           'https://en.wikipedia.org/wiki/Avoirdupois',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Troy weight — Wikipedia',
           'https://en.wikipedia.org/wiki/Troy_weight',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Mina (unit) — Wikipedia',
           'https://en.wikipedia.org/wiki/Mina_(unit)',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Cubical Weights — Harappa.com',
           'https://www.harappa.com/blog/cubical-weights',
           'R1',
           'A2',
         ),
-        Source(
+        const Source(
           'Legume Seeds for Weighing Gold in India — ResearchGate',
           'https://www.researchgate.net/publication/344088688',
           'R1',
@@ -1046,37 +1046,37 @@ List<Source> _unitSourcesEn(UnitCategory cat) {
       ];
     case UnitCategory.time:
       return [
-        Source(
+        const Source(
           'Sexagesimal — Wikipedia',
           'https://en.wikipedia.org/wiki/Sexagesimal',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Hour — Wikipedia',
           'https://en.wikipedia.org/wiki/Hour',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Minute — Wikipedia',
           'https://en.wikipedia.org/wiki/Minute',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Decimal time — Wikipedia',
           'https://en.wikipedia.org/wiki/Decimal_time',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Babylonian numerals — MacTutor (St Andrews)',
           'https://mathshistory.st-andrews.ac.uk/HistTopics/Babylonian_numerals/',
           'R1',
           'A3',
         ),
-        Source(
+        const Source(
           'Telling Time in Ancient Egypt — Metropolitan Museum of Art',
           'https://www.metmuseum.org/essays/telling-time-in-ancient-egypt',
           'R1',
@@ -1085,31 +1085,31 @@ List<Source> _unitSourcesEn(UnitCategory cat) {
       ];
     case UnitCategory.angle:
       return [
-        Source(
+        const Source(
           'Babylonian mathematics — MacTutor (St Andrews)',
           'https://mathshistory.st-andrews.ac.uk/HistTopics/Babylonian_mathematics/',
           'R1',
           'A1',
         ),
-        Source(
+        const Source(
           'Why did the Babylonians use 360 degrees? — UNLV',
           'https://www.physics.unlv.edu/~jeffery/astro/babylon/babylonian_360_degrees.html',
           'R1',
           'A1',
         ),
-        Source(
+        const Source(
           'Hipparchus — MacTutor',
           'https://mathshistory.st-andrews.ac.uk/Biographies/Hipparchus/',
           'R1',
           'A1',
         ),
-        Source(
+        const Source(
           'Angles in the SI: the radian as an independent unit — arXiv',
           'https://arxiv.org/pdf/2101.01578',
           'R1',
           'A1',
         ),
-        Source(
+        const Source(
           'Decimal time — MacTutor',
           'https://mathshistory.st-andrews.ac.uk/HistTopics/Decimal_time/',
           'R1',
@@ -1118,37 +1118,37 @@ List<Source> _unitSourcesEn(UnitCategory cat) {
       ];
     case UnitCategory.price:
       return [
-        Source(
+        const Source(
           '£sd — Wikipedia',
           'https://en.wikipedia.org/wiki/%C2%A3sd',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Denarius — Wikipedia',
           'https://en.wikipedia.org/wiki/Denarius',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Shekel — Wikipedia',
           'https://en.wikipedia.org/wiki/Shekel',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Non-decimal currency — Wikipedia',
           'https://en.wikipedia.org/wiki/Non-decimal_currency',
           'R2',
           'A1',
         ),
-        Source(
-          'Charon\'s obol — Wikipedia',
-          'https://en.wikipedia.org/wiki/Charon\'s_obol',
+        const Source(
+          "Charon's obol — Wikipedia",
+          "https://en.wikipedia.org/wiki/Charon's_obol",
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Babylonian numerals — MacTutor (St Andrews)',
           'https://mathshistory.st-andrews.ac.uk/HistTopics/Babylonian_numerals/',
           'R1',
@@ -1157,37 +1157,37 @@ List<Source> _unitSourcesEn(UnitCategory cat) {
       ];
     case UnitCategory.temp:
       return [
-        Source(
+        const Source(
           'Kelvin: History — NIST',
           'https://www.nist.gov/si-redefinition/kelvin/kelvin-history',
           'R1',
           'A1',
         ),
-        Source(
+        const Source(
           'Fahrenheit — Wikipedia',
           'https://en.wikipedia.org/wiki/Fahrenheit',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Daniel Gabriel Fahrenheit — Wikipedia',
           'https://en.wikipedia.org/wiki/Daniel_Gabriel_Fahrenheit',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Réaumur scale — Wikipedia',
           'https://en.wikipedia.org/wiki/R%C3%A9aumur_scale',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Thermodynamic temperature — Wikipedia',
           'https://en.wikipedia.org/wiki/Thermodynamic_temperature',
           'R2',
           'A1',
         ),
-        Source(
+        const Source(
           'Rankine scale — Wikipedia',
           'https://en.wikipedia.org/wiki/Rankine_scale',
           'R2',

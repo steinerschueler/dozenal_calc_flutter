@@ -84,7 +84,7 @@ List<ProseChapter> _grundlagenChaptersGa() => const [
             'Tá hipitéis ann fiú cén fáth a dó dhéag go díreach: is féidir '
             'trí chnámh na gceithre mhéar eile a chomhaireamh leis an ordóg, '
             'sin 4 × 3 = 12. Tá an modh comhairimh seo in úsáid fós i '
-            'gcodanna d\'Áise. Is míniú plausible é ar bhunús na dó dhéag '
+            "gcodanna d'Áise. Is míniú plausible é ar bhunús na dó dhéag "
             'comhairimh, ach ní cruthaithe — fanann sé ina hipitéis.',
       ),
       ProseSection(
@@ -254,7 +254,7 @@ List<ProseChapter> _grundlagenChaptersGa() => const [
             'modh seo mar bhunús córas na Bablónach. Oireann an modh don '
             'bhunús — ach ní hionann sin agus cruthúnas.\n\n'
             'Is é Éigipt an chontra-argóint is láidre: de réir Ifrah '
-            'chomhairigh na hÉigiptigh ar ailt méar freisin — agus d\'fhorbair '
+            "chomhairigh na hÉigiptigh ar ailt méar freisin — agus d'fhorbair "
             'siad córas uimhreacha deachúlach ina dhiaidh sin. Ní éigníonn '
             'an modh méar dá bhrí sin an dó dhéag ná an seasca.',
       ),

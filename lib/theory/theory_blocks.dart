@@ -3,18 +3,24 @@
 // chapter's imageId (see _customChapterIllustration in info_pages.dart). The
 // former legacy chapters (info_content.dart) have been fully migrated away.
 
-import '../l10n/app_localizations.dart';
-import 'grundlagen_theory.dart';
-import 'math_theory.dart';
-import 'prose_chapter.dart';
-import 'society_theory.dart';
-import 'werte_theory.dart';
-import 'world_theory.dart';
+import 'package:dozenal_calc_flutter/l10n/app_localizations.dart';
+import 'package:dozenal_calc_flutter/theory/grundlagen_theory.dart';
+import 'package:dozenal_calc_flutter/theory/math_theory.dart';
+import 'package:dozenal_calc_flutter/theory/prose_chapter.dart';
+import 'package:dozenal_calc_flutter/theory/society_theory.dart';
+import 'package:dozenal_calc_flutter/theory/werte_theory.dart';
+import 'package:dozenal_calc_flutter/theory/world_theory.dart';
 
 /// One chapter inside a theory block: a [title], its [prose] sections, cited
 /// [sources], and an optional [imageId] for a chapter illustration (photo via
 /// theoryImageFor, or a custom-painted diagram via _customChapterIllustration).
 class TheoryChapterRef {
+  const TheoryChapterRef.prose(
+    this.title,
+    List<ProseSection> sections, [
+    this.sources = const [],
+    this.imageId,
+  ]) : prose = sections;
   final String title;
   final List<ProseSection>? prose;
   final List<Source> sources;
@@ -22,23 +28,15 @@ class TheoryChapterRef {
   /// Stable, language-neutral id used to look up a chapter image
   /// ([theoryImageFor]). Null for chapters without an image slot.
   final String? imageId;
-
-  const TheoryChapterRef.prose(
-    this.title,
-    List<ProseSection> sections, [
-    this.sources = const [],
-    this.imageId,
-  ]) : prose = sections;
 }
 
 /// A named group of chapters. [inProgress] blocks have no chapters yet and are
 /// shown with an "in Arbeit" hint.
 class TheoryBlock {
+  const TheoryBlock(this.title, this.chapters, {this.inProgress = false});
   final String title;
   final List<TheoryChapterRef> chapters;
   final bool inProgress;
-
-  const TheoryBlock(this.title, this.chapters, {this.inProgress = false});
 }
 
 /// The theory blocks shown under the "Theorie" expansion, in display order:

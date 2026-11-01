@@ -4,19 +4,18 @@
 // aspect ratios (tall 20:9+, landscape, small phones, foldable cover, split-
 // screen). The converter must survive the same shapes as the main calculator.
 
-import 'package:flutter/material.dart';
-import 'package:flutter_test/flutter_test.dart';
-
 import 'package:dozenal_calc_flutter/converter_keypad.dart';
 import 'package:dozenal_calc_flutter/converter_page.dart';
 import 'package:dozenal_calc_flutter/converter_state.dart';
 import 'package:dozenal_calc_flutter/l10n/app_localizations.dart';
 import 'package:dozenal_calc_flutter/logic/unit_data.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_test/flutter_test.dart';
 
-Widget _pageApp() => MaterialApp(
+Widget _pageApp() => const MaterialApp(
   localizationsDelegates: AppLocalizations.localizationsDelegates,
   supportedLocales: AppLocalizations.supportedLocales,
-  home: const ConverterPage(),
+  home: ConverterPage(),
 );
 
 Widget _keypad(double height, {bool overlayOpen = false, bool active = false}) {

@@ -35,15 +35,14 @@ class GermanFlagPainter extends CustomPainter {
 /// the same blueprint). Three equal-width bands; colours and order are
 /// passed in. Canonical aspect ratio of these flags is 3:2.
 class _VerticalTribandPainter extends CustomPainter {
-  final Color left;
-  final Color middle;
-  final Color right;
-
   const _VerticalTribandPainter({
     required this.left,
     required this.middle,
     required this.right,
   });
+  final Color left;
+  final Color middle;
+  final Color right;
 
   @override
   void paint(Canvas canvas, Size size) {

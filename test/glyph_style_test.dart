@@ -2,11 +2,10 @@
 // keypad digit keys): defaults, persistence round-trips, independence, and
 // the scope-less keypadStyleOf fallback used by the keypads.
 
+import 'package:dozenal_calc_flutter/logic/glyph_style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
-import 'package:dozenal_calc_flutter/logic/glyph_style.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();

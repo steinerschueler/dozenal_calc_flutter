@@ -566,7 +566,7 @@ List<ProseChapter> _mathChaptersEn() => const [
       ),
       ProseSection(
         'The Indian Invention of Zero',
-        'Today\'s base-ten system with zero comes from India. Aryabhata '
+        "Today's base-ten system with zero comes from India. Aryabhata "
             'used place-value notation in the 5th century; Brahmagupta '
             'in 628 treated zero for the first time as a number in its own right with its own '
             'rules of arithmetic, not merely as a gap.\n\n'
@@ -699,7 +699,7 @@ List<ProseChapter> _mathChaptersEn() => const [
             'fundamental number sequences — a special fact, not mysticism.\n\n'
             'An even stronger theorem from 2006 (Bugeaud, Mignotte, and Siksek) '
             'goes further: the only perfect powers at all in the Fibonacci '
-            'sequence are 0, 1, 8 = 2³, and 144 = 12². Cohn\'s statement about '
+            "sequence are 0, 1, 8 = 2³, and 144 = 12². Cohn's statement about "
             'square numbers is the special case of that.',
       ),
       ProseSection(
@@ -764,7 +764,7 @@ List<ProseChapter> _mathChaptersEn() => const [
             'of any connection to base twelve.',
       ),
       ProseSection(
-        'Plato\'s ideal city',
+        "Plato's ideal city",
         'In his "Laws" (Book V) Plato asks how many citizens an ideal city '
             'should have. His answer: 5040. The argument is not mystical but '
             'practical — a city must constantly divide its citizens into equal '
@@ -795,7 +795,7 @@ List<ProseChapter> _mathChaptersEn() => const [
             'AD 100), who attached moral valuations to these number classes — '
             'an interpretation of antiquity, not mathematics.\n\n'
             'The value of this chapter lies precisely in the distinction: '
-            'Cohn\'s theorem, the cannonball identity, and the smallest abundant '
+            "Cohn's theorem, the cannonball identity, and the smallest abundant "
             'number are proven facts. They deserve to be seen for what they are '
             '— fine, honest mathematics that needs no mystical charge.',
       ),
@@ -1587,7 +1587,7 @@ List<ProseChapter> _mathChaptersEn() => const [
         'That there can only be five such solids — no more and no fewer — is a '
             'proven result. Two paths lead to it, and both arrive at the same '
             'conclusion.\n\n'
-            'The first path is a simple count, Euler\'s polyhedron formula: for '
+            "The first path is a simple count, Euler's polyhedron formula: for "
             'every convex solid, vertices minus edges plus faces equals two. For '
             'the dodecahedron: 20 − 30 + 12 = 2. Leonhard Euler noted this '
             'relationship around 1750; the first complete proof was given by '
@@ -1655,7 +1655,7 @@ List<ProseChapter> _mathChaptersEn() => const [
             'is no. Pure hexagons produce a flat surface; to curve it into a '
             'sphere, exactly twelve pentagons must be incorporated — regardless '
             'of how many hexagons are otherwise used.\n\n'
-            'This again follows from Euler\'s theorem. With zero hexagons the '
+            "This again follows from Euler's theorem. With zero hexagons the "
             'regular dodecahedron arises. With twelve pentagons and twenty '
             'hexagons arises the classic football — and here lies a common '
             'error: a football is not a dodecahedron. It is a truncated '

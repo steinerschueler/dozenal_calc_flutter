@@ -11,15 +11,35 @@
 // digits — "more there, clipped", deliberately distinct from the ≈ of
 // State B.)
 
+import 'package:dozenal_calc_flutter/app_theme.dart';
+import 'package:dozenal_calc_flutter/glyph_painter.dart';
+import 'package:dozenal_calc_flutter/logic/glyph_style.dart';
+import 'package:dozenal_calc_flutter/tokens.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-import 'app_theme.dart';
-import 'glyph_painter.dart';
-import 'logic/glyph_style.dart';
-import 'tokens.dart';
-
 class TwoLineDisplay extends StatelessWidget {
+  const TwoLineDisplay({
+    required this.inputBuffer,
+    required this.resultBuffer,
+    super.key,
+    this.cursorPos = 0,
+    this.resultCursorPos = 0,
+    this.resultFieldActive = false,
+    this.resultPeriodStart,
+    this.resultPeriodLen = 0,
+    this.resultPeriodCapped = false,
+    this.isF64Fallback = false,
+    this.errorMsg,
+    this.memoryActive = false,
+    this.angleModeLabel,
+    this.numeralSystemLabel,
+    this.crossBaseBracket,
+    this.onInputCursorTap,
+    this.onLongPress,
+    this.onSwipeDown,
+    this.showCursor = true,
+  });
   final List<CalcToken> inputBuffer;
   final int cursorPos;
   final List<CalcToken> resultBuffer;
@@ -69,28 +89,6 @@ class TwoLineDisplay extends StatelessWidget {
   /// Whether to paint the input/result cursor. False for read-only renders
   /// (e.g. history tiles) where a caret would wrongly imply editability.
   final bool showCursor;
-
-  const TwoLineDisplay({
-    super.key,
-    required this.inputBuffer,
-    this.cursorPos = 0,
-    required this.resultBuffer,
-    this.resultCursorPos = 0,
-    this.resultFieldActive = false,
-    this.resultPeriodStart,
-    this.resultPeriodLen = 0,
-    this.resultPeriodCapped = false,
-    this.isF64Fallback = false,
-    this.errorMsg,
-    this.memoryActive = false,
-    this.angleModeLabel,
-    this.numeralSystemLabel,
-    this.crossBaseBracket,
-    this.onInputCursorTap,
-    this.onLongPress,
-    this.onSwipeDown,
-    this.showCursor = true,
-  });
 
   @override
   Widget build(BuildContext context) {
@@ -210,24 +208,6 @@ int? inputCursorPosForTap(
 }
 
 class _TwoLineDisplayPainter extends CustomPainter {
-  final List<CalcToken> inputBuffer;
-  final int cursorPos;
-  final List<CalcToken> resultBuffer;
-  final int resultCursorPos;
-  final bool resultFieldActive;
-  final int? resultPeriodStart;
-  final int resultPeriodLen;
-  final bool resultPeriodCapped;
-  final bool isF64Fallback;
-  final String? errorMsg;
-  final bool memoryActive;
-  final String? angleModeLabel;
-  final String? numeralSystemLabel;
-  final String? crossBaseBracket;
-  final GlyphStyle glyphStyle;
-  final bool showCursor;
-  final AppColors colors;
-
   _TwoLineDisplayPainter({
     required this.inputBuffer,
     required this.cursorPos,
@@ -247,6 +227,23 @@ class _TwoLineDisplayPainter extends CustomPainter {
     required this.showCursor,
     required this.colors,
   });
+  final List<CalcToken> inputBuffer;
+  final int cursorPos;
+  final List<CalcToken> resultBuffer;
+  final int resultCursorPos;
+  final bool resultFieldActive;
+  final int? resultPeriodStart;
+  final int resultPeriodLen;
+  final bool resultPeriodCapped;
+  final bool isF64Fallback;
+  final String? errorMsg;
+  final bool memoryActive;
+  final String? angleModeLabel;
+  final String? numeralSystemLabel;
+  final String? crossBaseBracket;
+  final GlyphStyle glyphStyle;
+  final bool showCursor;
+  final AppColors colors;
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -394,7 +391,7 @@ class _TwoLineDisplayPainter extends CustomPainter {
     // passt — inklusive reserviertem Platz für „≈"-Präfix und Suffix. Die
     // Periode wird mit-geclamped.
     var displayedPeriodLen = resultPeriodLen;
-    int? displayedPeriodStart = resultPeriodStart;
+    var displayedPeriodStart = resultPeriodStart;
     var truncated = false;
     void dropTrailing() {
       final dropped = laid.removeLast();
@@ -542,9 +539,9 @@ class _TwoLineDisplayPainter extends CustomPainter {
 // ---------------------------------------------------------------------------
 
 class _LaidToken {
+  _LaidToken(this.width, this.paint);
   final double width;
   final void Function(Canvas, Offset, double lineH) paint;
-  _LaidToken(this.width, this.paint);
 }
 
 /// Half-radius factor of the digit glyph relative to the line height.

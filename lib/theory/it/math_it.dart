@@ -36,7 +36,7 @@ List<ProseChapter> _mathChaptersIt() => const [
             'Poiché nel dodici è presente il tre, in base dodici molte frazioni '
             'di uso quotidiano vengono nette: un mezzo = 0,6; un terzo = 0,4; '
             'un quarto = 0,3; un sesto = 0,2; un nono = 0,14; un dodicesimo = '
-            '0,1. In base dieci, invece, terzi, sesti e noni vanno all\'infinito. '
+            "0,1. In base dieci, invece, terzi, sesti e noni vanno all'infinito. "
             'Il prezzo del dodici: le frazioni con cinque al denominatore '
             'diventano storte — un quinto in base dodici è 0,2497, con '
             'ripetizione.',
@@ -50,26 +50,26 @@ List<ProseChapter> _mathChaptersIt() => const [
             'Alcune cose sono altrettanto scomode in entrambi i mondi: un '
             'settimo ha sia in base dieci (0,142857) sia in base dodici '
             '(0,186A35) un periodo di sei cifre. Nel complesso, tra i piccoli '
-            'denominatori, in base dodici ci sono un po\' meno frazioni '
+            "denominatori, in base dodici ci sono un po' meno frazioni "
             'periodiche che in base dieci — in compenso i periodi, quando '
-            'compaiono, possono risultare un po\' più lunghi.',
+            "compaiono, possono risultare un po' più lunghi.",
       ),
       ProseSection(
-        'La divisibilità a colpo d\'occhio',
+        "La divisibilità a colpo d'occhio",
         'Nella pratica la forza del dodici si rivela nelle regole di '
             'divisibilità. Se un numero è divisibile per 2, 3, 4 o 6, in base '
-            'dodici lo svela già l\'ultima cifra. In base dieci questo vale solo '
+            "dodici lo svela già l'ultima cifra. In base dieci questo vale solo "
             'per 2, 5 e 10.\n\n'
-            'Per l\'undici (B) esiste una regola sulla somma delle cifre — '
+            "Per l'undici (B) esiste una regola sulla somma delle cifre — "
             'proprio come la nota prova del nove in base dieci, perché il dodici '
-            'sta uno sopra l\'undici. Solo il sette non ha, come del resto anche '
+            "sta uno sopra l'undici. Solo il sette non ha, come del resto anche "
             'in base dieci, un test semplice.',
       ),
       ProseSection(
         'Nessuna base vince ovunque',
         'Il dodici ha dunque un vero vantaggio nel dividere in terzi e quarti — '
             'e un vero svantaggio nel dividere in quinti, importante per le '
-            'percentuali e per il denaro. Scambia l\'uno con l\'altro.\n\n'
+            "percentuali e per il denaro. Scambia l'uno con l'altro.\n\n"
             'Più divisori non sono nemmeno indefinitamente meglio: altrimenti '
             'sarebbe in vantaggio il sessanta, divisibile per ancora più numeri '
             '— ma servirebbero sessanta cifre e una tavola pitagorica enorme. '
@@ -138,17 +138,17 @@ List<ProseChapter> _mathChaptersIt() => const [
       ProseSection(
         'Il complemento alla cifra più alta',
         'Il periodo 186A35 porta in sé anche un secondo schema. Se lo si divide a metà e si sommano le due metà, si ottiene 186 + A35 = BBB — di nuovo solo undici, questa volta tre. Le due metà si completano esattamente fino alla cifra più alta.\n\n'
-            'È un teorema generale (di Étienne Midy, 1836) e vale in qualsiasi base: in base dieci è 142 + 857 = 999. L\'effetto mostra che la seconda metà del periodo non è materiale nuovo, ma il riflesso della prima.',
+            "È un teorema generale (di Étienne Midy, 1836) e vale in qualsiasi base: in base dieci è 142 + 857 = 999. L'effetto mostra che la seconda metà del periodo non è materiale nuovo, ma il riflesso della prima.",
       ),
       ProseSection(
         'Non ogni numero primo partecipa',
-        'La bella rotazione è l\'eccezione, non la regola. Un undicesimo mostra in base dodici solo il periodo 0,1 — un unico uno che si ripete, perché dodici sta uno sopra undici (il corrispettivo di un nono = 0,1 nel sistema decimale). Un tredicesimo dà 0,0B con il breve periodo 0B. Tali numeri primi non generano un numero ciclico.\n\n'
-            'Tra i numeri primi piccoli, in base dodici 5, 7, 17, 31, 41 e 43 (contati in decimale) sono numeri primi a periodo completo — notevolmente tutti con la cifra finale 5 o 7 in base dodici. Questa è una condizione necessaria, ma non sufficiente: il diciannove termina anch\'esso con 7, ma ha solo un periodo di sei cifre. Anche il cambiamento di base conta: il cinque è a periodo completo in base dodici (un quinto = 0,2497, periodo 2497), mentre nel sistema decimale un quinto è netto. Quali numeri primi partecipano appartiene quindi alla coppia formata da base e numero primo, non al numero primo da solo.',
+        "La bella rotazione è l'eccezione, non la regola. Un undicesimo mostra in base dodici solo il periodo 0,1 — un unico uno che si ripete, perché dodici sta uno sopra undici (il corrispettivo di un nono = 0,1 nel sistema decimale). Un tredicesimo dà 0,0B con il breve periodo 0B. Tali numeri primi non generano un numero ciclico.\n\n"
+            "Tra i numeri primi piccoli, in base dodici 5, 7, 17, 31, 41 e 43 (contati in decimale) sono numeri primi a periodo completo — notevolmente tutti con la cifra finale 5 o 7 in base dodici. Questa è una condizione necessaria, ma non sufficiente: il diciannove termina anch'esso con 7, ma ha solo un periodo di sei cifre. Anche il cambiamento di base conta: il cinque è a periodo completo in base dodici (un quinto = 0,2497, periodo 2497), mentre nel sistema decimale un quinto è netto. Quali numeri primi partecipano appartiene quindi alla coppia formata da base e numero primo, non al numero primo da solo.",
       ),
       ProseSection(
         'Quanti ce ne sono — una questione aperta',
         'Si potrebbe pensare che una proprietà così netta sia già stata contata da tempo. Non è così. Quanti numeri primi a periodo completo esistono in base dodici — se siano infiniti — non è ancora dimostrato.\n\n'
-            'Una congettura di Emil Artin del 1927 prevede che circa trentasette primi su cento debbano essere a periodo completo, in base dodici come in ogni altra base adatta. Le osservazioni sui numeri piccoli si accordano con questo ordine di grandezza. Ma la congettura è appunto una congettura: nonostante grandi sforzi, non è dimostrata per nessuna singola base. Questo fa parte di una presentazione onesta — uno schema dall\'apparenza semplice, dietro cui si cela un problema ancora aperto oggi.',
+            "Una congettura di Emil Artin del 1927 prevede che circa trentasette primi su cento debbano essere a periodo completo, in base dodici come in ogni altra base adatta. Le osservazioni sui numeri piccoli si accordano con questo ordine di grandezza. Ma la congettura è appunto una congettura: nonostante grandi sforzi, non è dimostrata per nessuna singola base. Questo fa parte di una presentazione onesta — uno schema dall'apparenza semplice, dietro cui si cela un problema ancora aperto oggi.",
       ),
       ProseSection(
         'Da provare nella calcolatrice',
@@ -307,7 +307,7 @@ List<ProseChapter> _mathChaptersIt() => const [
     'Le basi numeriche a confronto',
     [
       ProseSection(
-        'Che cos\'è una base',
+        "Che cos'è una base",
         'Un sistema posizionale dà a ogni cifra un valore secondo la sua '
             'posizione. La base dice quante cifre ci sono e di quale fattore '
             'cresce ogni posizione. La base dieci usa dieci cifre, la base '
@@ -325,19 +325,19 @@ List<ProseChapter> _mathChaptersIt() => const [
             'file in Unix.\n'
             '• Base 10 (decimale): la nostra quotidianità e il sistema '
             'metrico.\n'
-            '• Base 12 (dozenale): la dozzina, l\'orologio e il pollice — e la '
+            "• Base 12 (dozenale): la dozzina, l'orologio e il pollice — e la "
             'causa del movimento dozenale.\n'
             '• Base 16 (esadecimale): notazione compatta per i dati dei '
             'computer.\n'
-            '• Base 60 (sessagesimale): tempo e angoli, un\'eredità di Babilonia.',
+            "• Base 60 (sessagesimale): tempo e angoli, un'eredità di Babilonia.",
       ),
       ProseSection(
         'Convertire tra le basi',
-        'I numeri passano da una base all\'altra con procedimenti fissi. La '
+        "I numeri passano da una base all'altra con procedimenti fissi. La "
             'parte intera si divide ripetutamente per la base di destinazione e '
-            'si leggono i resti dal basso verso l\'alto. La parte dopo la virgola '
+            "si leggono i resti dal basso verso l'alto. La parte dopo la virgola "
             'si moltiplica ripetutamente per la base di destinazione e si '
-            'leggono le parti intere dall\'alto verso il basso.\n\n'
+            "leggono le parti intere dall'alto verso il basso.\n\n"
             'Esempio: 0,5 diventa 0,6 in base dodici; 0,125 diventa 0,16. Tra '
             'basi imparentate è ancora più facile: poiché sedici è una potenza '
             'di due, una cifra esadecimale corrisponde esattamente a quattro '
@@ -346,18 +346,18 @@ List<ProseChapter> _mathChaptersIt() => const [
       ProseSection(
         'Dove ogni base è di casa',
         'I computer calcolano in binario, perché un transistor conosce solo due '
-            'stati. L\'esadecimale è la comoda abbreviazione per questo — si '
+            "stati. L'esadecimale è la comoda abbreviazione per questo — si "
             'trova negli indirizzi di memoria, nei colori web come #FF00FF e '
             'nei numeri Unicode. Tempo e angoli seguono il sessanta: sessanta '
             'minuti, 360 gradi, facilmente divisibili in terzi e quarti. La '
             'quotidianità e quasi tutta la scienza vanno in decimale — '
             'soprattutto per abitudine e perché il sistema metrico si fonda su '
             'di esso.\n\n'
-            'Il dodici sopravvive nella dozzina, nella grossa, nell\'orologio e '
+            "Il dodici sopravvive nella dozzina, nella grossa, nell'orologio e "
             'nel pollice. Dal Settecento ci sono sostenitori di un vero calcolo '
             'in dodici — da Buffon, passando per Isaac Pitman, fino a Frank '
             'Emerson Andrews, che nel 1935 ne scrisse il primo libro. Apposite '
-            'società coltivano l\'idea ancora oggi; di più nel blocco «La '
+            "società coltivano l'idea ancora oggi; di più nel blocco «La "
             'società dozenale».',
       ),
       ProseSection(
@@ -368,7 +368,7 @@ List<ProseChapter> _mathChaptersIt() => const [
             'perde sul quinto. Sessanta divide nel modo migliore, ma con '
             'sessanta simboli è troppo grande per la quotidianità.\n\n'
             'Nei sistemi di misura, alla fine, conta meno la base in sé che la '
-            'coerenza con cui si resta su un\'unica base: il sistema metrico '
+            "coerenza con cui si resta su un'unica base: il sistema metrico "
             'vince perché tutto passa per lo stesso dieci — un sistema misto di '
             'miglio, iarda, piede e pollice non avrebbe questo vantaggio in '
             'nessuna base.',
@@ -433,29 +433,29 @@ List<ProseChapter> _mathChaptersIt() => const [
         'Il primo vero sistema posizionale nacque presso i Sumeri e i '
             'Babilonesi, oltre quattromila anni fa, in base sessanta. È '
             'considerato la loro più grande conquista matematica.\n\n'
-            'Uno zero pieno, però, non l\'avevano ancora: conoscevano un segno '
+            "Uno zero pieno, però, non l'avevano ancora: conoscevano un segno "
             'segnaposto per le posizioni vuote in mezzo, mai però alla fine di '
             'un numero. La loro eredità ci accompagna ancora oggi — nei sessanta '
-            'minuti dell\'ora e nei 360 gradi del cerchio.',
+            "minuti dell'ora e nei 360 gradi del cerchio.",
       ),
       ProseSection(
-        'L\'invenzione indiana dello zero',
-        'L\'odierno sistema decimale con lo zero viene dall\'India. Aryabhata '
+        "L'invenzione indiana dello zero",
+        "L'odierno sistema decimale con lo zero viene dall'India. Aryabhata "
             'usò nel V secolo la notazione posizionale; Brahmagupta nel 628 '
             'trattò per la prima volta lo zero come un numero a sé stante con '
             'proprie regole di calcolo, non solo come una lacuna.\n\n'
             'Da lì lo ripresero studiosi arabi e persiani — al-Khwarizmi ne '
-            'scrisse intorno all\'825 —, e attraverso di loro giunse in Europa. '
+            "scrisse intorno all'825 —, e attraverso di loro giunse in Europa. "
             'Per questo le nostre cifre si chiamano ancora oggi «cifre arabe», '
-            'sebbene l\'idea provenga dall\'India.',
+            "sebbene l'idea provenga dall'India.",
       ),
       ProseSection(
         'Le basi delle macchine',
         'Con le macchine calcolatrici arrivarono nuove basi. Gottfried Wilhelm '
             'Leibniz pubblicò nel 1703 il sistema binario fatto di soli 0 e 1 — '
-            'vi rivide perfino gli antichi esagrammi dell\'I Ching cinese.\n\n'
+            "vi rivide perfino gli antichi esagrammi dell'I Ching cinese.\n\n"
             'Oggi i computer calcolano in binario, ma per lo più lo scrivono in '
-            'esadecimale: con il byte da 8 bit dell\'IBM System/360 negli anni '
+            "esadecimale: con il byte da 8 bit dell'IBM System/360 negli anni "
             'Sessanta si affermò la base sedici, perché due cifre esadecimali '
             'danno esattamente un byte. Ogni base trovò così il suo posto — non '
             'perché fosse «la migliore», ma perché si adatta al suo compito.',
@@ -503,7 +503,7 @@ List<ProseChapter> _mathChaptersIt() => const [
   ProseChapter('Come calcola questa calcolatrice', [
     ProseSection(
       'Due calcolatrici in una',
-      'Quando premi il tasto uguale, l\'app non calcola una volta sola, ma '
+      "Quando premi il tasto uguale, l'app non calcola una volta sola, ma "
           'due — con due macchine del tutto diverse.\n\n'
           'La prima è una calcolatrice esatta di frazioni. Calcola senza '
           'alcun arrotondamento, con numeri interi grandi a piacere. La '
@@ -520,8 +520,8 @@ List<ProseChapter> _mathChaptersIt() => const [
           'in base dodici.\n\n'
           'Nel farlo riconosce quando le cifre si ripetono. Un terzo '
           'in base dodici è un netto 0,4. Un quinto, invece, è periodico: '
-          '0,2497 2497 2497 … L\'app lo mostra con una linea sopra il gruppo '
-          'che si ripete e un punto che segna l\'inizio del periodo. Così il '
+          "0,2497 2497 2497 … L'app lo mostra con una linea sopra il gruppo "
+          "che si ripete e un punto che segna l'inizio del periodo. Così il "
           'risultato resta esatto, invece di essere arrotondato in silenzio.',
     ),
     ProseSection(
@@ -531,17 +531,17 @@ List<ProseChapter> _mathChaptersIt() => const [
           'oppure si divide per zero —, la calcolatrice di frazioni si '
           'arrende.\n\n'
           'Allora entra in gioco la calcolatrice decimale. Il suo risultato è '
-          'solo approssimato, perciò l\'app gli antepone un segno «≈»: '
+          "solo approssimato, perciò l'app gli antepone un segno «≈»: "
           '«circa». Se funzionano entrambe le vie, vince sempre la frazione '
           'esatta. Il «≈» compare quindi solo dove serve davvero '
-          'un\'approssimazione.',
+          "un'approssimazione.",
     ),
     ProseSection(
       'Periodi lunghi e il display',
       'I risultati esatti possono diventare molto lunghi. Alcune frazioni '
           'hanno periodi di oltre cento cifre — molto più di quanto stia in '
           'una riga.\n\n'
-          'Affinché nulla esca dal display, l\'app omette da destra tante '
+          "Affinché nulla esca dal display, l'app omette da destra tante "
           'cifre finali (le meno significative) finché il resto non sta nella '
           'riga, e mette un «…» come segno che la cosa prosegue ancora. La '
           'marcatura del periodo viene così accorciata in modo pulito. Il '
@@ -576,7 +576,7 @@ List<ProseChapter> _mathChaptersIt() => const [
             'fondamentali — una particolarità, non misticismo.\n\n'
             'Un teorema ancora più forte del 2006 (Bugeaud, Mignotte e Siksek) '
             'va oltre: le uniche potenze perfette in tutta la successione di '
-            'Fibonacci sono 0, 1, 8 = 2³ e 144 = 12². L\'affermazione di Cohn '
+            "Fibonacci sono 0, 1, 8 = 2³ e 144 = 12². L'affermazione di Cohn "
             'sui quadrati ne è il caso speciale.',
       ),
       ProseSection(
@@ -587,14 +587,14 @@ List<ProseChapter> _mathChaptersIt() => const [
             'Kepler notò questa approssimazione già nel 1611. In base 12 '
             'φ ≈ 1,74BB677…; il calcolatore porta φ come costante nel '
             'pannello espanso.\n\n'
-            'φ ha una semplice proprietà definitoria: φ² = φ + 1. È l\'unico '
+            "φ ha una semplice proprietà definitoria: φ² = φ + 1. È l'unico "
             'numero positivo il cui quadrato è maggiore di esattamente 1. '
             'Chi digita φ² = nel calcolatore ottiene esattamente φ + 1 — '
-            'l\'identità diventa immediatamente visibile.\n\n'
+            "l'identità diventa immediatamente visibile.\n\n"
             'In natura φ appare davvero dove foglie e semi crescono sfalsati '
-            'dell\'«angolo aureo»; i numeri delle spirali di girasoli o pigne '
+            "dell'«angolo aureo»; i numeri delle spirali di girasoli o pigne "
             'sono spesso numeri di Fibonacci adiacenti. Molto di ciò che viene '
-            'attribuito a φ non regge però all\'esame: la spirale della '
+            "attribuito a φ non regge però all'esame: la spirale della "
             'Nautilus non segue φ, e un uso consapevole nel Partenone o in '
             'Leonardo da Vinci non è documentato. φ è reale in matematica e '
             'nella fillotassi — non ovunque.',
@@ -617,7 +617,7 @@ List<ProseChapter> _mathChaptersIt() => const [
             'significa che ben due quantità caratteristiche dei suoi divisori '
             'sono esse stesse numeri perfetti. Il numero dei divisori è 6 '
             '(e 6 = 1+2+3 è perfetto). La somma di tutti i divisori è '
-            '1+2+3+4+6+12 = 28 (e 28 = 1+2+4+7+14 è anch\'esso perfetto). '
+            "1+2+3+4+6+12 = 28 (e 28 = 1+2+4+7+14 è anch'esso perfetto). "
             'Ad oggi sono noti solo due numeri sublimi — il dodici e un numero '
             'di 76 cifre. Il termine proviene però dalla matematica ricreativa '
             'ed è strettamente costruito; la sua rarità non è quindi prova di '
@@ -634,34 +634,34 @@ List<ProseChapter> _mathChaptersIt() => const [
             'banale, e si presenta bello: '
             '1² + 2² + … + 24² = 4900 = 70². Le stesse 4900 palle si possono '
             'disporre come piramide di 24 strati o come quadrato 70×70. '
-            'Édouard Lucas congetturò nel 1875 che questa sia l\'unica '
+            "Édouard Lucas congetturò nel 1875 che questa sia l'unica "
             'soluzione; la dimostrazione completa arrivò solo nel 1918 da '
             'G. N. Watson — il problema era davvero difficile.\n\n'
             'Il numero 24 è esattamente il doppio di 12. È una bella '
             'osservazione — ma onestamente non un motivo documentato: il 24 '
-            'compare qui perché l\'equazione sottostante ha esattamente questa '
+            "compare qui perché l'equazione sottostante ha esattamente questa "
             'soluzione, non per un legame con la base dodici.',
       ),
       ProseSection(
         'La città ideale di Platone',
         'Nelle sue «Leggi» (libro V) Platone chiede quanti cittadini dovrebbe '
-            'avere una città ideale. La sua risposta: 5040. L\'argomento non è '
+            "avere una città ideale. La sua risposta: 5040. L'argomento non è "
             'mistico, ma pratico — una città deve dividere continuamente i '
             'propri cittadini in gruppi uguali, e 5040 è divisibile per ogni '
-            'numero da 1 a 12, con la sola eccezione dell\'11. '
+            "numero da 1 a 12, con la sola eccezione dell'11. "
             '(Per la divisibilità per 11 Platone suggerisce di sottrarre due '
             'famiglie.)\n\n'
             'Ciò che Platone descrive qui è la stessa intuizione alla base del '
             'sistema dozenale: nella vita quotidiana i piccoli divisori sono '
             'quelli importanti. 5040 = 7! è in un certo senso la sorella '
             'maggiore del dodici — la stessa filosofia della divisibilità, '
-            'applicata a un\'intera popolazione cittadina anziché a un sistema '
+            "applicata a un'intera popolazione cittadina anziché a un sistema "
             'numerico.',
       ),
       ProseSection(
         'La curiosità non è numerologia',
         'Il dodici porta molte etichette insieme: altamente composto, '
-            'abbondante, sublime, indice dell\'unico quadrato di Fibonacci non '
+            "abbondante, sublime, indice dell'unico quadrato di Fibonacci non "
             'banale. Questa concentrazione fa impressione — ma ogni proprietà è '
             'una definizione propria e indipendente. Il fatto che coincidano non '
             'è causa né simbolo di qualcosa di superiore. Ciò che distingue '
@@ -675,9 +675,9 @@ List<ProseChapter> _mathChaptersIt() => const [
             'divisori propri danno 16, cioè più di 12. Il dodici è abbondante, '
             'non perfetto. La confusione risale a Nicomaco di Gerasa '
             '(intorno al 100 d.C.), che associava queste classi numeriche a '
-            'giudizi morali — un\'interpretazione dell\'antichità, non matematica.\n\n'
+            "giudizi morali — un'interpretazione dell'antichità, non matematica.\n\n"
             'Il valore di questo capitolo sta esattamente nella distinzione: '
-            'il teorema di Cohn, l\'identità delle palle da cannone e il più '
+            "il teorema di Cohn, l'identità delle palle da cannone e il più "
             'piccolo numero abbondante sono fatti dimostrati. Meritano di essere '
             'visti per quello che sono — bella e onesta matematica, che non ha '
             'bisogno di cariche mistiche.',
@@ -976,23 +976,23 @@ List<ProseChapter> _mathChaptersIt() => const [
     'Il dodecagono (poligono di dodici lati)',
     [
       ProseSection(
-        'Che cos\'è un dodecagono regolare',
+        "Che cos'è un dodecagono regolare",
         'Un dodecagono regolare (dal greco dodekagon: dōdeka = dodici, '
             'gōnía = angolo) è un poligono con dodici lati uguali e dodici '
             'angoli interni uguali. Tutti e dodici i vertici giacciono '
             'equamente distribuiti su una circonferenza, la circonscritta, '
-            'distanti 30° l\'uno dall\'altro.\n\n'
+            "distanti 30° l'uno dall'altro.\n\n"
             'Ogni angolo interno misura esattamente 150°. Questo segue da una '
             'considerazione semplice: percorrendo la figura per intero, ci si '
             'ruota ai dodici vertici complessivamente di 360°, cioè 30° per '
             'vertice. Questo angolo esterno e quello interno si completano a '
             '180°, quindi resta 180° − 30° = 150°. Nel sistema dozenale 150° '
-            'si scrive 106°, l\'angolo esterno 30° come 26°. Tutti gli angoli '
+            "si scrive 106°, l'angolo esterno 30° come 26°. Tutti gli angoli "
             'presenti nel dodecagono sono multipli di 15° — dozenale 13°.\n\n'
             'Il dodecagono è tra le figure costruibili con riga e compasso in '
             'modo esatto. Il procedimento è breve: tracciare un cerchio, '
             'dividerlo in sei parti uguali (lo si fa col solo compasso, perché '
-            'nell\'esagono il lato è uguale al raggio), poi bisecare ognuno '
+            "nell'esagono il lato è uguale al raggio), poi bisecare ognuno "
             'dei sei archi — si ottengono dodici punti equamente distribuiti. '
             'Che ciò sia possibile non è casuale: un poligono regolare di n lati '
             'è costruibile se e solo se n è prodotto di una potenza di due e di '
@@ -1007,7 +1007,7 @@ List<ProseChapter> _mathChaptersIt() => const [
             'esagono regolare. Ogni terzo vertice dà un quadrato, ogni quarto '
             'un triangolo equilatero — tutti e tre esatti, non approssimati, '
             'e tutti sulla stessa circonscritta del dodecagono.\n\n'
-            'Dietro c\'è una regola generale: un poligono regolare di m lati '
+            "Dietro c'è una regola generale: un poligono regolare di m lati "
             'entra in uno di n lati con gli stessi vertici se e solo se m '
             'divide n; si collegano allora ogni (n/m)-esimo vertice. Esagono, '
             'quadrato e triangolo stanno nel dodecagono perché 12 è divisibile '
@@ -1039,33 +1039,33 @@ List<ProseChapter> _mathChaptersIt() => const [
             'terza diagonale differiscono esattamente di un lato: '
             '(2+√3) − (1+√3) = 1. E il diametro è esattamente il doppio della '
             'diagonale più corta, d₆ = 2 · d₂ — lo stesso rapporto 2:1 '
-            'dell\'ottava in musica. Tutti gli angoli tra le diagonali sono '
+            "dell'ottava in musica. Tutti gli angoli tra le diagonali sono "
             'ancora multipli di 15°, perché i dodici vertici suddividono '
             'il cerchio completo in passi di 30°.',
       ),
       ProseSection(
-        'L\'area e il «tre tondo»',
-        'Per trovare l\'area si scompone il dodecagono, dal centro, in dodici '
+        "L'area e il «tre tondo»",
+        "Per trovare l'area si scompone il dodecagono, dal centro, in dodici "
             'triangoli uguali e sottili. Ognuno ha due lati di lunghezza R — '
             'il raggio della circonscritta, la distanza dal centro a un vertice '
-            '— e all\'apice un angolo di 30°. Sommando i dodici triangoli '
+            "— e all'apice un angolo di 30°. Sommando i dodici triangoli "
             'emerge qualcosa di bello:\n\n'
             'A = 3 · R².\n\n'
             'Il fattore è un netto intero tre, senza radici. Questo riesce '
             'perché nel calcolo compare sin(30°) = un mezzo, e 30° è proprio '
-            'l\'angolo al vertice del dodecagono. Tra i poligoni costruibili con '
-            'riga e compasso è l\'unico più grande in cui la formula dell\'area '
-            'risulta così netta; nell\'esagono, ad esempio, rimane una radice. '
-            'Se si preferisce usare il lato s, l\'area è A = 3(2+√3)·s² ≈ 11,196·s².\n\n'
-            'Rapportando l\'area alla circonscritta, la cui area è π·R², R² si '
+            "l'angolo al vertice del dodecagono. Tra i poligoni costruibili con "
+            "riga e compasso è l'unico più grande in cui la formula dell'area "
+            "risulta così netta; nell'esagono, ad esempio, rimane una radice. "
+            "Se si preferisce usare il lato s, l'area è A = 3(2+√3)·s² ≈ 11,196·s².\n\n"
+            "Rapportando l'area alla circonscritta, la cui area è π·R², R² si "
             'semplifica e resta esattamente 3/π ≈ 0,9549. Il dodecagono riempie '
             'la sua circonscritta per circa il 95,5 % — molto di più '
-            'dell\'esagono (circa 83 %), del quadrato (circa 64 %) o del '
+            "dell'esagono (circa 83 %), del quadrato (circa 64 %) o del "
             'triangolo (circa 41 %). Al posto del numero complicato π sta il '
-            'tre tondo: con R = 1 l\'area del dodecagono è esattamente 3 e '
+            "tre tondo: con R = 1 l'area del dodecagono è esattamente 3 e "
             'si trova appena sotto π ≈ 3,1416.\n\n'
             'Questa vicinanza fu già sfruttata da Archimede. Approssimò π '
-            'tramite poligoni, iniziò dall\'esagono facile da disegnare e '
+            "tramite poligoni, iniziò dall'esagono facile da disegnare e "
             'raddoppiò il numero di lati: 6, 12, 24, 48, 96. Il dodecagono '
             'fu il suo primo passo. Il 96-gono — dozenale 12 × 8 — riempie '
             'già il cerchio al 99,93 % e gli fornì 3 + 10/71 < π < 3 + 1/7.',
@@ -1082,7 +1082,7 @@ List<ProseChapter> _mathChaptersIt() => const [
             'Il «threepence» britannico in ottone (dal 1937) fu il primo pezzo '
             'non circolare in circolazione nel Regno Unito; la sterlina a dodici '
             'lati (dal 2017) fu introdotta come misura antifalsificazione e '
-            'deliberatamente modellata su quell\'esempio. Contrariamente a '
+            "deliberatamente modellata su quell'esempio. Contrariamente a "
             'quanto si sostiene talvolta, tali monete non hanno larghezza '
             'costante — questa proprietà appartiene ai pezzi britannici da 20 '
             'e 50 penny a sette lati, che non sono dodecagoni.\n\n'
@@ -1090,28 +1090,28 @@ List<ProseChapter> _mathChaptersIt() => const [
             'esattamente in 360°. Insieme ad altri poligoni sì — ad esempio '
             'con triangoli o con quadrati ed esagoni, i cui angoli si sommano '
             'a 360° a ogni vertice. Tali motivi a simmetria dodecagonale '
-            'costituiscono un fondamento dell\'ornamentazione geometrica '
-            'islamica. Come il dodici sia entrato nell\'architettura e '
-            'nell\'arte è trattato nel capitolo «Il dodici nell\'arte».',
+            "costituiscono un fondamento dell'ornamentazione geometrica "
+            "islamica. Come il dodici sia entrato nell'architettura e "
+            "nell'arte è trattato nel capitolo «Il dodici nell'arte».",
       ),
       ProseSection(
         'Geometria, non misticismo numerico',
         'Le proprietà del dodecagono sono veri fatti matematici, non segreti. '
-            'Che l\'area stia nel rapporto 3/π con la circonscritta deriva '
+            "Che l'area stia nel rapporto 3/π con la circonscritta deriva "
             'necessariamente da sin(30°) = un mezzo; mostra solo che il '
             'dodecagono approssima bene il cerchio, e non stabilisce alcuna '
             'connessione segreta tra il tre e π. Allo stesso modo il semplice '
-            'tre in «area = 3·R²» è conseguenza dell\'angolo al vertice, '
+            "tre in «area = 3·R²» è conseguenza dell'angolo al vertice, "
             'non un prodigio.\n\n'
             'Anche il teorema «A = 3·R²» richiede la lettura corretta: il tre '
-            'netto vale per il raggio della circonscritta. Con lato 1 l\'area '
+            "netto vale per il raggio della circonscritta. Con lato 1 l'area "
             'è circa 11,2, non 3. E per le diagonali vale la precisione — '
-            'la quarta è (3√2+√6)/2 ≈ 3,346, non un\'espressione con radice '
+            "la quarta è (3√2+√6)/2 ≈ 3,346, non un'espressione con radice "
             'più semplice; in alcune fonti circolano valori errati.\n\n'
             'Infine la facile costruibilità dice solo che la forma si ottiene '
             'con strumenti semplici. Spiega bene perché i dodecagoni siano '
-            'così frequenti nell\'artigianato, sulle monete e nell\'ornamento. '
-            'Perché però l\'orologio ha dodici ore è una questione di tradizione, '
+            "così frequenti nell'artigianato, sulle monete e nell'ornamento. "
+            "Perché però l'orologio ha dodici ore è una questione di tradizione, "
             'non di geometria. Il dodecagono è un bello strumento geometrico — '
             'e non gli si dovrebbe attribuire nulla di più.',
       ),
@@ -1246,11 +1246,11 @@ List<ProseChapter> _mathChaptersIt() => const [
             'facce sono composte esclusivamente da poligoni regolari uguali e '
             'in ogni vertice dei quali si incontrano sempre lo stesso numero '
             'di facce. Gli altri quattro sono il tetraedro (quattro triangoli), '
-            'il cubo (sei quadrati), l\'ottaedro (otto triangoli) e '
-            'l\'icosaedro (venti triangoli). Tra questi cinque il dodecaedro '
-            'è l\'unico con facce pentagonali.\n\n'
+            "il cubo (sei quadrati), l'ottaedro (otto triangoli) e "
+            "l'icosaedro (venti triangoli). Tra questi cinque il dodecaedro "
+            "è l'unico con facce pentagonali.\n\n"
             'In notazione compatta il dodecaedro si scrive {5, 3}: pentagoni '
-            'come facce, tre per ogni vertice. L\'angolo diedro tra due facce '
+            "come facce, tre per ogni vertice. L'angolo diedro tra due facce "
             'adiacenti è circa 116,57° (in decimale). Per confronto: nel '
             'cubo è 90°.',
       ),
@@ -1268,13 +1268,13 @@ List<ProseChapter> _mathChaptersIt() => const [
             'ogni prisma. Combinandola con il requisito che le facce siano '
             'poligoni regolari uguali, restano esattamente cinque soluzioni.\n\n'
             'La seconda via è più intuitiva e considera un singolo vertice. '
-            'L\'angolo interno di un pentagono regolare è 108°. Se in un '
+            "L'angolo interno di un pentagono regolare è 108°. Se in un "
             'vertice si incontrano tre pentagoni, i loro angoli sommano 324°. '
             'I 36° mancanti al cerchio completo sono esattamente la lacuna '
             'che si piega verso lo spazio — così nasce un vertice del '
             'dodecaedro. Quattro pentagoni darebbero già 432° e non '
             'entrerebbero più in un vertice. Per questo tre pentagoni sono '
-            'l\'unica possibilità, e il dodecaedro è l\'unico solido con '
+            "l'unica possibilità, e il dodecaedro è l'unico solido con "
             'facce pentagonali.',
       ),
       ProseSection(
@@ -1284,8 +1284,8 @@ List<ProseChapter> _mathChaptersIt() => const [
             'φ = (1+√5)/2 ≈ 1,618 appare come rapporto di segmenti. La '
             'diagonale di un pentagono regolare è esattamente φ volte il lato. '
             'Chi digita φ² = nel calcolatore ottiene φ+1 — questa è '
-            'l\'equazione definitoria della sezione aurea.\n\n'
-            'Poiché ogni faccia porta questo rapporto, φ pervade l\'intero '
+            "l'equazione definitoria della sezione aurea.\n\n"
+            "Poiché ogni faccia porta questo rapporto, φ pervade l'intero "
             'solido. Collocando il dodecaedro in un sistema di coordinate, φ '
             'appare letteralmente nelle coordinate dei suoi venti vertici. '
             'Otto di questi vertici formano da soli un cubo; in totale si '
@@ -1294,7 +1294,7 @@ List<ProseChapter> _mathChaptersIt() => const [
             'tra i lati pari a φ a uno —, disposti a coppie perpendicolari '
             'tra loro.\n\n'
             'φ appare qui non per magia, ma per necessità: dove ci sono '
-            'pentagoni regolari, c\'è φ. Le interpretazioni ulteriori della '
+            "pentagoni regolari, c'è φ. Le interpretazioni ulteriori della "
             'sezione aurea come «divina proporzione» sono attribuzioni umane, '
             'non una proprietà della geometria stessa.',
       ),
@@ -1302,9 +1302,9 @@ List<ProseChapter> _mathChaptersIt() => const [
         'Dualità e la simmetria più ricca',
         'A ogni solido platonico corrisponde un solido duale: si pone un '
             'nuovo vertice al centro di ogni faccia e si collegano i vertici '
-            'di facce adiacenti. Dal dodecaedro nasce così l\'icosaedro — e '
+            "di facce adiacenti. Dal dodecaedro nasce così l'icosaedro — e "
             'viceversa. Nel processo facce e vertici si scambiano i ruoli: '
-            'il dodecaedro ha 12 facce e 20 vertici, l\'icosaedro 20 facce '
+            "il dodecaedro ha 12 facce e 20 vertici, l'icosaedro 20 facce "
             'e 12 vertici. Il numero di spigoli, 30, rimane lo stesso in '
             'entrambi. Il dodici compare in entrambi — una volta come numero '
             'di facce, una volta come numero di vertici.\n\n'
@@ -1340,7 +1340,7 @@ List<ProseChapter> _mathChaptersIt() => const [
             'esagoni. Entrambi condividono solo i dodici pentagoni; il '
             'dodecaedro però non ha esagoni.\n\n'
             'Il dodecaedro regolare è quindi il caso più puro di questa '
-            'dodicesimità: dodici pentagoni e nient\'altro.',
+            "dodicesimità: dodici pentagoni e nient'altro.",
       ),
       ProseSection(
         'Cubo, dodecagono e piritoedro — ciò che non è',
@@ -1352,12 +1352,12 @@ List<ProseChapter> _mathChaptersIt() => const [
             'il dodecaedro. Entrambe le parole portano «dodeka-» (dodici), ma '
             'il dodecagono è un poligono piatto con dodici lati, il dodecaedro '
             'un solido tridimensionale con dodici facce. '
-            'Secondo: il piritoedro del minerale pirite ha anch\'esso dodici '
+            "Secondo: il piritoedro del minerale pirite ha anch'esso dodici "
             'facce pentagonali, ma non è un dodecaedro regolare — i suoi '
             'pentagoni sono deformati e non ha vera simmetria quinaria '
             '(in dettaglio nel capitolo sulla pirite). Terzo infine: '
             'Platone assegnò il dodecaedro al cosmo nella sua interezza; è '
-            'un\'antica interpretazione filosofica, non un risultato matematico. '
+            "un'antica interpretazione filosofica, non un risultato matematico. "
             'La geometria del solido sta per sé, del tutto indipendentemente '
             'dal significato che gli esseri umani vi hanno attribuito.',
       ),

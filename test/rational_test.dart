@@ -1,9 +1,9 @@
 // Port of Rational + period-detection tests from src/logic.rs::tests.
 // The eval_rational tests are deferred to step 5 (rat_parser.dart).
 
-import 'package:flutter_test/flutter_test.dart';
 import 'package:dozenal_calc_flutter/logic/dozenal_digit.dart';
 import 'package:dozenal_calc_flutter/logic/rational.dart';
+import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   group('Rational basic arithmetic', () {
@@ -116,7 +116,7 @@ void main() {
     });
 
     test('period_integer: 7/1 — no fractional part', () {
-      final res = Rational.fromInts(7, 1).toDozenalPeriodic();
+      final res = Rational.fromInts(7).toDozenalPeriodic();
       expect(res.intDigits, equals([DozenalDigit.d7]));
       expect(res.preDigits, isEmpty);
       expect(res.period, isEmpty);

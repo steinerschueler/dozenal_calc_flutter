@@ -10,7 +10,7 @@ part of '../world_theory.dart';
 
 List<ProseChapter> _worldChaptersCy() => const [
   ProseChapter(
-    'Pyrit: deuddeg wyneb o\'r ciwb',
+    "Pyrit: deuddeg wyneb o'r ciwb",
     [
       ProseSection(
         'Carreg fel deuddegwynebog',
@@ -20,40 +20,40 @@ List<ProseChapter> _worldChaptersCy() => const [
             'pumochrog. Mae mwynyddwyr yn ei alw\'n "pyritohedron" — dyma nod '
             'masnach y garreg hon.\n\n'
             'Ar yr olwg gyntaf mae hyn yn edrych fel y dodecahedron enwog o '
-            'eometreg y Groegiaid (dodeka = deuddeg). Yn wir, mae\'r gwneuthuriad '
+            "eometreg y Groegiaid (dodeka = deuddeg). Yn wir, mae'r gwneuthuriad "
             'hyd yn oed yn cyfateb: deuddeg wyneb, deg ar hugain o ymylon, ugain '
-            'o gorneli. Mae\'r ffaith bod carreg farw\'n cymryd ffurf mor bur o '
+            "o gorneli. Mae'r ffaith bod carreg farw'n cymryd ffurf mor bur o "
             'ddeuddeg ohoni ei hun wedi swyno pobl ers yr hen amser.',
       ),
       ProseSection(
-        'Pam nad yw\'n ddodecahedron perffaith',
-        'Ac eto nid dodecahedron go iawn, rheolaidd, yw\'r pyritohedron. Mae ei '
+        "Pam nad yw'n ddodecahedron perffaith",
+        "Ac eto nid dodecahedron go iawn, rheolaidd, yw'r pyritohedron. Mae ei "
             'ddeuddeg pumochr ychydig yn ystumiedig, nid yn hafalochrog. Mae gan '
-            'ei ymylon ddau hyd gwahanol. Ac mae\'n brin o gymesuredd '
+            "ei ymylon ddau hyd gwahanol. Ac mae'n brin o gymesuredd "
             'pum-blyg go iawn y corff Platonaidd.\n\n'
             'Mae rheswm clir y tu ôl i hyn. Ni chaiff grisial osod ei wynebau '
             'ond mewn cymarebau cyfanrif. Ond byddai angen y Gymhareb Aur ar y '
             'dodecahedron delfrydol, rhif diddiwedd, anghyfanrif, na all dellt '
-            'risial ei roi. Felly mae\'r brasamcan llyfn symlaf yn ffurfio, sef '
-            'y gymhareb dau i un. Daw\'r pyritohedron i\'r golwg: deuddeg wyneb, '
+            "risial ei roi. Felly mae'r brasamcan llyfn symlaf yn ffurfio, sef "
+            "y gymhareb dau i un. Daw'r pyritohedron i'r golwg: deuddeg wyneb, "
             'ond nid perffeithrwydd Platonaidd.',
       ),
       ProseSection(
-        'Pam mae natur yn adeiladu\'r ffurf hon',
+        "Pam mae natur yn adeiladu'r ffurf hon",
         'Mae siâp allanol grisial yn adlewyrchu ei atomau mewnol. Mewn pyrit '
-            'nid yw\'r sylffwr yn eistedd ar ei ben ei hun, ond mewn pwysynnau '
-            'bach o ddau atom yr un. Mae\'r pwysynnau hyn wedi eu cyfeirio ac yn '
+            "nid yw'r sylffwr yn eistedd ar ei ben ei hun, ond mewn pwysynnau "
+            "bach o ddau atom yr un. Mae'r pwysynnau hyn wedi eu cyfeirio ac yn "
             '"torri" cymesuredd llawn y ciwb ryw ychydig. Dim ond drwy hynny y '
             'gall y deuddegwynebog ddod i fodolaeth o gwbl.\n\n'
-            'Y twf sy\'n penderfynu pa ffurf a ymddengys yn y diwedd: mae '
-            'wynebau sy\'n tyfu\'n gyflym yn diflannu, a\'r rhai araf yn aros. Yn '
-            'ôl yr amodau daw pyrit yn giwb, yn wythwynebog neu\'n byritohedron. '
+            "Y twf sy'n penderfynu pa ffurf a ymddengys yn y diwedd: mae "
+            "wynebau sy'n tyfu'n gyflym yn diflannu, a'r rhai araf yn aros. Yn "
+            "ôl yr amodau daw pyrit yn giwb, yn wythwynebog neu'n byritohedron. "
             'Mae sylweddau gronyn a chyflymder twf yn cael dweud eu dweud.',
       ),
       ProseSection(
         'Carreg dân ac aur ffyliaid',
-        'Daw\'r enw o\'r gair Groeg am dân: o daro pyrit yn erbyn dur, mae\'n '
-            'tasgu gwreichion. Felly mae\'r garreg ymhlith offer hynaf y ddynol '
+        "Daw'r enw o'r gair Groeg am dân: o daro pyrit yn erbyn dur, mae'n "
+            "tasgu gwreichion. Felly mae'r garreg ymhlith offer hynaf y ddynol "
             'ryw — roedd hyd yn oed Ötzi, y mymi rhewlif, yn ei chario gydag ef '
             'i wneud tân.\n\n'
             'Roedd ei sglein euraidd yn aml yn cymryd arno fod yn aur go iawn, '
@@ -65,14 +65,14 @@ List<ProseChapter> _worldChaptersCy() => const [
       ProseSection(
         'Y dodecahedron fel symbol',
         'Mae adleisiau diwylliannol cryf gan y deuddegwynebog. Yn yr hen amser '
-            'gosododd Platon bedwar o\'r pum corff perffaith i\'r elfennau a '
-            'rhoddodd y dodecahedron rheolaidd i\'r cosmos yn ei gyfanrwydd; '
-            'roedd ei ddeuddeg wyneb yn cael eu cysylltu\'n aml â deuddeg arwydd '
+            "gosododd Platon bedwar o'r pum corff perffaith i'r elfennau a "
+            "rhoddodd y dodecahedron rheolaidd i'r cosmos yn ei gyfanrwydd; "
+            "roedd ei ddeuddeg wyneb yn cael eu cysylltu'n aml â deuddeg arwydd "
             'y Sidydd.\n\n'
-            'Mae hyd yn oed dyfaliad bod y Pythagoreaid wedi dyfeisio\'r '
+            "Mae hyd yn oed dyfaliad bod y Pythagoreaid wedi dyfeisio'r "
             'dodecahedron delfrydol yn y lle cyntaf wrth weld grisialau pyrit — '
             'yn gredadwy, ond heb ei brofi. Y cymesuredd pum-blyg go iawn, nad '
-            'yw\'r pyritohedron ond yn ei awgrymu, ni cheir hyd iddo yn natur '
+            "yw'r pyritohedron ond yn ei awgrymu, ni cheir hyd iddo yn natur "
             'tan y cwasigrisialau, pennod lawer iau.',
       ),
     ],
@@ -124,46 +124,46 @@ List<ProseChapter> _worldChaptersCy() => const [
             'a heb holltedd. Ei hoff ffurf yn natur yw corff â deuddeg wyneb, '
             'ond y tro hwn nid pumochrau mohonynt, ond deuddeg rhomb cyfartal. '
             'Yr enw ar y ffurf hon yw dodecahedron rhombig.\n\n'
-            'Prin bod unrhyw gorff arall mor agos gysylltiedig â mwyn fel y\'i '
+            "Prin bod unrhyw gorff arall mor agos gysylltiedig â mwyn fel y'i "
             'gelwir yn syml yn "garnethedron". Mae\'n llenwi gofod hefyd: mae '
-            'corff ar ôl corff o\'r fath yn llenwi gofod yn ddi-fwlch — yr un '
-            'ffurf yw hi ag sy\'n ffurfio gwaelodion crwybr y gwenyn, fel y '
+            "corff ar ôl corff o'r fath yn llenwi gofod yn ddi-fwlch — yr un "
+            "ffurf yw hi ag sy'n ffurfio gwaelodion crwybr y gwenyn, fel y "
             'sylwodd Johannes Kepler eisoes.',
       ),
       ProseSection(
         'Pam deuddeg rhomb',
         'Mae garnet yn tyfu yn y system risial ciwbig, a fyddai mewn gwirionedd '
-            'yn caniatáu ciwb a wythwynebog hefyd. Ond gyda garnet mae\'r '
-            'wynebau hyn yn union yn tyfu\'n rhy gyflym ac yn diflannu. Yr hyn '
-            'sy\'n aros yw\'r wynebau araf — a\'r rheiny yn union yw\'r deuddeg '
-            'sy\'n ffurfio\'r dodecahedron rhombig. Dyna pam nad yw garnet byth '
+            "yn caniatáu ciwb a wythwynebog hefyd. Ond gyda garnet mae'r "
+            "wynebau hyn yn union yn tyfu'n rhy gyflym ac yn diflannu. Yr hyn "
+            "sy'n aros yw'r wynebau araf — a'r rheiny yn union yw'r deuddeg "
+            "sy'n ffurfio'r dodecahedron rhombig. Dyna pam nad yw garnet byth "
             'bron yn siâp ciwb, ond yn grwn-ddeuddegwynebog fel hedyn.\n\n'
-            'Mae cymesuredd y grisial yn caniatáu\'r ffurf hon, ond nid yw\'n ei '
-            'gorfodi; y twf yn unig sy\'n penderfynu pa un o\'r ffurfiau a '
+            "Mae cymesuredd y grisial yn caniatáu'r ffurf hon, ond nid yw'n ei "
+            "gorfodi; y twf yn unig sy'n penderfynu pa un o'r ffurfiau a "
             'ganiateir a ymddengys.',
       ),
       ProseSection(
-        'O\'r pomgranad i\'r papur llyfnu',
+        "O'r pomgranad i'r papur llyfnu",
         'Daw\'r enw o\'r gair Lladin am "grawnog" — drwy\'r pomgranad, y mae ei '
-            'hadau cochion yn debyg i\'r grisialau. Garnetau coch oedd hoff '
+            "hadau cochion yn debyg i'r grisialau. Garnetau coch oedd hoff "
             'gerrig yr Hen Oes Ddiweddar: mae platiau garnet wedi eu gosod mewn '
             'aur yn addurno trysorau fel trysor Sutton Hoo; daeth y cerrig dros '
             'fasnach bell o Sri Lanka ac India.\n\n'
             'Yn economaidd, pwysicach heddiw yw nodwedd ddi-lol: mae garnet yn '
-            'galed iawn ac yn torri\'n finiog. Dyna pam mae\'n bresennol mewn '
+            "galed iawn ac yn torri'n finiog. Dyna pam mae'n bresennol mewn "
             'papur llyfnu, mewn deunydd chwythu tywod a hyd yn oed yn y jet ddŵr '
-            'sy\'n torri dur. Mae\'r gem hardd yn geffyl gwaith i ddiwydiant ar '
+            "sy'n torri dur. Mae'r gem hardd yn geffyl gwaith i ddiwydiant ar "
             'yr un pryd.',
       ),
       ProseSection(
         'Tri deuddegwynebog gwahanol',
-        'Mae tri chorff â deuddeg wyneb yn debyg i\'w gilydd:\n\n'
+        "Mae tri chorff â deuddeg wyneb yn debyg i'w gilydd:\n\n"
             '• Mae gan ddodecahedron rhombig y garnet ddeuddeg rhomb.\n'
             '• Mae gan byritohedron y pyrit ddeuddeg pumochr ystumiedig.\n'
             '• Mae gan ddodecahedron rheolaidd Platon ddeuddeg pumochr '
             'perffaith.\n\n'
             'Dim ond gan y corff Platonaidd y mae cymesuredd pum-blyg go iawn — '
-            'ac mae\'r union beth hwnnw\'n amhosibl mewn grisial, am na ellir '
+            "ac mae'r union beth hwnnw'n amhosibl mewn grisial, am na ellir "
             'gosod pumochrau wrth ei gilydd yn ddi-fwlch. Dyna pam nad oes '
             'grisial cyffredin yn ffurfio dodecahedron perffaith; mae garnet a '
             'phyrit yn cyrraedd y rhif deuddeg yn ei ffordd ei hun.',
@@ -208,57 +208,57 @@ List<ProseChapter> _worldChaptersCy() => const [
       ProseSection(
         'Y deuddeg ddwywaith',
         'Mae dau gorff perffaith yn cynnwys y deuddeg ynddynt. Mae gan yr '
-            'icosahedron ugain o wynebau trionglog sy\'n cydgyfarfod mewn '
+            "icosahedron ugain o wynebau trionglog sy'n cydgyfarfod mewn "
             'deuddeg cornel. Mae gan y dodecahedron ddeuddeg wyneb pumochrog. '
             'Maent yn "efeilliaid": o osod corneli\'r naill ar ganol wynebau\'r '
-            'llall, maent yn troi yn ei gilydd. Maent yn rhannu\'r un cymesuredd.'
+            "llall, maent yn troi yn ei gilydd. Maent yn rhannu'r un cymesuredd."
             '\n\n'
-            'Yr icosahedron yw\'r corff hwn sydd agosaf at sffêr — mae\'n cau o '
+            "Yr icosahedron yw'r corff hwn sydd agosaf at sffêr — mae'n cau o "
             'amgylch y cyfaint mwyaf gydag arwynebedd lleiaf. Ar gyfer plisgyn '
-            'amddiffynnol dyma\'r ffurf fwyaf cynnil. Yn union am hynny mae\'r '
+            "amddiffynnol dyma'r ffurf fwyaf cynnil. Yn union am hynny mae'r "
             'eometreg hon yn ailymddangos yn y peth lleiaf un o fywyd.',
       ),
       ProseSection(
         'Pam fod rhaid iddynt fod yn union ddeuddeg',
         'Mae rheol syml, anorfod o eometreg y tu ôl i hyn. Ni ellir gorchuddio '
             'sffêr yn ddi-fwlch â chwechochrau yn unig — mae rhwyd bur o '
-            'chwechochrau\'n aros yn fflat. Er mwyn ei chrymu\'n sffêr caeedig, '
-            'mae angen union ddeuddeg pumochr. Mae nifer y chwechochrau\'n '
+            "chwechochrau'n aros yn fflat. Er mwyn ei chrymu'n sffêr caeedig, "
+            "mae angen union ddeuddeg pumochr. Mae nifer y chwechochrau'n "
             'fympwyol, ond mae nifer y pumochrau bob amser yn ddeuddeg.\n\n'
-            'Mae\'r un egwyddor yn y bêl-droed glasurol (deuddeg maes pumochrog), '
-            'yn y cromenni geodesig ac ym moleciwl y carbon C₆₀. Mae\'r deuddeg '
-            'yma\'n ganlyniad anochel i\'r ffaith bod arwyneb yn cau\'n sffêr.',
+            "Mae'r un egwyddor yn y bêl-droed glasurol (deuddeg maes pumochrog), "
+            "yn y cromenni geodesig ac ym moleciwl y carbon C₆₀. Mae'r deuddeg "
+            "yma'n ganlyniad anochel i'r ffaith bod arwyneb yn cau'n sffêr.",
       ),
       ProseSection(
         'Firysau: deuddeg cornel bumochrog, bob tro',
         'Mae tua saith o bob deg firws yn rhoi eu defnydd genetig mewn plisgyn '
-            'â\'r union gymesuredd icosahedrol hwn. Y rheswm yw cynildeb: ychydig '
+            "â'r union gymesuredd icosahedrol hwn. Y rheswm yw cynildeb: ychydig "
             'iawn o wybodaeth etifeddol sydd gan firws. Yn lle adeiladu un '
-            'protein plisgyn mawr, unigryw, mae\'n adeiladu ei gragen o sawl '
-            'copi o un bloc adeiladu bach. Mae\'r blociau hyn yn ymffurfio o\'u '
-            'gwirfodd, i\'r cyflwr sefydlocaf.\n\n'
+            "protein plisgyn mawr, unigryw, mae'n adeiladu ei gragen o sawl "
+            "copi o un bloc adeiladu bach. Mae'r blociau hyn yn ymffurfio o'u "
+            "gwirfodd, i'r cyflwr sefydlocaf.\n\n"
             'Dangosodd yr ymchwilwyr Caspar a Klug yn 1962 sut mae hyn yn gweithio '
-            'ar gyfer plisg mwy hefyd: mae\'r blociau\'n ffurfio cylchoedd o bump '
-            'a chwech. Pa mor fawr bynnag y daw\'r firws — mae bob amser union '
+            "ar gyfer plisg mwy hefyd: mae'r blociau'n ffurfio cylchoedd o bump "
+            "a chwech. Pa mor fawr bynnag y daw'r firws — mae bob amser union "
             'ddeuddeg cylch o bump yn eistedd yn y deuddeg cornel. Y deuddeg '
             'Euler eto, yn union fel y bêl-droed. Cafodd Caspar a Klug eu '
-            'hysbrydoli gan gromenni\'r pensaer Buckminster Fuller. Nid yw pob '
-            'firws yn icosahedrol, fodd bynnag: mae rhai\'n siâp gwialen neu wedi '
-            'eu hadeiladu\'n wahanol.',
+            "hysbrydoli gan gromenni'r pensaer Buckminster Fuller. Nid yw pob "
+            "firws yn icosahedrol, fodd bynnag: mae rhai'n siâp gwialen neu wedi "
+            "eu hadeiladu'n wahanol.",
       ),
       ProseSection(
         'Radiolaria: geometreg o un gell unigol',
-        'Organebau ungellog bach iawn yn y môr yw radiolaria, sy\'n adeiladu '
+        "Organebau ungellog bach iawn yn y môr yw radiolaria, sy'n adeiladu "
             'sgerbydau cain o asid silicig — gwydr, mewn ffordd. Mae rhai '
-            'rhywogaethau\'n taro\'r ffurfiau Platonaidd yn rhyfeddol o gywir. '
+            "rhywogaethau'n taro'r ffurfiau Platonaidd yn rhyfeddol o gywir. "
             'Tynnodd y naturiaethwr Ernst Haeckel tua 1900 un rhywogaeth fel '
             'icosahedron pur (â deuddeg pigyn yn y deuddeg cornel) ac un arall '
             'fel dodecahedron.\n\n'
             'Ar gyfer ei blatiau celfydd dewisodd Haeckel y sbesimenau harddaf, '
             'mwyaf cymesur; mae llawer o radiolaria mewn gwirionedd ond yn '
             'fras-Blatonaidd. Sut y mae cell heb ymennydd yn adeiladu geometreg '
-            'o\'r fath o gwbl, nid yw\'n gwbl eglur hyd heddiw — mae\'n debyg bod '
-            'y gwydr yn ymgasglu ar furiau swigod o\'r un maint, fel ar weiniau '
+            "o'r fath o gwbl, nid yw'n gwbl eglur hyd heddiw — mae'n debyg bod "
+            "y gwydr yn ymgasglu ar furiau swigod o'r un maint, fel ar weiniau "
             'ewyn sebon. Dylanwadodd platiau Haeckel yn ddiweddarach hyd yn oed '
             'ar yr Art Nouveau.',
       ),
@@ -295,7 +295,7 @@ List<ProseChapter> _worldChaptersCy() => const [
         'A1',
       ),
       Source(
-        'Haeckel\'s embryos: fraud not proven — R. J. Richards (U Chicago)',
+        "Haeckel's embryos: fraud not proven — R. J. Richards (U Chicago)",
         'https://home.uchicago.edu/~rjr6/articles/Haeckel--fraud%20not%20proven.pdf',
         'R1',
         'A1',
@@ -307,42 +307,42 @@ List<ProseChapter> _worldChaptersCy() => const [
     [
       ProseSection(
         'Y pump gwaharddedig',
-        'Mae grisial cyffredin wedi ei adeiladu o\'r uned leiaf, sy\'n '
-            'ailadrodd yn ddiddiwedd drwy symudiad. O\'r ailadrodd hwn daw rheol '
+        "Mae grisial cyffredin wedi ei adeiladu o'r uned leiaf, sy'n "
+            "ailadrodd yn ddiddiwedd drwy symudiad. O'r ailadrodd hwn daw rheol "
             'galed: dim ond cymesureddau cylchdro o blygiant dau, tri, pedwar a '
             'chwech a ganiateir. Mae echel pum-blyg yn waharddedig.\n\n'
-            'Mae\'r rheswm yn weledol: gellir teilio arwyneb yn ddi-fwlch â '
+            "Mae'r rheswm yn weledol: gellir teilio arwyneb yn ddi-fwlch â "
             'thrionglau, sgwariau neu chwechochrau — ond byth â phumochrau '
-            'rheolaidd. Mae bylchau\'n aros bob tro. Dyna pam na all grisial '
+            "rheolaidd. Mae bylchau'n aros bob tro. Dyna pam na all grisial "
             'arferol gario patrwm pump go iawn nac icosahedron go iawn. Roedd '
-            'pyrit a garnet yn edrych yn ddeuddegwynebog — ond y nhw\'n union '
-            'sy\'n brin o\'r cymesuredd pum-blyg go iawn.',
+            "pyrit a garnet yn edrych yn ddeuddegwynebog — ond y nhw'n union "
+            "sy'n brin o'r cymesuredd pum-blyg go iawn.",
       ),
       ProseSection(
-        'Sut maent yn osgoi\'r gwaharddiad',
-        'Dim ond am fod y grisial yn ailadrodd ei hun y mae\'r gwaharddiad yn '
+        "Sut maent yn osgoi'r gwaharddiad",
+        "Dim ond am fod y grisial yn ailadrodd ei hun y mae'r gwaharddiad yn "
             'dal. Ond beth os yw strwythur yn drefnus, ond byth yn ailadrodd '
-            'yn union? Dyna\'n union yw cwasigrisialau. Maent yn drefnus iawn, '
+            "yn union? Dyna'n union yw cwasigrisialau. Maent yn drefnus iawn, "
             'ond nid oes symudiad yn dod â hwy i orchuddio eu hunain.\n\n'
-            'Yr hyn sy\'n gwneud hynny\'n bosibl yw mesur anghymarebol — y '
-            'Gymhareb Aur eto. Os oes dau hyd mewn strwythur a\'u cymhareb yn '
+            "Yr hyn sy'n gwneud hynny'n bosibl yw mesur anghymarebol — y "
+            "Gymhareb Aur eto. Os oes dau hyd mewn strwythur a'u cymhareb yn "
             'Gymhareb Aur, nid ydynt byth yn cwrdd eto yn yr un curiad. Mae '
             'patrwm enwog Penrose yn dangos hyn ar y plân: dwy ffurf deilsen '
-            'sy\'n llenwi\'r llawr heb byth ailadrodd, gyda threfn pum-blyg. Dim '
-            'ond drwy roi\'r gorau i\'r ailadrodd y caniateir y pump '
+            "sy'n llenwi'r llawr heb byth ailadrodd, gyda threfn pum-blyg. Dim "
+            "ond drwy roi'r gorau i'r ailadrodd y caniateir y pump "
             'gwaharddedig.',
       ),
       ProseSection(
         'Y gwrthbwynt go iawn i byrit a garnet',
         'Yma mae\'r cylch yn cau. Mae pyrit a garnet yn "chwarae" â '
-            'deuddegwynebogau, ond yn aros yn risialau sy\'n ailadrodd — mae eu '
-            'golwg ddodecahedron yn twyllo. Mae\'r cwasigrisial yn cario\'r '
-            'cymesuredd icosahedrol go iawn, am ei fod yn ymwrthod â\'r '
+            "deuddegwynebogau, ond yn aros yn risialau sy'n ailadrodd — mae eu "
+            "golwg ddodecahedron yn twyllo. Mae'r cwasigrisial yn cario'r "
+            "cymesuredd icosahedrol go iawn, am ei fod yn ymwrthod â'r "
             'ailadrodd.\n\n'
             'Y pwynt mathemategol y tu ôl i hyn: mae cymesuredd y pyrit yn union '
-            'yn rhan o\'r cymesuredd icosahedrol llawn — sef y rhan sy\'n dal i '
-            'ffitio i ddellt sy\'n ailadrodd. Yn y dodecahedron go iawn mae\'r '
-            'Gymhareb Aur yn yr wynebau; mae\'r pyrit yn ei disodli â\'r rhif '
+            "yn rhan o'r cymesuredd icosahedrol llawn — sef y rhan sy'n dal i "
+            "ffitio i ddellt sy'n ailadrodd. Yn y dodecahedron go iawn mae'r "
+            "Gymhareb Aur yn yr wynebau; mae'r pyrit yn ei disodli â'r rhif "
             'llyfn dau. Dyna pam mae pyrit yn edrych "bron" fel dodecahedron, '
             'ond ni all byth gael echel pump.',
       ),
@@ -352,7 +352,7 @@ List<ProseChapter> _worldChaptersCy() => const [
             'aloi alwminiwm-manganîs ddelwedd diffreithiant â chymesuredd '
             '"gwaharddedig" deg-blyg. Yn ei lyfr nodiadau ysgrifennodd "10 '
             'Fold???". Mae pwyntiau miniog yn golygu trefn — ond roedd y '
-            'cymesuredd hwn yn cael ei ystyried yn amhosibl. Roedd y ddau gyda\'i '
+            "cymesuredd hwn yn cael ei ystyried yn amhosibl. Roedd y ddau gyda'i "
             'gilydd yn ymddangos yn wrthddywediad.\n\n'
             'Cafodd Shechtman ei wawdio am flynyddoedd. Gofynnodd pennaeth ei '
             'labordy iddo adael. Gwawdiodd y cemegydd enwog Linus Pauling: '
@@ -362,16 +362,16 @@ List<ProseChapter> _worldChaptersCy() => const [
             'Nobel mewn Cemeg.',
       ),
       ProseSection(
-        'O\'r gofod ac o\'r Alhambra',
-        'Am amser hir roedd cwasigrisialau\'n cael eu hystyried yn artiffisial '
-            'yn unig. Yna daeth tîm ymchwil o hyd i\'r un naturiol cyntaf — '
+        "O'r gofod ac o'r Alhambra",
+        "Am amser hir roedd cwasigrisialau'n cael eu hystyried yn artiffisial "
+            "yn unig. Yna daeth tîm ymchwil o hyd i'r un naturiol cyntaf — "
             'gronynnau bach mewn meteoryn o ddwyrain Siberia, tua 4.5 biliwn '
             'mlwydd oed, a ffurfiwyd mewn gwrthdrawiad yn y system solar gynnar. '
             'Mae\'r mwyn yn cael ei alw\'n addas "icosahedryt".\n\n'
             'Ac roedd dyn ar y blaen i natur, heb wybod hynny: eisoes yn y 13eg '
-            'i\'r 15fed ganrif gosododd penseiri Islamaidd ym Mhersia batrymau '
-            'teils (girih) sy\'n dilyn yn union y drefn ddi-ailadrodd, pum-blyg '
-            'hon. Yma, yn y cwasigrisialau a phatrymau Penrose, mae\'r Gymhareb '
+            "i'r 15fed ganrif gosododd penseiri Islamaidd ym Mhersia batrymau "
+            "teils (girih) sy'n dilyn yn union y drefn ddi-ailadrodd, pum-blyg "
+            "hon. Yma, yn y cwasigrisialau a phatrymau Penrose, mae'r Gymhareb "
             'Aur wir ar waith.',
       ),
     ],
@@ -415,65 +415,65 @@ List<ProseChapter> _worldChaptersCy() => const [
     ],
   ),
   ProseChapter(
-    'Celloedd ac ewynnau: y deuddeg a\'r pedwar ar ddeg cudd',
+    "Celloedd ac ewynnau: y deuddeg a'r pedwar ar ddeg cudd",
     [
       ProseSection(
         'Pan fydd natur yn rhannu gofod yn gelloedd',
-        'Mae\'n rhaid i ewynnau sebon, crwybr gwenyn a chelloedd byw oll '
+        "Mae'n rhaid i ewynnau sebon, crwybr gwenyn a chelloedd byw oll "
             'ddatrys yr un broblem: rhannu gofod yn siambrau, gyda chyn lleied o '
-            'wal rannu â phosibl. Yma mae\'r deuddeg yn ymddangos — ond nid hwn '
-            'yw\'r unig brif rif.\n\n'
-            'Y ffurf ddeuddeg harddaf yw\'r dodecahedron pentagonol: deuddeg '
-            'wyneb pumochrog, bron yn berffaith grwn. Mae\'n ymddangos fel '
+            "wal rannu â phosibl. Yma mae'r deuddeg yn ymddangos — ond nid hwn "
+            "yw'r unig brif rif.\n\n"
+            "Y ffurf ddeuddeg harddaf yw'r dodecahedron pentagonol: deuddeg "
+            "wyneb pumochrog, bron yn berffaith grwn. Mae'n ymddangos fel "
             'swigen ewyn unigol ac fel caets mewn nwy wedi rhewi. Ond corff arall '
-            'yw\'r seren gudd — un â phedwar wyneb ar ddeg.',
+            "yw'r seren gudd — un â phedwar wyneb ar ddeg.",
       ),
       ProseSection(
-        'Rheolau\'r croen sebon',
+        "Rheolau'r croen sebon",
         'Mae croen sebon am fod yn fach, oherwydd mae pob wal yn costio ynni. '
-            'Daeth y ffisegydd dall o Wlad Belg Joseph Plateau o hyd i\'r rheolau '
+            "Daeth y ffisegydd dall o Wlad Belg Joseph Plateau o hyd i'r rheolau "
             'yn y 19eg ganrif: mae tri chroen bob amser yn cwrdd ar union 120 '
             'gradd, a phedair ymyl mewn un pwynt ar tua 109 gradd. Mae unrhyw '
             'drefniant arall yn chwalu ar unwaith.\n\n'
-            'O hynny daw\'r rheswm pam mae pumochrau mor gyffredin: mae eu hongl '
+            "O hynny daw'r rheswm pam mae pumochrau mor gyffredin: mae eu hongl "
             'o 108 gradd yn agos at y 120 gofynnol. Ond nid yw deuddeg pumochr '
-            'pur yn llenwi gofod — mae\'r dodecahedron pentagonol yn gadael '
+            "pur yn llenwi gofod — mae'r dodecahedron pentagonol yn gadael "
             'bylchau. Er mwyn rhannu gofod yn ddi-fwlch, mae angen ar bob cell ar '
-            'gyfartaledd fwy na deuddeg cymydog. Felly y daw\'r pedwar ar ddeg.',
+            "gyfartaledd fwy na deuddeg cymydog. Felly y daw'r pedwar ar ddeg.",
       ),
       ProseSection(
-        'Kelvin, Weaire-Phelan a\'r Water Cube',
+        "Kelvin, Weaire-Phelan a'r Water Cube",
         'Gofynnodd yr Arglwydd Kelvin yn 1887: sut mae rhannu gofod yn gelloedd '
-            'o\'r un maint gyda\'r wal gyfanswm leiaf? Ei ateb oedd corff â '
+            "o'r un maint gyda'r wal gyfanswm leiaf? Ei ateb oedd corff â "
             'phedwar wyneb ar ddeg. Am dros gan mlynedd cafodd hyn ei ystyried '
             'fel y datrysiad gorau.\n\n'
             'Yn 1994 daeth Denis Weaire a Robert Phelan o hyd, drwy gyfrifiadur, '
             'i strwythur 0.3 y cant gwell — o ddau fath o gell, 13.5 wyneb ar '
             'gyfartaledd. Daeth hwn i\'r golwg ar ffasâd swigenog "Water Cube" '
-            'Beijing yn 2008. Nid yw hwn wedi ei brofi\'n optimaidd ychwaith; mae '
+            "Beijing yn 2008. Nid yw hwn wedi ei brofi'n optimaidd ychwaith; mae "
             'y broblem yn agored hyd heddiw.',
       ),
       ProseSection(
-        'Lle mae\'r deuddeg wir yn eistedd',
-        'Mae un lle y mae\'r ffurf ddeuddeg yn wir ac ym mhobman: yn yr '
-            'hydradau nwy. Ar wely\'r môr mae moleciwlau dŵr yn cau moleciwlau '
-            'nwy mewn caetsiau — a\'r caets bach yn union yw dodecahedron '
+        "Lle mae'r deuddeg wir yn eistedd",
+        "Mae un lle y mae'r ffurf ddeuddeg yn wir ac ym mhobman: yn yr "
+            "hydradau nwy. Ar wely'r môr mae moleciwlau dŵr yn cau moleciwlau "
+            "nwy mewn caetsiau — a'r caets bach yn union yw dodecahedron "
             'pentagonol o ddeuddeg pumochr, wedi ei adeiladu o ugain moleciwl '
             'dŵr.\n\n'
             'Ond hyd yn oed yma ni all y dodecahedron lenwi gofod ar ei ben ei '
-            'hun. Mae bob amser angen caets-bartner mwy yn ei ymyl. Mae\'r '
-            'strwythur iâ hwn yr un fath yn ei adeiladwaith â\'r ewyn '
+            "hun. Mae bob amser angen caets-bartner mwy yn ei ymyl. Mae'r "
+            "strwythur iâ hwn yr un fath yn ei adeiladwaith â'r ewyn "
             'Weaire-Phelan.',
       ),
       ProseSection(
         'Y pedwar ar ddeg cudd',
         'Clywir yn aml fod celloedd ewyn yn ddodecahedronau deuddegwynebog. '
             'Mewn gwirionedd mae gan ewynnau go iawn tua phedwar wyneb ar ddeg ar '
-            'gyfartaledd; mae ffiniau mathemategol hyd yn oed yn diystyru\'r '
-            'deuddeg. Mae\'r dodecahedron pentagonol perffaith yn brin — yn aml '
+            "gyfartaledd; mae ffiniau mathemategol hyd yn oed yn diystyru'r "
+            "deuddeg. Mae'r dodecahedron pentagonol perffaith yn brin — yn aml "
             'dim ond yr wynebau pumochrog ar eu pennau eu hunain.\n\n'
             'Ar arwyneb, megis yn y crwybr gwenyn neu mewn haen o gelloedd '
-            'croen, y prif rif yw\'r chwech, nid y deuddeg.',
+            "croen, y prif rif yw'r chwech, nid y deuddeg.",
       ),
     ],
     sources: [
@@ -519,10 +519,10 @@ List<ProseChapter> _worldChaptersCy() => const [
     'Pacio peli: deuddeg cymydog',
     [
       ProseSection(
-        'Deuddeg sy\'n cyffwrdd',
-        'Cwestiwn syml: faint o beli o\'r un maint a all gyffwrdd un bêl ganol '
+        "Deuddeg sy'n cyffwrdd",
+        "Cwestiwn syml: faint o beli o'r un maint a all gyffwrdd un bêl ganol "
             'ar yr un pryd? Mewn gofod yr ateb yw union ddeuddeg. Yr enw ar y '
-            'rhif hwn yw\'r rhif cusanu.\n\n'
+            "rhif hwn yw'r rhif cusanu.\n\n"
             'Gwelir hyn ar y stondin ffrwythau ac ar y pentwr o belennau magnel: '
             'mae gan bob pêl yn y trefniant tynnaf chwe chymydog yn ei haen ei '
             'hun, tri yn y pantiau uwch ei phen a thri oddi tani — deuddeg i gyd. '
@@ -530,26 +530,26 @@ List<ProseChapter> _worldChaptersCy() => const [
       ),
       ProseSection(
         'Newton yn erbyn Gregory',
-        'Nid yw hyn mor amlwg â hynny. Yn 1694 bu Isaac Newton a\'r seryddwr '
+        "Nid yw hyn mor amlwg â hynny. Yn 1694 bu Isaac Newton a'r seryddwr "
             'David Gregory yn dadlau: dywedodd Newton ddeuddeg, ond credai '
             'Gregory fod hyd yn oed tri ar ddeg yn bosibl. Y rheswm dros yr '
-            'amheuaeth: o osod y deuddeg pêl allanol yn llac, mae lle\'n aros '
+            "amheuaeth: o osod y deuddeg pêl allanol yn llac, mae lle'n aros "
             'rhyngddynt — dros ddeg y cant o radiws. Gall dwy ohonynt hyd yn oed '
-            'gyfnewid lle, heb golli\'r cyswllt. Mae\'n edrych fel pe bai\'n rhaid '
+            "gyfnewid lle, heb golli'r cyswllt. Mae'n edrych fel pe bai'n rhaid "
             'i drydedd ar ddeg ffitio i mewn.\n\n'
-            'Nid yw\'n ffitio. Roedd Newton yn iawn — ond ni lwyddwyd i\'w brofi\'n '
+            "Nid yw'n ffitio. Roedd Newton yn iawn — ond ni lwyddwyd i'w brofi'n "
             'llym tan 1953, bron 260 mlynedd yn ddiweddarach.',
       ),
       ProseSection(
-        'Dyfaliad Kepler a\'r pomgranadau',
-        'Y tu ôl i hyn mae cwestiwn mwy: sut mae pacio peli\'n dynnaf? Eisoes '
-            'tua 1590 gofynnodd Walter Raleigh i\'w gynghorwr Thomas Harriot '
+        "Dyfaliad Kepler a'r pomgranadau",
+        "Y tu ôl i hyn mae cwestiwn mwy: sut mae pacio peli'n dynnaf? Eisoes "
+            "tua 1590 gofynnodd Walter Raleigh i'w gynghorwr Thomas Harriot "
             'gyfrifo sut i bentyrru pelennau magnel. Yn 1611 mynegodd Johannes '
-            'Kepler y dyfaliad: mae\'r paciad tynnaf yn llenwi tua 74 y cant o\'r '
+            "Kepler y dyfaliad: mae'r paciad tynnaf yn llenwi tua 74 y cant o'r "
             'gofod, gyda deuddeg cymydog i bob pêl. Ei ddelwedd ef o hynny oedd '
-            'hadau pomgranad wedi eu gwasgu\'n dynn.\n\n'
-            'Mor syml yw\'r datganiad — ni lwyddwyd i\'w brofi tan 1998 (Thomas '
-            'Hales), ac ni wnaeth cyfrifiadur ei wirio\'n ddi-fwlch tan 2014. '
+            "hadau pomgranad wedi eu gwasgu'n dynn.\n\n"
+            "Mor syml yw'r datganiad — ni lwyddwyd i'w brofi tan 1998 (Thomas "
+            "Hales), ac ni wnaeth cyfrifiadur ei wirio'n ddi-fwlch tan 2014. "
             'Roedd Kepler wedi bod yn iawn am dros bedwar can mlynedd.',
       ),
       ProseSection(
@@ -559,17 +559,17 @@ List<ProseChapter> _worldChaptersCy() => const [
             'copr, aur, arian, alwminiwm — ddeuddeg cymydog agosaf. Ac o rannu '
             'gofod yn ôl "pwy sydd agosaf?", mae pob pêl yn cael cell â deuddeg '
             'wyneb.\n\n'
-            'Y gell hon yw\'r dodecahedron rhombig — yn union ffurf deuddeg-rhomb '
-            'y garnet o\'r bennod gynt. Mae hadau pomgranad wir yn cael eu '
-            'gwasgu i\'r ffurf hon wrth chwyddo. Mae mwyn, ffrwyth a dellt atomig '
+            "Y gell hon yw'r dodecahedron rhombig — yn union ffurf deuddeg-rhomb "
+            "y garnet o'r bennod gynt. Mae hadau pomgranad wir yn cael eu "
+            "gwasgu i'r ffurf hon wrth chwyddo. Mae mwyn, ffrwyth a dellt atomig "
             'yn dangos yr un eometreg.',
       ),
       ProseSection(
-        'Yr hyn y mae\'r deuddeg yn ei ragdybio',
-        'Dim ond ar gyfer peli o\'r un maint y mae\'r deuddeg yn dal. O dywallt '
-            'peli at ei gilydd ar hap yn unig, dim ond tua chwech sy\'n cyffwrdd '
-            'ar gyfartaledd — mae\'r deuddeg tynnaf angen y paciad trefnus. Ac '
-            'nid yw\'r deuddeg pêl allanol yn gorwedd yn anhyblyg: mae ganddynt '
+        "Yr hyn y mae'r deuddeg yn ei ragdybio",
+        "Dim ond ar gyfer peli o'r un maint y mae'r deuddeg yn dal. O dywallt "
+            "peli at ei gilydd ar hap yn unig, dim ond tua chwech sy'n cyffwrdd "
+            "ar gyfartaledd — mae'r deuddeg tynnaf angen y paciad trefnus. Ac "
+            "nid yw'r deuddeg pêl allanol yn gorwedd yn anhyblyg: mae ganddynt "
             'ryw ychydig o le.',
       ),
     ],
@@ -616,66 +616,66 @@ List<ProseChapter> _worldChaptersCy() => const [
     'Y deuddeg mewn cerddoriaeth',
     [
       ProseSection(
-        'Pam fod deuddeg cam i\'r wythfed',
+        "Pam fod deuddeg cam i'r wythfed",
         'Mae dwy nodyn yn y gymhareb amledd 2 i 1 yn swnio fel yr un nodyn, ond '
-            'yn uwch — dyna\'r wythfed. Y cyfwng nesaf-puraf yw\'r bumed, yn y '
+            "yn uwch — dyna'r wythfed. Y cyfwng nesaf-puraf yw'r bumed, yn y "
             'gymhareb 3 i 2. Ond o bentyrru pumedau pur, ni laniwn byth yn union '
             'yn ôl ar y nodyn cychwynnol.\n\n'
-            'Mae\'r fathemateg yn dweud pa mor agos y down: dim ond ar ôl deuddeg '
+            "Mae'r fathemateg yn dweud pa mor agos y down: dim ond ar ôl deuddeg "
             'pumed y trawn bron yn union saith wythfed. Dyna pam y rhennir yr '
-            'wythfed yn ddeuddeg hanner-tôn cyfartal — mae\'r bumed wedyn yn '
-            'pontio saith ohonynt. Deuddeg yw\'r rhaniad lleiaf sy\'n taro\'r '
+            "wythfed yn ddeuddeg hanner-tôn cyfartal — mae'r bumed wedyn yn "
+            "pontio saith ohonynt. Deuddeg yw'r rhaniad lleiaf sy'n taro'r "
             'bumed bwysig yn dda iawn eisoes ac yn aros yn hylaw o hyd. Felly '
             'nid damwain mohono, ond nid "rhywbeth a roddwyd gan natur" ychwaith: '
             'byddai rhaniadau eraill yn bosibl.',
       ),
       ProseSection(
-        'Coma\'r Pythagoreaid',
-        'Nid yw\'r cyfrif yn cwbl gywion. Mae deuddeg pumed pur ychydig yn fwy '
-            'na saith wythfed — yr enw ar y bwlch yw coma\'r Pythagoreaid, tua '
+        "Coma'r Pythagoreaid",
+        "Nid yw'r cyfrif yn cwbl gywion. Mae deuddeg pumed pur ychydig yn fwy "
+            "na saith wythfed — yr enw ar y bwlch yw coma'r Pythagoreaid, tua "
             'chwarter hanner-tôn, yn glywadwy iawn.\n\n'
             'Dyna pam nad cylch yw cylch y pumedau mewn tiwn pur o gwbl, ond '
-            'troell sy\'n gorlifo o drwch blewyn. Eisoes dros ddwy fil o '
+            "troell sy'n gorlifo o drwch blewyn. Eisoes dros ddwy fil o "
             'flynyddoedd yn ôl roedd y coma hwn yn hysbys — ymhlith y Groegiaid '
             'fel yn hen Tsieina.',
       ),
       ProseSection(
         'Y tiwn cyfartal',
-        'Mae\'r datrysiad heddiw\'n dosbarthu\'r bwlch hwn yn gyfartal: mae pob '
-            'un o\'r deuddeg hanner-tôn yn union yr un maint. Y ffactor cam yw '
-            'ail wreiddyn ar ddeg 2 (tua 1.0595) — o\'i ddefnyddio ddeuddeg gwaith '
-            'mae\'n rhoi\'r wythfed yn union. Felly mae pob cyfwng heblaw\'r '
+        "Mae'r datrysiad heddiw'n dosbarthu'r bwlch hwn yn gyfartal: mae pob "
+            "un o'r deuddeg hanner-tôn yn union yr un maint. Y ffactor cam yw "
+            "ail wreiddyn ar ddeg 2 (tua 1.0595) — o'i ddefnyddio ddeuddeg gwaith "
+            "mae'n rhoi'r wythfed yn union. Felly mae pob cyfwng heblaw'r "
             'wythfed ychydig yn amhur, ond yr un fath ym mhob cywair; gellir '
             'symud yn rhydd rhwng y cyweiriau.\n\n'
             'Camargraff cyffredin: nid y tiwn cyfartal hwn oedd "Y Clavier '
             'Tymheredig" Bach yn ei olygu, ond "yn chwaraeadwy\'n dda ym mhob '
             'cywair" — roedd gan bob cywair ei gymeriad ei hun o hyd. Daw\'r '
-            'cyfrifiad cywir cyntaf o\'r cyfartalrwydd gan Zhu Zaiyu (Tsieina, '
-            '1584); yn Ewrop daethpwyd ato\'n annibynnol.',
+            "cyfrifiad cywir cyntaf o'r cyfartalrwydd gan Zhu Zaiyu (Tsieina, "
+            "1584); yn Ewrop daethpwyd ato'n annibynnol.",
       ),
       ProseSection(
         'Schönberg a cherddoriaeth deuddeg-nodyn',
-        'Ar ddechrau\'r 20fed ganrif gwnaeth Arnold Schönberg y deuddeg nodyn '
-            'yn rhaglen. Yn ei dechneg deuddeg-nodyn mae pob un o\'r deuddeg '
-            'hanner-tôn yn gyfartal: mae cyfansoddiad yn eu trefnu\'n gyfres, lle '
-            'nad yw\'r un nodyn yn cael ei ffafrio, ac felly\'n datod yn fwriadol '
+        "Ar ddechrau'r 20fed ganrif gwnaeth Arnold Schönberg y deuddeg nodyn "
+            "yn rhaglen. Yn ei dechneg deuddeg-nodyn mae pob un o'r deuddeg "
+            "hanner-tôn yn gyfartal: mae cyfansoddiad yn eu trefnu'n gyfres, lle "
+            "nad yw'r un nodyn yn cael ei ffafrio, ac felly'n datod yn fwriadol "
             'y canol mwyaf-lleiaf cyfarwydd. Ni ddaeth byth yn gerddoriaeth y '
-            'mwyafrif, ond dylanwadodd ar gyfansoddi\'r 20fed ganrif hyd at '
+            "mwyafrif, ond dylanwadodd ar gyfansoddi'r 20fed ganrif hyd at "
             'gerddoriaeth ffilm.',
       ),
       ProseSection(
-        'Mae diwylliannau eraill yn rhannu\'n wahanol',
-        'Y deuddeg yw\'r datrysiad gorllewinol, nid yr unig un. Mae India\'n '
+        "Mae diwylliannau eraill yn rhannu'n wahanol",
+        "Y deuddeg yw'r datrysiad gorllewinol, nid yr unig un. Mae India'n "
             'gwybod yn ddamcaniaethol am 22 cam mân (shruti), y dewisir deuddeg '
             'nodyn ohonynt yn ymarferol. Mae cerddoriaeth Arabaidd yn aml yn '
-            'disgrifio ei system â 24 chwarter-tôn, a\'r un Dyrcaidd hyd yn oed â '
-            '53 o gomâu mân. Mae gamelan Jafa\'n rhannu\'r wythfed yn bump neu '
+            "disgrifio ei system â 24 chwarter-tôn, a'r un Dyrcaidd hyd yn oed â "
+            "53 o gomâu mân. Mae gamelan Jafa'n rhannu'r wythfed yn bump neu "
             'saith cam anghyfartal — ac yn tiwnio pob ensemble yn unigol, yn aml '
             'heb wythfed bur. Mae Gwlad Thai yn defnyddio saith cam cyfartal.\n\n'
-            'Yr amrywiaeth hon yw\'r prawf gorau: cyfaddawd da iawn yw\'r deuddeg, '
-            'nid deddf natur. Mae\'r ffaith bod yna ddeuddeg arwydd Sidydd a '
-            'deuddeg mis ar yr un pryd wedi cefnogi\'r rhif yn ddiwylliannol — '
-            'ond nid y gerddoriaeth a\'i hachosodd; acwsteg y bumed oedd hynny.',
+            "Yr amrywiaeth hon yw'r prawf gorau: cyfaddawd da iawn yw'r deuddeg, "
+            "nid deddf natur. Mae'r ffaith bod yna ddeuddeg arwydd Sidydd a "
+            "deuddeg mis ar yr un pryd wedi cefnogi'r rhif yn ddiwylliannol — "
+            "ond nid y gerddoriaeth a'i hachosodd; acwsteg y bumed oedd hynny.",
       ),
     ],
     sources: [
@@ -722,49 +722,49 @@ List<ProseChapter> _worldChaptersCy() => const [
     [
       ProseSection(
         'Un ar ddeg a deuddeg — y ddau eithriad',
-        'Yn Almaeneg mae\'r geiriau rhif o dri ar ddeg ymlaen yn dilyn patrwm '
+        "Yn Almaeneg mae'r geiriau rhif o dri ar ddeg ymlaen yn dilyn patrwm "
             'clir: "tri-deg", "pedwar-deg". Dim ond "elf" (un ar ddeg) a "zwölf" '
             '(deuddeg) sy\'n disgyn allan — nid "undeg" na "deudeg" mohonynt.\n\n'
             'Mae\'r rheswm yn eu hoedran. Mae "elf" yn mynd yn ôl i\'r '
             'Wrth-Germaneg "ainalif", a "zwölf" i "twalif". Ystyr yr ail elfen '
             '"-lif-" yw "dros ben". Yn llythrennol felly mae un ar ddeg yn golygu '
             '"un dros ben" a deuddeg "dau dros ben" — sef: dyna faint sy\'n aros '
-            'ar ôl y deg bys. Dim ond Lithwaneg sydd â\'r un gwneuthuriad fel '
+            "ar ôl y deg bys. Dim ond Lithwaneg sydd â'r un gwneuthuriad fel "
             'arall, ac yno hyd yn oed o un ar ddeg i bedwar ar bymtheg yn '
             'ddi-dor.',
       ),
       ProseSection(
         'Dwsin, gros a grosfawr',
-        'Daw\'r geiriau masnach cyfarwydd am ddeuddeg o\'r Lladin: daeth '
+        "Daw'r geiriau masnach cyfarwydd am ddeuddeg o'r Lladin: daeth "
             '"duodecim" (deuddeg) drwy\'r Ffrangeg "douzaine" yn "dwsin" — ac '
-            'mae hynny\'n golygu union ddeuddeg, nid tua deuddeg.\n\n'
-            'Uwchlaw hynny safant y gros (deuddeg dwsin = 144) a\'r grosfawr '
+            "mae hynny'n golygu union ddeuddeg, nid tua deuddeg.\n\n"
+            "Uwchlaw hynny safant y gros (deuddeg dwsin = 144) a'r grosfawr "
             '(deuddeg gros = 1728), y ddau o\'r fasnach swmp ("en gros"). Yn y '
-            'byd deuddeg, y grosfawr yw\'n union yr hyn yw\'r fil yn y system '
+            "byd deuddeg, y grosfawr yw'n union yr hyn yw'r fil yn y system "
             'ddeg — trydydd cam y bôn.',
       ),
       ProseSection(
-        'Pwy sy\'n cyfrif yn wirioneddol mewn deuddegau',
+        "Pwy sy'n cyfrif yn wirioneddol mewn deuddegau",
         'Er gwaethaf "elf" a "zwölf", mae Almaeneg yn y bôn yn cyfrif yn '
-            'ddegol. Mae ieithoedd sy\'n wir yn cyfrif yn ddi-dor mewn deuddegau '
-            'yn brin — mae rhai ieithoedd yng nghanol Nigeria a\'r Chepang yn '
+            "ddegol. Mae ieithoedd sy'n wir yn cyfrif yn ddi-dor mewn deuddegau "
+            "yn brin — mae rhai ieithoedd yng nghanol Nigeria a'r Chepang yn "
             'Nepal wedi eu cofnodi. O\'r Hen Norsaeg gwyddys hefyd am y "cant '
             'mawr" o 120.\n\n'
-            'Mae olion y chwe deg a\'r ugain yn fwy cyffredin. Mae chwe deg y '
-            'Swmeriaid yn byw ymlaen mewn munudau, oriau a graddau; mae\'r '
+            "Mae olion y chwe deg a'r ugain yn fwy cyffredin. Mae chwe deg y "
+            "Swmeriaid yn byw ymlaen mewn munudau, oriau a graddau; mae'r "
             '"Schock" Almaeneg yn bum dwsin (60). Ac mewn ugeiniau y mae olion '
             'o\'r Ffrangeg yn cyfrif ("quatre-vingts", pedwar-ugain = 80), y '
-            'Daneg a\'r Gymraeg — yn ogystal â system y Maya, wedi ei hadeiladu\'n '
+            "Daneg a'r Gymraeg — yn ogystal â system y Maya, wedi ei hadeiladu'n "
             'llawn.',
       ),
       ProseSection(
         'Y llaw fel gwreiddyn posibl',
-        'O ble y daw\'r deuddeg a\'r chwe deg, eglurir hynny\'n aml drwy '
-            'dechneg gyfrif y llaw: mae\'r bawd yn tapio tri chymal y pedwar bys '
-            'arall — daw hynny i ddeuddeg y llaw. Os yw\'r llaw arall yn cyfrif y '
-            'dwsinau llawn hefyd, down at chwe deg. Mae\'r dechneg hon wedi ei '
-            'chofnodi hyd heddiw mewn rhannau o Asia a\'r Dwyrain Agos.\n\n'
-            'Ond nid yw\'r tarddiad hwn wedi ei brofi\'n sicr. Mae\'r syniad bod '
+        "O ble y daw'r deuddeg a'r chwe deg, eglurir hynny'n aml drwy "
+            "dechneg gyfrif y llaw: mae'r bawd yn tapio tri chymal y pedwar bys "
+            "arall — daw hynny i ddeuddeg y llaw. Os yw'r llaw arall yn cyfrif y "
+            "dwsinau llawn hefyd, down at chwe deg. Mae'r dechneg hon wedi ei "
+            "chofnodi hyd heddiw mewn rhannau o Asia a'r Dwyrain Agos.\n\n"
+            "Ond nid yw'r tarddiad hwn wedi ei brofi'n sicr. Mae'r syniad bod "
             '"elf" a "zwölf" yn olion o hen system ddeuddeg yn gamargraff hefyd — '
             'dim ond dau air a arhosodd yn hen mewn iaith ddegol ydynt.',
       ),
@@ -808,13 +808,13 @@ List<ProseChapter> _worldChaptersCy() => const [
     [
       ProseSection(
         'Y deuddeg fel syniad adeiladu',
-        'Mae\'r deuddeg yn ymddangos mewn adeiladu mewn tair ffurf: fel ffurf '
+        "Mae'r deuddeg yn ymddangos mewn adeiladu mewn tair ffurf: fel ffurf "
             'cynllun llawr (y deuddegongl rheolaidd ar gyfer tyrau a chapeli), '
             'fel trefn ddelweddol (deuddeg apostol, porth, mis, arwydd Sidydd ar '
             'byrth a ffenestri) ac fel syniad cosmig (y dodecahedron fel "ffurf '
             'y cyfan"). Eisoes rhestrodd y damcaniaethwr Dadeni Alberti y '
             'deuddegongl fel un o ffurfiau delfrydol y deml.\n\n'
-            'Mae angen gofal yma: nid y deuddegongl ond yr wythongl yw\'r '
+            "Mae angen gofal yma: nid y deuddegongl ond yr wythongl yw'r "
             'adeilad canol canoloesol mwyaf cyffredin (y capeli bedydd, fel '
             'arwydd y "wythfed dydd"). Rhaid i bwy bynnag sy\'n chwilio am y '
             'deuddeg gyfrif yn ofalus — mae llawer o adeiladau crwn mewn '
@@ -824,40 +824,40 @@ List<ProseChapter> _worldChaptersCy() => const [
         'Y Jerwsalem nefol',
         'Gwreiddyn bron pob cyfeiriad deuddeg Cristnogol yw Datguddiad Ioan: '
             'mae gan y ddinas nefol ddeuddeg porth (tri i bob cyfeiriad) ag '
-            'enwau\'r deuddeg llwyth, a saif ar ddeuddeg carreg sylfaen ag enwau\'r '
+            "enwau'r deuddeg llwyth, a saif ar ddeuddeg carreg sylfaen ag enwau'r "
             'deuddeg apostol. Roedd adeiladwyr canoloesol yn deall eglwysi fel '
-            'darlun daearol o\'r ddinas hon.\n\n'
+            "darlun daearol o'r ddinas hon.\n\n"
             'Mae adeiladau deuddegonglog go iawn yn bod: eglwys Romanésg '
             'Vera-Cruz yn Segovia (cysegrwyd 1208), rotunda Mauritius Konstanz '
             'â deuddeg ffigwr apostol yn y corneli, neu goron golofnau Eglwys y '
-            'Bedd yn Jerwsalem. (Priodolir Vera Cruz yn aml i\'r Marchogion '
+            "Bedd yn Jerwsalem. (Priodolir Vera Cruz yn aml i'r Marchogion "
             'Templar — mae ymchwil ddiweddarach yn enwi Urdd y Bedd Sanctaidd.)',
       ),
       ProseSection(
         'Rhosynnau, y Sidydd a chlociau',
-        'Ar y cadeirlannau mae\'r deuddeg yn ymddangos yn bennaf yn y rhaglen '
-            'ddelweddol. Caiff ffenestri rhosyn gothig eu galw\'n aml yn '
+        "Ar y cadeirlannau mae'r deuddeg yn ymddangos yn bennaf yn y rhaglen "
+            "ddelweddol. Caiff ffenestri rhosyn gothig eu galw'n aml yn "
             'ddeuddeg-ran — ond yn aml wyth-, un ar bymtheg- neu bedair ar '
             'hugain-ran ydynt; mae rhosyn yr apostolion yn Notre-Dame Paris yn '
             'gosod y deuddeg yn ei chylchoedd.\n\n'
-            'Yn ddibynadwy ddeuddeg-blyg y mae\'r cylchoedd calendr: yn Chartres '
+            "Yn ddibynadwy ddeuddeg-blyg y mae'r cylchoedd calendr: yn Chartres "
             'ac Amiens saif deuddeg arwydd y Sidydd wrth ymyl y deuddeg "gwaith '
             'mis" — cwrs y nefoedd wrth ymyl blwyddyn y ffermwr. Yr un deuddeg '
-            'sy\'n cynnal wyneb y clociau seryddol mawr.',
+            "sy'n cynnal wyneb y clociau seryddol mawr.",
       ),
       ProseSection(
-        'O\'r dodecahedron i\'r gromen',
-        'Daw\'r llinell gosmig o Platon: roedd y dodecahedron â\'i ddeuddeg '
-            'wyneb pumochrog yn sefyll am y nefoedd yn ei chyfanrwydd, a\'i '
-            'wynebau am ddeuddeg arwydd y Sidydd. Mae\'r syniad hwn yn dal ei '
+        "O'r dodecahedron i'r gromen",
+        "Daw'r llinell gosmig o Platon: roedd y dodecahedron â'i ddeuddeg "
+            "wyneb pumochrog yn sefyll am y nefoedd yn ei chyfanrwydd, a'i "
+            "wynebau am ddeuddeg arwydd y Sidydd. Mae'r syniad hwn yn dal ei "
             'ddylanwad hyd at y cyfnod modern — ac yn gwbl ddi-lol yn y gromen '
             'eodesig, sydd o reidrwydd angen deuddeg cwlwm pumochrog er mwyn cau.'
             '\n\n'
-            'Mae\'n perthyn i onestrwydd: er bod gan y dodecahedronau efydd '
+            "Mae'n perthyn i onestrwydd: er bod gan y dodecahedronau efydd "
             'Rhufeinig dirgel ddeuddeg wyneb, mae eu diben yn anhysbys hyd heddiw, '
             'ac nid oes symboleg rifau wedi ei phrofi. Ac mae rhywfaint o '
             '"eometreg sanctaidd" mewn adeiladu yn cael ei dehongli\'n gryfach '
-            'nag y mae\'r ffynonellau\'n caniatáu.',
+            "nag y mae'r ffynonellau'n caniatáu.",
       ),
     ],
     sources: [
@@ -904,10 +904,10 @@ List<ProseChapter> _worldChaptersCy() => const [
     [
       ProseSection(
         'Y dodecahedron fel symbol y nefoedd',
-        'Mewn celf mae\'r deuddeg yn bennaf yn hanes un corff: y dodecahedron '
-            'â\'i ddeuddeg wyneb pumochrog. Ers Platon cafodd ei ystyried fel '
+        "Mewn celf mae'r deuddeg yn bennaf yn hanes un corff: y dodecahedron "
+            "â'i ddeuddeg wyneb pumochrog. Ers Platon cafodd ei ystyried fel "
             'symbol y nefoedd, fel "pumed bod" wrth ymyl y pedair elfen.\n\n'
-            'Mae\'r dehongliad hwn yn tynnu llinell ddi-dor o\'r Dadeni hyd at y '
+            "Mae'r dehongliad hwn yn tynnu llinell ddi-dor o'r Dadeni hyd at y "
             'cyfnod modern — drwy Pacioli a Leonardo, Kepler, Escher hyd at '
             'Dalí. Lle bynnag y mae\'r deuddegwynebog yn ymddangos, "y cosmos" a '
             'olygir bron bob amser.',
@@ -917,32 +917,32 @@ List<ProseChapter> _worldChaptersCy() => const [
         'Ar gyfer llyfr Luca Pacioli am y "gyfartaledd ddwyfol" (argraffwyd '
             '1509) tynnodd Leonardo da Vinci y pum corff Platonaidd — gan '
             'gynnwys y dodecahedron — am y tro cyntaf yn solet ac fel model ymyl '
-            'tryloyw. Dyma\'r delweddau polyhedron cyntaf sy\'n argyhoeddi\'n '
+            "tryloyw. Dyma'r delweddau polyhedron cyntaf sy'n argyhoeddi'n "
             'ofodol, rhagflaenwyr modelau gwifren heddiw.\n\n'
-            'Mae\'n rhaid cywiro camargraff ystyfnig: nid dodecahedron yw\'r corff '
+            "Mae'n rhaid cywiro camargraff ystyfnig: nid dodecahedron yw'r corff "
             'carreg enwog yn "Melencolia I" Dürer, ond corff ei hun â dim ond '
             'wyth wyneb. Ceir deuddegwynebogau go iawn, ar y llaw arall, gan '
             'M. C. Escher — er enghraifft yn "Gravitation", lle mae deuddeg '
             'crwban yn cropian o ddeuddeg pigyn dodecahedron seren.',
       ),
       ProseSection(
-        'Dalí a\'r deuddeg',
+        "Dalí a'r deuddeg",
         'Y gwaith deuddeg mwyaf penodol o\'r cyfnod modern yw "Sacrament y Swper '
             'Olaf" (1955) gan Salvador Dalí. Mae\'r olygfa\'n digwydd mewn '
-            'dodecahedron hanner-tryloyw, a\'i ffenestri pumochrog yn hofran '
+            "dodecahedron hanner-tryloyw, a'i ffenestri pumochrog yn hofran "
             'uwchben Crist.\n\n'
             'Enwodd Dalí y rheswm ei hun: "cymun nefol y rhif deuddeg" — deuddeg '
             'awr y dydd, deuddeg mis, deuddeg pumochr y dodecahedron, deuddeg '
-            'arwydd Sidydd, deuddeg apostol. Mewn un ddelwedd mae\'n cydio holl '
-            'edafedd y thema hon ac yn cyfeirio\'n benodol at Platon wrth wneud '
+            "arwydd Sidydd, deuddeg apostol. Mewn un ddelwedd mae'n cydio holl "
+            "edafedd y thema hon ac yn cyfeirio'n benodol at Platon wrth wneud "
             'hynny.',
       ),
       ProseSection(
         'Delweddau calendr ac addurniadau',
-        'Yn fwyaf cyffredin mewn celf, calendr syml yw\'r deuddeg. Mae\'r llyfr '
+        "Yn fwyaf cyffredin mewn celf, calendr syml yw'r deuddeg. Mae'r llyfr "
             'oriau "Très Riches Heures" (tua 1415) yn dangos deuddeg delwedd mis '
             'â gwaith y flwyddyn, ac uwchben pob un ddarn o nefoedd ag arwyddion '
-            'y Sidydd — mae\'r ymyl allanol yn rhannu\'r 360 gradd yn lân yn '
+            "y Sidydd — mae'r ymyl allanol yn rhannu'r 360 gradd yn lân yn "
             'ddeuddeg maes o ddeg gradd ar hugain. Mae "gwaith mis" o\'r fath yn '
             'genre delweddol ei hun, o fosaigau Rhufeinig hyd at y cadeirlannau.'
             '\n\n'
@@ -950,7 +950,7 @@ List<ProseChapter> _worldChaptersCy() => const [
             'girih yn gwybod am sêr deuddeg-bigyn, o Konya hyd at Isfahan — '
             'eometreg bur yn lle ffigyrau. A heb unrhyw ystyr a drosglwyddwyd o '
             'gwbl, saif wrth eu hymyl y dodecahedronau efydd Rhufeinig '
-            'deuddegwynebog, y mae eu diben yn parhau\'n ddirgelwch.',
+            "deuddegwynebog, y mae eu diben yn parhau'n ddirgelwch.",
       ),
     ],
     sources: [
@@ -973,7 +973,7 @@ List<ProseChapter> _worldChaptersCy() => const [
         'A1',
       ),
       Source(
-        'Dürer\'s solid (Truncated triangular trapezohedron) — Wikipedia',
+        "Dürer's solid (Truncated triangular trapezohedron) — Wikipedia",
         'https://en.wikipedia.org/wiki/Truncated_triangular_trapezohedron',
         'R2',
         'A1',
@@ -997,52 +997,52 @@ List<ProseChapter> _worldChaptersCy() => const [
     [
       ProseSection(
         'Pam deuddeg mis',
-        'Daw\'r deuddeg mis o\'r lleuad. I un flwyddyn haul mae tua deuddeg '
+        "Daw'r deuddeg mis o'r lleuad. I un flwyddyn haul mae tua deuddeg "
             'cylch lleuad yn ffitio — ond dim ond tua. Mae un cylch lleuad yn '
-            'para tua 29.5 diwrnod; o\'i gyfrif yn fanwl mae tua 12.37 mis lleuad '
+            "para tua 29.5 diwrnod; o'i gyfrif yn fanwl mae tua 12.37 mis lleuad "
             'y flwyddyn.\n\n'
             'Felly nid yw deuddeg mis lleuad ond yn rhoi tua 354 diwrnod — tua un '
-            'diwrnod ar ddeg yn llai na\'r flwyddyn haul. Y bwlch bach hwn yw '
+            "diwrnod ar ddeg yn llai na'r flwyddyn haul. Y bwlch bach hwn yw "
             'achos bron pob cast calendr yn y byd. Cywir felly yw "tua deuddeg", '
             'nid "union ddeuddeg".',
       ),
       ProseSection(
-        'Y mis naid a\'r cylch naw mlynedd ar bymtheg',
-        'Mae\'n rhaid i bwy bynnag sydd am gyfeirio\'r misoedd at y lleuad a dal '
-            'i gadw\'r flwyddyn yn y tymhorau wthio trydydd mis ar ddeg i mewn '
+        "Y mis naid a'r cylch naw mlynedd ar bymtheg",
+        "Mae'n rhaid i bwy bynnag sydd am gyfeirio'r misoedd at y lleuad a dal "
+            "i gadw'r flwyddyn yn y tymhorau wthio trydydd mis ar ddeg i mewn "
             'bob hyn a hyn — ar gyfartaledd bob dwy i dair blynedd.\n\n'
-            'Mae\'r rheol gain ar gyfer hynny\'n hen iawn: mae naw mlynedd haul ar '
+            "Mae'r rheol gain ar gyfer hynny'n hen iawn: mae naw mlynedd haul ar "
             'bymtheg bron yn union 235 mis lleuad (deuddeg blwyddyn gyffredin o '
             'ddeuddeg mis ynghyd â saith blynedd o dri mis ar ddeg). Defnyddiodd '
             'y Babiloniaid y cylch hwn eisoes tua 500 CC; yn Athen cyflwynodd '
-            'Meton ef yn 432 CC — wedi ei ddysgu, mae\'n debyg, gan y Babiloniaid.',
+            "Meton ef yn 432 CC — wedi ei ddysgu, mae'n debyg, gan y Babiloniaid.",
       ),
       ProseSection(
         'Calendrau ledled y byd',
-        'O\'r un cysonyn — tua 12.37 cylch lleuad — daeth tair strategaeth, sy\'n '
+        "O'r un cysonyn — tua 12.37 cylch lleuad — daeth tair strategaeth, sy'n "
             'byw ochr yn ochr hyd heddiw.\n\n'
-            'Mae\'r calendr Iddewig, Tsieineaidd a Hindŵaidd yn lunisolar: '
-            'deuddeg mis, tri ar ddeg yn y flwyddyn naid. Mae\'r calendr Islamaidd '
-            'yn galendr lleuad pur heb fis naid — dyna pam mae Ramadan yn crwydro\'n '
-            'araf drwy\'r holl dymhorau. Mae\'r cylch Tsieineaidd yn gosod deuddeg '
-            'anifail (canghennau\'r ddaear) i\'r blynyddoedd, wedi eu cysylltu\'n '
-            'llac â chylchdro tua deuddeg mlynedd Iau. Ac mae\'n calendr Gregoraidd '
-            'yn galendr haul pur: nid yw ei ddeuddeg enw mis ond olion enwau o\'r '
-            'hen gwrs lleuad, ers i Cesar ryddhau\'r flwyddyn o\'r rhwymiad lleuad '
+            "Mae'r calendr Iddewig, Tsieineaidd a Hindŵaidd yn lunisolar: "
+            "deuddeg mis, tri ar ddeg yn y flwyddyn naid. Mae'r calendr Islamaidd "
+            "yn galendr lleuad pur heb fis naid — dyna pam mae Ramadan yn crwydro'n "
+            "araf drwy'r holl dymhorau. Mae'r cylch Tsieineaidd yn gosod deuddeg "
+            "anifail (canghennau'r ddaear) i'r blynyddoedd, wedi eu cysylltu'n "
+            "llac â chylchdro tua deuddeg mlynedd Iau. Ac mae'n calendr Gregoraidd "
+            "yn galendr haul pur: nid yw ei ddeuddeg enw mis ond olion enwau o'r "
+            "hen gwrs lleuad, ers i Cesar ryddhau'r flwyddyn o'r rhwymiad lleuad "
             'yn 46 CC.',
       ),
       ProseSection(
         'Deuddeg, ond nid o reidrwydd',
-        'Mor naturiol yr ymddengys y deuddeg — nid yw\'n anorfod. Mae gan '
+        "Mor naturiol yr ymddengys y deuddeg — nid yw'n anorfod. Mae gan "
             'flynyddoedd lunisolar dri mis ar ddeg yn y flwyddyn naid beth bynnag. '
             'Ac roedd a bu galendrau tri-mis-ar-ddeg go iawn: y calendr Celtaidd '
             'Coligny, calendr traddodiadol yr Igbo yn Nigeria â thri mis ar ddeg '
             'o 28 diwrnod yr un, a chynigion diwygio modern â 13 × 28 diwrnod — '
-            'sy\'n cyfrif yn fwy llyfn hyd yn oed.\n\n'
-            'Felly dewis diwylliannol yn anad dim yw\'r deuddeg, wedi ei gefnogi '
-            'gan ei rhanadwyedd da a\'i rôl fel rhif cyflawnder (deuddeg llwyth, '
+            "sy'n cyfrif yn fwy llyfn hyd yn oed.\n\n"
+            "Felly dewis diwylliannol yn anad dim yw'r deuddeg, wedi ei gefnogi "
+            "gan ei rhanadwyedd da a'i rôl fel rhif cyflawnder (deuddeg llwyth, "
             'deuddeg apostol, deuddeg duw). Mae rhai tarddiadau poblogaidd yn '
-            'aros yn ansicr: mae\'r ffaith bod y nosweithiau garw\'n cydbwyso\'r '
+            "aros yn ansicr: mae'r ffaith bod y nosweithiau garw'n cydbwyso'r "
             'gwahaniaeth lleuad-haul ond wedi ei gofnodi ers yr 16eg ganrif, ac '
             'mae tarddiad Iau y cylch Tsieineaidd yn dyfaliad, nid wedi ei brofi.',
       ),
@@ -1178,7 +1178,7 @@ List<ProseChapter> _worldChaptersCy() => const [
             'am y flwyddyn geni y mae, nid y mis geni. Am nad yw cylchdro '
             'Iau yn union ddeuddeg blynedd, cyflwynodd y seryddwyr ddiweddarach '
             'Iau-wrthwynebol dychmygol â chylchdro perffaith gyfartal. Dwy '
-            'ddiwylliant, dau arsylwad gwahanol — y lleuad yma, Iau acw — a\'r '
+            "ddiwylliant, dau arsylwad gwahanol — y lleuad yma, Iau acw — a'r "
             'ddwy yn cyrraedd y deuddeg. (Mae’r deuddeg mis eu hunain yn '
             'destun y bennod „Y Deuddeg yn y Calendr“.)',
       ),

@@ -1,3 +1,6 @@
+// Prose wraps inside words and CJK has no spaces, so this lint almost only reports false positives.
+// ignore_for_file: missing_whitespace_between_adjacent_strings
+
 // “十二进制数学”章节的简体中文散文。属于 ../math_theory.dart 的一部分。
 // 对复杂主题使用简单、清晰的句子（更易于翻译）。应用内部机制章节
 // 取材自源代码（logic/rational.dart、logic/expression.dart、state.dart）；
@@ -207,7 +210,7 @@ List<ProseChapter> _mathChaptersZh() => const [
         'A1',
       ),
       Source(
-        'Midy\'s theorem — Wikipedia',
+        "Midy's theorem — Wikipedia",
         'https://en.wikipedia.org/wiki/Midy%27s_theorem',
         'R2',
         'A1',
@@ -219,7 +222,7 @@ List<ProseChapter> _mathChaptersZh() => const [
         'A1',
       ),
       Source(
-        'Artin\'s conjecture on primitive roots — Wikipedia',
+        "Artin's conjecture on primitive roots — Wikipedia",
         'https://en.wikipedia.org/wiki/Artin%27s_conjecture_on_primitive_roots',
         'R2',
         'A1',

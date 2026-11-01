@@ -3,12 +3,11 @@
 // builds without throwing across the matrix of orientations × heights, and
 // that the panel-swap renders both states.
 
-import 'package:flutter/material.dart';
-import 'package:flutter_test/flutter_test.dart';
-
 import 'package:dozenal_calc_flutter/calc_prefs.dart';
 import 'package:dozenal_calc_flutter/keypad.dart';
 import 'package:dozenal_calc_flutter/l10n/app_localizations.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_test/flutter_test.dart';
 
 Widget _wrap(
   Size size, {
@@ -73,7 +72,7 @@ void main() {
   // Panel-swap: both states render without error.
   testWidgets('Hoch panel-swap renders with overlay closed', (tester) async {
     await tester.binding.setSurfaceSize(const Size(400, 800));
-    await tester.pumpWidget(_wrap(const Size(400, 700), overlayOpen: false));
+    await tester.pumpWidget(_wrap(const Size(400, 700)));
     await tester.pumpAndSettle();
     expect(tester.takeException(), isNull);
   });
@@ -114,7 +113,7 @@ void main() {
   // that the keypad doesn't crash when overlayOpen flips.
   testWidgets('Hoch keypad re-renders when overlayOpen flips', (tester) async {
     await tester.binding.setSurfaceSize(const Size(400, 800));
-    await tester.pumpWidget(_wrap(const Size(400, 700), overlayOpen: false));
+    await tester.pumpWidget(_wrap(const Size(400, 700)));
     await tester.pumpWidget(_wrap(const Size(400, 700), overlayOpen: true));
     await tester.pumpAndSettle();
     expect(tester.takeException(), isNull);
@@ -161,7 +160,7 @@ void main() {
   testWidgets('Breit keypad fills width on phone-landscape (Pixel-class)', (
     tester,
   ) async {
-    const Size keypadArea = Size(891, 290);
+    const keypadArea = Size(891, 290);
     await tester.binding.setSurfaceSize(keypadArea);
     await tester.pumpWidget(_wrap(keypadArea));
     expect(tester.takeException(), isNull);
@@ -189,7 +188,7 @@ void main() {
   testWidgets('Breit keypad fills width on a compact-phone landscape', (
     tester,
   ) async {
-    const Size keypadArea = Size(829, 274);
+    const keypadArea = Size(829, 274);
     await tester.binding.setSurfaceSize(keypadArea);
     await tester.pumpWidget(_wrap(keypadArea));
     expect(tester.takeException(), isNull);
@@ -215,7 +214,7 @@ void main() {
   testWidgets('Breit keypad fits a very compact landscape without scrolling', (
     tester,
   ) async {
-    const Size keypadArea = Size(670, 240);
+    const keypadArea = Size(670, 240);
     await tester.binding.setSurfaceSize(keypadArea);
     await tester.pumpWidget(_wrap(keypadArea));
     expect(tester.takeException(), isNull);
@@ -251,7 +250,7 @@ void main() {
   // group with the same compact-phone fit guarantee — no vertical scroll,
   // row fills the viewport.
   testWidgets('Breit ignores a stale function-page index', (tester) async {
-    const Size keypadArea = Size(670, 240);
+    const keypadArea = Size(670, 240);
     await tester.binding.setSurfaceSize(keypadArea);
     await tester.pumpWidget(_wrap(keypadArea, overlayPage: 1));
     expect(tester.takeException(), isNull);
@@ -285,16 +284,12 @@ void main() {
   testWidgets('Breit shows no page arrows while the function page is off', (
     tester,
   ) async {
-    const Size keypadArea = Size(800, 300);
+    const keypadArea = Size(800, 300);
     await tester.binding.setSurfaceSize(keypadArea);
 
     int? requested;
     await tester.pumpWidget(
-      _wrap(
-        keypadArea,
-        overlayPage: 0,
-        onOverlayPageChanged: (p) => requested = p,
-      ),
+      _wrap(keypadArea, onOverlayPageChanged: (p) => requested = p),
     );
     expect(find.byIcon(Icons.chevron_right), findsNothing);
     expect(find.byIcon(Icons.chevron_left), findsNothing);
@@ -380,7 +375,7 @@ void main() {
       tester,
     ) async {
       final semantics = tester.ensureSemantics();
-      const Size keypadArea = Size(800, 300);
+      const keypadArea = Size(800, 300);
       await tester.binding.setSurfaceSize(keypadArea);
       await tester.pumpWidget(_wrap(keypadArea, keypadMode: KeypadMode.scroll));
       expect(tester.takeException(), isNull);
@@ -395,7 +390,7 @@ void main() {
       tester,
     ) async {
       final semantics = tester.ensureSemantics();
-      const Size keypadArea = Size(800, 300);
+      const keypadArea = Size(800, 300);
       await tester.binding.setSurfaceSize(keypadArea);
       await tester.pumpWidget(
         _wrap(keypadArea, keypadProfile: KeypadProfile.simple),

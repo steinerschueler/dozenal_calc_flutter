@@ -53,7 +53,11 @@ void main(List<String> argv) {
       continue;
     }
     final md = src.readAsStringSync();
-    final String name, subtitle, promo, keywords, description;
+    final String name;
+    final String subtitle;
+    final String promo;
+    final String keywords;
+    final String description;
     try {
       name = _inlineBacktick(md, '## App-Name');
       subtitle = _inlineBacktick(md, '## Untertitel');
@@ -131,7 +135,7 @@ Map<String, String> _parseWhatsNew(String version) {
 String _inlineBacktick(String md, String heading) {
   final idx = md.indexOf(heading);
   if (idx < 0) throw FormatException('Heading not found: $heading');
-  final m = RegExp(r'`([^`]+)`').firstMatch(md.substring(idx));
+  final m = RegExp('`([^`]+)`').firstMatch(md.substring(idx));
   if (m == null) throw FormatException('No `value` after $heading');
   return m.group(1)!.trim();
 }

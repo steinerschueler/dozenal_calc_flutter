@@ -1,3 +1,6 @@
+// Prose wraps inside words and CJK has no spaces, so this lint almost only reports false positives.
+// ignore_for_file: missing_whitespace_between_adjacent_strings
+
 // German prose for the "Dozenale Gesellschaft" chapters. part of
 // ../society_theory.dart. Simple sentences (easier to translate). Facts and
 // attributed views; honest about uncertain attributions (citation cascades),
@@ -36,7 +39,7 @@ List<ProseChapter> _societyChaptersDe() => const [
       ),
       ProseSection(
         'Die Gesellschaften entstehen',
-        'Aus den Zuschriften zu Andrews\' Artikel wuchs ein Briefkreis und '
+        "Aus den Zuschriften zu Andrews' Artikel wuchs ein Briefkreis und "
             'daraus 1944 die „Duodecimal Society of America". Den Namen gab ihr '
             'scherzhaft Ralph „Whiskers" Beard; das Startkapital stiftete George '
             'Terry. Später wurde sie zur „Dozenal Society of America" umbenannt '
@@ -92,7 +95,7 @@ List<ProseChapter> _societyChaptersDe() => const [
             'geklärt; selbst die amerikanische Gesellschaft schreibt keine feste '
             'Notation vor.\n\n'
             'Es gibt mehrere Varianten: Pitmans gedrehte Zwei und Drei (↊ und '
-            '↋), Andrews\' kursives X und gerundetes E, ein Sextil und ein '
+            "↋), Andrews' kursives X und gerundetes E, ein Sextil und ein "
             'Doppelkreuz (von den Telefontasten inspiriert), die Glyphen des '
             'Schriftgestalters Dwiggins — und schlicht die Buchstaben A und B '
             'aus der Computerwelt.',
@@ -286,7 +289,7 @@ List<ProseChapter> _societyChaptersDe() => const [
         'A1',
       ),
       Source(
-        'Dozenal RPN Calculator — Eddie\'s Math and Calculator Blog',
+        "Dozenal RPN Calculator — Eddie's Math and Calculator Blog",
         'http://edspi31415.blogspot.com/2026/02/dozenal-rpn-calculator-app-for-android.html',
         'R3',
         'A1',

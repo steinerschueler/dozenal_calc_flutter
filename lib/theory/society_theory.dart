@@ -4,7 +4,7 @@
 // measurement system, plus today's community and tools. Distilled from the
 // dossiers in docs/research/society_*.md (and material in math_*.md).
 
-import 'prose_chapter.dart';
+import 'package:dozenal_calc_flutter/theory/prose_chapter.dart';
 
 part 'de/society_de.dart';
 part 'en/society_en.dart';

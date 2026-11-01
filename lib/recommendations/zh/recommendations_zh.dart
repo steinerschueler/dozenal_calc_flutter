@@ -1,3 +1,6 @@
+// Prose wraps inside words and CJK has no spaces, so this lint almost only reports false positives.
+// ignore_for_file: missing_whitespace_between_adjacent_strings
+
 // Simplified Chinese translation of the "Recommendations" chapters. part of
 // ../recommendations.dart.
 part of '../recommendations.dart';

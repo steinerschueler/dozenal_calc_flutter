@@ -2,10 +2,9 @@
 // scaffolding lives in markdown_page.dart — when the privacy policy text
 // changes, edit the .md file and rebuild, no Dart changes needed.
 
+import 'package:dozenal_calc_flutter/l10n/app_localizations.dart';
+import 'package:dozenal_calc_flutter/markdown_page.dart';
 import 'package:flutter/material.dart';
-
-import 'l10n/app_localizations.dart';
-import 'markdown_page.dart';
 
 class PrivacyPage extends StatelessWidget {
   const PrivacyPage({super.key});

@@ -15,11 +15,10 @@
 
 import 'dart:math' as math;
 
+import 'package:dozenal_calc_flutter/app_theme.dart';
+import 'package:dozenal_calc_flutter/logic/price_history.dart';
+import 'package:dozenal_calc_flutter/logic/price_history_data.dart';
 import 'package:flutter/material.dart';
-
-import '../app_theme.dart';
-import '../logic/price_history.dart';
-import '../logic/price_history_data.dart';
 
 // Theme-independent categorical accents (read fine on light and dark).
 const _teal = Color(0xFF0F6E56);
@@ -141,9 +140,9 @@ Widget? inlineTheoryIllustration(String? id) {
 /// data + rendering discipline as the live chart (price_chart.dart), fully
 /// fitted (oldest point on the bold "0" line).
 class _PriceFigure extends StatelessWidget {
+  const _PriceFigure({required this.id, required this.caption});
   final PriceSeriesId id;
   final String caption;
-  const _PriceFigure({required this.id, required this.caption});
 
   @override
   Widget build(BuildContext context) {
@@ -222,11 +221,6 @@ class _PriceFigure extends StatelessWidget {
 }
 
 class _PriceFigurePainter extends CustomPainter {
-  final PriceSeries series;
-  final ChartViewport viewport;
-  final double baseline;
-  final String caption;
-  final AppColors colors;
   _PriceFigurePainter({
     required this.series,
     required this.viewport,
@@ -234,6 +228,11 @@ class _PriceFigurePainter extends CustomPainter {
     required this.caption,
     required this.colors,
   });
+  final PriceSeries series;
+  final ChartViewport viewport;
+  final double baseline;
+  final String caption;
+  final AppColors colors;
 
   static const _margin = EdgeInsets.fromLTRB(36, 18, 10, 18);
 
@@ -338,7 +337,7 @@ class _PriceFigurePainter extends CustomPainter {
         align: TextAlign.right,
       );
     }
-    for (final yr in niceTicks(viewport.xMin, viewport.xMax, maxTicks: 6)) {
+    for (final yr in niceTicks(viewport.xMin, viewport.xMax)) {
       final x = r.left + viewport.nx(yr) * r.width;
       if (x < r.left - 1 || x > r.right + 1) continue;
       canvas.drawLine(Offset(x, r.top), Offset(x, r.bottom), grid);
@@ -438,24 +437,24 @@ class _PriceFigurePainter extends CustomPainter {
 // ════════════════════════ C/D/E/F · bar charts ══════════════════════════════
 
 class _BarDatum {
+  const _BarDatum(this.label, this.value, this.valueText, this.color);
   final String label;
   final double value; // bar length
   final String valueText; // shown number
   final Color color;
-  const _BarDatum(this.label, this.value, this.valueText, this.color);
 }
 
 /// A small horizontal bar chart: title, labelled bars (normalized to the max),
 /// and a one-line caption. Reused for density / conductivity / ratio / demand.
 class _BarChart extends StatelessWidget {
-  final String title;
-  final List<_BarDatum> bars;
-  final String note;
   const _BarChart({
     required this.title,
     required this.bars,
     required this.note,
   });
+  final String title;
+  final List<_BarDatum> bars;
+  final String note;
 
   @override
   Widget build(BuildContext context) {
@@ -489,14 +488,14 @@ class _BarChart extends StatelessWidget {
 }
 
 class _BarChartPainter extends CustomPainter {
-  final String title;
-  final List<_BarDatum> bars;
-  final AppColors colors;
   _BarChartPainter({
     required this.title,
     required this.bars,
     required this.colors,
   });
+  final String title;
+  final List<_BarDatum> bars;
+  final AppColors colors;
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -646,8 +645,8 @@ class _TroyLadderFigure extends StatelessWidget {
 }
 
 class _TroyLadderPainter extends CustomPainter {
-  final AppColors colors;
   _TroyLadderPainter({required this.colors});
+  final AppColors colors;
 
   static const _nodes = ['gr', 'dwt', 'oz t', 'lb t'];
   static const _steps = ['×24', '×20', '×12'];
@@ -749,11 +748,11 @@ class _MoneyFunctionsFigure extends StatelessWidget {
 }
 
 class _MoneyFunctionsPainter extends CustomPainter {
-  final AppColors colors;
   _MoneyFunctionsPainter({required this.colors});
+  final AppColors colors;
 
   static const _labels = ['Tauschmittel', 'Recheneinheit', 'Wertspeicher'];
-  static const _accents = [_teal, _blue, _purple];
+  static const List<Color> _accents = [_teal, _blue, _purple];
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -793,7 +792,8 @@ class _MoneyFunctionsPainter extends CustomPainter {
   }
 
   void _glyph(Canvas canvas, int i, Rect box) {
-    final cx = box.center.dx, cy = box.center.dy;
+    final cx = box.center.dx;
+    final cy = box.center.dy;
     final s = box.shortestSide * 0.26;
     final p = Paint()
       ..color = _accents[i]
@@ -874,8 +874,8 @@ class _GoldStandardTimelineFigure extends StatelessWidget {
 }
 
 class _TimelinePainter extends CustomPainter {
-  final AppColors colors;
   _TimelinePainter({required this.colors});
+  final AppColors colors;
 
   // (year, two-line label, place above?)
   static const _events = <(int, String, bool)>[
@@ -884,13 +884,15 @@ class _TimelinePainter extends CustomPainter {
     (1971, 'Nixon-\nSchock', true),
     (2025, 'heute:\nfreie Währungen', false),
   ];
-  static const _accents = [_teal, _blue, _orange, _slate];
-  static const _y0 = 1850, _y1 = 2035;
+  static const List<Color> _accents = [_teal, _blue, _orange, _slate];
+  static const _y0 = 1850;
+  static const _y1 = 2035;
 
   @override
   void paint(Canvas canvas, Size size) {
     final axisY = size.height * 0.5;
-    final left = size.width * 0.04, right = size.width * 0.96;
+    final left = size.width * 0.04;
+    final right = size.width * 0.96;
     canvas.drawLine(
       Offset(left, axisY),
       Offset(right, axisY),
@@ -988,12 +990,13 @@ class _AllocatedFigure extends StatelessWidget {
 }
 
 class _AllocatedPainter extends CustomPainter {
-  final AppColors colors;
   _AllocatedPainter({required this.colors});
+  final AppColors colors;
 
   @override
   void paint(Canvas canvas, Size size) {
-    final areaTop = size.height * 0.14, areaH = size.height * 0.60;
+    final areaTop = size.height * 0.14;
+    final areaH = size.height * 0.60;
 
     // Left: 3 solid physical bars.
     final barW = size.width * 0.24;
@@ -1025,7 +1028,8 @@ class _AllocatedPainter extends CustomPainter {
 
     // Right: 3×3 hollow paper claims.
     const cols = 3, rowsC = 3;
-    final claimsLeft = size.width * 0.50, claimsRight = size.width * 0.96;
+    final claimsLeft = size.width * 0.50;
+    final claimsRight = size.width * 0.96;
     final cw = (claimsRight - claimsLeft) / cols;
     final ch = areaH / rowsC;
     final claims = <Rect>[];
@@ -1114,8 +1118,8 @@ class _InflationHorizonFigure extends StatelessWidget {
 }
 
 class _InflationHorizonPainter extends CustomPainter {
-  final AppColors colors;
   _InflationHorizonPainter({required this.colors});
+  final AppColors colors;
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -1174,14 +1178,14 @@ class _InflationHorizonPainter extends CustomPainter {
 }
 
 class _LegendSwatch extends StatelessWidget {
-  final Color color;
-  final String label;
-  final AppColors t;
   const _LegendSwatch({
     required this.color,
     required this.label,
     required this.t,
   });
+  final Color color;
+  final String label;
+  final AppColors t;
   @override
   Widget build(BuildContext context) => Row(
     children: [
@@ -1233,8 +1237,8 @@ class _CatalystFigure extends StatelessWidget {
 }
 
 class _CatalystPainter extends CustomPainter {
-  final AppColors colors;
   _CatalystPainter({required this.colors});
+  final AppColors colors;
 
   // Cluster offsets reused for the dirty (left) and clean (right) gas dots.
   static const _cluster = <Offset>[
@@ -1249,7 +1253,8 @@ class _CatalystPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final cy = size.height * 0.46;
-    final blockW = size.width * 0.30, blockH = size.height * 0.62;
+    final blockW = size.width * 0.30;
+    final blockH = size.height * 0.62;
     final blockLeft = size.width * 0.35;
     final block = Rect.fromLTWH(blockLeft, cy - blockH / 2, blockW, blockH);
 

@@ -19,26 +19,37 @@
 
 import 'dart:math' as math;
 
+import 'package:dozenal_calc_flutter/app_layout.dart';
+import 'package:dozenal_calc_flutter/app_theme.dart';
+import 'package:dozenal_calc_flutter/asset_state.dart';
+import 'package:dozenal_calc_flutter/haptics.dart';
+import 'package:dozenal_calc_flutter/keypad_parts.dart';
+import 'package:dozenal_calc_flutter/logic/asset_data.dart';
+import 'package:dozenal_calc_flutter/logic/base_num.dart';
+import 'package:dozenal_calc_flutter/logic/dozenal_digit.dart';
+import 'package:dozenal_calc_flutter/logic/glyph_style.dart';
+import 'package:dozenal_calc_flutter/logic/unit_data.dart';
+import 'package:dozenal_calc_flutter/tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
-import 'app_layout.dart';
-import 'app_theme.dart';
-import 'asset_state.dart';
-import 'haptics.dart';
-import 'keypad_parts.dart';
-import 'logic/asset_data.dart';
-import 'logic/base_num.dart';
-import 'logic/dozenal_digit.dart';
-import 'logic/glyph_style.dart';
-import 'logic/unit_data.dart';
-import 'tokens.dart';
 
 /// The always-visible system/mode row beneath the panel: clear, delete,
 /// decimal — plus the "Wert" key (a [LabelButton], appended by the caller).
 const List<CalcToken> _systemTokens = [Ac(), Del(), Decimal()];
 
 class AssetKeypad extends StatelessWidget {
+  const AssetKeypad({
+    required this.state,
+    super.key,
+    this.classLabelOf,
+    this.genusLabelOf,
+    this.equalsHint,
+    this.valueHint,
+    this.valueLabel,
+    this.ratesLabel,
+    this.chartLabel,
+    this.onRatesTap,
+  });
   final AssetState state;
 
   /// Localized class label (Edelmetall/Währung). Null → English key fallback
@@ -61,19 +72,6 @@ class AssetKeypad extends StatelessWidget {
   final String? ratesLabel;
   final String? chartLabel;
   final VoidCallback? onRatesTap;
-
-  const AssetKeypad({
-    super.key,
-    required this.state,
-    this.classLabelOf,
-    this.genusLabelOf,
-    this.equalsHint,
-    this.valueHint,
-    this.valueLabel,
-    this.ratesLabel,
-    this.chartLabel,
-    this.onRatesTap,
-  });
 
   @override
   Widget build(BuildContext context) {
@@ -714,12 +712,6 @@ bool _isActiveOp(CalcToken t) =>
 /// label (e.g. the chart is open), [enabled] false greys it inert. Hosts
 /// "Kurve" (chart) and "Kurse" (rate editor).
 class _RoundKey extends StatefulWidget {
-  final String label;
-  final String semanticLabel;
-  final bool active;
-  final bool enabled;
-  final VoidCallback onTap;
-
   const _RoundKey({
     required this.label,
     required this.semanticLabel,
@@ -727,6 +719,11 @@ class _RoundKey extends StatefulWidget {
     required this.enabled,
     required this.onTap,
   });
+  final String label;
+  final String semanticLabel;
+  final bool active;
+  final bool enabled;
+  final VoidCallback onTap;
 
   @override
   State<_RoundKey> createState() => _RoundKeyState();

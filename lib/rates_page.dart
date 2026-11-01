@@ -8,17 +8,16 @@
 // numeric entry) — unlike the custom-painted calculators it may use a plain
 // text field. Pushed from the asset keypad's "Kurse" key.
 
+import 'package:dozenal_calc_flutter/app_theme.dart';
+import 'package:dozenal_calc_flutter/asset_labels.dart';
+import 'package:dozenal_calc_flutter/l10n/app_localizations.dart';
+import 'package:dozenal_calc_flutter/logic/asset_data.dart';
+import 'package:dozenal_calc_flutter/rate_store.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import 'app_theme.dart';
-import 'asset_labels.dart';
-import 'l10n/app_localizations.dart';
-import 'logic/asset_data.dart';
-import 'rate_store.dart';
-
 class RatesPage extends StatefulWidget {
-  const RatesPage({super.key, required this.store});
+  const RatesPage({required this.store, super.key});
 
   final RateStore store;
 
@@ -206,7 +205,7 @@ class _RatesPageState extends State<RatesPage> {
               ),
               textAlign: TextAlign.end,
               inputFormatters: [
-                FilteringTextInputFormatter.allow(RegExp(r'[0-9.,]')),
+                FilteringTextInputFormatter.allow(RegExp('[0-9.,]')),
               ],
               style: TextStyle(color: t.textPrimary, fontSize: 14),
               decoration: InputDecoration(

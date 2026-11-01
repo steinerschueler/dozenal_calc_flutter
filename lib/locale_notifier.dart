@@ -49,7 +49,7 @@ class LocaleNotifier extends ChangeNotifier {
 /// rare language+script+country form (`zh-Hant-HK`). Also tolerates the
 /// underscore-separated form persisted by some older entries.
 Locale _parseLanguageTag(String tag) {
-  final parts = tag.split(RegExp(r'[-_]'));
+  final parts = tag.split(RegExp('[-_]'));
   if (parts.length == 1) return Locale(parts[0]);
   String? script;
   String? country;
@@ -128,9 +128,9 @@ Locale resolveLocale(Locale? device, Iterable<Locale> supported) {
 /// the notifier through constructors.
 class LocaleScope extends InheritedNotifier<LocaleNotifier> {
   const LocaleScope({
-    super.key,
     required LocaleNotifier super.notifier,
     required super.child,
+    super.key,
   });
 
   static LocaleNotifier of(BuildContext context) {

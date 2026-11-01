@@ -5,7 +5,7 @@
 
 import 'dart:math' as math;
 
-import 'dozenal_digit.dart';
+import 'package:dozenal_calc_flutter/logic/dozenal_digit.dart';
 
 /// Numerical tolerance used when extracting dozenal digits from a `double`
 /// fractional part. Below this threshold floating-point drift is treated as

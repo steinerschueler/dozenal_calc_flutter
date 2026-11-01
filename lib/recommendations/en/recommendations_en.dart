@@ -1,3 +1,6 @@
+// Prose wraps inside words and CJK has no spaces, so this lint almost only reports false positives.
+// ignore_for_file: missing_whitespace_between_adjacent_strings
+
 // English translation of the "Empfehlungen" (Recommendations) chapters. part of
 // ../recommendations.dart. Mirrors the German source 1:1 in structure; product
 // names, URLs and technical terms (RPN, GPL, MIT, CAS, base 12, decimal-128,
@@ -43,7 +46,7 @@ List<RecChapter> _recChaptersEn() => const [
         blurb:
             'A flagship RPN calculator and homage to the HP-42S, in a CNC-milled '
             'stainless-steel case with USB-C. Its computation core is Thomas '
-            'Okken\'s open-source Free42 with decimal-128 arithmetic (34 digits).',
+            "Okken's open-source Free42 with decimal-128 arithmetic (34 digits).",
         pros: [
           'Open computation core (Free42, GPL) — behaviour is studyable',
           'Identical to the desktop/mobile engine, programs portable',
@@ -80,7 +83,7 @@ List<RecChapter> _recChaptersEn() => const [
     ],
     verdict:
         'Bottom line: the fx-5800P is the rational pick — programmable, compact, '
-        'familiar entry. The DM42n is the enthusiast\'s piece with an open core '
+        "familiar entry. The DM42n is the enthusiast's piece with an open core "
         '(but RPN-only and premium-priced). Tip: try RPN for free with '
         'Free42/Plus42 before buying the hardware.',
   ),
@@ -163,7 +166,7 @@ List<RecChapter> _recChaptersEn() => const [
         ],
         cons: [
           'Obtained mainly via F-Droid or a direct build',
-          'The project declines Google\'s developer verification — future '
+          "The project declines Google's developer verification — future "
               'installability through regular channels is uncertain (not an '
               'issue via F-Droid)',
           'Higher entry barrier than a simple calculator',

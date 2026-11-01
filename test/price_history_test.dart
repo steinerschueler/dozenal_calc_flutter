@@ -43,7 +43,7 @@ void main() {
       () {
         final z = vp.zoomed(2, 0.5, 0.5); // 2× around the centre
         expect(z.xSpan, closeTo(500, 1e-6));
-        final focusYear = 1000 + 0.5 * 1000;
+        const focusYear = 1000 + 0.5 * 1000;
         expect(z.xMin + 0.5 * z.xSpan, closeTo(focusYear, 1e-6));
       },
     );
@@ -95,7 +95,7 @@ void main() {
     });
 
     test('defaultViewport shows the last ~century and keeps the 0 line', () {
-      final vp = defaultViewport(s, nowYear: 2025, span: 100);
+      final vp = defaultViewport(s);
       expect(vp.xMin, closeTo(1925, 1));
       expect(vp.xMax, closeTo(2025, 1));
       expect(vp.lyMin, lessThanOrEqualTo(0));
@@ -124,7 +124,7 @@ void main() {
 
   group('axis ticks', () {
     test('niceTicks lands on round years within range', () {
-      final t = niceTicks(1000, 2000, maxTicks: 6);
+      final t = niceTicks(1000, 2000);
       expect(t, isNotEmpty);
       expect(t.first, greaterThanOrEqualTo(900));
       expect(t.last, lessThanOrEqualTo(2100));

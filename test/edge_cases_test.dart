@@ -5,10 +5,10 @@
 // engine handles the case gracefully — either with a valid result or a
 // clean error message — and never throws.
 
-import 'package:flutter_test/flutter_test.dart';
 import 'package:dozenal_calc_flutter/logic/dozenal_digit.dart';
 import 'package:dozenal_calc_flutter/state.dart';
 import 'package:dozenal_calc_flutter/tokens.dart';
+import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   group('Edge cases — engine should never throw', () {
@@ -20,9 +20,9 @@ void main() {
 
     test('double equals in a row', () {
       final s = DozenalCalcState()
-        ..handleClick(Digit(DozenalDigit.d2))
+        ..handleClick(const Digit(DozenalDigit.d2))
         ..handleClick(const Add())
-        ..handleClick(Digit(DozenalDigit.d3))
+        ..handleClick(const Digit(DozenalDigit.d3))
         ..handleClick(const Equals());
       expect(() => s.handleClick(const Equals()), returnsNormally);
     });
@@ -35,19 +35,19 @@ void main() {
 
     test('two operators in a row', () {
       final s = DozenalCalcState()
-        ..handleClick(Digit(DozenalDigit.d2))
+        ..handleClick(const Digit(DozenalDigit.d2))
         ..handleClick(const Add())
         ..handleClick(const Mul())
-        ..handleClick(Digit(DozenalDigit.d3));
+        ..handleClick(const Digit(DozenalDigit.d3));
       expect(() => s.handleClick(const Equals()), returnsNormally);
     });
 
     test('unclosed paren', () {
       final s = DozenalCalcState()
         ..handleClick(const ParenOpen())
-        ..handleClick(Digit(DozenalDigit.d2))
+        ..handleClick(const Digit(DozenalDigit.d2))
         ..handleClick(const Add())
-        ..handleClick(Digit(DozenalDigit.d3));
+        ..handleClick(const Digit(DozenalDigit.d3));
       expect(() => s.handleClick(const Equals()), returnsNormally);
     });
 
@@ -56,7 +56,7 @@ void main() {
       for (var i = 0; i < 20; i++) {
         s.handleClick(const ParenOpen());
       }
-      s.handleClick(Digit(DozenalDigit.d1));
+      s.handleClick(const Digit(DozenalDigit.d1));
       for (var i = 0; i < 20; i++) {
         s.handleClick(const ParenClose());
       }
@@ -67,7 +67,7 @@ void main() {
     test('very long digit literal (50 digits)', () {
       final s = DozenalCalcState();
       for (var i = 0; i < 50; i++) {
-        s.handleClick(Digit(DozenalDigit.d9));
+        s.handleClick(const Digit(DozenalDigit.d9));
       }
       expect(() => s.handleClick(const Equals()), returnsNormally);
     });
@@ -76,11 +76,13 @@ void main() {
       // 2^200 is huge but BigInt-feasible. 9^9^9 would build a 370M-digit
       // BigInt and effectively hang — avoided on purpose.
       final s = DozenalCalcState()
-        ..handleClick(Digit(DozenalDigit.d2))
+        ..handleClick(const Digit(DozenalDigit.d2))
         ..handleClick(const ExpTopRight())
-        ..handleClick(Digit(DozenalDigit.d1)) // 200 in doz = 1*144+0+0 = 144
-        ..handleClick(Digit(DozenalDigit.d4)) // change to 14 doz = 16 dec
-        ..handleClick(Digit(DozenalDigit.d8));
+        ..handleClick(
+          const Digit(DozenalDigit.d1),
+        ) // 200 in doz = 1*144+0+0 = 144
+        ..handleClick(const Digit(DozenalDigit.d4)) // change to 14 doz = 16 dec
+        ..handleClick(const Digit(DozenalDigit.d8));
       expect(() => s.handleClick(const Equals()), returnsNormally);
     });
 
@@ -88,11 +90,11 @@ void main() {
       // Without the rational-track exponent cap this would allocate a
       // BigInt with ~370 million decimal digits and freeze the app.
       final s = DozenalCalcState()
-        ..handleClick(Digit(DozenalDigit.d9))
+        ..handleClick(const Digit(DozenalDigit.d9))
         ..handleClick(const ExpTopRight())
-        ..handleClick(Digit(DozenalDigit.d9))
+        ..handleClick(const Digit(DozenalDigit.d9))
         ..handleClick(const ExpTopRight())
-        ..handleClick(Digit(DozenalDigit.d9));
+        ..handleClick(const Digit(DozenalDigit.d9));
       expect(() => s.handleClick(const Equals()), returnsNormally);
       // f64 fallback overflows to infinity → engine surfaces a clean
       // error rather than crashing.
@@ -103,21 +105,21 @@ void main() {
       // Fractional exponent collapses rational → f64; chain pushes towards
       // f64 infinity. Engine must surface a clean error, not throw.
       final s = DozenalCalcState()
-        ..handleClick(Digit(DozenalDigit.d2))
+        ..handleClick(const Digit(DozenalDigit.d2))
         ..handleClick(const ExpTopRight())
         ..handleClick(const ParenOpen())
-        ..handleClick(Digit(DozenalDigit.d1))
+        ..handleClick(const Digit(DozenalDigit.d1))
         ..handleClick(const Div())
-        ..handleClick(Digit(DozenalDigit.d2))
+        ..handleClick(const Digit(DozenalDigit.d2))
         ..handleClick(const ParenClose());
       expect(() => s.handleClick(const Equals()), returnsNormally);
     });
 
     test('division by zero', () {
       final s = DozenalCalcState()
-        ..handleClick(Digit(DozenalDigit.d1))
+        ..handleClick(const Digit(DozenalDigit.d1))
         ..handleClick(const Div())
-        ..handleClick(Digit(DozenalDigit.d0));
+        ..handleClick(const Digit(DozenalDigit.d0));
       expect(() => s.handleClick(const Equals()), returnsNormally);
       expect(s.errorMsg, isNotNull, reason: 'expect clean error message');
     });
@@ -125,10 +127,10 @@ void main() {
     test('sqrt of negative number', () {
       final s = DozenalCalcState()
         ..handleClick(const RootTopLeft())
-        ..handleClick(Digit(DozenalDigit.d2))
+        ..handleClick(const Digit(DozenalDigit.d2))
         ..handleClick(const ParenOpen())
         ..handleClick(const Sub())
-        ..handleClick(Digit(DozenalDigit.d1))
+        ..handleClick(const Digit(DozenalDigit.d1))
         ..handleClick(const ParenClose());
       expect(() => s.handleClick(const Equals()), returnsNormally);
     });
@@ -136,9 +138,9 @@ void main() {
     test('log of zero', () {
       final s = DozenalCalcState()
         ..handleClick(const LogBotRight())
-        ..handleClick(Digit(DozenalDigit.d10))
+        ..handleClick(const Digit(DozenalDigit.d10))
         ..handleClick(const ParenOpen())
-        ..handleClick(Digit(DozenalDigit.d0))
+        ..handleClick(const Digit(DozenalDigit.d0))
         ..handleClick(const ParenClose());
       expect(() => s.handleClick(const Equals()), returnsNormally);
     });
@@ -148,8 +150,10 @@ void main() {
           DozenalCalcState() // default DEG
             ..handleClick(const Tan())
             ..handleClick(const ParenOpen())
-            ..handleClick(Digit(DozenalDigit.d7)) // 90 in doz = 7×12+6 = 90
-            ..handleClick(Digit(DozenalDigit.d6))
+            ..handleClick(
+              const Digit(DozenalDigit.d7),
+            ) // 90 in doz = 7×12+6 = 90
+            ..handleClick(const Digit(DozenalDigit.d6))
             ..handleClick(const ParenClose());
       expect(() => s.handleClick(const Equals()), returnsNormally);
     });
@@ -159,8 +163,8 @@ void main() {
       // 100 doz = 144! would be a 250-digit BigInt and is also fine, but
       // we keep it tame here to keep test runs sub-second.
       final s = DozenalCalcState()
-        ..handleClick(Digit(DozenalDigit.d1))
-        ..handleClick(Digit(DozenalDigit.d8)) // 18 doz = 20 dec → 20!
+        ..handleClick(const Digit(DozenalDigit.d1))
+        ..handleClick(const Digit(DozenalDigit.d8)) // 18 doz = 20 dec → 20!
         ..handleClick(const Factorial());
       expect(() => s.handleClick(const Equals()), returnsNormally);
     });
@@ -170,20 +174,20 @@ void main() {
       // truncate, not crash.
       final s = DozenalCalcState()
         ..handleClick(const Decimal())
-        ..handleClick(Digit(DozenalDigit.d4)); // 0.4 in doz
+        ..handleClick(const Digit(DozenalDigit.d4)); // 0.4 in doz
       expect(() => s.handleClick(const Dez()), returnsNormally);
       expect(s.errorMsg, isNull);
     });
 
     test('Mode-switch Doz→Dez→Doz with operators in buffer', () {
       final s = DozenalCalcState()
-        ..handleClick(Digit(DozenalDigit.d1))
-        ..handleClick(Digit(DozenalDigit.d10)) // doz "1A" = 22 dec
+        ..handleClick(const Digit(DozenalDigit.d1))
+        ..handleClick(const Digit(DozenalDigit.d10)) // doz "1A" = 22 dec
         ..handleClick(const Add())
-        ..handleClick(Digit(DozenalDigit.d11)) // + B = 11 dec
+        ..handleClick(const Digit(DozenalDigit.d11)) // + B = 11 dec
         ..handleClick(const Mul())
         ..handleClick(const ParenOpen())
-        ..handleClick(Digit(DozenalDigit.d2))
+        ..handleClick(const Digit(DozenalDigit.d2))
         ..handleClick(const ParenClose());
       expect(() => s.handleClick(const Dez()), returnsNormally);
       expect(() => s.handleClick(const Doz()), returnsNormally);
@@ -193,8 +197,8 @@ void main() {
 
     test('Mode-switch repeatedly (10 round-trips)', () {
       final s = DozenalCalcState()
-        ..handleClick(Digit(DozenalDigit.d2))
-        ..handleClick(Digit(DozenalDigit.d3));
+        ..handleClick(const Digit(DozenalDigit.d2))
+        ..handleClick(const Digit(DozenalDigit.d3));
       for (var i = 0; i < 10; i++) {
         expect(() => s.handleClick(const Dez()), returnsNormally);
         expect(() => s.handleClick(const Doz()), returnsNormally);
@@ -212,7 +216,7 @@ void main() {
     });
 
     test('Backspace many times past empty', () {
-      final s = DozenalCalcState()..handleClick(Digit(DozenalDigit.d5));
+      final s = DozenalCalcState()..handleClick(const Digit(DozenalDigit.d5));
       for (var i = 0; i < 10; i++) {
         expect(() => s.handleClick(const Del()), returnsNormally);
       }
@@ -220,8 +224,8 @@ void main() {
 
     test('Cursor left/right past buffer edges', () {
       final s = DozenalCalcState()
-        ..handleClick(Digit(DozenalDigit.d1))
-        ..handleClick(Digit(DozenalDigit.d2));
+        ..handleClick(const Digit(DozenalDigit.d1))
+        ..handleClick(const Digit(DozenalDigit.d2));
       for (var i = 0; i < 10; i++) {
         expect(() => s.handleClick(const TriangleLeft()), returnsNormally);
       }
@@ -233,14 +237,14 @@ void main() {
     test('Mass-click stress (200 mixed tokens)', () {
       final s = DozenalCalcState();
       final tokens = <CalcToken>[
-        Digit(DozenalDigit.d1),
+        const Digit(DozenalDigit.d1),
         const Add(),
-        Digit(DozenalDigit.d2),
+        const Digit(DozenalDigit.d2),
         const Mul(),
         const ParenOpen(),
-        Digit(DozenalDigit.d3),
+        const Digit(DozenalDigit.d3),
         const Sub(),
-        Digit(DozenalDigit.d4),
+        const Digit(DozenalDigit.d4),
         const ParenClose(),
         const Equals(),
       ];
@@ -251,9 +255,9 @@ void main() {
 
     test('Switch DRG / Doz / Dez during error state stays consistent', () {
       final s = DozenalCalcState()
-        ..handleClick(Digit(DozenalDigit.d1))
+        ..handleClick(const Digit(DozenalDigit.d1))
         ..handleClick(const Div())
-        ..handleClick(Digit(DozenalDigit.d0))
+        ..handleClick(const Digit(DozenalDigit.d0))
         ..handleClick(const Equals());
       expect(s.errorMsg, isNotNull);
       expect(() => s.handleClick(const Drg()), returnsNormally);

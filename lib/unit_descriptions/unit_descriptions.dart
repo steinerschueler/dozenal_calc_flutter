@@ -10,7 +10,7 @@
 // genuinely new content. German is the source of truth; other languages attach
 // via `part` and fall back to German until translated.
 
-import '../logic/unit_data.dart';
+import 'package:dozenal_calc_flutter/logic/unit_data.dart';
 
 part 'ar/unit_desc_ar.dart';
 part 'cy/unit_desc_cy.dart';

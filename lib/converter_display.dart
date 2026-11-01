@@ -17,13 +17,12 @@
 
 import 'dart:math' as math;
 
+import 'package:dozenal_calc_flutter/app_theme.dart';
+import 'package:dozenal_calc_flutter/calc_prefs.dart';
+import 'package:dozenal_calc_flutter/converter_state.dart';
+import 'package:dozenal_calc_flutter/glyph_painter.dart';
+import 'package:dozenal_calc_flutter/logic/glyph_style.dart';
 import 'package:flutter/material.dart';
-
-import 'app_theme.dart';
-import 'calc_prefs.dart';
-import 'converter_state.dart';
-import 'glyph_painter.dart';
-import 'logic/glyph_style.dart';
 
 // Palette slots (lib/app_theme.dart): displayBg/displayBorder for the frame,
 // displayText for all digits (neutral — base and system are colour-coded on
@@ -49,11 +48,6 @@ int? _glyphDigit(String ch) {
 /// are not mistaken for the dozenal eleven glyph (header: units/brackets stay
 /// as text).
 class _Seg {
-  final String text;
-  final Color color;
-  final double size;
-  final FontWeight weight;
-  final bool glyph;
   const _Seg(
     this.text,
     this.color,
@@ -61,6 +55,11 @@ class _Seg {
     this.weight = FontWeight.w400,
     this.glyph = true,
   });
+  final String text;
+  final Color color;
+  final double size;
+  final FontWeight weight;
+  final bool glyph;
 }
 
 /// A laid-out line: the [TextPainter] plus, per character, its digit value
@@ -69,10 +68,10 @@ class _Seg {
 /// occupies its exact monospace cell and the caret/hit-test geometry is
 /// unchanged) and the glyph is painted on top.
 class _LineLayout {
+  _LineLayout(this.tp, this.digits, this.colors);
   final TextPainter tp;
   final List<int?> digits; // per UTF-16 code unit: 0..11 or null
   final List<Color> colors;
-  _LineLayout(this.tp, this.digits, this.colors);
 
   static _LineLayout build(List<_Seg> segs, GlyphStyle style) {
     final custom = style == GlyphStyle.custom;
@@ -144,6 +143,17 @@ Color _bracketHue(bool? tenWorld, AppColors t) => tenWorld == null
     : (tenWorld ? t.worldTen : t.worldTwelve).withValues(alpha: 0.85);
 
 class ConverterDisplay extends StatelessWidget {
+  const ConverterDisplay({
+    required this.topLine,
+    required this.resultLine,
+    required this.worldLabel,
+    super.key,
+    this.baseIsTen = false,
+    this.systemIsTen = false,
+    this.inputCaret = 0,
+    this.onInputTapChar,
+    this.resultPrefix = '= ',
+  });
   final ConverterLine topLine;
   final ConverterLine? resultLine;
 
@@ -168,18 +178,6 @@ class ConverterDisplay extends StatelessWidget {
   /// Prefix on the result line ('= ' for exact results; '≈ ' for the value
   /// calculator's rate-based value line).
   final String resultPrefix;
-
-  const ConverterDisplay({
-    super.key,
-    required this.topLine,
-    required this.resultLine,
-    required this.worldLabel,
-    this.baseIsTen = false,
-    this.systemIsTen = false,
-    this.inputCaret = 0,
-    this.onInputTapChar,
-    this.resultPrefix = '= ',
-  });
 
   @override
   Widget build(BuildContext context) {
@@ -349,15 +347,6 @@ List<int?> debugResultGlyphCells(ConverterLine line, GlyphStyle style) =>
 /// Right-aligned, scale-to-fit result line (no caret). Custom-painted so the
 /// dozenal glyph overlay lines up with the (possibly down-scaled) text.
 class _ResultLine extends StatelessWidget {
-  final ConverterLine? line;
-  final Color numberColor;
-  final Color unitColor;
-  final Color bracketColor;
-  final double numberSize;
-  final double bracketSize;
-  final GlyphStyle style;
-  final String prefix;
-
   const _ResultLine({
     required this.line,
     required this.numberColor,
@@ -368,6 +357,14 @@ class _ResultLine extends StatelessWidget {
     required this.style,
     this.prefix = '= ',
   });
+  final ConverterLine? line;
+  final Color numberColor;
+  final Color unitColor;
+  final Color bracketColor;
+  final double numberSize;
+  final double bracketSize;
+  final GlyphStyle style;
+  final String prefix;
 
   @override
   Widget build(BuildContext context) {
@@ -409,17 +406,6 @@ class _ResultLine extends StatelessWidget {
 /// so the caret and taps map to the same character positions as the rendered
 /// (possibly down-scaled) text.
 class _CaretInputLine extends StatelessWidget {
-  final String text;
-  final List<(int, int)> unitRanges;
-  final Color unitColor;
-  final String? bracket;
-  final Color bracketColor;
-  final int caret;
-  final double numberSize;
-  final double bracketSize;
-  final GlyphStyle style;
-  final ValueChanged<int>? onTapChar;
-
   const _CaretInputLine({
     required this.text,
     required this.unitRanges,
@@ -432,6 +418,16 @@ class _CaretInputLine extends StatelessWidget {
     required this.style,
     required this.onTapChar,
   });
+  final String text;
+  final List<(int, int)> unitRanges;
+  final Color unitColor;
+  final String? bracket;
+  final Color bracketColor;
+  final int caret;
+  final double numberSize;
+  final double bracketSize;
+  final GlyphStyle style;
+  final ValueChanged<int>? onTapChar;
 
   @override
   Widget build(BuildContext context) {
@@ -493,13 +489,6 @@ class _CaretInputLine extends StatelessWidget {
 /// Paints a [_LineLayout] (text + dozenal glyph overlay) right-aligned and
 /// scaled, with an optional edit caret.
 class _LinePainter extends CustomPainter {
-  final _LineLayout layout;
-  final double scale;
-  final double xOff;
-  final GlyphStyle style;
-  final int? caret;
-  final Color? caretColor;
-
   _LinePainter({
     required this.layout,
     required this.scale,
@@ -508,6 +497,12 @@ class _LinePainter extends CustomPainter {
     this.caret,
     this.caretColor,
   });
+  final _LineLayout layout;
+  final double scale;
+  final double xOff;
+  final GlyphStyle style;
+  final int? caret;
+  final Color? caretColor;
 
   @override
   void paint(Canvas canvas, Size size) {

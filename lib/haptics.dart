@@ -34,9 +34,9 @@ class HapticsNotifier extends ChangeNotifier {
 
 class HapticsScope extends InheritedNotifier<HapticsNotifier> {
   const HapticsScope({
-    super.key,
     required HapticsNotifier super.notifier,
     required super.child,
+    super.key,
   });
 
   /// Subscribing read for build methods (e.g. the settings toggle, which must

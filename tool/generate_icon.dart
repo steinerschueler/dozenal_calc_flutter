@@ -32,7 +32,7 @@ void main() {
   test('generate app icon', () async {
     await _loadIconFont();
 
-    const double size = 1024.0;
+    const size = 1024.0;
     final recorder = ui.PictureRecorder();
     final canvas = Canvas(recorder, const Rect.fromLTWH(0, 0, size, size));
 
@@ -49,18 +49,18 @@ void main() {
     canvas.translate(-size / 2, -size / 2);
 
     // Calculator body bounds within the rotated frame.
-    final bodyRect = Rect.fromLTRB(
+    const bodyRect = Rect.fromLTRB(
       size * 0.13,
       size * 0.10,
       size * 0.87,
       size * 0.92,
     );
-    final bodyRadius = Radius.circular(size * 0.07);
+    const bodyRadius = Radius.circular(size * 0.07);
 
     // 1. Soft drop shadow: a blurred dark rounded rect behind everything.
     canvas.drawRRect(
       RRect.fromRectAndRadius(
-        bodyRect.shift(Offset(size * 0.018, size * 0.030)),
+        bodyRect.shift(const Offset(size * 0.018, size * 0.030)),
         bodyRadius,
       ),
       Paint()
@@ -72,7 +72,7 @@ void main() {
     //    the calculator has physical depth (3D from above).
     canvas.drawRRect(
       RRect.fromRectAndRadius(
-        bodyRect.shift(Offset(size * 0.010, size * 0.014)),
+        bodyRect.shift(const Offset(size * 0.010, size * 0.014)),
         bodyRadius,
       ),
       Paint()..color = const Color(0xFF161616),
@@ -94,19 +94,19 @@ void main() {
     );
 
     // 5. Display: dark inset rect.
-    final dispRect = Rect.fromLTRB(
+    const dispRect = Rect.fromLTRB(
       size * 0.19,
       size * 0.15,
       size * 0.81,
       size * 0.51,
     );
     canvas.drawRRect(
-      RRect.fromRectAndRadius(dispRect, Radius.circular(size * 0.025)),
+      RRect.fromRectAndRadius(dispRect, const Radius.circular(size * 0.025)),
       Paint()..color = const Color(0xFF0A0F12),
     );
     // Subtle inner highlight on display top edge — adds depth.
     canvas.drawRRect(
-      RRect.fromRectAndRadius(dispRect, Radius.circular(size * 0.025)),
+      RRect.fromRectAndRadius(dispRect, const Radius.circular(size * 0.025)),
       Paint()
         ..color = const Color(0xFF1A2128)
         ..style = PaintingStyle.stroke
@@ -115,10 +115,10 @@ void main() {
 
     // 6. "BASIS" text.
     final basisTp = TextPainter(
-      text: TextSpan(
+      text: const TextSpan(
         text: 'BASIS',
         style: TextStyle(
-          color: const Color(0xFFB8C4CC),
+          color: Color(0xFFB8C4CC),
           fontSize: size * 0.075,
           fontFamily: _iconFontFamily,
           fontWeight: FontWeight.w700,
@@ -137,7 +137,7 @@ void main() {
 
     // 7. "12" text — dominant.
     final twelveTp = TextPainter(
-      text: TextSpan(
+      text: const TextSpan(
         text: '12',
         style: TextStyle(
           color: Colors.white,
@@ -160,19 +160,19 @@ void main() {
     // 8. Buttons: 4 cols × 3 rows = 12. Bottom-right is orange (= key).
     const cols = 4;
     const rows = 3;
-    final btnAreaLeft = size * 0.20;
-    final btnAreaRight = size * 0.80;
-    final btnAreaTop = size * 0.57;
-    final btnAreaBottom = size * 0.88;
-    final btnGapX = size * 0.018;
-    final btnGapY = size * 0.020;
-    final btnW = (btnAreaRight - btnAreaLeft - btnGapX * (cols - 1)) / cols;
-    final btnH = (btnAreaBottom - btnAreaTop - btnGapY * (rows - 1)) / rows;
-    final btnRadius = Radius.circular(size * 0.016);
+    const btnAreaLeft = size * 0.20;
+    const btnAreaRight = size * 0.80;
+    const btnAreaTop = size * 0.57;
+    const btnAreaBottom = size * 0.88;
+    const btnGapX = size * 0.018;
+    const btnGapY = size * 0.020;
+    const btnW = (btnAreaRight - btnAreaLeft - btnGapX * (cols - 1)) / cols;
+    const btnH = (btnAreaBottom - btnAreaTop - btnGapY * (rows - 1)) / rows;
+    const btnRadius = Radius.circular(size * 0.016);
 
     for (var r = 0; r < rows; r++) {
       for (var c = 0; c < cols; c++) {
-        final isEquals = (r == rows - 1 && c == cols - 1);
+        final isEquals = r == rows - 1 && c == cols - 1;
         final btnRect = Rect.fromLTWH(
           btnAreaLeft + c * (btnW + btnGapX),
           btnAreaTop + r * (btnH + btnGapY),
@@ -182,7 +182,7 @@ void main() {
         // Tiny shadow under each button for subtle depth.
         canvas.drawRRect(
           RRect.fromRectAndRadius(
-            btnRect.shift(Offset(0, size * 0.003)),
+            btnRect.shift(const Offset(0, size * 0.003)),
             btnRadius,
           ),
           Paint()..color = const Color(0xFF1A1A1A),

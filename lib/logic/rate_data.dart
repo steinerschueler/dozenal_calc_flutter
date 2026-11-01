@@ -15,6 +15,13 @@
 const double kTroyOunceKg = 0.0311034768;
 
 class RateSnapshot {
+  const RateSnapshot({
+    required this.asOf,
+    required this.pivot,
+    required this.currencyPerPivot,
+    required this.metalSpotPivot,
+  });
+
   /// Human label of the snapshot date, e.g. "2026-06".
   final String asOf;
 
@@ -28,13 +35,6 @@ class RateSnapshot {
   /// Spot price of each metal per troy ounce, expressed in the [pivot]
   /// currency (e.g. gold 2350 = 2350 USD / troy oz).
   final Map<String, double> metalSpotPivot;
-
-  const RateSnapshot({
-    required this.asOf,
-    required this.pivot,
-    required this.currencyPerPivot,
-    required this.metalSpotPivot,
-  });
 }
 
 /// Rough, dated, fully overridable defaults. Pivot = USD.

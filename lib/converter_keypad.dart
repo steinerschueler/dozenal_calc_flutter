@@ -15,17 +15,16 @@
 
 import 'dart:math' as math;
 
+import 'package:dozenal_calc_flutter/app_layout.dart';
+import 'package:dozenal_calc_flutter/app_theme.dart';
+import 'package:dozenal_calc_flutter/converter_state.dart';
+import 'package:dozenal_calc_flutter/keypad_parts.dart';
+import 'package:dozenal_calc_flutter/logic/base_num.dart';
+import 'package:dozenal_calc_flutter/logic/dozenal_digit.dart';
+import 'package:dozenal_calc_flutter/logic/glyph_style.dart';
+import 'package:dozenal_calc_flutter/logic/unit_data.dart';
+import 'package:dozenal_calc_flutter/tokens.dart';
 import 'package:flutter/material.dart';
-
-import 'app_layout.dart';
-import 'app_theme.dart';
-import 'converter_state.dart';
-import 'keypad_parts.dart';
-import 'logic/base_num.dart';
-import 'logic/dozenal_digit.dart';
-import 'logic/glyph_style.dart';
-import 'logic/unit_data.dart';
-import 'tokens.dart';
 
 // Colors live in AppColors (lib/app_theme.dart). Converter-specific slots:
 // magnitude (value-like gold-tinted labels) and inertKey (not-yet-wired op
@@ -66,6 +65,13 @@ const List<UnitCategory> _set9 = [
 const List<CalcToken> _systemRow = [Ac(), Del(), Decimal(), Expand()];
 
 class ConverterKeypad extends StatelessWidget {
+  const ConverterKeypad({
+    required this.state,
+    super.key,
+    this.categoryLabelOf,
+    this.unitInfoOf,
+    this.equalsHint,
+  });
   final ConverterState state;
 
   /// Resolves a category's localized label. Null → fall back to the English
@@ -85,14 +91,6 @@ class ConverterKeypad extends StatelessWidget {
   /// the bottom edge): repeated taps cycle the displayed unit. Null → no
   /// hint (preview harness without localizations).
   final String? equalsHint;
-
-  const ConverterKeypad({
-    super.key,
-    required this.state,
-    this.categoryLabelOf,
-    this.unitInfoOf,
-    this.equalsHint,
-  });
 
   @override
   Widget build(BuildContext context) {

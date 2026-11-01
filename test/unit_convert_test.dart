@@ -1,9 +1,9 @@
 // Pins the unit-converter factors and the conversion/bracket logic.
 // Spec: docs/unit-converter.md
 
-import 'package:flutter_test/flutter_test.dart';
-import 'package:dozenal_calc_flutter/logic/unit_data.dart';
 import 'package:dozenal_calc_flutter/logic/unit_convert.dart';
+import 'package:dozenal_calc_flutter/logic/unit_data.dart';
+import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   Unit u(UnitCategory c, String symbol) {
@@ -252,7 +252,7 @@ void main() {
     }
 
     test('length 53 in → 1 yd 1 ft 5 in', () {
-      final si = 53 * 0.0254; // 53 inches in metres
+      const si = 53 * 0.0254; // 53 inches in metres
       expect(render(UnitCategory.dist, si), '0 mi 1 yd 1 ft 5.00 in');
     });
 
@@ -261,7 +261,7 @@ void main() {
     });
 
     test('price 250 d → 1 £ 0 sh 10 d', () {
-      final si = 250 / 240; // 250 old pence in pounds
+      const si = 250 / 240; // 250 old pence in pounds
       expect(render(UnitCategory.price, si), '1 £ 0 sh 10.00 d');
     });
 

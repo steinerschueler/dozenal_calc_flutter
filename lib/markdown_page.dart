@@ -3,28 +3,26 @@
 // scaffolding verbatim — keeping the style decisions in one place means a
 // future tweak to typography or link colour only touches this file.
 
+import 'package:dozenal_calc_flutter/app_theme.dart';
+import 'package:dozenal_calc_flutter/license_page.dart' show openExternalLink;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter_markdown_plus/flutter_markdown_plus.dart';
-
-import 'app_theme.dart';
-import 'license_page.dart' show openExternalLink;
 
 /// Renders a Markdown file from the asset bundle inside a Scaffold with the
 /// app's standard dark style. [title] sets the AppBar label, [assetPath]
 /// is the asset path passed to `rootBundle.loadString`, and [errorLabel]
 /// is the prose shown if loading fails.
 class MarkdownAssetPage extends StatefulWidget {
-  final String title;
-  final String assetPath;
-  final String errorLabel;
-
   const MarkdownAssetPage({
-    super.key,
     required this.title,
     required this.assetPath,
     required this.errorLabel,
+    super.key,
   });
+  final String title;
+  final String assetPath;
+  final String errorLabel;
 
   @override
   State<MarkdownAssetPage> createState() => _MarkdownAssetPageState();

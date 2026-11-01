@@ -10,16 +10,15 @@
 // standalone); the theme row reads ThemeScope the same way (Dunkel/Hell/
 // System, persisted via ThemeNotifier).
 
+import 'package:dozenal_calc_flutter/app_theme.dart';
+import 'package:dozenal_calc_flutter/calc_prefs.dart';
+import 'package:dozenal_calc_flutter/calc_scope.dart';
+import 'package:dozenal_calc_flutter/haptics.dart';
+import 'package:dozenal_calc_flutter/l10n/app_localizations.dart';
+import 'package:dozenal_calc_flutter/logic/glyph_style.dart';
+import 'package:dozenal_calc_flutter/round_badge.dart';
+import 'package:dozenal_calc_flutter/tokens.dart';
 import 'package:flutter/material.dart';
-
-import 'app_theme.dart';
-import 'calc_prefs.dart';
-import 'calc_scope.dart';
-import 'haptics.dart';
-import 'l10n/app_localizations.dart';
-import 'logic/glyph_style.dart';
-import 'round_badge.dart';
-import 'tokens.dart';
 
 class SettingsPage extends StatelessWidget {
   const SettingsPage({super.key});
