@@ -9,7 +9,7 @@ flowchart LR
   nutzer[Nutzerin oder Nutzer] --> app[Dozenal Calc]
   app -->|Einstellungen, Kurs-Overrides| geraet[(Gerätespeicher)]
   app -->|Link oder mailto, nur nach Tipp| extern[Browser oder Mail-App des Geräts]
-  stores[Play, App Store, Microsoft Store, Flathub] -->|liefern aus| app
+  stores[Play, App Store, Microsoft Store] -->|liefern aus| app
 ```
 
 ## Container

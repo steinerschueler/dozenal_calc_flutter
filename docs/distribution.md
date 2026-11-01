@@ -73,7 +73,8 @@ Manifest referenziert es per `url`+`sha256` (**`strip-components: 0`**!). Runtim
 `org.freedesktop.Platform 25.08`, finish-args bewusst **ohne** `--share=network`.
 Einreichung: PR gegen `flathub/flathub` (Base `new-pr`), Build per PR-Kommentar
 **`bot, build`**. Stand: PR **flathub/flathub#8968** baute grün (aarch64+x86_64),
-liegt im Review.
+wurde aber am 2026-06-13 ungemerged geschlossen. Die App ist nicht auf Flathub und wird dort nicht mehr eingereicht,
+bis sich die KI-Richtlinie ändert: [ADR 0003](decisions/0003-keine-flathub-einreichung.md).
 
 ## Windows / Microsoft Store
 

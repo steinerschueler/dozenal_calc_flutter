@@ -1,4 +1,66 @@
-# Verbesserungen — offene Todos (Code-Review)
+# Verbesserungen — offene Todos
+
+Sammelstelle für alles, was noch zu tun ist, auch für Kleinigkeiten. Erledigtes wird hier gestrichen oder nach unten
+verschoben.
+
+## Offene Punkte
+
+Stand: 2026-11-01, gegen den Code und die genannten Dienste geprüft. Was sich von hier aus nicht prüfen liess, ist markiert.
+
+### Nächster Release
+
+- [ ] **Version anheben und taggen.** `pubspec.yaml` steht auf `1.5.1+19`, im `CHANGELOG.md` liegt unter `[Unreleased]`
+      unter anderem der ganze Werterechner. Mitziehen: `MARKETING_VERSION` und `CURRENT_PROJECT_VERSION` des
+      Watch-Targets, `msix_version`, die Flutter-Version im F-Droid-Rezept (heute 3.41.8, gepinnt auf den Tag `v1.5.1`).
+- [ ] **Werterechner in die Store-Texte.** Die Listings für Play, App Store und Microsoft Store erwähnen ihn nicht. Alle
+      Sprachen nachziehen, Neuheiten-Text schreiben.
+- [ ] **Store-Screenshots prüfen.** Dritte Rechner-Seite und neuer Page-Peek sind in den Bildern vom Juni nicht zu sehen.
+- [ ] **Kurse im Werterechner auffrischen.** `lib/logic/rate_data.dart` enthält feste Kurse mit `asOf`-Datum, sie altern
+      mit jedem Release.
+
+### Apple
+
+- [ ] **watchOS-Screenshots.** In App Store Connect liegen noch die Bilder von Build 16 (416×496). Neu aufnehmen auf dem
+      Watch-Simulator mit `simctl io screenshot`, nicht rahmen. Vorher den nächsten Punkt entscheiden.
+- [ ] **Erstrender-Zoom der Watch-App.** Direkt nach dem Start ist die unterste Glyphen-Reihe abgeschnitten, bis einmal
+      gewischt wird. Ursache und deterministische Lösung: [watch.md](watch.md#bekanntes-problem-page-tabview-erstrender-zoom).
+- [ ] **Freigabe von 1.5.1 in App Store Connect kontrollieren.** Im Juni war die Version hochgeladen, aber noch nicht
+      eingereicht. Der heutige Stand ist nicht geprüft. Screenshots sind nach dem Einreichen gesperrt, also zuerst hochladen.
+
+### Weitere Vertriebswege
+
+- [ ] **F-Droid einreichen.** Die App ist noch nicht in `fdroiddata`. Rezept mit `fdroid build` testen, dann MR auf
+      GitLab: [packaging/fdroid/README.md](../packaging/fdroid/README.md).
+
+### App
+
+- [ ] **`=`-Zyklus über beide Einheitensysteme** im Umrechner: [unit-converter.md](unit-converter.md#10-offene-ideen-todo).
+      Der Eintrag dort spricht noch von der Doz/Dez-Welt, seit der Entkopplung ist das Einheitensystem gemeint.
+- [ ] **Werterechner, spätere Phasen:** Krypto, Rohstoffe, Rhodium, Karat, Apothekereinheiten, Feinschliff für lange
+      Gattungs-Labels im Breit-Layout: [asset-converter.md](asset-converter.md#offene-punkte-für-spätere-phasen).
+- [ ] **Theorie-Themen ohne Dossier:** Goldener Schnitt, Pi, Einheitskreis und 360° sowie die Ideen im
+      [Recherche-Backlog](research/README.md#backlog-stand-pflegen).
+- [ ] **`DozenalCalcState` weiter entflechten**, nur bei Bedarf: siehe Punkt 8 unten.
+
+### Aufräumen im Repo
+
+- [ ] `build18-release-notes.txt` entfernen: Laut [release-workflow.md](release-workflow.md) bleibt nur die aktuellste
+      Fassung liegen.
+- [ ] `appstore-build16-submission.md` im Projekt-Root: prüfen, ob die Anleitung noch gebraucht wird, sonst nach `docs/`
+      verschieben oder entfernen.
+- [ ] **Lint-Altlast abbauen.** `flutter analyze` meldet Tausende alte Befunde, geprüft werden nur geänderte Dateien
+      (CC-41).
+- [ ] **Paket- und GitHub-Name ändern**, wenn das npf-Backlog (A-067) so weit ist.
+
+### Kürzlich erledigt
+
+- Fehlende Leerzeichen in der traditionell-chinesischen Anleitung (`41d9bc7`). Eine Suche über alle Zeilenumbrüche in
+  den Texten unter `lib/` fand danach keine weitere Stelle.
+- `㏒` aus den App-Store-Texten entfernt (`4e2f744`), App Store Connect lehnt das Zeichen ab.
+
+---
+
+## Code-Review vom Juni 2026
 
 Stand: 2026-06-11. Quelle: Code-Review der App. Die **Korrekturen** (Bugfixes +
 Code-Hygiene) und die ersten Features sind bereits umgesetzt und committet

@@ -25,6 +25,7 @@ Entwicklungs-Sandbox unter <https://github.com/Bawdyness/dozenal_calc>. Paket- u
 | Release, Assets, Store-Screenshots | [docs/build-und-assets.md](docs/build-und-assets.md) |
 | macOS, watchOS, Flathub, Microsoft Store, F-Droid | [docs/distribution.md](docs/distribution.md) |
 | Lizenz, Lints, Portierung, Umgebung (Volltext) | [docs/konventionen.md](docs/konventionen.md) |
+| Offene Punkte, auch Kleinigkeiten | [docs/improvements-todo.md](docs/improvements-todo.md) |
 | Prosa in `lib/theory/<lang>/math_<lang>.dart` | [docs/chapter2-conventions.md](docs/chapter2-conventions.md), vor jedem Edit |
 
 ## Git

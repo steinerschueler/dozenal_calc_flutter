@@ -22,8 +22,9 @@ Alle Vorarbeiten sind erledigt:
    `store/screenshots/linux/`.
 3. **Build geprüft.** Der Builder von Flathub hat das Manifest für aarch64 und x86_64 grün gebaut, ausgelöst über den
    PR-Kommentar `bot, build`.
-4. **Eingereicht.** PR **flathub/flathub#8968** (Base `new-pr`) liegt im Review. Builds und Updates laufen nach der Annahme
-   auf der Infrastruktur von Flathub.
+4. **Eingereicht, nicht angenommen.** PR **flathub/flathub#8968** (Base `new-pr`) wurde am 2026-06-13 ungemerged
+   geschlossen. Es gibt keinen neuen Versuch, bis sich die KI-Richtlinie von Flathub ändert:
+   [ADR 0003](../../docs/decisions/0003-keine-flathub-einreichung.md).
 
 ## Version aktualisieren (nächstes Release)
 
