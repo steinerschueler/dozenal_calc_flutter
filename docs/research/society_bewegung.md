@@ -103,6 +103,7 @@ Es gibt keinen einzigen Standard. Die DSA selbst endorsiert offiziell keine best
 Wurzeln 0 bis 11: nil, un, bi, tri, quad, pent, hex, sept, oct, enn, dec, lev.
 
 Exponent-Marker:
+
 - **-qua-** = positive Zwölferpotenz (unqua = 12¹, biqua = 12², triqua = 12³ …)
 - **-cia-** = negative Zwölferpotenz (uncia = 12⁻¹, also ein Zwölftel — das ist exakt das lateinische *uncia*, die Wurzel von englisch *inch* und *ounce*)
 - **"dit"** = der dozenale Radixpunkt
@@ -201,53 +202,53 @@ Bewertung nach zwei Achsen. **Zuverlässigkeit:** R1 = wissenschaftlich/primär,
 
 ### Primärquellen der Gesellschaften (DSA/DSGB)
 
-- [R1·A2] A History of the DSA — Gene Zirkel (Duodecimal Bulletin WN 97) — https://dozenal.org/article-zirkel-history-of-dsa.pdf — Wichtigste Primärquelle zur Gründungsgeschichte (Zeitleiste, fünf Gründer, Daten 1944/1945, DSGB 1959, Essig-Konferenz 1960). PDF öffentlich, aber nur teilweise als Reintext extrahierbar; Kernfakten über Snippets und Sekundärquellen gegengeprüft.
-- [R1·A2] An Excursion in Numbers — F. Emerson Andrews (Faksimile) — https://dozenal.org/article-andrews-excursion-in-numbers.pdf — Der Ausgangsartikel von 1934. Landingpage nur Metadaten, Faksimile-PDF vorhanden.
-- [R1·A1] Honorary Members and Fellows — DSA — https://dozenal.org/about-us-honorary-members-and-fellows-society — Volltext-Liste der Ehrenmitglieder (Asimov, Glaser, Trigg, Whillock, Ferguson u. a.).
-- [R2·A1] Dozenal Society of America — Hauptseite/Resources/About — https://dozenal.org/ — Heutige Aktivitäten, Bulletin/Jottings/Newscast, Januar-2026-Umstrukturierung und A/B-Web-Notation, Tool-Verzeichnis.
-- [R2·A1] Duodecimal Bulletin (Archiv + Einzelhefte) — https://dozenal.org/duodecimal-bulletin — Flaggschiff-Journal der DSA, einzelne PDFs lesbar.
-- [R1·A3] My Love Affair with Dozens — F. Emerson Andrews (DSGB) — http://www.dozenalsociety.org.uk/pdfs/andrews.pdf — Andrews' Rückschau; Server verweigerte Verbindung, nur indirekt referenziert.
-- [R2·A3] Dozenal Society of Great Britain — Startseite + About-PDF — http://www.dozenalsociety.org.uk/ — Zum Recherchezeitpunkt nicht erreichbar (ECONNREFUSED); GB-Angaben über Wikipedia und Zirkel gegengeprüft.
+- [R1·A2] A History of the DSA — Gene Zirkel (Duodecimal Bulletin WN 97) — <https://dozenal.org/article-zirkel-history-of-dsa.pdf> — Wichtigste Primärquelle zur Gründungsgeschichte (Zeitleiste, fünf Gründer, Daten 1944/1945, DSGB 1959, Essig-Konferenz 1960). PDF öffentlich, aber nur teilweise als Reintext extrahierbar; Kernfakten über Snippets und Sekundärquellen gegengeprüft.
+- [R1·A2] An Excursion in Numbers — F. Emerson Andrews (Faksimile) — <https://dozenal.org/article-andrews-excursion-in-numbers.pdf> — Der Ausgangsartikel von 1934. Landingpage nur Metadaten, Faksimile-PDF vorhanden.
+- [R1·A1] Honorary Members and Fellows — DSA — <https://dozenal.org/about-us-honorary-members-and-fellows-society> — Volltext-Liste der Ehrenmitglieder (Asimov, Glaser, Trigg, Whillock, Ferguson u. a.).
+- [R2·A1] Dozenal Society of America — Hauptseite/Resources/About — <https://dozenal.org/> — Heutige Aktivitäten, Bulletin/Jottings/Newscast, Januar-2026-Umstrukturierung und A/B-Web-Notation, Tool-Verzeichnis.
+- [R2·A1] Duodecimal Bulletin (Archiv + Einzelhefte) — <https://dozenal.org/duodecimal-bulletin> — Flaggschiff-Journal der DSA, einzelne PDFs lesbar.
+- [R1·A3] My Love Affair with Dozens — F. Emerson Andrews (DSGB) — <http://www.dozenalsociety.org.uk/pdfs/andrews.pdf> — Andrews' Rückschau; Server verweigerte Verbindung, nur indirekt referenziert.
+- [R2·A3] Dozenal Society of Great Britain — Startseite + About-PDF — <http://www.dozenalsociety.org.uk/> — Zum Recherchezeitpunkt nicht erreichbar (ECONNREFUSED); GB-Angaben über Wikipedia und Zirkel gegengeprüft.
 
 ### Etablierte Referenzwerke
 
-- [R2·A1] Duodecimal — Wikipedia — https://en.wikipedia.org/wiki/Duodecimal — Breit gegengeprüfte Hauptreferenz: Pitman 1857, Sidis 1906, Aitken, Glyphen-Varianten, Unicode ↊↋, Gesellschaften 1944/1959, A/B-Web-Notation der DSA (Stand Jan. 2026), Spencer/Shaw/Adams als Befürworter.
-- [R2·A1] F. Emerson Andrews — Wikipedia — https://en.wikipedia.org/wiki/F._Emerson_Andrews — Lebensdaten 1902–1978, Russell-Sage-Karriere, *New Numbers* 1935.
-- [R2·A3] Duodecimal — Wolfram MathWorld — https://mathworld.wolfram.com/Duodecimal.html — Quelle für die Gardner-1984-Zuschreibung (Buffon/Shaw/Spencer/Adams); Server lieferte 403, nur über Snippets.
-- [R2·A3] Definition:Duodecimal System/Historical Note — ProofWiki — https://proofwiki.org/wiki/Definition:Duodecimal_System/Historical_Note — Wiederholt dieselbe Befürworter-Kaskade; 403, nur Snippets.
-- [R3·A3] H. G. Wells — Wikipedia — https://en.wikipedia.org/wiki/H._G._Wells — Negativbefund: keine Basis-12-Befürwortung erwähnt.
+- [R2·A1] Duodecimal — Wikipedia — <https://en.wikipedia.org/wiki/Duodecimal> — Breit gegengeprüfte Hauptreferenz: Pitman 1857, Sidis 1906, Aitken, Glyphen-Varianten, Unicode ↊↋, Gesellschaften 1944/1959, A/B-Web-Notation der DSA (Stand Jan. 2026), Spencer/Shaw/Adams als Befürworter.
+- [R2·A1] F. Emerson Andrews — Wikipedia — <https://en.wikipedia.org/wiki/F._Emerson_Andrews> — Lebensdaten 1902–1978, Russell-Sage-Karriere, *New Numbers* 1935.
+- [R2·A3] Duodecimal — Wolfram MathWorld — <https://mathworld.wolfram.com/Duodecimal.html> — Quelle für die Gardner-1984-Zuschreibung (Buffon/Shaw/Spencer/Adams); Server lieferte 403, nur über Snippets.
+- [R2·A3] Definition:Duodecimal System/Historical Note — ProofWiki — <https://proofwiki.org/wiki/Definition:Duodecimal_System/Historical_Note> — Wiederholt dieselbe Befürworter-Kaskade; 403, nur Snippets.
+- [R3·A3] H. G. Wells — Wikipedia — <https://en.wikipedia.org/wiki/H._G._Wells> — Negativbefund: keine Basis-12-Befürwortung erwähnt.
 
 ### System, Nomenklatur, Masse (SDN, TGM, Glyphen)
 
-- [R1·A1] Symbols, Symbols … Symbols — DSA — https://dozenal.org/drupal/content/symbols-symbols-%C2%A2-symbols.html — Symbol-Chronologie (Sextil/Hash, Dwiggins, Pitman).
-- [R2·A1] SDN-Kurzfassung — gorpub — https://gorpub.freeshell.org/dozenal/sdnbrief.html — Wurzeln nil…lev, -qua-/-cia-, uncia, "dit", Aussprache-Beispiele.
-- [R1·A3] SDN (DSA PDF, Kodegadulo) — https://dozenal.org/drupal/sites_bck/default/files/DSA_kodegadulo_sdn.pdf — Primärdokument der Nomenklatur; nur über Snippet.
-- [R2·A1] TGM — fergusoncreations — http://www.fergusoncreations.co.uk/home/shaun/metrology/tgm.htm — Tim/Grafut/Maz und abgeleitete Einheiten mit Definitionen, Präfix-Liste.
-- [R1·A3] TGM-Booklet (DSGB/DSA PDF) — https://dozenal.org/drupal/sites_bck/default/files/tgm_0.pdf — Pendlebury-Original; PDF binär, nur Snippet.
-- [R2·A1] Dozenal Suite — https://dozenal.ca/suite/ — DozClock/DozWeather/DozAlarm/DozTimer/DozStopwatch (iOS/macOS).
-- [R3·A1] Dozenal RPN Calculator — Eddie's Math and Calculator Blog — http://edspi31415.blogspot.com/2026/02/dozenal-rpn-calculator-app-for-android.html — App-Review mit Versions-/Datums-Angaben.
+- [R1·A1] Symbols, Symbols … Symbols — DSA — <https://dozenal.org/drupal/content/symbols-symbols-%C2%A2-symbols.html> — Symbol-Chronologie (Sextil/Hash, Dwiggins, Pitman).
+- [R2·A1] SDN-Kurzfassung — gorpub — <https://gorpub.freeshell.org/dozenal/sdnbrief.html> — Wurzeln nil…lev, -qua-/-cia-, uncia, "dit", Aussprache-Beispiele.
+- [R1·A3] SDN (DSA PDF, Kodegadulo) — <https://dozenal.org/drupal/sites_bck/default/files/DSA_kodegadulo_sdn.pdf> — Primärdokument der Nomenklatur; nur über Snippet.
+- [R2·A1] TGM — fergusoncreations — <http://www.fergusoncreations.co.uk/home/shaun/metrology/tgm.htm> — Tim/Grafut/Maz und abgeleitete Einheiten mit Definitionen, Präfix-Liste.
+- [R1·A3] TGM-Booklet (DSGB/DSA PDF) — <https://dozenal.org/drupal/sites_bck/default/files/tgm_0.pdf> — Pendlebury-Original; PDF binär, nur Snippet.
+- [R2·A1] Dozenal Suite — <https://dozenal.ca/suite/> — DozClock/DozWeather/DozAlarm/DozTimer/DozStopwatch (iOS/macOS).
+- [R3·A1] Dozenal RPN Calculator — Eddie's Math and Calculator Blog — <http://edspi31415.blogspot.com/2026/02/dozenal-rpn-calculator-app-for-android.html> — App-Review mit Versions-/Datums-Angaben.
 
 ### Seriös populäre Einordnung und Rezeption
 
-- [R3·A1] Engines of Our Ingenuity Nr. 3172 "Dozenels" — https://engines.egr.uh.edu/episode/3172 — Andrews-Charakterisierung ("Reformer, nicht Spinner"), Atlantic 1934, Rezeptionseinordnung.
-- [R3·A1] Charles Petzold, "Summer Reading: New Numbers" — http://www.charlespetzold.com/blog/2006/08/250954.html — Petzold besitzt eine Ausgabe; Erst-/Zweitbuch-Einordnung, Andrews' Realismus-Zitat.
-- [R3·A2] Gizmodo, "Why We Should Switch To A Base-12 Counting System" — https://gizmodo.com/why-we-should-switch-to-a-base-12-counting-system-5977095 — Nennt Pitman/Spencer/Shaw als Befürworter (nicht Wells/Buffon); Pro-Argumente.
-- [R3·A2] ScienceABC, "Duodecimal Number System: Should We Use Base 12?" — https://www.scienceabc.com/eyeopeners/why-we-should-already-use-base-12-instead-of-base-10 — Pro/Contra-Übersicht.
-- [R4·A2] Hexnet, "An Argument For Dozenalism" — https://hexnet.org/content/argument-dozenalism — Befürworter-Essay, als Standpunktquelle zu behandeln.
-- [R4·A2] Metric Views, "Why ten and not twelve?" — https://metricviews.uk/2016/10/10/why-ten-and-not-twelve/ — Quelle des unbestätigten Buffon/Laplace-Revolution-Strangs; als schwach/unverifiziert markiert.
+- [R3·A1] Engines of Our Ingenuity Nr. 3172 "Dozenels" — <https://engines.egr.uh.edu/episode/3172> — Andrews-Charakterisierung ("Reformer, nicht Spinner"), Atlantic 1934, Rezeptionseinordnung.
+- [R3·A1] Charles Petzold, "Summer Reading: New Numbers" — <http://www.charlespetzold.com/blog/2006/08/250954.html> — Petzold besitzt eine Ausgabe; Erst-/Zweitbuch-Einordnung, Andrews' Realismus-Zitat.
+- [R3·A2] Gizmodo, "Why We Should Switch To A Base-12 Counting System" — <https://gizmodo.com/why-we-should-switch-to-a-base-12-counting-system-5977095> — Nennt Pitman/Spencer/Shaw als Befürworter (nicht Wells/Buffon); Pro-Argumente.
+- [R3·A2] ScienceABC, "Duodecimal Number System: Should We Use Base 12?" — <https://www.scienceabc.com/eyeopeners/why-we-should-already-use-base-12-instead-of-base-10> — Pro/Contra-Übersicht.
+- [R4·A2] Hexnet, "An Argument For Dozenalism" — <https://hexnet.org/content/argument-dozenalism> — Befürworter-Essay, als Standpunktquelle zu behandeln.
+- [R4·A2] Metric Views, "Why ten and not twelve?" — <https://metricviews.uk/2016/10/10/why-ten-and-not-twelve/> — Quelle des unbestätigten Buffon/Laplace-Revolution-Strangs; als schwach/unverifiziert markiert.
 
 ### Schoolhouse Rock "Little Twelvetoes"
 
-- [R3·A1] Little Twelvetoes — Schoolhouse Rock Wiki (Fandom) — https://schoolhouserock.fandom.com/wiki/Little_Twelvetoes — Bob Dorough, 31.3.1973, dek/el/doh, Dwiggins-Glyphen, seltene Ausstrahlung. Fan-Wiki, als Sekundärquelle.
-- [R3·A2] Little Twelvetoes — IMDb — https://www.imdb.com/title/tt1268074/ — Erstausstrahlungsdatum.
-- [R3·A1] Little Twelvetoes — Internet Archive (Video) — https://archive.org/details/LittleTwelvetoesSchoolhouseRock — Das Medium selbst.
+- [R3·A1] Little Twelvetoes — Schoolhouse Rock Wiki (Fandom) — <https://schoolhouserock.fandom.com/wiki/Little_Twelvetoes> — Bob Dorough, 31.3.1973, dek/el/doh, Dwiggins-Glyphen, seltene Ausstrahlung. Fan-Wiki, als Sekundärquelle.
+- [R3·A2] Little Twelvetoes — IMDb — <https://www.imdb.com/title/tt1268074/> — Erstausstrahlungsdatum.
+- [R3·A1] Little Twelvetoes — Internet Archive (Video) — <https://archive.org/details/LittleTwelvetoesSchoolhouseRock> — Das Medium selbst.
 
 ### Buch-Kataloge "New Numbers"
 
-- [R2·A1] New Numbers — Internet Archive — https://archive.org/details/newnumbershowacc0000fran — Leihzugang/Katalog (Titel, Jahr).
-- [R2·A2] New Numbers — Open Library — https://openlibrary.org/works/OL4105777W/New_numbers — Metadaten.
-- [R2·A2] New Numbers — Google Books — https://books.google.com/books/about/New_numbers.html?id=zfXuAAAAMAAJ — Snippet/Metadaten.
+- [R2·A1] New Numbers — Internet Archive — <https://archive.org/details/newnumbershowacc0000fran> — Leihzugang/Katalog (Titel, Jahr).
+- [R2·A2] New Numbers — Open Library — <https://openlibrary.org/works/OL4105777W/New_numbers> — Metadaten.
+- [R2·A2] New Numbers — Google Books — <https://books.google.com/books/about/New_numbers.html?id=zfXuAAAAMAAJ> — Snippet/Metadaten.
 
 ### Online-Community
 
-- [R3·A2] Dozensonline-Forum — Tapatalk — https://www.tapatalk.com/groups/dozensonline/ — Zentrales aktives Diskussionsforum der Bewegung; einzelne Threads via Snippet.
+- [R3·A2] Dozensonline-Forum — Tapatalk — <https://www.tapatalk.com/groups/dozensonline/> — Zentrales aktives Diskussionsforum der Bewegung; einzelne Threads via Snippet.

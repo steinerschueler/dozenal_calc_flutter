@@ -55,6 +55,7 @@ mittel/schwach) · **Zugänglichkeit** (Einsteiger…fortgeschritten) · **Über
 ## Empfohlene kohärente Auswahl (Vorschlag)
 
 Ein stimmiger, abwechslungsreicher Satz von **drei bis vier** neuen Kapiteln:
+
 1. **Zyklische Zahlen (186A35)** — interaktiv, sehr dozenal-eigen.
 2. **ℤ/12ℤ — die Uhr als Gruppe** (inkl. Primziffern + Quintenzirkel) — verbindet viel.
 3. **Archimedische Parkettierungen** — visuell, mit Diagramm.

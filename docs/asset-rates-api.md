@@ -41,6 +41,7 @@ Persistenz und der „≈/Stand"-Mechanismus funktionieren dann unverändert wei
      // → store.setMetalOverride('gold', spotProTroyUnze);
    }
    ```
+
 3. **Aufruf** nach `_rateStore.load()` in `lib/main.dart`
    (`_CalcScaffoldState.initState`), hinter einem Flag, das per Default **aus**
    ist (Muster `_kFuncPageEnabled`), oder direkt nur in deinem Fork.

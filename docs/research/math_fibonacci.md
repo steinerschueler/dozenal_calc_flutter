@@ -294,7 +294,7 @@ Paywall · **A3** nur indirekt). Jede Quelle annotiert, *was* sie belegt.
 ### Fibonacci-Quadratzahlen (Kern-Mathematik)
 
 - **[R1·A1]** Cohn, J. H. E.: „Square Fibonacci Numbers, Etc." *Fibonacci
-  Quarterly* 2 (1964), S. 109–113 — https://math.la.asu.edu/~checkman/SquareFibonacci.html
+  Quarterly* 2 (1964), S. 109–113 — <https://math.la.asu.edu/~checkman/SquareFibonacci.html>
   — Volltext-Scan zugänglich. Belegt: F(n) = x² ⟺ n ∈ {0, ±1, 2, 12};
   Beweisstruktur über Lucas-Faktorisierung und Kongruenzen. Hauptquelle für
   den Cohn-Satz.
@@ -305,70 +305,70 @@ Paywall · **A3** nur indirekt). Jede Quelle annotiert, *was* sie belegt.
 - **[R1·A1]** Bugeaud, Y.; Mignotte, M.; Siksek, S.: „Classical and modular
   approaches to exponential Diophantine equations I. Fibonacci and Lucas
   perfect powers." *Annals of Mathematics* 163 (2006), S. 969–1018 —
-  https://annals.math.princeton.edu/2006/163-3/p05 — Volltext-Seite. Belegt:
+  <https://annals.math.princeton.edu/2006/163-3/p05> — Volltext-Seite. Belegt:
   einzige vollständige Potenzen in Fibonacci sind 0, 1, 8, 144.
 - **[R1·A3]** OEIS A166074 (Indizes n mit F(n) = Quadrat) —
-  https://oeis.org/A166074 — Snippet. Belegt: Korrektheit von {0, 1, 2, 12}.
+  <https://oeis.org/A166074> — Snippet. Belegt: Korrektheit von {0, 1, 2, 12}.
 
 ### Goldener Schnitt, φ, Natur
 
 - **[R2·A1]** Fibonacci sequence — Wikipedia (en) —
-  https://en.wikipedia.org/wiki/Fibonacci_sequence — Volltext. Belegt:
+  <https://en.wikipedia.org/wiki/Fibonacci_sequence> — Volltext. Belegt:
   Folgendefinition, Indexkonventionen, Binet-Formel, φ-Grenzwert,
   Kepler 1611, Leonardo Bonacci / Liber Abaci 1202.
 - **[R3·A1]** Myth-busting the Golden Ratio — University of Edinburgh (EuSci,
-  2020) — https://eusci.org.uk/2020/07/29/myth-busting-the-golden-ratio/ —
+  2020) — <https://eusci.org.uk/2020/07/29/myth-busting-the-golden-ratio/> —
   Volltext. Belegt: Phyllotaxis als legitimes Gebiet; Überdehnungen
   (Nautilus, Parthenon, Schönheitsmasken) als unbelegt.
 
 ### Kanonenkugel-Problem / Pyramidalzahlen
 
 - **[R2·A1]** Cannonball problem — Wikipedia (en) —
-  https://en.wikipedia.org/wiki/Cannonball_problem — Volltext. Belegt:
+  <https://en.wikipedia.org/wiki/Cannonball_problem> — Volltext. Belegt:
   1²+…+24² = 70² als einzige nichttriviale Lösung; Lucas 1875, Watson 1918
   (elliptische Funktionen), Ma 1984, Anglin 1990; Harriot/Raleigh 1587;
   Leech-Gitter / Stringtheorie-Echos.
 - **[R2·A1]** Square pyramidal number — Wikipedia (en) —
-  https://en.wikipedia.org/wiki/Square_pyramidal_number — Volltext. Belegt:
+  <https://en.wikipedia.org/wiki/Square_pyramidal_number> — Volltext. Belegt:
   Formel P(n) = n(n+1)(2n+1)/6; 4900 = 70² = P(24).
 
 ### Teilerreiche / abundante / sublime Zahlen
 
 - **[R1·A2]** Ramanujan, S.: „Highly Composite Numbers." *Proc. London Math.
   Soc.*, Serie 2, 14 (1915), S. 347–409. doi:10.1112/plms/s2_14.1.347 —
-  https://www.math.univ-lyon1.fr/~nicolas/ramanujanNR.pdf — Direkt-PDF,
+  <https://www.math.univ-lyon1.fr/~nicolas/ramanujanNR.pdf> — Direkt-PDF,
   teilweise gelesen. Belegt: Definition hochzusammengesetzter Zahlen,
   d(N)-Notation, erste Glieder.
 - **[R2·A1]** Highly composite number — Wikipedia (en) —
-  https://en.wikipedia.org/wiki/Highly_composite_number — Volltext. Belegt:
+  <https://en.wikipedia.org/wiki/Highly_composite_number> — Volltext. Belegt:
   d(12) = 6, Liste der ersten HCN, 12 als 5. Glied, Kahane-These zu Platon.
 - **[R2·A1]** Abundant number — Wikipedia (en) —
-  https://en.wikipedia.org/wiki/Abundant_number — Volltext. Belegt:
+  <https://en.wikipedia.org/wiki/Abundant_number> — Volltext. Belegt:
   12 als kleinste abundante Zahl, Abundanz = 4, Nikomachos (ca. 100 n. Chr.).
 - **[R2·A1]** Sublime number — Wikipedia (en) —
-  https://en.wikipedia.org/wiki/Sublime_number — Volltext. Belegt: Definition,
+  <https://en.wikipedia.org/wiki/Sublime_number> — Volltext. Belegt: Definition,
   Verifikation für 12 (6 Teiler perfekt, Summe 28 perfekt), nur zwei bekannte
   sublime Zahlen, OEIS A081357.
 - **[R2·A2]** Perfect number — Wikipedia / MacTutor —
-  https://en.wikipedia.org/wiki/Perfect_number ;
-  https://mathshistory.st-andrews.ac.uk/HistTopics/Perfect_numbers/ —
+  <https://en.wikipedia.org/wiki/Perfect_number> ;
+  <https://mathshistory.st-andrews.ac.uk/HistTopics/Perfect_numbers/> —
   Teilweise. Belegt: σ(n) = 2n, perfekte Zahlen 6, 28, 496, 8128 — Kontrast
   zum Irrtum „12 ist perfekt".
 
 ### Gross / Platon
 
 - **[R2·A1]** Gross (unit) — Wikipedia (en) —
-  https://en.wikipedia.org/wiki/Gross_(unit) — Volltext. Belegt:
+  <https://en.wikipedia.org/wiki/Gross_(unit)> — Volltext. Belegt:
   144 = 12² = „dozen dozen"; *grosse douzaine* (altfranzösisch, frühes 15. Jh.);
   Grossgross = 1728 = 12³.
 - **[R2·A1]** 5040 (number) — Wikipedia (en) —
-  https://en.wikipedia.org/wiki/5040_(number) — Volltext. Belegt:
+  <https://en.wikipedia.org/wiki/5040_(number)> — Volltext. Belegt:
   Platon, *Gesetze* Buch V; Teilbarkeit 1–12 (ausser 11); 7! = 5040, 60 Teiler;
   Kahane-Interpretation.
 
 ### Beleg für die *Existenz* des Irrtums (nicht als Sachbeleg)
 
-- **[S·A2]** mysticalnumbers.com — Number 12 — https://mysticalnumbers.com/number-12/
+- **[S·A2]** mysticalnumbers.com — Number 12 — <https://mysticalnumbers.com/number-12/>
   — Inhaltlich unzuverlässig. Nur herangezogen als Beleg, *dass* die populäre
   These „12 ist perfekt/vollkommen" existiert. Nicht als mathematischer Beleg.
 

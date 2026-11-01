@@ -20,6 +20,7 @@ Die beiden sind **dual** zueinander: Die 12 Ecken des Ikosaeders entsprechen den
 Die volle ikosaedrische Symmetriegruppe heisst I_h und hat die Ordnung 120 (60 reine Drehungen plus 60 Operationen mit Spiegelung). Die reine Drehgruppe hat die Ordnung 60. Sie ist die grösstmögliche Punktsymmetriegruppe im dreidimensionalen Raum.
 
 Die 31 Drehachsen verteilen sich auf:
+
 - **6 fünfzählige Achsen** (durch die 12 Ecken-Paare des Ikosaeders),
 - **10 dreizählige Achsen** (durch die 20 Flächen),
 - **15 zweizählige Achsen** (durch die 30 Kanten).
@@ -82,6 +83,7 @@ Warum die Natur das überhaupt bildet: Bei bestimmten Legierungen und Abkühlbed
 Genau hier liegt ein wichtiger und oft missverstandener Punkt. Manche gewöhnlichen Kristalle **sehen aus**, als hätten sie fünf- oder zwölfzählige Symmetrie — haben sie aber nicht.
 
 **Pyrit (FeS₂)** kristallisiert **kubisch**. Er bildet oft den **Pyritoeder** (Pentagondodekaeder): einen Körper mit zwölf fünfeckigen Flächen, der einem Dodekaeder ähnelt. Aber:
+
 - Die zwölf Flächen sind **keine regelmässigen Fünfecke** (es gibt zwei verschiedene Kantenlängen).
 - Pyrit hat **keine fünfzählige Drehachse**. Seine echten Achsen sind die kubischen: drei zweizählige und vier dreizählige. Die Symmetriegruppe ist T_h (Ordnung 24).
 
@@ -195,95 +197,95 @@ Bewertung pro Quelle: Zuverlässigkeit (R1 = wissenschaftlich/primär, R2 = etab
 
 ### Quasikristalle: Theorie, Entdeckung, Geschichte
 
-- [R2·A1] Quasicrystal — Wikipedia — https://en.wikipedia.org/wiki/Quasicrystal — Volltext; deckt Entdeckung, cut-and-project (5D/6D), Pauling-Twinning, Anwendungen, 6D-Indizierung.
-- [R1·A1] The Nobel Prize in Chemistry 2011 — Popular information — https://www.nobelprize.org/prizes/chemistry/2011/popular-information/ — Volltext; 8.4.1982, „10 Fold???", Al-Mn/NBS, Publikationsweg, Begriffsprägung, Girih.
-- [R1·A1] The Nobel Prize in Chemistry 2011 — Facts — https://www.nobelprize.org/prizes/chemistry/2011/shechtman/facts/ — Volltext; ungeteilter Preis, Ortsangabe Johns Hopkins (Abweichung).
-- [R2·A3] Dan Shechtman — Wikipedia — https://en.wikipedia.org/wiki/Dan_Shechtman — indirekt; Biografie, Widerstand, Shechtman-Zitat.
-- [R1·A3] The Nobel Moment: Dan Shechtman — NIST — https://www.nist.gov/nist-and-nobel/dan-shechtman — indirekt; bestätigt NBS als Entdeckungsort.
-- [R2·A3] Daniel Shechtman — Britannica — https://www.britannica.com/biography/Daniel-Shechtman — indirekt.
-- [R1·A2] Quasi-Periodic Crystals — The Long Road from Discovery to Acceptance — PMC3678913 — https://pmc.ncbi.nlm.nih.gov/articles/PMC3678913/ — Snippet; peer-reviewed Übersicht.
-- [R1·A3] Metallic Phase with Long-Range Orientational Order… (PRL 53, 1951, 1984) — bibliografisch via Atticus Rare Books — https://www.atticusrarebooks.com/pages/books/700/ — indirekt; Originalartikel hinter APS-Paywall.
-- [R3·A2] „There Are No Quasicrystals, Only Quasi-Scientists" — Z. Ambekar, Medium — https://medium.com/@zeneil_writes/there-are-no-quasicrystals-only-quasi-scientists-2f45a80a4c00 — Snippet/Volltext (je nach Block); Sekundärquelle, Pauling-Zitat, Faktenkerne decken sich mit Primärquellen.
-- [R3·A3] Adversity, Quasicrystals and a Nobel — Lindau Nobel Laureate Meetings — https://www.lindau-nobel.org/blog-adversity-quasicrystals-and-a-nobel-the-forbidden-fivefold-symmetry-that-was/ — indirekt.
-- [R3·A3] Dan Shechtman Wins Nobel — Harvard Crimson — https://www.thecrimson.com/article/2011/10/6/shechtman-discovery-quasicrystals-nobel/ — indirekt.
+- [R2·A1] Quasicrystal — Wikipedia — <https://en.wikipedia.org/wiki/Quasicrystal> — Volltext; deckt Entdeckung, cut-and-project (5D/6D), Pauling-Twinning, Anwendungen, 6D-Indizierung.
+- [R1·A1] The Nobel Prize in Chemistry 2011 — Popular information — <https://www.nobelprize.org/prizes/chemistry/2011/popular-information/> — Volltext; 8.4.1982, „10 Fold???", Al-Mn/NBS, Publikationsweg, Begriffsprägung, Girih.
+- [R1·A1] The Nobel Prize in Chemistry 2011 — Facts — <https://www.nobelprize.org/prizes/chemistry/2011/shechtman/facts/> — Volltext; ungeteilter Preis, Ortsangabe Johns Hopkins (Abweichung).
+- [R2·A3] Dan Shechtman — Wikipedia — <https://en.wikipedia.org/wiki/Dan_Shechtman> — indirekt; Biografie, Widerstand, Shechtman-Zitat.
+- [R1·A3] The Nobel Moment: Dan Shechtman — NIST — <https://www.nist.gov/nist-and-nobel/dan-shechtman> — indirekt; bestätigt NBS als Entdeckungsort.
+- [R2·A3] Daniel Shechtman — Britannica — <https://www.britannica.com/biography/Daniel-Shechtman> — indirekt.
+- [R1·A2] Quasi-Periodic Crystals — The Long Road from Discovery to Acceptance — PMC3678913 — <https://pmc.ncbi.nlm.nih.gov/articles/PMC3678913/> — Snippet; peer-reviewed Übersicht.
+- [R1·A3] Metallic Phase with Long-Range Orientational Order… (PRL 53, 1951, 1984) — bibliografisch via Atticus Rare Books — <https://www.atticusrarebooks.com/pages/books/700/> — indirekt; Originalartikel hinter APS-Paywall.
+- [R3·A2] „There Are No Quasicrystals, Only Quasi-Scientists" — Z. Ambekar, Medium — <https://medium.com/@zeneil_writes/there-are-no-quasicrystals-only-quasi-scientists-2f45a80a4c00> — Snippet/Volltext (je nach Block); Sekundärquelle, Pauling-Zitat, Faktenkerne decken sich mit Primärquellen.
+- [R3·A3] Adversity, Quasicrystals and a Nobel — Lindau Nobel Laureate Meetings — <https://www.lindau-nobel.org/blog-adversity-quasicrystals-and-a-nobel-the-forbidden-fivefold-symmetry-that-was/> — indirekt.
+- [R3·A3] Dan Shechtman Wins Nobel — Harvard Crimson — <https://www.thecrimson.com/article/2011/10/6/shechtman-discovery-quasicrystals-nobel/> — indirekt.
 
 ### Kristallographisches Restriktionstheorem
 
-- [R2·A1] Crystallographic restriction theorem — Wikipedia — https://en.wikipedia.org/wiki/Crystallographic_restriction_theorem — Volltext; Spur-/Cosinus-Beweis, Schrumpf-Argument, Ikosaeder füllt Raum nicht.
-- [R2·A3] Crystallographic restriction theorem — MathWorld (Wolfram) — https://mathworld.wolfram.com/CrystallographyRestriction.html — indirekt.
-- [R1·A2] Lecture notes, Univ. Illinois PHYS560 (PDF) — https://courses.physics.illinois.edu/phys560/sp2011/lecture/Problem_5-fold_rotation_axis_in_crystals.pdf — Trefferanzeige.
-- [R2·A3] Crystallography / Restriction theorem — CSIC — https://www.xtal.iqfr.csic.es/Cristalografia/parte_03_1_1-en.html — indirekt.
+- [R2·A1] Crystallographic restriction theorem — Wikipedia — <https://en.wikipedia.org/wiki/Crystallographic_restriction_theorem> — Volltext; Spur-/Cosinus-Beweis, Schrumpf-Argument, Ikosaeder füllt Raum nicht.
+- [R2·A3] Crystallographic restriction theorem — MathWorld (Wolfram) — <https://mathworld.wolfram.com/CrystallographyRestriction.html> — indirekt.
+- [R1·A2] Lecture notes, Univ. Illinois PHYS560 (PDF) — <https://courses.physics.illinois.edu/phys560/sp2011/lecture/Problem_5-fold_rotation_axis_in_crystals.pdf> — Trefferanzeige.
+- [R2·A3] Crystallography / Restriction theorem — CSIC — <https://www.xtal.iqfr.csic.es/Cristalografia/parte_03_1_1-en.html> — indirekt.
 
 ### IUCr-Definition / Aperiodizität
 
-- [R1·A3] Change to the definition of „crystal" — IUCr — https://www.iucr.org/news/newsletter/etc/articles?issue=151351 — indirekt; Neudefinition 1992.
-- [R1·A2] Fascinating quasicrystals — IUCr Journals — https://journals.iucr.org/a/issues/2008/01/00/sc5003/index.html — Trefferanzeige.
+- [R1·A3] Change to the definition of „crystal" — IUCr — <https://www.iucr.org/news/newsletter/etc/articles?issue=151351> — indirekt; Neudefinition 1992.
+- [R1·A2] Fascinating quasicrystals — IUCr Journals — <https://journals.iucr.org/a/issues/2008/01/00/sc5003/index.html> — Trefferanzeige.
 
 ### Penrose-Parkettierung / höhere Dimension / Goldener Schnitt
 
-- [R2·A2] Penrose tiling — Wikipedia — https://en.wikipedia.org/wiki/Penrose_tiling — teilweise; Rhomben 36°/72°, φ-Verhältnis, Mackay.
-- [R1·A2] New perspectives on forbidden symmetries, quasicrystals, and Penrose tilings — PMC34472 — https://pmc.ncbi.nlm.nih.gov/articles/PMC34472/ — Trefferanzeige; peer-reviewed.
-- [R1·A2] Five-fold symmetry in crystalline quasicrystal lattices — PNAS — https://www.pnas.org/doi/10.1073/pnas.93.25.14271 — Trefferanzeige; peer-reviewed.
-- [R1·A2] Mathematical aspects of quasicrystals — Springer (Rendiconti Lincei) — https://link.springer.com/article/10.1007/s12210-023-01176-y — Trefferanzeige.
-- [R1·A3] Quasicrystals — The impact of N.G. de Bruijn (arXiv:1306.6698) — https://arxiv.org/pdf/1306.6698 — indirekt; algebraische Theorie der Penrose-Parkettierung.
-- [R3·A2] Cut-and-Project Method — Bohrium — https://www.bohrium.com/en/sciencepedia/feynman/keyword/cut_and_project_method — teilweise.
-- [R2·A3] Golden ratio — Wikipedia — https://en.wikipedia.org/wiki/Golden_ratio — indirekt.
+- [R2·A2] Penrose tiling — Wikipedia — <https://en.wikipedia.org/wiki/Penrose_tiling> — teilweise; Rhomben 36°/72°, φ-Verhältnis, Mackay.
+- [R1·A2] New perspectives on forbidden symmetries, quasicrystals, and Penrose tilings — PMC34472 — <https://pmc.ncbi.nlm.nih.gov/articles/PMC34472/> — Trefferanzeige; peer-reviewed.
+- [R1·A2] Five-fold symmetry in crystalline quasicrystal lattices — PNAS — <https://www.pnas.org/doi/10.1073/pnas.93.25.14271> — Trefferanzeige; peer-reviewed.
+- [R1·A2] Mathematical aspects of quasicrystals — Springer (Rendiconti Lincei) — <https://link.springer.com/article/10.1007/s12210-023-01176-y> — Trefferanzeige.
+- [R1·A3] Quasicrystals — The impact of N.G. de Bruijn (arXiv:1306.6698) — <https://arxiv.org/pdf/1306.6698> — indirekt; algebraische Theorie der Penrose-Parkettierung.
+- [R3·A2] Cut-and-Project Method — Bohrium — <https://www.bohrium.com/en/sciencepedia/feynman/keyword/cut_and_project_method> — teilweise.
+- [R2·A3] Golden ratio — Wikipedia — <https://en.wikipedia.org/wiki/Golden_ratio> — indirekt.
 
 ### Cluster-/Strukturaufbau der Quasikristalle
 
-- [R3·A2] Introduction to Quasicrystals — S. Weber, jcrystal.com — http://jcrystal.com/steffenweber/qc.html — Snippet; Triakontaeder/Ikosidodekaeder-Cluster.
-- [R1·A3] A group theoretical approach to structural transitions of icosahedral quasicrystals (arXiv:1512.02101) — https://arxiv.org/pdf/1512.02101 — indirekt.
-- [R1·A3] Structure of the icosahedral Ti-Zr-Ni quasicrystal (arXiv:cond-mat/0202517) — https://arxiv.org/pdf/cond-mat/0202517 — indirekt.
+- [R3·A2] Introduction to Quasicrystals — S. Weber, jcrystal.com — <http://jcrystal.com/steffenweber/qc.html> — Snippet; Triakontaeder/Ikosidodekaeder-Cluster.
+- [R1·A3] A group theoretical approach to structural transitions of icosahedral quasicrystals (arXiv:1512.02101) — <https://arxiv.org/pdf/1512.02101> — indirekt.
+- [R1·A3] Structure of the icosahedral Ti-Zr-Ni quasicrystal (arXiv:cond-mat/0202517) — <https://arxiv.org/pdf/cond-mat/0202517> — indirekt.
 
 ### Natürliche Quasikristalle / Chatyrka-Meteorit
 
-- [R2·A1] Icosahedrite — Wikipedia — https://en.wikipedia.org/wiki/Icosahedrite — Volltext; Komposition, IMA-Anerkennung, Begleitminerale.
-- [R3·A1] Quasicrystal is extraterrestrial in origin — Princeton — https://www.princeton.edu/news/2012/01/12/quasicrystal-extraterrestrial-origin-princeton-researchers-find — Volltext; Formel, Korjaken/1979, Florenz, Isotope, Stishovit, CV3, 4,5 Mrd. J.
-- [R1·A1] First high-resolution synchrotron X-ray study of icosahedrite — IUCrJ/PMC12403171 — https://pmc.ncbi.nlm.nih.gov/articles/PMC12403171/ — Volltext; 6D-Indizierung, Phason ~20 nm, Bildungs-Debatte.
-- [R1·A3] Collisions in outer space produced an icosahedral phase in the Khatyrka meteorite — Scientific Reports (srep38117) — https://www.nature.com/articles/srep38117 — indirekt (auth-gesperrt).
-- [R1·A2] Natural quasicrystal with decagonal symmetry — Scientific Reports (srep09111) — https://www.nature.com/articles/srep09111 — Snippet; Dekagonit Al₇₁Ni₂₄Fe₅.
-- [R1·A2] Shock synthesis of quasicrystals … asteroid collisions — PNAS — https://www.pnas.org/doi/10.1073/pnas.1600321113 — Trefferanzeige; peer-reviewed.
-- [R1·A2] Impact-induced shock and the formation of natural quasicrystals — Nature Communications (ncomms5040) — https://www.nature.com/articles/ncomms5040 — Trefferanzeige; peer-reviewed.
-- [R1·A2] Cosmic history and a candidate parent asteroid for Khatyrka — ScienceDirect — https://www.sciencedirect.com/science/article/abs/pii/S0012821X1830147X — Abstract.
-- [R3·A2] Khatyrka meteorite found to have third quasicrystal — Phys.org — https://phys.org/news/2016-12-khatyrka-meteorite-quasicrystal.html — Snippet; dritte Phase.
-- [R3·A3] Kamchatka or bust: Paul Steinhardt's quest… — Physics World — https://physicsworld.com/a/kamchatka-or-bust-paul-steinhardts-quest-for-quasicrystals-from-outer-space/ — indirekt; Kryachko 1979, Expedition 2011.
-- [R3·A3] The Second Kind of Impossible (Buchseite, P. Steinhardt) — https://secondkindofimpossible.org/about-the-book/ — indirekt; populärwissenschaftliche Schilderung.
-- [R2·A3] Khatyrkite — Wikipedia — https://en.wikipedia.org/wiki/Khatyrkite — indirekt.
+- [R2·A1] Icosahedrite — Wikipedia — <https://en.wikipedia.org/wiki/Icosahedrite> — Volltext; Komposition, IMA-Anerkennung, Begleitminerale.
+- [R3·A1] Quasicrystal is extraterrestrial in origin — Princeton — <https://www.princeton.edu/news/2012/01/12/quasicrystal-extraterrestrial-origin-princeton-researchers-find> — Volltext; Formel, Korjaken/1979, Florenz, Isotope, Stishovit, CV3, 4,5 Mrd. J.
+- [R1·A1] First high-resolution synchrotron X-ray study of icosahedrite — IUCrJ/PMC12403171 — <https://pmc.ncbi.nlm.nih.gov/articles/PMC12403171/> — Volltext; 6D-Indizierung, Phason ~20 nm, Bildungs-Debatte.
+- [R1·A3] Collisions in outer space produced an icosahedral phase in the Khatyrka meteorite — Scientific Reports (srep38117) — <https://www.nature.com/articles/srep38117> — indirekt (auth-gesperrt).
+- [R1·A2] Natural quasicrystal with decagonal symmetry — Scientific Reports (srep09111) — <https://www.nature.com/articles/srep09111> — Snippet; Dekagonit Al₇₁Ni₂₄Fe₅.
+- [R1·A2] Shock synthesis of quasicrystals … asteroid collisions — PNAS — <https://www.pnas.org/doi/10.1073/pnas.1600321113> — Trefferanzeige; peer-reviewed.
+- [R1·A2] Impact-induced shock and the formation of natural quasicrystals — Nature Communications (ncomms5040) — <https://www.nature.com/articles/ncomms5040> — Trefferanzeige; peer-reviewed.
+- [R1·A2] Cosmic history and a candidate parent asteroid for Khatyrka — ScienceDirect — <https://www.sciencedirect.com/science/article/abs/pii/S0012821X1830147X> — Abstract.
+- [R3·A2] Khatyrka meteorite found to have third quasicrystal — Phys.org — <https://phys.org/news/2016-12-khatyrka-meteorite-quasicrystal.html> — Snippet; dritte Phase.
+- [R3·A3] Kamchatka or bust: Paul Steinhardt's quest… — Physics World — <https://physicsworld.com/a/kamchatka-or-bust-paul-steinhardts-quest-for-quasicrystals-from-outer-space/> — indirekt; Kryachko 1979, Expedition 2011.
+- [R3·A3] The Second Kind of Impossible (Buchseite, P. Steinhardt) — <https://secondkindofimpossible.org/about-the-book/> — indirekt; populärwissenschaftliche Schilderung.
+- [R2·A3] Khatyrkite — Wikipedia — <https://en.wikipedia.org/wiki/Khatyrkite> — indirekt.
 
 ### Pyrit / Granat (periodischer Kontrast)
 
-- [R2·A1] Pyrite — Wikipedia — https://en.wikipedia.org/wiki/Pyrite — Volltext; kubisch, Pyritoeder ≈ Dodekaeder, keine echte Fünf-Zähligkeit.
-- [R3·A1] Fool's Gold — J. C. Baez (Azimuth) — https://johncarlosbaez.wordpress.com/2011/09/12/fools-gold/ — Volltext; präzise φ-vs-2-Erklärung des Pyritoeders. (Autor ist Mathematiker; Blog-Format, aber fachlich solide.)
-- [R2·A2] Dodecahedron — Wikipedia — https://en.wikipedia.org/wiki/Dodecahedron — Snippet; Pyritoeder T_h, 24+6 Kanten.
-- [R2·A3] Crystal Morphology and Symmetry — OpenGeology — https://opengeology.org/Mineralogy/10-crystal-morphology-and-symmetry/ — indirekt; Granat kubisch, Rhombendodekaeder.
-- [R2·A2] Pyrite — Mindat — https://www.mindat.org/min-3314.html — Trefferanzeige.
-- [R3·A2] Pyritohedral symmetry — apieceofthepi (Substack) — https://apieceofthepi.substack.com/p/pyritohedral-symmetry — Snippet.
+- [R2·A1] Pyrite — Wikipedia — <https://en.wikipedia.org/wiki/Pyrite> — Volltext; kubisch, Pyritoeder ≈ Dodekaeder, keine echte Fünf-Zähligkeit.
+- [R3·A1] Fool's Gold — J. C. Baez (Azimuth) — <https://johncarlosbaez.wordpress.com/2011/09/12/fools-gold/> — Volltext; präzise φ-vs-2-Erklärung des Pyritoeders. (Autor ist Mathematiker; Blog-Format, aber fachlich solide.)
+- [R2·A2] Dodecahedron — Wikipedia — <https://en.wikipedia.org/wiki/Dodecahedron> — Snippet; Pyritoeder T_h, 24+6 Kanten.
+- [R2·A3] Crystal Morphology and Symmetry — OpenGeology — <https://opengeology.org/Mineralogy/10-crystal-morphology-and-symmetry/> — indirekt; Granat kubisch, Rhombendodekaeder.
+- [R2·A2] Pyrite — Mindat — <https://www.mindat.org/min-3314.html> — Trefferanzeige.
+- [R3·A2] Pyritohedral symmetry — apieceofthepi (Substack) — <https://apieceofthepi.substack.com/p/pyritohedral-symmetry> — Snippet.
 
 ### Ikosaeder / Dodekaeder / Symmetriegruppe
 
-- [R2·A1] Regular icosahedron — Wikipedia — https://en.wikipedia.org/wiki/Regular_icosahedron — Volltext; Euler-Daten, φ-Koordinaten.
-- [R2·A2] Regular dodecahedron — Wikipedia — https://en.wikipedia.org/wiki/Regular_dodecahedron — Snippet; Dualität.
-- [R2·A2] Icosahedral symmetry — Wikipedia — https://en.wikipedia.org/wiki/Icosahedral_symmetry — Snippet; Ordnung 120/60, A₅.
-- [R2·A2] Icosahedral Group — Wolfram MathWorld — https://mathworld.wolfram.com/IcosahedralGroup.html — Snippet.
-- [R3·A2] Three Golden Rectangles in an Icosahedron — Dawson, SMU — https://cs.smu.ca/~dawson/images3.html — Snippet.
+- [R2·A1] Regular icosahedron — Wikipedia — <https://en.wikipedia.org/wiki/Regular_icosahedron> — Volltext; Euler-Daten, φ-Koordinaten.
+- [R2·A2] Regular dodecahedron — Wikipedia — <https://en.wikipedia.org/wiki/Regular_dodecahedron> — Snippet; Dualität.
+- [R2·A2] Icosahedral symmetry — Wikipedia — <https://en.wikipedia.org/wiki/Icosahedral_symmetry> — Snippet; Ordnung 120/60, A₅.
+- [R2·A2] Icosahedral Group — Wolfram MathWorld — <https://mathworld.wolfram.com/IcosahedralGroup.html> — Snippet.
+- [R3·A2] Three Golden Rectangles in an Icosahedron — Dawson, SMU — <https://cs.smu.ca/~dawson/images3.html> — Snippet.
 
 ### Viren / Fullerene / Radiolarien / Haeckel (kulturelle und biologische Echos)
 
-- [R1·A2] Origin of icosahedral symmetry in viruses — PNAS — https://www.pnas.org/doi/10.1073/pnas.0405844101 — Trefferanzeige; peer-reviewed.
-- [R1·A2] Minimal Design Principles for Icosahedral Virus Capsids — PMC8939845 — https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8939845/ — Trefferanzeige; peer-reviewed.
-- [R3·A2] Why Are Viral Capsids Icosahedral? — Asimov Press — https://press.asimov.com/articles/viral-capsids — Snippet; Caspar-Klug, Quasi-Äquivalenz.
-- [R2·A2] Icosahedral capsids, Caspar and Klug — ViralZone/Expasy — https://viralzone.expasy.org/8577 — Snippet.
-- [R2·A2] Buckminsterfullerene — Wikipedia — https://en.wikipedia.org/wiki/Buckminsterfullerene — Trefferanzeige; C₆₀ = abgestumpfter Ikosaeder.
-- [R2·A3] Discovery of Fullerenes — American Chemical Society — https://www.acs.org/education/whatischemistry/landmarks/fullerenes.html — indirekt.
-- [R1·A2] Icosadeltahedral geometry of fullerenes, viruses and geodesic domes — arXiv:0711.3527 — https://arxiv.org/pdf/0711.3527 — Trefferanzeige.
-- [R2·A1] Kunstformen der Natur — Wikipedia — https://en.wikipedia.org/wiki/Kunstformen_der_Natur — Volltext; 1899–1904, Jugendstil-Rezeption.
-- [R1·A2] Art Forms in Nature: radiolaria… — Theory in Biosciences (Springer) — https://link.springer.com/article/10.1007/s12064-019-00289-z — Abstract; ikosaedrische Radiolarien.
-- [R3·A3] Ernst Haeckel and the Microbial Baroque — Cabinet Magazine (D. Brody) — https://www.cabinetmagazine.org/issues/7/brody.php — indirekt.
-- [R4·A3] Haeckel's Radiolaria — Kronecker Wallis — https://www.kroneckerwallis.com/haeckels-radiolaria-the-most-beautiful-microscopic-creatures/ — indirekt; populär/kommerziell.
+- [R1·A2] Origin of icosahedral symmetry in viruses — PNAS — <https://www.pnas.org/doi/10.1073/pnas.0405844101> — Trefferanzeige; peer-reviewed.
+- [R1·A2] Minimal Design Principles for Icosahedral Virus Capsids — PMC8939845 — <https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8939845/> — Trefferanzeige; peer-reviewed.
+- [R3·A2] Why Are Viral Capsids Icosahedral? — Asimov Press — <https://press.asimov.com/articles/viral-capsids> — Snippet; Caspar-Klug, Quasi-Äquivalenz.
+- [R2·A2] Icosahedral capsids, Caspar and Klug — ViralZone/Expasy — <https://viralzone.expasy.org/8577> — Snippet.
+- [R2·A2] Buckminsterfullerene — Wikipedia — <https://en.wikipedia.org/wiki/Buckminsterfullerene> — Trefferanzeige; C₆₀ = abgestumpfter Ikosaeder.
+- [R2·A3] Discovery of Fullerenes — American Chemical Society — <https://www.acs.org/education/whatischemistry/landmarks/fullerenes.html> — indirekt.
+- [R1·A2] Icosadeltahedral geometry of fullerenes, viruses and geodesic domes — arXiv:0711.3527 — <https://arxiv.org/pdf/0711.3527> — Trefferanzeige.
+- [R2·A1] Kunstformen der Natur — Wikipedia — <https://en.wikipedia.org/wiki/Kunstformen_der_Natur> — Volltext; 1899–1904, Jugendstil-Rezeption.
+- [R1·A2] Art Forms in Nature: radiolaria… — Theory in Biosciences (Springer) — <https://link.springer.com/article/10.1007/s12064-019-00289-z> — Abstract; ikosaedrische Radiolarien.
+- [R3·A3] Ernst Haeckel and the Microbial Baroque — Cabinet Magazine (D. Brody) — <https://www.cabinetmagazine.org/issues/7/brody.php> — indirekt.
+- [R4·A3] Haeckel's Radiolaria — Kronecker Wallis — <https://www.kroneckerwallis.com/haeckels-radiolaria-the-most-beautiful-microscopic-creatures/> — indirekt; populär/kommerziell.
 
 ### Goldener-Schnitt-Mythen (Vorbehalte / Pseudowissenschaft)
 
-- [R3·A3] Myths of maths: The golden ratio — plus.maths.org — https://plus.maths.org/content/myths-maths-golden-ratio — indirekt; entkräftet φ-Allgegenwart.
-- [R3·A3] Misconceptions about the Golden Ratio (G. Markowsky, Besprechung) — https://www.goldennumber.net/golden-ratio-misconceptions-by-george-markowsky-reviewed/ — indirekt.
-- [R4·A3] The Parthenon and the Golden Ratio: Myth or Misinformation? — https://www.goldennumber.net/parthenon-golden-ratio-myth-or-misinformation/ — indirekt; Seite mit φ-Eigeninteresse, daher als schwach eingestuft.
+- [R3·A3] Myths of maths: The golden ratio — plus.maths.org — <https://plus.maths.org/content/myths-maths-golden-ratio> — indirekt; entkräftet φ-Allgegenwart.
+- [R3·A3] Misconceptions about the Golden Ratio (G. Markowsky, Besprechung) — <https://www.goldennumber.net/golden-ratio-misconceptions-by-george-markowsky-reviewed/> — indirekt.
+- [R4·A3] The Parthenon and the Golden Ratio: Myth or Misinformation? — <https://www.goldennumber.net/parthenon-golden-ratio-myth-or-misinformation/> — indirekt; Seite mit φ-Eigeninteresse, daher als schwach eingestuft.
 - [S·—] „Heilige Geometrie" / φ-Mystik allgemein — keine spezifische seriöse Quelle; im Dossier ausdrücklich als pseudowissenschaftlich markiert und nicht als Faktum geführt.

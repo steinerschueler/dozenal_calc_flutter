@@ -2,7 +2,7 @@
 
 Stand: 2026-06-11. Quelle: Code-Review der App. Die **Korrekturen** (Bugfixes +
 Code-Hygiene) und die ersten Features sind bereits umgesetzt und committet
-(siehe [Erledigt](#erledigt-referenz)). Hier die noch offenen Vorschläge als
+(siehe [Erledigt](#erledigt-referenz-committet)). Hier die noch offenen Vorschläge als
 Todos — jeweils mit Problem, Lösungsskizze und den Constraints (vor allem:
 ändert es das Haupt-Keypad → Store-Screenshots? braucht es 14-Sprachen-
 Lokalisierung? braucht es eine Produkt-/Design-Entscheidung?).
@@ -12,6 +12,7 @@ Lokalisierung? braucht es eine Produkt-/Design-Entscheidung?).
 ## Rechner-Funktionen
 
 ### 1. Ergebnis-Historie / Tape — ✅ erledigt (committet)
+
 **Umgesetzt:** `List<HistoryEntry>` in `DozenalCalcState` (gecappt 30, überlebt
 AC, dedup bei wiederholtem `=`), Push am Ende von `calculateResult`,
 `recallHistory` wie `Ans` (exakt via `RatLit`, sonst Ziffern). **Einstieg
@@ -44,6 +45,7 @@ recall + schliessen).
 solange der Einstieg nicht über eine neue Keypad-Taste läuft.
 
 ### 2. M+ / M− — ✅ erledigt (Logik + Hoch + Breit)
+
 **Umgesetzt:** Tokens `MemPlus`/`MemMinus`, exakte BigInt-Akkumulation auf
 `memoryRational` (`cur.add/sub(lastAns)`), Tasten auf der **zweiten Overlay-Seite
 (OLR)** und der **Breit-Funktionsseite** (siehe Sammelnotiz unter #4). Tests grün.
@@ -59,6 +61,7 @@ Umwidmung (z. B. Sto-Doppeltipp).
 (Memory) hätte Platz, aber es ist eine Layout-Änderung am Haupt-Keypad.
 
 ### 3. Funktionstasten (ln, eˣ, x², ±, log₁₂, nCr/nPr) — ✅ erledigt (Logik + Hoch + Breit)
+
 **Umgesetzt:** `Ln`/`ExpE`/`Log12` (f64: ln/exp/log12), `NCr`/`NPr`
 (fakultätsbasiert im Resolver), `Square` (= ^2-Shortcut), `PlusMinus`
 (Vorzeichen-Toggle des aktuellen Literals). Tasten auf OLR und der
@@ -77,6 +80,7 @@ Shortcut. `±` = Negate am aktuellen Literal. `nCr/nPr` BigInt-Fakultäts-basier
 **Constraint:** Neue Tasten ⇒ **Store-Screenshots.** Set 9 (Extended) hat Luft.
 
 ### 4. Wissenschaftsnotation / EXP-Eingabe — ✅ erledigt (Logik + Hoch + Breit)
+
 **Umgesetzt:** Token `Sci`; `a EXP b` → `a·Basis^b` (×10ⁿ dezimal, ×12ⁿ dozenal,
 in `buildMevalString` mit der aktiven Basis). Taste auf OLR. Test `5 EXP 2 = 500`
 (dozenal) grün.
@@ -109,6 +113,7 @@ Exponent ab einer Stellen-Schwelle.
 ## UI / UX
 
 ### 5. „Expand"-Affordance schärfen — ✅ erledigt (Build-Folge, committet)
+
 **Umgesetzt:** Dezenter, zentrierter „Erweiterungsfeld"-Header (···-Icon +
 lokalisierter Titel, ARB-Key `keypadOverlayTitle`, 14 Sprachen) über den
 erweiterten Sets im **offenen** Overlay. Nur im offenen Zustand gerendert →
@@ -126,6 +131,7 @@ Eine Glyphen-Änderung am geschlossenen Button würde den Screenshot ändern.
 **Constraint:** Klein. Achtung Screenshot-Falle (s. o.).
 
 ### 6. Operator-Discoverability (√, log) — ✅ erledigt (Variante c, committet)
+
 **Umgesetzt:** „Spezialoperatoren"-Sektion in „Bedienung des Rechners"
 geschärft (14 Sprachen) — inkl. klarer Operandenreihenfolge mit Beispielen
 (`3√8 = 2`, `8 log 2 = 3`). **Dabei einen echten Doku-Bug gefunden und behoben:**
@@ -147,6 +153,7 @@ Sprachen)** + SharedPreferences-Flag. (c) ist am billigsten, sobald Theorie pass
 ## Design
 
 ### 7. Heller Modus — ✅ erledigt (committet)
+
 **Umgesetzt:** Semantische Palette `AppColors` (dark/light) in
 `lib/app_theme.dart`, `ThemeNotifier` (`theme_mode_v1`,
 Dunkel/Hell/System) + `ThemeScope`, Settings-Zeile „Erscheinungsbild";
@@ -161,6 +168,7 @@ Dark-Fallback ohne Scope). Details: docs/einstellungen-und-theming.md Theming-Ab
 ## Architektur
 
 ### 8. `DozenalCalcState` weiter entflechten — teilweise erledigt
+
 **Erledigt:** Reine Ergebnis-Formatierung nach `lib/logic/result_format.dart`
 ausgelagert (Flutter-frei, eigene Unit-Tests).
 

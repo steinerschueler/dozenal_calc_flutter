@@ -7,6 +7,7 @@ Ein **Stellenwertsystem** (Positionssystem) ordnet jeder Ziffer einen Wert zu, d
 Die **Basis** (Radix) ist die Anzahl der verfügbaren Ziffern und zugleich der Faktor zwischen benachbarten Stellen. Basis 10 nutzt die Ziffern 0–9. Basis 12 nutzt zwölf Ziffern: 0–9 plus zwei zusätzliche Symbole für Zehn und Elf. In diesem Text schreiben wir **A für Zehn** und **B für Elf**. „10" in Basis 12 bedeutet also Zwölf.
 
 Ein **Teiler** *t* einer Zahl *n* ist eine ganze Zahl, für die *n*/*t* wieder ganzzahlig ist. Die Anzahl der Teiler heisst d(n).
+
 - Teiler von **12**: 1, 2, 3, 4, 6, 12 → d(12) = 6.
 - Teiler von **10**: 1, 2, 5, 10 → d(10) = 4.
 
@@ -21,10 +22,12 @@ Die **multiplikative Ordnung von b modulo n** ist die kleinste positive ganze Za
 ### Warum 12 mehr Teiler hat als 10
 
 Der Unterschied liegt vollständig in der Primfaktorzerlegung:
+
 - **10 = 2 × 5** — zwei verschiedene, weit auseinanderliegende Primzahlen, jede nur einfach.
 - **12 = 2² × 3** — die zwei kleinsten Primzahlen, wobei die 2 doppelt vorkommt.
 
 Die Teileranzahl errechnet sich aus den Exponenten der Primfaktoren über die Formel (e₁+1)(e₂+1)…:
+
 - d(10) = (1+1)(1+1) = 4.
 - d(12) = (2+1)(1+1) = 6.
 
@@ -39,6 +42,7 @@ Wichtig: Es geht um die Primfaktor-Struktur, nicht um die Grösse. Grösse allei
 **Satz:** Ein vollständig gekürzter Bruch lässt sich in Basis *b* genau dann endlich (abbrechend) darstellen, wenn alle Primfaktoren des Nenners auch Primfaktoren der Basis sind. Das ist eine echte Äquivalenz (genau dann, wenn).
 
 Daraus folgt direkt:
+
 - **Basis 10 (Primfaktoren 2, 5):** Nur Nenner der Form 2ᵃ·5ᵇ brechen ab.
 - **Basis 12 (Primfaktoren 2, 3):** Nur Nenner der Form 2ᵃ·3ᵇ brechen ab.
 
@@ -67,6 +71,7 @@ Lesehinweis zur Notation: In `0.186A35` ist der gesamte sechsstellige Block die 
 **Kernbeobachtung:** Von den alltäglich häufigen Brüchen 1/2, 1/3, 1/4, 1/6, 1/8, 1/9 und 1/12 brechen in Basis 12 **alle** ab. In Basis 10 brechen 1/3, 1/6, 1/9 und 1/12 *nicht* ab. Nur die Fünferreihe (1/5, 1/10) kehrt das Verhältnis um.
 
 Zählt man die periodischen Stammbrüche im Bereich der Nenner 2 bis 12, so ergeben sich:
+
 - **Basis 10: sechs** periodische (Nenner 3, 6, 7, 9, 11, 12).
 - **Basis 12: vier** periodische (Nenner 5, 7, 11, 12).
 
@@ -183,6 +188,7 @@ Basis 12 und ihre Verwandten sind kulturell tief verankert, auch ohne dass tats�
 - **Musiktheorie:** 12 Halbtöne pro Oktave.
 
 Welche Basis wofür (breiter Konsens):
+
 - **Basis 10** bleibt Standard für allgemeine Arithmetik — vor allem aus kultureller Trägheit und weil der Mensch zehn Finger hat.
 - **Basis 2, 8, 16** dominieren in der Informatik (Zweierpotenzen, Hardware-Nähe).
 - **Basis 12 und 60** prägen Zeit, Winkel und traditionelle Masse, weil dort das Teilen in Drittel und Viertel praktisch zählt.
@@ -202,6 +208,7 @@ Die Dozenal Society of America und die Dozenal Society of Great Britain fördern
 **Umstellung ist teuer.** Die Sonderzeichen ↊/↋ sind schwer zu tippen, Font-Unterstützung fehlt vielerorts. Bestehende Lehrbücher, Software und kulturelle Gewohnheiten umzustellen wäre ein enormer Aufwand. Die Dozenal-Vorteile sind real, aber inkrementell, nicht revolutionär. Viele Befürworter verstehen ihre Texte selbst eher als Gedankenexperiment denn als Handlungsaufruf.
 
 **Hinweise zur Genauigkeit und zu Quellenfehlern:**
+
 - Der häufig zitierte eev.ee-Blog gibt 1/5 in Basis 12 fälschlich als „0.[249]" an — er lässt die 7 weg. Die korrekte Periode ist vierstellig „2497", bestätigt durch Wikipedia und unabhängige Rechnung. Dieses Dossier folgt der verifizierten Version.
 - Die exakten Ordnungswerte „Ordnung von 12 mod 5 = 4" und „mod 7 = 6" wurden direkt aus der Definition nachgerechnet und über die belegten Periodenlängen gegengeprüft. Keine Einzelquelle führte eine fertige „Ordnung von 12 mod n"-Tabelle im Volltext.
 - Die Pauschalaussage „sechs periodische Stammbrüche weniger / zehn kürzere Perioden" wird in den Quellen nicht einheitlich definiert und hängt vom Nenner-Bereich ab. Als grobe Grössenordnung verlässlich, als präzise Konstante nicht.
@@ -214,33 +221,33 @@ Bewertung nach zwei Achsen. **Zuverlässigkeit:** R1 = wissenschaftlich/primär,
 
 ### Mathematische Grundlagen (Brüche, Perioden, Teilbarkeit)
 
-- [R2·A1] Duodecimal — Wikipedia — https://en.wikipedia.org/wiki/Duodecimal — Teilerzahlen 12 vs. 10, Abbruch-Kriterium, exakte Bruchtabelle (1/5 = 0.2497, 1/7 = 0.186A35), „zwischen 11 und 13"-Bemerkung, HCN/abundant-Status. Mehrfach unabhängig per WebFetch geladen.
-- [R2·A1] Repeating decimal — Wikipedia — https://en.wikipedia.org/wiki/Repeating_decimal — Abbruch-Kriterium, Periodenlänge = multiplikative Ordnung, Full-Reptend-Primzahlen, Vorlauflänge bei gemischten Nennern, Euler/Fermat.
-- [R2·A1] Highly composite number — Wikipedia — https://en.wikipedia.org/wiki/Highly_composite_number — Definition HCN, d(12)=6, Liste 1,2,4,6,12,24,36,48,60, Abgrenzung zu abundanten Zahlen, Ramanujan 1915.
-- [R2·A1] Dozenal Divisibility Rules — Dozenal Society of America — https://dozenal.org/drupal/content/dozenal-divisibility-rules.html — Teilbarkeitsregeln Basis 12 für 2–B inkl. 7-Verfahren; „lowest abundant number".
-- [R1·A2] Decimal Period — Wolfram MathWorld — https://mathworld.wolfram.com/DecimalPeriod.html — Periodenlänge = multiplikative Ordnung der Basis mod Nenner. Volltext lieferte HTTP 403; nur über Snippet.
-- [R1·A2] Multiplicative order — Wikipedia / Wolfram MathWorld — https://en.wikipedia.org/wiki/Multiplicative_order — Definition „kleinstes k mit aᵏ ≡ 1 (mod n)". Teilweise (Snippet).
-- [R1·A2] Orders of Units in Modular Arithmetic — Keith Conrad (UConn) — https://kconrad.math.uconn.edu/blurbs/ugradnumthy/ordersmodm.pdf — Begründung Ordnung/Periode, Primitivwurzel-Fall, Ordnung teilt φ(n). PDF beim Abruf nicht maschinenlesbar; Aussage über Wikipedia doppelt belegt.
-- [R1·A2] Full Reptend Prime — Wolfram MathWorld — https://mathworld.wolfram.com/FullReptendPrime.html — maximale Periode p−1 ↔ Primitivwurzel. Nur Snippet.
-- [R1·A2] eJMT v16n3: Repeating Decimal Expansions in Different Bases — https://ejmt.mathandtech.org/Contents/eJMT_v16n3p4.pdf — Perioden in verschiedenen Basen, „warum nicht grössere Basis". PDF binär nicht lesbar; Inhalt durch Wikipedia redundant abgedeckt.
-- [R1·A3] OEIS A246004 (dozenale Periodenlängen von 1/p) — https://oeis.org/A246004 — Katalog der Periodenlängen. Direktabruf HTTP 403; Werte selbst per Programm reproduziert.
-- [R1·A3] OEIS A002326 (multiplikative Ordnung von 2 mod 2n+1) — https://oeis.org/A002326 — Ordnungs-Maschinerie. Nur Snippet.
-- [R4·A1] The case for base twelve — eev.ee / fuzzy notepad — https://eev.ee/blog/2016/04/26/the-case-for-base-twelve/ — praktische Argumentation, abbrechende Brüche, Prozent-Argument. Achtung: enthält Tippfehler bei 1/5 (lässt die 7 weg).
-- [R4·A1] Duodecimal: The Base-12 Counting System — duodecimal.net — http://duodecimal.net/archives/duodecimal/duodecimal.html — „terminates iff", Konversionsbeispiel 12345.6₁₂ = 24677.5₁₀, Stellenwert-Tabellen.
-- [R4·A1] Should We Use Base 12 Instead Of Base 10? — ScienceABC — https://www.scienceabc.com/eyeopeners/why-we-should-already-use-base-12-instead-of-base-10.html — Nachteil bei der 5, Umstellungs-Argument, „warum nicht grössere Basis".
-- [R3·A2] Base 12: An Introduction — Built In — https://builtin.com/data-science/base-12 — populäre Einführung, kulturelle Anwendungen. Nur Snippet.
-- [R4·A3] Grokipedia „Duodecimal" + dcode Repetend-Rechner — https://grokipedia.com/page/Duodecimal , https://www.dcode.fr/number-repeating-decimal — Kreuzbestätigung Periode 1/5 (4) und 1/7 (6). Nur Snippet.
-- [R1·A3] Dozenal Society of Great Britain — Reciprocals — http://www.dozenalsociety.org.uk/pdfs/reciprocals.pdf — Reziproken-Muster. Kein Zugang (ECONNREFUSED); inhaltlich durch eigene Rechnung ersetzt.
+- [R2·A1] Duodecimal — Wikipedia — <https://en.wikipedia.org/wiki/Duodecimal> — Teilerzahlen 12 vs. 10, Abbruch-Kriterium, exakte Bruchtabelle (1/5 = 0.2497, 1/7 = 0.186A35), „zwischen 11 und 13"-Bemerkung, HCN/abundant-Status. Mehrfach unabhängig per WebFetch geladen.
+- [R2·A1] Repeating decimal — Wikipedia — <https://en.wikipedia.org/wiki/Repeating_decimal> — Abbruch-Kriterium, Periodenlänge = multiplikative Ordnung, Full-Reptend-Primzahlen, Vorlauflänge bei gemischten Nennern, Euler/Fermat.
+- [R2·A1] Highly composite number — Wikipedia — <https://en.wikipedia.org/wiki/Highly_composite_number> — Definition HCN, d(12)=6, Liste 1,2,4,6,12,24,36,48,60, Abgrenzung zu abundanten Zahlen, Ramanujan 1915.
+- [R2·A1] Dozenal Divisibility Rules — Dozenal Society of America — <https://dozenal.org/drupal/content/dozenal-divisibility-rules.html> — Teilbarkeitsregeln Basis 12 für 2–B inkl. 7-Verfahren; „lowest abundant number".
+- [R1·A2] Decimal Period — Wolfram MathWorld — <https://mathworld.wolfram.com/DecimalPeriod.html> — Periodenlänge = multiplikative Ordnung der Basis mod Nenner. Volltext lieferte HTTP 403; nur über Snippet.
+- [R1·A2] Multiplicative order — Wikipedia / Wolfram MathWorld — <https://en.wikipedia.org/wiki/Multiplicative_order> — Definition „kleinstes k mit aᵏ ≡ 1 (mod n)". Teilweise (Snippet).
+- [R1·A2] Orders of Units in Modular Arithmetic — Keith Conrad (UConn) — <https://kconrad.math.uconn.edu/blurbs/ugradnumthy/ordersmodm.pdf> — Begründung Ordnung/Periode, Primitivwurzel-Fall, Ordnung teilt φ(n). PDF beim Abruf nicht maschinenlesbar; Aussage über Wikipedia doppelt belegt.
+- [R1·A2] Full Reptend Prime — Wolfram MathWorld — <https://mathworld.wolfram.com/FullReptendPrime.html> — maximale Periode p−1 ↔ Primitivwurzel. Nur Snippet.
+- [R1·A2] eJMT v16n3: Repeating Decimal Expansions in Different Bases — <https://ejmt.mathandtech.org/Contents/eJMT_v16n3p4.pdf> — Perioden in verschiedenen Basen, „warum nicht grössere Basis". PDF binär nicht lesbar; Inhalt durch Wikipedia redundant abgedeckt.
+- [R1·A3] OEIS A246004 (dozenale Periodenlängen von 1/p) — <https://oeis.org/A246004> — Katalog der Periodenlängen. Direktabruf HTTP 403; Werte selbst per Programm reproduziert.
+- [R1·A3] OEIS A002326 (multiplikative Ordnung von 2 mod 2n+1) — <https://oeis.org/A002326> — Ordnungs-Maschinerie. Nur Snippet.
+- [R4·A1] The case for base twelve — eev.ee / fuzzy notepad — <https://eev.ee/blog/2016/04/26/the-case-for-base-twelve/> — praktische Argumentation, abbrechende Brüche, Prozent-Argument. Achtung: enthält Tippfehler bei 1/5 (lässt die 7 weg).
+- [R4·A1] Duodecimal: The Base-12 Counting System — duodecimal.net — <http://duodecimal.net/archives/duodecimal/duodecimal.html> — „terminates iff", Konversionsbeispiel 12345.6₁₂ = 24677.5₁₀, Stellenwert-Tabellen.
+- [R4·A1] Should We Use Base 12 Instead Of Base 10? — ScienceABC — <https://www.scienceabc.com/eyeopeners/why-we-should-already-use-base-12-instead-of-base-10.html> — Nachteil bei der 5, Umstellungs-Argument, „warum nicht grössere Basis".
+- [R3·A2] Base 12: An Introduction — Built In — <https://builtin.com/data-science/base-12> — populäre Einführung, kulturelle Anwendungen. Nur Snippet.
+- [R4·A3] Grokipedia „Duodecimal" + dcode Repetend-Rechner — <https://grokipedia.com/page/Duodecimal> , <https://www.dcode.fr/number-repeating-decimal> — Kreuzbestätigung Periode 1/5 (4) und 1/7 (6). Nur Snippet.
+- [R1·A3] Dozenal Society of Great Britain — Reciprocals — <http://www.dozenalsociety.org.uk/pdfs/reciprocals.pdf> — Reziproken-Muster. Kein Zugang (ECONNREFUSED); inhaltlich durch eigene Rechnung ersetzt.
 
 ### Geschichte & Personen
 
-- [R2·A1] Babylonian mathematics — MacTutor (St Andrews) — https://mathshistory.st-andrews.ac.uk/HistTopics/Babylonian_mathematics/ — Sumerer vor 3500 v. Chr., Babylon ~2000 v. Chr., Reziprokentafeln, 1/7,1/11,1/13-Lücken, Zeit/Winkel-Vermächtnis.
-- [R3·A1] Summer Reading: New Numbers — Charles Petzold — http://www.charlespetzold.com/blog/2006/08/250954.html — New Numbers 1935/1944, Atlantic 1934/1935, Symbole X und swash-E, „leech-clutch of habit".
-- [R2·A2] Hexadecimal — Wikipedia — https://en.wikipedia.org/wiki/Hexadecimal — A–F-Standard ab 1966 (Fortran IV / System/360), Knuth 1969 „senidenary". Snippet.
-- [R2·A2] IBM System/360 — Wikipedia — https://en.wikipedia.org/wiki/IBM_System/360 — Ankündigung 7.4.1964, 8-Bit-Byte. Snippet.
-- [R2·A2] History of the Hindu–Arabic numeral system — Wikipedia — https://en.wikipedia.org/wiki/History_of_the_Hindu%E2%80%93Arabic_numeral_system — Aryabhata 499, Brahmagupta 628, Mankani-Platten 595–596. Snippet.
-- [R2·A2] Sexagesimal — Wikipedia — https://en.wikipedia.org/wiki/Sexagesimal — 60 = superior highly composite, Teilerliste, Bruchfreundlichkeit. Snippet.
-- [R1·A3] An Excursion in Numbers — F. E. Andrews (DSA) — https://dozenal.org/article-andrews-excursion-in-numbers.pdf — Primärartikel. PDF binär nicht lesbar; Inhalt via Petzold abgedeckt.
-- [R1·A3] New Numbers (Internet Archive) — https://archive.org/details/newnumbershowacc0000fran — Primärwerk-Nachweis. Nur Katalogeintrag.
-- [R2·A3] Dozenal Society of Great Britain — About Us — http://www.dozenalsociety.org.uk/pdfs/AboutUs.pdf — DSGB-Fakten. Kein Zugang (ECONNREFUSED); via Wikipedia abgedeckt.
-- [R2·A3] New Digits (Hammond) — DSGB — http://www.dozenalsociety.org.uk/basicstuff/hammond.html — Hammonds Pitman-Anpassung für Digitalanzeigen. Snippet.
+- [R2·A1] Babylonian mathematics — MacTutor (St Andrews) — <https://mathshistory.st-andrews.ac.uk/HistTopics/Babylonian_mathematics/> — Sumerer vor 3500 v. Chr., Babylon ~2000 v. Chr., Reziprokentafeln, 1/7,1/11,1/13-Lücken, Zeit/Winkel-Vermächtnis.
+- [R3·A1] Summer Reading: New Numbers — Charles Petzold — <http://www.charlespetzold.com/blog/2006/08/250954.html> — New Numbers 1935/1944, Atlantic 1934/1935, Symbole X und swash-E, „leech-clutch of habit".
+- [R2·A2] Hexadecimal — Wikipedia — <https://en.wikipedia.org/wiki/Hexadecimal> — A–F-Standard ab 1966 (Fortran IV / System/360), Knuth 1969 „senidenary". Snippet.
+- [R2·A2] IBM System/360 — Wikipedia — <https://en.wikipedia.org/wiki/IBM_System/360> — Ankündigung 7.4.1964, 8-Bit-Byte. Snippet.
+- [R2·A2] History of the Hindu–Arabic numeral system — Wikipedia — <https://en.wikipedia.org/wiki/History_of_the_Hindu%E2%80%93Arabic_numeral_system> — Aryabhata 499, Brahmagupta 628, Mankani-Platten 595–596. Snippet.
+- [R2·A2] Sexagesimal — Wikipedia — <https://en.wikipedia.org/wiki/Sexagesimal> — 60 = superior highly composite, Teilerliste, Bruchfreundlichkeit. Snippet.
+- [R1·A3] An Excursion in Numbers — F. E. Andrews (DSA) — <https://dozenal.org/article-andrews-excursion-in-numbers.pdf> — Primärartikel. PDF binär nicht lesbar; Inhalt via Petzold abgedeckt.
+- [R1·A3] New Numbers (Internet Archive) — <https://archive.org/details/newnumbershowacc0000fran> — Primärwerk-Nachweis. Nur Katalogeintrag.
+- [R2·A3] Dozenal Society of Great Britain — About Us — <http://www.dozenalsociety.org.uk/pdfs/AboutUs.pdf> — DSGB-Fakten. Kein Zugang (ECONNREFUSED); via Wikipedia abgedeckt.
+- [R2·A3] New Digits (Hammond) — DSGB — <http://www.dozenalsociety.org.uk/basicstuff/hammond.html> — Hammonds Pitman-Anpassung für Digitalanzeigen. Snippet.

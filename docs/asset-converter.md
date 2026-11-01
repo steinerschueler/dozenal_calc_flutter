@@ -10,7 +10,7 @@ Werterechners" (Handbuch, `assetManualChapters`, 6 Kapitel) und
 Im Design des Einheitenrechners,
 aber mit **drei** Hierarchien statt zwei:
 
-```
+```text
 Klasse (AssetClass)  →  Gattung (AssetGenus)  →  Einheit (Unit)
 Edelmetall           →  Gold/Silber/Platin/   →  gr · dwt · oz t · lb t
                         Palladium                · g · kg

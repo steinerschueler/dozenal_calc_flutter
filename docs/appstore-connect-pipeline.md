@@ -23,6 +23,7 @@ Build → Signieren → Upload, **Listing-Texte in N Sprachen ohne Copy-Paste**,
   **Issuer-ID**. Liegt als Geheimnis **ausserhalb des Repos** (z. B. `~/keys/AuthKey_<KEYID>.p8`).
 - Für `altool`: die `.p8` auch nach `~/.appstoreconnect/private_keys/` kopieren.
 - Für fastlane: einen kombinierten Key als JSON bauen (nicht ins Repo):
+
   ```bash
   python3 - <<'PY'
   import json, os
@@ -37,6 +38,7 @@ Build → Signieren → Upload, **Listing-Texte in N Sprachen ohne Copy-Paste**,
 ## 1. Geräte-loses Build & Upload (kein Test-Gerät nötig)
 
 Der iOS-Trick (kein registriertes Gerät): **unsigniert archivieren → beim Export signieren.**
+
 ```bash
 flutter build ios --release --no-codesign           # nur bei Flutter
 xcodebuild -workspace ios/Runner.xcworkspace -scheme Runner -configuration Release \
@@ -49,6 +51,7 @@ xcodebuild -exportArchive -archivePath build/ios/archive/Runner.xcarchive \
 xcrun altool --validate-app -f build/ios/ipa/<APP>.ipa -t ios --apiKey <KEYID> --apiIssuer <ISSUER>
 xcrun altool --upload-app  -f build/ios/ipa/<APP>.ipa -t ios --apiKey <KEYID> --apiIssuer <ISSUER>
 ```
+
 `ExportOptions.plist`: `method=app-store-connect`, `signingStyle=automatic`, `teamID=<TEAMID>`,
 `manageAppVersionAndBuildNumber=false`. `-allowProvisioningUpdates` legt fehlende App-IDs/Profile
 (auch für eingebettete watchOS-Apps) automatisch an.
@@ -71,6 +74,7 @@ Textdateien, die `fastlane deliver` erwartet → **ein** Push für alle Sprachen
    keywords,description,release_notes}.txt`. **Locale-Ordner = ASC-Codes**
    (de-DE, en-US, fr-FR, es-ES, it, ru, hi, ja, zh-Hans, zh-Hant, ar-SA — region nur wo nötig).
 3. **`fastlane/Appfile`** (`app_identifier("<BUNDLE_ID>")`) + **`fastlane/Deliverfile`**:
+
    ```ruby
    app_identifier("<BUNDLE_ID>")
    skip_binary_upload(true)        # Binaries via altool, s. o.
@@ -78,11 +82,14 @@ Textdateien, die `fastlane deliver` erwartet → **ein** Push für alle Sprachen
    force(true)                     # keine HTML-Preview-Rückfrage
    submit_for_review(false)        # nur Entwurf aktualisieren, Mensch reicht ein
    ```
+
 4. **Push** (Texte für ALLE Sprachen auf einmal):
+
    ```bash
    dart run tool/sync_appstore_metadata.dart            # bzw. das Sync-Skript der App
    fastlane deliver --api_key_path ~/keys/appstore_api_key.json --platform ios --skip_screenshots true
    ```
+
    Für macOS zusätzlich `--platform osx`. **Gleiche Texte gelten für iOS und macOS.**
 
 - **App-Name & Untertitel** liegen auf App-Ebene (über Plattformen geteilt); deliver setzt sie
@@ -121,6 +128,7 @@ ImageMagick-Komposition auf **exaktes App-Store-Mass**.
    `magick … -alpha remove -alpha off`. Verifizieren mit `sips -g hasAlpha`.
 
 **Masse & Slots (Stand 2026):**
+
 | Slot | Grösse | Hinweis |
 |---|---|---|
 | iPhone 6,9″ | 1320×2868 | aktueller Pflicht-Slot |
@@ -136,6 +144,7 @@ zeigen automatisch die der Primärsprache.
 **Upload-Layout:** Ordnernamen = ASC-Locale-Codes. **iPhone + iPad + Watch alle zusammen** in
 `fastlane/screenshots/ios/<loc>/` (deliver sortiert per Pixelmass in die Geräte-Slots); macOS
 getrennt in `fastlane/screenshots/osx/<loc>/`.
+
 ```bash
 fastlane deliver --api_key_path ~/keys/appstore_api_key.json \
   --platform ios --screenshots_path fastlane/screenshots/ios --skip_metadata true

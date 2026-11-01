@@ -21,6 +21,7 @@ Wichtige Einschränkung: Galilei baute kein Thermometer im heutigen Sinn. Das Ge
 **Ferdinando II. de’ Medici (um 1654) — das erste Flüssigkeitsthermometer.** Der Grossherzog der Toskana fertigte versiegelte (geschlossene) Glasröhren mit Alkohol-Füllung, Kolben und Stiel. Das war das erste Thermometer modernen Typs. Die Versiegelung machte das Instrument **unabhängig vom Luftdruck**, der die früheren offenen Bauformen verfälscht hatte.
 
 **Die Idee der Fixpunkte.** Eine Skala braucht reproduzierbare Bezugspunkte. Sonst sind die Werte zweier Thermometer nicht vergleichbar.
+
 - Christiaan Huygens schlug 1665 vor, Schmelz- und Siedepunkt des Wassers als feste Referenz zu nehmen.
 - Carlo Renaldini empfahl 1694, beide als Fixpunkte einer universellen Skala zu verwenden.
 
@@ -29,6 +30,7 @@ Das ist der konzeptionelle Kern aller späteren Skalen.
 ### Die Namensgeber
 
 **Ole Christensen Rømer (um 1701/1702) — der Vorläufer von Fahrenheit.** Der dänische Astronom entwickelte eine der ersten praktisch brauchbaren Skalen (Thermometer mit Rotwein-Füllung). Fixpunkte:
+
 - **0 °Rø** = Erstarrungspunkt einer Salzlake (eutektische Sole aus Ammoniumchlorid/Salmiak), der kälteste damals leicht reproduzierbare Punkt.
 - **7,5 °Rø** = Gefrierpunkt reinen Wassers.
 - **22,5 °Rø** ≈ menschliche Körpertemperatur.
@@ -51,6 +53,7 @@ Fahrenheit besuchte Rømer 1708 in Kopenhagen und übernahm dessen Ansatz weitge
 Fahrenheit baute auf Rømers Skala auf. Das ist durch einen Brief an Herman Boerhaave belegt. Er multiplizierte Rømers Werte etwa mit 4, um Brüche zu vermeiden und eine feinere Abstufung zu erhalten.
 
 Drei ursprüngliche Fixpunkte (Skala 1724):
+
 - **0 °F** = Temperatur einer Kältemischung aus Eis, Wasser und Salmiak (Ammoniumchlorid), teils auch Meersalz. Das ist ein eutektisches System, das sich selbst auf einen festen Tiefpunkt stabilisiert. Fahrenheit wählte diesen Punkt bewusst, damit gewöhnliche Wintertemperaturen nicht ins Negative fallen.
 - **32 °F** = Gefrierpunkt von reinem Wasser (ohne Salz).
 - **96 °F** = seine Schätzung der menschlichen Körpertemperatur (gemessen unter der Achsel oder im Mund). [Britannica nennt eine leicht andere Frühform: 0 = Eis-Salz-Mischung, 30° = Wasser-Gefrierpunkt, 90° = Körper, später revidiert auf 32°/96°. Die Quellen weichen in diesem Detail voneinander ab.]
@@ -72,6 +75,7 @@ Umrechnung: 1 °Ré = 1,25 °C = 2,25 °F (Intervall).
 Celsius definierte 1742 seine Skala **umgekehrt**: **0° = Siedepunkt** und **100° = Gefrierpunkt** des Wassers. Mögliche Gründe: Er wollte den Nullpunkt am mittleren Luftdruck auf Meereshöhe eichen; vermutlich auch, um im skandinavischen Wetteralltag negative Werte zu vermeiden.
 
 Die Umkehrung in die heutige Form (0 = Gefrieren, 100 = Sieden) wird mehreren Personen unabhängig zugeschrieben:
+
 - **Jean-Pierre Christin** (Lyon, Frankreich) 1743.
 - **Carl von Linné** (Linnaeus) 1744, dem Todesjahr von Celsius; erste dokumentierte Nutzung der „Vorwärts"-Skala in seiner Arbeit von 1745 über Gewächshaustemperaturen.
 - Weiter genannt: Pehr Elvius, Mårten Strömer.
@@ -83,6 +87,7 @@ Die Umkehrung in die heutige Form (0 = Gefrieren, 100 = Sieden) wird mehreren Pe
 ### Die Rankine-Skala (1859)
 
 William Rankine schlug 1859 eine absolute Skala mit Fahrenheit-Gradgrösse vor — gewissermassen das „absolute Fahrenheit" für die angloamerikanische Ingenieurwelt.
+
 - Nullpunkt = absoluter Nullpunkt (0 °R = 0 K).
 - Gradgrösse = Fahrenheit-Grad. Umrechnung: 1 K = 1,8 °R; °R = °F + 459,67.
 - Eckwerte: Wasser gefriert bei 491,67 °R (= 32 °F), siedet bei ca. 671,64 °R (≈ 212 °F).
@@ -104,6 +109,7 @@ Der entscheidende politische Moment: Der **Metric Conversion Act von 1975** (unt
 ### Die geografische Landkarte heute
 
 **Fahrenheit als Alltagsskala** (gesichert) — praktisch nur noch:
+
 - **USA** (samt Territorien Puerto Rico, US-Virgin Islands, Guam).
 - Eine Handvoll eng mit den USA verbundener Staaten/Gebiete: **Bahamas, Belize, Cayman-Inseln, Palau, Föderierte Staaten von Mikronesien, Marshallinseln**.
 - Gemischte Nutzung (Celsius offiziell, Fahrenheit umgangssprachlich): **Bermuda, Britische Jungferninseln** und teils ältere Generationen im **Vereinigten Königreich**.
@@ -154,6 +160,7 @@ Die populäre Vorstellung setzt die christliche Hölle mit Feuer gleich. **Dante
 ### Heisse und kalte Höllen im Buddhismus
 
 Die buddhistische Kosmologie kennt beide Pole als abgestufte Strafgrade:
+
 - **Acht heisse Höllen** (Uṣṇa-naraka / 八熱地獄): brennender Boden, Eisenberge, kochende Kessel, Klingenwälder.
 - **Acht kalte Höllen** (Śīta-naraka / 八寒地獄): gefrorene Leeren, in denen die Kälte den Körper zerreisst; ihre Namen beziehen sich oft auf Blasen und Risse auf erfrierender Haut.
 
@@ -162,6 +169,7 @@ Der Weg dieser Vorstellung: indisches **Naraka** → chinesisches **Diyu** → j
 ### Feuer als heilig und rein
 
 In vielen Religionen ist Feuer nicht Strafe, sondern das Reinigende und Göttliche:
+
 - **Hinduismus — Agni:** das göttliche Feuer, Bote zwischen Mensch und Göttern. Homa- und Yajna-Rituale nutzen Feuer zur Reinigung und als „Achse" zwischen Erde und Himmel.
 - **Zoroastrismus:** Feuer als Symbol von Reinheit und sichtbare Repräsentation von Ahura Mazdas Licht und Weisheit. Feuertempel (Atash Behram, Atash Kadeh) sind die heiligsten Orte.
 - **Buddhismus:** Hitze und Brennen als Metapher für Begierde und Leidenschaften, die es zu „löschen" gilt. *Nirvana* bedeutet wörtlich „Verlöschen". Zugleich gilt inneres Feuer (tantrisch) als transformative Energie.
@@ -177,6 +185,7 @@ In der kinetischen Theorie ist die absolute Temperatur proportional zur **mittle
 ### Der absolute Nullpunkt
 
 Mehrere Forscher näherten sich dem Gedanken über das Verhalten von Gasen:
+
 - **Guillaume Amontons (1702/1703):** Über sein Luftthermometer argumentierte er, der Nullpunkt sei die Temperatur, bei der der Druck der Luft auf null sinkt. Seine Extrapolation ergab etwa −240 °C.
 - **Johann Heinrich Lambert (1779):** verfeinerte die Schätzung auf etwa −270 °C.
 - **Charles, Dalton, Gay-Lussac (1787–1802):** Ideale Gase dehnen sich zwischen 0 und 100 °C um etwa 1/273 pro °C aus. Extrapoliert würde Volumen bzw. Druck bei rund −273 °C null erreichen.
@@ -239,6 +248,7 @@ Dieser Abschnitt ist für den späteren Artikel besonders wichtig, weil das Proj
 Temperaturskalen wie Celsius, Fahrenheit und Réaumur sind **affine Intervallskalen mit willkürlich verschobenem Nullpunkt**. Ihr Null ist eine bequeme physikalische Marke (Wasser-Gefrierpunkt, Kältemischung), *nicht* die Abwesenheit thermischer Energie.
 
 Daraus folgt:
+
 - Man kann **Differenzen** sinnvoll bilden, aber **keine echten Verhältnisse**.
 - Halbiert oder drittelt man eine Temperatur-*Zahl*, hat das **keine physikalische Bedeutung**. „Halb so warm" existiert auf einer Intervallskala nicht.
 
@@ -249,6 +259,7 @@ Genau hier verliert das zentrale Dozenal-Verkaufsargument seinen Anker. Bei **L�
 Es gibt genau *eine* Stelle, an der Teilbarkeits-Denken historisch real in eine Temperaturskala einfloss: die **Unterteilung der Skala selbst**, nicht die Temperaturwerte.
 
 Fahrenheit nutzte bewusst hochzusammengesetzte Zahlen für die Skalen-Markierung:
+
 - 96 (teilbar u. a. durch 2, 3, 4, 6, 8, 12) als Körpertemperatur.
 - 64 = 2⁶ Intervalle zwischen Eis (32) und Körper (96), markierbar durch sechsmaliges Halbieren.
 - später 180 Grad zwischen Gefrier- und Siedepunkt (ebenfalls hochzusammengesetzt).
@@ -283,77 +294,77 @@ Bewertung nach zwei Achsen. Zuverlässigkeit: R1 = wissenschaftlich/primär, R2 
 
 ### Primär & wissenschaftlich (R1)
 
-- [R1·A1] Kelvin: History — NIST — https://www.nist.gov/si-redefinition/kelvin/kelvin-history — Volltext gefetcht; 1848-Arbeit, absoluter Nullpunkt, Tripelpunkt, CGPM 1954. Massgebliche Behördenquelle. [Hinweis: Boltzmann-2019-Teil nicht in dieser Seite enthalten.]
-- [R1·A3] Kelvin: Present Realization / Boltzmann Constant — NIST — https://www.nist.gov/si-redefinition/kelvin/kelvin-boltzmann-constant — k = 1,380649 × 10⁻²³ J/K, Realisierung der Definition.
-- [R1·A3] SI Brochure, 9th edition (2019), Appendix 2 (Kelvin) — BIPM — https://www.bipm.org/documents/20126/41489682/SI-App2-kelvin.pdf — massgebliche Primärquelle für die 2019er-Definition; nur als Treffer gelistet, nicht geöffnet. Für eine zitierfähige Endfassung direkt prüfen.
-- [R1·A2] The Instrument That Never Was: Inventing, Manufacturing, and Branding Réaumur's Thermometer During the Enlightenment — Annals of Science — https://www.tandfonline.com/doi/abs/10.1080/00033790.2011.609073 — nur Abstract (Paywall). Wissenschaftlicher Aufsatz zur Réaumur-Geschichte.
+- [R1·A1] Kelvin: History — NIST — <https://www.nist.gov/si-redefinition/kelvin/kelvin-history> — Volltext gefetcht; 1848-Arbeit, absoluter Nullpunkt, Tripelpunkt, CGPM 1954. Massgebliche Behördenquelle. [Hinweis: Boltzmann-2019-Teil nicht in dieser Seite enthalten.]
+- [R1·A3] Kelvin: Present Realization / Boltzmann Constant — NIST — <https://www.nist.gov/si-redefinition/kelvin/kelvin-boltzmann-constant> — k = 1,380649 × 10⁻²³ J/K, Realisierung der Definition.
+- [R1·A3] SI Brochure, 9th edition (2019), Appendix 2 (Kelvin) — BIPM — <https://www.bipm.org/documents/20126/41489682/SI-App2-kelvin.pdf> — massgebliche Primärquelle für die 2019er-Definition; nur als Treffer gelistet, nicht geöffnet. Für eine zitierfähige Endfassung direkt prüfen.
+- [R1·A2] The Instrument That Never Was: Inventing, Manufacturing, and Branding Réaumur's Thermometer During the Enlightenment — Annals of Science — <https://www.tandfonline.com/doi/abs/10.1080/00033790.2011.609073> — nur Abstract (Paywall). Wissenschaftlicher Aufsatz zur Réaumur-Geschichte.
 
 ### Etablierte Referenz (R2)
 
-- [R2·A1] Fahrenheit — Wikipedia (EN) — https://en.wikipedia.org/wiki/Fahrenheit — Volltext; drei Fixpunkte, Rømer ×4, 96/64=2⁶, 32/212, 180-Grad-Spanne, Länderliste, EU-Regel, Kanada. Kernquelle für Fahrenheit.
-- [R2·A1] Daniel Gabriel Fahrenheit — Wikipedia (EN) — https://en.wikipedia.org/wiki/Daniel_Gabriel_Fahrenheit — Volltext; Drei-Fixpunkte-Wortlaut, Cohen/Boerhaave-Zweifel.
-- [R2·A1] Réaumur scale — Wikipedia (EN) — https://en.wikipedia.org/wiki/R%C3%A9aumur_scale — Volltext; 1730, 0/80, 8%-Ausdehnung, Frankreich/Deutschland/Russland, Käse/Zucker, Dostojewski/Tolstoi.
-- [R2·A1] Thermodynamic temperature — Wikipedia (EN) — https://en.wikipedia.org/wiki/Thermodynamic_temperature — Volltext; Intervall- vs. Verhältnisskala, −273,15 °C, Boltzmann.
-- [R2·A1] Rankine scale — Wikipedia (EN) — https://en.wikipedia.org/wiki/Rankine_scale — Volltext; 0 °R = absoluter Nullpunkt, °R = °F + 459,67, Eckwerte.
-- [R2·A1] Rømer scale — Wikipedia (EN) — https://en.wikipedia.org/wiki/R%C3%B8mer_scale — Volltext; Fixpunkte, Fahrenheit-Bezug 1708.
-- [R2·A1] Thermometer — Wikipedia (EN) — https://en.wikipedia.org/wiki/Thermometer — Volltext; frühe Gerätegeschichte.
-- [R2·A1] Absolute zero — Wikipedia (EN) — https://en.wikipedia.org/wiki/Absolute_zero — Volltext (Block 1); Amontons/Lambert/Extrapolationen.
-- [R2·A1] Timeline of temperature and pressure measurement technology — Wikipedia (EN) — https://en.wikipedia.org/wiki/Timeline_of_temperature_and_pressure_measurement_technology — Volltext; Chronologie.
-- [R2·A1] Celsius — Wikipedia (EN) — https://en.wikipedia.org/wiki/Celsius — Volltext (Block 1); Original-Umkehrung, Christin/Linné/Strömer, „Centigrade" bis 1948.
-- [R2·A1] Fahrenheit temperature scale — Britannica — https://www.britannica.com/science/Fahrenheit-temperature-scale — Volltext (Block 1); abweichende Frühform 0/30/90.
-- [R2·A2] Réaumur temperature scale — Britannica — https://www.britannica.com/science/Reaumur-temperature-scale — teilweise; Erfinder/Fixpunkte/Niedergang ja, „80"-Begründung und regionale Nutzung fehlen.
-- [R2·A3] Absolute temperature scale — Britannica — https://www.britannica.com/science/absolute-temperature-scale — indirekt.
-- [R2·A3] Kelvin — Wikipedia (EN) — https://en.wikipedia.org/wiki/Kelvin — indirekt; SI-Basiseinheit.
-- [R2·A3] Boltzmann constant — Wikipedia (EN) — https://en.wikipedia.org/wiki/Boltzmann_constant — indirekt.
-- [R2·A3] 2019 revision of the SI — Wikipedia (EN) — https://en.wikipedia.org/wiki/2019_revision_of_the_SI — indirekt; 20. Mai 2019, Boltzmann.
-- [R2·A3] Scale of temperature — Wikipedia (EN) — https://en.wikipedia.org/wiki/Scale_of_temperature — indirekt; affiner Offset.
-- [R2·A3] Temperature — Wikipedia (EN) — https://en.wikipedia.org/wiki/Temperature — indirekt.
-- [R2·A3] Metric Conversion Act — Wikipedia (EN) — https://en.wikipedia.org/wiki/Metric_Conversion_Act — indirekt; 1975, freiwillig, Ford.
-- [R2·A3] Metrication in the United States — Wikipedia (EN) — https://en.wikipedia.org/wiki/Metrication_in_the_United_States — indirekt; Metric Board 1982 aufgelöst.
-- [R2·A3] Early Thermometers and Temperature Scales — Whipple Museum (Cambridge) — https://www.whipplemuseum.cam.ac.uk/explore-whipple-collections/meteorology/early-thermometers-and-temperature-scales — nur gelistet, nicht abgerufen.
+- [R2·A1] Fahrenheit — Wikipedia (EN) — <https://en.wikipedia.org/wiki/Fahrenheit> — Volltext; drei Fixpunkte, Rømer ×4, 96/64=2⁶, 32/212, 180-Grad-Spanne, Länderliste, EU-Regel, Kanada. Kernquelle für Fahrenheit.
+- [R2·A1] Daniel Gabriel Fahrenheit — Wikipedia (EN) — <https://en.wikipedia.org/wiki/Daniel_Gabriel_Fahrenheit> — Volltext; Drei-Fixpunkte-Wortlaut, Cohen/Boerhaave-Zweifel.
+- [R2·A1] Réaumur scale — Wikipedia (EN) — <https://en.wikipedia.org/wiki/R%C3%A9aumur_scale> — Volltext; 1730, 0/80, 8%-Ausdehnung, Frankreich/Deutschland/Russland, Käse/Zucker, Dostojewski/Tolstoi.
+- [R2·A1] Thermodynamic temperature — Wikipedia (EN) — <https://en.wikipedia.org/wiki/Thermodynamic_temperature> — Volltext; Intervall- vs. Verhältnisskala, −273,15 °C, Boltzmann.
+- [R2·A1] Rankine scale — Wikipedia (EN) — <https://en.wikipedia.org/wiki/Rankine_scale> — Volltext; 0 °R = absoluter Nullpunkt, °R = °F + 459,67, Eckwerte.
+- [R2·A1] Rømer scale — Wikipedia (EN) — <https://en.wikipedia.org/wiki/R%C3%B8mer_scale> — Volltext; Fixpunkte, Fahrenheit-Bezug 1708.
+- [R2·A1] Thermometer — Wikipedia (EN) — <https://en.wikipedia.org/wiki/Thermometer> — Volltext; frühe Gerätegeschichte.
+- [R2·A1] Absolute zero — Wikipedia (EN) — <https://en.wikipedia.org/wiki/Absolute_zero> — Volltext (Block 1); Amontons/Lambert/Extrapolationen.
+- [R2·A1] Timeline of temperature and pressure measurement technology — Wikipedia (EN) — <https://en.wikipedia.org/wiki/Timeline_of_temperature_and_pressure_measurement_technology> — Volltext; Chronologie.
+- [R2·A1] Celsius — Wikipedia (EN) — <https://en.wikipedia.org/wiki/Celsius> — Volltext (Block 1); Original-Umkehrung, Christin/Linné/Strömer, „Centigrade" bis 1948.
+- [R2·A1] Fahrenheit temperature scale — Britannica — <https://www.britannica.com/science/Fahrenheit-temperature-scale> — Volltext (Block 1); abweichende Frühform 0/30/90.
+- [R2·A2] Réaumur temperature scale — Britannica — <https://www.britannica.com/science/Reaumur-temperature-scale> — teilweise; Erfinder/Fixpunkte/Niedergang ja, „80"-Begründung und regionale Nutzung fehlen.
+- [R2·A3] Absolute temperature scale — Britannica — <https://www.britannica.com/science/absolute-temperature-scale> — indirekt.
+- [R2·A3] Kelvin — Wikipedia (EN) — <https://en.wikipedia.org/wiki/Kelvin> — indirekt; SI-Basiseinheit.
+- [R2·A3] Boltzmann constant — Wikipedia (EN) — <https://en.wikipedia.org/wiki/Boltzmann_constant> — indirekt.
+- [R2·A3] 2019 revision of the SI — Wikipedia (EN) — <https://en.wikipedia.org/wiki/2019_revision_of_the_SI> — indirekt; 20. Mai 2019, Boltzmann.
+- [R2·A3] Scale of temperature — Wikipedia (EN) — <https://en.wikipedia.org/wiki/Scale_of_temperature> — indirekt; affiner Offset.
+- [R2·A3] Temperature — Wikipedia (EN) — <https://en.wikipedia.org/wiki/Temperature> — indirekt.
+- [R2·A3] Metric Conversion Act — Wikipedia (EN) — <https://en.wikipedia.org/wiki/Metric_Conversion_Act> — indirekt; 1975, freiwillig, Ford.
+- [R2·A3] Metrication in the United States — Wikipedia (EN) — <https://en.wikipedia.org/wiki/Metrication_in_the_United_States> — indirekt; Metric Board 1982 aufgelöst.
+- [R2·A3] Early Thermometers and Temperature Scales — Whipple Museum (Cambridge) — <https://www.whipplemuseum.cam.ac.uk/explore-whipple-collections/meteorology/early-thermometers-and-temperature-scales> — nur gelistet, nicht abgerufen.
 
 ### Mythologie & Kultur (R2/R3)
 
-- [R2·A3] Niflheim — Wikipedia (EN) — https://en.wikipedia.org/wiki/Niflheim — indirekt.
-- [R2·A3] Cocytus — Wikipedia (EN) — https://en.wikipedia.org/wiki/Cocytus — indirekt; Dantes Eis-Hölle.
-- [R2·A3] The Eight Cold Hells — Wikipedia (EN) — https://en.wikipedia.org/wiki/The_Eight_Cold_Hells — indirekt.
-- [R2·A3] Fire worship — Wikipedia (EN) — https://en.wikipedia.org/wiki/Fire_worship — indirekt.
-- [R2·A3] Jigoku — Britannica — https://www.britannica.com/topic/Jigoku — indirekt.
-- [R3·A3] Ginnungagap — Mythopedia — https://mythopedia.com/topics/ginnungagap/ — indirekt.
-- [R3·A3] Muspelheim — Norse Mythology for Smart People — https://norse-mythology.org/cosmology/the-nine-worlds/muspelheim/ — indirekt.
-- [R3·A3] Inferno Canto XXXIV Summary & Analysis — SparkNotes — https://www.sparknotes.com/poetry/inferno/section13/ — indirekt.
-- [R3·A3] eight hot hells / eight cold hells — Dictionary of Buddhism, Nichiren Buddhism Library — https://www.nichirenlibrary.org/en/dic/Content/E/29 — indirekt.
-- [R3·A3] Jigoku — Yokai.com — https://yokai.com/jigoku/ — indirekt.
-- [R3·A3] The Sacred Fire: Agni in Hinduism — Motilal Banarsidass — https://www.motilalbanarsidass.com/en-us/blogs/news/the-sacred-fire-agni-in-hinduism — indirekt.
-- [R3·A3] Fire: A Common Theme Across Religions — UEF/Medium — https://uef.medium.com/fire-a-common-theme-across-religions-9351fc9ec6af — indirekt; Medium-Beitrag, mit Vorsicht.
+- [R2·A3] Niflheim — Wikipedia (EN) — <https://en.wikipedia.org/wiki/Niflheim> — indirekt.
+- [R2·A3] Cocytus — Wikipedia (EN) — <https://en.wikipedia.org/wiki/Cocytus> — indirekt; Dantes Eis-Hölle.
+- [R2·A3] The Eight Cold Hells — Wikipedia (EN) — <https://en.wikipedia.org/wiki/The_Eight_Cold_Hells> — indirekt.
+- [R2·A3] Fire worship — Wikipedia (EN) — <https://en.wikipedia.org/wiki/Fire_worship> — indirekt.
+- [R2·A3] Jigoku — Britannica — <https://www.britannica.com/topic/Jigoku> — indirekt.
+- [R3·A3] Ginnungagap — Mythopedia — <https://mythopedia.com/topics/ginnungagap/> — indirekt.
+- [R3·A3] Muspelheim — Norse Mythology for Smart People — <https://norse-mythology.org/cosmology/the-nine-worlds/muspelheim/> — indirekt.
+- [R3·A3] Inferno Canto XXXIV Summary & Analysis — SparkNotes — <https://www.sparknotes.com/poetry/inferno/section13/> — indirekt.
+- [R3·A3] eight hot hells / eight cold hells — Dictionary of Buddhism, Nichiren Buddhism Library — <https://www.nichirenlibrary.org/en/dic/Content/E/29> — indirekt.
+- [R3·A3] Jigoku — Yokai.com — <https://yokai.com/jigoku/> — indirekt.
+- [R3·A3] The Sacred Fire: Agni in Hinduism — Motilal Banarsidass — <https://www.motilalbanarsidass.com/en-us/blogs/news/the-sacred-fire-agni-in-hinduism> — indirekt.
+- [R3·A3] Fire: A Common Theme Across Religions — UEF/Medium — <https://uef.medium.com/fire-a-common-theme-across-religions-9351fc9ec6af> — indirekt; Medium-Beitrag, mit Vorsicht.
 
 ### Seriös populär (R3)
 
-- [R3·A3] A Brief History of Thermometry — ThermoWorks — https://www.thermoworks.com/blogs/learning-center/a-brief-history-of-thermometry — indirekt.
-- [R3·A3] Celsius Proposes a Temperature Scale — EBSCO Research Starters — https://www.ebsco.com/research-starters/history/celsius-proposes-temperature-scale — indirekt.
-- [R3·A3] May 24, 1686: Daniel Gabriel Fahrenheit and the Birth of Precision Thermometry — American Physical Society — https://www.aps.org/apsnews/2022/05/fahrenheit-birth-precision-thermometry — indirekt; seriöse Fachgesellschaft.
-- [R3·A3] Why Does the U.S. Use Fahrenheit Instead of Celsius? — HowStuffWorks — https://science.howstuffworks.com/nature/climate-weather/atmospheric/us-use-fahrenheit.htm — indirekt.
-- [R3·A3] Temperature: Fahrenheit, Celsius, Kelvin — Live Science — https://www.livescience.com/temperature.html — indirekt.
-- [R3·A3] Eighteenth-Century Development of Temperature Scales — Encyclopedia.com — https://www.encyclopedia.com/science/encyclopedias-almanacs-transcripts-and-maps/eighteenth-century-development-temperature-scales — indirekt.
-- [R3·A3] What is the Réaumur temperature scale? — Sizes.com — https://www.sizes.com/units/temperature_re_aumur.htm — indirekt.
-- [R3·A3] Countries That Use Fahrenheit — World Population Review — https://worldpopulationreview.com/country-rankings/countries-that-use-fahrenheit — indirekt; Länderliste.
-- [R3·A3] Celsius vs Fahrenheit Use Around The World — Brilliant Maps — https://brilliantmaps.com/celsius-vs-fahrenheit/ — indirekt.
-- [R3·A3] Fahrenheit scale — Einstein-Online — https://www.einstein-online.info/en/explandict/fahrenheit-scale/ — Volltext der Kurz-Definition; Quelle für die Danzig-1708/09-Erzählung (selbst seriös, Inhalt aber strittig).
-- [R3·A3] Weather, Temperature and Idioms — Woodward English — https://www.woodwardenglish.com/weather-temperature-and-idioms/ — indirekt.
-- [R3·A3] 11 German Idioms for Talking About the Weather — Chatterbug — https://blog.chatterbug.com/en/german-idioms-weather/ — indirekt.
-- [R3·A3] Temperature scales: Kelvin, Celsius, Fahrenheit, Rankine — solar-energy.technology — https://solar-energy.technology/thermodynamics/.../scales — indirekt; Rankine-Gradgrösse.
+- [R3·A3] A Brief History of Thermometry — ThermoWorks — <https://www.thermoworks.com/blogs/learning-center/a-brief-history-of-thermometry> — indirekt.
+- [R3·A3] Celsius Proposes a Temperature Scale — EBSCO Research Starters — <https://www.ebsco.com/research-starters/history/celsius-proposes-temperature-scale> — indirekt.
+- [R3·A3] May 24, 1686: Daniel Gabriel Fahrenheit and the Birth of Precision Thermometry — American Physical Society — <https://www.aps.org/apsnews/2022/05/fahrenheit-birth-precision-thermometry> — indirekt; seriöse Fachgesellschaft.
+- [R3·A3] Why Does the U.S. Use Fahrenheit Instead of Celsius? — HowStuffWorks — <https://science.howstuffworks.com/nature/climate-weather/atmospheric/us-use-fahrenheit.htm> — indirekt.
+- [R3·A3] Temperature: Fahrenheit, Celsius, Kelvin — Live Science — <https://www.livescience.com/temperature.html> — indirekt.
+- [R3·A3] Eighteenth-Century Development of Temperature Scales — Encyclopedia.com — <https://www.encyclopedia.com/science/encyclopedias-almanacs-transcripts-and-maps/eighteenth-century-development-temperature-scales> — indirekt.
+- [R3·A3] What is the Réaumur temperature scale? — Sizes.com — <https://www.sizes.com/units/temperature_re_aumur.htm> — indirekt.
+- [R3·A3] Countries That Use Fahrenheit — World Population Review — <https://worldpopulationreview.com/country-rankings/countries-that-use-fahrenheit> — indirekt; Länderliste.
+- [R3·A3] Celsius vs Fahrenheit Use Around The World — Brilliant Maps — <https://brilliantmaps.com/celsius-vs-fahrenheit/> — indirekt.
+- [R3·A3] Fahrenheit scale — Einstein-Online — <https://www.einstein-online.info/en/explandict/fahrenheit-scale/> — Volltext der Kurz-Definition; Quelle für die Danzig-1708/09-Erzählung (selbst seriös, Inhalt aber strittig).
+- [R3·A3] Weather, Temperature and Idioms — Woodward English — <https://www.woodwardenglish.com/weather-temperature-and-idioms/> — indirekt.
+- [R3·A3] 11 German Idioms for Talking About the Weather — Chatterbug — <https://blog.chatterbug.com/en/german-idioms-weather/> — indirekt.
+- [R3·A3] Temperature scales: Kelvin, Celsius, Fahrenheit, Rankine — solar-energy.technology — <https://solar-energy.technology/thermodynamics/.../scales> — indirekt; Rankine-Gradgrösse.
 
 ### Schwach (R4)
 
-- [R4·A3] The History of Thermometers — Utmel — https://www.utmel.com/blog/categories/measurement/the-history-of-thermometers — indirekt; Hersteller-Blog.
-- [R4·A3] The History of Thermometry – From the Beginnings to Precision (Klasmeier) — https://klasmeier.engineer/the-history-of-thermometry-from-the-beginnings-to-precision/?lang=en — indirekt; Firmen-Blog.
-- [R4·A3] Who Invented the Fahrenheit and Celsius … — Today I Found Out — http://www.todayifoundout.com/index.php/2014/12/fahrenheit-scale-isnt-arbitrary-seems/ — indirekt; SEO-Populärseite.
-- [R4·A3] Fahrenheit vs. Celsius: Why America Uses Fahrenheit — Reader’s Digest — https://www.rd.com/article/fahrenheit-vs-celsius/ — indirekt.
-- [R4·A3] Which Is Better — Celsius Or Fahrenheit? — ScienceABC — https://www.scienceabc.com/pure-sciences/which-is-better-celsius-or-fahrenheit — indirekt; Komfort-Argumente.
-- [R4·A3] History of the Thermometer — WeatherSTEM — https://learn.weatherstem.com/modules/learn/lessons/42/08.html — indirekt.
-- [R4·A3] Who invented the thermometer? — Brannan — https://www.brannan.co.uk/who-invented-the-thermometer/ — indirekt; Hersteller-Seite.
-- [R4·A3] Is Temperature an Interval or Ratio Scale? — Biology Insights — https://biologyinsights.com/is-temperature-an-interval-or-ratio-scale/ — indirekt.
-- [R4·A3] Interval vs. ratio data — Scribbr — https://www.scribbr.com/frequently-asked-questions/interval-vs-ratio-scale/ — indirekt; brauchbar für die Skalentypen-Erklärung.
+- [R4·A3] The History of Thermometers — Utmel — <https://www.utmel.com/blog/categories/measurement/the-history-of-thermometers> — indirekt; Hersteller-Blog.
+- [R4·A3] The History of Thermometry – From the Beginnings to Precision (Klasmeier) — <https://klasmeier.engineer/the-history-of-thermometry-from-the-beginnings-to-precision/?lang=en> — indirekt; Firmen-Blog.
+- [R4·A3] Who Invented the Fahrenheit and Celsius … — Today I Found Out — <http://www.todayifoundout.com/index.php/2014/12/fahrenheit-scale-isnt-arbitrary-seems/> — indirekt; SEO-Populärseite.
+- [R4·A3] Fahrenheit vs. Celsius: Why America Uses Fahrenheit — Reader’s Digest — <https://www.rd.com/article/fahrenheit-vs-celsius/> — indirekt.
+- [R4·A3] Which Is Better — Celsius Or Fahrenheit? — ScienceABC — <https://www.scienceabc.com/pure-sciences/which-is-better-celsius-or-fahrenheit> — indirekt; Komfort-Argumente.
+- [R4·A3] History of the Thermometer — WeatherSTEM — <https://learn.weatherstem.com/modules/learn/lessons/42/08.html> — indirekt.
+- [R4·A3] Who invented the thermometer? — Brannan — <https://www.brannan.co.uk/who-invented-the-thermometer/> — indirekt; Hersteller-Seite.
+- [R4·A3] Is Temperature an Interval or Ratio Scale? — Biology Insights — <https://biologyinsights.com/is-temperature-an-interval-or-ratio-scale/> — indirekt.
+- [R4·A3] Interval vs. ratio data — Scribbr — <https://www.scribbr.com/frequently-asked-questions/interval-vs-ratio-scale/> — indirekt; brauchbar für die Skalentypen-Erklärung.
 
 ### Spekulativ / unbelegt (S)
 

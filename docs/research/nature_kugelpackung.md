@@ -72,6 +72,7 @@ Im Mai 1694 (überliefert wird der 4. Mai) diskutierten **Isaac Newton** und der
 Gregorys Argument war eine Flächenabschätzung: Projiziert man die umgebenden Kugeln als „Schatten" auf eine Hüllkugel, scheint rein flächenmässig Platz für fast 15 Kugeln zu sein. Der Trugschluss: Diese Schatten lassen sich nicht lückenlos kacheln. Zusammen mit dem oben beschriebenen Wackelspielraum schien 13 plausibel.
 
 Newton hatte recht, doch ein strenger Beweis fehlte über zweieinhalb Jahrhunderte:
+
 - **Reinhold Hoppe (1874)** lieferte einen Beweisversuch zugunsten Newtons, der jedoch lückenhaft war.
 - Der erste vollständige, korrekte Beweis, dass k(3) = 12 gilt, stammt erst von **Kurt Schütte und Bartel Leendert van der Waerden (1953)** — rund 260 Jahre nach dem Disput. Ihr Kern: 13 Punkte auf einer Kugel mit paarweisem Mindest-Winkelabstand von 60° können nicht koexistieren, während die ikosaedrische 12-Punkt-Anordnung mit ~63,43° Abstand bequem hineinpasst.
 - Spätere, einfachere Beweise folgten, u. a. von **John Leech (1956)** und über die moderne Delsarte-Methode (Oleg Musin).
@@ -85,6 +86,7 @@ Newton hatte recht, doch ein strenger Beweis fehlte über zweieinhalb Jahrhunder
 **Die Vermutung.** Kepler formulierte sie 1611 in seiner Schrift *Strena seu de nive sexangula* („Vom sechseckigen Schnee"). Aussage: Keine Anordnung gleich grosser Kugeln erreicht eine höhere mittlere Dichte als fcc bzw. hcp, also π/√18 ≈ 74,05 %. Kepler beschrieb die Zwölfer-Nachbarschaft bereits direkt. Die Anschauung lieferten ihm eng gepackte Granatapfelkerne; im Alltag bilden gestapeltes Obst und Kanonenkugel-Pyramiden spontan dieselbe Anordnung.
 
 **Der Weg zum Beweis:**
+
 - **1831 – Carl Friedrich Gauss:** Beweis für den Spezialfall der regulären Gitterpackungen (nicht für unregelmässige Anordnungen).
 - **1900 – David Hilbert:** Aufnahme in sein 18. Problem.
 - **1953 – László Fejes Tóth:** zeigte, dass das Problem prinzipiell durch endliche (sehr umfangreiche) Fallprüfung lösbar ist — die konzeptionelle Grundlage für einen Computerbeweis.
@@ -98,6 +100,7 @@ Newton hatte recht, doch ein strenger Beweis fehlte über zweieinhalb Jahrhunder
 ### Anwendungen bei Atomen und Metallen
 
 Viele Metalle kristallisieren in einer der beiden dichtesten Packungen, jeweils mit Koordinationszahl 12 und ~74 % Packungsdichte:
+
 - **fcc / ccp:** Kupfer, Aluminium, Gold, Silber, Nickel, Platin, Blei, Iridium.
 - **hcp:** Magnesium, Zink, Titan, Beryllium, Cadmium, Zirconium.
 - Zum Kontrast die kubisch-raumzentrierte **bcc**-Struktur: Koordinationszahl nur 8, Packungsdichte ~68 % — also keine dichteste Packung.
@@ -116,11 +119,13 @@ Begrifflich getrennt vom Kugelpackungsproblem, aber eng verwandt, ist das Proble
 ## Bedeutung & kulturelle Echos
 
 Die Zahl Zwölf erscheint in diesem Themenkreis dreifach und kausal verkettet — es ist stets dieselbe Zwölf aus drei Blickwinkeln:
+
 1. **Kusszahl 12** — maximale Zahl gleich grosser Kugeln, die eine berühren können.
 2. **Koordinationszahl 12** in fcc und hcp — jedes Atom hat zwölf nächste Nachbarn.
 3. **12 Flächen** des Rhombendodekaeders, der Voronoi-Zelle des fcc-Gitters — eine Fläche je Kontaktnachbar.
 
 Natürliche und gebaute Echos dieser Geometrie:
+
 - **Granatapfelkerne** pressen sich beim Wachstum im engen Fruchtinneren gegenseitig und entwickeln rhombische Flächen — ein natürliches Abbild des Rhombendodekaeders. Kepler selbst nutzte dieses Bild.
 - **Bienenwaben:** Die sechseckigen Prismenzellen haben Böden aus drei Rauten — dieselbe Rhombus-Geometrie.
 - **Obststapel** im Marktstand (Orangen, Äpfel) und **Kanonenkugel-Pyramiden** realisieren makroskopisch die fcc-Packung.
@@ -153,71 +158,80 @@ Dies ist der kritische Teil. Mehrere populäre „Zwölf-überall"-Erzählungen 
 Bewertung nach Zuverlässigkeit (R1 primär/wissenschaftlich, R2 etablierte Referenz, R3 seriös populär, R4 schwach, S spekulativ) und Zugang (A1 Volltext, A2 teilweise, A3 indirekt).
 
 ### Kusszahl, Newton-Gregory, Beweis 1953
-- [R2·A1] Kissing number — Wikipedia — https://en.wikipedia.org/wiki/Kissing_number — Kernquelle, mehrfach im Volltext ausgewertet: k(3)=12, Werte je Dimension, Ikosaeder/~10 %-Spiel und Vertauschbarkeit, Newton-Gregory 1694, Hoppe 1874 unvollständig, Beweis 1953.
-- [R3·A1] Newton and the kissing problem — plus.maths.org — https://plus.maths.org/content/newton-and-kissing-problem — Newton/Gregory-Gespräch, Gregorys Flächenabschätzung, anschauliche Erklärung des Trugschlusses.
-- [R1·A2] The kissing problem in three dimensions (Musin/Tarasov) — arXiv math/0410324 — https://arxiv.org/abs/math/0410324 — moderner Beweisansatz, Schütte/van der Waerden; nur Abstract/Snippet gelesen.
-- [R1·A2] A short solution of the kissing number problem in dimension three — arXiv 2012.15058 — https://arxiv.org/pdf/2012.15058 — kürzerer Beweis, bestätigt k(3)=12.
-- [R1·A3] Kissing Numbers, Sphere Packings, and Some Unexpected Proofs (Pfender/Ziegler, Notices of the AMS, 2004) — https://www.ams.org/notices/200408/fea-pfender.pdf — Ikosaeder-Konfiguration, Schütte/van der Waerden 1953; PDF-Direktzugriff teils 403, nur über Snippet.
+
+- [R2·A1] Kissing number — Wikipedia — <https://en.wikipedia.org/wiki/Kissing_number> — Kernquelle, mehrfach im Volltext ausgewertet: k(3)=12, Werte je Dimension, Ikosaeder/~10 %-Spiel und Vertauschbarkeit, Newton-Gregory 1694, Hoppe 1874 unvollständig, Beweis 1953.
+- [R3·A1] Newton and the kissing problem — plus.maths.org — <https://plus.maths.org/content/newton-and-kissing-problem> — Newton/Gregory-Gespräch, Gregorys Flächenabschätzung, anschauliche Erklärung des Trugschlusses.
+- [R1·A2] The kissing problem in three dimensions (Musin/Tarasov) — arXiv math/0410324 — <https://arxiv.org/abs/math/0410324> — moderner Beweisansatz, Schütte/van der Waerden; nur Abstract/Snippet gelesen.
+- [R1·A2] A short solution of the kissing number problem in dimension three — arXiv 2012.15058 — <https://arxiv.org/pdf/2012.15058> — kürzerer Beweis, bestätigt k(3)=12.
+- [R1·A3] Kissing Numbers, Sphere Packings, and Some Unexpected Proofs (Pfender/Ziegler, Notices of the AMS, 2004) — <https://www.ams.org/notices/200408/fea-pfender.pdf> — Ikosaeder-Konfiguration, Schütte/van der Waerden 1953; PDF-Direktzugriff teils 403, nur über Snippet.
 - [R3·A3] The Difficulties of Kissing in Three Dimensions (Casselman, Notices of the AMS, 2004) — historische Vorsicht zur Newton/Gregory-Erzählung; nur sekundär referenziert.
 
 ### Keplersche Vermutung, Hales, Flyspeck
-- [R2·A1] Kepler conjecture — Wikipedia — https://en.wikipedia.org/wiki/Kepler_conjecture — π/√18 ≈ 0,74048, Kepler 1611, Harriot/Raleigh, Gauss 1831, Hilbert 18, Hales 1998, Fejes Tóth 1953, „99 %", Flyspeck 2014, Publikation 2017.
-- [R2·A1] Kepler Conjecture — Wolfram MathWorld — https://mathworld.wolfram.com/KeplerConjecture.html — Bestätigung Dichte/Daten.
-- [R3·A1] Mathematical mysteries: Kepler's conjecture — plus.maths.org — https://plus.maths.org/content/mathematical-mysteries-keplers-conjecture — Harriot-Geschichte, Stapelproblem.
-- [R3·A1] The Flyspeck project is complete — The Aperiodical — https://aperiodical.com/2014/09/the-flyspeck-project-is-complete-we-know-how-to-stack-balls/ — Abschluss 10.8.2014, HOL Light/Isabelle, 21 Mitarbeiter.
-- [R1·A1] A formal proof of the Kepler conjecture (Hales et al.) — arXiv 1501.02155 — https://arxiv.org/abs/1501.02155 — Flyspeck-Volltext-PDF verfügbar.
-- [R1·A2] A formal proof of the Kepler conjecture — Forum of Mathematics, Pi (Cambridge Core, 2017) — https://www.cambridge.org/core/journals/forum-of-mathematics-pi/article/formal-proof-of-the-kepler-conjecture/78FBD5E1A3D1BCCB8E0D5B0C463C9FBC — formale Publikation; Abstract gelesen, Volltext open access.
-- [R3·A2] Team announces … formal computer-verified proof of the Kepler conjecture — phys.org — https://phys.org/news/2014-08-team-formal-computer-verified-proof-kepler.html — „99 %"-Gremium, Flyspeck-Abschluss.
-- [R1·A3] A computer verification of the Kepler conjecture (Hales) — arXiv math/0305012 — https://arxiv.org/pdf/math/0305012 — ursprünglicher Computerbeweis; indirekt.
-- [R3·A1] Kepler's Sphere-Packing Conjecture Is Finally Proved — Encyclopedia.com — https://www.encyclopedia.com/science/encyclopedias-almanacs-transcripts-and-maps/keplers-sphere-packing-conjecture-finally-proved — Überblick.
-- [R3·A3] Stack 'em Tight — Scientific American — https://www.scientificamerican.com/article/stack-em-tight/ — Kepler-Zwölfer-Zitat; indirekt.
+
+- [R2·A1] Kepler conjecture — Wikipedia — <https://en.wikipedia.org/wiki/Kepler_conjecture> — π/√18 ≈ 0,74048, Kepler 1611, Harriot/Raleigh, Gauss 1831, Hilbert 18, Hales 1998, Fejes Tóth 1953, „99 %", Flyspeck 2014, Publikation 2017.
+- [R2·A1] Kepler Conjecture — Wolfram MathWorld — <https://mathworld.wolfram.com/KeplerConjecture.html> — Bestätigung Dichte/Daten.
+- [R3·A1] Mathematical mysteries: Kepler's conjecture — plus.maths.org — <https://plus.maths.org/content/mathematical-mysteries-keplers-conjecture> — Harriot-Geschichte, Stapelproblem.
+- [R3·A1] The Flyspeck project is complete — The Aperiodical — <https://aperiodical.com/2014/09/the-flyspeck-project-is-complete-we-know-how-to-stack-balls/> — Abschluss 10.8.2014, HOL Light/Isabelle, 21 Mitarbeiter.
+- [R1·A1] A formal proof of the Kepler conjecture (Hales et al.) — arXiv 1501.02155 — <https://arxiv.org/abs/1501.02155> — Flyspeck-Volltext-PDF verfügbar.
+- [R1·A2] A formal proof of the Kepler conjecture — Forum of Mathematics, Pi (Cambridge Core, 2017) — <https://www.cambridge.org/core/journals/forum-of-mathematics-pi/article/formal-proof-of-the-kepler-conjecture/78FBD5E1A3D1BCCB8E0D5B0C463C9FBC> — formale Publikation; Abstract gelesen, Volltext open access.
+- [R3·A2] Team announces … formal computer-verified proof of the Kepler conjecture — phys.org — <https://phys.org/news/2014-08-team-formal-computer-verified-proof-kepler.html> — „99 %"-Gremium, Flyspeck-Abschluss.
+- [R1·A3] A computer verification of the Kepler conjecture (Hales) — arXiv math/0305012 — <https://arxiv.org/pdf/math/0305012> — ursprünglicher Computerbeweis; indirekt.
+- [R3·A1] Kepler's Sphere-Packing Conjecture Is Finally Proved — Encyclopedia.com — <https://www.encyclopedia.com/science/encyclopedias-almanacs-transcripts-and-maps/keplers-sphere-packing-conjecture-finally-proved> — Überblick.
+- [R3·A3] Stack 'em Tight — Scientific American — <https://www.scientificamerican.com/article/stack-em-tight/> — Kepler-Zwölfer-Zitat; indirekt.
 
 ### fcc / hcp / Packungsdichte / Voronoi-Zelle
-- [R2·A1] Close-packing of equal spheres — Wikipedia — https://en.wikipedia.org/wiki/Close-packing_of_equal_spheres — 6+3+3=12, ABAB/ABCABC, 0,7405, Kuboktaeder/Antikuboktaeder, Rhombendodekaeder, Barlow-Packungen.
-- [R2·A1] Rhombic dodecahedron — Wikipedia — https://en.wikipedia.org/wiki/Rhombic_dodecahedron — 12/24/14 (6 Grad-4 + 8 Grad-3), Diagonalen 1:√2, Winkel 70,53°/109,47°, Diederwinkel 120°, fcc-Voronoi, raumfüllend, Granat.
-- [R2·A1] Cubic Close Packing — Wolfram MathWorld — https://mathworld.wolfram.com/CubicClosePacking.html — fcc-Geometrie.
-- [R2·A2] Hexagonal Close Packing — Wolfram MathWorld — https://mathworld.wolfram.com/HexagonalClosePacking.html — hcp-Geometrie.
-- [R3·A1] Closest Packed Structures — Chemistry LibreTexts — https://chem.libretexts.org/.../Closest_Pack_Structures — ABAB=hcp, ABCABC=fcc, KZ 12, 74 %/26 %.
-- [R3·A1] Let's pack up our spheres and go! — Heidelberg STRUCTURES Blog — https://structures.uni-heidelberg.de/blog/posts/sphere_packing/index.php — Barlow-Packungen, Schichtfolgen.
-- [R1·A2] The Dodecahedron as a Voronoi Cell — arXiv 1904.06108 — https://arxiv.org/pdf/1904.06108 — Voronoi-Zelle; PDF verfügbar, nur referenziert.
-- [R3·A2] Hexagonal Close-Packed (HCP) Unit Cell — msestudent.com — https://msestudent.com/hexagonal-close-packed-hcp-unit-cell/ — c/a=1,633, KZ 12, APF 74 %.
-- [R4·A3] Rhombic dodecahedron / Wigner–Seitz cell — Grokipedia — https://grokipedia.com/page/Rhombic_dodecahedron — Bestätigung 12 Rhombenflächen; schwache Quelle, nur indirekt.
+
+- [R2·A1] Close-packing of equal spheres — Wikipedia — <https://en.wikipedia.org/wiki/Close-packing_of_equal_spheres> — 6+3+3=12, ABAB/ABCABC, 0,7405, Kuboktaeder/Antikuboktaeder, Rhombendodekaeder, Barlow-Packungen.
+- [R2·A1] Rhombic dodecahedron — Wikipedia — <https://en.wikipedia.org/wiki/Rhombic_dodecahedron> — 12/24/14 (6 Grad-4 + 8 Grad-3), Diagonalen 1:√2, Winkel 70,53°/109,47°, Diederwinkel 120°, fcc-Voronoi, raumfüllend, Granat.
+- [R2·A1] Cubic Close Packing — Wolfram MathWorld — <https://mathworld.wolfram.com/CubicClosePacking.html> — fcc-Geometrie.
+- [R2·A2] Hexagonal Close Packing — Wolfram MathWorld — <https://mathworld.wolfram.com/HexagonalClosePacking.html> — hcp-Geometrie.
+- [R3·A1] Closest Packed Structures — Chemistry LibreTexts — <https://chem.libretexts.org/.../Closest_Pack_Structures> — ABAB=hcp, ABCABC=fcc, KZ 12, 74 %/26 %.
+- [R3·A1] Let's pack up our spheres and go! — Heidelberg STRUCTURES Blog — <https://structures.uni-heidelberg.de/blog/posts/sphere_packing/index.php> — Barlow-Packungen, Schichtfolgen.
+- [R1·A2] The Dodecahedron as a Voronoi Cell — arXiv 1904.06108 — <https://arxiv.org/pdf/1904.06108> — Voronoi-Zelle; PDF verfügbar, nur referenziert.
+- [R3·A2] Hexagonal Close-Packed (HCP) Unit Cell — msestudent.com — <https://msestudent.com/hexagonal-close-packed-hcp-unit-cell/> — c/a=1,633, KZ 12, APF 74 %.
+- [R4·A3] Rhombic dodecahedron / Wigner–Seitz cell — Grokipedia — <https://grokipedia.com/page/Rhombic_dodecahedron> — Bestätigung 12 Rhombenflächen; schwache Quelle, nur indirekt.
 
 ### Metalle / Kristallstrukturen
-- [R3·A2] Metallic Structures — NDE-Ed.org — https://www.nde-ed.org/Physics/Materials/Structure/metallic_structures.xhtml — KZ 12 = 6+3+3, fcc/hcp/bcc.
-- [R3·A2] Face-Centered Cubic (FCC) Unit Cell — msestudent.com — https://msestudent.com/face-centered-cubic-fcc-unit-cell/ — Duktilität, Gleitsysteme.
-- [R4·A2] Crystal Structure Types: FCC, BCC, HCP — SAMaterials — https://www.samaterials.com/blog/crystal-structure-types-fcc-bcc-and-hcp-explained.html — bcc KZ 8 / 68 %; Hersteller-Blog.
-- [R3·A2] Crystal Structures of Metals — Chemistry LibreTexts — https://chem.libretexts.org/.../3.03:_Crystal_Structures_of_Metals — Metalllisten.
-- [R3·A3] Bonding in Crystalline Solids — Physics LibreTexts (OpenStax) — https://phys.libretexts.org/.../9.04:_Bonding_in_Crystalline_Solids — Energieminimierung.
+
+- [R3·A2] Metallic Structures — NDE-Ed.org — <https://www.nde-ed.org/Physics/Materials/Structure/metallic_structures.xhtml> — KZ 12 = 6+3+3, fcc/hcp/bcc.
+- [R3·A2] Face-Centered Cubic (FCC) Unit Cell — msestudent.com — <https://msestudent.com/face-centered-cubic-fcc-unit-cell/> — Duktilität, Gleitsysteme.
+- [R4·A2] Crystal Structure Types: FCC, BCC, HCP — SAMaterials — <https://www.samaterials.com/blog/crystal-structure-types-fcc-bcc-and-hcp-explained.html> — bcc KZ 8 / 68 %; Hersteller-Blog.
+- [R3·A2] Crystal Structures of Metals — Chemistry LibreTexts — <https://chem.libretexts.org/.../3.03:_Crystal_Structures_of_Metals> — Metalllisten.
+- [R3·A3] Bonding in Crystalline Solids — Physics LibreTexts (OpenStax) — <https://phys.libretexts.org/.../9.04:_Bonding_in_Crystalline_Solids> — Energieminimierung.
 
 ### Kanonenkugeln / Harriot / Früchte
-- [R3·A1] Kepler and the Rhombic Dodecahedron: Stacking Cannonballs — MAA Convergence — https://old.maa.org/press/periodicals/convergence/kepler-and-the-rhombic-dodecahedron-stacking-cannonballs — Raleigh/Harriot 1591, Kanonenkugeln, Granatapfel.
-- [R3·A2] Johannes Kepler – the first scientific crystallographer — IUCr — https://www.iucr.org/news/newsletter/volume-32/number-1/johannes-kepler-the-first-scientific-crystallographer — Kepler 1611, Granatapfelkerne.
-- [R3·A2] Sphere Packing — Brilliant — https://brilliant.org/wiki/sphere-packing/ — gestapelte Orangen, fcc.
-- [R3·A3] Cannonball Problem Overview — Univ. of Pittsburgh Math — http://www.math.pitt.edu/articles/cannonOverview.html — Kanonenkugel-Hintergrund; indirekt.
+
+- [R3·A1] Kepler and the Rhombic Dodecahedron: Stacking Cannonballs — MAA Convergence — <https://old.maa.org/press/periodicals/convergence/kepler-and-the-rhombic-dodecahedron-stacking-cannonballs> — Raleigh/Harriot 1591, Kanonenkugeln, Granatapfel.
+- [R3·A2] Johannes Kepler – the first scientific crystallographer — IUCr — <https://www.iucr.org/news/newsletter/volume-32/number-1/johannes-kepler-the-first-scientific-crystallographer> — Kepler 1611, Granatapfelkerne.
+- [R3·A2] Sphere Packing — Brilliant — <https://brilliant.org/wiki/sphere-packing/> — gestapelte Orangen, fcc.
+- [R3·A3] Cannonball Problem Overview — Univ. of Pittsburgh Math — <http://www.math.pitt.edu/articles/cannonOverview.html> — Kanonenkugel-Hintergrund; indirekt.
 
 ### Schaum / Kelvin / Weaire-Phelan / Wabensatz
-- [R2·A1] Weaire–Phelan structure — Wikipedia — https://en.wikipedia.org/wiki/Weaire%E2%80%93Phelan_structure — Kelvin 1887, Plateau, −0,3 %, zwei Zelltypen, 13,4 mittlere Flächen, „unproven optimal", Water Cube.
-- [R2·A1] Honeycomb theorem — Wikipedia — https://en.wikipedia.org/wiki/Honeycomb_theorem — Hales 1999, 2D-Optimalität, Varro/Pappos.
-- [R1·A2] The Honeycomb Conjecture (Hales) — arXiv math/9906042 — https://arxiv.org/abs/math/9906042 — Originalbeweis 2D.
-- [R1·A3] On the honeycomb conjecture and the Kepler problem — arXiv 0906.1249 — https://arxiv.org/pdf/0906.1249 — 3D-Bienenwabe nicht optimal; indirekt.
-- [R3·A1] HALES PROVES HEXAGONAL HONEYCOMB CONJECTURE — Frank Morgan's Math Chat — https://web.williams.edu/mathchat/mathchat_6_17_99.html — Beweis Juni 1999.
-- [R3·A1] Throwing Shapes — Trinity College Dublin — https://www.tcd.ie/physics/300/history/exhibition-gallery/throwing-shapes/ — Weaire-Phelan-Entstehung.
-- [R3·A3] Foams and Honeycombs — American Scientist — https://www.americanscientist.org/article/foams-and-honeycombs — Matzke 13–13,8 Flächen, Plateau; indirekt.
-- [R1·A3] The structure of foam cells: Isotropic Plateau polyhedra — condmatjclub — https://www.condmatjclub.org/wp-content/uploads/2007/06/jccm_may05_02.pdf — Schaum-Statistik; indirekt.
-- [R3·A3] Structural Design of the Water Cube — ASCE Metropolitan Section — https://www.ascemetsection.org/.../372-structural-design-of-the-water-cube — Carfrae/Arup; indirekt.
-- [R3·A3] Kelvin's bubble burst again — plus.maths.org — https://plus.maths.org/content/kelvins-bubble-burst-again — Kelvin-Problem offen; indirekt.
+
+- [R2·A1] Weaire–Phelan structure — Wikipedia — <https://en.wikipedia.org/wiki/Weaire%E2%80%93Phelan_structure> — Kelvin 1887, Plateau, −0,3 %, zwei Zelltypen, 13,4 mittlere Flächen, „unproven optimal", Water Cube.
+- [R2·A1] Honeycomb theorem — Wikipedia — <https://en.wikipedia.org/wiki/Honeycomb_theorem> — Hales 1999, 2D-Optimalität, Varro/Pappos.
+- [R1·A2] The Honeycomb Conjecture (Hales) — arXiv math/9906042 — <https://arxiv.org/abs/math/9906042> — Originalbeweis 2D.
+- [R1·A3] On the honeycomb conjecture and the Kepler problem — arXiv 0906.1249 — <https://arxiv.org/pdf/0906.1249> — 3D-Bienenwabe nicht optimal; indirekt.
+- [R3·A1] HALES PROVES HEXAGONAL HONEYCOMB CONJECTURE — Frank Morgan's Math Chat — <https://web.williams.edu/mathchat/mathchat_6_17_99.html> — Beweis Juni 1999.
+- [R3·A1] Throwing Shapes — Trinity College Dublin — <https://www.tcd.ie/physics/300/history/exhibition-gallery/throwing-shapes/> — Weaire-Phelan-Entstehung.
+- [R3·A3] Foams and Honeycombs — American Scientist — <https://www.americanscientist.org/article/foams-and-honeycombs> — Matzke 13–13,8 Flächen, Plateau; indirekt.
+- [R1·A3] The structure of foam cells: Isotropic Plateau polyhedra — condmatjclub — <https://www.condmatjclub.org/wp-content/uploads/2007/06/jccm_may05_02.pdf> — Schaum-Statistik; indirekt.
+- [R3·A3] Structural Design of the Water Cube — ASCE Metropolitan Section — <https://www.ascemetsection.org/.../372-structural-design-of-the-water-cube> — Carfrae/Arup; indirekt.
+- [R3·A3] Kelvin's bubble burst again — plus.maths.org — <https://plus.maths.org/content/kelvins-bubble-burst-again> — Kelvin-Problem offen; indirekt.
 
 ### Random Close Packing (Vorbehalt z ≈ 6)
-- [R1·A3] A first-order phase transition at the random close packing of hard spheres — arXiv 1001.5287 — https://arxiv.org/pdf/1001.5287 — φ_RCP ≈ 0,64, z ≈ 6; indirekt.
-- [R3·A3] Random close packing or jamming of spheres in a container — phys.org — https://phys.org/news/2021-05-random-spheres.html — Isostatik z = 6; indirekt.
+
+- [R1·A3] A first-order phase transition at the random close packing of hard spheres — arXiv 1001.5287 — <https://arxiv.org/pdf/1001.5287> — φ_RCP ≈ 0,64, z ≈ 6; indirekt.
+- [R3·A3] Random close packing or jamming of spheres in a container — phys.org — <https://phys.org/news/2021-05-random-spheres.html> — Isostatik z = 6; indirekt.
 
 ### Höhere Dimensionen (Einordnung Viazovska)
-- [R3·A2] Ukrainian Mathematician Maryna Viazovska Wins Fields Medal — Quanta Magazine — https://www.quantamagazine.org/ukrainian-mathematician-maryna-viazovska-wins-fields-medal-20220705/ — Dim. 8 und 24.
-- [R1·A2] Fields Medal 2022 Citation: Maryna Viazovska — IMU — https://www.mathunion.org/fileadmin/IMU/Prizes/Fields/2022/IMU_Fields22_Viazovska_citation.pdf — offizielles Zitat.
-- [R3·A2] The Fields Medals 2022: Maryna Viazovska — plus.maths.org — https://plus.maths.org/content/mv — Einordnung.
+
+- [R3·A2] Ukrainian Mathematician Maryna Viazovska Wins Fields Medal — Quanta Magazine — <https://www.quantamagazine.org/ukrainian-mathematician-maryna-viazovska-wins-fields-medal-20220705/> — Dim. 8 und 24.
+- [R1·A2] Fields Medal 2022 Citation: Maryna Viazovska — IMU — <https://www.mathunion.org/fileadmin/IMU/Prizes/Fields/2022/IMU_Fields22_Viazovska_citation.pdf> — offizielles Zitat.
+- [R3·A2] The Fields Medals 2022: Maryna Viazovska — plus.maths.org — <https://plus.maths.org/content/mv> — Einordnung.
 
 ### Anmerkungen zur Belastbarkeit
+
 - Gut gesichert (mehrfach unabhängig bestätigt): k(3)=12; Newton vs. Gregory 1694; Beweis 1953 (Schütte/van der Waerden); Kepler 1611; Dichte π/√18 ≈ 74,05 %; KZ 12 = 6+3+3; Rhombendodekaeder 12/24/14 mit 1:√2-Diagonalen, 70,53°/109,47°, Diederwinkel 120°; Hales 1998 / Flyspeck 2014 / Forum of Math Pi 2017; Weaire-Phelan 1993, −0,3 %, Water Cube 2008; Wabensatz 2D bewiesen 1999/2001. Euler-Relation 14−24+12=2 ist eigene Kontrollrechnung.
 - Schwächer belegt (nur Snippet/indirekt): exakte Matzke-Statistik (~13,7 Flächen) und die genaue Harriot-1591-Zuschreibung — beide plausibel und in der Standardliteratur etabliert.
 - Offene Unschärfe: Weaire-Phelan-Jahr wird als 1993 (Simulation) oder 1994 (Publikation) angegeben — beides je nach Bezugspunkt korrekt.

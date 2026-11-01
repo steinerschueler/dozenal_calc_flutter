@@ -148,24 +148,28 @@ Cliffhanger fort. »Fibonacci, Quadratzahlen und Kuriositäten« berührt Fakult
 Zuverlässigkeit **R1**/**R2**/**R3**; Zugang **A1**/**A2**/**A3**.
 
 ### Kombinatorik (R2)
-- **[R2·A1]** Factorial — Wikipedia — https://en.wikipedia.org/wiki/Factorial — n!, 0!=1, Wachstum, Anwendungen.
-- **[R2·A1]** Permutation — Wikipedia — https://en.wikipedia.org/wiki/Permutation — geordnete Anordnungen, P(n,k).
-- **[R2·A1]** Combination — Wikipedia — https://en.wikipedia.org/wiki/Combination — C(n,k), Binomialkoeffizient.
-- **[R2·A2]** Twelvefold way — Wikipedia — https://en.wikipedia.org/wiki/Twelvefold_way — systematischer Überblick Abzählung.
+
+- **[R2·A1]** Factorial — Wikipedia — <https://en.wikipedia.org/wiki/Factorial> — n!, 0!=1, Wachstum, Anwendungen.
+- **[R2·A1]** Permutation — Wikipedia — <https://en.wikipedia.org/wiki/Permutation> — geordnete Anordnungen, P(n,k).
+- **[R2·A1]** Combination — Wikipedia — <https://en.wikipedia.org/wiki/Combination> — C(n,k), Binomialkoeffizient.
+- **[R2·A2]** Twelvefold way — Wikipedia — <https://en.wikipedia.org/wiki/Twelvefold_way> — systematischer Überblick Abzählung.
 
 ### Change Ringing (R2–R3)
-- **[R2·A1]** Change ringing — Wikipedia — https://en.wikipedia.org/wiki/Change_ringing — Permutations-Läuten, Stufennamen, Extent.
-- **[R2·A1]** Extent (change ringing) — Wikipedia — https://en.wikipedia.org/wiki/Extent_(change_ringing) — voller Extent = n! Wechsel.
-- **[R2·A1]** Method ringing / Maximus — Wikipedia — https://en.wikipedia.org/wiki/Method_ringing — Maximus (12), Plain Bob, Grandsire.
-- **[R2·A2]** Steinhaus–Johnson–Trotter algorithm — Wikipedia — https://en.wikipedia.org/wiki/Steinhaus%E2%80%93Johnson%E2%80%93Trotter_algorithm — benachbarte Vertauschungen, Bezug zum Glockenläuten.
+
+- **[R2·A1]** Change ringing — Wikipedia — <https://en.wikipedia.org/wiki/Change_ringing> — Permutations-Läuten, Stufennamen, Extent.
+- **[R2·A1]** Extent (change ringing) — Wikipedia — <https://en.wikipedia.org/wiki/Extent_(change_ringing)> — voller Extent = n! Wechsel.
+- **[R2·A1]** Method ringing / Maximus — Wikipedia — <https://en.wikipedia.org/wiki/Method_ringing> — Maximus (12), Plain Bob, Grandsire.
+- **[R2·A2]** Steinhaus–Johnson–Trotter algorithm — Wikipedia — <https://en.wikipedia.org/wiki/Steinhaus%E2%80%93Johnson%E2%80%93Trotter_algorithm> — benachbarte Vertauschungen, Bezug zum Glockenläuten.
 - **[R3·A2]** Peal records (CCCBR u. a.) — variierende Längenangaben für 12-Glocken-Peals; deshalb im Dossier nur als „einige Zehntausend" geführt.
 
 ### Gruppen (R2)
-- **[R2·A1]** Symmetric group — Wikipedia — https://en.wikipedia.org/wiki/Symmetric_group — |Sₙ| = n!, nicht-abelsch.
-- **[R2·A1]** Alternating group — Wikipedia — https://en.wikipedia.org/wiki/Alternating_group — |Aₙ| = n!/2.
-- **[R2·A1]** Parity of a permutation — Wikipedia — https://en.wikipedia.org/wiki/Parity_of_a_permutation — gerade/ungerade wohldefiniert.
+
+- **[R2·A1]** Symmetric group — Wikipedia — <https://en.wikipedia.org/wiki/Symmetric_group> — |Sₙ| = n!, nicht-abelsch.
+- **[R2·A1]** Alternating group — Wikipedia — <https://en.wikipedia.org/wiki/Alternating_group> — |Aₙ| = n!/2.
+- **[R2·A1]** Parity of a permutation — Wikipedia — <https://en.wikipedia.org/wiki/Parity_of_a_permutation> — gerade/ungerade wohldefiniert.
 
 ### Eigene Verifikation (R1·A1)
+
 - Python/Bash: 0!–12! dezimal & Basis 12; 12! = 2¹⁰·3⁵·5²·7·11; 11! = 39 916 800;
   P(12,3)=1320, C(12,6)=924, C(12,2)=66; |S₁₂|=12!, |A₁₂|=12!/2=239 500 800;
   Index S₁₂/M₁₂ = 5040 = 7!; 12!/Jahr ≈ 15,18. Alle reproduzierbar.

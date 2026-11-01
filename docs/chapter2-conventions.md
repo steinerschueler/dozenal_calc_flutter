@@ -14,6 +14,7 @@ bei nicht-lateinischer Schrift transliteriert (کوادر, کوبر, تسر … 
 квадер, кубер, тессер … in Russisch ; क्वाडर … in Hindi ; 卡德 … in Chinesisch).
 
 **Ausnahmen für romanische Phonologie:**
+
 - **Spanisch** adaptiert auf `-ero/-eros` (maskulin, parallel zu cuadrado/cubo).
 - **Italienisch** auf `-era/-ere` (feminin, mit „tessera" als existierendem
   italienischem Wort für Mosaikstein — Glücksfall für 12⁴).

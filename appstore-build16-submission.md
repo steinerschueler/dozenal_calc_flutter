@@ -5,6 +5,7 @@ iOS/iPadOS (bestehend) · **Apple Watch** (in die iOS-App eingebettet, kein
 eigener Eintrag) · **macOS** (Universal Purchase, gleiche Bundle-ID).
 
 Was Claude erledigt hat:
+
 - **iOS + eingebettete Watch**: gebaut, signiert, **hochgeladen** (UPLOAD
   SUCCEEDED, Delivery-UUID `91315778-2220-486c-a89c-35824b08867b`).
 - **macOS**: `Dozenal Calc.pkg` gebaut + signiert. Upload **blockiert** — siehe
@@ -31,18 +32,21 @@ keine Rückfrage.
 
 Der macOS-Upload schlägt fehl, **solange** der App-Eintrag keine macOS-Plattform
 hat. Einmalig einrichten:
+
 1. App Store Connect → **Dozenal Calc** → oben/links beim App-Namen das
    Plattform-Menü bzw. **„(+)"** → **macOS hinzufügen** (Universal Purchase;
    möglich, weil die Bundle-ID `app.weltanschauung.dozenal` mit der iOS-App
    übereinstimmt).
 2. Danach den macOS-Upload erneut anstossen (das `.pkg` liegt fertig in
    `build/macos/pkg/`):
+
    ```bash
    xcrun altool --validate-app -f "build/macos/pkg/Dozenal Calc.pkg" -t macos \
      --apiKey RMAP26R27U --apiIssuer df8ff114-f196-4783-a030-bc8be4ab3434
    xcrun altool --upload-app   -f "build/macos/pkg/Dozenal Calc.pkg" -t macos \
      --apiKey RMAP26R27U --apiIssuer df8ff114-f196-4783-a030-bc8be4ab3434
    ```
+
    (Sag mir Bescheid, sobald die Plattform aktiv ist — ich übernehme Validierung
    + Upload dann.)
 3. Build 16 (macOS) durchläuft „Processing", dann unter dem macOS-Tab wählbar.

@@ -19,6 +19,7 @@ Luca Pacioli verfasste die Abhandlung über die "göttliche Proportion" (den Gol
 Die Druckausgabe enthält rund sechzig Holzschnitt-Illustrationen nach Leonardos Zeichnungen: Kugel, Kegel, Zylinder, Pyramide und die fünf platonischen Körper. Darunter ist ausdrücklich das Dodekaeder, verknüpft mit dem Goldenen Schnitt, sowie ein gesterntes (stelliertes) Dodekaeder.
 
 Leonardos Neuerung war die Darstellung jeder Form in zwei Ansichten:
+
 - als massive Form ("solida")
 - als durchbrochene Skelett- oder Kantenform ("vacua"), die erstmals Vorder- und Rückseite klar unterscheidbar machte
 
@@ -186,92 +187,92 @@ Bewertung nach zwei Achsen. Zuverlässigkeit: R1 = wissenschaftlich/primär, R2 
 
 ### Dodekaeder, Leonardo, Pacioli, Platon
 
-- [R2·A1] Divina proportione — Wikipedia — https://en.wikipedia.org/wiki/Divina_proportione — belegt "solida/vacua"-Skelettform, ~60 Holzschnitte, Dodekaeder als Quintessenz.
-- [R1·A1] Mathematical Treasures – De Divina Proportione — MAA — https://old.maa.org/press/periodicals/convergence/mathematical-treasures-de-divina-proportione-by-luca-pacioli — Faksimile-Scans, etablierte Fachorganisation.
-- [R2·A2] Leonardo da Vinci: Drawing of a dodecahedron — Matemáticas Visuales — http://www.matematicasvisuales.com/english/html/history/leonardo/dodecahedron.html — Original-Holzschnitt-Reproduktionen, interaktive Rekonstruktion.
-- [R3·A3] What did Plato say about the Dodecahedron? — Wisdomshort — https://wisdomshort.com/philosophers/plato/on-the-dodecahedron — populäre Zusammenfassung der Timaios-Stelle.
-- [R3·A3] Plato's Model of the Universe and the Dodecahedron — UMass — https://www.faculty.umb.edu/gary_zabel/Courses/Phil%20281b/Philosophy%20of%20Magic/Arcana/Renaissance/PlatoSolid.htm — Lehrmaterial zur Element-Zuordnung.
+- [R2·A1] Divina proportione — Wikipedia — <https://en.wikipedia.org/wiki/Divina_proportione> — belegt "solida/vacua"-Skelettform, ~60 Holzschnitte, Dodekaeder als Quintessenz.
+- [R1·A1] Mathematical Treasures – De Divina Proportione — MAA — <https://old.maa.org/press/periodicals/convergence/mathematical-treasures-de-divina-proportione-by-luca-pacioli> — Faksimile-Scans, etablierte Fachorganisation.
+- [R2·A2] Leonardo da Vinci: Drawing of a dodecahedron — Matemáticas Visuales — <http://www.matematicasvisuales.com/english/html/history/leonardo/dodecahedron.html> — Original-Holzschnitt-Reproduktionen, interaktive Rekonstruktion.
+- [R3·A3] What did Plato say about the Dodecahedron? — Wisdomshort — <https://wisdomshort.com/philosophers/plato/on-the-dodecahedron> — populäre Zusammenfassung der Timaios-Stelle.
+- [R3·A3] Plato's Model of the Universe and the Dodecahedron — UMass — <https://www.faculty.umb.edu/gary_zabel/Courses/Phil%20281b/Philosophy%20of%20Magic/Arcana/Renaissance/PlatoSolid.htm> — Lehrmaterial zur Element-Zuordnung.
 
 ### Dürer
 
-- [R2·A1] Melencolia I — Wikipedia — https://en.wikipedia.org/wiki/Melencolia_I — magisches Quadrat 4×4, Körper-Deutung.
-- [R2·A1] Dürer graph — Wikipedia — https://en.wikipedia.org/wiki/D%C3%BCrer_graph — 12 Knoten/18 Kanten, daraus 8 Flächen.
-- [R2·A1] Truncated triangular trapezohedron (Dürer's solid) — Wikipedia — https://en.wikipedia.org/wiki/Truncated_triangular_trapezohedron — Flächenzahl und konkurrierende Winkel-Rekonstruktionen.
-- [R3·A3] Art and Math: The Unusual Shape in Melencolia I — Library of Congress Blog — https://blogs.loc.gov/bibliomania/2023/12/14/art-and-math-the-unusual-shape-in-melencolia-i/ — seriöse populäre Einordnung.
-- [R1·A2] Another Solution to the Polyhedron in Dürer's Melencolia — Ishizu (PDF) — http://www.bigakukai.jp/aesthetics_online/aesthetics_13/text/text13_ishizu.pdf — wissenschaftliche Arbeit zur Geometrie.
-- [R1·A2] A New Hypothesis on Dürer's Enigmatic Polyhedron — ScienceDirect — https://www.sciencedirect.com/science/article/pii/S0315086099922450 — Abstract zugänglich, Paywall.
-- [R2·A3] Dürer's Solid — Wolfram MathWorld — https://mathworld.wolfram.com/DuerersSolid.html — Zugang zeitweise 403, mathematische Referenz.
+- [R2·A1] Melencolia I — Wikipedia — <https://en.wikipedia.org/wiki/Melencolia_I> — magisches Quadrat 4×4, Körper-Deutung.
+- [R2·A1] Dürer graph — Wikipedia — <https://en.wikipedia.org/wiki/D%C3%BCrer_graph> — 12 Knoten/18 Kanten, daraus 8 Flächen.
+- [R2·A1] Truncated triangular trapezohedron (Dürer's solid) — Wikipedia — <https://en.wikipedia.org/wiki/Truncated_triangular_trapezohedron> — Flächenzahl und konkurrierende Winkel-Rekonstruktionen.
+- [R3·A3] Art and Math: The Unusual Shape in Melencolia I — Library of Congress Blog — <https://blogs.loc.gov/bibliomania/2023/12/14/art-and-math-the-unusual-shape-in-melencolia-i/> — seriöse populäre Einordnung.
+- [R1·A2] Another Solution to the Polyhedron in Dürer's Melencolia — Ishizu (PDF) — <http://www.bigakukai.jp/aesthetics_online/aesthetics_13/text/text13_ishizu.pdf> — wissenschaftliche Arbeit zur Geometrie.
+- [R1·A2] A New Hypothesis on Dürer's Enigmatic Polyhedron — ScienceDirect — <https://www.sciencedirect.com/science/article/pii/S0315086099922450> — Abstract zugänglich, Paywall.
+- [R2·A3] Dürer's Solid — Wolfram MathWorld — <https://mathworld.wolfram.com/DuerersSolid.html> — Zugang zeitweise 403, mathematische Referenz.
 
 ### Escher
 
-- [R2·A1] Stars (M. C. Escher) — Wikipedia — https://en.wikipedia.org/wiki/Stars_(M._C._Escher) — Drei-Oktaeder-Käfig, Plato-Zitat zu 12 Flächen/Tierkreis, Holzstich-Terminologie.
-- [R2·A1] Gravitation (M. C. Escher) — Wikipedia — https://en.wikipedia.org/wiki/Gravitation_(M._C._Escher) — Sterndodekaeder, 12 Schildkröten.
-- [R3·A2] The Polyhedra of M.C. Escher — George Hart — https://www.georgehart.com/virtual-polyhedra/escher.html — Werkliste eines Fachautors für Polyeder.
-- [R3·A2] Magical polyhedra — Escher in The Palace (Den Haag) — https://escherinhetpaleis.nl/en/about-escher/escher-today/magical-polyhedra — Museumskontext.
+- [R2·A1] Stars (M. C. Escher) — Wikipedia — <https://en.wikipedia.org/wiki/Stars_(M._C._Escher)> — Drei-Oktaeder-Käfig, Plato-Zitat zu 12 Flächen/Tierkreis, Holzstich-Terminologie.
+- [R2·A1] Gravitation (M. C. Escher) — Wikipedia — <https://en.wikipedia.org/wiki/Gravitation_(M._C._Escher)> — Sterndodekaeder, 12 Schildkröten.
+- [R3·A2] The Polyhedra of M.C. Escher — George Hart — <https://www.georgehart.com/virtual-polyhedra/escher.html> — Werkliste eines Fachautors für Polyeder.
+- [R3·A2] Magical polyhedra — Escher in The Palace (Den Haag) — <https://escherinhetpaleis.nl/en/about-escher/escher-today/magical-polyhedra> — Museumskontext.
 
 ### Dalí
 
-- [R2·A1] The Sacrament of the Last Supper — Wikipedia — https://en.wikipedia.org/wiki/The_Sacrament_of_the_Last_Supper — enthält das wörtliche Dalí-Zitat zur Zahl Zwölf.
-- [R2·A2] Sacrament of the Last Supper — National Gallery of Art — https://www.nga.gov/artworks/46590-sacrament-last-supper — Museumsquelle, Werkdaten.
-- [R3·A3] Breaking Down The Last Supper — SalvadorDali.com — https://www.salvadordali.com/the-last-supper/ — offizielle, aber werbliche Quelle.
-- [R3·A2] The Sacrament of the Last Supper — Artchive — https://www.artchive.com/artwork/the-sacrament-of-the-last-supper-salvador-dali-1955/ — populäre Kunstdatenbank.
+- [R2·A1] The Sacrament of the Last Supper — Wikipedia — <https://en.wikipedia.org/wiki/The_Sacrament_of_the_Last_Supper> — enthält das wörtliche Dalí-Zitat zur Zahl Zwölf.
+- [R2·A2] Sacrament of the Last Supper — National Gallery of Art — <https://www.nga.gov/artworks/46590-sacrament-last-supper> — Museumsquelle, Werkdaten.
+- [R3·A3] Breaking Down The Last Supper — SalvadorDali.com — <https://www.salvadordali.com/the-last-supper/> — offizielle, aber werbliche Quelle.
+- [R3·A2] The Sacrament of the Last Supper — Artchive — <https://www.artchive.com/artwork/the-sacrament-of-the-last-supper-salvador-dali-1955/> — populäre Kunstdatenbank.
 
 ### Römische Dodekaeder
 
-- [R2·A1] Roman dodecahedron — Wikipedia — https://en.wikipedia.org/wiki/Roman_dodecahedron — Fundverteilung, keine Inschriften, Genfer Tierkreis-Exemplar.
-- [R3·A1] Roman dodecahedron: A mysterious 12-sided object — Live Science — https://www.livescience.com/archaeology/romans/roman-dodecahedron-a-mysterious-12-sided-object-that-has-baffled-archaeologists-for-centuries — ~120 Stück, Datierung, >50 Theorien.
-- [R3·A1] The Mysterious Dodecahedrons of the Roman Empire — Atlas Obscura — https://www.atlasobscura.com/articles/dodecahedrons-roman-empire — seriöse populäre Übersicht.
-- [R3·A2] Roman dodecahedron found in Belgium (magical rituals) — Live Science — https://www.livescience.com/roman-dodecahedron-discovered-belgium — Ritual-Hypothese.
-- [R3·A2] Roman dodecahedron uncovered in the UK (Norton Disney) — Live Science — https://www.livescience.com/archaeology/romans/roman-dodecahedron-uncovered-by-amateur-archaeologists-in-the-uk — aktueller Fund.
-- [R2·A2] Norton Disney dodecahedron to go on display — Lincolnshire County Council — https://www.lincolnshire.gov.uk/news/article/1853/ — offizielle Mitteilung.
-- [R3·A2] Norton Disney History and Archaeology Group — https://nortondisneyhag.org/?page_id=2406 — Grabungsgruppe, Primärnähe zum Fund.
-- [R3·A2] Roman dodecahedron — NPR — https://www.npr.org/2024/01/24/1226575715/archaeologists-roman-empire-dodecahedron-england — seriöse Berichterstattung.
-- [R3·A2] Another 12-sided object found in England — Smithsonian Magazine — https://www.smithsonianmag.com/smart-news/another-of-ancient-romes-mysterious-12-sided-objects-has-been-found-in-england-180983632/ — seriöse Berichterstattung.
+- [R2·A1] Roman dodecahedron — Wikipedia — <https://en.wikipedia.org/wiki/Roman_dodecahedron> — Fundverteilung, keine Inschriften, Genfer Tierkreis-Exemplar.
+- [R3·A1] Roman dodecahedron: A mysterious 12-sided object — Live Science — <https://www.livescience.com/archaeology/romans/roman-dodecahedron-a-mysterious-12-sided-object-that-has-baffled-archaeologists-for-centuries> — ~120 Stück, Datierung, >50 Theorien.
+- [R3·A1] The Mysterious Dodecahedrons of the Roman Empire — Atlas Obscura — <https://www.atlasobscura.com/articles/dodecahedrons-roman-empire> — seriöse populäre Übersicht.
+- [R3·A2] Roman dodecahedron found in Belgium (magical rituals) — Live Science — <https://www.livescience.com/roman-dodecahedron-discovered-belgium> — Ritual-Hypothese.
+- [R3·A2] Roman dodecahedron uncovered in the UK (Norton Disney) — Live Science — <https://www.livescience.com/archaeology/romans/roman-dodecahedron-uncovered-by-amateur-archaeologists-in-the-uk> — aktueller Fund.
+- [R2·A2] Norton Disney dodecahedron to go on display — Lincolnshire County Council — <https://www.lincolnshire.gov.uk/news/article/1853/> — offizielle Mitteilung.
+- [R3·A2] Norton Disney History and Archaeology Group — <https://nortondisneyhag.org/?page_id=2406> — Grabungsgruppe, Primärnähe zum Fund.
+- [R3·A2] Roman dodecahedron — NPR — <https://www.npr.org/2024/01/24/1226575715/archaeologists-roman-empire-dodecahedron-england> — seriöse Berichterstattung.
+- [R3·A2] Another 12-sided object found in England — Smithsonian Magazine — <https://www.smithsonianmag.com/smart-news/another-of-ancient-romes-mysterious-12-sided-objects-has-been-found-in-england-180983632/> — seriöse Berichterstattung.
 
 ### Stundenbücher, Monatsarbeiten, Tierkreis
 
-- [R2·A1] Très Riches Heures du Duc de Berry — Wikipedia — https://en.wikipedia.org/wiki/Tr%C3%A8s_Riches_Heures_du_Duc_de_Berry — 12 Miniaturen, 360°/12×30°-Teilung, Entstehungsphasen.
-- [R2·A2] Très Riches Heures — Britannica — https://www.britannica.com/topic/Tres-Riches-Heures-du-duc-de-Berry — etablierte Enzyklopädie.
-- [R3·A2] Labors of the Months from the Très Riches Heures — Public Domain Review — https://publicdomainreview.org/collection/labors-of-the-months-from-the-tres-riches-heures/ — seriös, gemeinfreie Bilder.
-- [R2·A2] Labours of the Months — Wikipedia — https://en.wikipedia.org/wiki/Labours_of_the_Months — Bildtradition, Ursprung Spätantike.
-- [R3·A3] Medieval Calendars and the Labours of the Months — Medievalists.net — https://www.medievalists.net/2022/07/medieval-calendars-labours-months/ — seriös populär.
-- [R3·A3] Written in the Stars: Zodiac in Medieval Art — DailyArt Magazine — https://www.dailyartmagazine.com/zodiac-medieval-art/ — populäre Übersicht.
-- [R3·A2] Limbourg brothers, Très Riches Heures — Smarthistory — https://smarthistory.org/limbourg-brothers-tres-riches-heures-du-duc-de-berry/ — seriöse Kunstgeschichte.
-- [R2·A1] Chartres Cathedral — Wikipedia — https://en.wikipedia.org/wiki/Chartres_Cathedral — Archivolten und Kalenderfenster.
-- [R3·A3] Amiens Cathedral — French Moments — https://frenchmoments.eu/amiens-cathedral/ — populäre Beschreibung der Vierpass-Medaillons.
-- [R1·A2] Zodiacal Miniature in Duke of Berry's Manuscript — Bober (1948) — https://www.scribd.com/document/669928171/Bober-ZodiacalMiniatureTrs-1948 — wissenschaftlicher Aufsatz.
+- [R2·A1] Très Riches Heures du Duc de Berry — Wikipedia — <https://en.wikipedia.org/wiki/Tr%C3%A8s_Riches_Heures_du_Duc_de_Berry> — 12 Miniaturen, 360°/12×30°-Teilung, Entstehungsphasen.
+- [R2·A2] Très Riches Heures — Britannica — <https://www.britannica.com/topic/Tres-Riches-Heures-du-duc-de-Berry> — etablierte Enzyklopädie.
+- [R3·A2] Labors of the Months from the Très Riches Heures — Public Domain Review — <https://publicdomainreview.org/collection/labors-of-the-months-from-the-tres-riches-heures/> — seriös, gemeinfreie Bilder.
+- [R2·A2] Labours of the Months — Wikipedia — <https://en.wikipedia.org/wiki/Labours_of_the_Months> — Bildtradition, Ursprung Spätantike.
+- [R3·A3] Medieval Calendars and the Labours of the Months — Medievalists.net — <https://www.medievalists.net/2022/07/medieval-calendars-labours-months/> — seriös populär.
+- [R3·A3] Written in the Stars: Zodiac in Medieval Art — DailyArt Magazine — <https://www.dailyartmagazine.com/zodiac-medieval-art/> — populäre Übersicht.
+- [R3·A2] Limbourg brothers, Très Riches Heures — Smarthistory — <https://smarthistory.org/limbourg-brothers-tres-riches-heures-du-duc-de-berry/> — seriöse Kunstgeschichte.
+- [R2·A1] Chartres Cathedral — Wikipedia — <https://en.wikipedia.org/wiki/Chartres_Cathedral> — Archivolten und Kalenderfenster.
+- [R3·A3] Amiens Cathedral — French Moments — <https://frenchmoments.eu/amiens-cathedral/> — populäre Beschreibung der Vierpass-Medaillons.
+- [R1·A2] Zodiacal Miniature in Duke of Berry's Manuscript — Bober (1948) — <https://www.scribd.com/document/669928171/Bober-ZodiacalMiniatureTrs-1948> — wissenschaftlicher Aufsatz.
 
 ### Islamische Tierkreis-Astralsymbolik
 
-- [R2·A1] Astronomy and Astrology in the Medieval Islamic World — Metropolitan Museum — https://www.metmuseum.org/essays/astronomy-and-astrology-in-the-medieval-islamic-world — Museumsessay.
-- [R2·A1] Inkwell with Zodiac Signs — Metropolitan Museum — https://www.metmuseum.org/art/collection/search/451491 — Objektdaten.
-- [R2·A1] Divination Bowl with Zodiac Signs — Smarthistory/LibreTexts — https://human.libretexts.org/Bookshelves/Art/SmartHistory_of_Art_2e/03:_SmartHistory_of_Art_III-_The_Islamic_World/04:_Later_period/4.15:_Divination_Bowl_with_Inscriptions_and_Zodiac_Signs — seriöse Kunstgeschichte.
-- [R2·A1] Zodiac signs (Astrolabes) — Museum of the History of Science, Oxford — https://www.mhs.ox.ac.uk/almizan/Zodiac.htm — Museumsquelle.
+- [R2·A1] Astronomy and Astrology in the Medieval Islamic World — Metropolitan Museum — <https://www.metmuseum.org/essays/astronomy-and-astrology-in-the-medieval-islamic-world> — Museumsessay.
+- [R2·A1] Inkwell with Zodiac Signs — Metropolitan Museum — <https://www.metmuseum.org/art/collection/search/451491> — Objektdaten.
+- [R2·A1] Divination Bowl with Zodiac Signs — Smarthistory/LibreTexts — <https://human.libretexts.org/Bookshelves/Art/SmartHistory_of_Art_2e/03:_SmartHistory_of_Art_III-_The_Islamic_World/04:_Later_period/4.15:_Divination_Bowl_with_Inscriptions_and_Zodiac_Signs> — seriöse Kunstgeschichte.
+- [R2·A1] Zodiac signs (Astrolabes) — Museum of the History of Science, Oxford — <https://www.mhs.ox.ac.uk/almizan/Zodiac.htm> — Museumsquelle.
 
 ### Girih und zwölfzählige Ornamente
 
-- [R2·A1] Girih — Wikipedia — https://en.wikipedia.org/wiki/Girih — Definition, 12-Punkt-Beispiele, Konstruktion.
-- [R2·A1] Islamic geometric patterns — Wikipedia — https://en.wikipedia.org/wiki/Islamic_geometric_patterns — Konya 1220, Aniconismus, Symbolik.
-- [R2·A1] Girih tile — Wikipedia — https://en.wikipedia.org/wiki/Girih_tile — Kachelsatz.
-- [R2·A1] Topkapı Scroll — Wikipedia — https://en.wikipedia.org/wiki/Topkap%C4%B1_Scroll — Mustervorlagen-Rolle.
-- [R1·A1] Decagonal and Quasi-crystalline Tilings in Medieval Islamic Architecture — Lu & Steinhardt, Science 2007 (PDF) — https://www.physics.rutgers.edu/~pchandra/physics601/Lu_Steinhardt.pdf — die zentrale (umstrittene) Primärthese.
-- [R1·A1] Medieval Islamic Architecture, Quasicrystals, and Penrose and Girih Tiles — Bridges 2008 (PDF) — https://archive.bridgesmathart.org/2008/bridges2008-297.pdf — Fach-Konferenzpapier.
-- [R3·A2] Islamic 'quasicrystals' predate Penrose tiles — Physics World — https://physicsworld.com/a/islamic-quasicrystals-predate-penrose-tiles/ — seriöse Wissenschaftsberichterstattung.
-- [R1·A2] Tendentious tilings — Nature Materials — https://www.nature.com/articles/nmat1945 — kritischer Fachkommentar (Paywall/Abstract).
-- [R3·A3] Art of Islamic Patterns: A Moorish Star — AramcoWorld — https://www.aramcoworld.com/articles/2022/art-of-islamic-patterns-a-moorish-star — Khargird/Ibn-Tulun-Angaben.
-- [R3·A3] Introduction to Geometry — Art of Islamic Pattern — https://artofislamicpattern.com/resources/educational-posters/ — Lehrmaterial.
-- [R3·A2] Twelve-Point Star Tile — Art Institute of Chicago — https://www.artic.edu/artworks/86467/twelve-point-star-tile — Objektdaten.
-- [R2·A3] Twelve-Pointed Star-Shaped Tile — Met Museum — https://www.metmuseum.org/art/collection/search/446971 — Objektdaten.
+- [R2·A1] Girih — Wikipedia — <https://en.wikipedia.org/wiki/Girih> — Definition, 12-Punkt-Beispiele, Konstruktion.
+- [R2·A1] Islamic geometric patterns — Wikipedia — <https://en.wikipedia.org/wiki/Islamic_geometric_patterns> — Konya 1220, Aniconismus, Symbolik.
+- [R2·A1] Girih tile — Wikipedia — <https://en.wikipedia.org/wiki/Girih_tile> — Kachelsatz.
+- [R2·A1] Topkapı Scroll — Wikipedia — <https://en.wikipedia.org/wiki/Topkap%C4%B1_Scroll> — Mustervorlagen-Rolle.
+- [R1·A1] Decagonal and Quasi-crystalline Tilings in Medieval Islamic Architecture — Lu & Steinhardt, Science 2007 (PDF) — <https://www.physics.rutgers.edu/~pchandra/physics601/Lu_Steinhardt.pdf> — die zentrale (umstrittene) Primärthese.
+- [R1·A1] Medieval Islamic Architecture, Quasicrystals, and Penrose and Girih Tiles — Bridges 2008 (PDF) — <https://archive.bridgesmathart.org/2008/bridges2008-297.pdf> — Fach-Konferenzpapier.
+- [R3·A2] Islamic 'quasicrystals' predate Penrose tiles — Physics World — <https://physicsworld.com/a/islamic-quasicrystals-predate-penrose-tiles/> — seriöse Wissenschaftsberichterstattung.
+- [R1·A2] Tendentious tilings — Nature Materials — <https://www.nature.com/articles/nmat1945> — kritischer Fachkommentar (Paywall/Abstract).
+- [R3·A3] Art of Islamic Patterns: A Moorish Star — AramcoWorld — <https://www.aramcoworld.com/articles/2022/art-of-islamic-patterns-a-moorish-star> — Khargird/Ibn-Tulun-Angaben.
+- [R3·A3] Introduction to Geometry — Art of Islamic Pattern — <https://artofislamicpattern.com/resources/educational-posters/> — Lehrmaterial.
+- [R3·A2] Twelve-Point Star Tile — Art Institute of Chicago — <https://www.artic.edu/artworks/86467/twelve-point-star-tile> — Objektdaten.
+- [R2·A3] Twelve-Pointed Star-Shaped Tile — Met Museum — <https://www.metmuseum.org/art/collection/search/446971> — Objektdaten.
 
 ### Zwölfteilige Bildzyklen (Apostel, Herkules)
 
-- [R2·A2] List of apostolados — Wikipedia — https://en.wikipedia.org/wiki/List_of_apostolados — "12 + 1"-Struktur.
-- [R3·A3] Apostolados (El Greco) — Web Gallery of Art — https://www.wga.hu/html_m/g/greco_el/18/index.html — Bilddatenbank.
-- [R2·A1] Hercules and the Hydra (Pollaiuolo) — Uffizien — https://www.uffizi.it/en/artworks/pollaiolo-hercules-and-hydra — Museumsobjektseite.
-- [R2·A1] Hercules Killing the Stymphalian Birds (Dürer) — Wikipedia — https://en.wikipedia.org/wiki/Hercules_Killing_the_Stymphalian_Birds — Herkules-Zyklus, Pollaiuolo-Bezug.
+- [R2·A2] List of apostolados — Wikipedia — <https://en.wikipedia.org/wiki/List_of_apostolados> — "12 + 1"-Struktur.
+- [R3·A3] Apostolados (El Greco) — Web Gallery of Art — <https://www.wga.hu/html_m/g/greco_el/18/index.html> — Bilddatenbank.
+- [R2·A1] Hercules and the Hydra (Pollaiuolo) — Uffizien — <https://www.uffizi.it/en/artworks/pollaiolo-hercules-and-hydra> — Museumsobjektseite.
+- [R2·A1] Hercules Killing the Stymphalian Birds (Dürer) — Wikipedia — <https://en.wikipedia.org/wiki/Hercules_Killing_the_Stymphalian_Birds> — Herkules-Zyklus, Pollaiuolo-Bezug.
 
 ### Goldener-Schnitt-Mythos (Vorbehalte)
 
-- [R3·A3] Myth-busting the Golden Ratio — University of Edinburgh (EUSci) — https://eusci.org.uk/2020/07/29/myth-busting-the-golden-ratio/ — Studierenden-Wissenschaftsmagazin.
-- [R1·A3] The golden ratio—dispelling the myth — PMC — https://pmc.ncbi.nlm.nih.gov/articles/PMC10792139/ — wissenschaftlicher Artikel.
-- [R3·A3] Myths of maths: The golden ratio — plus.maths.org — https://plus.maths.org/content/myths-maths-golden-ratio — seriös populär (Univ. Cambridge).
+- [R3·A3] Myth-busting the Golden Ratio — University of Edinburgh (EUSci) — <https://eusci.org.uk/2020/07/29/myth-busting-the-golden-ratio/> — Studierenden-Wissenschaftsmagazin.
+- [R1·A3] The golden ratio—dispelling the myth — PMC — <https://pmc.ncbi.nlm.nih.gov/articles/PMC10792139/> — wissenschaftlicher Artikel.
+- [R3·A3] Myths of maths: The golden ratio — plus.maths.org — <https://plus.maths.org/content/myths-maths-golden-ratio> — seriös populär (Univ. Cambridge).

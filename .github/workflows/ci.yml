@@ -11,6 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # analyze_changed.py compares with the base commit
 
       - uses: actions/setup-java@v4
         with:
@@ -25,5 +27,8 @@ jobs:
           cache: true
 
       - run: flutter pub get --enforce-lockfile
-      - run: flutter analyze
+      - run: git ls-files '*.dart' | xargs dart format --output=none --set-exit-if-changed
+      - run: python3 -I tool/analyze_changed.py --base "$BASE_COMMIT"
+        env:
+          BASE_COMMIT: ${{ github.event.pull_request.base.sha || github.event.before }}
       - run: flutter test

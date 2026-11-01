@@ -5,8 +5,9 @@ Entwicklungs-Sandbox unter <https://github.com/Bawdyness/dozenal_calc>. Paket- u
 
 ## Prüfen
 
-- Vor «erledigt»: `flutter analyze` und `flutter test`, Ergebnis nennen. Die CI führt dieselben Schritte aus.
-- Der pre-commit-Hook prüft nur gestagte Dateien mit gitleaks und ersetzt die beiden Befehle nicht.
+- Vor «erledigt»: `pre-commit run --all-files` und `pre-commit run --all-files --hook-stage pre-push`, Ergebnis nennen.
+- `flutter analyze` listet Tausende alter Lint-Befunde und ist kein Prüfbefehl mehr. `tool/analyze_changed.py` blockiert
+  Lint-Befunde nur in geänderten Dateien (CC-41). Wer eine Datei ändert, behebt ihre Befunde, die CI prüft das auch.
 - Einzeln: `flutter test test/rational_test.dart`, `flutter test --plain-name "parses 1/7"`.
 - Welche Testdatei zu welchem Bereich gehört: [docs/entwicklung.md](docs/entwicklung.md).
 

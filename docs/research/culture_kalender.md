@@ -86,76 +86,76 @@ Drei kalendarische Grundstrategien gehen aus der einen astronomischen Konstante 
 
 **Mond-/Sonnenjahr, lunisolare Kalender, Schaltmonate, Metonischer Zyklus**
 
-- [R2·A1] Lunisolar calendar — Wikipedia (EN) — https://en.wikipedia.org/wiki/Lunisolar_calendar — etablierte Referenz, Volltext geprüft; liefert 12,36826, Epakte ~11 Tage, Schaltmonat alle 2–3 Jahre, Schaltjahre 3/6/8/11/14/17/19.
-- [R2·A1] Lunisolarkalender — Wikipedia (DE) — https://de.wikipedia.org/wiki/Lunisolarkalender — etablierte Referenz, frei; Metonperiode, Schaltmonat-Rhythmus, Liste lunisolarer Kalender.
-- [R2·A1] Metonic cycle — Wikipedia (EN) — https://en.wikipedia.org/wiki/Metonic_cycle — etablierte Referenz, Volltext; 19 J = 235 Monate, 6939,602 vs. 6939,689 Tage (~2 h 5 min), Meton 432 v. Chr., Babylon spätes 6. Jh.
-- [R2·A1] Lunarkalender — Wikipedia (DE) — https://de.wikipedia.org/wiki/Lunarkalender — etablierte Referenz; Mondjahr 354 d, „11–12 Tage kürzer".
-- [R2·A2] Lunar calendar — Wikipedia (EN) — https://en.wikipedia.org/wiki/Lunar_calendar — etablierte Referenz, teilweise via Snippet; 354 d 8 h 48 min 34 s.
-- [R2·A1] Kalendermonat / Monat — Wikipedia (DE) — https://de.wikipedia.org/wiki/Kalendermonat — etablierte Referenz; Mond-Monat-Etymologie, Monatsnamen-Erbe.
-- [R2·A2] Leap year — Wikipedia (EN) — https://en.wikipedia.org/wiki/Leap_year — etablierte Referenz, teilweise; Schaltlogik allgemein.
-- [R4·A1] Die zwölf Monate und ihre Bedeutungen — timeanddate.de — https://www.timeanddate.de/kalender/monate/ — populär/kommerziell, frei; 29,53 d, 365,24 d, ≈12,36; Babylonier 12 Monate à 30 Tage. Faktenarm, Rundungen nicht immer präzise.
-- [R3·A1] Kalenderkunde — Michael Neuhold — http://www.mneuhold.at/misc/kalender.html — seriös populär, frei; Übersicht lunisolare Systeme.
+- [R2·A1] Lunisolar calendar — Wikipedia (EN) — <https://en.wikipedia.org/wiki/Lunisolar_calendar> — etablierte Referenz, Volltext geprüft; liefert 12,36826, Epakte ~11 Tage, Schaltmonat alle 2–3 Jahre, Schaltjahre 3/6/8/11/14/17/19.
+- [R2·A1] Lunisolarkalender — Wikipedia (DE) — <https://de.wikipedia.org/wiki/Lunisolarkalender> — etablierte Referenz, frei; Metonperiode, Schaltmonat-Rhythmus, Liste lunisolarer Kalender.
+- [R2·A1] Metonic cycle — Wikipedia (EN) — <https://en.wikipedia.org/wiki/Metonic_cycle> — etablierte Referenz, Volltext; 19 J = 235 Monate, 6939,602 vs. 6939,689 Tage (~2 h 5 min), Meton 432 v. Chr., Babylon spätes 6. Jh.
+- [R2·A1] Lunarkalender — Wikipedia (DE) — <https://de.wikipedia.org/wiki/Lunarkalender> — etablierte Referenz; Mondjahr 354 d, „11–12 Tage kürzer".
+- [R2·A2] Lunar calendar — Wikipedia (EN) — <https://en.wikipedia.org/wiki/Lunar_calendar> — etablierte Referenz, teilweise via Snippet; 354 d 8 h 48 min 34 s.
+- [R2·A1] Kalendermonat / Monat — Wikipedia (DE) — <https://de.wikipedia.org/wiki/Kalendermonat> — etablierte Referenz; Mond-Monat-Etymologie, Monatsnamen-Erbe.
+- [R2·A2] Leap year — Wikipedia (EN) — <https://en.wikipedia.org/wiki/Leap_year> — etablierte Referenz, teilweise; Schaltlogik allgemein.
+- [R4·A1] Die zwölf Monate und ihre Bedeutungen — timeanddate.de — <https://www.timeanddate.de/kalender/monate/> — populär/kommerziell, frei; 29,53 d, 365,24 d, ≈12,36; Babylonier 12 Monate à 30 Tage. Faktenarm, Rundungen nicht immer präzise.
+- [R3·A1] Kalenderkunde — Michael Neuhold — <http://www.mneuhold.at/misc/kalender.html> — seriös populär, frei; Übersicht lunisolare Systeme.
 
 **Babylonischer, jüdischer, hinduistischer, islamischer Kalender**
 
-- [R2·A1] Babylonischer Kalender — Wikipedia (DE) — https://de.wikipedia.org/wiki/Babylonischer_Kalender — etablierte Referenz; lunisolar, Normaljahre 12 Monate + Schaltmonat, Vorbild jüdisch/griechisch.
-- [R2·A3] Babylonian calendar / Hebrew calendar — Wikipedia (EN) — https://en.wikipedia.org/wiki/Babylonian_calendar — etablierte Referenz, indirekt via Snippet; Addaru II / Ululu II, ab ~499 v. Chr., Monatsnamen-Übernahme im Exil.
-- [R2·A1] Jüdischer Kalender — Wikipedia (DE) — https://de.wikipedia.org/wiki/J%C3%BCdischer_Kalender — etablierte Referenz; Gemeinjahr 354 d / Schaltjahr 384 d, Adar I 30 d, 19-Jahres-Zyklus, mittleres Jahr 365,2468 d.
-- [R4·A1] Jüdischer Kalender — timeanddate.de — https://www.timeanddate.de/kalender/juedischer-kalender — populär, frei; Begleitbeleg.
-- [R2·A2] Adhika-masa — Wikipedia (EN) — https://en.wikipedia.org/wiki/Adhika-masa — etablierte Referenz, teilweise; Mondjahr ~354 d, ~11 d Diskrepanz, Schaltmonat alle 32,5 Monate, Sankranti/Rashi-Mechanik, vedische Wurzeln.
-- [R2·A1] Hinduistischer Lunisolarkalender — Wikipedia (DE) — https://de.wikipedia.org/wiki/Hinduistischer_Lunisolarkalender — etablierte Referenz; Adhik Maas, Sonnen-Rashi-Regel, babylonisch/griechischer Einfluss.
-- [R2·A1] Islamischer Kalender — Wikipedia (DE) — https://de.wikipedia.org/wiki/Islamischer_Kalender — etablierte Referenz; 354/355 d, nasīʾ-Verbot, ~33-Jahre-Durchlauf.
-- [R3·A1] Islamische Zeitrechnung — ORF Lexikon der Religionen — https://religion.orf.at/v3/lexikon/stories/2553019/ — seriös populär (öffentlich-rechtlich), frei.
+- [R2·A1] Babylonischer Kalender — Wikipedia (DE) — <https://de.wikipedia.org/wiki/Babylonischer_Kalender> — etablierte Referenz; lunisolar, Normaljahre 12 Monate + Schaltmonat, Vorbild jüdisch/griechisch.
+- [R2·A3] Babylonian calendar / Hebrew calendar — Wikipedia (EN) — <https://en.wikipedia.org/wiki/Babylonian_calendar> — etablierte Referenz, indirekt via Snippet; Addaru II / Ululu II, ab ~499 v. Chr., Monatsnamen-Übernahme im Exil.
+- [R2·A1] Jüdischer Kalender — Wikipedia (DE) — <https://de.wikipedia.org/wiki/J%C3%BCdischer_Kalender> — etablierte Referenz; Gemeinjahr 354 d / Schaltjahr 384 d, Adar I 30 d, 19-Jahres-Zyklus, mittleres Jahr 365,2468 d.
+- [R4·A1] Jüdischer Kalender — timeanddate.de — <https://www.timeanddate.de/kalender/juedischer-kalender> — populär, frei; Begleitbeleg.
+- [R2·A2] Adhika-masa — Wikipedia (EN) — <https://en.wikipedia.org/wiki/Adhika-masa> — etablierte Referenz, teilweise; Mondjahr ~354 d, ~11 d Diskrepanz, Schaltmonat alle 32,5 Monate, Sankranti/Rashi-Mechanik, vedische Wurzeln.
+- [R2·A1] Hinduistischer Lunisolarkalender — Wikipedia (DE) — <https://de.wikipedia.org/wiki/Hinduistischer_Lunisolarkalender> — etablierte Referenz; Adhik Maas, Sonnen-Rashi-Regel, babylonisch/griechischer Einfluss.
+- [R2·A1] Islamischer Kalender — Wikipedia (DE) — <https://de.wikipedia.org/wiki/Islamischer_Kalender> — etablierte Referenz; 354/355 d, nasīʾ-Verbot, ~33-Jahre-Durchlauf.
+- [R3·A1] Islamische Zeitrechnung — ORF Lexikon der Religionen — <https://religion.orf.at/v3/lexikon/stories/2553019/> — seriös populär (öffentlich-rechtlich), frei.
 
 **Römischer / julianischer Kalender**
 
-- [R2·A1] Roman calendar — Wikipedia (EN) — https://en.wikipedia.org/wiki/Roman_calendar — etablierte Referenz, Volltext; Romulus 10/304, Numa 12/355, Mercedonius 27–28 d, Korruption der Interkalation, Reform 46 v. Chr., Romulus/Numa als legendär markiert.
-- [R2·A2] Römischer Kalender — Wikipedia (DE) — https://de.wikipedia.org/wiki/R%C3%B6mischer_Kalender — etablierte Referenz, teilweise; Monatslängen-Lösung vom Mond, Schaltmonate.
+- [R2·A1] Roman calendar — Wikipedia (EN) — <https://en.wikipedia.org/wiki/Roman_calendar> — etablierte Referenz, Volltext; Romulus 10/304, Numa 12/355, Mercedonius 27–28 d, Korruption der Interkalation, Reform 46 v. Chr., Romulus/Numa als legendär markiert.
+- [R2·A2] Römischer Kalender — Wikipedia (DE) — <https://de.wikipedia.org/wiki/R%C3%B6mischer_Kalender> — etablierte Referenz, teilweise; Monatslängen-Lösung vom Mond, Schaltmonate.
 
 **Chinesischer Tierzyklus, Erdzweige, Jupiter, 60-Jahres-Zyklus**
 
-- [R2·A1] Chinese zodiac — Wikipedia (EN) — https://en.wikipedia.org/wiki/Chinese_zodiac — etablierte Referenz, Volltext; 12 Tiere + Erdzweige mit Zeichen/Pinyin, 60-Jahres-Zyklus, Han-Standardisierung. (Jupiter dort nicht erwähnt.)
-- [R2·A1] Erdzweige — Wikipedia (DE) — https://de.wikipedia.org/wiki/Erdzweige — etablierte Referenz; Erdzweige als Zählsystem, „Zwölf als Zahl der Erde" aus Jupiterumlauf + Sonnenmonaten + Doppelstunden.
-- [R2·A1] Tai Sui — Wikipedia (EN) — https://en.wikipedia.org/wiki/Tai_Sui — etablierte Referenz; Suixing/Jahresstern, Tai Sui als gegenläufiger Markierungspunkt, Streitende Reiche, 12 Stationen am Jupiterumlauf.
-- [R2·A2] Chinese astrology — Wikipedia (EN) — https://en.wikipedia.org/wiki/Chinese_astrology — etablierte Referenz, teilweise; 12-Jahres-Zyklus aus Jupiter, Rundung 11,86 → 12, 10 Stämme + 12 Zweige.
-- [R2·A1] 60-Jahre-Zyklus — Wikipedia (DE) — https://de.wikipedia.org/wiki/60-Jahre-Zyklus — etablierte Referenz; Stämme/Zweige-Kombinatorik.
-- [R1·A1] Sechziger Zyklus — Kamigraphie, Universität Wien — https://www.univie.ac.at/rel_jap/kami/Sechziger_Zyklus — akademisch mit Belegapparat, frei; Stämme/Zweige-Systematik, 60er-Kombinatorik.
-- [R1·A1] Der traditionelle Kalender — Religion-in-Japan, Universität Wien — https://religion-in-japan.univie.ac.at/Handbuch/Grundbegriffe/Yin_und_Yang/Kalender — akademisch; ostasiatische Zeit-/Festzyklus-Systematik.
-- [R2·A1] Jupiter — Wikipedia (EN) — https://en.wikipedia.org/wiki/Jupiter — etablierte Referenz; siderische Periode 11,86 Jahre.
-- [S·A1] The Jupiter cycle — lascartasdelavida.com — http://www.lascartasdelavida.com/chinese_horoscope/jupiter.php — astrologische Website, spekulativ; Jupiter 11,86 statt 12, Deckung nur in bestimmten Jahrhunderten. Astronomische Zahl korrekt, Rahmen nicht akademisch.
-- [R4·A1] Erdzweige — de-academic.com (Wikipedia-Spiegel) — https://de-academic.com/dic.nsf/dewiki/1556152 — Spiegel, schwach (kein Originalmedium); inhaltsgleich mit DE-Wikipedia.
+- [R2·A1] Chinese zodiac — Wikipedia (EN) — <https://en.wikipedia.org/wiki/Chinese_zodiac> — etablierte Referenz, Volltext; 12 Tiere + Erdzweige mit Zeichen/Pinyin, 60-Jahres-Zyklus, Han-Standardisierung. (Jupiter dort nicht erwähnt.)
+- [R2·A1] Erdzweige — Wikipedia (DE) — <https://de.wikipedia.org/wiki/Erdzweige> — etablierte Referenz; Erdzweige als Zählsystem, „Zwölf als Zahl der Erde" aus Jupiterumlauf + Sonnenmonaten + Doppelstunden.
+- [R2·A1] Tai Sui — Wikipedia (EN) — <https://en.wikipedia.org/wiki/Tai_Sui> — etablierte Referenz; Suixing/Jahresstern, Tai Sui als gegenläufiger Markierungspunkt, Streitende Reiche, 12 Stationen am Jupiterumlauf.
+- [R2·A2] Chinese astrology — Wikipedia (EN) — <https://en.wikipedia.org/wiki/Chinese_astrology> — etablierte Referenz, teilweise; 12-Jahres-Zyklus aus Jupiter, Rundung 11,86 → 12, 10 Stämme + 12 Zweige.
+- [R2·A1] 60-Jahre-Zyklus — Wikipedia (DE) — <https://de.wikipedia.org/wiki/60-Jahre-Zyklus> — etablierte Referenz; Stämme/Zweige-Kombinatorik.
+- [R1·A1] Sechziger Zyklus — Kamigraphie, Universität Wien — <https://www.univie.ac.at/rel_jap/kami/Sechziger_Zyklus> — akademisch mit Belegapparat, frei; Stämme/Zweige-Systematik, 60er-Kombinatorik.
+- [R1·A1] Der traditionelle Kalender — Religion-in-Japan, Universität Wien — <https://religion-in-japan.univie.ac.at/Handbuch/Grundbegriffe/Yin_und_Yang/Kalender> — akademisch; ostasiatische Zeit-/Festzyklus-Systematik.
+- [R2·A1] Jupiter — Wikipedia (EN) — <https://en.wikipedia.org/wiki/Jupiter> — etablierte Referenz; siderische Periode 11,86 Jahre.
+- [S·A1] The Jupiter cycle — lascartasdelavida.com — <http://www.lascartasdelavida.com/chinese_horoscope/jupiter.php> — astrologische Website, spekulativ; Jupiter 11,86 statt 12, Deckung nur in bestimmten Jahrhunderten. Astronomische Zahl korrekt, Rahmen nicht akademisch.
+- [R4·A1] Erdzweige — de-academic.com (Wikipedia-Spiegel) — <https://de-academic.com/dic.nsf/dewiki/1556152> — Spiegel, schwach (kein Originalmedium); inhaltsgleich mit DE-Wikipedia.
 
 **Rauhnächte / Zwölf Weihnachtstage**
 
-- [R2·A2] Raunacht — Wikipedia (DE) — https://de.wikipedia.org/wiki/Raunacht — etablierte Referenz, teilweise; 354 vs. 365 d, „tote Tage", Wilde Jagd, Lostage-Wetterregel, Etymologie-Vorbehalt, „vermutlich"-Formulierung.
-- [R2·A2] Twelve Days of Christmas — Wikipedia (EN) — https://en.wikipedia.org/wiki/Twelve_Days_of_Christmas — etablierte Referenz, teilweise; Konzil von Tours 567, julianisch-vs.-lunare-Koordination, 25.12.–6.1.
-- [R3·A1] When to take down the Christmas decorations? Council of Tours (567) — Roger Pearse — https://www.roger-pearse.com/weblog/2021/01/04/when-to-take-down-the-christmas-decorations-a-canon-of-the-2nd-council-of-tours-567/ — seriös populär/quellennah (Fachblog mit Primärtext-Diskussion), frei; kritische Einordnung des Konzilskanons.
-- [R3·A1] WhyChristmas.com — 12 Days — https://www.whychristmas.com/customs/12-days-of-christmas — seriös populär; 567, Vereinigung 25.12./6.1., Verwaltungsproblem solar/lunar.
-- [R3·A1] Rauhnächte — Katholische Militärseelsorge (mildioz.at) — https://www.mildioz.at/index.php/aktuelles/item/2152-rauhnaechte — seriös populär (kirchlich), frei; Brauchtum-Einordnung.
-- [R4·A1] Rauhnächte — Vivat! Magazin — https://www.vivat.de/magazin/jahreskreis/weihnachten/rauhnaechte/ — populär/kommerziell; volkskundlicher Überblick.
-- [R4·A1] Beginn der Rauhnächte — kuriose-feiertage.de — https://www.kuriose-feiertage.de/rauhnaechte/ — populär; Datierungs-Varianten 21./24. Dezember.
+- [R2·A2] Raunacht — Wikipedia (DE) — <https://de.wikipedia.org/wiki/Raunacht> — etablierte Referenz, teilweise; 354 vs. 365 d, „tote Tage", Wilde Jagd, Lostage-Wetterregel, Etymologie-Vorbehalt, „vermutlich"-Formulierung.
+- [R2·A2] Twelve Days of Christmas — Wikipedia (EN) — <https://en.wikipedia.org/wiki/Twelve_Days_of_Christmas> — etablierte Referenz, teilweise; Konzil von Tours 567, julianisch-vs.-lunare-Koordination, 25.12.–6.1.
+- [R3·A1] When to take down the Christmas decorations? Council of Tours (567) — Roger Pearse — <https://www.roger-pearse.com/weblog/2021/01/04/when-to-take-down-the-christmas-decorations-a-canon-of-the-2nd-council-of-tours-567/> — seriös populär/quellennah (Fachblog mit Primärtext-Diskussion), frei; kritische Einordnung des Konzilskanons.
+- [R3·A1] WhyChristmas.com — 12 Days — <https://www.whychristmas.com/customs/12-days-of-christmas> — seriös populär; 567, Vereinigung 25.12./6.1., Verwaltungsproblem solar/lunar.
+- [R3·A1] Rauhnächte — Katholische Militärseelsorge (mildioz.at) — <https://www.mildioz.at/index.php/aktuelles/item/2152-rauhnaechte> — seriös populär (kirchlich), frei; Brauchtum-Einordnung.
+- [R4·A1] Rauhnächte — Vivat! Magazin — <https://www.vivat.de/magazin/jahreskreis/weihnachten/rauhnaechte/> — populär/kommerziell; volkskundlicher Überblick.
+- [R4·A1] Beginn der Rauhnächte — kuriose-feiertage.de — <https://www.kuriose-feiertage.de/rauhnaechte/> — populär; Datierungs-Varianten 21./24. Dezember.
 
 **Orthodoxe Zwölf-Feste**
 
-- [R2·A1] Great feasts in the Eastern Orthodox Church — Wikipedia (EN) — https://en.wikipedia.org/wiki/Great_feasts_in_the_Eastern_Orthodox_Church — etablierte Referenz; Dodekaorton, acht Christus-/vier Marienfeste.
-- [R3·A1] The Major Feasts of the Church — Greek Orthodox Archdiocese — https://www.goarch.org/-/the-major-feasts-of-the-church — seriös populär (konfessionelle Primärinstitution), frei.
+- [R2·A1] Great feasts in the Eastern Orthodox Church — Wikipedia (EN) — <https://en.wikipedia.org/wiki/Great_feasts_in_the_Eastern_Orthodox_Church> — etablierte Referenz; Dodekaorton, acht Christus-/vier Marienfeste.
+- [R3·A1] The Major Feasts of the Church — Greek Orthodox Archdiocese — <https://www.goarch.org/-/the-major-feasts-of-the-church> — seriös populär (konfessionelle Primärinstitution), frei.
 
 **Dreizehn-Monats-Kalender (Gegenbeispiele)**
 
-- [R2·A1] Coligny calendar — Wikipedia (EN) — https://en.wikipedia.org/wiki/Coligny_calendar — etablierte Referenz; lunisolar, 5-Jahres-Zyklus, 13. Schaltmonat.
-- [R2·A1] Igbo calendar — Wikipedia (EN) — https://en.wikipedia.org/wiki/Igbo_calendar — etablierte Referenz; 13 Monate × 28 Tage, 4-Tage-Wochen.
-- [R4·A1] The Igbo Calendar — igbocalendar.com — https://igbocalendar.com/the-igbo-calendar-what-you-need-to-know/ — populär/Community; Begleitbeleg.
-- [R2·A1] International Fixed Calendar — Wikipedia (EN) — https://en.wikipedia.org/wiki/International_Fixed_Calendar — etablierte Referenz; 13 × 28 Reformvorschlag.
+- [R2·A1] Coligny calendar — Wikipedia (EN) — <https://en.wikipedia.org/wiki/Coligny_calendar> — etablierte Referenz; lunisolar, 5-Jahres-Zyklus, 13. Schaltmonat.
+- [R2·A1] Igbo calendar — Wikipedia (EN) — <https://en.wikipedia.org/wiki/Igbo_calendar> — etablierte Referenz; 13 Monate × 28 Tage, 4-Tage-Wochen.
+- [R4·A1] The Igbo Calendar — igbocalendar.com — <https://igbocalendar.com/the-igbo-calendar-what-you-need-to-know/> — populär/Community; Begleitbeleg.
+- [R2·A1] International Fixed Calendar — Wikipedia (EN) — <https://en.wikipedia.org/wiki/International_Fixed_Calendar> — etablierte Referenz; 13 × 28 Reformvorschlag.
 
 **Basis-12-Ursprung / Fingerzählung (spekulativ)**
 
-- [R2·A1] Duodecimal — Wikipedia (EN) — https://en.wikipedia.org/wiki/Duodecimal — etablierte Referenz; Ifrah-Hypothese ausdrücklich „speculatively".
-- [R2·A1] Finger-counting — Wikipedia (EN) — https://en.wikipedia.org/wiki/Finger-counting — etablierte Referenz; Drei-Glieder-mal-vier-Finger-Zählung.
-- [R1·A1] Does the Ishango Bone Indicate Knowledge of the Base 12? — arXiv-Preprint — https://arxiv.org/pdf/1204.1019 — wissenschaftlicher Preprint (nicht peer-reviewt), Volltext-PDF; behandelt das a-posteriori-Argument.
+- [R2·A1] Duodecimal — Wikipedia (EN) — <https://en.wikipedia.org/wiki/Duodecimal> — etablierte Referenz; Ifrah-Hypothese ausdrücklich „speculatively".
+- [R2·A1] Finger-counting — Wikipedia (EN) — <https://en.wikipedia.org/wiki/Finger-counting> — etablierte Referenz; Drei-Glieder-mal-vier-Finger-Zählung.
+- [R1·A1] Does the Ishango Bone Indicate Knowledge of the Base 12? — arXiv-Preprint — <https://arxiv.org/pdf/1204.1019> — wissenschaftlicher Preprint (nicht peer-reviewt), Volltext-PDF; behandelt das a-posteriori-Argument.
 
 **Zahlensymbolik der Zwölf (nur für Verbreitung/Volksglauben, nicht für Kausalität)**
 
-- [R4·A1] Geheimnisvolle 12 — Sonntagsblatt — https://www.sonntagsblatt.de/artikel/spiritualitaet-mystik/geheimnisvolle-12-was-es-mit-der-zahl-auf-sich-hat — populär/konfessionell; Symbolik-Übersicht.
-- [R4·A1] Bedeutung der Zahl 12 — Ruhrpott Kurier — https://ruhrpott-kurier.de/panorama/bedeutung-der-zahl-12/ — schwach (Netzwerk-Text geringer Quellentiefe); nur Einstieg.
-- [S·A1] The Divine Number 12 — humanreligions.info — https://www.humanreligions.info/twelve.html — weltanschaulich/spekulativ; Deutungen kritisch lesen.
-- [S·A1] Meaning of Numbers in the Bible: The Number 12 — biblestudy.org — https://www.biblestudy.org/bibleref/meaning-of-numbers-in-bible/12.html — konfessionell-erbaulich, spekulative Deutung.
+- [R4·A1] Geheimnisvolle 12 — Sonntagsblatt — <https://www.sonntagsblatt.de/artikel/spiritualitaet-mystik/geheimnisvolle-12-was-es-mit-der-zahl-auf-sich-hat> — populär/konfessionell; Symbolik-Übersicht.
+- [R4·A1] Bedeutung der Zahl 12 — Ruhrpott Kurier — <https://ruhrpott-kurier.de/panorama/bedeutung-der-zahl-12/> — schwach (Netzwerk-Text geringer Quellentiefe); nur Einstieg.
+- [S·A1] The Divine Number 12 — humanreligions.info — <https://www.humanreligions.info/twelve.html> — weltanschaulich/spekulativ; Deutungen kritisch lesen.
+- [S·A1] Meaning of Numbers in the Bible: The Number 12 — biblestudy.org — <https://www.biblestudy.org/bibleref/meaning-of-numbers-in-bible/12.html> — konfessionell-erbaulich, spekulative Deutung.

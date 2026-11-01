@@ -21,7 +21,7 @@ darunter, Tag-schliessen auf einer Zeile. Leerzeile zwischen Blöcken. So
 vermeidet Copy-Paste in Play Console ungewollte Zeilenumbrüche in der
 Beschreibung.
 
-```
+```text
 <de-DE>
 …ca. 450 Zeichen (Limit 500 pro Locale)…
 </de-DE>

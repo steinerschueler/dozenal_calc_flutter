@@ -11,12 +11,14 @@ Granat kristallisiert im **kubischen (isometrischen) Kristallsystem**: drei glei
 Die typische Naturform des Granats ist das **Rhombendodekaeder {110}** — ein Körper mit **zwölf Flächen**. Das ist der zentrale Zwölf-Bezug. Wichtig: Es ist *nicht* das regelmässige (platonische) Dodekaeder, sondern der Körper mit zwölf rautenförmigen Flächen.
 
 **Exakte Geometrie des Rhombendodekaeders:**
+
 - **12 Flächen** — alle gleiche **Rhomben (Rauten)**, daher der Name.
 - **24 Kanten.**
 - **14 Ecken** in zwei Sorten: 8 Ecken, an denen drei Rhomben zusammenstossen (an den stumpfen Winkeln, auf Würfel-Positionen), und 6 Ecken, an denen vier Rhomben zusammenstossen (an den spitzen Winkeln, auf Oktaeder-Positionen).
 - Euler-Probe: 12 − 24 + 14 = 2. ✓
 
 **Masse der Rautenfläche:**
+
 - Verhältnis der Diagonalen (lang zu kurz) = **√2 ≈ 1,414**.
 - spitzer Winkel = arccos(1/3) ≈ **70,53°**.
 - stumpfer Winkel ≈ **109,47°** (der „Tetraederwinkel").
@@ -41,6 +43,7 @@ Im Granatgitter sind die **{110}-Ebenen** diejenigen, die diese Bedingung am bes
 So entsteht die Zahl Zwölf physikalisch: zwölf gleichwertige, langsam wachsende {110}-Flächen unter der Würfelsymmetrie. Zusätzlich begünstigt, dass Granat **keine Spaltbarkeit** hat (kein muschliger Bruch entlang schwacher Ebenen) — die Morphologie kann sich frei nach der inneren Symmetrie ausbilden, nicht nach Spaltrichtungen.
 
 **Vorbehalt zur Sorgfalt (Unsicheres ausdrücklich gekennzeichnet):**
+
 - Die einfache Heuristik „dichteste Packung = niedrigste Oberflächenenergie" erklärt {110} *nicht vollständig*. In einfachen fcc-Modellen ist {110} gerade nicht die dichteste Ebene. Massgeblich ist die spezifische Gitter- und Bindungsstruktur des Granats (periodische Bindungsketten), nicht ein generisches Packungsargument.
 - Die in populären Texten verbreitete Aussage „die Zwölf-Flächen-Form ist das *natürliche Resultat* der kubischen Symmetrie" ist eine **Verkürzung** und teils zirkulär. Die Symmetrie *erlaubt* die Form, *erzwingt* sie aber nicht — die Auswahl ist Wachstumskinetik.
 - Begründungen über „hohe {110}-Oberflächenenergie" stammen aus der Nanopartikel-Literatur (z. B. synthetische YAG- oder Gold-Rhombendodekaeder). Sie sind auf natürlichen Granat plausibel übertragbar, betreffen aber eine *andere* Erklärungsebene (thermodynamische Gleichgewichtsform / Wulff-Konstruktion) als das BFDH-Wachstumsgesetz (Kinetik). Beide werden in populären Quellen oft durcheinandergeworfen.
@@ -59,12 +62,14 @@ So entsteht die Zahl Zwölf physikalisch: zwölf gleichwertige, langsam wachsend
 **Kristallographie:** **René-Just Haüy** (1743–1822), „Vater der modernen Kristallographie", reichte **1779** eine Arbeit über die Bildung von Granat- und Kalkspat-Kristallen auf Basis eines schichtweisen Modells ein. Der Granat war damit ein Schlüsselobjekt für sein Konzept der „integrierenden Moleküle" und das Gesetz der rationalen Indizes. Im *Traité de minéralogie* (1801) ordnete Haüy dem Granat das Rhombendodekaeder als charakteristische Form zu. Vorarbeit lieferte Romé de l'Isle mit dem Gesetz der Winkelkonstanz (1772/1783).
 
 **Berühmte Fundorte und Beispiele:**
+
 - **Böhmischer Granat (Pyrop), Tschechien:** Kerngebiet ist ein etwa 70 km² grosses Areal im Böhmischen Mittelgebirge zwischen Třebenice und Měrunice; heute aktiv abgebaut bei Podsedice. Die feuerrote Farbe stammt von etwas Cr₂O₃; die Pyrope kommen aus verwittertem Serpentinit. Schon Kelten sammelten sie; Bergbau ab dem 16. Jahrhundert. Museum: Muzeum českého granátu in Třebenice.
 - **Gore Mountain, Adirondacks, New York (USA):** Weltgrösste Granat-Einzelkristalle (Almandin), 5–35 cm, vereinzelt bis etwa 1 m Durchmesser; gebildet vor rund 1,05 Milliarden Jahren. Wichtigster Industriegranat-Standort der Welt; Henry Hudson Barton entdeckte das Vorkommen 1878 (Barton International / North Creek — älteste durchgehend betriebene Granatmine der Welt).
 - **Ural, Russland:** Uwarowit (smaragdgrün) und **Demantoid** (grüner Andradit, entdeckt 1868, von Nils Gustaf Nordenskiöld bestimmt), berühmt für „Pferdeschweif"-Einschlüsse aus Byssolith; von Fabergé und Tiffany verarbeitet.
 - **Weitere:** Tsavorit (grüner Grossular, Kenia/Tansania), Rhodolith (North Carolina), Spessartin (benannt nach dem Spessart). Industriegranat heute vor allem aus Strandseifen in Indien und Australien.
 
 **Verwendung:**
+
 - **Edelstein:** Rote Granate waren die meistverwendeten Schmucksteine der Spätantike und der Völkerwanderungszeit. **Granat-Cloisonné** (Almandin-Plättchen in Goldzellen über reflektierender Goldfolie) prägte merowingische und angelsächsische Goldschmiedekunst — Spitzenstücke sind **Sutton Hoo** und der 2009 entdeckte **Staffordshire Hoard**; die Granate stammten über Fernhandel aus Sri Lanka und Indien. Granat ist Geburtsstein des Januar.
 - **Schleifmittel und Industrie (wirtschaftlich wichtigste Nutzung):** Wegen Härte, fehlender Spaltbarkeit und scharfkantigem Bruch ein hervorragendes Abrasiv. US-Aufschlüsselung 2012: Wasserstrahlschneiden etwa 35 %, Strahlmittel etwa 30 %, Wasserfilter-Granulat etwa 20 %, Schleifpulver etwa 10 %. Granat ersetzt Quarzsand beim Sandstrahlen (kein Silikose-Risiko) und ist das klassische „Granatpapier" für Holzbearbeitung.
 - **Synthetik:** Yttrium-Aluminium-Granat (**YAG**) für Laser und Hochfrequenztechnik.
@@ -112,51 +117,57 @@ Der Granat bildet das **Rhombendodekaeder** (zwölf Rauten), einen Catalan-Körp
 Bewertung nach Zuverlässigkeit (R1 = wissenschaftlich/primär, R2 = etablierte Referenz, R3 = seriös populär, R4 = schwach, S = spekulativ) und Zugang (A1 = Volltext, A2 = teilweise/Snippet, A3 = nur indirekt).
 
 **Mineralogie & Granat**
-- [R2·A1] Garnet — Wikipedia (EN) — https://en.wikipedia.org/wiki/Garnet — Volltext; Formel, kubisch/Ia3̄d, {100}/{111}-Verarmung, Arten, Vorkommen, Geschichte, Schleifmittel, Gore Mountain.
-- [R2·A1] Granat — Wikipedia (DE) — https://de.wikipedia.org/wiki/Granat — Volltext; Raumgruppe, {110}/{211}-Tracht, Karfunkel-Etymologie, YAG.
-- [R3·A1] Garnet group — Geology is the Way — https://geologyistheway.com/minerals/garnet-group/ — Volltext; Habitus Dodekaeder/Trapezoeder; stellt ausdrücklich klar, keine Wachstumstheorie zu liefern.
-- [R3·A1] Garnet — geology.com — https://geology.com/minerals/garnet.shtml — Volltext; Industrie-Aufschlüsselung 2012, Härte, Nutzungsgeschichte; behandelt Kristallform nicht.
-- [R3·A2] Garnet — New World Encyclopedia — https://www.newworldencyclopedia.org/entry/Garnet — Snippet; Etymologie, Bronzezeit, Mohs, Abrasiv-Nutzung.
-- [R3·A2] Garnet thin section — MicROCKScopic — http://microckscopic.ro/minerals/silicates/nesosilicates/garnet-thin-section/ — Snippet; euhedrale {110}/{112}-Kristalle.
-- [R4·A2] AlphaVariable — Garnet — https://alphavariable.com/blogs/news/garnet — Snippet (Händler); {100}/{111} verarmt — mit Vorbehalt.
-- [R3·A3] Mineralienatlas — Granat: Kristallformen — https://www.mineralienatlas.de/lexikon/index.php/Mineralienportrait/Granat/Kristallformen%20und%20Aggregate — HTTP 403, nur indirekt via Snippet.
+
+- [R2·A1] Garnet — Wikipedia (EN) — <https://en.wikipedia.org/wiki/Garnet> — Volltext; Formel, kubisch/Ia3̄d, {100}/{111}-Verarmung, Arten, Vorkommen, Geschichte, Schleifmittel, Gore Mountain.
+- [R2·A1] Granat — Wikipedia (DE) — <https://de.wikipedia.org/wiki/Granat> — Volltext; Raumgruppe, {110}/{211}-Tracht, Karfunkel-Etymologie, YAG.
+- [R3·A1] Garnet group — Geology is the Way — <https://geologyistheway.com/minerals/garnet-group/> — Volltext; Habitus Dodekaeder/Trapezoeder; stellt ausdrücklich klar, keine Wachstumstheorie zu liefern.
+- [R3·A1] Garnet — geology.com — <https://geology.com/minerals/garnet.shtml> — Volltext; Industrie-Aufschlüsselung 2012, Härte, Nutzungsgeschichte; behandelt Kristallform nicht.
+- [R3·A2] Garnet — New World Encyclopedia — <https://www.newworldencyclopedia.org/entry/Garnet> — Snippet; Etymologie, Bronzezeit, Mohs, Abrasiv-Nutzung.
+- [R3·A2] Garnet thin section — MicROCKScopic — <http://microckscopic.ro/minerals/silicates/nesosilicates/garnet-thin-section/> — Snippet; euhedrale {110}/{112}-Kristalle.
+- [R4·A2] AlphaVariable — Garnet — <https://alphavariable.com/blogs/news/garnet> — Snippet (Händler); {100}/{111} verarmt — mit Vorbehalt.
+- [R3·A3] Mineralienatlas — Granat: Kristallformen — <https://www.mineralienatlas.de/lexikon/index.php/Mineralienportrait/Granat/Kristallformen%20und%20Aggregate> — HTTP 403, nur indirekt via Snippet.
 
 **Geometrie des Polyeders**
-- [R2·A1] Rhombic dodecahedron — Wikipedia (EN) — https://en.wikipedia.org/wiki/Rhombic_dodecahedron — Volltext; 12/24/14, √2-Diagonale, 70,53°/109,47°, Diederwinkel 120°, Catalan, Dual des Kuboktaeders, fcc-Voronoi-Zelle, raumfüllend.
-- [R2·A2] Rhombendodekaeder — Wikipedia (DE) — https://de.wikipedia.org/wiki/Rhombendodekaeder — Snippet; Granatoeder, catalanisch.
-- [R1·A3] Rhombic Dodecahedron — Wolfram MathWorld — https://mathworld.wolfram.com/RhombicDodecahedron.html — Fetch 403, Daten via Snippet; A = 8√2·a², V = (16√3/9)·a³.
-- [R2·A2] Deltoidal icositetrahedron — Wikipedia — https://en.wikipedia.org/wiki/Deltoidal_icositetrahedron — Snippet; 24 Drachenflächen, Bezug zu Granat {211}.
-- [R2·A2] Dodecahedron — Wikipedia — https://en.wikipedia.org/wiki/Dodecahedron — Volltext/Snippet; „regular dodecahedra do not exist in crystals", Pyritoeder, Plato/Kosmos.
-- [R1·A2] Pyritohedron — Wolfram MathWorld — https://mathworld.wolfram.com/Pyritohedron.html — Snippet; unregelmässige Fünfecke, Tₕ, Flächen {210}.
+
+- [R2·A1] Rhombic dodecahedron — Wikipedia (EN) — <https://en.wikipedia.org/wiki/Rhombic_dodecahedron> — Volltext; 12/24/14, √2-Diagonale, 70,53°/109,47°, Diederwinkel 120°, Catalan, Dual des Kuboktaeders, fcc-Voronoi-Zelle, raumfüllend.
+- [R2·A2] Rhombendodekaeder — Wikipedia (DE) — <https://de.wikipedia.org/wiki/Rhombendodekaeder> — Snippet; Granatoeder, catalanisch.
+- [R1·A3] Rhombic Dodecahedron — Wolfram MathWorld — <https://mathworld.wolfram.com/RhombicDodecahedron.html> — Fetch 403, Daten via Snippet; A = 8√2·a², V = (16√3/9)·a³.
+- [R2·A2] Deltoidal icositetrahedron — Wikipedia — <https://en.wikipedia.org/wiki/Deltoidal_icositetrahedron> — Snippet; 24 Drachenflächen, Bezug zu Granat {211}.
+- [R2·A2] Dodecahedron — Wikipedia — <https://en.wikipedia.org/wiki/Dodecahedron> — Volltext/Snippet; „regular dodecahedra do not exist in crystals", Pyritoeder, Plato/Kosmos.
+- [R1·A2] Pyritohedron — Wolfram MathWorld — <https://mathworld.wolfram.com/Pyritohedron.html> — Snippet; unregelmässige Fünfecke, Tₕ, Flächen {210}.
 
 **Kristallwachstum (warum {110})**
-- [R2·A1] 10/11 Crystal Morphology and Symmetry — OpenGeology Mineralogy — https://opengeology.org/Mineralogy/10-crystal-morphology-and-symmetry/ — Volltext/Snippet; Form spiegelt Atomanordnung, Bravais-Gesetz, retikuläre Dichte.
-- [R1·A2] Explanation of some peculiarities of crystal morphology deduced from the BFDH law — ScienceDirect — https://www.sciencedirect.com/science/article/abs/pii/S0022024804007936 — Abstract/Paywall; MI ∝ d(hkl), langsame Flächen überleben.
-- [R1·A2] Synthesis of YAG micro-crystals with rhombic dodecahedron — ScienceDirect — https://www.sciencedirect.com/science/article/abs/pii/S092583881831987X — Abstract/Paywall; theoretisch begünstigte {110}-Flächen (Nanopartikel-Kontext, als Vereinfachung markiert).
-- [R1·A3] Au-Rhombendodekaeder-Nanokristalle — PMC — https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10797619/ — Snippet; {110}-Oberflächenenergie (Nanopartikel, mit Vorbehalt).
-- [R3·A2] Crystal Habit — galleries.com — https://galleries.com/minerals/property/crystal.htm — Snippet; Rhombendodekaeder als Granat-Markenzeichen, Atompositionen bestimmen Tracht.
-- [R2·A2] Crystallographic restriction theorem — Wikipedia — https://en.wikipedia.org/wiki/Crystallographic_restriction_theorem — Snippet; nur 2/3/4/6-zählig, Pentagon-Kachelung scheitert, Quasikristalle als Ausnahme.
+
+- [R2·A1] 10/11 Crystal Morphology and Symmetry — OpenGeology Mineralogy — <https://opengeology.org/Mineralogy/10-crystal-morphology-and-symmetry/> — Volltext/Snippet; Form spiegelt Atomanordnung, Bravais-Gesetz, retikuläre Dichte.
+- [R1·A2] Explanation of some peculiarities of crystal morphology deduced from the BFDH law — ScienceDirect — <https://www.sciencedirect.com/science/article/abs/pii/S0022024804007936> — Abstract/Paywall; MI ∝ d(hkl), langsame Flächen überleben.
+- [R1·A2] Synthesis of YAG micro-crystals with rhombic dodecahedron — ScienceDirect — <https://www.sciencedirect.com/science/article/abs/pii/S092583881831987X> — Abstract/Paywall; theoretisch begünstigte {110}-Flächen (Nanopartikel-Kontext, als Vereinfachung markiert).
+- [R1·A3] Au-Rhombendodekaeder-Nanokristalle — PMC — <https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10797619/> — Snippet; {110}-Oberflächenenergie (Nanopartikel, mit Vorbehalt).
+- [R3·A2] Crystal Habit — galleries.com — <https://galleries.com/minerals/property/crystal.htm> — Snippet; Rhombendodekaeder als Granat-Markenzeichen, Atompositionen bestimmen Tracht.
+- [R2·A2] Crystallographic restriction theorem — Wikipedia — <https://en.wikipedia.org/wiki/Crystallographic_restriction_theorem> — Snippet; nur 2/3/4/6-zählig, Pentagon-Kachelung scheitert, Quasikristalle als Ausnahme.
 
 **Geschichte & Forschung**
-- [R2·A2] Kepler and the Rhombic Dodecahedron — MAA Convergence — https://old.maa.org/press/periodicals/convergence/kepler-and-the-rhombic-dodecahedron-introducing-the-rhombic-dodecahedron — Snippet; Kepler 1611, Bienenwabe, kein mathematischer Vorläufer.
-- [R1·A2] René-Just Haüy and the birth of crystallography — IUCr — https://www.iucr.org/news/newsletter/volume-30/number-4/rene-just-hauy-and-the-birth-of-crystallography — Snippet; Haüy 1779 Granat-/Kalkspat-Arbeit, Schichtmodell.
-- [R2·A2] René Just Haüy — Wikipedia — https://en.wikipedia.org/wiki/Ren%C3%A9_Just_Ha%C3%BCy — Snippet; integrierende Moleküle, Gesetz der rationalen Indizes.
-- [R3·A2] Garnet — Etymonline — https://www.etymonline.com/word/garnet — Snippet; granatus/granum, Granatapfel-Bezug.
-- [R2·A2] 1911 Encyclopædia Britannica/Garnet — Wikisource — https://en.wikisource.org/wiki/1911_Encyclop%C3%A6dia_Britannica/Garnet — Snippet; Theophrast/Plinius, zwölf Varietäten.
+
+- [R2·A2] Kepler and the Rhombic Dodecahedron — MAA Convergence — <https://old.maa.org/press/periodicals/convergence/kepler-and-the-rhombic-dodecahedron-introducing-the-rhombic-dodecahedron> — Snippet; Kepler 1611, Bienenwabe, kein mathematischer Vorläufer.
+- [R1·A2] René-Just Haüy and the birth of crystallography — IUCr — <https://www.iucr.org/news/newsletter/volume-30/number-4/rene-just-hauy-and-the-birth-of-crystallography> — Snippet; Haüy 1779 Granat-/Kalkspat-Arbeit, Schichtmodell.
+- [R2·A2] René Just Haüy — Wikipedia — <https://en.wikipedia.org/wiki/Ren%C3%A9_Just_Ha%C3%BCy> — Snippet; integrierende Moleküle, Gesetz der rationalen Indizes.
+- [R3·A2] Garnet — Etymonline — <https://www.etymonline.com/word/garnet> — Snippet; granatus/granum, Granatapfel-Bezug.
+- [R2·A2] 1911 Encyclopædia Britannica/Garnet — Wikisource — <https://en.wikisource.org/wiki/1911_Encyclop%C3%A6dia_Britannica/Garnet> — Snippet; Theophrast/Plinius, zwölf Varietäten.
 
 **Fundorte & berühmte Beispiele**
-- [R2·A2] Bohemian garnets (O. Revheim) — mindat.org — https://www.mindat.org/article.php/4193/ — Snippet; Třebenice/Podsedice, Cr-Pyrop, de Boot 1609.
-- [R2·A2] Barton Garnet Mines, Gore Mountain — mindat.org — https://www.mindat.org/loc-16747.html — Snippet; Almandin bis ~1 m, älteste durchgehend betriebene Mine.
-- [R4·A2] BARTON History — bartongarnet.com — https://bartongarnet.com/barton-history/ — Snippet (Firma); H. H. Barton 1878.
-- [R1·A3] Russian Demantoid — GIA (PDF) — https://www.gia.edu/doc/Russian-Demantoid-Czar-of-the-Garnet-Family.pdf — Snippet; Demantoid 1868 Ural.
-- [R3·A2] Sutton Hoo ship burial — British Museum — https://www.britishmuseum.org/collection/death-and-memory/anglo-saxon-ship-burial-sutton-hoo — Snippet; Granat-Cloisonné, Sri-Lanka-Handel.
+
+- [R2·A2] Bohemian garnets (O. Revheim) — mindat.org — <https://www.mindat.org/article.php/4193/> — Snippet; Třebenice/Podsedice, Cr-Pyrop, de Boot 1609.
+- [R2·A2] Barton Garnet Mines, Gore Mountain — mindat.org — <https://www.mindat.org/loc-16747.html> — Snippet; Almandin bis ~1 m, älteste durchgehend betriebene Mine.
+- [R4·A2] BARTON History — bartongarnet.com — <https://bartongarnet.com/barton-history/> — Snippet (Firma); H. H. Barton 1878.
+- [R1·A3] Russian Demantoid — GIA (PDF) — <https://www.gia.edu/doc/Russian-Demantoid-Czar-of-the-Garnet-Family.pdf> — Snippet; Demantoid 1868 Ural.
+- [R3·A2] Sutton Hoo ship burial — British Museum — <https://www.britishmuseum.org/collection/death-and-memory/anglo-saxon-ship-burial-sutton-hoo> — Snippet; Granat-Cloisonné, Sri-Lanka-Handel.
 
 **Kultur & Vorbehalte/Irrtümer**
-- [R3·A1] Kiwi Hellenist: The classical elements (P. Gainsford) — http://kiwihellenist.blogspot.com/2020/09/elements.html — Volltext; philologische Timaios-Lesart, Caveats gegen „fünftes Element".
-- [R3·A1] Fool's Gold — John Carlos Baez (Azimuth) — https://johncarlosbaez.wordpress.com/2011/09/12/fools-gold/ — Volltext; Pyritoeder ≠ reg. Dodekaeder (2 vs. φ), Pythagoreer-Hypothese als unbewiesen markiert.
-- [R3·A3] Roman dodecahedron — Wikipedia — https://en.wikipedia.org/wiki/Roman_dodecahedron — Snippet; >100 Funde, Zweck unbekannt (alles spekulativ).
-- [R3·A1] Sacred Geometry — Sacred Nonsense? (Skepfeeds) — https://skepfeeds.wordpress.com/2008/11/21/sacred-geometry-sacred-nonsense/ — Volltext; Apophänie, Nicht-Falsifizierbarkeit, fehlende Evidenz.
-- [R3·A3] Sacred geometry — RationalWiki — https://rationalwiki.org/wiki/Sacred_geometry — HTTP 503, nur Snippet; Pseudowissenschafts-Kritik, Quantenphysik-Missbrauch.
+
+- [R3·A1] Kiwi Hellenist: The classical elements (P. Gainsford) — <http://kiwihellenist.blogspot.com/2020/09/elements.html> — Volltext; philologische Timaios-Lesart, Caveats gegen „fünftes Element".
+- [R3·A1] Fool's Gold — John Carlos Baez (Azimuth) — <https://johncarlosbaez.wordpress.com/2011/09/12/fools-gold/> — Volltext; Pyritoeder ≠ reg. Dodekaeder (2 vs. φ), Pythagoreer-Hypothese als unbewiesen markiert.
+- [R3·A3] Roman dodecahedron — Wikipedia — <https://en.wikipedia.org/wiki/Roman_dodecahedron> — Snippet; >100 Funde, Zweck unbekannt (alles spekulativ).
+- [R3·A1] Sacred Geometry — Sacred Nonsense? (Skepfeeds) — <https://skepfeeds.wordpress.com/2008/11/21/sacred-geometry-sacred-nonsense/> — Volltext; Apophänie, Nicht-Falsifizierbarkeit, fehlende Evidenz.
+- [R3·A3] Sacred geometry — RationalWiki — <https://rationalwiki.org/wiki/Sacred_geometry> — HTTP 503, nur Snippet; Pseudowissenschafts-Kritik, Quantenphysik-Missbrauch.
 - [S·A3] Diverse Sacred-Geometry/Crystal-Healing-Shop-Blogs (soulfoodcrystals, healing-sounds u. a.) — nur als Beleg für die zu kritisierende Behauptungslage zitiert, NICHT als Faktenquelle.
 
 **Belastbarkeits-Hinweise:** (1) Die kausale „Warum-{110}"-Begründung ist in frei zugänglichen Quellen nur teilweise/oberflächlich belegt; die Verknüpfung von BFDH-Wachstumsgesetz mit der gesicherten Granat-Symmetrie ist gut gestützt, aber synthetisiert. (2) Alle Aussagen zu römischen Dodekaedern sind spekulativ (kein Konsens). (3) Esoterik-Quellen dienen ausschliesslich als Kritik-Gegenstand. (4) Die exakten Geometrie-Werte (70,53° = arccos 1/3; 109,47°; Diederwinkel 120°; 12/24/14 Ecken) sind durch mehrere unabhängige Quellen quergeprüft.

@@ -77,7 +77,7 @@ für `tool/fetch_web_fonts.py`, das die Schriften beim Bauen von `fonts.gstatic.
 ## Projekt
 
 Flutter-Port eines Rust + egui Wissenschafts-Taschenrechners, der nativ in
-**Basis 12** (dozenal) rechnet. Ursprung: https://github.com/Bawdyness/dozenal_calc
+**Basis 12** (dozenal) rechnet. Ursprung: <https://github.com/Bawdyness/dozenal_calc>
 (Rust-Upstream bleibt unter Bawdyness — bei steinerschueler veröffentlicht
 der Autor nur fertige Software, der Rust-Prototyp ist Entwicklungs-Sandbox).
 Viele `.dart`-Dateien nennen explizit die Rust-Datei, von der sie portiert
@@ -155,6 +155,7 @@ gefiltert (beidseitiger Walk durch das aktuelle Zahlen-Literal), damit
 
 **Error-Guard mit in-place Edit:** der `handleClick`-Error-Guard ist
 dreiteilig:
+
 - **AC** → kompletter Reset (Buffer, Cursor, Error).
 - **Mode/Memory/Info-Tokens** (`_isErrorBlocked`: Drg/Doz/Dez/Sto/Rcl/
   Mc/Ans/ConvAns/M+/M−/Info/Expand/Close) → blockiert, User muss AC drücken.

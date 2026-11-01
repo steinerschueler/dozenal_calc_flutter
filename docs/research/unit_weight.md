@@ -396,183 +396,183 @@ Bemerkenswert ist der **Kontrast innerhalb des imperialen Systems selbst**: Avoi
 
 ### Avoirdupois, Stone, Hundredweight, Tonne
 
-- [R2·A1] Avoirdupois — Wikipedia (EN) — https://en.wikipedia.org/wiki/Avoirdupois — Volltext gelesen; exakte Werte, Halbierungs-/Teilbarkeitsargument, Ursprungs-Hypothesen.
-- [R2·A1] Avoirdupois — Wikipedia (DE) — https://de.wikipedia.org/wiki/Avoirdupois — Volltext; exakte SI-Werte aller Einheiten.
-- [R2·A2] Pound (mass) — Wikipedia — https://en.wikipedia.org/wiki/Pound_(mass) — Pfund-Varianten (Tower, Merchants', London).
-- [R2·A2] Stone (unit) — Wikipedia — https://en.wikipedia.org/wiki/Stone_(unit) — Snippet; historische Stone-Werte, heutige Körpergewichts-Nutzung.
-- [R2·A3] Stone — Britannica — https://www.britannica.com/science/stone-unit-of-weight — referenziert.
-- [R2·A2] Tonne — Wikipedia — https://en.wikipedia.org/wiki/Tonne — Snippet; metrische Tonne, Schreibweise.
-- [R2·A2] Ton — Etymonline — https://www.etymonline.com/word/ton — Tun→Ton-Herleitung.
-- [R2·A2] Tun — Etymonline — https://www.etymonline.com/word/tun — Fass-Ursprung.
-- [R2·A2] Tun (unit) — Wikipedia — https://en.wikipedia.org/wiki/Tun_(unit) — Fass-Hohlmass.
-- [R3·A2] The Stone: England's Enduring Weight Unit — unit-converter.net — https://www.unit-converter.net/blog/2025-05-15-history-of-the-stone/ — Bildungs-Blog.
-- [R2·A3] Imperial units — Britannica — https://www.britannica.com/topic/Imperial-unit — Übersicht.
-- [R1·A3] Weights — University of Nottingham (Manuscripts & Special Collections) — https://www.nottingham.ac.uk/manuscriptsandspecialcollections/researchguidance/weightsandmeasures/weights.aspx — Universitäts-Forschungsguide.
+- [R2·A1] Avoirdupois — Wikipedia (EN) — <https://en.wikipedia.org/wiki/Avoirdupois> — Volltext gelesen; exakte Werte, Halbierungs-/Teilbarkeitsargument, Ursprungs-Hypothesen.
+- [R2·A1] Avoirdupois — Wikipedia (DE) — <https://de.wikipedia.org/wiki/Avoirdupois> — Volltext; exakte SI-Werte aller Einheiten.
+- [R2·A2] Pound (mass) — Wikipedia — <https://en.wikipedia.org/wiki/Pound_(mass)> — Pfund-Varianten (Tower, Merchants', London).
+- [R2·A2] Stone (unit) — Wikipedia — <https://en.wikipedia.org/wiki/Stone_(unit)> — Snippet; historische Stone-Werte, heutige Körpergewichts-Nutzung.
+- [R2·A3] Stone — Britannica — <https://www.britannica.com/science/stone-unit-of-weight> — referenziert.
+- [R2·A2] Tonne — Wikipedia — <https://en.wikipedia.org/wiki/Tonne> — Snippet; metrische Tonne, Schreibweise.
+- [R2·A2] Ton — Etymonline — <https://www.etymonline.com/word/ton> — Tun→Ton-Herleitung.
+- [R2·A2] Tun — Etymonline — <https://www.etymonline.com/word/tun> — Fass-Ursprung.
+- [R2·A2] Tun (unit) — Wikipedia — <https://en.wikipedia.org/wiki/Tun_(unit)> — Fass-Hohlmass.
+- [R3·A2] The Stone: England's Enduring Weight Unit — unit-converter.net — <https://www.unit-converter.net/blog/2025-05-15-history-of-the-stone/> — Bildungs-Blog.
+- [R2·A3] Imperial units — Britannica — <https://www.britannica.com/topic/Imperial-unit> — Übersicht.
+- [R1·A3] Weights — University of Nottingham (Manuscripts & Special Collections) — <https://www.nottingham.ac.uk/manuscriptsandspecialcollections/researchguidance/weightsandmeasures/weights.aspx> — Universitäts-Forschungsguide.
 
 ### Troy-Gewichte und Apothekergewicht
 
-- [R2·A1] Troy weight — Wikipedia — https://en.wikipedia.org/wiki/Troy_weight — Volltext; exakte Werte, Etymologie-Unsicherheit, Geschichte.
-- [R2·A2] Pennyweight — Wikipedia — https://en.wikipedia.org/wiki/Pennyweight — denarius-Bezug, 240/Pfund.
-- [R2·A3] Troy weight — Britannica — https://www.britannica.com/science/troy-weight — referenziert.
-- [R3·A2] The Origin of the Troy Ounce — Provident Metals — https://blog.providentmetals.com/the-origin-of-the-troy-ounce.htm — Händler-Blog, Troyes-These.
-- [R3·A2] Die Feinunze — GoldBroker.com — https://de.goldbroker.com/investoren-handbuch/die-feinunze — Branchen-Ratgeber.
-- [R3·A2] Feinunze (Troy ounce) — StoneX Bullion — https://stonexbullion.com/en/blog/troy-ounce-all-you-need-to-know/ — Branchen-Ratgeber.
-- [R4·A3] 24carat.co.uk — Weight Information — https://24carat.co.uk/weight.html — selbstpublizierte Händlerseite.
-- [R2·A2] Apothekergewicht — Wikipedia (DE) — https://de.wikipedia.org/wiki/Apothekergewicht — regionale Medizinalgewichte, Abschaffung.
-- [R3·A3] Vormetrische Medizinalgewichte — Historische Apotheke — https://www.historische-apotheke.de/gewichte/medizinalgewichte/vormetrische-medizinalgewichte — Fachseite, nur referenziert.
+- [R2·A1] Troy weight — Wikipedia — <https://en.wikipedia.org/wiki/Troy_weight> — Volltext; exakte Werte, Etymologie-Unsicherheit, Geschichte.
+- [R2·A2] Pennyweight — Wikipedia — <https://en.wikipedia.org/wiki/Pennyweight> — denarius-Bezug, 240/Pfund.
+- [R2·A3] Troy weight — Britannica — <https://www.britannica.com/science/troy-weight> — referenziert.
+- [R3·A2] The Origin of the Troy Ounce — Provident Metals — <https://blog.providentmetals.com/the-origin-of-the-troy-ounce.htm> — Händler-Blog, Troyes-These.
+- [R3·A2] Die Feinunze — GoldBroker.com — <https://de.goldbroker.com/investoren-handbuch/die-feinunze> — Branchen-Ratgeber.
+- [R3·A2] Feinunze (Troy ounce) — StoneX Bullion — <https://stonexbullion.com/en/blog/troy-ounce-all-you-need-to-know/> — Branchen-Ratgeber.
+- [R4·A3] 24carat.co.uk — Weight Information — <https://24carat.co.uk/weight.html> — selbstpublizierte Händlerseite.
+- [R2·A2] Apothekergewicht — Wikipedia (DE) — <https://de.wikipedia.org/wiki/Apothekergewicht> — regionale Medizinalgewichte, Abschaffung.
+- [R3·A3] Vormetrische Medizinalgewichte — Historische Apotheke — <https://www.historische-apotheke.de/gewichte/medizinalgewichte/vormetrische-medizinalgewichte> — Fachseite, nur referenziert.
 
 ### Römischer Ursprung (Libra, Uncia)
 
-- [R2·A2] Libra — Britannica — https://www.britannica.com/science/libra-unit-of-weight — Libra-Wert, As.
-- [R2·A2] Uncia — Britannica — https://www.britannica.com/science/uncia-unit-of-weight — Zwölftel-Bedeutung.
-- [R2·A3] Uncia (unit) — Wikipedia — https://en.wikipedia.org/wiki/Uncia_(unit) — referenziert.
-- [R1·A3] LacusCurtius — Roman Weights and Measures (Smith's Dictionary, 1875) — https://penelope.uchicago.edu/Thayer/E/Roman/Texts/secondary/SMIGRA*/Libra.html — Standardwerk, nur referenziert.
-- [R2·A2] uncia — Wiktionary — https://en.wiktionary.org/wiki/uncia — Etymologie.
-- [R4·A2] As (Roman coin) — Grokipedia — https://grokipedia.com/page/As_(Roman_coin) — KI-Referenz, mit Vorsicht.
+- [R2·A2] Libra — Britannica — <https://www.britannica.com/science/libra-unit-of-weight> — Libra-Wert, As.
+- [R2·A2] Uncia — Britannica — <https://www.britannica.com/science/uncia-unit-of-weight> — Zwölftel-Bedeutung.
+- [R2·A3] Uncia (unit) — Wikipedia — <https://en.wikipedia.org/wiki/Uncia_(unit)> — referenziert.
+- [R1·A3] LacusCurtius — Roman Weights and Measures (Smith's Dictionary, 1875) — <https://penelope.uchicago.edu/Thayer/E/Roman/Texts/secondary/SMIGRA*/Libra.html> — Standardwerk, nur referenziert.
+- [R2·A2] uncia — Wiktionary — <https://en.wiktionary.org/wiki/uncia> — Etymologie.
+- [R4·A2] As (Roman coin) — Grokipedia — <https://grokipedia.com/page/As_(Roman_coin)> — KI-Referenz, mit Vorsicht.
 
 ### Mesopotamien, Hebräisch, Bibel
 
-- [R2·A1] Mina (unit) — Wikipedia — https://en.wikipedia.org/wiki/Mina_(unit) — Volltext; Werte, Etymologie, griechische Varianten.
-- [R2·A1] Mine (Gewichtseinheit) — Wikipedia (DE) — https://de.wikipedia.org/wiki/Mine_(Gewichtseinheit) — Volltext; Mene-Tekel-Bezug.
-- [R2·A1] Talent (Einheit) — Wikipedia (DE) — https://de.wikipedia.org/wiki/Talent_(Einheit) — Volltext; Etymologie, Talent→Begabung.
-- [R2·A1] Shekel — Wikipedia (EN) — https://en.wikipedia.org/wiki/Shekel — Volltext; Etymologie, halber Schekel, moderne Währung.
-- [R2·A2] Gerah — Wikipedia — https://en.wikipedia.org/wiki/Gerah — kleinste biblische Einheit.
-- [R2·A2] Biblical and Talmudic units of measurement — Wikipedia — https://en.wikipedia.org/wiki/Biblical_and_Talmudic_units_of_measurement — biblische Gewichte.
-- [R2·A3] Masse und Gewichte in der Bibel — Wikipedia (DE) — https://de.wikipedia.org/wiki/Ma%C3%9Fe_und_Gewichte_in_der_Bibel — referenziert.
-- [R2·A2] Mina | Britannica — https://www.britannica.com/science/mina-unit-of-weight — Mina-Wert.
-- [R1·A1] Hanging in the Balance: Precision Weighing in Antiquity — Penn Museum / Expedition Magazine — https://www.penn.museum/sites/expedition/hanging-in-the-balance-2/ — Museums-Fachartikel; Ur-Bruchgewichte, 0,14-g-Gewicht.
-- [R2·A2] Measures of weight — BiblicalTraining — https://www.biblicaltraining.org/library/measures-of-weight — Bildungsseite.
-- [R1·A3] Weights and Measures (in the Bible) — Encyclopedia.com — https://www.encyclopedia.com/.../weights-and-measures-bible — Lexikon, referenziert.
-- [R4·A2] Ancient Mesopotamian units of measurement — Grokipedia — https://grokipedia.com/page/Ancient_Mesopotamian_units_of_measurement — KI-Referenz, mit Vorsicht.
-- [R4·A2] Mina — BTN Münzen — https://www.btn-muenzen.de/geld/alte-masseinheiten/mina — Händler-Glossar.
-- [R4·A3] Schekel — Moneypedia — https://www.moneypedia.de/index.php/Schekel — Sammler-Wiki.
+- [R2·A1] Mina (unit) — Wikipedia — <https://en.wikipedia.org/wiki/Mina_(unit)> — Volltext; Werte, Etymologie, griechische Varianten.
+- [R2·A1] Mine (Gewichtseinheit) — Wikipedia (DE) — <https://de.wikipedia.org/wiki/Mine_(Gewichtseinheit)> — Volltext; Mene-Tekel-Bezug.
+- [R2·A1] Talent (Einheit) — Wikipedia (DE) — <https://de.wikipedia.org/wiki/Talent_(Einheit)> — Volltext; Etymologie, Talent→Begabung.
+- [R2·A1] Shekel — Wikipedia (EN) — <https://en.wikipedia.org/wiki/Shekel> — Volltext; Etymologie, halber Schekel, moderne Währung.
+- [R2·A2] Gerah — Wikipedia — <https://en.wikipedia.org/wiki/Gerah> — kleinste biblische Einheit.
+- [R2·A2] Biblical and Talmudic units of measurement — Wikipedia — <https://en.wikipedia.org/wiki/Biblical_and_Talmudic_units_of_measurement> — biblische Gewichte.
+- [R2·A3] Masse und Gewichte in der Bibel — Wikipedia (DE) — <https://de.wikipedia.org/wiki/Ma%C3%9Fe_und_Gewichte_in_der_Bibel> — referenziert.
+- [R2·A2] Mina | Britannica — <https://www.britannica.com/science/mina-unit-of-weight> — Mina-Wert.
+- [R1·A1] Hanging in the Balance: Precision Weighing in Antiquity — Penn Museum / Expedition Magazine — <https://www.penn.museum/sites/expedition/hanging-in-the-balance-2/> — Museums-Fachartikel; Ur-Bruchgewichte, 0,14-g-Gewicht.
+- [R2·A2] Measures of weight — BiblicalTraining — <https://www.biblicaltraining.org/library/measures-of-weight> — Bildungsseite.
+- [R1·A3] Weights and Measures (in the Bible) — Encyclopedia.com — <https://www.encyclopedia.com/.../weights-and-measures-bible> — Lexikon, referenziert.
+- [R4·A2] Ancient Mesopotamian units of measurement — Grokipedia — <https://grokipedia.com/page/Ancient_Mesopotamian_units_of_measurement> — KI-Referenz, mit Vorsicht.
+- [R4·A2] Mina — BTN Münzen — <https://www.btn-muenzen.de/geld/alte-masseinheiten/mina> — Händler-Glossar.
+- [R4·A3] Schekel — Moneypedia — <https://www.moneypedia.de/index.php/Schekel> — Sammler-Wiki.
 
 ### Ägypten
 
-- [R2·A2] Deben (unit) — Wikipedia — https://en.wikipedia.org/wiki/Deben_(unit) — Deben/Kite-Werte, Buto-Fund.
-- [R1·A3] Weight in Ancient Egypt — UCL Digital Egypt — https://www.ucl.ac.uk/museums-static/digitalegypt/weights/weight.html — Universitäts-Projekt, referenziert.
-- [R2·A3] Deben — Britannica — https://www.britannica.com/science/deben — referenziert.
+- [R2·A2] Deben (unit) — Wikipedia — <https://en.wikipedia.org/wiki/Deben_(unit)> — Deben/Kite-Werte, Buto-Fund.
+- [R1·A3] Weight in Ancient Egypt — UCL Digital Egypt — <https://www.ucl.ac.uk/museums-static/digitalegypt/weights/weight.html> — Universitäts-Projekt, referenziert.
+- [R2·A3] Deben — Britannica — <https://www.britannica.com/science/deben> — referenziert.
 
 ### Industal / Harappa
 
-- [R1·A2] Cubical Weights — Harappa.com — https://www.harappa.com/blog/cubical-weights — Fachprojekt (Archäologen); binäre Staffelung.
-- [R4·A2] Harappan Weight System — Vocal Media — https://vocal.media/history/harappan-weight-system... — populär, selbstpubliziert.
+- [R1·A2] Cubical Weights — Harappa.com — <https://www.harappa.com/blog/cubical-weights> — Fachprojekt (Archäologen); binäre Staffelung.
+- [R4·A2] Harappan Weight System — Vocal Media — <https://vocal.media/history/harappan-weight-system>... — populär, selbstpubliziert.
 
 ### Griechenland
 
-- [R2·A2] Ancient drachma — Wikipedia — https://en.wikipedia.org/wiki/Ancient_drachma — Drachme/Obol-Etymologie und Werte.
+- [R2·A2] Ancient drachma — Wikipedia — <https://en.wikipedia.org/wiki/Ancient_drachma> — Drachme/Obol-Etymologie und Werte.
 
 ### China und Japan
 
-- [R2·A2] Chinese units of measurement — Wikipedia — https://en.wikipedia.org/wiki/Chinese_units_of_measurement — Jin/Liang/Tael-Hierarchie, Reform 1959.
-- [R2·A2] Liang (mass) — Wikipedia — https://en.wikipedia.org/wiki/Liang_(mass) — Liang-Werte.
-- [R2·A2] Jin (mass) — Wikipedia — https://en.wikipedia.org/wiki/Jin_(mass) — Jin-Werte.
-- [R2·A2] Japanese units of measurement — Wikipedia — https://en.wikipedia.org/wiki/Japanese_units_of_measurement — kan/momme, Verbot 1966.
-- [R3·A3] How catty and tael entered the English language — SCMP — https://www.scmp.com/.../2129495/... — Qualitätsmedium, referenziert.
-- [R4·A3] Momme — Traditional unit of silk weight — Sartor Bohemia — https://www.sartorbohemia.com/article/87/... — Händler-Fachartikel.
-- [R4·A2] 古代的十六两秤…福禄寿三星 — Baidu Baike — https://baike.baidu.com/tashuo/browse/content?id=eff6467717a1dcc7dea07bdb — Crowd-Wiki; 16-Sterne-Symbolik (mit Vorsicht).
-- [R4·A2] 古秤是十六位…北斗七星加南斗六星 — Zhihu — https://zhuanlan.zhihu.com/p/1928494391078676390 — Blog-Plattform.
-- [R3·A2] 秦镇木杆秤秤星和良心的故事 — 北京旅游网 (Visit Beijing) — https://lyzz.visitbeijing.com.cn/news/detail?id=24416 — offizielle Tourismusseite.
-- [R4·A2] 天地之间有杆秤 — tangshui.net — https://m.tangshui.net/post/show/5b3129321b4e45e24428de54 — Blog.
+- [R2·A2] Chinese units of measurement — Wikipedia — <https://en.wikipedia.org/wiki/Chinese_units_of_measurement> — Jin/Liang/Tael-Hierarchie, Reform 1959.
+- [R2·A2] Liang (mass) — Wikipedia — <https://en.wikipedia.org/wiki/Liang_(mass)> — Liang-Werte.
+- [R2·A2] Jin (mass) — Wikipedia — <https://en.wikipedia.org/wiki/Jin_(mass)> — Jin-Werte.
+- [R2·A2] Japanese units of measurement — Wikipedia — <https://en.wikipedia.org/wiki/Japanese_units_of_measurement> — kan/momme, Verbot 1966.
+- [R3·A3] How catty and tael entered the English language — SCMP — <https://www.scmp.com/.../2129495/>... — Qualitätsmedium, referenziert.
+- [R4·A3] Momme — Traditional unit of silk weight — Sartor Bohemia — <https://www.sartorbohemia.com/article/87/>... — Händler-Fachartikel.
+- [R4·A2] 古代的十六两秤…福禄寿三星 — Baidu Baike — <https://baike.baidu.com/tashuo/browse/content?id=eff6467717a1dcc7dea07bdb> — Crowd-Wiki; 16-Sterne-Symbolik (mit Vorsicht).
+- [R4·A2] 古秤是十六位…北斗七星加南斗六星 — Zhihu — <https://zhuanlan.zhihu.com/p/1928494391078676390> — Blog-Plattform.
+- [R3·A2] 秦镇木杆秤秤星和良心的故事 — 北京旅游网 (Visit Beijing) — <https://lyzz.visitbeijing.com.cn/news/detail?id=24416> — offizielle Tourismusseite.
+- [R4·A2] 天地之间有杆秤 — tangshui.net — <https://m.tangshui.net/post/show/5b3129321b4e45e24428de54> — Blog.
 
 ### Indien, Russland, Osmanen, Iberien
 
-- [R2·A2] Indian units of measurement — Wikipedia — https://en.wikipedia.org/wiki/Indian_units_of_measurement — Ratti/Masha/Tola/Seer/Maund.
-- [R2·A2] Masha (mass) — Wikipedia — https://en.wikipedia.org/wiki/Masha_(mass) — Masha-Wert.
-- [R2·A2] Indische Masse und Gewichte — Wikipedia (DE) — https://de.wikipedia.org/wiki/Indische_Ma%C3%9Fe_und_Gewichte — Seer/Maund/Tola.
-- [R1·A2] Historical Note: Traditional Use of Legume Seeds for Weighing Gold in India — ResearchGate — https://www.researchgate.net/publication/344088688 — Fachpublikation (nur Abstract).
-- [R2·A2] Obsolete Russian units of measurement — Wikipedia — https://en.wikipedia.org/wiki/Obsolete_Russian_units_of_measurement — Pud/Funt-Werte.
-- [R2·A2] Zolotnik — Wikipedia — https://en.wikipedia.org/wiki/Zolotnik — Solotnik, Punzierungsstandard.
-- [R2·A2] Oka (mass) — Wikipedia — https://en.wikipedia.org/wiki/Oka_(mass) — Oka/Okka-Wert.
-- [R2·A2] Ottoman units of measurement — Wikipedia — https://en.wikipedia.org/wiki/Ottoman_units_of_measurement — Abschaffung 1933.
-- [R4·A2] Arroba — Grokipedia — https://grokipedia.com/page/Arroba — KI-Referenz, mit Vorsicht.
-- [R4·A2] Spanish units of measurement — Grokipedia — https://grokipedia.com/page/Spanish_units_of_measurement — KI-Referenz, mit Vorsicht.
+- [R2·A2] Indian units of measurement — Wikipedia — <https://en.wikipedia.org/wiki/Indian_units_of_measurement> — Ratti/Masha/Tola/Seer/Maund.
+- [R2·A2] Masha (mass) — Wikipedia — <https://en.wikipedia.org/wiki/Masha_(mass)> — Masha-Wert.
+- [R2·A2] Indische Masse und Gewichte — Wikipedia (DE) — <https://de.wikipedia.org/wiki/Indische_Ma%C3%9Fe_und_Gewichte> — Seer/Maund/Tola.
+- [R1·A2] Historical Note: Traditional Use of Legume Seeds for Weighing Gold in India — ResearchGate — <https://www.researchgate.net/publication/344088688> — Fachpublikation (nur Abstract).
+- [R2·A2] Obsolete Russian units of measurement — Wikipedia — <https://en.wikipedia.org/wiki/Obsolete_Russian_units_of_measurement> — Pud/Funt-Werte.
+- [R2·A2] Zolotnik — Wikipedia — <https://en.wikipedia.org/wiki/Zolotnik> — Solotnik, Punzierungsstandard.
+- [R2·A2] Oka (mass) — Wikipedia — <https://en.wikipedia.org/wiki/Oka_(mass)> — Oka/Okka-Wert.
+- [R2·A2] Ottoman units of measurement — Wikipedia — <https://en.wikipedia.org/wiki/Ottoman_units_of_measurement> — Abschaffung 1933.
+- [R4·A2] Arroba — Grokipedia — <https://grokipedia.com/page/Arroba> — KI-Referenz, mit Vorsicht.
+- [R4·A2] Spanish units of measurement — Grokipedia — <https://grokipedia.com/page/Spanish_units_of_measurement> — KI-Referenz, mit Vorsicht.
 
 ### Deutsches Pfund, Zentner
 
-- [R2·A1] Pfund — Wikipedia (DE) — https://de.wikipedia.org/wiki/Pfund — Volltext; libra pondo, 500-g-Pfund, £/lb-Herkunft.
-- [R2·A2] Zentner — Wikipedia (DE) — https://de.wikipedia.org/wiki/Zentner — 50-kg-Zentner vs. Hundredweight.
-- [R2·A2] Zollpfund — Wikipedia — https://en.wikipedia.org/wiki/Zollpfund — Zollverein-Pfund.
+- [R2·A1] Pfund — Wikipedia (DE) — <https://de.wikipedia.org/wiki/Pfund> — Volltext; libra pondo, 500-g-Pfund, £/lb-Herkunft.
+- [R2·A2] Zentner — Wikipedia (DE) — <https://de.wikipedia.org/wiki/Zentner> — 50-kg-Zentner vs. Hundredweight.
+- [R2·A2] Zollpfund — Wikipedia — <https://en.wikipedia.org/wiki/Zollpfund> — Zollverein-Pfund.
 
 ### Mesoamerika
 
-- [R3·A2] Beanz meanz money! — Mexicolore — https://www.mexicolore.co.uk/maya/chocolate/beanz-meanz-money — Bildungsseite (Fachautoren); Kakaobohnen-Geld.
-- [R3·A3] Why were cocoa beans so valuable? — Mexicolore — https://www.mexicolore.co.uk/aztecs/ask-experts/why-were-cocoa-beans-so-valuable — Bildungsseite, referenziert.
+- [R3·A2] Beanz meanz money! — Mexicolore — <https://www.mexicolore.co.uk/maya/chocolate/beanz-meanz-money> — Bildungsseite (Fachautoren); Kakaobohnen-Geld.
+- [R3·A3] Why were cocoa beans so valuable? — Mexicolore — <https://www.mexicolore.co.uk/aztecs/ask-experts/why-were-cocoa-beans-so-valuable> — Bildungsseite, referenziert.
 
 ### Karat (Masse und Feinheit)
 
-- [R2·A1] Carat (mass) — Wikipedia — https://en.wikipedia.org/wiki/Carat_(mass) — Volltext; 1907-Standard, 23 Vorläufer, Karob-Mythos-Widerlegung.
-- [R3·A2] Origins of the Carat Weight System — GIA 4Cs — https://4cs.gia.edu/interactive-4cs/carat-weight/origins.html — Fachinstitut (Gemological Institute of America).
-- [R2·A2] Karat — Etymonline — https://www.etymonline.com/word/karat — Etymologie.
-- [R2·A2] Karat (Feingehalt) — Wikipedia (DE) — https://de.wikipedia.org/wiki/Karat_(Feingehalt) — 24er-Feinheits-Skala.
-- [R2·A3] Fineness — Wikipedia — https://en.wikipedia.org/wiki/Fineness — Tausendstel-System.
-- [R2·A3] Karat — Britannica — https://www.britannica.com/technology/karat — referenziert.
-- [R1·A3] On the origin of the carat (Acta Geochimica, Springer) — https://link.springer.com/content/pdf/10.1007/BF02843332.pdf — Peer-Review-Aufsatz, nur referenziert.
-- [R3·A2] Warum aus Johannisbrotkernen das Karat wurde — wissenschaft.de — https://www.wissenschaft.de/.../warum-aus-johannisbrotkernen-das-karat-wurde/ — Wissenschaftsmedium.
-- [R3·A2] Woher kommt Karat — wissen.de — https://www.wissen.de/wortherkunft/karat — Bildungsseite.
-- [R2·A2] Johannisbrotbaum — Wikipedia (DE) — https://de.wikipedia.org/wiki/Johannisbrotbaum — Johannes-Legende.
-- [R4·A2] Goldschmiede Rabea Kruel: Von Johannisbrot zu Diamanten — https://www.goldschmiede-rabea-kruel.de/von-johannisbrot-zu-diamanten... — Handwerker-Blog.
-- [R4·A2] Goldkarat 333/585/750/999 — Marin Edelmetallhandel — https://www.marin.de/goldwissen/goldkarat-goldlegierungen — Händler-Ratgeber.
-- [R4·A2] Karat or Carat — Why 24 Parts? — Timio 24K — https://www.timio24k.com/blogs/all/... — Händler-Blog; Solidus/24-Teilung.
-- [R3·A3] Karat — NZZ — https://www.nzz.ch/articleEXB4S-ld.398207 — Qualitätsmedium, **Volltext nicht zugänglich (HTTP 402 Paywall)**.
+- [R2·A1] Carat (mass) — Wikipedia — <https://en.wikipedia.org/wiki/Carat_(mass)> — Volltext; 1907-Standard, 23 Vorläufer, Karob-Mythos-Widerlegung.
+- [R3·A2] Origins of the Carat Weight System — GIA 4Cs — <https://4cs.gia.edu/interactive-4cs/carat-weight/origins.html> — Fachinstitut (Gemological Institute of America).
+- [R2·A2] Karat — Etymonline — <https://www.etymonline.com/word/karat> — Etymologie.
+- [R2·A2] Karat (Feingehalt) — Wikipedia (DE) — <https://de.wikipedia.org/wiki/Karat_(Feingehalt)> — 24er-Feinheits-Skala.
+- [R2·A3] Fineness — Wikipedia — <https://en.wikipedia.org/wiki/Fineness> — Tausendstel-System.
+- [R2·A3] Karat — Britannica — <https://www.britannica.com/technology/karat> — referenziert.
+- [R1·A3] On the origin of the carat (Acta Geochimica, Springer) — <https://link.springer.com/content/pdf/10.1007/BF02843332.pdf> — Peer-Review-Aufsatz, nur referenziert.
+- [R3·A2] Warum aus Johannisbrotkernen das Karat wurde — wissenschaft.de — <https://www.wissenschaft.de/.../warum-aus-johannisbrotkernen-das-karat-wurde/> — Wissenschaftsmedium.
+- [R3·A2] Woher kommt Karat — wissen.de — <https://www.wissen.de/wortherkunft/karat> — Bildungsseite.
+- [R2·A2] Johannisbrotbaum — Wikipedia (DE) — <https://de.wikipedia.org/wiki/Johannisbrotbaum> — Johannes-Legende.
+- [R4·A2] Goldschmiede Rabea Kruel: Von Johannisbrot zu Diamanten — <https://www.goldschmiede-rabea-kruel.de/von-johannisbrot-zu-diamanten>... — Handwerker-Blog.
+- [R4·A2] Goldkarat 333/585/750/999 — Marin Edelmetallhandel — <https://www.marin.de/goldwissen/goldkarat-goldlegierungen> — Händler-Ratgeber.
+- [R4·A2] Karat or Carat — Why 24 Parts? — Timio 24K — <https://www.timio24k.com/blogs/all/>... — Händler-Blog; Solidus/24-Teilung.
+- [R3·A3] Karat — NZZ — <https://www.nzz.ch/articleEXB4S-ld.398207> — Qualitätsmedium, **Volltext nicht zugänglich (HTTP 402 Paywall)**.
 
 ### Grain / Gerstenkorn
 
-- [R2·A1] Grain (unit) — Wikipedia — https://en.wikipedia.org/wiki/Grain_(unit) — Volltext; 64,79891 mg, Penny-Erlass, drei Systeme.
-- [R2·A2] Gran (Einheit) — Wikipedia (DE) — https://de.wikipedia.org/wiki/Gran_(Einheit) — Apotheker-Basiseinheit.
-- [R2·A2] Gerstenkorn (Einheit) — Wikipedia (DE) — https://de.wikipedia.org/wiki/Gerstenkorn_(Einheit) — Korn-Basis von Längen/Gewichten.
-- [R2·A3] Geschichte der Masse und Gewichte — Wikipedia (DE) — https://de.wikipedia.org/wiki/Geschichte_der_Ma%C3%9Fe_und_Gewichte — Übersicht, referenziert.
+- [R2·A1] Grain (unit) — Wikipedia — <https://en.wikipedia.org/wiki/Grain_(unit)> — Volltext; 64,79891 mg, Penny-Erlass, drei Systeme.
+- [R2·A2] Gran (Einheit) — Wikipedia (DE) — <https://de.wikipedia.org/wiki/Gran_(Einheit)> — Apotheker-Basiseinheit.
+- [R2·A2] Gerstenkorn (Einheit) — Wikipedia (DE) — <https://de.wikipedia.org/wiki/Gerstenkorn_(Einheit)> — Korn-Basis von Längen/Gewichten.
+- [R2·A3] Geschichte der Masse und Gewichte — Wikipedia (DE) — <https://de.wikipedia.org/wiki/Geschichte_der_Ma%C3%9Fe_und_Gewichte> — Übersicht, referenziert.
 
 ### Islamische Münzgewichte
 
-- [R2·A2] Dirham — Wikipedia — https://en.wikipedia.org/wiki/Dirham — Dirham/Mithqal-Werte.
-- [R2·A2] Ratl — Wikipedia — https://en.wikipedia.org/wiki/Ratl — Ratl-Regionalwerte.
-- [R2·A3] Weights — Oxford Islamic Studies Online — http://www.oxfordislamicstudies.com/print/opr/t445/e257 — Fachlexikon, referenziert.
+- [R2·A2] Dirham — Wikipedia — <https://en.wikipedia.org/wiki/Dirham> — Dirham/Mithqal-Werte.
+- [R2·A2] Ratl — Wikipedia — <https://en.wikipedia.org/wiki/Ratl> — Ratl-Regionalwerte.
+- [R2·A3] Weights — Oxford Islamic Studies Online — <http://www.oxfordislamicstudies.com/print/opr/t445/e257> — Fachlexikon, referenziert.
 
 ### Mythos, Religion, Symbolik
 
-- [R2·A1] Psychostasie — Wikipedia (DE) — https://de.wikipedia.org/wiki/Psychostasie — Volltext; Ägypten, Homer, Michael.
-- [R3·A2] Das Totengericht im alten Ägypten — reiseninaegypten.com — https://www.reiseninaegypten.com/blog/das-totengericht-im-alten-aegypten — populär.
-- [R2·A3] Altägyptisches Totengericht — Wikipedia (DE) — https://de.wikipedia.org/wiki/Alt%C3%A4gyptisches_Totengericht — referenziert.
-- [R4·A3] Seelenwaage — AnthroWiki — https://anthrowiki.at/Seelenwaage — anthroposophisch, mit Vorsicht.
-- [R3·A2] Balance (Al-Mizan) in Islam — qurangallery.app — https://qurangallery.app/topics/al-mizan-balance-... — religiöse Bildungsseite.
-- [R3·A2] Scale Of Deeds — Al-Islam.org — https://al-islam.org/resurrection-maad-quran-ibrahim-amini/scale-deeds — religiöse Quelle.
-- [R3·A2·S] Mizan: The Weighing Balance — uzairfalahi.com — https://english.uzairfalahi.com/mizan-the-weighing-balance/ — religiös-deutend.
-- [R3·A2] Summary of Aqida – The Balance (al-mizan) — dorar.net — https://dorar.net/en/aqadia/110 — religiöse Lehrseite.
-- [R2·A2] Menetekel — Wikipedia (DE) — https://de.m.wikipedia.org/wiki/Menetekel — Daniel 5, Deutung.
-- [R3·A2] Wie ein halber Schekel Gegensätze verbindet — Chabad.org — https://de.chabad.org/parshah/article_cdo/aid/2806741 — religiöse Auslegung.
-- [R3·A2] Der halbe Schekel — Chabad.org — https://de.chabad.org/parshah/article_cdo/aid/721612 — religiöse Auslegung.
-- [R2·A2] Tempelsteuer — Wikipedia (DE) — https://de.wikipedia.org/wiki/Tempelsteuer — halber Schekel als Steuer.
-- [R3·A2] Proverbs 11:1 — BibleHub — https://biblehub.com/proverbs/11-1.htm — Bibeltext.
-- [R3·A2] Proverbs 20:23 — BibleHub — https://biblehub.com/proverbs/20-23.htm — Bibeltext.
-- [R4·A2] 10 Bible verses about Balances, Dishonest Use — knowing-jesus.com — https://bible.knowing-jesus.com/topics/... — thematische Sammlung.
-- [R2·A2] Waage (Sternbild) — Wikipedia (DE) — https://de.wikipedia.org/wiki/Waage_(Sternbild) — Libra-Sternbild, ZIB.BA.AN.NA.
-- [R2·A3] Ancient Roman symbols of monetary and weight units — Wikipedia — https://en.wikipedia.org/wiki/Ancient_Roman_symbols_of_monetary_and_weight_units — referenziert.
-- [R3·A2] Personifikationen der Gerechtigkeit · Dike — aventin.de — https://aventin.de/personifikationen-der-gerechtigkeit/ — Bildungsseite.
-- [R2·A3] Dike (mythology) — Wikipedia — https://en.wikipedia.org/wiki/Dike_(mythology) — referenziert.
-- [R3·A2] Iustitia — artedea.net — https://artedea.net/iustitia/ — Kunst-/Mythologieseite.
-- [R4·A2] Griechen: Die Waage der Göttin der Gerechtigkeit — mythoman.wordpress.com — https://mythoman.wordpress.com/2013/09/18/ — Blog.
-- [R2·A3] Tyche — Wikipedia — https://en.wikipedia.org/wiki/Tyche — referenziert.
-- [R3·A2] Pound of flesh — Phrases.org.uk — https://www.phrases.org.uk/meanings/284400.html — Redewendungs-Datenbank.
-- [R3·A2] 'A Pound Of Flesh' — No Sweat Shakespeare — https://nosweatshakespeare.com/quotes/famous/pound-of-flesh/ — Bildungsseite.
-- [R3·A2] Weighed in the balance and found wanting — The Free Dictionary — https://idioms.thefreedictionary.com/weighed+(in+the+balance)+and+found+wanting — Idiom-Lexikon.
-- [R3·A3] The Big Dipper — Heathen Chinese — https://heathenchinese.wordpress.com/2013/09/08/the-big-dipper/ — themenkundiger Blog, referenziert.
-- [R1·A3] Chinese Starlore — Hong Kong Space Museum — https://hk.space.museum/.../chinese-starlore.html — Museums-Bildungsseite, referenziert.
+- [R2·A1] Psychostasie — Wikipedia (DE) — <https://de.wikipedia.org/wiki/Psychostasie> — Volltext; Ägypten, Homer, Michael.
+- [R3·A2] Das Totengericht im alten Ägypten — reiseninaegypten.com — <https://www.reiseninaegypten.com/blog/das-totengericht-im-alten-aegypten> — populär.
+- [R2·A3] Altägyptisches Totengericht — Wikipedia (DE) — <https://de.wikipedia.org/wiki/Alt%C3%A4gyptisches_Totengericht> — referenziert.
+- [R4·A3] Seelenwaage — AnthroWiki — <https://anthrowiki.at/Seelenwaage> — anthroposophisch, mit Vorsicht.
+- [R3·A2] Balance (Al-Mizan) in Islam — qurangallery.app — <https://qurangallery.app/topics/al-mizan-balance->... — religiöse Bildungsseite.
+- [R3·A2] Scale Of Deeds — Al-Islam.org — <https://al-islam.org/resurrection-maad-quran-ibrahim-amini/scale-deeds> — religiöse Quelle.
+- [R3·A2·S] Mizan: The Weighing Balance — uzairfalahi.com — <https://english.uzairfalahi.com/mizan-the-weighing-balance/> — religiös-deutend.
+- [R3·A2] Summary of Aqida – The Balance (al-mizan) — dorar.net — <https://dorar.net/en/aqadia/110> — religiöse Lehrseite.
+- [R2·A2] Menetekel — Wikipedia (DE) — <https://de.m.wikipedia.org/wiki/Menetekel> — Daniel 5, Deutung.
+- [R3·A2] Wie ein halber Schekel Gegensätze verbindet — Chabad.org — <https://de.chabad.org/parshah/article_cdo/aid/2806741> — religiöse Auslegung.
+- [R3·A2] Der halbe Schekel — Chabad.org — <https://de.chabad.org/parshah/article_cdo/aid/721612> — religiöse Auslegung.
+- [R2·A2] Tempelsteuer — Wikipedia (DE) — <https://de.wikipedia.org/wiki/Tempelsteuer> — halber Schekel als Steuer.
+- [R3·A2] Proverbs 11:1 — BibleHub — <https://biblehub.com/proverbs/11-1.htm> — Bibeltext.
+- [R3·A2] Proverbs 20:23 — BibleHub — <https://biblehub.com/proverbs/20-23.htm> — Bibeltext.
+- [R4·A2] 10 Bible verses about Balances, Dishonest Use — knowing-jesus.com — <https://bible.knowing-jesus.com/topics/>... — thematische Sammlung.
+- [R2·A2] Waage (Sternbild) — Wikipedia (DE) — <https://de.wikipedia.org/wiki/Waage_(Sternbild)> — Libra-Sternbild, ZIB.BA.AN.NA.
+- [R2·A3] Ancient Roman symbols of monetary and weight units — Wikipedia — <https://en.wikipedia.org/wiki/Ancient_Roman_symbols_of_monetary_and_weight_units> — referenziert.
+- [R3·A2] Personifikationen der Gerechtigkeit · Dike — aventin.de — <https://aventin.de/personifikationen-der-gerechtigkeit/> — Bildungsseite.
+- [R2·A3] Dike (mythology) — Wikipedia — <https://en.wikipedia.org/wiki/Dike_(mythology)> — referenziert.
+- [R3·A2] Iustitia — artedea.net — <https://artedea.net/iustitia/> — Kunst-/Mythologieseite.
+- [R4·A2] Griechen: Die Waage der Göttin der Gerechtigkeit — mythoman.wordpress.com — <https://mythoman.wordpress.com/2013/09/18/> — Blog.
+- [R2·A3] Tyche — Wikipedia — <https://en.wikipedia.org/wiki/Tyche> — referenziert.
+- [R3·A2] Pound of flesh — Phrases.org.uk — <https://www.phrases.org.uk/meanings/284400.html> — Redewendungs-Datenbank.
+- [R3·A2] 'A Pound Of Flesh' — No Sweat Shakespeare — <https://nosweatshakespeare.com/quotes/famous/pound-of-flesh/> — Bildungsseite.
+- [R3·A2] Weighed in the balance and found wanting — The Free Dictionary — <https://idioms.thefreedictionary.com/weighed+(in+the+balance)+and+found+wanting> — Idiom-Lexikon.
+- [R3·A3] The Big Dipper — Heathen Chinese — <https://heathenchinese.wordpress.com/2013/09/08/the-big-dipper/> — themenkundiger Blog, referenziert.
+- [R1·A3] Chinese Starlore — Hong Kong Space Museum — <https://hk.space.museum/.../chinese-starlore.html> — Museums-Bildungsseite, referenziert.
 
 ### Troy-Herkunft (Troyes-Messen)
 
-- [R3·A2] The Champagne fairs — Troyes Champagne Tourism — https://en.troyeslachampagne.com/discover/made-in-troyes/the-champagne-fairs/ — offizielle Tourismusseite; Heiligen-Messzyklen.
-- [R2·A3] Troy — Etymonline — https://www.etymonline.com/word/troy — Etymologie, referenziert.
+- [R3·A2] The Champagne fairs — Troyes Champagne Tourism — <https://en.troyeslachampagne.com/discover/made-in-troyes/the-champagne-fairs/> — offizielle Tourismusseite; Heiligen-Messzyklen.
+- [R2·A3] Troy — Etymonline — <https://www.etymonline.com/word/troy> — Etymologie, referenziert.
 
 ### Basis 12, Teilbarkeit, Spekulatives
 
-- [R2·A1] Duodecimal — Wikipedia — https://en.wikipedia.org/wiki/Duodecimal — Volltext; Teilbarkeit, Ifrah-These, Aitken-Schätzung (alle als Spekulation markiert).
-- [R2·A3] Dozenal Society of America — https://dozenal.org/ — Interessensgruppe, Bruch-Argumente.
-- [R3·A3] Why we should use base 12 instead of base 10 — ScienceABC — https://www.scienceabc.com/.../why-we-should-already-use-base-12... — Populärwissenschaft.
-- [R4·A2·S] Counting on fingers leads naturally also to base-60 — k2p blog — https://ktwop.com/2017/08/19/... — Blog, spekulativ.
-- [R4·A3·S] Duodecimal Finger Counting — phillosoph.blogspot — http://phillosoph.blogspot.com/2015/11/... — Blog, spekulativ.
-- [R3·A3·S] Roger Hanson: origins of the number 60 — Stuff — https://www.stuff.co.nz/science/71273903/ — Medien-Kolumne, spekulativ.
-- [R1·A2·S] Does the Ishango Bone Indicate Knowledge of the Base 12? — arXiv — https://arxiv.org/pdf/1204.1019 — Preprint (nicht peer-reviewed), hochspekulativ.
-- [R3·A3] Going back from carats to carobs — counting-stuff.com — https://www.counting-stuff.com/going-back-from-carats-to-carobs/ — Datenanalyse-Blog; Karob-Streuung.
-- [R4·A2] Read your history here: the Shekel — The Finanser (Chris Skinner) — https://thefinanser.com/2008/02/read-your-histo — Branchen-Blog.
-- [R3·A3] Libra in the Ancient Zodiac — evangel.me — https://evangel.me/2020/08/22/libra-in-the-ancient-zodiac/ — themenkundiger Blog.
+- [R2·A1] Duodecimal — Wikipedia — <https://en.wikipedia.org/wiki/Duodecimal> — Volltext; Teilbarkeit, Ifrah-These, Aitken-Schätzung (alle als Spekulation markiert).
+- [R2·A3] Dozenal Society of America — <https://dozenal.org/> — Interessensgruppe, Bruch-Argumente.
+- [R3·A3] Why we should use base 12 instead of base 10 — ScienceABC — <https://www.scienceabc.com/.../why-we-should-already-use-base-12>... — Populärwissenschaft.
+- [R4·A2·S] Counting on fingers leads naturally also to base-60 — k2p blog — <https://ktwop.com/2017/08/19/>... — Blog, spekulativ.
+- [R4·A3·S] Duodecimal Finger Counting — phillosoph.blogspot — <http://phillosoph.blogspot.com/2015/11/>... — Blog, spekulativ.
+- [R3·A3·S] Roger Hanson: origins of the number 60 — Stuff — <https://www.stuff.co.nz/science/71273903/> — Medien-Kolumne, spekulativ.
+- [R1·A2·S] Does the Ishango Bone Indicate Knowledge of the Base 12? — arXiv — <https://arxiv.org/pdf/1204.1019> — Preprint (nicht peer-reviewed), hochspekulativ.
+- [R3·A3] Going back from carats to carobs — counting-stuff.com — <https://www.counting-stuff.com/going-back-from-carats-to-carobs/> — Datenanalyse-Blog; Karob-Streuung.
+- [R4·A2] Read your history here: the Shekel — The Finanser (Chris Skinner) — <https://thefinanser.com/2008/02/read-your-histo> — Branchen-Blog.
+- [R3·A3] Libra in the Ancient Zodiac — evangel.me — <https://evangel.me/2020/08/22/libra-in-the-ancient-zodiac/> — themenkundiger Blog.

@@ -255,20 +255,20 @@ nur indirekt).
 - **[R2·A3]** Ifrah, Georges: *The Universal History of Numbers / Histoire
   universelle des chiffres* (1981; EN Wiley 2000; DE *Universalgeschichte
   der Zahlen*). S. 48 (EN) / S. 69–75, 90–92 (DE). —
-  https://en.wikipedia.org/wiki/The_Universal_History_of_Numbers —
+  <https://en.wikipedia.org/wiki/The_Universal_History_of_Numbers> —
   Primärquelle für die Hypothese und die Länderliste; kennzeichnet die
   Herleitung selbst als spekulativ. Nicht im Volltext gelesen, über
   Sekundärzitate erschlossen.
 - **[R2·A1]** Duodecimal — Wikipedia (en) —
-  https://en.wikipedia.org/wiki/Duodecimal — Bezeichnet Ifrahs Darstellung
+  <https://en.wikipedia.org/wiki/Duodecimal> — Bezeichnet Ifrahs Darstellung
   ausdrücklich als *spekulativ*; Länderliste; 12 × 5 = 60; lebende
   Duodezimalsprachen (Chepang, Janji, Gbiri-Niragu, Piti, Gwandara/Nimbia);
   protogermanisch *ainlif/twalif* als Dezimal-Bildungen.
 - **[R2·A1]** Finger-counting — Wikipedia (en) —
-  https://en.wikipedia.org/wiki/Finger-counting — Phalangen-Methode,
+  <https://en.wikipedia.org/wiki/Finger-counting> — Phalangen-Methode,
   Ifrah (S. 48) und Macey (1989, S. 92) als Quellen; zweite Hand bis 144.
 - **[R2·A1]** Duodezimalsystem — Wikipedia (de) —
-  https://de.wikipedia.org/wiki/Duodezimalsystem — Länderliste, Ifrah-Seiten
+  <https://de.wikipedia.org/wiki/Duodezimalsystem> — Länderliste, Ifrah-Seiten
   der DE-Ausgabe.
 - **[R2·A3]** Macey, Samuel L.: *The Dynamics of Progress* (1989), S. 92. —
   Bei Wikipedia zitiert; nicht direkt gelesen.
@@ -278,44 +278,44 @@ nur indirekt).
 - **[R1·A2]** Caughley, Ross C.: „Chepang: a Sino-Tibetan language with a
   duodecimal numeral base?" Pacific Linguistics C-104, ANU Canberra 1988,
   S. 197–199. —
-  https://openresearch-repository.anu.edu.au/handle/1885/145390 —
+  <https://openresearch-repository.anu.edu.au/handle/1885/145390> —
   Primärquelle für den Chepang-Befund; Finger-Tally explizit dokumentiert,
   Belege „tantalisingly incomplete". Volltext OCR-belastet.
 - **[R1·A2]** Mazaudon, Martine: „Number building in Tibeto-Burman
   languages." In: *North East Indian Linguistics* (Morey & Post, Hg.),
-  CUP 2008. — https://www.academia.edu/3253865/ — Etymologie *hale* /
+  CUP 2008. — <https://www.academia.edu/3253865/> — Etymologie *hale* /
   *khal/kal*; zitiert Caughley wörtlich zur Finger-Tally-Verbindung.
 - **[R2·A2]** Gwandara language — Wikipedia (en) —
-  https://en.wikipedia.org/wiki/Gwandara_language — Nimbia-Dialekt
+  <https://en.wikipedia.org/wiki/Gwandara_language> — Nimbia-Dialekt
   duodezimal (vermutlich von Kainji übernommen), Alltagssprache Hausa.
 - **[R2·A2]** Gbiri-Niragu language — Wikipedia (en) —
-  https://en.wikipedia.org/wiki/Gbiri-Niragu_language — duodezimales
+  <https://en.wikipedia.org/wiki/Gbiri-Niragu_language> — duodezimales
   Zahlsystem bestätigt; kurzer Eintrag ohne Primärquellen.
 
 ### Ursprung von Basis 60 (Debatte)
 
 - **[R2·A1]** Babylonian numerals — MacTutor, Univ. St Andrews —
-  https://mathshistory.st-andrews.ac.uk/HistTopics/Babylonian_numerals/ —
+  <https://mathshistory.st-andrews.ac.uk/HistTopics/Babylonian_numerals/> —
   Merger-Hypothese „am weitesten akzeptiert"; 12 × 5-Finger-Theorie
   „verlockendste"; Neugebauer-Caveat; keine Direktbeweise.
 - **[R1·A1]** Sexagesimal — Wikipedia (en) —
-  https://en.wikipedia.org/wiki/Sexagesimal — Sumerischer Ursprung ab 3.
+  <https://en.wikipedia.org/wiki/Sexagesimal> — Sumerischer Ursprung ab 3.
   Jahrtausend v. Chr.; Neugebauer-Zitat (Entstehung nicht einfach/singulär);
   Finger-Erklärung fehlt auf dieser Seite.
 - **[R3·A1]** Nagaitoshiya, T.: „Why Did Sumerians Use the Sexagesimal
-  System?" (2013) — https://www.nagaitoshiya.com/en/2013/sexagesimal/ —
+  System?" (2013) — <https://www.nagaitoshiya.com/en/2013/sexagesimal/> —
   Kritik der Finger-Hypothese: Notation intern 10 × 6, Ägypten als
   Gegenbeispiel, alternative kgV-Theorie.
 
 ### Anatomie, Astronomie, Handelsspuren
 
 - **[R1·A1]** Phalanx bone — Wikipedia (en) —
-  https://en.wikipedia.org/wiki/Phalanx_bone — 2-3-3-3-3-Formel,
+  <https://en.wikipedia.org/wiki/Phalanx_bone> — 2-3-3-3-3-Formel,
   proximal/medial/distal, Daumen-Ausnahme, Primaten-Evolution.
-- **[R2·A1]** Decan — Wikipedia (en) — https://en.wikipedia.org/wiki/Decan
+- **[R2·A1]** Decan — Wikipedia (en) — <https://en.wikipedia.org/wiki/Decan>
   — 36 Dekane zu 10°; Sargdeckel-Sternuhren ab Erster Zwischenzeit;
   12 Nachtstunden aus 12 sichtbaren Dekanen.
-- **[R2·A1]** Dozen — Wikipedia (en) — https://en.wikipedia.org/wiki/Dozen
+- **[R2·A1]** Dozen — Wikipedia (en) — <https://en.wikipedia.org/wiki/Dozen>
   — *douzaine* → *duodecim*; Gross = 12²; Handelsspuren (unabhängig von der
   Finger-These).
 
@@ -323,14 +323,14 @@ nur indirekt).
 
 - **[R3·A1]** EarthDate (Bureau of Economic Geology, Univ. Texas): „How 10
   Fingers Became 12 Hours" —
-  https://www.earthdate.org/episodes/how-10-fingers-became-12-hours —
+  <https://www.earthdate.org/episodes/how-10-fingers-became-12-hours> —
   populär, keine Primärquellen.
 - **[R3·A1]** k2p blog: „Counting on fingers leads naturally also to
   base-60" (2017) —
-  https://ktwop.com/2017/08/19/counting-on-fingers-leads-naturally-also-to-base-60/
+  <https://ktwop.com/2017/08/19/counting-on-fingers-leads-naturally-also-to-base-60/>
   — persönliche Familientradition; keine akademischen Belege.
 - **[R3·A2]** Ishango Bone and Base-12 — arXiv:1204.1019 —
-  https://arxiv.org/pdf/1204.1019 — spekulative Interpretation, Zweck des
+  <https://arxiv.org/pdf/1204.1019> — spekulative Interpretation, Zweck des
   Knochens unklar; **nicht** als Beleg verwendbar (Vorbehalt 8).
 
 ---

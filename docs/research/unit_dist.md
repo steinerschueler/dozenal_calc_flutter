@@ -353,6 +353,7 @@ Gegenargument: Menschen nutzen „natürlich" Basis 10 wegen zehn Fingern; die m
 Jede Quelle ist nach zwei Achsen eingestuft. Format: `[R·A] Titel — URL — Begründung`.
 
 Verlässlichkeit (R):
+
 - **R1** = wissenschaftlich/primär (Peer-Review, Universität, Museum, Normungsgremium wie NIST/BIPM/IHO, Standardwerk).
 - **R2** = etablierte Referenz (Britannica, gut belegter Wikipedia-Artikel, Fachbuch).
 - **R3** = seriös populär (Qualitätsmedien, Bildungsseiten).
@@ -360,6 +361,7 @@ Verlässlichkeit (R):
 - Zusatz **S** = spekulativ/pseudowissenschaftlich.
 
 Zugang/Einblick (A):
+
 - **A1** = Volltext gelesen.
 - **A2** = teilweise (Abstract/Snippet).
 - **A3** = indirekt (nur referenziert).
@@ -368,129 +370,129 @@ Zugang/Einblick (A):
 
 **R1 — wissenschaftlich/primär**
 
-- [R1·A1] Measurement — MacTutor History of Mathematics — https://mathshistory.st-andrews.ac.uk/HistTopics/Measurement/ — Universitäre mathematikhistorische Darstellung (St Andrews); Basis-12/60-Teilbarkeit, ~250.000 frz. Einheiten.
-- [R1·A2] The nautical mile — IHR (IHO) — https://ihr.iho.int/articles/the-nautical-mile/ — Normungsgremium für hydrografische Standards; Definition Seemeile.
-- [R1·A2] The Cubit: A History and Measurement Commentary (Stone 2014) — Journal of Anthropology, Wiley — https://onlinelibrary.wiley.com/doi/10.1155/2014/489757 — Peer-Review-Artikel; Volltext per Paywall (HTTP 402) gesperrt, nur Snippet.
-- [R1·A2] Why human societies still use arms, feet… — Science/AAAS — https://www.science.org/content/article/why-human-societies-still-use-arms-feet-and-other-body-parts-measure-things — Wissenschaftsjournal; Körpermass-Persistenz.
-- [R1·A2] Body-based units of measure in cultural evolution — ResearchGate (PDF) — https://www.researchgate.net/publication/363546085 — Forschungspublikation, nur Titel/Abstract.
-- [R1·A1] Proportionate measurements (Māna, Aṅgula, Hasta), Vastu-Shastra — wisdomlib.org — https://www.wisdomlib.org/hinduism/book/vastu-shastra-indian-architecture/d/doc1085304.html — Primärtext-Auszüge indischer Architekturtraktate.
-- [R1·A2] Angula / Shilpa Shastra — wisdomlib.org — https://www.wisdomlib.org/concept/angula — Primärtext-Auszüge; hasta = 24 angula, Talamana.
+- [R1·A1] Measurement — MacTutor History of Mathematics — <https://mathshistory.st-andrews.ac.uk/HistTopics/Measurement/> — Universitäre mathematikhistorische Darstellung (St Andrews); Basis-12/60-Teilbarkeit, ~250.000 frz. Einheiten.
+- [R1·A2] The nautical mile — IHR (IHO) — <https://ihr.iho.int/articles/the-nautical-mile/> — Normungsgremium für hydrografische Standards; Definition Seemeile.
+- [R1·A2] The Cubit: A History and Measurement Commentary (Stone 2014) — Journal of Anthropology, Wiley — <https://onlinelibrary.wiley.com/doi/10.1155/2014/489757> — Peer-Review-Artikel; Volltext per Paywall (HTTP 402) gesperrt, nur Snippet.
+- [R1·A2] Why human societies still use arms, feet… — Science/AAAS — <https://www.science.org/content/article/why-human-societies-still-use-arms-feet-and-other-body-parts-measure-things> — Wissenschaftsjournal; Körpermass-Persistenz.
+- [R1·A2] Body-based units of measure in cultural evolution — ResearchGate (PDF) — <https://www.researchgate.net/publication/363546085> — Forschungspublikation, nur Titel/Abstract.
+- [R1·A1] Proportionate measurements (Māna, Aṅgula, Hasta), Vastu-Shastra — wisdomlib.org — <https://www.wisdomlib.org/hinduism/book/vastu-shastra-indian-architecture/d/doc1085304.html> — Primärtext-Auszüge indischer Architekturtraktate.
+- [R1·A2] Angula / Shilpa Shastra — wisdomlib.org — <https://www.wisdomlib.org/concept/angula> — Primärtext-Auszüge; hasta = 24 angula, Talamana.
 
 **R2 — etablierte Referenz**
 
-- [R2·A1] Cubit — Wikipedia — https://en.wikipedia.org/wiki/Cubit — Gut belegter Hauptartikel; ägyptische/mesopotamische/biblische/islamische Ellen, Maimonides 5- vs. 6-Handbreiten.
-- [R2·A1] Ancient Mesopotamian units of measurement — Wikipedia — https://en.wikipedia.org/wiki/Ancient_Mesopotamian_units_of_measurement — Sexagesimal-System, Nippur, Naram-Sin-Standard.
-- [R2·A1] Ancient Egyptian units of measurement — Wikipedia — https://en.wikipedia.org/wiki/Ancient_Egyptian_units_of_measurement — Königselle, digits/Palmen, Palermo-Stein.
-- [R2·A1] Ancient Roman units of measurement — Wikipedia — https://en.wikipedia.org/wiki/Ancient_Roman_units_of_measurement — pes/uncia/passus/mille passus, Agrippa-Standardisierung.
-- [R2·A1] Mile — Wikipedia — https://en.wikipedia.org/wiki/Mile — Statute Mile 1593, Fuss-Verkürzung, regionale Meilen.
-- [R2·A1] Fathom — Wikipedia — https://en.wikipedia.org/wiki/Fathom — Etymologie, 6 Fuss, Lot-Mass, Idiome.
-- [R2·A1] Nautical mile — Wikipedia — https://en.wikipedia.org/wiki/Nautical_mile — Bogenminute, Monaco 1929, Entwicklungslinie.
-- [R2·A1] Foot (unit) — Wikipedia — https://en.wikipedia.org/wiki/Foot_(unit) — 16-Männer-Methode, Tempel-Füsse, Karolinger-toise.
-- [R2·A1] Yard — Wikipedia — https://en.wikipedia.org/wiki/Yard — Etymologie, Heinrich-I.-Legende, Standardisierung 1300/1824/1959.
-- [R2·A1] Duodecimal — Wikipedia — https://en.wikipedia.org/wiki/Duodecimal — Teilbarkeit, Ifrah-Phalangenzählung („speculatively traced").
-- [R2·A1] Megalithic yard — Wikipedia — https://en.wikipedia.org/wiki/Megalithic_yard — Thom-These, Kendall/Heggie/Burl-Kritik, Pseudoarchäologie-Einordnung. (S für die These selbst.)
-- [R2·A1] Cubit — Britannica — https://www.britannica.com/science/cubit — Ursprung ~3000 v. Chr., Unterarmlänge.
-- [R2·A2] Nautical mile — Britannica — https://www.britannica.com/science/nautical-mile — Definition, heutige Verwendung.
-- [R2·A2] Mile — Britannica — https://www.britannica.com/science/mile — Allgemeine Meilendefinition.
-- [R2·A2] Mille passus — Britannica — https://www.britannica.com/science/mille-passus — 5000 Fuss / 8 Stadien.
-- [R2·A2] Imperial units — Wikipedia — https://en.wikipedia.org/wiki/Imperial_units — Heutige UK-Verwendung, Einheitenverhältnisse.
-- [R2·A2] The whole nine yards — Wikipedia — https://en.wikipedia.org/wiki/The_whole_nine_yards — Idiom, umstrittener Ursprung.
-- [R2·A2] Scandinavian mile — Wikipedia — https://en.wikipedia.org/wiki/Scandinavian_mile — mil = 10 km, Umdefinition 1889.
-- [R2·A2] Chinese units of measurement — Wikipedia — https://en.wikipedia.org/wiki/Chinese_units_of_measurement — chi/cun/li, Qin-Standardisierung.
-- [R2·A2] Chi (unit) — Wikipedia — https://en.wikipedia.org/wiki/Chi_(unit) — chinesischer Fuss, dynastische Entwicklung.
-- [R2·A2] Li (unit) — Wikipedia — https://en.wikipedia.org/wiki/Li_(unit) — Wegmass, heute 500 m.
-- [R2·A2] Cun (unit) — Grokipedia — https://grokipedia.com/page/Cun_(unit) — chinesischer Zoll; nur Sekundär-Bestätigung. (Belastbarkeit eingeschränkt.)
-- [R2·A2] Shaku (unit) — Wikipedia — https://en.wikipedia.org/wiki/Shaku_(unit) — japanisches Pendant zu chi.
-- [R2·A2] History of measurement systems in India — Wikipedia — https://en.wikipedia.org/wiki/History_of_measurement_systems_in_India — Indus-Kultur, Arthashastra-Standards.
-- [R2·A2] Indian units of measurement — Wikipedia — https://en.wikipedia.org/wiki/Indian_units_of_measurement — gaz/hasta/kos, Metrik 1956.
-- [R2·A2] Arabic mile — Wikipedia — https://en.wikipedia.org/wiki/Arabic_mile — mīl = 4000 Ellen, farsakh.
-- [R2·A2] Al-Ma'mun's arc measurement — Wikipedia — https://en.wikipedia.org/wiki/Al-Ma%27mun%27s_arc_measurement — Bogenmessung ~830, Erdumfang.
-- [R2·A2] Traditional French units of measurement — Wikipedia — https://en.wikipedia.org/wiki/Traditional_French_units_of_measurement — pied du roi, toise, lieue.
-- [R2·A2] Historical Russian units of measurement — Wikipedia — https://en.wikipedia.org/wiki/Historical_Russian_units_of_measurement — Arschin/Saschen/Werst, Peter d. Gr., Metrik 1925.
-- [R2·A1] Klafter — Wikipedia (DE) — https://de.wikipedia.org/wiki/Klafter — Etymologie, regionale Werte, Holz-Raummass.
-- [R2·A2] Toise — Wikipedia — https://en.wikipedia.org/wiki/Toise — Toise du Châtelet, Unterteilung.
-- [R2·A2] Ell — Wikipedia — https://en.wikipedia.org/wiki/Ell — ulna-Wurzel, regionale Ellen. (St-Olav-Folklore Negativbefund.)
-- [R2·A2] Tlalcuahuitl — Wikipedia — https://en.wikipedia.org/wiki/Tlalcuahuitl — aztekische Landrute ~2,5 m.
-- [R2·A2] Smoot — Wikipedia — https://en.wikipedia.org/wiki/Smoot — MIT-Brücken-Mass, ANSI/ISO-Ironie.
-- [R2·A2] Terminus (god) — Wikipedia — https://en.wikipedia.org/wiki/Terminus_(god) — Grenzstein-Gott, Terminalia, sechster Meilenstein.
-- [R2·A2] New Jerusalem — Wikipedia — https://en.wikipedia.org/wiki/New_Jerusalem — Würfel 12.000 Stadien, 144 Ellen.
-- [R2·A2] Seshat / Foundation Ritual — Wikipedia / Ancient Egypt Online — https://en.wikipedia.org/wiki/Seshat , https://ancientegyptonline.co.uk/foundationritual/ — pedj-shes, Merket, Vermessungs-Göttin.
-- [R2·A2] Minute and second of arc — Wikipedia — https://en.wikipedia.org/wiki/Minute_and_second_of_arc — sexagesimale Grad-Unterteilung.
-- [R2·A2] Babylonian astronomy — Wikipedia — https://en.wikipedia.org/wiki/Babylonian_astronomy — religiös-astronomischer Kontext der Basis 60.
-- [R2·A3] Meridian arc — Wikipedia — https://en.wikipedia.org/wiki/Meridian_arc — Meter-Definition über Meridianquadrant.
-- [R2·A3] Alexander Thom — Wikipedia — https://en.wikipedia.org/wiki/Alexander_Thom — Biografie des Megalithic-Yard-Urhebers.
+- [R2·A1] Cubit — Wikipedia — <https://en.wikipedia.org/wiki/Cubit> — Gut belegter Hauptartikel; ägyptische/mesopotamische/biblische/islamische Ellen, Maimonides 5- vs. 6-Handbreiten.
+- [R2·A1] Ancient Mesopotamian units of measurement — Wikipedia — <https://en.wikipedia.org/wiki/Ancient_Mesopotamian_units_of_measurement> — Sexagesimal-System, Nippur, Naram-Sin-Standard.
+- [R2·A1] Ancient Egyptian units of measurement — Wikipedia — <https://en.wikipedia.org/wiki/Ancient_Egyptian_units_of_measurement> — Königselle, digits/Palmen, Palermo-Stein.
+- [R2·A1] Ancient Roman units of measurement — Wikipedia — <https://en.wikipedia.org/wiki/Ancient_Roman_units_of_measurement> — pes/uncia/passus/mille passus, Agrippa-Standardisierung.
+- [R2·A1] Mile — Wikipedia — <https://en.wikipedia.org/wiki/Mile> — Statute Mile 1593, Fuss-Verkürzung, regionale Meilen.
+- [R2·A1] Fathom — Wikipedia — <https://en.wikipedia.org/wiki/Fathom> — Etymologie, 6 Fuss, Lot-Mass, Idiome.
+- [R2·A1] Nautical mile — Wikipedia — <https://en.wikipedia.org/wiki/Nautical_mile> — Bogenminute, Monaco 1929, Entwicklungslinie.
+- [R2·A1] Foot (unit) — Wikipedia — <https://en.wikipedia.org/wiki/Foot_(unit)> — 16-Männer-Methode, Tempel-Füsse, Karolinger-toise.
+- [R2·A1] Yard — Wikipedia — <https://en.wikipedia.org/wiki/Yard> — Etymologie, Heinrich-I.-Legende, Standardisierung 1300/1824/1959.
+- [R2·A1] Duodecimal — Wikipedia — <https://en.wikipedia.org/wiki/Duodecimal> — Teilbarkeit, Ifrah-Phalangenzählung („speculatively traced").
+- [R2·A1] Megalithic yard — Wikipedia — <https://en.wikipedia.org/wiki/Megalithic_yard> — Thom-These, Kendall/Heggie/Burl-Kritik, Pseudoarchäologie-Einordnung. (S für die These selbst.)
+- [R2·A1] Cubit — Britannica — <https://www.britannica.com/science/cubit> — Ursprung ~3000 v. Chr., Unterarmlänge.
+- [R2·A2] Nautical mile — Britannica — <https://www.britannica.com/science/nautical-mile> — Definition, heutige Verwendung.
+- [R2·A2] Mile — Britannica — <https://www.britannica.com/science/mile> — Allgemeine Meilendefinition.
+- [R2·A2] Mille passus — Britannica — <https://www.britannica.com/science/mille-passus> — 5000 Fuss / 8 Stadien.
+- [R2·A2] Imperial units — Wikipedia — <https://en.wikipedia.org/wiki/Imperial_units> — Heutige UK-Verwendung, Einheitenverhältnisse.
+- [R2·A2] The whole nine yards — Wikipedia — <https://en.wikipedia.org/wiki/The_whole_nine_yards> — Idiom, umstrittener Ursprung.
+- [R2·A2] Scandinavian mile — Wikipedia — <https://en.wikipedia.org/wiki/Scandinavian_mile> — mil = 10 km, Umdefinition 1889.
+- [R2·A2] Chinese units of measurement — Wikipedia — <https://en.wikipedia.org/wiki/Chinese_units_of_measurement> — chi/cun/li, Qin-Standardisierung.
+- [R2·A2] Chi (unit) — Wikipedia — <https://en.wikipedia.org/wiki/Chi_(unit)> — chinesischer Fuss, dynastische Entwicklung.
+- [R2·A2] Li (unit) — Wikipedia — <https://en.wikipedia.org/wiki/Li_(unit)> — Wegmass, heute 500 m.
+- [R2·A2] Cun (unit) — Grokipedia — <https://grokipedia.com/page/Cun_(unit)> — chinesischer Zoll; nur Sekundär-Bestätigung. (Belastbarkeit eingeschränkt.)
+- [R2·A2] Shaku (unit) — Wikipedia — <https://en.wikipedia.org/wiki/Shaku_(unit)> — japanisches Pendant zu chi.
+- [R2·A2] History of measurement systems in India — Wikipedia — <https://en.wikipedia.org/wiki/History_of_measurement_systems_in_India> — Indus-Kultur, Arthashastra-Standards.
+- [R2·A2] Indian units of measurement — Wikipedia — <https://en.wikipedia.org/wiki/Indian_units_of_measurement> — gaz/hasta/kos, Metrik 1956.
+- [R2·A2] Arabic mile — Wikipedia — <https://en.wikipedia.org/wiki/Arabic_mile> — mīl = 4000 Ellen, farsakh.
+- [R2·A2] Al-Ma'mun's arc measurement — Wikipedia — <https://en.wikipedia.org/wiki/Al-Ma%27mun%27s_arc_measurement> — Bogenmessung ~830, Erdumfang.
+- [R2·A2] Traditional French units of measurement — Wikipedia — <https://en.wikipedia.org/wiki/Traditional_French_units_of_measurement> — pied du roi, toise, lieue.
+- [R2·A2] Historical Russian units of measurement — Wikipedia — <https://en.wikipedia.org/wiki/Historical_Russian_units_of_measurement> — Arschin/Saschen/Werst, Peter d. Gr., Metrik 1925.
+- [R2·A1] Klafter — Wikipedia (DE) — <https://de.wikipedia.org/wiki/Klafter> — Etymologie, regionale Werte, Holz-Raummass.
+- [R2·A2] Toise — Wikipedia — <https://en.wikipedia.org/wiki/Toise> — Toise du Châtelet, Unterteilung.
+- [R2·A2] Ell — Wikipedia — <https://en.wikipedia.org/wiki/Ell> — ulna-Wurzel, regionale Ellen. (St-Olav-Folklore Negativbefund.)
+- [R2·A2] Tlalcuahuitl — Wikipedia — <https://en.wikipedia.org/wiki/Tlalcuahuitl> — aztekische Landrute ~2,5 m.
+- [R2·A2] Smoot — Wikipedia — <https://en.wikipedia.org/wiki/Smoot> — MIT-Brücken-Mass, ANSI/ISO-Ironie.
+- [R2·A2] Terminus (god) — Wikipedia — <https://en.wikipedia.org/wiki/Terminus_(god)> — Grenzstein-Gott, Terminalia, sechster Meilenstein.
+- [R2·A2] New Jerusalem — Wikipedia — <https://en.wikipedia.org/wiki/New_Jerusalem> — Würfel 12.000 Stadien, 144 Ellen.
+- [R2·A2] Seshat / Foundation Ritual — Wikipedia / Ancient Egypt Online — <https://en.wikipedia.org/wiki/Seshat> , <https://ancientegyptonline.co.uk/foundationritual/> — pedj-shes, Merket, Vermessungs-Göttin.
+- [R2·A2] Minute and second of arc — Wikipedia — <https://en.wikipedia.org/wiki/Minute_and_second_of_arc> — sexagesimale Grad-Unterteilung.
+- [R2·A2] Babylonian astronomy — Wikipedia — <https://en.wikipedia.org/wiki/Babylonian_astronomy> — religiös-astronomischer Kontext der Basis 60.
+- [R2·A3] Meridian arc — Wikipedia — <https://en.wikipedia.org/wiki/Meridian_arc> — Meter-Definition über Meridianquadrant.
+- [R2·A3] Alexander Thom — Wikipedia — <https://en.wikipedia.org/wiki/Alexander_Thom> — Biografie des Megalithic-Yard-Urhebers.
 - [R2·A2] Cubit — Wiley „History and Measurement Commentary" (s. R1; Anthropologie-Journal, gleicher Eintrag).
-- [R2·A2] keinen Zollbreit zurückweichen — Redensarten-Index — https://www.redensarten-index.de/... — etablierte Redewendungs-Referenz.
-- [R2·A3] Zoll — DWDS-Wörterbuch — https://www.dwds.de/wb/Zoll — wissenschaftliches Wörterbuch.
-- [R2·A3] Klafter — DWDS — https://www.dwds.de/wb/Klafter — Etymologie.
-- [R2·A3] Steinwurf — Duden — https://www.duden.de/rechtschreibung/Steinwurf — Wörterbuch.
-- [R2·A3] Liste geflügelter Worte/U — Wikipedia — https://de.wikipedia.org/wiki/Liste_gefl%C3%BCgelter_Worte/U — „jeder Zoll ein König".
-- [R2·A2] Fathom — etymonline — https://www.etymonline.com/word/fathom — Etymologie „Umarmung", figurative Bedeutung.
-- [R2·A2] Deep six — etymonline — https://www.etymonline.com/word/deep%20six — Lot-Ursprung des Idioms.
+- [R2·A2] keinen Zollbreit zurückweichen — Redensarten-Index — <https://www.redensarten-index.de/>... — etablierte Redewendungs-Referenz.
+- [R2·A3] Zoll — DWDS-Wörterbuch — <https://www.dwds.de/wb/Zoll> — wissenschaftliches Wörterbuch.
+- [R2·A3] Klafter — DWDS — <https://www.dwds.de/wb/Klafter> — Etymologie.
+- [R2·A3] Steinwurf — Duden — <https://www.duden.de/rechtschreibung/Steinwurf> — Wörterbuch.
+- [R2·A3] Liste geflügelter Worte/U — Wikipedia — <https://de.wikipedia.org/wiki/Liste_gefl%C3%BCgelter_Worte/U> — „jeder Zoll ein König".
+- [R2·A2] Fathom — etymonline — <https://www.etymonline.com/word/fathom> — Etymologie „Umarmung", figurative Bedeutung.
+- [R2·A2] Deep six — etymonline — <https://www.etymonline.com/word/deep%20six> — Lot-Ursprung des Idioms.
 
 **R3 — seriös populär / Bildungsseiten**
 
-- [R3·A1] Inch — Unit of Measurement Definition — Inch Calculator — https://www.inchcalculator.com/inch-background-and-definition/ — Bildungs-Referenzseite; Gerstenkorn-Definition, 2,54 cm, 1959.
-- [R3·A1] Historische Masse — Schülerlexikon Lernhelfer — https://www.lernhelfer.de/schuelerlexikon/mathematik/artikel/historische-masse — Bildungsportal; 132 deutsche Ellen, Zoll/Fuss/Klafter-Werte.
-- [R3·A2] A History of Metrology from Ancient Egypt to the SI System — Fluke — https://www.fluke.com/.../history-of-metrology — Hersteller-Bildungsblog; Metrologie-Überblick.
-- [R3·A2] The Birth Of Calibration – Egyptian Cubit — Brüel & Kjær (HBK) — https://www.hbkworld.com/.../egyptian-cubit — Mess-Technik-Bildungsartikel; apotropäische Inschriften, Vollmond-Eichung.
-- [R3·A2] What is the unit called a stadion? — Sizes — https://www.sizes.com/units/stadion.htm — spezialisierte Mass-Referenzseite.
-- [R3·A2] What is the unit called a kós? — Sizes — https://www.sizes.com/units/kos.htm — Mass-Referenzseite.
-- [R3·A2] 'give someone an inch…': meaning and origin — wordhistories.net — https://wordhistories.net/2024/05/06/give-inch-take-mile/ — Redewendungs-Recherche; Heywood 1546, ell→mile.
-- [R3·A2] Go the Extra Mile – Origin and Meaning — Grammar Monster — https://www.grammar-monster.com/sayings_proverbs/go_the_extra_mile.htm — Bergpredigt-Ursprung.
-- [R3·A2] A Miss Is As Good As A Mile — phrases.org.uk — https://www.phrases.org.uk/meanings/a-miss-is-as-good-as-a-mile.html — Redewendungs-Referenz.
-- [R3·A2] Nautical mile vs. knot — NOAA — https://oceanservice.noaa.gov/facts/nautical-mile-knot.html — Behörden-Bildungsseite; Knoten-Definition.
-- [R3·A2] ASU archaeologist determines standard unit of measurement… — ASU News — https://news.asu.edu/.../asu-archaeologist-determines-standard-unit — Universitäts-Pressemeldung zu Sugiyama/Teotihuacán.
-- [R3·A2] Aviation's Crazy, Mixed Up Units of Measure — AeroSavvy — https://aerosavvy.com/metric-imperial/ — Piloten-Fachblog; Luftfahrt-Einheiten.
-- [R3·A2] Units of Measurements in Aviation — AviationHunt — https://www.aviationhunt.com/units-of-measurements-in-aviation/ — Luftfahrt-Übersicht.
-- [R3·A2] From the nose of Henry I to his thumb… — Deseret News — https://www.deseret.com/1992/6/25/18991257/ — Qualitätsmedium; Yard-Legende.
-- [R3·A3] Ollie Smoot, The Official Unit Of Measure… — WBUR — https://www.wbur.org/radioboston/2016/05/06/ollie-smoot-... — öffentlich-rechtliches Radio; Smoot-Story.
-- [R3·A2] Nautical Term: Deep Six — Deep Sea News — https://deepseanews.com/2009/07/nautical-termphrase-wednesday-deep-six/ — Wissenschafts-Blog; Idiom-Herkunft.
-- [R3·A2] Fathom — UK Sailmakers Glossary — https://www.uksailmakers.com/encyclopedia/glossary/fathom/ — Fach-Glossar Segelei.
-- [R3·A2] How Long Is a Cubit? — Ark Encounter — https://arkencounter.com/noahs-ark/cubit/ — thematisch (kreationistisch); biblische Ellen-Masse. (Weltanschaulich gefärbt — mit Vorsicht.)
-- [R3·A2] Masse und Gewichte in Baiern — paardon.de — https://www.paardon.de/2024/05/08/masse-und-gewichte-in-baiern/ — regionalhistorische Aufstellung.
-- [R3·A2] Masse und Mengen im 19. Jahrhundert — Chronik Jennewitz — https://www.chronik-jennewitz.de/mase-und-mengen-im-19-jahrhundert/ — lokalhistorische Quelle.
-- [R3·A2] Hindu Temple Measurement Principles — hinduvigyan.com — https://hinduvigyan.com/hindu-temples-specific-measurements-why/ — thematische Bildungsseite; Talamana/Vastu.
-- [R3·A2] Shilpa Shastra — vitalveda.com.au — https://www.vitalveda.com.au/learn/vedic-wisdom/shilpa-shastra/ — thematische Seite; Ikonometrie.
-- [R3·A2] Chinese measurement / cosmology — tandfonline / Atlas Obscura — https://www.tandfonline.com/doi/full/10.1080/13467581.2025.2585658 , https://www.atlasobscura.com/articles/flat-earth-ancient-china — Tai-Terrasse, Quadrat-Erde/Kreis-Himmel, chi-Höhen-Hierarchie. (tandfonline-Teil R1-nah, nur Snippet.)
-- [R3·A2] Greek stadion / Herakles — World History Encyclopedia / hellenicaworld — https://www.worldhistory.org/Stadium/ — Herakles-Legende, ortsabhängige Stadien.
-- [R3·A2] Measuring the Ka'ba — nabataea.net — https://nabataea.net/cinema/archeologyislam/archeology-and-islam-4-measuring-kaba/ — thematische Seite; Kaaba-Ellen.
-- [R3·A2] Russian measure units (SAZHENs) — Russia Beyond — https://www.rbth.com/education/332739-russian-measure-units — Medienportal; russische Einheiten.
-- [R3·A2] An Arpent, a Toise, a Perche, a League… — Library and Archives Canada (Blog) — https://thediscoverblog.com/2014/04/24/... — Archiv-Bildungsblog; alte frz. Masse.
-- [R3·A2] Polynesian navigation — Wikipedia / Hōkūleʻa — https://en.wikipedia.org/wiki/Polynesian_navigation , https://hokulea.com/polynesian-wayfinding/ — Sternenkompass. (Klafter-Termini Negativbefund.)
-- [R3·A2] The Origin Of 'Foot' For Measurement — Sparkfiles — https://sparkfiles.net/foot-whats-special-12-inches/ — populäre Bildungsseite. (SEO-nah — mit Vorsicht.)
-- [R3·A2] How Long Is a Foot? The Humble Origins… — The Wilkes Record — https://thewilkesrecord.com/how-long-is-a-foot-... — populärer Überblick.
-- [R3·A3] Origins of Measurements — Fact Monster — https://www.factmonster.com/math-science/weights-measures/origins-of-measurements — Kinder-/Bildungsportal.
-- [R3·A3] The Origins of 7 Common Units of Measurement — Mental Floss — https://www.mentalfloss.com/article/25108/... — populäres Wissensmagazin.
+- [R3·A1] Inch — Unit of Measurement Definition — Inch Calculator — <https://www.inchcalculator.com/inch-background-and-definition/> — Bildungs-Referenzseite; Gerstenkorn-Definition, 2,54 cm, 1959.
+- [R3·A1] Historische Masse — Schülerlexikon Lernhelfer — <https://www.lernhelfer.de/schuelerlexikon/mathematik/artikel/historische-masse> — Bildungsportal; 132 deutsche Ellen, Zoll/Fuss/Klafter-Werte.
+- [R3·A2] A History of Metrology from Ancient Egypt to the SI System — Fluke — <https://www.fluke.com/.../history-of-metrology> — Hersteller-Bildungsblog; Metrologie-Überblick.
+- [R3·A2] The Birth Of Calibration – Egyptian Cubit — Brüel & Kjær (HBK) — <https://www.hbkworld.com/.../egyptian-cubit> — Mess-Technik-Bildungsartikel; apotropäische Inschriften, Vollmond-Eichung.
+- [R3·A2] What is the unit called a stadion? — Sizes — <https://www.sizes.com/units/stadion.htm> — spezialisierte Mass-Referenzseite.
+- [R3·A2] What is the unit called a kós? — Sizes — <https://www.sizes.com/units/kos.htm> — Mass-Referenzseite.
+- [R3·A2] 'give someone an inch…': meaning and origin — wordhistories.net — <https://wordhistories.net/2024/05/06/give-inch-take-mile/> — Redewendungs-Recherche; Heywood 1546, ell→mile.
+- [R3·A2] Go the Extra Mile – Origin and Meaning — Grammar Monster — <https://www.grammar-monster.com/sayings_proverbs/go_the_extra_mile.htm> — Bergpredigt-Ursprung.
+- [R3·A2] A Miss Is As Good As A Mile — phrases.org.uk — <https://www.phrases.org.uk/meanings/a-miss-is-as-good-as-a-mile.html> — Redewendungs-Referenz.
+- [R3·A2] Nautical mile vs. knot — NOAA — <https://oceanservice.noaa.gov/facts/nautical-mile-knot.html> — Behörden-Bildungsseite; Knoten-Definition.
+- [R3·A2] ASU archaeologist determines standard unit of measurement… — ASU News — <https://news.asu.edu/.../asu-archaeologist-determines-standard-unit> — Universitäts-Pressemeldung zu Sugiyama/Teotihuacán.
+- [R3·A2] Aviation's Crazy, Mixed Up Units of Measure — AeroSavvy — <https://aerosavvy.com/metric-imperial/> — Piloten-Fachblog; Luftfahrt-Einheiten.
+- [R3·A2] Units of Measurements in Aviation — AviationHunt — <https://www.aviationhunt.com/units-of-measurements-in-aviation/> — Luftfahrt-Übersicht.
+- [R3·A2] From the nose of Henry I to his thumb… — Deseret News — <https://www.deseret.com/1992/6/25/18991257/> — Qualitätsmedium; Yard-Legende.
+- [R3·A3] Ollie Smoot, The Official Unit Of Measure… — WBUR — <https://www.wbur.org/radioboston/2016/05/06/ollie-smoot->... — öffentlich-rechtliches Radio; Smoot-Story.
+- [R3·A2] Nautical Term: Deep Six — Deep Sea News — <https://deepseanews.com/2009/07/nautical-termphrase-wednesday-deep-six/> — Wissenschafts-Blog; Idiom-Herkunft.
+- [R3·A2] Fathom — UK Sailmakers Glossary — <https://www.uksailmakers.com/encyclopedia/glossary/fathom/> — Fach-Glossar Segelei.
+- [R3·A2] How Long Is a Cubit? — Ark Encounter — <https://arkencounter.com/noahs-ark/cubit/> — thematisch (kreationistisch); biblische Ellen-Masse. (Weltanschaulich gefärbt — mit Vorsicht.)
+- [R3·A2] Masse und Gewichte in Baiern — paardon.de — <https://www.paardon.de/2024/05/08/masse-und-gewichte-in-baiern/> — regionalhistorische Aufstellung.
+- [R3·A2] Masse und Mengen im 19. Jahrhundert — Chronik Jennewitz — <https://www.chronik-jennewitz.de/mase-und-mengen-im-19-jahrhundert/> — lokalhistorische Quelle.
+- [R3·A2] Hindu Temple Measurement Principles — hinduvigyan.com — <https://hinduvigyan.com/hindu-temples-specific-measurements-why/> — thematische Bildungsseite; Talamana/Vastu.
+- [R3·A2] Shilpa Shastra — vitalveda.com.au — <https://www.vitalveda.com.au/learn/vedic-wisdom/shilpa-shastra/> — thematische Seite; Ikonometrie.
+- [R3·A2] Chinese measurement / cosmology — tandfonline / Atlas Obscura — <https://www.tandfonline.com/doi/full/10.1080/13467581.2025.2585658> , <https://www.atlasobscura.com/articles/flat-earth-ancient-china> — Tai-Terrasse, Quadrat-Erde/Kreis-Himmel, chi-Höhen-Hierarchie. (tandfonline-Teil R1-nah, nur Snippet.)
+- [R3·A2] Greek stadion / Herakles — World History Encyclopedia / hellenicaworld — <https://www.worldhistory.org/Stadium/> — Herakles-Legende, ortsabhängige Stadien.
+- [R3·A2] Measuring the Ka'ba — nabataea.net — <https://nabataea.net/cinema/archeologyislam/archeology-and-islam-4-measuring-kaba/> — thematische Seite; Kaaba-Ellen.
+- [R3·A2] Russian measure units (SAZHENs) — Russia Beyond — <https://www.rbth.com/education/332739-russian-measure-units> — Medienportal; russische Einheiten.
+- [R3·A2] An Arpent, a Toise, a Perche, a League… — Library and Archives Canada (Blog) — <https://thediscoverblog.com/2014/04/24/>... — Archiv-Bildungsblog; alte frz. Masse.
+- [R3·A2] Polynesian navigation — Wikipedia / Hōkūleʻa — <https://en.wikipedia.org/wiki/Polynesian_navigation> , <https://hokulea.com/polynesian-wayfinding/> — Sternenkompass. (Klafter-Termini Negativbefund.)
+- [R3·A2] The Origin Of 'Foot' For Measurement — Sparkfiles — <https://sparkfiles.net/foot-whats-special-12-inches/> — populäre Bildungsseite. (SEO-nah — mit Vorsicht.)
+- [R3·A2] How Long Is a Foot? The Humble Origins… — The Wilkes Record — <https://thewilkesrecord.com/how-long-is-a-foot->... — populärer Überblick.
+- [R3·A3] Origins of Measurements — Fact Monster — <https://www.factmonster.com/math-science/weights-measures/origins-of-measurements> — Kinder-/Bildungsportal.
+- [R3·A3] The Origins of 7 Common Units of Measurement — Mental Floss — <https://www.mentalfloss.com/article/25108/>... — populäres Wissensmagazin.
 
 **R4 — schwach (Blog / SEO / Forum / selbstpubliziert)**
 
-- [R4·A1] Dividing We Fall: Base 12 and Resistance to Metric — milebehind.wordpress.com — https://milebehind.wordpress.com/2013/07/14/... — privater Blog; pointierte Gegenthese „base-12 a crap argument", dyadische Zoll-Teilung. Argumentativ nützlich, aber selbstpubliziert.
-- [R4·A2] Why is the imperial measurement system base 12? — Quora — https://www.quora.com/Why-is-the-imperial-measurement-system-base-12 — Laienforum; nur als schwacher Beleg, durch MacTutor gestützt.
-- [R4·A2] Duodecimal Finger Counting — phillosoph.blogspot.com — http://phillosoph.blogspot.com/2015/11/... — Blog; Fingerglied-Zählung.
-- [R4·A2] A straightforward explanation for base 12 (Diagramm) — ResearchGate Figure — https://www.researchgate.net/figure/...222106237 — Einzel-Abbildung ohne Kontext.
-- [R4·A2] Grokipedia: Ancient Greek units / Plethron / Chi / Li — https://grokipedia.com/page/Ancient_Greek_units_of_measurement u. a. — KI-generierte Enzyklopädie; nur Sekundär-Bestätigung, geringe Belastbarkeit.
-- [R4·A2] Noah's Ark Dimensions — scientifically.blog — https://www.scientifically.blog/noahs-ark-dimensions-modern-comparison — Blog; Ellen-Umrechnung Arche.
+- [R4·A1] Dividing We Fall: Base 12 and Resistance to Metric — milebehind.wordpress.com — <https://milebehind.wordpress.com/2013/07/14/>... — privater Blog; pointierte Gegenthese „base-12 a crap argument", dyadische Zoll-Teilung. Argumentativ nützlich, aber selbstpubliziert.
+- [R4·A2] Why is the imperial measurement system base 12? — Quora — <https://www.quora.com/Why-is-the-imperial-measurement-system-base-12> — Laienforum; nur als schwacher Beleg, durch MacTutor gestützt.
+- [R4·A2] Duodecimal Finger Counting — phillosoph.blogspot.com — <http://phillosoph.blogspot.com/2015/11/>... — Blog; Fingerglied-Zählung.
+- [R4·A2] A straightforward explanation for base 12 (Diagramm) — ResearchGate Figure — <https://www.researchgate.net/figure/...222106237> — Einzel-Abbildung ohne Kontext.
+- [R4·A2] Grokipedia: Ancient Greek units / Plethron / Chi / Li — <https://grokipedia.com/page/Ancient_Greek_units_of_measurement> u. a. — KI-generierte Enzyklopädie; nur Sekundär-Bestätigung, geringe Belastbarkeit.
+- [R4·A2] Noah's Ark Dimensions — scientifically.blog — <https://www.scientifically.blog/noahs-ark-dimensions-modern-comparison> — Blog; Ellen-Umrechnung Arche.
 
 **R-S — spekulativ / pseudowissenschaftlich (zusätzlich markiert)**
 
-- [R4-S·A1] The Royal Cubit — sacredgeometry.blog — https://www.sacredgeometry.blog/the-royal-cubit/ — esoterische Quelle; Mondbezug, Seschat/Thoth, „harmonisches π = √10", 42/Totenbuch. Symbolik-Anregung, keine harten Fakten.
-- [R4-S·A1] Vitruvian Man and Sacred Proportions — mysticryst.com — https://mysticryst.com/blogs/.../vitruvian-man-sacred-proportions-... — esoterischer Blog; Mikrokosmos-Idee, Goldener Schnitt. Spekulativ.
-- [R3-S·A2] Sacred Measurements: How the Human Body and Geometry… — AFNN — https://afnn.us/2025/01/01/sacred-measurements-... — meinungsstarkes Portal; cubit/span/foot/fathom als „sakral".
-- [R3-S·A2] Megalithic story of Professor Alexander Thom — Wiley/Significance — https://rss.onlinelibrary.wiley.com/doi/full/10.1111/j.1740-9713.2009.00368.x — bespricht (kritisch) die Thom-These; These selbst spekulativ.
-- [R4-S·A3] Does the Ishango Bone Indicate Knowledge of the Base 12? — arXiv-Preprint — https://arxiv.org/pdf/1204.1019 — nicht peer-reviewt, hochspekulativ; nur referenziert.
+- [R4-S·A1] The Royal Cubit — sacredgeometry.blog — <https://www.sacredgeometry.blog/the-royal-cubit/> — esoterische Quelle; Mondbezug, Seschat/Thoth, „harmonisches π = √10", 42/Totenbuch. Symbolik-Anregung, keine harten Fakten.
+- [R4-S·A1] Vitruvian Man and Sacred Proportions — mysticryst.com — <https://mysticryst.com/blogs/.../vitruvian-man-sacred-proportions->... — esoterischer Blog; Mikrokosmos-Idee, Goldener Schnitt. Spekulativ.
+- [R3-S·A2] Sacred Measurements: How the Human Body and Geometry… — AFNN — <https://afnn.us/2025/01/01/sacred-measurements->... — meinungsstarkes Portal; cubit/span/foot/fathom als „sakral".
+- [R3-S·A2] Megalithic story of Professor Alexander Thom — Wiley/Significance — <https://rss.onlinelibrary.wiley.com/doi/full/10.1111/j.1740-9713.2009.00368.x> — bespricht (kritisch) die Thom-These; These selbst spekulativ.
+- [R4-S·A3] Does the Ishango Bone Indicate Knowledge of the Base 12? — arXiv-Preprint — <https://arxiv.org/pdf/1204.1019> — nicht peer-reviewt, hochspekulativ; nur referenziert.
 - [R4-S·A2] „366-Grad-Geometrie" (Knight & Butler) — über Wikipedia *Megalithic yard* referenziert — populärwissenschaftliche Bücher; spekulativ/unbelegt.
 
 **A3-only / nicht erschliessbar (referenziert, nicht gelesen)**
 
-- [R1·A3] Old Babylonian Weights and Measures — St. Lawrence Univ. — https://myslu.stlawu.edu/~dmel/mesomath/obmetrology.html — universitäre Primärquellen-Sammlung.
-- [R2·A3] The Aztecs and the Vara — academia.edu — https://www.academia.edu/37786698/ — Fachaufsatz, nur referenziert.
-- [R2·A3] Ancient Maya Measurement System: Length (Prado Cobos/Nelson) — academia.edu — https://www.academia.edu/35646062/ — Fachaufsatz, nur referenziert.
-- [R1·A3] The Archaeology of Measurement (Aztec/Teotihuacan-Kapitel) — Cambridge — https://www.cambridge.org/core/books/archaeology-of-measurement — Standardwerk, nur referenziert.
-- [R2·A3] The Ancient Geography of India / Appendix-B (Yojana, Li, Krosa) — Jatland Wiki — https://www.jatland.com/home/.../Appendix-B_... — sekundär referenziert.
-- [R3·A3] Roman milestones / miliarium — alaturka.info — https://www.alaturka.info/en/history/antiquity/5485-roman-milestones-... — nur gelistet.
-- [R3·A3] Definition:Admiralty Mile — ProofWiki — https://proofwiki.org/wiki/Definition:Admiralty_Mile — nur referenziert.
-- [R3·A3] Klaus Schröter: Geschichte der Längenmessung und Längenmasse — heimatkunde-schwelm.de (PDF) — https://www.heimatkunde-schwelm.de/.../Laengenmessung%20und%20Laengenmasse%20wz.pdf — komprimiertes PDF, durch WebFetch nicht parsbar.
-- [R4·A1] Egyptian cubit: Significance and symbolism — wisdomlib.org — https://www.wisdomlib.org/concept/egyptian-cubit — Volltext gelesen, enthielt nur Administratives, **keine** Symbolik (Negativbefund).
+- [R1·A3] Old Babylonian Weights and Measures — St. Lawrence Univ. — <https://myslu.stlawu.edu/~dmel/mesomath/obmetrology.html> — universitäre Primärquellen-Sammlung.
+- [R2·A3] The Aztecs and the Vara — academia.edu — <https://www.academia.edu/37786698/> — Fachaufsatz, nur referenziert.
+- [R2·A3] Ancient Maya Measurement System: Length (Prado Cobos/Nelson) — academia.edu — <https://www.academia.edu/35646062/> — Fachaufsatz, nur referenziert.
+- [R1·A3] The Archaeology of Measurement (Aztec/Teotihuacan-Kapitel) — Cambridge — <https://www.cambridge.org/core/books/archaeology-of-measurement> — Standardwerk, nur referenziert.
+- [R2·A3] The Ancient Geography of India / Appendix-B (Yojana, Li, Krosa) — Jatland Wiki — <https://www.jatland.com/home/.../Appendix-B>_... — sekundär referenziert.
+- [R3·A3] Roman milestones / miliarium — alaturka.info — <https://www.alaturka.info/en/history/antiquity/5485-roman-milestones->... — nur gelistet.
+- [R3·A3] Definition:Admiralty Mile — ProofWiki — <https://proofwiki.org/wiki/Definition:Admiralty_Mile> — nur referenziert.
+- [R3·A3] Klaus Schröter: Geschichte der Längenmessung und Längenmasse — heimatkunde-schwelm.de (PDF) — <https://www.heimatkunde-schwelm.de/.../Laengenmessung%20und%20Laengenmasse%20wz.pdf> — komprimiertes PDF, durch WebFetch nicht parsbar.
+- [R4·A1] Egyptian cubit: Significance and symbolism — wisdomlib.org — <https://www.wisdomlib.org/concept/egyptian-cubit> — Volltext gelesen, enthielt nur Administratives, **keine** Symbolik (Negativbefund).
 
 **Methodischer Gesamthinweis:** Alle harten Zahlen im Dossier sind durch im Volltext gelesene Hauptartikel (überwiegend Wikipedia-Fachartikel R2·A1, Britannica, MacTutor R1) gedeckt. Grokipedia-, Foren- und Blog-Snippets dienten nur als Sekundär-Bestätigung. Bei mesoamerikanischen und indischen Werten besteht reale Forschungsstreuung (mehrere konkurrierende Schätzungen) — genannte Zahlen sind die prominentesten, nicht unstrittig kanonisch. Esoterische und megalithische Theorien sind durchgängig mit „S" markiert und im Spekulativ-Abschnitt gebündelt.

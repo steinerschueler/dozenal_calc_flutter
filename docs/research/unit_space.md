@@ -13,6 +13,7 @@ Ein Muster zieht sich durch die ganze Geschichte: Derselbe Massname hatte starke
 Hier entstand das früheste formalisierte Volumensystem. Es war **sexagesimal** (Basis 60) und verband Länge, Fläche, Volumen und Gewicht zu einem Ganzen.
 
 Die Einheitenkette:
+
 - **sila₃** (akkadisch *qû*) ≈ 1 Liter — Grundeinheit für Trocken- und Flüssigwaren (Getreide, Öl, Bier).
 - **ban₂** (*sutū*) = 10 sila ≈ 10 Liter.
 - **barig** (*parsiktu*) = 60 sila ≈ 60 Liter.
@@ -27,6 +28,7 @@ Das klassische System entstand in der Akkad-Zeit (ca. 2350–2150 v. Chr.) und w
 Das Hauptmass für Getreide, Brot und Bier war die **Hekat** (heqat) ≈ 4,8 Liter.
 
 Die Unterteilungen:
+
 - **Hin** = 1/10 Hekat ≈ 0,48 L.
 - **Dja** = 1/64 Hekat (im Mittleren Reich ≈ 75 cm³).
 - **Ro** = 1/320 Hekat — kleinste Einheit, u. a. für medizinische Rezepturen.
@@ -40,12 +42,14 @@ Die Besonderheit: Die Bruchteile der Hekat wurden mit den **Horusaugen-Brüchen*
 Die Griechen führten Trocken- und Flüssigmasse getrennt, mit erheblicher regionaler Variation.
 
 **Trockenmasse:**
+
 - **Medimnos** (attisch) ≈ 51,84 L; spartanisch ≈ 71,16 L; nach Reformen ab dem 2. Jh. v. Chr. ≈ 58,92 L.
 - **Hekteus** = 1/6 Medimnos; **Tritaios** = 1/3; **Hemiektos** = 1/12.
 - **Choinix** = 1/48 Medimnos ≈ 1,08–1,094 L — die typische **Tagesration Getreide** für einen erwachsenen Arbeiter oder Sklaven. Ein klarer Arbeits- und Naturbezug.
 - **Kotyle** ≈ 0,274 L (kleines Bechermass).
 
 **Flüssigmasse:**
+
 - **Metretes** ≈ 39,4 L (≈ 9 Gallonen) = 12 Chous = 144 Kotyle.
 
 Zur Standardisierung: **Solon** (ca. 595 v. Chr.) nutzte den Medimnos zur Klasseneinteilung der athenischen Verfassung — die oberste Klasse hiess „Pentakosiomedimnoi" (500-Medimnos-Klasse). Der Jahresverbrauch eines Mannes lag bei etwa 8 Medimnoi.
@@ -57,6 +61,7 @@ Rom verknüpfte das Volumen **explizit geometrisch** mit dem Längenmass (dem **
 Der Schlüsselbefund: Die **Amphora quadrantal** = ein **Kubik-pes** (ein römischer Kubikfuss) ≈ 26,2 Liter. Das Grundvolumen *war* also bereits der Kubikfuss.
 
 Die Unterteilung (gemischt binär und duodezimal):
+
 - **Urna** = 1/2 Amphora ≈ 13,1 L.
 - **Congius** = 1/8 Amphora ≈ 3,27 L (ein halber pes-Würfel).
 - **Sextarius** = 1/6 Congius; theoretisch ≈ 540 ml, archäologisch 500–580 ml.
@@ -82,6 +87,7 @@ Das berühmteste Eich-Normgefäss ist das **Jialiang** (嘉量) **Wang Mangs** (
 Das indische Volumensystem für Getreidelagerung, Steuer und Handel ist früh im **Arthashastra** (Kautilya, Maurya-Zeit, ca. 4.–3. Jh. v. Chr.) dokumentiert.
 
 Die aufsteigende Kette: **kudava** → **prastha** → **adhaka** (āḍhaka) → **drona** (droṇa) → **khari**.
+
 - 1 adhaka = 4 prastha; 1 drona = 4 adhaka; 1 khari = 16 drona.
 - **Drona** ≈ 12–25 L je nach Region.
 
@@ -121,6 +127,7 @@ Unter Moctezuma II. flossen jährlich rund 7.000 t Mais und 4.000 t Bohnen in di
 ### Imperiale Kubikmasse
 
 Diese sind geometrisch aus den Längenmassen abgeleitet — anders als die älteren Hohlmasse:
+
 - **Kubikzoll** = 16,387064 cm³.
 - **Kubikfuss** = 1.728 Kubikzoll ≈ 0,0283168 m³ ≈ 28,317 L.
 - **Kubikyard** = 27 Kubikfuss ≈ 0,7645549 m³ ≈ 764,55 L.
@@ -128,6 +135,7 @@ Diese sind geometrisch aus den Längenmassen abgeleitet — anders als die älte
 Seit der internationalen Yard-Definition (1950er/60er Jahre) ist das Yard exakt 0,9144 m und der Zoll exakt 2,54 cm. Damit sind alle imperialen Kubikmasse exakt metrisch festgelegt. Das imperiale System selbst ist ein Amalgam aus römischen, keltischen, angelsächsischen und lokalen mittelalterlichen Einheiten.
 
 Der Arbeitsbezug des Kubikfusses zeigt sich überall:
+
 - **Schifffahrt:** Der **Register-Ton** (Moorsom-System, Mitte 19. Jh.) = 100 Kubikfuss Innenraum; der **Freight Ton** = 40 Kubikfuss. Die Schiffstonnage stammt etymologisch und sachlich vom **tun** (Weinfass) — man zählte ursprünglich, wie viele Wein-Tuns ein Schiff laden konnte.
 - **Holz:** Der **Hoppus-Kubikfuss** (britisches Empire) schätzte das nutzbare Schnittholz eines runden Stamms; der **Board foot** = 1 ft × 1 ft × 1 in.
 - **Kohle:** Faustregel ≈ 40 Kubikfuss pro Tonne.
@@ -201,6 +209,7 @@ Seit dem Mittelalter bezeichnete „Barrel" (von französisch *baril*) in Europa
 ### Holzmasse: Ster/Raummeter, Festmeter, Klafter, Cord
 
 Beim Holz unterscheidet man **gestapelt und massiv**:
+
 - **Raummeter/Ster** = 1 m³ ordentlich geschichtetes Scheitholz inklusive Luftzwischenräume.
 - **Festmeter** = 1 m³ reine Holzmasse (1 Rm ≈ 0,7 Fm).
 - **Schüttraummeter** = lose geschüttet.
@@ -273,6 +282,7 @@ Die vedischen Hohlmasse (**prastha – adhaka – drona**) gehören in den Ritua
 ### Der heilige Würfel als Raummass-Symbol
 
 Quer durch die abrahamitischen Traditionen ist der **Würfel** das Raummass göttlicher Vollkommenheit, weil Länge = Breite = Höhe:
+
 - **Allerheiligstes** (Holy of Holies) im Tempel/Stiftshütte: würfelförmig (Stiftshütten-Raum 15 × 15 × 15 Fuss, Salomos doppelt so gross), Ort der unmittelbaren Gottesgegenwart über der Bundeslade.
 - **Neues Jerusalem** (Offb 21): als gewaltiger Würfel aus Gold beschrieben — göttliche Vollendung.
 - **Kaaba** (wörtlich „Würfel") in Mekka: schwarzes kubisches Heiligtum, „Haus Allahs", Achsenmitte (axis mundi), Funktionsanalogie zum Allerheiligsten.
@@ -314,6 +324,7 @@ Das metrische System ist die aufgeklärt-säkulare Variante des „heiligen Mass
 Die nordamerikanische Landwirtschaft und der globale Getreidehandel laufen weiter auf **Bushels**. Jeder jährliche USDA-Crop-Production-Report (Mais, Soja, Weizen, Sorghum) erscheint ausschliesslich in Bushels. Am Getreidesilo wird das Bruttogewicht in Pfund gewogen und für die CBOT-Futures-Abrechnung durch den jeweiligen Bushel-Faktor (z. B. 56 bei Mais) geteilt. Der Welthandel ist faktisch in Bushels und metrischen Tonnen denominiert — zwei inkompatible Systeme nebeneinander.
 
 Weitere lebende Hohlmasse:
+
 - **Erdöl-Barrel** (42 US-Gallonen): die Leitwährung des globalen Ölhandels.
 - **Pint** in UK und Irland: Bier wird gesetzlich im Imperial-Pint (568 ml) ausgeschenkt — eine der letzten gesetzlich vorgeschriebenen Imperial-Einheiten. Das US-Pint ist mit 473 ml spürbar kleiner.
 - **Gō** in Japan: Standard-Reisportion, der Messbecher im Reiskocher.
@@ -338,6 +349,7 @@ Die imperialen Würfelmasse erben die Basis-12- und Basis-3-Struktur ihrer Läng
 | Kubikmeter (m³) | SI-Einheit, Würfel mit 1 m Kante | = **1.000 dm³** = 1.000 Liter |
 
 Exakte Brücken zwischen den Systemen:
+
 - 1 ft³ = 0,028316846592 m³ = 28,316846592 Liter.
 - 1 yd³ = 0,764554857984 m³ ≈ 764,55 Liter.
 - 1 in³ ≈ 16,387 cm³.
@@ -347,12 +359,14 @@ Exakte Brücken zwischen den Systemen:
 Der wichtigste Befund: **1.728 = 12³** ist exakt die „great gross" der Dozenal-Welt. Ein Kubikfuss zerfällt sauber in Halbe, Drittel, Viertel, Sechstel, Achtel und mehr, weil 1728 = 2⁶ · 3³ ist — extrem faktorreich. Ein Kubikmeter teilt sich dezimal-sauber nur durch 2 und 5; ein Drittel Kubikmeter ist 0,333… m³.
 
 Die mathematische Grundlage:
+
 - Basis 12 hat sechs Teiler (1, 2, 3, 4, 6, 12) — die kleinste Zahl mit sechs Teilern. In Dozenal-Notation terminieren Brüche mit Nenner 2, 3, 4, 6, 12 sauber; dezimal terminieren nur Halbe und Fünftel. Beispiel: 1/3 = 0,4 (dozenal) gegenüber 0,333… (dezimal).
 - Basis 60 (sexagesimal) erweitert das: 60 = 5 · 12 fügt die Teiler 4, 12, 20, 60 hinzu — daher 60 Sekunden/Minuten und 360° im Kreis. Der Preis sind riesige Multiplikationstabellen und viele Symbole. Mesopotamische Masse ab ~3000 v. Chr. nutzten Sexagesimal, das Duodezimalfaktoren enthält.
 
 ### Das antike Erbe spiegelt das wider
 
 Die alten Volumenmasse zeigen durchweg Halbierungs- und Drittelungs-Logik, die dezimal bricht:
+
 - Amphora als Kubikfuss.
 - Bushel in Vierteln (Pecks) und Achteln.
 - Römischer Sextarius in Dritteln (triens), Vierteln (quartarius), Sechsteln (sextans).
@@ -386,136 +400,136 @@ Die folgenden Punkte sind **kein** wissenschaftlicher Konsens. Die Hauptquelle (
 
 ### Geschichte & Ursprung
 
-- [R2·A1] Ancient Mesopotamian units of measurement — Wikipedia — https://en.wikipedia.org/wiki/Ancient_Mesopotamian_units_of_measurement — Kern-Seite für sila/ban/barig/gur und Naram-Sin-Standardisierung.
-- [R2·A2] Gur (unit of measurement) — Britannica — https://www.britannica.com/science/gur — bestätigt gur-Grössenordnung.
-- [R1·A3] Old Babylonian Weights and Measures — St. Lawrence University — https://myslu.stlawu.edu/~dmel/mesomath/obmetrology.html — akademische Metrologie-Referenz, nur referenziert.
-- [R2·A1] Hekat — Wikipedia — https://en.wikipedia.org/wiki/Hekat — Hekat-Unterteilungen, Horusauge-Notation, oipe/khar.
-- [R1·A3] measuring volume — UCL Digital Egypt — https://www.ucl.ac.uk/museums-static/digitalegypt/weights/volume.html — universitäre Ägyptologie-Ressource.
-- [R1·A3] An Ancient Relation between Units of Length and Volume Based on a Sphere — PLOS One — https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0033895 — Peer-Review, nur referenziert.
-- [R2·A1] Medimnos — Wikipedia — https://en.wikipedia.org/wiki/Medimnos — griechische Trockenmasse, Solon-Klassen.
-- [R2·A2] Metrētēs — Britannica — https://www.britannica.com/science/metretes — griechisches Flüssigmass.
-- [R3·A2] What is the unit called a kotyle? — Sizes.com — https://www.sizes.com/units/kotyle.htm — Bildungsseite zu Massen.
-- [R2·A1] Ancient Roman units of measurement — Wikipedia — https://en.wikipedia.org/wiki/Ancient_Roman_units_of_measurement — Amphora=Kubikfuss, Modius, Sextarius-Kette.
-- [R1·A3] Roman Weights and Measures: Quadrantal (Smith's Dictionary, 1875) — LacusCurtius/Univ. Chicago — https://penelope.uchicago.edu/Thayer/E/Roman/Texts/secondary/SMIGRA*/Quadrantal.html — Standardwerk-Digitalisat.
-- [R2·A2] Hemina — Britannica — https://www.britannica.com/topic/hemina — römisches Kleinmass.
-- [R2·A1] Jialiang — Wikipedia — https://en.wikipedia.org/wiki/Jialiang — Wang-Mang-Normgefäss, huangzhong-Kopplung.
-- [R2·A2] Sheng (volume) — Wikipedia — https://en.wikipedia.org/wiki/Sheng_(volume) — chinesische sheng-Einheit.
-- [R2·A2] Chinese units of measurement — Wikipedia — https://en.wikipedia.org/wiki/Chinese_units_of_measurement — Überblick.
-- [R2·A2] History of measurement systems in India — Wikipedia — https://en.wikipedia.org/wiki/History_of_measurement_systems_in_India — Arthashastra-Masse.
-- [R3·A2] Adhaka, Āḍhaka: 18 definitions — Wisdomlib — https://www.wisdomlib.org/definition/adhaka — Sanskrit-Referenzsammlung.
-- [R4·A2] Indian units of measurement — Grokipedia — https://grokipedia.com/page/Indian_units_of_measurement — KI-generierte Referenz, mit Vorsicht.
-- [R3·A2] Ancient Arabic units of measurement — Wikipedia — https://en.wikipedia.org/wiki/Ancient_Arabic_units_of_measurement — mudd/ṣāʿ/qafīz.
-- [R4·A2] Qafiz — Grokipedia — https://grokipedia.com/page/qafiz — KI-generierte Referenz, mit Vorsicht.
-- [R1·A3] Weights and Measures i. Pre-Islamic Period — Encyclopaedia Iranica — https://www.iranicaonline.org/articles/weights-measures-i/ — akademisches Standardwerk.
-- [R1·A3] Glossary of Measures, Weights, and Monetary Units (Rural Society in Medieval Islam) — Queen Mary Univ. London — https://projects.history.qmul.ac.uk/ruralsocietyislam/database/glossary-of-measures-weights-and-monetary-units/ — universitäres Projekt.
-- [R1·A1] Before the Melting Pot: Pre-Columbian Weights and Measures — NIST — https://www.nist.gov/blogs/taking-measure/melting-pot-pre-columbian-weights-and-measures — Normungsgremium, aztekische Masse.
-- [R3·A2] Aztec Mathematics: The Use of Numbers and Measurement — MexicoHistorico — https://www.mexicohistorico.com/paginas/Aztec-Mathematics--The-Use-of-Numbers-and-Measurement.html — Bildungsseite.
-- [R3·A2] Aztec advances (12): grain and crop storage — Mexicolore — https://www.mexicolore.co.uk/aztecs/health/aztec-advances-12-grain-and-crop-storage — Bildungsseite.
-- [R2·A2] Obsolete German units of measurement — Wikipedia — https://en.wikipedia.org/wiki/Obsolete_German_units_of_measurement — Scheffel/Malter/Wispel.
-- [R3·A2] What is the unit called a Wispel? — Sizes.com — https://www.sizes.com/units/winspel.htm — Bildungsseite.
-- [R2·A1] Bushel — Wikipedia — https://en.wikipedia.org/wiki/Bushel — Winchester/Imperial-Bushel, Pfund-Faktoren.
-- [R2·A2] Winchester measure — Wikipedia — https://en.wikipedia.org/wiki/Winchester_measure — Winchester-Standard-Historie.
-- [R2·A2] Winchester bushel — Britannica — https://www.britannica.com/science/Winchester-bushel — Bushel-Definition.
-- [R2·A2] English wine cask units — Wikipedia — https://en.wikipedia.org/wiki/English_wine_cask_units — rundlet/tierce/hogshead/tun.
-- [R2·A2] Hogshead — Wikipedia — https://en.wikipedia.org/wiki/Hogshead — Fass-Einheit.
-- [R2·A2] Tun (unit) — Wikipedia — https://en.wikipedia.org/wiki/Tun_(unit) — Tun → Tonne-Etymologie.
-- [R2·A2] Cubic inch — Wikipedia — https://en.wikipedia.org/wiki/Cubic_inch — imperiales Würfelmass.
-- [R2·A2] Imperial units: History, Measurements, & Facts — Britannica — https://www.britannica.com/topic/Imperial-unit — Systemüberblick.
-- [R2·A2] Tonnage — Wikipedia — https://en.wikipedia.org/wiki/Tonnage — Register-/Freight-Ton.
-- [R2·A2] Hoppus — Wikipedia — https://en.wikipedia.org/wiki/Hoppus — Hoppus-Kubikfuss.
-- [R2·A2] Board foot — Wikipedia — https://en.wikipedia.org/wiki/Board_foot — Holzmass.
-- [R2·A1] Litre — Wikipedia — https://en.wikipedia.org/wiki/Litre — 1795/1901/1964-Liter-Definitionen.
-- [R2·A2] History of the metric system — Wikipedia — https://en.wikipedia.org/wiki/History_of_the_metric_system — metrische Genese.
-- [R2·A2] Metric system: Definition, Facts, & History — Britannica — https://www.britannica.com/science/metric-system-measurement — Systemüberblick.
-- [R1·A3] The historical evolution of units — LNE (Réseau National de la Métrologie Française) — https://metrologie-francaise.lne.fr/en/metrology/history-units — nationales Metrologie-Institut.
+- [R2·A1] Ancient Mesopotamian units of measurement — Wikipedia — <https://en.wikipedia.org/wiki/Ancient_Mesopotamian_units_of_measurement> — Kern-Seite für sila/ban/barig/gur und Naram-Sin-Standardisierung.
+- [R2·A2] Gur (unit of measurement) — Britannica — <https://www.britannica.com/science/gur> — bestätigt gur-Grössenordnung.
+- [R1·A3] Old Babylonian Weights and Measures — St. Lawrence University — <https://myslu.stlawu.edu/~dmel/mesomath/obmetrology.html> — akademische Metrologie-Referenz, nur referenziert.
+- [R2·A1] Hekat — Wikipedia — <https://en.wikipedia.org/wiki/Hekat> — Hekat-Unterteilungen, Horusauge-Notation, oipe/khar.
+- [R1·A3] measuring volume — UCL Digital Egypt — <https://www.ucl.ac.uk/museums-static/digitalegypt/weights/volume.html> — universitäre Ägyptologie-Ressource.
+- [R1·A3] An Ancient Relation between Units of Length and Volume Based on a Sphere — PLOS One — <https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0033895> — Peer-Review, nur referenziert.
+- [R2·A1] Medimnos — Wikipedia — <https://en.wikipedia.org/wiki/Medimnos> — griechische Trockenmasse, Solon-Klassen.
+- [R2·A2] Metrētēs — Britannica — <https://www.britannica.com/science/metretes> — griechisches Flüssigmass.
+- [R3·A2] What is the unit called a kotyle? — Sizes.com — <https://www.sizes.com/units/kotyle.htm> — Bildungsseite zu Massen.
+- [R2·A1] Ancient Roman units of measurement — Wikipedia — <https://en.wikipedia.org/wiki/Ancient_Roman_units_of_measurement> — Amphora=Kubikfuss, Modius, Sextarius-Kette.
+- [R1·A3] Roman Weights and Measures: Quadrantal (Smith's Dictionary, 1875) — LacusCurtius/Univ. Chicago — <https://penelope.uchicago.edu/Thayer/E/Roman/Texts/secondary/SMIGRA*/Quadrantal.html> — Standardwerk-Digitalisat.
+- [R2·A2] Hemina — Britannica — <https://www.britannica.com/topic/hemina> — römisches Kleinmass.
+- [R2·A1] Jialiang — Wikipedia — <https://en.wikipedia.org/wiki/Jialiang> — Wang-Mang-Normgefäss, huangzhong-Kopplung.
+- [R2·A2] Sheng (volume) — Wikipedia — <https://en.wikipedia.org/wiki/Sheng_(volume)> — chinesische sheng-Einheit.
+- [R2·A2] Chinese units of measurement — Wikipedia — <https://en.wikipedia.org/wiki/Chinese_units_of_measurement> — Überblick.
+- [R2·A2] History of measurement systems in India — Wikipedia — <https://en.wikipedia.org/wiki/History_of_measurement_systems_in_India> — Arthashastra-Masse.
+- [R3·A2] Adhaka, Āḍhaka: 18 definitions — Wisdomlib — <https://www.wisdomlib.org/definition/adhaka> — Sanskrit-Referenzsammlung.
+- [R4·A2] Indian units of measurement — Grokipedia — <https://grokipedia.com/page/Indian_units_of_measurement> — KI-generierte Referenz, mit Vorsicht.
+- [R3·A2] Ancient Arabic units of measurement — Wikipedia — <https://en.wikipedia.org/wiki/Ancient_Arabic_units_of_measurement> — mudd/ṣāʿ/qafīz.
+- [R4·A2] Qafiz — Grokipedia — <https://grokipedia.com/page/qafiz> — KI-generierte Referenz, mit Vorsicht.
+- [R1·A3] Weights and Measures i. Pre-Islamic Period — Encyclopaedia Iranica — <https://www.iranicaonline.org/articles/weights-measures-i/> — akademisches Standardwerk.
+- [R1·A3] Glossary of Measures, Weights, and Monetary Units (Rural Society in Medieval Islam) — Queen Mary Univ. London — <https://projects.history.qmul.ac.uk/ruralsocietyislam/database/glossary-of-measures-weights-and-monetary-units/> — universitäres Projekt.
+- [R1·A1] Before the Melting Pot: Pre-Columbian Weights and Measures — NIST — <https://www.nist.gov/blogs/taking-measure/melting-pot-pre-columbian-weights-and-measures> — Normungsgremium, aztekische Masse.
+- [R3·A2] Aztec Mathematics: The Use of Numbers and Measurement — MexicoHistorico — <https://www.mexicohistorico.com/paginas/Aztec-Mathematics--The-Use-of-Numbers-and-Measurement.html> — Bildungsseite.
+- [R3·A2] Aztec advances (12): grain and crop storage — Mexicolore — <https://www.mexicolore.co.uk/aztecs/health/aztec-advances-12-grain-and-crop-storage> — Bildungsseite.
+- [R2·A2] Obsolete German units of measurement — Wikipedia — <https://en.wikipedia.org/wiki/Obsolete_German_units_of_measurement> — Scheffel/Malter/Wispel.
+- [R3·A2] What is the unit called a Wispel? — Sizes.com — <https://www.sizes.com/units/winspel.htm> — Bildungsseite.
+- [R2·A1] Bushel — Wikipedia — <https://en.wikipedia.org/wiki/Bushel> — Winchester/Imperial-Bushel, Pfund-Faktoren.
+- [R2·A2] Winchester measure — Wikipedia — <https://en.wikipedia.org/wiki/Winchester_measure> — Winchester-Standard-Historie.
+- [R2·A2] Winchester bushel — Britannica — <https://www.britannica.com/science/Winchester-bushel> — Bushel-Definition.
+- [R2·A2] English wine cask units — Wikipedia — <https://en.wikipedia.org/wiki/English_wine_cask_units> — rundlet/tierce/hogshead/tun.
+- [R2·A2] Hogshead — Wikipedia — <https://en.wikipedia.org/wiki/Hogshead> — Fass-Einheit.
+- [R2·A2] Tun (unit) — Wikipedia — <https://en.wikipedia.org/wiki/Tun_(unit)> — Tun → Tonne-Etymologie.
+- [R2·A2] Cubic inch — Wikipedia — <https://en.wikipedia.org/wiki/Cubic_inch> — imperiales Würfelmass.
+- [R2·A2] Imperial units: History, Measurements, & Facts — Britannica — <https://www.britannica.com/topic/Imperial-unit> — Systemüberblick.
+- [R2·A2] Tonnage — Wikipedia — <https://en.wikipedia.org/wiki/Tonnage> — Register-/Freight-Ton.
+- [R2·A2] Hoppus — Wikipedia — <https://en.wikipedia.org/wiki/Hoppus> — Hoppus-Kubikfuss.
+- [R2·A2] Board foot — Wikipedia — <https://en.wikipedia.org/wiki/Board_foot> — Holzmass.
+- [R2·A1] Litre — Wikipedia — <https://en.wikipedia.org/wiki/Litre> — 1795/1901/1964-Liter-Definitionen.
+- [R2·A2] History of the metric system — Wikipedia — <https://en.wikipedia.org/wiki/History_of_the_metric_system> — metrische Genese.
+- [R2·A2] Metric system: Definition, Facts, & History — Britannica — <https://www.britannica.com/science/metric-system-measurement> — Systemüberblick.
+- [R1·A3] The historical evolution of units — LNE (Réseau National de la Métrologie Française) — <https://metrologie-francaise.lne.fr/en/metrology/history-units> — nationales Metrologie-Institut.
 
 ### Kulturen weltweit
 
-- [R2·A1] Kubikzoll — Wikipedia (de) — https://de.wikipedia.org/wiki/Kubikzoll — europäische Kubikzoll-Varianten, CID/Hubraum.
-- [R2·A1] Kubikfuss — Wikipedia (de) — https://de.wikipedia.org/wiki/Kubikfu%C3%9F — regionale Fuss-Varianten, Pariser Kubikfuss.
-- [R4·A3] Kubikfuss (Englisches Raummass) — rhetos.de — https://www.rhetos.de/html/lex/kubikfuss.htm — Lexikon-Seite, nur referenziert.
-- [R2·A3] Pariser Kubikzoll — Wikipedia (de) — https://de.wikipedia.org/wiki/Pariser_Kubikzoll — vormetrische Referenz.
-- [R3·A3] Kubikyard Rechner — Omnicalculator — https://www.omnicalculator.com/de/bauwesen/kubikyard-rechner — Rechner/Bildungsseite.
-- [R2·A2] Malter (Einheit) — Wikipedia (de) — https://de.wikipedia.org/wiki/Malter_(Einheit) — Schüttgutmass.
-- [R2·A2] Getreidemass — Wikipedia (de) — https://de.wikipedia.org/wiki/Getreidema%C3%9F — deutsche Getreidemasse.
-- [R4·A2] Alte Masse und Gewichte — historisches-museum-hellental.de — https://historisches-museum-hellental.de/alte-masse-gewichte.html — Museums-/Lokalseite.
-- [R4·A3] Das Berliner Scheffel Mass und der Preussen Scheffel — preussische-masse.de — http://preussische-masse.de/alte_masse/alte_masse_scheffel.html — Spezialseite, nur referenziert.
-- [R2·A2] Gleichnis vom Licht unter dem Scheffel — Wikipedia (de) — https://de.wikipedia.org/wiki/Gleichnis_vom_Licht_unter_dem_Scheffel — Redewendung + „Eimertestament".
-- [R3·A2] Herkunft „sein Licht unter den Scheffel stellen" — Gesellschaft für deutsche Sprache (GfdS) — https://gfds.de/sein-licht-unter-den-scheffel-stellen/ — sprachwissenschaftliche Fachgesellschaft.
-- [R2·A1] Bushel — Wikipedia (en) — https://en.wikipedia.org/wiki/Bushel — Doppelnennung; US-Rohstoff-Pfund-Werte.
-- [R2·A2] Comparison of the Imperial and US customary systems — Wikipedia — https://en.wikipedia.org/wiki/Comparison_of_the_Imperial_and_US_customary_systems — US/Imperial-Differenz.
-- [R3·A2] US Gallons And Imperial Gallons — thecalculatorsite.com — https://www.thecalculatorsite.com/articles/units/us-gallons-imperial-gallons.php — Bildungs-/Rechnerseite.
-- [R2·A3] Gallon — Wikipedia — https://en.wikipedia.org/wiki/Gallon — Gallonen-Varianten.
-- [R2·A3] Bushel / Peck — Britannica — https://www.britannica.com/science/bushel / https://www.britannica.com/science/peck — Referenz.
-- [R2·A2] Ancient Roman units of measurement — Wikipedia — https://en.wikipedia.org/wiki/Ancient_Roman_units_of_measurement — Amphora/Modius (Kultur-Block).
-- [R2·A2] Omer (unit) — Wikipedia — https://en.wikipedia.org/wiki/Omer_(unit) — Omer/Ephah, Omer-Zählen.
-- [R1·A3] How to read weights and measures in the Bible — Tyndale House — https://tyndalehouse.com/2021/02/15/how-to-read-weights-and-measures-in-the-bible/ — Forschungsinstitut (Cambridge).
-- [R2·A1] Koku — Wikipedia — https://en.wikipedia.org/wiki/Koku — Koku/Kokudaka, Daimyō-Schwelle.
-- [R3·A3] Traditional Japanese Measurements Hang On in Modern Times — Nippon.com — https://www.nippon.com/en/japan-data/h01488/ — Qualitätsmedium.
-- [R2·A2] Dou (volume) — Wikipedia — https://en.wikipedia.org/wiki/Dou_(volume) — chinesisches Dǒu, regionale Divergenz.
-- [R2·A2] Sheng (volume) — Wikipedia — https://en.wikipedia.org/wiki/Sheng_(volume) — Doppelnennung.
-- [R4·A2] „A sheng of rice brings gratitude; a dou of rice brings enmity" — Baidu Baike — https://baike.baidu.com/en/item/... — Wiki-Plattform, Sprichwort-Beleg, mit Vorsicht.
-- [R2·A2] Seer (unit) — Wikipedia — https://en.wikipedia.org/wiki/Seer_(unit) — südasiatischer Seer.
-- [R2·A2] Indian units of measurement — Wikipedia — https://en.wikipedia.org/wiki/Indian_units_of_measurement — Seer/Maund-Kontext.
-- [R2·A2] Barrel (unit) — Wikipedia — https://en.wikipedia.org/wiki/Barrel_(unit) — Barrel/Bier-Barrel.
-- [R3·A2] History of the 42-Gallon Oil Barrel — American Oil & Gas Historical Society — https://aoghs.org/transportation/history-of-the-42-gallon-oil-barrel/ — Fachhistorische Vereinsseite.
-- [R2·A2] Stere — Wikipedia — https://en.wikipedia.org/wiki/Stere — Ster/Cord-Gegenstück.
-- [R2·A3] Cord (Raummass) — Wikipedia (de) — https://de.wikipedia.org/wiki/Cord_(Raumma%C3%9F) — Cord-Definition.
-- [R3·A2] Masseinheiten für Holz — waldhilfe.de — https://www.waldhilfe.de/masseinheiten-fuer-holz/ — Bildungs-/Branchenseite.
-- [R4·A3] Festmeter, Raummeter und Schüttraummeter — onlydry.de — https://onlydry.de/blog/... — Branchen-Blog, nur referenziert.
+- [R2·A1] Kubikzoll — Wikipedia (de) — <https://de.wikipedia.org/wiki/Kubikzoll> — europäische Kubikzoll-Varianten, CID/Hubraum.
+- [R2·A1] Kubikfuss — Wikipedia (de) — <https://de.wikipedia.org/wiki/Kubikfu%C3%9F> — regionale Fuss-Varianten, Pariser Kubikfuss.
+- [R4·A3] Kubikfuss (Englisches Raummass) — rhetos.de — <https://www.rhetos.de/html/lex/kubikfuss.htm> — Lexikon-Seite, nur referenziert.
+- [R2·A3] Pariser Kubikzoll — Wikipedia (de) — <https://de.wikipedia.org/wiki/Pariser_Kubikzoll> — vormetrische Referenz.
+- [R3·A3] Kubikyard Rechner — Omnicalculator — <https://www.omnicalculator.com/de/bauwesen/kubikyard-rechner> — Rechner/Bildungsseite.
+- [R2·A2] Malter (Einheit) — Wikipedia (de) — <https://de.wikipedia.org/wiki/Malter_(Einheit)> — Schüttgutmass.
+- [R2·A2] Getreidemass — Wikipedia (de) — <https://de.wikipedia.org/wiki/Getreidema%C3%9F> — deutsche Getreidemasse.
+- [R4·A2] Alte Masse und Gewichte — historisches-museum-hellental.de — <https://historisches-museum-hellental.de/alte-masse-gewichte.html> — Museums-/Lokalseite.
+- [R4·A3] Das Berliner Scheffel Mass und der Preussen Scheffel — preussische-masse.de — <http://preussische-masse.de/alte_masse/alte_masse_scheffel.html> — Spezialseite, nur referenziert.
+- [R2·A2] Gleichnis vom Licht unter dem Scheffel — Wikipedia (de) — <https://de.wikipedia.org/wiki/Gleichnis_vom_Licht_unter_dem_Scheffel> — Redewendung + „Eimertestament".
+- [R3·A2] Herkunft „sein Licht unter den Scheffel stellen" — Gesellschaft für deutsche Sprache (GfdS) — <https://gfds.de/sein-licht-unter-den-scheffel-stellen/> — sprachwissenschaftliche Fachgesellschaft.
+- [R2·A1] Bushel — Wikipedia (en) — <https://en.wikipedia.org/wiki/Bushel> — Doppelnennung; US-Rohstoff-Pfund-Werte.
+- [R2·A2] Comparison of the Imperial and US customary systems — Wikipedia — <https://en.wikipedia.org/wiki/Comparison_of_the_Imperial_and_US_customary_systems> — US/Imperial-Differenz.
+- [R3·A2] US Gallons And Imperial Gallons — thecalculatorsite.com — <https://www.thecalculatorsite.com/articles/units/us-gallons-imperial-gallons.php> — Bildungs-/Rechnerseite.
+- [R2·A3] Gallon — Wikipedia — <https://en.wikipedia.org/wiki/Gallon> — Gallonen-Varianten.
+- [R2·A3] Bushel / Peck — Britannica — <https://www.britannica.com/science/bushel> / <https://www.britannica.com/science/peck> — Referenz.
+- [R2·A2] Ancient Roman units of measurement — Wikipedia — <https://en.wikipedia.org/wiki/Ancient_Roman_units_of_measurement> — Amphora/Modius (Kultur-Block).
+- [R2·A2] Omer (unit) — Wikipedia — <https://en.wikipedia.org/wiki/Omer_(unit)> — Omer/Ephah, Omer-Zählen.
+- [R1·A3] How to read weights and measures in the Bible — Tyndale House — <https://tyndalehouse.com/2021/02/15/how-to-read-weights-and-measures-in-the-bible/> — Forschungsinstitut (Cambridge).
+- [R2·A1] Koku — Wikipedia — <https://en.wikipedia.org/wiki/Koku> — Koku/Kokudaka, Daimyō-Schwelle.
+- [R3·A3] Traditional Japanese Measurements Hang On in Modern Times — Nippon.com — <https://www.nippon.com/en/japan-data/h01488/> — Qualitätsmedium.
+- [R2·A2] Dou (volume) — Wikipedia — <https://en.wikipedia.org/wiki/Dou_(volume)> — chinesisches Dǒu, regionale Divergenz.
+- [R2·A2] Sheng (volume) — Wikipedia — <https://en.wikipedia.org/wiki/Sheng_(volume)> — Doppelnennung.
+- [R4·A2] „A sheng of rice brings gratitude; a dou of rice brings enmity" — Baidu Baike — <https://baike.baidu.com/en/item/>... — Wiki-Plattform, Sprichwort-Beleg, mit Vorsicht.
+- [R2·A2] Seer (unit) — Wikipedia — <https://en.wikipedia.org/wiki/Seer_(unit)> — südasiatischer Seer.
+- [R2·A2] Indian units of measurement — Wikipedia — <https://en.wikipedia.org/wiki/Indian_units_of_measurement> — Seer/Maund-Kontext.
+- [R2·A2] Barrel (unit) — Wikipedia — <https://en.wikipedia.org/wiki/Barrel_(unit)> — Barrel/Bier-Barrel.
+- [R3·A2] History of the 42-Gallon Oil Barrel — American Oil & Gas Historical Society — <https://aoghs.org/transportation/history-of-the-42-gallon-oil-barrel/> — Fachhistorische Vereinsseite.
+- [R2·A2] Stere — Wikipedia — <https://en.wikipedia.org/wiki/Stere> — Ster/Cord-Gegenstück.
+- [R2·A3] Cord (Raummass) — Wikipedia (de) — <https://de.wikipedia.org/wiki/Cord_(Raumma%C3%9F)> — Cord-Definition.
+- [R3·A2] Masseinheiten für Holz — waldhilfe.de — <https://www.waldhilfe.de/masseinheiten-fuer-holz/> — Bildungs-/Branchenseite.
+- [R4·A3] Festmeter, Raummeter und Schüttraummeter — onlydry.de — <https://onlydry.de/blog/>... — Branchen-Blog, nur referenziert.
 
 ### Mythos, Religion & Symbolik
 
-- [R4·A2] Ancient Mesopotamian units of measurement — Grokipedia — https://grokipedia.com/page/Ancient_Mesopotamian_units_of_measurement — KI-Referenz für gur-Würfel/šarru kurru, mit Vorsicht.
-- [R3·A1] Why Did Sumerians Use the Sexagesimal System? — Nagaitoshiya.com — https://www.nagaitoshiya.com/en/2013/sexagesimal/ — populärwissenschaftlicher Aufsatz, Volltext.
-- [R3·S·A2] Eye of Horus Fraction — Wolfram MathWorld — https://mathworld.wolfram.com/EyeofHorusFraction.html — Mathematik-Referenz (mythologische Zuordnung als Tradition referiert).
-- [R4·A2] Egyptian Fractions: From Mythology to Computation — 3010tangents (WordPress) — https://3010tangents.wordpress.com/2015/02/23/... — studentischer Blog.
-- [R2·A1] Masse und Gewichte in der Bibel — Wikipedia (de) — https://de.wikipedia.org/wiki/Ma%C3%9Fe_und_Gewichte_in_der_Bibel — biblische Massketten, Homer-Etymologie.
-- [R3·A2] Ezechiel 45,11 (Lutherbibel) — studylight.org — https://www.studylight.org/bible/ger/lut/ezekiel/45-11.html — Bibel-Textquelle.
-- [R4·A3] Epha in der Bibel — knowing-jesus.com — https://bible.knowing-jesus.com/Deutsch/words/Epha — Konkordanz-Seite.
-- [R3·A2] Levitikus 19,36 (Elberfelder) — biblestudytools.com — https://www.biblestudytools.com/elb/levitikus/19-36.html — Bibel-Textquelle.
-- [R4·A2] Levitikus 19 (Andacht) — jesusimpuls.de — https://jesusimpuls.de/altes-testament/levitikus/lev-19-andacht/ — Andachts-Blog.
-- [R3·A2] Why Do We Count Up to Shavuot — AlephBeta — https://www.alephbeta.org/shavuot/why-do-we-count-up-to-shavuot — jüdische Bildungsplattform.
-- [R3·A2] Sefirat HaOmer — Chabad.org — https://www.chabad.org/library/article_cdo/aid/130631/... — religiöse Bildungsinstitution.
-- [R4·A3] The Spiritual Significance of Sefirat haOmer — Mayim Achronim — https://www.mayimachronim.com/... — Religions-Blog.
-- [R3·A2] Zechariah Chapter 5 — Enduring Word — https://enduringword.com/bible-commentary/zechariah-5/ — Bibelkommentar.
-- [R3·A2] The Wicked Woman in Zechariah 5:5–11 — Marg Mowczko — https://margmowczko.com/woman-basket-zechariah-55-11/ — theologische Fachautorin.
-- [R2·A1] Gleichnis vom Licht unter dem Scheffel — Wikipedia (de) — https://de.wikipedia.org/wiki/Gleichnis_vom_Licht_unter_dem_Scheffel — modius-Symbolik, „Eimertestament".
-- [R4·A3] Sein Licht (nicht) unter den Scheffel stellen — Vivat! Magazin — https://www.vivat.de/magazin/bibel/redewendungen/... — Magazinseite.
-- [R3·A3] Luke 6:38 — BibleHub — https://biblehub.com/luke/6-38.htm — Bibel-Textquelle.
-- [R3·A2] What does „pressed down, shaken together…" mean? — GotQuestions — https://www.gotquestions.org/pressed-down-shaken-together-running-over.html — Bibel-Q&A-Seite.
-- [R3·A2] Sure 83: Al-Mutaffifin — koran-deutsch.com — https://www.koran-deutsch.com/Al-Mutaffifin — Koran-Textquelle.
-- [R3·A2] Surah al-Mutaffifin (Deutsch) — quran-for-all.com — https://quran-for-all.com/translations/de/83 — Koran-Textquelle.
-- [R3·A2] Kernos: the Mystery vessel — MyEleusis — https://myeleusis.com/en-us/blog/categories/general/kernos-the-mystery-vessel/ — kulturhistorische Bildungsseite.
-- [R1·A3] Greek Popular Religion: The Religion of Eleusis — Sacred Texts Archive — https://sacred-texts.com/cla/gpr/gpr07.htm — Digitalisat eines Standardwerks (Nilsson).
-- [R2·A2] Amphore — Wikipedia (de) — https://de.m.wikipedia.org/wiki/Amphore — Amphora=Kubikfuss, Panathenäische Preisamphoren.
-- [R2·A1] Jialiang — Wikipedia — https://en.wikipedia.org/wiki/Jialiang — Souveränitätssymbol, huangzhong.
-- [R2·A3] Dou (volume) — Wikipedia — https://en.wikipedia.org/wiki/Dou_(volume) — chinesische Masskette.
-- [R2·A2] Shulba Sutras — Wikipedia — https://en.wikipedia.org/wiki/Shulba_Sutras — vedische Altar-Geometrie.
-- [R3·A2] Vedic Altar: Significance and symbolism — Wisdomlib — https://www.wisdomlib.org/concept/vedic-altar — Sanskrit-Referenzsammlung.
-- [R4·A1] Symbolism of the Cube — deilataylor.com (Eve Out of the Garden) — https://www.deilataylor.com/symbolism-of-the-cube/ — selbstpublizierter Essay; Würfelsymbolik (Allerheiligstes/Neues Jerusalem/Kaaba), mit Vorsicht.
-- [R4·A2] Why are the Most Holy Place, the New Jerusalem, and the KAABA all shaped as CUBES? — Quora — https://www.quora.com/... — Forum, mit Vorsicht.
-- [R3·A2] Metrisches Masssystem (Meyers 1905) — Zeno.org — http://www.zeno.org/Meyers-1905/A/Metrisches+Ma%C3%9Fsystem — historisches Lexikon-Digitalisat (Ster=Kubikmeter).
-- [R3·A2] Das Esperanto der Wissenschaft: 150 Jahre metrisches System — UEPO.de — https://uepo.de/2021/12/27/... — Fachportal-Artikel.
-- [R2·A3] Metrisches Einheitensystem — Wikipedia (de) — https://de.wikipedia.org/wiki/Metrisches_Einheitensystem — Systemüberblick.
-- [R1·A3] Scheffel — Deutsches Rechtswörterbuch (Uni Heidelberg) — https://www.rzuser.uni-heidelberg.de/~cd2/drw/e/sc/heff/scheffel.htm — akademisches Wörterbuch.
-- [R3·A3] Symbole im Landbau — Nikola Patzel (oekom, PDF-Leseprobe) — https://www.oekom.de/_files_media/titel/leseproben/9783865811035.pdf — Fachbuch-Leseprobe.
-- [R4·A3] Zahlensymbolik in der germanischen Mythologie — Arbeitskreis für Vergleichende Mythologie — https://www.vergleichende-mythologie.de/zahlensymbolik-in-der-germanischen-mythologie/ — Vereinsseite.
+- [R4·A2] Ancient Mesopotamian units of measurement — Grokipedia — <https://grokipedia.com/page/Ancient_Mesopotamian_units_of_measurement> — KI-Referenz für gur-Würfel/šarru kurru, mit Vorsicht.
+- [R3·A1] Why Did Sumerians Use the Sexagesimal System? — Nagaitoshiya.com — <https://www.nagaitoshiya.com/en/2013/sexagesimal/> — populärwissenschaftlicher Aufsatz, Volltext.
+- [R3·S·A2] Eye of Horus Fraction — Wolfram MathWorld — <https://mathworld.wolfram.com/EyeofHorusFraction.html> — Mathematik-Referenz (mythologische Zuordnung als Tradition referiert).
+- [R4·A2] Egyptian Fractions: From Mythology to Computation — 3010tangents (WordPress) — <https://3010tangents.wordpress.com/2015/02/23/>... — studentischer Blog.
+- [R2·A1] Masse und Gewichte in der Bibel — Wikipedia (de) — <https://de.wikipedia.org/wiki/Ma%C3%9Fe_und_Gewichte_in_der_Bibel> — biblische Massketten, Homer-Etymologie.
+- [R3·A2] Ezechiel 45,11 (Lutherbibel) — studylight.org — <https://www.studylight.org/bible/ger/lut/ezekiel/45-11.html> — Bibel-Textquelle.
+- [R4·A3] Epha in der Bibel — knowing-jesus.com — <https://bible.knowing-jesus.com/Deutsch/words/Epha> — Konkordanz-Seite.
+- [R3·A2] Levitikus 19,36 (Elberfelder) — biblestudytools.com — <https://www.biblestudytools.com/elb/levitikus/19-36.html> — Bibel-Textquelle.
+- [R4·A2] Levitikus 19 (Andacht) — jesusimpuls.de — <https://jesusimpuls.de/altes-testament/levitikus/lev-19-andacht/> — Andachts-Blog.
+- [R3·A2] Why Do We Count Up to Shavuot — AlephBeta — <https://www.alephbeta.org/shavuot/why-do-we-count-up-to-shavuot> — jüdische Bildungsplattform.
+- [R3·A2] Sefirat HaOmer — Chabad.org — <https://www.chabad.org/library/article_cdo/aid/130631/>... — religiöse Bildungsinstitution.
+- [R4·A3] The Spiritual Significance of Sefirat haOmer — Mayim Achronim — <https://www.mayimachronim.com/>... — Religions-Blog.
+- [R3·A2] Zechariah Chapter 5 — Enduring Word — <https://enduringword.com/bible-commentary/zechariah-5/> — Bibelkommentar.
+- [R3·A2] The Wicked Woman in Zechariah 5:5–11 — Marg Mowczko — <https://margmowczko.com/woman-basket-zechariah-55-11/> — theologische Fachautorin.
+- [R2·A1] Gleichnis vom Licht unter dem Scheffel — Wikipedia (de) — <https://de.wikipedia.org/wiki/Gleichnis_vom_Licht_unter_dem_Scheffel> — modius-Symbolik, „Eimertestament".
+- [R4·A3] Sein Licht (nicht) unter den Scheffel stellen — Vivat! Magazin — <https://www.vivat.de/magazin/bibel/redewendungen/>... — Magazinseite.
+- [R3·A3] Luke 6:38 — BibleHub — <https://biblehub.com/luke/6-38.htm> — Bibel-Textquelle.
+- [R3·A2] What does „pressed down, shaken together…" mean? — GotQuestions — <https://www.gotquestions.org/pressed-down-shaken-together-running-over.html> — Bibel-Q&A-Seite.
+- [R3·A2] Sure 83: Al-Mutaffifin — koran-deutsch.com — <https://www.koran-deutsch.com/Al-Mutaffifin> — Koran-Textquelle.
+- [R3·A2] Surah al-Mutaffifin (Deutsch) — quran-for-all.com — <https://quran-for-all.com/translations/de/83> — Koran-Textquelle.
+- [R3·A2] Kernos: the Mystery vessel — MyEleusis — <https://myeleusis.com/en-us/blog/categories/general/kernos-the-mystery-vessel/> — kulturhistorische Bildungsseite.
+- [R1·A3] Greek Popular Religion: The Religion of Eleusis — Sacred Texts Archive — <https://sacred-texts.com/cla/gpr/gpr07.htm> — Digitalisat eines Standardwerks (Nilsson).
+- [R2·A2] Amphore — Wikipedia (de) — <https://de.m.wikipedia.org/wiki/Amphore> — Amphora=Kubikfuss, Panathenäische Preisamphoren.
+- [R2·A1] Jialiang — Wikipedia — <https://en.wikipedia.org/wiki/Jialiang> — Souveränitätssymbol, huangzhong.
+- [R2·A3] Dou (volume) — Wikipedia — <https://en.wikipedia.org/wiki/Dou_(volume)> — chinesische Masskette.
+- [R2·A2] Shulba Sutras — Wikipedia — <https://en.wikipedia.org/wiki/Shulba_Sutras> — vedische Altar-Geometrie.
+- [R3·A2] Vedic Altar: Significance and symbolism — Wisdomlib — <https://www.wisdomlib.org/concept/vedic-altar> — Sanskrit-Referenzsammlung.
+- [R4·A1] Symbolism of the Cube — deilataylor.com (Eve Out of the Garden) — <https://www.deilataylor.com/symbolism-of-the-cube/> — selbstpublizierter Essay; Würfelsymbolik (Allerheiligstes/Neues Jerusalem/Kaaba), mit Vorsicht.
+- [R4·A2] Why are the Most Holy Place, the New Jerusalem, and the KAABA all shaped as CUBES? — Quora — <https://www.quora.com/>... — Forum, mit Vorsicht.
+- [R3·A2] Metrisches Masssystem (Meyers 1905) — Zeno.org — <http://www.zeno.org/Meyers-1905/A/Metrisches+Ma%C3%9Fsystem> — historisches Lexikon-Digitalisat (Ster=Kubikmeter).
+- [R3·A2] Das Esperanto der Wissenschaft: 150 Jahre metrisches System — UEPO.de — <https://uepo.de/2021/12/27/>... — Fachportal-Artikel.
+- [R2·A3] Metrisches Einheitensystem — Wikipedia (de) — <https://de.wikipedia.org/wiki/Metrisches_Einheitensystem> — Systemüberblick.
+- [R1·A3] Scheffel — Deutsches Rechtswörterbuch (Uni Heidelberg) — <https://www.rzuser.uni-heidelberg.de/~cd2/drw/e/sc/heff/scheffel.htm> — akademisches Wörterbuch.
+- [R3·A3] Symbole im Landbau — Nikola Patzel (oekom, PDF-Leseprobe) — <https://www.oekom.de/_files_media/titel/leseproben/9783865811035.pdf> — Fachbuch-Leseprobe.
+- [R4·A3] Zahlensymbolik in der germanischen Mythologie — Arbeitskreis für Vergleichende Mythologie — <https://www.vergleichende-mythologie.de/zahlensymbolik-in-der-germanischen-mythologie/> — Vereinsseite.
 
 ### Inkompatibilität / Basis-12 & Spekulatives
 
-- [R2·A1] Cubic foot — Wikipedia — https://en.wikipedia.org/wiki/Cubic_foot — 1728=12³, m³/Liter-Brücken.
-- [R2·A1] Cubic yard — Wikipedia — https://en.wikipedia.org/wiki/Cubic_yard — 27 ft³ = 46656 in³.
-- [R2·A1] Duodecimal — Wikipedia — https://en.wikipedia.org/wiki/Duodecimal — Basis-12-Teiler, Andrews-Gegenposition.
-- [R4·A1] In Defense of Imperial Units — Douglas Rumbaugh — https://douglasrumbaugh.com/post/imperial-defense/ — selbstpublizierter Meinungstext (Advocacy), als Standpunkt markiert.
-- [R4·A1] Amphora Quadrantal (Roman Jar, Bushel) — convert-me.com — https://www.convert-me.com/en/convert/history_volume/ramphora.html — Konverter-Seite; Litergrössen nur als Links → Teilwerte indirekt.
-- [R4·A2] Bushel — Grokipedia — https://grokipedia.com/page/Bushel — KI-Referenz, mit Vorsicht.
-- [R3·A2] Base 12: An Introduction — Built In — https://builtin.com/data-science/base-12 — Tech-Bildungsmedium.
-- [R3·A2] Duodecimal Number System: Should We Use Base 12 — ScienceABC — https://www.scienceabc.com/eyeopeners/why-we-should-already-use-base-12-instead-of-base-10 — populärwissenschaftliche Bildungsseite.
-- [R4·A2] What Is A Bushel? — Cultivation Agriculture — https://cultivationag.com/bushel/ — Branchen-/SEO-Seite.
-- [R2·S·A1] Pseudoscientific metrology — Wikipedia — https://en.wikipedia.org/wiki/Pseudoscientific_metrology — Hauptquelle zur Einordnung der spekulativen Theorien als Pseudowissenschaft.
-- [R4·S·A3] Imperial Measures and the Pyramids — Ancient Origins — https://www.ancient-origins.net/opinion-guest-authors/imperial-measures-and-pyramids-001856 — Beispiel der spekulativen Strömung, nicht als Beleg.
-- [R3·S·A3] A Critique of Graham Hancock's Forced Numerical Relationship — Hall of Maât — https://www.hallofmaat.com/numerology/... — skeptische Gegen-Kritik der Numerologie.
-- [R4·S·A3] Sacred Number Systems: Tesla, 3-6-9, Vortex Math — netism.org — https://netism.org/sacred-number-systems-tesla-vortex-math/ — Numerologie-Fringe-Beispiel, nicht als Beleg.
+- [R2·A1] Cubic foot — Wikipedia — <https://en.wikipedia.org/wiki/Cubic_foot> — 1728=12³, m³/Liter-Brücken.
+- [R2·A1] Cubic yard — Wikipedia — <https://en.wikipedia.org/wiki/Cubic_yard> — 27 ft³ = 46656 in³.
+- [R2·A1] Duodecimal — Wikipedia — <https://en.wikipedia.org/wiki/Duodecimal> — Basis-12-Teiler, Andrews-Gegenposition.
+- [R4·A1] In Defense of Imperial Units — Douglas Rumbaugh — <https://douglasrumbaugh.com/post/imperial-defense/> — selbstpublizierter Meinungstext (Advocacy), als Standpunkt markiert.
+- [R4·A1] Amphora Quadrantal (Roman Jar, Bushel) — convert-me.com — <https://www.convert-me.com/en/convert/history_volume/ramphora.html> — Konverter-Seite; Litergrössen nur als Links → Teilwerte indirekt.
+- [R4·A2] Bushel — Grokipedia — <https://grokipedia.com/page/Bushel> — KI-Referenz, mit Vorsicht.
+- [R3·A2] Base 12: An Introduction — Built In — <https://builtin.com/data-science/base-12> — Tech-Bildungsmedium.
+- [R3·A2] Duodecimal Number System: Should We Use Base 12 — ScienceABC — <https://www.scienceabc.com/eyeopeners/why-we-should-already-use-base-12-instead-of-base-10> — populärwissenschaftliche Bildungsseite.
+- [R4·A2] What Is A Bushel? — Cultivation Agriculture — <https://cultivationag.com/bushel/> — Branchen-/SEO-Seite.
+- [R2·S·A1] Pseudoscientific metrology — Wikipedia — <https://en.wikipedia.org/wiki/Pseudoscientific_metrology> — Hauptquelle zur Einordnung der spekulativen Theorien als Pseudowissenschaft.
+- [R4·S·A3] Imperial Measures and the Pyramids — Ancient Origins — <https://www.ancient-origins.net/opinion-guest-authors/imperial-measures-and-pyramids-001856> — Beispiel der spekulativen Strömung, nicht als Beleg.
+- [R3·S·A3] A Critique of Graham Hancock's Forced Numerical Relationship — Hall of Maât — <https://www.hallofmaat.com/numerology/>... — skeptische Gegen-Kritik der Numerologie.
+- [R4·S·A3] Sacred Number Systems: Tesla, 3-6-9, Vortex Math — netism.org — <https://netism.org/sacred-number-systems-tesla-vortex-math/> — Numerologie-Fringe-Beispiel, nicht als Beleg.
 
 **Belastbarkeits-Hinweis:** Die Kern-Würfelzahlen (1728 = 12³, 27, 46656; die m³/Liter-Werte) und die US-Bushel-Definition (2150,42 in³) sind über mehrere unabhängige Volltext-Quellen konsistent. Der preussische **Scheffel-Wert** (3.072 Kubikzoll / ~54,96 L, 1816) stammt aus einem Suchsnippet und ist vor weiterer Verwendung an einer Primärquelle gegenzuprüfen. Alle Pyramid- und Megalith-Theorien sind ausdrücklich als spekulativ/pseudowissenschaftlich eingestuft (Kennzeichnung **S**).

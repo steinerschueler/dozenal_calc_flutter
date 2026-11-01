@@ -55,6 +55,7 @@ Vollständige Spezifikation + Implementierungs-Fortschritt:
 des anderen per Taste ziehen. Werte reisen als `double`
 (Provider-Callbacks, verdrahtet in `_CalcScaffoldState.initState`); jede
 Seite formatiert in ihrer eigenen aktiven Basis:
+
 - **Umrechner-Ans** (Set 6, vorher inert): `ConverterState.insertCalcAns()`
   ersetzt die Pending-Zahl durch `DozenalCalcState.ansForBridge`
   (= `lastResultF64`, nur bei lebendem fehlerfreiem Resultat non-null) in
@@ -93,6 +94,7 @@ verdeckten Hauptrechner editiert.
 **Basis ⊗ System (entkoppelt seit dem Farb-Umbau):** Die frühere Kopplung
 „Doz = imperial in Basis 12 / Dez = metrisch in Basis 10" ist aufgelöst —
 zwei unabhängige Achsen, alle **vier** Kombinationen gültig:
+
 - **Einheitensystem** (imperial ↔ metrisch): converter-lokal, über die zwei
   **runden System-Tasten in der Equals-Reihe** — `met` (links, grün) / `imp`
   (rechts, violett); Kreisform + `pagerFill` wie die (i)/(?)-Rundtasten des

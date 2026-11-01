@@ -253,36 +253,36 @@ Paywall) · A3 (nur indirekt).
 
 ### Geometrie, Winkel, Symmetrie
 
-- **[R2·A1]** Dodecagon — Wikipedia (en) — https://en.wikipedia.org/wiki/Dodecagon —
+- **[R2·A1]** Dodecagon — Wikipedia (en) — <https://en.wikipedia.org/wiki/Dodecagon> —
   Innenwinkel 150°, Schläfli {12}, A = 3(2+√3)s² und 3R², R = (√6+√2)/2·s,
   Subpolygone (2{6}, 3{4}, 4{3}), archimedische Parkettierungen 3.12.12 und 4.6.12,
   Zerlegung in 15 Rhomben, Münz- und Architekturbeispiele.
 - **[R2·A1]** Constructible polygon — Wikipedia (en) —
-  https://en.wikipedia.org/wiki/Constructible_polygon — Satz von Gauss–Wantzel,
+  <https://en.wikipedia.org/wiki/Constructible_polygon> — Satz von Gauss–Wantzel,
   Fermat-Primzahlen 3/5/17/257/65537, 12 = 2²×3, Gauss 1796 / Wantzel 1837.
 - **[R2·A1]** Dihedral group — Wikipedia (en) —
-  https://en.wikipedia.org/wiki/Dihedral_group — Dih_n Ordnung 2n, 12 Drehungen + 12
+  <https://en.wikipedia.org/wiki/Dihedral_group> — Dih_n Ordnung 2n, 12 Drehungen + 12
   Spiegelungen für das Zwölfeck.
-- **[R3·A1]** Dodecagon — Math.net — https://www.math.net/dodecagon — Innenwinkel,
+- **[R3·A1]** Dodecagon — Math.net — <https://www.math.net/dodecagon> — Innenwinkel,
   Symmetrien, 54 Diagonalen, Anwendungen.
 
 ### Diagonalen und exakte Formeln
 
 - **[R2·A1]** Dodecagon (12-gon) calculator and formulas — RedCrab Software —
-  https://www.redcrab-software.com/en/Calculator/Geometry/Dodecagon — vollständige
+  <https://www.redcrab-software.com/en/Calculator/Geometry/Dodecagon> — vollständige
   Formelsammlung R, r, d₂…d₆, A = 3(2+√3)s²; bestätigt d₄ = (3√2+√6)/2·s.
 - **[R2·A1]** Diagonal of Dodecagon across Two Sides — CalculatorAtoz —
-  https://www.calculatoratoz.com/en/diagonal-of-dodecagon-across-two-siden-calculator/calc-10221 —
+  <https://www.calculatoratoz.com/en/diagonal-of-dodecagon-across-two-siden-calculator/calc-10221> —
   d₂ = (√6+√2)/2·s mit numerischem Beispiel.
 
 ### Fläche, Kreisbezug, sin(30°) = ½
 
 - **[R3·A1]** Area of a Dodecagon — Alison Kiddle —
-  https://alisonkiddle.co.uk/area-of-a-dodecagon/ — geometrischer Beweis A = 3R²
+  <https://alisonkiddle.co.uk/area-of-a-dodecagon/> — geometrischer Beweis A = 3R²
   (12 Dreiecke, sin 30° = ½) per Dissektion.
 - **[R3·A1]** Getting Closer to π: Inscribing and Circumscribing Polygons — Univ.
   Alberta —
-  https://sites.ualberta.ca/~esimmt/think/main/richMathTasks/evan/files/InscribingAndCircumscribingPolygons.pdf —
+  <https://sites.ualberta.ca/~esimmt/think/main/richMathTasks/evan/files/InscribingAndCircumscribingPolygons.pdf> —
   Flächenanteil-Tabelle (41,3 % / 63,7 % / 82,7 % / 95,5 %).
 - **[R1·A2]** Niven, I. (1956), *Irrational Numbers*, Carus Mathematical Monographs —
   rationale Sinuswerte ganzzahliger Grade nur bei 0°/30°/90°; indirekt über
@@ -291,25 +291,25 @@ Paywall) · A3 (nur indirekt).
 ### Archimedes und π-Approximation
 
 - **[R2·A1]** Archimedes on the Circumference and Area of a Circle — AMS Feature Column
-  — https://www.ams.org/publicoutreach/feature-column/fc-2012-02 — Sechseck als
+  — <https://www.ams.org/publicoutreach/feature-column/fc-2012-02> — Sechseck als
   Ausgangspunkt, Verdoppelung 6→…→96, Ergebnis 223/71 < π < 22/7.
 
 ### Einbeschriebene Vielecke / Teilbarkeit
 
 - **[R3·A1]** Polygons and Divisibility — Prof. Tiz —
-  https://professortiz.wordpress.com/2013/03/05/489/ — Prinzip „m | n ⟺ reguläres
+  <https://professortiz.wordpress.com/2013/03/05/489/> — Prinzip „m | n ⟺ reguläres
   m-Eck in regulärem n-Eck einbeschreibbar"; Dreieck/Quadrat/Sechseck im Zwölfeck.
 
 ### Anwendung als Form (knapp)
 
 - **[R2·A1]** Brass threepence — Wikipedia (en) —
-  https://en.wikipedia.org/wiki/Brass_threepence — zwölfseitig ab 1937, Tast-
+  <https://en.wikipedia.org/wiki/Brass_threepence> — zwölfseitig ab 1937, Tast-
   Erkennbarkeit, erstes nicht-rundes Umlaufstück Grossbritanniens.
-- **[R2·A2]** Royal Mint — The 12-Sided £1 Coin — https://www.royalmint.com/new-pound-coin/
+- **[R2·A2]** Royal Mint — The 12-Sided £1 Coin — <https://www.royalmint.com/new-pound-coin/>
   — zwölfseitiges Pfund ab 2017, Fälschungsabwehr, Vorbild Threepence.
 - **[R2·A1]** Dodecagonal coin — Wikipedia (en) —
-  https://en.wikipedia.org/wiki/Dodecagonal_coin — Liste zwölfseitiger Münzen; keine
+  <https://en.wikipedia.org/wiki/Dodecagonal_coin> — Liste zwölfseitiger Münzen; keine
   konstante Breite bei gerader Seitenzahl.
 - **[R3·A1]** DataGenetics — Tessellating Regular Polygons —
-  http://datagenetics.com/blog/september22019/index.html — welche Vielecke allein
+  <http://datagenetics.com/blog/september22019/index.html> — welche Vielecke allein
   parkettieren; Zwölfeck nur mit Partnern (3.12.12 / 4.6.12).

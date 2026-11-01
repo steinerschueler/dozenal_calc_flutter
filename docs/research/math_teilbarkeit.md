@@ -115,13 +115,14 @@ die Multiplikationstabelle, nicht die Teilbarkeit.
 
 Zuverlässigkeit **R1**/**R2**/**R3**; Zugang **A1**/**A2**/**A3**.
 
-- **[R2·A1]** Divisibility rule — Wikipedia — https://en.wikipedia.org/wiki/Divisibility_rule — allgemeines Prinzip, Quersumme/alternierende Quersumme über Basis±1; enthält Basis-12-Hinweise.
-- **[R2·A1]** Duodecimal — Wikipedia — https://en.wikipedia.org/wiki/Duodecimal — Teilbarkeitsregeln in Basis 12 (Endziffer 2/3/4/6, Quersumme B, alternierend für 13).
-- **[R2·A1]** Casting out nines — Wikipedia — https://en.wikipedia.org/wiki/Casting_out_nines — Neunerprobe als Rechenkontrolle; Verallgemeinerung auf Basis−1.
-- **[R2·A2]** Modular arithmetic — Wikipedia — https://en.wikipedia.org/wiki/Modular_arithmetic — Begründung über Kongruenzen (12 ≡ 1 mod 11, 12 ≡ −1 mod 13).
-- **[R3·A2]** Dozenal Society of America — Manuale/Teilbarkeit — https://dozenal.org — Dozenal-Teilbarkeitsregeln (PDF-Manuale; als Beleg-Kandidat, nicht im Volltext geprüft).
+- **[R2·A1]** Divisibility rule — Wikipedia — <https://en.wikipedia.org/wiki/Divisibility_rule> — allgemeines Prinzip, Quersumme/alternierende Quersumme über Basis±1; enthält Basis-12-Hinweise.
+- **[R2·A1]** Duodecimal — Wikipedia — <https://en.wikipedia.org/wiki/Duodecimal> — Teilbarkeitsregeln in Basis 12 (Endziffer 2/3/4/6, Quersumme B, alternierend für 13).
+- **[R2·A1]** Casting out nines — Wikipedia — <https://en.wikipedia.org/wiki/Casting_out_nines> — Neunerprobe als Rechenkontrolle; Verallgemeinerung auf Basis−1.
+- **[R2·A2]** Modular arithmetic — Wikipedia — <https://en.wikipedia.org/wiki/Modular_arithmetic> — Begründung über Kongruenzen (12 ≡ 1 mod 11, 12 ≡ −1 mod 13).
+- **[R3·A2]** Dozenal Society of America — Manuale/Teilbarkeit — <https://dozenal.org> — Dozenal-Teilbarkeitsregeln (PDF-Manuale; als Beleg-Kandidat, nicht im Volltext geprüft).
 
 ### Eigene Verifikation (R1·A1)
+
 - Python (Basis 12): Endziffer-Mengen für 2/3/4/6/12; Quersummentest für B an Beispielen
   (4B7=715=11·65); alternierender Test für 13 (AA=130, 121=169); 12 mod 11 = 1, 12 mod 13 =
   12 (≡ −1). Reproduzierbar.

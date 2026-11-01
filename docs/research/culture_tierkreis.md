@@ -279,93 +279,93 @@ teilweise/Snippet/Paywall, **A3** = nur indirekt).
 - **[R1·A2]** John P. Britton, „Studies in Babylonian lunar theory: part III.
   The introduction of the uniform zodiac", *Archive for History of Exact
   Sciences* 64, 617–663 (2010) —
-  https://link.springer.com/article/10.1007/s00407-010-0064-z — Paywall, über
+  <https://link.springer.com/article/10.1007/s00407-010-0064-z> — Paywall, über
   Semantic-Scholar-/PhilPapers-Snippet. Belegt: Einführung des uniformen
   Zwölf-Zeichen-Tierkreises 409–398 v. Chr., wahrscheinlich nahe 401 v. Chr.;
   Verbindung zum 12×30-Schemakalender.
 - **[R1·A2]** G. E. Kurtik, „On the origin of the 12 zodiac constellation
   system in ancient Mesopotamia", *Journal for the History of Astronomy*
-  52(1), 53–66 (2021) — https://journals.sagepub.com/doi/10.1177/0021828620980544
+  52(1), 53–66 (2021) — <https://journals.sagepub.com/doi/10.1177/0021828620980544>
   — Abstract/Snippet (Paywall). Belegt: drei Entstehungs-Umstände
   (schematisches Jahr, Mondmonate, 30°-Einteilung).
-- **[R2·A1]** Zodiac — Wikipedia (en) — https://en.wikipedia.org/wiki/Zodiac
+- **[R2·A1]** Zodiac — Wikipedia (en) — <https://en.wikipedia.org/wiki/Zodiac>
   — Volltext. Belegt: Datierung nach Britton, 12×30-Schemakalender,
   babylonische Zeichennamen, Eudoxos, Hypsikles, Ptolemäus/Tetrabiblos,
   Ungleichheit der Sternbilder (Virgo 5× Scorpius), 13 Ekliptik-Sternbilder.
-- **[R2·A1]** MUL.APIN — Wikipedia (en) — https://en.wikipedia.org/wiki/MUL.APIN
+- **[R2·A1]** MUL.APIN — Wikipedia (en) — <https://en.wikipedia.org/wiki/MUL.APIN>
   — Volltext. Belegt: Kompilation ca. 1000 v. Chr., älteste Kopie 686 v. Chr.;
   17(/18) Mondpfad-Sternbilder als Vorläufer.
 - **[R2·A1]** Babylonian astronomy — Wikipedia (en) —
-  https://en.wikipedia.org/wiki/Babylonian_astronomy — Volltext. Belegt:
+  <https://en.wikipedia.org/wiki/Babylonian_astronomy> — Volltext. Belegt:
   Basis-60, 12 Zeichen, Ekliptik-Teilung in 30°-Abschnitte.
 - **[R2·A2]** Eudoxus of Cnidus — Wikipedia (en) —
-  https://en.wikipedia.org/wiki/Eudoxus_of_Cnidus — Teilweise. Belegt: ca.
+  <https://en.wikipedia.org/wiki/Eudoxus_of_Cnidus> — Teilweise. Belegt: ca.
   395–347 v. Chr.; Studium in Ägypten/Vorderem Orient; erste detaillierte
   griechische Sternbildbeschreibung.
 - **[R2·A2]** Hypsicles — Wikipedia (en) —
-  https://en.wikipedia.org/wiki/Hypsicles — Teilweise. Belegt: *Anaphoricus*
+  <https://en.wikipedia.org/wiki/Hypsicles> — Teilweise. Belegt: *Anaphoricus*
   ca. 190 v. Chr., ältester griechischer Text mit 360°/12-Zeichen-System.
 - **[R2·A2]** Tetrabiblos — Wikipedia (en) —
-  https://en.wikipedia.org/wiki/Tetrabiblos — Teilweise. Belegt: Ptolemäus,
+  <https://en.wikipedia.org/wiki/Tetrabiblos> — Teilweise. Belegt: Ptolemäus,
   tropisches System, Frühlingspunkt-Verankerung, astrologische
   Standardisierung.
 
 ### Astronomie: Sternbilder, Ophiuchus, Präzession, tropisch/sideal
 
 - **[R2·A1]** Ophiuchus — Wikipedia (en) —
-  https://en.wikipedia.org/wiki/Ophiuchus — Volltext. Belegt: Sonne in
+  <https://en.wikipedia.org/wiki/Ophiuchus> — Volltext. Belegt: Sonne in
   Ophiuchus ~30. Nov. bis 17./18. Dez.; bei Ptolemäus bekannt; Ausschluss
   aus dem 12-Zeichen-System.
 - **[R2·A1]** Zodiacal constellation boundaries (D. Asher, Univ. Armagh) —
-  https://www.cantab.net/users/davidasher/orrery/zodiac.html — Volltext.
+  <https://www.cantab.net/users/davidasher/orrery/zodiac.html> — Volltext.
   Belegt: exakte Grad-Spannen aller 13 Ekliptik-Sternbilder nach IAU-Grenzen
   (J2000); Leo ≈ 44°, Libra ≈ 7°.
 - **[R2·A1]** Is Ophiuchus the 13th constellation of the zodiac? — EarthSky —
-  https://earthsky.org/constellations/ophiuchus-the-serpent-bearer-13th-constellation-zodiac/
+  <https://earthsky.org/constellations/ophiuchus-the-serpent-bearer-13th-constellation-zodiac/>
   — Volltext. Belegt: Sonne 30. Nov. bis 18. Dez. in Ophiuchus; IAU-Grenzen
   1930; Ungleichheit der Sternbilder.
 - **[R2·A1]** Axial precession — Wikipedia (en) —
-  https://en.wikipedia.org/wiki/Axial_precession — Volltext. Belegt: Periode
+  <https://en.wikipedia.org/wiki/Axial_precession> — Volltext. Belegt: Periode
   ~25.772 Jahre, ~1°/72 Jahre; physikalische Ursache (Sonnen-Mond-Drehmoment
   am Äquatorwulst); Entdeckung durch Hipparchos ~127 v. Chr.
 - **[R2·A1]** Sidereal and tropical astrology — Wikipedia (en) —
-  https://en.wikipedia.org/wiki/Sidereal_and_tropical_astrology — Volltext.
+  <https://en.wikipedia.org/wiki/Sidereal_and_tropical_astrology> — Volltext.
   Belegt: aktueller Versatz ~23–24° (≈ 1 Zeichen); letzte Übereinstimmung
   ~150 n. Chr.; Ayanamsa/Jyotisha.
 - **[R2·A2]** Hipparchus — Wikipedia (en) —
-  https://en.wikipedia.org/wiki/Hipparchus — Teilweise. Belegt: Entdeckung der
+  <https://en.wikipedia.org/wiki/Hipparchus> — Teilweise. Belegt: Entdeckung der
   Präzession ~127 v. Chr. durch Vergleich mit älteren Beobachtungen;
   Spica-Verschiebung 2°.
 - **[R2·A1]** Synodic month — Encyclopædia Britannica —
-  https://www.britannica.com/science/synodic-month — Volltext. Belegt:
+  <https://www.britannica.com/science/synodic-month> — Volltext. Belegt:
   29,530588 Tage; ~12,37 synodische Monate pro Sonnenjahr.
 
 ### Wissenschaftliche Prüfung der Astrologie
 
 - **[R1·A1]** Astrology and science — Wikipedia (en) —
-  https://en.wikipedia.org/wiki/Astrology_and_science — Volltext. Belegt:
+  <https://en.wikipedia.org/wiki/Astrology_and_science> — Volltext. Belegt:
   Carlson 1985 (*Nature*), Dean/Kelly 2003, Meta-Analyse, 1975-Erklärung (186
   Wissenschaftler), Sagans Einwand, fehlender Mechanismus.
 - **[R1·A2]** Shawn Carlson, „A double-blind test of astrology", *Nature* 318,
-  419 (1985) — https://www.nature.com/articles/318419a0 — Abstract/Snippet
+  419 (1985) — <https://www.nature.com/articles/318419a0> — Abstract/Snippet
   (Paywall). Belegt: 28 Astrologen, CPI-Profile, Doppelblind, vorab
   vereinbartes Protokoll; nicht besser als Zufall.
 - **[R3·A1]** The Final Word on Astrology and Personality — *Psychology Today*
-  — https://www.psychologytoday.com/us/blog/unique-like-everybody-else/202206/the-final-word-on-astrology-and-personality
+  — <https://www.psychologytoday.com/us/blog/unique-like-everybody-else/202206/the-final-word-on-astrology-and-personality>
   — Volltext (populär). Belegt: Big Five / Sternzeichen, keine signifikante
   Korrelation. Für die Prosa-Formulierung genutzt.
 
 ### Chinesischer Tierkreis und Unabhängigkeit
 
 - **[R2·A1]** Chinese astrology — Wikipedia (en) —
-  https://en.wikipedia.org/wiki/Chinese_astrology — Volltext. Belegt:
+  <https://en.wikipedia.org/wiki/Chinese_astrology> — Volltext. Belegt:
   Jupiter/Suìxīng, 12 Stationen (*shí'èr cì*), Abrundung 11,86 → 12,
   Erdzweige, *Tài Suì*; Streitende Reiche / Han als Ausarbeitungszeit.
 - **[R2·A1]** Earthly Branches — Wikipedia (en) —
-  https://en.wikipedia.org/wiki/Earthly_Branches — Volltext. Belegt:
+  <https://en.wikipedia.org/wiki/Earthly_Branches> — Volltext. Belegt:
   Shang-zeitliche Belege, Jupiter-Hypothese, Tier-Zuordnung.
 - **[R2·A2]** Chinese zodiac — Britannica —
-  https://www.britannica.com/topic/Chinese-zodiac — Snippet. Belegt: 12 Tiere,
+  <https://www.britannica.com/topic/Chinese-zodiac> — Snippet. Belegt: 12 Tiere,
   Streitende Reiche bis Han, Jahres- statt Monats-Zeichen.
 
 ### Hinweis zu nicht verwendeten / abgelehnten Belegen

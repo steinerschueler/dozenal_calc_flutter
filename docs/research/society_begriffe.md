@@ -54,6 +54,7 @@ Die britische Variante: die Anfangsbuchstaben von „Ten" und „Eleven".
 Aus der Hexadezimal-Schreibweise übernommen, wo A = 10, B = 11, C = 12 und so weiter gilt. In der dozenalen Szene wird dies „Computerese" genannt. Der grosse Vorteil: A und B sind auf jeder Tastatur tippbar und in jeder Schrift vorhanden. Genau diese Konvention nutzt diese App auf der konventionellen Anzeige.
 
 **Weitere, heute kaum gebräuchliche Vorschläge**
+
 - Bell-/Telefon-Symbole: Stern `*` für Zehn, Raute `#` für Elf, angelehnt an die Telefontastatur. Von der amerikanischen Gesellschaft bis etwa 2008 genutzt.
 - Edna Kramer (1951): ein sechszackiger Stern und ein Rautenzeichen, ebenfalls aus dem Telefonkontext. *Unsicher:* Diese Detail-Zuschreibung stammt nur aus einer einzelnen Quelle.
 - Griechische Buchstaben sowie weitere Einzelvorschläge.
@@ -116,11 +117,13 @@ Die zwölf Ziffernwurzeln (0 bis 11):
 | 5 | quin | | ↋ (11) | lev |
 
 Die Partikeln (Mengen-Vorsilben):
+
 - **-qua** = positive Zwölferpotenz. Beispiel: *unqua* = 12¹, *triqua* = 12³.
 - **-cia** = negative Zwölferpotenz. Beispiel: *uncia* = 12⁻¹, *tricia* = 12⁻³ (Regel: „qua" zu „cia" tauschen).
 - **dit** = der dozenale Punkt (Komma-Trennzeichen), beim Lesen der Nachkommastellen gesprochen.
 
 Worked examples (dozenal):
+
 - 56 → „five unqua six"
 - 5678 → „five triqua six seven eight"
 - 84;56 → „eightqua four dit five six"
@@ -136,6 +139,7 @@ TGM ist ein kohärentes, gravitationsbasiertes Masssystem, das Tom Pendlebury vo
 - **Maz** (Masse)
 
 **Konstruktionsprinzipien:**
+
 - Alle Verhältnisse sind durchgehend dozenal.
 - Die Einheiten sind kohärent (möglichst einfache 1:1-Beziehungen).
 - Alles wird aus der Basiseinheit abgeleitet.
@@ -173,6 +177,7 @@ Eine überarbeitete Buchfassung stammt von Donald P. Goodman III: *TGM: A Cohere
 Primel (auch „Corn-Obol-Fecc-System" genannt) ist ein von John Volan entworfenes Masssystem. Es ist von TGM inspiriert, aber bewusst „noch systematischer" angelegt und nutzt durchgehend die SDN-Vorsilben.
 
 **Hauptunterschiede zu TGM:**
+
 - Andere, kleinere Zeit-Basiseinheit: Primel geht vom mittleren Sonnentag aus und teilt ihn durch sechs Zwölferpotenzen (Grundeinheit „timel" = 12⁻⁶ Tag). TGM teilt dagegen die Stunde durch vier Zwölferpotenzen.
 - Eigene Ableitungskette und eine systematische Namensgebung: Alle kohärenten Einheiten enden auf „-el" (timel, lengthel, massel) und tragen ein gemeinsames Markierungszeichen.
 
@@ -202,6 +207,7 @@ Das **Duodecimal Bulletin** ist die Hauptpublikation der DSA und erscheint seit 
 ### Apps und Werkzeuge
 
 Mehrere Rechner-Apps existieren und werden gepflegt:
+
 - **Dozecal** (Unum Designum) — ein RPN-Rechner für iOS und Android, dozenal und dezimal.
 - **Dozenal Calculator and Helper** (Android) — Rechner, Kalender und Uhr.
 - **Dozenal Calculator** auf F-Droid (von Donald Goodman, als DSA-Ressource gelistet).
@@ -274,54 +280,54 @@ Bewertung nach zwei Achsen. Zuverlässigkeit: R1 = wissenschaftlich/primär, R2 
 ### Ziffern, Unicode, DSA-Umstellung
 
 - [R1·A3] Unicode-Proposal L2/13-054 (Karl Pentzlin, dozenale Ziffern, März 2013) — referenziert in den UTC-Minutes — Primärbeleg für U+218A/U+218B; nur indirekt über die Minutes und Sekundärquellen bestätigt.
-- [R1·A1] Unicode UTC #135 Minutes — https://www.unicode.org/L2/L2013/13058.htm — primäres Sitzungsprotokoll; bestätigt Annahme der Ziffern, Item 135-C6, Pentzlin als Antragsteller.
-- [R2·A1] Duodecimal — Wikipedia — https://en.wikipedia.org/wiki/Duodecimal — zentrale Referenz für Pitman 1857, Dwiggins 2008–2015, Andrews X/E, Unicode 8.0, A/B ab Jan. 2026, Kramer 1951.
-- [R2·A1] The Dozenal Society of America — Wikipedia — https://en.wikipedia.org/wiki/The_Dozenal_Society_of_America — Gründung 1944, Dwiggins-Zeiträume, A/B Januar 2026.
-- [R2·A1] The DSA Symbology Synopsis — https://dozenal.org/drupal/content/dsa-symbology-synopsis.html — DSA-Eigenangabe; listet Dwiggins/Bell/Pitman, Copyright-Range bis 120Az (2026d).
-- [R3·A1] Dozenalism: New Digits (gorpub, Donald Goodman, CC BY-SA) — https://gorpub.freeshell.org/dozenal/newdigs.html — Pro/Contra aller Vorschläge, empfiehlt Pitman; Andrews X/E, britisch T/E, Bell-Symbole.
-- [R2·A2] Foundation and First Generation / Bulletin Chronology (DSA) — https://dozenal.org/duodecimal-bulletin-chronology — Gründungsdaten, Ralph Beard, Kingsland Camp.
-- [R1·A3] Unicode-Proposal L2/18-190 („American style Dozenal notation") — https://www.unicode.org/L2/L2018/18190-american-dozenal.pdf — späteres Proposal zur Dwiggins-Notation; nur gelistet.
-- [R4·A3] „Pitman Glyphs Are Now In Unicode" — Dozensonline-Forum — https://www.tapatalk.com/groups/dozensonline/pitman-glyphs-are-now-in-unicode-t1324.html — Community-Thread, nur indirekt.
-- [R1·A1] Unicode-Proposal L2/15-116 (Pitman *Kurzschrift*) — https://www.unicode.org/L2/L2015/15116-pitman.pdf — Negativ-Befund/Verwechslungswarnung: betrifft NICHT die dozenalen Ziffern.
+- [R1·A1] Unicode UTC #135 Minutes — <https://www.unicode.org/L2/L2013/13058.htm> — primäres Sitzungsprotokoll; bestätigt Annahme der Ziffern, Item 135-C6, Pentzlin als Antragsteller.
+- [R2·A1] Duodecimal — Wikipedia — <https://en.wikipedia.org/wiki/Duodecimal> — zentrale Referenz für Pitman 1857, Dwiggins 2008–2015, Andrews X/E, Unicode 8.0, A/B ab Jan. 2026, Kramer 1951.
+- [R2·A1] The Dozenal Society of America — Wikipedia — <https://en.wikipedia.org/wiki/The_Dozenal_Society_of_America> — Gründung 1944, Dwiggins-Zeiträume, A/B Januar 2026.
+- [R2·A1] The DSA Symbology Synopsis — <https://dozenal.org/drupal/content/dsa-symbology-synopsis.html> — DSA-Eigenangabe; listet Dwiggins/Bell/Pitman, Copyright-Range bis 120Az (2026d).
+- [R3·A1] Dozenalism: New Digits (gorpub, Donald Goodman, CC BY-SA) — <https://gorpub.freeshell.org/dozenal/newdigs.html> — Pro/Contra aller Vorschläge, empfiehlt Pitman; Andrews X/E, britisch T/E, Bell-Symbole.
+- [R2·A2] Foundation and First Generation / Bulletin Chronology (DSA) — <https://dozenal.org/duodecimal-bulletin-chronology> — Gründungsdaten, Ralph Beard, Kingsland Camp.
+- [R1·A3] Unicode-Proposal L2/18-190 („American style Dozenal notation") — <https://www.unicode.org/L2/L2018/18190-american-dozenal.pdf> — späteres Proposal zur Dwiggins-Notation; nur gelistet.
+- [R4·A3] „Pitman Glyphs Are Now In Unicode" — Dozensonline-Forum — <https://www.tapatalk.com/groups/dozensonline/pitman-glyphs-are-now-in-unicode-t1324.html> — Community-Thread, nur indirekt.
+- [R1·A1] Unicode-Proposal L2/15-116 (Pitman *Kurzschrift*) — <https://www.unicode.org/L2/L2015/15116-pitman.pdf> — Negativ-Befund/Verwechslungswarnung: betrifft NICHT die dozenalen Ziffern.
 
 ### Zahlen-Benennung (SDN, do-gro-mo)
 
-- [R3·A1] SDN Brief (gorpub) — https://gorpub.freeshell.org/dozenal/sdnbrief.html — Wurzeln, -qua/-cia, dit, Beispiele 56/5678/84;56.
-- [R3·A2] Systematic Dozenal Nomenclature (John Volan, DSA-Artikel) — https://dozenal.org/article-volan-systematic-dozenal-nomenclature — Autorschaft Volan/Kodegadulo, Aufbau.
-- [R3·A3] SDN (DSA-PDF, kodegadulo) — https://dozenal.org/drupal/sites_bck/default/files/DSA_kodegadulo_sdn.pdf — Digit-Wurzeln, Potenz-Vorsilben; nur als Download (binär, nicht inline gelesen).
-- [R3·A2] How Do You Pronounce Dozenals? (Gene Zirkel, DSA-PDF) — https://dozenal.org/article-zirkel-on-do-gro-mo.pdf — do-gro-mo, Andrews-Urheberschaft, aktueller Status; nur teilweise/Snippet.
-- [R4·A1] Counting — The Dozenal System (Weebly) — http://dozenal.weebly.com/counting.html — do/gro/mo-Tabelle, alternative 'zy-Konvention; schwache Quelle.
-- [R4·A3] A Comprehensive Dozenal Counting System (angelfire/whittenwords) — https://www.angelfire.com/whittenwords/measure/dozencount.htm — doh-five, six-doh-four; nicht erreichbar, nur Snippet.
-- [R2·A3] Manual of the Dozenal System (DSA-PDF) — https://dozenal.org/drupal/sites_bck/default/files/DSA_mods_rev.pdf — Gründungsdokument; nur gelistet.
-- [R4·A3] SDN — Dozenal Wiki (Fandom) — https://dozenal.fandom.com/wiki/Systematic_Dozenal_Nomenclature — beim Abruf 403; indirekt über Snippet.
+- [R3·A1] SDN Brief (gorpub) — <https://gorpub.freeshell.org/dozenal/sdnbrief.html> — Wurzeln, -qua/-cia, dit, Beispiele 56/5678/84;56.
+- [R3·A2] Systematic Dozenal Nomenclature (John Volan, DSA-Artikel) — <https://dozenal.org/article-volan-systematic-dozenal-nomenclature> — Autorschaft Volan/Kodegadulo, Aufbau.
+- [R3·A3] SDN (DSA-PDF, kodegadulo) — <https://dozenal.org/drupal/sites_bck/default/files/DSA_kodegadulo_sdn.pdf> — Digit-Wurzeln, Potenz-Vorsilben; nur als Download (binär, nicht inline gelesen).
+- [R3·A2] How Do You Pronounce Dozenals? (Gene Zirkel, DSA-PDF) — <https://dozenal.org/article-zirkel-on-do-gro-mo.pdf> — do-gro-mo, Andrews-Urheberschaft, aktueller Status; nur teilweise/Snippet.
+- [R4·A1] Counting — The Dozenal System (Weebly) — <http://dozenal.weebly.com/counting.html> — do/gro/mo-Tabelle, alternative 'zy-Konvention; schwache Quelle.
+- [R4·A3] A Comprehensive Dozenal Counting System (angelfire/whittenwords) — <https://www.angelfire.com/whittenwords/measure/dozencount.htm> — doh-five, six-doh-four; nicht erreichbar, nur Snippet.
+- [R2·A3] Manual of the Dozenal System (DSA-PDF) — <https://dozenal.org/drupal/sites_bck/default/files/DSA_mods_rev.pdf> — Gründungsdokument; nur gelistet.
+- [R4·A3] SDN — Dozenal Wiki (Fandom) — <https://dozenal.fandom.com/wiki/Systematic_Dozenal_Nomenclature> — beim Abruf 403; indirekt über Snippet.
 
 ### TGM und verwandte Masssysteme
 
-- [R1·A1] TGM: A Coherent Dozenal Metrology (Goodman/Pendlebury, DSA-PDF) — http://www.dozenal.org/drupal/sites_bck/default/files/tgm_0.pdf — Primärtext, Volltext frei.
-- [R1·A3] TGM-Booklet (DSGB-PDF, Pendlebury) — http://www.dozenalsociety.org.uk/pdfs/TGMbooklet.pdf — Primärquelle; beim Abruf nicht erreichbar.
-- [R3·A1] TGM: An Overview (gorpub, tgmbrief) — https://gorpub.freeshell.org/dozenal/tgmbrief.html — Einheitenliste; enthielt den fehlerhaften Tim-Wert (korrigiert).
-- [R2·A3] TGM — DSGB — http://www.dozenalsociety.org.uk/apps/tgm.htm — Tim = 12⁻⁴ Hr = 25/144 s; beim Abruf nicht erreichbar (ECONNREFUSED).
-- [R4·A3] TGM — Dozenal Wiki (Fandom) — https://dozenal.fandom.com/wiki/TGM — Pendlebury, Einheiten; beim Abruf 403, nur Snippet.
-- [R3·A3] TGM: A Coherent Dozenal Metrology — Lulu (Print, Goodman) — https://www.lulu.com/shop/donald-goodman/tgm-a-coherent-dozenal-metrology/paperback/product-21095233.html — kostenpflichtige Print-Ausgabe; nur gelistet.
-- [R4·A3] Faults Of TGM — Dozensonline — https://www.tapatalk.com/groups/dozensonline/faults-of-tgm-t658.html — interne Kritik (variables g, zu grosse Einheiten); beim Abruf 403, nur Snippet.
-- [R4·A3] Introduction to the Primel Metrology (Confluence-Wiki) — https://primelmetrology.atlassian.net/wiki/spaces/PM/pages/35565/Introduction+to+the+Primel+Metrology — Volan, Ableitungskette, timel = 12⁻⁶ Tag; Volltext blockiert, nur indirekt.
-- [R4·A3] The Primel or Corn-Obol-Fecc system — Dozenal Wiki — https://dozenal.fandom.com/wiki/The_Primel_or_Corn-Obol-Fecc_system — Primel-Benennung; nur gelistet.
+- [R1·A1] TGM: A Coherent Dozenal Metrology (Goodman/Pendlebury, DSA-PDF) — <http://www.dozenal.org/drupal/sites_bck/default/files/tgm_0.pdf> — Primärtext, Volltext frei.
+- [R1·A3] TGM-Booklet (DSGB-PDF, Pendlebury) — <http://www.dozenalsociety.org.uk/pdfs/TGMbooklet.pdf> — Primärquelle; beim Abruf nicht erreichbar.
+- [R3·A1] TGM: An Overview (gorpub, tgmbrief) — <https://gorpub.freeshell.org/dozenal/tgmbrief.html> — Einheitenliste; enthielt den fehlerhaften Tim-Wert (korrigiert).
+- [R2·A3] TGM — DSGB — <http://www.dozenalsociety.org.uk/apps/tgm.htm> — Tim = 12⁻⁴ Hr = 25/144 s; beim Abruf nicht erreichbar (ECONNREFUSED).
+- [R4·A3] TGM — Dozenal Wiki (Fandom) — <https://dozenal.fandom.com/wiki/TGM> — Pendlebury, Einheiten; beim Abruf 403, nur Snippet.
+- [R3·A3] TGM: A Coherent Dozenal Metrology — Lulu (Print, Goodman) — <https://www.lulu.com/shop/donald-goodman/tgm-a-coherent-dozenal-metrology/paperback/product-21095233.html> — kostenpflichtige Print-Ausgabe; nur gelistet.
+- [R4·A3] Faults Of TGM — Dozensonline — <https://www.tapatalk.com/groups/dozensonline/faults-of-tgm-t658.html> — interne Kritik (variables g, zu grosse Einheiten); beim Abruf 403, nur Snippet.
+- [R4·A3] Introduction to the Primel Metrology (Confluence-Wiki) — <https://primelmetrology.atlassian.net/wiki/spaces/PM/pages/35565/Introduction+to+the+Primel+Metrology> — Volan, Ableitungskette, timel = 12⁻⁶ Tag; Volltext blockiert, nur indirekt.
+- [R4·A3] The Primel or Corn-Obol-Fecc system — Dozenal Wiki — <https://dozenal.fandom.com/wiki/The_Primel_or_Corn-Obol-Fecc_system> — Primel-Benennung; nur gelistet.
 
 ### Gesellschaften, Apps, Community
 
-- [R2·A1] Dozenal Society of America — Hauptseite — https://dozenal.org/ — Selbstdarstellung als Bildungsorganisation, aktuelle Pflege.
-- [R2·A3] DSGB — About Us (PDF) — http://www.dozenalsociety.org.uk/pdfs/AboutUs.pdf — Selbstdarstellung der DSGB.
-- [R2·A1] The Duodecimal Bulletin / Chronologie (DSA) — https://dozenal.org/duodecimal-bulletin — Hauptpublikation seit 1945, freies Archiv.
-- [R4·A1] Dozensonline (Forum) — https://www.tapatalk.com/groups/dozensonline/ — aktives Forum, Beiträge bis Juni 2026.
-- [R3·A3] A Primer on Dozenalism (Donald Goodman, hexnet.org) — https://hexnet.org/files/documents/dozprim.pdf — Lehrtext; nur gelistet.
-- [R3·A3] Dozecal / Dozenal RPN Calculator — App Store / Google Play — https://apps.apple.com/us/app/dozecal/id1521160089 — App-Beleg.
-- [R4·A3] Base-12-Calculator — GitHub (HunterManhart) — https://github.com/HunterManhart/Base-12-Calculator — Open-Source-App mit A/B.
-- [R4·A3] Dozenal RPN Calculator App — Eddie's Math Blog (Feb. 2026) — http://edspi31415.blogspot.com/2026/02/dozenal-rpn-calculator-app-for-android.html — Beleg für 2026er-Aktivität.
+- [R2·A1] Dozenal Society of America — Hauptseite — <https://dozenal.org/> — Selbstdarstellung als Bildungsorganisation, aktuelle Pflege.
+- [R2·A3] DSGB — About Us (PDF) — <http://www.dozenalsociety.org.uk/pdfs/AboutUs.pdf> — Selbstdarstellung der DSGB.
+- [R2·A1] The Duodecimal Bulletin / Chronologie (DSA) — <https://dozenal.org/duodecimal-bulletin> — Hauptpublikation seit 1945, freies Archiv.
+- [R4·A1] Dozensonline (Forum) — <https://www.tapatalk.com/groups/dozensonline/> — aktives Forum, Beiträge bis Juni 2026.
+- [R3·A3] A Primer on Dozenalism (Donald Goodman, hexnet.org) — <https://hexnet.org/files/documents/dozprim.pdf> — Lehrtext; nur gelistet.
+- [R3·A3] Dozecal / Dozenal RPN Calculator — App Store / Google Play — <https://apps.apple.com/us/app/dozecal/id1521160089> — App-Beleg.
+- [R4·A3] Base-12-Calculator — GitHub (HunterManhart) — <https://github.com/HunterManhart/Base-12-Calculator> — Open-Source-App mit A/B.
+- [R4·A3] Dozenal RPN Calculator App — Eddie's Math Blog (Feb. 2026) — <http://edspi31415.blogspot.com/2026/02/dozenal-rpn-calculator-app-for-android.html> — Beleg für 2026er-Aktivität.
 
 ### Rezeption (extern)
 
-- [R3·A1] The Dozenal Society: It's counting Jim … — nobleword.co.uk — https://www.nobleword.co.uk/the-dozenal-society-its-counting-jim-but-not-as-we-know-it/ — Aussenperspektive, Vicky-Neale-Zitat.
-- [R3·A3] Why We Should Switch To A Base-12 Counting System — Gizmodo — https://gizmodo.com/why-we-should-switch-to-a-base-12-counting-system-5977095 — Pro/Contra-Populärdarstellung.
-- [R4·A3] Duodecimal Number System: Should We Use Base 12? — ScienceABC — https://www.scienceabc.com/eyeopeners/why-we-should-already-use-base-12-instead-of-base-10 — Umstellungskosten, Symbolstandard-Problem.
-- [R3·A1] Base 12 — Numberphile (James Grime) — https://www.numberphile.com/videos/base-12 — einflussreiches Mainstream-Video.
-- [R4·A3] Base 12: An Introduction — Built In — https://builtin.com/data-science/base-12 — Populärartikel; nur gelistet.
+- [R3·A1] The Dozenal Society: It's counting Jim … — nobleword.co.uk — <https://www.nobleword.co.uk/the-dozenal-society-its-counting-jim-but-not-as-we-know-it/> — Aussenperspektive, Vicky-Neale-Zitat.
+- [R3·A3] Why We Should Switch To A Base-12 Counting System — Gizmodo — <https://gizmodo.com/why-we-should-switch-to-a-base-12-counting-system-5977095> — Pro/Contra-Populärdarstellung.
+- [R4·A3] Duodecimal Number System: Should We Use Base 12? — ScienceABC — <https://www.scienceabc.com/eyeopeners/why-we-should-already-use-base-12-instead-of-base-10> — Umstellungskosten, Symbolstandard-Problem.
+- [R3·A1] Base 12 — Numberphile (James Grime) — <https://www.numberphile.com/videos/base-12> — einflussreiches Mainstream-Video.
+- [R4·A3] Base 12: An Introduction — Built In — <https://builtin.com/data-science/base-12> — Populärartikel; nur gelistet.
