@@ -1,6 +1,6 @@
 # Distribution
 
-Aus dem früheren Gesamtdokument übernommen. Verweise wie «oben» oder «siehe …-Abschnitt» meinen die Themenseiten, die
+Verweise wie «oben» oder «siehe …-Abschnitt» meinen die Themenseiten, die
 [architektur.md](architektur.md) auflistet.
 
 ## Native Begleit-Apps (macOS, watchOS)
@@ -55,11 +55,12 @@ aber **nicht** die Apple Watch.
 
 Neben **Google Play** (Android, live) und **App Store** (iOS/iPadOS/macOS, live —
 auf dem Mac per Xcode gebaut/eingereicht, nicht von hier) laufen drei weitere
-Schienen. Play-/App-Store-Workflows siehe „### Release-Builds" +
-`docs/release-workflow.md`; diese drei sind eigenständig und jeweils nur hier
-dokumentiert:
+Schienen. Play-/App-Store-Workflows siehe
+[build-und-assets.md](build-und-assets.md#release-builds) und
+[release-workflow.md](release-workflow.md). Ergänzend stehen Einzelheiten in
+`packaging/flatpak/README.md` und `store/microsoft-store/WORKFLOW.md`.
 
-## Linux / Flathub
+### Linux / Flathub
 
 `flutter build linux --release` → portables `build/linux/x64/release/bundle/`
 (Binary `dozenal_calc_flutter` + `lib/` + `data/`). Fenstertitel „Dozenal Calc",
@@ -76,7 +77,7 @@ Einreichung: PR gegen `flathub/flathub` (Base `new-pr`), Build per PR-Kommentar
 wurde aber am 2026-06-13 ungemerged geschlossen. Die App ist nicht auf Flathub und wird dort nicht mehr eingereicht,
 bis sich die KI-Richtlinie ändert: [ADR 0003](decisions/0003-keine-flathub-einreichung.md).
 
-## Windows / Microsoft Store
+### Windows / Microsoft Store
 
 Flutter-Desktop-Target in **`windows/`** (`flutter create --platforms=windows
 --org app.weltanschauung .`, braucht VS 2022 + „Desktop development with C++").
@@ -94,7 +95,7 @@ jeder Submission) steht in **`store/microsoft-store/WORKFLOW.md`** — der
 massgebliche Leitfaden. Identität: Store ID `9N4M1XLPLP0N`, Package
 `steinerschler.DozenalCalc`, Publisher „steinerschüler".
 
-## F-Droid (Paketierung vorbereitet, Einreichung offen)
+### F-Droid (Paketierung vorbereitet, Einreichung offen)
 
 Paketierung in **`packaging/fdroid/`** (eigene `README.md`): F-Droid baut **aus dem
 Quellcode** auf eigenen Servern — also ein Bau-Rezept, kein Artefakt. Metadata

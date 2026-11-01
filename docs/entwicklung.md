@@ -1,6 +1,6 @@
 # Entwicklung
 
-Aus dem früheren Gesamtdokument übernommen. Verweise wie «oben» oder «siehe …-Abschnitt» meinen die Themenseiten, die
+Verweise wie «oben» oder «siehe …-Abschnitt» meinen die Themenseiten, die
 [architektur.md](architektur.md) auflistet.
 
 ```bash
@@ -8,7 +8,7 @@ flutter pub get
 flutter run                   # aktuelle Plattform
 flutter run -d chrome         # Web
 pre-commit run --all-files    # Prüfbefehl (auch in der CI: format und Analyse)
-flutter test                  # gesamte Suite (593 Tests in 35 Dateien, Stand 31.10.2026)
+flutter test                  # gesamte Suite (42 Testdateien)
 flutter test test/rational_test.dart           # einzelne Datei
 flutter test --plain-name "parses 1/7"         # einzelner Test per Name
 ```
@@ -39,8 +39,8 @@ Test-Routing (für gezielte Edits):
   SI-Drehscheibe/Faktoren/Breakdown bzw. Compound-Eingabe + Cursor; dazu
   die Resultat-Brücke (`insertCalcAns`/`ansForBridge`) und das Überleben
   der Pending-Zahl beim Kategorienwechsel.
-- `calc_pager_test.dart` — Rechner↔Umrechner-Pager: Swipe in beide
-  Richtungen, Tastatur-Routing nach aktiver Seite, Ans/CONV-Roundtrip
+- `calc_pager_test.dart` — Rechner↔Umrechner-Pager: Wechsel per Taste, ein
+  Wischen bewegt die Seite nicht, Tastatur-Routing nach aktiver Seite, Ans/CONV-Roundtrip
   durchs UI (Umrechner UND Werterechner inkl. CONV-Fallback),
   Info-Listen-Eintrag → Pager-Wechsel.
 - `converter_keypad_layout_test.dart` — Umrechner-Layout über Seitenverhältnisse.
@@ -50,7 +50,7 @@ Test-Routing (für gezielte Edits):
   Resultat-Brücke (`insertCalcAns`/`ansForBridge` inkl. Wertmodus). Dazu
   `asset_keypad_layout_test.dart` (Höhen-Regime × Drill-Ebenen ×
   Seitenverhältnisse + Tile-Tap-Drilldown). `calc_pager_test.dart` deckt
-  zusätzlich die dritte Seite ab (Swipe, Tastatur-Routing, 3-Punkte-Peek).
+  zusätzlich die dritte Seite ab (Wechseltaste, Tastatur-Routing, 3-Punkte-Peek).
 - `cursor_tap_test.dart` — Tipp-Cursor (Hauptrechner-Hit-Test + `moveCursorTo`).
 - `recommendations_test.dart` — „Empfehlungen": Kapitel-Dispatcher plus
   Struktur-Treue aller 14 Sprachen (7 Kapitel, Pro-/Contra-Zählung je Rechner,
@@ -78,6 +78,17 @@ Test-Routing (für gezielte Edits):
   ln/eˣ/log₁₂, nCr/nPr, wissenschaftliche Notation.
 - `result_format_test.dart` — Präsentations-Helfer aus
   `logic/result_format.dart` (Clipboard-String, Cross-Base-Referenz).
+- `asset_state_editing_test.dart` — Werterechner: Speicherregister und Bearbeiten.
+- `asset_carry_answer_test.dart` + `converter_carry_answer_test.dart` — Ankunft
+  im Rechner: ein neues Ergebnis des Hauptrechners landet in der leeren Eingabe.
+- `display_line_drag_test.dart` — zu lange Display-Zeilen: Eingabe folgt dem
+  Cursor, Ziehen der Zeile.
+- `landscape_keypad_fit_test.dart` — alle drei Keypads passen ohne Scrollen auf
+  niedrige Bildschirme.
+- `network_boundary_test.dart` — kein Netzwerk-Code, keine Internet-Berechtigung.
+- `web_bootstrap_test.dart` — der Web-Build lädt CanvasKit und Schriften von der
+  eigenen Seite.
+- `analyze_changed_hook_test.dart` — der Pre-commit-Hook `tool/analyze_changed.py`.
 - `watch_parity_test.dart` — Dart-Hälfte des Watch-Paritäts-Netzes:
   replayed `test/fixtures/watch_parity_fixtures.json` gegen `evalF64`;
   Swift-Gegenstück `watch/Tests/CalculatorParityTests.swift` (nur mit
@@ -92,14 +103,56 @@ erwartet, kein Bug. Nach jedem Flutter-Minor-Stable-Release erneut prüfen.
 Grundprinzip: adb-Loop (Gerät finden → bauen/installieren → per
 `input tap/swipe` ansteuern → `screencap` → `Read`); bei
 State-Wechsel-Prüfungen (Sprache/Orientierung/Theme/Tastenmodus) **beide**
-Zustände als Datei capturen und via `SendUserFile` nebeneinander zeigen, nie
-Spot-Check zurückgeben.
+Zustände als Datei capturen und nebeneinander zeigen, nie Spot-Check
+zurückgeben.
 
-Die **vollständige Anleitung** (Geräte-Quick-Reference mit Serials/Auflösung,
-Entsperr-Rezepte mit Pixelkoordinaten, Install-Konflikt-Lösung, udev-Reflex)
-liegt **bewusst nur lokal** in `docs/local/device-testing.md` — diese Datei ist
-**gitignored und gehört nicht ins (ggf. veröffentlichte) Repo**, weil sie
-gerätespezifische und persönliche Daten enthält. Sie ist auf der Arbeits-
-maschine vorhanden; bei Gerätetests dort nachschlagen. Beim Anlegen neuer
-gerätebezogener Test-Doku ebenfalls dort (gitignored) ablegen, nie in
-versionierten Dateien.
+Gerätedaten (Seriennummern, Koordinaten, Entsperr-Rezepte) liegen **bewusst nur
+lokal** in `docs/local/device-testing.md`. Der Ordner ist gitignored und gehört
+nicht ins Repo. Er wird nicht mit dem Repo verteilt und kann auf einem Rechner
+fehlen: Dann gilt der Ablauf hier, und die Datei wird neu angelegt. Fehlt sie,
+heisst das nicht, dass kein Gerät erreichbar ist.
+
+### Gerät erreichen
+
+- `adb` liegt in `~/Android/Sdk/platform-tools/` und ist nicht zwingend im
+  Suchpfad. `flutter devices` findet das Gerät auch ohne Suchpfad.
+- In der Sandbox von Claude Code meldet `adb devices` eine leere Liste, weil sie
+  den USB-Zugriff sperrt. Eine leere Liste heisst dort nicht, dass kein Gerät
+  angeschlossen ist: Gerätebefehle laufen ausserhalb der Sandbox.
+
+### Installieren
+
+```bash
+flutter build apk --debug
+until adb install -r build/app/outputs/flutter-apk/app-debug.apk 2>&1 | grep -q '^Success'; do :; done
+```
+
+Das Debug-Paket ist rund 200 MB gross, und grosse Übertragungen sind am
+Testgerät unzuverlässig (gemessen 2026-11-01 am Mi A3): Etwa jede zweite
+Installation bricht mit `INSTALL_PARSE_FAILED_NO_CERTIFICATES` ab. Bei `adb push`
+kam die Datei teils mit anderer Prüfsumme an oder fehlte ganz.
+
+- Das Paket selbst ist dann in Ordnung, und die alte Version bleibt installiert.
+  Darum wiederholen, **nicht deinstallieren**: Das löscht die Daten der App.
+- `--no-streaming` und ein Paket nur für arm64 (rund 170 MB) beheben es nicht.
+- Kleine Übertragungen sind nicht betroffen: 5 MB per `push` und `pull` kamen in
+  allen Versuchen korrekt an, Screenshots ebenso.
+- Wer die Schleife nutzt, bricht sie ab, wenn sie nicht nach wenigen Versuchen
+  endet: Eine andere Fehlerursache, etwa eine fremde Signatur, heilt sie nicht.
+
+### Steuern und aufnehmen
+
+- Bildschirm und Eingabe brauchen Zeit: Ein `screencap` direkt nach dem Tipp zeigt
+  noch den alten Zustand. Dazwischen `adb shell sleep 1`, nach dem Drehen
+  `adb shell sleep 3`, sonst zeigt das Bild die Drehung mitten im Übergang.
+- Nach der Rückkehr aus dem Menü liegt kurz der Page-Peek über dem Gleichbalken.
+  Für saubere Bilder `adb shell sleep 3` warten.
+- Tippziele nicht schätzen: `adb shell uiautomator dump /sdcard/ui.xml` listet
+  die Bedienelemente mit Bezeichnung und Pixelbereich, auch die Tasten der App.
+- Drehen geht ohne Griff zum Gerät, danach zurückstellen:
+
+  ```bash
+  adb shell settings put system accelerometer_rotation 0
+  adb shell settings put system user_rotation 1   # 0 = Hochformat
+  adb shell settings put system accelerometer_rotation 1
+  ```

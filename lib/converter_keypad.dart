@@ -18,7 +18,9 @@ import 'dart:math' as math;
 import 'package:dozenal_calc_flutter/app_layout.dart';
 import 'package:dozenal_calc_flutter/app_theme.dart';
 import 'package:dozenal_calc_flutter/converter_state.dart';
+import 'package:dozenal_calc_flutter/key_face.dart';
 import 'package:dozenal_calc_flutter/keypad_parts.dart';
+import 'package:dozenal_calc_flutter/l10n/app_localizations.dart';
 import 'package:dozenal_calc_flutter/logic/base_num.dart';
 import 'package:dozenal_calc_flutter/logic/dozenal_digit.dart';
 import 'package:dozenal_calc_flutter/logic/glyph_style.dart';
@@ -71,6 +73,8 @@ class ConverterKeypad extends StatelessWidget {
     this.categoryLabelOf,
     this.unitInfoOf,
     this.equalsHint,
+    this.onMenuTap,
+    this.onSwitchTap,
   });
   final ConverterState state;
 
@@ -92,6 +96,12 @@ class ConverterKeypad extends StatelessWidget {
   /// hint (preview harness without localizations).
   final String? equalsHint;
 
+  /// Opens the menu. Null hides the key (standalone route, previews).
+  final VoidCallback? onMenuTap;
+
+  /// Goes to the next calculator. Null hides the key.
+  final VoidCallback? onSwitchTap;
+
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
@@ -112,12 +122,18 @@ class ConverterKeypad extends StatelessWidget {
     // floor (fixed 44 dp rows so nothing is unreachable), tight gaps in the mid
     // band, flex layout above.
     if (h.isFinite && h < kKeypadScrollThreshold) {
-      return SingleChildScrollView(
-        child: _buildColumn(context, tight: true, fixedHeights: true),
+      return KeyLabelFontCap.forEqualColumns(
+        keypadWidth: constraints.maxWidth,
+        child: SingleChildScrollView(
+          child: _buildColumn(context, tight: true, fixedHeights: true),
+        ),
       );
     }
     final tight = h.isFinite && h < kKeypadTightThreshold;
-    return _buildColumn(context, tight: tight, fixedHeights: false);
+    return KeyLabelFontCap.forEqualColumns(
+      keypadWidth: constraints.maxWidth,
+      child: _buildColumn(context, tight: tight, fixedHeights: false),
+    );
   }
 
   Widget _buildColumn(
@@ -245,7 +261,8 @@ class ConverterKeypad extends StatelessWidget {
         SizedBox(height: bottomGap),
         rowWrap(
           fourCellRow([
-            for (final t in bottomRow) t == null ? _emptyCell() : _opCell(t),
+            for (final t in bottomRow)
+              if (t == null) _emptyCell() else _opCell(t),
           ]),
         ),
       ],
@@ -313,6 +330,7 @@ class ConverterKeypad extends StatelessWidget {
       label: 'Ziffer ${digit.value}',
       excludeSemantics: true,
       child: PressableShell(
+        role: KeyRole.digit,
         onTap: enabled ? () => state.inputDigit(digit.value) : null,
         builder: (ctx, pressed) {
           final t = AppColors.of(ctx);
@@ -372,6 +390,7 @@ class ConverterKeypad extends StatelessWidget {
                   : (pressed
                         ? (isAc ? t.acPressed : t.opPressed)
                         : (isAc ? t.ac : t.op)),
+              labelFontCap: KeyLabelFontCap.tokensOf(ctx),
             ),
           );
         },
@@ -439,9 +458,23 @@ class ConverterKeypad extends StatelessWidget {
     return LayoutBuilder(
       builder: (ctx, c) {
         final h = c.maxHeight.isFinite ? c.maxHeight : minTouchTarget * 1.2;
+        final flanks =
+            2 + (onMenuTap == null ? 0 : 1) + (onSwitchTap == null ? 0 : 1);
+        final showHint =
+            equalsHint != null &&
+            c.maxWidth - flanks * (h + _kFlankGap) >= kEqualsHintMinBarWidth;
         return Row(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
+            if (onMenuTap != null) ...[
+              RoundIconKey(
+                size: h,
+                icon: Icons.menu,
+                tooltip: AppLocalizations.of(ctx).a11yTheoryChapters,
+                onPressed: onMenuTap,
+              ),
+              const SizedBox(width: _kFlankGap),
+            ],
             SizedBox(
               width: h,
               child: SystemKey(
@@ -452,7 +485,7 @@ class ConverterKeypad extends StatelessWidget {
                 onTap: () => state.setWorld(UnitWorld.metric),
               ),
             ),
-            const SizedBox(width: 10),
+            const SizedBox(width: _kFlankGap),
             Expanded(
               child: Semantics(
                 button: true,
@@ -460,12 +493,14 @@ class ConverterKeypad extends StatelessWidget {
                 hint: equalsHint,
                 excludeSemantics: true,
                 child: PressableShell(
+                  role: KeyRole.primary,
                   onTap: state.equals,
                   builder: (ctx, pressed) {
                     final t = AppColors.of(ctx);
                     return Stack(
                       children: [
                         Positioned.fill(
+                          bottom: showHint ? keyEqualsHintBand : 0,
                           child: CustomPaint(
                             painter: TokenKeyPainter(
                               token: const Equals(),
@@ -475,7 +510,7 @@ class ConverterKeypad extends StatelessWidget {
                         ),
                         // Discoverability for the = cycle: a faint one-liner
                         // between the glyph and the bottom edge.
-                        if (equalsHint != null)
+                        if (showHint)
                           Positioned(
                             left: 8,
                             right: 8,
@@ -498,7 +533,7 @@ class ConverterKeypad extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(width: 10),
+            const SizedBox(width: _kFlankGap),
             SizedBox(
               width: h,
               child: SystemKey(
@@ -509,6 +544,15 @@ class ConverterKeypad extends StatelessWidget {
                 onTap: () => state.setWorld(UnitWorld.imperial),
               ),
             ),
+            if (onSwitchTap != null) ...[
+              const SizedBox(width: _kFlankGap),
+              RoundIconKey(
+                size: h,
+                icon: Icons.swap_horiz,
+                tooltip: AppLocalizations.of(ctx).a11ySwitchCalculator,
+                onPressed: onSwitchTap,
+              ),
+            ],
           ],
         );
       },
@@ -518,9 +562,11 @@ class ConverterKeypad extends StatelessWidget {
   // ── Breit (landscape / tablet) — all sets inline, no overlay ──────────────
 
   Widget _buildBreit(BuildContext context, BoxConstraints constraints) {
-    const interBlockGap = tabletColGap; // 8
-    const verticalContentGap = 18.0;
-    const groupGapBase = interBlockGap + 10.0; // 18
+    final compact = constraints.maxHeight < compactBreitHeight;
+    final rowGap = compact ? compactBreitRowGap : tabletColGap;
+    final interBlockGap = compact ? compactBreitColumnGap : tabletColGap;
+    final verticalContentGap = compact ? compactBreitEqualsGap : 18.0;
+    const groupGapBase = 18.0;
     const maxGroupGap = 100.0;
 
     final h = constraints.maxHeight;
@@ -528,7 +574,7 @@ class ConverterKeypad extends StatelessWidget {
     // 5 button-rows vertically; 13 button-columns horizontally (3 digit + 5 + 5)
     // with 10 inner gaps + 2 group gaps. Pick the tighter axis.
     final rawH = h.isFinite
-        ? (h - 3 * interBlockGap - verticalContentGap) / 5
+        ? (h - 3 * rowGap - verticalContentGap) / 5
         : tabletButtonSize;
     final rawW = w.isFinite
         ? (w - 10 * interBlockGap - 2 * groupGapBase) / 13
@@ -537,40 +583,65 @@ class ConverterKeypad extends StatelessWidget {
         .min(rawH, rawW)
         .clamp(breitMinTouchTarget, tabletButtonSize);
 
-    final baseNaturalWidth =
-        13 * buttonSize + 10 * interBlockGap + 2 * groupGapBase;
-    final hSlack = w.isFinite ? math.max(0.0, w - baseNaturalWidth) : 0.0;
+    const columnChars = [
+      1, 1, 1, // digits
+      1, 1, // Sets 1 and 2
+      keyWordColumnChars, keyWordColumnChars,
+      3, // AC DEL .
+      3, 2, // memory, constants
+      keyWordColumnChars, keyWordColumnChars,
+      3, // DRG
+    ];
+    final fixedWidth = 10 * interBlockGap + 2 * groupGapBase;
+    final columnLayout = compact && w.isFinite
+        ? BreitColumnLayout.solve(
+            columnChars: columnChars,
+            buttonHeight: buttonSize,
+            available: w - fixedWidth,
+          )
+        : null;
+    double widthOf(int chars) => columnLayout?.widthFor(chars) ?? buttonSize;
+    final columnsWidth = columnChars.map(widthOf).reduce((a, b) => a + b);
+
+    final baseNaturalWidth = columnsWidth + fixedWidth;
+    final hSlack = w.isFinite ? math.max(0, w - baseNaturalWidth) : 0.0;
     final groupGap = (groupGapBase + hSlack / 2).clamp(
       groupGapBase,
       maxGroupGap,
     );
-    final contentWidth = 13 * buttonSize + 10 * interBlockGap + 2 * groupGap;
+    final contentWidth = columnsWidth + 10 * interBlockGap + 2 * groupGap;
 
     final content = _buildBreitContent(
       buttonSize: buttonSize,
       interBlockGap: interBlockGap,
       groupGap: groupGap,
+      rowGap: rowGap,
+      widthOf: widthOf,
       t: AppColors.of(context),
     );
 
-    final body = Column(
-      mainAxisSize: MainAxisSize.min,
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-          child: SizedBox(
-            width: w.isFinite ? math.max(w, contentWidth) : contentWidth,
-            child: content,
+    final body = KeyLabelFontCap(
+      tokens: columnLayout?.labelFont ?? double.infinity,
+      words: columnLayout?.labelFont ?? keyWordFontSize,
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: SizedBox(
+              width: w.isFinite ? math.max(w, contentWidth) : contentWidth,
+              child: content,
+            ),
           ),
-        ),
-        const SizedBox(height: verticalContentGap),
-        SizedBox(height: buttonSize, child: _equalsRow()),
-      ],
+          SizedBox(height: verticalContentGap),
+          SizedBox(height: buttonSize, child: _equalsRow()),
+        ],
+      ),
     );
 
     final naturalHeight =
-        4 * buttonSize + 3 * interBlockGap + verticalContentGap + buttonSize;
+        4 * buttonSize + 3 * rowGap + verticalContentGap + buttonSize;
     if (h.isFinite && h < naturalHeight) {
       return SingleChildScrollView(child: body);
     }
@@ -581,36 +652,38 @@ class ConverterKeypad extends StatelessWidget {
     required double buttonSize,
     required double interBlockGap,
     required double groupGap,
+    required double rowGap,
+    required double Function(int chars) widthOf,
     required AppColors t,
   }) {
-    Widget cell(Widget child) =>
-        SizedBox(width: buttonSize, height: buttonSize, child: child);
+    Widget cell(Widget child, int chars) =>
+        SizedBox(width: widthOf(chars), height: buttonSize, child: child);
 
     // A vertical block of (up to) four cells, padded to four for alignment.
-    Widget column(List<Widget> children) => Column(
+    Widget column(List<Widget> children, int chars) => Column(
       mainAxisSize: MainAxisSize.min,
       children: [
         for (var i = 0; i < 4; i++) ...[
-          if (i > 0) const SizedBox(height: tabletColGap),
-          cell(i < children.length ? children[i] : const SizedBox()),
+          if (i > 0) SizedBox(height: rowGap),
+          cell(i < children.length ? children[i] : const SizedBox(), chars),
         ],
       ],
     );
 
-    Widget opColumn(List<CalcToken> tokens) =>
-        column([for (final t in tokens) _opCell(t)]);
+    Widget opColumn(List<CalcToken> tokens, int chars) =>
+        column([for (final t in tokens) _opCell(t)], chars);
 
     Widget digitGrid() => Column(
       mainAxisSize: MainAxisSize.min,
       children: [
         for (var r = 0; r < kDigitGridRows.length; r++) ...[
-          if (r > 0) const SizedBox(height: tabletDigitGap),
+          if (r > 0) SizedBox(height: rowGap),
           Row(
             mainAxisSize: MainAxisSize.min,
             children: [
               for (var c = 0; c < kDigitGridRows[r].length; c++) ...[
-                if (c > 0) const SizedBox(width: tabletDigitGap),
-                cell(_digitCell(kDigitGridRows[r][c])),
+                if (c > 0) SizedBox(width: interBlockGap),
+                cell(_digitCell(kDigitGridRows[r][c]), 1),
               ],
             ],
           ),
@@ -621,8 +694,8 @@ class ConverterKeypad extends StatelessWidget {
     final cells34 = _buildCategoryColumns(_set3, _set4);
     final cells89 = _buildCategoryColumns(_set8, _set9);
 
-    Widget gap() => const SizedBox(width: tabletColGap);
-    final dividerHeight = 4 * buttonSize + 3 * interBlockGap;
+    Widget gap() => SizedBox(width: interBlockGap);
+    final dividerHeight = 4 * buttonSize + 3 * rowGap;
     Widget bigGap() => SizedBox(
       width: groupGap,
       child: Center(
@@ -635,27 +708,27 @@ class ConverterKeypad extends StatelessWidget {
       children: [
         digitGrid(),
         bigGap(), // group break: digit pad → Sets 1-5
-        opColumn(kSet1),
+        opColumn(kSet1, 1),
         gap(),
-        opColumn(kSet2),
+        opColumn(kSet2, 1),
         gap(),
-        column(cells34.$1),
+        column(cells34.$1, keyWordColumnChars),
         gap(),
-        column(cells34.$2),
+        column(cells34.$2, keyWordColumnChars),
         gap(),
-        opColumn(const [Ac(), Del(), Decimal()]), // system column
+        opColumn(const [Ac(), Del(), Decimal()], 3), // system column
         bigGap(), // group break: Sets 1-5 → Sets 6-10
-        opColumn(kSet6),
+        opColumn(kSet6, 3),
         gap(),
-        opColumn(kSet7),
+        opColumn(kSet7, 2),
         gap(),
-        column(cells89.$1),
+        column(cells89.$1, keyWordColumnChars),
         gap(),
-        column(cells89.$2),
+        column(cells89.$2, keyWordColumnChars),
         gap(),
         // Set 10 (no overlay in Breit): Doz/Dez removed with the base/system
         // decoupling — only the (inert) Drg remains.
-        opColumn(const [Drg()]),
+        opColumn(const [Drg()], 3),
       ],
     );
   }
@@ -736,3 +809,5 @@ bool _isActiveOp(CalcToken t) =>
 
 // Shared building blocks (LabelButton, SystemKey, showUnitInfoBox) live in
 // keypad_parts.dart so the unit and asset keypads can't drift apart.
+
+const double _kFlankGap = 10;

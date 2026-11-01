@@ -22,20 +22,25 @@ import 'package:flutter/material.dart';
 
 /// Embeddable converter content: display + keypad, padded like the main
 /// calculator body. Expects Scaffold/SafeArea/Directionality(ltr) from its
-/// host (the calc pager or the ConverterPage route wrapper). Navigation
-/// affordances live elsewhere since the system keys took the equals-row
-/// flanks: back = swipe right (pager), info = the main calculator's (i).
+/// host (the calc pager or the ConverterPage route wrapper).
 class ConverterBody extends StatelessWidget {
-  const ConverterBody({required this.state, super.key});
+  const ConverterBody({
+    required this.state,
+    super.key,
+    this.onMenuTap,
+    this.onSwitchTap,
+  });
 
   final ConverterState state;
+  final VoidCallback? onMenuTap;
+  final VoidCallback? onSwitchTap;
 
   @override
   Widget build(BuildContext context) {
     final l = AppLocalizations.of(context);
     final langTag = Localizations.localeOf(context).toLanguageTag();
     return Padding(
-      padding: const EdgeInsets.all(12),
+      padding: calculatorPagePadding(context),
       child: LayoutBuilder(
         builder: (ctx, constraints) {
           final displayH = displayHeightFor(constraints.maxHeight);
@@ -56,12 +61,15 @@ class ConverterBody extends StatelessWidget {
                     systemIsTen: state.world == UnitWorld.metric,
                     inputCaret: state.inputLayout.caret,
                     onInputTapChar: state.handleInputTapAtChar,
+                    emptyHint: state.isEntryEmpty ? l.converterEmptyHint : null,
                   ),
                 ),
-                const SizedBox(height: 14),
+                SizedBox(height: calculatorDisplayGap(context)),
                 Expanded(
                   child: ConverterKeypad(
                     state: state,
+                    onMenuTap: onMenuTap,
+                    onSwitchTap: onSwitchTap,
                     equalsHint: l.converterEqualsHint,
                     categoryLabelOf: (c) => converterCategoryLabel(c, l),
                     unitInfoOf: (cat, symbol) => (

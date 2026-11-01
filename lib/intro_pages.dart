@@ -1,14 +1,12 @@
-// Bedienungs-Intro: PageView, das frischen Nutzern die App erklärt. Vier
-// Seiten, jede mit einem Screenshot + roten Highlight-Markierungen (Kreise
-// oder Rechtecke) plus kurzem Erklärtext:
-//   1 — die (i)-Taste (öffnet das Menü)
-//   2 — die (?)-Taste (ruft dieses Intro erneut auf)
-//   3 — das Wischen zwischen Haupt- und Einheitenrechner
-//   4 — Zahlensystem + Glyphen-Stil in den Einstellungen
-// Alle Koordinaten sind relativ (0..1), passen also auf jede Bildschirmgröße.
-// Screenshots (assets/intro/v4_*.png) sind Telefon-Captures (720×1448, Status-
-// und Navigationsleiste beschnitten); Layout-Metadata ist sprach-neutral, nur
-// die Texte kommen aus dem ARB-System der aktiven Locale.
+// Onboarding intro: a PageView that explains the app to new users. Four slides,
+// each a screenshot with red highlights (circles or rectangles) and a short text:
+//   1 - the menu key
+//   2 - the intro entry in the menu, which reopens this intro
+//   3 - the switch key between the calculators
+//   4 - number system and glyph style in the settings
+// All coordinates are fractions (0..1), so they fit any screen. The screenshots
+// (assets/intro/v5_*.png) are phone captures with status and navigation bar cropped.
+// Layout metadata is language-neutral, the texts come from the ARB locale.
 
 import 'package:dozenal_calc_flutter/l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
@@ -46,54 +44,59 @@ class _IntroSlide {
 }
 
 // ---------------------------------------------------------------------------
-// Coordinates for the 720×1448 phone screenshots in assets/intro/ (the status
+// Coordinates for the 720×1394 phone screenshots in assets/intro/ (the status
 // bar and the navigation pill were cropped off, so the app fills the frame).
 // Re-measure here if a future screenshot moves anything.
 // ---------------------------------------------------------------------------
 
 /// Aspect ratio of the cropped intro screenshots.
-const double _kIntroAspect = 720 / 1448;
+const double _kIntroAspect = 720 / 1394;
 
-// The two round buttons in the equals row of v4_calc.png.
-const HighlightCircle _kInfoButton = HighlightCircle(
-  center: Offset(0.121, 0.956),
-  radius: 0.036,
+// The two round keys beside the equals bar in v5_calc.png.
+const HighlightCircle _kMenuKey = HighlightCircle(
+  center: Offset(0.114, 0.9405),
+  radius: 0.044,
 );
-const HighlightCircle _kHelpButton = HighlightCircle(
-  center: Offset(0.879, 0.956),
-  radius: 0.036,
+const HighlightCircle _kSwitchKey = HighlightCircle(
+  center: Offset(0.885, 0.9405),
+  radius: 0.044,
 );
 
-// On v4_settings.png: the two glyph rows (Ziffern im Display + auf Tasten)
-// grouped into one box, and the number-system row below.
+// The intro row in v5_menu.png.
+const HighlightRect _kIntroRow = HighlightRect(
+  rect: Rect.fromLTRB(0.02, 0.495, 0.98, 0.575),
+);
+
+// In v5_settings.png: the two glyph rows grouped into one box, and the
+// number-system row.
 const HighlightRect _kGlyphRows = HighlightRect(
-  rect: Rect.fromLTRB(0.035, 0.158, 0.965, 0.312),
+  rect: Rect.fromLTRB(0.035, 0.171, 0.965, 0.333),
 );
 const HighlightRect _kNumberSystemRow = HighlightRect(
-  rect: Rect.fromLTRB(0.035, 0.632, 0.965, 0.707),
+  rect: Rect.fromLTRB(0.035, 0.661, 0.965, 0.742),
 );
 
 /// The slide list depends on AppLocalizations for the per-slide prose, so it
 /// can't be a top-level const. Layout metadata (image, highlight rects/
 /// circles) stays const; only the text strings come from the current locale.
 List<_IntroSlide> _buildSlides(AppLocalizations l) => [
-  // 1 — the (i) button: opens the menu.
   _IntroSlide(
-    image: 'assets/intro/v4_calc.png',
-    circles: const [_kInfoButton],
+    image: 'assets/intro/v5_calc.png',
+    circles: const [_kMenuKey],
     text: l.introSlide1,
   ),
-  // 2 — the (?) button: re-opens this intro.
   _IntroSlide(
-    image: 'assets/intro/v4_calc.png',
-    circles: const [_kHelpButton],
+    image: 'assets/intro/v5_menu.png',
+    rects: const [_kIntroRow],
     text: l.introSlide2,
   ),
-  // 3 — swiping between the two calculators (swipe graphic baked in).
-  _IntroSlide(image: 'assets/intro/v4_swipe.png', text: l.introSlide3),
-  // 4 — number system + glyph style in the settings.
   _IntroSlide(
-    image: 'assets/intro/v4_settings.png',
+    image: 'assets/intro/v5_calc.png',
+    circles: const [_kSwitchKey],
+    text: l.introSlide3,
+  ),
+  _IntroSlide(
+    image: 'assets/intro/v5_settings.png',
     rects: const [_kGlyphRows, _kNumberSystemRow],
     text: l.introSlide4,
   ),

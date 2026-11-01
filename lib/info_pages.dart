@@ -2,9 +2,12 @@
 // Pure routing. Chapter content lives in lib/theory/ (theory blocks) and
 // lib/manual/ (the calculator manual).
 
+import 'dart:async';
+
 import 'package:dozenal_calc_flutter/app_theme.dart';
 import 'package:dozenal_calc_flutter/conversions_page.dart';
 import 'package:dozenal_calc_flutter/feedback_dialog.dart';
+import 'package:dozenal_calc_flutter/intro_pages.dart';
 import 'package:dozenal_calc_flutter/l10n/app_localizations.dart';
 import 'package:dozenal_calc_flutter/language_options.dart';
 import 'package:dozenal_calc_flutter/license_page.dart';
@@ -85,6 +88,21 @@ class InfoListPage extends StatelessWidget {
             // Kapitel pro Plattform (Physisch, Android Play Store / F-Droid,
             // iOS, macOS, Linux, Windows) mit Pros/Cons je Rechner.
             const _RecommendationsExpansion(),
+            Divider(color: t.divider, height: 1),
+            ListTile(
+              leading: const RoundIconBadge(
+                icon: Icons.help_outline,
+                color: BadgeHue.slate,
+              ),
+              title: Text(
+                _sentenceCase(l.a11yIntro),
+                style: TextStyle(fontSize: 14, color: t.textSecondary),
+              ),
+              trailing: const _NavChevron(),
+              onTap: () => Navigator.of(context).push(
+                MaterialPageRoute<void>(builder: (_) => const IntroPage()),
+              ),
+            ),
             Divider(color: t.divider, height: 1),
             // Einstellungen: buendelt die frueher hier liegenden Quick-Toggles
             // (Glyphen-Stil, Haptik) mit den Keypad-Praeferenzen (Overlay/
@@ -603,7 +621,7 @@ class _LanguagePickerExpansionState extends State<_LanguagePickerExpansion> {
                             ? Icon(Icons.check, color: t.textPrimary, size: 16)
                             : null,
                         onTap: () {
-                          notifier.setOverride(lang.locale);
+                          unawaited(notifier.setOverride(lang.locale));
                           setState(() => _expanded = false);
                         },
                       ),
@@ -872,3 +890,6 @@ class _SourceList extends StatelessWidget {
     );
   }
 }
+
+String _sentenceCase(String text) =>
+    text.isEmpty ? text : text[0].toUpperCase() + text.substring(1);

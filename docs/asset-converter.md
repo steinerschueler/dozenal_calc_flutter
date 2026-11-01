@@ -1,7 +1,7 @@
 # Werterechner (dritter Rechner-Modus): Edelmetalle & Währungen
 
 Der **Werterechner** ist der dritte Rechner neben Haupt- und Einheitenrechner —
-**Seite 3 des horizontalen Pagers** (zweimal Links-Swipe vom Hauptrechner).
+**Seite 3 des horizontalen Pagers** (zweimal die Wechseltaste vom Hauptrechner).
 Nutzer-sichtbarer Name „Werterechner" (`pagerLabelAsset`); der interne Code-/
 Dateinamensraum bleibt `asset` (umbrella für Metalle/Währungen/später
 Krypto/Rohstoff). Begleittexte sind umgesetzt: „Bedienung des
@@ -34,13 +34,12 @@ Prüfung). Diese Datei ist die laufende Spezifikation.
   wird die Metall-Gattung (Wert) und die Cross-Währungs-Umrechnung aktiv.
   Opt-in-Selbst-API nur als Doku (`docs/asset-rates-api.md`), **kein Netzcode
   im ausgelieferten Binary, keine Datenschutz-Änderung** (erlauben ≠ ausliefern).
-- **Phase 3 — umgesetzt (gold-bezogene Index-Darstellung):** historische
-  Preiskurve (`price_chart.dart`) — **alles relativ zu Gold, indexiert auf den
-  ältesten Wert (0-Linie in der Mitte)**: Silber in Gold · Getreide in Gold ·
-  Gold in Getreide. Custom-Paint mit Pan/Zoom (Scale-Recognizer), Standard
-  letzte ~100 Jahre + Fit-Knopf/Doppeltipp/Pinch zum Herauszoomen bis zur
-  Antike, log10-Faktorachse, Basis-12-Ticks, Era-Styling (Antike = diskrete
-  Ringe + **Unsicherheitsband**, nie Linie über Lücken). „Kurve"-Taste ersetzt
+- **Phase 3 — umgesetzt:** historische Preiskurve (`price_chart.dart`) mit
+  echten Mengen statt eines Index: Silber in Gold · Getreide in Gold · Gold in
+  Getreide. Custom-Paint mit Pan/Zoom (Scale-Recognizer), Epochen-Chips
+  (Start: Heute), Doppeltipp zeigt die ganze Reihe, logarithmische Wertachse in
+  der aktiven Basis, Era-Styling (Antike = diskrete Punkte, **Unsicherheit als
+  Balken**, nie Linie über Lücken). „Kurve"-Taste ersetzt
   das Keypad (AnimatedSwitcher), kuratierter belegter Datensatz + Quellen-Screen.
 
 ## Datenmodell (`lib/logic/asset_data.dart`)
@@ -117,8 +116,8 @@ Langdruck-Option **VAL** (`AssetAns`-Token).
   nebeneinander (imperial/Troy Spalte A, metrisch Spalte B — keine
   met/imp-Tasten). Auf der Klassen-Ebene füllt der Speicher
   (STO/RCL/MC/Ans) das Set 3 und weicht nach Klassenwahl den Gattungen.
-  System-Reihe ist [AC · Del · `.` · Wert]; „Kurve" (links) und „Kurse"
-  (rechts) sind runde Tasten neben der Gleichtaste. Genus-Tiles tragen einen
+  System-Reihe ist [AC · Del · `.` · Wert]; die Equals-Reihe lautet
+  [Menü · „Kurve" · `=` · „Kurse" · Wechsel] mit runden Tasten. Genus-Tiles tragen einen
   Langdruck-Hinweis (`assetValueHint`: Kurzanleitung zum Wertmodus,
   Kurse = grobe Richtwerte).
 - **Seite** (`lib/asset_page.dart`): `AssetBody` (im Pager) + `AssetPage`
@@ -134,10 +133,8 @@ hat drei Kinder; `_pagerProgress` clampt auf `[0, 2]`; `_PagePeekOverlay`
 zeigt den Punkte-Indikator mit drei Punkten (Label i blendet bei
 `progress ≈ i` ein); `_handleAssetKey`
 routet physische Tasten auf Seite 2; die globale „Zahlensystem"-Basis wird (wie
-beim Umrechner) in `_assetState.setBase` gespiegelt. Bei offenem Chart
-sperrt der Pager das Seiten-Wischen (`NeverScrollableScrollPhysics` auf
-`chartOpen`), damit horizontales Pannen die Kurve schwenkt statt zu
-blättern.
+beim Umrechner) in `_assetState.setBase` gespiegelt. Der Pager reagiert nie auf
+Wischen, horizontales Pannen schwenkt also immer die Kurve.
 
 ## Lokalisierung
 
@@ -184,9 +181,8 @@ Scroll-/zoombare Kurve, die per **„Kurve"-Taste** das Keypad ersetzt
 (AnimatedSwitcher in `asset_page.dart`; `AssetState.toggleChart`/`chartOpen`;
 Schliessen über das ×-Symbol im Chart, da das Keypad dann verdeckt ist).
 
-**Framing (gold-bezogen, indexiert):** Jede Reihe wird **relativ zu Gold**
-gezeigt und auf ihren **ältesten Wert** indexiert (ältester → Index 1 → die
-**fette 0-Linie**, zentriert; rauf = teurer in Gold, runter = billiger). Eine
+**Framing:** Jede Reihe zeigt **echte Mengen**; eine Zeile über dem Plot nennt
+für den gewählten Punkt etwa «2024 · 1 g Gold = 290 L Getreide». Eine
 konsistente Einheit je Reihe: `silver` = Silber in Gold (= 1/Gold-Silber-
 Verhältnis), `wheat` = Getreide in Gold (= Getreide-in-Silber ÷ Verhältnis),
 `gold` = Gold in Getreide (Gold-Kaufkraft in Nahrung, **Kehrwert von `wheat`**,
@@ -194,20 +190,21 @@ programmatisch abgeleitet → eine Quelle der Wahrheit).
 
 - `lib/logic/price_history.dart` — Modell + Mathematik: `PriceSeries`/
   `PricePoint` (mit `Era` + optionalem **`valueLow`/`valueHigh`-Unsicherheits-
-  band** + Label/Quelle), `baselineOf` (ältester Wert), `ChartViewport`
-  (log10-**Index**-Y, Pan/Zoom), `defaultViewport` (letzte ~100 J.) /
-  `fitViewport` (voll, beide **0-zentriert**), **LTTB**, Achsen-Ticks.
+  band** + Label/Quelle), `ChartViewport` (log10-Y, Pan/Zoom), `ChartEpoch` +
+  `epochViewport` (Zeitraum), `wholeSeriesViewport` (ganze Reihe),
+  `clampedToSeries` (Verschieben endet bei den Daten), **LTTB**, Achsen-Ticks.
+  `baselineOf`, `defaultViewport` und `fitViewport` der früheren Index-Fassung
+  bestehen noch, das Diagramm ruft sie nicht auf.
 - `lib/logic/price_history_data.dart` — der **kompilierte, belegte Datensatz**
   (zwei Subagenten+Prüfer-Workflows). Silber-in-Gold (−3200→2024) +
   Getreide-in-Gold (−380→2024), je Antike-Punkt mit Band; Gold-in-Getreide als
   Kehrwert. `kPriceSources` mit Lizenz/URL. Bewusst grob, ehrlich gerahmt.
 - `lib/price_chart.dart` — `CustomPaint` + `GestureDetector` (nur Scale-
-  Recognizer: Pan+Zoom; manuell erkannter Doppeltipp + **Fit-Knopf** = ganz
-  herauszoomen; Tap = Punkt lesen). Werte indexiert (value/baseline); **fette
-  0-Linie**, Y-Labels als **Faktoren** (×A, ÷A) via `formatBaseNum`;
-  **Unsicherheitsband** (gefüllte Fläche + Whisker) um die Antike. Era-Styling:
-  Antike/sparse = diskrete Ringe, **Linie nur zwischen modernen Punkten**, nie
-  über Lücken. Reihen-Tabs (Gold/Silber/Getreide) + „Quellen"-Link + ×-Schliessen.
+  Recognizer: Pan+Zoom; manuell erkannter Doppeltipp = ganze Reihe; Tap = Punkt
+  lesen). Zahlen via `formatBaseNum`; **Unsicherheit als Balken** am Punkt.
+  Era-Styling: Antike/sparse = diskrete Punkte, **Linie nur zwischen modernen
+  Punkten**, nie über Lücken. Reihen-Chips (Gold/Silber/Getreide), Epochen-Chips
+  (Antike, Mittelalter, Neuzeit, Heute, Alles) + „Quellen"-Link + ×-Schliessen.
 - `lib/price_sources_page.dart` — Quellen & Methodik (Ehrlichkeits-Note +
   `kPriceSources` mit `openExternalLink`).
 - „Kurve"-Taste in `asset_keypad.dart` (runde Taste neben der Gleichtaste,
@@ -222,8 +219,8 @@ programmatisch abgeleitet → eine Quelle der Wahrheit).
 - `test/rates_page_test.dart` — Editor rendert, Override schreibt/zurücksetzt.
 - `test/asset_keypad_layout_test.dart` — Höhen-Regime × Drill-Ebenen (inkl.
   `valueTargets`) × Seitenverhältnisse, plus Tile-Tap-Drilldown.
-- `test/calc_pager_test.dart` — dritte Seite per Swipe, Tastatur-Routing,
-  Page-Peek mit drei Karten.
+- `test/calc_pager_test.dart` — dritte Seite per Wechseltaste, Tastatur-Routing,
+  Page-Peek mit drei Punkten.
 - `test/price_history_test.dart` — Chart-Mathematik (log10/Viewport/LTTB/Ticks)
   + Datensatz-Integrität. `test/price_chart_test.dart` — Chart-/Quellen-Widget
   + „Kurve"-Toggle (Keypad ↔ Chart).

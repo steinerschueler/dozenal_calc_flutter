@@ -33,7 +33,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 /// SharedPreferences key for the "user has seen the intro" flag. Bump the
 /// version suffix when the intro changes substantially enough to warrant
 /// showing it again to existing users.
-const String _kIntroSeenFlag = 'intro_seen_v4';
+const String _kIntroSeenFlag = 'intro_seen_v5';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -90,11 +90,11 @@ class _DozenalCalcAppState extends State<DozenalCalcApp>
       WidgetsBinding.instance.platformDispatcher.platformBrightness,
     );
     _themeNotifier.addListener(_syncSystemBars);
-    _localeNotifier.load();
-    _glyphStyleNotifier.load();
-    _hapticsNotifier.load();
-    _themeNotifier.load();
-    _calcPrefs.load().then((_) => _applyStartupPrefs());
+    unawaited(_localeNotifier.load());
+    unawaited(_glyphStyleNotifier.load());
+    unawaited(_hapticsNotifier.load());
+    unawaited(_themeNotifier.load());
+    unawaited(_calcPrefs.load().then((_) => _applyStartupPrefs()));
     _calcState.addListener(_syncPrefsFromState);
   }
 
@@ -141,8 +141,8 @@ class _DozenalCalcAppState extends State<DozenalCalcApp>
   /// equal values, so ordinary keystrokes never touch disk.
   void _syncPrefsFromState() {
     if (!_calcPrefs.loaded) return;
-    _calcPrefs.setNumeralSystem(_calcState.numeralSystem);
-    _calcPrefs.setAngleMode(_calcState.angleMode);
+    unawaited(_calcPrefs.setNumeralSystem(_calcState.numeralSystem));
+    unawaited(_calcPrefs.setAngleMode(_calcState.angleMode));
   }
 
   @override
@@ -220,7 +220,7 @@ class _DozenalCalcAppState extends State<DozenalCalcApp>
                         return MediaQuery(
                           data: mq.copyWith(
                             textScaler: TextScaler.linear(
-                              mq.textScaler.scale(1.0) * scale,
+                              mq.textScaler.scale(1) * scale,
                             ),
                           ),
                           child: child!,
@@ -335,15 +335,15 @@ class _CalcScaffoldState extends State<_CalcScaffold> {
   DozenalCalcState get _state => widget.state;
   final FocusNode _focusNode = FocusNode(debugLabel: 'calc-keyboard');
 
-  /// The unit converter is page 2 of a horizontal pager (swipe left from the
-  /// main calculator, swipe right to come back). Its state lives here — not
-  /// in the page widget — so compound input survives page swipes, and so the
+  /// The unit converter is page 2 of the pager, reached through the switch
+  /// key. Its state lives here — not in the page widget — so compound input
+  /// survives a change of calculator, and so the
   /// Ans/CONV result bridge below can reach both calculators.
   final ConverterState _converterState = ConverterState();
 
   /// The asset converter (precious metals & currencies) is page 3 of the
   /// pager. Like the unit converter its state lives here so input survives
-  /// page swipes; it follows the global numeral base and takes part in the
+  /// a change of calculator; it follows the global numeral base and takes part in the
   /// result bridge (its drill Ans key pulls the calc answer, the calc's
   /// CONV key reaches its result via long-press VAL or the tap-fallback).
   final AssetState _assetState = AssetState();
@@ -358,10 +358,8 @@ class _CalcScaffoldState extends State<_CalcScaffold> {
   /// 2 = asset converter); routes physical-keyboard input to the right state.
   int _page = 0;
 
-  // Page-peek indicator: two translucent rectangles (the current page
-  // centred + outlined, the neighbour clipped by the screen edge) that pulse
-  // briefly on every landing/swipe to make the horizontal pager
-  // discoverable. [_pagePeekMounted] keeps the overlay in the tree only
+  // Page-peek indicator: the page name and three dots that pulse briefly on
+  // every landing and change of calculator, to show where the user is. [_pagePeekMounted] keeps the overlay in the tree only
   // while it is visible or fading, so the hidden state leaves no invisible
   // hit-test/semantics/finder surface behind.
   bool _pagePeekVisible = false;
@@ -434,7 +432,7 @@ class _CalcScaffoldState extends State<_CalcScaffold> {
     _converterState.setBase(_state.activeBase);
     _assetState.setBase(_state.activeBase);
     _assetState.rates = _rateStore;
-    _rateStore.load();
+    unawaited(_rateStore.load());
     _pageController.addListener(_onPagerScroll);
     WidgetsBinding.instance.addPostFrameCallback((_) => _maybeShowIntro());
   }
@@ -450,7 +448,7 @@ class _CalcScaffoldState extends State<_CalcScaffold> {
       if (mounted) _focusNode.requestFocus();
     }
     // Landing on the main calculator — first boot (after the intro closes)
-    // or any later start: hint at the swipeable second page.
+    // or any later start: show which calculator this is.
     if (mounted) _pulsePagePeek();
   }
 
@@ -502,7 +500,7 @@ class _CalcScaffoldState extends State<_CalcScaffold> {
   void _copyResult() {
     if (_state.errorMsg != null) return;
     final text = _state.resultText;
-    Clipboard.setData(ClipboardData(text: text));
+    unawaited(Clipboard.setData(ClipboardData(text: text)));
     ScaffoldMessenger.of(context)
       ..hideCurrentSnackBar()
       ..showSnackBar(
@@ -514,15 +512,13 @@ class _CalcScaffoldState extends State<_CalcScaffold> {
       );
   }
 
-  void _openIntro() {
-    Navigator.of(context)
-        .push(MaterialPageRoute<void>(builder: (_) => const IntroPage()))
-        .then((_) {
-          if (mounted) {
-            _focusNode.requestFocus();
-            _pulsePagePeek(); // closing the intro lands on the main calculator
-          }
-        });
+  /// Goes to the next calculator, from the last one back to the first.
+  void _showNextCalculator() {
+    _pageController.animateToPage(
+      (_page + 1) % _kCalculatorCount,
+      duration: const Duration(milliseconds: 260),
+      curve: Curves.easeInOut,
+    );
   }
 
   /// Result-history tape (#1), opened by swiping down on the display. Lists the
@@ -533,76 +529,78 @@ class _CalcScaffoldState extends State<_CalcScaffold> {
     final l = AppLocalizations.of(context);
     final t = AppColors.of(context);
     final entries = _state.history.reversed.toList();
-    showModalBottomSheet<void>(
-      context: context,
-      backgroundColor: t.appBarBg,
-      showDragHandle: true,
-      builder: (sheetCtx) => SafeArea(
-        top: false,
-        child: ConstrainedBox(
-          constraints: BoxConstraints(
-            maxHeight: MediaQuery.of(sheetCtx).size.height * 0.6,
-          ),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Padding(
-                padding: const EdgeInsets.fromLTRB(20, 0, 20, 8),
-                child: Align(
-                  alignment: AlignmentDirectional.centerStart,
-                  child: Text(
-                    l.historyTitle,
-                    style: TextStyle(
-                      fontSize: 13,
-                      fontWeight: FontWeight.w600,
-                      color: t.textTertiary,
+    unawaited(
+      showModalBottomSheet<void>(
+        context: context,
+        backgroundColor: t.appBarBg,
+        showDragHandle: true,
+        builder: (sheetCtx) => SafeArea(
+          top: false,
+          child: ConstrainedBox(
+            constraints: BoxConstraints(
+              maxHeight: MediaQuery.of(sheetCtx).size.height * 0.6,
+            ),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(20, 0, 20, 8),
+                  child: Align(
+                    alignment: AlignmentDirectional.centerStart,
+                    child: Text(
+                      l.historyTitle,
+                      style: TextStyle(
+                        fontSize: 13,
+                        fontWeight: FontWeight.w600,
+                        color: t.textTertiary,
+                      ),
                     ),
                   ),
                 ),
-              ),
-              if (entries.isEmpty)
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(20, 12, 20, 28),
-                  child: Text(
-                    l.historyEmpty,
-                    style: TextStyle(fontSize: 14, color: t.textFaint),
-                  ),
-                )
-              else
-                Flexible(
-                  child: ListView.separated(
-                    shrinkWrap: true,
-                    padding: const EdgeInsets.fromLTRB(12, 0, 12, 16),
-                    itemCount: entries.length,
-                    separatorBuilder: (_, _) => const SizedBox(height: 8),
-                    itemBuilder: (c, i) {
-                      final e = entries[i];
-                      return GestureDetector(
-                        behavior: HitTestBehavior.opaque,
-                        onTap: () {
-                          _state.recallHistory(e);
-                          Navigator.of(sheetCtx).pop();
-                        },
-                        child: SizedBox(
-                          height: 70,
-                          child: Directionality(
-                            textDirection: TextDirection.ltr,
-                            child: TwoLineDisplay(
-                              inputBuffer: e.input,
-                              resultBuffer: e.result,
-                              resultPeriodStart: e.periodStart,
-                              resultPeriodLen: e.periodLen,
-                              resultPeriodCapped: e.periodCapped,
-                              isF64Fallback: e.isF64,
-                              showCursor: false,
+                if (entries.isEmpty)
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(20, 12, 20, 28),
+                    child: Text(
+                      l.historyEmpty,
+                      style: TextStyle(fontSize: 14, color: t.textFaint),
+                    ),
+                  )
+                else
+                  Flexible(
+                    child: ListView.separated(
+                      shrinkWrap: true,
+                      padding: const EdgeInsets.fromLTRB(12, 0, 12, 16),
+                      itemCount: entries.length,
+                      separatorBuilder: (_, _) => const SizedBox(height: 8),
+                      itemBuilder: (c, i) {
+                        final e = entries[i];
+                        return GestureDetector(
+                          behavior: HitTestBehavior.opaque,
+                          onTap: () {
+                            _state.recallHistory(e);
+                            Navigator.of(sheetCtx).pop();
+                          },
+                          child: SizedBox(
+                            height: 70,
+                            child: Directionality(
+                              textDirection: TextDirection.ltr,
+                              child: TwoLineDisplay(
+                                inputBuffer: e.input,
+                                resultBuffer: e.result,
+                                resultPeriodStart: e.periodStart,
+                                resultPeriodLen: e.periodLen,
+                                resultPeriodCapped: e.periodCapped,
+                                isF64Fallback: e.isF64,
+                                showCursor: false,
+                              ),
                             ),
                           ),
-                        ),
-                      );
-                    },
+                        );
+                      },
+                    ),
                   ),
-                ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
@@ -624,16 +622,18 @@ class _CalcScaffoldState extends State<_CalcScaffold> {
   }
 
   void _openInfo() {
-    Navigator.of(context)
-        .push(MaterialPageRoute<void>(builder: (_) => const InfoListPage()))
-        .then((_) {
-          // After returning from Info, refocus so the keyboard listener is live
-          // again — and re-hint the pager (landing moment).
-          if (mounted) {
-            _focusNode.requestFocus();
-            _pulsePagePeek();
-          }
-        });
+    unawaited(
+      Navigator.of(context)
+          .push(MaterialPageRoute<void>(builder: (_) => const InfoListPage()))
+          .then((_) {
+            // After returning from Info, refocus so the keyboard listener is
+            // live again — and re-hint the pager (landing moment).
+            if (mounted) {
+              _focusNode.requestFocus();
+              _pulsePagePeek();
+            }
+          }),
+    );
   }
 
   KeyEventResult _handleKey(FocusNode node, KeyEvent event) {
@@ -750,35 +750,36 @@ class _CalcScaffoldState extends State<_CalcScaffold> {
           // pages, intro, feedback, legal pages) keep the locale's
           // natural direction because they sit outside this wrap.
           // The wrap also pins the pager's page order physically:
-          // the converter is always the LEFT swipe, even in RTL
-          // locales.
+          // the converter always follows the main calculator on the
+          // same side, even in RTL locales.
           child: Directionality(
             textDirection: TextDirection.ltr,
             child: Stack(
               children: [
-                // The PageView rebuilds on _assetState so the price chart
-                // (page 3, AssetBody) can lock page-swiping while it is open:
-                // its own pan/zoom GestureDetector would otherwise lose the
-                // gesture arena to the pager's horizontal drag, and a sideways
-                // pan would flip to the unit converter instead of scrolling the
-                // curve. Closed → null physics (normal swiping). The page-peek
-                // overlay stays OUTSIDE this builder (it is independent).
-                ListenableBuilder(
-                  listenable: _assetState,
-                  builder: (ctx, _) => PageView(
-                    controller: _pageController,
-                    physics: _assetState.chartOpen
-                        ? const NeverScrollableScrollPhysics()
-                        : null,
-                    // The peek pulses via the controller listener; here only
-                    // the keyboard routing needs the settled page.
-                    onPageChanged: (i) => _page = i,
-                    children: [
-                      _calcPage(prefs),
-                      ConverterBody(state: _converterState),
-                      AssetBody(state: _assetState),
-                    ],
-                  ),
+                // Calculators change only through the switch key: with swiping,
+                // a slightly moving finger on a key slid the page and lost the
+                // tap. It also leaves the display lines and chart free to drag.
+                PageView(
+                  controller: _pageController,
+                  physics: const NeverScrollableScrollPhysics(),
+                  onPageChanged: (i) {
+                    _page = i;
+                    if (i == _kConverterPage) _converterState.carryNewCalcAns();
+                    if (i == _kAssetPage) _assetState.carryNewCalcAns();
+                  },
+                  children: [
+                    _calcPage(prefs),
+                    ConverterBody(
+                      state: _converterState,
+                      onMenuTap: _openInfo,
+                      onSwitchTap: _showNextCalculator,
+                    ),
+                    AssetBody(
+                      state: _assetState,
+                      onMenuTap: _openInfo,
+                      onSwitchTap: _showNextCalculator,
+                    ),
+                  ],
                 ),
                 // Page-peek indicator: transient, never blocks input, and
                 // unmounts entirely after the fade so it leaves no invisible
@@ -820,13 +821,12 @@ class _CalcScaffoldState extends State<_CalcScaffold> {
   /// Page 0: the main calculator (display over keypad). Also listens to the
   /// converter AND asset states so the CONV key's enabled state (it reads
   /// both bridge values since the asset bridge landed) stays fresh while
-  /// pages are visible mid-swipe — independent of the chart-physics
-  /// ListenableBuilder around the PageView.
+  /// the other pages hold values.
   Widget _calcPage(CalcPrefsNotifier prefs) {
     return ListenableBuilder(
       listenable: Listenable.merge([_state, _converterState, _assetState]),
       builder: (ctx, _) => Padding(
-        padding: const EdgeInsets.all(12.0),
+        padding: calculatorPagePadding(ctx),
         child: LayoutBuilder(
           builder: (innerCtx, constraints) {
             // Display sizes itself proportionally (20 % of body height,
@@ -862,15 +862,15 @@ class _CalcScaffoldState extends State<_CalcScaffold> {
                     onSwipeDown: _showHistory,
                   ),
                 ),
-                const SizedBox(height: 14),
+                SizedBox(height: calculatorDisplayGap(ctx)),
                 Expanded(
                   child: Keypad(
                     onTap: _state.handleClick,
                     isArmed: _state.isArmed,
                     isSelected: _isModeSelected,
                     isDisabled: _isTokenDisabled,
-                    onInfoTap: () => _state.handleClick(const Info()),
-                    onHelpTap: _openIntro,
+                    onMenuTap: () => _state.handleClick(const Info()),
+                    onSwitchTap: _showNextCalculator,
                     overlayOpen: _state.overlayOpen,
                     overlayPage: _state.overlayPage,
                     onOverlayPageChanged: _state.setOverlayPage,
@@ -908,8 +908,8 @@ class _PagePeekOverlay extends StatelessWidget {
   /// 2 = asset converter.
   final double progress;
 
-  static const double _dot = 7.0;
-  static const double _dotPitch = 18.0; // centre-to-centre
+  static const double _dot = 7;
+  static const double _dotPitch = 18; // centre-to-centre
 
   @override
   Widget build(BuildContext context) {
@@ -995,3 +995,7 @@ class _PagePeekOverlay extends StatelessWidget {
     );
   }
 }
+
+const int _kCalculatorCount = 3;
+const int _kConverterPage = 1;
+const int _kAssetPage = 2;

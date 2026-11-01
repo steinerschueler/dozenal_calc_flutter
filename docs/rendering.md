@@ -1,6 +1,6 @@
 # Rendering und Keypad
 
-Aus dem früheren Gesamtdokument übernommen. Verweise wie «oben» oder «siehe …-Abschnitt» meinen die Themenseiten, die
+Verweise wie «oben» oder «siehe …-Abschnitt» meinen die Themenseiten, die
 [architektur.md](architektur.md) auflistet.
 
 ## Rendering
@@ -20,14 +20,21 @@ Aus dem früheren Gesamtdokument übernommen. Verweise wie «oben» oder «siehe
   (Tasten-Chassis: Press-Flash, Haptik, Rahmen inkl. gold/selected, Langdruck-
   Hooks, 44-dp-Floor), `DigitKeyPainter`/`TokenKeyPainter`, das
   Ziffern-Grid `kDigitGridRows`, die identischen Spalten `kSet1/2/6/7`,
-  die Hoch-Höhen-Regime `kKeypadTight-/ScrollThreshold` und — seit dem
-  Asset-Rechner — die Tile-Bausteine `LabelButton`/`SystemKey`/
-  `showUnitInfoBox` (vorher privat in `converter_keypad.dart`; `SystemKey`
-  trägt ein `enabled`-Flag, wird aber seit dem Asset-Keypad-Umbau nur
-  noch von den met/imp-Tasten des Umrechners genutzt — der Werterechner
-  hat keine System-Tasten mehr). Die Keypads selbst bleiben bewusst
+  die Hoch-Höhen-Regime `kKeypadTight-/ScrollThreshold` und die Tile-Bausteine
+  `LabelButton`/`SystemKey`/`showUnitInfoBox` (`SystemKey` nutzen nur die
+  met/imp-Tasten des Umrechners). Die Keypads selbst bleiben bewusst
   getrennte Widget-Bäume: gleiche Glyphen, verschiedene
   Semantik/Dispatches.
+- `key_face.dart` — **das Erscheinungsbild an einer Stelle**: Schrift JetBrains Mono fett auf Tasten und in den
+  Displays, die Tastenflächen (`keyFaceDecoration`, keine Rahmen ausser für «ausgewählt» und «scharf»), die
+  gewählten Grössen (Tasten 145 %, Hauptdisplay 175 %, Querformat-Display 36 % der Höhe) und zwei Layout-Bausteine:
+  `KeyLabelFontCap` gibt allen Beschriftungen eines Tastenfelds dieselbe Grösse, statt dass jede einzeln auf ihre
+  Taste schrumpft. `BreitColumnLayout` macht im niedrigen Querformat jede Spalte so breit, wie ihre längste
+  Beschriftung es verlangt. Die Reihen schliessen dort ohne Lücke an, jede Fläche behält ihren eigenen Rand.
+- `line_drag.dart` — zu lange Display-Zeilen behalten in allen drei Rechnern ihre Grösse: Die Eingabe folgt dem
+  Cursor, beide Zeilen lassen sich ziehen und bleiben liegen, bis sich Inhalt oder Cursor ändert; Punkte zeigen, auf
+  welcher Seite es weitergeht. `LineDragRecognizer` nimmt nur an der Geste teil, wenn die berührte Zeile etwas zu
+  verschieben hat.
 - `display.dart` — Zwei-Zeilen-Display, Überstrich-Rendering,
   Periode-Markierung. `TwoLineDisplay` skaliert sich adaptiv an seinen
   Container, funktioniert also vom Landscape-Phone (~60 dp) bis zum
@@ -105,20 +112,20 @@ Aus dem früheren Gesamtdokument übernommen. Verweise wie «oben» oder «siehe
       Sets 1–4 + AC/Del/`.` — keine Expand-Taste, kein Erweiterungsfeld,
       keine EXP/DRG-Reihe (Winkelmodus dann über die
       Einstellungen-Seite). Scroll-Modus wird in „Einfach" ignoriert.
-  - **`_BreitKeypad`**: Konfigurationen in `_buildBreitContent` —
-    Einfach = 8 Spalten ohne dritte Gruppe; „Alle" = 13 Spalten inline.
+  - **`_BreitKeypad`** (Landscape / Tablet): Konfigurationen in
+    `_buildBreitContent` — Einfach = 8 Spalten ohne dritte Gruppe; „Alle" = 13 Spalten inline.
     Mit dem deaktivierten `_kFuncPageEnabled` gibt es keinen Page-Pfeil
     und keine 17-Spalten-Variante (beides ist auf das Flag
     konditioniert und derzeit unerreichbar); im Scroll-Modus läuft das
     Button-Sizing nur über `rawH` (horizontaler Scroll absorbiert die
     Überbreite).
-  - **`_BreitKeypad`** (Landscape / Tablet): Inline-Layout mit allen zehn
+    Inline-Layout mit allen zehn
     Sets nebeneinander, gegliedert in drei visuelle Blöcke: Zahlengitter,
     Sets 1–5 (Hauptoperationen + System), Sets 6–10 (erweiterte Funktionen).
     Zwischen den drei Blöcken läuft je eine 1-dp-Divider-Linie
     (Palette-Slot `hairline`, gleich wie der horizontale Divider in
     `_HochKeypad`).
-    Geometrie (Build 7, mit Build-8-Floor-Anpassung):
+    Geometrie:
     - `buttonSize = min(rawH, rawW).clamp(breitMinTouchTarget, 70)` — beide
       Achsen werden berücksichtigt, damit weder vertikal noch horizontal
       beschnitten wird. `breitMinTouchTarget = 36 dp` (statt der Hoch-Mode-
@@ -139,8 +146,7 @@ Aus dem früheren Gesamtdokument übernommen. Verweise wie «oben» oder «siehe
       Split-Screen, Foldable-Cover-Display).
 - Jede Taste ist in `ConstrainedBox(minHeight: 44)` gewrappt, damit der
   Material-44-dp-Touch-Target-Floor deklarativ erzwungen wird.
-- `app_layout.dart` — `displayHeightFor(h) = (h * 0.20).clamp(60, 170)`
-  für beide Orientierungen, plus die `tablet*`-Referenz-Proportionen für
-  `_BreitKeypad`. Die alten `mobile*`-Konstanten und der frühere
-  `_DesktopKeypad` / `_MobileKeypad` / `_TabletKeypad`-Dreiklang wurden
-  in Build 4 entfernt.
+- `app_layout.dart` — `displayHeightFor(h)`: 20 % der Höhe, auf niedrigen
+  Bildschirmen (Querformat am Telefon) 36 %, begrenzt auf 60 bis 170 dp;
+  `lowDisplayHeightFor(h)` für das zweireihige Display auf niedrigen
+  Bildschirmen; dazu die `tablet*`-Referenz-Proportionen für `_BreitKeypad`.

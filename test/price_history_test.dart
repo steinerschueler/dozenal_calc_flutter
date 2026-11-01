@@ -33,7 +33,7 @@ void main() {
     });
 
     test('pan shifts both ranges by a fraction of the span', () {
-      final p = vp.panned(0.1, 0.0);
+      final p = vp.panned(0.1, 0);
       expect(p.xMin, closeTo(1100, 1e-9));
       expect(p.xMax, closeTo(2100, 1e-9));
     });
@@ -187,7 +187,7 @@ void main() {
         for (final p in s.points) {
           if (p.sourceId != null) {
             expect(
-              p.sourceId!,
+              p.sourceId,
               inInclusiveRange(0, kPriceSources.length - 1),
               reason: '${s.id} bad sourceId at ${p.year}',
             );
@@ -200,8 +200,8 @@ void main() {
       for (final s in kPriceSeries.values) {
         for (final p in s.points) {
           if (p.hasBand) {
-            expect(p.valueLow!, lessThanOrEqualTo(p.value));
-            expect(p.valueHigh!, greaterThanOrEqualTo(p.value));
+            expect(p.valueLow, lessThanOrEqualTo(p.value));
+            expect(p.valueHigh, greaterThanOrEqualTo(p.value));
           }
         }
       }
@@ -225,6 +225,93 @@ void main() {
       for (var i = 0; i < gold.points.length; i++) {
         expect(gold.points[i].value, closeTo(1 / wheat.points[i].value, 1e-9));
       }
+    });
+  });
+
+  group('epochs and real values', () {
+    final gold = kPriceSeries[PriceSeriesId.gold]!;
+
+    test('every epoch view shows the values it covers', () {
+      final view = epochViewport(gold, ChartEpoch.present);
+      for (final p in gold.points.where((p) => p.year >= 1900)) {
+        expect(view.ny(p.value), inInclusiveRange(0, 1));
+      }
+    });
+
+    test('a period older than the series start stays that period', () {
+      final view = epochViewport(gold, ChartEpoch.antiquity);
+      expect(view.xMin, greaterThan(gold.minYear - 200));
+      expect(view.xMax, lessThan(ChartEpoch.middleAges.lastYear));
+      final newest = nearestVisiblePoint(gold, view, view.xMax);
+      expect(newest!.year, lessThanOrEqualTo(view.xMax));
+    });
+
+    test('a view cannot be dragged into the future', () {
+      final dragged = clampedToSeries(
+        const ChartViewport(2100, 2400, 0, 1),
+        gold,
+      );
+      expect(dragged.xMax, lessThan(2040));
+      expect(dragged.xSpan, 300);
+    });
+
+    test('a view cannot be dragged past the oldest point', () {
+      final dragged = clampedToSeries(
+        const ChartViewport(-9000, -8000, 0, 1),
+        gold,
+      );
+      expect(dragged.xMin, greaterThan(-1000));
+    });
+
+    test('every visible uncertainty bar stays inside a zoomed view', () {
+      for (final series in kPriceSeries.values) {
+        const windows = [(1990.0, 2024.0), (1400.0, 1520.0), (-400.0, 400.0)];
+        for (final (first, last) in windows) {
+          final view = fittedToVisibleValues(
+            ChartViewport(first, last, -9, 9),
+            series,
+          );
+          for (final p in series.points) {
+            if (p.year < first || p.year > last || !p.hasBand) continue;
+            expect(view.ny(p.valueLow!), greaterThanOrEqualTo(0));
+            expect(view.ny(p.valueHigh!), lessThanOrEqualTo(1));
+          }
+        }
+      }
+    });
+
+    test('a line running out of the window stays inside the frame', () {
+      // Cuts between the 2008 and 2020 points: the 2020 value lies far above.
+      final view = fittedToVisibleValues(
+        const ChartViewport(1990, 2015, -9, 9),
+        gold,
+      );
+      final beyond = gold.points.firstWhere((p) => p.year == 2020);
+      expect(view.ny(beyond.value), lessThanOrEqualTo(1));
+    });
+
+    test('a window without points keeps its value axis', () {
+      const view = ChartViewport(600, 700, 1, 2);
+      expect(fittedToVisibleValues(view, gold), view);
+    });
+
+    test('the value axis keeps several ticks at any zoom', () {
+      for (final (low, high) in const [(-3.0, 3.0), (2.0, 2.6), (2.1, 2.2)]) {
+        expect(valueAxisTicks(low, high).length, greaterThanOrEqualTo(3));
+      }
+    });
+
+    test('the nearest point stays inside the view', () {
+      const view = ChartViewport(1400, 1500, 0, 1);
+      expect(nearestVisiblePoint(gold, view, 1900)?.year, 1500);
+      const empty = ChartViewport(600, 700, 0, 1);
+      expect(nearestVisiblePoint(gold, empty, 650), isNull);
+    });
+
+    test('values read with two digits in either base', () {
+      expect(roughValueLabel(294, 10), '290');
+      expect(roughValueLabel(0.0114, 10), '0.011');
+      expect(roughValueLabel(144, 12), '100');
     });
   });
 }

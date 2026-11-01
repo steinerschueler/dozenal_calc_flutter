@@ -1,40 +1,35 @@
 # Rechner-Seiten
 
-Aus dem früheren Gesamtdokument übernommen. Verweise wie «oben» oder «siehe …-Abschnitt» meinen die Themenseiten, die
+Verweise wie «oben» oder «siehe …-Abschnitt» meinen die Themenseiten, die
 [architektur.md](architektur.md) auflistet.
 
 ## Einheitenrechner (zweiter Rechner-Modus)
 
-Vollständiger Umrechner, seit dem Pager-Umbau **Seite 2 eines horizontalen
-PageView** im `_CalcScaffold`: Links-Swipe auf dem Hauptrechner öffnet ihn,
-Rechts-Swipe führt zurück (Default beim Start ist immer der Hauptrechner).
-Einen Listen-Eintrag als Zugang gibt es seit dem Texte-Umbau nicht mehr —
-Swipe + Page-Peek tragen die Entdeckbarkeit, das Kapitel „Der zweite
-Rechner" im Einheitenrechner-Handbuch erklärt den Wechsel
-(`requestConverter`/`converterRequested` wurden entfernt). Der
+Vollständiger Umrechner, **Seite 2 eines horizontalen PageView** im
+`_CalcScaffold`. Die Taste rechts vom Gleichbalken (`Icons.swap_horiz`, `_showNextCalculator`) führt
+zum nächsten Rechner, vom letzten wieder zum ersten; links vom Gleichbalken liegt
+die Menütaste (`Icons.menu`). Wischen ist abgeschaltet
+(`NeverScrollableScrollPhysics`): Ein leicht bewegter Finger liess sonst die Seite
+rutschen und verschluckte den Tipp. Beim Start zeigt die App immer den
+Hauptrechner. Einen Listen-Eintrag als Zugang gibt es nicht, das Kapitel „Der
+zweite Rechner" im Einheitenrechner-Handbuch erklärt den Wechsel. Der
 einbettbare Inhalt ist `ConverterBody`
 (`converter_page.dart`); `ConverterPage` bleibt als Route-Wrapper für
 Tests/Preview mit eigenem, brückenlosem State. Im Pager besitzt
 `_CalcScaffoldState` den langlebigen `ConverterState` — Eingaben überleben
-Seitenwechsel. Die Swipe-Geste ist frei, weil beide Displays nur
-Tap/Langdruck/Vertikal-Drag belegen; in Breit-Layouts mit horizontalem
-Keypad-Scroll funktioniert der Seiten-Swipe auf der Display-Fläche.
+Seitenwechsel.
 
-**Page-Peek-Indikator** (Swipe-Discoverability): ein dezenter
+**Page-Peek-Indikator** (zeigt, auf welcher Seite man steht): ein dezenter
 **Punkte-Indikator** unten mittig — drei Punkte (einer pro Seite,
 `textMuted`) auf einem durchscheinenden Pill, darüber der Name der
 ankommenden Seite (13 pt `textSecondary`; `pagerLabelMain`/
 `infoListConverterEntry`/`pagerLabelAsset` ×14). Bewusst ohne Gold und
-ohne Karten-Optik: das frühere Design (grosse Miniatur-Karten mit
-2-dp-Goldrahmen in Bildschirmmitte) las sich wie ein modaler Dialog
-und verheizte den sparsamen Gold-Akzent für einen rein informativen
-Hinweis. Der Indikator **gleitet live mit dem Pager**: ein
+ohne Karten-Optik. Der Indikator **gleitet live mit dem Pager**: ein
 `AnimatedBuilder` am `PageController` zeichnet den aktiven Punkt
 (`textPrimary`) an der kontinuierlichen `page`-Position (eine
-Swipe-Breite = ein Punkt-Pitch), die drei Seitennamen liegen gestapelt
+Seitenbreite = ein Punkt-Pitch), die drei Seitennamen liegen gestapelt
 und blenden per Alpha von der verlassenen zur ankommenden Seite über
-(stabile Pill-Grösse, keine Layout-Sprünge), und das sanfte
-Ausrollen liefert die Pager-Physik selbst. Der Puls läuft über einen
+(stabile Pill-Grösse, keine Layout-Sprünge). Der Puls läuft über einen
 Controller-Listener (`_onPagerScroll`): jede Bewegung hält den Peek am
 Leben, der Hide-Timer zählt erst ab Stillstand; `_pulsePagePeek` ist
 Build-Phasen-sicher (Scroll-Callbacks können während des Layouts
@@ -91,17 +86,14 @@ zerstörungsfrei an den Rändern), auf Seite 2 analog `_handleAssetKey`;
 alles andere wird geschluckt, damit kein Tastendruck unsichtbar den
 verdeckten Hauptrechner editiert.
 
-**Basis ⊗ System (entkoppelt seit dem Farb-Umbau):** Die frühere Kopplung
-„Doz = imperial in Basis 12 / Dez = metrisch in Basis 10" ist aufgelöst —
-zwei unabhängige Achsen, alle **vier** Kombinationen gültig:
+**Basis ⊗ System:** zwei unabhängige Achsen, alle **vier** Kombinationen
+gültig:
 
 - **Einheitensystem** (imperial ↔ metrisch): converter-lokal, über die zwei
-  **runden System-Tasten in der Equals-Reihe** — `met` (links, grün) / `imp`
-  (rechts, violett); Kreisform + `pagerFill` wie die (i)/(?)-Rundtasten des
-  Hauptrechners, die aktive trägt einen 2-dp-Eigenfarb-Ring. Sie
-  ersetzen die früheren Rundtasten ((i)/Taschenrechner-Icon: Info läuft über
-  die Hauptrechner-Seite, zurück per Rechts-Swipe) und die Doz/Dez-Tasten
-  des Umrechner-Overlays (Slots leer, Drg/Close behalten ihre Plätze).
+  **runden System-Tasten in der Equals-Reihe** — die Reihe lautet
+  [Menü · `met` (grün) · `=` · `imp` (violett) · Wechsel]; Kreisform +
+  `pagerFill`, die aktive trägt einen 2-dp-Eigenfarb-Ring. Die Doz/Dez-Slots
+  des Umrechner-Overlays bleiben leer, Drg/Close behalten ihre Plätze.
   `setWorld` kollabiert Terme werterhaltend zur Partner-Einheit.
 - **Zahlbasis** (12 ↔ 10): global — die Settings-Zeile „Zahlensystem" wirkt
   auf BEIDE Rechner. Der Scaffold spiegelt `DozenalCalcState.activeBase` per
@@ -188,10 +180,8 @@ dem Hauptrechner, und seit der Basis/System-Entkopplung gilt auch die
 Settings-**Zahlensystem**-Zeile für beide Rechner (Sync siehe oben). Nur das
 **Einheitensystem** bleibt converter-lokal (met/imp-Tasten).
 
-`conversions_page.dart` ist inzwischen zur **Einheitentheorie**-Seite
-ausgebaut (siehe Sekundärseiten im Info-Modal-Abschnitt) und über die
-Theorie-Expansion erreichbar — der frühere Plan „später Theorie-Block"
-ist damit umgesetzt.
+`conversions_page.dart` ist die **Einheitentheorie**-Seite (siehe
+Sekundärseiten im Info-Modal-Abschnitt), erreichbar über die Theorie-Expansion.
 
 **Tipp-Cursor (beide Rechner):** Tippen auf die Eingabezeile positioniert den
 Bearbeitungs-Cursor (die rote Linie). Hauptrechner: `TwoLineDisplay`
@@ -201,7 +191,7 @@ Umrechner: `converter_display` Caret-Hit-Test → `ConverterState.handleInputTap
 ## Werterechner (dritter Rechner-Modus): Edelmetalle & Währungen
 
 Nutzer-sichtbarer Name **„Werterechner"** (`pagerLabelAsset`); interner Code-/
-Dateinamensraum bleibt `asset`. **Seite 3 des Pagers** (zweimal Links-Swipe),
+Dateinamensraum bleibt `asset`. **Seite 3 des Pagers** (zweimal die Wechseltaste vom Hauptrechner),
 im Design des Einheitenrechners,
 aber mit **drei** Hierarchien: **Klasse → Gattung → Einheit** (Edelmetall →
 Gold → gr/dwt/oz t/lb t bzw. g/kg; Währung → GBP → £/sh/d). **Phase 1** =
@@ -244,16 +234,13 @@ Vollständige Spezifikation + Roadmap:
   metrisch Spalte B — keine met/imp-Tasten). Auf der Klassen-Ebene
   füllt der Speicher (STO/RCL/MC/Ans) das Set 3 und weicht nach
   Klassenwahl den Gattungen. System-Reihe ist [AC · Del · `.` · Wert];
-  „Kurve" (links) und „Kurse" (rechts) sind runde `_RoundKey`-Tasten
-  neben der Gleichtaste. `lib/asset_page.dart` (`AssetBody`/`AssetPage`),
+  die Equals-Reihe lautet [Menü · „Kurve" · `=` · „Kurse" · Wechsel], „Kurve"
+  und „Kurse" sind runde `_RoundKey`-Tasten. `lib/asset_page.dart` (`AssetBody`/`AssetPage`),
   Labels in `lib/asset_labels.dart` (Währungs-Tiles = ISO-Code).
 - Verdrahtung in `main.dart`: `_assetState` + `_rateStore` im
   `_CalcScaffoldState`, drittes PageView-Kind, `_pagerProgress` clampt `[0,2]`,
   `_PagePeekOverlay` mit drei Punkten, `_handleAssetKey` für physische
-  Tasten auf Seite 2, Basis-Sync via `_assetState.setBase`. Bei offenem
-  Chart sperrt der Pager das Seiten-Wischen
-  (`NeverScrollableScrollPhysics` auf `chartOpen`), sonst verlöre der
-  Chart-Pan die Gesture-Arena. Die **Asset↔Hauptrechner-Brücke ist
+  Tasten auf Seite 2, Basis-Sync via `_assetState.setBase`. Die **Asset↔Hauptrechner-Brücke ist
   verdrahtet**: die Ans-Taste im Drill zieht das Rechner-Resultat
   (`_assetState.calcAnsProvider`), der Hauptrechner erreicht den
   Asset-Wert über CONV (Tap-Fallback bei leerem Umrechner) bzw. dessen
@@ -268,6 +255,10 @@ Vollständige Spezifikation + Roadmap:
   geteilten `converter_display.dart`. **Opt-in-API nur als Doku**
   (`docs/asset-rates-api.md`) — ausgeliefertes Binary netzwerkfrei,
   `legal/privacy-*` unverändert.
+- **Kurve:** Der Chart zeigt echte Mengen statt des Index: eine Zeile über dem Plot nennt für den gewählten Punkt
+  etwa «2024 · 1 g Gold = 290 L Getreide» samt geschätzter Spanne. Epochen-Chips (Antike, Mittelalter, Neuzeit, Heute,
+  Alles) springen zum Zeitraum, Verschieben endet bei den Daten. Unsicherheit steht als Balken am Punkt, nicht mehr als
+  Fläche. Der folgende Abschnitt beschreibt die ursprüngliche Index-Fassung, die Theorie-Abbildungen nutzen sie weiter.
 - **Phase 3 (historische Preiskurve, gold-bezogene Index-Darstellung):**
   „Kurve"-Taste ersetzt das Keypad per AnimatedSwitcher
   (`AssetState.chartOpen`/`toggleChart`, Schliessen über × im Chart). **Alles
@@ -284,3 +275,10 @@ Vollständige Spezifikation + Roadmap:
 - ARB (`pagerLabelAsset`, `assetClass*`, `assetGenus*`, `assetValueHint` plus die
   Phase-2-Keys `assetValueKey`/`assetRatesKey`/`assetRates*`/`assetValueNote`):
   **alle 14 Sprachen vollständig übersetzt** (Subagenten-Pipeline).
+
+## Ankunft im Einheiten- und Werterechner
+
+Beim Ankommen übernehmen beide Rechner ein neues Ergebnis des Hauptrechners in die oberste Reihe und ersetzen damit
+einen alten Eintrag, die gewählte Kategorie (im Werterechner Klasse und Gattung) bleibt. Dasselbe Ergebnis kommt nie ein zweites Mal: AC bleibt leer,
+ein hier getippter Wert überlebt den Blick auf den Hauptrechner. Ist einer der beiden leer, erklärt das Display, dass die
+Gleichtaste durch die Magnituden schaltet.

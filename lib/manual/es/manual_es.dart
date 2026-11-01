@@ -33,10 +33,11 @@ List<ManualChapter> _manualChaptersEs() => const [
     ),
     _H('Ayuda y teoría'),
     _P(
-      'A la izquierda y a la derecha de la tecla = hay dos botones '
-      'redondos: (i) abre estos doce capítulos teóricos, (?) '
-      'reproduce el recorrido de uso con los marcadores rojos. El '
-      'recorrido se abre automáticamente en el primer inicio.',
+      'A la izquierda de la barra de igual está la tecla de menú: abre '
+      'el menú con estos doce capítulos teóricos. La entrada '
+      '«Introducción» del menú reproduce el recorrido de uso con los '
+      'marcadores rojos. El recorrido se abre automáticamente en el '
+      'primer inicio.',
     ),
     _H('Cursor y navegación'),
     _P(
@@ -121,10 +122,10 @@ List<ManualChapter> _manualChaptersEs() => const [
     ),
     _H('Sistema numérico: Doz / Dez'),
     _P(
-      'El sistema numérico se cambia en los ajustes, accesibles '
-      'a través de la tecla (i): duodecimal calcula en base 12 '
-      '(predeterminado), decimal en base 10. El sistema activo '
-      'se muestra en la parte superior derecha de la pantalla.',
+      'El sistema numérico se cambia en los ajustes, accesibles a través '
+      'de la tecla de menú: duodecimal calcula en base 12 '
+      '(predeterminado), decimal en base 10. El sistema activo se '
+      'muestra en la parte superior derecha de la pantalla.',
     ),
     _P(
       'Al cambiar, el número actualmente visible se convierte '
@@ -1119,15 +1120,16 @@ List<ManualChapter> _converterManualChaptersEs() => const [
     ),
     _H('Cambiar de un lado a otro'),
     _P(
-      'Desliza hacia la izquierda en la calculadora principal y aparece el '
-      'conversor de unidades. Desliza hacia la derecha en el conversor y '
-      'estás de vuelta. Al cambiar aparecen brevemente abajo tres puntos '
-      'pequeños con el nombre de la página — el punto claro muestra dónde '
-      'estás.',
+      'La tecla a la derecha de la barra de igual cambia a la '
+      'calculadora siguiente: de la calculadora principal al conversor '
+      'de unidades, de allí a la calculadora de valores y de vuelta a la '
+      'calculadora principal. Al cambiar aparecen brevemente abajo tres '
+      'puntos pequeños con el nombre de la página — el punto claro '
+      'muestra dónde estás.',
     ),
     _P(
-      'Ambas calculadoras conservan sus entradas al cambiar: puedes '
-      'deslizarte a la calculadora principal en medio de una conversión, '
+      'Todas las calculadoras conservan sus entradas al cambiar: puedes '
+      'pasar a la calculadora principal en medio de una conversión, '
       'calcular algo allí y continuar sin interrupciones.',
     ),
   ]),
@@ -1257,7 +1259,7 @@ List<ManualChapter> _converterManualChaptersEs() => const [
     _H('El puente a la calculadora principal'),
     _P(
       'La tecla Ans trae el último resultado de la calculadora principal '
-      'a la entrada — calcula algo allí, desliza hacia aquí y dale una '
+      'a la entrada — calcula algo allí, cambia hasta aquí y dale una '
       'unidad al valor. A la inversa, la tecla CONV en el panel ampliado '
       'de la calculadora principal trae el número de la línea de '
       'resultado del conversor de unidades. Los valores viajan como '
@@ -1281,11 +1283,13 @@ List<ManualChapter> _assetManualChaptersEs() => const [
     ),
     _H('Cambiar de un lado a otro'),
     _P(
-      'Desliza dos veces hacia la izquierda en la calculadora principal — '
-      'más allá del conversor de unidades — y aparece la calculadora de '
-      'valores. Deslizar hacia la derecha te lleva de vuelta paso a paso. '
-      'Los puntos pequeños con el nombre de la página vuelven a indicar '
-      'al cambiar dónde estás; el punto claro es la página activa.',
+      'La tecla a la derecha de la barra de igual recorre las '
+      'calculadoras por turnos: desde la calculadora principal, dos '
+      'toques — más allá del conversor de unidades — llevan a la '
+      'calculadora de valores; un toque más te devuelve a la calculadora '
+      'principal. Los puntos pequeños con el nombre de la página vuelven '
+      'a indicar al cambiar dónde estás; el punto claro es la página '
+      'activa.',
     ),
     _P(
       'Como las demás calculadoras, la calculadora de valores conserva su '
@@ -1405,28 +1409,26 @@ List<ManualChapter> _assetManualChaptersEs() => const [
   ]),
   ManualChapter('Curva: la comparación histórica', [
     _P(
-      'La tecla de curva — el círculo de la izquierda junto a la barra de '
-      'igual — sustituye el teclado por un diagrama; la × de arriba lo '
-      'vuelve a cerrar.',
+      'La tecla de curva a la izquierda de la barra de igual sustituye '
+      'el teclado por un diagrama; la × de arriba lo vuelve a cerrar.',
     ),
     _H('Las tres series'),
     _P(
-      'Todo se mide respecto al oro: plata en oro, grano en oro y oro en '
-      'grano — es decir, el poder adquisitivo del oro en alimentos. Cada '
-      'serie está referida a su valor conocido más antiguo; este se sitúa '
-      'como línea de cero en negrita en el centro. Por encima de la línea '
-      'significa más caro, por debajo más barato, siempre respecto al '
-      'oro.',
+      'Tres botones eligen la serie, medida en cantidades reales: oro en '
+      'grano — es decir, el poder adquisitivo del oro en alimentos —, '
+      'plata en oro y grano en oro. Sobre el diagrama, el valor aparece '
+      'como una cantidad concreta, por ejemplo «1 g de oro = … L de '
+      'grano», primero para el punto más reciente.',
     ),
     _H('Leer y desplazar'),
     _P(
-      'Arrastrar desplaza la imagen, pellizcar hace zoom, el botón de la '
-      'derecha aleja el zoom hasta la Antigüedad. De forma '
-      'predeterminada, la curva muestra los últimos cien años '
-      'aproximadamente. La banda sombreada en torno a los puntos de la '
-      'Antigüedad es el rango estimado — la Antigüedad consta de anillos '
-      'sueltos (solo órdenes de magnitud), ninguna línea cruza un hueco. '
-      'La línea de fuentes enumera el conjunto de datos.',
+      'Los botones Antigüedad, Edad Media, Edad Moderna y Hoy eligen el '
+      'período; se empieza en Hoy. Todo o un doble toque muestra la '
+      'serie completa. Un toque en el diagrama lee el punto más cercano, '
+      'arrastrar desplaza la imagen, pellizcar hace zoom. Las barras '
+      'muestran la incertidumbre estimada — la Antigüedad consta de '
+      'puntos sueltos (solo órdenes de magnitud), ninguna línea cruza un '
+      'hueco. Fuentes enumera el conjunto de datos.',
     ),
   ]),
 ];

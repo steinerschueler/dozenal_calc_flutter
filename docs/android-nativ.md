@@ -1,6 +1,6 @@
 # Android nativ
 
-Aus dem früheren Gesamtdokument übernommen. Verweise wie «oben» oder «siehe …-Abschnitt» meinen die Themenseiten, die
+Verweise wie «oben» oder «siehe …-Abschnitt» meinen die Themenseiten, die
 [architektur.md](architektur.md) auflistet.
 
 ## Edge-to-edge (Android 15) und Native-Activity
@@ -26,16 +26,8 @@ Die Transparenz der System-Bars UND die Icon-Brightness werden
    dunklem Hintergrund. Das ist der nicht-deprecated Ersatz für Flutters
    `SystemUiOverlayStyle.statusBarIconBrightness`.
 
-**Keine `SystemChrome.*`-Calls in `main.dart`** (kein
-`setEnabledSystemUIMode`, kein `setSystemUIOverlayStyle`): beide laufen über
-Flutters `PlatformPlugin`, das statisch auf deprecated `Window.setStatusBar/
-NavigationBarColor` verweist, die Play Console beim DEX-Scan flaggt. Alles
-nativ in `MainActivity.java`. Verbleibende Play-Console-Warnungen (»randlose
-Anzeige«, »nicht mehr unterstützte APIs«) stammen aus Flutter-Engine +
-`androidx.activity`-Backports, sind als bekannte **Upstream-Issues** zu
-behandeln (kein TODO im Repo) und keine aggressiven R8-Strip-Regeln einbauen.
-Vollständige Begründung, Issue-Tracking und der Re-Check bei Flutter-Upgrades:
-[`docs/edge-to-edge.md`](edge-to-edge.md).
+**Keine `SystemChrome.*`-Calls in `main.dart`**, alles läuft nativ in `MainActivity.java`. Begründung, verbleibende
+Play-Console-Warnungen und der Re-Check bei Flutter-Upgrades: [`docs/edge-to-edge.md`](edge-to-edge.md).
 
 `MainActivity` extendet bewusst **`FlutterFragmentActivity`**, nicht
 `FlutterActivity`: nur Erstere erbt über `FragmentActivity` von

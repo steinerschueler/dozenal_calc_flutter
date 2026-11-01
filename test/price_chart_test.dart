@@ -16,10 +16,13 @@ Widget _wrap(Widget child) => MaterialApp(
   home: Scaffold(body: child),
 );
 
-PriceChart _chart() => PriceChart(
-  base: 12,
+PriceChart _chart({int base = 12}) => PriceChart(
+  base: base,
   seriesLabel: (id) => id.name,
   unitLabel: (id) => '${id.name} in gold',
+  readoutLabel: (id, value) => '${id.name} = $value',
+  epochLabel: (epoch) => epoch.name,
+  allLabel: 'all',
   sourcesLabel: 'Quellen',
   caption: 'caption',
   eraReconstructedLabel: 'Ankerpunkt',
@@ -52,14 +55,53 @@ void main() {
       expect(tester.takeException(), isNull);
     });
 
-    testWidgets('tap on the plot reads a point (no crash)', (tester) async {
+    testWidgets('opens on the newest value, stated as a real amount', (
+      tester,
+    ) async {
+      await tester.binding.setSurfaceSize(const Size(412, 600));
+      addTearDown(() => tester.binding.setSurfaceSize(null));
+      await tester.pumpWidget(_wrap(_chart(base: 10)));
+      await tester.pumpAndSettle();
+      expect(find.textContaining('2024'), findsWidgets);
+      expect(find.textContaining('gold = '), findsOneWidget);
+    });
+
+    testWidgets('a tap on the plot reads the nearest point', (tester) async {
       await tester.binding.setSurfaceSize(const Size(412, 600));
       addTearDown(() => tester.binding.setSurfaceSize(null));
       await tester.pumpWidget(_wrap(_chart()));
       await tester.pumpAndSettle();
-      await tester.tapAt(const Offset(250, 300));
+      final before = tester.widget<Text>(find.textContaining('gold = ')).data;
+      final plot = tester.getCenter(find.byType(CustomPaint).last);
+      await tester.tapAt(plot);
+      await tester.pumpAndSettle();
+      expect(
+        tester.widget<Text>(find.textContaining('gold = ')).data,
+        isNot(before),
+      );
+    });
+
+    testWidgets('dragging keeps a read point in view', (tester) async {
+      await tester.binding.setSurfaceSize(const Size(412, 600));
+      addTearDown(() => tester.binding.setSurfaceSize(null));
+      await tester.pumpWidget(_wrap(_chart(base: 10)));
+      await tester.pumpAndSettle();
+      await tester.drag(find.byType(CustomPaint).last, const Offset(250, 0));
       await tester.pumpAndSettle();
       expect(tester.takeException(), isNull);
+      expect(find.textContaining('gold = '), findsOneWidget);
+      expect(find.textContaining('2024'), findsNothing);
+    });
+
+    testWidgets('an epoch chip jumps to that period', (tester) async {
+      await tester.binding.setSurfaceSize(const Size(412, 600));
+      addTearDown(() => tester.binding.setSurfaceSize(null));
+      await tester.pumpWidget(_wrap(_chart(base: 10)));
+      await tester.pumpAndSettle();
+      await tester.tap(find.text('middleAges'));
+      await tester.pumpAndSettle();
+      expect(find.textContaining('1500'), findsWidgets);
+      expect(find.textContaining('2024'), findsNothing);
     });
   });
 

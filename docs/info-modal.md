@@ -1,6 +1,6 @@
 # Info-Modal und Empfehlungen
 
-Aus dem früheren Gesamtdokument übernommen. Verweise wie «oben» oder «siehe …-Abschnitt» meinen die Themenseiten, die
+Verweise wie «oben» oder «siehe …-Abschnitt» meinen die Themenseiten, die
 [architektur.md](architektur.md) auflistet.
 
 ## Info-Modal
@@ -34,11 +34,7 @@ eigener Abschnitt unten):
   Kapitel-Fallback); konsumiert via `unitInfoOf` in `converter_page.dart`
   → `showUnitInfoBox` (`keypad_parts.dart`).
 
-Die frühere `info_content.dart` mit ihren `info_content_<lang>.dart`-Parts und
-der `_chapter<Lang>`-Funktion ist vollständig hierher migriert und existiert
-nicht mehr.
-
-**Layout der Info-Liste** (`InfoListPage`) — seit dem Texte-Umbau:
+**Layout der Info-Liste** (`InfoListPage`):
 
 1. „Bedienung des Hauptrechners" (`chapterTitle01`) — Handbuch-
    Expansion (`_ManualSectionExpansion`, parametrisiert statt
@@ -60,25 +56,22 @@ nicht mehr.
    (`infoListConversionsEntry` → `ConversionsPage`; dorthin gezogen,
    als die frühere `_UnitsExpansion` aufgelöst wurde), zuletzt
    „Wertetheorie" (`theoryBlockWerte` → `werteTheoryBlock`). Einen
-   Navigations-Eintrag „Einheitenrechner" gibt es nicht mehr (Swipe +
-   Page-Peek tragen den Zugang; der `requestConverter`-Pfad in
-   state/main ist entfernt).
+   Navigations-Eintrag „Einheitenrechner" gibt es nicht: Der Wechsel läuft
+   über die Taste rechts vom Gleichbalken.
 5. `_RecommendationsExpansion` — ausklappbar; ein Kapitel pro
    Plattform mit Pros/Cons je Rechner (eigener Abschnitt
    „Empfehlungen" unten).
-6. **Einstellungen-Eintrag** — pusht `SettingsPage`
-   (`settings_page.dart`, eigener Abschnitt unten). Die früher hier
-   liegenden Quick-Toggles (Glyphen-Stil, Haptik) sind dorthin gezogen.
-7. `_LanguagePickerExpansion` — analoge Ausklapp-Struktur, Default
+6. **Intro-Eintrag** (`a11yIntro`) — pusht `IntroPage`.
+7. **Einstellungen-Eintrag** — pusht `SettingsPage`
+   (`settings_page.dart`, eigener Abschnitt unten).
+8. `_LanguagePickerExpansion` — analoge Ausklapp-Struktur, Default
    collapsed, listet `kSupportedLanguages`.
-8. Sekundärseiten als Navigations-Items (Datenschutz, Lizenz, Spenden,
+9. Sekundärseiten als Navigations-Items (Datenschutz, Lizenz, Spenden,
    Feedback).
-9. `_VersionFooter` (Padding + Versions-Anzeige).
+10. `_VersionFooter` (Padding + Versions-Anzeige).
 
 Alle Top-Level-Items sind durch 1-dp-Dividers im Palette-Slot `divider`
-getrennt; keine grösseren Gaps mehr (früher 24 dp vor dem Sprach-
-Picker als visueller Sektions-Marker — mit dem Theorie-Expansion-
-Container ist dieser Marker visuell redundant geworden).
+getrennt.
 
 AppBar-Titel ist `infoListTitle`: DE „Dozenal Calc Menü",
 EN „Dozenal Calc Menu", entsprechend lokalisiert in allen 14 Locales.

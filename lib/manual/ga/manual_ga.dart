@@ -32,10 +32,10 @@ List<ManualChapter> _manualChaptersGa() => const [
     ),
     _H('Cabhair agus teoiric'),
     _P(
-      'Ar chlé agus ar dheis na heochrach =, suíonn dhá chnaipe '
-      'ciorclacha: osclaíonn (i) an dáréag caibidil teoirice seo, '
-      'athchasann (?) an turas tapa leis na marcóirí dearga. Osclaíonn '
-      'an turas go huathoibríoch ar an chéad tús.',
+      'Ar chlé ón mbarra cothroime atá eochair an roghchláir: osclaíonn '
+      'sí an roghchlár leis an dáréag caibidil teoirice seo. Athchasann '
+      'an iontráil «Réamhrá» sa roghchlár an turas tapa leis na marcóirí '
+      'dearga. Osclaíonn an turas go huathoibríoch ar an chéad tús.',
     ),
     _H('Cúrsóir agus loingseoireacht'),
     _P(
@@ -116,8 +116,8 @@ List<ManualChapter> _manualChaptersGa() => const [
     ),
     _H('Córas uimhrithe: Doz / Dez'),
     _P(
-      'Athraíonn tú an córas uimhrithe sna socruithe, ar fáil '
-      'tríd an eochair (i): ríomhann dosaenach i mbonn 12 '
+      'Athraíonn tú an córas uimhrithe sna socruithe, ar fáil trí '
+      'eochair an roghchláir: ríomhann dosaenach i mbonn 12 '
       '(réamhshocrú), deachúil i mbonn 10. Taispeántar an córas '
       'gníomhach ag barr na láimhe deise den taispeáint.',
     ),
@@ -1128,15 +1128,16 @@ List<ManualChapter> _converterManualChaptersGa() => const [
     ),
     _H('Athrú anonn is anall'),
     _P(
-      'Svuáil ar chlé ar an bpríomháireamhán, agus taispeánfar an '
-      'tiontaire aonad. Svuáil ar dheis ar an tiontaire aonad, agus tá '
-      'tú ar ais. Agus tú ag athrú, nochtann trí phonc bheaga le hainm '
-      'an leathanaigh ar feadh meandair ag bun an scáileáin — '
+      'Bogann an eochair ar dheis ón mbarra cothroime chuig an gcéad '
+      'áireamhán eile: ón bpríomháireamhán chuig an tiontaire aonad, as '
+      'sin chuig an áireamhán luacha agus ar ais chuig an '
+      'bpríomháireamhán. Agus tú ag athrú, nochtann trí phonc bheaga le '
+      'hainm an leathanaigh ar feadh meandair ag bun an scáileáin — '
       'taispeánann an ponc geal cá bhfuil tú faoi láthair.',
     ),
     _P(
-      'Coinníonn an dá áireamhán a n-ionchur agus tú ag athrú: is '
-      'féidir leat svuáil chuig an bpríomháireamhán i lár tiontaithe, '
+      'Coinníonn na háireamháin go léir a n-ionchur agus tú ag athrú: is '
+      'féidir leat bogadh chuig an bpríomháireamhán i lár tiontaithe, '
       'rud éigin a ríomh ansiúd agus leanúint ar aghaidh gan uaim.',
     ),
   ]),
@@ -1271,15 +1272,14 @@ List<ManualChapter> _converterManualChaptersGa() => const [
     _H('An droichead chuig an bpríomháireamhán'),
     _P(
       'Faigheann an eochair Ans toradh deireanach an phríomháireamháin '
-      'isteach san ionchur — ríomh rud éigin ansiúd, svuáil anall agus '
+      'isteach san ionchur — ríomh rud éigin ansiúd, bog anall agus '
       'tabhair aonad don luach. Os a choinne sin, faigheann an eochair '
       'CONV i bpainéal breisithe an phríomháireamháin an uimhir ó líne '
-      'thoraidh an tiontaire aonad. Taistealaíonn luachanna mar '
-      'uimhir, agus taispeántar iad go huathoibríoch i mbonn an '
-      'leathanaigh sprice. Mura bhfuil aon rud sa tiontaire aonad '
-      'faoi láthair, téann CONV i muinín thoradh an áireamháin '
-      'luacha; le brú fada ar CONV tá sé ar fáil go díreach mar '
-      'VAL freisin.',
+      'thoraidh an tiontaire aonad. Taistealaíonn luachanna mar uimhir, '
+      'agus taispeántar iad go huathoibríoch i mbonn an leathanaigh '
+      'sprice. Mura bhfuil aon rud sa tiontaire aonad faoi láthair, '
+      'téann CONV i muinín thoradh an áireamháin luacha; le brú fada ar '
+      'CONV tá sé ar fáil go díreach mar VAL freisin.',
     ),
   ]),
 ];
@@ -1295,11 +1295,12 @@ List<ManualChapter> _assetManualChaptersGa() => const [
     ),
     _H('Anonn is anall'),
     _P(
-      'Svuáil ar chlé ar an bpríomháireamhán faoi dhó — thar an tiontaire '
-      'aonad — agus taispeánfar an t-áireamhán luacha. Tugann svuáil ar '
-      'dheis ar ais thú céim ar chéim. Taispeánann na poncanna beaga le '
-      'hainm an leathanaigh ag an athrú arís cá bhfuil tú; is é an ponc '
-      'geal an leathanach gníomhach.',
+      'Téann an eochair ar dheis ón mbarra cothroime trí na háireamháin '
+      'ar a seal: ón bpríomháireamhán, le dhá thapáil — thar an '
+      'tiontaire aonad — sroicheann tú an t-áireamhán luacha; le tapáil '
+      'eile tá tú ar ais ag an bpríomháireamhán. Taispeánann na poncanna '
+      'beaga le hainm an leathanaigh ag an athrú arís cá bhfuil tú; is é '
+      'an ponc geal an leathanach gníomhach.',
     ),
     _P(
       'Cosúil leis na háireamháin eile, coinníonn an t-áireamhán luacha a '
@@ -1421,27 +1422,26 @@ List<ManualChapter> _assetManualChaptersGa() => const [
   ]),
   ManualChapter('Cuar: an chomparáid stairiúil', [
     _P(
-      'Cuireann an eochair Cuar — an ciorcal ar chlé in aice leis an '
-      'mbarra cothroime — cairt in áit an eochaircheaptha; dúnann an × ag '
-      'an mbarr arís é.',
+      'Cuireann an eochair Cuar ar chlé ón mbarra cothroime cairt in áit '
+      'an eochaircheaptha; dúnann an × ag an mbarr arís é.',
     ),
     _H('Na trí shraith'),
     _P(
-      'Tomhaistear gach rud i gcoinne óir: airgead in ór, gránach in ór '
-      'agus ór i ngránach — is é sin cumhacht cheannaigh an óir i mbia. '
-      'Tá gach sraith bunaithe ar a luach is sine ar a bhfuil eolas; '
-      'luíonn sé sin mar líne nialais throm sa lár. Os cionn na líne '
-      'ciallaíonn níos daoire, faoina bun níos saoire, gach ceann i '
-      'gcoinne óir.',
+      'Roghnaíonn trí chnaipe an tsraith, tomhaiste i méideanna fíora: '
+      'ór i ngránach — is é sin cumhacht cheannaigh an óir i mbia —, '
+      'airgead in ór agus gránach in ór. Os cionn na cairte tá an luach '
+      'mar mhéid nithiúil, mar shampla «1 g óir = … L gránach», ar dtús '
+      'don phointe is nuaí.',
     ),
     _H('Léamh agus bogadh'),
     _P(
-      'Bogann tarraingt an pictiúr, súmálann fáscadh, súmálann an cnaipe '
-      'ar dheis amach ar fad isteach san ársaíocht. De réir '
-      'réamhshocraithe taispeánann an cuar an céad bliain deireanach nó '
-      'mar sin. Is é an banda scáthaithe timpeall na bpointí ársa an raon '
-      'measta — is é an ársaíocht fáinní aonair (ord méide amháin), agus '
-      'ní ritheann aon líne thar bhearna. Liostaíonn líne na bhfoinsí an '
+      'Roghnaíonn na cnaipí An tSeaniarsmacht, An Mheánaois, An Ré '
+      'Nua-Aimseartha agus Inniu an tréimhse; tosaítear le Inniu. '
+      'Taispeánann Gach rud nó tapáil dhúbailte an tsraith iomlán. Léann '
+      'tapáil ar an gcairt an pointe is gaire, bogann tarraingt an '
+      'pictiúr, súmálann fáscadh. Taispeánann na barraí an éiginnteacht '
+      'mheasta — is é an ársaíocht pointí aonair (ord méide amháin), '
+      'agus ní ritheann aon líne thar bhearna. Liostaíonn Foinsí an '
       'tacar sonraí.',
     ),
   ]),

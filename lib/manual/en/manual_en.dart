@@ -30,10 +30,10 @@ List<ManualChapter> _manualChaptersEn() => const [
     ),
     _H('Help and theory'),
     _P(
-      'To the left and right of the = key sit two round buttons: '
-      '(i) opens these twelve theory chapters, (?) replays the '
-      'operating tour with the red highlight markers. The tour '
-      'opens automatically on first launch.',
+      'To the left of the equals bar sits the menu key: it opens the '
+      'menu with these twelve theory chapters. The “Intro” menu entry '
+      'replays the operating tour with the red highlight markers. The '
+      'tour opens automatically on first launch.',
     ),
     _H('Cursor and navigation'),
     _P(
@@ -113,10 +113,9 @@ List<ManualChapter> _manualChaptersEn() => const [
     ),
     _H('Number system: Doz / Dez'),
     _P(
-      'You switch the number base in the settings, reached via '
-      'the (i) key: dozenal computes in base 12 (default), decimal '
-      'in base 10. The active system is shown at the top right of '
-      'the display.',
+      'You switch the number base in the settings, reached via the menu '
+      'key: dozenal computes in base 12 (default), decimal in base 10. '
+      'The active system is shown at the top right of the display.',
     ),
     _P(
       'When switching, the currently visible number is automatically '
@@ -1069,15 +1068,16 @@ List<ManualChapter> _converterManualChaptersEn() => const [
     ),
     _H('Switching back and forth'),
     _P(
-      'Swipe left on the main calculator and the unit converter appears. '
-      'Swipe right on the unit converter and you are back. During the '
-      'switch three small dots with the page name briefly appear at the '
-      'bottom — the bright dot shows where you are.',
+      'The key to the right of the equals bar switches to the next '
+      'calculator: from the main calculator to the unit converter, from '
+      'there to the value calculator and back to the main calculator. '
+      'During the switch three small dots with the page name briefly '
+      'appear at the bottom — the bright dot shows where you are.',
     ),
     _P(
-      'Both calculators keep their input across the switch: you can swipe '
-      'to the main calculator in the middle of a conversion, work something '
-      'out there and carry on seamlessly.',
+      'All calculators keep their input across the switch: you can '
+      'switch to the main calculator in the middle of a conversion, work '
+      'something out there and carry on seamlessly.',
     ),
   ]),
   ManualChapter('Category, number, unit', [
@@ -1199,13 +1199,14 @@ List<ManualChapter> _converterManualChaptersEn() => const [
     _H('The bridge to the main calculator'),
     _P(
       'The Ans key fetches the last result of the main calculator into '
-      'the input — work something out there, swipe over and give the '
+      'the input — work something out there, switch over and give the '
       'value a unit. Conversely, the CONV key in the extension panel of '
       'the main calculator fetches the number from the result line of '
       'the unit converter. Values travel as a number and appear '
       'automatically in the base of the destination page. If the unit '
-      "converter holds nothing, CONV falls back to the value calculator's "
-      'result; a long press on CONV also offers it directly as VAL.',
+      'converter holds nothing, CONV falls back to the value '
+      "calculator's result; a long press on CONV also offers it directly "
+      'as VAL.',
     ),
   ]),
 ];
@@ -1221,11 +1222,12 @@ List<ManualChapter> _assetManualChaptersEn() => const [
     ),
     _H('There and back'),
     _P(
-      'Swipe left twice on the main calculator — past the unit '
-      'converter — and the value calculator appears. Swiping right takes '
-      'you back step by step. The small dots with the page name again '
-      'show where you are during the switch; the bright dot is the '
-      'active page.',
+      'The key to the right of the equals bar steps through the '
+      'calculators in turn: from the main calculator, two taps — past '
+      'the unit converter — reach the value calculator; one more tap '
+      'takes you back to the main calculator. The small dots with the '
+      'page name again show where you are during the switch; the bright '
+      'dot is the active page.',
     ),
     _P(
       'Like the other calculators, the value calculator keeps its input '
@@ -1339,25 +1341,26 @@ List<ManualChapter> _assetManualChaptersEn() => const [
   ]),
   ManualChapter('Curve: the historical comparison', [
     _P(
-      'The Curve key — the left circle next to the equals bar — replaces '
-      'the keypad with a chart; the × at the top closes it again.',
+      'The Curve key to the left of the equals bar replaces the keypad '
+      'with a chart; the × at the top closes it again.',
     ),
     _H('The three rows'),
     _P(
-      'Everything is measured against gold: silver in gold, grain in '
-      'gold and gold in grain — that is, the purchasing power of gold in '
-      'food. Each row is referenced to its oldest known value; that '
-      'value lies as a bold zero line in the middle. Above the line '
-      'means dearer, below it cheaper, each relative to gold.',
+      'Three buttons choose the row, measured in real amounts: gold in '
+      'grain — that is, the purchasing power of gold in food — silver in '
+      'gold and grain in gold. Above the chart the value stands as a '
+      'concrete amount, such as “1 g gold = … L grain”, first for the '
+      'newest point.',
     ),
     _H('Reading and moving'),
     _P(
-      'Dragging shifts the view, pinching zooms, the button on the right '
-      'zooms all the way out into antiquity. By default the curve shows '
-      'the last hundred years or so. The shaded band around the '
-      'antiquity points is the estimated range — antiquity consists of '
-      'individual rings (orders of magnitude only), no line runs across '
-      'a gap. The sources line lists the dataset.',
+      'The buttons Antiquity, Middle Ages, Modern era and Today choose '
+      'the period; it starts on Today. All or a double tap shows the '
+      'whole row. A tap on the chart reads the nearest point, dragging '
+      'shifts the view, pinching zooms. The bars show the estimated '
+      'uncertainty — antiquity consists of individual points (orders of '
+      'magnitude only), no line runs across a gap. Sources lists the '
+      'dataset.',
     ),
   ]),
 ];

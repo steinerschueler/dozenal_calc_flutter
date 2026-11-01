@@ -15,6 +15,19 @@ Git-Historie zusammengefasst. Nur `v1.5.1` ist als Git-Tag vorhanden.
 
 ### Changed
 
+- Die Preiskurve nennt echte Mengen («1 g Gold = 290 L Getreide»), springt per Epochen-Chip zu Zeiträumen, endet bei den
+  Daten und zeigt Unsicherheit als Balken.
+- Rechnerwechsel über einen Knopf statt durch Wischen, Menüknopf auf allen Rechnern, das Intro liegt im Menü.
+- Die Einführung zeigt neue Bilder und erklärt Menütaste, Rechnerwechsel und den Intro-Eintrag im Menü.
+- Das Display des Einheiten- und Werterechners zeigt vier Reihen; beide übernehmen neue Ergebnisse des Hauptrechners,
+  und im leeren Zustand erklärt das Display die Gleichtaste.
+- Im Querformat stehen die kleinen Zeilen des Werterechners neben den grossen. Bei offener Kurve liegt die Auswahl der
+  Reihe links, das Display nimmt rechts zwei Drittel der Breite.
+- Neues Erscheinungsbild aller drei Rechner: flächige Tasten ohne Rahmen, JetBrains Mono fett, deutlich grössere
+  Zeichen und Displays ohne Kasten.
+- Im Querformat bleibt mehr Höhe fürs Display; jede Tastenspalte ist so breit wie ihre längste Beschriftung.
+- Zu lange Display-Zeilen schrumpfen nicht mehr: Die Eingabe folgt dem Cursor, beide Zeilen lassen sich ziehen, und
+  Punkte zeigen, wo es weitergeht.
 - Der Page-Peek ist ein dezenter Punkte-Indikator, der mit dem Wischen mitgleitet.
 - Das Keypad des Werterechners kommt ohne Overlay aus und zeigt beide Einheitensysteme gleichzeitig.
 - Die CI nutzt Flutter 3.47.9 und prüft das Lockfile streng.

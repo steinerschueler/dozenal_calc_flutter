@@ -74,15 +74,14 @@ void main() {
 
   test('platform brightness only notifies in system mode', () async {
     SharedPreferences.setMockInitialValues({});
-    final theme = ThemeNotifier();
-    theme.updatePlatformBrightness(Brightness.dark);
+    final theme = ThemeNotifier()..updatePlatformBrightness(Brightness.dark);
 
     var notifications = 0;
-    theme.addListener(() => notifications++);
-
     // Explicit dark: OS brightness flips must not notify — the resolved
     // palette cannot change.
-    theme.updatePlatformBrightness(Brightness.light);
+    theme
+      ..addListener(() => notifications++)
+      ..updatePlatformBrightness(Brightness.light);
     expect(notifications, 0);
 
     await theme.setSetting(ThemeSetting.system);
@@ -113,7 +112,7 @@ void main() {
     SharedPreferences.setMockInitialValues({
       'theme_mode_v1': 'light',
       // Skip the onboarding intro (matches _kIntroSeenFlag in main.dart).
-      'intro_seen_v4': true,
+      'intro_seen_v5': true,
     });
     await tester.pumpWidget(const DozenalCalcApp());
     await tester.pumpAndSettle();

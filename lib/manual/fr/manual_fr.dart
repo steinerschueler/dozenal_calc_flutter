@@ -36,10 +36,10 @@ List<ManualChapter> _manualChaptersFr() => const [
     ),
     _H('Aide et théorie'),
     _P(
-      'À gauche et à droite de la touche =, deux boutons ronds : '
-      '(i) ouvre ces douze chapitres de théorie, (?) rejoue la '
-      'visite guidée avec les marqueurs rouges. La visite '
-      "s'ouvre automatiquement au premier lancement.",
+      "À gauche de la barre d'égalité se trouve la touche de menu : elle "
+      "ouvre le menu avec ces douze chapitres de théorie. L'entrée « "
+      'Intro » du menu rejoue la visite guidée avec les marqueurs '
+      "rouges. La visite s'ouvre automatiquement au premier lancement.",
     ),
     _H('Curseur et navigation'),
     _P(
@@ -125,10 +125,10 @@ List<ManualChapter> _manualChaptersFr() => const [
     ),
     _H('Système numérique : Doz / Dez'),
     _P(
-      'Vous changez le système numérique dans les réglages, '
-      'accessibles via la touche (i) : duodécimal calcule en base '
-      '12 (par défaut), décimal en base 10. Le système actif '
-      "s'affiche en haut à droite de l'écran.",
+      'Vous changez le système numérique dans les réglages, accessibles '
+      'via la touche de menu : duodécimal calcule en base 12 (par '
+      "défaut), décimal en base 10. Le système actif s'affiche en haut à "
+      "droite de l'écran.",
     ),
     _P(
       'En basculant, le nombre actuellement visible est '
@@ -1117,15 +1117,16 @@ List<ManualChapter> _converterManualChaptersFr() => const [
     ),
     _H("Passer de l'un à l'autre"),
     _P(
-      'Glissez vers la gauche sur la calculatrice principale et le '
-      "convertisseur d'unités apparaît. Glissez vers la droite sur le "
-      'convertisseur et vous voilà de retour. Au changement, trois '
-      'petits points apparaissent brièvement en bas avec le nom de la '
-      'page — le point clair indique où vous vous trouvez.',
+      "La touche à droite de la barre d'égalité passe à la calculatrice "
+      'suivante : de la calculatrice principale au convertisseur '
+      "d'unités, de là à la calculatrice de valeurs, puis de nouveau à "
+      'la calculatrice principale. Au changement, trois petits points '
+      'apparaissent brièvement en bas avec le nom de la page — le point '
+      'clair indique où vous vous trouvez.',
     ),
     _P(
-      'Les deux calculatrices conservent leur saisie au changement : '
-      'vous pouvez, en pleine conversion, glisser vers la calculatrice '
+      'Toutes les calculatrices conservent leur saisie au changement : '
+      'vous pouvez, en pleine conversion, passer à la calculatrice '
       'principale, y calculer quelque chose et poursuivre sans '
       'interruption.',
     ),
@@ -1260,15 +1261,16 @@ List<ManualChapter> _converterManualChaptersFr() => const [
     _H('La passerelle vers la calculatrice principale'),
     _P(
       'La touche Ans ramène le dernier résultat de la calculatrice '
-      'principale dans la saisie — calculez-y quelque chose, glissez '
-      'pour revenir et donnez une unité à la valeur. Inversement, la '
-      "touche CONV du panneau d'extension de la calculatrice principale "
-      'récupère le nombre de la ligne de résultat du convertisseur '
-      "d'unités. Les valeurs voyagent sous forme de nombre et "
-      "apparaissent automatiquement dans la base de la page d'arrivée. "
-      "Si le convertisseur d'unités ne contient rien pour l'instant, "
-      'CONV se rabat sur le résultat de la calculatrice de valeurs ; '
-      'un appui long sur CONV le propose aussi directement comme VAL.',
+      'principale dans la saisie — calculez-y quelque chose, revenez '
+      'avec la touche de changement et donnez une unité à la valeur. '
+      "Inversement, la touche CONV du panneau d'extension de la "
+      'calculatrice principale récupère le nombre de la ligne de '
+      "résultat du convertisseur d'unités. Les valeurs voyagent sous "
+      'forme de nombre et apparaissent automatiquement dans la base de '
+      "la page d'arrivée. Si le convertisseur d'unités ne contient rien "
+      "pour l'instant, CONV se rabat sur le résultat de la calculatrice "
+      'de valeurs ; un appui long sur CONV le propose aussi directement '
+      'comme VAL.',
     ),
   ]),
 ];
@@ -1284,12 +1286,13 @@ List<ManualChapter> _assetManualChaptersFr() => const [
     ),
     _H('Aller et revenir'),
     _P(
-      'Glissez deux fois vers la gauche sur la calculatrice principale — '
-      "par-dessus le convertisseur d'unités — et la calculatrice de "
-      'valeurs apparaît. Glisser vers la droite ramène pas à pas en '
-      'arrière. Au changement, les petits points avec le nom de la page '
-      'indiquent de nouveau où vous vous trouvez ; le point clair est la '
-      'page active.',
+      "La touche à droite de la barre d'égalité parcourt les "
+      'calculatrices tour à tour : depuis la calculatrice principale, '
+      "deux appuis — par-dessus le convertisseur d'unités — mènent à la "
+      'calculatrice de valeurs ; un appui de plus ramène à la '
+      'calculatrice principale. Au changement, les petits points avec le '
+      'nom de la page indiquent de nouveau où vous vous trouvez ; le '
+      'point clair est la page active.',
     ),
     _P(
       'Comme les autres calculatrices, la calculatrice de valeurs '
@@ -1410,28 +1413,27 @@ List<ManualChapter> _assetManualChaptersFr() => const [
   ]),
   ManualChapter('Courbe : la comparaison historique', [
     _P(
-      'La touche Courbe — le cercle de gauche à côté de la barre '
-      "d'égalité — remplace le clavier par un graphique ; le × en haut "
-      'le referme.',
+      "La touche Courbe à gauche de la barre d'égalité remplace le "
+      'clavier par un graphique ; le × en haut le referme.',
     ),
     _H('Les trois séries'),
     _P(
-      "Tout est mesuré par rapport à l'or : l'argent en or, le grain en "
-      "or et l'or en grain — c'est-à-dire le pouvoir d'achat de l'or "
-      'en nourriture. Chaque série est rapportée à sa plus ancienne '
-      'valeur connue ; celle-ci se trouve au centre comme une ligne zéro '
-      'en gras. Au-dessus de la ligne signifie plus cher, en dessous '
-      "moins cher, chaque fois relativement à l'or.",
+      'Trois boutons choisissent la série, mesurée en quantités réelles '
+      ": l'or en grain — c'est-à-dire le pouvoir d'achat de l'or en "
+      "nourriture —, l'argent en or et le grain en or. Au-dessus du "
+      "graphique, la valeur s'affiche comme une quantité concrète, par "
+      "exemple « 1 g d'or = … L de grain », d'abord pour le point le "
+      'plus récent.',
     ),
     _H('Lire et déplacer'),
     _P(
-      "Tirer déplace l'image, pincer zoome, le bouton de droite dézoome "
-      "entièrement jusqu'à l'Antiquité. Par défaut, la courbe montre la "
-      "dernière centaine d'années environ. La bande ombrée autour des "
-      "points de l'Antiquité est la plage estimée — l'Antiquité se "
-      "compose d'anneaux isolés (ordres de grandeur seulement), aucune "
-      'ligne ne court par-dessus une lacune. La ligne des sources liste '
-      'le jeu de données.',
+      "Les boutons Antiquité, Moyen Âge, Temps modernes et Aujourd'hui "
+      "choisissent la période ; au départ, c'est Aujourd'hui. Tout ou un "
+      'double appui montre toute la série. Un appui sur le graphique lit '
+      "le point le plus proche, tirer déplace l'image, pincer zoome. Les "
+      "barres montrent l'incertitude estimée — l'Antiquité se compose de "
+      'points isolés (ordres de grandeur seulement), aucune ligne ne '
+      'court par-dessus une lacune. Sources liste le jeu de données.',
     ),
   ]),
 ];

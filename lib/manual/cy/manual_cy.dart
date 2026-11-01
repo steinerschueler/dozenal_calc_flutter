@@ -36,10 +36,11 @@ List<ManualChapter> _manualChaptersCy() => const [
     ),
     _H('Cymorth a damcaniaeth'),
     _P(
-      "I chwith ac i ddeau'r fysell =, eistedda dau fotwm crwn: mae "
-      '(i) yn agor y deuddeg pennod ddamcaniaeth hyn, mae (?) yn '
-      "ailchwarae'r daith weithredu gyda'r marciau coch. Mae'r daith "
-      'yn agor yn awtomatig ar y lansiad cyntaf.',
+      "I'r chwith o far yr hafal mae bysell y ddewislen: mae'n agor y "
+      "ddewislen gyda'r deuddeg pennod ddamcaniaeth hyn. Mae'r cofnod "
+      "«Rhagarweiniad» yn y ddewislen yn ailchwarae'r daith weithredu "
+      "gyda'r marciau coch. Mae'r daith yn agor yn awtomatig ar y "
+      'lansiad cyntaf.',
     ),
     _H('Y cyrchwr a llywio'),
     _P(
@@ -122,10 +123,9 @@ List<ManualChapter> _manualChaptersCy() => const [
     ),
     _H('System rifau: Doz / Dez'),
     _P(
-      "Newidiwch y system rifau yn y gosodiadau, ar gael drwy'r "
-      'fysell (i): mae dwsin yn cyfrifo ym môn 12 (diofyn), degol '
-      'ym môn 10. Dangosir y system weithredol yng nghornel dde '
-      'uchaf y sgrin.',
+      'Newidiwch y system rifau yn y gosodiadau, ar gael drwy fysell y '
+      'ddewislen: mae dwsin yn cyfrifo ym môn 12 (diofyn), degol ym môn '
+      '10. Dangosir y system weithredol yng nghornel dde uchaf y sgrin.',
     ),
     _P(
       "Wrth newid, caiff y rhif sy'n weladwy ar hyn o bryd ei "
@@ -1105,15 +1105,15 @@ List<ManualChapter> _converterManualChaptersCy() => const [
     ),
     _H('Newid yn ôl ac ymlaen'),
     _P(
-      "Sweipiwch i'r chwith ar y brif gyfrifiannell, ac fe "
-      "ymddengys y trawsnewidydd unedau. Sweipiwch i'r dde ar y "
-      'trawsnewidydd, ac rydych yn ôl. Wrth newid, mae tri dot bach '
-      "gydag enw'r dudalen yn ymddangos am ennyd ar y gwaelod — mae'r "
-      "dot golau yn dangos ble'r ydych.",
+      "Mae'r fysell i'r dde o far yr hafal yn newid i'r gyfrifiannell "
+      "nesaf: o'r brif gyfrifiannell i'r trawsnewidydd unedau, oddi yno "
+      "i'r trawsnewidydd gwerth ac yn ôl i'r brif gyfrifiannell. Wrth "
+      "newid, mae tri dot bach gydag enw'r dudalen yn ymddangos am ennyd "
+      "ar y gwaelod — mae'r dot golau yn dangos ble'r ydych.",
     ),
     _P(
-      "Mae'r ddwy gyfrifiannell yn cadw eu mewnbwn wrth newid: gallwch "
-      "sweipio i'r brif gyfrifiannell yng nghanol trosiad, cyfrifo "
+      "Mae'r holl gyfrifianellau yn cadw eu mewnbwn wrth newid: gallwch "
+      "newid i'r brif gyfrifiannell yng nghanol trosiad, cyfrifo "
       "rhywbeth yno, a pharhau'n ddi-dor.",
     ),
   ]),
@@ -1241,15 +1241,14 @@ List<ManualChapter> _converterManualChaptersCy() => const [
     _H("Y bont i'r brif gyfrifiannell"),
     _P(
       "Mae'r fysell Ans yn cyrchu canlyniad diwethaf y brif "
-      "gyfrifiannell i'r mewnbwn — cyfrifwch rywbeth yno, sweipiwch "
-      "draw, a rhowch uned i'r gwerth. I'r gwrthwyneb, mae'r fysell "
-      "CONV ym mhanel estynedig y brif gyfrifiannell yn cyrchu'r rhif "
-      'o linell canlyniad y trawsnewidydd unedau. Mae gwerthoedd yn '
+      "gyfrifiannell i'r mewnbwn — cyfrifwch rywbeth yno, newidiwch "
+      "draw, a rhowch uned i'r gwerth. I'r gwrthwyneb, mae'r fysell CONV "
+      "ym mhanel estynedig y brif gyfrifiannell yn cyrchu'r rhif o "
+      'linell canlyniad y trawsnewidydd unedau. Mae gwerthoedd yn '
       'teithio fel rhif ac yn ymddangos yn awtomatig ym môn yr ochr '
-      'darged. Os nad oes dim yn y trawsnewidydd unedau ar hyn o '
-      'bryd, mae CONV yn troi at ganlyniad y gyfrifiannell gwerth; '
-      'mae pwysiad hir ar CONV hefyd yn ei gynnig yn uniongyrchol '
-      'fel VAL.',
+      'darged. Os nad oes dim yn y trawsnewidydd unedau ar hyn o bryd, '
+      'mae CONV yn troi at ganlyniad y gyfrifiannell gwerth; mae pwysiad '
+      'hir ar CONV hefyd yn ei gynnig yn uniongyrchol fel VAL.',
     ),
   ]),
 ];
@@ -1265,11 +1264,12 @@ List<ManualChapter> _assetManualChaptersCy() => const [
     ),
     _H('Yn ôl ac ymlaen'),
     _P(
-      "Sweipiwch ddwywaith i'r chwith ar y brif gyfrifiannell — heibio "
-      "i'r trawsnewidydd unedau — ac fe ymddengys y trawsnewidydd "
-      "gwerth. Mae sweipio i'r dde yn eich arwain yn ôl gam wrth gam. "
-      "Mae'r dotiau bach gydag enw'r dudalen wrth newid yn dangos eto "
-      "ble'r ydych; y dot golau yw'r dudalen weithredol.",
+      "Mae'r fysell i'r dde o far yr hafal yn mynd drwy'r cyfrifianellau "
+      "yn eu tro: o'r brif gyfrifiannell, mae dau dap — heibio i'r "
+      'trawsnewidydd unedau — yn cyrraedd y trawsnewidydd gwerth; mae '
+      "tap arall yn eich arwain yn ôl i'r brif gyfrifiannell. Mae'r "
+      "dotiau bach gydag enw'r dudalen wrth newid yn dangos eto ble'r "
+      "ydych; y dot golau yw'r dudalen weithredol.",
     ),
     _P(
       "Fel y cyfrifianellau eraill, mae'r trawsnewidydd gwerth yn cadw "
@@ -1388,27 +1388,27 @@ List<ManualChapter> _assetManualChaptersCy() => const [
   ]),
   ManualChapter('Cromlin: y gymhariaeth hanesyddol', [
     _P(
-      "Mae'r fysell Cromlin — y cylch chwith wrth ymyl bar yr hafal — yn "
-      "disodli'r bysellfwrdd â siart; mae'r × ar y brig yn ei gau eto.",
+      "Mae'r fysell Cromlin i'r chwith o far yr hafal yn disodli'r "
+      "bysellfwrdd â siart; mae'r × ar y brig yn ei gau eto.",
     ),
     _H('Y tair rhes'),
     _P(
-      'Caiff popeth ei fesur yn erbyn aur: arian mewn aur, grawn mewn '
-      'aur, ac aur mewn grawn — hynny yw, gallu prynu aur mewn bwyd. '
-      'Caiff pob rhes ei chyfeirio at ei gwerth hysbys hynaf; saif hwnnw '
-      "fel llinell sero drwchus yn y canol. Mae uwchlaw'r llinell yn "
-      "golygu drytach, oddi tani'n rhatach, y naill a'r llall yn "
-      'berthynol i aur.',
+      "Mae tri botwm yn dewis y rhes, wedi'i mesur mewn meintiau real: "
+      'aur mewn grawn — hynny yw, gallu prynu aur mewn bwyd —, arian '
+      'mewn aur a grawn mewn aur. Uwchben y siart saif y gwerth fel '
+      'maint pendant, er enghraifft «1 g aur = … L grawn», yn gyntaf ar '
+      'gyfer y pwynt diweddaraf.',
     ),
     _H('Darllen a symud'),
     _P(
-      "Mae llusgo yn symud y darlun, mae pinsio yn chwyddo, ac mae'r "
-      "botwm ar y dde yn chwyddo'n llwyr allan hyd at y cynfyd. Yn "
-      "ddiofyn, mae'r gromlin yn dangos y can mlynedd diwethaf neu fwy. "
-      "Y band cysgodol o amgylch pwyntiau'r cynfyd yw'r amrediad "
-      "amcangyfrifedig — mae'r cynfyd yn cynnwys cylchoedd unigol "
-      '(meintiau bras yn unig), ac ni red unrhyw linell dros fwlch. Mae '
-      "llinell y ffynonellau yn rhestru'r set ddata.",
+      "Mae'r botymau Hynafiaeth, Oesoedd Canol, Cyfnod modern a Heddiw "
+      'yn dewis y cyfnod; dechreuir gyda Heddiw. Mae Popeth neu dap dwbl '
+      'yn dangos y rhes gyfan. Mae tap ar y siart yn darllen y pwynt '
+      'agosaf, mae llusgo yn symud y darlun, mae pinsio yn chwyddo. '
+      "Mae'r barrau'n dangos yr ansicrwydd amcangyfrifedig — mae'r "
+      'cynfyd yn cynnwys pwyntiau unigol (meintiau bras yn unig), ac ni '
+      "red unrhyw linell dros fwlch. Mae Ffynonellau yn rhestru'r set "
+      'ddata.',
     ),
   ]),
 ];

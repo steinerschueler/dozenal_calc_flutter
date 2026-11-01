@@ -30,6 +30,7 @@ Widget _host(GlyphStyleNotifier n) => MaterialApp(
 );
 
 void main() {
+  lineDragTests();
   testWidgets('renders in both custom and conventional glyph styles', (
     tester,
   ) async {
@@ -93,5 +94,125 @@ void main() {
     );
     expect(find.text('DEZ'), findsOneWidget);
     expect(tester.takeException(), isNull);
+  });
+}
+
+const String _longInput = '123456789012345678901234567890';
+
+Future<PageController> _pumpLineInPager(
+  WidgetTester tester, {
+  required String input,
+  required String result,
+}) async {
+  final controller = PageController();
+  addTearDown(controller.dispose);
+  await tester.pumpWidget(
+    MaterialApp(
+      home: Scaffold(
+        body: GlyphStyleScope(
+          notifier: GlyphStyleNotifier(),
+          child: PageView(
+            controller: controller,
+            children: [
+              Center(
+                child: SizedBox(
+                  height: 140,
+                  width: 360,
+                  child: ConverterDisplay(
+                    topLine: ConverterLine(input),
+                    resultLine: ConverterLine(result),
+                    worldLabel: 'DOZ',
+                    inputCaret: input.length,
+                  ),
+                ),
+              ),
+              const SizedBox.expand(),
+            ],
+          ),
+        ),
+      ),
+    ),
+  );
+  return controller;
+}
+
+void lineDragTests() {
+  testWidgets('an empty converter shows how the equals key cycles', (
+    tester,
+  ) async {
+    Widget display({String? hint}) => MaterialApp(
+      home: Scaffold(
+        body: GlyphStyleScope(
+          notifier: GlyphStyleNotifier(),
+          child: SizedBox(
+            height: 140,
+            width: 360,
+            child: ConverterDisplay(
+              topLine: const ConverterLine(''),
+              resultLine: null,
+              worldLabel: 'DEZ',
+              emptyHint: hint,
+            ),
+          ),
+        ),
+      ),
+    );
+    await tester.pumpWidget(display(hint: 'cycle hint'));
+    expect(find.text('cycle hint'), findsOneWidget);
+    await tester.pumpWidget(display());
+    expect(find.text('cycle hint'), findsNothing);
+  });
+
+  group('long converter lines', () {
+    testWidgets('dragging an overflowing input moves it, not the page', (
+      tester,
+    ) async {
+      final controller = await _pumpLineInPager(
+        tester,
+        input: _longInput,
+        result: '1',
+      );
+      final center = tester.getCenter(find.byType(ConverterDisplay));
+      await tester.flingFrom(
+        center + const Offset(100, -30),
+        const Offset(-200, 0),
+        1000,
+      );
+      await tester.pumpAndSettle();
+      expect(controller.page, 0);
+    });
+
+    testWidgets('dragging an overflowing result moves it, not the page', (
+      tester,
+    ) async {
+      final controller = await _pumpLineInPager(
+        tester,
+        input: '1',
+        result: _longInput,
+      );
+      final center = tester.getCenter(find.byType(ConverterDisplay));
+      await tester.flingFrom(
+        center + const Offset(100, 15),
+        const Offset(-200, 0),
+        1000,
+      );
+      await tester.pumpAndSettle();
+      expect(controller.page, 0);
+    });
+
+    testWidgets('a line that fits leaves the page swipe alone', (tester) async {
+      final controller = await _pumpLineInPager(
+        tester,
+        input: '1',
+        result: '2',
+      );
+      await tester.fling(
+        find.byType(ConverterDisplay),
+        const Offset(-300, 0),
+        1000,
+      );
+      await tester.pumpAndSettle();
+      expect(controller.page, 1);
+    });
   });
 }

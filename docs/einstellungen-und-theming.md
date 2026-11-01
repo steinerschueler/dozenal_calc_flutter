@@ -1,15 +1,15 @@
 # Einstellungen und Theming
 
-Aus dem früheren Gesamtdokument übernommen. Verweise wie «oben» oder «siehe …-Abschnitt» meinen die Themenseiten, die
+Verweise wie «oben» oder «siehe …-Abschnitt» meinen die Themenseiten, die
 [architektur.md](architektur.md) auflistet.
 
 ## Einstellungen (`lib/settings_page.dart`)
 
 Eigene Seite, erreichbar über die Info-Liste. Bündelt die Quick-Toggles
-(Glyphen-Stil, Haptik — früher lose Zeilen in der Info-Liste) mit den
+(Glyphen-Stil, Haptik) mit den
 Keypad-Präferenzen und den Live-Rechner-Modi. Neun Zeilen, getrennt
 durch Dividers im Palette-Slot `divider`, Segment-Optik via `_SegmentRow`
-(ToggleButtons im Stil des früheren `_GlyphStyleToggle`):
+(ToggleButtons):
 
 1. **Erscheinungsbild** Dunkel/Hell/System — liest `ThemeScope.maybeOf`
    und schreibt `ThemeNotifier.setSetting` (siehe Theming-Abschnitt
@@ -40,8 +40,7 @@ durch Dividers im Palette-Slot `divider`, Segment-Optik via `_SegmentRow`
    `DozenalCalcState` über `CalcStateScope.maybeOf`
    (`lib/calc_scope.dart`); ohne Scope (Widget-Tests, die die Seite
    standalone pumpen) werden beide Zeilen ausgeblendet. Doz/Dez läuft
-   über `handleClick(Doz()/Dez())` (wertbewahrende Basis-Umschaltung,
-   gleicher Pfad wie früher die Keypad-Taste); der Winkelmodus über den
+   über `handleClick(Doz()/Dez())` (wertbewahrende Basis-Umschaltung); der Winkelmodus über den
    Setter `setAngleMode` (die DRG-Taste zykelt stattdessen).
 
 Wichtig: die Doz/Dez-Tasten existieren auf dem Keypad nicht mehr
@@ -55,7 +54,7 @@ Navigators, damit die Settings-Seite den State erreicht);
 `_applyStartupPrefs` spielt die persistierten Werte nach `load()`
 einmalig in den State ein, `_syncPrefsFromState` spiegelt
 State-getriebene Änderungen (DRG-Zyklus auf dem Keypad, Doz/Dez via
-Settings-`handleClick`) zurück in die Prefs. ARB: 9 neue Keys (`settingsTitle`, `settingsKeypadMode*`,
+Settings-`handleClick`) zurück in die Prefs. ARB-Keys (`settingsTitle`, `settingsKeypadMode*`,
 `settingsScope*`, `settingsNumeralSystemTitle`,
 `settingsAngleModeTitle`) in allen 14 Sprachen; plus 4 Theme-Keys
 (`settingsThemeTitle/Dark/Light/System`).

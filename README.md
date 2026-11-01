@@ -16,8 +16,8 @@ Flutter-Port der ursprünglichen Rust- und egui-Implementierung unter
   Paralleladdition (⊕), Quadrat- und n-te Wurzel, Logarithmus, trigonometrische und hyperbolische Funktionen. Der
   Ausdrucksparser läuft auf zwei Schienen: eine exakte `Rational`-Schiene auf `BigInt`-Basis, die Periodizität bewahrt
   (`1/7` erscheint als `0.186A35` mit Überstrich und Punktmarker), und eine `f64`-Schiene für die irrationalen Fälle.
-- **Einheitenrechner und Werterechner:** Einheiten, Edelmetalle und Währungen als weitere Pager-Seiten, per Wischen
-  erreichbar. Ergebnisse wandern per Taste zwischen den Rechnern.
+- **Einheitenrechner und Werterechner:** Einheiten, Edelmetalle und Währungen als weitere Pager-Seiten, erreichbar über die
+  Taste rechts vom Gleichbalken. Ergebnisse wandern per Taste zwischen den Rechnern.
 - **Speicher:** ein Slot, `STO`, `RCL`, `MC`, mit exaktem Rational-Round-Trip, wenn möglich.
 - **Modi:** Winkel (`RAD`, `DEG`, `GRD`), Anzeige-Basis (Dozenal oder Dezimal), Inversen-Umschaltung beim zweiten Tippen
   einer Trig- oder Hyperbolik-Taste.

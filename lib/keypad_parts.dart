@@ -7,12 +7,14 @@
 // the pressable key shell, the digit/token painters, the digit-grid layout,
 // the set columns both keypads share, and the Hoch height regimes.
 
+import 'dart:async';
 import 'dart:math' as math;
 
 import 'package:dozenal_calc_flutter/app_layout.dart';
 import 'package:dozenal_calc_flutter/app_theme.dart';
 import 'package:dozenal_calc_flutter/glyph_painter.dart';
 import 'package:dozenal_calc_flutter/haptics.dart';
+import 'package:dozenal_calc_flutter/key_face.dart';
 import 'package:dozenal_calc_flutter/logic/glyph_style.dart';
 import 'package:dozenal_calc_flutter/token_painter.dart';
 import 'package:dozenal_calc_flutter/tokens.dart';
@@ -25,12 +27,12 @@ import 'package:flutter/services.dart';
 
 /// Below this keypad height the Hoch layout switches to a tight gap regime
 /// to squeeze ~26 dp out of the inter-row spacing.
-const double kKeypadTightThreshold = 560.0;
+const double kKeypadTightThreshold = 560;
 
 /// Below this keypad height even the tight layout would push buttons below
 /// the 44 dp touch-target floor — fall back to a scrollable fixed-height
 /// layout so no row is unreachable.
-const double kKeypadScrollThreshold = 480.0;
+const double kKeypadScrollThreshold = 480;
 
 // ---------------------------------------------------------------------------
 // Shared key layouts.
@@ -55,6 +57,10 @@ const List<CalcToken> kSet2 = [
   LogBotRight(),
 ];
 const List<CalcToken> kSet6 = [Sto(), Rcl(), Mc(), Ans()];
+
+/// Below this width an equals bar drops its one-line hint.
+const double kEqualsHintMinBarWidth = 160;
+
 const List<CalcToken> kSet7 = [ConstPi(), ConstE(), ConstPhi(), ConstSqrt2()];
 
 // ---------------------------------------------------------------------------
@@ -79,8 +85,12 @@ class PressableShell extends StatefulWidget {
     this.onLongPressStart,
     this.onLongPressMoveUpdate,
     this.onLongPressEnd,
+    this.role = KeyRole.operation,
   });
   final VoidCallback? onTap;
+  final KeyRole role;
+  // A callback signature used at every key; a named flag would add nothing.
+  // ignore: avoid_positional_boolean_parameters
   final Widget Function(BuildContext ctx, bool pressed) builder;
   final bool selected;
   final bool gold;
@@ -106,7 +116,9 @@ class _PressableShellState extends State<PressableShell> {
 
   void _handleTap() {
     if (_inactive) return;
-    if (HapticsScope.enabledOf(context)) HapticFeedback.lightImpact();
+    if (HapticsScope.enabledOf(context)) {
+      unawaited(HapticFeedback.lightImpact());
+    }
     widget.onTap!();
   }
 
@@ -125,16 +137,14 @@ class _PressableShellState extends State<PressableShell> {
       child: ConstrainedBox(
         constraints: const BoxConstraints(minHeight: minTouchTarget),
         child: Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(4),
-            border: Border.all(
-              color: widget.gold
-                  ? t.accentGold
-                  : widget.selected
-                  ? t.op
-                  : (_inactive ? t.keyBorderDisabled : t.keyBorder),
-              width: widget.gold || widget.selected ? 2 : 1,
-            ),
+          margin: keyFaceMargin,
+          decoration: keyFaceDecoration(
+            t,
+            widget.role,
+            pressed: _pressed,
+            inactive: _inactive,
+            selected: widget.selected,
+            gold: widget.gold,
           ),
           child: widget.builder(context, _pressed),
         ),
@@ -170,8 +180,9 @@ class DigitKeyPainter extends CustomPainter {
           text: conventionalDigitChar(digit),
           style: TextStyle(
             color: color,
-            fontSize: minEdge * 0.55,
-            fontFamily: 'monospace',
+            fontSize: minEdge * 0.55 * keyCharacterScale,
+            fontFamily: keyFontFamily,
+            fontWeight: keyTextWeight,
           ),
         ),
         textDirection: TextDirection.ltr,
@@ -189,7 +200,7 @@ class DigitKeyPainter extends CustomPainter {
       center: Offset(size.width / 2, size.height / 2),
       q: q,
       color: color,
-      strokeWidth: 2.5,
+      strokeWidth: keyDigitStroke,
     );
   }
 
@@ -201,9 +212,16 @@ class DigitKeyPainter extends CustomPainter {
 /// Token-key painter: thin CustomPainter wrapper around [paintTokenAt], the
 /// single source of every operator/function glyph.
 class TokenKeyPainter extends CustomPainter {
-  TokenKeyPainter({required this.token, required this.color});
+  TokenKeyPainter({
+    required this.token,
+    required this.color,
+    this.labelFontCap = double.infinity,
+  });
   final CalcToken token;
   final Color color;
+
+  /// Largest label size, from [KeyLabelFontCap].
+  final double labelFontCap;
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -212,12 +230,15 @@ class TokenKeyPainter extends CustomPainter {
       token,
       rect: Rect.fromLTWH(0, 0, size.width, size.height),
       color: color,
+      labelFontCap: labelFontCap,
     );
   }
 
   @override
   bool shouldRepaint(covariant TokenKeyPainter old) =>
-      old.token != token || old.color != color;
+      old.token != token ||
+      old.color != color ||
+      old.labelFontCap != labelFontCap;
 }
 
 // ---------------------------------------------------------------------------
@@ -290,7 +311,7 @@ class _LabelButtonState extends State<LabelButton> {
           ? null
           : () {
               if (HapticsScope.enabledOf(context)) {
-                HapticFeedback.lightImpact();
+                unawaited(HapticFeedback.lightImpact());
               }
               widget.onTap();
             },
@@ -298,7 +319,7 @@ class _LabelButtonState extends State<LabelButton> {
           ? null
           : () {
               if (HapticsScope.enabledOf(context)) {
-                HapticFeedback.mediumImpact();
+                unawaited(HapticFeedback.mediumImpact());
               }
               final rb = context.findRenderObject();
               if (rb is! RenderBox) return;
@@ -313,14 +334,18 @@ class _LabelButtonState extends State<LabelButton> {
       child: ConstrainedBox(
         constraints: const BoxConstraints(minHeight: minTouchTarget),
         child: Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(4),
-            border: Border.all(
-              color: widget.gold
-                  ? t.accentGold
-                  : (widget.softGold ? t.accentGoldSoft : t.keyBorder),
-              width: widget.gold ? 2 : (widget.softGold ? 1.5 : 1),
-            ),
+          margin: keyFaceMargin,
+          decoration: keyFaceDecoration(
+            t,
+            KeyRole.operation,
+            pressed: _pressed,
+            inactive: !enabled,
+            frameOverride: widget.gold
+                ? t.accentGold
+                : widget.softGold
+                ? t.accentGoldSoft
+                : null,
+            frameWidthOverride: widget.gold ? 2 : (widget.softGold ? 1.5 : 1),
           ),
           alignment: Alignment.center,
           padding: const EdgeInsets.symmetric(horizontal: 4),
@@ -331,8 +356,9 @@ class _LabelButtonState extends State<LabelButton> {
               maxLines: 1,
               style: TextStyle(
                 color: _pressed ? t.opPressed : widget.colorOf(t),
-                fontSize: 15,
-                fontWeight: FontWeight.w600,
+                fontFamily: keyFontFamily,
+                fontSize: KeyLabelFontCap.wordsOf(context),
+                fontWeight: keyTextWeight,
               ),
             ),
           ),
@@ -395,7 +421,7 @@ class _SystemKeyState extends State<SystemKey> {
             ? null
             : () {
                 if (HapticsScope.enabledOf(context)) {
-                  HapticFeedback.lightImpact();
+                  unawaited(HapticFeedback.lightImpact());
                 }
                 widget.onTap();
               },
@@ -416,7 +442,7 @@ class _SystemKeyState extends State<SystemKey> {
               ),
             ),
             alignment: Alignment.center,
-            padding: const EdgeInsets.all(10),
+            padding: const EdgeInsets.all(keySystemKeyPadding),
             child: FittedBox(
               fit: BoxFit.scaleDown,
               child: Text(
@@ -455,7 +481,7 @@ void showUnitInfoBox(
   final overlay = Overlay.of(context);
   final t = AppColors.of(context);
   final media = MediaQuery.of(context);
-  final w = math.min(300.0, media.size.width - 16);
+  final w = math.min<double>(300, media.size.width - 16);
   final left = (anchor.center.dx - w / 2).clamp(8.0, media.size.width - w - 8);
   final bottom = media.size.height - anchor.top + 6;
   late OverlayEntry entry;
@@ -522,4 +548,41 @@ void showUnitInfoBox(
     ),
   );
   overlay.insert(entry);
+}
+
+/// A round icon key beside the equals bar.
+class RoundIconKey extends StatelessWidget {
+  const RoundIconKey({
+    required this.size,
+    required this.icon,
+    super.key,
+    this.tooltip,
+    this.onPressed,
+  });
+  final double size;
+  final IconData icon;
+  final String? tooltip;
+  final VoidCallback? onPressed;
+
+  @override
+  Widget build(BuildContext context) {
+    final t = AppColors.of(context);
+    final btn = Material(
+      color: t.pagerFill,
+      shape: CircleBorder(side: BorderSide(color: t.pagerBorder)),
+      child: InkWell(
+        customBorder: const CircleBorder(),
+        onTap: onPressed,
+        child: Center(
+          child: Icon(icon, size: size * 0.5, color: t.link),
+        ),
+      ),
+    );
+    final tip = tooltip;
+    return SizedBox(
+      width: size,
+      height: size,
+      child: tip != null ? Tooltip(message: tip, child: btn) : btn,
+    );
+  }
 }

@@ -1,14 +1,14 @@
 # Einheitenrechner (Unit Converter) — Spezifikation & Umbauplan
 
 > **Status: UMGESETZT.** Ursprünglich der Entwurf zur Abnahme; inzwischen
-> ist alles implementiert (Fortschritts-Checkliste in §9, offene Ideen in
-> §10). Die Datei bleibt als Spezifikation/Referenz — bei Widersprüchen
+> ist alles implementiert (offene Ideen in
+> §8). Die Datei bleibt als Spezifikation/Referenz — bei Widersprüchen
 > gewinnt der Code bzw. docs/rechner-seiten.md.
 
 ## 1. Zweck & Einordnung
 
 Ein **zweiter Rechner-Modus** — ein vollwertiger Einheitenrechner. Er ist
-Seite 2 des horizontalen Pagers (Links-Swipe vom Hauptrechner) und
+Seite 2 des horizontalen Pagers (Taste rechts vom Gleichbalken) und
 **wiederverwendet die Bausteine** des Hauptrechners
 (Tasten-Shells, Painter, Layout-Logik), ist aber ein **eigener Screen**. Das
 normale Keypad bleibt unangetastet — die Store-Screenshots bleiben gültig.
@@ -34,14 +34,11 @@ einer Welt-Kopplung — alle vier Kombinationen sind gültig.
 
 ## 2. Zugang
 
-Seit dem Pager-Umbau ist der Umrechner **Seite 2 des Rechner-PageView**:
-**Links-Swipe** auf dem Hauptrechner öffnet ihn, **Rechts-Swipe** führt
-zurück. Die früheren Rundtasten der Equals-Reihe ((i)-Info und
-Taschenrechner-Icon) sind den met/imp-System-Tasten gewichen: Info läuft
-über das (i) der Hauptrechner-Seite, zurück geht nur noch der Swipe. Beim
-App-Start zeigt das Display immer den Hauptrechner. Einen Listen-Eintrag als Zugang
-gibt es seit dem Texte-Umbau nicht mehr — Swipe + Page-Peek tragen die
-Entdeckbarkeit, und das Handbuch „Bedienung des Einheitenrechners"
+Der Umrechner ist **Seite 2 des Rechner-PageView**: Die Taste rechts vom Gleichbalken
+führt zum nächsten Rechner, vom letzten wieder zum ersten, Wischen ist
+abgeschaltet. Die Menütaste liegt auf allen Rechnern links vom Gleichbalken.
+Beim App-Start zeigt das Display immer den Hauptrechner. Einen Listen-Eintrag als
+Zugang gibt es nicht, das Handbuch „Bedienung des Einheitenrechners"
 (sechs Kapitel, `converterManualChapters` in `lib/manual/`) erklärt
 Wechsel und Bedienung. Der `ConverterState` lebt im Calc-Scaffold,
 Eingaben überleben also Seitenwechsel in beide Richtungen.
@@ -56,8 +53,8 @@ in der Basis der Zielseite):
   kein lebendes Resultat liegt.
 - **CONV** (Hauptrechner, Set-10-Slot): fügt die Zahl der
   Umrechner-Ergebniszeile (in der `=`-gezykelten Einheit; Breakdown →
-  Arbeits-Einheit) als Ziffern an der Cursor-Position ein. Grau ohne
-  committete Terme drüben.
+  Arbeits-Einheit) als Ziffern an der Cursor-Position ein. Grau erst, wenn
+  Umrechner und Werterechner beide nichts liefern.
 Damit „Ans → Kategorie → Magnitude" funktioniert, überlebt die
 Pending-Zahl den Kategorienwechsel (nur Terme werden verworfen).
 
@@ -97,8 +94,8 @@ Set6    Set7     Set8 (Kategorien)   Set9 (Kategorien)
 - **Set 10:** Doz/Dez sind **entfernt** (Basis = globale Einstellung, System
   = met/imp-Tasten in der Equals-Reihe, siehe §7); die Slots bleiben leer,
   Drg (inert) und Close behalten ihre Plätze.
-- **Equals-Reihe:** `met` (grün) | `=` | `imp` (violett) — die System-Tasten
-  flankieren die Gleichtaste, die aktive trägt einen Eigenfarb-Rahmen.
+- **Equals-Reihe:** Menü | `met` (grün) | `=` | `imp` (violett) | Wechsel — die
+  System-Tasten flankieren die Gleichtaste, die aktive trägt einen Eigenfarb-Rahmen.
 - **Beschriftung:** Text-Labels (`dist`, `area`, …), keine custom-Glyphen.
 
 ## 4. Interaktionsmodell
@@ -214,8 +211,7 @@ Jede Eingabe wird in eine **SI-Grösse** umgerechnet und gespeichert. Jede
 Magnitude trägt einen **Faktor zu SI**. Umrechnung innerhalb der Leiter =
 durch Ziel-Faktor teilen. Klammer = SI-Wert, gerendert in der **Partner-
 Einheit** des Gegen-Systems. Damit ist die Logik für 15 der 16 Kategorien
-rein multiplikativ; zwei Sonderfälle: **temp** (affin, Offset) und **fuel**
-(invers). `count` ist dimensionslos (Sonder-„Welt", siehe unten).
+rein multiplikativ; Sonderfall: **temp** (affin, Offset). `count` ist dimensionslos (Sonder-„Welt", siehe unten).
 
 Jede Kategorie definiert also: eine **imperiale Leiter** (Doz) und eine
 **metrische Leiter** (Dez), beide über SI gekoppelt; pro Einheit eine
@@ -345,107 +341,10 @@ Heutiges Verhalten, zwei getrennte Schalter:
    Pending-Eingabe werterhaltend um. A/B-Ziffern folgen der Basis, der
    Breakdown dem System.
 
-## 8. Umbauplan (Implementierungs-Reihenfolge)
+**Klammer-Partner (lineare Kategorien):** die magnitudennächste Einheit des Gegen-Systems (kleinste
+`|ln(faktor) − ln(faktor_gezeigt)|`). Sonderfälle: temp °F↔°C, price £sd↔£dez, count Basis↔Basis, time Basis-Swap.
 
-1. **Tokens** — generischer `UnitCategory`-Token (Enum-Payload) +
-   `Magnitude`-Token (Payload), statt vieler Einzelklassen.
-2. **Datenmodell** — `unit_data.dart`: 16 Kategorien als Daten (je imperiale
-   + metrische Leiter, SI-Faktoren, Partner-Einheiten, Sonderfall-Flags).
-   Reine Logik, keine Flutter-Imports — testbar.
-3. **Konvertierungs-Logik** — `unit_convert.dart`: SI-Drehscheibe, affine
-   temp, inverse fuel. Unit-Tests pinnen alle Faktoren.
-4. **State** — `ConverterState extends ChangeNotifier`: aktive Kategorie,
-   Eingabe-Einheit, Wert (als SI), Welt (Doz/Dez), `=`-Ladder-Index, Speicher.
-   Eigener Orchestrator, kein Umbau am `DozenalCalcState`.
-5. **Keypad-Variante** — `converter_keypad.dart`, wiederverwendet die
-   Bausteine aus `keypad.dart`; rendert Kategorie/Magnituden-Swap +
-   Gold-Umrandung. Prüfen: `keypad.dart` parametrisieren vs. Parallel-Widget.
-6. **Display-Variante** — `converter_display.dart`: Einheiten-Text +
-   `{ }`-Klammer in beiden Zeilen (der Hauptrechner-Display rendert
-   Dozenal-Glyphen + Periodenstrich, das passt hier nicht).
-7. **Screen** — `converter_page.dart`: Display + Keypad-Variante,
-   `displayHeightFor`, SafeArea-Konvention, erzwungenes LTR für Zahlen.
-8. **Verdrahtung** — Eintrag in `InfoListPage`; Taschenrechner-Rück-Icon.
-9. **l10n** — Kategorie-Labels + Screen-Strings in 14 Sprachen (ARB).
-   Einheiten-Symbole (in, ft, kg …) bleiben international.
-
-## 9. Status
-
-Spec **eingefroren** — alle Design-Entscheidungen getroffen:
-
-- ~~Ziffernbasis fest an Welt gekoppelt (Doz=12/imperial, Dez=10/metrisch)~~
-  **revidiert**: Basis und System sind entkoppelt (§1/§7), Farbcode
-  grün=Zehner-/violett=Zwölfer-Welt.
-- count: Dutzend- ↔ Dezimal-Gruppierung, konsequent durchgezogen.
-- time: einsystemig, Klammer zeigt den Wert in der anderen Ziffernbasis.
-- Einheiten = US-Varianten; Feinunze (Troy) behalten.
-- Physik-Einheiten-Klassifizierung (§6) bestätigt.
-
-**Klammer-Partner (linieare Kategorien):** die magnitudennächste Einheit des
-Gegen-Systems (kleinste `|ln(faktor) − ln(faktor_gezeigt)|`). Sonderfälle:
-temp °F↔°C, fuel mpg↔L/100km, price £sd↔£dez, count Basis↔Basis, time Basis-Swap.
-
-### Implementierungs-Fortschritt
-
-- [x] **2–3** `lib/logic/unit_data.dart` + `unit_convert.dart` + 23 Tests
-- [x] **4** `lib/converter_state.dart` (+ `lib/logic/base_num.dart`) + 11 Tests
-- [x] **5** `lib/converter_keypad.dart` (Portrait)
-- [x] **6** `lib/converter_display.dart`
-- [x] **7** `lib/converter_page.dart`
-- [x] **8** Verdrahtung in `InfoListPage` (Eintrag „Einheitenrechner",
-      ARB-Key `infoListConverterEntry` in DE+EN, Rest fällt vorerst auf DE)
-- [x] fuel → **liquid** (US-Flüssigmasse); `space` auf rein kubisch bereinigt
-- [x] inaktive Op-Tasten ausgegraut (Set 1/2, Set 6/7, Drg) — *später
-      revidiert: Operatoren sind heute immer aktiv, siehe §4a*
-- [x] **Breakdown**-Daten (Kaskaden je Kategorie, temp affine) + `breakdown()`
-      + Tests (imperial mixed-radix)
-- [x] **Compound-State**: Term-Liste + implizite/explizite Operatoren (+/−) +
-      Gesamtwert + `=`-Zyklus (Einheiten + Breakdown) — `ConverterState`-Umbau
-      + 16 Tests
-- [x] Compound-UI: + / − aktiviert + verdrahtet (− gold wenn scharf),
-      Operator-Semantics, Breakdown ohne führende Null-Stellen, Vorschau geprüft
-- [x] **5b** Landscape/Tablet-Layout (Breit) — alle Sets inline, Magnituden-
-      Swap, gleiche Geometrie wie Hauptrechner-Breit; Layout-Tests grün
-- [x] **9** l10n der 16 Kategorie-Labels in allen 14 Sprachen (Magnituden-
-      Symbole bleiben international); Resolver mit Englisch-Fallback
-- [x] Tipp-Cursor **Hauptrechner**: Tippen auf die Eingabezeile setzt den
-      roten Cursor an die nächste Lücke (`moveCursorTo` + `inputCursorPosForTap`)
-- [x] Tipp-Cursor **Umrechner** (Variante 2) — **State**: Caret in der
-      getippten Zahl + Term-Grenzen, Einfügen/Löschen an jeder Stelle
-      (`moveInputCaret` / `moveCursorToTermBoundary`), 4 Tests
-- [x] Tipp-Cursor **Umrechner** — **Display**: roter Caret im
-      `converter_display` (custom-paint, skaliert) + Taps auf die Eingabezeile
-      → `handleInputTapAtChar` (Caret/Term-Grenze); Vorschau bestätigt
-- [x] **Pager-Integration**: Umrechner als Seite 2 des Rechner-PageView
-      (Links-/Rechts-Swipe), `ConverterBody` extrahiert, `ConverterState`
-      im Scaffold, Tastatur-Routing nach aktiver Seite,
-      Tastatur-Routing nach aktiver Seite — `calc_pager_test.dart`
-- [x] **Resultat-Brücke**: Set-6-**Ans** verdrahtet (zieht das
-      Hauptrechner-Resultat, `insertCalcAns`) + neues **CONV**-Token im
-      Set-10-Slot des Hauptrechners (zieht die Umrechner-Ergebniszeile,
-      `ansForBridge` beidseitig, Provider-Verdrahtung im Scaffold);
-      Pending-Zahl überlebt den Kategorienwechsel
-- [x] **Basis/System-Entkopplung + Farbsystem**: Doz/Dez-Tasten entfernt,
-      met/imp-System-Tasten als Equals-Flanken (grün/violett, Rundtasten
-      entfallen), Basis global via Settings-Sync (`setBase`), Palette-Slots
-      `worldTen`/`worldTwelve`, Einheitensymbole/Badge/Klammern farbcodiert
-      (`unitRanges`/`bracketTenWorld`), `formatBaseNum`-Near-Integer-Snap
-- [x] **× ÷ verdrahtet** (Skalar-Operatoren in der Pending-Eingabe +
-      Compound-Kollaps; `parseScalarEntry`/`reformatScalarEntry` in
-      `base_num.dart`, Tastatur-Routing `*`/`/`, 9 Tests)
-- [x] **Set 2 + Set 6/7 verdrahtet**: ⊕ ^ √ ㏒ als weitere Entry-Operatoren
-      (Fold-Konventionen wie Hauptrechner: linker Operand = Grad/Basis),
-      Konstanten + RCL + Ans als Wert-Tasten mit Segment-Regel
-      (`insertValueEntry`), STO/MC-Register; nur Drg bleibt inert.
-      **Der Umrechner-Keypad ist damit vollständig.**
-
-Schritt 1 (Tokens) entfiel: das Keypad nutzt `UnitCategory`/`Unit` direkt
-statt eigener `CalcToken`-Varianten.
-
-Vorschau-Tool: `tool/preview_converter_keypad.dart` (Wegwerf, rendert nach
-`tool/preview/`).
-
-## 10. Offene Ideen (TODO)
+## 8. Offene Ideen (TODO)
 
 Gesammelte Verbesserungswünsche, noch nicht umgesetzt:
 

@@ -23,23 +23,34 @@ import 'package:flutter/material.dart';
 /// Embeddable asset-converter content: display + keypad, padded like the main
 /// calculator body. Expects Scaffold/SafeArea/Directionality(ltr) from its host.
 class AssetBody extends StatelessWidget {
-  const AssetBody({required this.state, super.key});
+  const AssetBody({
+    required this.state,
+    super.key,
+    this.onMenuTap,
+    this.onSwitchTap,
+  });
 
   final AssetState state;
+  final VoidCallback? onMenuTap;
+  final VoidCallback? onSwitchTap;
 
   @override
   Widget build(BuildContext context) {
     final l = AppLocalizations.of(context);
     return Padding(
-      padding: const EdgeInsets.all(12),
+      padding: calculatorPagePadding(context),
       child: LayoutBuilder(
         builder: (ctx, constraints) {
-          final displayH = displayHeightFor(constraints.maxHeight);
+          final low = isLowScreen(ctx);
+          final displayH = low
+              ? lowDisplayHeightFor(constraints.maxHeight)
+              : displayHeightFor(constraints.maxHeight);
           // Listen to the rate store too, so an edited rate updates the value
           // line immediately (the store is a separate ChangeNotifier).
-          final listenable = state.rates == null
+          final rates = state.rates;
+          final listenable = rates == null
               ? state
-              : Listenable.merge([state, state.rates!]);
+              : Listenable.merge([state, rates]);
           return ListenableBuilder(
             listenable: listenable,
             builder: (ctx, _) {
@@ -49,28 +60,37 @@ class AssetBody extends StatelessWidget {
               // "≈ rate-based · as of <date>" note.
               final inValue = state.valueMode;
               final asOf = state.rateAsOf;
+              final display = ConverterDisplay(
+                topLine: state.topLine,
+                resultLine: inValue ? state.valueLine : state.resultLine,
+                resultPrefix: inValue ? '≈ ' : '= ',
+                worldLabel: state.base == 12 ? 'DOZ' : 'DEZ',
+                baseIsTen: state.base == 10,
+                // Single-world genera (currencies) have no metric/
+                // imperial axis, so their unit symbols must not flip hue
+                // with a leftover (disabled) world toggle — pin them to
+                // the Twelve-world violet (the duodecimal-money theme).
+                systemIsTen:
+                    state.worldToggleEnabled && state.world == UnitWorld.metric,
+                inputCaret: state.inputLayout.caret,
+                onInputTapChar: state.handleInputTapAtChar,
+                emptyHint: state.isEntryEmpty ? l.converterEmptyHint : null,
+                sideBySide: low,
+              );
+              // A low screen with the chart open: the chart takes the page,
+              // and the display shares its top band with the series choice.
+              if (low && state.chartOpen) {
+                return _chart(
+                  ctx,
+                  l,
+                  headerEnd: display,
+                  headerHeight: displayH,
+                );
+              }
               return Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  SizedBox(
-                    height: displayH,
-                    child: ConverterDisplay(
-                      topLine: state.topLine,
-                      resultLine: inValue ? state.valueLine : state.resultLine,
-                      resultPrefix: inValue ? '≈ ' : '= ',
-                      worldLabel: state.base == 12 ? 'DOZ' : 'DEZ',
-                      baseIsTen: state.base == 10,
-                      // Single-world genera (currencies) have no metric/
-                      // imperial axis, so their unit symbols must not flip hue
-                      // with a leftover (disabled) world toggle — pin them to
-                      // the Twelve-world violet (the duodecimal-money theme).
-                      systemIsTen:
-                          state.worldToggleEnabled &&
-                          state.world == UnitWorld.metric,
-                      inputCaret: state.inputLayout.caret,
-                      onInputTapChar: state.handleInputTapAtChar,
-                    ),
-                  ),
+                  SizedBox(height: displayH, child: display),
                   if (inValue && asOf != null)
                     Padding(
                       padding: const EdgeInsets.only(top: 3, right: 2),
@@ -80,29 +100,17 @@ class AssetBody extends StatelessWidget {
                         style: TextStyle(fontSize: 11, color: t.textFaint),
                       ),
                     ),
-                  const SizedBox(height: 14),
+                  SizedBox(height: calculatorDisplayGap(context)),
                   Expanded(
                     child: AnimatedSwitcher(
                       duration: const Duration(milliseconds: 200),
                       child: state.chartOpen
-                          ? PriceChart(
-                              key: const ValueKey('chart'),
-                              base: state.base,
-                              seriesLabel: (id) => _seriesLabel(id, l),
-                              unitLabel: (id) => _seriesRelLabel(id, l),
-                              sourcesLabel: l.priceSourcesLabel,
-                              caption: l.priceChartCaption,
-                              eraReconstructedLabel: l.priceEraAnchor,
-                              onClose: state.toggleChart,
-                              onSourcesTap: () => Navigator.of(ctx).push(
-                                MaterialPageRoute<void>(
-                                  builder: (_) => const PriceSourcesPage(),
-                                ),
-                              ),
-                            )
+                          ? _chart(ctx, l)
                           : AssetKeypad(
                               key: const ValueKey('keypad'),
                               state: state,
+                              onMenuTap: onMenuTap,
+                              onSwitchTap: onSwitchTap,
                               equalsHint: l.converterEqualsHint,
                               valueHint: l.assetValueHint,
                               valueLabel: l.assetValueKey,
@@ -129,6 +137,39 @@ class AssetBody extends StatelessWidget {
       ),
     );
   }
+
+  Widget _chart(
+    BuildContext context,
+    AppLocalizations l, {
+    Widget? headerEnd,
+    double? headerHeight,
+  }) => PriceChart(
+    key: const ValueKey('chart'),
+    base: state.base,
+    seriesLabel: (id) => _seriesLabel(id, l),
+    unitLabel: (id) => _seriesRelLabel(id, l),
+    readoutLabel: (id, value) => switch (id) {
+      PriceSeriesId.gold => l.priceReadGold(value),
+      PriceSeriesId.silver => l.priceReadSilver(value),
+      PriceSeriesId.wheat => l.priceReadWheat(value),
+    },
+    epochLabel: (epoch) => switch (epoch) {
+      ChartEpoch.antiquity => l.priceEpochAntiquity,
+      ChartEpoch.middleAges => l.priceEpochMiddleAges,
+      ChartEpoch.modern => l.priceEpochModern,
+      ChartEpoch.present => l.priceEpochPresent,
+    },
+    allLabel: l.priceEpochAll,
+    sourcesLabel: l.priceSourcesLabel,
+    caption: l.priceChartCaption,
+    eraReconstructedLabel: l.priceEraAnchor,
+    onClose: state.toggleChart,
+    onSourcesTap: () => Navigator.of(
+      context,
+    ).push(MaterialPageRoute<void>(builder: (_) => const PriceSourcesPage())),
+    headerEnd: headerEnd,
+    headerHeight: headerHeight,
+  );
 }
 
 /// Localized toggle label for a price-chart series (short tab name).

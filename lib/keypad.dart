@@ -21,6 +21,7 @@
 // below the minimum viable layout, a SingleChildScrollView is used as a
 // safety net so no row is unreachable.
 
+import 'dart:async';
 import 'dart:math' as math;
 
 import 'package:dozenal_calc_flutter/app_layout.dart';
@@ -29,9 +30,11 @@ import 'package:dozenal_calc_flutter/calc_prefs.dart'
     show KeypadMode, KeypadProfile;
 import 'package:dozenal_calc_flutter/glyph_painter.dart';
 import 'package:dozenal_calc_flutter/haptics.dart';
+import 'package:dozenal_calc_flutter/key_face.dart';
 import 'package:dozenal_calc_flutter/keypad_parts.dart';
 import 'package:dozenal_calc_flutter/l10n/app_localizations.dart';
 import 'package:dozenal_calc_flutter/logic/glyph_style.dart';
+import 'package:dozenal_calc_flutter/token_painter.dart';
 import 'package:dozenal_calc_flutter/tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -62,8 +65,8 @@ class Keypad extends StatelessWidget {
     this.isArmed,
     this.isSelected,
     this.isDisabled,
-    this.onInfoTap,
-    this.onHelpTap,
+    this.onMenuTap,
+    this.onSwitchTap,
     this.overlayOpen = false,
     this.overlayPage = 0,
     this.onOverlayPageChanged,
@@ -74,8 +77,8 @@ class Keypad extends StatelessWidget {
   final ArmedPredicate? isArmed;
   final SelectedPredicate? isSelected;
   final DisabledPredicate? isDisabled;
-  final VoidCallback? onInfoTap;
-  final VoidCallback? onHelpTap;
+  final VoidCallback? onMenuTap;
+  final VoidCallback? onSwitchTap;
 
   /// Whether the Sets 6-10 overlay panel is currently active. Only meaningful
   /// in Hoch mode — Breit ignores it (all sets are always visible).
@@ -106,8 +109,8 @@ class Keypad extends StatelessWidget {
             isArmed: isArmed,
             isSelected: isSelected,
             isDisabled: isDisabled,
-            onInfoTap: onInfoTap,
-            onHelpTap: onHelpTap,
+            onMenuTap: onMenuTap,
+            onSwitchTap: onSwitchTap,
             overlayOpen: overlayOpen,
             overlayPage: overlayPage,
             onOverlayPageChanged: onOverlayPageChanged,
@@ -120,8 +123,8 @@ class Keypad extends StatelessWidget {
           isArmed: isArmed,
           isSelected: isSelected,
           isDisabled: isDisabled,
-          onInfoTap: onInfoTap,
-          onHelpTap: onHelpTap,
+          onMenuTap: onMenuTap,
+          onSwitchTap: onSwitchTap,
           page: overlayPage,
           onPageChanged: onOverlayPageChanged,
           mode: keypadMode,
@@ -240,8 +243,8 @@ const List<CalcToken> _funcCol4 = [PlusMinus(), Sci()];
 /// third-group pages. The Breit width math accounts for
 /// `_kPageArrowWidth + _kPageArrowMargin` so both pages render at the same
 /// total row width.
-const double _kPageArrowWidth = 22.0;
-const double _kPageArrowMargin = 6.0;
+const double _kPageArrowWidth = 22;
+const double _kPageArrowMargin = 6;
 
 // ---------------------------------------------------------------------------
 // Hoch keypad — portrait. Flex Column with panel-swap.
@@ -258,15 +261,15 @@ class _HochKeypad extends StatelessWidget {
     this.isArmed,
     this.isSelected,
     this.isDisabled,
-    this.onInfoTap,
-    this.onHelpTap,
+    this.onMenuTap,
+    this.onSwitchTap,
   });
   final TokenTapHandler onTap;
   final ArmedPredicate? isArmed;
   final SelectedPredicate? isSelected;
   final DisabledPredicate? isDisabled;
-  final VoidCallback? onInfoTap;
-  final VoidCallback? onHelpTap;
+  final VoidCallback? onMenuTap;
+  final VoidCallback? onSwitchTap;
   final bool overlayOpen;
   final int overlayPage;
   final ValueChanged<int>? onOverlayPageChanged;
@@ -275,6 +278,13 @@ class _HochKeypad extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return KeyLabelFontCap.forEqualColumns(
+      keypadWidth: MediaQuery.sizeOf(context).width - _kHochPagePadding,
+      child: _buildPanel(context),
+    );
+  }
+
+  Widget _buildPanel(BuildContext context) {
     // Scroll mode (full profile only — the simple profile has nothing to
     // scroll to): one fixed-height column with every set, wrapped in a
     // scroll view, equals row pinned below. Replaces the overlay swap.
@@ -352,8 +362,8 @@ class _HochKeypad extends StatelessWidget {
           child: _EqualsRow(
             onEquals: () => onTap(const Equals()),
             sideGap: 10,
-            onInfoTap: onInfoTap,
-            onHelpTap: onHelpTap,
+            onMenuTap: onMenuTap,
+            onSwitchTap: onSwitchTap,
           ),
         ),
       ],
@@ -406,8 +416,8 @@ class _HochKeypad extends StatelessWidget {
           child: _EqualsRow(
             onEquals: () => onTap(const Equals()),
             sideGap: rowGap,
-            onInfoTap: onInfoTap,
-            onHelpTap: onHelpTap,
+            onMenuTap: onMenuTap,
+            onSwitchTap: onSwitchTap,
           ),
         )
       else
@@ -416,8 +426,8 @@ class _HochKeypad extends StatelessWidget {
           child: _EqualsRow(
             onEquals: () => onTap(const Equals()),
             sideGap: rowGap,
-            onInfoTap: onInfoTap,
-            onHelpTap: onHelpTap,
+            onMenuTap: onMenuTap,
+            onSwitchTap: onSwitchTap,
           ),
         ),
     ];
@@ -806,6 +816,9 @@ class _RowsPanel extends StatelessWidget {
 // sets visible. Button size scales with available height.
 // ---------------------------------------------------------------------------
 
+/// Portrait: the page's padding left and right of the keypad.
+const double _kHochPagePadding = 24;
+
 class _BreitKeypad extends StatelessWidget {
   const _BreitKeypad({
     required this.onTap,
@@ -816,15 +829,15 @@ class _BreitKeypad extends StatelessWidget {
     this.isArmed,
     this.isSelected,
     this.isDisabled,
-    this.onInfoTap,
-    this.onHelpTap,
+    this.onMenuTap,
+    this.onSwitchTap,
   });
   final TokenTapHandler onTap;
   final ArmedPredicate? isArmed;
   final SelectedPredicate? isSelected;
   final DisabledPredicate? isDisabled;
-  final VoidCallback? onInfoTap;
-  final VoidCallback? onHelpTap;
+  final VoidCallback? onMenuTap;
+  final VoidCallback? onSwitchTap;
 
   /// Third-group page: 0 = Sets 6-10, 1 = function keys. Flipped by the
   /// tall edge arrow (no swipe in Breit — horizontal drags must stay free
@@ -855,20 +868,25 @@ class _BreitKeypad extends StatelessWidget {
         // h+v, op-column v, between-set h). Keeping these identical means
         // each block "breathes" consistently in both axes — the user-visible
         // contract is that within-block spacing reads as one rhythm.
-        const interBlockGap = tabletColGap; // 8 dp
-        const verticalContentGap = 18.0; // gap between top content and equals
+        final compactRows = constraints.maxHeight < compactBreitHeight;
+        final rowGap = compactRows ? compactBreitRowGap : tabletColGap;
+        final interBlockGap = compactRows
+            ? compactBreitColumnGap
+            : tabletColGap; // 8 dp
+        // gap between top content and equals
+        final verticalContentGap = compactRows ? compactBreitEqualsGap : 18.0;
         // Group gap (between digit pad / Sets 1-5 / Sets 6-10) starts at a
         // comfortable visual baseline and absorbs horizontal slack so the
         // viewport fills. Capped so wide tablets don't end up with groups
         // drifting hundreds of dp apart — the remainder lands as symmetric
         // outer margins via the SizedBox + MainAxisAlignment.center pair.
-        const groupGapBase = interBlockGap + 10.0; // 18 dp
+        const groupGapBase = 18.0;
         const maxGroupGap = 100.0;
         // Width consumed by the third-group page arrow: arrow + its margin
         // + the extra inter-block gap next to it. Both pages carry exactly
         // one arrow (right edge on page 0, left edge on page 1), so the row
         // width is page-independent and the fit math holds for both.
-        const pageArrowExtent =
+        final pageArrowExtent =
             _kPageArrowWidth + _kPageArrowMargin + interBlockGap;
 
         // Column configuration per settings profile/mode:
@@ -896,7 +914,7 @@ class _BreitKeypad extends StatelessWidget {
         final h = constraints.maxHeight;
         final w = constraints.maxWidth;
         final rawH = h.isFinite
-            ? (h - 3 * interBlockGap - verticalContentGap) / 5
+            ? (h - 3 * rowGap - verticalContentGap) / 5
             : tabletButtonSize;
         final rawW = w.isFinite
             ? (w -
@@ -908,18 +926,46 @@ class _BreitKeypad extends StatelessWidget {
         final raw = scrollAll ? rawH : math.min(rawH, rawW);
         final buttonSize = raw.clamp(breitMinTouchTarget, tabletButtonSize);
 
+        // Compact landscape: each column as wide as its longest label needs.
+        int longestLabel(List<CalcToken> tokens) =>
+            tokens.map(tokenLabelLength).reduce(math.max);
+        final widthColumns = <List<CalcToken>>[
+          const [Add()],
+          const [Add()],
+          const [Add()],
+          kSet1,
+          kSet2,
+          _set3,
+          _set4,
+          const [Ac(), Del(), Decimal()],
+          if (!simple) ...[kSet6, kSet7, _set8, _set9, _set10Column],
+        ];
+        final fixedWidth =
+            innerGaps * interBlockGap + nGroupGaps * groupGapBase + arrowExtent;
+        final columnLayout = compactRows && w.isFinite
+            ? BreitColumnLayout.solve(
+                columnChars: widthColumns.map(longestLabel).toList(),
+                buttonHeight: buttonSize,
+                available: w - fixedWidth,
+              )
+            : null;
+        double columnWidth(List<CalcToken> tokens) =>
+            columnLayout?.widthFor(longestLabel(tokens)) ?? buttonSize;
+        final columnsWidth = columnLayout == null
+            ? cols * buttonSize
+            : widthColumns.map(columnWidth).reduce((a, b) => a + b);
         final baseNaturalWidth =
-            cols * buttonSize +
+            columnsWidth +
             innerGaps * interBlockGap +
             nGroupGaps * groupGapBase +
             arrowExtent;
-        final hSlack = w.isFinite ? math.max(0.0, w - baseNaturalWidth) : 0.0;
+        final hSlack = w.isFinite ? math.max(0, w - baseNaturalWidth) : 0.0;
         final groupGap = (groupGapBase + hSlack / nGroupGaps).clamp(
           groupGapBase,
           maxGroupGap,
         );
         final contentWidth =
-            cols * buttonSize +
+            columnsWidth +
             innerGaps * interBlockGap +
             nGroupGaps * groupGap +
             arrowExtent;
@@ -928,36 +974,42 @@ class _BreitKeypad extends StatelessWidget {
           buttonSize: buttonSize,
           interBlockGap: interBlockGap,
           groupGap: groupGap,
+          rowGap: rowGap,
+          columnWidth: columnWidth,
           l: AppLocalizations.of(ctx),
           t: AppColors.of(ctx),
         );
 
-        final body = Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            // Outer SizedBox: when content fits, we force row width = viewport
-            // width so MainAxisAlignment.center yields symmetric margins.
-            // When content overflows (very narrow devices clamped to 44 dp),
-            // the row stays at its natural width and the scroll-view scrolls.
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: SizedBox(
-                width: w.isFinite ? math.max(w, contentWidth) : contentWidth,
-                child: content,
+        final body = KeyLabelFontCap(
+          tokens: columnLayout?.labelFont ?? double.infinity,
+          words: columnLayout?.labelFont ?? keyWordFontSize,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              // Outer SizedBox: when content fits, we force row width = viewport
+              // width so MainAxisAlignment.center yields symmetric margins.
+              // When content overflows (very narrow devices clamped to 44 dp),
+              // the row stays at its natural width and the scroll-view scrolls.
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: SizedBox(
+                  width: w.isFinite ? math.max(w, contentWidth) : contentWidth,
+                  child: content,
+                ),
               ),
-            ),
-            const SizedBox(height: verticalContentGap),
-            SizedBox(
-              height: buttonSize,
-              child: _EqualsRow(
-                sideGap: verticalContentGap,
-                onEquals: () => onTap(const Equals()),
-                onInfoTap: onInfoTap,
-                onHelpTap: onHelpTap,
+              SizedBox(height: verticalContentGap),
+              SizedBox(
+                height: buttonSize,
+                child: _EqualsRow(
+                  sideGap: verticalContentGap,
+                  onEquals: () => onTap(const Equals()),
+                  onMenuTap: onMenuTap,
+                  onSwitchTap: onSwitchTap,
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         );
 
         // Vertical safety net: if buttonSize clamped at the 44 dp floor but
@@ -965,10 +1017,7 @@ class _BreitKeypad extends StatelessWidget {
         // landscape, foldable cover display), allow vertical scroll so no
         // row is unreachable. Otherwise center for abundant height (tablet).
         final naturalHeight =
-            4 * buttonSize +
-            3 * interBlockGap +
-            verticalContentGap +
-            buttonSize;
+            4 * buttonSize + 3 * rowGap + verticalContentGap + buttonSize;
         if (h.isFinite && h < naturalHeight) {
           return SingleChildScrollView(child: body);
         }
@@ -981,6 +1030,8 @@ class _BreitKeypad extends StatelessWidget {
     required double buttonSize,
     required double interBlockGap,
     required double groupGap,
+    required double rowGap,
+    required double Function(List<CalcToken>) columnWidth,
     required AppLocalizations l,
     required AppColors t,
   }) {
@@ -989,14 +1040,14 @@ class _BreitKeypad extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           for (var r = 0; r < kDigitGridRows.length; r++) ...[
-            if (r > 0) const SizedBox(height: tabletDigitGap),
+            if (r > 0) SizedBox(height: rowGap),
             Row(
               mainAxisSize: MainAxisSize.min,
               children: [
                 for (var col = 0; col < kDigitGridRows[r].length; col++) ...[
-                  if (col > 0) const SizedBox(width: tabletDigitGap),
+                  if (col > 0) SizedBox(width: interBlockGap),
                   SizedBox(
-                    width: buttonSize,
+                    width: columnWidth(const [Add()]),
                     height: buttonSize,
                     child: _DigitButton(
                       digit: kDigitGridRows[r][col],
@@ -1020,9 +1071,9 @@ class _BreitKeypad extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           for (var i = 0; i < tokens.length; i++) ...[
-            if (i > 0) const SizedBox(height: tabletColGap),
+            if (i > 0) SizedBox(height: rowGap),
             SizedBox(
-              width: buttonSize,
+              width: columnWidth(tokens),
               height: buttonSize,
               child: _TokenButton(
                 token: tokens[i],
@@ -1039,8 +1090,8 @@ class _BreitKeypad extends StatelessWidget {
           // aligned with the digit grid (otherwise CrossAxisAlignment.center
           // in the parent Row would float them downward).
           for (var j = 0; j < padCount; j++) ...[
-            const SizedBox(height: tabletColGap),
-            SizedBox(width: buttonSize, height: buttonSize),
+            SizedBox(height: rowGap),
+            SizedBox(width: columnWidth(tokens), height: buttonSize),
           ],
         ],
       );
@@ -1054,9 +1105,9 @@ class _BreitKeypad extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           for (var i = 0; i < tokens.length; i++) ...[
-            if (i > 0) const SizedBox(height: tabletColGap),
+            if (i > 0) SizedBox(height: rowGap),
             SizedBox(
-              width: buttonSize,
+              width: columnWidth(tokens),
               height: buttonSize,
               child: _TokenButton(
                 token: tokens[i],
@@ -1067,8 +1118,8 @@ class _BreitKeypad extends StatelessWidget {
               ),
             ),
           ],
-          const SizedBox(height: tabletColGap),
-          SizedBox(width: buttonSize, height: buttonSize),
+          SizedBox(height: rowGap),
+          SizedBox(width: columnWidth(tokens), height: buttonSize),
         ],
       );
     }
@@ -1078,7 +1129,7 @@ class _BreitKeypad extends StatelessWidget {
     // and the operator panels): a 1 dp line in the same colour, centred in
     // each inter-group gap. Height matches the digit grid so the line spans
     // the full top section but doesn't bleed into the equals row below.
-    final dividerHeight = 4 * buttonSize + 3 * interBlockGap;
+    final dividerHeight = 4 * buttonSize + 3 * rowGap;
     Widget bigGap() => SizedBox(
       width: groupGap,
       child: Center(
@@ -1210,6 +1261,7 @@ class _DigitButton extends StatelessWidget {
         excludeSemantics: true,
         enabled: !disabled,
         child: PressableShell(
+          role: KeyRole.digit,
           onTap: onTap,
           disabled: disabled,
           builder: (ctx, pressed) {
@@ -1276,14 +1328,14 @@ class _TokenButtonState extends State<_TokenButton> {
   Rect _cellsRect = Rect.zero;
   double _cellW = 0;
 
-  static const double _cellGap = 4.0;
-  static const double _popupPad = 4.0;
-  static const double _popupBorder = 1.0;
-  static const double _popupOffset = 6.0;
+  static const double _cellGap = 4;
+  static const double _popupPad = 4;
+  static const double _popupBorder = 1;
+  static const double _popupOffset = 6;
 
   /// Tolerance around the option row during the slide — smartphone-keyboard
   /// popups accept slightly sloppy fingers.
-  static const double _hitSlop = 12.0;
+  static const double _hitSlop = 12;
 
   @override
   void dispose() {
@@ -1320,7 +1372,7 @@ class _TokenButtonState extends State<_TokenButton> {
     final popupW = cellsW + 2 * frame;
     final popupH = cellH + 2 * frame;
     var left = origin.dx + keySize.width / 2 - popupW / 2;
-    left = left.clamp(8.0, math.max(8.0, screen.width - popupW - 8.0));
+    left = left.clamp(8.0, math.max(8, screen.width - popupW - 8.0));
     // Above the key; below it when the key sits too close to the top edge.
     var top = origin.dy - popupH - _popupOffset;
     if (top < MediaQuery.paddingOf(context).top + 8.0) {
@@ -1330,7 +1382,7 @@ class _TokenButtonState extends State<_TokenButton> {
     _cellsRect = Rect.fromLTWH(left + frame, top + frame, cellsW, cellH);
     _hover.value = null;
 
-    if (_haptics) HapticFeedback.lightImpact();
+    if (_haptics) unawaited(HapticFeedback.lightImpact());
     final entry = OverlayEntry(
       builder: (ctx) {
         final t = AppColors.of(ctx);
@@ -1405,7 +1457,7 @@ class _TokenButtonState extends State<_TokenButton> {
     var next = _hitIndex(d.globalPosition);
     if (next != null && _optionDisabled(next)) next = null;
     if (next != _hover.value) {
-      if (next != null && _haptics) HapticFeedback.lightImpact();
+      if (next != null && _haptics) unawaited(HapticFeedback.lightImpact());
       _hover.value = next;
     }
   }
@@ -1433,7 +1485,7 @@ class _TokenButtonState extends State<_TokenButton> {
     if (_optionDisabled(i)) return;
     final tok = _options[i];
     _removePopup();
-    if (_haptics) HapticFeedback.lightImpact();
+    if (_haptics) unawaited(HapticFeedback.lightImpact());
     widget.onTokenTap?.call(tok);
   }
 
@@ -1474,6 +1526,7 @@ class _TokenButtonState extends State<_TokenButton> {
                     painter: TokenKeyPainter(
                       token: widget.token,
                       color: keyColor,
+                      labelFontCap: KeyLabelFontCap.tokensOf(ctx),
                     ),
                   ),
                 ),
@@ -1544,6 +1597,7 @@ class _PopupOption extends StatelessWidget {
             painter: TokenKeyPainter(
               token: token,
               color: disabled ? t.digitDisabled : t.op,
+              labelFontCap: KeyLabelFontCap.tokensOf(context),
             ),
           ),
         ),
@@ -1669,6 +1723,7 @@ class _EqualsBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PressableShell(
+      role: KeyRole.primary,
       onTap: onTap,
       builder: (ctx, pressed) => CustomPaint(
         painter: TokenKeyPainter(
@@ -1688,13 +1743,13 @@ class _EqualsRow extends StatelessWidget {
   const _EqualsRow({
     required this.sideGap,
     required this.onEquals,
-    this.onInfoTap,
-    this.onHelpTap,
+    this.onMenuTap,
+    this.onSwitchTap,
   });
   final double sideGap;
   final VoidCallback onEquals;
-  final VoidCallback? onInfoTap;
-  final VoidCallback? onHelpTap;
+  final VoidCallback? onMenuTap;
+  final VoidCallback? onSwitchTap;
 
   @override
   Widget build(BuildContext context) {
@@ -1705,11 +1760,11 @@ class _EqualsRow extends StatelessWidget {
         return Row(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            _RoundIconButton(
+            RoundIconKey(
               size: h,
-              icon: Icons.info_outline,
+              icon: Icons.menu,
               tooltip: l.a11yTheoryChapters,
-              onPressed: onInfoTap,
+              onPressed: onMenuTap,
             ),
             SizedBox(width: sideGap),
             Expanded(
@@ -1719,49 +1774,15 @@ class _EqualsRow extends StatelessWidget {
               ),
             ),
             SizedBox(width: sideGap),
-            _RoundIconButton(
+            RoundIconKey(
               size: h,
-              icon: Icons.help_outline,
-              tooltip: l.a11yIntro,
-              onPressed: onHelpTap,
+              icon: Icons.swap_horiz,
+              tooltip: l.a11ySwitchCalculator,
+              onPressed: onSwitchTap,
             ),
           ],
         );
       },
-    );
-  }
-}
-
-class _RoundIconButton extends StatelessWidget {
-  const _RoundIconButton({
-    required this.size,
-    required this.icon,
-    this.tooltip,
-    this.onPressed,
-  });
-  final double size;
-  final IconData icon;
-  final String? tooltip;
-  final VoidCallback? onPressed;
-
-  @override
-  Widget build(BuildContext context) {
-    final t = AppColors.of(context);
-    final btn = Material(
-      color: t.pagerFill,
-      shape: CircleBorder(side: BorderSide(color: t.pagerBorder)),
-      child: InkWell(
-        customBorder: const CircleBorder(),
-        onTap: onPressed,
-        child: Center(
-          child: Icon(icon, size: size * 0.5, color: t.link),
-        ),
-      ),
-    );
-    return SizedBox(
-      width: size,
-      height: size,
-      child: tooltip != null ? Tooltip(message: tooltip!, child: btn) : btn,
     );
   }
 }

@@ -35,9 +35,9 @@ List<ManualChapter> _manualChaptersDe() => const [
     ),
     _H('Hilfe und Theorie'),
     _P(
-      'Links und rechts der =-Taste sitzen zwei runde Knöpfe: '
-      '(i) öffnet diese zwölf Theorie-Kapitel, (?) zeigt das '
-      'Bedienungs-Intro mit den roten Markierungen erneut. Beim '
+      'Links vom Gleichbalken sitzt die Menütaste: Sie öffnet das Menü '
+      'mit diesen zwölf Theorie-Kapiteln. Der Menü-Eintrag „Intro“ zeigt '
+      'das Bedienungs-Intro mit den roten Markierungen erneut. Beim '
       'allerersten Start öffnet sich das Intro automatisch.',
     ),
     _H('Cursor und Navigation'),
@@ -119,7 +119,7 @@ List<ManualChapter> _manualChaptersDe() => const [
     _H('Zahlensystem Doz / Dez'),
     _P(
       'Das Zahlensystem wechselst du in den Einstellungen, erreichbar '
-      'über die (i)-Taste: Dozenal rechnet in Basis 12 (Standard), '
+      'über die Menütaste: Dozenal rechnet in Basis 12 (Standard), '
       'Dezimal in Basis 10. Das aktive System steht oben rechts im '
       'Display angezeigt.',
     ),
@@ -1084,15 +1084,15 @@ List<ManualChapter> _converterManualChaptersDe() => const [
     ),
     _H('Hin- und herwechseln'),
     _P(
-      'Wische auf dem Hauptrechner nach links, und der Einheitenrechner '
-      'erscheint. Wische auf dem Einheitenrechner nach rechts, und du '
-      'bist zurück. Beim Wechsel erscheinen unten kurz drei kleine '
-      'Punkte mit dem Namen der Seite — der helle Punkt zeigt, wo du '
-      'gerade bist.',
+      'Die Taste rechts vom Gleichbalken wechselt zum nächsten Rechner: '
+      'vom Hauptrechner zum Einheitenrechner, von dort zum Werterechner '
+      'und wieder zurück zum Hauptrechner. Beim Wechsel erscheinen unten '
+      'kurz drei kleine Punkte mit dem Namen der Seite — der helle Punkt '
+      'zeigt, wo du gerade bist.',
     ),
     _P(
-      'Beide Rechner behalten ihre Eingaben beim Wechsel: Du kannst '
-      'mitten in einer Umrechnung zum Hauptrechner wischen, dort etwas '
+      'Alle Rechner behalten ihre Eingaben beim Wechsel: Du kannst '
+      'mitten in einer Umrechnung zum Hauptrechner wechseln, dort etwas '
       'nachrechnen und nahtlos weitermachen.',
     ),
   ]),
@@ -1220,13 +1220,14 @@ List<ManualChapter> _converterManualChaptersDe() => const [
     _H('Die Brücke zum Hauptrechner'),
     _P(
       'Die Ans-Taste holt das letzte Ergebnis des Hauptrechners in die '
-      'Eingabe — rechne dort etwas aus, wische herüber und gib dem Wert '
+      'Eingabe — rechne dort etwas aus, wechsle herüber und gib dem Wert '
       'eine Einheit. Umgekehrt holt die CONV-Taste im Erweiterungsfeld '
       'des Hauptrechners die Zahl aus der Ergebniszeile des '
       'Einheitenrechners. Werte reisen dabei als Zahl und erscheinen '
       'automatisch in der Basis der Zielseite. Hält der Einheitenrechner '
       'gerade nichts, greift CONV auf das Ergebnis des Werterechners '
-      'zurück; ein langer Druck auf CONV bietet es als VAL auch direkt an.',
+      'zurück; ein langer Druck auf CONV bietet es als VAL auch direkt '
+      'an.',
     ),
   ]),
 ];
@@ -1249,11 +1250,12 @@ List<ManualChapter> _assetManualChaptersDe() => const [
     ),
     _H('Hin und zurück'),
     _P(
-      'Wische auf dem Hauptrechner zweimal nach links — über den '
-      'Einheitenrechner hinweg — und der Werterechner erscheint. Nach '
-      'rechts wischen führt Schritt für Schritt zurück. Die kleinen '
-      'Punkte mit dem Seitennamen zeigen beim Wechsel wieder, wo du '
-      'bist; der helle Punkt ist die aktive Seite.',
+      'Die Taste rechts vom Gleichbalken führt der Reihe nach durch die '
+      'Rechner: Vom Hauptrechner erreichst du den Werterechner mit zwei '
+      'Tipps, über den Einheitenrechner hinweg; ein weiterer Tipp bringt '
+      'dich zurück zum Hauptrechner. Die kleinen Punkte mit dem '
+      'Seitennamen zeigen beim Wechsel wieder, wo du bist; der helle '
+      'Punkt ist die aktive Seite.',
     ),
     _P(
       'Wie die anderen Rechner behält der Werterechner seine Eingabe beim '
@@ -1370,25 +1372,26 @@ List<ManualChapter> _assetManualChaptersDe() => const [
   ]),
   ManualChapter('Kurve: der historische Vergleich', [
     _P(
-      'Die Kurve-Taste — der linke Kreis neben dem Gleichbalken — ersetzt '
-      'das Tastenfeld durch ein Diagramm; das × oben schließt es wieder.',
+      'Die Kurve-Taste links neben dem Gleichbalken ersetzt das '
+      'Tastenfeld durch ein Diagramm; das × oben schließt es wieder.',
     ),
     _H('Die drei Reihen'),
     _P(
-      'Alles wird an Gold gemessen: Silber in Gold, Getreide in Gold und '
-      'Gold in Getreide — also die Kaufkraft des Goldes in Nahrung. Jede '
-      'Reihe ist auf ihren ältesten bekannten Wert bezogen; diese liegt '
-      'als fette Nulllinie in der Mitte. Über der Linie heißt teurer, '
-      'darunter billiger, jeweils relativ zu Gold.',
+      'Drei Knöpfe wählen die Reihe, gemessen in realen Mengen: Gold in '
+      'Getreide — also die Kaufkraft des Goldes in Nahrung —, Silber in '
+      'Gold und Getreide in Gold. Über dem Diagramm steht der Wert als '
+      'konkrete Menge, etwa „1 g Gold = … L Getreide“, zuerst für den '
+      'jüngsten Punkt.',
     ),
     _H('Lesen und bewegen'),
     _P(
-      'Ziehen verschiebt das Bild, Zusammenziehen zoomt, der Knopf rechts '
-      'zoomt ganz heraus bis in die Antike. Standardmäßig zeigt die Kurve '
-      'die letzten rund hundert Jahre. Das schattierte Band um die '
-      'Antike-Punkte ist der geschätzte Bereich — die Antike besteht aus '
-      'einzelnen Ringen (nur Größenordnungen), keine Linie läuft über '
-      'eine Lücke. Die Quellen-Zeile listet den Datensatz.',
+      'Die Knöpfe Antike, Mittelalter, Neuzeit und Heute wählen den '
+      'Zeitraum, zu Beginn steht Heute. Alles oder ein Doppeltipp zeigt '
+      'die ganze Reihe. Ein Tipp ins Diagramm liest den nächsten Punkt '
+      'ab, Ziehen verschiebt das Bild, Zusammenziehen zoomt. Die Balken '
+      'zeigen die geschätzte Unsicherheit — die Antike besteht aus '
+      'einzelnen Punkten (nur Größenordnungen), keine Linie läuft über '
+      'eine Lücke. Quellen listet den Datensatz.',
     ),
   ]),
 ];

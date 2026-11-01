@@ -38,7 +38,7 @@ Alle dauerhaften Daten liegen auf dem Gerät in `SharedPreferences`. Es gibt kei
 - Darstellung: `theme_mode_v1`, `glyph_style_v1`, `keypad_glyph_style_v1`, `font_size_v1`, `locale_v1`,
   `haptics_enabled_v1`
 - Rechner: `keypad_mode_v1`, `keypad_profile_v1`, `numeral_system_v1`, `angle_mode_v1`
-- Einführung: `intro_seen_v4`
+- Einführung: `intro_seen_v5`
 - Werterechner: eigene Kurse, Metall und Währung je mit eigenem Präfix (`lib/rate_store.dart`)
 
 Speicher, Verlauf und Eingaben der Rechner liegen nur im Arbeitsspeicher.
@@ -193,16 +193,8 @@ Payload-freie Varianten. Spiegelt das Rust-Enum und erlaubt erschöpfende
 Wickelt die vorgenannten Bausteine zusammen — wenn etwas „in main.dart"
 liegt, dann hier:
 
-- **System-UI-Setup** (Details siehe Edge-to-edge-Abschnitt): `main()`
-  ruft **gar keine** `SystemChrome`-APIs — weder
-  `setEnabledSystemUIMode(edgeToEdge)` noch `setSystemUIOverlayStyle(...)`.
-  Beide würden über Flutters `PlatformPlugin` laufen, dessen kompilierte
-  Methoden statisch auf die deprecated `Window.setStatusBarColor /
-  setNavigationBarColor / setNavigationBarDividerColor` referenzieren —
-  Play Console scannt das DEX statisch und flaggt diese Referenzen auch
-  dann, wenn der Laufzeit-Pfad sie nie erreicht. Edge-to-edge UND
-  Icon-Brightness werden ausschliesslich nativ in `MainActivity.java`
-  gesetzt (`EdgeToEdge.enable` + `WindowInsetsControllerCompat`).
+- **System-UI-Setup:** `main()` ruft keine `SystemChrome`-APIs, Edge-to-edge und Icon-Helligkeit laufen nativ. Begründung:
+  [edge-to-edge.md](edge-to-edge.md).
 - **Physische Tastatur:** `_charKeyMap` (zeichen-basiert, inkl. `,` als
   Dezimaltrenner für deutsche Layouts) und `_logicalKeyMap` (Enter,
   Backspace, Pfeiltasten, kompletter Numpad inkl. Fallback-Digits, weil
@@ -213,7 +205,7 @@ liegt, dann hier:
   in die `ConverterState`-Handler (siehe Einheitenrechner-Abschnitt),
   auf Seite 2 (Werterechner) analog `_handleAssetKey`.
 - **Intro-Gate:** `_maybeShowIntro` liest `_kIntroSeenFlag` (aktuell
-  `intro_seen_v4`) aus `SharedPreferences` und pusht beim ersten Start
+  `intro_seen_v5`) aus `SharedPreferences` und pusht beim ersten Start
   `IntroPage`; danach wird das Flag gesetzt.
 - **Info-Routing:** `_onStateChanged` lauscht auf `state.infoState`,
   resettet es auf `InfoClosed` und pusht `InfoListPage`. Nach
@@ -236,7 +228,6 @@ liegt, dann hier:
   Resultat-Brücken-Provider aller drei Rechner (Umrechner-Ans/CONV,
   Asset-Ans/VAL inkl. CONV-Tap-Fallback — siehe Resultat-Brücke- und
   Werterechner-Abschnitt).
-  (Der frühere `state.converterRequested`-Pfad ist entfernt — der Zugang zu
-  den Folgeseiten läuft über Swipe + Page-Peek.)
+  Der Zugang zu den Folgeseiten läuft über die Taste rechts vom Gleichbalken.
   Splash-Feedback ist global via `NoSplash.splashFactory` aus, weil die
   Tasten ihre eigene Press-Color-Animation haben.

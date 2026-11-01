@@ -10,6 +10,8 @@
 
 import 'dart:math' as math;
 
+import 'package:dozenal_calc_flutter/logic/base_num.dart';
+
 /// The user-facing toggleable series.
 enum PriceSeriesId { gold, silver, wheat }
 
@@ -148,6 +150,8 @@ class ChartViewport {
   }
 
   @override
+  // Every field is final; the compared value object drives shouldRepaint.
+  // ignore: avoid_equals_and_hash_code_on_mutable_classes
   bool operator ==(Object other) =>
       other is ChartViewport &&
       other.xMin == xMin &&
@@ -156,6 +160,8 @@ class ChartViewport {
       other.lyMax == lyMax;
 
   @override
+  // Every field is final, see operator ==.
+  // ignore: avoid_equals_and_hash_code_on_mutable_classes
   int get hashCode => Object.hash(xMin, xMax, lyMin, lyMax);
 }
 
@@ -166,7 +172,7 @@ double baselineOf(PriceSeries series) =>
 
 /// All index values (value/baseline plus band bounds) used for the Y extent.
 List<double> _indexExtent(PriceSeries s, double base, bool Function(int) keep) {
-  final out = <double>[1.0]; // the baseline (0 line) is always in range
+  final out = <double>[1]; // the baseline (0 line) is always in range
   for (final p in s.points) {
     if (!keep(p.year)) continue;
     out.add(p.value / base);
@@ -221,6 +227,128 @@ ChartViewport defaultViewport(
     xMin,
     xMax,
     _indexExtent(series, base, (y) => y >= xMin && y <= xMax + 1),
+  );
+}
+
+// ── Epochs and real values ──────────────────────────────────────────────────
+
+/// The historical periods the chart jumps between.
+enum ChartEpoch {
+  antiquity(-3300, 500),
+  middleAges(500, 1500),
+  modern(1500, 1900),
+  present(1900, 2024);
+
+  const ChartEpoch(this.firstYear, this.lastYear);
+  final int firstYear;
+  final int lastYear;
+}
+
+const double _valuePadding = 0.12;
+const double _minValueSpan = 0.12;
+
+/// A view of [xMin]..[xMax] with the value axis fitted to the real values (and
+/// their uncertainty) in that window, or to the whole series if it holds none.
+ChartViewport _valueFitted(PriceSeries series, double xMin, double xMax) {
+  final inWindow = series.points
+      .where((p) => p.year >= xMin && p.year <= xMax)
+      .toList();
+  final logs = <double>[
+    for (final p in inWindow.isEmpty ? series.points : inWindow) ...[
+      log10(p.valueLow ?? p.value),
+      log10(p.valueHigh ?? p.value),
+    ],
+  ];
+  // A line running out of the window aims at a point beyond it. That point
+  // counts too, so the line leaves through the side and not the top or bottom.
+  final points = series.points;
+  for (var i = 0; i < points.length - 1; i++) {
+    final a = points[i];
+    final b = points[i + 1];
+    if (a.era != Era.modern || b.era != Era.modern) continue;
+    final aIn = a.year >= xMin && a.year <= xMax;
+    final bIn = b.year >= xMin && b.year <= xMax;
+    if (aIn != bIn) logs.add(log10((aIn ? b : a).value));
+  }
+  if (logs.isEmpty) return ChartViewport(xMin, xMax, -1, 1);
+  final low = logs.reduce(math.min);
+  final high = logs.reduce(math.max);
+  final middle = (low + high) / 2;
+  final span = math.max(_minValueSpan, (high - low) * (1 + 2 * _valuePadding));
+  return ChartViewport(xMin, xMax, middle - span / 2, middle + span / 2);
+}
+
+/// Share of a view left free at each end, so edge points show in full.
+const double _viewEdgeShare = 0.04;
+
+/// The view of one historical period, cut to the years the series covers. A
+/// series that starts inside the period must not widen the view beyond it.
+ChartViewport epochViewport(PriceSeries series, ChartEpoch epoch) {
+  final pad = (epoch.lastYear - epoch.firstYear) * _viewEdgeShare;
+  final xMin = math.max(epoch.firstYear - pad, series.minYear - pad);
+  final xMax = math.min(epoch.lastYear + pad, series.maxYear + pad);
+  if (xMin >= xMax) return wholeSeriesViewport(series);
+  return _valueFitted(series, xMin, xMax);
+}
+
+/// The view of the whole series, oldest point to newest.
+ChartViewport wholeSeriesViewport(PriceSeries series) {
+  final pad = (series.maxYear - series.minYear) * _viewEdgeShare;
+  return _valueFitted(series, series.minYear - pad, series.maxYear + pad);
+}
+
+/// [view]'s time window with the value axis fitted to what that window shows,
+/// so no point or uncertainty bar leaves the frame. A window without points
+/// keeps its value axis.
+ChartViewport fittedToVisibleValues(ChartViewport view, PriceSeries series) {
+  final anyVisible = series.points.any(
+    (p) => p.year >= view.xMin && p.year <= view.xMax,
+  );
+  return anyVisible ? _valueFitted(series, view.xMin, view.xMax) : view;
+}
+
+/// Keeps [view] on the time the series covers: it can't be dragged into the
+/// future, nor out past its oldest point.
+ChartViewport clampedToSeries(ChartViewport view, PriceSeries series) {
+  final edge = view.xSpan * _viewEdgeShare;
+  final first = series.minYear - edge;
+  final last = series.maxYear + edge;
+  final span = view.xSpan < last - first ? view.xSpan : last - first;
+  var xMin = view.xMin;
+  if (xMin + span > last) xMin = last - span;
+  if (xMin < first) xMin = first;
+  return ChartViewport(xMin, xMin + span, view.lyMin, view.lyMax);
+}
+
+/// The point nearest to [year] among those [view] shows; null if it shows none.
+PricePoint? nearestVisiblePoint(
+  PriceSeries series,
+  ChartViewport view,
+  double year,
+) {
+  PricePoint? best;
+  for (final p in series.points) {
+    if (p.year < view.xMin || p.year > view.xMax) continue;
+    if (best == null || (p.year - year).abs() < (best.year - year).abs()) {
+      best = p;
+    }
+  }
+  return best;
+}
+
+const double _digitGuard = 1e-6;
+
+/// [value] in [base], rounded to the two leading digits the coarse data can
+/// honestly claim.
+String roughValueLabel(double value, int base) {
+  if (value <= 0) return '0';
+  final exponent = (math.log(value) / math.log(base)).floor();
+  final step = math.pow(base, exponent - 1).toDouble();
+  return formatBaseNum(
+    // A hair above the rounded value, so digit extraction cannot fall short.
+    (value / step).round() * step + step * _digitGuard,
+    base,
+    fracDigits: math.max(0, 1 - exponent),
   );
 }
 
@@ -315,6 +443,32 @@ List<double> logDecadeTicks(double lyMin, double lyMax) {
     if (ly >= lyMin - 1e-9 && ly <= lyMax + 1e-9) ticks.add(pow10(ly));
   }
   return ticks;
+}
+
+const int _minValueAxisTicks = 4;
+const List<List<int>> _valueAxisMantissas = [
+  [1],
+  [1, 2, 5],
+  [1, 2, 3, 4, 5, 6, 7, 8, 9],
+];
+
+/// Tick VALUES for the value axis, as coarse as a narrow or wide range allows:
+/// decades, then 1-2-5 steps, then every digit, then even linear steps for a
+/// range too narrow to hold any of those.
+List<double> valueAxisTicks(double lyMin, double lyMax) {
+  for (final mantissas in _valueAxisMantissas) {
+    final ticks = <double>[
+      for (var k = lyMin.floor(); k <= lyMax.ceil(); k++)
+        for (final m in mantissas)
+          if (log10(pow10(k.toDouble()) * m) >= lyMin &&
+              log10(pow10(k.toDouble()) * m) <= lyMax)
+            pow10(k.toDouble()) * m,
+    ];
+    if (ticks.length >= _minValueAxisTicks) return ticks;
+  }
+  final low = pow10(lyMin);
+  final high = pow10(lyMax);
+  return niceTicks(low, high).where((v) => v >= low && v <= high).toList();
 }
 
 /// Minor log tick VALUES within [lyMin, lyMax]: the 2…9 subdivisions of each

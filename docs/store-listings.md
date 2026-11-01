@@ -1,9 +1,9 @@
 # Store-Listings: App-Namen-Konvention + Screenshots
 
-Referenz für Play-Store-Listing-Arbeit (App-Namen, Screenshots). Aus docs/build-und-assets.md
-ausgelagert — nur beim Hinzufügen einer Sprache oder bei Listing-/Asset-Arbeit
-gebraucht. Der `sync_play_listings` / `publishListing` / `publishBundle`-
-Workflow bleibt in docs/build-und-assets.md (Release-Builds).
+Referenz für Play-Store-Listing-Arbeit (App-Namen, Screenshots), nur beim
+Hinzufügen einer Sprache oder bei Listing-/Asset-Arbeit gebraucht. Der
+`sync_play_listings` / `publishListing` / `publishBundle`-Workflow steht in
+[release-workflow.md](release-workflow.md).
 
 **iOS-Keywords** (App-Store-Connect-only, kein Play-Feld): siehe
 `docs/app-store-keywords.md` — pro-Locale-Keyword-Strings für alle 14 Sprachen.

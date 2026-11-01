@@ -460,11 +460,37 @@ class AssetState extends ChangeNotifier {
     notifyListeners();
   }
 
+  // Existing call shape, used throughout the keypads and tests.
+  // ignore: avoid_positional_boolean_parameters
   void setSubtract(bool subtract) {
     if (_pendingSubtract == subtract) return;
     _leaveValueMode();
     _pendingSubtract = subtract;
     notifyListeners();
+  }
+
+  /// True while nothing has been entered and no term is committed.
+  bool get isEntryEmpty => _terms.isEmpty && _input.isEmpty;
+
+  double? _lastCarriedCalcAns;
+
+  /// Called on arriving at this calculator: a main-calculator answer not yet
+  /// carried over replaces the entry. The same answer never comes back, so AC
+  /// stays empty and an entry made here survives a look at the main calculator.
+  /// The chosen class and genus stay, ready for the next unit tap.
+  void carryNewCalcAns() {
+    final v = calcAnsProvider?.call();
+    if (v == null || !v.isFinite || v == _lastCarriedCalcAns) return;
+    _lastCarriedCalcAns = v;
+    _leaveValueMode();
+    _terms = const [];
+    _input = '';
+    _inputCursor = 0;
+    _cursorTerm = 0;
+    _pendingSubtract = false;
+    _heldUnit = null;
+    _resultStep = -1;
+    insertValueEntry(v);
   }
 
   void insertCalcAns() {
@@ -728,6 +754,8 @@ class AssetState extends ChangeNotifier {
       len += s.length;
     }
 
+    // Existing call shape, used throughout the keypads and tests.
+    // ignore: avoid_positional_boolean_parameters
     String opStr(bool subtract, Unit? thisUnit) {
       if (rendered == 0) return subtract ? '−' : '';
       if (subtract) return ' − ';

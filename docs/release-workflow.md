@@ -1,7 +1,6 @@
 # Release-Workflow: Versionshinweise + Listing-Push
 
-Operations-Referenz für den Release-Zeitpunkt. Aus docs/build-und-assets.md (Release-Builds /
-Automatisches Listing-Push) ausgelagert — nur beim Bauen+Veröffentlichen
+Operations-Referenz für den Release-Zeitpunkt. Nur beim Bauen+Veröffentlichen
 gebraucht. Die Build-Befehle selbst stehen in docs/build-und-assets.md.
 
 ## Mehrsprachige Play-Console-Versionshinweise
@@ -94,7 +93,7 @@ durch Play Console. Plugin: `com.github.triplet.play` 3.12.x, im app-Modul von
 ```bash
 dart run tool/sync_play_listings.dart   # store/play-store/listing.*.md + build<N>-release-notes.txt → android/app/src/main/play/
 ./gradlew publishListing                # nur Texte/Grafiken
-./gradlew publishBundle                 # AAB + Listings + Release-Notes (Track: internal, Status: DRAFT)
+./gradlew publishBundle                 # lädt das fertige AAB samt Listings und Release-Notes hoch (Track: internal, Status: DRAFT)
 ```
 
 `publishBundle` setzt voraus, dass das AAB bereits gebaut ist (`flutter build
@@ -168,11 +167,10 @@ fastlane deliver --api_key_path ~/keys/appstore_api_key.json \
   Watch-App in der iOS-App steckt; `…/osx/<locale>/` mit Mac-Shots). deliver
   ordnet Screenshots per Pixelmass dem Display-Typ zu. macOS-Grössen: 1280×800 /
   1440×900 / 2560×1600 / 2880×1800. Watch (Series-Grössen): u. a. 416×496.
-- **Credentials:** `~/keys/appstore_api_key.json` (aus `AuthKey_RMAP26R27U.p8`
+- **Credentials:** `~/keys/appstore_api_key.json` (aus `AuthKey_<KEY_ID>.p8`
   + Key-ID/Issuer gebaut), **nicht** im Repo — parallel zu den anderen Secrets.
 - `submit_for_review` ist im Deliverfile **aus** (DRAFT-Verhalten analog zum
   Play-`internal`-Track) — Einreichung im Browser oder per Flag.
 
 Binaries werden **nicht** über deliver geladen (`skip_binary_upload`), sondern
-über den geräte-losen `altool`-Upload (siehe [`watch.md`](watch.md) /
-[[apple-multiplatform-release]] im Memory).
+über den geräte-losen `altool`-Upload (siehe [`watch.md`](watch.md)).

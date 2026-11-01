@@ -11,8 +11,12 @@
 // digits — "more there, clipped", deliberately distinct from the ≈ of
 // State B.)
 
+import 'dart:math' as math;
+
 import 'package:dozenal_calc_flutter/app_theme.dart';
 import 'package:dozenal_calc_flutter/glyph_painter.dart';
+import 'package:dozenal_calc_flutter/key_face.dart';
+import 'package:dozenal_calc_flutter/line_drag.dart';
 import 'package:dozenal_calc_flutter/logic/glyph_style.dart';
 import 'package:dozenal_calc_flutter/tokens.dart';
 import 'package:flutter/foundation.dart';
@@ -96,17 +100,9 @@ class TwoLineDisplay extends StatelessWidget {
     // bracket relative to the available height inside the painter, so the
     // display works across the full range from ~60 dp (landscape phone) to
     // 170 dp (portrait tablet) without orientation-specific code.
-    final t = AppColors.of(context);
     return Container(
-      decoration: BoxDecoration(
-        color: t.displayBg,
-        borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: t.displayBorder),
-      ),
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-      child: SizedBox(
-        width: double.infinity,
-        height: double.infinity,
+      child: SizedBox.expand(
         child: Builder(
           // Builder so the painter rebuilds when GlyphStyleScope changes —
           // dependOnInheritedWidgetOfExactType subscribes this widget to
@@ -114,8 +110,10 @@ class TwoLineDisplay extends StatelessWidget {
           builder: (innerCtx) {
             final glyphStyle = GlyphStyleScope.of(innerCtx).style;
             final colors = AppColors.of(innerCtx);
-            final paint = CustomPaint(
-              painter: _TwoLineDisplayPainter(
+            Widget paintWith(double inputPan, double resultPan) => CustomPaint(
+              painter: TwoLineDisplayPainter(
+                inputPan: inputPan,
+                resultPan: resultPan,
                 inputBuffer: inputBuffer,
                 cursorPos: cursorPos,
                 resultBuffer: resultBuffer,
@@ -131,6 +129,7 @@ class TwoLineDisplay extends StatelessWidget {
                 numeralSystemLabel: numeralSystemLabel,
                 crossBaseBracket: crossBaseBracket,
                 glyphStyle: glyphStyle,
+                inputLineShare: displayInputLineShare,
                 showCursor: showCursor,
                 colors: colors,
               ),
@@ -139,32 +138,46 @@ class TwoLineDisplay extends StatelessWidget {
             final longPress = onLongPress;
             final swipeDown = onSwipeDown;
             if (tapHandler == null && longPress == null && swipeDown == null) {
-              return paint;
+              return paintWith(0, 0);
             }
             // Tap the input line → position the cursor at the nearest glyph
             // gap; long-press anywhere → copy the result.
             return LayoutBuilder(
-              builder: (ctx, c) => GestureDetector(
-                behavior: HitTestBehavior.opaque,
-                onTapDown: tapHandler == null
-                    ? null
-                    : (d) {
-                        final pos = inputCursorPosForTap(
-                          d.localPosition,
-                          Size(c.maxWidth, c.maxHeight),
-                          inputBuffer,
-                          glyphStyle,
-                        );
-                        if (pos != null) tapHandler(pos);
-                      },
-                onLongPress: longPress,
-                onVerticalDragEnd: swipeDown == null
-                    ? null
-                    : (d) {
-                        // Downward fling (primaryVelocity > 0, y grows down).
-                        if ((d.primaryVelocity ?? 0) > 0) swipeDown();
-                      },
-                child: paint,
+              builder: (ctx, c) => _DisplayPanHost(
+                size: Size(c.maxWidth, c.maxHeight),
+                inputBuffer: inputBuffer,
+                cursorPos: cursorPos,
+                resultBuffer: errorMsg == null ? resultBuffer : const [],
+                resultCursorPos: resultCursorPos,
+                glyphStyle: glyphStyle,
+                inputLineShare: displayInputLineShare,
+                isF64Fallback: isF64Fallback,
+                resultPeriodCapped: resultPeriodCapped,
+                builder: (inputPan, resultPan) => GestureDetector(
+                  behavior: HitTestBehavior.opaque,
+                  onTapDown: tapHandler == null
+                      ? null
+                      : (d) {
+                          final pos = inputCursorPosForTap(
+                            d.localPosition,
+                            Size(c.maxWidth, c.maxHeight),
+                            inputBuffer,
+                            glyphStyle,
+                            inputLineShare: displayInputLineShare,
+                            inputPan: inputPan,
+                            cursorPos: cursorPos,
+                          );
+                          if (pos != null) tapHandler(pos);
+                        },
+                  onLongPress: longPress,
+                  onVerticalDragEnd: swipeDown == null
+                      ? null
+                      : (d) {
+                          // Downward fling (primaryVelocity > 0, y grows down).
+                          if ((d.primaryVelocity ?? 0) > 0) swipeDown();
+                        },
+                  child: paintWith(inputPan, resultPan),
+                ),
               ),
             );
           },
@@ -182,10 +195,14 @@ int? inputCursorPosForTap(
   Offset local,
   Size size,
   List<CalcToken> inputBuffer,
-  GlyphStyle glyphStyle,
-) {
+  GlyphStyle glyphStyle, {
+  double inputLineShare = 0.5,
+  double inputPan = 0,
+  int? cursorPos,
+}) {
   final gap = (size.height * 0.06).clamp(2.0, 10.0);
-  final lineH = (size.height - gap) / 2;
+  final lineH =
+      (size.height - gap) * _inputShareAt(size.height, inputLineShare);
   if (local.dy > lineH) return null; // result line or inter-line gap
   // Color is irrelevant for hit-testing — only the widths matter.
   final laid = inputBuffer
@@ -193,7 +210,14 @@ int? inputCursorPosForTap(
       .toList();
   // Gap boundaries: x[0]=0 (before token 0), x[i]=Σ widths 0..i-1, x[n]=total.
   // Pick the boundary nearest the tap.
-  var x = 0.0;
+  final view = inputLineView(
+    size,
+    inputBuffer,
+    cursorPos ?? inputBuffer.length,
+    glyphStyle,
+    inputLineShare: inputLineShare,
+  );
+  var x = -(view.follow + inputPan).clamp(0.0, view.maxOffset);
   var bestIdx = 0;
   var bestDist = (local.dx - x).abs();
   for (var i = 0; i < laid.length; i++) {
@@ -207,8 +231,183 @@ int? inputCursorPosForTap(
   return bestIdx;
 }
 
-class _TwoLineDisplayPainter extends CustomPainter {
-  _TwoLineDisplayPainter({
+/// Room kept free for the angle and base badges beside an overflowing input.
+const double _inputBadgeReserve = 40;
+
+/// Room for the cut-off dots beside the cursor of an overflowing input.
+double _inputCursorMargin(double lineH) =>
+    _ellipsisPainter(lineH, Colors.white).width + 4;
+
+/// How far the input line is shifted left: `follow` keeps the cursor in view
+/// on its own, `maxOffset` reveals the line's end. Zero when everything fits.
+({double follow, double maxOffset}) inputLineView(
+  Size size,
+  List<CalcToken> inputBuffer,
+  int cursorPos,
+  GlyphStyle glyphStyle, {
+  double inputLineShare = 0.5,
+}) {
+  final gap = (size.height * 0.06).clamp(2.0, 10.0);
+  final lineH =
+      (size.height - gap) * _inputShareAt(size.height, inputLineShare);
+  final widths = inputBuffer
+      .map((t) => _layoutToken(t, lineH, glyphStyle, Colors.white).width)
+      .toList();
+  final total = widths.fold<double>(0, (a, w) => a + w);
+  final room = size.width - _inputBadgeReserve;
+  final margin = _inputCursorMargin(lineH);
+  if (total + margin <= room) return (follow: 0, maxOffset: 0);
+  final maxOffset = total + margin - room;
+  final cursorX = widths.take(cursorPos).fold<double>(0, (a, w) => a + w);
+  return (
+    follow: (cursorX + margin - room).clamp(0.0, maxOffset),
+    maxOffset: maxOffset,
+  );
+}
+
+/// How far an overflowing result line can be dragged left; zero when it fits.
+double resultLineMaxPan(
+  Size size,
+  List<CalcToken> resultBuffer,
+  GlyphStyle glyphStyle, {
+  double inputLineShare = 0.5,
+  bool isF64Fallback = false,
+  bool resultPeriodCapped = false,
+}) {
+  final gap = (size.height * 0.06).clamp(2.0, 10.0);
+  final inputH =
+      (size.height - gap) * _inputShareAt(size.height, inputLineShare);
+  final lineH = size.height - gap - inputH;
+  var total = resultBuffer.fold<double>(
+    0,
+    (a, t) => a + _layoutToken(t, lineH, glyphStyle, Colors.white).width,
+  );
+  if (isF64Fallback) {
+    total += _approxPainter(lineH, Colors.white).width + _approxGap(lineH);
+  }
+  if (resultPeriodCapped) {
+    total += _ellipsisPainter(lineH, Colors.white).width;
+  }
+  return math.max(0, total - size.width);
+}
+
+/// Holds how far the user dragged each display line. Both stay where they were
+/// left until their content or cursor changes.
+class _DisplayPanHost extends StatefulWidget {
+  const _DisplayPanHost({
+    required this.size,
+    required this.inputBuffer,
+    required this.cursorPos,
+    required this.resultBuffer,
+    required this.resultCursorPos,
+    required this.glyphStyle,
+    required this.inputLineShare,
+    required this.isF64Fallback,
+    required this.resultPeriodCapped,
+    required this.builder,
+  });
+
+  final Size size;
+  final List<CalcToken> inputBuffer;
+  final int cursorPos;
+  final List<CalcToken> resultBuffer;
+  final int resultCursorPos;
+  final GlyphStyle glyphStyle;
+  final double inputLineShare;
+  final bool isF64Fallback;
+  final bool resultPeriodCapped;
+  final Widget Function(double inputPan, double resultPan) builder;
+
+  @override
+  State<_DisplayPanHost> createState() => _DisplayPanHostState();
+}
+
+class _DisplayPanHostState extends State<_DisplayPanHost> {
+  double _inputPan = 0;
+  double _resultPan = 0;
+  bool _draggingInput = true;
+
+  @override
+  void didUpdateWidget(_DisplayPanHost old) {
+    super.didUpdateWidget(old);
+    if (!listEquals(old.inputBuffer, widget.inputBuffer) ||
+        old.cursorPos != widget.cursorPos) {
+      _inputPan = 0;
+    }
+    if (!listEquals(old.resultBuffer, widget.resultBuffer) ||
+        old.resultCursorPos != widget.resultCursorPos) {
+      _resultPan = 0;
+    }
+  }
+
+  ({double follow, double maxOffset}) get _inputView => inputLineView(
+    widget.size,
+    widget.inputBuffer,
+    widget.cursorPos,
+    widget.glyphStyle,
+    inputLineShare: widget.inputLineShare,
+  );
+
+  double get _resultMaxPan => resultLineMaxPan(
+    widget.size,
+    widget.resultBuffer,
+    widget.glyphStyle,
+    inputLineShare: widget.inputLineShare,
+    isF64Fallback: widget.isF64Fallback,
+    resultPeriodCapped: widget.resultPeriodCapped,
+  );
+
+  bool _isOnInputLine(Offset local) {
+    final height = widget.size.height;
+    final gap = (height * 0.06).clamp(2.0, 10.0);
+    return local.dy <=
+        (height - gap) * _inputShareAt(height, widget.inputLineShare);
+  }
+
+  bool _canDragAt(Offset local) {
+    final onInput = _isOnInputLine(local);
+    if (onInput ? _inputView.maxOffset <= 0 : _resultMaxPan <= 0) return false;
+    _draggingInput = onInput;
+    return true;
+  }
+
+  void _onDragUpdate(DragUpdateDetails details) {
+    setState(() {
+      if (_draggingInput) {
+        final view = _inputView;
+        _inputPan = (_inputPan - details.delta.dx).clamp(
+          -view.follow,
+          view.maxOffset - view.follow,
+        );
+      } else {
+        _resultPan = (_resultPan - details.delta.dx).clamp(0.0, _resultMaxPan);
+      }
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) => RawGestureDetector(
+    gestures: {
+      LineDragRecognizer:
+          GestureRecognizerFactoryWithHandlers<
+            LineDragRecognizer
+          >(() => LineDragRecognizer(allowedAt: _canDragAt), (recognizer) {
+            recognizer
+              ..allowedAt = _canDragAt
+              // The device's slop, as the display's other gestures use it; with
+              // the default the vertical swipe always wins.
+              ..gestureSettings = MediaQuery.maybeGestureSettingsOf(context)
+              ..onUpdate = _onDragUpdate;
+          }),
+    },
+    child: widget.builder(_inputPan, _resultPan),
+  );
+}
+
+class TwoLineDisplayPainter extends CustomPainter {
+  TwoLineDisplayPainter({
+    required this.inputPan,
+    required this.resultPan,
     required this.inputBuffer,
     required this.cursorPos,
     required this.resultBuffer,
@@ -224,9 +423,12 @@ class _TwoLineDisplayPainter extends CustomPainter {
     required this.numeralSystemLabel,
     required this.crossBaseBracket,
     required this.glyphStyle,
+    required this.inputLineShare,
     required this.showCursor,
     required this.colors,
   });
+  final double inputPan;
+  final double resultPan;
   final List<CalcToken> inputBuffer;
   final int cursorPos;
   final List<CalcToken> resultBuffer;
@@ -242,6 +444,7 @@ class _TwoLineDisplayPainter extends CustomPainter {
   final String? numeralSystemLabel;
   final String? crossBaseBracket;
   final GlyphStyle glyphStyle;
+  final double inputLineShare;
   final bool showCursor;
   final AppColors colors;
 
@@ -250,10 +453,12 @@ class _TwoLineDisplayPainter extends CustomPainter {
     // Adaptive line layout: gap shrinks proportionally with height so two
     // lines remain visible from ~60 dp (landscape) to 170 dp (cap).
     final gap = (size.height * 0.06).clamp(2.0, 10.0);
-    final lineH = (size.height - gap) / 2;
-    final inputRect = Rect.fromLTWH(0, 0, size.width, lineH);
-    final resultRect = Rect.fromLTWH(0, lineH + gap, size.width, lineH);
-    _paintInputLine(canvas, inputRect);
+    final inputH =
+        (size.height - gap) * _inputShareAt(size.height, inputLineShare);
+    final resultH = size.height - gap - inputH;
+    final inputRect = Rect.fromLTWH(0, 0, size.width, inputH);
+    final resultRect = Rect.fromLTWH(0, inputH + gap, size.width, resultH);
+    _paintInputLine(canvas, inputRect, size);
     if (errorMsg != null) {
       _paintError(canvas, resultRect, errorMsg!);
     } else {
@@ -268,8 +473,8 @@ class _TwoLineDisplayPainter extends CustomPainter {
         text: msg,
         style: TextStyle(
           color: colors.displayError,
-          fontSize: rect.height * 0.42,
-          fontFamily: 'monospace',
+          fontSize: _displayFontSize(rect.height),
+          fontFamily: keyFontFamily,
           fontWeight: FontWeight.bold,
         ),
       ),
@@ -286,19 +491,20 @@ class _TwoLineDisplayPainter extends CustomPainter {
 
   void _paintIndicators(Canvas canvas, Size size) {
     if (memoryActive) {
-      final tp = TextPainter(
-        text: TextSpan(
-          text: 'M',
-          style: TextStyle(
-            color: colors.accentGold,
-            fontSize: 12,
-            fontFamily: 'monospace',
-            fontWeight: FontWeight.bold,
+      TextPainter(
+          text: TextSpan(
+            text: 'M',
+            style: TextStyle(
+              color: colors.accentGold,
+              fontSize: 12,
+              fontFamily: keyFontFamily,
+              fontWeight: FontWeight.bold,
+            ),
           ),
-        ),
-        textDirection: TextDirection.ltr,
-      )..layout();
-      tp.paint(canvas, const Offset(2, 2));
+          textDirection: TextDirection.ltr,
+        )
+        ..layout()
+        ..paint(canvas, const Offset(2, 2));
     }
     final label = angleModeLabel;
     if (label != null) {
@@ -308,7 +514,7 @@ class _TwoLineDisplayPainter extends CustomPainter {
           style: TextStyle(
             color: colors.displayDim,
             fontSize: 10,
-            fontFamily: 'monospace',
+            fontFamily: keyFontFamily,
           ),
         ),
         textDirection: TextDirection.ltr,
@@ -327,7 +533,7 @@ class _TwoLineDisplayPainter extends CustomPainter {
                 ? colors.worldTwelve
                 : colors.worldTen,
             fontSize: 10,
-            fontFamily: 'monospace',
+            fontFamily: keyFontFamily,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -337,13 +543,41 @@ class _TwoLineDisplayPainter extends CustomPainter {
     }
   }
 
-  void _paintInputLine(Canvas canvas, Rect rect) {
+  void _paintInputLine(Canvas canvas, Rect rect, Size size) {
+    final view = inputLineView(
+      size,
+      inputBuffer,
+      cursorPos,
+      glyphStyle,
+      inputLineShare: inputLineShare,
+    );
+    final offset = (view.follow + inputPan).clamp(0.0, view.maxOffset);
     final laid = inputBuffer
         .map(
           (t) => _layoutToken(t, rect.height, glyphStyle, colors.displayText),
         )
         .toList();
-    var x = rect.left;
+    final dots = _ellipsisPainter(rect.height, colors.displayText);
+    final dotsY = rect.top + (rect.height - dots.height) / 2;
+    final cutLeft = offset > 0;
+    final cutRight = offset < view.maxOffset;
+    final visibleRight = view.maxOffset > 0
+        ? rect.right - _inputBadgeReserve
+        : rect.right;
+    if (cutLeft) dots.paint(canvas, Offset(rect.left, dotsY));
+    if (cutRight) dots.paint(canvas, Offset(visibleRight - dots.width, dotsY));
+    canvas.save();
+    if (view.maxOffset > 0) {
+      canvas.clipRect(
+        Rect.fromLTRB(
+          rect.left + (cutLeft ? dots.width : 0),
+          rect.top,
+          visibleRight - (cutRight ? dots.width : 0),
+          rect.bottom,
+        ),
+      );
+    }
+    var x = rect.left - offset;
     for (var i = 0; i < laid.length; i++) {
       if (showCursor && i == cursorPos && !resultFieldActive) {
         _drawCursor(canvas, x, rect.top, rect.height);
@@ -354,15 +588,90 @@ class _TwoLineDisplayPainter extends CustomPainter {
     if (showCursor && cursorPos >= laid.length && !resultFieldActive) {
       _drawCursor(canvas, x, rect.top, rect.height);
     }
+    canvas.restore();
   }
 
-  void _paintResultLine(Canvas canvas, Rect rect) {
+  /// A result the user moved: nothing is cut off for good, the line just
+  /// shifts, and dots mark the sides where more of it lies out of view.
+  void _paintDraggedResultLine(Canvas canvas, Rect rect) {
     final laid = resultBuffer
         .map(
           (t) => _layoutToken(t, rect.height, glyphStyle, colors.displayText),
         )
         .toList();
-    var totalW = laid.fold<double>(0.0, (a, t) => a + t.width);
+    final approx = isF64Fallback
+        ? _approxPainter(rect.height, colors.displayText)
+        : null;
+    final approxW = approx == null
+        ? 0.0
+        : approx.width + _approxGap(rect.height);
+    final tail = resultPeriodCapped
+        ? _ellipsisPainter(rect.height, colors.displayText)
+        : null;
+    final total =
+        approxW +
+        laid.fold<double>(0, (a, t) => a + t.width) +
+        (tail?.width ?? 0);
+    final dots = _ellipsisPainter(rect.height, colors.displayText);
+    final dotsY = rect.top + (rect.height - dots.height) / 2;
+    final startX = rect.left - resultPan;
+    final cutRight = startX + total > rect.right + 0.5;
+    dots.paint(canvas, Offset(rect.left, dotsY));
+    if (cutRight) dots.paint(canvas, Offset(rect.right - dots.width, dotsY));
+    canvas
+      ..save()
+      ..clipRect(
+        Rect.fromLTRB(
+          rect.left + dots.width,
+          rect.top,
+          rect.right - (cutRight ? dots.width : 0),
+          rect.bottom,
+        ),
+      );
+    var x = startX;
+    approx?.paint(
+      canvas,
+      Offset(x, rect.top + (rect.height - approx.height) / 2),
+    );
+    x += approxW;
+    final overlineY = rect.top + _overlineYOffset(rect.height);
+    final periodStart = resultPeriodStart;
+    for (var i = 0; i < laid.length; i++) {
+      if (showCursor && resultFieldActive && i == resultCursorPos) {
+        _drawCursor(canvas, x, rect.top, rect.height);
+      }
+      laid[i].paint(canvas, Offset(x, rect.top), rect.height);
+      if (periodStart != null &&
+          i >= periodStart &&
+          i < periodStart + resultPeriodLen) {
+        canvas.drawLine(
+          Offset(x, overlineY),
+          Offset(x + laid[i].width, overlineY),
+          Paint()
+            ..color = colors.displayText
+            ..strokeWidth = 1.2,
+        );
+      }
+      x += laid[i].width;
+    }
+    if (showCursor && resultFieldActive && resultCursorPos >= laid.length) {
+      _drawCursor(canvas, x, rect.top, rect.height);
+    }
+    tail?.paint(canvas, Offset(x, rect.top + (rect.height - tail.height) / 2));
+    canvas.restore();
+  }
+
+  void _paintResultLine(Canvas canvas, Rect rect) {
+    if (resultPan > 0) {
+      _paintDraggedResultLine(canvas, rect);
+      return;
+    }
+    final laid = resultBuffer
+        .map(
+          (t) => _layoutToken(t, rect.height, glyphStyle, colors.displayText),
+        )
+        .toList();
+    var totalW = laid.fold<double>(0, (a, t) => a + t.width);
 
     // Leading "≈" when the rational track collapsed and we're showing a
     // rounded f64 value (State B). Deliberately distinct from the
@@ -514,7 +823,10 @@ class _TwoLineDisplayPainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(covariant _TwoLineDisplayPainter old) =>
+  bool shouldRepaint(covariant TwoLineDisplayPainter old) =>
+      old.inputLineShare != inputLineShare ||
+      old.inputPan != inputPan ||
+      old.resultPan != resultPan ||
       !listEquals(old.inputBuffer, inputBuffer) ||
       old.cursorPos != cursorPos ||
       !listEquals(old.resultBuffer, resultBuffer) ||
@@ -544,16 +856,39 @@ class _LaidToken {
   final void Function(Canvas, Offset, double lineH) paint;
 }
 
+/// A short display (landscape) cannot afford a small input line: its text
+/// would be unreadable, so the input takes nearly half of the height.
+double _inputShareAt(double displayHeight, double share) =>
+    displayHeight < _shortDisplayHeight
+    ? math.max(share, _shortDisplayInputShare)
+    : share;
+
+const double _shortDisplayHeight = 130;
+const double _shortDisplayInputShare = 0.46;
+
 /// Half-radius factor of the digit glyph relative to the line height.
 /// Composite digits (D2/D3/D5/D6/D8/D9/D11) span ±2q around the centre —
 /// so 4 · q must fit within lineH with room above for the overline.
 const double _digitQRatio = 0.18;
 
+/// Above this a composite glyph would no longer fit its line.
+const double _maxGlyphScale = 1.2;
+
 /// Pixel gap between the top of a composite glyph and the overline that
 /// signals a periodic expansion.
-const double _overlineGap = 4.0;
+const double _overlineGap = 4;
 
-double _digitQ(double lineH) => lineH * _digitQRatio;
+/// Text size in a display line. Low lines fill up to [_maxLineFill] before the
+/// text drops below the readable floor, which keeps landscape text legible.
+double _displayFontSize(double lineH) => math.max(
+  lineH * 0.42 * displayCharacterScale,
+  math.min(displayMinFontSize, lineH * _maxLineFill),
+);
+
+const double _maxLineFill = 0.74;
+
+double _digitQ(double lineH) =>
+    lineH * _digitQRatio * math.min(displayCharacterScale, _maxGlyphScale);
 
 /// Y offset (relative to the result rect's top) where the overline sits.
 /// Lifts it just above the top of a composite glyph: centre.y − 2·q − gap.
@@ -573,7 +908,7 @@ _LaidToken _layoutToken(
       // dozenal literature).
       final tp = _textPainter(
         conventionalDigitChar(token.value),
-        lineH * 0.42,
+        _displayFontSize(lineH),
         color,
       );
       return _LaidToken(tp.width + 4, (canvas, offset, h) {
@@ -598,7 +933,7 @@ _LaidToken _layoutToken(
   }
   final text = _tokenText(token);
   if (text.isEmpty) return _LaidToken(0, (_, _, _) {});
-  final tp = _textPainter(text, lineH * 0.42, color);
+  final tp = _textPainter(text, _displayFontSize(lineH), color);
   return _LaidToken(tp.width + 4, (canvas, offset, h) {
     tp.paint(canvas, Offset(offset.dx + 2, offset.dy + (h - tp.height) / 2));
   });
@@ -611,18 +946,19 @@ TextPainter _textPainter(String text, double fontSize, Color color) =>
         style: TextStyle(
           color: color,
           fontSize: fontSize,
-          fontFamily: 'monospace',
+          fontFamily: keyFontFamily,
+          fontWeight: keyTextWeight,
         ),
       ),
       textDirection: TextDirection.ltr,
     )..layout();
 
 TextPainter _ellipsisPainter(double lineH, Color color) =>
-    _textPainter('…', lineH * 0.42, color);
+    _textPainter('…', _displayFontSize(lineH), color);
 
 /// "≈" marker drawn ahead of a rounded f64-fallback result (State B).
 TextPainter _approxPainter(double lineH, Color color) =>
-    _textPainter('≈', lineH * 0.42, color);
+    _textPainter('≈', _displayFontSize(lineH), color);
 
 /// Gap between the "≈" marker and the first result digit.
 double _approxGap(double lineH) => lineH * 0.08;
@@ -635,7 +971,7 @@ TextPainter _bracketPainter(String text, double lineH, Color color) =>
         style: TextStyle(
           color: color,
           fontSize: lineH * 0.30,
-          fontFamily: 'monospace',
+          fontFamily: keyFontFamily,
         ),
       ),
       textDirection: TextDirection.ltr,

@@ -6,6 +6,7 @@
 
 import 'dart:math' as math;
 
+import 'package:dozenal_calc_flutter/key_face.dart';
 import 'package:dozenal_calc_flutter/tokens.dart';
 import 'package:flutter/material.dart';
 
@@ -14,11 +15,14 @@ void paintTokenAt(
   CalcToken token, {
   required Rect rect,
   Color color = Colors.lightBlueAccent,
-  double strokeWidth = 2.0,
+  double strokeWidth = keyTokenStroke,
+  double labelFontCap = double.infinity,
 }) {
   final c = rect.center;
   final minEdge = math.min(rect.width, rect.height);
   final q = minEdge / 4.0;
+  // Corner composites sit against the key edge, so only their x grows.
+  final lineQ = q * keyCharacterScale;
   final paint = Paint()
     ..color = color
     ..style = PaintingStyle.stroke
@@ -26,21 +30,27 @@ void paintTokenAt(
     ..strokeCap = StrokeCap.round;
 
   if (token is Add) {
-    canvas.drawLine(c - Offset(q, 0), c + Offset(q, 0), paint);
-    canvas.drawLine(c - Offset(0, q), c + Offset(0, q), paint);
+    canvas
+      ..drawLine(c - Offset(lineQ, 0), c + Offset(lineQ, 0), paint)
+      ..drawLine(c - Offset(0, lineQ), c + Offset(0, lineQ), paint);
     return;
   }
   if (token is Sub) {
-    canvas.drawLine(c - Offset(q, 0), c + Offset(q, 0), paint);
+    canvas.drawLine(c - Offset(lineQ, 0), c + Offset(lineQ, 0), paint);
     return;
   }
   if (token is Mul) {
-    canvas.drawLine(c - Offset(q, q), c + Offset(q, q), paint);
-    canvas.drawLine(c + Offset(-q, q), c + Offset(q, -q), paint);
+    canvas
+      ..drawLine(c - Offset(lineQ, lineQ), c + Offset(lineQ, lineQ), paint)
+      ..drawLine(c + Offset(-lineQ, lineQ), c + Offset(lineQ, -lineQ), paint);
     return;
   }
   if (token is Div) {
-    canvas.drawLine(c + Offset(-q, q), c + Offset(q, -q), paint);
+    canvas.drawLine(
+      c + Offset(-lineQ, lineQ),
+      c + Offset(lineQ, -lineQ),
+      paint,
+    );
     return;
   }
 
@@ -98,26 +108,27 @@ void paintTokenAt(
       ..color = color
       ..strokeWidth = 1.0
       ..strokeCap = StrokeCap.round;
-    canvas.drawLine(
-      sqC + Offset(0, -cross),
-      sqC + Offset(0, cross),
-      crossPaint,
-    );
-    canvas.drawLine(
-      sqC + Offset(-cross, 0),
-      sqC + Offset(cross, 0),
-      crossPaint,
-    );
+    canvas
+      ..drawLine(sqC + Offset(0, -cross), sqC + Offset(0, cross), crossPaint)
+      ..drawLine(sqC + Offset(-cross, 0), sqC + Offset(cross, 0), crossPaint);
     return;
   }
 
   if (token is TriangleRight) {
-    final pts = [c + Offset(-q, -q), c + Offset(-q, q), c + Offset(q, 0)];
+    final pts = [
+      c + Offset(-lineQ, -lineQ),
+      c + Offset(-lineQ, lineQ),
+      c + Offset(lineQ, 0),
+    ];
     _drawClosedPolygon(canvas, pts, paint);
     return;
   }
   if (token is TriangleLeft) {
-    final pts = [c + Offset(q, q), c + Offset(q, -q), c + Offset(-q, 0)];
+    final pts = [
+      c + Offset(lineQ, lineQ),
+      c + Offset(lineQ, -lineQ),
+      c + Offset(-lineQ, 0),
+    ];
     _drawClosedPolygon(canvas, pts, paint);
     return;
   }
@@ -125,18 +136,40 @@ void paintTokenAt(
   // Text fallback for everything else.
   final text = _tokenLabel(token);
   if (text.isEmpty) return;
-  _drawCenteredText(canvas, text, c, minEdge * _labelScale(token), color);
+  _drawCenteredText(
+    canvas,
+    text,
+    c,
+    token is Equals
+        ? minEdge * _strongEqualsScale * keyCharacterScale
+        : _labelScale(token) == keyBaseLabelShare
+        ? math.min(
+            minEdge * keyBaseLabelShare * keyLabelBoost * keyCharacterScale,
+            labelFontCap,
+          )
+        : minEdge * _labelScale(token) * keyLabelBoost * keyCharacterScale,
+    color,
+    maxWidth: rect.width * _labelMaxWidthShare,
+  );
 }
+
+const double _fineStroke = 2;
+const double _strongEqualsScale = 0.7;
+const double _compositeScale = 1.2;
+const double _labelMaxWidthShare = 0.92;
 
 /// Per-token font scale for the text fallback. Tokens whose glyph is
 /// intrinsically tiny (the decimal dot, the … of Expand/Close) or thin
 /// (the parens) render larger so they read at keypad size; everything
-/// else keeps the 0.35 baseline.
+/// else keeps the baseline.
 double _labelScale(CalcToken t) {
   if (t is Decimal || t is Expand || t is Close) return 0.55;
   if (t is ParenOpen || t is ParenClose) return 0.5;
-  return 0.35;
+  return keyBaseLabelShare;
 }
+
+/// Characters on [t]'s key; a drawn glyph counts as one.
+int tokenLabelLength(CalcToken t) => math.max(1, _tokenLabel(t).runes.length);
 
 void _paintXWithCornerSquare(
   Canvas canvas,
@@ -169,17 +202,24 @@ void _paintXWithCornerSquareAt(
   Offset squareCenter,
   double squareSize,
 ) {
-  _drawCenteredText(canvas, 'x', center, minEdge * 0.45, color);
+  // A heavier stroke would close the small square, so it keeps the fine line
+  // and grows instead; the x gets the weight.
+  final strong = strokeWidth > _fineStroke;
+  _drawCenteredText(
+    canvas,
+    'x',
+    center,
+    minEdge * (strong ? 0.56 : 0.45) * _compositeScale,
+    color,
+    weight: FontWeight.w600,
+  );
+  final side = squareSize * (strong ? 1.2 : 1);
   canvas.drawRect(
-    Rect.fromCenter(
-      center: squareCenter,
-      width: squareSize,
-      height: squareSize,
-    ),
+    Rect.fromCenter(center: squareCenter, width: side, height: side),
     Paint()
       ..color = color
       ..style = PaintingStyle.stroke
-      ..strokeWidth = strokeWidth,
+      ..strokeWidth = _fineStroke,
   );
 }
 
@@ -197,19 +237,27 @@ void _drawCenteredText(
   String text,
   Offset center,
   double fontSize,
-  Color color,
-) {
-  final tp = TextPainter(
+  Color color, {
+  FontWeight weight = keyTextWeight,
+  double? maxWidth,
+}) {
+  TextPainter laidOut(double size) => TextPainter(
     text: TextSpan(
       text: text,
       style: TextStyle(
         color: color,
-        fontSize: fontSize,
-        fontFamily: 'monospace',
+        fontSize: size,
+        fontFamily: keyFontFamily,
+        fontWeight: weight,
       ),
     ),
     textDirection: TextDirection.ltr,
   )..layout();
+  var tp = laidOut(fontSize);
+  if (maxWidth != null && tp.width > maxWidth) {
+    // Long labels such as sinh⁻¹ shrink instead of leaving the key.
+    tp = laidOut(fontSize * maxWidth / tp.width);
+  }
   tp.paint(canvas, center - Offset(tp.width / 2, tp.height / 2));
 }
 

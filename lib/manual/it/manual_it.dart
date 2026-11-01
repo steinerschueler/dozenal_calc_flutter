@@ -33,10 +33,10 @@ List<ManualChapter> _manualChaptersIt() => const [
     ),
     _H('Aiuto e teoria'),
     _P(
-      'A sinistra e a destra del tasto =, due bottoni rotondi: '
-      '(i) apre questi dodici capitoli teorici, (?) riproduce il '
-      'tour rapido con i marcatori rossi. Il tour si apre '
-      'automaticamente al primo avvio.',
+      'A sinistra della barra di uguale si trova il tasto menu: apre il '
+      'menu con questi dodici capitoli teorici. La voce «Introduzione» '
+      'del menu riproduce il tour rapido con i marcatori rossi. Il tour '
+      'si apre automaticamente al primo avvio.',
     ),
     _H('Cursore e navigazione'),
     _P(
@@ -120,10 +120,10 @@ List<ManualChapter> _manualChaptersIt() => const [
     ),
     _H('Sistema numerico: Doz / Dez'),
     _P(
-      'Il sistema numerico si cambia nelle impostazioni, '
-      'raggiungibili tramite il tasto (i): duodecimale calcola '
-      'in base 12 (predefinito), decimale in base 10. Il sistema '
-      'attivo è mostrato in alto a destra del display.',
+      'Il sistema numerico si cambia nelle impostazioni, raggiungibili '
+      'tramite il tasto menu: duodecimale calcola in base 12 '
+      '(predefinito), decimale in base 10. Il sistema attivo è mostrato '
+      'in alto a destra del display.',
     ),
     _P(
       'Al cambio, il numero attualmente visibile viene '
@@ -1137,15 +1137,16 @@ List<ManualChapter> _converterManualChaptersIt() => const [
     ),
     _H("Passare dall'una all'altra"),
     _P(
-      'Scorri verso sinistra sulla calcolatrice principale e appare il '
-      'convertitore di unità. Scorri verso destra sul convertitore e sei '
-      'di ritorno. Al passaggio compaiono brevemente in basso tre '
-      'puntini con il nome della pagina — il puntino chiaro mostra dove '
-      'ti trovi.',
+      'Il tasto a destra della barra di uguale passa alla calcolatrice '
+      'successiva: dalla calcolatrice principale al convertitore di '
+      'unità, da lì alla calcolatrice dei valori e di nuovo alla '
+      'calcolatrice principale. Al passaggio compaiono brevemente in '
+      'basso tre puntini con il nome della pagina — il puntino chiaro '
+      'mostra dove ti trovi.',
     ),
     _P(
-      'Entrambe le calcolatrici conservano i loro input al passaggio: puoi '
-      'scorrere verso la calcolatrice principale nel mezzo di una '
+      'Tutte le calcolatrici conservano i loro input al passaggio: puoi '
+      'passare alla calcolatrice principale nel mezzo di una '
       'conversione, fare lì un calcolo e continuare senza interruzioni.',
     ),
   ]),
@@ -1274,15 +1275,15 @@ List<ManualChapter> _converterManualChaptersIt() => const [
     _H('Il ponte verso la calcolatrice principale'),
     _P(
       "Il tasto Ans porta l'ultimo risultato della calcolatrice "
-      "principale nell'input — calcola lì qualcosa, scorri fin qui e dai "
+      "principale nell'input — calcola lì qualcosa, passa fin qui e dai "
       "al valore un'unità. Viceversa, il tasto CONV nel pannello esteso "
       'della calcolatrice principale recupera il numero dalla riga del '
       'risultato del convertitore di unità. I valori viaggiano come '
       'numero puro e appaiono automaticamente nella base della pagina di '
       'destinazione. Se il convertitore di unità al momento non contiene '
       'nulla, CONV ripiega sul risultato della calcolatrice dei valori; '
-      'una pressione prolungata su CONV lo offre anche direttamente '
-      'come VAL.',
+      'una pressione prolungata su CONV lo offre anche direttamente come '
+      'VAL.',
     ),
   ]),
 ];
@@ -1298,9 +1299,10 @@ List<ManualChapter> _assetManualChaptersIt() => const [
     ),
     _H('Avanti e indietro'),
     _P(
-      'Scorri due volte verso sinistra sulla calcolatrice principale — '
-      'oltre il convertitore di unità — e appare la calcolatrice dei '
-      'valori. Scorrendo verso destra torni indietro passo dopo passo. Al '
+      'Il tasto a destra della barra di uguale percorre a turno le '
+      'calcolatrici: dalla calcolatrice principale, due tocchi — oltre '
+      'il convertitore di unità — portano alla calcolatrice dei valori; '
+      'un altro tocco ti riporta alla calcolatrice principale. Al '
       'passaggio, i puntini con il nome della pagina indicano di nuovo '
       'dove ti trovi; il puntino chiaro è la pagina attiva.',
     ),
@@ -1423,27 +1425,26 @@ List<ManualChapter> _assetManualChaptersIt() => const [
   ]),
   ManualChapter('Curva: il confronto storico', [
     _P(
-      'Il tasto Curva — il cerchio a sinistra accanto alla barra di '
-      'uguale — sostituisce la tastiera con un grafico; la × in alto lo '
-      'richiude.',
+      'Il tasto Curva a sinistra della barra di uguale sostituisce la '
+      'tastiera con un grafico; la × in alto lo richiude.',
     ),
     _H('Le tre serie'),
     _P(
-      "Tutto viene misurato rispetto all'oro: argento in oro, grano in "
-      "oro e oro in grano — cioè il potere d'acquisto dell'oro in cibo. "
-      'Ogni serie è riferita al suo valore noto più antico; questo si '
-      'trova come spessa linea dello zero al centro. Sopra la linea '
-      "significa più caro, sotto più economico, sempre rispetto all'oro.",
+      'Tre pulsanti scelgono la serie, misurata in quantità reali: oro '
+      "in grano — cioè il potere d'acquisto dell'oro in cibo —, argento "
+      'in oro e grano in oro. Sopra il grafico il valore compare come '
+      'quantità concreta, per esempio «1 g di oro = … L di grano», prima '
+      'per il punto più recente.',
     ),
     _H('Leggere e muovere'),
     _P(
-      "Trascinare sposta l'immagine, avvicinare le dita ingrandisce, il "
-      "pulsante a destra rimpicciolisce tutto fino all'antichità. Per "
-      "impostazione predefinita la curva mostra all'incirca gli ultimi "
-      "cento anni. La banda ombreggiata attorno ai punti dell'antichità "
-      "è l'intervallo stimato — l'antichità è composta da singoli "
-      'anelli (solo ordini di grandezza), nessuna linea attraversa una '
-      'lacuna. La riga delle fonti elenca il set di dati.',
+      'I pulsanti Antichità, Medioevo, Età moderna e Oggi scelgono il '
+      'periodo; si parte da Oggi. Tutto o un doppio tocco mostra '
+      "l'intera serie. Un tocco sul grafico legge il punto più vicino, "
+      "trascinare sposta l'immagine, avvicinare le dita ingrandisce. Le "
+      "barre mostrano l'incertezza stimata — l'antichità è composta da "
+      'singoli punti (solo ordini di grandezza), nessuna linea '
+      'attraversa una lacuna. Fonti elenca il set di dati.',
     ),
   ]),
 ];

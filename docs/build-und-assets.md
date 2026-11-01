@@ -1,6 +1,6 @@
 # Build und Assets
 
-Aus dem früheren Gesamtdokument übernommen. Verweise wie «oben» oder «siehe …-Abschnitt» meinen die Themenseiten, die
+Verweise wie «oben» oder «siehe …-Abschnitt» meinen die Themenseiten, die
 [architektur.md](architektur.md) auflistet.
 
 ## Release-Builds
@@ -16,27 +16,8 @@ Der Play-Store-Appbundle-Build braucht explizit Java 17 (Java 21 auf dieser
 Maschine zerbricht Gradle). Android-Signing liest `android/key.properties` —
 fehlt die Datei, fällt der Build still auf Debug-Signing zurück.
 
-**Nach jedem Release-Build** mehrsprachige Play-Console-Versionshinweise
-verfassen — ein <500-Zeichen-Block (Play-Limit) pro Listing-Locale für die
-**zwölf** Play-Console-Release-Notes-Locales (DE, EN, FR, ES, IT, FA, RU, HI,
-ZH, ZH-Hant, JA, AR; Play-Tags de-DE/en-US/fr-FR/es-ES/it-IT/fa-AF/ru-RU/
-hi-IN/zh-CN/zh-TW/ja-JP/ar — massgeblich ist die `_localeMap` in
-`tool/sync_play_listings.dart`). Nur Irisch (GA) und Walisisch (CY) haben dort
-keinen Slot. Als `build<N>-release-notes.txt`
-im Projekt-Root ablegen, dann via Gradle Play Publisher pushen:
-
-```bash
-dart run tool/sync_play_listings.dart   # store/play-store/listing.*.md + build<N>-release-notes.txt → play/
-./gradlew publishListing                # nur Texte/Grafiken
-./gradlew publishBundle                 # AAB-Upload (Track: internal, Status: DRAFT)
-```
-
-`publishBundle` lädt nur hoch (AAB muss schon gebaut sein), landet als Entwurf
-auf `internal` und muss in Play Console manuell promotet werden. Vollständiger
-Workflow — Notes-Block-Format + Template, `-Pplay.track`-Override, Credentials
-(`~/keys/play-publisher.json`), Sync-Source-Layout:
-[`docs/release-workflow.md`](release-workflow.md). App-Namen-Konvention
-pro Locale: [`docs/store-listings.md`](store-listings.md).
+Nach jedem Release-Build folgen Versionshinweise und Upload: [`docs/release-workflow.md`](release-workflow.md).
+App-Namen pro Locale: [`docs/store-listings.md`](store-listings.md).
 
 ## Asset-Regenerierung
 

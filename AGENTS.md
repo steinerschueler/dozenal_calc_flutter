@@ -16,16 +16,18 @@ Entwicklungs-Sandbox unter <https://github.com/Bawdyness/dozenal_calc>. Paket- u
 | Aufgabe | Datei |
 |---|---|
 | Rechenkern, State, Tokens, Start der App, Daten, Netzziele | [docs/architektur.md](docs/architektur.md) |
+| Fachbegriffe und ihre Namen im Code | [docs/glossar.md](docs/glossar.md) |
 | Display, Glyphen, Keypad, Langdruck | [docs/rendering.md](docs/rendering.md) |
 | Info-Liste, Theorie, Handbuch, Empfehlungen | [docs/info-modal.md](docs/info-modal.md) |
 | Einstellungen, Theming | [docs/einstellungen-und-theming.md](docs/einstellungen-und-theming.md) |
-| Umrechner, Werterechner, Resultat-Brücke, Farbcode | [docs/rechner-seiten.md](docs/rechner-seiten.md) |
+| Umrechner, Werterechner, Resultat-Brücke, Farbcode | [docs/rechner-seiten.md](docs/rechner-seiten.md), Spezifikation: [unit-converter](docs/unit-converter.md), [asset-converter](docs/asset-converter.md), [asset-rates-api](docs/asset-rates-api.md) |
 | Intro, Sprachen, RTL | [docs/mehrsprachigkeit.md](docs/mehrsprachigkeit.md) |
-| Edge-to-edge, `MainActivity`, ABI-Filter | [docs/android-nativ.md](docs/android-nativ.md) |
-| Release, Assets, Store-Screenshots | [docs/build-und-assets.md](docs/build-und-assets.md) |
-| macOS, watchOS, Flathub, Microsoft Store, F-Droid | [docs/distribution.md](docs/distribution.md) |
+| Edge-to-edge, `MainActivity`, ABI-Filter | [docs/android-nativ.md](docs/android-nativ.md), Begründung: [docs/edge-to-edge.md](docs/edge-to-edge.md) |
+| Release, Assets, Store-Screenshots | [docs/build-und-assets.md](docs/build-und-assets.md), [release-workflow](docs/release-workflow.md), [store-listings](docs/store-listings.md), [appstore-connect-pipeline](docs/appstore-connect-pipeline.md), [app-store-keywords](docs/app-store-keywords.md) |
+| macOS, watchOS, Flathub, Microsoft Store, F-Droid | [docs/distribution.md](docs/distribution.md), Watch: [docs/watch.md](docs/watch.md) |
 | Lizenz, Lints, Portierung, Umgebung (Volltext) | [docs/konventionen.md](docs/konventionen.md) |
 | Offene Punkte, auch Kleinigkeiten | [docs/improvements-todo.md](docs/improvements-todo.md) |
+| Analyse anderer Taschenrechner | [docs/taschenrechner-analyse.md](docs/taschenrechner-analyse.md) |
 | Prosa in `lib/theory/<lang>/math_<lang>.dart` | [docs/chapter2-conventions.md](docs/chapter2-conventions.md), vor jedem Edit |
 
 ## Git
@@ -68,12 +70,14 @@ Entwicklungs-Sandbox unter <https://github.com/Bawdyness/dozenal_calc>. Paket- u
 
 - Die Schliess-Barrier der Popups ist ein `Listener` mit translucent-Hit-Test und schluckt nie Eingaben.
 - Die Popup-Breite muss den 1-px-Rahmen einrechnen.
+- Schrift, Tastenflächen und Grössen stehen in `key_face.dart`, sie gelten für alle drei Rechner.
 - `_kFuncPageEnabled` ist absichtlich `false`, der Code bleibt bestehen. Nicht löschen.
 - Die drei Keypads teilen `keypad_parts.dart`, bleiben aber getrennte Widget-Bäume mit eigener Semantik.
 - `Keypad`: Der Scroll-Modus gilt nicht im Profil «Einfach».
 - Ohne `CalcStateScope` oder `ThemeScope` blendet die Einstellungen-Seite die betroffenen Zeilen aus. Tests pumpen sie so.
 - Widget-Tests mit `find.text` müssen den Page-Peek ausklingen lassen (`flushPagePeek`).
-- Bei offenem Chart bleibt das Pager-Wischen gesperrt, sonst verliert das Verschieben im Chart die Gesture-Arena.
+- Die Rechner wechseln nur über die Taste rechts vom Gleichbalken: Beim Wischen liess ein leicht bewegter Finger die
+  Seite rutschen und verschluckte den Tipp. Das Menü liegt links davon, das Intro als Eintrag im Menü.
 - Der Umrechner wertet Skalar-Operatoren links nach rechts aus und kennt keinen Operatorvorrang.
 - Die Pending-Zahl überlebt den Kategorie- und Klassenwechsel, committete Terme nicht.
 - Painter tragen `final AppColors colors`, `shouldRepaint` vergleicht es. Ohne `ThemeScope` gilt `AppColors.dark`.

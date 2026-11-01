@@ -1,12 +1,12 @@
 # Intro, Sprachen, RTL
 
-Aus dem früheren Gesamtdokument übernommen. Verweise wie «oben» oder «siehe …-Abschnitt» meinen die Themenseiten, die
+Verweise wie «oben» oder «siehe …-Abschnitt» meinen die Themenseiten, die
 [architektur.md](architektur.md) auflistet.
 
 ## Intro
 
 Onboarding-PageView beim ersten Start, gesperrt über einen
-`SharedPreferences`-Schlüssel der Form `intro_seen_v<N>` (aktuell `v4`,
+`SharedPreferences`-Schlüssel der Form `intro_seen_v<N>` (aktuell `v5`,
 definiert als `_kIntroSeenFlag` in `lib/main.dart`). Bei substanziellen
 Intro-Änderungen den Suffix erhöhen, damit Bestandstester das
 überarbeitete Intro erneut sehen. Slide-Inhalte (Text) kommen aus dem
