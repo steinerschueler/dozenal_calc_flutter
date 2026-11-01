@@ -48,6 +48,11 @@ Stand: 2026-11-01, gegen den Code und die genannten Dienste geprüft. Was sich v
       Fassung liegen.
 - [ ] `appstore-build16-submission.md` im Projekt-Root: prüfen, ob die Anleitung noch gebraucht wird, sonst nach `docs/`
       verschieben oder entfernen.
+- [ ] **`tool/analyze_changed.py` robuster machen.** Die git-Aufrufe lesen noch mit der Standard-Kodierung des Systems,
+      unter Windows also nicht UTF-8. Fehlt `git` oder `origin/master`, endet das Skript mit einem Traceback statt mit einer
+      Meldung. Heute ohne Wirkung: Alle Dart-Dateien haben ASCII-Namen, und CI und Hooks haben `git`.
+- [ ] **Hook-Tests brauchen `python3` und `git`.** `test/analyze_changed_hook_test.dart` scheitert ohne die beiden mit
+      einer Meldung, die nichts mit dem Hook zu tun hat. CI und Pre-Push haben beide, ein klarer Hinweis fehlt trotzdem.
 - [ ] **Lint-Altlast abbauen.** `flutter analyze` meldet Tausende alte Befunde, geprüft werden nur geänderte Dateien
       (CC-41).
 - [ ] **Paket- und GitHub-Name ändern**, wenn das npf-Backlog (A-067) so weit ist.
