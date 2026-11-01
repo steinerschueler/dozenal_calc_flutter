@@ -7,6 +7,7 @@ since the base commit, because the existing code is cleaned up file by file.
 
 import argparse
 import io
+import os
 import shutil
 import subprocess
 import sys
@@ -29,6 +30,8 @@ def dart_launcher() -> str:
     On Windows the launcher is dart.bat, which subprocess cannot start by the bare
     name "dart". shutil.which also applies the Windows file extensions.
     """
+    # Windows searches the current directory first unless this variable is set.
+    os.environ["NoDefaultCurrentDirectoryInExePath"] = "1"
     launcher = shutil.which("dart")
     if launcher is None:
         raise DartNotFoundError("dart nicht gefunden: Flutter-SDK im PATH eintragen")

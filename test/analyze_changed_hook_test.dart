@@ -40,7 +40,10 @@ Directory _writeFakeDart(String analyzerOutput) {
 }
 
 /// Runs the hook script with exactly [searchPath] as its program search path.
-ProcessResult _runHook(String searchPath) {
+///
+/// The variable that turns off the Windows current-directory lookup is removed,
+/// because a normal terminal does not set it.
+ProcessResult _runHook(String searchPath, {String? workingDirectory}) {
   // The interpreter is resolved first because searchPath may not contain it.
   final python = Process.runSync('python3', [
     '-I',
@@ -49,12 +52,17 @@ ProcessResult _runHook(String searchPath) {
   ]).stdout.toString().trim();
   final environment = {
     for (final entry in Platform.environment.entries)
-      if (entry.key.toUpperCase() != 'PATH') entry.key: entry.value,
+      if (!const {
+        'PATH',
+        'NODEFAULTCURRENTDIRECTORYINEXEPATH',
+      }.contains(entry.key.toUpperCase()))
+        entry.key: entry.value,
     'PATH': searchPath,
   };
   return Process.runSync(
     python,
-    ['-I', 'tool/analyze_changed.py', '--base', 'HEAD'],
+    ['-I', File('tool/analyze_changed.py').absolute.path, '--base', 'HEAD'],
+    workingDirectory: workingDirectory,
     environment: environment,
     includeParentEnvironment: false,
     stdoutEncoding: utf8,
@@ -89,6 +97,22 @@ void main() {
 
     expect(result.stderr, isNot(contains('Traceback')));
     expect(result.stdout, contains('Name Á 日.'));
+    expect(result.exitCode, 1);
+  });
+
+  test('ignores a dart launcher that only lies in the current directory', () {
+    final currentDirectory = _writeFakeDart(_infoFinding);
+    final directoryWithoutDart = Directory.systemTemp.createTempSync(
+      'no_dart_',
+    );
+    addTearDown(() => directoryWithoutDart.deleteSync(recursive: true));
+
+    final result = _runHook(
+      directoryWithoutDart.path,
+      workingDirectory: currentDirectory.path,
+    );
+
+    expect(result.stderr, contains('dart nicht gefunden'));
     expect(result.exitCode, 1);
   });
 
