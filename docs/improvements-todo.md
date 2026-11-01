@@ -9,6 +9,9 @@ Stand: 2026-11-01, gegen den Code und die genannten Dienste geprüft. Was sich v
 
 ### Nächster Release
 
+Erst, wenn der Werterechner bereit ist und das Wischen zwischen den Rechner-Seiten überarbeitet ist (Erics Entscheid
+vom 2026-11-01).
+
 - [ ] **Version anheben und taggen.** `pubspec.yaml` steht auf `1.5.1+19`, im `CHANGELOG.md` liegt unter `[Unreleased]`
       unter anderem der ganze Werterechner. Mitziehen: `MARKETING_VERSION` und `CURRENT_PROJECT_VERSION` des
       Watch-Targets, `msix_version`, die Flutter-Version im F-Droid-Rezept (heute 3.41.8, gepinnt auf den Tag `v1.5.1`).
@@ -39,6 +42,8 @@ Stand: 2026-11-01, gegen den Code und die genannten Dienste geprüft. Was sich v
 
 ### App
 
+- [ ] **Werterechner fertigstellen.** Er ist noch nicht bereit für eine Veröffentlichung. Was fehlt, legt Eric fest.
+- [ ] **Design des Wischens zwischen den Rechner-Seiten überarbeiten.** Es gefällt Eric noch nicht.
 - [ ] **`=`-Zyklus über beide Einheitensysteme** im Umrechner: [unit-converter.md](unit-converter.md#10-offene-ideen-todo).
       Der Eintrag dort spricht noch von der Doz/Dez-Welt, seit der Entkopplung ist das Einheitensystem gemeint.
 - [ ] **Werterechner, spätere Phasen:** Krypto, Rohstoffe, Rhodium, Karat, Apothekereinheiten, Feinschliff für lange
@@ -54,7 +59,7 @@ Stand: 2026-11-01, gegen den Code und die genannten Dienste geprüft. Was sich v
 - [ ] `appstore-build16-submission.md` im Projekt-Root: prüfen, ob die Anleitung noch gebraucht wird, sonst nach `docs/`
       verschieben oder entfernen.
 - [ ] **`tool/analyze_changed.py` robuster machen.** Die git-Aufrufe lesen noch mit der Standard-Kodierung des Systems,
-      unter Windows also nicht UTF-8. Fehlt `git` oder `origin/master`, endet das Skript mit einem Traceback statt mit einer
+      unter Windows also nicht UTF-8. Fehlt `git` oder `origin/main`, endet das Skript mit einem Traceback statt mit einer
       Meldung. Heute ohne Wirkung: Alle Dart-Dateien haben ASCII-Namen, und CI und Hooks haben `git`.
 - [ ] **Hook-Tests brauchen `python3` und `git`.** `test/analyze_changed_hook_test.dart` scheitert ohne die beiden mit
       einer Meldung, die nichts mit dem Hook zu tun hat. CI und Pre-Push haben beide, ein klarer Hinweis fehlt trotzdem.

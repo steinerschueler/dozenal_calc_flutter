@@ -13,7 +13,7 @@ import subprocess
 import sys
 from pathlib import Path
 
-DEFAULT_BASE_BRANCH = "origin/master"
+DEFAULT_BASE_BRANCH = "origin/main"
 BLOCKING_EVERYWHERE = {"ERROR"}
 ANALYZER_EXIT_CODES_WITH_RESULT = {0, 1, 2, 3}
 MACHINE_FIELD_COUNT = 8
@@ -102,7 +102,7 @@ def main() -> int:
     write_output_as_utf8()
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
-        "--base", help="Vergleichs-Commit, sonst die Abzweigung von origin/master"
+        "--base", help="Vergleichs-Commit, sonst die Abzweigung von origin/main"
     )
     parser.add_argument(
         "files", nargs="*", help="von pre-commit übergeben und nicht verwendet"
