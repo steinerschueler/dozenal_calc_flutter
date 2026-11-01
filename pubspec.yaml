@@ -58,7 +58,7 @@ dev_dependencies:
   #   dart run flutter_native_splash:create
   flutter_launcher_icons: ^0.14.0
   flutter_native_splash: ^2.4.0
-  msix: ^3.17.0
+  msix: ^3.18.0
   very_good_analysis: 11.0.0
 
 flutter_launcher_icons:
