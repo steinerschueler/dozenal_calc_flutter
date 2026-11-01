@@ -1,24 +1,16 @@
-// Shared leading badges for the Menü (info list) and Einstellungen rows.
-// Replaces the former small grey icons and the variable-width flag thumbnails
-// with a single visual family: colored circular discs of one uniform
-// diameter. Icon rows get a solid hue + white glyph; language rows get the
-// flag cropped (cover-fit) into the same circle, with a faint edge ring so
-// flags with light areas still read as discs against the scaffold.
+// Shared leading badges of the Einstellungen rows and the menu's language rows:
+// colored circular discs of one uniform diameter. Icon rows get a solid hue +
+// white glyph; language rows get the flag cropped (cover-fit) into the same
+// circle, with a faint edge ring so flags with light areas still read as discs
+// against the scaffold.
 
 import 'package:dozenal_calc_flutter/app_theme.dart';
 import 'package:dozenal_calc_flutter/language_options.dart';
 import 'package:flutter/material.dart';
 
-/// One uniform diameter for every leading badge (icon or flag) across the
-/// Menü and Einstellungen lists — the single knob the design hangs on.
-const double kBadgeDiameter = 30.0;
-
-/// Start indent for the rows revealed when a section expands, so they read as
-/// nested *under* their category header (right of the header's badge, aligned
-/// with its title) rather than sitting at — or left of — the top-level column.
-/// Roughly tracks a top-level title's start (contentPadding 16 + badge 30 +
-/// gap 16).
-const double kSubItemIndent = 64.0;
+/// One uniform diameter for every leading badge (icon or flag), also the width
+/// of the leading slot in menu rows.
+const double kBadgeDiameter = 30;
 
 /// Curated, theme-independent disc hues. Mid-saturation tones chosen to carry
 /// a white glyph and to read on both the dark and light scaffolds. Decorative

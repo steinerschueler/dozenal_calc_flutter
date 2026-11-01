@@ -38,7 +38,7 @@ Der Umrechner ist **Seite 2 des Rechner-PageView**: Die Taste rechts vom Gleichb
 führt zum nächsten Rechner, vom letzten wieder zum ersten, Wischen ist
 abgeschaltet. Die Menütaste liegt auf allen Rechnern links vom Gleichbalken.
 Beim App-Start zeigt das Display immer den Hauptrechner. Einen Listen-Eintrag als
-Zugang gibt es nicht, das Handbuch „Bedienung des Einheitenrechners"
+Zugang gibt es nicht, das Handbuch unter „Bedienung"
 (sechs Kapitel, `converterManualChapters` in `lib/manual/`) erklärt
 Wechsel und Bedienung. Der `ConverterState` lebt im Calc-Scaffold,
 Eingaben überleben also Seitenwechsel in beide Richtungen.

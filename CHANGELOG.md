@@ -17,6 +17,7 @@ Git-Historie zusammengefasst. Nur `v1.5.1` ist als Git-Tag vorhanden.
 
 - Die Preiskurve nennt echte Mengen («1 g Gold = 290 L Getreide»), springt per Epochen-Chip zu Zeiträumen, endet bei den
   Daten und zeigt Unsicherheit als Balken.
+- Das Menü ist in Gruppen geordnet und auf Flächen wie die Tasten gesetzt, die drei Anleitungen liegen unter «Bedienung».
 - Rechnerwechsel über einen Knopf statt durch Wischen, Menüknopf auf allen Rechnern, das Intro liegt im Menü.
 - Die Einführung zeigt neue Bilder und erklärt Menütaste, Rechnerwechsel und den Intro-Eintrag im Menü.
 - Das Display des Einheiten- und Werterechners zeigt vier Reihen; beide übernehmen neue Ergebnisse des Hauptrechners,

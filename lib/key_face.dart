@@ -61,7 +61,8 @@ const double keySystemKeyPadding = 4;
 /// What a key is for, which decides its visual weight.
 enum KeyRole { digit, operation, primary }
 
-const double _keyFaceRadius = 14;
+/// Corner radius of key faces, also of anything drawn as one.
+const double keyFaceRadius = 14;
 const double _keyFaceAir = 2;
 
 /// Space around a key's visible face. The touch area stays the full cell.
@@ -107,7 +108,7 @@ BoxDecoration keyFaceDecoration(
           : null);
   return BoxDecoration(
     color: _keyFaceFill(colors, role, pressed: pressed, inactive: inactive),
-    borderRadius: BorderRadius.circular(_keyFaceRadius),
+    borderRadius: BorderRadius.circular(keyFaceRadius),
     border: frame == null
         ? null
         : Border.all(

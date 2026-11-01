@@ -13,6 +13,7 @@ import 'package:dozenal_calc_flutter/language_options.dart';
 import 'package:dozenal_calc_flutter/license_page.dart';
 import 'package:dozenal_calc_flutter/locale_notifier.dart';
 import 'package:dozenal_calc_flutter/manual/manual.dart';
+import 'package:dozenal_calc_flutter/menu_rows.dart';
 import 'package:dozenal_calc_flutter/privacy_page.dart';
 import 'package:dozenal_calc_flutter/recommendations/recommendations.dart';
 import 'package:dozenal_calc_flutter/recommendations/recommendations_page.dart';
@@ -28,13 +29,14 @@ import 'package:dozenal_calc_flutter/theory/werte_illustrations.dart';
 import 'package:flutter/material.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
+/// The menu: what the app teaches, its settings, recommendations and the
+/// legal and contact pages, in groups on key faces.
 class InfoListPage extends StatelessWidget {
   const InfoListPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     final l = AppLocalizations.of(context);
-    final t = AppColors.of(context);
     return Scaffold(
       // AppBar background comes from the MaterialApp's appBarTheme (palette-
       // derived), so no explicit color here — same on all themed pages.
@@ -45,147 +47,96 @@ class InfoListPage extends StatelessWidget {
         // system navigation bar.
         top: false,
         child: ListView(
-          padding: const EdgeInsets.symmetric(vertical: 4),
+          padding: const EdgeInsets.symmetric(horizontal: 12),
           children: [
-            // Bedienung ist App-Hilfe, kein Theorie-Stoff — darum zwei
-            // eigenstaendige, ausklappbare Handbuch-Sammlungen ganz oben:
-            // Hauptrechner (Grundbedienung + Lehr-Kapitel) und
-            // Einheitenrechner (Wechsel, Kategorien, met/imp + Farbcode,
-            // Terme, Skalar-Rechnen, Speicher/Bruecke).
-            _ManualSectionExpansion(
-              icon: Icons.touch_app_outlined,
-              color: BadgeHue.blue,
-              titleOf: (l) => l.chapterTitle01,
-              chaptersOf: manualChapters,
+            MenuGroup(
+              title: l.infoListGroupLearn,
+              children: [
+                _MenuLink(
+                  icon: Icons.help_outline,
+                  title: _sentenceCase(l.a11yIntro),
+                  onTap: () => _openPage(context, (_) => const IntroPage()),
+                ),
+                const _ManualExpansion(),
+                const _TheoryExpansion(),
+              ],
             ),
-            Divider(color: t.divider, height: 1),
-            _ManualSectionExpansion(
-              icon: Icons.swap_horiz,
-              color: BadgeHue.teal,
-              titleOf: (l) => l.infoListConverterManual,
-              chaptersOf: converterManualChapters,
+            MenuGroup(
+              title: l.infoListGroupApp,
+              children: [
+                _MenuLink(
+                  icon: Icons.settings_outlined,
+                  title: l.settingsTitle,
+                  onTap: () => _openPage(context, (_) => const SettingsPage()),
+                ),
+                const _LanguagePickerExpansion(),
+              ],
             ),
-            Divider(color: t.divider, height: 1),
-            // Werterechner (dritte Pager-Seite): Klasse/Gattung/Einheit,
-            // beide Welt-Systeme zugleich, Speicher im Drill, Wert/Kurse/Kurve.
-            _ManualSectionExpansion(
-              icon: Icons.diamond_outlined,
-              color: BadgeHue.bronze,
-              titleOf: (l) => l.infoListAssetManual,
-              chaptersOf: assetManualChapters,
-            ),
-            Divider(color: t.divider, height: 1),
-            // Theorie-Sektion: ausklappbar (Default collapsed) zu den drei
-            // Bloecken (Zwoelf und die Welt, Dozenale Mathematik, Dozenale
-            // Gesellschaft) plus der Einheitentheorie; jeder Block fuehrt zu
-            // seinen Kapiteln. Die fruehere Einheiten-Sektion ist aufgeloest:
-            // der Einheitenrechner ist seit dem Pager eine Swipe-Geste (kein
-            // Navigations-Eintrag mehr noetig), die Einheitentheorie wohnt
-            // jetzt hier.
-            const _TheoryExpansion(),
-            Divider(color: t.divider, height: 1),
-            // Empfehlungen-Sektion: ausklappbar, direkt unter "Theorie" — ein
-            // Kapitel pro Plattform (Physisch, Android Play Store / F-Droid,
-            // iOS, macOS, Linux, Windows) mit Pros/Cons je Rechner.
-            const _RecommendationsExpansion(),
-            Divider(color: t.divider, height: 1),
-            ListTile(
-              leading: const RoundIconBadge(
-                icon: Icons.help_outline,
-                color: BadgeHue.slate,
-              ),
-              title: Text(
-                _sentenceCase(l.a11yIntro),
-                style: TextStyle(fontSize: 14, color: t.textSecondary),
-              ),
-              trailing: const _NavChevron(),
-              onTap: () => Navigator.of(context).push(
-                MaterialPageRoute<void>(builder: (_) => const IntroPage()),
-              ),
-            ),
-            Divider(color: t.divider, height: 1),
-            // Einstellungen: buendelt die frueher hier liegenden Quick-Toggles
-            // (Glyphen-Stil, Haptik) mit den Keypad-Praeferenzen (Overlay/
-            // Scrollen, Alle/Einfach) und Zahlensystem/Winkelmodus auf einer
-            // eigenen Seite (settings_page.dart).
-            ListTile(
-              leading: const RoundIconBadge(
-                icon: Icons.settings_outlined,
-                color: BadgeHue.slate,
-              ),
-              title: Text(
-                l.settingsTitle,
-                style: TextStyle(fontSize: 14, color: t.textSecondary),
-              ),
-              trailing: const _NavChevron(),
-              onTap: () => Navigator.of(context).push(
-                MaterialPageRoute<void>(builder: (_) => const SettingsPage()),
-              ),
-            ),
-            Divider(color: t.divider, height: 1),
-            const _LanguagePickerExpansion(),
-            Divider(color: t.divider, height: 1),
-            ListTile(
-              leading: const RoundIconBadge(
-                icon: Icons.shield_outlined,
-                color: BadgeHue.green,
-              ),
-              title: Text(
-                l.infoListPrivacyEntry,
-                style: TextStyle(fontSize: 14, color: t.textSecondary),
-              ),
-              trailing: const _NavChevron(),
-              onTap: () => Navigator.of(context).push(
-                MaterialPageRoute<void>(builder: (_) => const PrivacyPage()),
-              ),
-            ),
-            Divider(color: t.divider, height: 1),
-            ListTile(
-              leading: const RoundIconBadge(
-                icon: Icons.balance,
-                color: BadgeHue.bronze,
-              ),
-              title: Text(
-                l.infoListLicenseEntry,
-                style: TextStyle(fontSize: 14, color: t.textSecondary),
-              ),
-              trailing: const _NavChevron(),
-              onTap: () => Navigator.of(context).push(
-                MaterialPageRoute<void>(builder: (_) => const AppLicensePage()),
-              ),
-            ),
-            Divider(color: t.divider, height: 1),
-            ListTile(
-              leading: const RoundIconBadge(
-                icon: Icons.favorite_outline,
-                color: BadgeHue.pink,
-              ),
-              title: Text(
-                l.infoListSupportEntry,
-                style: TextStyle(fontSize: 14, color: t.textSecondary),
-              ),
-              trailing: const _NavChevron(),
-              onTap: () => Navigator.of(context).push(
-                MaterialPageRoute<void>(builder: (_) => const SupportPage()),
-              ),
-            ),
-            Divider(color: t.divider, height: 1),
-            ListTile(
-              leading: const RoundIconBadge(
-                icon: Icons.mail_outline,
-                color: BadgeHue.cyan,
-              ),
-              title: Text(
-                l.infoListFeedbackEntry,
-                style: TextStyle(fontSize: 14, color: t.textSecondary),
-              ),
-              trailing: const _NavChevron(),
-              onTap: () => showFeedbackDialog(context),
+            const MenuGroup(children: [_RecommendationsExpansion()]),
+            MenuGroup(
+              title: l.infoListGroupAbout,
+              children: [
+                _MenuLink(
+                  icon: Icons.shield_outlined,
+                  title: l.infoListPrivacyEntry,
+                  onTap: () => _openPage(context, (_) => const PrivacyPage()),
+                ),
+                _MenuLink(
+                  icon: Icons.balance,
+                  title: l.infoListLicenseEntry,
+                  onTap: () =>
+                      _openPage(context, (_) => const AppLicensePage()),
+                ),
+                _MenuLink(
+                  icon: Icons.favorite_outline,
+                  title: l.infoListSupportEntry,
+                  onTap: () => _openPage(context, (_) => const SupportPage()),
+                ),
+                _MenuLink(
+                  icon: Icons.mail_outline,
+                  title: l.infoListFeedbackEntry,
+                  onTap: () => showFeedbackDialog(context),
+                ),
+              ],
             ),
             const _VersionFooter(),
           ],
         ),
       ),
+    );
+  }
+}
+
+void _openPage(BuildContext context, WidgetBuilder builder) {
+  Navigator.of(context).push(MaterialPageRoute<void>(builder: builder));
+}
+
+/// A menu row that leads somewhere else, marked by the chevron.
+class _MenuLink extends StatelessWidget {
+  const _MenuLink({
+    required this.title,
+    required this.onTap,
+    this.icon,
+    this.subtitle,
+    this.depth = 0,
+  });
+
+  final String title;
+  final VoidCallback onTap;
+  final IconData? icon;
+  final String? subtitle;
+  final int depth;
+
+  @override
+  Widget build(BuildContext context) {
+    final glyph = icon;
+    return MenuRow(
+      title: title,
+      subtitle: subtitle,
+      depth: depth,
+      leading: glyph == null ? null : MenuRowIcon(glyph),
+      trailing: const _NavChevron(),
+      onTap: onTap,
     );
   }
 }
@@ -237,87 +188,70 @@ class _VersionFooterState extends State<_VersionFooter> {
   }
 }
 
-/// Collapsible theory section. Default collapsed so the Info page opens
-/// compact; tapping the header unfolds the three theory blocks (Zwölf und die
-/// Welt, Dozenale Mathematik, Dozenale Gesellschaft). Each block leads to its
-/// own chapter list (see [theoryBlocks] / [TheoryBlockPage]).
-/// Collapsible manual section: a flat list of chapters (no sub-blocks,
-/// unlike the theory section). Instantiated twice — "Bedienung des
-/// Hauptrechners" (Grundbedienung + Lehr-Kapitel) and "Bedienung des
-/// Einheitenrechners" — parameterised instead of duplicated.
-class _ManualSectionExpansion extends StatefulWidget {
-  const _ManualSectionExpansion({
+/// "Bedienung": one entry that unfolds to the three calculators, each of which
+/// unfolds to its own manual chapters. The calculators keep their colours here,
+/// the only colour in the menu's rows.
+class _ManualExpansion extends StatelessWidget {
+  const _ManualExpansion();
+
+  @override
+  Widget build(BuildContext context) {
+    final l = AppLocalizations.of(context);
+    return MenuExpansionRow(
+      title: l.infoListManualExpansion,
+      leading: const MenuRowIcon(Icons.touch_app_outlined),
+      childrenBuilder: (context, _) => [
+        _CalculatorManualExpansion(
+          icon: Icons.calculate_outlined,
+          color: BadgeHue.blue,
+          title: l.pagerLabelMain,
+          chaptersOf: manualChapters,
+        ),
+        _CalculatorManualExpansion(
+          icon: Icons.swap_horiz,
+          color: BadgeHue.teal,
+          title: l.infoListConverterEntry,
+          chaptersOf: converterManualChapters,
+        ),
+        _CalculatorManualExpansion(
+          icon: Icons.diamond_outlined,
+          color: BadgeHue.bronze,
+          title: l.pagerLabelAsset,
+          chaptersOf: assetManualChapters,
+        ),
+      ],
+    );
+  }
+}
+
+/// The manual of one calculator: a flat list of chapters.
+class _CalculatorManualExpansion extends StatelessWidget {
+  const _CalculatorManualExpansion({
     required this.icon,
     required this.color,
-    required this.titleOf,
+    required this.title,
     required this.chaptersOf,
   });
 
   final IconData icon;
   final Color color;
-  final String Function(AppLocalizations) titleOf;
+  final String title;
   final List<ManualChapter> Function(String langTag) chaptersOf;
 
   @override
-  State<_ManualSectionExpansion> createState() =>
-      _ManualSectionExpansionState();
-}
-
-class _ManualSectionExpansionState extends State<_ManualSectionExpansion> {
-  bool _expanded = false;
-
-  @override
   Widget build(BuildContext context) {
-    final l = AppLocalizations.of(context);
-    final t = AppColors.of(context);
     final langTag = Localizations.localeOf(context).toLanguageTag();
-    final chapters = widget.chaptersOf(langTag);
-    return Column(
-      children: [
-        ListTile(
-          leading: RoundIconBadge(icon: widget.icon, color: widget.color),
-          title: Text(
-            widget.titleOf(l),
-            style: TextStyle(fontSize: 14, color: t.textPrimary),
+    return MenuExpansionRow(
+      title: title,
+      depth: 1,
+      leading: MenuRowIcon(icon, color: color),
+      childrenBuilder: (context, _) => [
+        for (final chapter in chaptersOf(langTag))
+          _MenuLink(
+            title: chapter.title,
+            depth: 2,
+            onTap: () => _openPage(context, (_) => ManualChapterPage(chapter)),
           ),
-          trailing: AnimatedRotation(
-            turns: _expanded ? 0.5 : 0,
-            duration: const Duration(milliseconds: 200),
-            child: Icon(Icons.expand_more, color: t.textFaint, size: 20),
-          ),
-          onTap: () => setState(() => _expanded = !_expanded),
-        ),
-        AnimatedSize(
-          duration: const Duration(milliseconds: 200),
-          alignment: Alignment.topCenter,
-          child: _expanded
-              ? Column(
-                  children: [
-                    for (final c in chapters) ...[
-                      Divider(color: t.divider, height: 1),
-                      ListTile(
-                        contentPadding: const EdgeInsetsDirectional.fromSTEB(
-                          kSubItemIndent,
-                          0,
-                          16,
-                          0,
-                        ),
-                        title: Text(
-                          c.title,
-                          style: TextStyle(fontSize: 14, color: t.textPrimary),
-                        ),
-                        trailing: const _NavChevron(),
-                        onTap: () => Navigator.of(context).push(
-                          MaterialPageRoute<void>(
-                            builder: (_) => ManualChapterPage(c),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ],
-                )
-              : const SizedBox.shrink(),
-        ),
       ],
     );
   }
@@ -349,224 +283,81 @@ class ManualChapterPage extends StatelessWidget {
   }
 }
 
-class _TheoryExpansion extends StatefulWidget {
+/// Collapsible theory section: the theory blocks, then the Einheitentheorie and
+/// the Wertetheorie. Each leads to its own chapters.
+class _TheoryExpansion extends StatelessWidget {
   const _TheoryExpansion();
-
-  @override
-  State<_TheoryExpansion> createState() => _TheoryExpansionState();
-}
-
-class _TheoryExpansionState extends State<_TheoryExpansion> {
-  bool _expanded = false;
 
   @override
   Widget build(BuildContext context) {
     final l = AppLocalizations.of(context);
-    final t = AppColors.of(context);
-    final langTag = Localizations.localeOf(context).toLanguageTag();
-    final blocks = theoryBlocks(l, langTag);
-    // Rendered LAST, after the Einheitentheorie entry (per the desired order).
-    final werteBlock = werteTheoryBlock(l, langTag);
-    return Column(
-      children: [
-        ListTile(
-          leading: const RoundIconBadge(
-            icon: Icons.menu_book_outlined,
-            color: BadgeHue.violet,
+    return MenuExpansionRow(
+      title: l.infoListTheoryExpansion,
+      leading: const MenuRowIcon(Icons.menu_book_outlined),
+      childrenBuilder: (context, _) {
+        final langTag = Localizations.localeOf(context).toLanguageTag();
+        final werteBlock = werteTheoryBlock(l, langTag);
+        return [
+          for (final block in theoryBlocks(l, langTag))
+            _MenuLink(
+              title: block.title,
+              subtitle: block.inProgress ? l.theoryInProgress : null,
+              depth: 1,
+              onTap: () =>
+                  _openPage(context, (_) => TheoryBlockPage(block: block)),
+            ),
+          _MenuLink(
+            title: l.infoListConversionsEntry,
+            depth: 1,
+            onTap: () => _openPage(context, (_) => const ConversionsPage()),
           ),
-          title: Text(
-            l.infoListTheoryExpansion,
-            style: TextStyle(fontSize: 14, color: t.textPrimary),
+          _MenuLink(
+            title: werteBlock.title,
+            depth: 1,
+            onTap: () =>
+                _openPage(context, (_) => TheoryBlockPage(block: werteBlock)),
           ),
-          trailing: AnimatedRotation(
-            turns: _expanded ? 0.5 : 0,
-            duration: const Duration(milliseconds: 200),
-            child: Icon(Icons.expand_more, color: t.textFaint, size: 20),
-          ),
-          onTap: () => setState(() => _expanded = !_expanded),
-        ),
-        AnimatedSize(
-          duration: const Duration(milliseconds: 200),
-          alignment: Alignment.topCenter,
-          child: _expanded
-              ? Column(
-                  children: [
-                    for (final block in blocks) ...[
-                      Divider(color: t.divider, height: 1),
-                      ListTile(
-                        contentPadding: const EdgeInsetsDirectional.fromSTEB(
-                          kSubItemIndent,
-                          0,
-                          16,
-                          0,
-                        ),
-                        title: Text(
-                          block.title,
-                          style: TextStyle(fontSize: 14, color: t.textPrimary),
-                        ),
-                        subtitle: block.inProgress
-                            ? Text(
-                                l.theoryInProgress,
-                                style: TextStyle(
-                                  fontSize: 11,
-                                  color: t.textFaint,
-                                ),
-                              )
-                            : null,
-                        trailing: const _NavChevron(),
-                        onTap: () => Navigator.of(context).push(
-                          MaterialPageRoute<void>(
-                            builder: (_) => TheoryBlockPage(block: block),
-                          ),
-                        ),
-                      ),
-                    ],
-                    // Einheitentheorie als vierter Block — hierher gezogen,
-                    // als die Einheiten-Sektion aufgeloest wurde (der
-                    // Einheitenrechner selbst ist eine Swipe-Geste, kein
-                    // Listen-Eintrag mehr).
-                    Divider(color: t.divider, height: 1),
-                    ListTile(
-                      contentPadding: const EdgeInsetsDirectional.fromSTEB(
-                        kSubItemIndent,
-                        0,
-                        16,
-                        0,
-                      ),
-                      title: Text(
-                        l.infoListConversionsEntry,
-                        style: TextStyle(fontSize: 14, color: t.textPrimary),
-                      ),
-                      trailing: const _NavChevron(),
-                      onTap: () => Navigator.of(context).push(
-                        MaterialPageRoute<void>(
-                          builder: (_) => const ConversionsPage(),
-                        ),
-                      ),
-                    ),
-                    // Wertetheorie zuletzt — nach der Einheitentheorie. Prosa-
-                    // Block, rendert wie die anderen über TheoryBlockPage.
-                    Divider(color: t.divider, height: 1),
-                    ListTile(
-                      contentPadding: const EdgeInsetsDirectional.fromSTEB(
-                        kSubItemIndent,
-                        0,
-                        16,
-                        0,
-                      ),
-                      title: Text(
-                        werteBlock.title,
-                        style: TextStyle(fontSize: 14, color: t.textPrimary),
-                      ),
-                      trailing: const _NavChevron(),
-                      onTap: () => Navigator.of(context).push(
-                        MaterialPageRoute<void>(
-                          builder: (_) => TheoryBlockPage(block: werteBlock),
-                        ),
-                      ),
-                    ),
-                  ],
-                )
-              : const SizedBox.shrink(),
-        ),
-      ],
+        ];
+      },
     );
   }
 }
 
 /// Collapsible "Empfehlungen" section: one chapter per platform, each opening a
-/// [RecChapterPage] with pros/cons per recommended calculator. A flat list (no
-/// sub-blocks), placed directly under the Theorie section.
-class _RecommendationsExpansion extends StatefulWidget {
+/// [RecChapterPage] with pros/cons per recommended calculator.
+class _RecommendationsExpansion extends StatelessWidget {
   const _RecommendationsExpansion();
-
-  @override
-  State<_RecommendationsExpansion> createState() =>
-      _RecommendationsExpansionState();
-}
-
-class _RecommendationsExpansionState extends State<_RecommendationsExpansion> {
-  bool _expanded = false;
 
   @override
   Widget build(BuildContext context) {
     final l = AppLocalizations.of(context);
-    final t = AppColors.of(context);
-    final langTag = Localizations.localeOf(context).toLanguageTag();
-    final chapters = recommendationChapters(langTag);
-    return Column(
-      children: [
-        ListTile(
-          leading: const RoundIconBadge(
-            icon: Icons.recommend_outlined,
-            color: BadgeHue.amber,
-          ),
-          title: Text(
-            l.infoListRecommendationsExpansion,
-            style: TextStyle(fontSize: 14, color: t.textPrimary),
-          ),
-          trailing: AnimatedRotation(
-            turns: _expanded ? 0.5 : 0,
-            duration: const Duration(milliseconds: 200),
-            child: Icon(Icons.expand_more, color: t.textFaint, size: 20),
-          ),
-          onTap: () => setState(() => _expanded = !_expanded),
-        ),
-        AnimatedSize(
-          duration: const Duration(milliseconds: 200),
-          alignment: Alignment.topCenter,
-          child: _expanded
-              ? Column(
-                  children: [
-                    for (final c in chapters) ...[
-                      Divider(color: t.divider, height: 1),
-                      ListTile(
-                        contentPadding: const EdgeInsetsDirectional.fromSTEB(
-                          kSubItemIndent,
-                          0,
-                          16,
-                          0,
-                        ),
-                        title: Text(
-                          c.title,
-                          style: TextStyle(fontSize: 14, color: t.textPrimary),
-                        ),
-                        trailing: const _NavChevron(),
-                        onTap: () => Navigator.of(context).push(
-                          MaterialPageRoute<void>(
-                            builder: (_) => RecChapterPage(c),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ],
-                )
-              : const SizedBox.shrink(),
-        ),
-      ],
+    return MenuExpansionRow(
+      title: l.infoListRecommendationsExpansion,
+      leading: const MenuRowIcon(Icons.recommend_outlined),
+      childrenBuilder: (context, _) {
+        final langTag = Localizations.localeOf(context).toLanguageTag();
+        return [
+          for (final chapter in recommendationChapters(langTag))
+            _MenuLink(
+              title: chapter.title,
+              depth: 1,
+              onTap: () => _openPage(context, (_) => RecChapterPage(chapter)),
+            ),
+        ];
+      },
     );
   }
 }
 
-/// Language picker between the twelve teaching chapters and the legal-link
-/// section. Collapsed it looks like an ordinary list entry showing the
-/// active language; tapping unfolds the full list of supported languages
-/// from [kSupportedLanguages]. Designed to scale to many languages — to
-/// add a new one, append a [LanguageOption] entry there, no UI changes
-/// needed here.
-class _LanguagePickerExpansion extends StatefulWidget {
+/// Language picker. Folded it names what it is and the active language;
+/// unfolded it lists [kSupportedLanguages]. To add a language, append a
+/// [LanguageOption] there, no UI changes needed here.
+class _LanguagePickerExpansion extends StatelessWidget {
   const _LanguagePickerExpansion();
 
   @override
-  State<_LanguagePickerExpansion> createState() =>
-      _LanguagePickerExpansionState();
-}
-
-class _LanguagePickerExpansionState extends State<_LanguagePickerExpansion> {
-  bool _expanded = false;
-
-  @override
   Widget build(BuildContext context) {
+    final l = AppLocalizations.of(context);
     final notifier = LocaleScope.of(context);
     final t = AppColors.of(context);
     // Match by full BCP-47 tag, not just languageCode — otherwise `zh` and
@@ -575,60 +366,27 @@ class _LanguagePickerExpansionState extends State<_LanguagePickerExpansion> {
     // appears first in kSupportedLanguages.
     final activeTag = Localizations.localeOf(context).toLanguageTag();
     final active = kSupportedLanguages.firstWhere(
-      (l) => l.locale.toLanguageTag() == activeTag,
+      (option) => option.locale.toLanguageTag() == activeTag,
       orElse: () => kSupportedLanguages.first,
     );
-
-    return Column(
-      children: [
-        ListTile(
-          leading: RoundFlagBadge(option: active),
-          title: Text(
-            active.label,
-            style: TextStyle(fontSize: 14, color: t.textSecondary),
+    return MenuExpansionRow(
+      title: l.infoListLanguageEntry,
+      value: active.label,
+      leading: RoundFlagBadge(option: active),
+      childrenBuilder: (context, collapse) => [
+        for (final option in kSupportedLanguages)
+          MenuRow(
+            title: option.label,
+            depth: 1,
+            leading: RoundFlagBadge(option: option),
+            trailing: option.locale.toLanguageTag() == activeTag
+                ? Icon(Icons.check, color: t.textPrimary, size: 18)
+                : null,
+            onTap: () {
+              unawaited(notifier.setOverride(option.locale));
+              collapse();
+            },
           ),
-          trailing: AnimatedRotation(
-            turns: _expanded ? 0.5 : 0,
-            duration: const Duration(milliseconds: 200),
-            child: Icon(Icons.expand_more, color: t.textFaint, size: 20),
-          ),
-          onTap: () => setState(() => _expanded = !_expanded),
-        ),
-        AnimatedSize(
-          duration: const Duration(milliseconds: 200),
-          alignment: Alignment.topCenter,
-          child: _expanded
-              ? Column(
-                  children: [
-                    Divider(color: t.divider, height: 1),
-                    for (final lang in kSupportedLanguages)
-                      ListTile(
-                        contentPadding: const EdgeInsetsDirectional.fromSTEB(
-                          kSubItemIndent,
-                          0,
-                          16,
-                          0,
-                        ),
-                        leading: RoundFlagBadge(option: lang),
-                        title: Text(
-                          lang.label,
-                          style: TextStyle(
-                            fontSize: 14,
-                            color: t.textSecondary,
-                          ),
-                        ),
-                        trailing: lang.locale.toLanguageTag() == activeTag
-                            ? Icon(Icons.check, color: t.textPrimary, size: 16)
-                            : null,
-                        onTap: () {
-                          unawaited(notifier.setOverride(lang.locale));
-                          setState(() => _expanded = false);
-                        },
-                      ),
-                  ],
-                )
-              : const SizedBox.shrink(),
-        ),
       ],
     );
   }

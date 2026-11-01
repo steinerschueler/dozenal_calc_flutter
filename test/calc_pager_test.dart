@@ -217,21 +217,23 @@ void main() {
     },
   );
 
-  testWidgets('the info list carries both manuals; the converter nav entry '
-      'is gone', (tester) async {
+  testWidgets('the menu unfolds the manuals of all three calculators; there is '
+      'no converter nav entry', (tester) async {
     await bootApp(tester);
     await tester.tap(find.byTooltip('theory chapters'));
     await tester.pumpAndSettle();
 
-    // Restructured list: two manual sections at the top, no "Unit
-    // converter" navigation entry anymore (the switch key carries that).
-    expect(find.text('Using the main calculator'), findsOneWidget);
-    expect(find.text('Using the unit converter'), findsOneWidget);
+    // No "Unit converter" navigation entry at the top level: the switch key
+    // carries that. The manual groups all three calculators under one entry.
     expect(find.text('Unit converter'), findsNothing);
+    await tester.tap(find.text('How to use'));
+    await tester.pumpAndSettle();
+    expect(find.text('Main calculator'), findsOneWidget);
+    expect(find.text('Value calculator'), findsOneWidget);
 
     // The converter manual opens its chapters (now fully translated — the
     // EN locale shows the English titles, no German fallback).
-    await tester.tap(find.text('Using the unit converter'));
+    await tester.tap(find.text('Unit converter'));
     await tester.pumpAndSettle();
     await tester.tap(find.text('The second calculator'));
     await tester.pumpAndSettle();

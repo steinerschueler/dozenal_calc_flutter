@@ -34,44 +34,25 @@ eigener Abschnitt unten):
   Kapitel-Fallback); konsumiert via `unitInfoOf` in `converter_page.dart`
   → `showUnitInfoBox` (`keypad_parts.dart`).
 
-**Layout der Info-Liste** (`InfoListPage`):
+**Aufbau des Menüs** (`InfoListPage`): vier Gruppen, jede Zeile eine Fläche wie eine Taste (`menu_rows.dart`). Symbole
+sind neutral, Farbe tragen nur die drei Rechner unter «Bedienung».
 
-1. „Bedienung des Hauptrechners" (`chapterTitle01`) — Handbuch-
-   Expansion (`_ManualSectionExpansion`, parametrisiert statt
-   dupliziert): App-Hilfe, kein Theorie-Stoff.
-2. „Bedienung des Einheitenrechners" (`infoListConverterManual`) —
-   zweite Instanz derselben Expansion, gespeist aus
-   `converterManualChapters` (sechs Kapitel: Der zweite Rechner ·
-   Kategorie/Zahl/Einheit · met/imp+Farben · +/−-Terme ·
-   Skalar-Rechnen · Speicher/Konstanten/Brücke). **Alle 14 Sprachen
-   vollständig übersetzt** (Subagenten-Pipeline: Übersetzen + Review);
-   der positionsweise Deutsch-Fallback bleibt als Mechanik für
-   künftige Kapitel bestehen.
-3. „Bedienung des Werterechners" (`infoListAssetManual`) — dritte
-   Instanz derselben Expansion, gespeist aus `assetManualChapters`
-   (sechs Kapitel, „Der dritte Rechner" … „Kurve"; alle 14 Sprachen).
-4. `_TheoryExpansion` — ausklappbar zu sechs Zeilen: die vier
-   Theorie-Blöcke (Grundlagen, Zwölf und die Welt, Dozenale
-   Mathematik, Dozenale Gesellschaft), dann „Einheitentheorie"
-   (`infoListConversionsEntry` → `ConversionsPage`; dorthin gezogen,
-   als die frühere `_UnitsExpansion` aufgelöst wurde), zuletzt
-   „Wertetheorie" (`theoryBlockWerte` → `werteTheoryBlock`). Einen
-   Navigations-Eintrag „Einheitenrechner" gibt es nicht: Der Wechsel läuft
-   über die Taste rechts vom Gleichbalken.
-5. `_RecommendationsExpansion` — ausklappbar; ein Kapitel pro
-   Plattform mit Pros/Cons je Rechner (eigener Abschnitt
-   „Empfehlungen" unten).
-6. **Intro-Eintrag** (`a11yIntro`) — pusht `IntroPage`.
-7. **Einstellungen-Eintrag** — pusht `SettingsPage`
-   (`settings_page.dart`, eigener Abschnitt unten).
-8. `_LanguagePickerExpansion` — analoge Ausklapp-Struktur, Default
-   collapsed, listet `kSupportedLanguages`.
-9. Sekundärseiten als Navigations-Items (Datenschutz, Lizenz, Spenden,
-   Feedback).
-10. `_VersionFooter` (Padding + Versions-Anzeige).
+1. **Lernen** (`infoListGroupLearn`)
+   - **Intro** (`a11yIntro`) pusht `IntroPage`.
+   - **Bedienung** (`infoListManualExpansion`, `_ManualExpansion`) klappt auf die drei Rechner auf, jeder Rechner auf seine
+     Handbuch-Kapitel: `manualChapters`, `converterManualChapters` (sechs Kapitel), `assetManualChapters` (sechs Kapitel).
+     Die Namen der Rechner sind dieselben wie im Page-Peek.
+   - **Theorie** (`_TheoryExpansion`) klappt auf zu den vier Theorie-Blöcken (Grundlagen, Zwölf und die Welt, Dozenale
+     Mathematik, Dozenale Gesellschaft), «Einheitentheorie» (`ConversionsPage`) und «Wertetheorie» (`werteTheoryBlock`).
+2. **App** (`infoListGroupApp`)
+   - **Einstellungen** pusht `SettingsPage` (`settings_page.dart`).
+   - **Sprache** (`infoListLanguageEntry`, `_LanguagePickerExpansion`) zeigt Flagge und aktive Sprache, klappt auf
+     `kSupportedLanguages` auf und nach der Wahl wieder zu.
+3. **Empfehlungen** (`_RecommendationsExpansion`) ist eine Gruppe ohne Überschrift: Der Eintrag sagt es schon.
+4. **Über die App** (`infoListGroupAbout`): Datenschutz, Lizenz, Spenden, Feedback.
 
-Alle Top-Level-Items sind durch 1-dp-Dividers im Palette-Slot `divider`
-getrennt.
+Darunter `_VersionFooter`. Einen Navigations-Eintrag «Einheitenrechner» gibt es nicht: Der Wechsel läuft über die Taste
+rechts vom Gleichbalken. Am Mi A3 passen alle Gruppen ohne Scrollen auf den Bildschirm, nur die Versionszeile nicht.
 
 AppBar-Titel ist `infoListTitle`: DE „Dozenal Calc Menü",
 EN „Dozenal Calc Menu", entsprechend lokalisiert in allen 14 Locales.
@@ -129,7 +110,7 @@ Regional-Indicator-Emojis.
 
 ## Empfehlungen (`lib/recommendations/`)
 
-Ausklappbarer Eintrag direkt unter „Theorie" (`_RecommendationsExpansion` in
+Ausklappbarer Eintrag im Menü (`_RecommendationsExpansion` in
 `info_pages.dart`) → sieben Plattform-Kapitel: Physisch, Android — Play Store,
 Android — F-Droid, iOS, macOS, Linux, Windows. Jedes öffnet eine
 `RecChapterPage` (`recommendations_page.dart`): kurze Einleitung, je Rechner

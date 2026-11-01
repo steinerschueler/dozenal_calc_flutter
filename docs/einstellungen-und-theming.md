@@ -11,7 +11,7 @@ Keypad-Präferenzen und den Live-Rechner-Modi. Neun Zeilen, getrennt
 durch Dividers im Palette-Slot `divider`, Segment-Optik via `_SegmentRow`
 (ToggleButtons):
 
-1. **Erscheinungsbild** Dunkel/Hell/System — liest `ThemeScope.maybeOf`
+1. **Darstellung** Dunkel/Hell/System — liest `ThemeScope.maybeOf`
    und schreibt `ThemeNotifier.setSetting` (siehe Theming-Abschnitt
    unten); ohne ThemeScope (Standalone-Widget-Tests) wird die Zeile
    ausgeblendet — gleiche Konvention wie die Calc-State-Zeilen.

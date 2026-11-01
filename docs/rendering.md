@@ -55,10 +55,9 @@ Verweise wie «oben» oder «siehe …-Abschnitt» meinen die Themenseiten, die
   `moveCursorTo`), Langdruck = Resultat-Copy, Swipe-down = History-Tape
   (siehe State-Abschnitt); `showCursor: false` macht das Widget zum
   read-only History-Tile.
-- `round_badge.dart` — Bausteine der Listen-Optik von Info-Liste und
-  Einstellungen: `RoundIconBadge`/`RoundFlagBadge` (30-dp-Farbscheiben
-  statt grauer Icons/Flaggen-Thumbnails; `BadgeHue`-Palette bewusst
-  ausserhalb `AppColors`), `kBadgeDiameter`, `kSubItemIndent`.
+- `round_badge.dart` — Bausteine der Einstellungen: `RoundIconBadge` und `RoundFlagBadge` (30-dp-Scheiben, `BadgeHue`-Palette
+  bewusst ausserhalb `AppColors`). Das Menü nutzt daraus nur die Flaggen und die Farben der drei Rechner.
+- `menu_rows.dart` — Zeilen des Menüs als Tastenflächen: `MenuGroup`, `MenuRow`, `MenuExpansionRow`, `MenuRowIcon`.
 - `keypad.dart` — orientierungsgesteuertes Dispatch. `Keypad` nimmt
   zusätzlich `keypadMode` (Overlay/Scroll) und `keypadProfile`
   (Alle/Einfach) aus den Einstellungen entgegen (siehe

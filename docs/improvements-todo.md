@@ -59,7 +59,9 @@ Erst, wenn der Werterechner bereit ist und das Design des Rechnerwechsels fertig
       bekommt. Mit seitlichem Rand werden die Beschriftungen ungleich gross.
 - [ ] **Lange Methoden (CC-03):** `ConverterDisplay.build` und `_MovableLineState.build` sind länger als 50 Zeilen.
 - [ ] **Lange Eingaben:** Das Display misst alle Zeichen pro Bild und Ziehschritt mehrfach, das lässt sich zwischenspeichern.
-- [ ] **Einstellungen: Zeilenumbruch mitten im Wort.** «Erscheinungsbild» bricht auf dem Mi A3 in «Erscheinung» und «sbild» um.
+- [ ] **Einstellungen an das Menü angleichen.** Dort stehen noch Farbscheiben und Trennlinien, das Menü zeigt Flächen.
+- [ ] **Intro-Titel abgeschnitten:** «Bedienungs-Intro» wird auf dem Mi A3 neben «Überspringen» gekürzt.
+- [ ] **Kapiteltitel mit «log»:** Im Titel «Rechnen in der Eingabe» erscheint «log» in einer fremden Schrift und auf eigener Zeile.
 - [ ] **Werterechner fertigstellen.** Er ist noch nicht bereit für eine Veröffentlichung. Was fehlt, legt Eric fest.
 - [ ] **Design des Rechnerwechsels (Taste, Peek) überarbeiten.** Das Wischen ist abgeschaltet, gewechselt wird per Taste.
       Ob dieser Punkt damit erledigt ist, entscheidet Eric.

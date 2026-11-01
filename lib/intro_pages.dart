@@ -64,7 +64,7 @@ const HighlightCircle _kSwitchKey = HighlightCircle(
 
 // The intro row in v5_menu.png.
 const HighlightRect _kIntroRow = HighlightRect(
-  rect: Rect.fromLTRB(0.02, 0.495, 0.98, 0.575),
+  rect: Rect.fromLTRB(0.03, 0.130, 0.97, 0.211),
 );
 
 // In v5_settings.png: the two glyph rows grouped into one box, and the
