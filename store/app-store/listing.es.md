@@ -47,7 +47,7 @@ Funciones
 
 Conversor de unidades
 
-Un deslizamiento a la izquierda abre la segunda calculadora: convierte unidades imperiales y métricas entre sí — longitud, superficie, volumen, peso, tiempo, ángulo, dinero (£/sh/d), temperatura y más. Entradas compuestas como 3 ft 5 in, desglose en subunidades y cálculo directamente en la entrada (× ÷ ⊕ ^ √ ㏒) con memoria y constantes. Los resultados viajan entre ambas calculadoras con una tecla. Un código de colores separa los mundos: verde para el mundo del diez (métrico, base 10), violeta para el mundo del doce (imperial, base 12).
+Un deslizamiento a la izquierda abre la segunda calculadora: convierte unidades imperiales y métricas entre sí — longitud, superficie, volumen, peso, tiempo, ángulo, dinero (£/sh/d), temperatura y más. Entradas compuestas como 3 ft 5 in, desglose en subunidades y cálculo directamente en la entrada (× ÷ ⊕ ^ √ log) con memoria y constantes. Los resultados viajan entre ambas calculadoras con una tecla. Un código de colores separa los mundos: verde para el mundo del diez (métrico, base 10), violeta para el mundo del doce (imperial, base 12).
 
 Teoría para descubrir, ahora con imágenes
 

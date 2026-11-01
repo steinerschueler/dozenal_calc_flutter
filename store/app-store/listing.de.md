@@ -47,7 +47,7 @@ Funktionsumfang
 
 Einheitenrechner
 
-Ein Wisch nach links öffnet den zweiten Rechner: Er wandelt imperiale und metrische Einheiten ineinander um — Länge, Fläche, Volumen, Gewicht, Zeit, Winkel, Geld (£/sh/d), Temperatur und mehr. Zusammengesetzte Eingaben wie 3 ft 5 in, Aufschlüsselung in Teil-Einheiten und direktes Rechnen in der Eingabe (× ÷ ⊕ ^ √ ㏒) mit Speicher und Konstanten. Ergebnisse wandern per Taste zwischen beiden Rechnern. Ein Farbcode hält die Welten auseinander: Grün für die Zehnerwelt (metrisch, Basis 10), Violett für die Zwölferwelt (imperial, Basis 12).
+Ein Wisch nach links öffnet den zweiten Rechner: Er wandelt imperiale und metrische Einheiten ineinander um — Länge, Fläche, Volumen, Gewicht, Zeit, Winkel, Geld (£/sh/d), Temperatur und mehr. Zusammengesetzte Eingaben wie 3 ft 5 in, Aufschlüsselung in Teil-Einheiten und direktes Rechnen in der Eingabe (× ÷ ⊕ ^ √ log) mit Speicher und Konstanten. Ergebnisse wandern per Taste zwischen beiden Rechnern. Ein Farbcode hält die Welten auseinander: Grün für die Zehnerwelt (metrisch, Basis 10), Violett für die Zwölferwelt (imperial, Basis 12).
 
 Theorie zum Anfassen — jetzt mit Bildern
 

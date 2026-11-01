@@ -47,7 +47,7 @@ Features
 
 Unit converter
 
-One swipe to the left opens the second calculator: it converts imperial and metric units into one another — length, area, volume, weight, time, angle, money (£/sh/d), temperature and more. Compound entries like 3 ft 5 in, breakdown into part units, and math right inside the entry (× ÷ ⊕ ^ √ ㏒) with memory and constants. Results travel between the two calculators at the press of a key. A color code keeps the worlds apart: green for the world of ten (metric, base 10), violet for the world of twelve (imperial, base 12).
+One swipe to the left opens the second calculator: it converts imperial and metric units into one another — length, area, volume, weight, time, angle, money (£/sh/d), temperature and more. Compound entries like 3 ft 5 in, breakdown into part units, and math right inside the entry (× ÷ ⊕ ^ √ log) with memory and constants. Results travel between the two calculators at the press of a key. A color code keeps the worlds apart: green for the world of ten (metric, base 10), violet for the world of twelve (imperial, base 12).
 
 Hands-on theory — now with pictures
 

@@ -47,7 +47,7 @@ Fonctionnalités
 
 Convertisseur d'unités
 
-Un balayage vers la gauche ouvre la deuxième calculatrice : elle convertit les unités impériales et métriques entre elles — longueur, surface, volume, poids, temps, angle, monnaie (£/sh/d), température et plus encore. Saisies composées comme 3 ft 5 in, décomposition en sous-unités et calcul directement dans la saisie (× ÷ ⊕ ^ √ ㏒) avec mémoire et constantes. Les résultats passent d'une calculatrice à l'autre d'une simple touche. Un code couleur sépare les mondes : vert pour le monde du dix (métrique, base 10), violet pour le monde du douze (impérial, base 12).
+Un balayage vers la gauche ouvre la deuxième calculatrice : elle convertit les unités impériales et métriques entre elles — longueur, surface, volume, poids, temps, angle, monnaie (£/sh/d), température et plus encore. Saisies composées comme 3 ft 5 in, décomposition en sous-unités et calcul directement dans la saisie (× ÷ ⊕ ^ √ log) avec mémoire et constantes. Les résultats passent d'une calculatrice à l'autre d'une simple touche. Un code couleur sépare les mondes : vert pour le monde du dix (métrique, base 10), violet pour le monde du douze (impérial, base 12).
 
 La théorie à portée de main — désormais en images
 

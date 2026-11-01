@@ -47,7 +47,7 @@ Funzionalità
 
 Convertitore di unità
 
-Uno scorrimento a sinistra apre la seconda calcolatrice: converte le unità imperiali e metriche le une nelle altre — lunghezza, area, volume, peso, tempo, angolo, denaro (£/sh/d), temperatura e altro. Inserimenti composti come 3 ft 5 in, scomposizione in sottounità e calcolo direttamente nell'inserimento (× ÷ ⊕ ^ √ ㏒) con memoria e costanti. I risultati passano da una calcolatrice all'altra con un tasto. Un codice colore separa i mondi: verde per il mondo del dieci (metrico, base 10), viola per il mondo del dodici (imperiale, base 12).
+Uno scorrimento a sinistra apre la seconda calcolatrice: converte le unità imperiali e metriche le une nelle altre — lunghezza, area, volume, peso, tempo, angolo, denaro (£/sh/d), temperatura e altro. Inserimenti composti come 3 ft 5 in, scomposizione in sottounità e calcolo direttamente nell'inserimento (× ÷ ⊕ ^ √ log) con memoria e costanti. I risultati passano da una calcolatrice all'altra con un tasto. Un codice colore separa i mondi: verde per il mondo del dieci (metrico, base 10), viola per il mondo del dodici (imperiale, base 12).
 
 Teoria da toccare con mano — ora con immagini
 
