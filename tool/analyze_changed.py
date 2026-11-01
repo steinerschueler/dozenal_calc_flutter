@@ -14,6 +14,7 @@ DEFAULT_BASE_BRANCH = "origin/master"
 BLOCKING_EVERYWHERE = {"ERROR"}
 ANALYZER_EXIT_CODES_WITH_RESULT = {0, 1, 2, 3}
 MACHINE_FIELD_COUNT = 8
+BULK_CLEANUP_TRAILER = "Lint-Bulk:"
 
 
 def git_output(*arguments: str) -> str:
@@ -23,12 +24,34 @@ def git_output(*arguments: str) -> str:
 
 
 def changed_dart_files(base: str | None) -> set[Path]:
-    """Return absolute paths of Dart files differing from the base, staged changes included."""
+    """Return absolute paths of Dart files changed since the base.
+
+    Commits marked as bulk cleanup do not count: They touch many files without
+    reviewing them, so their old findings stay for the next real change (CC-41).
+    """
     base_commit = base or git_output("merge-base", DEFAULT_BASE_BRANCH, "HEAD").strip()
+    commits = git_output(
+        "rev-list",
+        "--no-merges",
+        "--invert-grep",
+        f"--grep=^{BULK_CLEANUP_TRAILER}",
+        f"{base_commit}..HEAD",
+    ).split()
     names = git_output(
-        "diff", "--name-only", "--diff-filter=d", base_commit, "--", "*.dart"
-    )
-    return {Path(name).resolve() for name in names.splitlines()}
+        "diff", "--name-only", "--diff-filter=d", "HEAD", "--", "*.dart"
+    ).split("\n")
+    for commit in commits:
+        names += git_output(
+            "diff-tree",
+            "--no-commit-id",
+            "--name-only",
+            "-r",
+            "--diff-filter=d",
+            commit,
+            "--",
+            "*.dart",
+        ).split("\n")
+    return {Path(name).resolve() for name in names if name and Path(name).exists()}
 
 
 def blocking_findings(machine_output: str, changed_files: set[Path]) -> list[str]:
