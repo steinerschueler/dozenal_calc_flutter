@@ -18,6 +18,11 @@ Stand: 2026-11-01, gegen den Code und die genannten Dienste geprüft. Was sich v
 - [ ] **Kurse im Werterechner auffrischen.** `lib/logic/rate_data.dart` enthält feste Kurse mit `asOf`-Datum, sie altern
       mit jedem Release.
 
+- [ ] **MSIX vor dem Einreichen starten.** `msix` 3.18.0 nimmt die C++-Laufzeit neu aus Visual Studio, das Paket ändert
+      sich also. Die Rechenlogik ist nicht betroffen.
+- [ ] **`package_info_plus` 8 auf 10 (Dependabot #13) auf Android und Windows testen.** Die neue Hauptversion ändert das
+      Android-SDK und `win32` und bringt `ffi_leak_tracker` neu mit (Herausgeber `halildurmus.dev`, derselbe wie `win32`).
+
 ### Apple
 
 - [ ] **watchOS-Screenshots.** In App Store Connect liegen noch die Bilder von Build 16 (416×496). Neu aufnehmen auf dem

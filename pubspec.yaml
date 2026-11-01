@@ -33,9 +33,9 @@ dependencies:
   flutter_localizations:
     sdk: flutter
 
-  flutter_markdown_plus: ^1.0.7
-  shared_preferences: ^2.3.3
-  url_launcher: ^6.3.1
+  flutter_markdown_plus: ^1.0.12
+  shared_preferences: ^2.5.6
+  url_launcher: ^6.3.3
   package_info_plus: ^8.0.2
 
 dev_dependencies:
@@ -58,7 +58,7 @@ dev_dependencies:
   #   dart run flutter_native_splash:create
   flutter_launcher_icons: ^0.14.0
   flutter_native_splash: ^2.4.0
-  msix: ^3.17.0
+  msix: ^3.18.0
   very_good_analysis: 11.0.0
 
 flutter_launcher_icons:

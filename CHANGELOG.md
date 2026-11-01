@@ -18,6 +18,7 @@ Git-Historie zusammengefasst. Nur `v1.5.1` ist als Git-Tag vorhanden.
 - Der Page-Peek ist ein dezenter Punkte-Indikator, der mit dem Wischen mitgleitet.
 - Das Keypad des Werterechners kommt ohne Overlay aus und zeigt beide Einheitensysteme gleichzeitig.
 - Die CI nutzt Flutter 3.47.9 und prüft das Lockfile streng.
+- Kleine Updates: `shared_preferences`, `flutter_markdown_plus`, `url_launcher`, `msix`, dazu neue Hauptversionen der CI-Actions `checkout` und `setup-java`.
 - `pre-commit` prüft Format, Lints, Markdown und Commit-Nachrichten, `very_good_analysis` gilt für geänderte Dateien.
 - Rund 7700 Lint-Befunde sind automatisch korrigiert, die Fehlalarme zu Zeilenumbrüchen in Texten ausgeblendet.
 - Die KI-Anweisungen sind thematisch nach `docs/` aufgeteilt.
