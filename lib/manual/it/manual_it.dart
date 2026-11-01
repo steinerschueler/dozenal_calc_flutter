@@ -1231,7 +1231,7 @@ List<ManualChapter> _converterManualChaptersIt() => const [
       'precedente. AC cancella tutto.',
     ),
   ]),
-  ManualChapter("Calcolare nell'input: × ÷ ⊕ ^ √ ㏒", [
+  ManualChapter("Calcolare nell'input: × ÷ ⊕ ^ √ log", [
     _P(
       'Il numero digitato può essere esso stesso un piccolo calcolo: '
       '"3 × 2" e poi "ft" dà 6 piedi. La valutazione procede '
@@ -1248,7 +1248,7 @@ List<ManualChapter> _converterManualChaptersIt() => const [
     _P(
       'Per la radice e il logaritmo, a sinistra sta rispettivamente il '
       'grado o la base: "2 √ 9" è la radice quadrata di 9, cioè 3; '
-      '"2 ㏒ 8" è il logaritmo di 8 in base 2, cioè 3. Il ⊕ forma la '
+      '"2 log 8" è il logaritmo di 8 in base 2, cioè 3. Il ⊕ forma la '
       'somma parallela a·b/(a+b), nota dalle resistenze in parallelo.',
     ),
     _P(
@@ -1390,7 +1390,7 @@ List<ManualChapter> _assetManualChaptersIt() => const [
     _P(
       'Il tasto Valore siede fisso nella riga di sistema e si attiva non '
       "appena c'è un termine (vedi il capitolo successivo). Gli "
-      'operatori scalari (× ÷ ⊕ ^ √ ㏒) fanno sì che il numero digitato '
+      'operatori scalari (× ÷ ⊕ ^ √ log) fanno sì che il numero digitato '
       'sia esso stesso un piccolo calcolo, come nel convertitore di '
       'unità. AC cancella tutto, Del il carattere precedente.',
     ),

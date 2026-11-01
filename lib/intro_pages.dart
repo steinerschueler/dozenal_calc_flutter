@@ -145,7 +145,8 @@ class _IntroPageState extends State<IntroPage> {
       appBar: AppBar(
         backgroundColor: const Color(0xFF1F1F1F),
         elevation: 0,
-        title: Text(l.introTitle),
+        // Shrinks rather than cuts off: "Skip" leaves little room in some languages.
+        title: FittedBox(fit: BoxFit.scaleDown, child: Text(l.introTitle)),
         actions: [
           TextButton(
             onPressed: () => Navigator.of(context).pop(),

@@ -85,6 +85,20 @@ void main() {
     expect(find.byType(InfoListPage), findsOneWidget);
   });
 
+  testWidgets('the intro title shrinks to fit beside the skip button', (
+    tester,
+  ) async {
+    await openMenu(tester);
+    await tapText(tester, 'Intro');
+    expect(
+      find.ancestor(
+        of: find.text('Quick Tour'),
+        matching: find.byType(FittedBox),
+      ),
+      findsOneWidget,
+    );
+  });
+
   test('the German appearance title is short enough not to break mid-word', () {
     // Beside three segments a phone leaves about twelve characters for it;
     // "Erscheinungsbild" broke into "Erscheinung / sbild".

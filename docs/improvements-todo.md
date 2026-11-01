@@ -60,8 +60,8 @@ Erst, wenn der Werterechner bereit ist und das Design des Rechnerwechsels fertig
 - [ ] **Lange Methoden (CC-03):** `ConverterDisplay.build` und `_MovableLineState.build` sind länger als 50 Zeilen.
 - [ ] **Lange Eingaben:** Das Display misst alle Zeichen pro Bild und Ziehschritt mehrfach, das lässt sich zwischenspeichern.
 - [ ] **Einstellungen an das Menü angleichen.** Dort stehen noch Farbscheiben und Trennlinien, das Menü zeigt Flächen.
-- [ ] **Intro-Titel abgeschnitten:** «Bedienungs-Intro» wird auf dem Mi A3 neben «Überspringen» gekürzt.
-- [ ] **Kapiteltitel mit «log»:** Im Titel «Rechnen in der Eingabe» erscheint «log» in einer fremden Schrift und auf eigener Zeile.
+- [ ] **Intro und Store-Screenshots neu gestalten.** Eric will beide nach dem Design-Umbau neu haben. Die Intro-Bilder von Menü und Einstellungen sind bisher nur ausgetauscht.
+- [ ] **«log» im Display von Einheiten- und Werterechner:** Das Zeichen U+33D2 fehlt in JetBrains Mono und erscheint schmal in einer fremden Schrift. Es ist lesbar. Eine Änderung berührt den Cursor, weil ein Tastendruck ein Zeichen bleiben muss.
 - [ ] **Werterechner fertigstellen.** Er ist noch nicht bereit für eine Veröffentlichung. Was fehlt, legt Eric fest.
 - [ ] **Design des Rechnerwechsels (Taste, Peek) überarbeiten.** Das Wischen ist abgeschaltet, gewechselt wird per Taste.
       Ob dieser Punkt damit erledigt ist, entscheidet Eric.

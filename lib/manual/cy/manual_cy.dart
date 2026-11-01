@@ -1196,7 +1196,7 @@ List<ManualChapter> _converterManualChaptersCy() => const [
       'Mae AC yn clirio popeth.',
     ),
   ]),
-  ManualChapter('Cyfrifo yn y mewnbwn: × ÷ ⊕ ^ √ ㏒', [
+  ManualChapter('Cyfrifo yn y mewnbwn: × ÷ ⊕ ^ √ log', [
     _P(
       'Caiff y rhif a deipiwyd fod yn gyfrifiad bach ei hun: mae '
       '"3 × 2" ac yna "ft" yn rhoi 6 troedfedd. Gwerthusir yn llym '
@@ -1212,7 +1212,7 @@ List<ManualChapter> _converterManualChaptersCy() => const [
     _H('Y gweithredwyr arbennig'),
     _P(
       "Gyda'r gwraidd a'r logarithm, saif y radd neu'r bôn ar y "
-      'chwith: "2 √ 9" yw gwraidd sgwâr 9, sef 3; "2 ㏒ 8" yw '
+      'chwith: "2 √ 9" yw gwraidd sgwâr 9, sef 3; "2 log 8" yw '
       "logarithm 8 i'r bôn 2, sef 3. Mae'r ⊕ yn ffurfio'r swm paralel "
       "a·b/(a+b), sy'n gyfarwydd o wrthyddion paralel.",
     ),
@@ -1353,7 +1353,7 @@ List<ManualChapter> _assetManualChaptersCy() => const [
     _P(
       "Mae'r fysell Gwerth yn eistedd yn sefydlog yn rhes y system ac yn "
       'dod yn barod cyn gynted ag y saif term (gweler y bennod nesaf). '
-      "Mae'r gweithredwyr sgalar (× ÷ ⊕ ^ √ ㏒) yn gadael i'r rhif a "
+      "Mae'r gweithredwyr sgalar (× ÷ ⊕ ^ √ log) yn gadael i'r rhif a "
       'deipiwyd fod yn gyfrifiad bach ei hun, fel yn y trawsnewidydd '
       "unedau. Mae AC yn clirio popeth, a Del y cymeriad o'i flaen.",
     ),

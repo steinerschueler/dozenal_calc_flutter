@@ -1156,7 +1156,7 @@ List<ManualChapter> _converterManualChaptersEn() => const [
       'everything.',
     ),
   ]),
-  ManualChapter('Calculating in the input: × ÷ ⊕ ^ √ ㏒', [
+  ManualChapter('Calculating in the input: × ÷ ⊕ ^ √ log', [
     _P(
       'The typed number may itself be a small calculation: "3 × 2" and '
       'then "ft" gives 6 feet. It is evaluated strictly from left to '
@@ -1172,7 +1172,7 @@ List<ManualChapter> _converterManualChaptersEn() => const [
     _H('The special operators'),
     _P(
       'For root and logarithm the degree or the base stands on the left: '
-      '"2 √ 9" is the square root of 9, i.e. 3; "2 ㏒ 8" is the logarithm '
+      '"2 √ 9" is the square root of 9, i.e. 3; "2 log 8" is the logarithm '
       'of 8 to base 2, i.e. 3. The ⊕ forms the parallel sum a·b/(a+b), '
       'familiar from resistors in parallel.',
     ),
@@ -1308,7 +1308,7 @@ List<ManualChapter> _assetManualChaptersEn() => const [
     _P(
       'The Value key sits fixed in the system row and arms as soon as a '
       'term stands there (see the next chapter). The scalar operators '
-      '(× ÷ ⊕ ^ √ ㏒) let the typed number itself be a small '
+      '(× ÷ ⊕ ^ √ log) let the typed number itself be a small '
       'calculation, just as in the unit converter. AC clears everything, '
       'Del the character before it.',
     ),

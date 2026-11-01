@@ -6,6 +6,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
+  test('chapter titles spell log out instead of the square-log character', () {
+    // U+33D2 is missing from the text font: it appeared in a foreign fallback
+    // font, tall and narrow, on a line of its own.
+    const squareLog = '\u33D2';
+    for (final tag in ['de', 'en', 'fa', 'ja', 'zh-Hant']) {
+      final titles = [
+        ...manualChapters(tag),
+        ...converterManualChapters(tag),
+        ...assetManualChapters(tag),
+      ].map((chapter) => chapter.title);
+      expect(titles.where((t) => t.contains(squareLog)), isEmpty, reason: tag);
+    }
+  });
+
   test('manualChapters returns chapters for every locale', () {
     // All 14 languages are fully translated — every locale resolves to a
     // non-empty chapter list.

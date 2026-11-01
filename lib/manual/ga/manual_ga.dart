@@ -1226,7 +1226,7 @@ List<ManualChapter> _converterManualChaptersGa() => const [
       'roimhe. Glanann AC gach rud.',
     ),
   ]),
-  ManualChapter('Ríomh san ionchur: × ÷ ⊕ ^ √ ㏒', [
+  ManualChapter('Ríomh san ionchur: × ÷ ⊕ ^ √ log', [
     _P(
       'Is féidir leis an uimhir chlóscríofa féin a bheith ina ríomhadh '
       'beag: tugann "3 × 2" agus ansin "ft" 6 troigh. Ríomhtar go '
@@ -1242,7 +1242,7 @@ List<ManualChapter> _converterManualChaptersGa() => const [
     _H('Na hoibreoirí speisialta'),
     _P(
       'I gcás fréimhe agus logartaim seasann an chéim nó an bonn ar '
-      'chlé: is é "2 √ 9" fréamh chearnach 9, is é sin 3; is é "2 ㏒ 8" '
+      'chlé: is é "2 √ 9" fréamh chearnach 9, is é sin 3; is é "2 log 8" '
       'logartam 8 le bonn 2, is é sin 3. Cruthaíonn an ⊕ an tsuim '
       'chomhthreomhar a·b/(a+b), atá ar eolas ó fhriotóirí '
       'comhthreomhara.',
@@ -1386,7 +1386,7 @@ List<ManualChapter> _assetManualChaptersGa() => const [
     _P(
       'Suíonn an eochair Luach go daingean sa tsraith chórais agus téann '
       'sí ar tinneall a luaithe atá téarma ann (féach an chéad chaibidil '
-      'eile). Ligeann na hoibreoirí scalaracha (× ÷ ⊕ ^ √ ㏒) don uimhir '
+      'eile). Ligeann na hoibreoirí scalaracha (× ÷ ⊕ ^ √ log) don uimhir '
       'chlóscríofa féin a bheith ina ríomhadh beag, díreach mar atá sa '
       'tiontaire aonad. Glanann AC gach rud, baineann Del an carachtar '
       'roimhe.',

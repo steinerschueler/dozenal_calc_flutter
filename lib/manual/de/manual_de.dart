@@ -1176,7 +1176,7 @@ List<ManualChapter> _converterManualChaptersDe() => const [
       'Term-Grenze, entfernt Del den ganzen Term davor. AC löscht alles.',
     ),
   ]),
-  ManualChapter('Rechnen in der Eingabe: × ÷ ⊕ ^ √ ㏒', [
+  ManualChapter('Rechnen in der Eingabe: × ÷ ⊕ ^ √ log', [
     _P(
       'Die getippte Zahl darf selbst eine kleine Rechnung sein: „3 × 2" '
       'und dann „ft" ergibt 6 Fuß. Ausgewertet wird strikt von links '
@@ -1192,7 +1192,7 @@ List<ManualChapter> _converterManualChaptersDe() => const [
     _H('Die besonderen Operatoren'),
     _P(
       'Bei Wurzel und Logarithmus steht links der Grad beziehungsweise '
-      'die Basis: „2 √ 9" ist die Quadratwurzel aus 9, also 3; „2 ㏒ 8" '
+      'die Basis: „2 √ 9" ist die Quadratwurzel aus 9, also 3; „2 log 8" '
       'ist der Logarithmus von 8 zur Basis 2, also 3. Das ⊕ bildet die '
       'Parallelsumme a·b/(a+b), bekannt von parallelen Widerständen.',
     ),
@@ -1338,7 +1338,7 @@ List<ManualChapter> _assetManualChaptersDe() => const [
     _P(
       'Die Wert-Taste sitzt fest in der System-Reihe und schaltet scharf, '
       'sobald ein Term steht (siehe nächstes Kapitel). Die '
-      'Skalar-Operatoren (× ÷ ⊕ ^ √ ㏒) lassen die getippte Zahl wie im '
+      'Skalar-Operatoren (× ÷ ⊕ ^ √ log) lassen die getippte Zahl wie im '
       'Einheitenrechner selbst eine kleine Rechnung sein. AC löscht alles, '
       'Del das Zeichen davor.',
     ),

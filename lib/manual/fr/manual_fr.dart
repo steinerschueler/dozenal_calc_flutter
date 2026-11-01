@@ -1214,7 +1214,7 @@ List<ManualChapter> _converterManualChaptersFr() => const [
       'le terme précédent. AC efface tout.',
     ),
   ]),
-  ManualChapter('Calculer dans la saisie : × ÷ ⊕ ^ √ ㏒', [
+  ManualChapter('Calculer dans la saisie : × ÷ ⊕ ^ √ log', [
     _P(
       'Le nombre tapé peut être lui-même un petit calcul : « 3 × 2 » '
       "puis « ft » donne 6 pieds. L'évaluation se fait strictement de "
@@ -1232,7 +1232,7 @@ List<ManualChapter> _converterManualChaptersFr() => const [
     _P(
       'Pour la racine et le logarithme, le nombre de gauche est le '
       'degré ou la base : « 2 √ 9 » est la racine carrée de 9, soit 3 ; '
-      '« 2 ㏒ 8 » est le logarithme de 8 en base 2, soit 3. Le ⊕ forme '
+      '« 2 log 8 » est le logarithme de 8 en base 2, soit 3. Le ⊕ forme '
       'la somme parallèle a·b/(a+b), bien connue des résistances en '
       'parallèle.',
     ),
@@ -1377,7 +1377,7 @@ List<ManualChapter> _assetManualChaptersFr() => const [
     _P(
       "La touche Valeur est fixée dans la rangée du système et s'arme "
       "dès qu'un terme est posé (voir le chapitre suivant). Les "
-      'opérateurs scalaires (× ÷ ⊕ ^ √ ㏒) permettent au nombre tapé '
+      'opérateurs scalaires (× ÷ ⊕ ^ √ log) permettent au nombre tapé '
       "d'être lui-même un petit calcul, comme dans le convertisseur "
       "d'unités. AC efface tout, Del le caractère qui précède.",
     ),

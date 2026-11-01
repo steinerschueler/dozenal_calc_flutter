@@ -1007,7 +1007,7 @@ List<ManualChapter> _converterManualChaptersZhHant() => const [
       '停在項的邊界上，Del 會移除前面的整個項。AC 清除一切。',
     ),
   ]),
-  ManualChapter('在輸入中計算：× ÷ ⊕ ^ √ ㏒', [
+  ManualChapter('在輸入中計算：× ÷ ⊕ ^ √ log', [
     _P(
       '輸入的數字本身可以是一個小算式：「3 × 2」再接「ft」，得到'
       ' 6 英尺。求值嚴格由左至右，在點按單位的那一刻執行。',
@@ -1021,7 +1021,7 @@ List<ManualChapter> _converterManualChaptersZhHant() => const [
     _H('特殊運算符'),
     _P(
       '對根號和對數而言，次數或底數位於左側：「2 √ 9」是 9 的'
-      '平方根，即 3；「2 ㏒ 8」是以 2 為底 8 的對數，也是 3。'
+      '平方根，即 3；「2 log 8」是以 2 為底 8 的對數，也是 3。'
       '⊕ 則計算並聯和 a·b/(a+b)，因並聯電阻而為人熟知。',
     ),
     _P(
@@ -1107,7 +1107,7 @@ List<ManualChapter> _assetManualChaptersZhHant() => const [
     _H('值、計算與清除'),
     _P(
       '值鍵固定位於系統列中，一旦有項存在便會啟用（見下一章）。標量運算符（× ÷ ⊕ ^ √ '
-      '㏒）讓所輸入的數字本身像在單位換算器中那樣成為一個小算式。AC 清除一切，Del 刪除前一個字元。',
+      'log）讓所輸入的數字本身像在單位換算器中那樣成為一個小算式。AC 清除一切，Del 刪除前一個字元。',
     ),
   ]),
   ManualChapter('值：換算成某種貨幣', [

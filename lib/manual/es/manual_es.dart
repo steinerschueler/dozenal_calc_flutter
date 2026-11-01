@@ -1214,7 +1214,7 @@ List<ManualChapter> _converterManualChaptersEs() => const [
       'lo borra todo.',
     ),
   ]),
-  ManualChapter('Calcular en la entrada: × ÷ ⊕ ^ √ ㏒', [
+  ManualChapter('Calcular en la entrada: × ÷ ⊕ ^ √ log', [
     _P(
       'El número escrito puede ser él mismo un pequeño cálculo: «3 × 2» y '
       'luego «ft» da 6 pies. Se evalúa estrictamente de izquierda a '
@@ -1231,7 +1231,7 @@ List<ManualChapter> _converterManualChaptersEs() => const [
     _P(
       'En la raíz y el logaritmo, a la izquierda va el grado o la base, '
       'respectivamente: «2 √ 9» es la raíz cuadrada de 9, es decir 3; '
-      '«2 ㏒ 8» es el logaritmo de 8 en base 2, es decir 3. El ⊕ forma la '
+      '«2 log 8» es el logaritmo de 8 en base 2, es decir 3. El ⊕ forma la '
       'suma paralela a·b/(a+b), conocida por las resistencias en paralelo.',
     ),
     _P(
@@ -1374,7 +1374,7 @@ List<ManualChapter> _assetManualChaptersEs() => const [
     _P(
       'La tecla de valor está fija en la fila del sistema y se arma en '
       'cuanto hay un término (véase el siguiente capítulo). Los '
-      'operadores escalares (× ÷ ⊕ ^ √ ㏒) permiten que el número escrito '
+      'operadores escalares (× ÷ ⊕ ^ √ log) permiten que el número escrito '
       'sea él mismo un pequeño cálculo, como en el conversor de unidades. '
       'AC lo borra todo, Del el carácter anterior.',
     ),
