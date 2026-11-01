@@ -1,0 +1,4 @@
+# False positives: constant lists of calculator tokens in old versions of keypad.dart.
+07c8eac32310b5a18fd296c51cdc7427ed1d6943:lib/keypad.dart:generic-api-key:228
+8a110a631a5a62cbb5534cb99f8c9265341f68c1:lib/keypad.dart:generic-api-key:251
+89d081eb056a32568402344bfc8fd4d2c8cb2cfc:lib/keypad.dart:generic-api-key:171

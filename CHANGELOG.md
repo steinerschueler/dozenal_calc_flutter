@@ -32,6 +32,8 @@ Git-Historie zusammengefasst. Nur `v1.5.1` ist als Git-Tag vorhanden.
 ### Security
 
 - gitleaks läuft als pre-commit-Hook.
+- Ein Test sichert die Datenschutzgrenze: kein Netz-Code, keine Internet-Berechtigung, keine ungeprüften Laufzeit-Pakete.
+- Dependabot-Konfiguration mit 7 Tagen Wartefrist.
 - Der Web-Build lädt CanvasKit und Schriften von der eigenen Seite, die IP der Besucher geht nicht mehr an Google.
 
 ## [1.5.1] - 2026-06-13
