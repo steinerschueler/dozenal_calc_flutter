@@ -18,22 +18,22 @@ Diese Zahl ist irrational. Man kann sie aber durch einfache Brüche annähern (m
 
 Der Bruch 3/5 entspricht einer pentatonischen Teilung (fünf Töne, wie in vielen Volksmusiken). Der Bruch **7/12** bedeutet wörtlich: teile die Oktave in **zwölf** gleiche Schritte, dann überspannt die Quinte genau **sieben** davon. Das ist der eigentliche mathematische Grund für die Zwölf. Nach zwölf gestapelten Quinten landet man fast genau wieder beim Ausgangston.
 
-Warum setzte sich gerade 12 durch und nicht 41 oder 53? Weil 12 die kleinste Zahl ist, die die wichtigste Konsonanz, die Quinte, schon sehr gut trifft und zugleich praktisch handhabbar bleibt. Teilungen mit 19, 31 oder 53 Tönen treffen einzelne Intervalle (vor allem die große Terz) sogar besser, verlangen aber unpraktisch viele Töne pro Oktave. Die Zwölf ist der beste Kompromiss zwischen Genauigkeit und Handhabbarkeit. Ein oft genannter Nebenaspekt: 12 ist eine hoch teilbare Zahl (durch 2, 3, 4 und 6), was praktisch bequem ist. Dieser Punkt ist aber zweitrangig gegenüber dem Quinten-Argument.
+Warum setzte sich gerade 12 durch und nicht 41 oder 53? Weil 12 die kleinste Zahl ist, die die wichtigste Konsonanz, die Quinte, schon sehr gut trifft und zugleich praktisch handhabbar bleibt. Teilungen mit 19, 31 oder 53 Tönen treffen einzelne Intervalle (vor allem die grosse Terz) sogar besser, verlangen aber unpraktisch viele Töne pro Oktave. Die Zwölf ist der beste Kompromiss zwischen Genauigkeit und Handhabbarkeit. Ein oft genannter Nebenaspekt: 12 ist eine hoch teilbare Zahl (durch 2, 3, 4 und 6), was praktisch bequem ist. Dieser Punkt ist aber zweitrangig gegenüber dem Quinten-Argument.
 
 ### Die pythagoreische Stimmung
 
-Die älteste systematische Stimmung des Abendlandes ist die pythagoreische. Sie leitet alle Töne ausschließlich aus der Oktave (2:1) und der reinen Quinte (3:2) ab. Sie wird Pythagoras (6. Jahrhundert v. Chr.) zugeschrieben, hat aber wahrscheinlich ältere mesopotamische Vorläufer. In Europa war sie bis Anfang des 16. Jahrhunderts vorherrschend; danach löste sie die mitteltönige Stimmung ab.
+Die älteste systematische Stimmung des Abendlandes ist die pythagoreische. Sie leitet alle Töne ausschliesslich aus der Oktave (2:1) und der reinen Quinte (3:2) ab. Sie wird Pythagoras (6. Jahrhundert v. Chr.) zugeschrieben, hat aber wahrscheinlich ältere mesopotamische Vorläufer. In Europa war sie bis Anfang des 16. Jahrhunderts vorherrschend; danach löste sie die mitteltönige Stimmung ab.
 
 Die wichtigsten Intervalle der pythagoreischen Stimmung:
 
 | Intervall | Verhältnis | Cent (gerundet) |
 |---|---|---|
 | Reine Quinte | 3:2 | 701,96 |
-| Großer Ganzton | 9:8 | 203,91 |
-| Große Terz (Ditonus) | 81:64 | 407,82 |
+| Grosser Ganzton | 9:8 | 203,91 |
+| Grosse Terz (Ditonus) | 81:64 | 407,82 |
 | Kleine Terz | 32:27 | 294,13 |
 
-Auffällig ist die große Terz. Die pythagoreische Terz (81:64) klingt deutlich rauher als die reine große Terz (5:4 ≈ 386,31 Cent). Die Differenz heißt **syntonisches Komma** (81:80, etwa 21,5 Cent). Das ist ein Grund, warum die mittelalterliche Mehrstimmigkeit Terzen lange als unrein mied und Quinten und Quarten bevorzugte.
+Auffällig ist die grosse Terz. Die pythagoreische Terz (81:64) klingt deutlich rauher als die reine grosse Terz (5:4 ≈ 386,31 Cent). Die Differenz heisst **syntonisches Komma** (81:80, etwa 21,5 Cent). Das ist ein Grund, warum die mittelalterliche Mehrstimmigkeit Terzen lange als unrein mied und Quinten und Quarten bevorzugte.
 
 ### Das pythagoreische Komma
 
@@ -42,7 +42,7 @@ Hier zeigt sich das zentrale Problem aller Stimmungen. Zwölf reine Quinten erge
 - Zwölf Quinten: (3/2)¹² = 3¹² / 2¹⁹ = **531441 : 524288**
 - Das ist ≈ **1,01364**, also etwa **23,46 Cent** (ungefähr ein Viertel-Halbton, klar hörbar).
 
-Bildlich: der Quintenzirkel ist in reiner Stimmung eigentlich gar kein geschlossener Kreis, sondern eine **Spirale**. Die Quinten "schießen über" und treffen sich nicht sauber, typischerweise dargestellt an der Stelle Fis/Ges. Wer eine pythagoreische Stimmung auf zwölf Töne festlegt, drängt das gesamte Komma in ein einziges Intervall (meist die verminderte Sexte Gis–Es). Dieses wird zu einer unbrauchbaren **"Wolfsquinte"** von etwa 678,5 Cent.
+Bildlich: der Quintenzirkel ist in reiner Stimmung eigentlich gar kein geschlossener Kreis, sondern eine **Spirale**. Die Quinten "schiessen über" und treffen sich nicht sauber, typischerweise dargestellt an der Stelle Fis/Ges. Wer eine pythagoreische Stimmung auf zwölf Töne festlegt, drängt das gesamte Komma in ein einziges Intervall (meist die verminderte Sexte Gis–Es). Dieses wird zu einer unbrauchbaren **"Wolfsquinte"** von etwa 678,5 Cent.
 
 Die Geschichte dieses Kommas reicht weit zurück. Es ist bereits bei Pseudo-Euklid (*Teilung des Kanons*, um 300 v. Chr.) mit dem Verhältnis 531441:524288 dokumentiert. Chinesische Mathematiker kannten es im *Huainanzi* schon 122 v. Chr. Der chinesische Gelehrte **Jing Fang** (um 50 v. Chr.) erkannte, dass eine Quintenkette erst nach **53** Quinten einen viel kleineren Rest ergibt als nach zwölf. Das ist genau der Wert 31/53 aus der Näherungsliste oben und die Grundlage späterer 53-teiliger Systeme.
 
@@ -52,28 +52,28 @@ Der Quintenzirkel ist die geometrische Darstellung des Ganzen. Er ordnet die zw�
 
 **C – G – D – A – E – H – Fis/Ges – Cis/Des – As – Es – B – F – (zurück zu C)**
 
-Im Uhrzeigersinn ab C wächst die Zahl der Kreuze (G hat eines, D hat zwei …), gegen den Uhrzeigersinn die Zahl der Be (F hat eines, B hat zwei …). Dass der Kreis sich nach zwölf Schritten überhaupt schließt, gelingt nur durch **enharmonische Gleichsetzung** (Fis = Ges) und genau das geht akustisch sauber nur in der gleichstufigen Stimmung auf. In reiner Stimmung bleibt die erwähnte Spirale.
+Im Uhrzeigersinn ab C wächst die Zahl der Kreuze (G hat eines, D hat zwei …), gegen den Uhrzeigersinn die Zahl der Be (F hat eines, B hat zwei …). Dass der Kreis sich nach zwölf Schritten überhaupt schliesst, gelingt nur durch **enharmonische Gleichsetzung** (Fis = Ges) und genau das geht akustisch sauber nur in der gleichstufigen Stimmung auf. In reiner Stimmung bleibt die erwähnte Spirale.
 
 Wer den Quintenzirkel zuerst aufzeichnete, ist gut belegt: **Nikolai Diletski** zeichnete ihn Ende der 1670er Jahre als Erster. **Johann David Heinichen** entwickelte ihn unabhängig (1711).
 
 ### Die Wohltemperierung als erste Lösung
 
-Bevor die exakte Gleichstufigkeit kam, gab es die **Wohltemperierung** (englisch *well temperament*). Sie verteilt das pythagoreische Komma **ungleichmäßig** über den Quintenzirkel. Ergebnis: keine Quinte ist unbrauchbar, jede Tonart ist spielbar, aber jede Tonart behält einen eigenen Klangcharakter. **Andreas Werckmeister** (1645–1706) prägte den Begriff "wohltemperiert" und systematisierte das Verfahren in *Musicalische Temperatur* (Quedlinburg, 1691).
+Bevor die exakte Gleichstufigkeit kam, gab es die **Wohltemperierung** (englisch *well temperament*). Sie verteilt das pythagoreische Komma **ungleichmässig** über den Quintenzirkel. Ergebnis: keine Quinte ist unbrauchbar, jede Tonart ist spielbar, aber jede Tonart behält einen eigenen Klangcharakter. **Andreas Werckmeister** (1645–1706) prägte den Begriff "wohltemperiert" und systematisierte das Verfahren in *Musicalische Temperatur* (Quedlinburg, 1691).
 
-Hier ist eine wichtige Richtigstellung nötig. **Bachs *Wohltemperiertes Klavier* (1722) nutzte nicht die gleichstufige Stimmung.** "Wohltemperiert" bedeutete damals: in *allen* Tonarten *gut* spielbar, nicht: alle zwölf Halbtöne exakt gleich groß. Die unterschiedlichen Tonart-Charaktere waren ein gewolltes künstlerisches Mittel. Zu Bachs Zeit gab es noch keine Methode, gleichstufig zu stimmen (es fehlten Frequenzmessgeräte). Welche konkrete Stimmung Bach genau wollte, ist bis heute **wissenschaftlich umstritten**; mehrere Rekonstruktionen (Werckmeister, Vallotti, Kirnberger und andere) konkurrieren. Der verbreitete Satz "Bach = gleichstufige Stimmung" gilt als **weitgehend widerlegt** und geht auf eine Behauptung Marpurgs nach Bachs Tod zurück.
+Hier ist eine wichtige Richtigstellung nötig. **Bachs *Wohltemperiertes Klavier* (1722) nutzte nicht die gleichstufige Stimmung.** "Wohltemperiert" bedeutete damals: in *allen* Tonarten *gut* spielbar, nicht: alle zwölf Halbtöne exakt gleich gross. Die unterschiedlichen Tonart-Charaktere waren ein gewolltes künstlerisches Mittel. Zu Bachs Zeit gab es noch keine Methode, gleichstufig zu stimmen (es fehlten Frequenzmessgeräte). Welche konkrete Stimmung Bach genau wollte, ist bis heute **wissenschaftlich umstritten**; mehrere Rekonstruktionen (Werckmeister, Vallotti, Kirnberger und andere) konkurrieren. Der verbreitete Satz "Bach = gleichstufige Stimmung" gilt als **weitgehend widerlegt** und geht auf eine Behauptung Marpurgs nach Bachs Tod zurück.
 
 ### Die gleichstufige Stimmung und die zwölfte Wurzel aus 2
 
-In der gleichstufigen (auch: gleichschwebenden) Stimmung wird die Oktave in **zwölf exakt gleich große Halbtöne** geteilt. "Gleich groß" heißt logarithmisch gleich: jeder Halbtonschritt multipliziert die Frequenz mit demselben Faktor, der **zwölften Wurzel aus 2**:
+In der gleichstufigen (auch: gleichschwebenden) Stimmung wird die Oktave in **zwölf exakt gleich grosse Halbtöne** geteilt. "Gleich gross" heisst logarithmisch gleich: jeder Halbtonschritt multipliziert die Frequenz mit demselben Faktor, der **zwölften Wurzel aus 2**:
 
 **¹²√2 ≈ 1,0594630943592952646**
 
-Zwölfmal angewandt ergibt das exakt die Oktave: (¹²√2)¹² = 2. In der Cent-Einheit ist jeder Halbton damit genau 100 Cent groß und die Oktave genau 1200 Cent.
+Zwölfmal angewandt ergibt das exakt die Oktave: (¹²√2)¹² = 2. In der Cent-Einheit ist jeder Halbton damit genau 100 Cent gross und die Oktave genau 1200 Cent.
 
-Der Preis dafür: jedes Intervall außer der Oktave wird leicht unrein, aber gleichmäßig. Wie gut trifft 12-TET die reinen Intervalle?
+Der Preis dafür: jedes Intervall ausser der Oktave wird leicht unrein, aber gleichmässig. Wie gut trifft 12-TET die reinen Intervalle?
 
-- **Quinte:** 12-TET = 700 Cent gegenüber rein (3:2) = 702 Cent. Fehler nur etwa **2 Cent** (praktisch unhörbar). Die Quinte wird also um ein Zwölftel des pythagoreischen Kommas verkleinert, und genau dadurch schließt sich der Zirkel exakt.
-- **Große Terz:** 12-TET = 400 Cent gegenüber rein (5:4) = 386 Cent. Fehler etwa **14 Cent** (deutlich hörbar). Das gibt den Dur-Akkorden am Klavier ihren charakteristischen, leicht "angerauten" Klang.
+- **Quinte:** 12-TET = 700 Cent gegenüber rein (3:2) = 702 Cent. Fehler nur etwa **2 Cent** (praktisch unhörbar). Die Quinte wird also um ein Zwölftel des pythagoreischen Kommas verkleinert, und genau dadurch schliesst sich der Zirkel exakt.
+- **Grosse Terz:** 12-TET = 400 Cent gegenüber rein (5:4) = 386 Cent. Fehler etwa **14 Cent** (deutlich hörbar). Das gibt den Dur-Akkorden am Klavier ihren charakteristischen, leicht "angerauten" Klang.
 
 Die gleichstufige Stimmung wurde mehrfach unabhängig entdeckt; sie ist ausdrücklich **kein rein europäisches Konzept**:
 
@@ -111,17 +111,17 @@ Daten und Fakten:
 - Schönberg entwickelte die Technik 1921 und erklärte sie 1923 privat seinen Schülern.
 - Schlüsselwerke: die *Fünf Klavierstücke* op. 23 (1920–1923; ihr fünfter Satz gilt als erstes Zwölftonwerk) und die *Suite für Klavier* op. 25 (1921–1923, erste durchgehende Anwendung).
 - **Prioritätsstreit:** **Josef Matthias Hauer** veröffentlichte sein "Gesetz der zwölf Töne" bereits 1919, allerdings mit ungeordneten Sechston-Gruppen ("Tropen") statt einer geordneten Reihe.
-- Getragen wurde die Technik etwa zwei Jahrzehnte fast ausschließlich von der **Zweiten Wiener Schule**: Schönberg, Alban Berg und Anton Webern.
+- Getragen wurde die Technik etwa zwei Jahrzehnte fast ausschliesslich von der **Zweiten Wiener Schule**: Schönberg, Alban Berg und Anton Webern.
 
 Wichtig: die Zwölftontechnik **organisiert** die zwölf bereits vorhandenen Halbtöne neu. Sie ändert nicht die Stimmung (es bleibt 12-TET). Sie ist also kein neues Tonsystem, sondern ein Kompositionsverfahren auf dem etablierten Zwölffundament. Symbolisch lässt sie sich als eine Art "Gleichberechtigung aller zwölf Töne" lesen, im Gegensatz zur Hierarchie der klassischen Tonalität.
 
 ## Kulturen weltweit
 
-Die Zwölfteilung ist die **westliche** Lösung, nicht die universelle. Andere Kulturen wählten andere Näherungen aus der Kettenbruch-Liste oder verließen die Oktav-Logik teilweise ganz. Ein Überblick:
+Die Zwölfteilung ist die **westliche** Lösung, nicht die universelle. Andere Kulturen wählten andere Näherungen aus der Kettenbruch-Liste oder verliessen die Oktav-Logik teilweise ganz. Ein Überblick:
 
 | Tradition | Teilung der Oktave | Kurzcharakter |
 |---|---|---|
-| Westeuropa | 12 gleich (12-TET) | Quinte sehr gut, Terz mäßig getroffen; freie Modulation |
+| Westeuropa | 12 gleich (12-TET) | Quinte sehr gut, Terz mässig getroffen; freie Modulation |
 | Indien (Shruti) | 22 Shruti (ungleich) | feinste theoretische Stufung; Praxis fluide |
 | Arabische Welt (Maqam) | 24 Vierteltöne (idealisiert) | neutrale Stufen, in der Praxis variabel |
 | Türkei (Makam) | 53 Kommata (Holdrisch) | sehr feine Stufung; einer der "besseren" Näherungswerte |
@@ -130,9 +130,9 @@ Die Zwölfteilung ist die **westliche** Lösung, nicht die universelle. Andere K
 
 ### Indien: 22 Shruti und 7 Swara
 
-Die nordindische und die karnatische Tradition kennen theoretisch **22 Shruti** pro Oktave. Das Wort bedeutet ungefähr "das, was gehört wird"; gemeint sind die kleinsten wahrnehmbaren Tonhöhenschritte. Diese Shrutis sind **nicht gleich groß** und beruhen auf natürlichen Verhältnissen, nicht auf einer Gleichteilung. Aus ihnen werden die sieben **Swara** (Sa, Re, Ga, Ma, Pa, Dha, Ni) ausgewählt, die wiederum das praktische Gerüst von zwölf Standardtönen bilden. Die feinen Tonhöhen geben jedem Raga seine emotionale Färbung. Die Theorie wurde zuerst im *Natyashastra* des Bharata (Datierung etwa 200 v. Chr. bis 200 n. Chr., unsicher) formuliert und im *Sangita Ratnakara* des Sarangadeva fortgeführt.
+Die nordindische und die karnatische Tradition kennen theoretisch **22 Shruti** pro Oktave. Das Wort bedeutet ungefähr "das, was gehört wird"; gemeint sind die kleinsten wahrnehmbaren Tonhöhenschritte. Diese Shrutis sind **nicht gleich gross** und beruhen auf natürlichen Verhältnissen, nicht auf einer Gleichteilung. Aus ihnen werden die sieben **Swara** (Sa, Re, Ga, Ma, Pa, Dha, Ni) ausgewählt, die wiederum das praktische Gerüst von zwölf Standardtönen bilden. Die feinen Tonhöhen geben jedem Raga seine emotionale Färbung. Die Theorie wurde zuerst im *Natyashastra* des Bharata (Datierung etwa 200 v. Chr. bis 200 n. Chr., unsicher) formuliert und im *Sangita Ratnakara* des Sarangadeva fortgeführt.
 
-Wichtiger Vorbehalt: "Indien hat 22 Töne" ist eine **Übervereinfachung**. Die 22 Shruti sind eine theoretische Größe, kein Satz aus 22 festen, gleichabständigen Tasten. In der Praxis tragen die zwölf Swara das System; viele Zwischentöne entstehen durch Verzierungen (Gamaka) und variieren je nach Raga, Phrase und Interpret. Ob die 22 Shruti in der heutigen Aufführungspraxis als feste Einheiten überhaupt existieren, ist ein **aktives Forschungsfeld** und wissenschaftlich nicht abschließend geklärt.
+Wichtiger Vorbehalt: "Indien hat 22 Töne" ist eine **Übervereinfachung**. Die 22 Shruti sind eine theoretische Grösse, kein Satz aus 22 festen, gleichabständigen Tasten. In der Praxis tragen die zwölf Swara das System; viele Zwischentöne entstehen durch Verzierungen (Gamaka) und variieren je nach Raga, Phrase und Interpret. Ob die 22 Shruti in der heutigen Aufführungspraxis als feste Einheiten überhaupt existieren, ist ein **aktives Forschungsfeld** und wissenschaftlich nicht abschliessend geklärt.
 
 ### Arabische Welt: Maqam und die 24 Vierteltöne
 
@@ -185,10 +185,10 @@ Für ein sachliches Verständnis ist die Trennung entscheidend: Diese Symbolik i
 Drei Faktoren wirkten zusammen:
 
 1. **Mathematik und Akustik:** Zwölf ist der kleinste praktikable Wert, der die reine Quinte (Fehler nur etwa 2 Cent) sehr gut und die Terz brauchbar trifft.
-2. **Modulationsbedarf der Tasteninstrumente:** Ältere Stimmungen (etwa die mitteltönige) klangen in wenigen Tonarten schön, aber in entfernten Tonarten entstand die unbrauchbare Wolfsquinte. Die Gleichstufigkeit verteilt die Verstimmung gleichmäßig und erlaubt freie Modulation in alle Tonarten. Das war entscheidend für die harmonisch reiche Musik des 18. Jahrhunderts und für alles, was darauf aufbaute (von der romantischen Harmonik bis zum Jazz am Klavier).
+2. **Modulationsbedarf der Tasteninstrumente:** Ältere Stimmungen (etwa die mitteltönige) klangen in wenigen Tonarten schön, aber in entfernten Tonarten entstand die unbrauchbare Wolfsquinte. Die Gleichstufigkeit verteilt die Verstimmung gleichmässig und erlaubt freie Modulation in alle Tonarten. Das war entscheidend für die harmonisch reiche Musik des 18. Jahrhunderts und für alles, was darauf aufbaute (von der romantischen Harmonik bis zum Jazz am Klavier).
 3. **Standardisierung und Trägheit:** Einmal in Instrumentenbau, Notation und Ausbildung verankert, verstärkte sich das System selbst. Manche Quellen vergleichen das mit einem Pfad-Abhängigkeits-Effekt (ähnlich der QWERTZ-Tastatur): nicht das theoretisch beste System gewinnt, sondern das praktisch durchgesetzte. Alternativen wie 19-, 31- oder 53-TET nähern die reine Intonation **besser** an, setzten sich aber praktisch nicht durch.
 
-Hinzu kommt ein soziokultureller Aspekt: Die standardisierte, "rationalisierte" Stimmung galt als technisch-wissenschaftlich fortschrittlich. Ihre weltweite Verbreitung, einschließlich der Übernahme in China, war Teil breiterer Modernisierungs- und Austauschprozesse, nicht reiner akustischer Überlegenheit.
+Hinzu kommt ein soziokultureller Aspekt: Die standardisierte, "rationalisierte" Stimmung galt als technisch-wissenschaftlich fortschrittlich. Ihre weltweite Verbreitung, einschliesslich der Übernahme in China, war Teil breiterer Modernisierungs- und Austauschprozesse, nicht reiner akustischer Überlegenheit.
 
 ## Gegenwart
 
@@ -197,19 +197,19 @@ Heute ist die gleichstufige Zwölfteilung (12-TET) das mit Abstand vorherrschend
 - dem Klavier und allen Tasteninstrumenten,
 - der Gitarre und allen bundierten Instrumenten,
 - dem MIDI-Standard und praktisch der gesamten elektronischen Musikproduktion,
-- nahezu der gesamten populären Musik (Pop, Rock, Jazz, Hip-Hop) und dem Großteil der heutigen klassischen Aufführungspraxis.
+- nahezu der gesamten populären Musik (Pop, Rock, Jazz, Hip-Hop) und dem Grossteil der heutigen klassischen Aufführungspraxis.
 
 Schönbergs Zwölftontechnik bleibt historisch einflussreich und in der Kunstmusik des 20. Jahrhunderts ein fester Bezugspunkt, auch wenn sie nie eine Mehrheitspraxis wurde. Sie hat das spätere serielle Komponieren und Teile der Filmmusik geprägt.
 
-Parallel existiert eine lebendige, kleine **mikrotonale Szene**, die bewusst mit anderen Teilungen arbeitet: 19-, 31- und 53-TET sowie reine Intonation. Diese Bewegung sieht in 12-TET ausdrücklich nicht das Optimum, sondern eine historische Konvention, und nutzt heutige Software und elektronische Instrumente, um Alternativen praktisch erfahrbar zu machen. Zugleich werden die traditionellen außereuropäischen Systeme (Maqam, indische Ragas, Gamelan) weiter gepflegt; in manchen Regionen geraten ihre feinen Stimmungsdetails durch die Dominanz von 12-TET-Instrumenten und -Software allerdings unter Druck.
+Parallel existiert eine lebendige, kleine **mikrotonale Szene**, die bewusst mit anderen Teilungen arbeitet: 19-, 31- und 53-TET sowie reine Intonation. Diese Bewegung sieht in 12-TET ausdrücklich nicht das Optimum, sondern eine historische Konvention, und nutzt heutige Software und elektronische Instrumente, um Alternativen praktisch erfahrbar zu machen. Zugleich werden die traditionellen aussereuropäischen Systeme (Maqam, indische Ragas, Gamelan) weiter gepflegt; in manchen Regionen geraten ihre feinen Stimmungsdetails durch die Dominanz von 12-TET-Instrumenten und -Software allerdings unter Druck.
 
 ## Vorbehalte & verbreitete Irrtümer
 
 - **"Die Zwölfteilung ist naturgegeben."** Falsch in dieser Schärfe. Aus der Physik folgen objektiv nur Oktave und Quinte/Quarte als sehr konsonant, nicht die Zahl 12. Zwölf ist ein historisch gewachsener, sehr guter Kompromiss. Der direkte Gegenbeweis sind die anderen Kulturen.
-- **"Bach komponierte für die gleichstufige Stimmung."** Weitgehend widerlegt. "Wohltemperiert" meinte "in allen Tonarten gut spielbar", nicht "alle Halbtöne gleich groß". Welche Stimmung Bach genau wollte, ist bis heute umstritten.
-- **"Gleichstufig ist die beste Stimmung."** Wertend und relativierungsbedürftig. 12-TET ist die praktischste, nicht die reinste Stimmung. Jedes Intervall außer der Oktave ist leicht verstimmt, die Terz spürbar (etwa 14 Cent). "Besser" hängt vom Ziel ab (Modulationsfreiheit gegen klangliche Reinheit).
+- **"Bach komponierte für die gleichstufige Stimmung."** Weitgehend widerlegt. "Wohltemperiert" meinte "in allen Tonarten gut spielbar", nicht "alle Halbtöne gleich gross". Welche Stimmung Bach genau wollte, ist bis heute umstritten.
+- **"Gleichstufig ist die beste Stimmung."** Wertend und relativierungsbedürftig. 12-TET ist die praktischste, nicht die reinste Stimmung. Jedes Intervall ausser der Oktave ist leicht verstimmt, die Terz spürbar (etwa 14 Cent). "Besser" hängt vom Ziel ab (Modulationsfreiheit gegen klangliche Reinheit).
 - **"Indien hat 22 Töne / die arabische Musik hat 24."** Beides übervereinfacht. Es sind theoretische Modelle; die gelebte Praxis ist fluide und nicht streng gleichstufig.
-- **"12-TET hat ein Europäer erfunden."** Verzerrt. Die erste korrekte mathematische Lösung stammt von Zhu Zaiyu (China, 1584); in Europa entstand sie unabhängig (Galilei, Stevin, Mersenne, Werckmeister). Ob und wie sich diese frühen Beschreibungen gegenseitig beeinflussten, ist historisch nicht abschließend geklärt.
+- **"12-TET hat ein Europäer erfunden."** Verzerrt. Die erste korrekte mathematische Lösung stammt von Zhu Zaiyu (China, 1584); in Europa entstand sie unabhängig (Galilei, Stevin, Mersenne, Werckmeister). Ob und wie sich diese frühen Beschreibungen gegenseitig beeinflussten, ist historisch nicht abschliessend geklärt.
 - **"Die Zwölf stammt aus Zahlensymbolik (Tierkreis, Monate, Fingerglieder)."** Spekulativ und für die musikalische Zwölf nicht belegt. Die seriösen Fachquellen leiten die Zwölf aus dem Quinten-Oktaven-Kompromiss her. Die allgemeine Kulturgeschichte der Zwölf darf nicht mit der spezifischen Akustik der Tonleiter vermischt werden.
 - **Unsichere Detaildaten (ausdrücklich markiert):** das Einführungsjahr der Cent-Einheit (1875 / 1880 / 1885, am ehesten 1885); die genaue Datierung des *Natyashastra*; das genaue erste Zwölftonwerk (op. 23 Satz 5 gegenüber op. 25); die strenge Äquidistanz der thailändischen 7-TET-Stimmung.
 

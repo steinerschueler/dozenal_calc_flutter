@@ -75,8 +75,11 @@ String compactF64String(double v, int base) {
   final frac = x - x.floorToDouble();
   if (frac > fracEpsilon) {
     sb.write('.');
-    sb.write(_digitsToAscii(
-        DozenalConverter.fracToDigits(frac, _crossFracDigits, base: base)));
+    sb.write(
+      _digitsToAscii(
+        DozenalConverter.fracToDigits(frac, _crossFracDigits, base: base),
+      ),
+    );
     sb.write('…');
   }
   return sb.toString();

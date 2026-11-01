@@ -8,8 +8,20 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:dozenal_calc_flutter/theory/unit_theory.dart';
 
 const _allTags = [
-  'de', 'en', 'fr', 'es', 'it', 'ru', 'ga',
-  'hi', 'zh', 'zh-Hant', 'cy', 'ja', 'fa', 'ar',
+  'de',
+  'en',
+  'fr',
+  'es',
+  'it',
+  'ru',
+  'ga',
+  'hi',
+  'zh',
+  'zh-Hant',
+  'cy',
+  'ja',
+  'fa',
+  'ar',
 ];
 
 void main() {

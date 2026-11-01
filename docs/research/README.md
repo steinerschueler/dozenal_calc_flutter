@@ -122,7 +122,7 @@ verdrahtet (`lib/theory/<lang>/<block>_<lang>.dart`).
 
 ## Methodik (verbindlich)
 
-Maßstab ist ein bestehendes Dossier wie [`nature_pyrit.md`](nature_pyrit.md).
+Massstab ist ein bestehendes Dossier wie [`nature_pyrit.md`](nature_pyrit.md).
 
 1. **Dossier zuerst** (`docs/research/<kategorie>_<thema>.md`), gegliedert in
    Sach-Abschnitte **plus** einen expliziten Abschnitt **„Vorbehalte & verbreitete

@@ -215,11 +215,14 @@ class _DozenalCalcAppState extends State<DozenalCalcApp>
                         // (the converter display scales itself; see there).
                         final mq = MediaQuery.of(ctx);
                         final scale = effectiveTextScale(
-                          _calcPrefs.fontSize, mq.size.shortestSide);
+                          _calcPrefs.fontSize,
+                          mq.size.shortestSide,
+                        );
                         return MediaQuery(
                           data: mq.copyWith(
                             textScaler: TextScaler.linear(
-                                mq.textScaler.scale(1.0) * scale),
+                              mq.textScaler.scale(1.0) * scale,
+                            ),
                           ),
                           child: child!,
                         );
@@ -406,8 +409,7 @@ class _CalcScaffoldState extends State<_CalcScaffold> {
   /// 2 = asset converter) for the gliding peek cards; falls back to the
   /// settled page before the controller has dimensions.
   double get _pagerProgress {
-    if (_pageController.hasClients &&
-        _pageController.position.haveDimensions) {
+    if (_pageController.hasClients && _pageController.position.haveDimensions) {
       return (_pageController.page ?? _page.toDouble()).clamp(0.0, 2.0);
     }
     return _page.toDouble();
@@ -470,7 +472,6 @@ class _CalcScaffoldState extends State<_CalcScaffold> {
     _focusNode.dispose();
     super.dispose();
   }
-
 
   bool _isModeSelected(CalcToken token) {
     if (token is Doz) return _state.numeralSystem == NumeralSystem.doz;
@@ -926,10 +927,10 @@ class _PagePeekOverlay extends StatelessWidget {
     double at(int i) => (1 - (progress - i).abs()).clamp(0.0, 1.0);
 
     Widget dot(Color color) => Container(
-          width: _dot,
-          height: _dot,
-          decoration: BoxDecoration(color: color, shape: BoxShape.circle),
-        );
+      width: _dot,
+      height: _dot,
+      decoration: BoxDecoration(color: color, shape: BoxShape.circle),
+    );
 
     final dotsW = _dot + (labels.length - 1) * _dotPitch;
 
@@ -942,8 +943,9 @@ class _PagePeekOverlay extends StatelessWidget {
           decoration: BoxDecoration(
             // Opaque enough that the bright equals glyph beneath cannot
             // ghost through as a stray dash (device-found at alpha 0.45).
-            color: (t.isDark ? Colors.black : Colors.white)
-                .withValues(alpha: 0.80),
+            color: (t.isDark ? Colors.black : Colors.white).withValues(
+              alpha: 0.80,
+            ),
             borderRadius: BorderRadius.circular(14),
           ),
           child: Column(
@@ -976,10 +978,7 @@ class _PagePeekOverlay extends StatelessWidget {
                 child: Stack(
                   children: [
                     for (var i = 0; i < labels.length; i++)
-                      Positioned(
-                        left: i * _dotPitch,
-                        child: dot(t.textMuted),
-                      ),
+                      Positioned(left: i * _dotPitch, child: dot(t.textMuted)),
                     // The active dot is a fourth dot drawn OVER the row at
                     // the continuous pager position — one page of travel =
                     // one dot-pitch, so it glides with the finger.

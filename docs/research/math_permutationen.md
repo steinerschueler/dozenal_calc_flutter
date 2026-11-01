@@ -6,7 +6,7 @@
 **Verifikation:** Alle Zahlen per Python/Bash nachgerechnet. Merge aus drei Recherche-
 Dossiers (perm_a Kombinatorik · perm_b Change Ringing · perm_c Gruppen-Brücke).
 
-> Methodik gemäß `docs/research/README.md`. Maßstab `nature_pyrit.md`,
+> Methodik gemäss `docs/research/README.md`. Massstab `nature_pyrit.md`,
 > `math_zyklische_zahlen.md`.
 
 ---
@@ -49,7 +49,7 @@ Stelle" 12 = 2²·3 verbraucht zwei Zweien und eine Drei; davon gibt es min(10/2
 (In Basis 10 endet 12! auf zwei Nullen, weil nur min(10, 2) = 2 Fünfer-Zweier-Paare
 übrig.) Die vielen Endnullen sind ein Dozenal-Effekt.
 
-Größeneinordnung: Zeigte man jede Sekunde eine neue Reihenfolge, bräuchte man für alle 12!
+Grösseneinordnung: Zeigte man jede Sekunde eine neue Reihenfolge, bräuchte man für alle 12!
 rund **15,18 Jahre** (479 001 600 / 31 557 600 Sekunden je Jahr). An einem **runden** Tisch
 zählt nur die Sitz*folge*, nicht der Startplatz — dann sind es (12−1)! = **11! = 39 916 800**
 Anordnungen.
@@ -130,7 +130,7 @@ ist nur die typische Turm-Glockenzahl (Maximus), keine magische Eigenschaft.
 geläutete Stück hatte, geben Quellen unterschiedlich an (Kategorisierung nach Methode).
 Deshalb hier nur „einige Zehntausend / ein winziger Bruchteil", keine harte Rekordzahl.
 
-**Vorbehalt 6: 12! ist groß, aber nicht riesig.** Ein Kartenspiel hat 52! Reihenfolgen —
+**Vorbehalt 6: 12! ist gross, aber nicht riesig.** Ein Kartenspiel hat 52! Reihenfolgen —
 unvorstellbar mehr. 12! ist gerade noch greifbar (Jahre, nicht Universumsalter).
 
 ---

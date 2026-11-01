@@ -147,12 +147,14 @@ class AssetKeypad extends StatelessWidget {
   // units) + the system/Wert row. Memory and the genera share Set 3 via
   // _drillColumns, so no panel swap is needed.
   Widget _middleSection({required bool tight, required bool fixedHeights}) {
-    return _panel(const ValueKey('main'), kSet1, kSet2,
-        bottomCells: [
-          for (final tk in _systemTokens) _opCell(tk),
-          _valueCell(),
-        ],
-        tight: tight, fixedHeights: fixedHeights);
+    return _panel(
+      const ValueKey('main'),
+      kSet1,
+      kSet2,
+      bottomCells: [for (final tk in _systemTokens) _opCell(tk), _valueCell()],
+      tight: tight,
+      fixedHeights: fixedHeights,
+    );
   }
 
   /// A 5-row panel: four op rows (opColA · opColB · drillColA · drillColB)
@@ -174,13 +176,13 @@ class AssetKeypad extends StatelessWidget {
         : Expanded(flex: flex, child: child);
 
     Widget fourCellRow(List<Widget> cells) => Row(
-          children: [
-            for (var i = 0; i < cells.length; i++) ...[
-              if (i > 0) const SizedBox(width: 8),
-              Expanded(child: cells[i]),
-            ],
-          ],
-        );
+      children: [
+        for (var i = 0; i < cells.length; i++) ...[
+          if (i > 0) const SizedBox(width: 8),
+          Expanded(child: cells[i]),
+        ],
+      ],
+    );
 
     return Column(
       key: key,
@@ -189,12 +191,14 @@ class AssetKeypad extends StatelessWidget {
       children: [
         for (var r = 0; r < 4; r++) ...[
           if (r > 0) SizedBox(height: rowGap),
-          rowWrap(fourCellRow([
-            _opCell(opColA[r]),
-            _opCell(opColB[r]),
-            drillA[r],
-            drillB[r],
-          ])),
+          rowWrap(
+            fourCellRow([
+              _opCell(opColA[r]),
+              _opCell(opColB[r]),
+              drillA[r],
+              drillB[r],
+            ]),
+          ),
         ],
         SizedBox(height: bottomGap),
         rowWrap(fourCellRow(bottomCells)),
@@ -332,8 +336,8 @@ class AssetKeypad extends StatelessWidget {
               color: !active
                   ? t.inertKey
                   : (pressed
-                      ? (isAc ? t.acPressed : t.opPressed)
-                      : (isAc ? t.ac : t.op)),
+                        ? (isAc ? t.acPressed : t.opPressed)
+                        : (isAc ? t.ac : t.op)),
             ),
           );
         },
@@ -482,7 +486,9 @@ class AssetKeypad extends StatelessWidget {
                                 equalsHint!,
                                 maxLines: 1,
                                 style: TextStyle(
-                                    fontSize: 9.5, color: t.textFaint),
+                                  fontSize: 9.5,
+                                  color: t.textFaint,
+                                ),
                               ),
                             ),
                           ),
@@ -530,14 +536,16 @@ class AssetKeypad extends StatelessWidget {
     final rawW = w.isFinite
         ? (w - 6 * interBlockGap - groupGapBase) / 8
         : tabletButtonSize;
-    final buttonSize =
-        math.min(rawH, rawW).clamp(breitMinTouchTarget, tabletButtonSize);
+    final buttonSize = math
+        .min(rawH, rawW)
+        .clamp(breitMinTouchTarget, tabletButtonSize);
 
-    final baseNaturalWidth =
-        8 * buttonSize + 6 * interBlockGap + groupGapBase;
+    final baseNaturalWidth = 8 * buttonSize + 6 * interBlockGap + groupGapBase;
     final hSlack = w.isFinite ? math.max(0.0, w - baseNaturalWidth) : 0.0;
-    final groupGap =
-        (groupGapBase + hSlack / 2).clamp(groupGapBase, maxGroupGap);
+    final groupGap = (groupGapBase + hSlack / 2).clamp(
+      groupGapBase,
+      maxGroupGap,
+    );
     final contentWidth = 8 * buttonSize + 6 * interBlockGap + groupGap;
 
     final content = _buildBreitContent(
@@ -581,46 +589,46 @@ class AssetKeypad extends StatelessWidget {
         SizedBox(width: buttonSize, height: buttonSize, child: child);
 
     Widget column(List<Widget> children) => Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            for (var i = 0; i < 4; i++) ...[
-              if (i > 0) const SizedBox(height: tabletColGap),
-              cell(i < children.length ? children[i] : const SizedBox()),
-            ],
-          ],
-        );
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        for (var i = 0; i < 4; i++) ...[
+          if (i > 0) const SizedBox(height: tabletColGap),
+          cell(i < children.length ? children[i] : const SizedBox()),
+        ],
+      ],
+    );
 
     Widget opColumn(List<CalcToken> tokens) =>
         column([for (final tk in tokens) _opCell(tk)]);
 
     Widget digitGrid() => Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            for (var r = 0; r < kDigitGridRows.length; r++) ...[
-              if (r > 0) const SizedBox(height: tabletDigitGap),
-              Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  for (var c = 0; c < kDigitGridRows[r].length; c++) ...[
-                    if (c > 0) const SizedBox(width: tabletDigitGap),
-                    cell(_digitCell(kDigitGridRows[r][c])),
-                  ],
-                ],
-              ),
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        for (var r = 0; r < kDigitGridRows.length; r++) ...[
+          if (r > 0) const SizedBox(height: tabletDigitGap),
+          Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              for (var c = 0; c < kDigitGridRows[r].length; c++) ...[
+                if (c > 0) const SizedBox(width: tabletDigitGap),
+                cell(_digitCell(kDigitGridRows[r][c])),
+              ],
             ],
-          ],
-        );
+          ),
+        ],
+      ],
+    );
 
     final (drillA, drillB) = _drillColumns();
 
     Widget gap() => const SizedBox(width: tabletColGap);
     final dividerHeight = 4 * buttonSize + 3 * interBlockGap;
     Widget bigGap() => SizedBox(
-          width: groupGap,
-          child: Center(
-            child: Container(width: 1, height: dividerHeight, color: t.hairline),
-          ),
-        );
+      width: groupGap,
+      child: Center(
+        child: Container(width: 1, height: dividerHeight, color: t.hairline),
+      ),
+    );
 
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
@@ -781,8 +789,8 @@ class _RoundKeyState extends State<_RoundKey> {
                   color: !enabled
                       ? t.inertKey
                       : (_pressed
-                          ? t.opPressed
-                          : (widget.active ? t.accentGold : t.op)),
+                            ? t.opPressed
+                            : (widget.active ? t.accentGold : t.op)),
                   fontSize: 15,
                   fontWeight: FontWeight.w600,
                 ),

@@ -925,12 +925,7 @@ List<ProseChapter> _werteChaptersZh() => const [
         'R1',
         'A2',
       ),
-      Source(
-        '国际货币基金组织——储备数据',
-        'https://www.imf.org/en/Data',
-        'R1',
-        'A3',
-      ),
+      Source('国际货币基金组织——储备数据', 'https://www.imf.org/en/Data', 'R1', 'A3'),
       Source(
         '世界黄金协会——中央银行统计数据（利益相关方）',
         'https://www.gold.org/goldhub/data/monthly-central-bank-statistics',

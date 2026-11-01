@@ -6,9 +6,9 @@ Das Dodekaeder, die zwölf Tierkreiszeichen, zwölfteilige Bildzyklen und zwölf
 
 ### Das geistige Fundament: Platons "Timaios"
 
-Die abendländische Symbolik des Zwölfflächners (Dodekaeder) wurzelt in Platons Dialog "Timaios". Das reguläre Dodekaeder hat zwölf fünfeckige Flächen, zwanzig Ecken und dreißig Kanten. Es ist einer der fünf platonischen Körper.
+Die abendländische Symbolik des Zwölfflächners (Dodekaeder) wurzelt in Platons Dialog "Timaios". Das reguläre Dodekaeder hat zwölf fünfeckige Flächen, zwanzig Ecken und dreissig Kanten. Es ist einer der fünf platonischen Körper.
 
-Vier dieser Körper ordnete Platon den vier Elementen zu: Tetraeder = Feuer, Würfel = Erde, Oktaeder = Luft, Ikosaeder = Wasser. Der Dodekaeder blieb als fünfter, übriger Körper. Platon wies ihn dem Kosmos als Ganzem zu. Sinngemäß schrieb er, Gott habe das Dodekaeder benutzt, "um die Sternbilder am ganzen Himmel anzuordnen". Aus dieser Stelle stammt die durchgehende Gleichsetzung: zwölf Flächen = zwölf Tierkreiszeichen = Himmel/Kosmos. Spätere Tradition koppelte den Körper an die Quintessenz, die fünfte, himmlische Substanz (den Äther).
+Vier dieser Körper ordnete Platon den vier Elementen zu: Tetraeder = Feuer, Würfel = Erde, Oktaeder = Luft, Ikosaeder = Wasser. Der Dodekaeder blieb als fünfter, übriger Körper. Platon wies ihn dem Kosmos als Ganzem zu. Sinngemäss schrieb er, Gott habe das Dodekaeder benutzt, "um die Sternbilder am ganzen Himmel anzuordnen". Aus dieser Stelle stammt die durchgehende Gleichsetzung: zwölf Flächen = zwölf Tierkreiszeichen = Himmel/Kosmos. Spätere Tradition koppelte den Körper an die Quintessenz, die fünfte, himmlische Substanz (den Äther).
 
 Diese Linie ist der ikonografische Schlüssel des ganzen Themas. Sie zieht sich ungebrochen über Pacioli und Leonardo (Renaissance) und Kepler bis zu Escher und Dalí im 20. Jahrhundert.
 
@@ -53,11 +53,11 @@ Dalí erklärte das Bild über die "himmlische Kommunion der Zahl Zwölf". Sein 
 
 ### Die römischen Bronze-Dodekaeder
 
-Hohle, zwölfflächige Objekte aus Bronze beziehungsweise Kupferlegierung. Jede der zwölf fünfeckigen Flächen trägt meist ein kreisrundes Loch wechselnden Durchmessers; an den zwanzig Ecken sitzen kleine Knöpfe oder Kugeln. Größe etwa 4 bis 11 cm. Herstellung im Wachsausschmelzverfahren.
+Hohle, zwölfflächige Objekte aus Bronze beziehungsweise Kupferlegierung. Jede der zwölf fünfeckigen Flächen trägt meist ein kreisrundes Loch wechselnden Durchmessers; an den zwanzig Ecken sitzen kleine Knöpfe oder Kugeln. Grösse etwa 4 bis 11 cm. Herstellung im Wachsausschmelzverfahren.
 
 - Mindestens rund 120 bis 130 Exemplare sind bekannt (Zählungen variieren je nach Quelle).
 - Datierung: spätes 2. bis spätes 4. Jahrhundert n. Chr.
-- Fundverteilung: fast ausschließlich in den nordwestlichen Provinzen des Römischen Reichs (Gallien, Germanien, Britannien, Alpenraum). Auffällig: kein einziges Exemplar aus Italien selbst.
+- Fundverteilung: fast ausschliesslich in den nordwestlichen Provinzen des Römischen Reichs (Gallien, Germanien, Britannien, Alpenraum). Auffällig: kein einziges Exemplar aus Italien selbst.
 - Erster dokumentierter Fund 1739 in England (zusammen mit römischen Münzen).
 - Kein einziges Exemplar trägt eine Inschrift oder Zahl. Es gibt keine antike Schriftquelle und keine antike Abbildung.
 
@@ -69,7 +69,7 @@ Das illuminierte Stundenbuch "Les Très Riches Heures du Duc de Berry" (um 1412�
 
 Der Kalenderteil umfasst genau zwölf ganzseitige Monatsminiaturen. Sie zeigen die "Monatsarbeiten" (labors of the months): typische ländliche und höfische Tätigkeiten, dazu Schlösser des Herzogs. Über jeder Szene sitzt eine Halbkreis-Lünette mit einem Sonnenwagen und den Tierkreiszeichen.
 
-Bemerkenswert präzise: Das äußere Band entspricht den 360 Grad des Himmelskreises, geteilt in zwölf 30-Grad-Sektoren für die zwölf Sternzeichen. Jeder Monat reicht von der Mitte eines Zeichens zur Mitte des nächsten — deshalb erscheinen pro Lünette zwei Zeichen (der Übergang). Hier ist die Zwölf zugleich Kalender, Kosmos und herrschaftliche Repräsentation. Das Blatt "Oktober" gilt wegen seiner Wasserspiegelung als Meilenstein der Lichtdarstellung.
+Bemerkenswert präzise: Das äussere Band entspricht den 360 Grad des Himmelskreises, geteilt in zwölf 30-Grad-Sektoren für die zwölf Sternzeichen. Jeder Monat reicht von der Mitte eines Zeichens zur Mitte des nächsten — deshalb erscheinen pro Lünette zwei Zeichen (der Übergang). Hier ist die Zwölf zugleich Kalender, Kosmos und herrschaftliche Repräsentation. Das Blatt "Oktober" gilt wegen seiner Wasserspiegelung als Meilenstein der Lichtdarstellung.
 
 ### "Labours of the Months" als Bildtradition
 
@@ -135,7 +135,7 @@ Ein wichtiger Sonderfall fällt aus dem Schema: Bei den römischen Bronze-Dodeka
 
 - Wissenschaft und Didaktik: Leonardos Polyeder-Tafeln, Eschers Werke und Dalís Abendmahl sind kanonische Lehrbeispiele für die Verschränkung von Mathematik und Kunst. Eschers "vacua"-Tradition ist in Geometrie- und Kristallographie-Didaktik präsent.
 - Museen: Dalís Abendmahl hängt in der National Gallery of Art, Washington. Römische Dodekaeder sind u. a. im Gallo-Römischen Museum Tongeren, im Rheinischen Landesmuseum Bonn und (nach dem Fund 2023) im Lincoln Museum ausgestellt. Islamische Tierkreis-Metallarbeiten und Girih-Fliesen sind im Metropolitan Museum und vergleichbaren Häusern vertreten.
-- Mediales Rätsel: Die römischen Dodekaeder sind ein populäres "großes Rätsel der Archäologie". Die Funde bei Norton Disney 2023/24 erzeugten breite Berichterstattung (Smithsonian, NPR, CNN u. a.).
+- Mediales Rätsel: Die römischen Dodekaeder sind ein populäres "grosses Rätsel der Archäologie". Die Funde bei Norton Disney 2023/24 erzeugten breite Berichterstattung (Smithsonian, NPR, CNN u. a.).
 - Wissenschaftliche Debatte: Die These von Lu und Steinhardt (Science, 2007), wonach spätmittelalterliche Girih-Muster quasikristalline (Penrose-artige) Strukturen vorwegnähmen, ist bis heute prominent diskutiert und umstritten (siehe Vorbehalte).
 - Public Domain: Die historischen Werke (Leonardo/Pacioli, Dürer, "Très Riches Heures", Girih, römische Dodekaeder) sind gemeinfrei und frei abbildbar. Escher- und Dalí-Abbildungen sind überwiegend noch urheberrechtlich geschützt; ihre Werkbeschreibungen sind aber frei zugänglich.
 
@@ -164,7 +164,7 @@ Im Einzelnen:
 
 **Goldener-Schnitt-Mythen (Pacioli, Leonardo).** Entgegen der populären Erzählung argumentierte Pacioli nicht, der Goldene Schnitt sei der Schlüssel zur Schönheit; er vertrat ein vitruvianisches System rationaler Proportionen. Die Deutung "Pacioli propagiere harmonische Schönheitsproportion" wird auf einen Lesefehler von 1799 zurückgeführt. Ebenso gibt es keinen Beleg, dass Leonardo den Goldenen Schnitt bewusst in Gemälden oder Proportionszeichnungen einsetzte; der "Vitruvianische Mensch" entspricht nicht dem Goldenen Schnitt. Phi-Raster über Mona Lisa und Vitruv sind nachträgliche Überdeutungen. Hinweis: Die Zuschreibung der Illustrationen an Leonardo ist gut belegt — nur die Verkopplung mit einer Schönheitslehre ist die Übertreibung.
 
-**Dalí — Zwölf belegt, Phi-Messungen umstritten.** Die Zwölf-Symbolik des Abendmahls ist durch Dalís eigenes Zitat gesichert und kein Irrtum. Oft heißt es zusätzlich, Leinwand und Dodekaeder folgten exakt dem Goldenen Schnitt. Diese präzisen Phi-Vermessungen sind teils nachträgliche Konstruktion und mit Vorsicht zu behandeln (gleiche Mythen-Dynamik wie bei Pacioli/Leonardo).
+**Dalí — Zwölf belegt, Phi-Messungen umstritten.** Die Zwölf-Symbolik des Abendmahls ist durch Dalís eigenes Zitat gesichert und kein Irrtum. Oft heisst es zusätzlich, Leinwand und Dodekaeder folgten exakt dem Goldenen Schnitt. Diese präzisen Phi-Vermessungen sind teils nachträgliche Konstruktion und mit Vorsicht zu behandeln (gleiche Mythen-Dynamik wie bei Pacioli/Leonardo).
 
 **Römische Dodekaeder — Zweck unbekannt, keine Zwölf-Symbolik belegt.** Es gibt keinen wissenschaftlichen Konsens über die Funktion; über 50 Hypothesen wurden vorgeschlagen (Messgerät, Kalender, Würfel, Kerzenhalter, Strickrahmen, Münzprüfer, Zepterknauf, Wahrsage- oder Ritualobjekt, handwerkliches Meisterstück). Einzelne populäre Theorien sind schwach gestützt: Die "Strickwerkzeug"-Deutung ist untergraben (früheste Strickreferenz erst 1535); die "Vermessungsinstrument"-Deutung scheitert an fehlenden Markierungen und stark variierenden, nicht normierten Lochdurchmessern. Die aktuelle Leitthese (nach Norton Disney) ist ein religiös-rituelles Objekt — gestützt auf den hohen Fertigungsaufwand und das Fehlen jeder schriftlichen Erwähnung. Das bleibt eine Hypothese, kein Beweis (spekulativ). Entscheidend für dieses Dossier: Ein Zusammenhang zwischen der Zwölfflächigkeit und einer Zahlensymbolik der Zwölf ist nicht belegt. Die Form ist möglicherweise rein geometrisch-handwerklich motiviert.
 

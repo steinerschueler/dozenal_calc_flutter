@@ -124,10 +124,7 @@ class AppRefCard extends StatelessWidget {
                 const SizedBox(height: 2),
                 Text(
                   '${app.maker} · ${app.genre}',
-                  style: TextStyle(
-                    color: t.textMuted,
-                    fontSize: 12,
-                  ),
+                  style: TextStyle(color: t.textMuted, fontSize: 12),
                 ),
                 const SizedBox(height: 8),
                 InkWell(
@@ -135,7 +132,9 @@ class AppRefCard extends StatelessWidget {
                   borderRadius: BorderRadius.circular(6),
                   child: Container(
                     padding: const EdgeInsets.symmetric(
-                        horizontal: 12, vertical: 6),
+                      horizontal: 12,
+                      vertical: 6,
+                    ),
                     decoration: BoxDecoration(
                       color: const Color(0xFF0A84FF),
                       borderRadius: BorderRadius.circular(6),
@@ -143,8 +142,11 @@ class AppRefCard extends StatelessWidget {
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Icon(app.web ? Icons.public : Icons.apple,
-                            color: Colors.white, size: 15),
+                        Icon(
+                          app.web ? Icons.public : Icons.apple,
+                          color: Colors.white,
+                          size: 15,
+                        ),
                         const SizedBox(width: 6),
                         Text(
                           app.web ? host : 'App Store',
@@ -155,8 +157,11 @@ class AppRefCard extends StatelessWidget {
                           ),
                         ),
                         const SizedBox(width: 4),
-                        const Icon(Icons.open_in_new,
-                            color: Colors.white, size: 13),
+                        const Icon(
+                          Icons.open_in_new,
+                          color: Colors.white,
+                          size: 13,
+                        ),
                       ],
                     ),
                   ),

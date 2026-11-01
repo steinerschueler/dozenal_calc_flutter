@@ -1295,7 +1295,7 @@ List<ManualChapter> _assetManualChaptersIt() => const [
       'la calcolatrice dei valori. Converte in modo esatto i pesi dei '
       'metalli preziosi e i tagli delle valute, ne stima il valore in una '
       'valuta di riferimento e confronta come questo valore si è '
-      'mantenuto nel corso dei secoli.'
+      'mantenuto nel corso dei secoli.',
     ),
     _H('Avanti e indietro'),
     _P(
@@ -1303,20 +1303,20 @@ List<ManualChapter> _assetManualChaptersIt() => const [
       'oltre il convertitore di unità — e appare la calcolatrice dei '
       'valori. Scorrendo verso destra torni indietro passo dopo passo. Al '
       'passaggio, i puntini con il nome della pagina indicano di nuovo '
-      'dove ti trovi; il puntino chiaro è la pagina attiva.'
+      'dove ti trovi; il puntino chiaro è la pagina attiva.',
     ),
     _P(
       'Come le altre calcolatrici, la calcolatrice dei valori conserva il '
       'suo input al passaggio. L\'aspetto è lo stesso del convertitore di '
       'unità — solo le colonne di tasti a destra conducono un livello più '
-      'in profondità.'
+      'in profondità.',
     ),
   ]),
   ManualChapter('Classe, genere, unità', [
     _P(
       'Mentre il convertitore di unità conosce due livelli (categoria e '
       'unità), la calcolatrice dei valori ne ha tre: classe, genere e '
-      'unità. Una conversione la digiti dall\'alto verso il basso.'
+      'unità. Una conversione la digiti dall\'alto verso il basso.',
     ),
     _H('I tre livelli'),
     _P(
@@ -1325,14 +1325,14 @@ List<ManualChapter> _assetManualChaptersIt() => const [
       'generi — per il metallo prezioso ad esempio oro, argento, platino '
       'e palladio; per la valuta le sigle delle valute. Se tocchi un '
       'genere, appaiono le sue unità. Un tocco su un\'unità la inserisce '
-      'come termine.'
+      'come termine.',
     ),
     _H('Indietro di un livello'),
     _P(
       'La classe o il genere scelto resta in alto nella colonna di destra '
       '— con bordo dorato — e funge da ritorno: un tocco lì conduce un '
       'livello più in alto. Così niente salta avanti e indietro, vedi '
-      'sempre dove ti trovi in quel momento.'
+      'sempre dove ti trovi in quel momento.',
     ),
     _H('Il tasto ='),
     _P(
@@ -1340,7 +1340,7 @@ List<ManualChapter> _assetManualChaptersIt() => const [
       'stessa grandezza nell\'unità successiva; per i pesi troy segue '
       'alla fine la notazione mista (per esempio „1 lb t 2 oz t 3 dwt“). '
       'Un cambio di classe o di genere scarta i termini completati, '
-      'mentre un numero già digitato rimane conservato.'
+      'mentre un numero già digitato rimane conservato.',
     ),
   ]),
   ManualChapter('Metrico e imperiale insieme', [
@@ -1351,7 +1351,7 @@ List<ManualChapter> _assetManualChaptersIt() => const [
       'contemporaneamente: le unità troy imperiali (gr, dwt, oz t, lb t) '
       'in una colonna, quelle metriche (g, kg) nell\'altra. Tocchi '
       'semplicemente quella desiderata — il mondo di lavoro si regola in '
-      'base all\'unità in cui hai inserito l\'ultimo valore.'
+      'base all\'unità in cui hai inserito l\'ultimo valore.',
     ),
     _H('I colori'),
     _P(
@@ -1362,13 +1362,13 @@ List<ManualChapter> _assetManualChaptersIt() => const [
       'sistema, la parentesi graffa mostra lo stesso valore nell\'altro '
       'sistema nel colore di quest\'ultimo, il segno DOZ/DEZ il colore '
       'della base. Le valute non hanno un asse dei mondi — i loro simboli '
-      'restano viola.'
+      'restano viola.',
     ),
     _H('Duodecimale o decimale'),
     _P(
       'La base delle cifre la cambi come nelle altre calcolatrici in '
       'Impostazioni → Sistema numerico; vale congiuntamente per tutte e '
-      'tre le calcolatrici ed è indipendente dal sistema di unità.'
+      'tre le calcolatrici ed è indipendente dal sistema di unità.',
     ),
   ]),
   ManualChapter('La memoria e gli altri tasti', [
@@ -1383,7 +1383,7 @@ List<ManualChapter> _assetManualChaptersIt() => const [
       'principale. Grigio significa vuoto o nulla disponibile. Nella '
       'direzione opposta, il tasto CONV della calcolatrice principale '
       'recupera il valore della riga del risultato (la sua opzione di '
-      'pressione prolungata: VAL).'
+      'pressione prolungata: VAL).',
     ),
     _H('Valore, calcolare e cancellare'),
     _P(
@@ -1391,13 +1391,13 @@ List<ManualChapter> _assetManualChaptersIt() => const [
       'appena c\'è un termine (vedi il capitolo successivo). Gli '
       'operatori scalari (× ÷ ⊕ ^ √ ㏒) fanno sì che il numero digitato '
       'sia esso stesso un piccolo calcolo, come nel convertitore di '
-      'unità. AC cancella tutto, Del il carattere precedente.'
+      'unità. AC cancella tutto, Del il carattere precedente.',
     ),
   ]),
   ManualChapter('Valore: convertire in una valuta', [
     _P(
       'Oltre alla conversione esatta dei pesi, la calcolatrice dei valori '
-      'può stimare un valore monetario approssimativo.'
+      'può stimare un valore monetario approssimativo.',
     ),
     _H('La modalità valore'),
     _P(
@@ -1405,28 +1405,28 @@ List<ManualChapter> _assetManualChaptersIt() => const [
       '„oz t“ di oro. Ora il tasto Valore diventa blu. Un tocco lì '
       'trasforma la navigazione in una scelta di valute di destinazione; '
       'se ne tocchi una, la riga del risultato mostra il valore con un '
-      '„≈“ davanti e una piccola nota datata sotto.'
+      '„≈“ davanti e una piccola nota datata sotto.',
     ),
     _H('I tassi'),
     _P(
       'I tassi sottostanti sono valori indicativi approssimativi e '
       'datati. Il tasto Tassi in basso a destra apre un editor in cui '
       'puoi sovrascrivere ogni tasso; un reset ripristina i valori '
-      'incorporati.'
+      'incorporati.',
     ),
     _H('Nessuna rete'),
     _P(
       'L\'app non recupera nulla da internet — il „≈“ significa '
       '„approssimativo, basato sui tassi“, mai „live“. Mantieni tu stesso '
       'i tassi aggiornati, ad esempio secondo Kitco per i metalli o la '
-      'BCE per le valute.'
+      'BCE per le valute.',
     ),
   ]),
   ManualChapter('Curva: il confronto storico', [
     _P(
       'Il tasto Curva — il cerchio a sinistra accanto alla barra di '
       'uguale — sostituisce la tastiera con un grafico; la × in alto lo '
-      'richiude.'
+      'richiude.',
     ),
     _H('Le tre serie'),
     _P(
@@ -1434,7 +1434,7 @@ List<ManualChapter> _assetManualChaptersIt() => const [
       'oro e oro in grano — cioè il potere d\'acquisto dell\'oro in cibo. '
       'Ogni serie è riferita al suo valore noto più antico; questo si '
       'trova come spessa linea dello zero al centro. Sopra la linea '
-      'significa più caro, sotto più economico, sempre rispetto all\'oro.'
+      'significa più caro, sotto più economico, sempre rispetto all\'oro.',
     ),
     _H('Leggere e muovere'),
     _P(
@@ -1444,7 +1444,7 @@ List<ManualChapter> _assetManualChaptersIt() => const [
       'cento anni. La banda ombreggiata attorno ai punti dell\'antichità '
       'è l\'intervallo stimato — l\'antichità è composta da singoli '
       'anelli (solo ordini di grandezza), nessuna linea attraversa una '
-      'lacuna. La riga delle fonti elenca il set di dati.'
+      'lacuna. La riga delle fonti elenca il set di dati.',
     ),
   ]),
 ];

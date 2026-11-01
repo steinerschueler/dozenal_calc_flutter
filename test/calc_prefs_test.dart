@@ -38,7 +38,9 @@ void main() {
     await first.load();
     await first.setMode(KeypadMode.scroll);
     await first.setProfile(KeypadProfile.simple);
-    await first.setNumeralSystem(NumeralSystem.doz); // non-default → real roundtrip
+    await first.setNumeralSystem(
+      NumeralSystem.doz,
+    ); // non-default → real roundtrip
     await first.setAngleMode(AngleMode.rad);
     await first.setFontSize(FontSize.large);
 
@@ -54,12 +56,17 @@ void main() {
   test('effectiveTextScale: phones unchanged at Normal, tablets boosted', () {
     expect(effectiveTextScale(FontSize.normal, 360), 1.0); // phone
     expect(effectiveTextScale(FontSize.normal, 600), 1.0); // phone/tablet edge
-    expect(effectiveTextScale(FontSize.normal, 800), greaterThan(1.3)); // tablet
+    expect(
+      effectiveTextScale(FontSize.normal, 800),
+      greaterThan(1.3),
+    ); // tablet
     expect(effectiveTextScale(FontSize.large, 360), closeTo(1.2, 1e-9));
     expect(effectiveTextScale(FontSize.xlarge, 360), closeTo(1.4, 1e-9));
     // User choice and tablet baseline compose.
-    expect(effectiveTextScale(FontSize.large, 800),
-        closeTo(effectiveTextScale(FontSize.normal, 800) * 1.2, 1e-9));
+    expect(
+      effectiveTextScale(FontSize.large, 800),
+      closeTo(effectiveTextScale(FontSize.normal, 800) * 1.2, 1e-9),
+    );
   });
 
   test('unknown stored strings fall back to the defaults', () async {

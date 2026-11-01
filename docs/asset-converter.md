@@ -182,7 +182,7 @@ Picker**:
 
 Scroll-/zoombare Kurve, die per **„Kurve"-Taste** das Keypad ersetzt
 (AnimatedSwitcher in `asset_page.dart`; `AssetState.toggleChart`/`chartOpen`;
-Schließen über das ×-Symbol im Chart, da das Keypad dann verdeckt ist).
+Schliessen über das ×-Symbol im Chart, da das Keypad dann verdeckt ist).
 
 **Framing (gold-bezogen, indexiert):** Jede Reihe wird **relativ zu Gold**
 gezeigt und auf ihren **ältesten Wert** indexiert (ältester → Index 1 → die
@@ -207,7 +207,7 @@ programmatisch abgeleitet → eine Quelle der Wahrheit).
   0-Linie**, Y-Labels als **Faktoren** (×A, ÷A) via `formatBaseNum`;
   **Unsicherheitsband** (gefüllte Fläche + Whisker) um die Antike. Era-Styling:
   Antike/sparse = diskrete Ringe, **Linie nur zwischen modernen Punkten**, nie
-  über Lücken. Reihen-Tabs (Gold/Silber/Getreide) + „Quellen"-Link + ×-Schließen.
+  über Lücken. Reihen-Tabs (Gold/Silber/Getreide) + „Quellen"-Link + ×-Schliessen.
 - `lib/price_sources_page.dart` — Quellen & Methodik (Ehrlichkeits-Note +
   `kPriceSources` mit `openExternalLink`).
 - „Kurve"-Taste in `asset_keypad.dart` (runde Taste neben der Gleichtaste,

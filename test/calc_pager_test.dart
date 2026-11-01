@@ -73,10 +73,12 @@ void main() {
   }
 
   String assetInput(WidgetTester tester) => tester
-      .widget<ConverterDisplay>(find.descendant(
-        of: find.byType(AssetBody),
-        matching: find.byType(ConverterDisplay),
-      ))
+      .widget<ConverterDisplay>(
+        find.descendant(
+          of: find.byType(AssetBody),
+          matching: find.byType(ConverterDisplay),
+        ),
+      )
       .topLine
       .number;
 
@@ -95,13 +97,13 @@ void main() {
     expect(find.byType(ConverterDisplay), findsNothing);
   });
 
-  testWidgets('physical keyboard routes to the visible calculator',
-      (tester) async {
+  testWidgets('physical keyboard routes to the visible calculator', (
+    tester,
+  ) async {
     await bootApp(tester);
     await tester.sendKeyEvent(LogicalKeyboardKey.digit5);
     await tester.pump();
-    var display =
-        tester.widget<TwoLineDisplay>(find.byType(TwoLineDisplay));
+    var display = tester.widget<TwoLineDisplay>(find.byType(TwoLineDisplay));
     expect(display.inputBuffer, [const Digit(DozenalDigit.d5)]);
 
     // On the converter page the same keys drive the converter…
@@ -116,94 +118,100 @@ void main() {
     expect(display.inputBuffer, [const Digit(DozenalDigit.d5)]);
   });
 
-  testWidgets('result bridge round trip: calc → converter (Ans) → calc (CONV)',
-      (tester) async {
-    await bootApp(tester, numeralSystem: 'doz'); // asserts dozenal digits
+  testWidgets(
+    'result bridge round trip: calc → converter (Ans) → calc (CONV)',
+    (tester) async {
+      await bootApp(tester, numeralSystem: 'doz'); // asserts dozenal digits
 
-    // 5 × 3 = → 13 (dozenal 13 = decimal 15).
-    await tester.sendKeyEvent(LogicalKeyboardKey.digit5);
-    await tester.sendKeyEvent(LogicalKeyboardKey.numpadMultiply);
-    await tester.sendKeyEvent(LogicalKeyboardKey.digit3);
-    await tester.sendKeyEvent(LogicalKeyboardKey.enter);
-    await tester.pump();
-    final display =
-        tester.widget<TwoLineDisplay>(find.byType(TwoLineDisplay));
-    expect(display.resultBuffer, [
-      const Digit(DozenalDigit.d1),
-      const Digit(DozenalDigit.d3),
-    ]);
+      // 5 × 3 = → 13 (dozenal 13 = decimal 15).
+      await tester.sendKeyEvent(LogicalKeyboardKey.digit5);
+      await tester.sendKeyEvent(LogicalKeyboardKey.numpadMultiply);
+      await tester.sendKeyEvent(LogicalKeyboardKey.digit3);
+      await tester.sendKeyEvent(LogicalKeyboardKey.enter);
+      await tester.pump();
+      final display = tester.widget<TwoLineDisplay>(
+        find.byType(TwoLineDisplay),
+      );
+      expect(display.resultBuffer, [
+        const Digit(DozenalDigit.d1),
+        const Digit(DozenalDigit.d3),
+      ]);
 
-    // Converter: Ans pulls the answer as the pending number (world base 12).
-    await swipeToConverter(tester);
-    await tester.tap(find.bySemanticsLabel('Ergebnis des Rechners einfügen'));
-    await tester.pump();
-    expect(converterInput(tester), '13');
+      // Converter: Ans pulls the answer as the pending number (world base 12).
+      await swipeToConverter(tester);
+      await tester.tap(find.bySemanticsLabel('Ergebnis des Rechners einfügen'));
+      await tester.pump();
+      expect(converterInput(tester), '13');
 
-    // Commit it as 13 ft (category first taps fine after Ans — the pending
-    // number survives the category switch).
-    await tester.tap(find.text('Length'));
-    await tester.pumpAndSettle();
-    await tester.tap(find.text('ft'));
-    await tester.pump();
-    expect(converterInput(tester), '13 ft');
+      // Commit it as 13 ft (category first taps fine after Ans — the pending
+      // number survives the category switch).
+      await tester.tap(find.text('Length'));
+      await tester.pumpAndSettle();
+      await tester.tap(find.text('ft'));
+      await tester.pump();
+      expect(converterInput(tester), '13 ft');
 
-    // Back on the calculator, CONV inserts the converter's shown result
-    // (13 ft → the same 13 in dozenal digits).
-    await swipeToCalculator(tester);
-    await tester
-        .tap(find.bySemanticsLabel("Insert the unit converter's result"));
-    await tester.pump();
-    final after = tester.widget<TwoLineDisplay>(find.byType(TwoLineDisplay));
-    expect(after.inputBuffer, [
-      const Digit(DozenalDigit.d1),
-      const Digit(DozenalDigit.d3),
-    ]);
-  });
+      // Back on the calculator, CONV inserts the converter's shown result
+      // (13 ft → the same 13 in dozenal digits).
+      await swipeToCalculator(tester);
+      await tester.tap(
+        find.bySemanticsLabel("Insert the unit converter's result"),
+      );
+      await tester.pump();
+      final after = tester.widget<TwoLineDisplay>(find.byType(TwoLineDisplay));
+      expect(after.inputBuffer, [
+        const Digit(DozenalDigit.d1),
+        const Digit(DozenalDigit.d3),
+      ]);
+    },
+  );
 
   testWidgets(
-      'asset bridge round trip: calc → asset (Ans) → calc (CONV fallback)',
-      (tester) async {
-    await bootApp(tester, numeralSystem: 'doz'); // asserts dozenal digits
+    'asset bridge round trip: calc → asset (Ans) → calc (CONV fallback)',
+    (tester) async {
+      await bootApp(tester, numeralSystem: 'doz'); // asserts dozenal digits
 
-    // 5 × 3 = → 13 (dozenal 13 = decimal 15).
-    await tester.sendKeyEvent(LogicalKeyboardKey.digit5);
-    await tester.sendKeyEvent(LogicalKeyboardKey.numpadMultiply);
-    await tester.sendKeyEvent(LogicalKeyboardKey.digit3);
-    await tester.sendKeyEvent(LogicalKeyboardKey.enter);
-    await tester.pump();
+      // 5 × 3 = → 13 (dozenal 13 = decimal 15).
+      await tester.sendKeyEvent(LogicalKeyboardKey.digit5);
+      await tester.sendKeyEvent(LogicalKeyboardKey.numpadMultiply);
+      await tester.sendKeyEvent(LogicalKeyboardKey.digit3);
+      await tester.sendKeyEvent(LogicalKeyboardKey.enter);
+      await tester.pump();
 
-    // Two left swipes → asset converter. The drill's Ans key (class level)
-    // pulls the calc answer as the pending number.
-    await swipePager(tester, -400);
-    await swipePager(tester, -400);
-    expect(find.byType(AssetKeypad), findsOneWidget);
-    await tester.tap(find.bySemanticsLabel('Ergebnis des Rechners einfügen'));
-    await tester.pump();
-    expect(assetInput(tester), '13');
+      // Two left swipes → asset converter. The drill's Ans key (class level)
+      // pulls the calc answer as the pending number.
+      await swipePager(tester, -400);
+      await swipePager(tester, -400);
+      expect(find.byType(AssetKeypad), findsOneWidget);
+      await tester.tap(find.bySemanticsLabel('Ergebnis des Rechners einfügen'));
+      await tester.pump();
+      expect(assetInput(tester), '13');
 
-    // Commit as 13 oz t of gold (drill: class → genus → unit; the pending
-    // number survives the drill navigation).
-    await tester.tap(find.text('Precious metal'));
-    await tester.pumpAndSettle();
-    await tester.tap(find.text('Gold'));
-    await tester.pumpAndSettle();
-    await tester.tap(find.text('oz t'));
-    await tester.pump();
-    expect(assetInput(tester), '13 oz t');
+      // Commit as 13 oz t of gold (drill: class → genus → unit; the pending
+      // number survives the drill navigation).
+      await tester.tap(find.text('Precious metal'));
+      await tester.pumpAndSettle();
+      await tester.tap(find.text('Gold'));
+      await tester.pumpAndSettle();
+      await tester.tap(find.text('oz t'));
+      await tester.pump();
+      expect(assetInput(tester), '13 oz t');
 
-    // Back on the calculator (two right swipes), the CONV tap falls back to
-    // the asset result — the unit converter holds nothing.
-    await swipePager(tester, 400);
-    await swipePager(tester, 400);
-    await tester
-        .tap(find.bySemanticsLabel("Insert the unit converter's result"));
-    await tester.pump();
-    final after = tester.widget<TwoLineDisplay>(find.byType(TwoLineDisplay));
-    expect(after.inputBuffer, [
-      const Digit(DozenalDigit.d1),
-      const Digit(DozenalDigit.d3),
-    ]);
-  });
+      // Back on the calculator (two right swipes), the CONV tap falls back to
+      // the asset result — the unit converter holds nothing.
+      await swipePager(tester, 400);
+      await swipePager(tester, 400);
+      await tester.tap(
+        find.bySemanticsLabel("Insert the unit converter's result"),
+      );
+      await tester.pump();
+      final after = tester.widget<TwoLineDisplay>(find.byType(TwoLineDisplay));
+      expect(after.inputBuffer, [
+        const Digit(DozenalDigit.d1),
+        const Digit(DozenalDigit.d3),
+      ]);
+    },
+  );
 
   testWidgets('the info list carries both manuals; the converter nav entry '
       'is gone', (tester) async {
@@ -227,8 +235,9 @@ void main() {
     expect(find.byType(InfoListPage), findsNothing);
   });
 
-  testWidgets('page peek pulses on swipe, blocks nothing, and unmounts',
-      (tester) async {
+  testWidgets('page peek pulses on swipe, blocks nothing, and unmounts', (
+    tester,
+  ) async {
     await bootApp(tester); // helper already flushed the boot pulse …
     expect(find.text('Main calculator'), findsNothing); // … fully unmounted
 

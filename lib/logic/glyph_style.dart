@@ -74,8 +74,7 @@ class GlyphStyleScope extends InheritedNotifier<GlyphStyleNotifier> {
   });
 
   static GlyphStyleNotifier of(BuildContext context) {
-    final scope =
-        context.dependOnInheritedWidgetOfExactType<GlyphStyleScope>();
+    final scope = context.dependOnInheritedWidgetOfExactType<GlyphStyleScope>();
     assert(scope != null, 'GlyphStyleScope.of called outside the style scope.');
     return scope!.notifier!;
   }
@@ -84,8 +83,7 @@ class GlyphStyleScope extends InheritedNotifier<GlyphStyleNotifier> {
   /// glyphs when no scope is present — e.g. isolated widget tests and the
   /// tool/ golden generators that pump a keypad without the app shell.
   static GlyphStyle keypadStyleOf(BuildContext context) {
-    final scope =
-        context.dependOnInheritedWidgetOfExactType<GlyphStyleScope>();
+    final scope = context.dependOnInheritedWidgetOfExactType<GlyphStyleScope>();
     return scope?.notifier?.keypadStyle ?? GlyphStyle.custom;
   }
 
@@ -94,8 +92,7 @@ class GlyphStyleScope extends InheritedNotifier<GlyphStyleNotifier> {
   /// Used by the unit-converter display, which shares the main display's
   /// "Ziffern im Display" preference.
   static GlyphStyle styleOf(BuildContext context) {
-    final scope =
-        context.dependOnInheritedWidgetOfExactType<GlyphStyleScope>();
+    final scope = context.dependOnInheritedWidgetOfExactType<GlyphStyleScope>();
     return scope?.notifier?.style ?? GlyphStyle.custom;
   }
 }

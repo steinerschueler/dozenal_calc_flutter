@@ -364,11 +364,7 @@ class _TheoryExpansionState extends State<_TheoryExpansion> {
           trailing: AnimatedRotation(
             turns: _expanded ? 0.5 : 0,
             duration: const Duration(milliseconds: 200),
-            child: Icon(
-              Icons.expand_more,
-              color: t.textFaint,
-              size: 20,
-            ),
+            child: Icon(Icons.expand_more, color: t.textFaint, size: 20),
           ),
           onTap: () => setState(() => _expanded = !_expanded),
         ),
@@ -389,10 +385,7 @@ class _TheoryExpansionState extends State<_TheoryExpansion> {
                         ),
                         title: Text(
                           block.title,
-                          style: TextStyle(
-                            fontSize: 14,
-                            color: t.textPrimary,
-                          ),
+                          style: TextStyle(fontSize: 14, color: t.textPrimary),
                         ),
                         subtitle: block.inProgress
                             ? Text(
@@ -523,9 +516,7 @@ class _RecommendationsExpansionState extends State<_RecommendationsExpansion> {
                         ),
                         trailing: const _NavChevron(),
                         onTap: () => Navigator.of(context).push(
-                          MaterialPageRoute(
-                            builder: (_) => RecChapterPage(c),
-                          ),
+                          MaterialPageRoute(builder: (_) => RecChapterPage(c)),
                         ),
                       ),
                     ],
@@ -580,11 +571,7 @@ class _LanguagePickerExpansionState extends State<_LanguagePickerExpansion> {
           trailing: AnimatedRotation(
             turns: _expanded ? 0.5 : 0,
             duration: const Duration(milliseconds: 200),
-            child: Icon(
-              Icons.expand_more,
-              color: t.textFaint,
-              size: 20,
-            ),
+            child: Icon(Icons.expand_more, color: t.textFaint, size: 20),
           ),
           onTap: () => setState(() => _expanded = !_expanded),
         ),
@@ -612,11 +599,7 @@ class _LanguagePickerExpansionState extends State<_LanguagePickerExpansion> {
                           ),
                         ),
                         trailing: lang.locale.toLanguageTag() == activeTag
-                            ? Icon(
-                                Icons.check,
-                                color: t.textPrimary,
-                                size: 16,
-                              )
+                            ? Icon(Icons.check, color: t.textPrimary, size: 16)
                             : null,
                         onTap: () {
                           notifier.setOverride(lang.locale);
@@ -675,10 +658,7 @@ class TheoryBlockPage extends StatelessWidget {
                   padding: const EdgeInsets.all(32),
                   child: Text(
                     l.theoryInProgress,
-                    style: TextStyle(
-                      fontSize: 14,
-                      color: t.textFaint,
-                    ),
+                    style: TextStyle(fontSize: 14, color: t.textFaint),
                   ),
                 ),
               )
@@ -686,8 +666,7 @@ class TheoryBlockPage extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(vertical: 4),
                 children: [
                   for (var i = 0; i < block.chapters.length; i++) ...[
-                    if (i > 0)
-                      Divider(color: t.divider, height: 1),
+                    if (i > 0) Divider(color: t.divider, height: 1),
                     ListTile(
                       leading: SizedBox(
                         width: 28,
@@ -703,10 +682,7 @@ class TheoryBlockPage extends StatelessWidget {
                       ),
                       title: Text(
                         block.chapters[i].title,
-                        style: TextStyle(
-                          fontSize: 14,
-                          color: t.textPrimary,
-                        ),
+                        style: TextStyle(fontSize: 14, color: t.textPrimary),
                       ),
                       trailing: const _NavChevron(),
                       onTap: () => Navigator.of(context).push(
@@ -763,9 +739,7 @@ class TheoryChapterPage extends StatelessWidget {
     }
     if (sources.isNotEmpty) children.add(_SourceList(sources: sources));
     return Scaffold(
-      appBar: AppBar(
-        title: Text(title, style: const TextStyle(fontSize: 14)),
-      ),
+      appBar: AppBar(title: Text(title, style: const TextStyle(fontSize: 14))),
       body: SafeArea(
         top: false,
         child: SingleChildScrollView(
@@ -889,10 +863,7 @@ class _SourceList extends StatelessWidget {
                   const SizedBox(height: 2),
                   Text(
                     '${reliabilityLabel(l, s.reliability)} · ${accessLabel(l, s.access)}',
-                    style: TextStyle(
-                      color: t.textFaint,
-                      fontSize: 11,
-                    ),
+                    style: TextStyle(color: t.textFaint, fontSize: 11),
                   ),
                 ],
               ),

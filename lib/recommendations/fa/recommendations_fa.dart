@@ -31,7 +31,8 @@ List<RecChapter> _recChaptersFa() => const [
           'اختصاصی — هیچ دیدی به کد وجود ندارد',
           'بدون خروجی مبنای ۱۲',
         ],
-        url: 'https://www.casio.com/intl/scientific-calculators/product.FX-5800P/',
+        url:
+            'https://www.casio.com/intl/scientific-calculators/product.FX-5800P/',
       ),
       RecCalc(
         'SwissMicros DM42n',
@@ -70,7 +71,8 @@ List<RecChapter> _recChaptersFa() => const [
           'محسوساً کندتر در عملیات پیچیده',
           'بدون مبنای ۱۲',
         ],
-        url: 'https://www.casio.com/us/scientific-calculators/product.FX-991CW/',
+        url:
+            'https://www.casio.com/us/scientific-calculators/product.FX-991CW/',
       ),
     ],
     verdict:
@@ -285,10 +287,7 @@ List<RecChapter> _recChaptersFa() => const [
           'RPN، نوار کاغذ، تبدیل‌های فراوان',
           'Magic Variables، Handoff iOS/macOS',
         ],
-        cons: [
-          'اختصاصی، پولی',
-          'بدون مبنای ۱۲',
-        ],
+        cons: ['اختصاصی، پولی', 'بدون مبنای ۱۲'],
         url: 'https://pcalc.com/mac/',
       ),
       RecCalc(
@@ -302,10 +301,7 @@ List<RecChapter> _recChaptersFa() => const [
           'دقت Decimal-128',
           'یکسان در همه پلتفرم‌ها',
         ],
-        cons: [
-          'منطق RPN',
-          'بدون مبنای ۱۲',
-        ],
+        cons: ['منطق RPN', 'بدون مبنای ۱۲'],
         url: 'https://thomasokken.com/free42/',
       ),
     ],
@@ -336,9 +332,7 @@ List<RecChapter> _recChaptersFa() => const [
           'قوی‌ترین موتور، در مبنای ۱۲ نیز محاسبه می‌کند',
           'CLI قابل اسکریپت — alias‌ها، pipe‌ها، کتابخانه‌های توابع شخصی',
         ],
-        cons: [
-          'انبوه ویژگی‌ها نیاز به یادگیری دارد',
-        ],
+        cons: ['انبوه ویژگی‌ها نیاز به یادگیری دارد'],
         url: 'https://qalculate.github.io/',
       ),
       RecCalc(
@@ -352,10 +346,7 @@ List<RecChapter> _recChaptersFa() => const [
           'حالت برنامه‌نویس (bin/oct/hex)',
           'خوب در KDE Plasma ادغام شده',
         ],
-        cons: [
-          'بدون CAS',
-          'بدون مبنای ۱۲',
-        ],
+        cons: ['بدون CAS', 'بدون مبنای ۱۲'],
         url: 'https://apps.kde.org/kcalc/',
       ),
       RecCalc(
@@ -365,14 +356,8 @@ List<RecChapter> _recChaptersFa() => const [
             'ماشین‌حساب استاندارد GNOME با واحدها و ارزها، '
             'به‌علاوه حالت‌های پیشرفته، مالی و برنامه‌نویس. '
             'از نظر عملکردی زیر Qalculate، اما در مجموع محکم.',
-        pros: [
-          'متن‌باز، آسان برای استفاده',
-          'واحدها و ارزها داخل‌سازی‌شده',
-        ],
-        cons: [
-          'کمتر قدرتمند از Qalculate',
-          'بدون مبنای ۱۲',
-        ],
+        pros: ['متن‌باز، آسان برای استفاده', 'واحدها و ارزها داخل‌سازی‌شده'],
+        cons: ['کمتر قدرتمند از Qalculate', 'بدون مبنای ۱۲'],
         url: 'https://apps.gnome.org/Calculator/',
       ),
       RecCalc(
@@ -420,10 +405,7 @@ List<RecChapter> _recChaptersFa() => const [
           'در مبنای ۱۲ (دوازده‌دهی) نیز محاسبه می‌کند',
           'قابل توسعه با توابع شخصی',
         ],
-        cons: [
-          'کمتر «Windows-native» پرداخت‌شده',
-          'قدرتش نیاز به تمرین دارد',
-        ],
+        cons: ['کمتر «Windows-native» پرداخت‌شده', 'قدرتش نیاز به تمرین دارد'],
         url: 'https://qalculate.github.io/',
       ),
       RecCalc(
@@ -453,10 +435,7 @@ List<RecChapter> _recChaptersFa() => const [
             'ورودی سریع و کیبوردمحور با برجسته‌سازی نحوی و تکمیل خودکار، '
             'دقت بالا، قابل حمل بدون نصب — '
             'اما سال‌هاست نسخه جدیدی ندارد.',
-        pros: [
-          'متن‌باز، ورودی کیبورد بسیار سریع',
-          'دقت بالا، قابل حمل',
-        ],
+        pros: ['متن‌باز، ورودی کیبورد بسیار سریع', 'دقت بالا، قابل حمل'],
         cons: [
           'توسعه متوقف شده — چشم‌اندازی برای آینده ندارد',
           'از نظر عملکردی توسط Qalculate پشت سر گذاشته شده',
@@ -475,10 +454,7 @@ List<RecChapter> _recChaptersFa() => const [
           'دقت Decimal-128',
           'یکسان در همه پلتفرم‌ها',
         ],
-        cons: [
-          'منطق RPN (Plus42 این را تلطیف می‌کند)',
-          'بدون مبنای ۱۲',
-        ],
+        cons: ['منطق RPN (Plus42 این را تلطیف می‌کند)', 'بدون مبنای ۱۲'],
         url: 'https://thomasokken.com/free42/',
       ),
     ],

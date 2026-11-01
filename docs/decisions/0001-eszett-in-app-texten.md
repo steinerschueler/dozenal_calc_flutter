@@ -25,5 +25,4 @@ Texte bleiben Hochdeutsch: ARB, Theorie, Handbuch, Empfehlungen, `legal/` und `s
 
 ## Konsequenzen
 
-- Das Eszett-Skript aus DOK-62 muss `legal/` und `store/` ausnehmen.
-- Ältere Dateien unter `docs/` enthalten noch Eszett. Sie werden umgestellt, wenn sie ohnehin geändert werden.
+- Das Eszett-Skript aus DOK-62 muss `legal/`, `store/app-store/` und die Store-Listings ausnehmen.

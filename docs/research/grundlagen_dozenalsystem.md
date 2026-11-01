@@ -32,7 +32,7 @@ Stellenwerte sind Potenzen von 12:
 - Stelle 0 (ganz rechts): 12⁰ = 1 (Einer)
 - Stelle 1: 12¹ = 12 (ein Dutzend)
 - Stelle 2: 12² = 144 (ein »Gross«)
-- Stelle 3: 12³ = 1728 (ein »Großgross«)
+- Stelle 3: 12³ = 1728 (ein »Grossgross«)
 
 Die dozenale Zahl »100« bedeutet also nicht hundert, sondern 1 × 144 = 144 (dezimal).
 Und »10« bedeutet 1 × 12 = 12 (dezimal), also genau ein Dutzend.
@@ -81,7 +81,7 @@ umgeschaltet werden. Dieses Kapitel verwendet A (= zehn) und B (= elf). Beispiel
 *Ziffern*, keine Variablen. „2B" ist also die zweistellige Zahl (2 an der Zwölfer-,
 B an der Einerstelle, = 35), NICHT das Produkt „2 mal B" (das wäre 22 = dozenal „1A").
 Nebeneinanderstehende Ziffern bilden eine Zahl, sie werden nicht multipliziert; der
-Rechner weiß das, weil A und B für ihn feste Ziffern sind. Diese Klarstellung gehört
+Rechner weiss das, weil A und B für ihn feste Ziffern sind. Diese Klarstellung gehört
 überdeutlich in den Kapiteltext.
 
 ---
@@ -121,9 +121,9 @@ günstig, weil im Alltag häufiger durch drei und vier geteilt wird als durch f�
 er ist kein unbegrenzter Vorteil. Fünftel und Zehntel sind für Prozentrechnung und
 Dezimalgeld zentral.
 
-Zwölf ist außerdem eine **hochzusammengesetzte Zahl** (mehr Teiler als jede kleinere
+Zwölf ist ausserdem eine **hochzusammengesetzte Zahl** (mehr Teiler als jede kleinere
 Zahl) und sogar eine **superior hochzusammengesetzte Zahl** (bestes
-Teiler-zu-Größe-Verhältnis in ihrer Klasse). Srinivasa Ramanujan entwickelte 1915 die
+Teiler-zu-Grösse-Verhältnis in ihrer Klasse). Srinivasa Ramanujan entwickelte 1915 die
 erste systematische Theorie dieser Zahlenklasse. Die Folge der superior
 hochzusammengesetzten Zahlen beginnt mit 2, 6, **12**, 60, 120, 360 — genau die Zahlen,
 die historisch als Basen, Winkel- und Zeiteinheiten auftauchen.
@@ -133,24 +133,24 @@ die historisch als Basen, Winkel- und Zeiteinheiten auftauchen.
 ## Wo die Zwölf im Alltag schon lebt
 
 Lange bevor es eine organisierte dozenale Bewegung gab, war die Zwölf tief in westliche
-Maß-, Zeit- und Handelseinheiten eingegraben — wegen ihrer guten Teilbarkeit.
+Mass-, Zeit- und Handelseinheiten eingegraben — wegen ihrer guten Teilbarkeit.
 
 **Dutzend und Gross.** Das **Dutzend** (englisch *dozen*) stammt vom altfranzösischen
 *douzaine* (zu *douze*, »zwölf«, lateinisch *duodecim*) und ist als Handelseinheit
-mindestens seit dem Mittelalter belegt. Ein Dutzend lässt sich gleichmäßig in 2, 3, 4
+mindestens seit dem Mittelalter belegt. Ein Dutzend lässt sich gleichmässig in 2, 3, 4
 oder 6 Teile teilen — bei zehn geht das nur durch 2 und 5. Das **Gross** (französisch
-*grosse douzaine*, »großes Dutzend«) bezeichnet 144 = 12² Stück und ist seit dem frühen
-15. Jahrhundert belegt; das Großgross umfasst 1728 = 12³.
+*grosse douzaine*, »grosses Dutzend«) bezeichnet 144 = 12² Stück und ist seit dem frühen
+15. Jahrhundert belegt; das Grossgross umfasst 1728 = 12³.
 
-**Fuß und Zoll.** Das lateinische Wort *uncia* bedeutet »ein Zwölftel« — sowohl eines
-Fußes als auch eines Pfunds. Der römische Fuß war in 12 *unciae* geteilt (daraus der
+**Fuss und Zoll.** Das lateinische Wort *uncia* bedeutet »ein Zwölftel« — sowohl eines
+Fusses als auch eines Pfunds. Der römische Fuss war in 12 *unciae* geteilt (daraus der
 Zoll), das Pfund (*libra*) ebenfalls in 12 *unciae* (daraus die Unze). Ein einziges
 lateinisches Wort für »Zwölftel« prägte damit die englischen Wörter *inch* und *ounce*.
-Heute gelten 12 Zoll = 1 Fuß in den USA und Großbritannien fort; 12 Troy-Unzen = 1
+Heute gelten 12 Zoll = 1 Fuss in den USA und Grossbritannien fort; 12 Troy-Unzen = 1
 Troy-Pfund ebenso.
 
-**Währung.** Karl der Große legte um 780 n. Chr. fest: 12 Denare = 1 Schilling, 20
-Schillinge = 1 Pfund. Das Pfund-Schilling-Pence-System galt in Großbritannien bis zur
+**Währung.** Karl der Grosse legte um 780 n. Chr. fest: 12 Denare = 1 Schilling, 20
+Schillinge = 1 Pfund. Das Pfund-Schilling-Pence-System galt in Grossbritannien bis zur
 Dezimalisierung 1971.
 
 **Zeit und Winkel.** Tag und Nacht werden in je zwölf Stunden geteilt — ein Erbe des
@@ -168,8 +168,8 @@ wird zitiert, aber archäologisch *nicht belegt* (siehe Vorbehalte). Sie sollte 
 Vermutung gekennzeichnet bleiben.
 
 Diese Spuren sind kein Argument für einen Systemwechsel. Sie zeigen nur: Die Zwölf wurde
-historisch — auch ohne formale Basis-12-Notation — als praktische Teilungsgröße
-erkannt. Wer Fuß, Zoll, Dutzend oder Grad in Basis 12 rechnet, rechnet im selben System,
+historisch — auch ohne formale Basis-12-Notation — als praktische Teilungsgrösse
+erkannt. Wer Fuss, Zoll, Dutzend oder Grad in Basis 12 rechnet, rechnet im selben System,
 das diese Einheiten ursprünglich strukturiert hat.
 
 ---
@@ -199,7 +199,7 @@ entstand 1959. Prominentes Mitglied war der Mathematiker und legendäre Kopfrech
 Alexander Craig Aitken (1895–1967), der 1962 *The Case Against Decimalisation*
 veröffentlichte. Ihm wird das Urteil zugeschrieben, die Effizienz des Dezimalsystems
 liege gegenüber dem Duodezimalen »bei etwa 65 oder weniger« (auf einer Skala von 100) —
-eine illustrative Schätzung, kein gemessenes Maß (siehe Vorbehalte).
+eine illustrative Schätzung, kein gemessenes Mass (siehe Vorbehalte).
 
 Beide Gesellschaften betreiben **keine** politische Kampagne für eine globale
 Systemumstellung. Ihr Selbstverständnis ist überwiegend ein didaktisches
@@ -217,9 +217,9 @@ mathematischer Schwächen, sondern wegen **Pfadabhängigkeit und sozialer Trägh
    Basis 10 ist plausibel und weit verbreitet — ein *anatomischer*, kein *mathematischer*
    Grund. Aber sie sitzt tief.
 2. **Das metrische System hat das Dezimale institutionell festgelegt.** Als die
-   Französische Revolutionskommission 1790 ein neues Maßsystem debattierte, standen
+   Französische Revolutionskommission 1790 ein neues Masssystem debattierte, standen
    Basis 10 und Basis 12 zur Diskussion. Basis 10 setzte sich durch, weil ein globaler
-   Wechsel des *Zählsystems* (Voraussetzung für ein echtes Basis-12-Maßsystem) für
+   Wechsel des *Zählsystems* (Voraussetzung für ein echtes Basis-12-Masssystem) für
    undurchführbar gehalten wurde.
 3. **Die Umstellungskosten wären enorm.** Neue Einmaleins-Tabellen, alle Lehrbücher und
    Geräte umgeschrieben, jahrzehntelange Koexistenz beider Systeme im Übergang. Selbst
@@ -236,10 +236,10 @@ mathematischer Schwächen, sondern wegen **Pfadabhängigkeit und sozialer Trägh
 
 ## Vorbehalte & verbreitete Irrtümer
 
-**Irrtum 1 (der wichtigste): »Eine Zahl wird größer oder kleiner, wenn man die Basis
-wechselt.«** Falsch. Es ändert sich ausschließlich die *Schreibweise*, nicht die Menge.
+**Irrtum 1 (der wichtigste): »Eine Zahl wird grösser oder kleiner, wenn man die Basis
+wechselt.«** Falsch. Es ändert sich ausschliesslich die *Schreibweise*, nicht die Menge.
 Gleichungen bleiben wahr, physikalische Gesetze gültig. Wer sagt, »in Basis 12 ist zwölf
-größer als in Basis 10«, verwechselt die Zahl mit ihrer Darstellung.
+grösser als in Basis 10«, verwechselt die Zahl mit ihrer Darstellung.
 
 **Irrtum 2: »In Basis 12 wird alles glatter — auch 1/5, 1/7.«** Nein. Der Vorteil ist
 ein *Tausch*. Fünftel und Zehntel sind in Basis 12 periodisch (in Basis 10 endlich).
@@ -264,8 +264,8 @@ Babylonier gruppierten auch in Zwölfern — aber die Basis des Stellenwertsyste
 
 **Vorbehalt 6: Die Effizienz-Zahl von Aitken (»65«).** Aitkens Aussage, Dezimal sei nur
 etwa 65 % so effizient wie Duodezimal, ist eine illustrative Schätzung eines einzelnen
-Mathematikers, kein formal definiertes, allgemein anerkanntes Maß. Sie soll die
-Größenordnung des Vorteils veranschaulichen, sollte aber nicht als exakte Messzahl
+Mathematikers, kein formal definiertes, allgemein anerkanntes Mass. Sie soll die
+Grössenordnung des Vorteils veranschaulichen, sollte aber nicht als exakte Messzahl
 zitiert werden.
 
 **Vorbehalt 7: »Elf und zwölf beweisen ein altes Basis-12-Zählsystem.«** Die Etymologie
@@ -288,7 +288,7 @@ Wiedererkennungsmerkmal; Dwiggins-Symbole sind schön, aber schriftartabhängig.
 älterer dozenaler Texte muss man die jeweils gültige Notation prüfen.
 
 > **Nicht aufgenommen (unbestätigt):** Die in Draft C genannte »DSA-Umstellung der
-> Web-Notation auf A/B im Januar 2026« ließ sich nicht solide belegen (nur als interne
+> Web-Notation auf A/B im Januar 2026« liess sich nicht solide belegen (nur als interne
 > Annahme/Snippet) und wird daher hier nicht als Faktum geführt. Die *Begründung* dafür
 > — lückenhafte Font-Unterstützung der Pitman-Ziffern — ist davon unabhängig gut belegt
 > und bleibt als Vorbehalt 9 erhalten.
@@ -329,7 +329,7 @@ mit dem annotiert, was sie belegt. (Interne Repo-Dossiers wie `math_basen.md` od
 
 - **[R2·A1]** Wikipedia (en): *Highly composite number* —
   https://en.wikipedia.org/wiki/Highly_composite_number — Volltext gelesen: Definition,
-  12 hat 6 Teiler, Folge der HCN, Verbindung zu Maßsystemen. Belegt: 12 als HCN.
+  12 hat 6 Teiler, Folge der HCN, Verbindung zu Masssystemen. Belegt: 12 als HCN.
 
 - **[R2·A1]** Wikipedia (en): *Superior highly composite number* —
   https://en.wikipedia.org/wiki/Superior_highly_composite_number — Volltext gelesen:
@@ -374,19 +374,19 @@ mit dem annotiert, was sie belegt. (Interne Repo-Dossiers wie `math_basen.md` od
 - **[R3·A2]** Andrews, F. E.: *New Numbers* (1935) — zitiert via Wikipedia (Duodecimal):
   buchlanger Fall für Duodezimal, prägte die US-Bewegung. Belegt: historischer Hintergrund.
 
-### Historische Spuren (Handel, Maß, Zeit)
+### Historische Spuren (Handel, Mass, Zeit)
 
 - **[R2·A1]** Wikipedia (en): *Dozen* — https://en.wikipedia.org/wiki/Dozen — Volltext
   gelesen: Etymologie (frz. *douzaine* < lat. *duodecim*), Teilbarkeit als Grund, ≈ 12
   Mondmonate. Belegt: Herkunft und Begründung des Dutzends.
 
 - **[R2·A1]** Wikipedia (en): *Gross (unit)* — https://en.wikipedia.org/wiki/Gross_(unit) —
-  Volltext gelesen: 144 = 12², »grosse douzaine«, Herkunft 15. Jh., Großgross 1728 = 12³.
-  Belegt: Gross / Großgross.
+  Volltext gelesen: 144 = 12², »grosse douzaine«, Herkunft 15. Jh., Grossgross 1728 = 12³.
+  Belegt: Gross / Grossgross.
 
 - **[R2·A1]** Wikipedia (en): *Ancient Roman units of measurement* —
   https://en.wikipedia.org/wiki/Ancient_Roman_units_of_measurement — Volltext gelesen:
-  *uncia* = »ein Zwölftel« (Fuß und Pfund), Ableitung von *inch* und *ounce*. Belegt:
+  *uncia* = »ein Zwölftel« (Fuss und Pfund), Ableitung von *inch* und *ounce*. Belegt:
   römisches Duodezimal-Brucherbe.
 
 - **[R2·A1]** Wikipedia (en): *12-hour clock* — https://en.wikipedia.org/wiki/12-hour_clock —
@@ -425,5 +425,5 @@ mit dem annotiert, was sie belegt. (Interne Repo-Dossiers wie `math_basen.md` od
 
 - **[R3·A1]** Hexnet: *An Argument For Dozenalism* —
   https://hexnet.org/content/argument-dozenalism — Volltext gelesen: Teiler-Argument,
-  historische Maßspuren, ehrliches Einräumen von 1/5 als periodisch, soziale
+  historische Massspuren, ehrliches Einräumen von 1/5 als periodisch, soziale
   Adoptionsbarriere. Belegt: Pro-Contra-Bilanz.

@@ -20,10 +20,10 @@ keine eigenen Wertungen; einfache, übersetzbare deutsche Sätze.
 
 ---
 
-## 1. Grundform und Maße
+## 1. Grundform und Masse
 
 Der reguläre Dodekaeder (griechisch *dōdeka* = zwölf, *hédra* = Fläche/Sitz) ist
-einer der fünf platonischen Körper. Er besteht ausschließlich aus zwölf
+einer der fünf platonischen Körper. Er besteht ausschliesslich aus zwölf
 kongruenten, regulären Fünfecken (Pentagonen):
 
 - **12 Flächen** — reguläre Fünfecke, alle gleich, Innenwinkel je 108°.
@@ -86,14 +86,14 @@ E − K + F = 2 folgt die Ungleichung
 Mit p ≥ 3 (mindestens Dreiecke) und q ≥ 3 (mindestens drei Flächen je Ecke) hat
 sie **genau fünf** Lösungen: {3,3} Tetraeder, {4,3} Würfel, {3,4} Oktaeder,
 {5,3} **Dodekaeder**, {3,5} Ikosaeder. Bei {6,3} ist 1/6 + 1/3 = 1/2 — gleich,
-nicht größer: das ist die flache Sechseck-Parkettierung der Ebene, kein
+nicht grösser: das ist die flache Sechseck-Parkettierung der Ebene, kein
 geschlossener Körper. Für p ≥ 6 oder q ≥ 6 wird die Summe kleiner als 1/2.
 
 **Winkeldefekt-Sicht (gleicher Inhalt, anschaulicher).** Der Innenwinkel des
 regulären p-Ecks ist (p−2)·180°/p; fürs Fünfeck 108°. An einer Dodekaeder-Ecke
 treffen drei Fünfecke: 3·108° = 324°. Bleiben 360° − 324° = **36°** Defekt —
 positiv, also faltet sich der Raum zu einem konvexen Körper. Vier Fünfecke an
-einer Ecke ergäben schon 432° > 360° — unmöglich flach zu schließen. Darum ist
+einer Ecke ergäben schon 432° > 360° — unmöglich flach zu schliessen. Darum ist
 {5,3} die **einzige** mögliche Fünfeck-Konfiguration, und der Dodekaeder der
 einzige platonische Körper mit fünfeckigen Flächen.
 
@@ -143,7 +143,7 @@ Würfelflächen ein „Satteldach", dessen Firstkante 1/φ der Würfelkante miss
 werden die zwölf Dächer zu zwölf Fünfecken — so entsteht der Dodekaeder aus dem
 Würfel.
 
-**Maßformeln** (Kantenlänge a = 1; alle enthalten √5 bzw. φ, also denselben
+**Massformeln** (Kantenlänge a = 1; alle enthalten √5 bzw. φ, also denselben
 Zahlbereich ℚ(√5)): Volumen (15 + 7√5)/4 ≈ 7,663; Oberfläche 3√(25 + 10√5) ≈
 20,646; Umkugelradius (√3·φ)/2 ≈ 1,401; Mittelkugelradius φ²/2 ≈ 1,309;
 Inkugelradius √(25 + 11√5)/(2√10) ≈ 1,114.
@@ -206,18 +206,18 @@ dodecahedron — Wikipedia (en); [R2·A1] Platonic solid — Wikipedia (en).
 ## 5. Die Euler-Zwölf: warum immer genau zwölf Fünfecke
 
 Dies ist ein eigenständiges topologisches Ergebnis, das den Dodekaeder mit dem
-Fußball, mit Viren und mit geodätischen Kuppeln verbindet.
+Fussball, mit Viren und mit geodätischen Kuppeln verbindet.
 
 **Frage:** Kann man eine geschlossene, kugelartige Fläche aus lauter regulären
 Sechsecken bauen? **Antwort:** Nein. Ein reines Sechseck-Netz ist flach (es
 füllt die Ebene). Um es zur Kugel zu krümmen, müssen **genau zwölf Fünfecke**
 eingebaut werden — egal, wie viele Sechsecke sonst verwendet werden.
 
-Das folgt direkt aus Euler: Stoßen an jeder Ecke drei Flächen zusammen und
+Das folgt direkt aus Euler: Stossen an jeder Ecke drei Flächen zusammen und
 verwendet man nur Fünf- und Sechsecke (p₅ Fünfecke, p₆ Sechsecke), so liefert
 E − K + F = 2 die Bedingung **p₅ = 12** — unabhängig von p₆. Konkret: p₅ = 12,
 p₆ = 0 ergibt das **reguläre Dodekaeder**; p₅ = 12, p₆ = 20 das **abgestumpfte
-Ikosaeder** (Fußball, Fulleren C₆₀); p₅ = 12, p₆ beliebig die geodätischen
+Ikosaeder** (Fussball, Fulleren C₆₀); p₅ = 12, p₆ beliebig die geodätischen
 Kuppeln. Das reguläre Dodekaeder ist der reinste Fall: zwölf Fünfecke und kein
 einziges Sechseck.
 
@@ -233,7 +233,7 @@ American Scientist.
 bekannt — der zwölfseitige Würfel. Seine zwölf gleichwertigen Flächen machen ihn
 fair (jede Zahl 1/12 ≈ 8,3 %). Von allen fünf platonischen Körpern nähert der
 Dodekaeder die Kugelform am stärksten an (das Verhältnis Inkugel- zu
-Umkugelradius ist mit ≈ 0,795 das größte), darum rollt der D12 angenehm und
+Umkugelradius ist mit ≈ 0,795 das grösste), darum rollt der D12 angenehm und
 kommt zuverlässig auf einer Fläche zur Ruhe. Zwölfseitige Würfel sind alt:
 Beispiele aus dem ptolemäischen Ägypten (ab ca. 150 v. Chr.) sind belegt — aber
 ohne nachweisbare durchgehende Tradition bis zur Moderne (siehe Vorbehalte).
@@ -252,7 +252,7 @@ Quellen: [R3·A2] D12 — RPG Museum (Fandom); [R3·A2] d12 dice — DiceEnvy;
 
 ## 7. Vorbehalte und verbreitete Irrtümer
 
-**Irrtum 1: „Der Fußball ist ein Dodekaeder."** Der klassische Fußball
+**Irrtum 1: „Der Fussball ist ein Dodekaeder."** Der klassische Fussball
 (Telstar-Muster, WM 1970) ist ein **abgestumpftes Ikosaeder**: 12 Fünfecke + 20
 Sechsecke = 32 Flächen, 60 Ecken, 90 Kanten. Er ist ein *archimedischer*, kein
 platonischer Körper. Gemeinsam mit dem Dodekaeder hat er nur die zwölf Fünfecke
@@ -262,12 +262,12 @@ Flächen, alle Fünfecke, keine Sechsecke.
 **Irrtum 2: Dodekagon (2D) ≠ Dodekaeder (3D).** Beide Namen tragen „dodeka-"
 (zwölf). Das **Dodekagon** (Zwölfeck) ist ein flaches Polygon mit zwölf Seiten
 und zwölf Ecken. Der **Dodekaeder** ist ein räumlicher Körper mit zwölf Flächen,
-dreißig Kanten, zwanzig Ecken. Im Griechischen trennt *-gon* (Ecke/Winkel, 2D)
+dreissig Kanten, zwanzig Ecken. Im Griechischen trennt *-gon* (Ecke/Winkel, 2D)
 von *-hédra* (Fläche, 3D).
 
 **Irrtum 3: Reguläres Dodekaeder ≠ Pyritoeder.** Pyrit bildet einen
 Zwölfflächner mit fünfeckigen Flächen (Pyritoeder {210}), der aber
-*unregelmäßig* ist: Winkel ≈ 121,6°/106,6°/102,6° statt überall 108°, zwei
+*unregelmässig* ist: Winkel ≈ 121,6°/106,6°/102,6° statt überall 108°, zwei
 verschiedene Kantenlängen, Symmetriegruppe Tₕ (Ordnung 24) **ohne echte
 fünfzählige Achse**. Das reguläre Dodekaeder hat gleiche Flächen, gleiche Kanten
 und echte Fünf-Achsen (Iₕ, Ordnung 120). Ausführliche Herleitung im Pyrit-Kapitel.
@@ -300,7 +300,7 @@ als illustratives Faktum verwenden, nicht tragend.
 **Vorbehalt 9: A₅ ↔ Quintik.** Dass A₅ keine auflösbare Erweiterung hat, ist der
 gruppentheoretische Kern dafür, dass allgemeine Gleichungen fünften Grades nicht
 durch Radikale lösbar sind (Abel-Ruffini). Korrekt, aber für die Zielgruppe eine
-Fußnote — nicht den Fließtext überfrachten.
+Fussnote — nicht den Fliesstext überfrachten.
 
 **Vorbehalt 10: Ptolemäisches Alter der D12.** Antike zwölfseitige Würfel
 existieren (gut belegt), belegen aber keine *kontinuierliche* Tradition bis zu
@@ -314,16 +314,16 @@ Bewertung: Zuverlässigkeit R1 (wissenschaftlich/primär) · R2 (etablierte
 Referenz) · R3 (seriös populär) · R4 (schwach) · S (spekulativ); Zugang A1
 (Volltext gelesen) · A2 (teilweise/Snippet) · A3 (nur indirekt).
 
-### Geometrie, Topologie, Maße (R1–R2)
+### Geometrie, Topologie, Masse (R1–R2)
 
 - **[R2·A1]** Regular dodecahedron — Wikipedia (en) —
   https://en.wikipedia.org/wiki/Regular_dodecahedron —
   Flächen/Kanten/Ecken, Schläfli {5,3}, Diederwinkel 2·arctan(φ), exakte
-  Maßformeln und Radien, Eckkoordinaten mit φ, fünf einbeschriebene Würfel,
+  Massformeln und Radien, Eckkoordinaten mit φ, fünf einbeschriebene Würfel,
   Dualität, Symmetriegruppe Iₕ. Primärquelle.
 - **[R2·A1]** Dodekaeder — Wikipedia (de) —
   https://de.wikipedia.org/wiki/Dodekaeder —
-  Deutsche Maßangaben (Volumen ≈ 7,663·a³, Oberfläche ≈ 20,646·a²,
+  Deutsche Massangaben (Volumen ≈ 7,663·a³, Oberfläche ≈ 20,646·a²,
   Umkugel ≈ 1,401·a, Inkugel ≈ 1,114·a, Diederwinkel ≈ 116,56°).
 - **[R2·A1]** Platonic solid — Wikipedia (en) —
   https://en.wikipedia.org/wiki/Platonic_solid —
@@ -363,7 +363,7 @@ Referenz) · R3 (seriös populär) · R4 (schwach) · S (spekulativ); Zugang A1
   Iₕ Ordnung 120, Zerlegung der 60 Drehungen (6/10/15 Achsen), I ≅ A₅,
   Iₕ ≅ A₅×ℤ₂, Coxeter H₃ [5,3], Inkompatibilität mit Translationssymmetrie.
 
-### Fußball / Euler-Zwölf (R1–R2)
+### Fussball / Euler-Zwölf (R1–R2)
 
 - **[R2·A1]** Truncated icosahedron — Wikipedia (en) —
   https://en.wikipedia.org/wiki/Truncated_icosahedron —
@@ -404,7 +404,7 @@ Referenz) · R3 (seriös populär) · R4 (schwach) · S (spekulativ); Zugang A1
 
 - **[R1·A3]** Regular Dodecahedron — Wolfram MathWorld —
   https://mathworld.wolfram.com/RegularDodecahedron.html —
-  HTTP 403; Maßformeln/Koordinaten via Wikipedia redundant abgesichert.
+  HTTP 403; Massformeln/Koordinaten via Wikipedia redundant abgesichert.
 - **[R2·A2]** CALCETRA / redcrab-software / SmartConversion —
   Volumen (15+7√5)/4·a³ und Oberfläche 3√(25+10√5)·a² numerisch gegengeprüft.
 </content>

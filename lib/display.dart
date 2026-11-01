@@ -342,7 +342,9 @@ class _TwoLineDisplayPainter extends CustomPainter {
 
   void _paintInputLine(Canvas canvas, Rect rect) {
     final laid = inputBuffer
-        .map((t) => _layoutToken(t, rect.height, glyphStyle, colors.displayText))
+        .map(
+          (t) => _layoutToken(t, rect.height, glyphStyle, colors.displayText),
+        )
         .toList();
     var x = rect.left;
     for (var i = 0; i < laid.length; i++) {
@@ -359,7 +361,9 @@ class _TwoLineDisplayPainter extends CustomPainter {
 
   void _paintResultLine(Canvas canvas, Rect rect) {
     final laid = resultBuffer
-        .map((t) => _layoutToken(t, rect.height, glyphStyle, colors.displayText))
+        .map(
+          (t) => _layoutToken(t, rect.height, glyphStyle, colors.displayText),
+        )
         .toList();
     var totalW = laid.fold<double>(0.0, (a, t) => a + t.width);
 
@@ -369,8 +373,9 @@ class _TwoLineDisplayPainter extends CustomPainter {
     // clipped to fit*. An f64 fallback never carries a period
     // (formatF64Result clears it), so the prefix and the period/State-C
     // suffix never collide.
-    final approxTp =
-        isF64Fallback ? _approxPainter(rect.height, colors.displayText) : null;
+    final approxTp = isF64Fallback
+        ? _approxPainter(rect.height, colors.displayText)
+        : null;
     final approxW = approxTp == null
         ? 0.0
         : approxTp.width + _approxGap(rect.height);

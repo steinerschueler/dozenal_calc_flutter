@@ -11,13 +11,13 @@ Zwei platonische Körper tragen den Zwölf-Bezug:
 | Körper | Ecken | Flächen | Kanten |
 |---|---|---|---|
 | **Ikosaeder** | **12** | 20 (gleichseitige Dreiecke) | 30 |
-| **Dodekaeder** | 20 | **12** (regelmäßige Fünfecke) | 30 |
+| **Dodekaeder** | 20 | **12** (regelmässige Fünfecke) | 30 |
 
 Die beiden sind **dual** zueinander: Die 12 Ecken des Ikosaeders entsprechen den 12 Flächen des Dodekaeders. Die Zwölf erscheint also doppelt — als Eckenzahl des einen, als Flächenzahl des anderen. Beide Körper teilen dieselbe Symmetrie. *(gesichert)*
 
 ### Die Symmetriegruppe
 
-Die volle ikosaedrische Symmetriegruppe heißt I_h und hat die Ordnung 120 (60 reine Drehungen plus 60 Operationen mit Spiegelung). Die reine Drehgruppe hat die Ordnung 60. Sie ist die größtmögliche Punktsymmetriegruppe im dreidimensionalen Raum.
+Die volle ikosaedrische Symmetriegruppe heisst I_h und hat die Ordnung 120 (60 reine Drehungen plus 60 Operationen mit Spiegelung). Die reine Drehgruppe hat die Ordnung 60. Sie ist die grösstmögliche Punktsymmetriegruppe im dreidimensionalen Raum.
 
 Die 31 Drehachsen verteilen sich auf:
 - **6 fünfzählige Achsen** (durch die 12 Ecken-Paare des Ikosaeders),
@@ -46,9 +46,9 @@ Der Goldene Schnitt regiert auch hier: Die Flächen und Häufigkeiten der beiden
 
 Ein gewöhnlicher Kristall ist **periodisch**: Er entsteht, indem sich eine kleinste Einheit (Elementarzelle) durch Verschiebung lückenlos wiederholt. Aus dieser Verschiebungs-Wiederholung folgt eine harte Regel.
 
-**Der Satz:** In einem periodischen Gitter sind nur Drehachsen der Zähligkeit **2, 3, 4 und 6** möglich. Fünf-, sieben-, acht-, zehn- und höhere Zähligkeiten sind ausgeschlossen. *(gesichert — ein bewiesenes Theorem, kein bloßer empirischer Befund)*
+**Der Satz:** In einem periodischen Gitter sind nur Drehachsen der Zähligkeit **2, 3, 4 und 6** möglich. Fünf-, sieben-, acht-, zehn- und höhere Zähligkeiten sind ausgeschlossen. *(gesichert — ein bewiesenes Theorem, kein blosser empirischer Befund)*
 
-**Warum, anschaulich:** Man kann eine Ebene lückenlos mit Quadraten, Dreiecken oder Sechsecken kacheln — aber **nicht mit regelmäßigen Fünfecken**. Es bleiben immer Lücken; „die Winkel gehen nicht auf". Im Raum füllen Ikosaeder den Raum nicht lückenlos. Fünfzählige Drehung und Verschiebungs-Wiederholung schließen einander aus.
+**Warum, anschaulich:** Man kann eine Ebene lückenlos mit Quadraten, Dreiecken oder Sechsecken kacheln — aber **nicht mit regelmässigen Fünfecken**. Es bleiben immer Lücken; „die Winkel gehen nicht auf". Im Raum füllen Ikosaeder den Raum nicht lückenlos. Fünfzählige Drehung und Verschiebungs-Wiederholung schliessen einander aus.
 
 **Warum, mathematisch:** Eine Drehung, die ein Gitter auf sich abbildet, muss durch eine ganzzahlige Matrix beschreibbar sein. Deren Spur ist notwendig ganzzahlig. In der Ebene ist diese Spur gleich 2·cos α. Es muss also gelten:
 
@@ -82,7 +82,7 @@ Warum die Natur das überhaupt bildet: Bei bestimmten Legierungen und Abkühlbed
 Genau hier liegt ein wichtiger und oft missverstandener Punkt. Manche gewöhnlichen Kristalle **sehen aus**, als hätten sie fünf- oder zwölfzählige Symmetrie — haben sie aber nicht.
 
 **Pyrit (FeS₂)** kristallisiert **kubisch**. Er bildet oft den **Pyritoeder** (Pentagondodekaeder): einen Körper mit zwölf fünfeckigen Flächen, der einem Dodekaeder ähnelt. Aber:
-- Die zwölf Flächen sind **keine regelmäßigen Fünfecke** (es gibt zwei verschiedene Kantenlängen).
+- Die zwölf Flächen sind **keine regelmässigen Fünfecke** (es gibt zwei verschiedene Kantenlängen).
 - Pyrit hat **keine fünfzählige Drehachse**. Seine echten Achsen sind die kubischen: drei zweizählige und vier dreizählige. Die Symmetriegruppe ist T_h (Ordnung 24).
 
 Eine schöne, präzise Erklärung dazu (J. C. Baez): Beim **echten** Dodekaeder stehen die Flächen auf Richtungen, die den Goldenen Schnitt φ ≈ 1,618 enthalten. Beim Pyritoeder steht an dieser Stelle stattdessen die **ganze Zahl 2** — eine kubisch erlaubte „Treppen-Geometrie". Weil 2 nicht weit von 1,618 entfernt liegt, ist das Pyritoeder ein passabler, aber eben **kubischer Versuch** eines Dodekaeders — keine echte Fünf-Symmetrie. *(gesichert)*
@@ -105,9 +105,9 @@ Die Pointe: Scharfe Beugungspunkte bedeuten Ordnung. Zehnzählige Symmetrie ist 
 
 ### Der Widerstand und die Pauling-Kontroverse
 
-Der Befund stieß auf heftige Skepsis. Shechtmans Laborleiter reichte ihm ein Kristallographie-Lehrbuch und bat ihn schließlich, die Gruppe zu verlassen. Shechtman selbst: *„For a long time it was me against the world. I was a subject of ridicule."* *(gesichert)*
+Der Befund stiess auf heftige Skepsis. Shechtmans Laborleiter reichte ihm ein Kristallographie-Lehrbuch und bat ihn schliesslich, die Gruppe zu verlassen. Shechtman selbst: *„For a long time it was me against the world. I was a subject of ridicule."* *(gesichert)*
 
-Der prominenteste Gegner war der zweifache Nobelpreisträger **Linus Pauling**, von dem das berühmte Verdikt stammt: *„There is no such thing as quasicrystals, only quasi-scientists."* Paulings wissenschaftlich ernstzunehmender Einwand war die **Verzwillingungs-Hypothese** (multiple twinning): Das ikosaedrische Bild entstehe in Wahrheit durch viele verzwillingte gewöhnliche **kubische** Kristalle mit sehr großer Elementarzelle, die nur eine Fünf-Symmetrie vortäuschten. Pauling vergrößerte seine hypothetischen Zellen fortlaufend und bekämpfte die Idee bis zu seinem Tod **1994**. *(gesichert)*
+Der prominenteste Gegner war der zweifache Nobelpreisträger **Linus Pauling**, von dem das berühmte Verdikt stammt: *„There is no such thing as quasicrystals, only quasi-scientists."* Paulings wissenschaftlich ernstzunehmender Einwand war die **Verzwillingungs-Hypothese** (multiple twinning): Das ikosaedrische Bild entstehe in Wahrheit durch viele verzwillingte gewöhnliche **kubische** Kristalle mit sehr grosser Elementarzelle, die nur eine Fünf-Symmetrie vortäuschten. Pauling vergrösserte seine hypothetischen Zellen fortlaufend und bekämpfte die Idee bis zu seinem Tod **1994**. *(gesichert)*
 
 Warum die Hypothese scheiterte: Den Beugungsbildern fehlten die systematischen Reflexreihen und sonstigen Signaturen, die verzwillingte kubische Kristalle erzeugen müssten. Die Reflexe waren scharf und ikosaedrisch konsistent. *(gesichert)*
 
@@ -133,11 +133,11 @@ Lange galten Quasikristalle als rein synthetisch. Dann fand ein Team um **Luca B
 
 - **Ikosaedrit**, Zusammensetzung **Al₆₃Cu₂₄Fe₁₃**, mit **ikosaedrischer Symmetrie**. 2010 von der International Mineralogical Association als Mineral anerkannt — der erste anerkannte natürliche Quasikristall. *(gesichert)*
 - Die Probe steckte in einem Gesteinsstück, das als „Khatyrkit" katalogisiert war (Museo di Storia Naturale, Florenz), aus dem **Chatyrka-Gebiet** der Korjaken-Berge in Tschukotka/Ostrussland. Das Ausgangsstück war 1979 von dem russischen Studenten Valery Kryachko geborgen worden und lag jahrzehntelang unerkannt. *(gesichert)*
-- **Außerirdischer Ursprung:** Das Wirtsgestein ist der **Khatyrka-Meteorit**, ein **CV3-kohliger Chondrit** (zu den ältesten bekannten Meteoriten, ~4,5 Mrd. Jahre alt). Sauerstoff-Isotope und mitgefundenes **Stishovit** (eine Hochdruck-Form von Siliziumdioxid) belegen eine Hochdruck-Stoßgeschichte. Der Quasikristall bildete sich vermutlich bei einer Kollision im frühen Sonnensystem. *(gesichert)*
+- **Ausserirdischer Ursprung:** Das Wirtsgestein ist der **Khatyrka-Meteorit**, ein **CV3-kohliger Chondrit** (zu den ältesten bekannten Meteoriten, ~4,5 Mrd. Jahre alt). Sauerstoff-Isotope und mitgefundenes **Stishovit** (eine Hochdruck-Form von Siliziumdioxid) belegen eine Hochdruck-Stossgeschichte. Der Quasikristall bildete sich vermutlich bei einer Kollision im frühen Sonnensystem. *(gesichert)*
 - Begleitminerale: **Khatyrkit (CuAl₂)** und **Cupalit (CuAl)**. *(gesichert)*
 - Ein zweiter natürlicher Quasikristall aus demselben Meteoriten ist **Dekagonit**, Al₇₁Ni₂₄Fe₅, mit **zehnzähliger (dekagonaler)** Symmetrie. *(gesichert)* Eine dritte Phase wurde später ebenfalls gefunden. *(Detail)*
 
-Bemerkenswert: Ikosaedrit war die erste Quasikristall-Zusammensetzung, die in der **Natur** gefunden wurde. Allerdings war die Al-Cu-Fe-Klasse selbst zuvor (Ende der 1980er, japanische Labore) bereits synthetisch hergestellt worden — der natürliche Fund kam später. „Natürlich" heißt hier **außerirdisch entstanden**, nicht „auf der Erde gewachsen". *(gesichert)*
+Bemerkenswert: Ikosaedrit war die erste Quasikristall-Zusammensetzung, die in der **Natur** gefunden wurde. Allerdings war die Al-Cu-Fe-Klasse selbst zuvor (Ende der 1980er, japanische Labore) bereits synthetisch hergestellt worden — der natürliche Fund kam später. „Natürlich" heisst hier **ausserirdisch entstanden**, nicht „auf der Erde gewachsen". *(gesichert)*
 
 *Umstritten / offen:* Die genauen Bildungsbedingungen des natürlichen Ikosaedrits sind in der Literatur strittig — manche Studien nennen Schockdruck über 5 GPa und über 1200 °C mit rascher Abkühlung, andere moderatere Bedingungen. *(mittel)*
 
@@ -151,11 +151,11 @@ Bemerkenswert: Ikosaedrit war die erste Quasikristall-Zusammensetzung, die in de
 
 Die ikosaedrische Geometrie taucht in der Natur mehrfach auf. Wichtig: Es handelt sich um **verschiedene Ursachen, die nur dieselbe Geometrie teilen** — nicht um eine einzige „Vorliebe der Natur für die Zwölf".
 
-**Viren (Caspar-Klug, 1962).** Viele Viren verpacken ihr Erbgut in einer Proteinhülle mit **ikosaedrischer Symmetrie**. Der Grund ist Effizienz: Mit möglichst wenig genetischer Information bauen viele **identische** Proteine eine geschlossene Schale. Die ikosaedrische Anordnung bietet die meisten symmetrisch-gleichwertigen Positionen (60). Das **Caspar-Klug-Prinzip der Quasi-Äquivalenz** erklärt, wie auch größere Hüllen entstehen: Die Bausteine bilden Fünfergruppen (Pentamere) und Sechsergruppen (Hexamere). Auf jede der **zwölf** fünfzähligen Ecken kommt genau ein Pentamer; die erlaubten Größen folgen der Triangulationszahl T = h² + hk + k² (T = 1, 3, 4, 7, …). Die Zahl der Proteine ist 60·T. **Zwölf Pentamere sind dabei immer zwingend** — der Eulersche Polyedersatz erzwingt genau zwölf Fünferringe in jeder solchen geschlossenen Schale. *(gesichert)* Sprachlich interessant: „Quasi-Äquivalenz" (1962) nimmt den späteren „Quasikristall" (1984) vorweg — beide meinen Ordnung, die fast, aber nicht exakt gleich ist. Die Verbindung ist **analog, nicht ursächlich**.
+**Viren (Caspar-Klug, 1962).** Viele Viren verpacken ihr Erbgut in einer Proteinhülle mit **ikosaedrischer Symmetrie**. Der Grund ist Effizienz: Mit möglichst wenig genetischer Information bauen viele **identische** Proteine eine geschlossene Schale. Die ikosaedrische Anordnung bietet die meisten symmetrisch-gleichwertigen Positionen (60). Das **Caspar-Klug-Prinzip der Quasi-Äquivalenz** erklärt, wie auch grössere Hüllen entstehen: Die Bausteine bilden Fünfergruppen (Pentamere) und Sechsergruppen (Hexamere). Auf jede der **zwölf** fünfzähligen Ecken kommt genau ein Pentamer; die erlaubten Grössen folgen der Triangulationszahl T = h² + hk + k² (T = 1, 3, 4, 7, …). Die Zahl der Proteine ist 60·T. **Zwölf Pentamere sind dabei immer zwingend** — der Eulersche Polyedersatz erzwingt genau zwölf Fünferringe in jeder solchen geschlossenen Schale. *(gesichert)* Sprachlich interessant: „Quasi-Äquivalenz" (1962) nimmt den späteren „Quasikristall" (1984) vorweg — beide meinen Ordnung, die fast, aber nicht exakt gleich ist. Die Verbindung ist **analog, nicht ursächlich**.
 
-**Fullerene (C₆₀).** 1985 entdeckten Kroto, Curl und Smalley das **C₆₀-Molekül**: 60 Kohlenstoffatome an den Ecken eines abgestumpften Ikosaeders — die exakte Form eines klassischen Fußballs (12 Fünfecke, 20 Sechsecke). Benannt wurde es „Buckminsterfulleren" nach Buckminster Fuller, dessen geodätische Kuppeln dieselbe Symmetrie approximieren. Nobelpreis für Chemie 1996. Auch hier erscheint die **Zwölf** zwingend als die zwölf Fünfecke, die jeder geschlossene Kohlenstoff-Käfig topologisch besitzen muss (wieder der Eulersche Polyedersatz). *(gesichert)*
+**Fullerene (C₆₀).** 1985 entdeckten Kroto, Curl und Smalley das **C₆₀-Molekül**: 60 Kohlenstoffatome an den Ecken eines abgestumpften Ikosaeders — die exakte Form eines klassischen Fussballs (12 Fünfecke, 20 Sechsecke). Benannt wurde es „Buckminsterfulleren" nach Buckminster Fuller, dessen geodätische Kuppeln dieselbe Symmetrie approximieren. Nobelpreis für Chemie 1996. Auch hier erscheint die **Zwölf** zwingend als die zwölf Fünfecke, die jeder geschlossene Kohlenstoff-Käfig topologisch besitzen muss (wieder der Eulersche Polyedersatz). *(gesichert)*
 
-**Radiolarien.** Diese einzelligen Meeresorganismen bilden filigrane Silikat-Skelette; manche Arten (etwa *Circogonia icosahedra*) sind näherungsweise **ikosaedrisch**. Die Form ergibt sich plausibel aus Minimalprinzipien (gleichmäßige Verteilung von Stützpunkten auf einer Kugel). *(teils gesichert)* Vorsicht: Der genaue molekulare Steuermechanismus ist noch nicht vollständig verstanden, und viele Arten sind nur **näherungsweise** ikosaedrisch. *(mittel)*
+**Radiolarien.** Diese einzelligen Meeresorganismen bilden filigrane Silikat-Skelette; manche Arten (etwa *Circogonia icosahedra*) sind näherungsweise **ikosaedrisch**. Die Form ergibt sich plausibel aus Minimalprinzipien (gleichmässige Verteilung von Stützpunkten auf einer Kugel). *(teils gesichert)* Vorsicht: Der genaue molekulare Steuermechanismus ist noch nicht vollständig verstanden, und viele Arten sind nur **näherungsweise** ikosaedrisch. *(mittel)*
 
 ### Kunst und Design
 
@@ -175,7 +175,7 @@ In Penrose-Mustern und der Quasikristall-Mathematik ist der Goldene Schnitt **re
 
 **B. „Verboten" ist Fachjargon, kein Naturgesetz-Verbot.** Das Restriktionstheorem verbietet Fünf-Symmetrie nur **bei gleichzeitiger Periodizität**. Es ist kein generelles Verbot der Fünf-Symmetrie in der Natur. Die dramatische Rede von „Nature's forbidden symmetry" wird oft missverstanden.
 
-**C. Pyrit/Granat haben keine echte Fünf- oder Ikosaeder-Symmetrie.** Ihre Form ähnelt nur einem Dodekaeder. Die Flächen sind unregelmäßig, es gibt keine Fünf-Achse, die Struktur ist streng kubisch (φ wird durch die ganze Zahl 2 ersetzt).
+**C. Pyrit/Granat haben keine echte Fünf- oder Ikosaeder-Symmetrie.** Ihre Form ähnelt nur einem Dodekaeder. Die Flächen sind unregelmässig, es gibt keine Fünf-Achse, die Struktur ist streng kubisch (φ wird durch die ganze Zahl 2 ersetzt).
 
 **D. Das Penrose-Muster ist Modell, nicht Atombauplan.** Es ist die anschauliche Analogie für Quasiperiodizität — die reale Atomstruktur ist komplizierter.
 
@@ -187,7 +187,7 @@ In Penrose-Mustern und der Quasikristall-Mathematik ist der Goldene Schnitt **re
 
 **H. „Heilige Geometrie" und Goldener-Schnitt-Mystik — Pseudowissenschaft.** Behauptungen, der Parthenon, die Cheops-Pyramide, das menschliche Gesicht oder „die Natur generell" seien nach φ gebaut, sind **nicht haltbar**. Mess-Ungenauigkeit plus frei wählbare Messpunkte lassen leicht *irgendein* Verhältnis nahe 1,6 „finden" — das ist Bestätigungsfehler, kein Naturgesetz. φ ist mathematisch real und in Quasikristallen, Penrose-Mustern und Phyllotaxis nachweisbar; die spirituelle Aufladung („göttliche Proportion", Quasikristalle als „Beweis heiliger Geometrie") ist **Spekulation ohne empirischen Gehalt**. *(als pseudowissenschaftlich markiert)*
 
-**I. Detail-Verwechslungen.** (i) Shechtman fand einen *synthetischen* Quasikristall; der erste *natürliche* (Ikosaedrit) kam erst 2009/2010 und ist außerirdisch. (ii) Shechtman = Beobachtung (1982), Steinhardt/Levine = Theorie und Name (1984). (iii) „6D-Gitter" ist ein Rechenmodell, kein physischer Mehr-Dimensionen-Raum.
+**I. Detail-Verwechslungen.** (i) Shechtman fand einen *synthetischen* Quasikristall; der erste *natürliche* (Ikosaedrit) kam erst 2009/2010 und ist ausserirdisch. (ii) Shechtman = Beobachtung (1982), Steinhardt/Levine = Theorie und Name (1984). (iii) „6D-Gitter" ist ein Rechenmodell, kein physischer Mehr-Dimensionen-Raum.
 
 ## Quellen (Tier-System)
 

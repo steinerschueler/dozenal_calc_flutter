@@ -104,11 +104,11 @@ const List<Unit> _metalUnits = [
 const List<String> _troyBreakdown = ['lb t', 'oz t', 'dwt', 'gr'];
 
 AssetGenus _metal(String key) => AssetGenus(
-      key: key,
-      assetClass: AssetClass.metal,
-      units: _metalUnits,
-      breakdown: _troyBreakdown,
-    );
+  key: key,
+  assetClass: AssetClass.metal,
+  units: _metalUnits,
+  breakdown: _troyBreakdown,
+);
 
 // ── Currency denomination ladders (exact, single-world) ───────────────────
 //

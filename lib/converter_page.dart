@@ -74,7 +74,8 @@ class ConverterBody extends StatelessWidget {
                       // → unit-theory entry; the final hop names the
                       // category (a matching tab exists for the
                       // kTheoryAreas categories).
-                      more: '${l.unitInfoMore} → ${l.infoListTheoryExpansion}'
+                      more:
+                          '${l.unitInfoMore} → ${l.infoListTheoryExpansion}'
                           ' → ${l.infoListConversionsEntry}'
                           ' → ${converterCategoryLabel(cat, l)}',
                     ),

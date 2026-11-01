@@ -33,7 +33,8 @@ List<RecChapter> _recChaptersHi() => const [
           'मालिकाना — कोड में कोई अंतर्दृष्टि नहीं',
           'आधार 12 आउटपुट नहीं',
         ],
-        url: 'https://www.casio.com/intl/scientific-calculators/product.FX-5800P/',
+        url:
+            'https://www.casio.com/intl/scientific-calculators/product.FX-5800P/',
       ),
       RecCalc(
         'SwissMicros DM42n',
@@ -74,7 +75,8 @@ List<RecChapter> _recChaptersHi() => const [
           'जटिल गणनाओं में स्पष्ट रूप से धीमा',
           'आधार 12 नहीं',
         ],
-        url: 'https://www.casio.com/us/scientific-calculators/product.FX-991CW/',
+        url:
+            'https://www.casio.com/us/scientific-calculators/product.FX-991CW/',
       ),
     ],
     verdict:
@@ -291,10 +293,7 @@ List<RecChapter> _recChaptersHi() => const [
           'RPN, पेपर टेप, अनेक रूपांतरण',
           'Magic Variables, Handoff iOS/macOS',
         ],
-        cons: [
-          'मालिकाना, सशुल्क',
-          'आधार 12 नहीं',
-        ],
+        cons: ['मालिकाना, सशुल्क', 'आधार 12 नहीं'],
         url: 'https://pcalc.com/mac/',
       ),
       RecCalc(
@@ -308,10 +307,7 @@ List<RecChapter> _recChaptersHi() => const [
           'Decimal-128 सटीकता',
           'सभी प्लेटफ़ॉर्म पर समान',
         ],
-        cons: [
-          'RPN तर्क',
-          'आधार 12 नहीं',
-        ],
+        cons: ['RPN तर्क', 'आधार 12 नहीं'],
         url: 'https://thomasokken.com/free42/',
       ),
     ],
@@ -343,9 +339,7 @@ List<RecChapter> _recChaptersHi() => const [
           'सबसे शक्तिशाली इंजन, आधार 12 में भी गणना',
           'स्क्रिप्टेबल CLI — एलियास, पाइप, स्वयं की फ़ंक्शन लाइब्रेरी',
         ],
-        cons: [
-          'सुविधाओं की प्रचुरता को कुछ सीखने की आवश्यकता है',
-        ],
+        cons: ['सुविधाओं की प्रचुरता को कुछ सीखने की आवश्यकता है'],
         url: 'https://qalculate.github.io/',
       ),
       RecCalc(
@@ -359,10 +353,7 @@ List<RecChapter> _recChaptersHi() => const [
           'प्रोग्रामर मोड (bin/oct/hex)',
           'KDE Plasma में अच्छी तरह एकीकृत',
         ],
-        cons: [
-          'कोई CAS नहीं',
-          'आधार 12 नहीं',
-        ],
+        cons: ['कोई CAS नहीं', 'आधार 12 नहीं'],
         url: 'https://apps.kde.org/kcalc/',
       ),
       RecCalc(
@@ -372,14 +363,8 @@ List<RecChapter> _recChaptersHi() => const [
             'इकाइयों और मुद्राओं के साथ GNOME मानक कैलकुलेटर, साथ ही उन्नत, '
             'वित्तीय और प्रोग्रामिंग मोड। Qalculate से कार्यात्मक रूप से कमज़ोर, '
             'लेकिन संपूर्ण रूप से ठोस।',
-        pros: [
-          'ओपन सोर्स, उपयोग में सरल',
-          'इकाइयाँ और मुद्राएँ अंतर्निहित',
-        ],
-        cons: [
-          'Qalculate की तुलना में कम शक्तिशाली',
-          'आधार 12 नहीं',
-        ],
+        pros: ['ओपन सोर्स, उपयोग में सरल', 'इकाइयाँ और मुद्राएँ अंतर्निहित'],
+        cons: ['Qalculate की तुलना में कम शक्तिशाली', 'आधार 12 नहीं'],
         url: 'https://apps.gnome.org/Calculator/',
       ),
       RecCalc(
@@ -461,10 +446,7 @@ List<RecChapter> _recChaptersHi() => const [
             'सिंटैक्स हाइलाइटिंग और ऑटोकम्प्लीशन के साथ तीव्र, कुंजी-केंद्रित '
             'इनपुट, उच्च सटीकता, बिना इंस्टॉलेशन के पोर्टेबल — लेकिन वर्षों '
             'से कोई नया संस्करण नहीं।',
-        pros: [
-          'ओपन सोर्स, बहुत तेज़ कुंजीपटल इनपुट',
-          'उच्च सटीकता, पोर्टेबल',
-        ],
+        pros: ['ओपन सोर्स, बहुत तेज़ कुंजीपटल इनपुट', 'उच्च सटीकता, पोर्टेबल'],
         cons: [
           'विकास निष्क्रिय — कोई भविष्य की संभावना नहीं',
           'Qalculate द्वारा कार्यात्मक रूप से पीछे छोड़ा गया',
@@ -483,10 +465,7 @@ List<RecChapter> _recChaptersHi() => const [
           'Decimal-128 सटीकता',
           'सभी प्लेटफ़ॉर्म पर समान',
         ],
-        cons: [
-          'RPN तर्क (Plus42 इसे कम करता है)',
-          'आधार 12 नहीं',
-        ],
+        cons: ['RPN तर्क (Plus42 इसे कम करता है)', 'आधार 12 नहीं'],
         url: 'https://thomasokken.com/free42/',
       ),
     ],

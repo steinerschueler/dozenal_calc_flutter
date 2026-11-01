@@ -11,8 +11,20 @@ void main() {
     // All 14 languages are fully translated — every locale resolves to a
     // non-empty chapter list.
     for (final tag in [
-      'de', 'en', 'fr', 'es', 'it', 'fa', 'ru', 'ga',
-      'hi', 'zh', 'zh-Hant', 'cy', 'ja', 'ar',
+      'de',
+      'en',
+      'fr',
+      'es',
+      'it',
+      'fa',
+      'ru',
+      'ga',
+      'hi',
+      'zh',
+      'zh-Hant',
+      'cy',
+      'ja',
+      'ar',
     ]) {
       final chapters = manualChapters(tag);
       expect(chapters, isNotEmpty, reason: '$tag should resolve to chapters');
@@ -25,24 +37,52 @@ void main() {
     expect(de.length, 6);
     expect(de.first.title, 'Der zweite Rechner');
     for (final tag in [
-      'en', 'fr', 'es', 'it', 'fa', 'ru', 'ga',
-      'hi', 'zh', 'zh-Hant', 'cy', 'ja', 'ar',
+      'en',
+      'fr',
+      'es',
+      'it',
+      'fa',
+      'ru',
+      'ga',
+      'hi',
+      'zh',
+      'zh-Hant',
+      'cy',
+      'ja',
+      'ar',
     ]) {
       final chapters = converterManualChapters(tag);
       expect(chapters.length, de.length, reason: '$tag should have 6');
       // Fully translated: no locale shows the German chapter titles.
-      expect(chapters.first.title, isNot(de.first.title),
-          reason: '$tag should carry its own translation');
+      expect(
+        chapters.first.title,
+        isNot(de.first.title),
+        reason: '$tag should carry its own translation',
+      );
     }
     // Script-awareness: traditional and simplified Chinese differ.
-    expect(converterManualChapters('zh-Hant').first.title,
-        isNot(converterManualChapters('zh').first.title));
+    expect(
+      converterManualChapters('zh-Hant').first.title,
+      isNot(converterManualChapters('zh').first.title),
+    );
   });
 
   testWidgets('every converter-manual translation renders', (tester) async {
     for (final tag in [
-      'de', 'en', 'fr', 'es', 'it', 'fa', 'ru', 'ga',
-      'hi', 'zh', 'zh-Hant', 'cy', 'ja', 'ar',
+      'de',
+      'en',
+      'fr',
+      'es',
+      'it',
+      'fa',
+      'ru',
+      'ga',
+      'hi',
+      'zh',
+      'zh-Hant',
+      'cy',
+      'ja',
+      'ar',
     ]) {
       for (final chapter in converterManualChapters(tag)) {
         await tester.pumpWidget(
@@ -57,8 +97,11 @@ void main() {
             ),
           ),
         );
-        expect(tester.takeException(), isNull,
-            reason: '$tag/${chapter.title} should render');
+        expect(
+          tester.takeException(),
+          isNull,
+          reason: '$tag/${chapter.title} should render',
+        );
       }
     }
   });
@@ -219,7 +262,10 @@ void main() {
       ),
     );
     expect(find.text('Der Speicher: STO, RCL, MC'), findsOneWidget);
-    expect(find.text('Exakt gespeichert — kein Rundungsfehler'), findsOneWidget);
+    expect(
+      find.text('Exakt gespeichert — kein Rundungsfehler'),
+      findsOneWidget,
+    );
     expect(find.text('Das Verlaufsband'), findsOneWidget);
     expect(tester.takeException(), isNull);
   });
@@ -282,17 +328,34 @@ void main() {
     final de = manualChapters('de');
     expect(de.length, 7);
     for (final tag in [
-      'en', 'fr', 'es', 'it', 'fa', 'ru', 'ga', 'hi',
-      'zh', 'zh-Hant', 'cy', 'ja', 'ar',
+      'en',
+      'fr',
+      'es',
+      'it',
+      'fa',
+      'ru',
+      'ga',
+      'hi',
+      'zh',
+      'zh-Hant',
+      'cy',
+      'ja',
+      'ar',
     ]) {
       final chapters = manualChapters(tag);
-      expect(chapters.length, de.length,
-          reason: '$tag should have the same chapter count as German');
+      expect(
+        chapters.length,
+        de.length,
+        reason: '$tag should have the same chapter count as German',
+      );
       // Teaching chapters (ch 2+) should have own translated titles —
       // not falling back to the German string.
       if (tag != 'de') {
-        expect(chapters[1].title != de[1].title, isTrue,
-            reason: '$tag ch2 title should be translated, not German');
+        expect(
+          chapters[1].title != de[1].title,
+          isTrue,
+          reason: '$tag ch2 title should be translated, not German',
+        );
       }
     }
   });
@@ -339,7 +402,9 @@ void main() {
     expect(manualChapters('zh'), isNotEmpty);
   });
 
-  testWidgets('German Grundbedienung body renders its sections', (tester) async {
+  testWidgets('German Grundbedienung body renders its sections', (
+    tester,
+  ) async {
     final chapter = manualChapters('de').first;
     await tester.pumpWidget(
       MaterialApp(

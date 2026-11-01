@@ -18,12 +18,11 @@ Future<void> openExternalLink(BuildContext context, String href) async {
   // Capture localizations before the async gap so we can still build the
   // failure message after `launchUrl` returns.
   final l = AppLocalizations.of(context);
-  final ok =
-      await launchUrl(uri, mode: LaunchMode.externalApplication);
+  final ok = await launchUrl(uri, mode: LaunchMode.externalApplication);
   if (!ok && context.mounted) {
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text(l.externalLinkError(href))),
-    );
+    ScaffoldMessenger.of(
+      context,
+    ).showSnackBar(SnackBar(content: Text(l.externalLinkError(href))));
   }
 }
 

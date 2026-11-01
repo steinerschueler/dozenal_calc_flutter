@@ -936,27 +936,38 @@ void main() {
         ..handleClick(const Add())
         ..handleClick(dg(5));
       expect(s.inputBuffer, [
-        const Sin(), Digit(DozenalDigit.d3), Digit(DozenalDigit.d0),
-        const Add(), Digit(DozenalDigit.d5), const ParenClose(),
+        const Sin(),
+        Digit(DozenalDigit.d3),
+        Digit(DozenalDigit.d0),
+        const Add(),
+        Digit(DozenalDigit.d5),
+        const ParenClose(),
       ]);
       expect(s.cursorPos, 5); // still inside, before the close paren
     });
 
-    test('the ) key steps over the auto-paired close instead of duplicating', () {
-      final s = DozenalCalcState()
-        ..handleClick(const Sin())
-        ..handleClick(dg(3))
-        ..handleClick(dg(0))
-        ..handleClick(const ParenClose()) // step over
-        ..handleClick(const Add())
-        ..handleClick(dg(5));
-      expect(s.inputBuffer, [
-        const Sin(), Digit(DozenalDigit.d3), Digit(DozenalDigit.d0),
-        const ParenClose(), const Add(), Digit(DozenalDigit.d5),
-      ]);
-      // exactly one close paren (no duplicate from the ) press)
-      expect(s.inputBuffer.whereType<ParenClose>().length, 1);
-    });
+    test(
+      'the ) key steps over the auto-paired close instead of duplicating',
+      () {
+        final s = DozenalCalcState()
+          ..handleClick(const Sin())
+          ..handleClick(dg(3))
+          ..handleClick(dg(0))
+          ..handleClick(const ParenClose()) // step over
+          ..handleClick(const Add())
+          ..handleClick(dg(5));
+        expect(s.inputBuffer, [
+          const Sin(),
+          Digit(DozenalDigit.d3),
+          Digit(DozenalDigit.d0),
+          const ParenClose(),
+          const Add(),
+          Digit(DozenalDigit.d5),
+        ]);
+        // exactly one close paren (no duplicate from the ) press)
+        expect(s.inputBuffer.whereType<ParenClose>().length, 1);
+      },
+    );
 
     test('Del on an empty auto-pair removes both tokens', () {
       final s = DozenalCalcState()
@@ -972,8 +983,11 @@ void main() {
         ..handleClick(const Cos())
         ..handleClick(dg(0));
       expect(s.inputBuffer, [
-        const Sin(), const Cos(), Digit(DozenalDigit.d0),
-        const ParenClose(), const ParenClose(),
+        const Sin(),
+        const Cos(),
+        Digit(DozenalDigit.d0),
+        const ParenClose(),
+        const ParenClose(),
       ]);
       s.handleClick(const Equals());
       expect(s.errorMsg, isNull);

@@ -6,7 +6,7 @@
 **Verifikation:** Alle Winkel/Zählungen per Python nachgerechnet. Merge aus drei Recherche-
 Dossiers (park_a Kern · park_b Diagramm/Basis-12 · park_c Geschichte/Kultur).
 
-> Methodik gemäß `docs/research/README.md`. Maßstab `nature_pyrit.md`. **Diagramm:**
+> Methodik gemäss `docs/research/README.md`. Massstab `nature_pyrit.md`. **Diagramm:**
 > `ParkettierungPainter` in `lib/info_content.dart`, Hook `imageId 'math/parkettierung'`.
 
 ---
@@ -14,7 +14,7 @@ Dossiers (park_a Kern · park_b Diagramm/Basis-12 · park_c Geschichte/Kultur).
 ## 1. Was eine archimedische Parkettierung ist
 
 Eine **Parkettierung** bedeckt die Ebene lückenlos und überlappungsfrei mit Vielecken. Eine
-**archimedische** (uniforme) Parkettierung verwendet nur regelmäßige Vielecke und sieht an
+**archimedische** (uniforme) Parkettierung verwendet nur regelmässige Vielecke und sieht an
 **jeder Ecke gleich** aus (vertex-transitiv). Es gibt **genau 11** uniforme Parkettierungen:
 3 reguläre (nur eine Vielecksorte: Dreieck, Quadrat, Sechseck) + 8 semireguläre.
 
@@ -25,9 +25,9 @@ Zwölfeck. Die Innenwinkel an jeder Ecke müssen exakt **360°** ergeben.
 
 ## 2. Genau zwei enthalten ein Zwölfeck
 
-Innenwinkel eines regelmäßigen n-Ecks = (n−2)·180/n: Dreieck 60°, Quadrat 90°, Sechseck
+Innenwinkel eines regelmässigen n-Ecks = (n−2)·180/n: Dreieck 60°, Quadrat 90°, Sechseck
 120°, **Zwölfeck 150°**. Nach Abzug des Zwölfecks (150°) bleiben 210° für die Nachbarn.
-Erschöpfende Suche (n = 3…25, selbst gerechnet): genau **zwei** Paare regelmäßiger Vielecke
+Erschöpfende Suche (n = 3…25, selbst gerechnet): genau **zwei** Paare regelmässiger Vielecke
 ergeben 210° — (Dreieck, Zwölfeck) und (Quadrat, Sechseck). Also:
 
 | Eckenkonfiguration | Name (engl.) | Winkelcheck |
@@ -89,10 +89,10 @@ jeder Sehne durch den Mittelpunkt läuft.
 - Sechseck an Kante (a,b): Zentrum hc = mid + u·(s·√3/2); sechs Ecken bei Radius s um hc,
   Startwinkel zu a, Schrittrichtung so, dass die zweite Ecke b trifft.
 
-Der Ring schließt **gap-frei**, weil an jeder Zwölfeck-Ecke 90°+120°+150° = 360° ist — Quadrat
-und benachbartes Sechseck teilen exakt die nach außen laufende Kante (Python: Abweichung
+Der Ring schliesst **gap-frei**, weil an jeder Zwölfeck-Ecke 90°+120°+150° = 360° ist — Quadrat
+und benachbartes Sechseck teilen exakt die nach aussen laufende Kante (Python: Abweichung
 < 10⁻⁸). Farben wie die bestehenden Diagramme: Zwölfeck helle Outline, Quadrate blau,
-Sechsecke lila, weiße Eckpunkte.
+Sechsecke lila, weisse Eckpunkte.
 
 ---
 

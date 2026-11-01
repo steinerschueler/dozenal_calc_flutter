@@ -14,10 +14,10 @@ import 'package:dozenal_calc_flutter/logic/asset_data.dart';
 import 'package:dozenal_calc_flutter/rate_store.dart';
 
 Widget _pageApp() => MaterialApp(
-      localizationsDelegates: AppLocalizations.localizationsDelegates,
-      supportedLocales: AppLocalizations.supportedLocales,
-      home: const AssetPage(),
-    );
+  localizationsDelegates: AppLocalizations.localizationsDelegates,
+  supportedLocales: AppLocalizations.supportedLocales,
+  home: const AssetPage(),
+);
 
 enum _Drill {
   classes,
@@ -113,18 +113,20 @@ void main() {
       final state = AssetState();
       // No label resolvers → tiles show the fallback labels (class.name /
       // genus.key / unit symbol). Wrap in an AnimatedBuilder so taps rebuild.
-      await tester.pumpWidget(MaterialApp(
-        home: Scaffold(
-          body: SizedBox(
-            width: 412,
-            height: 760,
-            child: AnimatedBuilder(
-              animation: state,
-              builder: (_, _) => AssetKeypad(state: state),
+      await tester.pumpWidget(
+        MaterialApp(
+          home: Scaffold(
+            body: SizedBox(
+              width: 412,
+              height: 760,
+              child: AnimatedBuilder(
+                animation: state,
+                builder: (_, _) => AssetKeypad(state: state),
+              ),
             ),
           ),
         ),
-      ));
+      );
 
       await tester.tap(find.text('metal')); // class tile (fallback label)
       await tester.pumpAndSettle();
@@ -151,18 +153,20 @@ void main() {
       await tester.binding.setSurfaceSize(const Size(412, 915));
       addTearDown(() => tester.binding.setSurfaceSize(null));
       final state = AssetState();
-      await tester.pumpWidget(MaterialApp(
-        home: Scaffold(
-          body: SizedBox(
-            width: 412,
-            height: 760,
-            child: AnimatedBuilder(
-              animation: state,
-              builder: (_, _) => AssetKeypad(state: state),
+      await tester.pumpWidget(
+        MaterialApp(
+          home: Scaffold(
+            body: SizedBox(
+              width: 412,
+              height: 760,
+              child: AnimatedBuilder(
+                animation: state,
+                builder: (_, _) => AssetKeypad(state: state),
+              ),
             ),
           ),
         ),
-      ));
+      );
 
       // The Expand overlay is gone, and the always-visible function field
       // carries Kurve/Kurse (equals circles), Wert (system row) and the memory

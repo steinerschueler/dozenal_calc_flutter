@@ -1,66 +1,61 @@
-# F-Droid submission — Dozenal Calc
+# F-Droid-Einreichung: Dozenal Calc
 
-Staging copy of the F-Droid metadata for publishing on [F-Droid](https://f-droid.org).
-F-Droid builds **from source** on its own servers (unlike Play, where you upload a
-built AAB, or Flathub, which ships a pre-built bundle), so the work is a build
-*recipe*, not an artifact.
+Arbeitskopie der F-Droid-Metadaten für die Veröffentlichung auf [F-Droid](https://f-droid.org). F-Droid baut **aus dem
+Quellcode** auf eigenen Servern. Bei Play lädt man ein gebautes AAB hoch, Flathub liefert ein vorgebautes Bundle aus. Die
+Arbeit besteht hier also aus einem Bau-*Rezept*, nicht aus einem Artefakt.
 
-- `app.weltanschauung.dozenal.yml` — the metadata + build recipe. This is the file
-  that goes into `fdroiddata/metadata/app.weltanschauung.dozenal.yml`.
+- `app.weltanschauung.dozenal.yml`: Metadaten und Bau-Rezept. Diese Datei kommt nach
+  `fdroiddata/metadata/app.weltanschauung.dozenal.yml`.
 
-App ID `app.weltanschauung.dozenal` matches the Play/iOS/macOS/Flathub bundle ID.
+Die App-ID `app.weltanschauung.dozenal` entspricht der Bundle-ID von Play, iOS, macOS und Flathub.
 
-## Why this app is a clean F-Droid candidate
+## Warum die App ein sauberer F-Droid-Kandidat ist
 
-- **MIT** licensed, source public on GitHub.
-- **No proprietary dependencies** — only `flutter_markdown_plus`, `shared_preferences`,
-  `url_launcher`, `package_info_plus` (all FOSS).
-- **No anti-features** — no ads, no tracking, no analytics, no network access, no
-  Google Play Services / Firebase. So no `AntiFeatures:` block is needed.
-- The `v1.5.1` git tag (versionCode 19) already exists on GitHub — F-Droid builds
-  from that tag.
+- **MIT**-lizenziert, Quellcode öffentlich auf GitHub.
+- **Keine proprietären Abhängigkeiten:** nur `flutter_markdown_plus`, `shared_preferences`, `url_launcher` und
+  `package_info_plus`, alle FOSS.
+- **Keine Anti-Features:** keine Werbung, kein Tracking, keine Analyse, kein Netzzugriff, keine Google Play Services und
+  kein Firebase. Ein Block `AntiFeatures:` ist deshalb nicht nötig.
+- Der Git-Tag `v1.5.1` (versionCode 19) existiert bereits auf GitHub. F-Droid baut von diesem Tag.
 
-## The build recipe, in short
+## Das Bau-Rezept in Kürze
 
-- Pins Flutter to **3.41.8** (the version matching the `v1.5.1` tag; raise it with the next tag) via the
-  `flutter` srclib. **Keep this in lockstep with CI** when you bump Flutter.
-- Strips the non-Android Flutter targets (`ios linux macos web watch`).
-- Builds a **universal APK** (`flutter build apk --release`, both ABIs in one file).
-  Split-per-ABI is a later size optimisation (it needs a `versionCode * 10 + offset`
-  scheme and multiple outputs).
-- F-Droid **signs with its own key**, so the F-Droid build will have a *different
-  signature* than the Play Store build — that's normal and expected for F-Droid.
+- Pinnt Flutter über die srclib `flutter` auf **3.41.8**, passend zum Tag `v1.5.1`. Die Version steigt mit dem nächsten
+  Tag, nicht mit jeder Änderung an der CI.
+- Entfernt die Flutter-Ziele ausser Android (`ios linux macos web watch`).
+- Baut ein **universelles APK** (`flutter build apk --release`, beide ABIs in einer Datei). Getrennte APKs pro ABI sind
+  eine spätere Grössenoptimierung und brauchen ein Schema `versionCode * 10 + offset` sowie mehrere Ausgaben.
+- F-Droid **signiert mit eigenem Schlüssel**. Der F-Droid-Build hat also eine *andere Signatur* als der Play-Store-Build.
+  Das ist bei F-Droid normal und erwartet.
 
-## How to submit (needs a GitLab account — F-Droid uses GitLab, not GitHub)
+## So einreichen (braucht ein GitLab-Konto, F-Droid nutzt GitLab statt GitHub)
 
-1. Create / sign in at [gitlab.com](https://gitlab.com) and **fork**
-   [`fdroid/fdroiddata`](https://gitlab.com/fdroid/fdroiddata).
-2. Copy this file into the fork as
-   `metadata/app.weltanschauung.dozenal.yml`.
-3. **Test the recipe locally** (strongly recommended before opening the MR — Flutter
-   recipes usually need a round or two of iteration):
+1. Bei [gitlab.com](https://gitlab.com) anmelden und [`fdroid/fdroiddata`](https://gitlab.com/fdroid/fdroiddata) **forken**.
+2. Diese Datei in den Fork kopieren als `metadata/app.weltanschauung.dozenal.yml`.
+3. **Das Rezept lokal testen**. Das wird vor dem MR dringend empfohlen, weil Flutter-Rezepte meist ein bis zwei Runden
+   brauchen:
+
    ```bash
-   pip install fdroidserver        # or: apt install fdroidserver
+   pip install fdroidserver        # oder: apt install fdroidserver
    fdroid readmeta
    fdroid lint app.weltanschauung.dozenal
    fdroid build -v -l app.weltanschauung.dozenal:19
    ```
-4. Commit on a branch, push to your fork, open a **merge request** against
-   `fdroiddata` `master`. F-Droid's CI re-runs lint + build; address any reviewer
-   feedback and the maintainers merge it.
 
-## Known tuning points (flag for the reviewers if CI complains)
+4. Auf einem Branch committen, in den Fork pushen und einen **Merge Request** gegen `fdroiddata` `master` eröffnen. Die CI
+   von F-Droid wiederholt Lint und Build. Nach dem Einarbeiten allfälliger Rückmeldungen mergen die Maintainer.
 
-- **Flutter srclib ref:** if `flutter@3.41.8` isn't resolvable as-is, the fallback is
-  `flutter@stable` plus a `prebuild` step `git -C $$flutter$$ checkout 3.41.8`.
-- **Auto-update of versionCode:** `UpdateCheckMode: Tags` + `AutoUpdateMode: Version`
-  detects new `vX.Y.Z` tags, but Flutter keeps its versionCode in `pubspec.yaml`
-  (`version: X.Y.Z+N`), which F-Droid's auto-updater doesn't always parse. If it
-  mis-detects the code, the fix is an `UpdateCheckData` pointer at `pubspec.yaml` or a
-  manual `Builds:` entry per release. The first (1.5.1/19) entry is manual regardless.
+## Bekannte Stellschrauben (bei CI-Problemen den Prüfern nennen)
 
-## Updating for a future release
+- **Flutter-srclib-Ref:** Lässt sich `flutter@3.41.8` nicht auflösen, ist der Ausweg `flutter@stable` plus ein
+  `prebuild`-Schritt `git -C $$flutter$$ checkout 3.41.8`.
+- **Automatische Aktualisierung des versionCode:** `UpdateCheckMode: Tags` und `AutoUpdateMode: Version` erkennen neue Tags
+  `vX.Y.Z`. Flutter führt den versionCode aber in `pubspec.yaml` (`version: X.Y.Z+N`), was der Updater von F-Droid nicht
+  immer liest. Erkennt er ihn falsch, hilft ein Verweis `UpdateCheckData` auf `pubspec.yaml` oder ein manueller Eintrag
+  unter `Builds:` pro Release. Der erste Eintrag (1.5.1/19) ist in jedem Fall manuell.
 
-Tag `vX.Y.Z` on GitHub (the version must be set in `pubspec.yaml`), then either let
-the F-Droid update bot propose the new build or add a `Builds:` entry mirroring the
-1.5.1 one with the new `versionName`/`versionCode`/`commit`.
+## Für ein späteres Release aktualisieren
+
+Auf GitHub `vX.Y.Z` taggen (die Version muss in `pubspec.yaml` stehen). Dann schlägt entweder der Update-Bot von F-Droid
+den neuen Build vor, oder es kommt ein Eintrag unter `Builds:` dazu, der dem von 1.5.1 folgt, mit neuem `versionName`,
+`versionCode` und `commit`.

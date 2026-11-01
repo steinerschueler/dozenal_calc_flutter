@@ -20,9 +20,12 @@ const Map<UnitCategory, Map<String, String>> _unitDescEn = {
     'ft': 'Foot — imperial length of twelve inches (30.48 cm).',
     'yd': 'Yard — three feet (0.9144 m).',
     'mi': 'Mile — 1760 yards, the common imperial road measure (1.609 km).',
-    'fathom': 'Fathom — a nautical measure of water depth, six feet (1.8288 m).',
-    'nmi': 'Nautical mile — one arc-minute on the Earth’s circumference, exactly 1852 m.',
-    'league': 'League — historically about an hour’s walk, three miles (4.828 km).',
+    'fathom':
+        'Fathom — a nautical measure of water depth, six feet (1.8288 m).',
+    'nmi':
+        'Nautical mile — one arc-minute on the Earth’s circumference, exactly 1852 m.',
+    'league':
+        'League — historically about an hour’s walk, three miles (4.828 km).',
     'mm': 'Millimetre — one thousandth of a metre.',
     'cm': 'Centimetre — one hundredth of a metre.',
     'm': 'Metre — the SI base unit of length.',
@@ -30,8 +33,10 @@ const Map<UnitCategory, Map<String, String>> _unitDescEn = {
   },
   UnitCategory.area: {
     'sq in': 'Square inch — the area of a square one inch on a side.',
-    'sq ft': 'Square foot — area of a square one foot on a side; 144 square inches.',
-    'sq yd': 'Square yard — area of a square one yard on a side; nine square feet.',
+    'sq ft':
+        'Square foot — area of a square one foot on a side; 144 square inches.',
+    'sq yd':
+        'Square yard — area of a square one yard on a side; nine square feet.',
     'acre': 'Acre — an old field measure, 4840 square yards (about 4047 m²).',
     'sq mi': 'Square mile — area of a square one mile on a side; 640 acres.',
     'cm²': 'Square centimetre — area of a square one centimetre on a side.',
@@ -41,9 +46,12 @@ const Map<UnitCategory, Map<String, String>> _unitDescEn = {
   },
   UnitCategory.space: {
     'cu in': 'Cubic inch — the volume of a cube one inch on an edge.',
-    'cu ft': 'Cubic foot — volume of a cube one foot on an edge; 1728 cubic inches.',
-    'cu yd': 'Cubic yard — volume of a cube one yard on an edge; 27 cubic feet.',
-    'cm³': 'Cubic centimetre — volume of a cube 1 cm on an edge (one millilitre).',
+    'cu ft':
+        'Cubic foot — volume of a cube one foot on an edge; 1728 cubic inches.',
+    'cu yd':
+        'Cubic yard — volume of a cube one yard on an edge; 27 cubic feet.',
+    'cm³':
+        'Cubic centimetre — volume of a cube 1 cm on an edge (one millilitre).',
     'm³': 'Cubic metre — the SI unit of volume; a cube one metre on an edge.',
   },
   UnitCategory.weight: {
@@ -52,7 +60,8 @@ const Map<UnitCategory, Map<String, String>> _unitDescEn = {
     'st': 'Stone — a British body-weight measure, 14 pounds (6.35 kg).',
     'cwt': 'Hundredweight — US short hundredweight of 100 pounds (45.36 kg).',
     'ton': 'Short ton — US ton of 2000 pounds (907.2 kg).',
-    'oz t': 'Troy ounce — a weight for precious metals, slightly heavier than the ordinary ounce (31.1 g).',
+    'oz t':
+        'Troy ounce — a weight for precious metals, slightly heavier than the ordinary ounce (31.1 g).',
     'g': 'Gram — one thousandth of a kilogram.',
     'kg': 'Kilogram — the SI base unit of mass.',
     't': 'Tonne — one thousand kilograms.',
@@ -70,60 +79,81 @@ const Map<UnitCategory, Map<String, String>> _unitDescEn = {
     '″': 'Arcsecond — one sixtieth of an arcminute.',
     'sign': 'Sign — one zodiac sign, 30°, one twelfth of the full circle.',
     'turn': 'Turn — the full circle, 360° or 2π.',
-    'gon': 'Gon (gradian) — one four-hundredth of a full turn; a right angle is 100 gon.',
-    'rad': 'Radian — the SI angle measure; the angle whose arc equals the radius.',
+    'gon':
+        'Gon (gradian) — one four-hundredth of a full turn; a right angle is 100 gon.',
+    'rad':
+        'Radian — the SI angle measure; the angle whose arc equals the radius.',
   },
   UnitCategory.price: {
-    'd': 'Penny (old, “d” for denarius) — one twelfth of a shilling in old British money.',
-    'sh': 'Shilling — one twentieth of a pound in old British money, twelve pence.',
+    'd':
+        'Penny (old, “d” for denarius) — one twelfth of a shilling in old British money.',
+    'sh':
+        'Shilling — one twentieth of a pound in old British money, twelve pence.',
     '£': 'Pound sterling — the main British currency unit.',
-    'guinea': 'Guinea — a historic coin worth one pound and one shilling (21 shillings).',
+    'guinea':
+        'Guinea — a historic coin worth one pound and one shilling (21 shillings).',
     'p': 'Penny (new) — one hundredth of a pound since decimalisation in 1971.',
     '£dec': 'Pound (decimal) — today’s pound of 100 (new) pence.',
   },
   UnitCategory.temp: {
-    '°F': 'Degree Fahrenheit — scale with water freezing at 32° and boiling at 212°.',
-    '°R': 'Degree Rankine — an absolute scale with Fahrenheit-sized steps; 0 is absolute zero.',
-    '°C': 'Degree Celsius — scale with water freezing at 0° and boiling at 100°.',
-    'K': 'Kelvin — the SI base unit of temperature, counted from absolute zero.',
+    '°F':
+        'Degree Fahrenheit — scale with water freezing at 32° and boiling at 212°.',
+    '°R':
+        'Degree Rankine — an absolute scale with Fahrenheit-sized steps; 0 is absolute zero.',
+    '°C':
+        'Degree Celsius — scale with water freezing at 0° and boiling at 100°.',
+    'K':
+        'Kelvin — the SI base unit of temperature, counted from absolute zero.',
   },
   UnitCategory.press: {
-    'psi': 'Pounds per square inch — imperial pressure (one lbf on a one-square-inch area).',
-    'inHg': 'Inches of mercury — the pressure that holds a mercury column one inch high.',
+    'psi':
+        'Pounds per square inch — imperial pressure (one lbf on a one-square-inch area).',
+    'inHg':
+        'Inches of mercury — the pressure that holds a mercury column one inch high.',
     'Pa': 'Pascal — the SI unit of pressure; one newton per square metre.',
     'kPa': 'Kilopascal — one thousand pascals.',
     'bar': 'Bar — 100000 pascals, close to mean sea-level air pressure.',
-    'atm': 'Standard atmosphere — mean sea-level air pressure (101325 pascals).',
-    'mmHg': 'Millimetres of mercury (torr) — pressure of a mercury column one millimetre high.',
+    'atm':
+        'Standard atmosphere — mean sea-level air pressure (101325 pascals).',
+    'mmHg':
+        'Millimetres of mercury (torr) — pressure of a mercury column one millimetre high.',
   },
   UnitCategory.force: {
     'lbf': 'Pound-force — the weight-force of one pound (4.448 N).',
-    'pdl': 'Poundal — an imperial force that accelerates one pound at 1 ft/s² (0.138 N).',
+    'pdl':
+        'Poundal — an imperial force that accelerates one pound at 1 ft/s² (0.138 N).',
     'N': 'Newton — the SI unit of force; accelerates one kilogram at 1 m/s².',
     'kN': 'Kilonewton — one thousand newtons.',
     'kgf': 'Kilogram-force — the weight-force of one kilogram (9.807 N).',
-    'dyn': 'Dyne — the CGS unit of force; accelerates one gram at 1 cm/s² (10⁻⁵ N).',
+    'dyn':
+        'Dyne — the CGS unit of force; accelerates one gram at 1 cm/s² (10⁻⁵ N).',
   },
   UnitCategory.work: {
-    'BTU': 'British Thermal Unit — heat that warms one pound of water by 1 °F (1055 J).',
-    'ft·lbf': 'Foot-pound — work to move one pound-force through one foot (1.356 J).',
+    'BTU':
+        'British Thermal Unit — heat that warms one pound of water by 1 °F (1055 J).',
+    'ft·lbf':
+        'Foot-pound — work to move one pound-force through one foot (1.356 J).',
     'J': 'Joule — the SI unit of energy; one newton over one metre.',
     'kJ': 'Kilojoule — one thousand joules.',
     'Wh': 'Watt-hour — energy of one watt of power over one hour (3600 J).',
-    'kWh': 'Kilowatt-hour — one thousand watt-hours, the usual electricity-bill unit.',
+    'kWh':
+        'Kilowatt-hour — one thousand watt-hours, the usual electricity-bill unit.',
     'cal': 'Calorie — heat that warms one gram of water by 1 °C (4.184 J).',
     'kcal': 'Kilocalorie — one thousand calories; the “calorie” of nutrition.',
   },
   UnitCategory.power: {
     'hp': 'Horsepower (mechanical, imperial) — about 745.7 watts.',
-    'BTU/h': 'BTU per hour — a power measure used mainly in heating and cooling (0.293 W).',
+    'BTU/h':
+        'BTU per hour — a power measure used mainly in heating and cooling (0.293 W).',
     'W': 'Watt — the SI unit of power; one joule per second.',
     'kW': 'Kilowatt — one thousand watts.',
     'PS': 'Metric horsepower — 735.5 watts.',
   },
   UnitCategory.cook: {
-    'tsp': 'Teaspoon (US) — a cooking measure, one third of a tablespoon (4.93 ml).',
-    'tbsp': 'Tablespoon (US) — a cooking measure of three teaspoons (14.79 ml).',
+    'tsp':
+        'Teaspoon (US) — a cooking measure, one third of a tablespoon (4.93 ml).',
+    'tbsp':
+        'Tablespoon (US) — a cooking measure of three teaspoons (14.79 ml).',
     'fl oz': 'Fluid ounce (US) — a volume measure for liquids (29.57 ml).',
     'cup': 'Cup (US) — a cooking measure of eight fluid ounces (236.6 ml).',
     'pint': 'Pint (US) — two cups, i.e. 16 fluid ounces (473.2 ml).',
@@ -140,10 +170,14 @@ const Map<UnitCategory, Map<String, String>> _unitDescEn = {
     'L': 'Litre — a metric volume measure, one cubic decimetre.',
   },
   UnitCategory.moment: {
-    'lbf·ft': 'Pound-foot — the torque of one pound-force on a one-foot lever (1.356 N·m).',
-    'lbf·in': 'Pound-inch — the torque of one pound-force on a one-inch lever (0.113 N·m).',
-    'N·m': 'Newton-metre — the SI unit of torque; one newton on a one-metre lever.',
+    'lbf·ft':
+        'Pound-foot — the torque of one pound-force on a one-foot lever (1.356 N·m).',
+    'lbf·in':
+        'Pound-inch — the torque of one pound-force on a one-inch lever (0.113 N·m).',
+    'N·m':
+        'Newton-metre — the SI unit of torque; one newton on a one-metre lever.',
     'kN·m': 'Kilonewton-metre — one thousand newton-metres.',
-    'kgf·m': 'Kilogram-force metre — the torque of one kilogram-force on a one-metre lever (9.807 N·m).',
+    'kgf·m':
+        'Kilogram-force metre — the torque of one kilogram-force on a one-metre lever (9.807 N·m).',
   },
 };

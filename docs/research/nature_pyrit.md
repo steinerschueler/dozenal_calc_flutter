@@ -2,13 +2,13 @@ Ich erstelle das Dossier direkt aus den vier Recherche-Blöcken.
 
 ## Die Form und ihre Geometrie (Zwölf-Bezug)
 
-Pyrit (Eisenkies, „Katzengold") ist das Mineral Eisendisulfid, **FeS₂**. Es kristallisiert im **kubischen System**. Pyrit kann drei einfache äußere Formen (Trachten) bilden:
+Pyrit (Eisenkies, „Katzengold") ist das Mineral Eisendisulfid, **FeS₂**. Es kristallisiert im **kubischen System**. Pyrit kann drei einfache äussere Formen (Trachten) bilden:
 
 - den **Würfel {100}** mit sechs quadratischen Flächen,
 - das **Oktaeder {111}** mit acht dreieckigen Flächen,
 - und das **Pentagondodekaeder {210}** mit **zwölf fünfeckigen Flächen**.
 
-Diese Zwölfflächner-Form heißt **Pyritoeder** (englisch *pyritohedron*). Sie trägt diesen Namen, weil sie bei Pyrit besonders typisch auftritt — sie ist gewissermaßen das Markenzeichen dieses Minerals. Hier liegt der direkte Bezug zur Zahl Zwölf: zwölf Flächen, wie beim griechischen Dodekaeder (*dodeka* = zwölf).
+Diese Zwölfflächner-Form heisst **Pyritoeder** (englisch *pyritohedron*). Sie trägt diesen Namen, weil sie bei Pyrit besonders typisch auftritt — sie ist gewissermassen das Markenzeichen dieses Minerals. Hier liegt der direkte Bezug zur Zahl Zwölf: zwölf Flächen, wie beim griechischen Dodekaeder (*dodeka* = zwölf).
 
 **Die Topologie ist dieselbe wie beim platonischen Dodekaeder.** Der Pyritoeder hat:
 
@@ -20,7 +20,7 @@ Das erfüllt die Eulersche Formel: 12 − 30 + 20 = 2. Bis hierhin gleicht der P
 
 **Doch er ist kein platonisches Dodekaeder.** Das ist der wichtigste Punkt dieses Kapitels, und er darf nicht verschwiegen werden:
 
-- Die zwölf Flächen sind **unregelmäßige Fünfecke**, keine gleichseitigen, gleichwinkligen Pentagone. Beim regulären Dodekaeder hat jeder Innenwinkel 108°. Beim natürlichen Pyritoeder hat jede Fünfeck-Fläche stattdessen einen Winkel von etwa **121,6°**, zwei Winkel von etwa **106,6°** und zwei von etwa **102,6°**.
+- Die zwölf Flächen sind **unregelmässige Fünfecke**, keine gleichseitigen, gleichwinkligen Pentagone. Beim regulären Dodekaeder hat jeder Innenwinkel 108°. Beim natürlichen Pyritoeder hat jede Fünfeck-Fläche stattdessen einen Winkel von etwa **121,6°**, zwei Winkel von etwa **106,6°** und zwei von etwa **102,6°**.
 - Die **30 Kanten sind nicht alle gleich lang.** Sie zerfallen in zwei Gruppen: 24 gleich lange Kanten und 6 abweichende Kanten. Diese sechs Kanten verlaufen parallel zu den Würfelachsen. Beim regulären Dodekaeder sind alle 30 Kanten gleich lang.
 - Der **Flächen-Winkel (Diederwinkel)** beträgt etwa **126,87°** — exakt 2·arctan(2). Das folgt direkt aus der {210}-Orientierung.
 
@@ -62,7 +62,7 @@ Wichtige Kenndaten (gesichert): Raumgruppe **Pa3̄ (Nr. 205)**, Gitterparameter 
 **Warum diese Flächen und nicht andere wachsen.** Zwei Prinzipien wirken zusammen:
 
 1. **Thermodynamik (Gleichgewicht):** Im Gleichgewicht überleben die Flächen mit der geringsten Oberflächenenergie. Berechnete Werte: Die Würfelfläche (001) hat mit etwa **1,04 J/m²** die niedrigste Energie — daher die häufige Würfeltracht. Die Pyritoeder-Fläche (210) liegt bei etwa **1,65 J/m²** und ist ebenfalls relativ günstig.
-2. **Kinetik (Wachstumsgeschwindigkeit):** Flächen, die schnell wachsen, „wachsen sich aus dem Kristall heraus" und verschwinden. Langsam wachsende, energiearme Flächen bleiben als äußere Begrenzung übrig. So bestimmt die innere Atomanordnung die äußere Gestalt.
+2. **Kinetik (Wachstumsgeschwindigkeit):** Flächen, die schnell wachsen, „wachsen sich aus dem Kristall heraus" und verschwinden. Langsam wachsende, energiearme Flächen bleiben als äussere Begrenzung übrig. So bestimmt die innere Atomanordnung die äussere Gestalt.
 
 **Wann welche Form entsteht.** Experimente (Murowchick & Barnes 1987) zeigen eine Tendenz: Mit steigender Temperatur und Übersättigung durchläuft Pyrit grob die Reihe **Würfel → Oktaeder → Pyritoeder**. Grob gilt:
 
@@ -72,13 +72,13 @@ Wichtige Kenndaten (gesichert): Raumgruppe **Pa3̄ (Nr. 205)**, Gitterparameter 
 
 (Wie belastbar diese Regeln sind, siehe Abschnitt „Vorbehalte".)
 
-**Die Streifung als sichtbarer Beweis.** Pyritwürfel zeigen oft eine feine **Riefung (Striation)** auf den Flächen. Diese Streifen verlaufen auf benachbarten Würfelflächen in zueinander senkrechten Richtungen; nur gegenüberliegende Flächen haben dieselbe Richtung. Das beweist direkt, dass die Würfel-Normalachsen **nur zweizählig** sind (nicht vierzählig wie beim idealen Würfel). Die Streifung entsteht durch das stufenweise Wechselwachstum von Würfel- und Pyritoeder-Lagen und macht die Tₕ-Symmetrie mit bloßem Auge sichtbar.
+**Die Streifung als sichtbarer Beweis.** Pyritwürfel zeigen oft eine feine **Riefung (Striation)** auf den Flächen. Diese Streifen verlaufen auf benachbarten Würfelflächen in zueinander senkrechten Richtungen; nur gegenüberliegende Flächen haben dieselbe Richtung. Das beweist direkt, dass die Würfel-Normalachsen **nur zweizählig** sind (nicht vierzählig wie beim idealen Würfel). Die Streifung entsteht durch das stufenweise Wechselwachstum von Würfel- und Pyritoeder-Lagen und macht die Tₕ-Symmetrie mit blossem Auge sichtbar.
 
 ## Entdeckung, Forschung & berühmte Beispiele
 
 **Name und Antike.** Der Name kommt vom altgriechischen πῦρ (*pyr*, „Feuer"), über πυρίτης λίθος (*pyrítes líthos*, „Stein, der Feuer schlägt"). Der Grund: Schlägt man Pyrit gegen Stahl oder Stein, sprühen Funken. Der Arzt **Dioskurides** erwähnte den Stein um 50 n. Chr.; **Plinius der Ältere** beschrieb in seiner *Naturalis Historia* einen messingfarbenen Stein, der beim Schlag gegen Eisen Funken erzeugt — fast sicher Pyrit.
 
-**Vom Sammelbegriff zum klar definierten Mineral.** Um 1550 war „pyrites" bei **Georgius Agricola** ein Oberbegriff für alle Sulfidminerale. Im Deutschen hießen Pyrit und Markasit lange gemeinsam „Schwefelkies" oder „Eisenkies". Erst **Wilhelm von Haidinger trennte 1845** den kubischen Pyrit klar vom rhombischen (orthorhombischen) Markasit, der dieselbe Formel FeS₂ hat, aber ein anderes Polymorph ist.
+**Vom Sammelbegriff zum klar definierten Mineral.** Um 1550 war „pyrites" bei **Georgius Agricola** ein Oberbegriff für alle Sulfidminerale. Im Deutschen hiessen Pyrit und Markasit lange gemeinsam „Schwefelkies" oder „Eisenkies". Erst **Wilhelm von Haidinger trennte 1845** den kubischen Pyrit klar vom rhombischen (orthorhombischen) Markasit, der dieselbe Formel FeS₂ hat, aber ein anderes Polymorph ist.
 
 **Pyrit in der Geschichte der Kristallographie.** Pyrit spielte eine Schlüsselrolle dabei, dass Forscher den Unterschied zwischen Mineralform und idealer Geometrie verstanden:
 
@@ -89,8 +89,8 @@ Wichtige Kenndaten (gesichert): Raumgruppe **Pa3̄ (Nr. 205)**, Gitterparameter 
 
 - **Entstehung:** niedriggradige hydrothermale Metamorphose. Die Mineralisation sitzt in kretazischen (Wealden-)Mergeln der Urbión-Gruppe am Kontakt zur Enciso-Gruppe. Mobilisierter Schwefel reagierte mit dem Eisen der Mergel zu Pyrit; das umgebende weiche Sediment erlaubte langsames, ungestörtes Wachstum.
 - **Tracht:** überwiegend Würfel {100}, daneben kuboktaedrische Formen und Pyritoeder.
-- **Entdeckung:** 1965 im Zuge des Bleiglanz-(Galenit-)Bergbaus. Heute wird ausschließlich für Sammler abgebaut.
-- **Größe:** Kristalle meist bis etwa 10 cm, selten bis ~20 cm Kantenlänge. (Größere „Rekord"-Angaben siehe Vorbehalte.)
+- **Entdeckung:** 1965 im Zuge des Bleiglanz-(Galenit-)Bergbaus. Heute wird ausschliesslich für Sammler abgebaut.
+- **Grösse:** Kristalle meist bis etwa 10 cm, selten bis ~20 cm Kantenlänge. (Grössere „Rekord"-Angaben siehe Vorbehalte.)
 
 **Weitere klassische Fundorte** (Angaben aus der deutschen Wikipedia):
 
@@ -108,7 +108,7 @@ Wichtige Kenndaten (gesichert): Raumgruppe **Pa3̄ (Nr. 205)**, Gitterparameter 
 
 **„Narrengold".** Wegen seines goldähnlichen Glanzes wurde Pyrit oft mit echtem Gold verwechselt — daher die Namen „Katzengold" und englisch *fool's gold*. Captain John Smith verschiffte im frühen 17. Jahrhundert eine Ladung vermeintliches Gold aus Virginia nach London; es war Pyrit.
 
-**Wirtschaftliche Nutzung.** Im 19. Jahrhundert war Pyrit das wichtigste Ausgangsmaterial für **Schwefelsäure** (durch oxidierendes Rösten). Das zurückbleibende Eisenoxid diente als Eisenrohstoff oder Poliermittel. Heute gibt es Forschungsinteresse an Pyrit als Photovoltaik- und Batteriematerial; daneben besteht ein großer Sammlermarkt.
+**Wirtschaftliche Nutzung.** Im 19. Jahrhundert war Pyrit das wichtigste Ausgangsmaterial für **Schwefelsäure** (durch oxidierendes Rösten). Das zurückbleibende Eisenoxid diente als Eisenrohstoff oder Poliermittel. Heute gibt es Forschungsinteresse an Pyrit als Photovoltaik- und Batteriematerial; daneben besteht ein grosser Sammlermarkt.
 
 **Das Dodekaeder als Symbol.** Die Zwölfflächner-Form hat starke kulturelle Echos — wichtig ist aber, sauber zu trennen, was sich auf das *reguläre* Dodekaeder bezieht und was auf den Pyritoeder:
 
@@ -120,9 +120,9 @@ Wichtige Kenndaten (gesichert): Raumgruppe **Pa3̄ (Nr. 205)**, Gitterparameter 
 
 ## Vorbehalte & verbreitete Irrtümer (was man NICHT überdeuten darf)
 
-**Irrtum 1 (der wichtigste): Der Pyritoeder ist KEIN reguläres Dodekaeder.** Beide haben zwölf fünfeckige Flächen, 30 Kanten und 20 Ecken — deshalb werden sie ständig verwechselt. Aber die Fünfecke des Pyritoeders sind **unregelmäßig** (Winkel ~121,6° / ~106,6° / ~102,6° statt überall 108°), seine 30 Kanten zerfallen in zwei Längen (24 + 6), und er hat **keine echte fünfzählige Symmetrieachse**. Das reguläre Dodekaeder hat gleiche Flächen, gleiche Kanten und echte fünfzählige Achsen. Wenn dieses Kapitel die Zwölf in der Natur feiert, muss es diesen Unterschied ehrlich nennen: Die Natur erreicht die Zahl Zwölf, aber nicht die platonische Perfektion.
+**Irrtum 1 (der wichtigste): Der Pyritoeder ist KEIN reguläres Dodekaeder.** Beide haben zwölf fünfeckige Flächen, 30 Kanten und 20 Ecken — deshalb werden sie ständig verwechselt. Aber die Fünfecke des Pyritoeders sind **unregelmässig** (Winkel ~121,6° / ~106,6° / ~102,6° statt überall 108°), seine 30 Kanten zerfallen in zwei Längen (24 + 6), und er hat **keine echte fünfzählige Symmetrieachse**. Das reguläre Dodekaeder hat gleiche Flächen, gleiche Kanten und echte fünfzählige Achsen. Wenn dieses Kapitel die Zwölf in der Natur feiert, muss es diesen Unterschied ehrlich nennen: Die Natur erreicht die Zahl Zwölf, aber nicht die platonische Perfektion.
 
-**Irrtum 2: „Fünfzählige Symmetrie in Pyrit."** Eine echte fünfzählige Symmetrie ist in einem periodischen Kristall unmöglich. Der fünfeckige Eindruck der Pyritoeder-Flächen ist eine Eigenschaft der äußeren Form, nicht der Gitter-Symmetrie. Aus Pyrit „Natur liebt den Goldenen Schnitt / das Pentagramm" abzuleiten, übersieht genau das. (Echte fünfzählige Symmetrie tritt erst in **Quasikristallen** auf — entdeckt in den 1980er Jahren — und ist gerade der Kontrast zu Pyrit.)
+**Irrtum 2: „Fünfzählige Symmetrie in Pyrit."** Eine echte fünfzählige Symmetrie ist in einem periodischen Kristall unmöglich. Der fünfeckige Eindruck der Pyritoeder-Flächen ist eine Eigenschaft der äusseren Form, nicht der Gitter-Symmetrie. Aus Pyrit „Natur liebt den Goldenen Schnitt / das Pentagramm" abzuleiten, übersieht genau das. (Echte fünfzählige Symmetrie tritt erst in **Quasikristallen** auf — entdeckt in den 1980er Jahren — und ist gerade der Kontrast zu Pyrit.)
 
 **Vorbehalt 3: Die Form-Regeln sind Tendenzen, keine Gesetze.** Die saubere Zuordnung „schwefelarm → Würfel, schwefelreich → Pyritoeder, hohe Temperatur → Oktaeder" gibt die *Richtung* der Zusammenhänge korrekt wieder, ist aber **kein deterministisches Gesetz**. Die reale Form hängt zusätzlich von Spurenelementen (Arsen, Nickel, Kobalt), Wachstumsrate, Untergrund und lokaler Übersättigung ab. Einzelne Zahlenwerte aus Experimenten (Temperaturen, S/Fe-Verhältnisse) sind experimentspezifisch, nicht universell.
 
@@ -141,7 +141,7 @@ Wichtige Kenndaten (gesichert): Raumgruppe **Pa3̄ (Nr. 205)**, Gitterparameter 
 
 **Vorbehalt 8: Folklore zu Navajún.** Die in Händler-Texten kursierende Behauptung, vorrömische Anwohner hätten die Kristalle „für Magie" genutzt (~300 v. Chr.) oder die Römer hätten sie als Mosaikfliesen exportiert, stammt aus kommerziellen Verkaufsseiten ohne archäologischen Beleg und ist als unbelegt zu behandeln.
 
-**Vorbehalt 9: Notation und Zahlen.** Die Kristallklasse wird mal als „m3̄", mal als „2/m 3̄" geschrieben — beide bezeichnen dieselbe Punktgruppe (Tₕ). Bei der Dichte schwanken Literaturangaben (etwa 4,8–5,1 g/cm³); der gemessene Wert liegt nahe 5,0 g/cm³. „Rekord"-Größen einzelner Fundorte stammen meist aus Sekundärquellen und sind nicht durchweg einer Museumssammlung zugeordnet.
+**Vorbehalt 9: Notation und Zahlen.** Die Kristallklasse wird mal als „m3̄", mal als „2/m 3̄" geschrieben — beide bezeichnen dieselbe Punktgruppe (Tₕ). Bei der Dichte schwanken Literaturangaben (etwa 4,8–5,1 g/cm³); der gemessene Wert liegt nahe 5,0 g/cm³. „Rekord"-Grössen einzelner Fundorte stammen meist aus Sekundärquellen und sind nicht durchweg einer Museumssammlung zugeordnet.
 
 ## Quellen (Tier-System)
 
@@ -161,9 +161,9 @@ Bewertung nach Zuverlässigkeit (R1 = wissenschaftlich/primär, R2 = etablierte 
 
 - **[R2·A1]** Pyritohedron — Wikipedia (en) — https://en.wikipedia.org/wiki/Pyritohedron — Volltext: 12/30(24+6)/20, Flächenwinkel 121,6°/106,6°/102,6°, Diederwinkel 126,87°, Tₕ vs. Ih, h-Parameter-Familie.
 - **[R2·A1]** Dodecahedron — Wikipedia (en) — https://en.wikipedia.org/wiki/Dodecahedron — Volltext: regulär vs. Pyritoeder, Tₕ-Symmetrie, Miller {210}, keine fünfzählige Achse, Tetartoid.
-- **[R3·A1]** Pyrite – Pyritohedron — Wood Crystal Models — https://woodcrystalmodels.com/posts/pyrite-pyritohedron/ — Volltext: unregelmäßige Fünfecke, „Fünffach-Symmetrie ist eine Illusion".
+- **[R3·A1]** Pyrite – Pyritohedron — Wood Crystal Models — https://woodcrystalmodels.com/posts/pyrite-pyritohedron/ — Volltext: unregelmässige Fünfecke, „Fünffach-Symmetrie ist eine Illusion".
 - **[R3·A2]** Matematicas Visuales / Mindat-Glossar pyritohedron — https://www.matematicasvisuales.com/english/html/geometry/space/pyritohedron.html ; https://www.mindat.org/glossary/pyritohedron — Snippet: {210}, Diederwinkel 2·arctan(2), Substitution „2 → φ".
-- **[R2·A2]** Wolfram MathWorld — Pyritohedron — https://mathworld.wolfram.com/Pyritohedron.html — Volltext 403, über Snippets abgesichert (unregelmäßige Pentagone, keine 5-zählige Achse).
+- **[R2·A2]** Wolfram MathWorld — Pyritohedron — https://mathworld.wolfram.com/Pyritohedron.html — Volltext 403, über Snippets abgesichert (unregelmässige Pentagone, keine 5-zählige Achse).
 
 ### Mineral-Übersicht & Mineralogie (R2)
 
@@ -181,9 +181,9 @@ Bewertung nach Zuverlässigkeit (R1 = wissenschaftlich/primär, R2 = etablierte 
 ### Fundorte (R2–R4)
 
 - **[R2·A2]** Ampliación a Victoria Mine, Navajún — Mindat — https://www.mindat.org/loc-7116.html — Snippet: Würfel-Morphologie, Pyritoeder selten.
-- **[R3·A1]** Piritas de Navajún — „El yacimiento" (offizielle Minenseite) — https://piritasdenavajun.com/en/el-yacimiento/ — Volltext: Lage, hydrothermale Genese, Urbión/Enciso, Wealden-Mergel, Größe bis ~20 cm.
+- **[R3·A1]** Piritas de Navajún — „El yacimiento" (offizielle Minenseite) — https://piritasdenavajun.com/en/el-yacimiento/ — Volltext: Lage, hydrothermale Genese, Urbión/Enciso, Wealden-Mergel, Grösse bis ~20 cm.
 - **[R4·A2]** McDougall Minerals — The Pyrite of Navajún — https://www.mcdougallminerals.com/blog/the-pyrite-of-navajun-spain/ — Händler-Snippet: Konzession 1965, „world's best cubic crystals"; Folklore-Angaben unbelegt.
-- **[R4·A2]** Natural History Curiosities — Pyrite cubes from Navajún — https://www.naturalhistorycuriosities.com/minerals/wonderful-pyrite-cubes-from-navajun-spain/ — Snippet: größter Kristall >19 cm/9,5 kg; enthält unbelegte „Magie"-Folklore (S).
+- **[R4·A2]** Natural History Curiosities — Pyrite cubes from Navajún — https://www.naturalhistorycuriosities.com/minerals/wonderful-pyrite-cubes-from-navajun-spain/ — Snippet: grösster Kristall >19 cm/9,5 kg; enthält unbelegte „Magie"-Folklore (S).
 - **[R3·A2]** Rock & Gem — Pyrite Suns & Coal Mining; turnstone.ca — https://www.rockngem.com/pyrite-suns-coal-mining/ ; https://turnstone.ca/rom172py.htm — Teilweise: Sparta-Sonnen, Herrin-Flöz, ~300 Mio. Jahre.
 - **[R3·A2]** Frank Ruehlicke — PYRITE: Iron Cross Twins — Mindat-Artikel — https://www.mindat.org/article.php/3872/PYRITE+-+Iron+Cross+Twins — Teilweise: Eisernes Kreuz aus zwei Pentagondodekaedern, 90°-Kanten.
 

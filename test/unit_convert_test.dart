@@ -30,32 +30,40 @@ void main() {
 
     test('weight', () {
       expect(conv(UnitCategory.weight, 16, 'oz', 'lb'), closeTo(1, 1e-12));
-      expect(conv(UnitCategory.weight, 1, 'lb', 'kg'),
-          closeTo(0.45359237, 1e-12));
+      expect(
+        conv(UnitCategory.weight, 1, 'lb', 'kg'),
+        closeTo(0.45359237, 1e-12),
+      );
       expect(conv(UnitCategory.weight, 1, 'st', 'lb'), closeTo(14, 1e-9));
       expect(conv(UnitCategory.weight, 1, 'ton', 'lb'), closeTo(2000, 1e-6));
       // troy ounce ≈ 31.103 g
-      expect(conv(UnitCategory.weight, 1, 'oz t', 'g'),
-          closeTo(31.1034768, 1e-6));
+      expect(
+        conv(UnitCategory.weight, 1, 'oz t', 'g'),
+        closeTo(31.1034768, 1e-6),
+      );
     });
 
     test('space — cubic (no fluid units)', () {
-      expect(conv(UnitCategory.space, 1, 'cu ft', 'cu in'),
-          closeTo(1728, 1e-6));
+      expect(
+        conv(UnitCategory.space, 1, 'cu ft', 'cu in'),
+        closeTo(1728, 1e-6),
+      );
       expect(conv(UnitCategory.space, 1, 'cu yd', 'cu ft'), closeTo(27, 1e-9));
       expect(conv(UnitCategory.space, 1, 'm³', 'cm³'), closeTo(1e6, 1));
       // fluid measures moved to `liquid`
-      expect(kUnitCatalogue[UnitCategory.space]!.unitBySymbol('gallon'),
-          isNull);
+      expect(
+        kUnitCatalogue[UnitCategory.space]!.unitBySymbol('gallon'),
+        isNull,
+      );
     });
 
     test('pressure', () {
-      expect(conv(UnitCategory.press, 1, 'atm', 'Pa'),
-          closeTo(101325, 1e-6));
-      expect(conv(UnitCategory.press, 1, 'bar', 'Pa'),
-          closeTo(100000, 1e-6));
-      expect(conv(UnitCategory.press, 1, 'psi', 'kPa'),
-          closeTo(6.894757293, 1e-6));
+      expect(conv(UnitCategory.press, 1, 'atm', 'Pa'), closeTo(101325, 1e-6));
+      expect(conv(UnitCategory.press, 1, 'bar', 'Pa'), closeTo(100000, 1e-6));
+      expect(
+        conv(UnitCategory.press, 1, 'psi', 'kPa'),
+        closeTo(6.894757293, 1e-6),
+      );
     });
 
     test('energy', () {
@@ -64,8 +72,7 @@ void main() {
     });
 
     test('count — dozenal ladder', () {
-      expect(conv(UnitCategory.count, 1, 'ggr', 'items'),
-          closeTo(1728, 1e-9));
+      expect(conv(UnitCategory.count, 1, 'ggr', 'items'), closeTo(1728, 1e-9));
       expect(conv(UnitCategory.count, 1, 'gr', 'dz'), closeTo(12, 1e-9));
     });
 
@@ -93,15 +100,21 @@ void main() {
       expect(conv(UnitCategory.liquid, 1, 'gallon', 'quart'), closeTo(4, 1e-9));
       expect(conv(UnitCategory.liquid, 1, 'gallon', 'pint'), closeTo(8, 1e-9));
       // fl oz is exact, so the ladder ratios are now integer-tight (audit).
-      expect(conv(UnitCategory.liquid, 1, 'gallon', 'fl oz'),
-          closeTo(128, 1e-9));
+      expect(
+        conv(UnitCategory.liquid, 1, 'gallon', 'fl oz'),
+        closeTo(128, 1e-9),
+      );
       expect(conv(UnitCategory.liquid, 1, 'quart', 'fl oz'), closeTo(32, 1e-9));
     });
     test('cross to metric', () {
-      expect(conv(UnitCategory.liquid, 1, 'gallon', 'L'),
-          closeTo(3.785411784, 1e-9));
-      expect(conv(UnitCategory.liquid, 1, 'fl oz', 'mL'),
-          closeTo(29.5735295625, 1e-9));
+      expect(
+        conv(UnitCategory.liquid, 1, 'gallon', 'L'),
+        closeTo(3.785411784, 1e-9),
+      );
+      expect(
+        conv(UnitCategory.liquid, 1, 'fl oz', 'mL'),
+        closeTo(29.5735295625, 1e-9),
+      );
     });
   });
 
@@ -112,8 +125,11 @@ void main() {
         for (final unit in def.units) {
           final there = convert(7.5, ref, unit);
           final back = convert(there, unit, ref);
-          expect(back, closeTo(7.5, 1e-6),
-              reason: '${def.category} ${ref.symbol}→${unit.symbol}→back');
+          expect(
+            back,
+            closeTo(7.5, 1e-6),
+            reason: '${def.category} ${ref.symbol}→${unit.symbol}→back',
+          );
         }
       }
     });
@@ -144,22 +160,29 @@ void main() {
       expect(partner(UnitCategory.count, 'ten')?.symbol, 'items');
     });
     test('time has no cross-world bracket', () {
-      expect(bracketPartner(UnitCategory.time, u(UnitCategory.time, 'h')),
-          isNull);
-      expect(bracketValue(UnitCategory.time, u(UnitCategory.time, 'h'), 11),
-          isNull);
+      expect(
+        bracketPartner(UnitCategory.time, u(UnitCategory.time, 'h')),
+        isNull,
+      );
+      expect(
+        bracketValue(UnitCategory.time, u(UnitCategory.time, 'h'), 11),
+        isNull,
+      );
     });
     test('bracketValue computes the partner quantity', () {
       // 1 mi shows ≈ 1.609 km in the bracket
-      expect(bracketValue(UnitCategory.dist, u(UnitCategory.dist, 'mi'), 1),
-          closeTo(1.609344, 1e-9));
+      expect(
+        bracketValue(UnitCategory.dist, u(UnitCategory.dist, 'mi'), 1),
+        closeTo(1.609344, 1e-9),
+      );
     });
   });
 
   group('= ladder stepping', () {
     test('walks the visible world and wraps', () {
-      final imp = kUnitCatalogue[UnitCategory.dist]!
-          .ladderFor(UnitWorld.imperial);
+      final imp = kUnitCatalogue[UnitCategory.dist]!.ladderFor(
+        UnitWorld.imperial,
+      );
       var cur = imp.first; // 'in'
       final seen = <String>[];
       for (var i = 0; i < imp.length; i++) {
@@ -192,17 +215,25 @@ void main() {
 
     test('time is single-world (same ladder both)', () {
       final def = kUnitCatalogue[UnitCategory.time]!;
-      expect(def.ladderFor(UnitWorld.imperial).map((u) => u.symbol),
-          def.ladderFor(UnitWorld.metric).map((u) => u.symbol));
+      expect(
+        def.ladderFor(UnitWorld.imperial).map((u) => u.symbol),
+        def.ladderFor(UnitWorld.metric).map((u) => u.symbol),
+      );
     });
 
     test('every non-time category has ≤7 units per world (keypad slots)', () {
       for (final def in kUnitCatalogue.values) {
         if (def.singleWorld) continue;
-        expect(def.ladderFor(UnitWorld.imperial).length, lessThanOrEqualTo(7),
-            reason: '${def.category} imperial');
-        expect(def.ladderFor(UnitWorld.metric).length, lessThanOrEqualTo(7),
-            reason: '${def.category} metric');
+        expect(
+          def.ladderFor(UnitWorld.imperial).length,
+          lessThanOrEqualTo(7),
+          reason: '${def.category} imperial',
+        );
+        expect(
+          def.ladderFor(UnitWorld.metric).length,
+          lessThanOrEqualTo(7),
+          reason: '${def.category} metric',
+        );
       }
     });
   });
@@ -211,8 +242,11 @@ void main() {
     String render(UnitCategory c, double si) {
       final b = breakdown(c, si);
       final body = b.parts
-          .map((p) => '${p.$2.toStringAsFixed(p == b.parts.last ? 2 : 0)} '
-              '${p.$1.symbol}')
+          .map(
+            (p) =>
+                '${p.$2.toStringAsFixed(p == b.parts.last ? 2 : 0)} '
+                '${p.$1.symbol}',
+          )
           .join(' ');
       return '${b.negative ? '-' : ''}$body';
     }
@@ -223,8 +257,7 @@ void main() {
     });
 
     test('time 3725 s → 1 h 2 min 5 s', () {
-      expect(render(UnitCategory.time, 3725),
-          '0 week 0 d 1 h 2 min 5.00 s');
+      expect(render(UnitCategory.time, 3725), '0 week 0 d 1 h 2 min 5.00 s');
     });
 
     test('price 250 d → 1 £ 0 sh 10 d', () {
@@ -248,8 +281,11 @@ void main() {
         if (!def.hasBreakdown) continue;
         final units = def.breakdownUnits(); // throws if a symbol is missing
         for (var i = 1; i < units.length; i++) {
-          expect(units[i].a, lessThan(units[i - 1].a),
-              reason: '${def.category} cascade not descending at $i');
+          expect(
+            units[i].a,
+            lessThan(units[i - 1].a),
+            reason: '${def.category} cascade not descending at $i',
+          );
         }
       }
     });

@@ -72,8 +72,11 @@ class DozenalConverter {
 
   /// f64 fractional part → digits in [base], capped at `precision` digits.
   /// Stops early once the residual drops below fracEpsilon.
-  static List<DozenalDigit> fracToDigits(double frac, int precision,
-      {int base = 12}) {
+  static List<DozenalDigit> fracToDigits(
+    double frac,
+    int precision, {
+    int base = 12,
+  }) {
     final digits = <DozenalDigit>[];
     final b = base.toDouble();
     for (var i = 0; i < precision; i++) {

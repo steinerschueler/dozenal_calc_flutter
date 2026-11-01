@@ -250,7 +250,9 @@ class ThemeNotifier extends ChangeNotifier {
     ThemeSetting.dark => AppColors.dark,
     ThemeSetting.light => AppColors.light,
     ThemeSetting.system =>
-      _platformBrightness == Brightness.light ? AppColors.light : AppColors.dark,
+      _platformBrightness == Brightness.light
+          ? AppColors.light
+          : AppColors.dark,
   };
 
   /// Fed by the app root (initial value + didChangePlatformBrightness).

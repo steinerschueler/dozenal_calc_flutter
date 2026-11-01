@@ -2,7 +2,7 @@
 
 ### Die Basis-60-Schiene: Sekunde, Minute, Stunde
 
-Das Sexagesimalsystem (Stellenwertsystem zur Basis 60) entstand bei den **Sumerern im 3. Jahrtausend v. Chr.** und wurde von den **Babyloniern** übernommen, die es zu einem positionellen Stellenwertsystem ausbauten. Der MacTutor-Mathematikgeschichts-Überblick nennt dies die größte mathematische Leistung der Babylonier. Die Babylonier erbten Elemente von Sumerern und Akkadiern; einige Quellen verorten Vorläufer bei der eblaitischen Zivilisation.
+Das Sexagesimalsystem (Stellenwertsystem zur Basis 60) entstand bei den **Sumerern im 3. Jahrtausend v. Chr.** und wurde von den **Babyloniern** übernommen, die es zu einem positionellen Stellenwertsystem ausbauten. Der MacTutor-Mathematikgeschichts-Überblick nennt dies die grösste mathematische Leistung der Babylonier. Die Babylonier erbten Elemente von Sumerern und Akkadiern; einige Quellen verorten Vorläufer bei der eblaitischen Zivilisation.
 
 Aus dem Sexagesimalsystem leiten sich direkt ab: 60 Sekunden je Minute, 60 Minuten je Stunde, 360 Grad im Kreis, 60 Bogenminuten je Grad, 60 Bogensekunden je Bogenminute.
 
@@ -18,7 +18,7 @@ Die **Ägypter** teilten als Erste den Tageskreis in 24 Stunden: **12 Tag- und 1
 
 Zur Mechanik der 12 Nachtstunden gibt es in den Quellen leicht abweichende Darstellungen (hier ausdrücklich als Detail-Unsicherheit markiert):
 - Eine Darstellung: Pro Nacht markierte das Aufgehen von **11 Dekanen** die Übergänge und teilte die Nacht in 12 Abschnitte.
-- Eine andere: Pro Nacht waren **18 der 36 Dekane** sichtbar, je 3 entfielen auf die Dämmerungsphasen, sodass 12 Dekane die volle Dunkelheit maßen.
+- Eine andere: Pro Nacht waren **18 der 36 Dekane** sichtbar, je 3 entfielen auf die Dämmerungsphasen, sodass 12 Dekane die volle Dunkelheit massen.
 - Eine dritte: Zur Zeit des heliakischen Aufgangs des Sirius (Neujahr, nahe Sommersonnenwende, kürzeste Nächte) waren nur 12 Dekane in der Nacht sichtbar; der Tag wurde in 10 Stunden plus je eine Dämmerungsstunde morgens und abends geteilt → 12 Tagstunden.
 
 Gemeinsamer, gesicherter Kern: Die 36 Dekane lieferten den Rahmen, und die Nacht erhielt 12 Stunden. Alle zehn Tage fiel der westlichste Dekan weg, ein neuer kam im Osten hinzu; mit den Dekanen kalibrierte man Wasseruhren. Ab **ca. 1500 v. Chr.** wurden Sonnenuhren in 12 Teile gegliedert (Tagstunden), ergänzt durch Schatten- und Wasseruhren ab dem Neuen Reich.
@@ -42,7 +42,7 @@ Gemeinsamer, gesicherter Kern: Die 36 Dekane lieferten den Rahmen, und die Nacht
 
 **Tag:** Der **mittlere Sonnentag** (synodischer Tag, Sonne über demselben Meridian an aufeinanderfolgenden Tagen) = 24 h; der **siderische Tag** (Bezug auf einen Fixstern) = 23 h 56 min 4,09 s. Die Differenz entsteht, weil die Erde gleichzeitig um die Sonne wandert.
 
-**Monat:** Etymologisch mit „Mond" verwandt (engl. *month/moon*; altenglisch *mōnaþ*, urgermanisch *mēnōþs* von *mēnô* „Mond", letztlich von der indogermanischen Wurzel „messen"). Zwei astronomische Maße: **synodischer Monat** ≈ 29,53 Tage (Vollmond zu Vollmond — das alltägliche Maß) vs. **siderischer Monat** ≈ 27,32 Tage (voller Umlauf relativ zu den Sternen). „Synodisch" von griechisch *synodos* („Zusammenkunft"), „siderisch" von lateinisch *sidus* („Stern"). Der Monat war ursprünglich das Intervall von Neumond zu Neumond.
+**Monat:** Etymologisch mit „Mond" verwandt (engl. *month/moon*; altenglisch *mōnaþ*, urgermanisch *mēnōþs* von *mēnô* „Mond", letztlich von der indogermanischen Wurzel „messen"). Zwei astronomische Masse: **synodischer Monat** ≈ 29,53 Tage (Vollmond zu Vollmond — das alltägliche Mass) vs. **siderischer Monat** ≈ 27,32 Tage (voller Umlauf relativ zu den Sternen). „Synodisch" von griechisch *synodos* („Zusammenkunft"), „siderisch" von lateinisch *sidus* („Stern"). Der Monat war ursprünglich das Intervall von Neumond zu Neumond.
 
 ### Die Sieben-Tage-Woche — von Babylon über die Planetenwoche nach Rom
 
@@ -54,7 +54,7 @@ Gemeinsamer, gesicherter Kern: Die 36 Dekane lieferten den Rahmen, und die Nacht
 
 **Römische Übernahme:** Im **1. Jh. n. Chr.** im Römischen Reich verbreitet; **Konstantin** machte sie 321 n. Chr. amtlich (Sonntag als gesetzlicher Feiertag) — sie verdrängte den traditionellen achttägigen **Nundinal-Zyklus**. Die astrologische Woche verschmolz später mit der christlich-jüdischen.
 
-**Wichtig:** Die Woche ist die einzige große Zeiteinheit **ohne** astronomische Grundlage — es gibt keinen Himmelszyklus von genau 7 Tagen. Sie ist kulturell-religiös fixiert.
+**Wichtig:** Die Woche ist die einzige grosse Zeiteinheit **ohne** astronomische Grundlage — es gibt keinen Himmelszyklus von genau 7 Tagen. Sie ist kulturell-religiös fixiert.
 
 ### Der 360-Grad-Kreis (Bindeglied zwischen Zeit und Winkel)
 
@@ -64,15 +64,15 @@ Babylonische Astronomen (ca. 500–300 v. Chr.) teilten den Kreis in 360 Einheit
 
 ### Frühe Zeitmessgeräte — Sonnenuhr, Gnomon, Wasseruhr
 
-**Sonnenuhr/Gnomon:** in Ägypten um **1500 v. Chr.** (vertikaler Stab wirft Schatten auf markierte Fläche); griechische Mathematiker (**Anaximander**, Aristarch) verfeinerten sie. **Wasseruhr (Klepsydra, „Wasserdieb"):** früheste in Ägypten um **1500 v. Chr.** (Steingefäß im Amun-Tempel von Karnak; erste Erwähnung in der Grabinschrift des Beamten Amenemhet, 16. Jh. v. Chr.). Um **325 v. Chr.** bei den Griechen verbreitet, u. a. zur Redezeitmessung vor Gericht in Athen. Der **Turm der Winde** in Athen (1. Jh. v. Chr.) vereinte Wasseruhr, Sonnenuhren und Windfahne. Bis zur **Pendeluhr (1656)** blieben Wasseruhren die genauesten Zeitmesser.
+**Sonnenuhr/Gnomon:** in Ägypten um **1500 v. Chr.** (vertikaler Stab wirft Schatten auf markierte Fläche); griechische Mathematiker (**Anaximander**, Aristarch) verfeinerten sie. **Wasseruhr (Klepsydra, „Wasserdieb"):** früheste in Ägypten um **1500 v. Chr.** (Steingefäss im Amun-Tempel von Karnak; erste Erwähnung in der Grabinschrift des Beamten Amenemhet, 16. Jh. v. Chr.). Um **325 v. Chr.** bei den Griechen verbreitet, u. a. zur Redezeitmessung vor Gericht in Athen. Der **Turm der Winde** in Athen (1. Jh. v. Chr.) vereinte Wasseruhr, Sonnenuhren und Windfahne. Bis zur **Pendeluhr (1656)** blieben Wasseruhren die genauesten Zeitmesser.
 
 ### Römischer Kalender — von Numa zur gregorianischen Reform
 
 Laut Livius teilte **Numa Pompilius** (2. König Roms, ~715–673 v. Chr.) das Jahr in **zwölf Mondmonate:** Er fügte einem Zehn-Monats-Kalender **Ianuarius und Februarius** hinzu → 12 Monate, **355 Tage.** Da März der erste römische Monat war, verraten die Namen ihre alte Position: September (*septem* = 7), Oktober (*octo* = 8), November (9), Dezember (10). Quintilis wurde zu Ehren Julius Caesars in **Julius** (Juli) umbenannt, Sextilis 8 v. Chr. in **Augustus** (August). Tage wurden von drei Fixpunkten rückwärts gezählt: **Kalendae** (1., daher „Kalender"), **Nonae** (5. oder 7.), **Idus** (13. oder 15.) — Reste eines vorgeschichtlichen Mondkalenders (Kalenden = erste Sichel, Nonen = erstes Viertel, Iden = Vollmond).
 
-**Julianische Reform (46 v. Chr.):** Julius Caesar ließ den alexandrinischen Astronomen **Sosigenes** ein Sonnenjahr von **365 Tagen** mit einem Schalttag alle vier Jahre einrichten (mittlere Jahreslänge 365,25 Tage); Monatsnamen und -längen blieben.
+**Julianische Reform (46 v. Chr.):** Julius Caesar liess den alexandrinischen Astronomen **Sosigenes** ein Sonnenjahr von **365 Tagen** mit einem Schalttag alle vier Jahre einrichten (mittlere Jahreslänge 365,25 Tage); Monatsnamen und -längen blieben.
 
-**Gregorianische Reform (1582):** Papst Gregor XIII. (Bulle *Inter gravissimas*, 24. Februar 1582) strich 10 Tage und verfeinerte die Schaltregel: Schaltjahr alle 4 Jahre, **außer** in durch 100 teilbaren Jahren, **es sei denn** auch durch 400 teilbar (mittlere Jahreslänge 365,2425 Tage; Restdrift nur ~0,1 Tag in 400 Jahren).
+**Gregorianische Reform (1582):** Papst Gregor XIII. (Bulle *Inter gravissimas*, 24. Februar 1582) strich 10 Tage und verfeinerte die Schaltregel: Schaltjahr alle 4 Jahre, **ausser** in durch 100 teilbaren Jahren, **es sei denn** auch durch 400 teilbar (mittlere Jahreslänge 365,2425 Tage; Restdrift nur ~0,1 Tag in 400 Jahren).
 
 ### Mittelalterliches Europa — kanonische Stunden und die mechanische Uhr
 
@@ -80,7 +80,7 @@ Die **kanonischen Stunden** (Benediktsregel, Benedikt von Nursia ~480–547) str
 
 Gewichtsgetriebene **mechanische Uhren** mit Spindelhemmung und Foliot entstanden im späten **13. Jh.** / um **1300**; in der zweiten Hälfte des **14. Jh.** wurden über 500 schlagende Turmuhren in öffentlichen Gebäuden Europas installiert. Die mechanische Uhr trieb den Übergang von saisonalen zu gleichen Stunden voran. „Frère Jacques" / „Sonnez les matines" verweist auf das nächtliche Wecken zum Stundengebet.
 
-Vor mechanischen Uhren maß man kurze Zeitspannen über wiederholbare Tätigkeiten: die Dauer eines **Pater noster** (Vaterunser) war ein verbreitetes Maß und tauchte in medizinischen Rezepten auf. Andere Kulturen nutzten „eine Reiskochung" (~halbe Stunde); altkasachische Einheiten waren *sut pisirim* („Milchkochen", 5–10 Min.) und *yet pisirim* („Fleischkochen", 3–4 Std.).
+Vor mechanischen Uhren mass man kurze Zeitspannen über wiederholbare Tätigkeiten: die Dauer eines **Pater noster** (Vaterunser) war ein verbreitetes Mass und tauchte in medizinischen Rezepten auf. Andere Kulturen nutzten „eine Reiskochung" (~halbe Stunde); altkasachische Einheiten waren *sut pisirim* („Milchkochen", 5–10 Min.) und *yet pisirim* („Fleischkochen", 3–4 Std.).
 
 ---
 
@@ -88,7 +88,7 @@ Vor mechanischen Uhren maß man kurze Zeitspannen über wiederholbare Tätigkeit
 
 ### Zwölf als Zählbasis — Fingerglied-Zählung und das „Dutzend"
 
-Eine verbreitete Erklärung für die kulturelle Verankerung der Zwölf: Mit dem Daumen lassen sich die drei Fingerglieder der vier übrigen Finger einer Hand abzählen → 4 × 3 = 12. Diese Zählweise ist bis heute in Ägypten, Syrien, der Türkei, dem Irak, Iran, Afghanistan, Pakistan, Indochina und Indien in Gebrauch. Zählt man die zwölf Glieder einer Hand fünfmal (die andere Hand als Fünferzähler), erreicht man 60 — eine mögliche Brücke zwischen Duodezimal- und Sexagesimalsystem. Georges Ifrah führte den Ursprung des Duodezimalsystems **spekulativ** auf diese Knöchelzählung zurück. Reste des nicht-dezimalen Systems leben in „Dutzend" (12), „Gros" (144) und „Großgros" (1.728) fort. 12 ist die kleinste Zahl mit sechs Teilern (1, 2, 3, 4, 6, 12) und enthält die Faktoren 2 **und** 3.
+Eine verbreitete Erklärung für die kulturelle Verankerung der Zwölf: Mit dem Daumen lassen sich die drei Fingerglieder der vier übrigen Finger einer Hand abzählen → 4 × 3 = 12. Diese Zählweise ist bis heute in Ägypten, Syrien, der Türkei, dem Irak, Iran, Afghanistan, Pakistan, Indochina und Indien in Gebrauch. Zählt man die zwölf Glieder einer Hand fünfmal (die andere Hand als Fünferzähler), erreicht man 60 — eine mögliche Brücke zwischen Duodezimal- und Sexagesimalsystem. Georges Ifrah führte den Ursprung des Duodezimalsystems **spekulativ** auf diese Knöchelzählung zurück. Reste des nicht-dezimalen Systems leben in „Dutzend" (12), „Gros" (144) und „Grossgros" (1.728) fort. 12 ist die kleinste Zahl mit sechs Teilern (1, 2, 3, 4, 6, 12) und enthält die Faktoren 2 **und** 3.
 
 **12 als kulturelles Muster:** 12 Tierkreiszeichen, 12 Monate, (historisch) 12 Tagstunden, römisches Bruchsystem auf 12 (*uncia* → „ounce"/„inch"), £sd-System (1 Schilling = 12 Pence).
 
@@ -98,7 +98,7 @@ Die traditionelle chinesische Zeitrechnung kombiniert einen Lunisolarkalender mi
 
 Standardisiert in der **Kalenderreform 104 v. Chr.**; das System entstand in der Westlichen Zhou-Dynastie und verfestigte sich in der Östlichen Han-Zeit (25–220 n. Chr.). Das **kè**-System hatte traditionell **100 kè/Tag** (je 14,4 Min.); **1628/1645** (jesuitisch beeinflusster *Shíxiàn*-Kalender) auf **96 kè** umgestellt, um zur europäischen Astronomie zu passen → modernes kè = **15 Minuten**, jede Doppelstunde = **8 kè**. Nachts diente das **gēng**-System: fünf Nachtwachen, durch Trommeln/Gongs angekündigt. (Die Quellen nennen für das parallele dezimale System teils 100 *kè*, teils 10 *gēng* je 1/10 Tag — beide gehören zur dezimalen Schiene, die letztlich aufgegeben wurde.) Im modernen Chinesisch bezeichnet *xiǎoshí* („kleine Stunde") die heutige Stunde, *shíchen* die alte Doppelstunde.
 
-**Lunisolarkalender:** 12 Mondmonate à 29/30 Tage, Monatsbeginn am Neumond; **Schaltmonate** (闰月 rùnyuè, alle 2–3 Jahre, sieben in einem 19-Jahres-Zyklus) halten den Kalender an den Jahreszeiten. Regel: Jeder Monat muss eine der 12 Haupt-Solarperioden enthalten; fehlt sie, wird er Schaltmonat. Die **24 Solarperioden** (二十四节气, jiéqì) teilen das Sonnenjahr in 24 Abschnitte (z. B. „Frühlingsanfang", „Getreideregen", „Sommersonnenwende", „Weißer Tau", „Frostabstieg") und strukturierten Landwirtschaft und Feste. Der **Sexagenarzyklus** (60 Einheiten aus 10 Himmelsstämmen × 12 Erdzweigen) ist zentral für die Jahres- (und früher Stunden-)Zählung. Der 12er-Zyklus spiegelt **Jupiters ~12-jährigen Umlauf**.
+**Lunisolarkalender:** 12 Mondmonate à 29/30 Tage, Monatsbeginn am Neumond; **Schaltmonate** (闰月 rùnyuè, alle 2–3 Jahre, sieben in einem 19-Jahres-Zyklus) halten den Kalender an den Jahreszeiten. Regel: Jeder Monat muss eine der 12 Haupt-Solarperioden enthalten; fehlt sie, wird er Schaltmonat. Die **24 Solarperioden** (二十四节气, jiéqì) teilen das Sonnenjahr in 24 Abschnitte (z. B. „Frühlingsanfang", „Getreideregen", „Sommersonnenwende", „Weisser Tau", „Frostabstieg") und strukturierten Landwirtschaft und Feste. Der **Sexagenarzyklus** (60 Einheiten aus 10 Himmelsstämmen × 12 Erdzweigen) ist zentral für die Jahres- (und früher Stunden-)Zählung. Der 12er-Zyklus spiegelt **Jupiters ~12-jährigen Umlauf**.
 
 ### Indien — vedische Zeiteinheiten von Mikrosekunden bis Yugas
 
@@ -112,7 +112,7 @@ Konkrete Werte: **1 Tag = 60 ghati/nadi** (je ~24 Min.); 1 ghati = 60 pala/vigha
 
 Der **Hijri-Kalender** basiert auf der **Hijra** (Auswanderung Mohammeds nach Medina, 622 n. Chr.); die Ära wurde von Kalif **Umar um 638** eingeführt. Reiner Mondkalender: 12 Monate à 29/30 Tage = **354/355 Tage** (synodischer Monat ≈ 29,53 Tage), **~11 Tage kürzer** als das Sonnenjahr. Monatsbeginn mit Sichtung der neuen Mondsichel (*hilāl*). Daher wandern Ramadan, Eid und Hadsch jährlich rückwärts durch die Jahreszeiten (Ramadan z. B. innerhalb ~33 Jahren durch den ganzen Sonnenkalender).
 
-Religiöse Arbeitsteilung: der **Mond als Kalender**, die **Sonne für die Gebetszeiten (salat)** — die fünf täglichen Gebete sind minutengenau und variieren mit der Tageslänge. Das Amt des Moschee-Zeitwächters (**muwaqqit**) institutionalisierte die astronomisch-exakte Bestimmung von Kalender und Gebetszeiten; Zeittafeln entstanden ab dem **9./10. Jh. in Bagdad** und wuchsen an den großen Moscheen Syriens und Ägyptens auf Hunderttausende Einträge. **Vier heilige Monate** (Kampfverbot): Radschab (7), Dhū l-Qaʿda (11), Dhū l-Hiddscha (12), Muharram (1). Heute dient der Hijri-Kalender primär religiösen Anlässen, während der gregorianische Kalender den Alltag dominiert.
+Religiöse Arbeitsteilung: der **Mond als Kalender**, die **Sonne für die Gebetszeiten (salat)** — die fünf täglichen Gebete sind minutengenau und variieren mit der Tageslänge. Das Amt des Moschee-Zeitwächters (**muwaqqit**) institutionalisierte die astronomisch-exakte Bestimmung von Kalender und Gebetszeiten; Zeittafeln entstanden ab dem **9./10. Jh. in Bagdad** und wuchsen an den grossen Moscheen Syriens und Ägyptens auf Hunderttausende Einträge. **Vier heilige Monate** (Kampfverbot): Radschab (7), Dhū l-Qaʿda (11), Dhū l-Hiddscha (12), Muharram (1). Heute dient der Hijri-Kalender primär religiösen Anlässen, während der gregorianische Kalender den Alltag dominiert.
 
 ### Mesoamerika — Tzolk'in, Haab' und Long Count
 
@@ -146,7 +146,7 @@ Aus der Planeten-Zuordnung entstanden mehrere Namensschemata:
 
 **Englisch:** Die germanische Sitte, in Nächten zu rechnen, überlebt in **fortnight** (← altengl. *fēowertyne niht*, „vierzehn Nächte" = zwei Wochen; in Britannien bis heute alltäglich) und im archaischen **sennight** (← *seofon nihta*, „sieben Nächte" = eine Woche). „O'clock" = Kurzform von „of the clock" (mittelengl. *of the clokke*, erstbelegt 1384) — zur Unterscheidung von Sonnenuhr-Zeiten. „Clock" stammt von mittellat. *clocca* = „Glocke". AM/PM von lat. *ante/post meridiem*. „In a jiffy" (seit ~1785, vermutlich von schott. *gliff* „Augenblick").
 
-**Deutsch:** „halb" bezieht sich stets auf die kommende Stunde: *halb drei* = 2:30 (überregional einheitlich). Bei Viertelstunden gibt es starke regionale Unterschiede: Süden/Osten (z. B. Sachsen) *Viertel drei* = 2:15, *dreiviertel drei* = 2:45; im Norden (Hamburg) oft unverständlich, dort *Viertel nach zwei* / *Viertel vor drei*. In Süddeutschland/Österreich heißt 3:45 *dreiviertel vier*.
+**Deutsch:** „halb" bezieht sich stets auf die kommende Stunde: *halb drei* = 2:30 (überregional einheitlich). Bei Viertelstunden gibt es starke regionale Unterschiede: Süden/Osten (z. B. Sachsen) *Viertel drei* = 2:15, *dreiviertel drei* = 2:45; im Norden (Hamburg) oft unverständlich, dort *Viertel nach zwei* / *Viertel vor drei*. In Süddeutschland/Österreich heisst 3:45 *dreiviertel vier*.
 
 ---
 
@@ -160,7 +160,7 @@ Die Zahl 12 galt den Babyloniern als „vollkommen" und religiös bedeutsam (ver
 
 ### Mesopotamien — Tierkreis und 360°
 
-Spätes 5. Jh. v. Chr.: Babylonier entwickeln den gleichmäßig in **12 Zeichen à 30°** geteilten Tierkreis (Ekliptik in 12 gleiche Abschnitte). Symbolisch: Sonne wandert ~1°/Tag → 30°/Monat → 360°/Jahr; die Übereinstimmung von irdischer Zeit und Himmelsbewegung galt als heilig. Über den Hellenismus an Rom weitergegeben.
+Spätes 5. Jh. v. Chr.: Babylonier entwickeln den gleichmässig in **12 Zeichen à 30°** geteilten Tierkreis (Ekliptik in 12 gleiche Abschnitte). Symbolisch: Sonne wandert ~1°/Tag → 30°/Monat → 360°/Jahr; die Übereinstimmung von irdischer Zeit und Himmelsbewegung galt als heilig. Über den Hellenismus an Rom weitergegeben.
 
 ### Ägypten — die Nachtfahrt des Sonnengottes
 
@@ -209,7 +209,7 @@ Die zwölf Erdzweige tragen Yin-Yang-Polaritäten, Fünf-Elemente-, Himmelsricht
 - **24 Solarperioden:** in China bis heute kulturell präsent (Landwirtschaft, Feste, 2016 UNESCO-Kulturerbe).
 - **Rokuyō:** in Japan bis heute für Termine (Hochzeiten/Begräbnisse) konsultiert.
 - **Vedische Einheiten (muhurta, ghati):** in Indien weiter für astrologisch günstige Zeitpunkte genutzt.
-- **Winkelmaß:** 360°/Bogenminute/Bogensekunde weltweiter Standard in Navigation, Astronomie, Geometrie — direktes sexagesimales Erbe.
+- **Winkelmass:** 360°/Bogenminute/Bogensekunde weltweiter Standard in Navigation, Astronomie, Geometrie — direktes sexagesimales Erbe.
 - **Dezimalzeit real:** Bruchteile des Tages (Dezimaltage), Julianisches Datum und Unix-Sekunden in Astronomie und Informatik.
 
 ---
@@ -225,7 +225,7 @@ Die zwölf Erdzweige tragen Yin-Yang-Polaritäten, Fünf-Elemente-, Himmelsricht
 **Basis-12-Bezug (der stärkste „Dozenal"-Befund aus belastbarer Quelle):** Die Teiler-Asymmetrie (12: sechs Teiler inkl. 2 und 3; 10: nur vier, ohne 3) und die daraus folgende glatte Darstellung von 1/3, 1/4, 3/4. Direkt aus dem Volltext des Duodecimal-Wikipedia-Artikels. Die historische 12/24-Stunden-Teilung, das Dutzend/Gros und das römische *uncia*-System sind lebende Reste eines duodezimalen Denkens im Zeitwesen.
 
 **Gescheiterte Dezimalisierungsversuche:**
-- **Französische Revolutionszeit:** Dekret vom 5. Oktober 1793 — Tag in 10 Stunden, je 100 Minuten, je 100 Sekunden (100.000 Dezimalsekunden statt 86.400 SI-Sekunden; 1 Dezimalstunde = 144 konventionelle Minuten, 1 Dezimalsekunde = 0,864 s). Verbindliche Einführung ab 22. September 1794; Aussetzung der Pflicht bereits 7. April 1795 (~17 Monate). Gründe für das Scheitern: Gewohnheit/Verwirrung, Kosten des Uhren-Austauschs, Widerstand der Uhrmacher, **kein praktischer Nutzen.** Anders als beim metrischen Maßsystem (das uneinheitliche Standards vereinheitlichte) waren Uhren ohnehin schon kompatibel. Der Kalender (12 Monate × 3 *décades* à 10 Tage + 5–6 Zusatztage) war zudem bei Arbeitern unbeliebt (1 Ruhetag in 10 statt in 7) und kollidierte mit dem Sonntag; Kalender 1805 abgeschafft. Laplace nutzte Dezimalzeit weiter für Astronomie.
+- **Französische Revolutionszeit:** Dekret vom 5. Oktober 1793 — Tag in 10 Stunden, je 100 Minuten, je 100 Sekunden (100.000 Dezimalsekunden statt 86.400 SI-Sekunden; 1 Dezimalstunde = 144 konventionelle Minuten, 1 Dezimalsekunde = 0,864 s). Verbindliche Einführung ab 22. September 1794; Aussetzung der Pflicht bereits 7. April 1795 (~17 Monate). Gründe für das Scheitern: Gewohnheit/Verwirrung, Kosten des Uhren-Austauschs, Widerstand der Uhrmacher, **kein praktischer Nutzen.** Anders als beim metrischen Masssystem (das uneinheitliche Standards vereinheitlichte) waren Uhren ohnehin schon kompatibel. Der Kalender (12 Monate × 3 *décades* à 10 Tage + 5–6 Zusatztage) war zudem bei Arbeitern unbeliebt (1 Ruhetag in 10 statt in 7) und kollidierte mit dem Sonntag; Kalender 1805 abgeschafft. Laplace nutzte Dezimalzeit weiter für Astronomie.
 - **Commission de décimalisation du temps (1897):** Vorschlag, die Stunde zur Basiseinheit metrischer Zeit zu machen — abgelehnt.
 - **Swatch Internet Time (1998):** Tag in 1.000 „.beats" (je 86,4 s), @000 = Mitternacht (CET) — Marketing-Kuriosum ohne Durchsetzung.
 - **Sowjetunion (1929–1940):** 5- und 6-Tage-Arbeitswochen (nicht dezimal im engeren Sinn, aber ein gescheiterter Bruch mit der Sieben).
@@ -236,13 +236,13 @@ Die zwölf Erdzweige tragen Yin-Yang-Polaritäten, Fünf-Elemente-, Himmelsricht
 
 ## Spekulative & alternative Quellen (klar markiert)
 
-Die folgenden Punkte sind **Hypothesen ohne abschließenden Konsens** — teils plausibel, teils randständig. Nicht als gesichert behandeln.
+Die folgenden Punkte sind **Hypothesen ohne abschliessenden Konsens** — teils plausibel, teils randständig. Nicht als gesichert behandeln.
 
 - **(Spekulativ, etabliert-plausibel) Finger-Zähl-Ursprung von 12 und 60 — Ifrah.** Georges Ifrah leitet 12 aus der 3-Glieder-×-4-Finger-Zählung ab, 60 aus „5 Dutzend". Elegant, weil es das gemeinsame Auftreten von 12 und 60 erklärt — aber prähistorisch nicht belegbar.
 - **(Spekulativ) Neugebauer: 60 = „drei mal zwanzig".** Ableitung des Sechziger-Schritts aus einer Zählung in drei Zwanzigern (Vigesimalbezug) — eine konkurrierende Linie zur Finger-12-Theorie.
 - **(Spekulativ) 60 als Verschmelzung zweier älterer Systeme.** Lehrbuch-Hypothese: 60 = kgV/Produkt aus einem Basis-12- und einem Basis-10- (bzw. -5/-6-)System, die in Mesopotamien aufeinandertrafen. Plausibel, aber nicht direkt belegt.
 - **(Spekulativ, astronomisch) 60 = 12 Monde × 5 Planeten.** 60 als Produkt aus 12 (Monde/Jahr) und 5 (damals bekannte Planeten). Charmant, aber als reine Rückrechnung verdächtig.
-- **(Sehr spekulativ / Außenseiter, S) Velikovsky: reales 360-Tage-Jahr.** Immanuel Velikovsky behauptete, das idealisierte 360-Tage-Jahr und der 360-Grad-Kreis spiegelten ein **tatsächlich** früher exakt 360 Tage langes Jahr wider, das durch kosmische Katastrophen verändert worden sei. **Wissenschaftlich nicht akzeptiert (Pseudowissenschaft);** nur der Vollständigkeit halber genannt.
+- **(Sehr spekulativ / Aussenseiter, S) Velikovsky: reales 360-Tage-Jahr.** Immanuel Velikovsky behauptete, das idealisierte 360-Tage-Jahr und der 360-Grad-Kreis spiegelten ein **tatsächlich** früher exakt 360 Tage langes Jahr wider, das durch kosmische Katastrophen verändert worden sei. **Wissenschaftlich nicht akzeptiert (Pseudowissenschaft);** nur der Vollständigkeit halber genannt.
 - **(Sehr spekulativ / nicht-peer-reviewed, S) Numerologische 60er-Herleitungen.** Preprints wie J. F. Sweeneys „Why Base 60" (vixra.org) leiten 60 aus zahlentheoretischen/„sakralen" Mustern ab. Keine reguläre Fachliteratur — unbelegt.
 - **(Spekulativ, archäologisch) Ishango-Knochen als Basis-12-Beleg.** Ein arXiv-Preprint deutet den prähistorischen Ishango-Knochen als frühen Hinweis auf Basis-12-Wissen. Minderheitsinterpretation; die Mehrheit liest den Knochen nicht eindeutig.
 - **(Spekulativ, Sekundärquellen) Babylonische Zahlensymbolik (Anu = 60, „12 vollkommen").** Aus Numerologie-/Geschichtsblogs; nicht aus belastbaren Fachquellen verifiziert (siehe Mythos-Abschnitt).
@@ -316,7 +316,7 @@ Format: `[R·A] Titel — URL — Begründung`.
 - `[R3·A2]` Why are there 7 days in a week? Thank the Babylonians — Astronomy.com — https://www.astronomy.com/science/why-are-there-7-days-in-a-week-thank-the-babylonians/ — Fachmagazin Astronomie.
 - `[R3·A2]` The Origin Of O'clock — Merriam-Webster — https://www.merriam-webster.com/wordplay/the-origin-of-oclock — Wörterbuch-Redaktion.
 - `[R3·A2]` Seasonal Time System — Seiko Museum Ginza — https://museum.seiko.co.jp/en/knowledge/relation_16/ — Firmen-/Fachmuseum, Temporalstunden.
-- `[R3·A2]` Chinese day: double hours — Sizes.com — https://www.sizes.com/time/daychinese.htm — etablierte Maßeinheiten-Referenz.
+- `[R3·A2]` Chinese day: double hours — Sizes.com — https://www.sizes.com/time/daychinese.htm — etablierte Masseinheiten-Referenz.
 - `[R3·A2]` Ishtakala — Vedic Time Keeping — DrikPanchang — https://www.drikpanchang.com/utilities/vedic-time/vedic-time-ishtakala.html — fachlich solide Panchang-Seite.
 - `[R3·A2]` Why are there 24 hours in a day and 60 minutes in an hour? — BSTC UNESCO — https://bstcunesco.com/en/why-are-there-24-hours-in-a-day-and-60-minutes-in-an-hour/ — Bildungsseite.
 - `[R3·A2]` That time France tried to make decimal time a thing — Engadget — https://www.engadget.com/...-decimal-time-...html — Tech-Medium, Dezimalzeit.
@@ -378,6 +378,6 @@ Format: `[R·A] Titel — URL — Begründung`.
 
 - `[R4·A3·S]` Why Base 60 — John Frederic Sweeney (vixra.org-Preprint) — https://vixra.org/pdf/1407.0062v1.pdf — nicht peer-reviewt, numerologisch.
 - `[R3·A3·S]` 8. The Year of 360 Days — Immanuel Velikovsky — https://heritage-history.com/index.php?c=read&author=velikovsky&book=collision&story=year — Katastrophismus, wissenschaftlich abgelehnt.
-- `[R3·A3·S]` Does the Ishango Bone Indicate Knowledge of the Base 12? — arXiv-Preprint — https://arxiv.org/pdf/1204.1019 — Preprint (nicht abschließend peer-reviewt), Minderheitsthese.
+- `[R3·A3·S]` Does the Ishango Bone Indicate Knowledge of the Base 12? — arXiv-Preprint — https://arxiv.org/pdf/1204.1019 — Preprint (nicht abschliessend peer-reviewt), Minderheitsthese.
 
-**Hinweis zur Belastbarkeit:** Vierzehn Wikipedia-Kernartikel wurden im Volltext (A1) gelesen und tragen die zentralen, gesicherten Fakten. Britannica- und R1-Quellen wurden überwiegend nur per Snippet/indirekt (A2/A3) gesichtet — bei wörtlichen Zitaten ist eine Volltext-Prüfung ratsam. Die größten verbleibenden Unsicherheiten: (1) keine einzelne gesicherte Ursprungserklärung für Basis 60 (Neugebauer-Vorbehalt); (2) Finger-Zähl-Theorie als populärste, aber unbeweisbare Brücke zwischen 12 und 60; (3) Detail-Abweichungen bei der ägyptischen Dekan-Mechanik der 12 Nachtstunden und bei den kleinsten vedischen Zeiteinheiten; (4) babylonische Zahlensymbolik (Anu = 60) nur aus schwachen Sekundärquellen.
+**Hinweis zur Belastbarkeit:** Vierzehn Wikipedia-Kernartikel wurden im Volltext (A1) gelesen und tragen die zentralen, gesicherten Fakten. Britannica- und R1-Quellen wurden überwiegend nur per Snippet/indirekt (A2/A3) gesichtet — bei wörtlichen Zitaten ist eine Volltext-Prüfung ratsam. Die grössten verbleibenden Unsicherheiten: (1) keine einzelne gesicherte Ursprungserklärung für Basis 60 (Neugebauer-Vorbehalt); (2) Finger-Zähl-Theorie als populärste, aber unbeweisbare Brücke zwischen 12 und 60; (3) Detail-Abweichungen bei der ägyptischen Dekan-Mechanik der 12 Nachtstunden und bei den kleinsten vedischen Zeiteinheiten; (4) babylonische Zahlensymbolik (Anu = 60) nur aus schwachen Sekundärquellen.

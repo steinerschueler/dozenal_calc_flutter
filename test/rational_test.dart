@@ -143,20 +143,30 @@ void main() {
   // operations on the rational rail instead of collapsing to the f64 ≈ path.
   group('Rational mod / abs / reciprocal / factorial', () {
     test('mod matches Dart f64 % sign convention (divisor sign)', () {
-      expect(Rational.fromInts(7).mod(Rational.fromInts(3)),
-          Rational.fromInts(1));
-      expect(Rational.fromInts(-7).mod(Rational.fromInts(3)),
-          Rational.fromInts(2)); // euclidean
-      expect(Rational.fromInts(7).mod(Rational.fromInts(-3)),
-          Rational.fromInts(-2));
-      expect(Rational.fromInts(-7).mod(Rational.fromInts(-3)),
-          Rational.fromInts(-1));
+      expect(
+        Rational.fromInts(7).mod(Rational.fromInts(3)),
+        Rational.fromInts(1),
+      );
+      expect(
+        Rational.fromInts(-7).mod(Rational.fromInts(3)),
+        Rational.fromInts(2),
+      ); // euclidean
+      expect(
+        Rational.fromInts(7).mod(Rational.fromInts(-3)),
+        Rational.fromInts(-2),
+      );
+      expect(
+        Rational.fromInts(-7).mod(Rational.fromInts(-3)),
+        Rational.fromInts(-1),
+      );
     });
 
     test('mod of non-integers', () {
       // 7/2 mod 2 = 3/2
-      expect(Rational.fromInts(7, 2).mod(Rational.fromInts(2)),
-          Rational.fromInts(3, 2));
+      expect(
+        Rational.fromInts(7, 2).mod(Rational.fromInts(2)),
+        Rational.fromInts(3, 2),
+      );
     });
 
     test('mod by zero returns null', () {

@@ -31,80 +31,73 @@ class MarkdownAssetPage extends StatefulWidget {
 }
 
 class _MarkdownAssetPageState extends State<MarkdownAssetPage> {
-  late final Future<String> _markdown =
-      rootBundle.loadString(widget.assetPath);
+  late final Future<String> _markdown = rootBundle.loadString(widget.assetPath);
 
   @override
   Widget build(BuildContext context) {
     final t = AppColors.of(context);
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          widget.title,
-          style: const TextStyle(fontSize: 14),
-        ),
+        title: Text(widget.title, style: const TextStyle(fontSize: 14)),
       ),
       body: SafeArea(
         // Edge-to-edge: top inset is owned by the AppBar; the bottom matters
         // so the markdown text doesn't slide under the system nav bar.
         top: false,
         child: FutureBuilder<String>(
-        future: _markdown,
-        builder: (ctx, snap) {
-          if (snap.connectionState != ConnectionState.done) {
-            return const Center(child: CircularProgressIndicator());
-          }
-          if (snap.hasError) {
-            return Padding(
-              padding: const EdgeInsets.all(16),
-              child: Text(
-                '${widget.errorLabel}\n${snap.error}',
-                style: TextStyle(color: t.displayError),
+          future: _markdown,
+          builder: (ctx, snap) {
+            if (snap.connectionState != ConnectionState.done) {
+              return const Center(child: CircularProgressIndicator());
+            }
+            if (snap.hasError) {
+              return Padding(
+                padding: const EdgeInsets.all(16),
+                child: Text(
+                  '${widget.errorLabel}\n${snap.error}',
+                  style: TextStyle(color: t.displayError),
+                ),
+              );
+            }
+            return Markdown(
+              data: snap.data ?? '',
+              padding: const EdgeInsets.fromLTRB(16, 12, 16, 24),
+              onTapLink: (text, href, title) {
+                if (href != null) openExternalLink(context, href);
+              },
+              styleSheet: MarkdownStyleSheet(
+                h1: TextStyle(
+                  color: t.textPrimary,
+                  fontSize: 22,
+                  fontWeight: FontWeight.bold,
+                  height: 1.25,
+                ),
+                h2: TextStyle(
+                  color: t.textPrimary,
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                  height: 1.35,
+                ),
+                p: TextStyle(
+                  color: t.textSecondary,
+                  fontSize: 13.5,
+                  height: 1.5,
+                ),
+                strong: TextStyle(
+                  color: t.textPrimary,
+                  fontWeight: FontWeight.bold,
+                ),
+                code: TextStyle(
+                  color: t.textTertiary,
+                  fontFamily: 'JetBrainsMono',
+                  fontSize: 12.5,
+                  backgroundColor: t.cardFill,
+                ),
+                a: TextStyle(color: t.link),
+                listBullet: TextStyle(color: t.textSecondary, fontSize: 13.5),
               ),
             );
-          }
-          return Markdown(
-            data: snap.data ?? '',
-            padding: const EdgeInsets.fromLTRB(16, 12, 16, 24),
-            onTapLink: (text, href, title) {
-              if (href != null) openExternalLink(context, href);
-            },
-            styleSheet: MarkdownStyleSheet(
-              h1: TextStyle(
-                color: t.textPrimary,
-                fontSize: 22,
-                fontWeight: FontWeight.bold,
-                height: 1.25,
-              ),
-              h2: TextStyle(
-                color: t.textPrimary,
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
-                height: 1.35,
-              ),
-              p: TextStyle(
-                color: t.textSecondary,
-                fontSize: 13.5,
-                height: 1.5,
-              ),
-              strong: TextStyle(
-                color: t.textPrimary,
-                fontWeight: FontWeight.bold,
-              ),
-              code: TextStyle(
-                color: t.textTertiary,
-                fontFamily: 'JetBrainsMono',
-                fontSize: 12.5,
-                backgroundColor: t.cardFill,
-              ),
-              a: TextStyle(color: t.link),
-              listBullet: TextStyle(
-                color: t.textSecondary,
-                fontSize: 13.5,
-              ),
-            ),
-          );
-        },
+          },
         ),
       ),
     );

@@ -927,12 +927,7 @@ List<ProseChapter> _werteChaptersZhHant() => const [
         'R1',
         'A2',
       ),
-      Source(
-        'IMF — 儲備數據',
-        'https://www.imf.org/en/Data',
-        'R1',
-        'A3',
-      ),
+      Source('IMF — 儲備數據', 'https://www.imf.org/en/Data', 'R1', 'A3'),
       Source(
         'World Gold Council — 中央銀行統計（利益相關）',
         'https://www.gold.org/goldhub/data/monthly-central-bank-statistics',

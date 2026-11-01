@@ -32,7 +32,7 @@ geflaggten Stellen verweisen auf zwei Quellen ausserhalb unseres Codes:
    bleiben im DEX. Tracking: `flutter/flutter#165327` plus Duplikate `#183372`,
    `#183349`, `#175261`, `#175262`, `#169810` — alle als „r: fixed" markiert,
    aber nur im Sinne eines Doku-Updates; der `PlatformPlugin`-Code ist Stand
-   Flutter 3.41.8 unverändert.
+   Flutter 3.47.9 unverändert (am 31.10.2026 im SDK geprüft).
 2. **`B.b.q`, `b.o.J`, `b.p.J`, `b.r.J`** — die `EdgeToEdgeApi*Impl`-Backport-
    Klassen aus `androidx.activity:activity`. `EdgeToEdge.enable()` delegiert
    intern auf versions-spezifische Impls; die Pre-Android-15-Pfade rufen

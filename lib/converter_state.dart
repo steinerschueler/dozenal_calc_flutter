@@ -134,7 +134,8 @@ class ConverterState extends ChangeNotifier {
 
   void memStore() {
     final v =
-        ansForBridge ?? (_input.isEmpty ? null : parseScalarEntry(_input, base));
+        ansForBridge ??
+        (_input.isEmpty ? null : parseScalarEntry(_input, base));
     if (v == null || !v.isFinite) return;
     _memory = v;
     _overlayOpen = false;
@@ -262,7 +263,8 @@ class ConverterState extends ChangeNotifier {
 
   void inputDigit(int value) {
     if (value >= base) return; // A/B not valid in base 10
-    _input = _input.substring(0, _inputCursor) +
+    _input =
+        _input.substring(0, _inputCursor) +
         _digitChar(value) +
         _input.substring(_inputCursor);
     _inputCursor++;
@@ -283,11 +285,13 @@ class ConverterState extends ChangeNotifier {
     if (_input.substring(segStart, segEnd).contains('.')) return;
     if (_inputCursor == segStart) {
       // Segment start (entry start or right after an operator): seed "0.".
-      _input = '${_input.substring(0, _inputCursor)}0.'
+      _input =
+          '${_input.substring(0, _inputCursor)}0.'
           '${_input.substring(_inputCursor)}';
       _inputCursor += 2;
     } else {
-      _input = '${_input.substring(0, _inputCursor)}.'
+      _input =
+          '${_input.substring(0, _inputCursor)}.'
           '${_input.substring(_inputCursor)}';
       _inputCursor++;
     }
@@ -320,16 +324,16 @@ class ConverterState extends ChangeNotifier {
     final next = _inputCursor < _input.length ? _input[_inputCursor] : null;
     if (prev == null || isScalarOpChar(prev) || prev == '-') return;
     if (next != null && isScalarOpChar(next)) return;
-    _input = _input.substring(0, _inputCursor) +
-        ch +
-        _input.substring(_inputCursor);
+    _input =
+        _input.substring(0, _inputCursor) + ch + _input.substring(_inputCursor);
     _inputCursor++;
     notifyListeners();
   }
 
   void del() {
     if (_input.isNotEmpty && _inputCursor > 0) {
-      _input = _input.substring(0, _inputCursor - 1) +
+      _input =
+          _input.substring(0, _inputCursor - 1) +
           _input.substring(_inputCursor);
       _inputCursor--;
     } else if (_input.isEmpty && _heldUnit != null) {
@@ -505,8 +509,11 @@ class ConverterState extends ChangeNotifier {
     }
 
     // Commit the pending number as a term in `unit` (clearing any held unit).
-    final term = _Term(parseScalarEntry(_input, base), unit,
-        subtract: _pendingSubtract);
+    final term = _Term(
+      parseScalarEntry(_input, base),
+      unit,
+      subtract: _pendingSubtract,
+    );
     if (_def!.affine) {
       _terms = [term]; // temperature: single term
       _cursorTerm = 1;
@@ -612,7 +619,8 @@ class ConverterState extends ChangeNotifier {
   }
 
   void toggleWorld() => setWorld(
-      _world == UnitWorld.imperial ? UnitWorld.metric : UnitWorld.imperial);
+    _world == UnitWorld.imperial ? UnitWorld.metric : UnitWorld.imperial,
+  );
 
   /// Switch the numeral base (12 ↔ 10) — value-preserving: the pending
   /// number's digits are re-rendered in the new base; committed terms store
@@ -652,8 +660,9 @@ class ConverterState extends ChangeNotifier {
         ..._terms.sublist(1),
       ];
     }
-    _resultStep =
-        _terms.isEmpty ? -1 : _resultStep.clamp(0, _resultViewCount - 1);
+    _resultStep = _terms.isEmpty
+        ? -1
+        : _resultStep.clamp(0, _resultViewCount - 1);
   }
 
   String _digitChar(int v) =>
@@ -761,7 +770,13 @@ class ConverterState extends ChangeNotifier {
       caret = 0;
     }
     return _InputLayout(
-        text, caret, pendingStart, pendingEnd, boundaries, unitRanges);
+      text,
+      caret,
+      pendingStart,
+      pendingEnd,
+      boundaries,
+      unitRanges,
+    );
   }
 
   ConverterLine _breakdownLine() {

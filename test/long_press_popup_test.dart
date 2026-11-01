@@ -62,10 +62,7 @@ void main() {
         ExpE(),
       ]);
       expect(longPressOptionsFor(const Sub()), const [PlusMinus()]);
-      expect(longPressOptionsFor(const Sto()), const [
-        MemPlus(),
-        MemMinus(),
-      ]);
+      expect(longPressOptionsFor(const Sto()), const [MemPlus(), MemMinus()]);
       expect(longPressOptionsFor(const Factorial()), const [NCr(), NPr()]);
       expect(longPressOptionsFor(const ConvAns()), const [AssetAns()]);
     });
@@ -79,9 +76,7 @@ void main() {
   });
 
   group('popup interaction', () {
-    testWidgets('slide-and-release selects the hovered option', (
-      tester,
-    ) async {
+    testWidgets('slide-and-release selects the hovered option', (tester) async {
       final handle = tester.ensureSemantics();
       final tapped = <CalcToken>[];
       await tester.pumpWidget(_wrap(hochArea, tapped));
@@ -226,12 +221,14 @@ void main() {
       // VAL popup (disabled keys host nothing).
       final handle = tester.ensureSemantics();
       final tapped = <CalcToken>[];
-      await tester.pumpWidget(_wrap(
-        hochArea,
-        tapped,
-        overlayOpen: true,
-        isDisabled: (t) => t is ConvAns || t is AssetAns,
-      ));
+      await tester.pumpWidget(
+        _wrap(
+          hochArea,
+          tapped,
+          overlayOpen: true,
+          isDisabled: (t) => t is ConvAns || t is AssetAns,
+        ),
+      );
 
       final gesture = await tester.startGesture(
         tester.getCenter(
@@ -257,12 +254,14 @@ void main() {
       // "grey = nothing to pull" affordance as the keys.
       final handle = tester.ensureSemantics();
       final tapped = <CalcToken>[];
-      await tester.pumpWidget(_wrap(
-        hochArea,
-        tapped,
-        overlayOpen: true,
-        isDisabled: (t) => t is AssetAns,
-      ));
+      await tester.pumpWidget(
+        _wrap(
+          hochArea,
+          tapped,
+          overlayOpen: true,
+          isDisabled: (t) => t is AssetAns,
+        ),
+      );
 
       final gesture = await _holdKey(
         tester,

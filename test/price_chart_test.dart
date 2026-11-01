@@ -12,19 +12,19 @@ import 'package:dozenal_calc_flutter/price_chart.dart';
 import 'package:dozenal_calc_flutter/price_sources_page.dart';
 
 Widget _wrap(Widget child) => MaterialApp(
-      localizationsDelegates: AppLocalizations.localizationsDelegates,
-      supportedLocales: AppLocalizations.supportedLocales,
-      home: Scaffold(body: child),
-    );
+  localizationsDelegates: AppLocalizations.localizationsDelegates,
+  supportedLocales: AppLocalizations.supportedLocales,
+  home: Scaffold(body: child),
+);
 
 PriceChart _chart() => PriceChart(
-      base: 12,
-      seriesLabel: (id) => id.name,
-      unitLabel: (id) => '${id.name} in gold',
-      sourcesLabel: 'Quellen',
-      caption: 'caption',
-      eraReconstructedLabel: 'Ankerpunkt',
-    );
+  base: 12,
+  seriesLabel: (id) => id.name,
+  unitLabel: (id) => '${id.name} in gold',
+  sourcesLabel: 'Quellen',
+  caption: 'caption',
+  eraReconstructedLabel: 'Ankerpunkt',
+);
 
 void main() {
   group('PriceChart', () {
@@ -74,13 +74,14 @@ void main() {
 
   group('Kurve toggle in the Werterechner', () {
     Widget app() => MaterialApp(
-          localizationsDelegates: AppLocalizations.localizationsDelegates,
-          supportedLocales: AppLocalizations.supportedLocales,
-          home: const AssetPage(),
-        );
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
+      home: const AssetPage(),
+    );
 
-    testWidgets('Kurve replaces the keypad with the chart; close restores it',
-        (tester) async {
+    testWidgets('Kurve replaces the keypad with the chart; close restores it', (
+      tester,
+    ) async {
       await tester.binding.setSurfaceSize(const Size(412, 915));
       addTearDown(() => tester.binding.setSurfaceSize(null));
       await tester.pumpWidget(app());

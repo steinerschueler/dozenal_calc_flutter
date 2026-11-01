@@ -37,10 +37,10 @@ enum FontSize { normal, large, xlarge }
 extension FontSizeFactor on FontSize {
   /// The user-chosen multiplier (on top of the automatic tablet baseline).
   double get factor => switch (this) {
-        FontSize.normal => 1.0,
-        FontSize.large => 1.2,
-        FontSize.xlarge => 1.4,
-      };
+    FontSize.normal => 1.0,
+    FontSize.large => 1.2,
+    FontSize.xlarge => 1.4,
+  };
 }
 
 /// Effective text scale: the user's [FontSize] choice times an automatic

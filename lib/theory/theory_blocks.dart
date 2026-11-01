@@ -23,9 +23,12 @@ class TheoryChapterRef {
   /// ([theoryImageFor]). Null for chapters without an image slot.
   final String? imageId;
 
-  const TheoryChapterRef.prose(this.title, List<ProseSection> sections,
-      [this.sources = const [], this.imageId])
-      : prose = sections;
+  const TheoryChapterRef.prose(
+    this.title,
+    List<ProseSection> sections, [
+    this.sources = const [],
+    this.imageId,
+  ]) : prose = sections;
 }
 
 /// A named group of chapters. [inProgress] blocks have no chapters yet and are
@@ -69,7 +72,11 @@ List<TheoryBlock> theoryBlocks(AppLocalizations l, String langTag) {
   final welt = <TheoryChapterRef>[
     for (final (i, c) in world.indexed)
       TheoryChapterRef.prose(
-          c.title, c.sections, c.sources, c.imageId ?? 'world/$i'),
+        c.title,
+        c.sections,
+        c.sources,
+        c.imageId ?? 'world/$i',
+      ),
   ];
 
   // Dozenale Mathematik: komplett bequellte Prosa (Zahlen/Basen, Fibonacci,
@@ -77,7 +84,11 @@ List<TheoryBlock> theoryBlocks(AppLocalizations l, String langTag) {
   final mathematik = <TheoryChapterRef>[
     for (final (i, c) in math.indexed)
       TheoryChapterRef.prose(
-          c.title, c.sections, c.sources, c.imageId ?? 'math/$i'),
+        c.title,
+        c.sections,
+        c.sources,
+        c.imageId ?? 'math/$i',
+      ),
   ];
 
   return [
@@ -102,6 +113,10 @@ TheoryBlock werteTheoryBlock(AppLocalizations l, String langTag) {
   return TheoryBlock(l.theoryBlockWerte, [
     for (final (i, c) in werte.indexed)
       TheoryChapterRef.prose(
-          c.title, c.sections, c.sources, c.imageId ?? 'werte/$i'),
+        c.title,
+        c.sections,
+        c.sources,
+        c.imageId ?? 'werte/$i',
+      ),
   ]);
 }

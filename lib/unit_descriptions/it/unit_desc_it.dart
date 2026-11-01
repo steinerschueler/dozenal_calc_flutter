@@ -15,13 +15,18 @@ const Map<UnitCategory, Map<String, String>> _unitDescIt = {
     'thousand': 'Migliaio — dieci centinaia, cioè 1000 pezzi.',
   },
   UnitCategory.dist: {
-    'in': 'Pollice — misura di lunghezza imperiale; dodici pollici formano un piede (2,54 cm).',
+    'in':
+        'Pollice — misura di lunghezza imperiale; dodici pollici formano un piede (2,54 cm).',
     'ft': 'Piede — misura di lunghezza imperiale di dodici pollici (30,48 cm).',
     'yd': 'Iarda — tre piedi (0,9144 m).',
-    'mi': 'Miglio — 1760 iarde, la comune misura di percorrenza imperiale (1,609 km).',
-    'fathom': 'Braccio nautico — misura della profondità dell’acqua, sei piedi (1,8288 m).',
-    'nmi': 'Miglio nautico — un primo d’arco sulla circonferenza terrestre, esattamente 1852 m.',
-    'league': 'Lega — storicamente circa un’ora di cammino, tre miglia (4,828 km).',
+    'mi':
+        'Miglio — 1760 iarde, la comune misura di percorrenza imperiale (1,609 km).',
+    'fathom':
+        'Braccio nautico — misura della profondità dell’acqua, sei piedi (1,8288 m).',
+    'nmi':
+        'Miglio nautico — un primo d’arco sulla circonferenza terrestre, esattamente 1852 m.',
+    'league':
+        'Lega — storicamente circa un’ora di cammino, tre miglia (4,828 km).',
     'mm': 'Millimetro — un millesimo di metro.',
     'cm': 'Centimetro — un centesimo di metro.',
     'm': 'Metro — unità di base SI della lunghezza.',
@@ -29,29 +34,45 @@ const Map<UnitCategory, Map<String, String>> _unitDescIt = {
   },
   UnitCategory.area: {
     'sq in': 'Pollice quadrato — l’area di un quadrato con un pollice di lato.',
-    'sq ft': 'Piede quadrato — area di un quadrato con un piede di lato; 144 pollici quadrati.',
-    'sq yd': 'Iarda quadrata — area di un quadrato con un’iarda di lato; nove piedi quadrati.',
-    'acre': 'Acro — antica misura agraria, 4840 iarde quadrate (circa 4047 m²).',
-    'sq mi': 'Miglio quadrato — area di un quadrato con un miglio di lato; 640 acri.',
-    'cm²': 'Centimetro quadrato — area di un quadrato con un centimetro di lato.',
-    'm²': 'Metro quadrato — unità SI dell’area; un quadrato con un metro di lato.',
+    'sq ft':
+        'Piede quadrato — area di un quadrato con un piede di lato; 144 pollici quadrati.',
+    'sq yd':
+        'Iarda quadrata — area di un quadrato con un’iarda di lato; nove piedi quadrati.',
+    'acre':
+        'Acro — antica misura agraria, 4840 iarde quadrate (circa 4047 m²).',
+    'sq mi':
+        'Miglio quadrato — area di un quadrato con un miglio di lato; 640 acri.',
+    'cm²':
+        'Centimetro quadrato — area di un quadrato con un centimetro di lato.',
+    'm²':
+        'Metro quadrato — unità SI dell’area; un quadrato con un metro di lato.',
     'ha': 'Ettaro — 10000 metri quadrati, un quadrato con 100 m di lato.',
-    'km²': 'Chilometro quadrato — area di un quadrato con un chilometro di lato.',
+    'km²':
+        'Chilometro quadrato — area di un quadrato con un chilometro di lato.',
   },
   UnitCategory.space: {
-    'cu in': 'Pollice cubo — il volume di un cubo con uno spigolo di un pollice.',
-    'cu ft': 'Piede cubo — volume di un cubo con uno spigolo di un piede; 1728 pollici cubi.',
-    'cu yd': 'Iarda cubica — volume di un cubo con uno spigolo di un’iarda; 27 piedi cubi.',
-    'cm³': 'Centimetro cubo — volume di un cubo con uno spigolo di 1 cm (un millilitro).',
-    'm³': 'Metro cubo — unità SI del volume; un cubo con uno spigolo di un metro.',
+    'cu in':
+        'Pollice cubo — il volume di un cubo con uno spigolo di un pollice.',
+    'cu ft':
+        'Piede cubo — volume di un cubo con uno spigolo di un piede; 1728 pollici cubi.',
+    'cu yd':
+        'Iarda cubica — volume di un cubo con uno spigolo di un’iarda; 27 piedi cubi.',
+    'cm³':
+        'Centimetro cubo — volume di un cubo con uno spigolo di 1 cm (un millilitro).',
+    'm³':
+        'Metro cubo — unità SI del volume; un cubo con uno spigolo di un metro.',
   },
   UnitCategory.weight: {
-    'oz': 'Oncia — misura di peso imperiale, un sedicesimo di libbra (28,35 g).',
+    'oz':
+        'Oncia — misura di peso imperiale, un sedicesimo di libbra (28,35 g).',
     'lb': 'Libbra — misura di peso imperiale di 16 once (453,6 g).',
     'st': 'Stone — misura britannica del peso corporeo, 14 libbre (6,35 kg).',
-    'cwt': 'Hundredweight — centinaio di peso statunitense da 100 libbre (45,36 kg).',
-    'ton': 'Tonnellata corta — tonnellata statunitense da 2000 libbre (907,2 kg).',
-    'oz t': 'Oncia troy — peso per i metalli preziosi, leggermente più pesante dell’oncia ordinaria (31,1 g).',
+    'cwt':
+        'Hundredweight — centinaio di peso statunitense da 100 libbre (45,36 kg).',
+    'ton':
+        'Tonnellata corta — tonnellata statunitense da 2000 libbre (907,2 kg).',
+    'oz t':
+        'Oncia troy — peso per i metalli preziosi, leggermente più pesante dell’oncia ordinaria (31,1 g).',
     'g': 'Grammo — un millesimo di chilogrammo.',
     'kg': 'Chilogrammo — unità di base SI della massa.',
     't': 'Tonnellata — mille chilogrammi.',
@@ -67,61 +88,85 @@ const Map<UnitCategory, Map<String, String>> _unitDescIt = {
     '°': 'Grado — un trecentosessantesimo di una rotazione completa.',
     '′': 'Primo d’arco — un sessantesimo di grado.',
     '″': 'Secondo d’arco — un sessantesimo di primo d’arco.',
-    'sign': 'Segno — un segno zodiacale, 30°, un dodicesimo del cerchio completo.',
+    'sign':
+        'Segno — un segno zodiacale, 30°, un dodicesimo del cerchio completo.',
     'turn': 'Giro — il cerchio completo, 360° ossia 2π.',
-    'gon': 'Gon (grado centesimale) — un quattrocentesimo di giro completo; l’angolo retto misura 100 gon.',
-    'rad': 'Radiante — misura degli angoli nel SI; l’angolo il cui arco è uguale al raggio.',
+    'gon':
+        'Gon (grado centesimale) — un quattrocentesimo di giro completo; l’angolo retto misura 100 gon.',
+    'rad':
+        'Radiante — misura degli angoli nel SI; l’angolo il cui arco è uguale al raggio.',
   },
   UnitCategory.price: {
-    'd': 'Penny (antico, «d» per denarius) — nel vecchio sistema monetario britannico un dodicesimo di scellino.',
-    'sh': 'Scellino — nel vecchio sistema monetario britannico un ventesimo di sterlina, dodici pence.',
+    'd':
+        'Penny (antico, «d» per denarius) — nel vecchio sistema monetario britannico un dodicesimo di scellino.',
+    'sh':
+        'Scellino — nel vecchio sistema monetario britannico un ventesimo di sterlina, dodici pence.',
     '£': 'Sterlina — l’unità monetaria principale britannica.',
-    'guinea': 'Ghinea — moneta storica del valore di una sterlina e uno scellino (21 scellini).',
-    'p': 'Penny (nuovo) — un centesimo di sterlina dalla decimalizzazione del 1971.',
+    'guinea':
+        'Ghinea — moneta storica del valore di una sterlina e uno scellino (21 scellini).',
+    'p':
+        'Penny (nuovo) — un centesimo di sterlina dalla decimalizzazione del 1971.',
     '£dec': 'Sterlina (decimale) — la sterlina odierna da 100 penny (nuovi).',
   },
   UnitCategory.temp: {
-    '°F': 'Grado Fahrenheit — scala con il punto di congelamento dell’acqua a 32° e di ebollizione a 212°.',
-    '°R': 'Grado Rankine — scala assoluta con lo stesso passo del Fahrenheit; 0 corrisponde allo zero assoluto.',
-    '°C': 'Grado Celsius — scala con il punto di congelamento dell’acqua a 0° e di ebollizione a 100°.',
-    'K': 'Kelvin — unità di base SI della temperatura, contata dallo zero assoluto.',
+    '°F':
+        'Grado Fahrenheit — scala con il punto di congelamento dell’acqua a 32° e di ebollizione a 212°.',
+    '°R':
+        'Grado Rankine — scala assoluta con lo stesso passo del Fahrenheit; 0 corrisponde allo zero assoluto.',
+    '°C':
+        'Grado Celsius — scala con il punto di congelamento dell’acqua a 0° e di ebollizione a 100°.',
+    'K':
+        'Kelvin — unità di base SI della temperatura, contata dallo zero assoluto.',
   },
   UnitCategory.press: {
-    'psi': 'Libbre per pollice quadrato — misura di pressione imperiale (un lbf su una superficie di un pollice quadrato).',
-    'inHg': 'Pollici di mercurio — la pressione che mantiene una colonna di mercurio alta un pollice.',
+    'psi':
+        'Libbre per pollice quadrato — misura di pressione imperiale (un lbf su una superficie di un pollice quadrato).',
+    'inHg':
+        'Pollici di mercurio — la pressione che mantiene una colonna di mercurio alta un pollice.',
     'Pa': 'Pascal — unità SI della pressione; un newton per metro quadrato.',
     'kPa': 'Chilopascal — mille pascal.',
-    'bar': 'Bar — 100000 pascal, vicino alla pressione atmosferica media al livello del mare.',
-    'atm': 'Atmosfera standard — la pressione atmosferica media al livello del mare (101325 pascal).',
-    'mmHg': 'Millimetri di mercurio (torr) — pressione di una colonna di mercurio alta un millimetro.',
+    'bar':
+        'Bar — 100000 pascal, vicino alla pressione atmosferica media al livello del mare.',
+    'atm':
+        'Atmosfera standard — la pressione atmosferica media al livello del mare (101325 pascal).',
+    'mmHg':
+        'Millimetri di mercurio (torr) — pressione di una colonna di mercurio alta un millimetro.',
   },
   UnitCategory.force: {
     'lbf': 'Libbra-forza — la forza peso di una libbra (4,448 N).',
-    'pdl': 'Poundal — unità di forza imperiale che accelera una libbra di 1 ft/s² (0,138 N).',
+    'pdl':
+        'Poundal — unità di forza imperiale che accelera una libbra di 1 ft/s² (0,138 N).',
     'N': 'Newton — unità SI della forza; accelera un chilogrammo di 1 m/s².',
     'kN': 'Chilonewton — mille newton.',
     'kgf': 'Chilogrammo-forza — la forza peso di un chilogrammo (9,807 N).',
-    'dyn': 'Dina — unità CGS della forza; accelera un grammo di 1 cm/s² (10⁻⁵ N).',
+    'dyn':
+        'Dina — unità CGS della forza; accelera un grammo di 1 cm/s² (10⁻⁵ N).',
   },
   UnitCategory.work: {
-    'BTU': 'British Thermal Unit — calore che scalda una libbra d’acqua di 1 °F (1055 J).',
-    'ft·lbf': 'Foot-pound — lavoro per spostare una libbra-forza di un piede (1,356 J).',
+    'BTU':
+        'British Thermal Unit — calore che scalda una libbra d’acqua di 1 °F (1055 J).',
+    'ft·lbf':
+        'Foot-pound — lavoro per spostare una libbra-forza di un piede (1,356 J).',
     'J': 'Joule — unità SI dell’energia; un newton per un metro.',
     'kJ': 'Chilojoule — mille joule.',
-    'Wh': 'Wattora — energia erogata da una potenza di un watt per un’ora (3600 J).',
-    'kWh': 'Chilowattora — mille wattore, la comune unità della bolletta elettrica.',
+    'Wh':
+        'Wattora — energia erogata da una potenza di un watt per un’ora (3600 J).',
+    'kWh':
+        'Chilowattora — mille wattore, la comune unità della bolletta elettrica.',
     'cal': 'Caloria — calore che scalda un grammo d’acqua di 1 °C (4,184 J).',
     'kcal': 'Chilocaloria — mille calorie; la «caloria» della nutrizione.',
   },
   UnitCategory.power: {
     'hp': 'Horsepower (meccanico, imperiale) — circa 745,7 watt.',
-    'BTU/h': 'BTU all’ora — misura di potenza usata principalmente in climatizzazione e riscaldamento (0,293 W).',
+    'BTU/h':
+        'BTU all’ora — misura di potenza usata principalmente in climatizzazione e riscaldamento (0,293 W).',
     'W': 'Watt — unità SI della potenza; un joule al secondo.',
     'kW': 'Chilowatt — mille watt.',
     'PS': 'Cavallo vapore (metrico) — 735,5 watt.',
   },
   UnitCategory.cook: {
-    'tsp': 'Cucchiaino (US) — misura da cucina, un terzo di cucchiaio (4,93 ml).',
+    'tsp':
+        'Cucchiaino (US) — misura da cucina, un terzo di cucchiaio (4,93 ml).',
     'tbsp': 'Cucchiaio (US) — misura da cucina di tre cucchiaini (14,79 ml).',
     'fl oz': 'Oncia fluida (US) — misura di volume per i liquidi (29,57 ml).',
     'cup': 'Cup (US) — misura da cucina di otto once fluide (236,6 ml).',
@@ -139,10 +184,14 @@ const Map<UnitCategory, Map<String, String>> _unitDescIt = {
     'L': 'Litro — misura di volume metrica, un decimetro cubo.',
   },
   UnitCategory.moment: {
-    'lbf·ft': 'Piede-libbra — il momento torcente di una libbra-forza su una leva di un piede (1,356 N·m).',
-    'lbf·in': 'Pollice-libbra — il momento torcente di una libbra-forza su una leva di un pollice (0,113 N·m).',
-    'N·m': 'Newton metro — unità SI del momento torcente; un newton su una leva di un metro.',
+    'lbf·ft':
+        'Piede-libbra — il momento torcente di una libbra-forza su una leva di un piede (1,356 N·m).',
+    'lbf·in':
+        'Pollice-libbra — il momento torcente di una libbra-forza su una leva di un pollice (0,113 N·m).',
+    'N·m':
+        'Newton metro — unità SI del momento torcente; un newton su una leva di un metro.',
     'kN·m': 'Chilonewton metro — mille newton metri.',
-    'kgf·m': 'Chilogrammo-forza metro — il momento torcente di un chilogrammo-forza su una leva di un metro (9,807 N·m).',
+    'kgf·m':
+        'Chilogrammo-forza metro — il momento torcente di un chilogrammo-forza su una leva di un metro (9,807 N·m).',
   },
 };

@@ -64,7 +64,7 @@ Mondmonate → Idealkalender mit 12 × 30 = 360 Tagen → Ekliptik in 12 × 30°
 **Vorlauf MUL.APIN.** Die 12-Zeichen-Einteilung hatte einen älteren
 Vorläufer. Das Keilschrift-Kompendium *MUL.APIN*, in kanonischer Form um
 1000 v. Chr. zusammengestellt (älteste bekannte Kopie 686 v. Chr.), listet
-entlang des Mondpfads **17 oder 18 Sternbilder** auf — ungleich groß,
+entlang des Mondpfads **17 oder 18 Sternbilder** auf — ungleich gross,
 beobachtungsbasiert, noch keine mathematischen Einheiten. Der Weg von diesen
 17/18 Stationen zu den zwölf gleichen 30°-Abschnitten ist eine Abstraktion.
 
@@ -100,11 +100,11 @@ Skorpion, Fisch wurden unverändert übernommen); einzelne wandelten sich
 Hier liegt die wichtigste und am häufigsten übersehene Unterscheidung:
 **Zeichen ≠ Sternbilder.**
 
-**Die zwölf Zeichen sind gleich groß; die Sternbilder nicht.** Die zwölf
+**Die zwölf Zeichen sind gleich gross; die Sternbilder nicht.** Die zwölf
 Zeichen sind mathematische Abschnitte von je 30° — Koordinaten, kein Abbild
 realer Sternmuster. Die Sternbilder (Konstellationen) wurden nach
 Sternmustern benannt und haben seit der IAU-Grenzziehung von 1930 präzise,
-aber unregelmäßige Grenzen. Die Spannen entlang der Ekliptik sind sehr
+aber unregelmässige Grenzen. Die Spannen entlang der Ekliptik sind sehr
 ungleich: Leo belegt ≈ 44° Ekliptiklänge, Libra nur ≈ 7° — Virgo ist also
 fast dreimal so lang wie die Waage. Die Sonne steht entsprechend
 unterschiedlich lange vor jedem Sternbild.
@@ -113,7 +113,7 @@ unterschiedlich lange vor jedem Sternbild.
 Ekliptik **dreizehn** Sternbilder: Der Schlangenträger **Ophiuchus** liegt
 ebenfalls auf der Ekliptik. Die Sonne steht etwa vom 30. November bis zum
 17./18. Dezember vor Ophiuchus — rund drei Wochen im Jahr. Ophiuchus war
-schon Ptolemäus bekannt (er steht im *Almagest*) und ist das elftgrößte
+schon Ptolemäus bekannt (er steht im *Almagest*) und ist das elftgrösste
 Sternbild. Er wurde nie in den Tierkreis aufgenommen, weil dieser eine
 **mathematische Konvention** ist: Er braucht genau zwölf gleiche Teile, nicht
 eine Liste aller Sternbilder, durch die die Sonne läuft.
@@ -183,7 +183,7 @@ Tierkreis**. Seine Grundlage ist nicht der Mond, sondern **Jupiter**:
 Chinesische Astronomen beobachteten, dass Jupiter die Ekliptik in etwa
 **11,86 Jahren** durchläuft. Sie rundeten auf zwölf Jahre, nannten Jupiter
 „Jahres-Stern" (歲星, *Suìxīng*) und teilten den Himmelskreis in **zwölf
-Stationen** (十二次, *shí'èr cì*) — eine pro Jahr. Damit ließ sich ein Jahr
+Stationen** (十二次, *shí'èr cì*) — eine pro Jahr. Damit liess sich ein Jahr
 durch Jupiters Position benennen.
 
 Dieser 12-Jahres-Zyklus bildet die Grundlage der **zwölf Erdzweige** (地支,
@@ -213,7 +213,7 @@ des Himmels ist Astronomie und Mathematik. Die astrologische Deutung (Zeichen
 = Charakter/Schicksal) ist eine kulturelle Zuschreibung, die wissenschaftlich
 getestet wurde (Carlson 1985, Dean/Kelly 2003, Meta-Analysen) und **keine
 empirische Grundlage** hat. Die Einordnung als Pseudowissenschaft beruht auf
-empirischen Ergebnissen, nicht auf bloßer Ablehnung — das ist wichtig, damit
+empirischen Ergebnissen, nicht auf blosser Ablehnung — das ist wichtig, damit
 der Befund nicht dogmatisch wirkt, und es lässt sich ohne Häme sagen.
 
 **Irrtum 2: „Mein Sternzeichen sagt, vor welchem Sternbild die Sonne bei
@@ -225,8 +225,8 @@ der Präzession liegt das Zeichen „Widder" heute vor dem Sternbild Fische.
 die Ekliptik **dreizehn** Sternbilder; Ophiuchus ist das dreizehnte. Es wurde
 weggelassen, weil das Zwölf-Zeichen-System eine mathematische Konvention ist.
 
-**Irrtum 4: „Die zwölf Tierkreiszeichen sind gleich groß" (bezogen auf die
-Sternbilder).** Die zwölf *Zeichen* sind gleich groß (je 30°); die
+**Irrtum 4: „Die zwölf Tierkreiszeichen sind gleich gross" (bezogen auf die
+Sternbilder).** Die zwölf *Zeichen* sind gleich gross (je 30°); die
 entsprechenden *Sternbilder* nicht (Leo ≈ 44°, Libra ≈ 7°).
 
 **Irrtum 5: „Die Zwölf Mondmonate sind genau ein Jahr."** Eine Näherung:
@@ -248,7 +248,7 @@ Abweichung. Deshalb das *Tài-Suì*-Gegenlauf-System.
 
 **Vorbehalt 8: „Zeitalter des Wassermanns" und Esoterik.** Dass der
 Frühlingspunkt durch die Sternbilder wandert, ist physikalisch real (ein
-großer Zwölf-Zyklus von ~25.772 Jahren, im Schnitt ~2.150 Jahre je
+grosser Zwölf-Zyklus von ~25.772 Jahren, im Schnitt ~2.150 Jahre je
 Sternbild). Der genaue Übergangszeitpunkt hängt aber davon ab, welche
 Sternbild-Grenze man zugrunde legt (IAU-Grenze ~2700 n. Chr.; andere
 Definitionen geben frühere Daten). Die astrologische Deutung der „Zeitalter"

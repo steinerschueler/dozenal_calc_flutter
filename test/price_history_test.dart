@@ -17,7 +17,12 @@ void main() {
   });
 
   group('ChartViewport', () {
-    const vp = ChartViewport(1000, 2000, 0, 3); // years 1000..2000, value 1..1000
+    const vp = ChartViewport(
+      1000,
+      2000,
+      0,
+      3,
+    ); // years 1000..2000, value 1..1000
 
     test('normalizes year and value (log) into [0,1]', () {
       expect(vp.nx(1000), closeTo(0, 1e-9));
@@ -33,16 +38,21 @@ void main() {
       expect(p.xMax, closeTo(2100, 1e-9));
     });
 
-    test('zoom in around a focus shrinks the span and keeps the focus fixed', () {
-      final z = vp.zoomed(2, 0.5, 0.5); // 2× around the centre
-      expect(z.xSpan, closeTo(500, 1e-6));
-      final focusYear = 1000 + 0.5 * 1000;
-      expect(z.xMin + 0.5 * z.xSpan, closeTo(focusYear, 1e-6));
-    });
+    test(
+      'zoom in around a focus shrinks the span and keeps the focus fixed',
+      () {
+        final z = vp.zoomed(2, 0.5, 0.5); // 2× around the centre
+        expect(z.xSpan, closeTo(500, 1e-6));
+        final focusYear = 1000 + 0.5 * 1000;
+        expect(z.xMin + 0.5 * z.xSpan, closeTo(focusYear, 1e-6));
+      },
+    );
 
     test('value equality (for shouldRepaint)', () {
-      expect(const ChartViewport(0, 1, 0, 1) == const ChartViewport(0, 1, 0, 1),
-          isTrue);
+      expect(
+        const ChartViewport(0, 1, 0, 1) == const ChartViewport(0, 1, 0, 1),
+        isTrue,
+      );
       expect(vp == const ChartViewport(0, 1, 0, 1), isFalse);
     });
   });
@@ -52,8 +62,15 @@ void main() {
       id: PriceSeriesId.gold,
       unit: 'x',
       points: [
-        PricePoint(-400, 5, Era.reconstructed,
-            valueLow: 3, valueHigh: 8, label: 'Babylon', sourceId: 0),
+        PricePoint(
+          -400,
+          5,
+          Era.reconstructed,
+          valueLow: 3,
+          valueHigh: 8,
+          label: 'Babylon',
+          sourceId: 0,
+        ),
         PricePoint(1900, 20, Era.modern),
         PricePoint(2000, 280, Era.modern),
         PricePoint(2024, 2350, Era.modern),
@@ -87,8 +104,9 @@ void main() {
   });
 
   group('LTTB downsampling', () {
-    List<PricePoint> ramp(int n) =>
-        [for (var i = 0; i < n; i++) PricePoint(i, (i % 7) + 1.0, Era.modern)];
+    List<PricePoint> ramp(int n) => [
+      for (var i = 0; i < n; i++) PricePoint(i, (i % 7) + 1.0, Era.modern),
+    ];
 
     test('is a no-op when threshold ≥ n', () {
       final d = ramp(20);
@@ -145,12 +163,18 @@ void main() {
     test('points are ascending by year and strictly positive', () {
       for (final s in kPriceSeries.values) {
         for (var i = 1; i < s.points.length; i++) {
-          expect(s.points[i].year, greaterThan(s.points[i - 1].year),
-              reason: '${s.id} not sorted at index $i');
+          expect(
+            s.points[i].year,
+            greaterThan(s.points[i - 1].year),
+            reason: '${s.id} not sorted at index $i',
+          );
         }
         for (final p in s.points) {
-          expect(p.value, greaterThan(0),
-              reason: '${s.id} non-positive value at ${p.year}');
+          expect(
+            p.value,
+            greaterThan(0),
+            reason: '${s.id} non-positive value at ${p.year}',
+          );
         }
       }
     });
@@ -162,8 +186,11 @@ void main() {
         }
         for (final p in s.points) {
           if (p.sourceId != null) {
-            expect(p.sourceId!, inInclusiveRange(0, kPriceSources.length - 1),
-                reason: '${s.id} bad sourceId at ${p.year}');
+            expect(
+              p.sourceId!,
+              inInclusiveRange(0, kPriceSources.length - 1),
+              reason: '${s.id} bad sourceId at ${p.year}',
+            );
           }
         }
       }

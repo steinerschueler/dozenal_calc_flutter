@@ -1,10 +1,10 @@
 ## Grundlagen & Geschichte
 
-Die Zahl Zwölf tritt in der Baukunst in drei verschiedenen Registern auf. Erstens als **Grundriss-Geometrie**: das regelmäßige Zwölfeck (Dodekagon) als Form von Türmen, Kapellen und Rotunden. Zweitens als **ikonografisches Ordnungsschema**: zwölf Apostel, zwölf Stämme, zwölf Tore, zwölf Monate, zwölf Tierkreiszeichen in Fenstern, Portalen und Uhren. Drittens als **mathematisch-kosmologische Idee**: der Dodekaeder (Zwölfflächner) als „Form des Alls" und die zwölf Pentagon-Knoten jeder geodätischen Kuppel. Diese drei Register fallen selten in einem einzigen Bauwerk zusammen.
+Die Zahl Zwölf tritt in der Baukunst in drei verschiedenen Registern auf. Erstens als **Grundriss-Geometrie**: das regelmässige Zwölfeck (Dodekagon) als Form von Türmen, Kapellen und Rotunden. Zweitens als **ikonografisches Ordnungsschema**: zwölf Apostel, zwölf Stämme, zwölf Tore, zwölf Monate, zwölf Tierkreiszeichen in Fenstern, Portalen und Uhren. Drittens als **mathematisch-kosmologische Idee**: der Dodekaeder (Zwölfflächner) als „Form des Alls" und die zwölf Pentagon-Knoten jeder geodätischen Kuppel. Diese drei Register fallen selten in einem einzigen Bauwerk zusammen.
 
 ### Das Zwölfeck in der Architekturtheorie
 
-Leon Battista Alberti zählt in seinem Werk *De re aedificatoria* (verfasst um 1452, gedruckt 1485) die für „Tempel" geeigneten regelmäßigen Polygone auf: Quadrat, Sechseck, Achteck, Zehneck und **Zwölfeck**. Das Zwölfeck steht damit als Idealform in der Renaissance-Architekturtheorie ausdrücklich zur Verfügung. Es ist also nicht zufällig, sondern Teil eines theoretischen Kanons idealer Zentralbau-Polygone.
+Leon Battista Alberti zählt in seinem Werk *De re aedificatoria* (verfasst um 1452, gedruckt 1485) die für „Tempel" geeigneten regelmässigen Polygone auf: Quadrat, Sechseck, Achteck, Zehneck und **Zwölfeck**. Das Zwölfeck steht damit als Idealform in der Renaissance-Architekturtheorie ausdrücklich zur Verfügung. Es ist also nicht zufällig, sondern Teil eines theoretischen Kanons idealer Zentralbau-Polygone.
 
 Wichtig ist eine Unterscheidung, die oft übersehen wird: Der häufigste Zentralbau-Typ des Mittelalters ist nicht das Zwölfeck, sondern das **Achteck**. Baptisterien (Taufkapellen) sind klassisch achteckig. Die Acht steht christlich für den „achten Tag", für Auferstehung und Neuschöpfung (der Sonntag nach dem Sabbat, die acht Geretteten in Noahs Arche). Wer „Zwölf" in der Architektur sucht, muss daher genau zählen, weil viele Rundbauten in Wahrheit acht- oder sechseckig sind.
 
@@ -16,21 +16,21 @@ Dieses Schema von drei Toren mal vier Himmelsrichtungen ist die Vorlage für die
 
 ### Die kosmologische Wurzel: Platons Timaios
 
-Die kosmologische Aufladung der Zwölf stammt aus Platons Dialog *Timaios*. Dort werden vier der fünf regelmäßigen Körper den vier Elementen zugeordnet: das Tetraeder dem Feuer, das Oktaeder der Luft, das Ikosaeder dem Wasser und der Würfel der Erde. Der **Dodekaeder** mit seinen zwölf Fünfeck-Flächen wird dem **Kosmos als Ganzem** zugeordnet, weil er der Kugel am nächsten kommt; der Demiurg verwendet ihn, um die Sternbilder darauf zu verteilen. Daraus entstand die bis heute wirksame Gleichung Dodekaeder gleich „Form des Alls" oder „Quintessenz" (das fünfte Element, der Himmelsäther). Die zwölf Fünfeck-Flächen wurden dabei mit den zwölf Sternbildern des Tierkreises identifiziert.
+Die kosmologische Aufladung der Zwölf stammt aus Platons Dialog *Timaios*. Dort werden vier der fünf regelmässigen Körper den vier Elementen zugeordnet: das Tetraeder dem Feuer, das Oktaeder der Luft, das Ikosaeder dem Wasser und der Würfel der Erde. Der **Dodekaeder** mit seinen zwölf Fünfeck-Flächen wird dem **Kosmos als Ganzem** zugeordnet, weil er der Kugel am nächsten kommt; der Demiurg verwendet ihn, um die Sternbilder darauf zu verteilen. Daraus entstand die bis heute wirksame Gleichung Dodekaeder gleich „Form des Alls" oder „Quintessenz" (das fünfte Element, der Himmelsäther). Die zwölf Fünfeck-Flächen wurden dabei mit den zwölf Sternbildern des Tierkreises identifiziert.
 
 ## Kulturen weltweit
 
 ### Europäisch-christlich: zwölfeckige Grundrisse
 
-**Iglesia de la Vera Cruz, Segovia (Spanien).** Das klarste, gut belegte Beispiel eines wirklich zwölfeckigen Kirchenbaus. Eine romanische Rundkirche mit dodekagonalem Grundriss (zwölfseitiges Schiff), die ein zweigeschossiges zentrales Ädikulum umschließt, dazu drei Apsiden und ein quadratischer Turm. Geweiht am 13. September 1208. Inspiriert von der Grabeskirche in Jerusalem. **Korrektur zur Urheberschaft:** Die Kirche wird traditionell den Templern zugeschrieben, doch die neuere Forschung führt sie auf den Orden vom Heiligen Grab zurück. Die Templer-Zuschreibung beruht auf einer Fehldeutung des spanischen Ordensnamens.
+**Iglesia de la Vera Cruz, Segovia (Spanien).** Das klarste, gut belegte Beispiel eines wirklich zwölfeckigen Kirchenbaus. Eine romanische Rundkirche mit dodekagonalem Grundriss (zwölfseitiges Schiff), die ein zweigeschossiges zentrales Ädikulum umschliesst, dazu drei Apsiden und ein quadratischer Turm. Geweiht am 13. September 1208. Inspiriert von der Grabeskirche in Jerusalem. **Korrektur zur Urheberschaft:** Die Kirche wird traditionell den Templern zugeschrieben, doch die neuere Forschung führt sie auf den Orden vom Heiligen Grab zurück. Die Templer-Zuschreibung beruht auf einer Fehldeutung des spanischen Ordensnamens.
 
-**Mauritiusrotunde (Heilig-Grab-Kapelle), Konstanz, um 1260.** Eines der reinsten Beispiele architektonisierter Apostel-Symbolik: ein zwölfeckiger steinerner Schrein (Durchmesser 2,43 m, Höhe 4,65 m) mit zweigeschossigen Maßwerkfassaden, gekrönt von zwölf krabbenbesetzten Wimpergen und zwölf Apostelfiguren an den Ecken. Bischof Konrad stattete die zugehörige Kirche zudem mit zwölf Kanonikern aus, „der Zahl der Apostel entsprechend". Hier ist die Zwölfeck-Geometrie direkte Architektur-Theologie.
+**Mauritiusrotunde (Heilig-Grab-Kapelle), Konstanz, um 1260.** Eines der reinsten Beispiele architektonisierter Apostel-Symbolik: ein zwölfeckiger steinerner Schrein (Durchmesser 2,43 m, Höhe 4,65 m) mit zweigeschossigen Masswerkfassaden, gekrönt von zwölf krabbenbesetzten Wimpergen und zwölf Apostelfiguren an den Ecken. Bischof Konrad stattete die zugehörige Kirche zudem mit zwölf Kanonikern aus, „der Zahl der Apostel entsprechend". Hier ist die Zwölfeck-Geometrie direkte Architektur-Theologie.
 
-**Kölner Dom, Chorkonstruktion (ab 1248).** Meister Gerhard leitete den Kranz der sieben Chorkapellen erstmals aus einem regelmäßigen Zwölfeck her. In der Forschung wird das Schema als zwei um 30 Grad gegeneinander gedrehte gleichseitige Dreiecksraster beschrieben, aus dem die bezogenen Chorlinien hervorgehen.
+**Kölner Dom, Chorkonstruktion (ab 1248).** Meister Gerhard leitete den Kranz der sieben Chorkapellen erstmals aus einem regelmässigen Zwölfeck her. In der Forschung wird das Schema als zwei um 30 Grad gegeneinander gedrehte gleichseitige Dreiecksraster beschrieben, aus dem die bezogenen Chorlinien hervorgehen.
 
 **Anastasis-Rotunde der Grabeskirche, Jerusalem (4. Jahrhundert).** Im Zentrum ein Kranz von zwölf Säulen, gruppiert mit vier Pfeilern in den Haupthimmelsrichtungen. Die Zwölfzahl wird mit den Aposteln in Verbindung gebracht. Die Grabeskirche war Vorbild zahlloser europäischer Heilig-Grab-Nachbauten, darunter Vera Cruz in Segovia.
 
-**Verwandte spanische Zentralbauten.** In der Forschung werden Santo Sepulcro in Torres del Río und die Ermita de Nuestra Señora de Eunate (beide Navarra) oft zusammen mit Vera Cruz genannt. **Prüf-Hinweis:** Eunate ist oktogonal angelegt (acht Seiten mit äußerem Arkadengang), nicht zwölfeckig, also gerade kein sauberes Zwölf-Beispiel, obwohl es regelmäßig mit Vera Cruz in einem Atemzug genannt wird. Eine Templer-Stiftung ist bei diesen Bauten nicht nachweisbar.
+**Verwandte spanische Zentralbauten.** In der Forschung werden Santo Sepulcro in Torres del Río und die Ermita de Nuestra Señora de Eunate (beide Navarra) oft zusammen mit Vera Cruz genannt. **Prüf-Hinweis:** Eunate ist oktogonal angelegt (acht Seiten mit äusserem Arkadengang), nicht zwölfeckig, also gerade kein sauberes Zwölf-Beispiel, obwohl es regelmässig mit Vera Cruz in einem Atemzug genannt wird. Eine Templer-Stiftung ist bei diesen Bauten nicht nachweisbar.
 
 ### Profane und säkulare Zwölfecke
 
@@ -41,7 +41,7 @@ Das Dodekagon ist im Wehr- und Profanbau verbreiteter als im Sakralbau. Das ist 
 
 ### Islamische Architektur: Zwölfstern und Zwölfeck
 
-In der islamischen Geometrie (girih) gehören das Dodekagon und der zwölfzackige Stern zu den Grundpolygonen. Der Zwölfstern wird mit den zwölf Monaten verbunden; der umschließende Kreis steht für die Einheit Gottes, der Stern für die Ausstrahlung des göttlichen Lichts in alle Richtungen. Acht- und zwölfzackige girih-Rosetten erscheinen früh, unter anderem in der Alâeddin-Moschee in Konya (1220) und im Abbasiden-Palast in Bagdad (um 1230), und verbreiten sich danach in der gesamten islamischen Welt. Im Löwenhof der Alhambra werden zwölfseitige Sternmuster im Boden eingesetzt. Hier ist die Zwölf vor allem ein geometrisches und kalendarisches Motiv, kein apostolisches.
+In der islamischen Geometrie (girih) gehören das Dodekagon und der zwölfzackige Stern zu den Grundpolygonen. Der Zwölfstern wird mit den zwölf Monaten verbunden; der umschliessende Kreis steht für die Einheit Gottes, der Stern für die Ausstrahlung des göttlichen Lichts in alle Richtungen. Acht- und zwölfzackige girih-Rosetten erscheinen früh, unter anderem in der Alâeddin-Moschee in Konya (1220) und im Abbasiden-Palast in Bagdad (um 1230), und verbreiten sich danach in der gesamten islamischen Welt. Im Löwenhof der Alhambra werden zwölfseitige Sternmuster im Boden eingesetzt. Hier ist die Zwölf vor allem ein geometrisches und kalendarisches Motiv, kein apostolisches.
 
 ### Gotische Fensterrosen
 
@@ -50,9 +50,9 @@ Bei Fensterrosen ist Vorsicht geboten: Sie kommen sehr oft in acht, sechzehn, vi
 **Notre-Dame de Paris (präzise Zählung):**
 - Die **Südrose** (1260, etwa 13 m Durchmesser) hat 84 Felder in vier Kreisen; die zwölf Apostel sind in den ersten beiden Kreisen angeordnet. Die Felderzahl ist um die Zahlen 4, 12 und 24 organisiert. Dies ist die eigentliche Apostel-Rose.
 - Die **Westrose** (um 1225) hat 24 Strahlen; der innerste Kreis zeigt die zwölf Stämme Israels.
-- Die **Nordrose** (um 1250, 12,9 m) ist um 16 Propheten innen und 32 Könige außen organisiert, also nicht primär eine Zwölfer-Struktur. **Korrektur:** Die Nordrose ist kein sauberes Zwölf-Beispiel.
+- Die **Nordrose** (um 1250, 12,9 m) ist um 16 Propheten innen und 32 Könige aussen organisiert, also nicht primär eine Zwölfer-Struktur. **Korrektur:** Die Nordrose ist kein sauberes Zwölf-Beispiel.
 
-**Kathedrale von Chartres, Westrose (um 1215).** Ein zwölfspeichiges Radfenster, etwa 13 m Durchmesser, mit Zwölfpass-Nabe im Zentrum, umgeben von 12 Achtpass- und 12 kleinen Vierpassfenstern, also ein konsequent zwölfgliedrig aufgebautes Maßwerk. Inhaltlich zeigt es das Jüngste Gericht mit Christus im Zentrum.
+**Kathedrale von Chartres, Westrose (um 1215).** Ein zwölfspeichiges Radfenster, etwa 13 m Durchmesser, mit Zwölfpass-Nabe im Zentrum, umgeben von 12 Achtpass- und 12 kleinen Vierpassfenstern, also ein konsequent zwölfgliedrig aufgebautes Masswerk. Inhaltlich zeigt es das Jüngste Gericht mit Christus im Zentrum.
 
 **Kathedrale von Lausanne, die kosmologische Rose (1231 bis 1235).** Etwa 8 m Durchmesser, geschaffen von Pierre d'Arras aus der Picardie. Sie stellt ein Imago Mundi dar. **Prüf-Hinweis:** Das Grundgerüst ist vierfach (vier Jahreszeiten, vier Elemente, vier Paradiesflüsse, acht Winde), aber es enthält die zwölf Tierkreiszeichen und die zwölf Monate, je drei pro Jahreszeit. Die Zwölf ist hier also eingebettet, das Trägergerüst aber Vier und Acht.
 
@@ -74,11 +74,11 @@ An romanischen und gotischen Kathedralportalen erscheinen oft die zwölf Tierkre
 
 - **Chartres.** Tierkreiszeichen und Monatsarbeiten in den Archivolten des linken Westportals und in den Vierpässen des Nordportals, dazu ein eigenes Tierkreis-Fenster im Chorumgang.
 - **Amiens.** Voller Kalenderzyklus am Nordportal, Tierkreis in den oberen, Monatsarbeiten in den unteren Vierpässen.
-- **Abtei Saint-Denis, Nordrose.** Sie zeigt Gott den Schöpfer, umgeben von den Schöpfungstagen, der Himmelsordnung (Tierkreis) und der Erdordnung (Monatsarbeiten). **Hinweis:** Dieses Beispiel stammt aus einer Such-Zusammenfassung und ließ sich im Volltext nicht vollständig bestätigen; vor Verwendung gegen Fachliteratur prüfen.
+- **Abtei Saint-Denis, Nordrose.** Sie zeigt Gott den Schöpfer, umgeben von den Schöpfungstagen, der Himmelsordnung (Tierkreis) und der Erdordnung (Monatsarbeiten). **Hinweis:** Dieses Beispiel stammt aus einer Such-Zusammenfassung und liess sich im Volltext nicht vollständig bestätigen; vor Verwendung gegen Fachliteratur prüfen.
 
-**Astronomische Uhren** machen die Zwölf doppelt zur Ordnungsgröße, zeitlich (Stunden, Monate) und räumlich (Tierkreis):
+**Astronomische Uhren** machen die Zwölf doppelt zur Ordnungsgrösse, zeitlich (Stunden, Monate) und räumlich (Tierkreis):
 - **Prag, Altstädter Rathaus (Orloj).** Der älteste Teil von 1410, von Mikuláš von Kadaň und Jan Šindel; die älteste noch laufende astronomische Uhr der Welt. Sie hat einen Tierkreisring mit zwölf Zeichen, eine Kalenderscheibe mit zwölf Monatsmedaillons und den stündlichen „Apostelgang" mit den zwölf Apostel-Figuren (die Figuren wurden bei der Überholung 1787 bis 1791 ergänzt).
-- **Straßburg, Münster.** Am rechten Westportal zwölf Tierkreiszeichen mit zwölf Monatsarbeiten. Drei aufeinanderfolgende astronomische Uhren: 14. Jahrhundert, 16. Jahrhundert (Dasypodius/Habrecht) und die heutige von Jean-Baptiste Schwilgué (1838 bis 1843), heliozentrisch und mit ewigem Kalender.
+- **Strassburg, Münster.** Am rechten Westportal zwölf Tierkreiszeichen mit zwölf Monatsarbeiten. Drei aufeinanderfolgende astronomische Uhren: 14. Jahrhundert, 16. Jahrhundert (Dasypodius/Habrecht) und die heutige von Jean-Baptiste Schwilgué (1838 bis 1843), heliozentrisch und mit ewigem Kalender.
 - **Rostock, St. Marien (1472)** als reine Tierkreisuhr und **Münster, Dom (1540/42)** mit Innenkreis aus zwölf Monatsarbeiten-Medaillons.
 
 ### Radleuchter als Stadtmauer des himmlischen Jerusalem
@@ -91,7 +91,7 @@ Drei sich überlagernde Begründungsstränge erklären, warum gerade die Zwölf 
 
 **Religiös und biblisch.** Zwölf Apostel, zwölf Stämme, zwölf Tore und Grundsteine des himmlischen Jerusalem machen die Zwölf zur Zahl der Fülle und Vollständigkeit, zur Zahl des vollendeten Gottesvolkes. Eine verbreitete theologische Lesart deutet die Zwölf als 3 mal 4, als Verbindung des Göttlichen und Trinitarischen (3) mit dem Irdischen und den vier Himmelsrichtungen (4). Die Doppelzwölf von Stämmen und Aposteln steht für die Einheit von Altem und Neuem Bund. Architektur wird so zum irdischen Abbild der Himmelsstadt.
 
-**Kosmologisch.** Zwölf Tierkreiszeichen und zwölf Monate machen die Zwölf zum Maß der kosmischen Zeit- und Weltordnung. Der Dodekaeder gilt seit Platon als Form des Universums. An Portalen und Uhren wird die Herrschaft Christi über den so geordneten Kosmos sichtbar gemacht; der Tierkreis (Himmel) und die Monatsarbeiten (Erde) verschränken kosmische und agrarische Zeit.
+**Kosmologisch.** Zwölf Tierkreiszeichen und zwölf Monate machen die Zwölf zum Mass der kosmischen Zeit- und Weltordnung. Der Dodekaeder gilt seit Platon als Form des Universums. An Portalen und Uhren wird die Herrschaft Christi über den so geordneten Kosmos sichtbar gemacht; der Tierkreis (Himmel) und die Monatsarbeiten (Erde) verschränken kosmische und agrarische Zeit.
 
 **Ästhetisch und geometrisch.** Die Zwölf ist hochgradig teilbar (durch 1, 2, 3, 4, 6 und 12) und erlaubt symmetrische Kreis- und Radgliederungen, wie sie Rosen, Rotunden und Kuppeln verlangen. In der Moderne tritt die strukturelle Effizienz der Polyederformen an die Stelle der Sakralsymbolik, behält aber die Konnotation der Ganzheit.
 
@@ -101,13 +101,13 @@ Die Lichtmetaphysik gibt den Fensterrosen ihre besondere Bedeutung: Gott als Lic
 
 ### Dodekaeder und geodätische Kuppeln
 
-In der modernen Architektur leben die Polyeder vor allem in der geodätischen Kuppel weiter. Eine geodätische Kuppel trianguliert ein platonisches Polyeder, das einer Kugel näherkommt, und gewinnt so eine sehr hohe Tragfähigkeit pro Gewicht bei gleichmäßiger Last-, Licht- und Schallverteilung.
+In der modernen Architektur leben die Polyeder vor allem in der geodätischen Kuppel weiter. Eine geodätische Kuppel trianguliert ein platonisches Polyeder, das einer Kugel näherkommt, und gewinnt so eine sehr hohe Tragfähigkeit pro Gewicht bei gleichmässiger Last-, Licht- und Schallverteilung.
 
 **Wichtige Korrektur zur Geometrie.** Die geodätische Kuppel basiert primär auf dem **Ikosaeder** (20 Flächen), das durch Triangulierung in Sechs- und Fünfecke unterteilt wird, nicht auf dem Dodekaeder. Der Bezug zur Zwölf ist subtil, aber real: Jede geodätische Kugel braucht zwingend genau **zwölf Fünfecke**; alle übrigen Felder sind Sechsecke, und diese zwölf Pentagone erzwingen die Krümmung. Die Zwölf steckt also in den zwölf Knoten, nicht in einer zwölfflächigen Hülle. (Ikosaeder und Dodekaeder sind zueinander dual, was die Verwandtschaft erklärt.)
 
 **Wichtige Korrektur zur Erfindung.** Buckminster Fuller hat die geodätische Kuppel nicht erfunden, sondern populär gemacht und 1954 in den USA patentiert. Erfunden hat sie **Walther Bauersfeld** für das Zeiss-Planetarium in Jena (1922 bis 1926), bezeichnenderweise als Projektionsfläche für ein Planetarium, also wieder ein Himmels-Modell.
 
-**Ikonische Bauten.** Die Montreal-Biosphère (US-Pavillon der Expo 1967, von Fuller mit Shoji Sadao, 76 m Durchmesser) ist ikosaedrisch, kein Dodekaeder. Weitere Beispiele sind Spaceship Earth im Epcot (Walt Disney World, 1982), die Vitra-Campus-Kuppel in Weil am Rhein (Fuller 1978 entworfen, 2000 aufgestellt) sowie Gewächshaus-Anwendungen wie das Eden Project. Begriffsechtes Zwölfflächner-Design existiert eher im Kleinmaßstab, etwa bei Tiny-House-Entwürfen auf Basis eines (pentakis-)Dodekaeders.
+**Ikonische Bauten.** Die Montreal-Biosphère (US-Pavillon der Expo 1967, von Fuller mit Shoji Sadao, 76 m Durchmesser) ist ikosaedrisch, kein Dodekaeder. Weitere Beispiele sind Spaceship Earth im Epcot (Walt Disney World, 1982), die Vitra-Campus-Kuppel in Weil am Rhein (Fuller 1978 entworfen, 2000 aufgestellt) sowie Gewächshaus-Anwendungen wie das Eden Project. Begriffsechtes Zwölfflächner-Design existiert eher im Kleinmassstab, etwa bei Tiny-House-Entwürfen auf Basis eines (pentakis-)Dodekaeders.
 
 **Praxis-Vorbehalt.** Reale Wohnkuppeln litten unter Undichtigkeit (viele Nähte, tägliche thermische Bewegung), schlechter Dämmung und teuren Sonderanfertigungen für rechteckige Materialien. Der Traum der 1970er vom „Haus der Zukunft" scheiterte praktisch weitgehend; erst neuere Lösungen mildern diese Probleme.
 
@@ -155,7 +155,7 @@ Bewertung nach Zuverlässigkeit (R1 wissenschaftlich/primär, R2 etablierte Refe
 
 ### Zwölfeckige Grundrisse, Türme, Kapellen
 
-- [R2·A1] Mauritiusrotunde — Wikipedia — https://de.wikipedia.org/wiki/Mauritiusrotunde — bestes architektonisch-theologisches Beispiel, Maße und zwölf Apostelfiguren bestätigt.
+- [R2·A1] Mauritiusrotunde — Wikipedia — https://de.wikipedia.org/wiki/Mauritiusrotunde — bestes architektonisch-theologisches Beispiel, Masse und zwölf Apostelfiguren bestätigt.
 - [R2·A1] Iglesia de la Vera Cruz, Segovia — Wikipedia — https://en.wikipedia.org/wiki/Iglesia_de_la_Vera_Cruz,_Segovia — Datum 1208, Dodekagon, Urheberschafts-Korrektur (Orden vom Heiligen Grab).
 - [R2·A1] Kölner Dom — Wikipedia — https://de.wikipedia.org/wiki/K%C3%B6lner_Dom — Zwölfeck-Herleitung des Chorkapellenkranzes wörtlich bestätigt.
 - [R3·A1] Philip Steadman, „Sacred polygons" — https://www.philipsteadman.com/blog/sacred-polygons/ — Alberti-Polygonkanon inkl. Zwölfeck.
@@ -163,7 +163,7 @@ Bewertung nach Zuverlässigkeit (R1 wissenschaftlich/primär, R2 etablierte Refe
 - [R2·A1] Torre del Oro — Wikipedia — https://en.wikipedia.org/wiki/Torre_del_Oro — säkularer zwölfeckiger Wehrturm.
 - [R3·A2] itinerartis, „Vera Cruz Segovia" — https://itinerartis.com/vera-cruz-segovia/ — populär, Templer-Mythos kritisch zu lesen.
 - [R4·A3] sacred-destinations, „Vera Cruz Church" — http://www.sacred-destinations.com/spain/segovia-vera-cruz-templar-church — touristisch, Templer-Zuschreibung unkritisch.
-- [R1·A3] Heribert Sutter, „Form und Ikonologie spanischer Zentralbauten" — (Dissertation, nur als Literaturhinweis) — maßgebliche Studie zu Torres del Río, Segovia, Eunate; vor Verwendung beschaffen.
+- [R1·A3] Heribert Sutter, „Form und Ikonologie spanischer Zentralbauten" — (Dissertation, nur als Literaturhinweis) — massgebliche Studie zu Torres del Río, Segovia, Eunate; vor Verwendung beschaffen.
 - [R3·A3] Quadralectic Architecture, „The circular church plan" — https://quadralectics.wordpress.com/ — Eunate als Achteck (Korrektiv), Snippet.
 
 ### Himmlisches Jerusalem, zwölf Tore und Grundsteine
@@ -182,11 +182,11 @@ Bewertung nach Zuverlässigkeit (R1 wissenschaftlich/primär, R2 etablierte Refe
 
 - [R2·A1] Rose window — Wikipedia — https://en.wikipedia.org/wiki/Rose_window — Notre-Dame-Zählung, Zwölf-Symbolik.
 - [R2·A1] Friends of Notre-Dame de Paris, „Rose Windows" — https://www.friendsofnotredamedeparis.org/cathedral/artifacts/rose-windows/ — präzise Felderzahlen der Südrose.
-- [R2·A1] Radfenster — Wikipedia — https://de.wikipedia.org/wiki/Radfenster — Chartres-Westrose zwölfspeichig, Maße und Aufbau.
+- [R2·A1] Radfenster — Wikipedia — https://de.wikipedia.org/wiki/Radfenster — Chartres-Westrose zwölfspeichig, Masse und Aufbau.
 - [R2·A2] Fensterrose — Wikipedia — https://de.wikipedia.org/wiki/Fensterrose — Saint-Denis-Beispiel nur indirekt, nicht im Volltext bestätigt.
 - [R1·A3] RDK Labor, „Fensterrose" — http://www.rdklabor.de/wiki/Fensterrose — fachwissenschaftliches Reallexikon, indirekt.
 - [R3·A1] abelard.org, „Lausanne rose window" — https://www.abelard.org/france/lausanne-cathedral-rose.php — Imago-Mundi-Programm, Vier/Acht-Gerüst mit eingebetteter Zwölf.
-- [R3·A1] Astrology and Art, „Strasbourg Cathedral and astronomical time" — https://astrologyandart.wordpress.com/2014/03/05/strasbourg-cathedral-and-astronomical-time/ — drei Straßburger Uhren, Tierkreis/Monatsarbeiten.
+- [R3·A1] Astrology and Art, „Strasbourg Cathedral and astronomical time" — https://astrologyandart.wordpress.com/2014/03/05/strasbourg-cathedral-and-astronomical-time/ — drei Strassburger Uhren, Tierkreis/Monatsarbeiten.
 - [R3·A2] Astrology and Art, „Labours of the Months" — https://astrologyandart.wordpress.com/tag/labours-of-the-months/ — Chartres, Amiens, Münster, Lausanne.
 - [R3·A2] DailyArt Magazine, „Zodiac in Medieval Art" — https://www.dailyartmagazine.com/zodiac-medieval-art/ — populäre Übersicht.
 - [R2·A2] medart.pitt.edu, „Chartres Zodiac Window" — http://www.medart.pitt.edu/image/France/Chartres/ — kunsthistorische Bilddatenbank.
@@ -199,9 +199,9 @@ Bewertung nach Zuverlässigkeit (R1 wissenschaftlich/primär, R2 etablierte Refe
 
 - [R2·A1] Prager Rathausuhr — Wikipedia — https://de.wikipedia.org/wiki/Prager_Rathausuhr — Datierung 1410, Tierkreis, Apostelgang.
 - [R2·A2] Prague astronomical clock — Wikipedia (en) — https://en.wikipedia.org/wiki/Prague_astronomical_clock — Erbauer, älteste laufende Uhr.
-- [R2·A1] Astronomische Uhr — Wikipedia (de) — https://de.wikipedia.org/wiki/Astronomische_Uhr — Straßburg, Prag, Rostock, Münster mit Datierung.
+- [R2·A1] Astronomische Uhr — Wikipedia (de) — https://de.wikipedia.org/wiki/Astronomische_Uhr — Strassburg, Prag, Rostock, Münster mit Datierung.
 - [R2·A1] Astronomical clock — Wikipedia (en) — https://en.wikipedia.org/wiki/Astronomical_clock — internationaler Überblick.
-- [R2·A1] Straßburger Münster — Wikipedia — https://de.wikipedia.org/wiki/Stra%C3%9Fburger_M%C3%BCnster — drei Uhren, Datierung.
+- [R2·A1] Strassburger Münster — Wikipedia — https://de.wikipedia.org/wiki/Stra%C3%9Fburger_M%C3%BCnster — drei Uhren, Datierung.
 - [R3·A2] astro.com, „Astrologie in der Kunst" — https://www.astro.com/astrologie/aa_article210301_g.htm — Portal-Tympana, kosmologische Deutung; interpretierend.
 - [R3·A2] Marienkirche Rostock, astronomische Uhr — http://marienkirche-rostock.de/sehenswertes/astronomische-uhr — Tierkreisuhr 1472.
 - [R3·A2] MünsterWiki, „Astronomische Uhr" — https://wiki.muenster.org/index.php/Astronomische_Uhr — lokale Referenz.
@@ -235,7 +235,7 @@ Bewertung nach Zuverlässigkeit (R1 wissenschaftlich/primär, R2 etablierte Refe
 - [R3·A2] Smithsonian, „Architectural Genius of the Geodesic Dome" — https://www.smithsonianmag.com/smithsonian-institution/the-architectural-genius-of-the-geodesic-dome-180982492/ — populär, seriös.
 - [R3·A2] Buckminster Fuller Institute, „Domes" — https://www.bfi.org/about-fuller/geodesic-domes/ — institutionell, Snippet.
 - [R4·A2] faircompanies, „Geodesic domes: the failed dream" — https://faircompanies.com/articles/geodesic-domes-the-failed-dream-of-living-light-on-the-land/ — Praxis-Vorbehalte.
-- [R4·A3] New Atlas, „mini-dome Dodeca homes" — https://newatlas.com/tiny-houses/mini-dome-dodeca-homes/ — echtes Dodekaeder-Design im Kleinmaßstab.
+- [R4·A3] New Atlas, „mini-dome Dodeca homes" — https://newatlas.com/tiny-houses/mini-dome-dodeca-homes/ — echtes Dodekaeder-Design im Kleinmassstab.
 - [R3·A2] Ingenieurporträt R. B. Fuller (db 2/02, PDF) — https://www.bauberufe.eu/images/doks/buckminsterfuller.pdf — Fachzeitschrift.
 
 ### Vorbehalte: römische Dodekaeder, Sacred Geometry, Mythen

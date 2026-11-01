@@ -14,11 +14,11 @@ Die Frage, wie man Zehn und Elf als einzelne Ziffern schreibt, zieht sich durch 
 
 **William Addison Dwiggins (1880–1956)** war ein bekannter US-amerikanischer Schriftgestalter und Buchtypograf. Für die amerikanische Gesellschaft entwarf er eigene Ziffern für Zehn und Elf. Sein Ziel war es ausdrücklich, Zeichen zu schaffen, die *weder* anderen Ziffern *noch* bekannten Buchstaben gleichen. Das Zehn-Zeichen ist vom römischen X inspiriert, das Elf-Zeichen wird als „swash E" oder „fancy form of the italic E" beschrieben (ein druckerischer Fachbegriff für ein geschwungenes E).
 
-**Tom Pendlebury** war Mitglied der britischen Gesellschaft und entwickelte in den 1970er-Jahren das Maßsystem TGM (siehe unten).
+**Tom Pendlebury** war Mitglied der britischen Gesellschaft und entwickelte in den 1970er-Jahren das Masssystem TGM (siehe unten).
 
 **Donald P. Goodman III** ist eine der heute produktivsten Personen der amerikanischen Gesellschaft (Bulletin-Redakteur und Webmaster). Er überarbeitete und erweiterte Pendleburys TGM-Text zu einer neuen Ausgabe und verfasste mehrere Lehrtexte.
 
-**John Volan**, im Forum unter dem Pseudonym „Kodegadulo" bekannt, entwarf die Systematic Dozenal Nomenclature (SDN) und das Maßsystem Primel.
+**John Volan**, im Forum unter dem Pseudonym „Kodegadulo" bekannt, entwarf die Systematic Dozenal Nomenclature (SDN) und das Masssystem Primel.
 
 *Unsicher:* Volans reale Urheberschaft der SDN ist über Forum-Pseudonyme verteilt belegt; die Zuordnung des Klarnamens stützt sich auf die Selbstangaben im Umfeld der Gesellschaft.
 
@@ -51,7 +51,7 @@ Die frühe amerikanische Konvention von Andrews: X für Zehn (römisch zehn), E 
 Die britische Variante: die Anfangsbuchstaben von „Ten" und „Eleven".
 
 **A / B (Hexadezimal-Konvention)**
-Aus der Hexadezimal-Schreibweise übernommen, wo A = 10, B = 11, C = 12 und so weiter gilt. In der dozenalen Szene wird dies „Computerese" genannt. Der große Vorteil: A und B sind auf jeder Tastatur tippbar und in jeder Schrift vorhanden. Genau diese Konvention nutzt diese App auf der konventionellen Anzeige.
+Aus der Hexadezimal-Schreibweise übernommen, wo A = 10, B = 11, C = 12 und so weiter gilt. In der dozenalen Szene wird dies „Computerese" genannt. Der grosse Vorteil: A und B sind auf jeder Tastatur tippbar und in jeder Schrift vorhanden. Genau diese Konvention nutzt diese App auf der konventionellen Anzeige.
 
 **Weitere, heute kaum gebräuchliche Vorschläge**
 - Bell-/Telefon-Symbole: Stern `*` für Zehn, Raute `#` für Elf, angelehnt an die Telefontastatur. Von der amerikanischen Gesellschaft bis etwa 2008 genutzt.
@@ -90,7 +90,7 @@ Diese ältere Konvention stammt von Frank Emerson Andrews (aus *New Numbers*, 19
 |---|---|---|---|
 | 12 | 10 | **do** | von „dozen" (Dutzend) |
 | 144 | 100 | **gro** | von „gross" (Gros) |
-| 1.728 | 1.000 | **mo** | von „great gross" (großes Gros) |
+| 1.728 | 1.000 | **mo** | von „great gross" (grosses Gros) |
 | 20.736 | 10.000 | **do-mo** | |
 | 248.832 | 100.000 | **gro-mo** | |
 | 2.985.984 | 1.000.000 | **bi-mo** | |
@@ -125,14 +125,14 @@ Worked examples (dozenal):
 - 5678 → „five triqua six seven eight"
 - 84;56 → „eightqua four dit five six"
 
-SDN liefert zugleich die Vorsilben für das Maßsystem TGM (unqua/biqua für Vielfache, uncia/bicia für Teiler).
+SDN liefert zugleich die Vorsilben für das Masssystem TGM (unqua/biqua für Vielfache, uncia/bicia für Teiler).
 
-### Das Maßsystem TGM (Tim, Grafut, Maz)
+### Das Masssystem TGM (Tim, Grafut, Maz)
 
-TGM ist ein kohärentes, gravitationsbasiertes Maßsystem, das Tom Pendlebury von der britischen Gesellschaft in den 1970er-Jahren entwickelte. Es ist das dozenale Gegenstück zum SI-System. Der Name steht für die drei Basiseinheiten:
+TGM ist ein kohärentes, gravitationsbasiertes Masssystem, das Tom Pendlebury von der britischen Gesellschaft in den 1970er-Jahren entwickelte. Es ist das dozenale Gegenstück zum SI-System. Der Name steht für die drei Basiseinheiten:
 
 - **Tim** (Zeit)
-- **Grafut** (Länge, von „gravity foot", Schwerkraft-Fuß)
+- **Grafut** (Länge, von „gravity foot", Schwerkraft-Fuss)
 - **Maz** (Masse)
 
 **Konstruktionsprinzipien:**
@@ -143,7 +143,7 @@ TGM ist ein kohärentes, gravitationsbasiertes Maßsystem, das Tom Pendlebury vo
 
 **Die Basiseinheiten:**
 
-| Größe | Einheit | Definition | SI-Wert (ungefähr) |
+| Grösse | Einheit | Definition | SI-Wert (ungefähr) |
 |---|---|---|---|
 | Zeit | Tim | 12⁻⁴ Stunde = 25/144 s | ≈ 0,1736 s |
 | Länge | Grafut | aus dem Tim über die Erdschwere | ≈ 0,2957 m (≈ 11,6 Zoll) |
@@ -153,7 +153,7 @@ TGM ist ein kohärentes, gravitationsbasiertes Maßsystem, das Tom Pendlebury vo
 
 **Einige abgeleitete Einheiten:**
 
-| Größe | Einheit | Ableitung | SI-Wert (ungefähr) |
+| Grösse | Einheit | Ableitung | SI-Wert (ungefähr) |
 |---|---|---|---|
 | Geschwindigkeit | Vlos | Grafut / Tim | ≈ 1,70 m/s |
 | Beschleunigung | Gee | Grafut / Tim² | ≈ 9,81 m/s² (= Erd-Normalschwere) |
@@ -162,7 +162,7 @@ TGM ist ein kohärentes, gravitationsbasiertes Maßsystem, das Tom Pendlebury vo
 | Kraft | Mag | Maz × Gee | ≈ 192 N |
 | Energie | Werg | Mag × Grafut | |
 
-Das Gee ist bewusst so gewählt, dass es der normalen Erdbeschleunigung entspricht — daher heißt TGM „gravitationsbasiert".
+Das Gee ist bewusst so gewählt, dass es der normalen Erdbeschleunigung entspricht — daher heisst TGM „gravitationsbasiert".
 
 *Unsicher:* Die genauen dezimalen SI-Werte einiger abgeleiteter Einheiten sind in den Quellen nur dozenal angegeben und nicht durchgängig zweifach belegt.
 
@@ -170,27 +170,27 @@ Eine überarbeitete Buchfassung stammt von Donald P. Goodman III: *TGM: A Cohere
 
 ### Verwandter Vorschlag: Primel
 
-Primel (auch „Corn-Obol-Fecc-System" genannt) ist ein von John Volan entworfenes Maßsystem. Es ist von TGM inspiriert, aber bewusst „noch systematischer" angelegt und nutzt durchgehend die SDN-Vorsilben.
+Primel (auch „Corn-Obol-Fecc-System" genannt) ist ein von John Volan entworfenes Masssystem. Es ist von TGM inspiriert, aber bewusst „noch systematischer" angelegt und nutzt durchgehend die SDN-Vorsilben.
 
 **Hauptunterschiede zu TGM:**
 - Andere, kleinere Zeit-Basiseinheit: Primel geht vom mittleren Sonnentag aus und teilt ihn durch sechs Zwölferpotenzen (Grundeinheit „timel" = 12⁻⁶ Tag). TGM teilt dagegen die Stunde durch vier Zwölferpotenzen.
 - Eigene Ableitungskette und eine systematische Namensgebung: Alle kohärenten Einheiten enden auf „-el" (timel, lengthel, massel) und tragen ein gemeinsames Markierungszeichen.
 
-Primel ist teils eine Antwort auf die Kritik, manche TGM-Einheiten seien zu groß (siehe nächster Abschnitt).
+Primel ist teils eine Antwort auf die Kritik, manche TGM-Einheiten seien zu gross (siehe nächster Abschnitt).
 
 *Unsicher:* Der vollständige Text des Primel-Wikis war nicht zugänglich; die Angaben stützen sich teils auf indirekte Suchergebnisse.
 
-**Weiterer Vorschlag:** Takashi Sugas „Universal Unit System" wird gelegentlich als weiteres dozenales Maßsystem genannt.
+**Weiterer Vorschlag:** Takashi Sugas „Universal Unit System" wird gelegentlich als weiteres dozenales Masssystem genannt.
 
 ## Gegenwart: Gesellschaften, Apps, Aktivitäten
 
 ### Gesellschaften und Publikationen
 
-Die **Dozenal Society of America (DSA)** besteht seit 1944 und ist eine gemeinnützige Bildungs-Organisation. Ihre Website (dozenal.org) wird gepflegt; Donald Goodman III ist heute Bulletin-Redakteur und Webmaster. Die DSA bezeichnet sich selbst als „freiwillige, gemeinnützige Bildungs-Körperschaft" für Forschung und Aufklärung über dozenales Rechnen sowie Maße und Gewichte.
+Die **Dozenal Society of America (DSA)** besteht seit 1944 und ist eine gemeinnützige Bildungs-Organisation. Ihre Website (dozenal.org) wird gepflegt; Donald Goodman III ist heute Bulletin-Redakteur und Webmaster. Die DSA bezeichnet sich selbst als „freiwillige, gemeinnützige Bildungs-Körperschaft" für Forschung und Aufklärung über dozenales Rechnen sowie Masse und Gewichte.
 
 Die **Dozenal Society of Great Britain (DSGB)** besteht seit 1959 und ist die Schwester-Organisation. Sie ruft ausdrücklich dazu auf, „in Zwölfern statt in Zehnern zu zählen". Sie hat eine eigene Publikation.
 
-*Hinweis:* Beim Recherche-Zeitpunkt war die DSGB-Startseite über HTTP zeitweise nicht erreichbar; die PDF-Dateien der Seite ließen sich jedoch laden. Die Seite existiert weiterhin.
+*Hinweis:* Beim Recherche-Zeitpunkt war die DSGB-Startseite über HTTP zeitweise nicht erreichbar; die PDF-Dateien der Seite liessen sich jedoch laden. Die Seite existiert weiterhin.
 
 Das **Duodecimal Bulletin** ist die Hauptpublikation der DSA und erscheint seit 1945. Das Archiv ist frei verfügbar.
 
@@ -216,11 +216,11 @@ Auch ein Eintrag in einem Mathematik-Blog vom Februar 2026 (zu einem Dozenal-RPN
 - Weitere YouTube-Videos erklären die Vorteile des Zwölfersystems.
 - Der YouTuber jan Misali wirbt zwar vor allem für die Basis 6 (Seximal), wird aber oft als Einstiegspfad zu Dozenal-Inhalten genannt; die Communities alternativer Zahlenbasen überschneiden sich.
 
-### Einschätzung zur Größe und Aktivität
+### Einschätzung zur Grösse und Aktivität
 
 Die Gemeinschaft ist klein, aber kontinuierlich und derzeit aktiv. Sie ist um zwei langlebige Vereine (DSA seit 1944, DSGB seit 1959), das Dozensonline-Forum und einige sehr produktive Einzelpersonen (Donald Goodman III, John Volan) organisiert. Es handelt sich um eine Hobbyisten- und Enthusiasten-Szene ohne institutionelle oder industrielle Anwendung. Öffentliche Mitgliederzahlen sind nicht auffindbar.
 
-Die aktuellste größere Entwicklung ist die Glyphen-Umstellung der DSA im Januar 2026 (Web auf A/B, Publikationen weiter Pitman), bedingt durch die noch lückenhafte Schrift-Unterstützung auf mobilen Browsern.
+Die aktuellste grössere Entwicklung ist die Glyphen-Umstellung der DSA im Januar 2026 (Web auf A/B, Publikationen weiter Pitman), bedingt durch die noch lückenhafte Schrift-Unterstützung auf mobilen Browsern.
 
 ## Rezeption & ehrliche Vorbehalte
 
@@ -242,8 +242,8 @@ Die aktuellste größere Entwicklung ist die Glyphen-Umstellung der DSA im Janua
 
 Die Bewegung ist sich auch intern nicht einig:
 
-- **Kritik an TGM:** Die Erdbeschleunigung *g* schwankt mit der geografischen Breite. Die Grafut-Definition beruht daher auf einem willkürlich festgelegten „Standard-g", was manche als unschönen Anker sehen. Außerdem gelten einige Einheiten (besonders Volm und Maz) als zu groß für den Alltag. *Hinweis:* Diese Kritikpunkte stammen aus Forum-Beiträgen, die zum Recherche-Zeitpunkt nur über Suchausschnitte zugänglich waren.
-- **Mehrere konkurrierende Maßsysteme:** Dass neben TGM auch Primel und Sugas System existieren, ist selbst ein Befund: Die Bewegung hat sich nicht einmal intern auf ein Maßsystem geeinigt.
+- **Kritik an TGM:** Die Erdbeschleunigung *g* schwankt mit der geografischen Breite. Die Grafut-Definition beruht daher auf einem willkürlich festgelegten „Standard-g", was manche als unschönen Anker sehen. Ausserdem gelten einige Einheiten (besonders Volm und Maz) als zu gross für den Alltag. *Hinweis:* Diese Kritikpunkte stammen aus Forum-Beiträgen, die zum Recherche-Zeitpunkt nur über Suchausschnitte zugänglich waren.
+- **Mehrere konkurrierende Masssysteme:** Dass neben TGM auch Primel und Sugas System existieren, ist selbst ein Befund: Die Bewegung hat sich nicht einmal intern auf ein Masssystem geeinigt.
 - **Mehrere konkurrierende Ziffern und Benennungen:** Dasselbe gilt für die Symbole (Pitman, Dwiggins, X/E, T/E, A/B) und die Zahlen-Benennung (do-gro-mo gegen SDN).
 
 ### Selbstverständnis: Reform oder Gedankenexperiment?
@@ -252,11 +252,11 @@ Hier gibt es einen gespaltenen Befund, der selbst ein zentrales Rezeptions-Ergeb
 
 - **Offizielle Selbstdarstellung:** Die Satzungen klingen nach ernsthafter Reform und Bildung. Die DSA nennt sich Bildungs-Körperschaft, die DSGB ruft zum Zählen in Zwölfern auf.
 - **Praktische Realität:** Viele neuere Beiträge (SDN, Primel, TGM-Debatten) lesen sich eher als Erkundung — „Wie *würde* eine konsequent dozenale Welt aussehen?" — denn als operativer Umstellungsplan.
-- **Externe Wahrnehmung:** Außenstehende behandeln die Bewegung meist mit wohlwollender, leicht belustigter Achtung. Die Oxford-Mathematikerin Vicky Neale etwa würdigt, dass das Einmaleins in Basis 12 schöner aussieht, hält eine Umstellung aber für „so verwirrend für mich und für alle anderen". Tenor: ein anregendes Gedankenexperiment mit echtem mathematischem Gehalt, aber praktisch chancenlos.
+- **Externe Wahrnehmung:** Aussenstehende behandeln die Bewegung meist mit wohlwollender, leicht belustigter Achtung. Die Oxford-Mathematikerin Vicky Neale etwa würdigt, dass das Einmaleins in Basis 12 schöner aussieht, hält eine Umstellung aber für „so verwirrend für mich und für alle anderen". Tenor: ein anregendes Gedankenexperiment mit echtem mathematischem Gehalt, aber praktisch chancenlos.
 
-*Vorsichtig zu werten:* Ein Hinweis, dass die DSA-Hauptseite das Wort „Experiment" im Seitentitel führt, stammt nur aus einem Suchtreffer (Seitentitel, nicht Fließtext) und ist eine Interpretation, kein Beleg.
+*Vorsichtig zu werten:* Ein Hinweis, dass die DSA-Hauptseite das Wort „Experiment" im Seitentitel führt, stammt nur aus einem Suchtreffer (Seitentitel, nicht Fliesstext) und ist eine Interpretation, kein Beleg.
 
-**Zusammenfassend:** Die Bewegung präsentiert sich nach außen als ernsthafte (sehr langfristige) Reformbewegung mit Bildungsauftrag, funktioniert praktisch aber überwiegend als intellektuelles Erkundungs- und Hobbyprojekt. Beide Lesarten bestehen nebeneinander — das ist selbst der zentrale Rezeptions-Befund.
+**Zusammenfassend:** Die Bewegung präsentiert sich nach aussen als ernsthafte (sehr langfristige) Reformbewegung mit Bildungsauftrag, funktioniert praktisch aber überwiegend als intellektuelles Erkundungs- und Hobbyprojekt. Beide Lesarten bestehen nebeneinander — das ist selbst der zentrale Rezeptions-Befund.
 
 ### Hauptunsicherheiten auf einen Blick
 
@@ -295,7 +295,7 @@ Bewertung nach zwei Achsen. Zuverlässigkeit: R1 = wissenschaftlich/primär, R2 
 - [R2·A3] Manual of the Dozenal System (DSA-PDF) — https://dozenal.org/drupal/sites_bck/default/files/DSA_mods_rev.pdf — Gründungsdokument; nur gelistet.
 - [R4·A3] SDN — Dozenal Wiki (Fandom) — https://dozenal.fandom.com/wiki/Systematic_Dozenal_Nomenclature — beim Abruf 403; indirekt über Snippet.
 
-### TGM und verwandte Maßsysteme
+### TGM und verwandte Masssysteme
 
 - [R1·A1] TGM: A Coherent Dozenal Metrology (Goodman/Pendlebury, DSA-PDF) — http://www.dozenal.org/drupal/sites_bck/default/files/tgm_0.pdf — Primärtext, Volltext frei.
 - [R1·A3] TGM-Booklet (DSGB-PDF, Pendlebury) — http://www.dozenalsociety.org.uk/pdfs/TGMbooklet.pdf — Primärquelle; beim Abruf nicht erreichbar.
@@ -303,7 +303,7 @@ Bewertung nach zwei Achsen. Zuverlässigkeit: R1 = wissenschaftlich/primär, R2 
 - [R2·A3] TGM — DSGB — http://www.dozenalsociety.org.uk/apps/tgm.htm — Tim = 12⁻⁴ Hr = 25/144 s; beim Abruf nicht erreichbar (ECONNREFUSED).
 - [R4·A3] TGM — Dozenal Wiki (Fandom) — https://dozenal.fandom.com/wiki/TGM — Pendlebury, Einheiten; beim Abruf 403, nur Snippet.
 - [R3·A3] TGM: A Coherent Dozenal Metrology — Lulu (Print, Goodman) — https://www.lulu.com/shop/donald-goodman/tgm-a-coherent-dozenal-metrology/paperback/product-21095233.html — kostenpflichtige Print-Ausgabe; nur gelistet.
-- [R4·A3] Faults Of TGM — Dozensonline — https://www.tapatalk.com/groups/dozensonline/faults-of-tgm-t658.html — interne Kritik (variables g, zu große Einheiten); beim Abruf 403, nur Snippet.
+- [R4·A3] Faults Of TGM — Dozensonline — https://www.tapatalk.com/groups/dozensonline/faults-of-tgm-t658.html — interne Kritik (variables g, zu grosse Einheiten); beim Abruf 403, nur Snippet.
 - [R4·A3] Introduction to the Primel Metrology (Confluence-Wiki) — https://primelmetrology.atlassian.net/wiki/spaces/PM/pages/35565/Introduction+to+the+Primel+Metrology — Volan, Ableitungskette, timel = 12⁻⁶ Tag; Volltext blockiert, nur indirekt.
 - [R4·A3] The Primel or Corn-Obol-Fecc system — Dozenal Wiki — https://dozenal.fandom.com/wiki/The_Primel_or_Corn-Obol-Fecc_system — Primel-Benennung; nur gelistet.
 
@@ -320,7 +320,7 @@ Bewertung nach zwei Achsen. Zuverlässigkeit: R1 = wissenschaftlich/primär, R2 
 
 ### Rezeption (extern)
 
-- [R3·A1] The Dozenal Society: It's counting Jim … — nobleword.co.uk — https://www.nobleword.co.uk/the-dozenal-society-its-counting-jim-but-not-as-we-know-it/ — Außenperspektive, Vicky-Neale-Zitat.
+- [R3·A1] The Dozenal Society: It's counting Jim … — nobleword.co.uk — https://www.nobleword.co.uk/the-dozenal-society-its-counting-jim-but-not-as-we-know-it/ — Aussenperspektive, Vicky-Neale-Zitat.
 - [R3·A3] Why We Should Switch To A Base-12 Counting System — Gizmodo — https://gizmodo.com/why-we-should-switch-to-a-base-12-counting-system-5977095 — Pro/Contra-Populärdarstellung.
 - [R4·A3] Duodecimal Number System: Should We Use Base 12? — ScienceABC — https://www.scienceabc.com/eyeopeners/why-we-should-already-use-base-12-instead-of-base-10 — Umstellungskosten, Symbolstandard-Problem.
 - [R3·A1] Base 12 — Numberphile (James Grime) — https://www.numberphile.com/videos/base-12 — einflussreiches Mainstream-Video.

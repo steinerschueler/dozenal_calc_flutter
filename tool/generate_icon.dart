@@ -34,10 +34,7 @@ void main() {
 
     const double size = 1024.0;
     final recorder = ui.PictureRecorder();
-    final canvas = Canvas(
-      recorder,
-      const Rect.fromLTWH(0, 0, size, size),
-    );
+    final canvas = Canvas(recorder, const Rect.fromLTWH(0, 0, size, size));
 
     // Solid background — matches app theme.
     canvas.drawRect(

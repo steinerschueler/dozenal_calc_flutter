@@ -50,7 +50,9 @@ Unit? assetBracketPartner(AssetGenus genus, Unit unit) {
 /// smallest unit carrying the fractional rest so the sum stays exact).
 /// Empty for genera without a cascade.
 ({bool negative, List<(Unit unit, double value)> parts}) assetBreakdown(
-    AssetGenus genus, double totalBase) {
+  AssetGenus genus,
+  double totalBase,
+) {
   if (!genus.hasBreakdown) return (negative: false, parts: const []);
   final units = genus.breakdownUnits();
   final negative = totalBase < 0;

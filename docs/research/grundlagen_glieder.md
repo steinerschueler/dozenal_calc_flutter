@@ -17,7 +17,7 @@ Grundglied (Phalanx proximalis), einem Mittelglied (Phalanx media) und
 einem körperfernen Endglied (Phalanx distalis). Der Daumen bildet die
 Ausnahme: ihm fehlt das Mittelglied, er hat nur zwei Phalangen. Diese
 **2-3-3-3-3-Formel** ist kein menschliches Sondermerkmal, sondern das
-evolutionäre Erbe der pentadaktylen Gliedmaße der Landwirbeltiere; Primaten
+evolutionäre Erbe der pentadaktylen Gliedmasse der Landwirbeltiere; Primaten
 tragen sie seit mindestens 60 Millionen Jahren. Die drei Glieder entstanden
 für Greifen, Klettern und Werkzeugnutzung — nicht zum Zählen.
 
@@ -27,8 +27,8 @@ getrennt, also auch ohne Hinsehen klar unterscheidbar.
 
 **Der Ablauf.** Der Daumen der zählenden Hand dient als beweglicher Zeiger
 und wird selbst nicht mitgezählt. Er berührt nacheinander jedes der zwölf
-Glieder. Die am häufigsten dokumentierte Reihenfolge beginnt am äußersten
-Glied des kleinen Fingers (Ifrah: „äußerstes der drei Glieder am kleinen
+Glieder. Die am häufigsten dokumentierte Reihenfolge beginnt am äussersten
+Glied des kleinen Fingers (Ifrah: „äusserstes der drei Glieder am kleinen
 Finger") und wandert fingerweise zur Handinnenseite: kleiner Finger
 (1–3), Ringfinger (4–6), Mittelfinger (7–9), Zeigefinger (10–12).
 
@@ -44,7 +44,7 @@ vier Finger, je drei Glieder, Summe zwölf.
 
 Hat der Daumen alle zwölf Glieder der ersten Hand durchlaufen, ist ein
 voller Durchgang abgeschlossen. Die zweite Hand merkt sich die Durchgänge:
-Pro abgeschlossenem Zwölfer streckt sie einen Finger aus (oder schließt
+Pro abgeschlossenem Zwölfer streckt sie einen Finger aus (oder schliesst
 ihn, je nach Konvention). Fünf Finger × ein Zwölfer-Durchgang = 5 × 12 =
 **60**. Mit zwei Händen lässt sich so lautlos und ohne Hilfsmittel bis 60
 zählen.
@@ -124,7 +124,7 @@ herangezogen werden.
 
 ---
 
-## Die große These: Ursprung von Basis 12 und 60?
+## Die grosse These: Ursprung von Basis 12 und 60?
 
 Ifrah hat die Hypothese breit zugänglich gemacht, das Duodezimalsystem
 gehe auf das Fingerglied-Zählen zurück und das babylonische

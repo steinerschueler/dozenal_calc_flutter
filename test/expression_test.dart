@@ -95,12 +95,18 @@ void main() {
     });
 
     test('angle_mode_inverse: asin(1) returns 90°, π/2, 100 grad', () {
-      expect((evalF64('asin(1)', AngleMode.deg)! - 90.0).abs(),
-          lessThan(1e-10));
-      expect((evalF64('asin(1)', AngleMode.rad)! - math.pi / 2.0).abs(),
-          lessThan(1e-10));
-      expect((evalF64('asin(1)', AngleMode.grad)! - 100.0).abs(),
-          lessThan(1e-10));
+      expect(
+        (evalF64('asin(1)', AngleMode.deg)! - 90.0).abs(),
+        lessThan(1e-10),
+      );
+      expect(
+        (evalF64('asin(1)', AngleMode.rad)! - math.pi / 2.0).abs(),
+        lessThan(1e-10),
+      );
+      expect(
+        (evalF64('asin(1)', AngleMode.grad)! - 100.0).abs(),
+        lessThan(1e-10),
+      );
     });
 
     test('factorial_basic_and_negative: 5! = 120, 0! = 1, (-1)! = NaN', () {
@@ -135,11 +141,15 @@ void main() {
     // x + sqrt(x²+1) catastrophically cancels. Symmetric formula fixes it.
     test('arsinh_negative_x_does_not_underflow', () {
       // arsinh(-1000) ≈ -ln(2 * 1000) ≈ -7.6009
-      expect((evalDouble('arsinh(-1000)') - (-7.6009024595420813)).abs(),
-          lessThan(1e-6));
+      expect(
+        (evalDouble('arsinh(-1000)') - (-7.6009024595420813)).abs(),
+        lessThan(1e-6),
+      );
       // arsinh(-1) = -ln(1 + sqrt(2))
-      expect((evalDouble('arsinh(-1)') - (-math.log(1 + math.sqrt(2)))).abs(),
-          lessThan(1e-10));
+      expect(
+        (evalDouble('arsinh(-1)') - (-math.log(1 + math.sqrt(2)))).abs(),
+        lessThan(1e-10),
+      );
       // Symmetry: arsinh(-x) = -arsinh(x)
       expect(
         (evalDouble('arsinh(-3)') + evalDouble('arsinh(3)')).abs(),
@@ -288,8 +298,13 @@ void main() {
     test('|−3| + 1 = 4 (abs bounded)', () {
       expect(
         pipe([
-          const ParenOpen(), const Sub(), d(3), const ParenClose(),
-          const AbsVal(), const Add(), d(1),
+          const ParenOpen(),
+          const Sub(),
+          d(3),
+          const ParenClose(),
+          const AbsVal(),
+          const Add(),
+          d(1),
         ]),
         4.0,
       );
@@ -335,11 +350,7 @@ void main() {
 
     test('ratlit_token_evaluates_to_embedded_value: Ans + Ans = 10/7', () {
       final prevAns = Rational.fromInts(5, 7);
-      final tokens = <CalcToken>[
-        RatLit(prevAns),
-        const Add(),
-        RatLit(prevAns),
-      ];
+      final tokens = <CalcToken>[RatLit(prevAns), const Add(), RatLit(prevAns)];
       final exprs = buildRatExpr(tokens);
       expect(exprs, isNotNull);
       final result = evalRational(exprs!);
@@ -369,13 +380,15 @@ void main() {
       expect(r.meta.capped, isFalse);
     });
 
-    test('period_shorter_than_display_is_not_capped: 1/5 → period 4 (2497)',
-        () {
-      final r = formatRationalResult(Rational.fromInts(1, 5));
-      expect(r.meta.start, isNotNull);
-      expect(r.meta.len, equals(4));
-      expect(r.meta.capped, isFalse);
-    });
+    test(
+      'period_shorter_than_display_is_not_capped: 1/5 → period 4 (2497)',
+      () {
+        final r = formatRationalResult(Rational.fromInts(1, 5));
+        expect(r.meta.start, isNotNull);
+        expect(r.meta.len, equals(4));
+        expect(r.meta.capped, isFalse);
+      },
+    );
 
     test('negative_rational_renders_negate_token: -1/2 → leading Negate', () {
       final r = formatRationalResult(Rational.fromInts(-1, 2));
@@ -402,14 +415,16 @@ void main() {
       expect(r.first, Digit(DozenalDigit.d3));
     });
 
-    test('large integer part leaves fewer fractional places (~12 sig total)',
-        () {
-      // π·12⁵ ≈ 318480.95₁₂ → six integer dozenal digits.
-      final r = formatF64Result(math.pi * 248832);
-      final dot = r.indexWhere((t) => t is Decimal);
-      expect(dot, 6, reason: 'six integer digits before the point');
-      expect(fracCount(r), kF64SigDigits - 6);
-    });
+    test(
+      'large integer part leaves fewer fractional places (~12 sig total)',
+      () {
+        // π·12⁵ ≈ 318480.95₁₂ → six integer dozenal digits.
+        final r = formatF64Result(math.pi * 248832);
+        final dot = r.indexWhere((t) => t is Decimal);
+        expect(dot, 6, reason: 'six integer digits before the point');
+        expect(fracCount(r), kF64SigDigits - 6);
+      },
+    );
 
     test('shown digits track the true value (π = 3.184809493B9…)', () {
       final r = formatF64Result(math.pi);
@@ -427,14 +442,14 @@ void main() {
     });
 
     String ascii(List<CalcToken> buf) => buf.map((t) {
-          if (t is Digit) {
-            final v = t.value.value;
-            return v < 10 ? '$v' : (v == 10 ? 'A' : 'B');
-          }
-          if (t is Decimal) return '.';
-          if (t is Negate) return '-';
-          return '';
-        }).join();
+      if (t is Digit) {
+        final v = t.value.value;
+        return v < 10 ? '$v' : (v == 10 ? 'A' : 'B');
+      }
+      if (t is Decimal) return '.';
+      if (t is Negate) return '-';
+      return '';
+    }).join();
 
     test('near-integer f64 noise snaps onto the integer (tan 45° → 1)', () {
       // tan(45°) lands at 0.9999999999999999; without the snap this rendered as
@@ -496,8 +511,11 @@ void main() {
         Digit(DozenalDigit.d1),
         Digit(DozenalDigit.d2),
       ]);
-      expect(out.length, equals(2),
-          reason: 'no Mul should be inserted within a number');
+      expect(
+        out.length,
+        equals(2),
+        reason: 'no Mul should be inserted within a number',
+      );
     });
   });
 }

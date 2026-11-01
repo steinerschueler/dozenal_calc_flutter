@@ -85,14 +85,19 @@ class _RatesPageState extends State<RatesPage> {
               Text(
                 l.assetRatesAsOf(_s.asOf),
                 style: TextStyle(
-                    color: t.textSecondary,
-                    fontSize: 13,
-                    fontWeight: FontWeight.w600),
+                  color: t.textSecondary,
+                  fontSize: 13,
+                  fontWeight: FontWeight.w600,
+                ),
               ),
               const SizedBox(height: 6),
               Text(
                 l.assetRatesSourceHint,
-                style: TextStyle(color: t.textMuted, fontSize: 12, height: 1.35),
+                style: TextStyle(
+                  color: t.textMuted,
+                  fontSize: 12,
+                  height: 1.35,
+                ),
               ),
               const SizedBox(height: 18),
               _sectionHeader(l.assetRatesCurrencies(pivot), t),
@@ -144,8 +149,10 @@ class _RatesPageState extends State<RatesPage> {
                       }
                     },
                     icon: Icon(Icons.restore, color: t.link),
-                    label: Text(l.assetRatesResetAll,
-                        style: TextStyle(color: t.link)),
+                    label: Text(
+                      l.assetRatesResetAll,
+                      style: TextStyle(color: t.link),
+                    ),
                   ),
                 ),
             ],
@@ -156,15 +163,16 @@ class _RatesPageState extends State<RatesPage> {
   }
 
   Widget _sectionHeader(String text, AppColors t) => Padding(
-        padding: const EdgeInsets.only(bottom: 8),
-        child: Text(
-          text,
-          style: TextStyle(
-              color: t.textPrimary,
-              fontSize: 15,
-              fontWeight: FontWeight.bold),
-        ),
-      );
+    padding: const EdgeInsets.only(bottom: 8),
+    child: Text(
+      text,
+      style: TextStyle(
+        color: t.textPrimary,
+        fontSize: 15,
+        fontWeight: FontWeight.bold,
+      ),
+    ),
+  );
 
   Widget _rateRow({
     required String label,
@@ -184,16 +192,18 @@ class _RatesPageState extends State<RatesPage> {
             child: Text(
               label,
               style: TextStyle(
-                  color: overridden ? t.accentGold : t.textPrimary,
-                  fontSize: 14),
+                color: overridden ? t.accentGold : t.textPrimary,
+                fontSize: 14,
+              ),
             ),
           ),
           SizedBox(
             width: 120,
             child: TextField(
               controller: controller,
-              keyboardType:
-                  const TextInputType.numberWithOptions(decimal: true),
+              keyboardType: const TextInputType.numberWithOptions(
+                decimal: true,
+              ),
               textAlign: TextAlign.end,
               inputFormatters: [
                 FilteringTextInputFormatter.allow(RegExp(r'[0-9.,]')),
@@ -203,8 +213,10 @@ class _RatesPageState extends State<RatesPage> {
                 isDense: true,
                 filled: true,
                 fillColor: t.inputFill,
-                contentPadding:
-                    const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+                contentPadding: const EdgeInsets.symmetric(
+                  horizontal: 10,
+                  vertical: 8,
+                ),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(6),
                   borderSide: BorderSide(color: t.cardBorder),
@@ -212,7 +224,8 @@ class _RatesPageState extends State<RatesPage> {
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(6),
                   borderSide: BorderSide(
-                      color: overridden ? t.accentGold : t.cardBorder),
+                    color: overridden ? t.accentGold : t.cardBorder,
+                  ),
                 ),
               ),
               onChanged: (s) {

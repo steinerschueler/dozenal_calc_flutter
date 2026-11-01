@@ -91,9 +91,7 @@ void main() {
     expect(find.text('Appearance'), findsNothing);
   });
 
-  testWidgets('theme segment renders and drives ThemeNotifier', (
-    tester,
-  ) async {
+  testWidgets('theme segment renders and drives ThemeNotifier', (tester) async {
     final theme = ThemeNotifier();
     await tester.pumpWidget(
       _wrap(

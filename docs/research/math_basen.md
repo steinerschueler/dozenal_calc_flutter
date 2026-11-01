@@ -10,7 +10,7 @@ Jede Position trägt eine **Potenz der Basis**. Die Stellen wachsen nach links: 
 
 ### Basis (Radix) und Ziffern
 
-Die **Basis** (oder **Radix**) *b* ist die feste Zahl, mit der je zwei benachbarte Stellen zusammenhängen. Sie ist zugleich die **Anzahl der verschiedenen Ziffernsymbole** (einschließlich der Null), die das System braucht.
+Die **Basis** (oder **Radix**) *b* ist die feste Zahl, mit der je zwei benachbarte Stellen zusammenhängen. Sie ist zugleich die **Anzahl der verschiedenen Ziffernsymbole** (einschliesslich der Null), die das System braucht.
 
 | Basis | Name | Ziffernsymbole |
 |---|---|---|
@@ -48,7 +48,7 @@ Ein **Radixpunkt** (im Dezimalsystem das Komma) trennt den ganzzahligen vom gebr
 ### Zwei Bausteine für ein vollwertiges System
 
 Ein voll funktionsfähiges Positionssystem braucht zwei Dinge:
-1. das **Stellenwertprinzip** (die Position kodiert die Größenordnung), und
+1. das **Stellenwertprinzip** (die Position kodiert die Grössenordnung), und
 2. ein **Null-Zeichen** als Platzhalter, damit leere Stellen eindeutig sind (102 ist nicht 12).
 
 Historisch wurden beide Bausteine nicht überall gleichzeitig erreicht. Das babylonische System (Basis 60) hatte das Stellenwertprinzip lange vor einer konsistenten Null. Die vollständige Verbindung aus Positionsschreibweise und Null als eigenständiger Zahl ist eine indische Leistung (siehe Geschichte).
@@ -59,7 +59,7 @@ Historisch wurden beide Bausteine nicht überall gleichzeitig erreicht. Das baby
 
 **Hochzusammengesetzte Zahl (highly composite number).** Eine Zahl, die *mehr* Teiler hat als jede kleinere Zahl. Die Folge beginnt: 1, 2, 4, 6, **12**, 24, 36, 48, **60**, 120, 180, 240, **360**, …
 
-**Superior hochzusammengesetzte Zahl (superior highly composite number).** Eine stärkere Bedingung: Diese Zahlen haben das beste Verhältnis von Teilerzahl zu eigener Größe. Die ersten sechs sind **2, 6, 12, 60, 120, 360**. Genau deshalb wurden **12 und 60 historisch als Basen verwendet** — sie bieten viele Teiler bei noch handhabbarer Größe.
+**Superior hochzusammengesetzte Zahl (superior highly composite number).** Eine stärkere Bedingung: Diese Zahlen haben das beste Verhältnis von Teilerzahl zu eigener Grösse. Die ersten sechs sind **2, 6, 12, 60, 120, 360**. Genau deshalb wurden **12 und 60 historisch als Basen verwendet** — sie bieten viele Teiler bei noch handhabbarer Grösse.
 
 ### Wann ein Bruch abbricht und wann er sich wiederholt
 
@@ -206,7 +206,7 @@ Zum Vergleich: In Basis 10 sind nur 2, 5, 10 an der Endziffer ablesbar; 3 und 9 
 | 2 | 2 | nur n = 2ᵏ | sehr gering (lange Folgen) | gering |
 | 8 | 4 | nur n = 2ᵏ | mittel | mittel (technisch) |
 | 10 | 4 | 2ᵃ·5ᶜ (inkl. 1/5) | gut | sehr hoch (vertraut) |
-| 12 | 6 | 2ᵃ·3ᶜ (1/3, 1/4, 1/6, 1/8, 1/9) | gut | mäßig (Sonderziffern) |
+| 12 | 6 | 2ᵃ·3ᶜ (1/3, 1/4, 1/6, 1/8, 1/9) | gut | mässig (Sonderziffern) |
 | 16 | 5 | nur n = 2ᵏ | hoch (byte-bündig) | technisch |
 | 60 | 12 | bis 1/6, 1/10, 1/12, 1/15, 1/20, 1/30 | sehr hoch | gering (60 Symbole) |
 
@@ -216,9 +216,9 @@ Zum Vergleich: In Basis 10 sind nur 2, 5, 10 an der Endziffer ablesbar; 3 und 9 
 
 ### Sexagesimal (60) — das erste Positionssystem
 
-Das Sexagesimalsystem entstand bei den **Sumerern im 3. Jahrtausend v. Chr.** und wurde an die **Babylonier** weitergegeben, mit Einflüssen der **Akkader**. Es verband das Stellenwertprinzip (Potenzen von 60) mit einer internen Zehnergruppierung für die Werte 1–59. Der Übergang zum echten Positionssystem gilt als die größte mathematische Leistung der Babylonier; weder Sumerer noch Akkader hatten ein reines Positionssystem.
+Das Sexagesimalsystem entstand bei den **Sumerern im 3. Jahrtausend v. Chr.** und wurde an die **Babylonier** weitergegeben, mit Einflüssen der **Akkader**. Es verband das Stellenwertprinzip (Potenzen von 60) mit einer internen Zehnergruppierung für die Werte 1–59. Der Übergang zum echten Positionssystem gilt als die grösste mathematische Leistung der Babylonier; weder Sumerer noch Akkader hatten ein reines Positionssystem.
 
-Spuren der Basis 60 finden sich in alten Maßeinheiten: 1 Talent = 60 Minen, 1 Mine = 60 Schekel (spätes 3. Jahrtausend v. Chr.).
+Spuren der Basis 60 finden sich in alten Masseinheiten: 1 Talent = 60 Minen, 1 Mine = 60 Schekel (spätes 3. Jahrtausend v. Chr.).
 
 **Null-Problem:** Spätbabylonische Texte nutzten einen Platzhalter für die Null, aber nur in mittleren Positionen, nie am rechten Ende — also keine voll ausgereifte Null.
 
@@ -247,7 +247,7 @@ Ab dem 9. Jahrhundert übernahmen arabische und persische Mathematiker das Syste
 ### Oktal (8)
 
 - **1716** bat König **Karl XII. von Schweden** **Emanuel Swedenborg** um ein System zur Basis 64; Swedenborg hielt 64 für zu schwer und schlug **Basis 8** vor (Manuskript 1718, unveröffentlicht).
-- **Hugh Jones** schlug 1745 ein Oktalsystem für britische Münzen und Maße vor.
+- **Hugh Jones** schlug 1745 ein Oktalsystem für britische Münzen und Masse vor.
 - **James Anderson** prägte 1801 den Begriff **„octal"**.
 
 ### Hexadezimal (16)
@@ -258,7 +258,7 @@ Die heutige **A–F-Notation** wurde ab 1966 mit dem Fortran-IV-Handbuch für IB
 
 ### Dozenal/Duodezimal (12) — die Bewegung
 
-- **Frank Emerson Andrews** schrieb 1934/35 im *Atlantic Monthly* über Basis 12 und veröffentlichte 1935 das Buch „New Numbers: How Acceptance of a Duodecimal Base Would Simplify Mathematics" — das erste buchlange Werk dazu in Amerika. Sein Kernargument: Viele Rechenvorteile, die man dem metrischen System zuschreibt, ließen sich auch dozenal erreichen, weil traditionelle Maßeinheiten viele Faktoren von 12 enthalten.
+- **Frank Emerson Andrews** schrieb 1934/35 im *Atlantic Monthly* über Basis 12 und veröffentlichte 1935 das Buch „New Numbers: How Acceptance of a Duodecimal Base Would Simplify Mathematics" — das erste buchlange Werk dazu in Amerika. Sein Kernargument: Viele Rechenvorteile, die man dem metrischen System zuschreibt, liessen sich auch dozenal erreichen, weil traditionelle Masseinheiten viele Faktoren von 12 enthalten.
 - Die **Duodecimal Society of America** wurde **1944** gegründet (Andrews als erster Präsident; ab 1945 erschien das *Duodecimal Bulletin*). Die **Dozenal Society of Great Britain** folgte **1959**.
 
 **Symbole für Zehn und Elf** (es gibt bis heute keinen einheitlichen Standard):
@@ -277,7 +277,7 @@ Die heutige **A–F-Notation** wurde ab 1966 mit dem Fortran-IV-Handbuch für IB
 
 ### Binär (2) und Hexadezimal (16) — Computer
 
-Computer-Hardware ist binär: Ein Transistor kennt physisch nur zwei Zustände (an/aus, Strom fließt/fließt nicht), direkt als 1/0 interpretierbar. Das ist die einfachste, rauschrobusteste physikalische Realisierung.
+Computer-Hardware ist binär: Ein Transistor kennt physisch nur zwei Zustände (an/aus, Strom fliesst/fliesst nicht), direkt als 1/0 interpretierbar. Das ist die einfachste, rauschrobusteste physikalische Realisierung.
 
 Hexadezimal dient als **kompakte, byte-bündige Darstellung** von Binärdaten. Weil 16 = 2⁴, gilt: 1 Hex-Ziffer = 4 Bit (ein Nibble), 1 Byte = 2 Hex-Ziffern (z. B. `2C`). Die Umrechnung Binär↔Hex ist trivial (Vierergruppen bilden). Praktische Anwendungen: Speicheradressen, Byte-Werte, Web-Farben (`#FF00FF`), Unicode-Codepoints (`U+00A1`), MAC- und IPv6-Adressen, Hex-Dumps beim Debuggen.
 
@@ -295,9 +295,9 @@ Das gesamte metrische/SI-System ist base-10-strukturiert: alle Einheiten über Z
 
 ### Dozenal (12) — kulturelle Spuren plus aktive Bewegung
 
-Reale Spuren von 12 im Alltag: 12 Stunden, 24 Stunden (12×2), 12 Monate, **Dutzend** (12), **Gros** (144 = 12²), Großgros (1728 = 12³), 12 Zoll/Fuß, 12 Troy-Unzen/Pfund. Die römische *uncia* wurde sowohl zu „ounce" als auch zu „inch".
+Reale Spuren von 12 im Alltag: 12 Stunden, 24 Stunden (12×2), 12 Monate, **Dutzend** (12), **Gros** (144 = 12²), Grossgros (1728 = 12³), 12 Zoll/Fuss, 12 Troy-Unzen/Pfund. Die römische *uncia* wurde sowohl zu „ounce" als auch zu „inch".
 
-Aktiv gefördert wird die Umstellung von der **Dozenal Society of America** und der **Dozenal Society of Great Britain**; ein ausgearbeitetes dozenales Maßsystem ist Tom Pendleburys **TGM**. Das heutige Interesse ist überwiegend akademisch und hobbyistisch (Notation, Pädagogik, Basenvergleich) — eine breite praktische Umstellung findet nicht statt.
+Aktiv gefördert wird die Umstellung von der **Dozenal Society of America** und der **Dozenal Society of Great Britain**; ein ausgearbeitetes dozenales Masssystem ist Tom Pendleburys **TGM**. Das heutige Interesse ist überwiegend akademisch und hobbyistisch (Notation, Pädagogik, Basenvergleich) — eine breite praktische Umstellung findet nicht statt.
 
 ---
 
@@ -309,11 +309,11 @@ Es stimmt: 12 hat sechs Teiler gegen vier bei 10, und 1/3 = 0,4₁₂ terminiert
 
 ### B) Längere Perioden, wenn es schiefgeht
 
-Wenn in Dozenal doch ein Bruch periodisch wird, hat die Periode tendenziell *größere* Länge als das dezimale Gegenstück, weil 12 zwischen den Primzahlen 11 und 13 liegt. Das macht „hässliche" Ergebnisse in Basis 12 mitunter besonders lang (in diesem Rechner z. B. Periodenlängen über 100 Stellen bei manchen Ergebnissen).
+Wenn in Dozenal doch ein Bruch periodisch wird, hat die Periode tendenziell *grössere* Länge als das dezimale Gegenstück, weil 12 zwischen den Primzahlen 11 und 13 liegt. Das macht „hässliche" Ergebnisse in Basis 12 mitunter besonders lang (in diesem Rechner z. B. Periodenlängen über 100 Stellen bei manchen Ergebnissen).
 
 ### C) „Basis 12 ist wie das überlegene imperiale System" — Verwechslung
 
-Der eigentliche Vorteil eines Maßsystems ist die **interne Konsistenz** (alle Umrechnungen über *eine* Basis, Komma verschieben) — nicht „imperial gegen metrisch". Das metrische System gewinnt, weil es konsequent *eine* Basis nutzt, nicht weil 10 mathematisch optimal wäre. Ein gemischtes imperiales System (Meile/Yard/Fuß/Zoll mit Faktoren 1760/3/12) hätte diesen Vorteil *nicht*, egal in welcher Ziffernbasis man es schreibt. Pro-Dozenal-Argumente vermischen diese beiden Dinge häufig.
+Der eigentliche Vorteil eines Masssystems ist die **interne Konsistenz** (alle Umrechnungen über *eine* Basis, Komma verschieben) — nicht „imperial gegen metrisch". Das metrische System gewinnt, weil es konsequent *eine* Basis nutzt, nicht weil 10 mathematisch optimal wäre. Ein gemischtes imperiales System (Meile/Yard/Fuss/Zoll mit Faktoren 1760/3/12) hätte diesen Vorteil *nicht*, egal in welcher Ziffernbasis man es schreibt. Pro-Dozenal-Argumente vermischen diese beiden Dinge häufig.
 
 ### D) „Eine bessere Basis verbessert die Mathematik" — überzogen
 
@@ -335,7 +335,7 @@ Sowohl die „zehn Finger"-Erklärung für Basis 10 als auch die „Phalangen"-E
 
 ### Fazit der Abwägung
 
-Keine Basis ist universell überlegen. 12 schlägt 10 bei Drittel/Viertel/Sechstel, verliert aber bei Fünfteln. 60 ist „teilbarkeits-königlich", aber mit 60 Symbolen zu groß für den Alltag. 2 und 16 sind nicht „besser für Menschen", sondern für Maschinen optimal. Der praktisch entscheidende Faktor eines Messsystems ist die konsequente Ein-Basen-Konsistenz, nicht die Wahl der Basis selbst.
+Keine Basis ist universell überlegen. 12 schlägt 10 bei Drittel/Viertel/Sechstel, verliert aber bei Fünfteln. 60 ist „teilbarkeits-königlich", aber mit 60 Symbolen zu gross für den Alltag. 2 und 16 sind nicht „besser für Menschen", sondern für Maschinen optimal. Der praktisch entscheidende Faktor eines Messsystems ist die konsequente Ein-Basen-Konsistenz, nicht die Wahl der Basis selbst.
 
 ---
 

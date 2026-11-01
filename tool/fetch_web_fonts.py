@@ -15,6 +15,7 @@ FONT_SOURCE_URL = "https://fonts.gstatic.com/s/"
 FONT_PATH_PATTERN = re.compile(r'"([a-z0-9]+/v\d+/[A-Za-z0-9_.\-]+\.(?:woff2|ttf))"')
 BUILD_DIR = Path("build/web")
 DOWNLOAD_WORKERS = 8
+FONT_SIGNATURES = (b"wOF2", b"wOFF", b"\x00\x01\x00\x00", b"OTTO", b"true")
 
 
 def font_paths(compiled_app: Path) -> list[str]:
@@ -29,8 +30,11 @@ def download_font(font_path: str, target_dir: Path) -> None:
         return
     target.parent.mkdir(parents=True, exist_ok=True)
     with urllib.request.urlopen(FONT_SOURCE_URL + font_path, timeout=60) as response:
-        partial = target.with_name(target.name + ".part")
-        partial.write_bytes(response.read())
+        content = response.read()
+    if not content.startswith(FONT_SIGNATURES):
+        raise ValueError(f"Keine Schriftdatei: {font_path}")
+    partial = target.with_name(target.name + ".part")
+    partial.write_bytes(content)
     # An interrupted run must not leave a file that later runs accept as complete.
     partial.replace(target)
 

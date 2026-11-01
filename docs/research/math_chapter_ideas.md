@@ -42,14 +42,14 @@ mittel/schwach) · **Zugänglichkeit** (Einsteiger…fortgeschritten) · **Über
 | **S(5,6,12) / Mathieu-Gruppe M₁₂** | direkt, tief | stark | schwer | Einziges Steiner-System auf 12 Punkten; Automorphismen = sporadische einfache Gruppe (Mathieu 1861). Das „Wow"-Kapitel, aber hohe didaktische Hürde. |
 | **Kuboktaeder (12 Ecken)** | indirekt | mittel | mittel | Verbindet die 12 Nachbarkugeln (Kugelpackung, Welt-Block) mit den archimedischen Körpern. Fuller-„Vector Equilibrium" → Esoterik abgrenzen. |
 
-## Tier 3 — besser als Sektion/Fußnote im Bestehenden (kein neues Kapitel)
+## Tier 3 — besser als Sektion/Fussnote im Bestehenden (kein neues Kapitel)
 
 - **Superior HCN (12 & 60 als Familie)** → Erweiterung des HCN-Abschnitts im Fibonacci-Kapitel (sonst Duplikat).
 - **Elfer-Probe (Quersummen, B & 13)** → Vertiefung in „Teiler/Brüche/Perioden".
 - **Dozenales Einmaleins / Kopfrechentricks** → komplementärer Abschnitt zu Teilbarkeit (Abgrenzung beachten).
 - **Einheitskreis/Niven/30°** → Sektion im Zwölfeck-Kapitel.
 - **π in Basis 12** → Absatz im Zahlenbasen-Kapitel.
-- **Harshad-Zahlen**, **Gauss 17-Eck**, **Ramanujan Δ(z)/τ(n)** → höchstens Fußnoten (dünn bzw. zu schwer).
+- **Harshad-Zahlen**, **Gauss 17-Eck**, **Ramanujan Δ(z)/τ(n)** → höchstens Fussnoten (dünn bzw. zu schwer).
 - **Musik-Algebra D₁₂** → mit ℤ/12ℤ zusammenführen (Welt-Block hat schon das Klang-Kapitel).
 
 ## Empfohlene kohärente Auswahl (Vorschlag)

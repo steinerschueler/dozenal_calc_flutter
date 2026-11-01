@@ -63,12 +63,12 @@ ist davon der Spezialfall k = 2. Dieser allgemeinere Beweis ist tief: er
 kombiniert modulare Formen (im Geiste von Wiles' Fermat-Beweis) mit
 Logarithmenformen.
 
-**Dozenaler Kontext: 144 = 1 Gross.** Im Handel heißt 144 Stück ein *Gross*
-(aus dem altfranzösischen *grosse douzaine*, „großes Dutzend"; ältester
+**Dozenaler Kontext: 144 = 1 Gross.** Im Handel heisst 144 Stück ein *Gross*
+(aus dem altfranzösischen *grosse douzaine*, „grosses Dutzend"; ältester
 englischer Schriftbeleg um 1324). Ein Gross ist ein Dutzend Dutzend, also 12²
 — und im dozenalen Stellenwertsystem genau „100", die erste dreistellige
 Zahl. Diese Handelseinheit entstand unabhängig von der Fibonacci-Folge. Dass
-gerade dieses Handelsmaß die einzige nichttriviale Fibonacci-Quadratzahl ist,
+gerade dieses Handelsmass die einzige nichttriviale Fibonacci-Quadratzahl ist,
 macht den Befund für ein dozenales Publikum einprägsam — aber siehe
 Vorbehalte.
 
@@ -82,11 +82,11 @@ Kepler beobachtete diese Konvergenz erstmals 1611. Die Verhältnisse pendeln
 abwechselnd über und unter φ, mit schnell schrumpfendem Fehler.
 
 Die definierende Eigenschaft von φ ist die Gleichung **φ² = φ + 1**: φ ist die
-einzige positive Zahl, deren Quadrat genau um 1 größer ist als sie selbst. Im
+einzige positive Zahl, deren Quadrat genau um 1 grösser ist als sie selbst. Im
 Rechner: φ ≈ 1,74BB677… (dozenal); tippt man `φ² =`, erscheint exakt φ + 1.
 
 **Binets Formel** gibt das n-te Glied geschlossen an: F(n) = (φⁿ − ψⁿ)/√5 mit
-ψ = (1−√5)/2 ≈ −0,618. Da |ψ| < 1, wird ψⁿ für große n winzig; also F(n) ≈
+ψ = (1−√5)/2 ≈ −0,618. Da |ψ| < 1, wird ψⁿ für grosse n winzig; also F(n) ≈
 φⁿ/√5 — die Folge wächst wie eine Potenz von φ.
 
 ---
@@ -104,7 +104,7 @@ zwei). 12 ist die fünfte hochzusammengesetzte Zahl: die Folge beginnt 1, 2, 4,
 6, 12, 24, 36, 48, 60, 120, … Srinivasa Ramanujan definierte und untersuchte
 diese Klasse 1915 in den *Proceedings of the London Mathematical Society*.
 
-**Abundante Zahl — und die kleinste.** Eine Zahl ist *abundant* (überfließend),
+**Abundante Zahl — und die kleinste.** Eine Zahl ist *abundant* (überfliessend),
 wenn die Summe ihrer echten Teiler die Zahl übersteigt. Für 12: 1+2+3+4+6 = 16
 > 12; der Überschuss beträgt 4. **Zwölf ist die kleinste abundante Zahl** —
 alle Zahlen unter 12 sind defizient (Teilersumme < Zahl, z. B. 10: 1+2+5 = 8)
@@ -122,7 +122,7 @@ Zahlen bekannt: 12 und eine 76-stellige Zahl. Ob es weitere gibt, ist offen.
 Der Begriff ist ein Nischenkonzept der Freizeitmathematik (OEIS A081357),
 klar definiert, aber kein Standardlehrstoff — siehe Vorbehalte.
 
-*Anmerkung:* 12 ist außerdem semiperfekt (2+4+6 = 12), superior
+*Anmerkung:* 12 ist ausserdem semiperfekt (2+4+6 = 12), superior
 hochzusammengesetzt und kolossal abundant (jeweils 3. Glied der Folge). Diese
 strengeren Eigenschaften gehören in ein vertiefendes Dossier, nicht
 zwingend ins Einführungskapitel — sie verstärken nur das Bild „teilerreiche
@@ -172,7 +172,7 @@ Teilbarkeit durch 11 schlägt Platon vor, zwei Familien abzuziehen: 5038 =
 
 Jean-Pierre Kahane hat angemerkt, dass dies womöglich die erste historisch
 belegte bewusste Nutzung des Konzepts der hochzusammengesetzten Zahl ist.
-Platons Überlegung ist praktisch-verwaltend: Gruppen jeder Größe bis 12 lassen
+Platons Überlegung ist praktisch-verwaltend: Gruppen jeder Grösse bis 12 lassen
 sich restlos bilden. Es ist dieselbe Einsicht, die die Zwölf als Basis
 attraktiv macht — angewendet auf eine Bevölkerungszahl, nicht auf ein
 Zahlensystem.
@@ -198,19 +198,19 @@ Zahlensystem.
 ### Irrtum 1 (der wichtigste): „12 ist eine perfekte Zahl"
 
 Dies ist der häufigste populäre Fehler und verdient ausführliche
-Richtigstellung. Numerologie-Seiten und religiöse Texte nennen 12 regelmäßig
+Richtigstellung. Numerologie-Seiten und religiöse Texte nennen 12 regelmässig
 „vollkommen" oder „perfekt" — mit Argumenten wie „durch viele Zahlen teilbar",
 „12 Monate", „12 Apostel".
 
 Mathematisch hat „perfekte Zahl" seit der Antike eine präzise Definition:
 σ(n) = 2n, also die Summe *aller* Teiler (inklusive der Zahl selbst) ist
-doppelt so groß wie die Zahl. Die perfekten Zahlen sind 6, 28, 496, 8128, … —
+doppelt so gross wie die Zahl. Die perfekten Zahlen sind 6, 28, 496, 8128, … —
 Euklid kannte sie bereits. Für 12 gilt σ(12) = 1+2+3+4+6+12 = 28 = 2×14 ≠ 24 =
 2×12. **12 ist abundant, nicht perfekt.**
 
 Die historische Wurzel der Verwechslung liegt bei Nikomachos von Gerasa, der
 die Kategorien defizient / perfekt / abundant ausdrücklich mit moralischen
-Werten verknüpfte (abundant als „übermäßig", perfekt als „recht und schön").
+Werten verknüpfte (abundant als „übermässig", perfekt als „recht und schön").
 Diese Moralisierung ist der Ausgangspunkt des Missverständnisses. Sie ist ein
 Zeitzeugnis, keine Mathematik, und sollte in Lehrmaterial nicht als Wertung
 weitergegeben werden.
@@ -218,11 +218,11 @@ weitergegeben werden.
 ### Irrtum 2: „F₁₂ = 144 = 12² ist eine mystische Fügung"
 
 Cohns Satz ist ein echter Satz der Zahlentheorie — und gerade darum *keine*
-Mystik. 144 ist eine Fibonacci-Zahl, eine Quadratzahl und ein Handelsmaß
+Mystik. 144 ist eine Fibonacci-Zahl, eine Quadratzahl und ein Handelsmass
 (Gross); diese drei Fakten sind unabhängig gesichert. Dass sie in derselben
 Zahl zusammenfallen, ist eine echte Kuriosität. Der Wert liegt darin, dass
 Cohn *beweist*, es handle sich um einen Einzelfall, nicht um Teil einer
-größeren Regel. Der Satz identifiziert 12 als *Index* der Folge; er sagt nichts
+grösseren Regel. Der Satz identifiziert 12 als *Index* der Folge; er sagt nichts
 über die *Basis* 12. Dass 144 in Basis 12 „100" ist, ist eine ästhetische
 Beobachtung, kein mathematischer Inhalt — der Satz gilt in jeder Zahlenbasis.
 
@@ -240,7 +240,7 @@ Die Liste mehrerer Eigenschaften (abundant, sublim, hochzusammengesetzt,
 Fibonacci-Quadrat …) erzeugt den Eindruck kumulativer Besonderheit. Aber jede
 Eigenschaft ist eine eigene Definition; ihr gemeinsames Zutreffen ist weder
 kausal noch symbolisch verknüpft. Was 12 heraushebt, ist ihre *Kleinheit* —
-sie ist die kleinste Zahl mit diesen Eigenschaften; größere
+sie ist die kleinste Zahl mit diesen Eigenschaften; grössere
 hochzusammengesetzte Zahlen (24, 36, 60, 120, …) haben *mehr* Teiler. Der echte
 Wert der Auflistung ist didaktisch: Sie zeigt, wie viele Begriffe die
 Zahlentheorie für „reich" kennt — kein Beweis einer kosmischen Auszeichnung.
@@ -277,7 +277,7 @@ knapp und ehrlich gestreift.)
 ### Irrtum 8: Platons 5040 als mystische Zahl
 
 Platon ist kein Numerologe. Sein Argument ist explizit arithmetisch: eine
-leicht teilbare Bevölkerungsgröße. Die esoterische Rezeption („Platon wusste
+leicht teilbare Bevölkerungsgrösse. Die esoterische Rezeption („Platon wusste
 von heiligen Zahlen") überlagert ein nüchternes Verwaltungsargument. Und
 Kahanes Hinweis ist die Interpretation eines modernen Mathematikers über einen
 antiken Text, kein Zitat Platons selbst.
@@ -360,10 +360,10 @@ Paywall · **A3** nur indirekt). Jede Quelle annotiert, *was* sie belegt.
 - **[R2·A1]** Gross (unit) — Wikipedia (en) —
   https://en.wikipedia.org/wiki/Gross_(unit) — Volltext. Belegt:
   144 = 12² = „dozen dozen"; *grosse douzaine* (altfranzösisch, frühes 15. Jh.);
-  Großgross = 1728 = 12³.
+  Grossgross = 1728 = 12³.
 - **[R2·A1]** 5040 (number) — Wikipedia (en) —
   https://en.wikipedia.org/wiki/5040_(number) — Volltext. Belegt:
-  Platon, *Gesetze* Buch V; Teilbarkeit 1–12 (außer 11); 7! = 5040, 60 Teiler;
+  Platon, *Gesetze* Buch V; Teilbarkeit 1–12 (ausser 11); 7! = 5040, 60 Teiler;
   Kahane-Interpretation.
 
 ### Beleg für die *Existenz* des Irrtums (nicht als Sachbeleg)
