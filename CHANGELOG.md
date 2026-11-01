@@ -24,6 +24,7 @@ Git-Historie zusammengefasst. Nur `v1.5.1` ist als Git-Tag vorhanden.
 
 ### Fixed
 
+- Drei fehlende Leerzeichen in der traditionell-chinesischen Anleitung.
 - Vorzeichen-, Speicher- und Darstellungsfehler aus einem Code-Audit, dazu exakte Flüssigunzen.
 - Der Pfad in der Unit-Info zeigt den tatsächlichen Menüpfad.
 - `gen_logos.ps1` findet Icon und Schrift relativ zum Repo.
