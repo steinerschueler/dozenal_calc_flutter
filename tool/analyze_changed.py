@@ -6,6 +6,8 @@ since the base commit, because the existing code is cleaned up file by file.
 """
 
 import argparse
+import io
+import shutil
 import subprocess
 import sys
 from pathlib import Path
@@ -15,6 +17,22 @@ BLOCKING_EVERYWHERE = {"ERROR"}
 ANALYZER_EXIT_CODES_WITH_RESULT = {0, 1, 2, 3}
 MACHINE_FIELD_COUNT = 8
 BULK_CLEANUP_TRAILER = "Lint-Bulk:"
+
+
+class DartNotFoundError(Exception):
+    """The Dart launcher is not on the program search path."""
+
+
+def dart_launcher() -> str:
+    """Return the full path of the Dart launcher.
+
+    On Windows the launcher is dart.bat, which subprocess cannot start by the bare
+    name "dart". shutil.which also applies the Windows file extensions.
+    """
+    launcher = shutil.which("dart")
+    if launcher is None:
+        raise DartNotFoundError("dart nicht gefunden: Flutter-SDK im PATH eintragen")
+    return launcher
 
 
 def git_output(*arguments: str) -> str:
@@ -70,7 +88,15 @@ def blocking_findings(machine_output: str, changed_files: set[Path]) -> list[str
     return findings
 
 
+def write_output_as_utf8() -> None:
+    """Keep findings printable where the default output encoding is narrower."""
+    for stream in (sys.stdout, sys.stderr):
+        if isinstance(stream, io.TextIOWrapper):
+            stream.reconfigure(encoding="utf-8")
+
+
 def main() -> int:
+    write_output_as_utf8()
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
         "--base", help="Vergleichs-Commit, sonst die Abzweigung von origin/master"
@@ -80,10 +106,15 @@ def main() -> int:
     )
     arguments = parser.parse_args()
 
+    try:
+        launcher = dart_launcher()
+    except DartNotFoundError as error:
+        print(error, file=sys.stderr)
+        return 1
     analyzer = subprocess.run(  # noqa: S603
-        ["dart", "analyze", "--format=machine"],  # noqa: S607
+        [launcher, "analyze", "--format=machine"],
         capture_output=True,
-        text=True,
+        encoding="utf-8",
         check=False,
     )
     if analyzer.returncode not in ANALYZER_EXIT_CODES_WITH_RESULT:
