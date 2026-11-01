@@ -1,14 +1,13 @@
 // Tests for the function-key block (#2-#4): memory accumulator (M+/M−),
 // x² and ± modifiers, ln / eˣ / log₁₂, nCr / nPr, and scientific notation.
 
-import 'package:flutter_test/flutter_test.dart';
+import 'dart:math' as math;
 
 import 'package:dozenal_calc_flutter/logic/dozenal_digit.dart';
 import 'package:dozenal_calc_flutter/logic/expression.dart';
 import 'package:dozenal_calc_flutter/state.dart';
 import 'package:dozenal_calc_flutter/tokens.dart';
-
-import 'dart:math' as math;
+import 'package:flutter_test/flutter_test.dart';
 
 double evalDouble(String expr) {
   final v = evalF64(expr, AngleMode.rad);

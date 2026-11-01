@@ -3,7 +3,7 @@
 
 import 'dart:math' as math;
 
-import 'unit_data.dart';
+import 'package:dozenal_calc_flutter/logic/unit_data.dart';
 
 /// Convert a [value] expressed in [from] into [to]. Both must belong to the
 /// same category (route through that category's shared base value).
@@ -100,7 +100,7 @@ Unit _baseUnitOf(CategoryDef def, UnitWorld world) {
 Unit _nearestByMagnitude(CategoryDef def, UnitWorld other, Unit unit) {
   final candidates = def.units.where((u) => u.world == other).toList();
   final target = math.log(unit.a.abs());
-  Unit best = candidates.first;
+  var best = candidates.first;
   var bestDist = double.infinity;
   for (final u in candidates) {
     final d = (math.log(u.a.abs()) - target).abs();

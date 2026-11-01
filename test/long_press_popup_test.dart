@@ -4,14 +4,12 @@
 // tap), the tap-outside dismissal, the a11y hold hint, and the Set-10
 // EXP slot that took over from the removed Doz/Dez keys.
 
-import 'package:flutter/gestures.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_test/flutter_test.dart';
-
-import 'package:dozenal_calc_flutter/calc_prefs.dart';
 import 'package:dozenal_calc_flutter/keypad.dart';
 import 'package:dozenal_calc_flutter/l10n/app_localizations.dart';
 import 'package:dozenal_calc_flutter/tokens.dart';
+import 'package:flutter/gestures.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_test/flutter_test.dart';
 
 Widget _wrap(
   Size size,
@@ -31,8 +29,6 @@ Widget _wrap(
             onTap: tapped.add,
             overlayOpen: overlayOpen,
             isDisabled: isDisabled,
-            keypadMode: KeypadMode.overlay,
-            keypadProfile: KeypadProfile.full,
           ),
         ),
       ),
@@ -51,7 +47,7 @@ Future<TestGesture> _holdKey(WidgetTester tester, String label) async {
 }
 
 void main() {
-  const Size hochArea = Size(400, 700);
+  const hochArea = Size(400, 700);
 
   group('longPressOptionsFor', () {
     test('maps the six hosts to their related functions', () {

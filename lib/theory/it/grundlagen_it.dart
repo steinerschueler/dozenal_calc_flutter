@@ -2,10 +2,10 @@ part of '../grundlagen_theory.dart';
 
 List<ProseChapter> _grundlagenChaptersIt() => const [
   ProseChapter(
-    'Che cos\'è il sistema dozenale?',
+    "Che cos'è il sistema dozenale?",
     [
       ProseSection(
-        'Che cos\'è una base',
+        "Che cos'è una base",
         'In un sistema posizionale il valore di una cifra dipende dalla sua '
             'posizione. Nel numero 347 il 3 sta per trecento, il 4 per '
             'quaranta, il 7 per sette. Ogni posizione vale tante volte quella '
@@ -34,7 +34,7 @@ List<ProseChapter> _grundlagenChaptersIt() => const [
             'Fondamentale: A e B qui non sono lettere né segnaposto, ma cifre '
             'singole a pieno titolo — esattamente come 7 o 9, solo per dieci e '
             'undici. Il conteggio va quindi: 0, 1, 2, …, 9, A, B, 10, 11, …\n\n'
-            'Questa è una vera trappola per chi è abituato all\'algebra. Lì '
+            "Questa è una vera trappola per chi è abituato all'algebra. Lì "
             '«2B» indica il prodotto due per B. Qui no. «2B» è un numero a due '
             'cifre: un 2 nella posizione delle dozzine e un B nella posizione '
             'delle unità, cioè due dozzine e undici unità — 35 in decimale. Il '
@@ -55,7 +55,7 @@ List<ProseChapter> _grundlagenChaptersIt() => const [
             '(0,333…) e un sesto (0,1666…) sono frazioni decimali infinite e '
             'periodiche. In base 12 sono brevi ed esatte: un terzo è 0;4, un '
             'sesto è 0;2.\n\n'
-            'Alla base c\'è una regola semplice: una frazione 1/n è esatta in '
+            "Alla base c'è una regola semplice: una frazione 1/n è esatta in "
             'una data base se e solo se il denominatore n è composto soltanto da '
             'fattori primi di quella base. Dodici si compone di 2 e 3 — quindi '
             'tutte le frazioni con denominatori fatti solo di due e tre sono '
@@ -78,24 +78,24 @@ List<ProseChapter> _grundlagenChaptersIt() => const [
             '(pollice) e ounce (oncia): 12 pollici fanno un piede. Anche il '
             'tempo è suddiviso in dodici: due volte dodici ore al giorno, dodici '
             'mesi in un anno, e il cerchio completo ha 360 = 30 × 12 gradi.\n\n'
-            'Esiste persino un\'ipotesi sull\'origine del dodici: con il pollice '
+            "Esiste persino un'ipotesi sull'origine del dodici: con il pollice "
             'si possono contare le tre falangi delle altre quattro dita, cioè '
             '4 × 3 = 12. Questo metodo di conteggio è ancora in uso in alcune '
-            'parti dell\'Asia. È una spiegazione plausibile dell\'origine del '
-            'conteggio duodecimale, ma non dimostrata — resta un\'ipotesi.',
+            "parti dell'Asia. È una spiegazione plausibile dell'origine del "
+            "conteggio duodecimale, ma non dimostrata — resta un'ipotesi.",
       ),
       ProseSection(
         'Il movimento dozenale',
-        'Sfruttare consapevolmente il vantaggio del dodici è un\'idea antica '
+        "Sfruttare consapevolmente il vantaggio del dodici è un'idea antica "
             'che nel XX secolo trovò una piccola forma organizzata. Nel 1935 '
             'Frank Emerson Andrews scrisse negli Stati Uniti il primo libro '
-            'sull\'argomento; nel 1944 nacque la Dozenal Society of America, '
+            "sull'argomento; nel 1944 nacque la Dozenal Society of America, "
             'nel 1959 la Dozenal Society of Great Britain. Entrambe pubblicano '
-            'tutt\'oggi bollettini e usano le cifre di Pitman.\n\n'
+            "tutt'oggi bollettini e usano le cifre di Pitman.\n\n"
             'Queste società non chiedono un cambio di sistema mondiale. Intendono '
             'il loro lavoro come educazione ed esplorazione: vogliono mostrare '
             'che la scelta della base numerica non è una necessità della natura, '
-            'ma un\'abitudine. Il matematico Alexander Craig Aitken si batté '
+            "ma un'abitudine. Il matematico Alexander Craig Aitken si batté "
             'attivamente per il dodici e valutò il sistema decimale come '
             'nettamente meno efficiente — una stima espressiva, non un valore '
             'misurato.',
@@ -104,7 +104,7 @@ List<ProseChapter> _grundlagenChaptersIt() => const [
         'Perché non si è mai affermato',
         'Se la base 12 è spesso più comoda dal punto di vista aritmetico, perché '
             'tutto il mondo conta in decimale? La risposta non sta nella '
-            'matematica, ma nell\'abitudine. Il sistema decimale è radicato da '
+            "matematica, ma nell'abitudine. Il sistema decimale è radicato da "
             'millenni — presumibilmente perché gli esseri umani hanno dieci dita. '
             'È un motivo anatomico, non matematico, ma è profondo.\n\n'
             'Quando nel XVIII e XIX secolo il mondo unificò le proprie misure, '
@@ -114,7 +114,7 @@ List<ProseChapter> _grundlagenChaptersIt() => const [
             'riaddestrare tutti gli esseri umani — equivalgono a una ricostruzione '
             'totale. E i computer calcolano comunque in binario, dove la base 16 '
             'è più vicina del dodici.\n\n'
-            'Le tracce del dodici nell\'orologio, nel metro e nella dozzina non '
+            "Le tracce del dodici nell'orologio, nel metro e nella dozzina non "
             'sono quindi un invito al cambiamento. Mostrano soltanto che il '
             'dodici non è mai del tutto scomparso — e rendono il calcolare in '
             'esso un viaggio in una terra dei numeri familiare e allo stesso '
@@ -186,20 +186,20 @@ List<ProseChapter> _grundlagenChaptersIt() => const [
             'successione ciascuna delle dodici falangi, contando così da uno '
             'a dodici. La sequenza più comunemente descritta inizia dalla '
             'falange distale del mignolo e procede dito per dito verso '
-            'l\'interno della mano. Esistono però varianti: alcuni iniziano '
-            'dall\'indice, altri contano dalla punta verso il basso. '
+            "l'interno della mano. Esistono però varianti: alcuni iniziano "
+            "dall'indice, altri contano dalla punta verso il basso. "
             'Fissa è solo la struttura di base — un puntatore, quattro '
             'dita, tre falangi ciascuna, somma dodici.\n\n'
             'Che ci siano esattamente tre falangi non è una scelta culturale, '
             'bensì anatomia: questa forma 2-3-3-3-3 (il pollice ha solo due '
-            'falangi) è comune a tutti gli esseri umani ed è un\'antica eredità '
+            "falangi) è comune a tutti gli esseri umani ed è un'antica eredità "
             'della mano dei mammiferi. Le falangi si sono formate per afferrare '
             'e arrampicarsi, non per contare — ma vi si prestano bene.',
       ),
       ProseSection(
         'Da dodici a sessanta',
         'Quando il pollice ha percorso tutte le dodici falangi della prima '
-            'mano, un ciclo completo è terminato. L\'altra mano prende ora il '
+            "mano, un ciclo completo è terminato. L'altra mano prende ora il "
             'compito di memorizzare: per ogni dozzina completata alza un dito. '
             'Cinque dita per dodici falangi dà sessanta. Con due mani si può '
             'dunque contare in silenzio e senza alcun supporto fino a 60.\n\n'
@@ -207,20 +207,20 @@ List<ProseChapter> _grundlagenChaptersIt() => const [
             'proprio il sessanta abbia un ruolo così importante nei sistemi '
             'mesopotamici — e attraverso di essi fino a oggi: 60 secondi per '
             'minuto, 60 minuti per ora, 360 = 6 × 60 gradi nel cerchio completo.\n\n'
-            'Esiste anche un\'altra convenzione in cui entrambe le mani contano '
+            "Esiste anche un'altra convenzione in cui entrambe le mani contano "
             'falangi; si arriva allora a 12 × 12 = 144. Entrambi i metodi sono '
             'corretti, ma non sono lo stesso sistema.',
       ),
       ProseSection(
         'Dove si conta così',
-        'Questo metodo di conteggio non è un\'invenzione moderna. Lo storico '
+        "Questo metodo di conteggio non è un'invenzione moderna. Lo storico "
             'della matematica Georges Ifrah lo ha reso noto nella sua «Storia '
             'universale dei numeri» e lo ha descritto come ancora in uso — in '
-            'una larga fascia che va dall\'Egitto alla Siria, dalla Turchia '
-            'all\'Iraq, all\'Iran, all\'Afghanistan, al Pakistan, all\'India e '
-            'all\'Indocina.\n\n'
+            "una larga fascia che va dall'Egitto alla Siria, dalla Turchia "
+            "all'Iraq, all'Iran, all'Afghanistan, al Pakistan, all'India e "
+            "all'Indocina.\n\n"
             'Una nota onesta sulle fonti è qui doverosa: questo elenco di paesi '
-            'è l\'indicazione più citata sull\'argomento, ma risale quasi '
+            "è l'indicazione più citata sull'argomento, ma risale quasi "
             'interamente a questa unica fonte. I testi successivi si basano '
             'per lo più di nuovo su Ifrah. Quando e come esattamente siano state '
             'fatte le osservazioni non è documentato; manca uno studio sistematico '
@@ -236,25 +236,25 @@ List<ProseChapter> _grundlagenChaptersIt() => const [
       ),
       ProseSection(
         'La grande tesi — e perché rimane aperta',
-        'Ifrah avanzò l\'ipotesi che il sistema duodecimale in generale — e il '
+        "Ifrah avanzò l'ipotesi che il sistema duodecimale in generale — e il "
             'sistema sessagesimale babilonese con la base 60 — siano derivati '
             'da questo conteggio delle falangi. La tesi ha aspetti solidi: '
             'spiega insieme il dodici e il sessanta, è anatomicamente plausibile '
-            'e mostra un\'azione concreta anziché una mera coincidenza numerica.\n\n'
-            'Eppure rimane un\'ipotesi, non una storia accertata. Ifrah stesso '
+            "e mostra un'azione concreta anziché una mera coincidenza numerica.\n\n"
+            "Eppure rimane un'ipotesi, non una storia accertata. Ifrah stesso "
             'definisce espressamente la propria derivazione come speculativa. '
-            'Nessun testo antico, nessuna tavoletta d\'argilla e nessuna '
+            "Nessun testo antico, nessuna tavoletta d'argilla e nessuna "
             'illustrazione descrive questo metodo come origine del sistema '
-            'babilonese. Il metodo è compatibile con quell\'origine — ma questo '
+            "babilonese. Il metodo è compatibile con quell'origine — ma questo "
             'non equivale a una prova.\n\n'
-            'L\'argomento contrario più forte lo fornisce l\'Egitto: secondo '
+            "L'argomento contrario più forte lo fornisce l'Egitto: secondo "
             'Ifrah anche gli Egiziani contavano sulle falangi — eppure '
             'svilupparono un sistema numerale decimale. Il solo metodo delle '
             'dita non implica quindi né il dodici né il sessanta.',
       ),
       ProseSection(
         'Altre spiegazioni a confronto',
-        'La tesi delle falangi non è la sola. Per l\'origine del sessanta una '
+        "La tesi delle falangi non è la sola. Per l'origine del sessanta una "
             'diversa ipotesi è considerata dagli storici quella più ampiamente '
             'accettata: che due popoli con diverse basi di conteggio si '
             'incontrassero nel commercio e si accordassero sul 60 come multiplo '
@@ -268,7 +268,7 @@ List<ProseChapter> _grundlagenChaptersIt() => const [
             'necessariamente perché vi si sia ricorso originariamente.\n\n'
             'Probabilmente più forze hanno agito insieme: la mano, il cielo, il '
             'commercio e la buona divisibilità. Proprio questo rende così '
-            'difficile isolare un\'unica causa. Ciò che resta è una bella '
+            "difficile isolare un'unica causa. Ciò che resta è una bella "
             'conclusione onesta: la mano umana offre una base naturale per il '
             'dodici — che abbia davvero plasmato il sistema numerico non si può '
             'affermare con certezza.',

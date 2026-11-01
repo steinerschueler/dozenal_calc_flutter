@@ -1,10 +1,9 @@
 // Smoke tests for the calculator manual module (lib/manual/). Verifies the
 // chapter dispatcher and that the migrated German "Grundbedienung" renders.
 
+import 'package:dozenal_calc_flutter/manual/manual.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-
-import 'package:dozenal_calc_flutter/manual/manual.dart';
 
 void main() {
   test('manualChapters returns chapters for every locale', () {
@@ -390,7 +389,7 @@ void main() {
         ),
       ),
     );
-    expect(find.text('Pascal\'s triangle'), findsOneWidget); // _H heading
+    expect(find.text("Pascal's triangle"), findsOneWidget); // _H heading
     expect(find.text('Modulo: remainders and cycles'), findsOneWidget);
     expect(tester.takeException(), isNull);
   });

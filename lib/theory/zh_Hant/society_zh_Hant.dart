@@ -1,3 +1,6 @@
+// Prose wraps inside words and CJK has no spaces, so this lint almost only reports false positives.
+// ignore_for_file: missing_whitespace_between_adjacent_strings
+
 // 「十二進位學會」章節的繁體中文散文。part of
 // ../society_theory.dart。簡單句子（較易翻譯）。事實與
 // 歸屬的觀點；對不確定的歸屬（引用連鎖）誠實以告，
@@ -287,7 +290,7 @@ List<ProseChapter> _societyChaptersZhHant() => const [
         'A1',
       ),
       Source(
-        'Dozenal RPN Calculator — Eddie\'s Math and Calculator Blog',
+        "Dozenal RPN Calculator — Eddie's Math and Calculator Blog",
         'http://edspi31415.blogspot.com/2026/02/dozenal-rpn-calculator-app-for-android.html',
         'R3',
         'A1',

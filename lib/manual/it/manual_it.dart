@@ -8,138 +8,138 @@ part of '../manual.dart';
 
 List<ManualChapter> _manualChaptersIt() => const [
   ManualChapter('Per iniziare', [
-    _H("Le cifre"),
+    _H('Le cifre'),
     _P(
-      "Questa calcolatrice usa simboli propri per tutte le dodici "
-      "cifre. Quattro cifre di ancoraggio sono punte di freccia "
-      "stilizzate che puntano nelle quattro direzioni cardinali "
-      "— 1 (in alto), 4 (a sinistra), 7 (a destra), A (in basso). "
-      "Dividono il cerchio numerico in quattro gruppi di tre, "
+      'Questa calcolatrice usa simboli propri per tutte le dodici '
+      'cifre. Quattro cifre di ancoraggio sono punte di freccia '
+      'stilizzate che puntano nelle quattro direzioni cardinali '
+      '— 1 (in alto), 4 (a sinistra), 7 (a destra), A (in basso). '
+      'Dividono il cerchio numerico in quattro gruppi di tre, '
       "come le ore 12, 3, 6 e 9 su un quadrante d'orologio.",
     ),
     _P(
-      "Tutte le cifre intermedie sono costruite da semicerchi e "
-      "cerchi completi. Lo zero è un cerchio semplice, B (= "
-      "undici) un semicerchio sopra un cerchio completo.",
+      'Tutte le cifre intermedie sono costruite da semicerchi e '
+      'cerchi completi. Lo zero è un cerchio semplice, B (= '
+      'undici) un semicerchio sopra un cerchio completo.',
     ),
     _DigitLegend(),
-    _H("Uso base"),
+    _H('Uso base'),
     _P(
-      "Tocca numeri e operatori come su una calcolatrice "
-      "tascabile ordinaria. Premi il tasto largo = in basso per "
+      'Tocca numeri e operatori come su una calcolatrice '
+      'tascabile ordinaria. Premi il tasto largo = in basso per '
       "calcolare il risultato. AC (in rosso d'avviso) cancella "
       "tutto l'input e il risultato; Del rimuove il carattere a "
-      "sinistra del cursore.",
+      'sinistra del cursore.',
     ),
-    _H("Aiuto e teoria"),
+    _H('Aiuto e teoria'),
     _P(
-      "A sinistra e a destra del tasto =, due bottoni rotondi: "
-      "(i) apre questi dodici capitoli teorici, (?) riproduce il "
-      "tour rapido con i marcatori rossi. Il tour si apre "
-      "automaticamente al primo avvio.",
+      'A sinistra e a destra del tasto =, due bottoni rotondi: '
+      '(i) apre questi dodici capitoli teorici, (?) riproduce il '
+      'tour rapido con i marcatori rossi. Il tour si apre '
+      'automaticamente al primo avvio.',
     ),
-    _H("Cursore e navigazione"),
+    _H('Cursore e navigazione'),
     _P(
-      "La barra rossa nel campo di input è il cursore. Usa ◀ e ▶ "
-      "per spostarlo, inserendo o eliminando caratteri nel mezzo "
-      "di una formula. Dopo un calcolo, il cursore si sposta sul "
-      "campo del risultato — le frecce muovono allora il cursore "
-      "del risultato. Appena inizi un nuovo input, il cursore "
-      "torna al campo di input.",
+      'La barra rossa nel campo di input è il cursore. Usa ◀ e ▶ '
+      'per spostarlo, inserendo o eliminando caratteri nel mezzo '
+      'di una formula. Dopo un calcolo, il cursore si sposta sul '
+      'campo del risultato — le frecce muovono allora il cursore '
+      'del risultato. Appena inizi un nuovo input, il cursore '
+      'torna al campo di input.',
     ),
-    _H("Continuare un calcolo"),
+    _H('Continuare un calcolo'),
     _P(
-      "Dopo un calcolo puoi continuare direttamente con un "
-      "operatore. Tocca + 5 = per esempio, e la calcolatrice "
+      'Dopo un calcolo puoi continuare direttamente con un '
+      'operatore. Tocca + 5 = per esempio, e la calcolatrice '
       "usa automaticamente l'ultimo risultato come primo "
-      "operando. Per iniziare un calcolo completamente nuovo, "
-      "premi prima AC.",
+      'operando. Per iniziare un calcolo completamente nuovo, '
+      'premi prima AC.',
     ),
-    _H("Doppio tocco per funzioni inverse"),
+    _H('Doppio tocco per funzioni inverse'),
     _P(
-      "Un secondo tocco su un tasto di funzione lo trasforma "
-      "nella sua inversa: sin diventa sin⁻¹, cos diventa cos⁻¹, "
-      "e così via. La stessa regola si applica alle funzioni "
-      "iperboliche nel pannello di estensione. Un piccolo punto "
-      "dorato sul tasto indica che il prossimo tocco invertirà.",
+      'Un secondo tocco su un tasto di funzione lo trasforma '
+      'nella sua inversa: sin diventa sin⁻¹, cos diventa cos⁻¹, '
+      'e così via. La stessa regola si applica alle funzioni '
+      'iperboliche nel pannello di estensione. Un piccolo punto '
+      'dorato sul tasto indica che il prossimo tocco invertirà.',
     ),
-    _H("Pressione prolungata per più funzioni"),
+    _H('Pressione prolungata per più funzioni'),
     _P(
-      "I tasti con un piccolo angolo in basso a destra offrono "
-      "funzioni correlate con una pressione prolungata: x□ "
-      "contiene x², log contiene ln, log₁₂ ed eˣ, − contiene ±, "
-      "STO contiene M+ e M−, n! contiene nCr e nPr, CONV contiene "
-      "VAL (il risultato della calcolatrice dei valori). Per "
+      'I tasti con un piccolo angolo in basso a destra offrono '
+      'funzioni correlate con una pressione prolungata: x□ '
+      'contiene x², log contiene ln, log₁₂ ed eˣ, − contiene ±, '
+      'STO contiene M+ e M−, n! contiene nCr e nPr, CONV contiene '
+      'VAL (il risultato della calcolatrice dei valori). Per '
       "scegliere, scorri il dito sull'opzione desiderata e "
       "rilascia — oppure rilascia e tocca l'opzione. Un tocco "
-      "fuori chiude il pannello.",
+      'fuori chiude il pannello.',
     ),
-    _H("Operatori speciali"),
+    _H('Operatori speciali'),
     _P(
-      "x² eleva al quadrato il numero precedente. √ calcola la "
+      'x² eleva al quadrato il numero precedente. √ calcola la '
       "radice quadrata; se c'è un numero alla sua sinistra, quel "
-      "numero è il grado della radice: 3√8 dà la radice cubica di 8, "
-      "cioè 2. log calcola un logaritmo dove il numero a sinistra è "
+      'numero è il grado della radice: 3√8 dà la radice cubica di 8, '
+      'cioè 2. log calcola un logaritmo dove il numero a sinistra è '
       "l'argomento e quello a destra è la base: 8 log 2 è il logaritmo "
-      "di 8 in base 2, cioè 3. ⊕ calcola la somma "
-      "parallela: a ⊕ b = (a·b)/(a+b), utile per resistenze in "
-      "parallelo.",
+      'di 8 in base 2, cioè 3. ⊕ calcola la somma '
+      'parallela: a ⊕ b = (a·b)/(a+b), utile per resistenze in '
+      'parallelo.',
     ),
-    _H("Pannello di estensione"),
+    _H('Pannello di estensione'),
     _P(
-      "Il tasto … in basso a destra apre il pannello di "
-      "estensione con più funzioni: memoria, costanti (π, e, "
-      "φ, √2), funzioni iperboliche, operatori avanzati, più "
-      "EXP e DRG. Lo stesso tasto lo chiude, oppure un "
-      "tocco fuori dal pannello. Sui tablet tutti i set sono "
-      "visibili affiancati comunque — nessuna sovrapposizione.",
+      'Il tasto … in basso a destra apre il pannello di '
+      'estensione con più funzioni: memoria, costanti (π, e, '
+      'φ, √2), funzioni iperboliche, operatori avanzati, più '
+      'EXP e DRG. Lo stesso tasto lo chiude, oppure un '
+      'tocco fuori dal pannello. Sui tablet tutti i set sono '
+      'visibili affiancati comunque — nessuna sovrapposizione.',
     ),
     _Pre(
-      "  6 — Memoria:        STO   RCL   MC    Ans\n"
-      "  7 — Costanti:       π     e     φ     √2\n"
-      "  8 — Iperboliche:    sinh  cosh  tanh  coth\n"
-      "  9 — Avanzati:       n!    |x|   1/x   mod\n"
-      "  10 — Modi:          EXP   DRG   …",
+      '  6 — Memoria:        STO   RCL   MC    Ans\n'
+      '  7 — Costanti:       π     e     φ     √2\n'
+      '  8 — Iperboliche:    sinh  cosh  tanh  coth\n'
+      '  9 — Avanzati:       n!    |x|   1/x   mod\n'
+      '  10 — Modi:          EXP   DRG   …',
     ),
-    _H("Memoria"),
+    _H('Memoria'),
     _P(
-      "STO memorizza il risultato corrente, RCL inserisce il "
+      'STO memorizza il risultato corrente, RCL inserisce il '
       "valore memorizzato nell'input, MC cancella la memoria. "
-      "Una piccola M sul display indica che qualcosa è "
+      'Una piccola M sul display indica che qualcosa è '
       "memorizzato. Ans inserisce il risultato dell'ultimo "
-      "calcolo — i valori razionali esatti sono memorizzati "
-      "completi, la periodicità è preservata.",
+      'calcolo — i valori razionali esatti sono memorizzati '
+      'completi, la periodicità è preservata.',
     ),
-    _H("Barra di periodo"),
+    _H('Barra di periodo'),
     _P(
-      "Quando il risultato è una frazione periodica, la "
-      "calcolatrice marca le cifre ripetute con una barra "
-      "sopra. Esempio: 1/5 dà 0.2497 con barra sulle quattro "
-      "cifre. Per periodi più lunghi di cinque cifre, solo le "
-      "prime cinque sono mostrate, seguite da …",
+      'Quando il risultato è una frazione periodica, la '
+      'calcolatrice marca le cifre ripetute con una barra '
+      'sopra. Esempio: 1/5 dà 0.2497 con barra sulle quattro '
+      'cifre. Per periodi più lunghi di cinque cifre, solo le '
+      'prime cinque sono mostrate, seguite da …',
     ),
-    _H("Sistema numerico: Doz / Dez"),
+    _H('Sistema numerico: Doz / Dez'),
     _P(
-      "Il sistema numerico si cambia nelle impostazioni, "
-      "raggiungibili tramite il tasto (i): duodecimale calcola "
-      "in base 12 (predefinito), decimale in base 10. Il sistema "
-      "attivo è mostrato in alto a destra del display.",
+      'Il sistema numerico si cambia nelle impostazioni, '
+      'raggiungibili tramite il tasto (i): duodecimale calcola '
+      'in base 12 (predefinito), decimale in base 10. Il sistema '
+      'attivo è mostrato in alto a destra del display.',
     ),
     _P(
-      "Al cambio, il numero attualmente visibile viene "
+      'Al cambio, il numero attualmente visibile viene '
       "convertito automaticamente nell'altro sistema. «10» in "
-      "Doz diventa «12» in Dez. In modalità Dez i simboli di "
-      "10 e 11 diventano inattivi (grigi), poiché non esistono "
-      "come cifre singole in base 10 — per Doz basta cambiare "
-      "di nuovo.",
+      'Doz diventa «12» in Dez. In modalità Dez i simboli di '
+      '10 e 11 diventano inattivi (grigi), poiché non esistono '
+      'come cifre singole in base 10 — per Doz basta cambiare '
+      'di nuovo.',
     ),
-    _H("Modalità angolo"),
+    _H('Modalità angolo'),
     _P(
-      "DRG cicla la modalità angolo per le funzioni "
-      "trigonometriche: DEG → RAD → GRD → DEG. La modalità "
-      "corrente è mostrata in alto a destra del display, "
+      'DRG cicla la modalità angolo per le funzioni '
+      'trigonometriche: DEG → RAD → GRD → DEG. La modalità '
+      'corrente è mostrata in alto a destra del display, '
       "direttamente sopra l'indicatore Doz/Dez. Predefinito: "
-      "DEG.",
+      'DEG.',
     ),
   ]),
   ManualChapter('Esponenti, radici e logaritmi', [
@@ -148,7 +148,7 @@ List<ManualChapter> _manualChaptersIt() => const [
       'Elevare a potenza, estrarre una radice e calcolare un logaritmo '
       'sembrano tre operazioni diverse. In realtà sono tre domande sulla '
       'stessa relazione: b elevato a e dà n, in breve b^e = n. Qui b è la '
-      'base, e l\'esponente e n il risultato. Se conosci due di queste tre '
+      "base, e l'esponente e n il risultato. Se conosci due di queste tre "
       'quantità puoi trovare la terza — ed è esattamente a questo che servono '
       'i tre tasti x^□, √ e log.',
     ),
@@ -162,11 +162,11 @@ List<ManualChapter> _manualChaptersIt() => const [
     PowerTriangleFigure(power: 'Potenza', base: 'Base', exponent: 'Esponente'),
     _H('Potenze: moltiplicazione ripetuta'),
     _P(
-      'La potenza b^e significa, in prima battuta, nient\'altro che '
+      "La potenza b^e significa, in prima battuta, nient'altro che "
       'moltiplicare b per se stesso esattamente e volte. Così 2^3 = 2·2·2 = 8 '
       'e 3^2 = 3·3 = 9. '
       "L'elevamento a potenza condensa una moltiplicazione, proprio come la "
-      'moltiplicazione condensa un\'addizione.',
+      "moltiplicazione condensa un'addizione.",
     ),
     _P(
       'Da questa semplice idea seguono le leggi degli esponenti, che si '
@@ -191,16 +191,16 @@ List<ManualChapter> _manualChaptersIt() => const [
       "La radice annulla l'elevamento a potenza quando l'esponente è noto. "
       'La radice quadrata di 9 è 3, perché 3^2 = 9; la radice cubica di 8 è 2, '
       'perché 2^3 = 8. Sulla calcolatrice √ indica la radice quadrata; se si '
-      'digita un numero alla sua sinistra, quel numero diventa l\'indice della '
+      "digita un numero alla sua sinistra, quel numero diventa l'indice della "
       'radice — 3√8 è la radice cubica di 8.',
     ),
     _P(
-      "Una radice non è altro che una potenza con esponente frazionario: la "
+      'Una radice non è altro che una potenza con esponente frazionario: la '
       'radice n-esima di x è x^(1/n). Non è solo una notazione, ma segue '
       'direttamente dalla legge degli esponenti — elevando x^(1/n) alla '
       'potenza n si ottiene x^((1/n)·n) = x^1 = x. Tracciando y = x² e '
       'y = √x sullo stesso grafico, sono immagini speculari rispetto alla '
-      'retta y = x. È il segno visibile che una funzione inverte l\'altra.',
+      "retta y = x. È il segno visibile che una funzione inverte l'altra.",
     ),
     SquareRootFigure(),
     _H('Il logaritmo — la seconda inversa'),
@@ -212,7 +212,7 @@ List<ManualChapter> _manualChaptersIt() => const [
       "l'argomento a sinistra, la base a destra.",
     ),
     _P(
-      'Anche il logaritmo è un\'immagine speculare: y = log_2(x) nasce da '
+      "Anche il logaritmo è un'immagine speculare: y = log_2(x) nasce da "
       'y = 2^x per riflessione rispetto alla retta y = x. Dove la curva '
       'esponenziale sale ripida, il logaritmo cresce solo lentamente — '
       'trasforma grandi intervalli in numeri gestibili.',
@@ -223,16 +223,16 @@ List<ManualChapter> _manualChaptersIt() => const [
       'Poiché il logaritmo inverte le potenze, le leggi degli esponenti si '
       'trasformano in leggi speculari dei logaritmi. Un prodotto diventa una '
       'somma: log(x·y) = log x + log y. Un quoziente diventa una differenza: '
-      'log(x/y) = log x − log y. E un esponente nell\'argomento diventa un '
+      "log(x/y) = log x − log y. E un esponente nell'argomento diventa un "
       'fattore davanti: log(x^k) = k · log x.',
     ),
     _P(
-      "Questa conversione della moltiplicazione in addizione era per secoli "
-      "lo scopo reale dei logaritmi: con le tavole logaritmiche, le "
-      "moltiplicazioni faticose potevano essere sostituite da semplici "
-      "ricerche e addizioni. Lo stesso principio sta dietro ogni scala "
-      "logaritmica — dalla scala dei decibel del suono alla magnitudo dei "
-      "terremoti.",
+      'Questa conversione della moltiplicazione in addizione era per secoli '
+      'lo scopo reale dei logaritmi: con le tavole logaritmiche, le '
+      'moltiplicazioni faticose potevano essere sostituite da semplici '
+      'ricerche e addizioni. Lo stesso principio sta dietro ogni scala '
+      'logaritmica — dalla scala dei decibel del suono alla magnitudo dei '
+      'terremoti.',
     ),
     _P(
       'La base di un logaritmo è libera, e qualsiasi base si converte in '
@@ -384,7 +384,7 @@ List<ManualChapter> _manualChaptersIt() => const [
       'Il punto di partenza è la regola che i reciproci si sommano: '
       '1/(a⊕b) = 1/a + 1/b. Mettendo il lato destro su un denominatore '
       'comune si ottiene (a+b)/(a·b). Il reciproco di quello è '
-      'a ⊕ b = (a·b)/(a+b). Non c\'è altro — l\'intera operazione è '
+      "a ⊕ b = (a·b)/(a+b). Non c'è altro — l'intera operazione è "
       '"somma i reciproci e prendi il reciproco del risultato".',
     ),
     _H('Proprietà'),
@@ -401,9 +401,9 @@ List<ManualChapter> _manualChaptersIt() => const [
       'minore. Due casi limite completano il quadro: a ⊕ 0 = 0 — un '
       'percorso senza resistenza, un cortocircuito, attira tutta la '
       'corrente. E più b diventa grande, più a ⊕ b si avvicina ad a; una '
-      'resistenza infinitamente grande, un\'interruzione, non contribuisce '
+      "resistenza infinitamente grande, un'interruzione, non contribuisce "
       'nulla. "Infinito" è quindi l\'elemento neutro dell\'addizione '
-      'parallela — proprio come zero è l\'elemento neutro '
+      "parallela — proprio come zero è l'elemento neutro "
       "dell'addizione ordinaria.",
     ),
     _H('Media armonica e dualità'),
@@ -414,7 +414,7 @@ List<ManualChapter> _manualChaptersIt() => const [
       'sempre più in basso — sotto quella geometrica e quella aritmetica.',
     ),
     _P(
-      'Visto più in profondità, ⊕ è l\'immagine speculare '
+      "Visto più in profondità, ⊕ è l'immagine speculare "
       "dell'addizione ordinaria sotto la mappa dei reciproci x → 1/x: "
       'aggiungere normalmente nello spazio dei reciproci equivale ad '
       'aggiungere in parallelo qui, e viceversa. Il collegamento in serie '
@@ -448,9 +448,9 @@ List<ManualChapter> _manualChaptersIt() => const [
     ),
     _H('Quando la somma diventa zero'),
     _P(
-      'C\'è un caso in cui ⊕ fallisce: se a + b = 0, ad esempio '
-      '5 ⊕ (−5), c\'è uno zero al denominatore, e la calcolatrice segnala '
-      'una divisione per zero. Dopo l\'errore si può modificare '
+      "C'è un caso in cui ⊕ fallisce: se a + b = 0, ad esempio "
+      "5 ⊕ (−5), c'è uno zero al denominatore, e la calcolatrice segnala "
+      "una divisione per zero. Dopo l'errore si può modificare "
       "l'espressione direttamente — navigarvi con i tasti freccia e "
       'correggere il valore; AC azzera tutto.',
     ),
@@ -462,14 +462,14 @@ List<ManualChapter> _manualChaptersIt() => const [
       'Un angolo descrive una rotazione — quanto deve essere ruotato un raggio '
       'attorno al suo punto finale. Si misura in tre unità comuni: in gradi '
       '(un giro completo è 360°), in radianti (un giro completo è 2π) e in '
-      'gradianti o gon (un giro completo è 400). La scelta dell\'unità non '
-      'cambia l\'angolo stesso — solo il numero che lo descrive. La '
-      'calcolatrice passa da una all\'altra con il tasto DRG.',
+      "gradianti o gon (un giro completo è 400). La scelta dell'unità non "
+      "cambia l'angolo stesso — solo il numero che lo descrive. La "
+      "calcolatrice passa da una all'altra con il tasto DRG.",
     ),
     _H('Seno, coseno, tangente nel triangolo'),
     _P(
       'In un triangolo rettangolo ogni angolo acuto θ ha un significato '
-      'fisso. Il lato più lungo, opposto all\'angolo retto, è l\'ipotenusa. '
+      "fisso. Il lato più lungo, opposto all'angolo retto, è l'ipotenusa. "
       'Il lato opposto a θ è il cateto opposto, quello adiacente è il '
       'cateto adiacente.',
     ),
@@ -492,7 +492,7 @@ List<ManualChapter> _manualChaptersIt() => const [
     _H('Il cerchio unitario'),
     _P(
       'I triangoli coprono solo angoli tra 0° e 90°. Il cerchio unitario — '
-      'un cerchio di raggio 1 attorno all\'origine — estende la visione a '
+      "un cerchio di raggio 1 attorno all'origine — estende la visione a "
       'tutti gli angoli. A ogni angolo θ corrisponde un punto sul cerchio: '
       'si parte dal punto (1, 0) e si ruota in senso antiorario di θ. '
       'Allora il coseno è la coordinata x di questo punto e il seno la '
@@ -543,14 +543,14 @@ List<ManualChapter> _manualChaptersIt() => const [
     _P(
       'Le quattro funzioni sin, cos, tan e cot si trovano sulla tastiera '
       'principale e aprono una parentesi non appena le si preme '
-      '(sin( con il cursore all\'interno). Un secondo tocco sullo stesso '
+      "(sin( con il cursore all'interno). Un secondo tocco sullo stesso "
       'tasto passa alla funzione inversa — un punto dorato indica che il '
       'prossimo tocco invertirà. Il tasto DRG cambia la modalità angolo '
       '(DEG → RAD → GRD), mostrata in alto a destra; nel profilo '
       '"Semplice" si fa tramite Impostazioni.',
     ),
     _P(
-      'C\'è una trappola duodecimale a cui prestare attenzione: '
+      "C'è una trappola duodecimale a cui prestare attenzione: "
       "l'angolo viene inserito nel sistema numerico attivo. In modalità "
       'duodecimale "90" non è novanta gradi ma 9·12 = 108. Per calcolare '
       'sin(90°) si digita "76" (poiché 7·12+6 = 90). Ecco i valori comuni:',
@@ -597,30 +597,30 @@ List<ManualChapter> _manualChaptersIt() => const [
       'un dodicesimo del cerchio è esattamente 30°. Come sempre: la '
       'trigonometria stessa è indipendente dal sistema numerico. sin(30°) '
       'è ½, sia che si scriva l\'angolo "30" in decimale sia "26" in '
-      'duodecimale. Cambiano solo le cifre dell\'input.',
+      "duodecimale. Cambiano solo le cifre dell'input.",
     ),
   ]),
   ManualChapter('Memorizzare e richiamare', [
     _P(
       'Una calcolatrice diventa veramente veloce solo quando non si devono '
       'più riscrivere continuamente i numeri. Quattro strumenti si prendono '
-      'cura di questo lavoro: l\'ultimo risultato (Ans), una memoria con '
+      "cura di questo lavoro: l'ultimo risultato (Ans), una memoria con "
       'nome (STO/RCL), un accumulatore (M+/M−) e il nastro della '
       'cronologia della sessione. Non si sovrappongono, ma ciascuno copre '
       'una situazione diversa.',
     ),
     _H("L'ultimo risultato: Ans"),
     _P(
-      "Dopo ogni calcolo la calcolatrice memorizza il risultato con il "
+      'Dopo ogni calcolo la calcolatrice memorizza il risultato con il '
       'nome Ans. Se si continua direttamente con un operatore — ad esempio '
       '"× 2 =" subito dopo un risultato — Ans viene usato automaticamente '
       'come primo operando, senza toccare il tasto. Questo è il gesto più '
       'comune quando si calcola in catena: il risultato di un passo diventa '
-      'silenziosamente l\'inizio del successivo.',
+      "silenziosamente l'inizio del successivo.",
     ),
     _P(
       "Se si ha bisogno dell'ultimo risultato non all'inizio ma nel mezzo "
-      "di una nuova formula, lo si inserisce esplicitamente con Ans. "
+      'di una nuova formula, lo si inserisce esplicitamente con Ans. '
       'Importante: Ans conserva sempre il risultato completo — inclusa una '
       'frazione periodica, non solo le cifre visibili.',
     ),
@@ -630,12 +630,12 @@ List<ManualChapter> _manualChaptersIt() => const [
       'conservare un valore attraverso più calcoli indipendenti, si '
       'deposita con STO nella memoria. Una piccola "M" in cima al display '
       'indica che qualcosa è conservato. RCL inserisce il valore '
-      'memorizzato di nuovo nell\'input in corrispondenza del cursore — '
+      "memorizzato di nuovo nell'input in corrispondenza del cursore — "
       'quante volte si vuole. MC svuota la memoria, e la "M" si spegne.',
     ),
     _P(
       'Uno scenario tipico: si calcola il raggio di un cerchio e poi si ha '
-      'bisogno di esso sia per l\'area che per la circonferenza. Il raggio '
+      "bisogno di esso sia per l'area che per la circonferenza. Il raggio "
       'viene memorizzato una volta con STO; entrambe le formule lo '
       'richiamano indipendentemente con RCL, senza mai riscriverlo.',
     ),
@@ -644,16 +644,16 @@ List<ManualChapter> _manualChaptersIt() => const [
       'A volte non si vuole conservare un singolo valore ma costruire un '
       'totale progressivo — ad esempio quando si sommano molte voci. Per '
       'questo ci sono M+ e M−, raggiungibili con una pressione prolungata '
-      'su STO. M+ aggiunge l\'ultimo risultato al valore memorizzato, M− '
+      "su STO. M+ aggiunge l'ultimo risultato al valore memorizzato, M− "
       'lo sottrae. La memoria cresce o diminuisce ad ogni operazione, senza '
       'dover vedere o annotare il subtotale. RCL mostra il totale finale, '
-      'MC azzera l\'accumulatore.',
+      "MC azzera l'accumulatore.",
     ),
     MemoryFlowFigure(result: 'Risultato', store: 'Memoria', input: 'Input'),
     _P(
       'Lo schema riassume i percorsi: STO porta il risultato nella memoria, '
-      'RCL lo recupera da lì nell\'input. Ans prende la scorciatoia '
-      'direttamente dal risultato all\'input e bypassa la memoria '
+      "RCL lo recupera da lì nell'input. Ans prende la scorciatoia "
+      "direttamente dal risultato all'input e bypassa la memoria "
       '(tratteggiato). M+/M− riporta il risultato nella memoria in un '
       'ciclo e lo aggiunge lì.',
     ),
@@ -672,7 +672,7 @@ List<ManualChapter> _manualChaptersIt() => const [
       'La maggior parte delle calcolatrici lavora internamente con numeri '
       'in virgola mobile a precisione fissa. Ciò che mostrano è già '
       'arrotondato — e proprio questo valore arrotondato finisce in '
-      'memoria. Continuando a calcolare, si porta l\'errore con sé; dopo '
+      "memoria. Continuando a calcolare, si porta l'errore con sé; dopo "
       'diversi passi un risultato che dovrebbe essere esattamente 1 mostra '
       '"0,9999…".',
     ),
@@ -698,7 +698,7 @@ List<ManualChapter> _manualChaptersIt() => const [
       '— radici, logaritmi, trigonometria — non può conservarli come '
       'frazioni. Portano "≈" e vengono memorizzati come approssimazione. '
       'La regola è facile da leggere: se "≈" precede il valore, ciò che è '
-      'memorizzato è un\'approssimazione; se è assente, è esatto.',
+      "memorizzato è un'approssimazione; se è assente, è esatto.",
     ),
     _H('Il nastro della cronologia'),
     _P(
@@ -706,7 +706,7 @@ List<ManualChapter> _manualChaptersIt() => const [
       'sul display. Si apre il nastro della cronologia della sessione '
       'corrente — il calcolo più recente in cima, fino a trenta voci. '
       'Nemmeno AC lo cancella; viene conservato per tutta la sessione. '
-      'Un tocco su una voce riporta il suo valore risultante nell\'input, '
+      "Un tocco su una voce riporta il suo valore risultante nell'input, "
       'proprio come Ans — ma per qualsiasi passo precedente.',
     ),
     HistoryBandFigure(swipe: 'scorri', newCap: 'nuovo', tap: 'tocca'),
@@ -758,7 +758,7 @@ List<ManualChapter> _manualChaptersIt() => const [
       'A scuola si imparano seno e coseno come coordinate di un punto sul '
       'cerchio unitario. Meno noti, ma altrettanto fondamentali, sono i '
       'loro analoghi iperbolici sinh e cosh. Nascono quando si sostituisce '
-      'il cerchio con un\'iperbole — e la chiave è la funzione esponenziale '
+      "il cerchio con un'iperbole — e la chiave è la funzione esponenziale "
       'eˣ.',
     ),
     _H('Le metà pari e dispari di eˣ'),
@@ -769,7 +769,7 @@ List<ManualChapter> _manualChaptersIt() => const [
       'direttamente: cosh è la parte pari, sinh la parte dispari. '
       'Sommandole di nuovo si ottiene eˣ — poiché eˣ = cosh x + sinh x, '
       'e e⁻ˣ = cosh x − sinh x. Questa decomposizione non è arbitraria, '
-      'ma l\'unica possibile.',
+      "ma l'unica possibile.",
     ),
     _Pre(
       'sinh x = (eˣ − e⁻ˣ) / 2          arsinh x = ln(x + √(x²+1))\n'
@@ -784,7 +784,7 @@ List<ManualChapter> _manualChaptersIt() => const [
     _H("L'iperbole unitaria"),
     _P(
       "Sul cerchio unitario ogni punto (cos t, sin t) soddisfa l'equazione "
-      'x² + y² = 1. Per le funzioni iperboliche vale un\'identità quasi '
+      "x² + y² = 1. Per le funzioni iperboliche vale un'identità quasi "
       'identica, ma crucialmente diversa. Sostituendo le definizioni e '
       'calcolando la differenza dei quadrati, i termini misti si annullano:',
     ),
@@ -794,23 +794,23 @@ List<ManualChapter> _manualChaptersIt() => const [
       '  = ¼ · 4  =  1',
     ),
     _P(
-      "Quindi il punto (cosh t, sinh t) si trova sempre sulla curva "
-      'x² − y² = 1, l\'iperbole unitaria. Poiché cosh t non è mai minore '
-      'di 1, il punto rimane sempre sul ramo destro. L\'identità '
+      'Quindi il punto (cosh t, sinh t) si trova sempre sulla curva '
+      "x² − y² = 1, l'iperbole unitaria. Poiché cosh t non è mai minore "
+      "di 1, il punto rimane sempre sul ramo destro. L'identità "
       'cosh²t − sinh²t = 1 svolge lo stesso ruolo nel mondo iperbolico '
       'che cos²t + sin²t = 1 in quello circolare — solo che il più è '
       'diventato un meno.',
     ),
     UnitHyperbolaFigure(area: 'Area = t/2'),
-    _H('Il parametro: un\'area, non un angolo'),
+    _H("Il parametro: un'area, non un angolo"),
     _P(
       'Qui sta la differenza più profonda con la trigonometria. Sul cerchio '
-      'il parametro t è l\'angolo in radianti — e allo stesso tempo la '
-      'lunghezza dell\'arco e il doppio dell\'area del settore; questi tre '
-      'significati coincidono casualmente lì. Sull\'iperbole non esiste '
-      'un tale angolo. Ciò che rimane è l\'area: t è il doppio dell\'area '
-      'del settore iperbolico tra l\'origine, il vertice (1, 0) e il punto '
-      '(cosh t, sinh t) — esattamente l\'area ombreggiata nella figura '
+      "il parametro t è l'angolo in radianti — e allo stesso tempo la "
+      "lunghezza dell'arco e il doppio dell'area del settore; questi tre "
+      "significati coincidono casualmente lì. Sull'iperbole non esiste "
+      "un tale angolo. Ciò che rimane è l'area: t è il doppio dell'area "
+      "del settore iperbolico tra l'origine, il vertice (1, 0) e il punto "
+      "(cosh t, sinh t) — esattamente l'area ombreggiata nella figura "
       'sopra.',
     ),
     _P(
@@ -819,19 +819,19 @@ List<ManualChapter> _manualChaptersIt() => const [
       'dispositivi è strettamente parlando sbagliato: trasferisce il '
       'prefisso arco ("arc") a una funzione dove non c\'è nessun arco. '
       'arsinh(y) è quel valore del parametro t con sinh t = y — cioè '
-      'un\'area, non un arco.',
+      "un'area, non un arco.",
     ),
     _H('La forma delle quattro curve'),
     _P(
-      'cosh è una vasca simmetrica assialmente aperta verso l\'alto con '
+      "cosh è una vasca simmetrica assialmente aperta verso l'alto con "
       'il punto minimo in (0, 1), poiché cosh 0 = 1; il suo valore non '
-      'è mai minore di 1. sinh è simmetrica rispetto all\'origine, '
-      'passa per l\'origine e cresce senza limiti in entrambe le direzioni. '
+      "è mai minore di 1. sinh è simmetrica rispetto all'origine, "
+      "passa per l'origine e cresce senza limiti in entrambe le direzioni. "
       'Per x grande entrambe si avvicinano alla curva eˣ/2.',
     ),
     _P(
       'tanh è una curva di saturazione a forma di S: strettamente '
-      'crescente, attraverso l\'origine, e rimane strettamente tra '
+      "crescente, attraverso l'origine, e rimane strettamente tra "
       '−1 e +1 — questi limiti vengono avvicinati, mai raggiunti. coth '
       'infine si comporta come il reciproco di tanh, ma poiché sinh 0 = 0 '
       'ha un polo in x = 0 e rimane al di fuori di [−1, 1].',
@@ -844,18 +844,18 @@ List<ManualChapter> _manualChaptersIt() => const [
       'circolari in modo del tutto analogo — '
       'cos t = (eⁱᵗ + e⁻ⁱᵗ)/2, sin t = (eⁱᵗ − e⁻ⁱᵗ)/(2i). Lo schema è '
       'lo stesso; solo per le funzioni circolari la funzione esponenziale '
-      'corre sull\'asse immaginario (argomento i·t), per quelle iperboliche '
+      "corre sull'asse immaginario (argomento i·t), per quelle iperboliche "
       "sull'asse reale (argomento x). Se i numeri complessi sono ancora "
-      'poco familiari, si può saltare questo pensiero — l\'unica cosa '
+      "poco familiari, si può saltare questo pensiero — l'unica cosa "
       'importante è: nel suo nucleo è la stessa funzione.',
     ),
     _P(
       'Geometricamente è la stessa costruzione — un punto su una curva, '
-      'parametrizzato dal doppio dell\'area del settore — solo una volta '
-      'sul cerchio, una volta sull\'iperbole. Da questo segue il segno '
+      "parametrizzato dal doppio dell'area del settore — solo una volta "
+      "sul cerchio, una volta sull'iperbole. Da questo segue il segno "
       'ribaltato: cos² + sin² = 1 rispetto a cosh² − sinh² = 1. '
       'Sostituendo un argomento immaginario, le famiglie passano '
-      'direttamente l\'una nell\'altra: cos(i·x) = cosh x e '
+      "direttamente l'una nell'altra: cos(i·x) = cosh x e "
       'sin(i·x) = i·sinh x. Le funzioni iperboliche sono quindi '
       '"le funzioni trigonometriche con argomento immaginario".',
     ),
@@ -882,7 +882,7 @@ List<ManualChapter> _manualChaptersIt() => const [
     ),
     CatenaryFigure(catenary: 'Catenaria', parabola: 'Parabola'),
     _P(
-      'Anche la caduta con resistenza dell\'aria appartiene qui: se la '
+      "Anche la caduta con resistenza dell'aria appartiene qui: se la "
       'forza frenante cresce con il quadrato della velocità, la velocità '
       'segue una curva tanh e si avvicina dolcemente alla velocità '
       'terminale, senza mai superarla — la saturazione di tanh è qui la '
@@ -901,14 +901,14 @@ List<ManualChapter> _manualChaptersIt() => const [
     _P(
       'Le quattro funzioni si trovano nel Set 8, il pannello di estensione: '
       'aprirlo con il tasto "…", poi toccare sinh, cosh, tanh o coth. '
-      'Ognuna apre subito una parentesi (sinh( con il cursore all\'interno); '
+      "Ognuna apre subito una parentesi (sinh( con il cursore all'interno); "
       'se quella di chiusura manca, la calcolatrice la aggiunge al "=". '
       'Un secondo tocco sullo stesso tasto passa alla funzione area '
       '(sinh ↔ arsinh e così via) — un punto dorato indica che il '
       'prossimo tocco invertirà.',
     ),
     _P(
-      'La differenza più importante dalla trigonometria: l\'argomento è un '
+      "La differenza più importante dalla trigonometria: l'argomento è un "
       'numero puro, non un angolo. La modalità angolo (DEG/RAD/GRD) non ha '
       'alcun effetto sulle funzioni iperboliche — nessuna conversione di '
       'gradi, nessuna trappola degli angoli duodecimali come con sin e cos. '
@@ -945,7 +945,7 @@ List<ManualChapter> _manualChaptersIt() => const [
       'arsinh è definita per qualsiasi numero; arcosh richiede x ≥ 1; '
       'artanh richiede |x| < 1; arcoth vive esattamente al di fuori, '
       'a |x| > 1. Chi lo tiene a mente evita i messaggi di errore '
-      'fin dall\'inizio.',
+      "fin dall'inizio.",
     ),
   ]),
   ManualChapter('Set 9 e 10', [
@@ -975,7 +975,7 @@ List<ManualChapter> _manualChaptersIt() => const [
     _P(
       'Spesso non si dispone tutto, ma si scelgono r tra n cose — e '
       "l'ordine conta. Una gara con otto piloti: quanti podi (1°, 2°, 3°) "
-      'sono possibili? Otto per l\'oro, sette per l\'argento, sei per il '
+      "sono possibili? Otto per l'oro, sette per l'argento, sei per il "
       'bronzo: 8·7·6 = 240 (= 336 decimale). In generale questo è nPr '
       '(n permuta r) = n!/(n−r)!. Si divide per (n−r)! perché i fattori '
       'inferiori si annullano.',
@@ -1001,7 +1001,7 @@ List<ManualChapter> _manualChaptersIt() => const [
     _H('Il triangolo di Pascal'),
     _P(
       'Disponendo i valori nCr riga per riga emerge uno schema: nella riga '
-      'n si trovano, uno dopo l\'altro, n nCr 0, n nCr 1, …, n nCr n. '
+      "n si trovano, uno dopo l'altro, n nCr 0, n nCr 1, …, n nCr n. "
       'Ogni numero è la somma dei due sopra di lui — così il triangolo '
       'cresce interamente senza fattoriali. I bordi sono tutti uno, ed è '
       'simmetrico (n nCr r = n nCr (n−r)).',
@@ -1040,7 +1040,7 @@ List<ManualChapter> _manualChaptersIt() => const [
       "L'orologio conta in base dodici — non è un caso.",
     ),
     ModuloClockFigure(
-      title: 'Modulo — aritmetica dell\'orologio',
+      title: "Modulo — aritmetica dell'orologio",
       wrap: 'giro',
       note: '(= 17 dec., 17 mod 12 = 5)',
     ),
@@ -1058,12 +1058,11 @@ List<ManualChapter> _manualChaptersIt() => const [
       'mantissa per una potenza della base. In decimale "3 EXP 8" significa '
       'il valore 3 × 10⁸. Questa calcolatrice porta il principio '
       'coerentemente in base dodici: in modalità duodecimale "a EXP b" '
-      'non significa a × 10ᵇ ma a × 12ᵇ. L\'esponente conta le potenze '
+      "non significa a × 10ᵇ ma a × 12ᵇ. L'esponente conta le potenze "
       'di dodici.',
     ),
     DozenalPowersScaleFigure(
       title: 'Potenze di dodici — 1 EXP n',
-      dozLabel: 'Doz.',
       decLabel: 'Dec.',
     ),
     _P(
@@ -1105,7 +1104,7 @@ List<ManualChapter> _manualChaptersIt() => const [
     ),
     _P(
       'Esatti sono n!, |x|, 1/x e mod (nessun "≈"); solo nCr e nPr portano '
-      'il segno di approssimazione. Al di fuori dell\'intervallo valido le '
+      "il segno di approssimazione. Al di fuori dell'intervallo valido le "
       'funzioni segnalano un errore — poi azzerare con AC:',
     ),
     _Pre(
@@ -1136,7 +1135,7 @@ List<ManualChapter> _converterManualChaptersIt() => const [
       'una dozzina di altre categorie tra il sistema metrico e quello '
       'imperiale — a scelta in cifre duodecimali o decimali.',
     ),
-    _H('Passare dall\'una all\'altra'),
+    _H("Passare dall'una all'altra"),
     _P(
       'Scorri verso sinistra sulla calcolatrice principale e appare il '
       'convertitore di unità. Scorri verso destra sul convertitore e sei '
@@ -1153,7 +1152,7 @@ List<ManualChapter> _converterManualChaptersIt() => const [
   ManualChapter('Categoria, numero, unità', [
     _P(
       'Una conversione consiste in tre tocchi: scegliere la categoria, '
-      'digitare il numero, toccare l\'unità.',
+      "digitare il numero, toccare l'unità.",
     ),
     _H('La categoria'),
     _P(
@@ -1167,18 +1166,18 @@ List<ManualChapter> _converterManualChaptersIt() => const [
     _P(
       'Digita un numero e poi un tasto di unità: "144" e "ft" danno 144 '
       'piedi. La riga del risultato mostra subito la stessa grandezza in '
-      'un\'altra unità, e la parentesi graffa accanto il valore '
-      'nell\'altro sistema.',
+      "un'altra unità, e la parentesi graffa accanto il valore "
+      "nell'altro sistema.",
     ),
     _H('Il tasto ='),
     _P(
-      'Ogni pressione di = mostra l\'unità successiva della scala — così '
+      "Ogni pressione di = mostra l'unità successiva della scala — così "
       'percorri tutte le rappresentazioni della stessa grandezza. Nel '
       'mondo imperiale segue alla fine la notazione mista, per esempio '
       '"1 yd 2 ft 3 in", prima che il ciclo ricominci da capo.',
     ),
     _P(
-      'Se passi a un\'altra categoria, i termini completati vengono '
+      "Se passi a un'altra categoria, i termini completati vengono "
       'scartati — un numero già digitato però rimane, puoi quindi '
       'scegliere prima il numero e poi la categoria.',
     ),
@@ -1194,7 +1193,7 @@ List<ManualChapter> _converterManualChaptersIt() => const [
     ),
     _H('Il sistema dei colori'),
     _P(
-      'Il verde sta ovunque nell\'app per il mondo del dieci: unità '
+      "Il verde sta ovunque nell'app per il mondo del dieci: unità "
       'metriche e cifre decimali. Il viola sta per il mondo del dodici: '
       'unità imperiali e cifre duodecimali. I simboli di unità come "m" o '
       '"ft" appaiono nel colore del loro sistema, il segno DOZ/DEZ in '
@@ -1227,22 +1226,22 @@ List<ManualChapter> _converterManualChaptersIt() => const [
       'Tocca la riga di input per posizionare il cursore rosso — nel '
       'mezzo di un numero o tra due termini. Le cifre appaiono al '
       'cursore, Del cancella il carattere precedente; se il cursore si '
-      'trova su un confine tra termini, Del rimuove l\'intero termine '
+      "trova su un confine tra termini, Del rimuove l'intero termine "
       'precedente. AC cancella tutto.',
     ),
   ]),
-  ManualChapter('Calcolare nell\'input: × ÷ ⊕ ^ √ ㏒', [
+  ManualChapter("Calcolare nell'input: × ÷ ⊕ ^ √ ㏒", [
     _P(
       'Il numero digitato può essere esso stesso un piccolo calcolo: '
       '"3 × 2" e poi "ft" dà 6 piedi. La valutazione procede '
-      'rigorosamente da sinistra a destra, al tocco sull\'unità.',
+      "rigorosamente da sinistra a destra, al tocco sull'unità.",
     ),
     _P(
-      'Se premi un operatore di calcolo mentre c\'è già un\'espressione '
+      "Se premi un operatore di calcolo mentre c'è già un'espressione "
       'completata, questa viene prima trasformata in cifre modificabili — '
       'il valore totale nell\'ultima unità usata. "5 ft 3 in" e "×" '
       'diventano così un numero per …, che concludi con "2" e '
-      'un\'unità.',
+      "un'unità.",
     ),
     _H('Gli operatori speciali'),
     _P(
@@ -1262,7 +1261,7 @@ List<ManualChapter> _converterManualChaptersIt() => const [
     _P(
       'Nel pannello esteso "…" si trovano STO, RCL e MC: STO memorizza il '
       'numero della riga del risultato — oppure, se non è ancora stata '
-      'scelta un\'unità, l\'input digitato. RCL inserisce di nuovo il '
+      "scelta un'unità, l'input digitato. RCL inserisce di nuovo il "
       'valore memorizzato, MC lo cancella. Se RCL e MC sono grigi, la '
       'memoria è vuota.',
     ),
@@ -1274,9 +1273,9 @@ List<ManualChapter> _converterManualChaptersIt() => const [
     ),
     _H('Il ponte verso la calcolatrice principale'),
     _P(
-      'Il tasto Ans porta l\'ultimo risultato della calcolatrice '
-      'principale nell\'input — calcola lì qualcosa, scorri fin qui e dai '
-      'al valore un\'unità. Viceversa, il tasto CONV nel pannello esteso '
+      "Il tasto Ans porta l'ultimo risultato della calcolatrice "
+      "principale nell'input — calcola lì qualcosa, scorri fin qui e dai "
+      "al valore un'unità. Viceversa, il tasto CONV nel pannello esteso "
       'della calcolatrice principale recupera il numero dalla riga del '
       'risultato del convertitore di unità. I valori viaggiano come '
       'numero puro e appaiono automaticamente nella base della pagina di '
@@ -1307,7 +1306,7 @@ List<ManualChapter> _assetManualChaptersIt() => const [
     ),
     _P(
       'Come le altre calcolatrici, la calcolatrice dei valori conserva il '
-      'suo input al passaggio. L\'aspetto è lo stesso del convertitore di '
+      "suo input al passaggio. L'aspetto è lo stesso del convertitore di "
       'unità — solo le colonne di tasti a destra conducono un livello più '
       'in profondità.',
     ),
@@ -1316,7 +1315,7 @@ List<ManualChapter> _assetManualChaptersIt() => const [
     _P(
       'Mentre il convertitore di unità conosce due livelli (categoria e '
       'unità), la calcolatrice dei valori ne ha tre: classe, genere e '
-      'unità. Una conversione la digiti dall\'alto verso il basso.',
+      "unità. Una conversione la digiti dall'alto verso il basso.",
     ),
     _H('I tre livelli'),
     _P(
@@ -1324,7 +1323,7 @@ List<ManualChapter> _assetManualChaptersIt() => const [
       'metallo prezioso e valuta. Se ne tocchi una, appaiono i suoi '
       'generi — per il metallo prezioso ad esempio oro, argento, platino '
       'e palladio; per la valuta le sigle delle valute. Se tocchi un '
-      'genere, appaiono le sue unità. Un tocco su un\'unità la inserisce '
+      "genere, appaiono le sue unità. Un tocco su un'unità la inserisce "
       'come termine.',
     ),
     _H('Indietro di un livello'),
@@ -1337,7 +1336,7 @@ List<ManualChapter> _assetManualChaptersIt() => const [
     _H('Il tasto ='),
     _P(
       'Come nel convertitore di unità, ogni pressione di = mostra la '
-      'stessa grandezza nell\'unità successiva; per i pesi troy segue '
+      "stessa grandezza nell'unità successiva; per i pesi troy segue "
       'alla fine la notazione mista (per esempio „1 lb t 2 oz t 3 dwt“). '
       'Un cambio di classe o di genere scarta i termini completati, '
       'mentre un numero già digitato rimane conservato.',
@@ -1349,18 +1348,18 @@ List<ManualChapter> _assetManualChaptersIt() => const [
       'La calcolatrice dei valori non ha tasti met/imp. Non appena digiti '
       'dentro un genere di metallo, entrambi i sistemi compaiono '
       'contemporaneamente: le unità troy imperiali (gr, dwt, oz t, lb t) '
-      'in una colonna, quelle metriche (g, kg) nell\'altra. Tocchi '
+      "in una colonna, quelle metriche (g, kg) nell'altra. Tocchi "
       'semplicemente quella desiderata — il mondo di lavoro si regola in '
-      'base all\'unità in cui hai inserito l\'ultimo valore.',
+      "base all'unità in cui hai inserito l'ultimo valore.",
     ),
     _H('I colori'),
     _P(
       'Il codice dei colori è lo stesso del convertitore di unità: il '
       'viola sta per il mondo del dodici (unità imperiali e cifre '
       'duodecimali), il verde per il mondo del dieci (unità metriche e '
-      'cifre decimali). Il simbolo dell\'unità porta il colore del suo '
-      'sistema, la parentesi graffa mostra lo stesso valore nell\'altro '
-      'sistema nel colore di quest\'ultimo, il segno DOZ/DEZ il colore '
+      "cifre decimali). Il simbolo dell'unità porta il colore del suo "
+      "sistema, la parentesi graffa mostra lo stesso valore nell'altro "
+      "sistema nel colore di quest'ultimo, il segno DOZ/DEZ il colore "
       'della base. Le valute non hanno un asse dei mondi — i loro simboli '
       'restano viola.',
     ),
@@ -1379,7 +1378,7 @@ List<ManualChapter> _assetManualChaptersIt() => const [
       'Ans. Se scegli una classe, lì subentrano i generi al loro posto — '
       'la memoria condivide lo spazio con la navigazione. STO memorizza '
       'il valore della riga del risultato, RCL lo inserisce, MC lo '
-      'cancella; Ans recupera l\'ultimo risultato della calcolatrice '
+      "cancella; Ans recupera l'ultimo risultato della calcolatrice "
       'principale. Grigio significa vuoto o nulla disponibile. Nella '
       'direzione opposta, il tasto CONV della calcolatrice principale '
       'recupera il valore della riga del risultato (la sua opzione di '
@@ -1388,7 +1387,7 @@ List<ManualChapter> _assetManualChaptersIt() => const [
     _H('Valore, calcolare e cancellare'),
     _P(
       'Il tasto Valore siede fisso nella riga di sistema e si attiva non '
-      'appena c\'è un termine (vedi il capitolo successivo). Gli '
+      "appena c'è un termine (vedi il capitolo successivo). Gli "
       'operatori scalari (× ÷ ⊕ ^ √ ㏒) fanno sì che il numero digitato '
       'sia esso stesso un piccolo calcolo, come nel convertitore di '
       'unità. AC cancella tutto, Del il carattere precedente.',
@@ -1416,7 +1415,7 @@ List<ManualChapter> _assetManualChaptersIt() => const [
     ),
     _H('Nessuna rete'),
     _P(
-      'L\'app non recupera nulla da internet — il „≈“ significa '
+      "L'app non recupera nulla da internet — il „≈“ significa "
       '„approssimativo, basato sui tassi“, mai „live“. Mantieni tu stesso '
       'i tassi aggiornati, ad esempio secondo Kitco per i metalli o la '
       'BCE per le valute.',
@@ -1430,19 +1429,19 @@ List<ManualChapter> _assetManualChaptersIt() => const [
     ),
     _H('Le tre serie'),
     _P(
-      'Tutto viene misurato rispetto all\'oro: argento in oro, grano in '
-      'oro e oro in grano — cioè il potere d\'acquisto dell\'oro in cibo. '
+      "Tutto viene misurato rispetto all'oro: argento in oro, grano in "
+      "oro e oro in grano — cioè il potere d'acquisto dell'oro in cibo. "
       'Ogni serie è riferita al suo valore noto più antico; questo si '
       'trova come spessa linea dello zero al centro. Sopra la linea '
-      'significa più caro, sotto più economico, sempre rispetto all\'oro.',
+      "significa più caro, sotto più economico, sempre rispetto all'oro.",
     ),
     _H('Leggere e muovere'),
     _P(
-      'Trascinare sposta l\'immagine, avvicinare le dita ingrandisce, il '
-      'pulsante a destra rimpicciolisce tutto fino all\'antichità. Per '
-      'impostazione predefinita la curva mostra all\'incirca gli ultimi '
-      'cento anni. La banda ombreggiata attorno ai punti dell\'antichità '
-      'è l\'intervallo stimato — l\'antichità è composta da singoli '
+      "Trascinare sposta l'immagine, avvicinare le dita ingrandisce, il "
+      "pulsante a destra rimpicciolisce tutto fino all'antichità. Per "
+      "impostazione predefinita la curva mostra all'incirca gli ultimi "
+      "cento anni. La banda ombreggiata attorno ai punti dell'antichità "
+      "è l'intervallo stimato — l'antichità è composta da singoli "
       'anelli (solo ordini di grandezza), nessuna linea attraversa una '
       'lacuna. La riga delle fonti elenca il set di dati.',
     ),

@@ -5,13 +5,12 @@
 //
 //   flutter run -t tool/converter_demo_main.dart -d <device-id>
 
-import 'package:flutter/material.dart';
-
 import 'package:dozenal_calc_flutter/app_layout.dart';
 import 'package:dozenal_calc_flutter/converter_display.dart';
 import 'package:dozenal_calc_flutter/converter_keypad.dart';
 import 'package:dozenal_calc_flutter/converter_state.dart';
 import 'package:dozenal_calc_flutter/logic/unit_data.dart';
+import 'package:flutter/material.dart';
 
 void main() {
   final state = ConverterState()

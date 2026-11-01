@@ -22,14 +22,13 @@
 //
 // Design + roadmap: docs/asset-converter.md.
 
+import 'package:dozenal_calc_flutter/converter_state.dart' show ConverterLine;
+import 'package:dozenal_calc_flutter/logic/asset_convert.dart';
+import 'package:dozenal_calc_flutter/logic/asset_data.dart';
+import 'package:dozenal_calc_flutter/logic/base_num.dart';
+import 'package:dozenal_calc_flutter/logic/unit_data.dart';
+import 'package:dozenal_calc_flutter/rate_store.dart';
 import 'package:flutter/foundation.dart';
-
-import 'converter_state.dart' show ConverterLine;
-import 'logic/asset_convert.dart';
-import 'logic/asset_data.dart';
-import 'logic/base_num.dart';
-import 'logic/unit_data.dart';
-import 'rate_store.dart';
 
 /// Which tier of the drill-down the keypad should show. In value mode the drill
 /// area becomes a currency target picker ([valueTargets]).
@@ -39,20 +38,14 @@ enum AssetDrillLevel { classes, genera, units, valueTargets }
 /// previous one. Same model as ConverterState's private term.
 @immutable
 class _Term {
+  const _Term(this.value, this.unit, {this.subtract = false});
   final double value;
   final Unit unit;
   final bool subtract;
-  const _Term(this.value, this.unit, {this.subtract = false});
 }
 
 /// Rendered input text plus the char offsets the display needs.
 class _InputLayout {
-  final String text;
-  final int caret;
-  final int? pendingStart;
-  final int? pendingEnd;
-  final List<int> boundaries;
-  final List<(int, int)> unitRanges;
   _InputLayout(
     this.text,
     this.caret,
@@ -61,6 +54,12 @@ class _InputLayout {
     this.boundaries,
     this.unitRanges,
   );
+  final String text;
+  final int caret;
+  final int? pendingStart;
+  final int? pendingEnd;
+  final List<int> boundaries;
+  final List<(int, int)> unitRanges;
 }
 
 class AssetState extends ChangeNotifier {

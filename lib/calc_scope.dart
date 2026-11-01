@@ -6,15 +6,14 @@
 // that file is the pure logic port (input.rs/eval.rs) without Flutter-widget
 // dependencies beyond ChangeNotifier.
 
+import 'package:dozenal_calc_flutter/state.dart';
 import 'package:flutter/widgets.dart';
-
-import 'state.dart';
 
 class CalcStateScope extends InheritedNotifier<DozenalCalcState> {
   const CalcStateScope({
-    super.key,
     required DozenalCalcState super.notifier,
     required super.child,
+    super.key,
   });
 
   /// Subscribing read; null when no scope is present (e.g. widget tests that

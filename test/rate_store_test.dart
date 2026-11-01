@@ -30,7 +30,7 @@ void main() {
 
   test('metal value: 1 troy oz gold → USD → EUR', () {
     final s = RateStore();
-    final kg = kTroyOunceKg; // 1 troy oz in kg
+    const kg = kTroyOunceKg; // 1 troy oz in kg
     final pivot = s.pivotOfMetalKg(kg, 'gold');
     expect(pivot, closeTo(2350, 1e-6)); // 1 oz × 2350 USD/oz
     expect(s.currencyFromPivot(pivot, 'eur'), closeTo(2350 * 0.92, 1e-6));

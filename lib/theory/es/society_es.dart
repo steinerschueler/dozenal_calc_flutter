@@ -291,7 +291,7 @@ List<ProseChapter> _societyChaptersEs() => const [
         'A1',
       ),
       Source(
-        'Dozenal RPN Calculator — Eddie\'s Math and Calculator Blog',
+        "Dozenal RPN Calculator — Eddie's Math and Calculator Blog",
         'http://edspi31415.blogspot.com/2026/02/dozenal-rpn-calculator-app-for-android.html',
         'R3',
         'A1',

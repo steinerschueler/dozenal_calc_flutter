@@ -19,6 +19,7 @@ Git-Historie zusammengefasst. Nur `v1.5.1` ist als Git-Tag vorhanden.
 - Das Keypad des Werterechners kommt ohne Overlay aus und zeigt beide Einheitensysteme gleichzeitig.
 - Die CI nutzt Flutter 3.47.9 und prüft das Lockfile streng.
 - `pre-commit` prüft Format, Lints, Markdown und Commit-Nachrichten, `very_good_analysis` gilt für geänderte Dateien.
+- Rund 7700 Lint-Befunde sind automatisch korrigiert, die Fehlalarme zu Zeilenumbrüchen in Texten ausgeblendet.
 - Die KI-Anweisungen sind thematisch nach `docs/` aufgeteilt.
 
 ### Fixed

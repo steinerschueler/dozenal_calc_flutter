@@ -3,15 +3,14 @@
 // the Dart implementation; identical observable behaviour for the test
 // surface (acot Convention A, cot, sqrt, unary minus, custom ops).
 
-import 'package:flutter_test/flutter_test.dart';
+import 'dart:math' as math;
 
 import 'package:dozenal_calc_flutter/logic/dozenal_digit.dart';
 import 'package:dozenal_calc_flutter/logic/expression.dart';
 import 'package:dozenal_calc_flutter/logic/rat_parser.dart';
 import 'package:dozenal_calc_flutter/logic/rational.dart';
 import 'package:dozenal_calc_flutter/tokens.dart';
-
-import 'dart:math' as math;
+import 'package:flutter_test/flutter_test.dart';
 
 double evalDouble(String expr) {
   final v = evalF64(expr, AngleMode.rad);
@@ -64,7 +63,7 @@ void main() {
     });
 
     test('coth_one: coth(1) = cosh(1)/sinh(1)', () {
-      final expected =
+      const expected =
           ((math.e + 1 / math.e) / 2) / ((math.e - 1 / math.e) / 2);
       expect((evalDouble('coth(1)') - expected).abs(), lessThan(1e-10));
     });
@@ -334,12 +333,12 @@ void main() {
   group('buildRatExpr + evalRational', () {
     test('rational_oplus_with_paren: 5⊕(3+2) = 5/2', () {
       final tokens = <CalcToken>[
-        Digit(DozenalDigit.d5),
+        const Digit(DozenalDigit.d5),
         const OplusBotLeft(),
         const ParenOpen(),
-        Digit(DozenalDigit.d3),
+        const Digit(DozenalDigit.d3),
         const Add(),
-        Digit(DozenalDigit.d2),
+        const Digit(DozenalDigit.d2),
         const ParenClose(),
       ];
       final exprs = buildRatExpr(tokens);
@@ -412,7 +411,7 @@ void main() {
     test('one integer digit → kF64SigDigits − 1 fractional (π = 3.…)', () {
       final r = formatF64Result(math.pi);
       expect(fracCount(r), kF64SigDigits - 1);
-      expect(r.first, Digit(DozenalDigit.d3));
+      expect(r.first, const Digit(DozenalDigit.d3));
     });
 
     test(
@@ -482,7 +481,7 @@ void main() {
 
     test('implicit_mul_digit_paren: 2 ( → 2 * (', () {
       final out = withImplicitMuls(<CalcToken>[
-        Digit(DozenalDigit.d2),
+        const Digit(DozenalDigit.d2),
         const ParenOpen(),
       ]);
       expect(out.length, equals(3));
@@ -499,7 +498,7 @@ void main() {
 
     test('implicit_mul_digit_function: 2 sin → 2 * sin', () {
       final out = withImplicitMuls(<CalcToken>[
-        Digit(DozenalDigit.d2),
+        const Digit(DozenalDigit.d2),
         const Sin(),
       ]);
       expect(out.length, equals(3));
@@ -508,8 +507,8 @@ void main() {
 
     test('no_implicit_mul_within_number: 1 2 stays "12"', () {
       final out = withImplicitMuls(<CalcToken>[
-        Digit(DozenalDigit.d1),
-        Digit(DozenalDigit.d2),
+        const Digit(DozenalDigit.d1),
+        const Digit(DozenalDigit.d2),
       ]);
       expect(
         out.length,

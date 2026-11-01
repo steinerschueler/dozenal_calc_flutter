@@ -1,3 +1,6 @@
+// Prose wraps inside words and CJK has no spaces, so this lint almost only reports false positives.
+// ignore_for_file: missing_whitespace_between_adjacent_strings
+
 part of '../math_theory.dart';
 
 List<ProseChapter> _mathChaptersGa() => const [
@@ -58,7 +61,7 @@ List<ProseChapter> _mathChaptersGa() => const [
         'Ní bhuann aon bhonn i ngach áit',
         'Tá buntáiste fíor mar sin ag a Dó Dhéag agus tú ag roinnt ina dtrí agus '
             'ina cheathrú — agus míbhuntáiste fíor agus tú ag roinnt ina chúig, '
-            'rud atá tábhachtach do chéatadáin agus d\'airgead. Malartaíonn sé '
+            "rud atá tábhachtach do chéatadáin agus d'airgead. Malartaíonn sé "
             'ceann amháin ar an gceann eile.\n\n'
             'Ní hionann níos mó roinnteoirí agus níos fearr gan teorainn ach an '
             'oiread: mura mbeadh, bheadh buntáiste ag a Seasca, atá inroinnte ar '
@@ -115,7 +118,7 @@ List<ProseChapter> _mathChaptersGa() => const [
         'An seachtú agus a ghaolta',
         'Ní thagann seachtú amach go glan i mBonn a Dó Dhéag, ach athraítear é: '
             'seachtú = 0,186A35, ansin 186A35 arís, gan stad. (Seasann A do Dheich, '
-            'B d\'Aon Déag.) Is í an ghrúpa a athraítear an tréimhse; tá sí sé dhigit '
+            "B d'Aon Déag.) Is í an ghrúpa a athraítear an tréimhse; tá sí sé dhigit "
             'ar fhad anseo.\n\n'
             'Feictear an rud iontach nuair a leagtar na seachtaí eile taobh le taobh. '
             'Dhá sheachtú = 0,35186A, trí sheachtú = 0,5186A3, ceithre sheachtú = '
@@ -187,14 +190,14 @@ List<ProseChapter> _mathChaptersGa() => const [
       ),
       ProseSection(
         'Cé mhéad a bhfuil ann — ceist oscailte',
-        'D\'fhéadfaí ceapadh go mbeadh airíonna chomh soiléir sin comhairte le '
+        "D'fhéadfaí ceapadh go mbeadh airíonna chomh soiléir sin comhairte le "
             'fada. Níl. Cé mhéad uimhir lán-tréimhsiúil atá ann i mBonn a Dó Dhéag '
             '— cé acu an bhfuil a líon éigríochta — níl sé cruthaithe go dtí seo.\n\n'
             'Tuar ó Emil Artin ón mbliain 1927 deir go bhfuil thart ar '
             'tríocha is seacht as céad príomhuimhreacha lán-tréimhsiúil, i mBonn '
             'a Dó Dhéag chomh maith le haon bhonn oiriúnach eile. Oireann an '
             'breathnóireacht ar uimhreacha beaga don mhéid seo. Ach is tuar é '
-            'an tuar: d\'ainneoin dua mhór ní cruthaithe é d\'aon bhonn amháin. '
+            "an tuar: d'ainneoin dua mhór ní cruthaithe é d'aon bhonn amháin. "
             'Baineann sé seo leis an gcur i láthair macánta — patrún simplí ar '
             'chosúlacht, ach fadhb oscailte ina bhun go dtí an lá inniu.',
       ),
@@ -269,7 +272,7 @@ List<ProseChapter> _mathChaptersGa() => const [
     [
       ProseSection(
         'Nochtann an digit deiridh mórán',
-        'I mBonn a Dó Dhéag níl sa digit deiridh d\'uimhir ach a fuíoll á roinnt '
+        "I mBonn a Dó Dhéag níl sa digit deiridh d'uimhir ach a fuíoll á roinnt "
             'ar a dó dhéag. Mar sin feictear láithreach ón gcríochdigit an bhfuil '
             'uimhir inroinnte ar roinnteoirí an Dó Dhéag. Ciallaíonn críochdigití '
             'cothroim (0, 2, 4, 6, 8, A) inroinnteacht ar a dó. Más é an críochdigit '
@@ -308,7 +311,7 @@ List<ProseChapter> _mathChaptersGa() => const [
             'inroinnte. Is scáthán é sin ar thástáil an Aon Déag: luíonn a Dó '
             'Dhéag aon faoi bhun an tríú déag, mar sin athraíonn na hionaid '
             'comhartha agus iad á roinnt ar an tríú déag.\n\n'
-            'Seans go meabhraítear d\'daoine atá cleachta le córas an Deich: ann '
+            "Seans go meabhraítear d'daoine atá cleachta le córas an Deich: ann "
             'sin is ionann "Tástáil an Aon Déag" agus an leagan malartach, toisc '
             'go bhfuil an Aon Déag aon os cionn a deich. I mBonn a Dó Dhéag '
             'tá na róil iompaithe — is leis an Aon Déag an tsuim-dhigití shimplí, '
@@ -575,7 +578,7 @@ List<ProseChapter> _mathChaptersGa() => const [
             'agus na Bablónaigh, breis is ceithre mhíle bliain ó shin, ar Bhonn a '
             'Seasca. Meastar gurb é an éacht matamaiticiúil is mó acu é.\n\n'
             'Ní raibh náid iomlán acu fós, áfach: bhí comhartha sealbhóra ionaid '
-            'ar eolas acu d\'ionaid fholmha sa lár, ach riamh ag deireadh '
+            "ar eolas acu d'ionaid fholmha sa lár, ach riamh ag deireadh "
             'uimhreach. Gabhann a n-oidhreacht linn go dtí an lá inniu — i seasca '
             'nóiméad na huaire agus i 360 céim an chiorcail.',
       ),
@@ -592,7 +595,7 @@ List<ProseChapter> _mathChaptersGa() => const [
       ),
       ProseSection(
         'Boinn na meaisíní',
-        'Leis na meaisíní ríofa tháinig boinn nua. D\'fhoilsigh Gottfried Wilhelm '
+        "Leis na meaisíní ríofa tháinig boinn nua. D'fhoilsigh Gottfried Wilhelm "
             'Leibniz in 1703 an córas dénártha nach raibh ann ach 0 agus 1 — '
             'chonaic sé fiú na sean-heicseagraim de chuid an I Ching Síneach ann '
             'arís.\n\n'
@@ -755,7 +758,7 @@ List<ProseChapter> _mathChaptersGa() => const [
             'roinnt acu. Tá an dó dhéag ardchomhdhéanta: tá níos mó '
             'roinnteoirí aige ná aon uimhir níos lú. Is iad a roinnteoirí '
             '1, 2, 3, 4, 6, 12 — sé cinn; níl an líon sin ag uimhir ar bith '
-            'faoi 12. D\'iniúch Srinivasa Ramanujan an rang seo in 1915 i '
+            "faoi 12. D'iniúch Srinivasa Ramanujan an rang seo in 1915 i "
             'bpáipéar cáiliúil i Proceedings an London Mathematical '
             'Society.\n\n'
             'Is í an dó dhéag freisin an uimhir fhlúirseach is lú: sáraíonn '
@@ -946,7 +949,7 @@ List<ProseChapter> _mathChaptersGa() => const [
       ),
       ProseSection(
         'An clog céanna sa cheol',
-        'Cruthaíonn na dhá leathton déag d\'ochtach an ciorcal céanna: '
+        "Cruthaíonn na dhá leathton déag d'ochtach an ciorcal céanna: "
             'tar éis dhá chéim leathtoin déag, táthar ar ais ag an ton '
             'tosaigh, ochtach níos airde. Is ionann ceoil a aistriú go '
             'gléas eile agus na tonanna go léir a chasadh an méid céanna '
@@ -1006,7 +1009,7 @@ List<ProseChapter> _mathChaptersGa() => const [
             'Ríomhann an clog "modulo a dó dhéag" — ní choinníonn sé '
             'ach an fuíoll á roinnt ar a dó dhéag. Is rud difriúil é '
             'sin le "Bonn a Dó Dhéag", nodaireacht an áireamháin seo, '
-            'ina seasann na hionaid d\'aonaid, dosaen, grós agus mar '
+            "ina seasann na hionaid d'aonaid, dosaen, grós agus mar "
             'sin de. Insíonn modulo cén rang fuíll a bhfuil uimhir ann; '
             'insíonn bonn conas í a scríobh.\n\n'
             'Druidann an dá cheann thart ar an uimhir dó dhéag, ach ón '
@@ -1128,7 +1131,7 @@ List<ProseChapter> _mathChaptersGa() => const [
         'I dtúir eaglaise in Sasana tá seanealáin a dhéanann go díreach '
             'é seo: an cloigíneacht athraí. In ionad foinn buaileann na '
             'cloigirí a gcloig in orduithe nua i gcónaí, gach ordú díreach '
-            'uair amháin. Ag gach athrú ní cheadaítear d\'aon chlog ach '
+            "uair amháin. Ag gach athrú ní cheadaítear d'aon chlog ach "
             'aon ionad amháin a bhogadh — leagan coirp de shuíomhanna '
             'comharsanacha a mhalartú, maistir ag cloigirí ó 1621, '
             'i bhfad sula gcur síos na matamaiticeoirí ar an gcleas '
@@ -1136,7 +1139,7 @@ List<ProseChapter> _mathChaptersGa() => const [
             'Tá ainm ar gach méid cloig; tugtar Maximus ar dhá chlog '
             'dhéag. Gach ordú de dhá chlog dhéag a bhualadh chiallódh '
             '12! = thart ar 479 milliún athrú a rith — ar dhá shoicind '
-            'in aghaidh an athraithe, bheadh sin blianta fada d\'fhuaimniú '
+            "in aghaidh an athraithe, bheadh sin blianta fada d'fhuaimniú "
             'gan stad. Níor éirigh le haon duine é sin riamh agus '
             'meastar nach féidir; ní shroicheann na píosaí is faide '
             'a buaileadh ar dhá chlog dhéag ach roinnt deichna míle '
@@ -1233,7 +1236,7 @@ List<ProseChapter> _mathChaptersGa() => const [
         'Cad a choinníonn na 95040 athoiriúnú seo daingean? Figiúr '
             'comhcheangailteach mín. Is féidir grúpaí de shé cinn a '
             'roghnú as dhá phointe dhéag ar bhealach go bhfuil gach '
-            'roghnú féideartha d\'aon cúig phointe i gcónaí i díreach '
+            "roghnú féideartha d'aon cúig phointe i gcónaí i díreach "
             'ceann amháin de na grúpaí sé chinn sin. Tá go díreach '
             '132 grúpa den sórt sin, agus is é an socrú seo an ceann '
             'amháin is féidir — cé is moite de athainmniú na bpointí.\n\n'
@@ -1259,7 +1262,7 @@ List<ProseChapter> _mathChaptersGa() => const [
             'in áit ar bith eile taobh amuigh de na cásanna coitianta '
             '— maireann na siméadrachtaí thar a bheith foirfe seo. '
             'Is ionann sin agus a rá gur ceann de mhuirear beag '
-            'uimhreacha amháin an Dó Dhéag a bhfuil a leithéid d\'airíonna '
+            "uimhreacha amháin an Dó Dhéag a bhfuil a leithéid d'airíonna "
             'acu. Is toradh matamaiticiúil soiléir é sin, ní '
             'neiméadáil — ach cúis iontas i ndáiríre.',
       ),
@@ -1273,7 +1276,7 @@ List<ProseChapter> _mathChaptersGa() => const [
             'na grúpaí eisceachtúla. Is ceann de na grúpaí sin M₁₂.\n\n'
             'Chuir Émile Mathieu síos ar M₁₂ chomh luath le 1861 — ba '
             'é an chéad ghrúpa eisceachtúil riamh a aimsíodh, beagnach '
-            'céad bliain roimh an gcuid eile. D\'fhan a bhith ann '
+            "céad bliain roimh an gcuid eile. D'fhan a bhith ann "
             'conspóideach ar feadh i bhfad, agus rinne roinnt saineolaí '
             'amhras faoi; níor cuireadh ar bhonn daingean é ach in 1938 '
             'ag Ernst Witt. Tosaíonn an tsraith grúpaí eisceachtúla le '
@@ -1446,7 +1449,7 @@ List<ProseChapter> _mathChaptersGa() => const [
             'uimhir na gciorclán casta π seasann an trí chuinn: le R = 1 '
             'is é an t-achar dóideacagánach 3 go díreach agus luíonn sé '
             'beagán faoi π ≈ 3.1416.\n\n'
-            'D\'úsáid Archimedes an gaire seo cheana. Dhruid sé π tríd '
+            "D'úsáid Archimedes an gaire seo cheana. Dhruid sé π tríd "
             'polagáin, ag tosú leis an heicsigean éasca a tharraingt agus '
             'ag déanamh dúbailte ar an líon coirnéal: 6, 12, 24, 48, 96. '
             'Ba é an dóideacagán a chéad chéim. Líonann an 96-phach — '
@@ -1618,7 +1621,7 @@ List<ProseChapter> _mathChaptersGa() => const [
             'phléigh Archimedes féin tíleálacha.\n\n'
             'I bhfad roimh Kepler bhí an dóideacagán ina chónaí sa '
             'chealaíon cheana: baineann réaltaí dhá dhéag pointeach '
-            'de na móitíf is glórmhaire d\'ornáideachas céimseata '
+            "de na móitíf is glórmhaire d'ornáideachas céimseata "
             'Ioslamach, tógtha le compás agus rialóir ó ghéimseata '
             'ghlan — go luath mar shampla ar mhoscanna Konya (1220). '
             'Agus sa dúlra filleann an t-ord céanna dhá dhéag-chuíosach '

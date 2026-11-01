@@ -5,10 +5,9 @@
 // flag cropped (cover-fit) into the same circle, with a faint edge ring so
 // flags with light areas still read as discs against the scaffold.
 
+import 'package:dozenal_calc_flutter/app_theme.dart';
+import 'package:dozenal_calc_flutter/language_options.dart';
 import 'package:flutter/material.dart';
-
-import 'app_theme.dart';
-import 'language_options.dart';
 
 /// One uniform diameter for every leading badge (icon or flag) across the
 /// Menü and Einstellungen lists — the single knob the design hangs on.
@@ -41,7 +40,7 @@ abstract final class BadgeHue {
 /// Solid colored disc with a centered white icon, at the uniform
 /// [kBadgeDiameter]. The leading visual for every non-language row.
 class RoundIconBadge extends StatelessWidget {
-  const RoundIconBadge({super.key, required this.icon, required this.color});
+  const RoundIconBadge({required this.icon, required this.color, super.key});
 
   final IconData icon;
   final Color color;
@@ -66,7 +65,7 @@ class RoundIconBadge extends StatelessWidget {
 /// The painter keeps its canonical aspect ratio inside the [FittedBox]; the
 /// [ClipOval] does the cropping, so every language shares one diameter.
 class RoundFlagBadge extends StatelessWidget {
-  const RoundFlagBadge({super.key, required this.option});
+  const RoundFlagBadge({required this.option, super.key});
 
   final LanguageOption option;
 
@@ -99,7 +98,7 @@ class RoundFlagBadge extends StatelessWidget {
             child: DecoratedBox(
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                border: Border.all(color: ring, width: 1),
+                border: Border.all(color: ring),
               ),
             ),
           ),

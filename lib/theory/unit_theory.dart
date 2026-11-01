@@ -11,10 +11,10 @@
 // into languages like Chinese, Hindi and Persian. Translations are produced
 // later by a subagent workflow (two translators + one reconciler per language).
 
-import '../logic/unit_data.dart';
-import 'prose_chapter.dart';
+import 'package:dozenal_calc_flutter/logic/unit_data.dart';
+import 'package:dozenal_calc_flutter/theory/prose_chapter.dart';
 
-export 'prose_chapter.dart' show Source, reliabilityLabel, accessLabel;
+export 'prose_chapter.dart' show Source, accessLabel, reliabilityLabel;
 
 part 'de/unit_theory_de.dart';
 part 'en/unit_theory_en.dart';
@@ -33,9 +33,9 @@ part 'zh_Hant/unit_theory_zh_Hant.dart';
 
 /// One facet of an area's theory: a bold heading + a body paragraph.
 class UnitTheorySection {
+  const UnitTheorySection(this.heading, this.body);
   final String heading;
   final String body;
-  const UnitTheorySection(this.heading, this.body);
 }
 
 /// The areas that get a theory tab, in display order. `count` is first and

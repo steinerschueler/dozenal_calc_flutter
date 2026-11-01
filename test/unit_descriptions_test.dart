@@ -4,10 +4,9 @@
 // category+symbol keying distinguishes colliding symbols, and unknown locales
 // fall back to German.
 
-import 'package:flutter_test/flutter_test.dart';
-
 import 'package:dozenal_calc_flutter/logic/unit_data.dart';
 import 'package:dozenal_calc_flutter/unit_descriptions/unit_descriptions.dart';
+import 'package:flutter_test/flutter_test.dart';
 
 const _allTags = [
   'de',

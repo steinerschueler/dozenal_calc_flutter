@@ -1,3 +1,6 @@
+// Prose wraps inside words and CJK has no spaces, so this lint almost only reports false positives.
+// ignore_for_file: missing_whitespace_between_adjacent_strings
+
 part of '../society_theory.dart';
 
 // Arabic prose for the "Dozenale Gesellschaft" chapters. part of
@@ -283,7 +286,7 @@ List<ProseChapter> _societyChaptersAr() => const [
         'A1',
       ),
       Source(
-        'Dozenal RPN Calculator — Eddie\'s Math and Calculator Blog',
+        "Dozenal RPN Calculator — Eddie's Math and Calculator Blog",
         'http://edspi31415.blogspot.com/2026/02/dozenal-rpn-calculator-app-for-android.html',
         'R3',
         'A1',

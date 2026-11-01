@@ -2,8 +2,9 @@
 // Specification: dozenal_calc/GLYPHS.md.
 
 import 'dart:math';
+
+import 'package:dozenal_calc_flutter/logic/dozenal_digit.dart';
 import 'package:flutter/material.dart';
-import 'logic/dozenal_digit.dart';
 
 export 'logic/dozenal_digit.dart' show DozenalDigit;
 
@@ -41,10 +42,8 @@ void paintDozenalDigitAt(
     // --- Anchor digits: arrow points in cardinal direction ---
     case DozenalDigit.d1:
       _arrow(canvas, paint, center, Offset(0, -q), Offset(-q, q), Offset(q, q));
-      break;
     case DozenalDigit.d4:
       _arrow(canvas, paint, center, Offset(-q, 0), Offset(q, -q), Offset(q, q));
-      break;
     case DozenalDigit.d7:
       _arrow(
         canvas,
@@ -54,7 +53,6 @@ void paintDozenalDigitAt(
         Offset(-q, -q),
         Offset(-q, q),
       );
-      break;
     case DozenalDigit.d10:
       _arrow(
         canvas,
@@ -64,40 +62,31 @@ void paintDozenalDigitAt(
         Offset(-q, -q),
         Offset(q, -q),
       );
-      break;
 
     // --- Composite digits: top + bottom element, each at radius q ---
     case DozenalDigit.d0:
       canvas.drawCircle(center, q, paint);
-      break;
     case DozenalDigit.d2:
       _rightHalf(canvas, paint, top, q);
       _leftHalf(canvas, paint, bot, q);
-      break;
     case DozenalDigit.d3:
       _rightHalf(canvas, paint, top, q);
       _rightHalf(canvas, paint, bot, q);
-      break;
     case DozenalDigit.d5:
       _leftHalf(canvas, paint, top, q);
       _rightHalf(canvas, paint, bot, q);
-      break;
     case DozenalDigit.d6:
       _leftHalf(canvas, paint, top, q);
       canvas.drawCircle(bot, q, paint);
-      break;
     case DozenalDigit.d8:
       canvas.drawCircle(top, q, paint);
       canvas.drawCircle(bot, q, paint);
-      break;
     case DozenalDigit.d9:
       canvas.drawCircle(top, q, paint);
       _rightHalf(canvas, paint, bot, q);
-      break;
     case DozenalDigit.d11:
       _rightHalf(canvas, paint, top, q);
       canvas.drawCircle(bot, q, paint);
-      break;
   }
 }
 
@@ -137,15 +126,14 @@ void _arc(
 }
 
 class DozenalGlyphPainter extends CustomPainter {
-  final DozenalDigit digit;
-  final Color color;
-  final double strokeWidth;
-
   const DozenalGlyphPainter({
     required this.digit,
     this.color = Colors.white,
     this.strokeWidth = 2.0,
   });
+  final DozenalDigit digit;
+  final Color color;
+  final double strokeWidth;
 
   @override
   void paint(Canvas canvas, Size size) {

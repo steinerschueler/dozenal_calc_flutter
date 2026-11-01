@@ -3,15 +3,14 @@
 // "Wertetheorie" theory block (werteChapters / theoryBlocks). All 14
 // languages are authored; the tests below are fallback-agnostic either way.
 
-import 'package:flutter/material.dart';
-import 'package:flutter_test/flutter_test.dart';
-
 import 'package:dozenal_calc_flutter/l10n/app_localizations.dart';
 import 'package:dozenal_calc_flutter/manual/manual.dart';
 import 'package:dozenal_calc_flutter/theory/prose_chapter.dart';
 import 'package:dozenal_calc_flutter/theory/theory_blocks.dart';
 import 'package:dozenal_calc_flutter/theory/werte_illustrations.dart';
 import 'package:dozenal_calc_flutter/theory/werte_theory.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_test/flutter_test.dart';
 
 // All supported BCP-47 tags. A language either has its own authored set or
 // falls back to German — either way the structure must match German exactly.
@@ -80,7 +79,7 @@ void main() {
       }
     });
 
-    testWidgets('every locale\'s asset-manual chapters render', (tester) async {
+    testWidgets("every locale's asset-manual chapters render", (tester) async {
       for (final tag in _allTags) {
         for (final chapter in assetManualChapters(tag)) {
           await tester.pumpWidget(

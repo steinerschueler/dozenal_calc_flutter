@@ -171,7 +171,7 @@ List<ProseChapter> _werteChaptersEn() => const [
             'and for millennia the very embodiment of the store of value — '
             'what makes it so physically is set out in "What Makes Gold '
             'Gold."\n\n'
-            'Silver is the people\'s metal, long the money of everyday '
+            "Silver is the people's metal, long the money of everyday "
             'trade and at the same time an important material of '
             'technology; its own path runs through the silver chapters. '
             'Platinum and palladium, finally, are the youngest of the '
@@ -256,7 +256,7 @@ List<ProseChapter> _werteChaptersEn() => const [
             'leaf of about half a square meter in area can be beaten out — '
             'so thin that light shimmers through it.\n\n'
             'Gold can likewise be drawn into the finest wires. This '
-            'malleability makes it every goldsmith\'s dream. Because pure '
+            "malleability makes it every goldsmith's dream. Because pure "
             'gold is often too soft for everyday use, it is mixed with '
             'other metals — how to read the gold content in karat is set '
             'out in the chapter "Jewelry and Store of Value."',
@@ -310,7 +310,7 @@ List<ProseChapter> _werteChaptersEn() => const [
     'Gold Through History',
     [
       ProseSection(
-        'Humanity\'s First Gold',
+        "Humanity's First Gold",
         'Gold was one of the first metals that people worked with. It '
             'often lies in pure form in nature, as nuggets or flakes in '
             'rivers, and does not first have to be smelted from ore. You '
@@ -435,14 +435,14 @@ List<ProseChapter> _werteChaptersEn() => const [
             'the fabled "gilded" land — sought, but never found.',
       ),
       ProseSection(
-        'West Africa and Mali: Mansa Musa\'s Pilgrimage',
+        "West Africa and Mali: Mansa Musa's Pilgrimage",
         'The medieval empire of Mali in West Africa was rich in gold. '
             'Its ruler Mansa Musa undertook a pilgrimage to Mecca in 1324 '
             'and passed through Cairo. That he spent and gave away great '
             'quantities of gold there is well attested.\n\n'
             'Some accounts say his gold depressed the value of the metal in '
             'Cairo for years; how much exactly and for how long is wreathed '
-            'in legend. Mali\'s gold made the empire famous throughout the '
+            "in legend. Mali's gold made the empire famous throughout the "
             'world of that time.',
       ),
       ProseSection(
@@ -464,7 +464,7 @@ List<ProseChapter> _werteChaptersEn() => const [
             'According to estimates, Indian households and temples hold one '
             'of the largest private quantities of gold in the world — '
             'mostly worn, not hoarded. The World Gold Council, the '
-            'industry\'s interest group, repeatedly emphasizes this role of '
+            "industry's interest group, repeatedly emphasizes this role of "
             'India. Firm figures on it are uncertain; what is extraordinary '
             'is the cultural significance.',
       ),
@@ -519,7 +519,7 @@ List<ProseChapter> _werteChaptersEn() => const [
             'At other times too, gold was often the last nest egg. In wars '
             'and in flight, small, valuable gold could be carried along and '
             'exchanged anywhere that paper money no longer counted. This '
-            'reliability in crisis belongs to gold\'s reputation.',
+            "reliability in crisis belongs to gold's reputation.",
       ),
       ProseSection(
         'Fineness: Reading Karat',
@@ -539,7 +539,7 @@ List<ProseChapter> _werteChaptersEn() => const [
         'Gold comes to the investor in three main forms: as a bar, as a '
             'coin, and as jewelry. Bars exist from the gram to the heavy '
             'block; coins are handy and widely known; jewelry joins the '
-            'metal value with the goldsmith\'s work.\n\n'
+            "metal value with the goldsmith's work.\n\n"
             'Depending on the form, the price holds more or less beyond the '
             'pure metal value. With jewelry you pay for the workmanship as '
             'well, with bars the least. Which form is best depends on '
@@ -566,7 +566,7 @@ List<ProseChapter> _werteChaptersEn() => const [
         'A1',
       ),
       Source(
-        'The Goldsmiths\' Company — Hallmarking',
+        "The Goldsmiths' Company — Hallmarking",
         'https://www.thegoldsmiths.co.uk/company/london-assay-office/hallmarking/',
         'R2',
         'A2',
@@ -675,7 +675,7 @@ List<ProseChapter> _werteChaptersEn() => const [
     'Why the Ratio Shifted',
     [
       ProseSection(
-        'Bimetallism and Gresham\'s Law',
+        "Bimetallism and Gresham's Law",
         'For a long time gold and silver stood side by side as money at '
             'once. This is called bimetallism. So that both circulated as '
             'coins, states fixed a set ratio between them — about sixteen '
@@ -684,7 +684,7 @@ List<ProseChapter> _werteChaptersEn() => const [
             'value, the following happened: the metal that was undervalued '
             'in the coin was worth more as raw metal. People held it back '
             'or melted it down, and what stayed in circulation was the '
-            'overvalued one. That is Gresham\'s law — bad money drives out '
+            "overvalued one. That is Gresham's law — bad money drives out "
             'good. It showed itself as a rule of thumb under fixed coinage '
             'rates.',
       ),
@@ -712,8 +712,8 @@ List<ProseChapter> _werteChaptersEn() => const [
             'the reasons why the ratio widened so far.',
       ),
       ProseSection(
-        'Production and Occurrence in the Earth\'s Crust',
-        'In the earth\'s crust silver is markedly more abundant than '
+        "Production and Occurrence in the Earth's Crust",
+        "In the earth's crust silver is markedly more abundant than "
             'gold — roughly fifteen to twenty times as much, depending on '
             'the estimate. More silver than gold is also mined year after '
             'year. These figures are rough geological orders of magnitude, '
@@ -727,8 +727,8 @@ List<ProseChapter> _werteChaptersEn() => const [
       ),
       ProseSection(
         'Several Causes at Once',
-        'No single cause explains the shift. Coinage acts, Gresham\'s '
-            'law, silver\'s new role in industry, finds and production all '
+        "No single cause explains the shift. Coinage acts, Gresham's "
+            "law, silver's new role in industry, finds and production all "
             'worked together. The figures named — coinage rates, '
             'production, abundance — are orders of magnitude.\n\n'
             'Around the "Crime of 1873" the interpretations diverge as soon '
@@ -757,7 +757,7 @@ List<ProseChapter> _werteChaptersEn() => const [
         'A1',
       ),
       Source(
-        'Gresham\'s law — Wikipedia',
+        "Gresham's law — Wikipedia",
         'https://en.wikipedia.org/wiki/Gresham%27s_law',
         'R2',
         'A1',
@@ -786,7 +786,7 @@ List<ProseChapter> _werteChaptersEn() => const [
       ),
       ProseSection(
         'Crustal Abundance versus the Monetary Ratio',
-        'That silver is far more abundant in the earth\'s crust than '
+        "That silver is far more abundant in the earth's crust than "
             'gold is explained in the chapter "Why the Ratio Shifted." But '
             'no "natural" monetary ratio follows from abundance in the '
             'crust: abundance in the rock and the price in the monetary '
@@ -826,7 +826,7 @@ List<ProseChapter> _werteChaptersEn() => const [
         'A1',
       ),
       Source(
-        'Abundance of elements in Earth\'s crust — Wikipedia',
+        "Abundance of elements in Earth's crust — Wikipedia",
         'https://en.wikipedia.org/wiki/Abundance_of_elements_in_Earth%27s_crust',
         'R2',
         'A1',
@@ -843,7 +843,7 @@ List<ProseChapter> _werteChaptersEn() => const [
     'Silver Through History',
     [
       ProseSection(
-        'The People\'s Metal, Not the King\'s Metal',
+        "The People's Metal, Not the King's Metal",
         'Gold was the metal of kings and of treasure hoards. Silver was '
             'the metal of everyday money. Whoever bought and sold in daily '
             'life paid, over thousands of years, mostly in silver, not in '
@@ -1286,11 +1286,11 @@ List<ProseChapter> _werteChaptersEn() => const [
       ),
       ProseSection(
         'Why grain in particular is the yardstick',
-        'Grain is humanity\'s oldest and most even need. Whoever lives '
+        "Grain is humanity's oldest and most even need. Whoever lives "
             'must eat, and over most of history eating meant above all '
             'bread-corn — wheat, barley, rice. A bushel of grain two '
             'thousand years ago was roughly the same as today: a meal, a '
-            'day\'s ration, a piece of survival.\n\n'
+            "day's ration, a piece of survival.\n\n"
             'This constancy makes grain a better yardstick than any '
             'currency. Coins were debased, empires passed away, paper money '
             'came and went — hunger stayed the same. A measure anchored to '
@@ -1312,7 +1312,7 @@ List<ProseChapter> _werteChaptersEn() => const [
             'A few anchors give a feel for the span, each only as a rough '
             'order of magnitude. In Roman Egypt, gold quantities and grain '
             'prices can be compared in papyri; in medieval England, '
-            'Clark\'s long price series reach back from the thirteenth '
+            "Clark's long price series reach back from the thirteenth "
             'century onward; and today, too, an ounce of gold again buys a '
             'quantity of grain in a similar order of magnitude as back '
             'then. Between these points lay centuries with quite different '
@@ -1336,7 +1336,7 @@ List<ProseChapter> _werteChaptersEn() => const [
             'harsh. Gold is a store of value across generations, not a '
             'reliable yardstick from one year to the next.\n\n'
             'That is the other, more modern question: does gold protect '
-            'against inflation and crisis within a single person\'s '
+            "against inflation and crisis within a single person's "
             'investing life? It is treated separately in the chapter "Gold '
             'as a Hedge Against Inflation and Crisis." This chapter here '
             'deliberately takes the long, millennia-spanning view against '
@@ -1391,7 +1391,7 @@ List<ProseChapter> _werteChaptersEn() => const [
     [
       ProseSection(
         'What a gold peg means',
-        'A gold peg means: a country\'s money is legally tied to a '
+        "A gold peg means: a country's money is legally tied to a "
             'fixed amount of gold. A unit of money stands for so and so '
             'many grams of gold, and in principle you can exchange paper '
             'for metal. This is meant to secure trust, because the state '
@@ -1409,7 +1409,7 @@ List<ProseChapter> _werteChaptersEn() => const [
             'regard this time as a golden age of stable money.\n\n'
             'It was not calm, though. There were banking panics, long '
             'phases of falling prices, and sharp recessions. The fixed gold '
-            'peg took a tool out of governments\' hands with which they '
+            "peg took a tool out of governments' hands with which they "
             'could have responded to crises.',
         illustrationId: 'werte/goldstandard-timeline',
       ),
@@ -1438,7 +1438,7 @@ List<ProseChapter> _werteChaptersEn() => const [
       ),
       ProseSection(
         'What came after: pure paper money',
-        'Since then the world\'s money no longer rests on metal. Its '
+        "Since then the world's money no longer rests on metal. Its "
             'value is based on trust, on the stability of the state, and on '
             'the scarcity that the central bank maintains. Experts call '
             'this fiat money — money that holds because it is supposed to '
@@ -1517,7 +1517,7 @@ List<ProseChapter> _werteChaptersEn() => const [
       ),
       ProseSection(
         'Where the gold lies: storage and custody',
-        'The central banks\' gold lies in heavily secured vaults. Much '
+        "The central banks' gold lies in heavily secured vaults. Much "
             'of it rests with a few large custodians, because bars there '
             'can be reassigned between owners quickly and without '
             'transport. A central bank therefore often stores its gold not '
@@ -1544,7 +1544,7 @@ List<ProseChapter> _werteChaptersEn() => const [
             'deliberately not stated here — such figures change and grow '
             'stale. What matters here are the lasting reasons: trust, a '
             'crisis reserve, no default of a counterparty.\n\n'
-            'Some read the central banks\' gold purchases geopolitically — '
+            "Some read the central banks' gold purchases geopolitically — "
             'as an attempt to weaken a leading currency. Others see in them '
             'simply the old search for a reserve that belongs to no state. '
             'Both readings entwine themselves around the same documented '
@@ -1553,7 +1553,7 @@ List<ProseChapter> _werteChaptersEn() => const [
     ],
     sources: [
       Source(
-        'Deutsche Bundesbank — Germany\'s gold reserves',
+        "Deutsche Bundesbank — Germany's gold reserves",
         'https://www.bundesbank.de/en/tasks/topics/germany-s-gold',
         'R1',
         'A2',
@@ -1580,7 +1580,7 @@ List<ProseChapter> _werteChaptersEn() => const [
         'The promises: haven, inflation hedge, insurance',
         'Of gold three things are often said: that it is a safe haven '
             'in a crisis, a hedge against inflation, and a kind of '
-            'insurance for one\'s wealth. These three promises sound '
+            "insurance for one's wealth. These three promises sound "
             'similar, but they mean different things.\n\n'
             'A haven is supposed to hold when other things fall. An '
             'inflation hedge is supposed to preserve purchasing power when '
@@ -1632,7 +1632,7 @@ List<ProseChapter> _werteChaptersEn() => const [
             'prospects counts is decided by the time span over which one '
             'asks.\n\n'
             'Fixed return figures, correlations, or a "correct" gold share '
-            'in one\'s wealth are deliberately not stated here — they '
+            "in one's wealth are deliberately not stated here — they "
             'depend on the period and the situation. Whoever promotes the '
             'gold trade, industry associations for instance, is in this a '
             'party with an interest of its own.',
@@ -1732,7 +1732,7 @@ List<ProseChapter> _werteChaptersEn() => const [
         'What Is Documented and What Is Claimed',
         'Allocated means ownership of the metal, unallocated a claim '
             'with counterparty risk. Most futures contracts end in cash — '
-            'that is part of the exchange\'s design.\n\n'
+            "that is part of the exchange's design.\n\n"
             'Against this stands the recurring "There is too little '
             'physical gold, the market will collapse." Individual penalties '
             'for "spoofing" — feigned orders — are documented; some derive '
@@ -1913,7 +1913,7 @@ List<ProseChapter> _werteChaptersEn() => const [
             'city.\n\n'
             'But the treasure is scattered and firmly built in. To raise it '
             'demands collecting, dismantling, and laborious separation. The '
-            'world\'s electronic scrap grows quickly, and only a part is '
+            "world's electronic scrap grows quickly, and only a part is "
             'properly recovered. Urban mining is real, but no effortless '
             'money.',
       ),
@@ -1955,7 +1955,7 @@ List<ProseChapter> _werteChaptersEn() => const [
     'Where the Gold Lies: Vaults, Banks, and Free Ports',
     [
       ProseSection(
-        'Fortresses of Gold: Fort Knox and the New York Fed\'s Vault',
+        "Fortresses of Gold: Fort Knox and the New York Fed's Vault",
         'The best-known gold store is probably Fort Knox in Kentucky, '
             'the bullion depository of the United States. Its name has '
             'become almost proverbial for impregnability: a massive vault '
@@ -1981,7 +1981,7 @@ List<ProseChapter> _werteChaptersEn() => const [
       ),
       ProseSection(
         'The Swiss Hub: Refineries and Free Ports',
-        'A surprisingly large share of the world\'s gold passes through '
+        "A surprisingly large share of the world's gold passes through "
             'Switzerland. Several of the leading refineries are based '
             'there, melting raw gold and scrap gold into standardized bars '
             '— including the smaller sizes that are in demand in Asia.\n\n'
@@ -2037,7 +2037,7 @@ List<ProseChapter> _werteChaptersEn() => const [
         'A2',
       ),
       Source(
-        'Deutsche Bundesbank — Germany\'s gold',
+        "Deutsche Bundesbank — Germany's gold",
         'https://www.bundesbank.de/en/tasks/topics/germany-s-gold',
         'R1',
         'A2',
@@ -2169,7 +2169,7 @@ List<ProseChapter> _werteChaptersEn() => const [
         'Despite all its advocates, no major country has returned to '
             'the gold standard. If you ask economic experts, the majority '
             'reject a return.\n\n'
-            'The practical reason is flexibility: today\'s states want to '
+            "The practical reason is flexibility: today's states want to "
             'be able to steer their money supply in order to cushion '
             'crises. A gold peg narrows that room to maneuver.',
       ),
@@ -2234,8 +2234,8 @@ List<ProseChapter> _werteChaptersEn() => const [
             'rules cap the total supply firmly at twenty-one million units '
             '— that is a verifiable property of the protocol.\n\n'
             'But programmed scarcity is not the same as natural rarity. '
-            'Gold\'s limit is set by geology, which no one can change. '
-            'Bitcoin\'s limit is set by a rule that people have written — '
+            "Gold's limit is set by geology, which no one can change. "
+            "Bitcoin's limit is set by a rule that people have written — "
             'firm, but man-made.',
       ),
       ProseSection(

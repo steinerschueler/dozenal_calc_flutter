@@ -9,29 +9,20 @@
 // All list mutations create fresh instances so CustomPainter.shouldRepaint
 // (compared via listEquals) detects the change.
 
+import 'package:dozenal_calc_flutter/logic/dozenal_converter.dart';
+import 'package:dozenal_calc_flutter/logic/dozenal_digit.dart';
+import 'package:dozenal_calc_flutter/logic/expression.dart';
+import 'package:dozenal_calc_flutter/logic/rat_parser.dart';
+import 'package:dozenal_calc_flutter/logic/rational.dart';
+import 'package:dozenal_calc_flutter/logic/result_format.dart';
+import 'package:dozenal_calc_flutter/tokens.dart';
 import 'package:flutter/foundation.dart';
-
-import 'logic/dozenal_converter.dart';
-import 'logic/dozenal_digit.dart';
-import 'logic/expression.dart';
-import 'logic/rat_parser.dart';
-import 'logic/rational.dart';
-import 'logic/result_format.dart';
-import 'tokens.dart';
 
 /// One past calculation kept on the session history tape (#1). Stores enough
 /// to re-render the expression + result faithfully (via [TwoLineDisplay]) and
 /// to recall the value like `Ans` — the exact [ans] when the rational track
 /// held, else the formatted [result] tokens.
 class HistoryEntry {
-  final List<CalcToken> input;
-  final List<CalcToken> result;
-  final int? periodStart;
-  final int periodLen;
-  final bool periodCapped;
-  final Rational? ans;
-  final double f64;
-  final bool isF64;
   const HistoryEntry({
     required this.input,
     required this.result,
@@ -42,6 +33,14 @@ class HistoryEntry {
     required this.f64,
     required this.isF64,
   });
+  final List<CalcToken> input;
+  final List<CalcToken> result;
+  final int? periodStart;
+  final int periodLen;
+  final bool periodCapped;
+  final Rational? ans;
+  final double f64;
+  final bool isF64;
 }
 
 class DozenalCalcState extends ChangeNotifier {
@@ -938,7 +937,7 @@ class DozenalCalcState extends ChangeNotifier {
       return const <CalcToken>[];
     }
     final intVal = DozenalConverter.toDecimalExact(intDigits, base: from);
-    Rational rat = Rational.tryNew(intVal, BigInt.one)!;
+    var rat = Rational.tryNew(intVal, BigInt.one)!;
     if (fracDigits.isNotEmpty) {
       final fracNum = DozenalConverter.toDecimalExact(fracDigits, base: from);
       final fracDen = BigInt.from(from).pow(fracDigits.length);

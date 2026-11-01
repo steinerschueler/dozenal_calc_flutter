@@ -10,16 +10,15 @@
 // page swipes — and wires the Ans/CONV result bridge between the two
 // calculators. Design: docs/unit-converter.md.
 
+import 'package:dozenal_calc_flutter/app_layout.dart';
+import 'package:dozenal_calc_flutter/converter_display.dart';
+import 'package:dozenal_calc_flutter/converter_keypad.dart';
+import 'package:dozenal_calc_flutter/converter_state.dart';
+import 'package:dozenal_calc_flutter/l10n/app_localizations.dart';
+import 'package:dozenal_calc_flutter/logic/unit_data.dart';
+import 'package:dozenal_calc_flutter/unit_descriptions/unit_descriptions.dart';
+import 'package:dozenal_calc_flutter/unit_labels.dart';
 import 'package:flutter/material.dart';
-
-import 'app_layout.dart';
-import 'converter_display.dart';
-import 'converter_keypad.dart';
-import 'converter_state.dart';
-import 'l10n/app_localizations.dart';
-import 'logic/unit_data.dart';
-import 'unit_descriptions/unit_descriptions.dart';
-import 'unit_labels.dart';
 
 /// Embeddable converter content: display + keypad, padded like the main
 /// calculator body. Expects Scaffold/SafeArea/Directionality(ltr) from its
@@ -27,7 +26,7 @@ import 'unit_labels.dart';
 /// affordances live elsewhere since the system keys took the equals-row
 /// flanks: back = swipe right (pager), info = the main calculator's (i).
 class ConverterBody extends StatelessWidget {
-  const ConverterBody({super.key, required this.state});
+  const ConverterBody({required this.state, super.key});
 
   final ConverterState state;
 

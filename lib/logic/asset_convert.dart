@@ -4,8 +4,8 @@
 
 import 'dart:math' as math;
 
-import 'asset_data.dart';
-import 'unit_data.dart';
+import 'package:dozenal_calc_flutter/logic/asset_data.dart';
+import 'package:dozenal_calc_flutter/logic/unit_data.dart';
 
 // `convert` is re-exported for consumers (asset_state) — this file no longer
 // calls it directly.
@@ -33,7 +33,7 @@ Unit? assetBracketPartner(AssetGenus genus, Unit unit) {
   final candidates = genus.units.where((u) => u.world == other).toList();
   if (candidates.isEmpty) return null;
   final target = math.log(unit.a.abs());
-  Unit best = candidates.first;
+  var best = candidates.first;
   var bestDist = double.infinity;
   for (final u in candidates) {
     final d = (math.log(u.a.abs()) - target).abs();

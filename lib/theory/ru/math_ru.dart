@@ -1,3 +1,6 @@
+// Prose wraps inside words and CJK has no spaces, so this lint almost only reports false positives.
+// ignore_for_file: missing_whitespace_between_adjacent_strings
+
 part of '../math_theory.dart';
 
 List<ProseChapter> _mathChaptersRu() => const [
@@ -227,7 +230,7 @@ List<ProseChapter> _mathChaptersRu() => const [
         'A1',
       ),
       Source(
-        'Midy\'s theorem — Wikipedia',
+        "Midy's theorem — Wikipedia",
         'https://en.wikipedia.org/wiki/Midy%27s_theorem',
         'R2',
         'A1',
@@ -239,7 +242,7 @@ List<ProseChapter> _mathChaptersRu() => const [
         'A1',
       ),
       Source(
-        'Artin\'s conjecture on primitive roots — Wikipedia',
+        "Artin's conjecture on primitive roots — Wikipedia",
         'https://en.wikipedia.org/wiki/Artin%27s_conjecture_on_primitive_roots',
         'R2',
         'A1',

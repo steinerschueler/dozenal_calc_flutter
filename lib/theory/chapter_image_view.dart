@@ -2,15 +2,14 @@
 // (author · license → opens the source page). Used by the theory chapter pages
 // (info_pages) and the unit-theory tabs (conversions_page). A broken/missing
 // asset collapses to nothing rather than throwing.
+import 'package:dozenal_calc_flutter/app_theme.dart';
+import 'package:dozenal_calc_flutter/license_page.dart' show openExternalLink;
+import 'package:dozenal_calc_flutter/theory/chapter_images.dart';
 import 'package:flutter/material.dart';
 
-import '../app_theme.dart';
-import '../license_page.dart' show openExternalLink;
-import 'chapter_images.dart';
-
 class ChapterImageView extends StatelessWidget {
-  final TheoryImage image;
   const ChapterImageView(this.image, {super.key});
+  final TheoryImage image;
 
   @override
   Widget build(BuildContext context) {
@@ -69,8 +68,8 @@ class ChapterImageView extends StatelessWidget {
 /// a button that opens its App Store page (apps) or website (web tools). Shown
 /// at the head of a chapter that points at another tool (see [AppRef]).
 class AppRefCard extends StatelessWidget {
-  final AppRef app;
   const AppRefCard(this.app, {super.key});
+  final AppRef app;
 
   @override
   Widget build(BuildContext context) {
@@ -85,7 +84,6 @@ class AppRefCard extends StatelessWidget {
         border: Border.all(color: t.hairline),
       ),
       child: Row(
-        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           ClipRRect(
             borderRadius: BorderRadius.circular(13),

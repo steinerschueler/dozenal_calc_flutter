@@ -7,8 +7,8 @@
 // downstream code can use exhaustive `switch` pattern matching, mirroring
 // Rust `match`. Payload-free variants are const-singleton subclasses.
 
-import 'logic/dozenal_digit.dart';
-import 'logic/rational.dart';
+import 'package:dozenal_calc_flutter/logic/dozenal_digit.dart';
+import 'package:dozenal_calc_flutter/logic/rational.dart';
 
 // ---------------------------------------------------------------------------
 // CalcToken
@@ -21,8 +21,8 @@ sealed class CalcToken {
 // --- Main keypad ---
 
 final class Digit extends CalcToken {
-  final DozenalDigit value;
   const Digit(this.value);
+  final DozenalDigit value;
 
   @override
   bool operator ==(Object other) => other is Digit && other.value == value;
@@ -143,9 +143,9 @@ final class Negate extends CalcToken {
 /// input line (default 'Ans'; RCL passes 'M' so the user can tell a
 /// recalled value from the last result).
 final class RatLit extends CalcToken {
+  const RatLit(this.value, {this.label = 'Ans'});
   final Rational value;
   final String label;
-  const RatLit(this.value, {this.label = 'Ans'});
 
   @override
   bool operator ==(Object other) =>
@@ -395,8 +395,8 @@ final class InfoList extends InfoState {
 }
 
 final class InfoChapter extends InfoState {
-  final int index;
   const InfoChapter(this.index);
+  final int index;
 
   @override
   bool operator ==(Object other) =>

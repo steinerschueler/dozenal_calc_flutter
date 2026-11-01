@@ -23,17 +23,16 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:flutter_test/flutter_test.dart';
-
 import 'package:dozenal_calc_flutter/logic/base_num.dart';
 import 'package:dozenal_calc_flutter/logic/expression.dart';
 import 'package:dozenal_calc_flutter/tokens.dart' show AngleMode;
+import 'package:flutter_test/flutter_test.dart';
 
 /// Rewrite every maximal base-12 number literal in [expr] to its decimal value,
 /// leaving operators and parentheses untouched, so the base-10 [evalF64] sees
 /// the same magnitudes the watch's base-12 parser would.
 String litsToBase10(String expr) => expr.replaceAllMapped(
-  RegExp(r'[0-9AaBb.]+'),
+  RegExp('[0-9AaBb.]+'),
   (m) => parseBaseNum(m.group(0)!, 12).toString(),
 );
 

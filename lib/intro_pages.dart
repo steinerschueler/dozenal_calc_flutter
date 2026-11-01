@@ -10,41 +10,39 @@
 // und Navigationsleiste beschnitten); Layout-Metadata ist sprach-neutral, nur
 // die Texte kommen aus dem ARB-System der aktiven Locale.
 
+import 'package:dozenal_calc_flutter/l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
-
-import 'l10n/app_localizations.dart';
 
 const Color _kHighlight = Color(0xFFFF3030);
 
 class HighlightCircle {
+  const HighlightCircle({required this.center, required this.radius});
+
   /// Center as fraction of screenshot width/height.
   final Offset center;
 
   /// Radius as fraction of screenshot height.
   final double radius;
-
-  const HighlightCircle({required this.center, required this.radius});
 }
 
 class HighlightRect {
+  const HighlightRect({required this.rect});
+
   /// Left/top/right/bottom in fractional screenshot coordinates (0..1).
   final Rect rect;
-
-  const HighlightRect({required this.rect});
 }
 
 class _IntroSlide {
+  const _IntroSlide({
+    required this.image,
+    required this.text,
+    this.circles = const [],
+    this.rects = const [],
+  });
   final String image;
   final List<HighlightCircle> circles;
   final List<HighlightRect> rects;
   final String text;
-
-  const _IntroSlide({
-    required this.image,
-    this.circles = const [],
-    this.rects = const [],
-    required this.text,
-  });
 }
 
 // ---------------------------------------------------------------------------
@@ -188,9 +186,8 @@ class _IntroPageState extends State<IntroPage> {
 }
 
 class _SlideView extends StatelessWidget {
-  final _IntroSlide slide;
-
   const _SlideView({required this.slide});
+  final _IntroSlide slide;
 
   @override
   Widget build(BuildContext context) {
@@ -227,9 +224,8 @@ class _SlideView extends StatelessWidget {
 }
 
 class _SlidePainter extends CustomPainter {
-  final _IntroSlide slide;
-
   _SlidePainter(this.slide);
+  final _IntroSlide slide;
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -265,10 +261,9 @@ class _SlidePainter extends CustomPainter {
 }
 
 class _PageDots extends StatelessWidget {
+  const _PageDots({required this.count, required this.current});
   final int count;
   final int current;
-
-  const _PageDots({required this.count, required this.current});
 
   @override
   Widget build(BuildContext context) {

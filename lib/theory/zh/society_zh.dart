@@ -1,3 +1,6 @@
+// Prose wraps inside words and CJK has no spaces, so this lint almost only reports false positives.
+// ignore_for_file: missing_whitespace_between_adjacent_strings
+
 // 关于“十二进制协会”章节的中文散文。属于 ../society_theory.dart 的一部分。
 // 句子简单（更易翻译）。陈述事实和有出处的观点；对不确定的归属（引用链）
 // 保持诚实，不作叙述者的评判。提炼自 docs/research/society_*.md。
@@ -253,7 +256,7 @@ List<ProseChapter> _societyChaptersZh() => const [
         'A1',
       ),
       Source(
-        'Dozenal RPN Calculator — Eddie\'s Math and Calculator Blog',
+        "Dozenal RPN Calculator — Eddie's Math and Calculator Blog",
         'http://edspi31415.blogspot.com/2026/02/dozenal-rpn-calculator-app-for-android.html',
         'R3',
         'A1',

@@ -3,15 +3,14 @@
 // closing "Fazit" callout. Plain Material widgets throughout, so RTL (fa/ar)
 // mirrors automatically. Theme colors come from AppColors.
 
+import 'package:dozenal_calc_flutter/app_theme.dart';
+import 'package:dozenal_calc_flutter/license_page.dart' show openExternalLink;
+import 'package:dozenal_calc_flutter/recommendations/recommendations.dart';
 import 'package:flutter/material.dart';
 
-import '../app_theme.dart';
-import '../license_page.dart' show openExternalLink;
-import 'recommendations.dart';
-
 class RecChapterPage extends StatelessWidget {
-  final RecChapter chapter;
   const RecChapterPage(this.chapter, {super.key});
+  final RecChapter chapter;
 
   @override
   Widget build(BuildContext context) {
@@ -47,8 +46,8 @@ class RecChapterPage extends StatelessWidget {
 }
 
 class _RecCalcCard extends StatelessWidget {
-  final RecCalc calc;
   const _RecCalcCard(this.calc);
+  final RecCalc calc;
 
   @override
   Widget build(BuildContext context) {
@@ -103,10 +102,10 @@ class _RecCalcCard extends StatelessWidget {
 /// One ✓/✗ line: a colored icon plus neutral text (so the bullets read as
 /// rows of tradeoffs, not walls of red/green).
 class _Bullet extends StatelessWidget {
+  const _Bullet({required this.icon, required this.color, required this.text});
   final IconData icon;
   final Color color;
   final String text;
-  const _Bullet({required this.icon, required this.color, required this.text});
 
   @override
   Widget build(BuildContext context) {
@@ -139,8 +138,8 @@ class _Bullet extends StatelessWidget {
 
 /// A tappable link row showing the destination host; opens it externally.
 class _LinkRow extends StatelessWidget {
-  final String url;
   const _LinkRow(this.url);
+  final String url;
 
   @override
   Widget build(BuildContext context) {
@@ -177,8 +176,8 @@ class _LinkRow extends StatelessWidget {
 /// The closing "Fazit" callout: a card with a gold accent bar on the leading
 /// edge (direction-aware via Border + EdgeInsetsDirectional).
 class _VerdictBox extends StatelessWidget {
-  final String verdict;
   const _VerdictBox(this.verdict);
+  final String verdict;
 
   @override
   Widget build(BuildContext context) {

@@ -2,14 +2,13 @@
 // display hit-test inputCursorPosForTap. Spec: docs/unit-converter.md (shared
 // editing feature) — main calculator part.
 
-import 'package:flutter/material.dart';
-import 'package:flutter_test/flutter_test.dart';
-
 import 'package:dozenal_calc_flutter/display.dart';
-import 'package:dozenal_calc_flutter/state.dart';
 import 'package:dozenal_calc_flutter/logic/dozenal_digit.dart';
 import 'package:dozenal_calc_flutter/logic/glyph_style.dart';
+import 'package:dozenal_calc_flutter/state.dart';
 import 'package:dozenal_calc_flutter/tokens.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   group('state.moveCursorTo', () {

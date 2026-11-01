@@ -8,15 +8,14 @@
 import 'dart:io';
 import 'dart:ui' as ui;
 
-import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_test/flutter_test.dart';
-
 import 'package:dozenal_calc_flutter/conversions_page.dart';
 import 'package:dozenal_calc_flutter/converter_display.dart';
 import 'package:dozenal_calc_flutter/converter_page.dart';
 import 'package:dozenal_calc_flutter/l10n/app_localizations.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_test/flutter_test.dart';
 
 Future<void> _loadFont() async {
   final bytes = await File('tool/fonts/LiberationSans-Bold.ttf').readAsBytes();

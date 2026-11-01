@@ -68,9 +68,9 @@ class GlyphStyleNotifier extends ChangeNotifier {
 
 class GlyphStyleScope extends InheritedNotifier<GlyphStyleNotifier> {
   const GlyphStyleScope({
-    super.key,
     required GlyphStyleNotifier super.notifier,
     required super.child,
+    super.key,
   });
 
   static GlyphStyleNotifier of(BuildContext context) {

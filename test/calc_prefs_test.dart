@@ -1,11 +1,10 @@
 // Tests for CalcPrefsNotifier: defaults, SharedPreferences round-trip,
 // graceful fallback on unknown stored values, and notification behavior.
 
-import 'package:flutter_test/flutter_test.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-
 import 'package:dozenal_calc_flutter/calc_prefs.dart';
 import 'package:dozenal_calc_flutter/tokens.dart' show AngleMode, NumeralSystem;
+import 'package:flutter_test/flutter_test.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();

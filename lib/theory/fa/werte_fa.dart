@@ -544,7 +544,7 @@ List<ProseChapter> _werteChaptersFa() => const [
         'A1',
       ),
       Source(
-        'The Goldsmiths\' Company — Hallmarking',
+        "The Goldsmiths' Company — Hallmarking",
         'https://www.thegoldsmiths.co.uk/company/london-assay-office/hallmarking/',
         'R2',
         'A2',
@@ -728,7 +728,7 @@ List<ProseChapter> _werteChaptersFa() => const [
         'A1',
       ),
       Source(
-        'Gresham\'s law — Wikipedia',
+        "Gresham's law — Wikipedia",
         'https://en.wikipedia.org/wiki/Gresham%27s_law',
         'R2',
         'A1',
@@ -797,7 +797,7 @@ List<ProseChapter> _werteChaptersFa() => const [
         'A1',
       ),
       Source(
-        'Abundance of elements in Earth\'s crust — Wikipedia',
+        "Abundance of elements in Earth's crust — Wikipedia",
         'https://en.wikipedia.org/wiki/Abundance_of_elements_in_Earth%27s_crust',
         'R2',
         'A1',
@@ -1500,7 +1500,7 @@ List<ProseChapter> _werteChaptersFa() => const [
     ],
     sources: [
       Source(
-        'Deutsche Bundesbank — Germany\'s gold reserves',
+        "Deutsche Bundesbank — Germany's gold reserves",
         'https://www.bundesbank.de/en/tasks/topics/germany-s-gold',
         'R1',
         'A2',
@@ -1983,7 +1983,7 @@ List<ProseChapter> _werteChaptersFa() => const [
         'A2',
       ),
       Source(
-        'Deutsche Bundesbank — Germany\'s gold',
+        "Deutsche Bundesbank — Germany's gold",
         'https://www.bundesbank.de/en/tasks/topics/germany-s-gold',
         'R1',
         'A2',

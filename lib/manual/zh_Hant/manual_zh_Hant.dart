@@ -1,3 +1,6 @@
+// Prose wraps inside words and CJK has no spaces, so this lint almost only reports false positives.
+// ignore_for_file: missing_whitespace_between_adjacent_strings
+
 // zh_Hant manual chapters. part of ../manual.dart.
 // Grundbedienung migrated verbatim from the retired
 // info_content_zh_hant.dart (legacy chapter 0). Teaching chapters are

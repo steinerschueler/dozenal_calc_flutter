@@ -1,15 +1,14 @@
 // Widget/smoke tests for the price chart, the sources page, and the "Kurve"
 // toggle that swaps the keypad for the chart in the Werterechner.
 
-import 'package:flutter/material.dart';
-import 'package:flutter_test/flutter_test.dart';
-
 import 'package:dozenal_calc_flutter/asset_keypad.dart';
 import 'package:dozenal_calc_flutter/asset_page.dart';
 import 'package:dozenal_calc_flutter/l10n/app_localizations.dart';
 import 'package:dozenal_calc_flutter/logic/price_history.dart';
 import 'package:dozenal_calc_flutter/price_chart.dart';
 import 'package:dozenal_calc_flutter/price_sources_page.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_test/flutter_test.dart';
 
 Widget _wrap(Widget child) => MaterialApp(
   localizationsDelegates: AppLocalizations.localizationsDelegates,
@@ -73,10 +72,10 @@ void main() {
   });
 
   group('Kurve toggle in the Werterechner', () {
-    Widget app() => MaterialApp(
+    Widget app() => const MaterialApp(
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      home: const AssetPage(),
+      home: AssetPage(),
     );
 
     testWidgets('Kurve replaces the keypad with the chart; close restores it', (

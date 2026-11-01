@@ -284,9 +284,9 @@ class ThemeNotifier extends ChangeNotifier {
 
 class ThemeScope extends InheritedNotifier<ThemeNotifier> {
   const ThemeScope({
-    super.key,
     required ThemeNotifier super.notifier,
     required super.child,
+    super.key,
   });
 
   static ThemeNotifier? maybeOf(BuildContext context) =>

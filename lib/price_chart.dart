@@ -9,24 +9,23 @@
 // honour the active numeral base (formatBaseNum), so the dozenal calculator's
 // curve reads in base 12 or 10.
 
+import 'package:dozenal_calc_flutter/app_theme.dart';
+import 'package:dozenal_calc_flutter/logic/base_num.dart';
+import 'package:dozenal_calc_flutter/logic/price_history.dart';
+import 'package:dozenal_calc_flutter/logic/price_history_data.dart';
 import 'package:flutter/material.dart';
-
-import 'app_theme.dart';
-import 'logic/base_num.dart';
-import 'logic/price_history.dart';
-import 'logic/price_history_data.dart';
 
 const EdgeInsets _kPlotMargin = EdgeInsets.fromLTRB(46, 10, 12, 22);
 
 class PriceChart extends StatefulWidget {
   const PriceChart({
-    super.key,
     required this.base,
     required this.seriesLabel,
     required this.unitLabel,
     required this.sourcesLabel,
     required this.caption,
     required this.eraReconstructedLabel,
+    super.key,
     this.onSourcesTap,
     this.onClose,
   });
@@ -140,7 +139,7 @@ class _PriceChartState extends State<PriceChart> {
   void _hitTest(Offset local) {
     final rect = _plotRect;
     PricePoint? best;
-    Offset bestAt = Offset.zero;
+    var bestAt = Offset.zero;
     var bestDist = 28.0; // hit radius
     final base = _baseline;
     for (final p in _series.points) {
@@ -288,6 +287,18 @@ class _PriceChartState extends State<PriceChart> {
 }
 
 class _PriceChartPainter extends CustomPainter {
+  _PriceChartPainter({
+    required this.series,
+    required this.viewport,
+    required this.base,
+    required this.baseline,
+    required this.unitLabel,
+    required this.colors,
+    required this.plotMargin,
+    required this.selected,
+    required this.selectedAt,
+    required this.reconstructedLabel,
+  });
   final PriceSeries series;
   final ChartViewport viewport;
   final int base;
@@ -304,19 +315,6 @@ class _PriceChartPainter extends CustomPainter {
   final PricePoint? selected;
   final Offset selectedAt;
   final String reconstructedLabel;
-
-  _PriceChartPainter({
-    required this.series,
-    required this.viewport,
-    required this.base,
-    required this.baseline,
-    required this.unitLabel,
-    required this.colors,
-    required this.plotMargin,
-    required this.selected,
-    required this.selectedAt,
-    required this.reconstructedLabel,
-  });
 
   Rect _rect(Size size) => Rect.fromLTRB(
     plotMargin.left,
@@ -428,7 +426,7 @@ class _PriceChartPainter extends CustomPainter {
       );
     }
     // X: nice year ticks.
-    for (final yr in niceTicks(viewport.xMin, viewport.xMax, maxTicks: 6)) {
+    for (final yr in niceTicks(viewport.xMin, viewport.xMax)) {
       final x = r.left + viewport.nx(yr) * r.width;
       if (x < r.left - 1 || x > r.right + 1) continue;
       canvas.drawLine(Offset(x, r.top), Offset(x, r.bottom), gridPaint);

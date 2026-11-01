@@ -2,11 +2,10 @@
 // dispatcher, the data shape (pros/cons/links), structural fidelity of all 14
 // translations against the German template, and that a chapter page renders.
 
-import 'package:flutter/material.dart';
-import 'package:flutter_test/flutter_test.dart';
-
 import 'package:dozenal_calc_flutter/recommendations/recommendations.dart';
 import 'package:dozenal_calc_flutter/recommendations/recommendations_page.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_test/flutter_test.dart';
 
 const _allTags = [
   'de',

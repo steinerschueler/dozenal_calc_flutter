@@ -1,8 +1,8 @@
 // Port of DozenalConverter tests from src/logic.rs::tests.
 
-import 'package:flutter_test/flutter_test.dart';
 import 'package:dozenal_calc_flutter/logic/dozenal_converter.dart';
 import 'package:dozenal_calc_flutter/logic/dozenal_digit.dart';
+import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   group('DozenalConverter', () {
@@ -33,7 +33,7 @@ void main() {
     // which DozenalDigit.fromValue rejected as null, silently dropping the
     // digit and leaving an empty result.
     test('frac_to_digits_near_one_does_not_drop_silently', () {
-      final out = DozenalConverter.fracToDigits(0.99999, 5, base: 12);
+      final out = DozenalConverter.fracToDigits(0.99999, 5);
       // Must produce at least one digit (the leading 'B' / d11) and not be
       // an empty list.
       expect(out, isNotEmpty);

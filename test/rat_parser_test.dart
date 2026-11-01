@@ -1,8 +1,8 @@
 // Port of eval_* tests from src/logic.rs::tests.
 
-import 'package:flutter_test/flutter_test.dart';
 import 'package:dozenal_calc_flutter/logic/rat_parser.dart';
 import 'package:dozenal_calc_flutter/logic/rational.dart';
+import 'package:flutter_test/flutter_test.dart';
 
 RatExpr r(int n, [int d = 1]) => RatNum(Rational.fromInts(n, d));
 

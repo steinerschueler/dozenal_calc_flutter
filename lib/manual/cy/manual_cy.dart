@@ -1,3 +1,6 @@
+// Prose wraps inside words and CJK has no spaces, so this lint almost only reports false positives.
+// ignore_for_file: missing_whitespace_between_adjacent_strings
+
 // cy manual chapters. part of ../manual.dart.
 // Grundbedienung migrated verbatim from the retired
 // info_content_cy.dart (legacy chapter 0). Teaching chapters are
@@ -8,37 +11,37 @@ part of '../manual.dart';
 
 List<ManualChapter> _manualChaptersCy() => const [
   ManualChapter('Dechrau arni', [
-    _H("Y ffigurau"),
+    _H('Y ffigurau'),
     _P(
       "Defnyddia'r cyfrifiannell hwn ei symbolau ei hun ar gyfer y "
-      "deuddeg ffigur i gyd. Mae pedwar ffigur ancr yn bennau saeth "
+      'deuddeg ffigur i gyd. Mae pedwar ffigur ancr yn bennau saeth '
       "wedi'u stileiddio sy'n pwyntio i'r pedwar cyfeiriad cardinal "
       "— 1 (i fyny), 4 (i'r chwith), 7 (i'r dde), A (i lawr). Maent "
       "yn rhannu'r cylch rhif yn bedwar grŵp o dri, fel oriau 12, 3, "
-      "6 a 9 ar wyneb cloc.",
+      '6 a 9 ar wyneb cloc.',
     ),
     _P(
-      "Adeiledir pob ffigur rhyngddynt o hanner-gylchoedd a chylchoedd "
-      "llawn. Cylch syml yw sero, a hanner-cylch uwchben cylch llawn yw B "
-      "(= un ar ddeg).",
+      'Adeiledir pob ffigur rhyngddynt o hanner-gylchoedd a chylchoedd '
+      'llawn. Cylch syml yw sero, a hanner-cylch uwchben cylch llawn yw B '
+      '(= un ar ddeg).',
     ),
     _DigitLegend(),
-    _H("Defnydd sylfaenol"),
+    _H('Defnydd sylfaenol'),
     _P(
-      "Tapiwch rifau a gweithredwyr fel ar gyfrifiannell poced "
-      "cyffredin. Gwasgwch y fysell lydan = ar yr ymyl gwaelod i "
+      'Tapiwch rifau a gweithredwyr fel ar gyfrifiannell poced '
+      'cyffredin. Gwasgwch y fysell lydan = ar yr ymyl gwaelod i '
       "gyfrifo'r canlyniad. Mae AC (mewn coch rhybudd) yn clirio'r "
       "mewnbwn a'r canlyniad cyfan; mae Del yn dileu'r cymeriad i "
-      "chwith y cyrchwr.",
+      'chwith y cyrchwr.',
     ),
-    _H("Cymorth a damcaniaeth"),
+    _H('Cymorth a damcaniaeth'),
     _P(
       "I chwith ac i ddeau'r fysell =, eistedda dau fotwm crwn: mae "
-      "(i) yn agor y deuddeg pennod ddamcaniaeth hyn, mae (?) yn "
+      '(i) yn agor y deuddeg pennod ddamcaniaeth hyn, mae (?) yn '
       "ailchwarae'r daith weithredu gyda'r marciau coch. Mae'r daith "
-      "yn agor yn awtomatig ar y lansiad cyntaf.",
+      'yn agor yn awtomatig ar y lansiad cyntaf.',
     ),
-    _H("Y cyrchwr a llywio"),
+    _H('Y cyrchwr a llywio'),
     _P(
       "Y bar coch yn y maes mewnbwn yw'r cyrchwr. Defnyddiwch ◀ a ▶ "
       "i'w symud, gan fewnosod neu ddileu cymeriadau yng nghanol "
@@ -47,97 +50,97 @@ List<ManualChapter> _manualChaptersCy() => const [
       "Cyn gynted ag y dechreuwch fewnbwn newydd, mae'r cyrchwr yn "
       "neidio'n ôl i'r maes mewnbwn.",
     ),
-    _H("Parhau cyfrifiad"),
+    _H('Parhau cyfrifiad'),
     _P(
       "Ar ôl cyfrifiad gallwch barhau'n syth gyda gweithredydd. "
       "Tapiwch + 5 = er enghraifft, ac mae'r cyfrifiannell yn "
       "defnyddio'r canlyniad olaf yn awtomatig fel yr operand cyntaf. "
-      "I ddechrau cyfrifiad cwbl newydd, gwasgwch AC yn gyntaf.",
+      'I ddechrau cyfrifiad cwbl newydd, gwasgwch AC yn gyntaf.',
     ),
-    _H("Tap dwbl ar gyfer swyddogaethau gwrthdroëdig"),
+    _H('Tap dwbl ar gyfer swyddogaethau gwrthdroëdig'),
     _P(
       "Mae ail dap ar fysell swyddogaeth yn ei throi i'w gwrthdroad: "
       "daw sin yn sin⁻¹, daw cos yn cos⁻¹, ac yn y blaen. Mae'r un "
       "rheol yn berthnasol i'r swyddogaethau hyperbolig yn y panel "
-      "estyniad. Mae dot bach euraidd ar y fysell yn dynodi y bydd "
-      "y tap nesaf yn gwrthdroi.",
+      'estyniad. Mae dot bach euraidd ar y fysell yn dynodi y bydd '
+      'y tap nesaf yn gwrthdroi.',
     ),
-    _H("Pwysiad hir am ragor"),
+    _H('Pwysiad hir am ragor'),
     _P(
-      "Mae bysellau â chornel fach yn y gornel dde isaf yn cynnig "
-      "swyddogaethau cysylltiedig gyda phwysiad hir: mae x□ yn "
-      "cynnwys x², mae log yn cynnwys ln, log₁₂ ac eˣ, mae − yn "
-      "cynnwys ±, mae STO yn cynnwys M+ ac M−, mae n! yn cynnwys "
-      "nCr ac nPr, ac mae CONV yn cynnwys VAL (canlyniad y "
+      'Mae bysellau â chornel fach yn y gornel dde isaf yn cynnig '
+      'swyddogaethau cysylltiedig gyda phwysiad hir: mae x□ yn '
+      'cynnwys x², mae log yn cynnwys ln, log₁₂ ac eˣ, mae − yn '
+      'cynnwys ±, mae STO yn cynnwys M+ ac M−, mae n! yn cynnwys '
+      'nCr ac nPr, ac mae CONV yn cynnwys VAL (canlyniad y '
       "gyfrifiannell gwerth). I ddewis, llithrwch eich bys i'r "
-      "opsiwn a ddymunir a gollyngwch — neu gollyngwch a thapiwch yr "
+      'opsiwn a ddymunir a gollyngwch — neu gollyngwch a thapiwch yr '
       "opsiwn. Mae tap y tu allan yn cau'r naidlen.",
     ),
-    _H("Gweithredwyr arbennig"),
+    _H('Gweithredwyr arbennig'),
     _P(
       "Mae x² yn sgwario'r rhif blaenorol. Mae √ yn cyfrifo'r gwraidd "
       "sgwâr; os yw rhif yn sefyll i'w chwith, hwnnw yw gradd y "
-      "gwraidd: mae 3√8 yn rhoi gwraidd ciwbig 8, hynny yw 2. Mae log "
+      'gwraidd: mae 3√8 yn rhoi gwraidd ciwbig 8, hynny yw 2. Mae log '
       "yn cyfrifo logarithm lle mae'r rhif ar y chwith yn fewnbwn a'r "
-      "rhif ar y dde yn fôn: 8 log 2 yw logarithm 8 i fôn 2, hynny yw "
-      "3. Mae ⊕ "
+      'rhif ar y dde yn fôn: 8 log 2 yw logarithm 8 i fôn 2, hynny yw '
+      '3. Mae ⊕ '
       "yn cyfrifo'r swm cyfochrog: a ⊕ b = (a·b)/(a+b), defnyddiol "
-      "ar gyfer gwrthyddion cyfochrog.",
+      'ar gyfer gwrthyddion cyfochrog.',
     ),
-    _H("Y panel estyniad"),
+    _H('Y panel estyniad'),
     _P(
       "Mae'r fysell … yn y gornel dde isaf yn agor y panel estyniad "
-      "gyda mwy o swyddogaethau: cof, cysonion (π, e, φ, √2), "
-      "swyddogaethau hyperbolig, gweithredwyr datblygedig, "
+      'gyda mwy o swyddogaethau: cof, cysonion (π, e, φ, √2), '
+      'swyddogaethau hyperbolig, gweithredwyr datblygedig, '
       "ynghyd ag EXP a DRG. Mae'r un fysell yn ei chau, neu dapio y tu allan "
       "i'r panel. Ar dabledi mae pob set ochr yn ochr beth bynnag "
-      "— does dim haen.",
+      '— does dim haen.',
     ),
     _Pre(
-      "  6 — Cof:           STO   RCL   MC    Ans\n"
-      "  7 — Cysonion:      π     e     φ     √2\n"
-      "  8 — Hyperbolig:    sinh  cosh  tanh  coth\n"
-      "  9 — Datblygedig:   n!    |x|   1/x   mod\n"
-      "  10 — Moddau:       EXP   DRG   …",
+      '  6 — Cof:           STO   RCL   MC    Ans\n'
+      '  7 — Cysonion:      π     e     φ     √2\n'
+      '  8 — Hyperbolig:    sinh  cosh  tanh  coth\n'
+      '  9 — Datblygedig:   n!    |x|   1/x   mod\n'
+      '  10 — Moddau:       EXP   DRG   …',
     ),
-    _H("Cof"),
+    _H('Cof'),
     _P(
       "Mae STO yn storio'r canlyniad cyfredol, mae RCL yn mewnosod "
       "y gwerth wedi'i storio i'r mewnbwn, mae MC yn clirio'r cof. "
       "Mae M bach ar y sgrin yn dangos bod rhywbeth wedi'i storio. "
-      "Mae Ans yn mewnosod canlyniad y cyfrifiad olaf — caiff "
+      'Mae Ans yn mewnosod canlyniad y cyfrifiad olaf — caiff '
       "gwerthoedd rhesymol manwl gywir eu storio'n llawn, cedwir "
-      "cyfnodoldeb.",
+      'cyfnodoldeb.',
     ),
-    _H("Y bar cyfnod"),
+    _H('Y bar cyfnod'),
     _P(
       "Pan fo'r canlyniad yn ffracsiwn cyfnodol, mae'r cyfrifiannell "
       "yn marcio'r ffigurau sy'n ailadrodd gyda bar uwch eu pen. "
-      "Enghraifft: mae 1/5 yn rhoi 0.2497 gyda bar uwchben y pedwar "
-      "ffigur i gyd. Ar gyfer cyfnodau hwy na phum ffigur, dim ond "
-      "y pum cyntaf a ddangosir, gan ddilyn …",
+      'Enghraifft: mae 1/5 yn rhoi 0.2497 gyda bar uwchben y pedwar '
+      'ffigur i gyd. Ar gyfer cyfnodau hwy na phum ffigur, dim ond '
+      'y pum cyntaf a ddangosir, gan ddilyn …',
     ),
-    _H("System rifau: Doz / Dez"),
+    _H('System rifau: Doz / Dez'),
     _P(
       "Newidiwch y system rifau yn y gosodiadau, ar gael drwy'r "
-      "fysell (i): mae dwsin yn cyfrifo ym môn 12 (diofyn), degol "
-      "ym môn 10. Dangosir y system weithredol yng nghornel dde "
-      "uchaf y sgrin.",
+      'fysell (i): mae dwsin yn cyfrifo ym môn 12 (diofyn), degol '
+      'ym môn 10. Dangosir y system weithredol yng nghornel dde '
+      'uchaf y sgrin.',
     ),
     _P(
       "Wrth newid, caiff y rhif sy'n weladwy ar hyn o bryd ei "
       "drosglwyddo'n awtomatig i'r system arall. Daw « 10 » yn Doz "
       "yn « 12 » yn Dez. Ym modd Dez daw'r symbolau ar gyfer 10 ac "
-      "11 yn anweithredol (llwyd), gan nad ydynt yn bodoli fel "
-      "ffigurau unigol ym môn 10 — pan fydd angen Doz, newidiwch "
-      "yn ôl.",
+      '11 yn anweithredol (llwyd), gan nad ydynt yn bodoli fel '
+      'ffigurau unigol ym môn 10 — pan fydd angen Doz, newidiwch '
+      'yn ôl.',
     ),
-    _H("Modd ongl"),
+    _H('Modd ongl'),
     _P(
-      "Mae DRG yn cylchu modd ongl y swyddogaethau trigonometrig: "
-      "DEG → RAD → GRD → DEG. Dangosir y modd cyfredol yng nghornel "
-      "dde uchaf y sgrin, yn union uwchben y dangosydd Doz/Dez. "
-      "Diofyn yw DEG.",
+      'Mae DRG yn cylchu modd ongl y swyddogaethau trigonometrig: '
+      'DEG → RAD → GRD → DEG. Dangosir y modd cyfredol yng nghornel '
+      'dde uchaf y sgrin, yn union uwchben y dangosydd Doz/Dez. '
+      'Diofyn yw DEG.',
     ),
   ]),
   ManualChapter('Esbonyddion, Gwreiddiau a Logarithmau', [
@@ -145,9 +148,9 @@ List<ManualChapter> _manualChaptersCy() => const [
     _P(
       'Mae codi i bŵer, tynnu gwraidd a chymryd logarithm yn edrych fel tair '
       'gweithred wahanol. Mewn gwirionedd, tair cwestiwn am yr un berthynas '
-      'ydynt: b i rym e yn rhoi n, yn fyr b^e = n. Yma b yw\'r sylfaen, e yw\'r '
-      'esbonydd ac n yw\'r canlyniad. Os oes gennych ddau o\'r tri maint hyn '
-      'gallwch ddod o hyd i\'r trydydd — a dyna\'n union bwrpas y tair bysell '
+      "ydynt: b i rym e yn rhoi n, yn fyr b^e = n. Yma b yw'r sylfaen, e yw'r "
+      "esbonydd ac n yw'r canlyniad. Os oes gennych ddau o'r tri maint hyn "
+      "gallwch ddod o hyd i'r trydydd — a dyna'n union bwrpas y tair bysell "
       'x^□, √ a log.',
     ),
     _P(
@@ -160,7 +163,7 @@ List<ManualChapter> _manualChaptersCy() => const [
     PowerTriangleFigure(power: 'Pŵer', base: 'Sylfaen', exponent: 'Esbonydd'),
     _H('Pwerau: lluosi dro ar ôl tro'),
     _P(
-      'Nid yw\'r pŵer b^e yn golygu dim mwy i ddechrau na lluosi b â\'i hun yn '
+      "Nid yw'r pŵer b^e yn golygu dim mwy i ddechrau na lluosi b â'i hun yn "
       'union e o weithiau. Felly mae 2^3 = 2·2·2 = 8 a 3^2 = 3·3 = 9. Mae codi '
       'i bŵer yn cywasgu lluosiad, yn union fel mae lluosiad yn cywasgu adiad.',
     ),
@@ -174,73 +177,73 @@ List<ManualChapter> _manualChaptersCy() => const [
       "Daw dau achos arbennig o'r un ddeddf. Mae b^0 bob amser yn 1, oherwydd "
       "mae b^1 wedi'i rannu gan b^1 yn rhoi 1 a hefyd b^(1−1) = b^0. Ac mae "
       "esbonydd negatif yn golygu'r cilydd: b^(−n) = 1/b^n, gan fod "
-      "b^n · b^(−n) yn rhaid bod yn b^0 = 1.",
+      'b^n · b^(−n) yn rhaid bod yn b^0 = 1.',
     ),
     _P(
       "Os plotir gwerthoedd pŵer fel 2^x, ceir cromlin sy'n codi'n fwyfwy "
-      "serth — y darlun cyfarwydd o dwf esbonyddol.",
+      'serth — y darlun cyfarwydd o dwf esbonyddol.',
     ),
     ExpCurveFigure(),
-    _H("Y gwraidd — y gwrthdroad cyntaf"),
+    _H('Y gwraidd — y gwrthdroad cyntaf'),
     _P(
       "Mae'r gwraidd yn dadwneud codi i bŵer pan fo'r esbonydd yn hysbys. "
-      "Gwraidd sgwâr 9 yw 3, oherwydd 3^2 = 9; gwraidd ciwbig 8 yw 2, oherwydd "
-      "2^3 = 8. Ar y cyfrifiannell mae √ yn sefyll am y gwraidd sgwâr; teipiwch "
+      'Gwraidd sgwâr 9 yw 3, oherwydd 3^2 = 9; gwraidd ciwbig 8 yw 2, oherwydd '
+      '2^3 = 8. Ar y cyfrifiannell mae √ yn sefyll am y gwraidd sgwâr; teipiwch '
       "rif i'w chwith a daw'r rhif hwnnw yn raddfa'r gwraidd — mae 3√8 yn wraidd "
-      "ciwbig 8.",
+      'ciwbig 8.',
     ),
     _P(
-      "Nid yw gwraidd yn ddim ond pŵer ag esbonydd ffracsiynol: gwraidd n-fed x "
+      'Nid yw gwraidd yn ddim ond pŵer ag esbonydd ffracsiynol: gwraidd n-fed x '
       "yw x^(1/n). Nid confensiwn yn unig mo hyn ond mae'n dilyn yn uniongyrchol "
-      "o ddeddf esbonyddion — codwch x^(1/n) i rym n a chewch "
-      "x^((1/n)·n) = x^1 = x. Lluniwch y = x² a y = √x yn yr un darlun a "
+      'o ddeddf esbonyddion — codwch x^(1/n) i rym n a chewch '
+      'x^((1/n)·n) = x^1 = x. Lluniwch y = x² a y = √x yn yr un darlun a '
       "byddant yn ddelweddau drych ar hyd y llinell y = x. Dyna'r arwydd gweladwy "
       "fod un ffwythiant yn gwrthdroi'r llall.",
     ),
     SquareRootFigure(),
-    _H("Y logarithm — yr ail wrthdroad"),
+    _H('Y logarithm — yr ail wrthdroad'),
     _P(
       "Mae'r logarithm yn dadwneud codi i bŵer pan fo'r sylfaen yn hysbys. "
       "Mae'n ateb: â pha esbonydd mae'n rhaid codi'r sylfaen er mwyn cael y "
-      "canlyniad? Ysgrifennir log_b(n) = e. Felly mae log_2(8) = 3, oherwydd "
-      "2^3 = 8. Ar y cyfrifiannell, teipiwch 8 log 2 — yr arg ar y chwith, "
-      "y sylfaen ar y dde.",
+      'canlyniad? Ysgrifennir log_b(n) = e. Felly mae log_2(8) = 3, oherwydd '
+      '2^3 = 8. Ar y cyfrifiannell, teipiwch 8 log 2 — yr arg ar y chwith, '
+      'y sylfaen ar y dde.',
     ),
     _P(
       "Mae'r logarithm hefyd yn ddelwedd drych: daw y = log_2(x) o y = 2^x "
       "drwy adlewyrchu ar hyd y llinell y = x. Lle mae'r gromlin esbonyddol "
       "yn dringo'n serth, nid yw'r logarithm ond yn tyfu'n araf — mae'n troi "
-      "ystodau enfawr yn rifau hwylus.",
+      'ystodau enfawr yn rifau hwylus.',
     ),
     ExpLogFigure(),
-    _H("Deddfau logarithmau"),
+    _H('Deddfau logarithmau'),
     _P(
-      "Oherwydd bod y logarithm yn gwrthdroi pwerau, mae deddfau esbonyddion "
+      'Oherwydd bod y logarithm yn gwrthdroi pwerau, mae deddfau esbonyddion '
       "yn troi'n ddeddfau logarithmau fel delwedd drych. Daw lluoswm yn swm: "
-      "log(x·y) = log x + log y. Daw rhaniad yn wahaniaeth: "
-      "log(x/y) = log x − log y. Ac mae esbonydd yn yr arg yn dod yn ffactor "
+      'log(x·y) = log x + log y. Daw rhaniad yn wahaniaeth: '
+      'log(x/y) = log x − log y. Ac mae esbonydd yn yr arg yn dod yn ffactor '
       "o'i flaen: log(x^k) = k · log x.",
     ),
     _P(
       "Bu'r trawsnewidiad hwn o luosiad yn adiad yn bwrpas gwirioneddol "
-      "logarithmau am ganrifoedd: gyda thablau logarithmau, gellid disodli "
+      'logarithmau am ganrifoedd: gyda thablau logarithmau, gellid disodli '
       "lluosiadau blin â chyfeiriadau a adiad syml. Yr un egwyddor sy'n "
-      "sail i bob graddfa logarithmig — o raddfa decibel sain i faint daeargryn.",
+      'sail i bob graddfa logarithmig — o raddfa decibel sain i faint daeargryn.',
     ),
     _P(
       "Mae sylfaen logarithm yn rhydd i'w dewis, a gellir trosi unrhyw "
-      "sylfaen i unrhyw un arall: log_b(x) = log_c(x) / log_c(b). Nid yw ln "
-      "(sylfaen e), log i sylfaen 2 a log₁₂ yn swyddogaethau hollol wahanol, "
-      "ond yr un cwestiwn ar raddfa wahanol — maent yn wahanol dim ond gan "
-      "ffactor sefydlog.",
+      'sylfaen i unrhyw un arall: log_b(x) = log_c(x) / log_c(b). Nid yw ln '
+      '(sylfaen e), log i sylfaen 2 a log₁₂ yn swyddogaethau hollol wahanol, '
+      'ond yr un cwestiwn ar raddfa wahanol — maent yn wahanol dim ond gan '
+      'ffactor sefydlog.',
     ),
     _H('Y symbolau ar y bysellau'),
     _P(
-      "Nid yw’r cyfrifiannell hwn yn defnyddio arwyddion cyfarwydd fel √ neu "
-      "“log”. Yn hytrach, mae pob un o’r bysellau hyn yn dangos x gyda sgwâr "
-      "bach □ mewn cornel. Y sgwâr yw’r gofynnwr ar gyfer y rhif a roddir "
-      "gennych — a pha gornel y mae’n eistedd ynddi sy’n datgelu’r weithred, "
-      "oherwydd mae’r safle’n adlewyrchu’r nodiant mathemategol arferol.",
+      'Nid yw’r cyfrifiannell hwn yn defnyddio arwyddion cyfarwydd fel √ neu '
+      '“log”. Yn hytrach, mae pob un o’r bysellau hyn yn dangos x gyda sgwâr '
+      'bach □ mewn cornel. Y sgwâr yw’r gofynnwr ar gyfer y rhif a roddir '
+      'gennych — a pha gornel y mae’n eistedd ynddi sy’n datgelu’r weithred, '
+      'oherwydd mae’r safle’n adlewyrchu’r nodiant mathemategol arferol.',
     ),
     KeyGlyphsFigure(
       square: 'Sgwâr',
@@ -249,28 +252,28 @@ List<ManualChapter> _manualChaptersCy() => const [
       logarithm: 'Logarithm',
     ),
     _P(
-      "Sgwâr yn y gornel dde uchaf (x^□) yw codi i bŵer — x i’r □, yn union "
-      "fel y mae’r esbonydd yn eistedd yn y gornel dde uchaf yn xⁿ. Sgwâr "
-      "yn y gornel chwith uchaf (□√x) yw tynnu gwraidd — gwraidd □-fed x, yn "
-      "union fel y mae’r mynegai gwraidd yn eistedd yn y gornel chwith uchaf "
-      "yn ⁿ√x. Sgwâr yn y gornel dde isaf (x_□) yw logarithm — logarithm x "
-      "i sylfaen □, yn union fel y mae’r sylfaen yn eistedd yn y gornel dde "
+      'Sgwâr yn y gornel dde uchaf (x^□) yw codi i bŵer — x i’r □, yn union '
+      'fel y mae’r esbonydd yn eistedd yn y gornel dde uchaf yn xⁿ. Sgwâr '
+      'yn y gornel chwith uchaf (□√x) yw tynnu gwraidd — gwraidd □-fed x, yn '
+      'union fel y mae’r mynegai gwraidd yn eistedd yn y gornel chwith uchaf '
+      'yn ⁿ√x. Sgwâr yn y gornel dde isaf (x_□) yw logarithm — logarithm x '
+      'i sylfaen □, yn union fel y mae’r sylfaen yn eistedd yn y gornel dde '
       'isaf yn log_b. x² yw’r ffurf fer barod am "sgwâr". (Yr arwydd pedwaredd '
-      "gornel — sgwâr yn y gornel chwith isaf gyda + bach — yw’r adiad "
-      "cyfochrog ⊕, sydd â’i bennod ei hun.)",
+      'gornel — sgwâr yn y gornel chwith isaf gyda + bach — yw’r adiad '
+      'cyfochrog ⊕, sydd â’i bennod ei hun.)',
     ),
     _H('Ar y cyfrifiannell hwn'),
     _P(
-      "Mae’r tair bysell sylfaenol yn Set 2: x^□ (Pŵer), □√x (Gwraidd) ac "
-      "x_□ (Logarithm). Mae x² ym mlwch pwysiad hir y "
-      "fysell bŵer yn ffurf fer am “sgwâr”. Mae pwysiad hir ar log hefyd yn "
-      "rhoi ln, log₁₂ ac eˣ; mae’r rhain yn agor cromfach ar unwaith i chi "
-      "deipio’r arg i mewn iddi.",
+      'Mae’r tair bysell sylfaenol yn Set 2: x^□ (Pŵer), □√x (Gwraidd) ac '
+      'x_□ (Logarithm). Mae x² ym mlwch pwysiad hir y '
+      'fysell bŵer yn ffurf fer am “sgwâr”. Mae pwysiad hir ar log hefyd yn '
+      'rhoi ln, log₁₂ ac eˣ; mae’r rhain yn agor cromfach ar unwaith i chi '
+      'deipio’r arg i mewn iddi.',
     ),
     _P(
       "Mae'r gweithredydd pŵer yn gysylltol dde: mae 2^2^3 yn golygu "
       "2^(2^3) = 2^8, nid (2^2)^3. Mae esbonyddion cyfanrif a'r nodiant "
-      "gwyddonol EXP (a EXP b = a·12^b) yn aros yn union; mae gwreiddiau a "
+      'gwyddonol EXP (a EXP b = a·12^b) yn aros yn union; mae gwreiddiau a '
       "logarithmau, ar y llaw arall, yn dangos '≈' hyd yn oed pan fo'r "
       "canlyniad yn rhif cyfan — maent yn rhedeg drwy'r gwerthuswr bras.",
     ),
@@ -286,26 +289,26 @@ List<ManualChapter> _manualChaptersCy() => const [
       '2^−3       =   0.16       1/8\n'
       '5 EXP 2    =   500        5·144 = 720',
     ),
-    _H("Pwerau deuddeg a log₁₂"),
+    _H('Pwerau deuddeg a log₁₂'),
     _P(
       "Ym môn deuddeg, pwerau deuddeg yw'r rhifau crwn, yn union fel y mae "
       "pwerau deg yn y system ddegol: ysgrifennir deuddeg yn '10', cant a "
       "pedwar deg a phedwar yn '100', mil saith cant dau ddeg ac wyth yn '1000'. "
       "Felly pan welwch '100' yn y cyfrifiannell, rydych yn meddwl am naid o "
-      "144, nid 100.",
+      '144, nid 100.',
     ),
     _P(
       "Dyna pam mai log₁₂ yw'r cyfriffigur naturiol yn y system ddwsinol — "
-      "yn union fel y logarithm deg yn y system ddegol. Ar gyfer pŵer o "
-      "ddeuddeg, ei werth yw nifer y ffigurau llai un yn union: "
+      'yn union fel y logarithm deg yn y system ddegol. Ar gyfer pŵer o '
+      'ddeuddeg, ei werth yw nifer y ffigurau llai un yn union: '
       "log₁₂('10') = 1, log₁₂('100') = 2, log₁₂('1000') = 3.",
     ),
     _P(
-      "Mae sgwariau a chwibiau yn edrych yn anghyfarwydd yn ddwsinol, ond yr "
+      'Mae sgwariau a chwibiau yn edrych yn anghyfarwydd yn ddwsinol, ond yr '
       "un gwerthoedd ydynt — dim ond wedi'u hysgrifennu'n wahanol. Mae 4² yn "
       "'14' (un deg chwech), 5² yn '21' (dau ddeg pump), A² yn '84' (cant), "
       "B² yn 'A1' (cant dau ddeg un). Nid yw'r mathemateg byth yn newid gyda "
-      "sylfaen ysgrifennu; mae e a ln hefyd yn annibynnol ar sylfaen. Dim ond "
+      'sylfaen ysgrifennu; mae e a ln hefyd yn annibynnol ar sylfaen. Dim ond '
       "y dilyniant ffigurau sy'n newid, nid y gwerth.",
     ),
     _Pre(
@@ -318,11 +321,11 @@ List<ManualChapter> _manualChaptersCy() => const [
     ),
     _H("Beth i'w wylio"),
     _P(
-      "Mae rhai mewnbynnau heb eu diffinio ac yn arwain at wall: logarithm "
+      'Mae rhai mewnbynnau heb eu diffinio ac yn arwain at wall: logarithm '
       "sero neu rif negatif, yn ogystal â'r sylfaenau 0 ac 1. Nid yw gwraidd "
-      "sgwâr rhif negatif ychwaith yn bodoli yn y rhifau real. Esbonyddion "
-      "negatif a ffracsiynol, ar y llaw arall, a ganiateir heb gyfyngiad "
-      "— mae 8^(−1/3) yn 1/2.",
+      'sgwâr rhif negatif ychwaith yn bodoli yn y rhifau real. Esbonyddion '
+      'negatif a ffracsiynol, ar y llaw arall, a ganiateir heb gyfyngiad '
+      '— mae 8^(−1/3) yn 1/2.',
     ),
     _P(
       "Ac unwaith eto am y '≈': nid yw'n golygu 'amhur'. Mae gwreiddiau a "
@@ -342,9 +345,9 @@ List<ManualChapter> _manualChaptersCy() => const [
       "mewn cyfochrogedd — ond mae'r un fformiwla'n ymddangos ym mhobman "
       "lle nad y meintiau eu hunain ond eu cilyddion sy'n adio.",
     ),
-    _H("Mae cerrynt yn cymryd y llwybr haws"),
+    _H('Mae cerrynt yn cymryd y llwybr haws'),
     _P(
-      "Os cysylltir dau wrthydd yn gyfochrog, maent rhwng yr un ddau bwynt; "
+      'Os cysylltir dau wrthydd yn gyfochrog, maent rhwng yr un ddau bwynt; '
       "mae'r un foltedd ar draws y ddau, ac mae'r cerrynt yn rhannu rhwng "
       "y ddau lwybr. Faint sy'n llifo drwy bob cangen yn dibynnu ar ei "
       "gwrthiant — mae mwy yn llifo drwy'r llwybr gwrthiant is.",
@@ -353,67 +356,67 @@ List<ManualChapter> _manualChaptersCy() => const [
       "Y dargludedd yw'r hyn sy'n bwysig, cilydd y gwrthiant (G = 1/R): "
       "mae'n dweud pa mor dda y mae cydran yn gadael cerrynt drwodd. Mewn "
       "cyfochrogedd mae'r dargludeddau'n adio: 1/R = 1/R₁ + 1/R₂. Datryswch "
-      "hyn ar gyfer R a chewch yr adiad cyfochrog yn union: "
-      "R = (R₁·R₂)/(R₁+R₂) = R₁ ⊕ R₂.",
+      'hyn ar gyfer R a chewch yr adiad cyfochrog yn union: '
+      'R = (R₁·R₂)/(R₁+R₂) = R₁ ⊕ R₂.',
     ),
     ParallelCircuitFigure(),
-    _H('Bob amser yn llai na\'r lleiaf'),
+    _H("Bob amser yn llai na'r lleiaf"),
     _P(
       "Y canlyniad syn: mae cyfanswm y gwrthiant bob amser yn llai na'r lleiaf "
       "o'r ddau wrthiant unigol. Mae ail lwybr yn gadael cerrynt ychwanegol "
       "drwodd, beth bynnag fo'i wrthiant. Mae dau wrthydd hafal yn gyfochrog "
       "yn haneru'r gwerth: 6 Ω ⊕ 6 Ω = 36/12 = 3 Ω. Mae gwrthydd 6 Ω a "
-      "gwrthydd 3 Ω yn rhoi 18/9 = 2 Ω — llai na 3.",
+      'gwrthydd 3 Ω yn rhoi 18/9 = 2 Ω — llai na 3.',
     ),
     _P(
-      "Yn reddfol: mae dwy ddrws ochr yn ochr yn gadael mwy o bobl drwodd "
+      'Yn reddfol: mae dwy ddrws ochr yn ochr yn gadael mwy o bobl drwodd '
       "nag un; mae agor ail til yn byrhau'r ciw. Mae mwy o lwybrau'n golygu "
-      "llai o wrthiant a mwy o drwygyrch.",
+      'llai o wrthiant a mwy o drwygyrch.',
     ),
     ParallelBarFigure(lessThanBoth: "llai na'r naill werth na'r llall"),
-    _H('Deillio\'r fformiwla'),
+    _H("Deillio'r fformiwla"),
     _P(
       "Y man cychwyn yw'r rheol fod y cilyddion yn adio: "
-      "1/(a⊕b) = 1/a + 1/b. Rhowch yr ochr dde dros enwadur cyffredin a daw "
-      "yn (a+b)/(a·b). Cilydd hwnnw yw a ⊕ b = (a·b)/(a+b). Nid oes dim mwy "
+      '1/(a⊕b) = 1/a + 1/b. Rhowch yr ochr dde dros enwadur cyffredin a daw '
+      'yn (a+b)/(a·b). Cilydd hwnnw yw a ⊕ b = (a·b)/(a+b). Nid oes dim mwy '
       "i'r peth — y gweithred gyfan yw 'adio'r cilyddion a chymryd cilydd y "
       "canlyniad'.",
     ),
     _H('Priodweddau'),
     _P(
-      "Deillia rheolau cyfrifo o gymesuredd y fformiwla. Mae ⊕ yn "
-      "gymudiannol (a ⊕ b = b ⊕ a) ac yn gysylltol, felly gallwch gyfuno "
+      'Deillia rheolau cyfrifo o gymesuredd y fformiwla. Mae ⊕ yn '
+      'gymudiannol (a ⊕ b = b ⊕ a) ac yn gysylltol, felly gallwch gyfuno '
       "unrhyw nifer o werthoedd: gyda thri therm, mae tri chilydd yn adio'n "
       "syml, 1/(a⊕b⊕c) = 1/a + 1/b + 1/c. Mae gwerthoedd hafal yn symlhau'n "
-      "arbennig o daclus — mae n rhif hafal yn gyfochrog yn rhoi a/n, felly "
-      "mae a ⊕ a = a/2 ac a ⊕ a ⊕ a = a/3.",
+      'arbennig o daclus — mae n rhif hafal yn gyfochrog yn rhoi a/n, felly '
+      'mae a ⊕ a = a/2 ac a ⊕ a ⊕ a = a/3.',
     ),
     _P(
       "Ar gyfer rhifau positif mae'r canlyniad bob amser o dan yr operand "
       "lleiaf. Mae dau achos terfynol yn cwblhau'r darlun: a ⊕ 0 = 0 — mae "
       "llwybr heb wrthiant, cylched fer, yn tynnu'r holl gerrynt. A pho "
-      "fwyaf y daw b, y nesaf y daw a ⊕ b at a; nid yw gwrthiant anfeidrol "
+      'fwyaf y daw b, y nesaf y daw a ⊕ b at a; nid yw gwrthiant anfeidrol '
       "fawr, toriad, yn cyfrannu dim. 'Anfeidredd' felly yw'r elfen niwtral "
-      "o adiad cyfochrog — fel y mae sero yn elfen niwtral adiad cyffredin.",
+      'o adiad cyfochrog — fel y mae sero yn elfen niwtral adiad cyffredin.',
     ),
-    _H("Cymedr harmonig a deuoledd"),
+    _H('Cymedr harmonig a deuoledd'),
     _P(
-      "Mae adiad cyfochrog yn agos at y cymedr harmonig: cymedr harmonig dau "
+      'Mae adiad cyfochrog yn agos at y cymedr harmonig: cymedr harmonig dau '
       "rif yw 2·(a ⊕ b), ac mae a ⊕ b yn hanner hwnnw. O'r tri chymedr "
       "clasurol, y cymedr harmonig yw'r isaf bob amser — o dan y geometrig "
       "a'r rhifyddol.",
     ),
     _P(
-      "Yn ddyfnach, ⊕ yw delwedd drych adiad cyffredin o dan y mapio cilydd "
+      'Yn ddyfnach, ⊕ yw delwedd drych adiad cyffredin o dan y mapio cilydd '
       "x → 1/x: adiwch yn normal yn y gofod cilydd ac rydych yn adio'n "
       "gyfochrog yma, a'r gwrthwyneb. Mae cyfres a chyfochrogedd yn ddeuol "
       "i'w gilydd yn yr ystyr hwn — yr un berthynas â sbringiau pen wrth ben "
-      "ac ochr yn ochr.",
+      'ac ochr yn ochr.',
     ),
     _H('Ar y cyfrifiannell hwn'),
     _P(
       "Mae'r fysell ⊕ ymhlith glypiau'r gweithredwyr yn Set 2, wrth ymyl "
-      "x^□, √ a log. Teipiwch a ⊕ b fel cyfrifiad cyffredin: yn gyntaf a, "
+      'x^□, √ a log. Teipiwch a ⊕ b fel cyfrifiad cyffredin: yn gyntaf a, '
       "yna ⊕, yna b, yna =. Yn wahanol i'r gwraidd a'r logarithm, mae ⊕ yn "
       "cyfrifo'n union — mae'n rhedeg ar y trac ffracsiwn â chanfyddiad cyfnod "
       "a felly nid yw'n dangos '≈'.",
@@ -430,41 +433,41 @@ List<ManualChapter> _manualChaptersCy() => const [
     ),
     _P(
       "Mae'r enghraifft olaf yn dangos swyn y dwsinol: '10' ⊕ '20' — hynny "
-      "yw, deuddeg yn gyfochrog ag ugain a phedair ohm — yn rhoi 8 taclus. Ac "
-      "mae 2 ⊕ 3 yn gyfnodol ym môn deuddeg (1.2497… gyda gorlein uwchben "
+      'yw, deuddeg yn gyfochrog ag ugain a phedair ohm — yn rhoi 8 taclus. Ac '
+      'mae 2 ⊕ 3 yn gyfnodol ym môn deuddeg (1.2497… gyda gorlein uwchben '
       "2497), ond yn union serch hynny; ym môn deg byddai'r un canlyniad yn "
-      "syml yn 1.2.",
+      'syml yn 1.2.',
     ),
-    _H('Pan fo\'r swm yn sero'),
+    _H("Pan fo'r swm yn sero"),
     _P(
-      "Mae un achos lle mae ⊕ yn methu: os yw a + b = 0, er enghraifft "
-      "5 ⊕ (−5), mae sero yn yr enwadur a bydd y cyfrifiannell yn adrodd "
+      'Mae un achos lle mae ⊕ yn methu: os yw a + b = 0, er enghraifft '
+      '5 ⊕ (−5), mae sero yn yr enwadur a bydd y cyfrifiannell yn adrodd '
       "rhaniad â sero. Ar ôl y gwall gellir golygu'r mynegiad yn uniongyrchol "
       "— llywiwch iddo â'r bysellau saeth a chywirwch y gwerth; mae AC yn "
-      "ailosod popeth.",
+      'ailosod popeth.',
     ),
   ]),
   ManualChapter('Trigonometreg', [
-    _H('Onglau a\'u mesurau'),
+    _H("Onglau a'u mesurau"),
     _P(
       "Astudio'r berthynas rhwng onglau a hydoedd yw trigonometreg. Mae ongl "
       "yn disgrifio cylchdro — pa mor bell y mae'n rhaid troi pelydryn o "
-      "amgylch ei bwynt terfyn. Mesurir ef mewn tair uned gyffredin: mewn "
-      "graddau (cylch llawn yw 360°), mewn radianau (cylch llawn yw 2π) ac "
+      'amgylch ei bwynt terfyn. Mesurir ef mewn tair uned gyffredin: mewn '
+      'graddau (cylch llawn yw 360°), mewn radianau (cylch llawn yw 2π) ac '
       "mewn gradianau neu gon (cylch llawn yw 400). Nid yw'r mesur a "
       "ddewiswch yn newid yr ongl ei hun — dim ond y rhif sy'n ei disgrifio. "
       "Mae'r cyfrifiannell yn newid rhyngddynt â'r fysell DRG.",
     ),
     _H('Sin, cosin, tangiad yn y triongl'),
     _P(
-      "Mewn triongl ongl sgwâr mae gan bob ongl lem θ ystyr benodol. Yr ochr "
+      'Mewn triongl ongl sgwâr mae gan bob ongl lem θ ystyr benodol. Yr ochr '
       "hiraf, gyferbyn â'r ongl sgwâr, yw'r hypotenws. Yr ochr gyferbyn â θ "
       "yw'r ochr gyferbyn, a'r un nesaf ati yw'r ochr gyfagos.",
     ),
     _P(
       "O'r tair ochr hyn ffurfir tair cymhareb sy'n gyson ar gyfer ongl "
-      "benodol — yn annibynnol ar faint y triongl: "
-      "sin = cyferbyn/hypotenws, cosin = cyfagos/hypotenws, "
+      'benodol — yn annibynnol ar faint y triongl: '
+      'sin = cyferbyn/hypotenws, cosin = cyfagos/hypotenws, '
       "tangiad = cyferbyn/cyfagos = sin/cos. Cilydd y tangiad yw'r cotangiad. "
       "Mae'r cofair Saesneg SOH-CAH-TOA yn crynhoi'r tair cyntaf.",
     ),
@@ -481,31 +484,31 @@ List<ManualChapter> _manualChaptersCy() => const [
       "Nid yw trionglau ond yn cwmpasu onglau rhwng 0° a 90°. Mae'r cylch "
       "uned — cylch â radiws 1 o amgylch y tarddbwynt — yn ehangu'r golwg i "
       "bob ongl. I bob ongl θ mae pwynt ar y cylch: gan gychwyn o'r pwynt "
-      "(1, 0) trowch yn wrthglocwedd drwy θ. Yna cosin yw cyfesuryn-x y "
-      "pwynt hwn a sin yw ei gyfesuryn-y.",
+      '(1, 0) trowch yn wrthglocwedd drwy θ. Yna cosin yw cyfesuryn-x y '
+      'pwynt hwn a sin yw ei gyfesuryn-y.',
     ),
     _P(
-      "Yn y modd hwn mae onglau uwchlaw 90° ac onglau negyddol hefyd yn cael "
+      'Yn y modd hwn mae onglau uwchlaw 90° ac onglau negyddol hefyd yn cael '
       "lle naturiol. Ar 180° mae'r pwynt yn (−1, 0): cos 180° = −1, "
       "sin 180° = 0. Ar 270° yn (0, −1). Mae'r tangiad yn parhau'n gymhareb "
-      "sin/cos ac yn cytuno â diffiniad y triongl.",
+      'sin/cos ac yn cytuno â diffiniad y triongl.',
     ),
     UnitCircleFigure(),
     _H('Pythagoras ar y cylch'),
     _P(
       "Gan fod gan y cylch uned radiws 1, mae pob pwynt arno'n bodloni "
-      "x² + y² = 1. Mewn nodiant trigonometrig: cos²θ + sin²θ = 1. Nid "
-      "fformiwla newydd mo hon ond theorem Pythagoras ar y cylch uned. "
-      "O hyn deillia sin²θ = 1 − cos²θ ar unwaith — sail llawer o "
-      "drawsffurfiadau.",
+      'x² + y² = 1. Mewn nodiant trigonometrig: cos²θ + sin²θ = 1. Nid '
+      'fformiwla newydd mo hon ond theorem Pythagoras ar y cylch uned. '
+      'O hyn deillia sin²θ = 1 − cos²θ ar unwaith — sail llawer o '
+      'drawsffurfiadau.',
     ),
     _H('Tonnau a chyfnodau'),
     _P(
-      "Ar ôl tro llawn rydych yn ôl yn y man cychwyn: mae sin a cosin yn "
-      "ailadrodd â chyfnod o 360° (neu 2π). Plotiwch sin θ dros yr ongl a "
+      'Ar ôl tro llawn rydych yn ôl yn y man cychwyn: mae sin a cosin yn '
+      'ailadrodd â chyfnod o 360° (neu 2π). Plotiwch sin θ dros yr ongl a '
       "daw'r don sin gyfarwydd i'r golwg, yn siglo rhwng −1 a +1; mae'r "
       "cosin yr un don, wedi'i symud 90° yn unig. Mae tonnau o'r fath yn "
-      "disgrifio sain, golau a cherrynt eiledol — pob dirgryniad.",
+      'disgrifio sain, golau a cherrynt eiledol — pob dirgryniad.',
     ),
     _Pre(
       'θ      sin θ    cos θ    tan θ\n'
@@ -518,12 +521,12 @@ List<ManualChapter> _manualChaptersCy() => const [
     SineWaveFigure(),
     _H('Y swyddogaethau gwrthdro'),
     _P(
-      "Weithiau fe wyddoch y gymhareb ac fe geisiwch yr ongl. Ar gyfer hynny "
+      'Weithiau fe wyddoch y gymhareb ac fe geisiwch yr ongl. Ar gyfer hynny '
       "mae'r swyddogaethau gwrthdro sin⁻¹, cos⁻¹, tan⁻¹ (y swyddogaethau "
-      "arc): o sin θ = 0.5 daw sin⁻¹(0.5) = 30°. Oherwydd bod sin a cosin yn "
-      "gyfnodol, mae onglau anfeidrol lawer yn perthyn i bob cymhareb; felly "
-      "dim ond un amrediad nodedig a ddychwel y swyddogaethau arc — sin⁻¹ a "
-      "tan⁻¹ o −90° i +90°, cos⁻¹ o 0° i 180°.",
+      'arc): o sin θ = 0.5 daw sin⁻¹(0.5) = 30°. Oherwydd bod sin a cosin yn '
+      'gyfnodol, mae onglau anfeidrol lawer yn perthyn i bob cymhareb; felly '
+      'dim ond un amrediad nodedig a ddychwel y swyddogaethau arc — sin⁻¹ a '
+      'tan⁻¹ o −90° i +90°, cos⁻¹ o 0° i 180°.',
     ),
     _H('Ar y cyfrifiannell hwn'),
     _P(
@@ -531,11 +534,11 @@ List<ManualChapter> _manualChaptersCy() => const [
       "yn agor cromfach ar unwaith wrth eu pwyso (sin( â'r cyrchwr y tu "
       "mewn). Mae ail dap ar yr un fysell yn newid i'r swyddogaeth wrthdro — "
       "mae dot euraidd yn dangos y bydd y tap nesaf yn gwrthdroi. Mae'r "
-      "fysell DRG yn newid y modd ongl (DEG → RAD → GRD), a ddangosir "
+      'fysell DRG yn newid y modd ongl (DEG → RAD → GRD), a ddangosir '
       "yn dde uchaf; yn y proffil 'Syml' gwneir hyn drwy'r Gosodiadau.",
     ),
     _P(
-      "Mae trap dwsinol i wylio amdano: teipir yr ongl yn y system rifau "
+      'Mae trap dwsinol i wylio amdano: teipir yr ongl yn y system rifau '
       "weithredol. Ym modd dwsinol, nid naw deg gradd yw '90' ond "
       "9·12 = 108. I gyfrifo sin(90°) teipiwch '76' (gan fod 7·12+6 = 90). "
       "Dyma'r gwerthoedd cyffredin:",
@@ -564,12 +567,12 @@ List<ManualChapter> _manualChaptersCy() => const [
       "Mae pob canlyniad trigonometrig yn dwyn '≈', oherwydd mae sin, cos a "
       "tan yn gyffredinol afresymol — hyd yn oed pan fo'r gwerth mor daclus â "
       "sin(90°) = 1. Nid yw tan(90°) wedi'i ddiffinio; mae'r cyfrifiannell yn "
-      "dangos rhif mawr iawn yno, oherwydd nid yw cos(90°) yn union sero o "
-      "safbwynt cyfrifiadurol.",
+      'dangos rhif mawr iawn yno, oherwydd nid yw cos(90°) yn union sero o '
+      'safbwynt cyfrifiadurol.',
     ),
     _H('Onglau ym môn deuddeg'),
     _P(
-      "Hyd yn oed mae gwerthoedd cylch llawn cyfarwydd yn edrych yn ddieithr "
+      'Hyd yn oed mae gwerthoedd cylch llawn cyfarwydd yn edrych yn ddieithr '
       "yn ddwsinol: ysgrifennir 360° yn '260' (2·144 + 6·12), 400 gradian yn "
       "'294'. Dim ond y radian sy'n osgoi'r cwestiwn — mae 2π yn gysonyn, "
       "yn annibynnol ar y system rifau; mae pwy bynnag sy'n gweithio yn RAD "
@@ -577,41 +580,41 @@ List<ManualChapter> _manualChaptersCy() => const [
     ),
     _P(
       "Mae'r ffaith fod y cylch llawn â 360 rhan yn cyd-fynd â deuddeg yn "
-      "dda: mae gan 360 nifer fawr iawn o ranyddion (dau ddwsin ohonynt), "
+      'dda: mae gan 360 nifer fawr iawn o ranyddion (dau ddwsin ohonynt), '
       "felly gellir rhannu'r cylch yn daclus yn hanner, traean, chwarter, "
       "chweched a mwy — a 12·30 = 360, un ddeuddegfed o'r cylch yw 30° yn "
-      "union. Fel bob amser: mae trigonometreg ei hun yn annibynnol ar y "
+      'union. Fel bob amser: mae trigonometreg ei hun yn annibynnol ar y '
       "system rifau. Mae sin(30°) yn ½, boed yr ongl yn '30' yn ddegol neu "
       "yn '26' yn ddwsinol. Dim ond ffigurau'r mewnbwn sy'n newid.",
     ),
   ]),
   ManualChapter('Storio a Galw yn ôl', [
     _P(
-      "Nid yw cyfrifiannell yn wirioneddol gyflym nes na fydd yn rhaid i chi "
+      'Nid yw cyfrifiannell yn wirioneddol gyflym nes na fydd yn rhaid i chi '
       "ail-deipio rhifau'n barhaus. Mae pedwar teclyn yn cymryd y gwaith hwn "
-      "oddi arnoch: y canlyniad olaf (Ans), cof â enw (STO/RCL), croniadur "
-      "(M+/M−) a thâp hanes y sesiwn. Nid ydynt yn gorgyffwrdd ond mae pob "
-      "un yn cwmpasu sefyllfa wahanol.",
+      'oddi arnoch: y canlyniad olaf (Ans), cof â enw (STO/RCL), croniadur '
+      '(M+/M−) a thâp hanes y sesiwn. Nid ydynt yn gorgyffwrdd ond mae pob '
+      'un yn cwmpasu sefyllfa wahanol.',
     ),
     _H('Y canlyniad olaf: Ans'),
     _P(
       "Ar ôl pob cyfrifiad mae'r cyfrifiannell yn cofio'r canlyniad o dan yr "
       "enw Ans. Os teipiwch ymlaen yn syth â gweithredydd — dyweder '× 2 =' "
-      "ar unwaith ar ôl canlyniad — defnyddir Ans yn awtomatig fel yr operand "
+      'ar unwaith ar ôl canlyniad — defnyddir Ans yn awtomatig fel yr operand '
       "cyntaf, heb gyffwrdd y fysell o gwbl. Dyma'r symudiad mwyaf cyffredin "
       "wrth gyfrifo mewn cadwyn: mae canlyniad un cam yn dawel yn dechrau'r "
-      "cam nesaf.",
+      'cam nesaf.',
     ),
     _P(
-      "Os oes angen y canlyniad olaf arnoch nid ar y dechrau ond yng nghanol "
-      "fformiwla newydd, mewnosodir ef yn benodol â Ans. Pwysig: mae Ans "
-      "bob amser yn dal y canlyniad cyflawn — gan gynnwys ffracsiwn cyfnodol, "
-      "nid dim ond y ffigurau gweladwy.",
+      'Os oes angen y canlyniad olaf arnoch nid ar y dechrau ond yng nghanol '
+      'fformiwla newydd, mewnosodir ef yn benodol â Ans. Pwysig: mae Ans '
+      'bob amser yn dal y canlyniad cyflawn — gan gynnwys ffracsiwn cyfnodol, '
+      'nid dim ond y ffigurau gweladwy.',
     ),
     _H('Y cof: STO, RCL, MC'),
     _P(
       "Mae gwendid i Ans: mae'r '=' nesaf yn ei drosysgrifo. I gadw gwerth "
-      "ar draws sawl cyfrifiad annibynnol, storiwch ef gyda STO yn y cof. "
+      'ar draws sawl cyfrifiad annibynnol, storiwch ef gyda STO yn y cof. '
       "Mae 'M' bach ar frig y sgrin wedyn yn dangos bod rhywbeth wedi'i "
       "storio. Mae RCL (galw'n ôl) yn mewnosod y gwerth a storiwyd yn ôl "
       "i'r mewnbwn yn safle'r cyrchwr — cymaint o weithiau ag a fynnwch. "
@@ -621,17 +624,17 @@ List<ManualChapter> _manualChaptersCy() => const [
       "Senario nodweddiadol: cyfrifwch radiws cylch a'i angen wedyn ar "
       "gyfer yr arwynebedd a'r cylchedd. Storiwyd y radiws unwaith gyda STO; "
       "mae'r ddwy fformiwla wedyn yn ei alw'n ôl yn annibynnol â RCL, heb "
-      "ei ail-deipio unwaith.",
+      'ei ail-deipio unwaith.',
     ),
     _H('Y croniadur: M+ ac M−'),
     _P(
-      "Weithiau nid am gadw un gwerth yr ydych ond am adeiladu cyfanswm "
-      "rhedegol — er enghraifft wrth adio llawer o eitemau. Ar gyfer hynny "
+      'Weithiau nid am gadw un gwerth yr ydych ond am adeiladu cyfanswm '
+      'rhedegol — er enghraifft wrth adio llawer o eitemau. Ar gyfer hynny '
       "mae M+ ac M−, ar gael drwy bwysiad hir ar STO. Mae M+ yn adio'r "
       "canlyniad olaf at y gwerth a storiwyd, mae M− yn ei dynnu. Mae'r cof "
       "yn tyfu neu'n crebachu â phob tro, heb i chi orfod gweld na nodi'r "
-      "is-gyfanswm eich hun. Mae RCL yn dangos y cyfanswm terfynol, mae MC "
-      "yn ailosod y croniadur i sero.",
+      'is-gyfanswm eich hun. Mae RCL yn dangos y cyfanswm terfynol, mae MC '
+      'yn ailosod y croniadur i sero.',
     ),
     MemoryFlowFigure(result: 'Canlyniad', store: 'Cof', input: 'Mewnbwn'),
     _P(
@@ -639,16 +642,16 @@ List<ManualChapter> _manualChaptersCy() => const [
       "i'r cof, mae RCL yn ei nôl oddi yno i'r mewnbwn. Mae Ans yn cymryd "
       "y llwybr byr yn uniongyrchol o'r canlyniad i'r mewnbwn, gan osgoi'r "
       "cof (torlinell). Mae M+/M− yn dolen y canlyniad yn ôl i'r cof ac yn "
-      "ei adio yno.",
+      'ei adio yno.',
     ),
     _H('Ans neu gof — pryd pa un?'),
     _P(
       "Mae'r dewis yn dilyn rheol syml. Defnyddiwch Ans pan fo angen y "
-      "canlyniad ar unwaith yn y cam nesaf — yn gyflym a heb baratoi. "
-      "Defnyddiwch y cof pan ddylai gwerth fod ar gael ar draws sawl "
+      'canlyniad ar unwaith yn y cam nesaf — yn gyflym a heb baratoi. '
+      'Defnyddiwch y cof pan ddylai gwerth fod ar gael ar draws sawl '
       "cyfrifiad ar wahân neu fod yn ddiogel rhag y '=' nesaf. Mae M+ ac M− "
       "un lefel uwchlaw: nid ar gyfer galw un gwerth yn ôl y'u bwriedir ond "
-      "ar gyfer adio llawer o ganlyniadau unigol yn gyfanswm.",
+      'ar gyfer adio llawer o ganlyniadau unigol yn gyfanswm.',
     ),
     _H('Wedi ei storio yn union — dim gwall talgrynnu'),
     _P(
@@ -663,8 +666,8 @@ List<ManualChapter> _manualChaptersCy() => const [
       "o gyfanrifau mympwyol fawr — heb dalgrynnu. A'r union ffracsiwn hwn "
       "sy'n mynd i'r cof: mae STO, RCL, Ans a'r croniadur yn cadw'r rhifiadur "
       "a'r enwadur yn llawn, nid dim ond y ffigurau gweladwy. Enghraifft: "
-      "mae 1 ÷ 7 yn gyfnodol yn ddwsinol (bloc 186A35). Storiwch y canlyniad "
-      "a lluoswch ef â 7 wedyn, a daw 1 yn union allan — oherwydd ni "
+      'mae 1 ÷ 7 yn gyfnodol yn ddwsinol (bloc 186A35). Storiwch y canlyniad '
+      'a lluoswch ef â 7 wedyn, a daw 1 yn union allan — oherwydd ni '
       "chariodd y cyfrifiannell ddim ond 1/7 erioed. Byddai dyfais sy'n "
       "storio dim ond y ffigurau a ddangosir yn cyrraedd '0.BBBB…'.",
     ),
@@ -676,24 +679,24 @@ List<ManualChapter> _manualChaptersCy() => const [
     ),
     _P(
       "Mae'r cyfrifiannell yn onest yn ei derfyn: ni all ganlyniadau afresymol "
-      "— gwreiddiau, logarithmau, trigonometreg — eu dal fel ffracsiwn. Maent "
+      '— gwreiddiau, logarithmau, trigonometreg — eu dal fel ffracsiwn. Maent '
       "yn dwyn '≈' ac yn cael eu storio fel brasamcan. Mae'r rheol yn hawdd "
       "i'w darllen: os yw '≈' o flaen y gwerth, brasamcan yw'r hyn a "
       "storiwyd; os yw'n absennol, mae'n union.",
     ),
-    _H("Tâp yr hanes"),
+    _H('Tâp yr hanes'),
     _P(
-      "I ddefnyddio cyfrifiad cynharach eto, swipiwch i lawr ar y sgrin. "
+      'I ddefnyddio cyfrifiad cynharach eto, swipiwch i lawr ar y sgrin. '
       "Mae hynny'n agor tâp hanes y sesiwn gyfredol — y cyfrifiad diweddaraf "
-      "ar y brig, hyd at ddeg ar hugain o gofnodion. Nid yw hyd yn oed AC "
-      "yn ei glirio; cedwir ef am y sesiwn gyfan. Mae tap ar gofnod yn dod "
+      'ar y brig, hyd at ddeg ar hugain o gofnodion. Nid yw hyd yn oed AC '
+      'yn ei glirio; cedwir ef am y sesiwn gyfan. Mae tap ar gofnod yn dod '
       "â'i werth canlyniad yn ôl i'r mewnbwn, yn union fel Ans — dim ond ar "
-      "gyfer unrhyw gam cynharach.",
+      'gyfer unrhyw gam cynharach.',
     ),
     HistoryBandFigure(swipe: 'sweipio', newCap: 'newydd', tap: 'tapio'),
     _P(
       "Nid storfa barhaol mo dâp yr hanes ond edrychiad yn ôl: mae'n "
-      "cadw edefyn sesiwn ac yn gadael i chi adfer gwerth a gyfrifwyd "
+      'cadw edefyn sesiwn ac yn gadael i chi adfer gwerth a gyfrifwyd '
       "ond na chafodd ei storio'n benodol.",
     ),
     _H('Ar y cyfrifiannell hwn'),
@@ -703,7 +706,7 @@ List<ManualChapter> _manualChaptersCy() => const [
       "yn cuddio y tu ôl i bwysiad hir ar STO — mae'r gornel fach yn y "
       "gornel dde isaf o'r fysell yn pwyntio ato; yn y naidlen dewiswch "
       "M+ neu M−. Yn y proffil 'Syml' nid oes panel estyniad; nid yw'r "
-      "swyddogaethau cof ar gael yno.",
+      'swyddogaethau cof ar gael yno.',
     ),
     _P('Tair enghraifft wedi eu gweithio (ym modd dwsinol):'),
     _Pre(
@@ -719,7 +722,7 @@ List<ManualChapter> _manualChaptersCy() => const [
       '  × 2 =          →  94   (Ans = 48 yn awtomatig)',
     ),
     _Pre(
-      "Adio eitemau â M+\n"
+      'Adio eitemau â M+\n'
       '  … MC                   clirio cof\n'
       '  5 =   … STO(dal) M+   →  cof 5\n'
       '  7 =   … STO(dal) M+   →  cof 10\n'
@@ -730,24 +733,24 @@ List<ManualChapter> _manualChaptersCy() => const [
       "I wirio yn ddegol: 5 + 7 + 3 = 15, a 15 yn ddwsinol yw '13' "
       "(1·12 + 3). Mae'r pedwar teclyn i gyd — Ans, cof, croniadur a thâp "
       "hanes — yn gweithio ar yr un union werth; pwy bynnag sy'n eu hadnabod "
-      "prin y mae angen iddo deipio rhif â llaw na chadw is-gyfanswm yn ei ben.",
+      'prin y mae angen iddo deipio rhif â llaw na chadw is-gyfanswm yn ei ben.',
     ),
   ]),
   ManualChapter('Swyddogaethau hyperbolig', [
     _P(
-      "Yn yr ysgol dysgir sin a cosin fel cyfesurynnau pwynt ar y cylch "
-      "uned. Llai adnabyddus, ond yr un mor sylfaenol, yw eu cymheiriad "
+      'Yn yr ysgol dysgir sin a cosin fel cyfesurynnau pwynt ar y cylch '
+      'uned. Llai adnabyddus, ond yr un mor sylfaenol, yw eu cymheiriad '
       "hyperbolig sinh a cosh. Maent yn codi pan amidir'r cylch â hyperbol "
       "— a'r allwedd iddynt yw'r ffwythiant esbonyddol eˣ.",
     ),
     _H("Y rhan ffwythiant eilrif a'r rhan ffwythiant odrif o eˣ"),
     _P(
-      "Gellir hollti pob ffwythiant yn ran ffwythiant eilrif (cymesur am echelin-y) a "
-      "rhan ffwythiant odrif (cymesuredd pwynt am y tarddbwynt). Ar gyfer eˣ gellir "
+      'Gellir hollti pob ffwythiant yn ran ffwythiant eilrif (cymesur am echelin-y) a '
+      'rhan ffwythiant odrif (cymesuredd pwynt am y tarddbwynt). Ar gyfer eˣ gellir '
       "ysgrifennu'r ddwy ran yn uniongyrchol: cosh yw'r rhan ffwythiant eilrif, sinh yw'r "
-      "rhan ffwythiant odrif. Adiwch hwy eto a daw eˣ yn ôl — oherwydd "
+      'rhan ffwythiant odrif. Adiwch hwy eto a daw eˣ yn ôl — oherwydd '
       "eˣ = cosh x + sinh x, ac e⁻ˣ = cosh x − sinh x. Nid mympwyol yw'r "
-      "deiliad hwn ond yr unig un posibl.",
+      'deiliad hwn ond yr unig un posibl.',
     ),
     _Pre(
       'sinh x = (eˣ − e⁻ˣ) / 2          arsinh x = ln(x + √(x²+1))\n'
@@ -758,14 +761,14 @@ List<ManualChapter> _manualChaptersCy() => const [
     _P(
       "tanh yw'r ilosfwyd, a coth yw ei gilydd (ac felly wedi'i ddiffinio "
       "dim ond ar gyfer x ≠ 0). Ar y dde mae'r gwrthdroeon, y ddown atynt "
-      "yn fuan.",
+      'yn fuan.',
     ),
     _H('Y hyperbol uned'),
     _P(
       "Ar y cylch uned mae pob pwynt (cos t, sin t) yn bodloni'r hafaliad "
-      "x² + y² = 1. Ar gyfer y swyddogaethau hyperbolig mae hunaniaeth bron "
-      "yr un fath, ond un hollbwysig wahanol, yn dal. Amnewid y diffiniadau "
-      "a chyfrifo gwahaniaeth y sgwariau, a bydd y termau cymysg yn canslo:",
+      'x² + y² = 1. Ar gyfer y swyddogaethau hyperbolig mae hunaniaeth bron '
+      'yr un fath, ond un hollbwysig wahanol, yn dal. Amnewid y diffiniadau '
+      'a chyfrifo gwahaniaeth y sgwariau, a bydd y termau cymysg yn canslo:',
     ),
     _Pre(
       'cosh²t − sinh²t\n'
@@ -783,34 +786,34 @@ List<ManualChapter> _manualChaptersCy() => const [
     _H('Y paramedr: arwynebedd, nid ongl'),
     _P(
       "Dyma'r gwahaniaeth dyfnaf â thrigonometreg. Ar y cylch mae'r "
-      "paramedr t yn ongl mewn radianau — ac ar yr un pryd hyd yr arc a "
+      'paramedr t yn ongl mewn radianau — ac ar yr un pryd hyd yr arc a '
       "dwywaith arwynebedd y sector; mae'r tair ystyr hyn yn digwydd cyd-"
       "daro yno. Ar yr hyperbol nid oes y fath ongl. Yr hyn sy'n aros yw'r "
-      "arwynebedd: t yw dwywaith arwynebedd y sector hyperbolig rhwng y "
+      'arwynebedd: t yw dwywaith arwynebedd y sector hyperbolig rhwng y '
       "tarddbwynt, y fertig (1, 0) a'r pwynt (cosh t, sinh t) — union yr "
-      "arwynebedd lliwio yn y ffigur uchod.",
+      'arwynebedd lliwio yn y ffigur uchod.',
     ),
     _P(
       "Oddi yno daw enw'r gwrthdroeon. Fe'u gelwir yn swyddogaethau arwynebedd "
       "— arsinh, arcosh, artanh — o'r Lladin 'area', arwynebedd. Mae'r "
       "'arcsinh' cyffredin ar rai dyfeisiau'n anghywir yn llym: mae'n "
       "trosglwyddo'r rhagddodiad arc i swyddogaeth lle nad oes arc o gwbl. "
-      "Mae arsinh(y) yn y gwerth paramedr t hwnnw lle mae sinh t = y — hynny "
-      "yw, arwynebedd, nid arc.",
+      'Mae arsinh(y) yn y gwerth paramedr t hwnnw lle mae sinh t = y — hynny '
+      'yw, arwynebedd, nid arc.',
     ),
     _H('Siâp y pedair gromlin'),
     _P(
       "Mae cosh yn drap cymesur am yr echelin sy'n agor i fyny â'i bwynt "
-      "isaf yn (0, 1), gan fod cosh 0 = 1; nid yw ei werth byth yn llai nag "
+      'isaf yn (0, 1), gan fod cosh 0 = 1; nid yw ei werth byth yn llai nag '
       "1. Mae sinh yn gymesur am y pwynt, yn rhedeg drwy'r tarddbwynt ac yn "
       "tyfu heb derfyn yn y ddau gyfeiriad. Ar gyfer x mawr mae'r ddau'n "
-      "agosáu at y gromlin eˣ/2.",
+      'agosáu at y gromlin eˣ/2.',
     ),
     _P(
       "Mae tanh yn gromlin ddirlawnder ar ffurf S: yn codi'n gyson, drwy'r "
-      "tarddbwynt, ac yn aros yn llym rhwng −1 a +1 — agosêir at y ffiniau "
+      'tarddbwynt, ac yn aros yn llym rhwng −1 a +1 — agosêir at y ffiniau '
       "hyn, ond ni chyrhaeddir hwy byth. Mae coth o'r diwedd yn ymddwyn fel "
-      "cilydd tanh, ond oherwydd bod sinh 0 = 0 mae ganddo bolion yn x = 0 "
+      'cilydd tanh, ond oherwydd bod sinh 0 = 0 mae ganddo bolion yn x = 0 '
       "ac mae'n aros y tu allan i [−1, 1].",
     ),
     HyperbolicCurvesFigure(),
@@ -819,54 +822,54 @@ List<ManualChapter> _manualChaptersCy() => const [
       "Mae'r ddau deulu wedi'u plethu o'r un defnydd: y ffwythiant esbonyddol. "
       "Mae fformiwla Euler yn ysgrifennu'r swyddogaethau crwn yn hollol gyffredin "
       "— cos t = (eⁱᵗ + e⁻ⁱᵗ)/2, sin t = (eⁱᵗ − e⁻ⁱᵗ)/(2i). Mae'r patrwm yr "
-      "un peth; dim ond bod y ffwythiant esbonyddol ar gyfer y swyddogaethau "
-      "crwn yn rhedeg ar yr echelin dychmygol (arg i·t), ac ar gyfer y rhai "
-      "hyperbolig ar yr echelin real (arg x). Os yw rhifau cymhlyg yn dal yn "
-      "anghyfarwydd, gallwch hepgor y syniad hwn — yr unig beth pwysig yw: "
-      "yr un ffwythiant yw yn y bôn.",
+      'un peth; dim ond bod y ffwythiant esbonyddol ar gyfer y swyddogaethau '
+      'crwn yn rhedeg ar yr echelin dychmygol (arg i·t), ac ar gyfer y rhai '
+      'hyperbolig ar yr echelin real (arg x). Os yw rhifau cymhlyg yn dal yn '
+      'anghyfarwydd, gallwch hepgor y syniad hwn — yr unig beth pwysig yw: '
+      'yr un ffwythiant yw yn y bôn.',
     ),
     _P(
       "Yn geometrig mae'r un adeiladwaith — pwynt ar gromlin, wedi'i "
-      "baramedradu gan ddwywaith arwynebedd y sector — ond unwaith ar y "
+      'baramedradu gan ddwywaith arwynebedd y sector — ond unwaith ar y '
       "cylch, unwaith ar yr hyperbol. O hyn deillia'r arwydd troëdig: "
-      "cos² + sin² = 1 yn erbyn cosh² − sinh² = 1. Amnewid arg dychmygol "
+      'cos² + sin² = 1 yn erbyn cosh² − sinh² = 1. Amnewid arg dychmygol '
       "a bydd y teuluoedd yn mynd yn uniongyrchol i'w gilydd: "
       "cos(i·x) = cosh x a sin(i·x) = i·sinh x. Felly mae'r swyddogaethau "
       "hyperbolig yn 'swyddogaethau trigonometrig ag arg dychmygol'.",
     ),
     _P(
-      "Mae theoremau adio hefyd yn rhedeg yn gyfochrog: "
-      "sinh(a+b) = sinh a·cosh b + cosh a·sinh b, yn union fel ar gyfer y sin. "
-      "Ar gyfer y cosin, fodd bynnag, mae arwydd yn troi — mae cos(a+b) â "
-      "minws, mae cosh(a+b) â phlws. Rheol Osborn yw hon: mae pob hunaniaeth "
-      "trigonometrig yn dod yn hyperbolig drwy amnewid sin→sinh, cos→cosh a "
+      'Mae theoremau adio hefyd yn rhedeg yn gyfochrog: '
+      'sinh(a+b) = sinh a·cosh b + cosh a·sinh b, yn union fel ar gyfer y sin. '
+      'Ar gyfer y cosin, fodd bynnag, mae arwydd yn troi — mae cos(a+b) â '
+      'minws, mae cosh(a+b) â phlws. Rheol Osborn yw hon: mae pob hunaniaeth '
+      'trigonometrig yn dod yn hyperbolig drwy amnewid sin→sinh, cos→cosh a '
       "throi'r arwydd ym mhobman lle mae lluoswm dau ffactor sin. Mae arwydd "
-      "anghywir bron bob amser yn union yn y fan honno.",
+      'anghywir bron bob amser yn union yn y fan honno.',
     ),
     _H('Cymwysiadau yn y byd'),
     _P(
       "Y mwyaf adnabyddus yw'r gadwynlin. Nid parabolig y ffurfio rhaff yn "
-      "hongian yn rhydd rhwng dau bwynt — aeth Galileo ei hun ar gyfeiliorn "
+      'hongian yn rhydd rhwng dau bwynt — aeth Galileo ei hun ar gyfeiliorn '
       "yma — ond y gromlin y = a·cosh(x/a). Gydag ogwydd bas mae'r ddau'n "
       "debyg; gydag un dwfn daw'r gwahaniaeth i'r amlwg: mae'r gadwynlin yn "
       "tyfu'n gyflymach nag unrhyw barabola. I'r gwrthwyneb — fel bwa cosh "
       "sy'n agor i lawr — mae'n disgrifio ffurf ddelfrydol bwa cynhaliol sy'n "
-      "trosglwyddo ei lwyth drwy wasgu yn unig.",
+      'trosglwyddo ei lwyth drwy wasgu yn unig.',
     ),
     CatenaryFigure(catenary: 'Cadwynlin', parabola: 'Parabola'),
     _P(
-      "Mae cwympo ag aer-wrthiant hefyd yma: os tyf y grym brecio â sgwâr y "
+      'Mae cwympo ag aer-wrthiant hefyd yma: os tyf y grym brecio â sgwâr y '
       "cyflymder, mae'r cyflymder yn dilyn cromlin tanh ac yn agosáu at y "
       "buanedd terfynol yn dawel, heb ei orfodi byth — dirlawnder tanh yw'r "
-      "ffiseg ei hun yma.",
+      'ffiseg ei hun yma.',
     ),
     _P(
-      "Yn y ddamcaniaeth berthydedd, yn olaf, nid yw cyflymderau ger "
+      'Yn y ddamcaniaeth berthydedd, yn olaf, nid yw cyflymderau ger '
       "cyflymder golau yn adio'n syml. Diffinniwch y 'buanrwydd' φ drwy "
       "v = c·tanh φ a daw'r fformiwla adio gymhleth yn syml eto: mae'r "
       "buanrwyddau'n adio'n gyffredin (φ = φ₁ + φ₂), yn union am fod gan "
       "tanh ei theorem adio. Yr hyn yw'r radian mewn geometreg wastad yw'r "
-      "buanrwydd mewn geometreg gofod-amser.",
+      'buanrwydd mewn geometreg gofod-amser.',
     ),
     _H('Ar y cyfrifiannell hwn'),
     _P(
@@ -875,14 +878,14 @@ List<ManualChapter> _manualChaptersCy() => const [
       "cromfach ar unwaith (sinh( â'r cyrchwr y tu mewn); os yw'r un cau ar "
       "goll, mae'r cyfrifiannell yn ei hychwanegu wrth '='. Mae ail dap ar yr "
       "un fysell yn newid i'r swyddogaeth arwynebedd (sinh ↔ arsinh ac yn y "
-      "blaen) — mae dot euraidd yn dangos y bydd y tap nesaf yn gwrthdroi.",
+      'blaen) — mae dot euraidd yn dangos y bydd y tap nesaf yn gwrthdroi.',
     ),
     _P(
       "Y gwahaniaeth pwysicaf rhag trigonometreg: nid ongl yw'r arg ond rhif "
-      "pur. Nid oes unrhyw effaith o gwbl gan y modd ongl (DEG/RAD/GRD) ar y "
-      "swyddogaethau hyperbolig — dim trosi graddau, dim trap ongl dwsinol fel "
+      'pur. Nid oes unrhyw effaith o gwbl gan y modd ongl (DEG/RAD/GRD) ar y '
+      'swyddogaethau hyperbolig — dim trosi graddau, dim trap ongl dwsinol fel '
       "gyda sin a cos. Mae sinh(2) yn golygu'r un peth ym mhob modd. Gan fod "
-      "y swyddogaethau hyn yn drawsgrisiol, mae eu canlyniadau bob amser yn dwyn "
+      'y swyddogaethau hyn yn drawsgrisiol, mae eu canlyniadau bob amser yn dwyn '
       "'≈'.",
     ),
     _P(
@@ -901,12 +904,12 @@ List<ManualChapter> _manualChaptersCy() => const [
     _P(
       "Gellir gwirio'r hunaniaeth sylfaenol yn uniongyrchol: mae cosh(2)² "
       "− sinh(2)² yn rhoi ≈1. Yn fathemategol mae'n union 1; mae'r gweddill "
-      "pwynt arnofio bach o dan y trothwy dangos, a bydd y cyfrifiannell yn "
-      "ei gloi ar yr 1 taclus.",
+      'pwynt arnofio bach o dan y trothwy dangos, a bydd y cyfrifiannell yn '
+      'ei gloi ar yr 1 taclus.',
     ),
     _P(
       "Y tu allan i'w parth diffiniad mae'r swyddogaethau'n adrodd gwall — "
-      "rhaid ailosod ag AC wedyn:",
+      'rhaid ailosod ag AC wedyn:',
     ),
     _Pre(
       'coth(0)       →  DIV BY ZERO\n'
@@ -915,7 +918,7 @@ List<ManualChapter> _manualChaptersCy() => const [
     ),
     _P(
       "Mae arsinh wedi'i ddiffinio ar gyfer pob rhif; mae arcosh yn gofyn "
-      "am x ≥ 1; mae artanh yn gofyn am |x| < 1; mae arcoth yn byw yn union "
+      'am x ≥ 1; mae artanh yn gofyn am |x| < 1; mae arcoth yn byw yn union '
       "y tu allan, yn |x| > 1. Pwy bynnag sy'n cadw hynny mewn cof, mae'n "
       "osgoi'r negeseuon gwall o'r dechrau.",
     ),
@@ -923,105 +926,105 @@ List<ManualChapter> _manualChaptersCy() => const [
   ManualChapter('Set 9 & 10', [
     _P(
       "Mae'r ddau banel olaf o'r maes estyniad yn bwndelu'r hyn sydd ei "
-      "angen ar gyfrifiannell gwyddonol ymhellach: cyfrif (ffactoriol a "
-      "cyfuniadeg), tri gweithredydd defnyddiol (gwerth absoliwt, cilydd, "
+      'angen ar gyfrifiannell gwyddonol ymhellach: cyfrif (ffactoriol a '
+      'cyfuniadeg), tri gweithredydd defnyddiol (gwerth absoliwt, cilydd, '
       "gweddill) a nodiant gwyddonol. Mae'r cyfan y tu ôl i'r fysell '…'.",
     ),
-    _H("Ffactoriol: porth i gyfrif"),
+    _H('Ffactoriol: porth i gyfrif'),
     _P(
-      "Lluoswm pob rhif o 1 i n yw ffactoriol cyfanrif n, ysgrifennir n!: "
+      'Lluoswm pob rhif o 1 i n yw ffactoriol cyfanrif n, ysgrifennir n!: '
       "n! = 1·2·3·…·n. Fel achos arbennig mae 0! = 1. Mae'r gwerthoedd "
-      "cyntaf yn ddiniwed — 3! = 6, 4! = 20, 5! = A0 (= 120 degol) — ond "
+      'cyntaf yn ddiniwed — 3! = 6, 4! = 20, 5! = A0 (= 120 degol) — ond '
       "wedyn mae'r dilyniant yn ffrwydro: mae 10! (ffactoriol deuddeg) eisoes "
-      "yn 114500000 ym môn deuddeg, bron hanner biliwn.",
+      'yn 114500000 ym môn deuddeg, bron hanner biliwn.',
     ),
     _P(
-      "I beth? Mae n! yn cyfrif trefniadau. Gellir eistedd pum gwestai mewn "
-      "rhes mewn 5! = A0 o ffyrdd: pum dewis ar gyfer y sedd gyntaf, pedwar "
-      "ar gyfer yr ail, tair ar gyfer y drydedd ac yn y blaen. Y ffactoriol "
+      'I beth? Mae n! yn cyfrif trefniadau. Gellir eistedd pum gwestai mewn '
+      'rhes mewn 5! = A0 o ffyrdd: pum dewis ar gyfer y sedd gyntaf, pedwar '
+      'ar gyfer yr ail, tair ar gyfer y drydedd ac yn y blaen. Y ffactoriol '
       "yw'r elfen adeiladu ar gyfer popeth sy'n dilyn. Ar y cyfrifiannell mae "
       "n! yn union — nid yw'r canlyniad yn dwyn '≈'.",
     ),
-    _H("Amrywiadau: dewis â threfn"),
+    _H('Amrywiadau: dewis â threfn'),
     _P(
-      "Yn aml nid ydych yn trefnu popeth ond yn dewis r o n beth — a mae "
-      "trefn yn bwysig. Ras ag wyth gyrrwr: faint o bodiwm (1af, 2il, 3ydd) "
+      'Yn aml nid ydych yn trefnu popeth ond yn dewis r o n beth — a mae '
+      'trefn yn bwysig. Ras ag wyth gyrrwr: faint o bodiwm (1af, 2il, 3ydd) '
       "sy'n bosibl? Wyth ar gyfer aur, saith ar gyfer arian, chwech ar gyfer "
-      "efydd: 8·7·6 = 240 (= 336 degol). Yn gyffredinol nPr (n amrywio r) "
-      "= n!/(n−r)!. Rhennir â (n−r)! oherwydd bod y ffactorau is yn cwympo.",
+      'efydd: 8·7·6 = 240 (= 336 degol). Yn gyffredinol nPr (n amrywio r) '
+      '= n!/(n−r)!. Rhennir â (n−r)! oherwydd bod y ffactorau is yn cwympo.',
     ),
-    _H("Cyfuniadau: dewis heb drefn"),
+    _H('Cyfuniadau: dewis heb drefn'),
     _P(
-      "Weithiau nid yw trefn yn berthnasol — mewn llaw cardiau, yn y loteri, "
+      'Weithiau nid yw trefn yn berthnasol — mewn llaw cardiau, yn y loteri, '
       "mewn ysgwyd llaw. nCr ('n dewis r') = n!/(r!·(n−r)!) yw nifer y "
       "detholion heb drefn. Mae'r cysylltiad yn syml: gellir trefnu pob "
-      "detholiad heb drefn o r beth ar r! o ffyrdd, felly nCr = nPr/r!. "
-      "Tair o chwech ar gyfer pwyllgor: 6 nCr 3 = 18 (= 20 degol). Mae "
-      "ysgwydau llaw mewn grŵp o n o bobl yn n nCr 2 — gyda phum person A "
-      "(= 10), gyda dwsin eisoes 56 (= 66 degol).",
+      'detholiad heb drefn o r beth ar r! o ffyrdd, felly nCr = nPr/r!. '
+      'Tair o chwech ar gyfer pwyllgor: 6 nCr 3 = 18 (= 20 degol). Mae '
+      'ysgwydau llaw mewn grŵp o n o bobl yn n nCr 2 — gyda phum person A '
+      '(= 10), gyda dwsin eisoes 56 (= 66 degol).',
     ),
     _P(
       "Manylyn i'r ddau hyn: mae nCr ac nPr wedi eu hadeiladu o ffactorialau "
       "pwynt arnofio a felly bob amser yn dwyn '≈', hyd yn oed pan fo'r "
-      "canlyniad — fel y mae bron bob amser — yn rhif cyfan. Yn y loteri rhif "
-      "(chwech o 49), er enghraifft, mae 49 nCr 6 yn rhoi ≈48245A0 — tua "
-      "phedair ar ddeg miliwn ar y nod o bosibiliadau am un tocyn.",
+      'canlyniad — fel y mae bron bob amser — yn rhif cyfan. Yn y loteri rhif '
+      '(chwech o 49), er enghraifft, mae 49 nCr 6 yn rhoi ≈48245A0 — tua '
+      'phedair ar ddeg miliwn ar y nod o bosibiliadau am un tocyn.',
     ),
-    _H("Triongl Pascal"),
+    _H('Triongl Pascal'),
     _P(
-      "Trefnwch werthoedd nCr fesul rhes ac mae patrwm yn ymddangos: yn rhes "
-      "n mae n nCr 0, n nCr 1, …, n nCr n, un ar ôl y llall. Swm y ddau "
+      'Trefnwch werthoedd nCr fesul rhes ac mae patrwm yn ymddangos: yn rhes '
+      'n mae n nCr 0, n nCr 1, …, n nCr n, un ar ôl y llall. Swm y ddau '
       "uwch ei ben yw pob rhif — felly mae'r triongl yn tyfu heb ffactorialau "
       "o gwbl. Mae'r ymylon i gyd yn unedau, ac mae'n gymesur "
-      "(n nCr r = n nCr (n−r)).",
+      '(n nCr r = n nCr (n−r)).',
     ),
-    PascalTriangleFigure(title: "Triongl Pascal"),
+    PascalTriangleFigure(title: 'Triongl Pascal'),
     _P(
       "Ym môn deuddeg mae'r triongl yn edrych bron yr un fath â'r arfer — "
       "dim ond yn rhes 5 y mae 'A' yn ymddangos yn lle deg. Yr un rhifau, "
-      "gyda llaw, yw cyfernodau (a+b)ⁿ: o res 4 (1, 4, 6, 4, 1) darllenon "
-      "ni (a+b)⁴ = a⁴ + 4a³b + 6a²b² + 4ab³ + b⁴ yn uniongyrchol. Mae hyn "
-      "yn cysylltu cyfuniadeg ac algebra mewn un darlun.",
+      'gyda llaw, yw cyfernodau (a+b)ⁿ: o res 4 (1, 4, 6, 4, 1) darllenon '
+      'ni (a+b)⁴ = a⁴ + 4a³b + 6a²b² + 4ab³ + b⁴ yn uniongyrchol. Mae hyn '
+      'yn cysylltu cyfuniadeg ac algebra mewn un darlun.',
     ),
-    _H("Gwerth absoliwt a chilydd"),
+    _H('Gwerth absoliwt a chilydd'),
     _P(
       "Pellter rhif o sero yw'r gwerth absoliwt |x| — mae'r arwydd yn cael "
       "ei daflu, |−7| = 7. Manylyn mewnbwn: mae'r gweithredwyr ôl-dreiglad "
       "(|x|, n!, 1/x) yn rhwymo'n dynnach na minws blaenllaw. Mae '−5' ac "
       "wedyn |x| felly'n rhoi −(|5|) = −5; os am werth absoliwt y rhif "
-      "negatif, defnyddiwch gromfachau: mae (−5) ac wedyn |x| yn rhoi 5.",
+      'negatif, defnyddiwch gromfachau: mae (−5) ac wedyn |x| yn rhoi 5.',
     ),
     _P(
       "Yr unig bartner lluosog yw'r cilydd 1/x: mae x · (1/x) = 1, a bydd "
       "y cyfrifiannell yn ei gadw'n union fel ffracsiwn. Mae dwsinol yn "
-      "dangos hyn yn arbennig o daclus — mae 1/4 yn 0.3 glân (tair deuddegfed "
+      'dangos hyn yn arbennig o daclus — mae 1/4 yn 0.3 glân (tair deuddegfed '
       "yw chwarter) a 1/3 yn 0.4, lle mae môn deg eisoes yn rhedeg i'r "
       "0.333… cyfnodol. Nid yw cilydd sero wedi'i ddiffinio.",
     ),
-    _H("Modwlo: gweddillion a chylchoedd"),
+    _H('Modwlo: gweddillion a chylchoedd'),
     _P(
       "Saith wedi'i rannu â thri yw dau, gweddill un — a dyma'n union yr hyn "
       "y mae '7 mod 3 = 1' yn ei roi. Y darlun mwyaf amlwg yw'r cloc: ar ôl "
       "deuddeg mae'r cyfrif yn ailddechrau, '14:00' yw '2 y prynhawn', am "
       "fod 14 mod 12 = 2. Mae'r cloc yn cyfrifo ym môn deuddeg — dim "
-      "cyd-ddigwyddiad.",
+      'cyd-ddigwyddiad.',
     ),
     ModuloClockFigure(
       title: 'Modwlo — rhifeg cloc',
-      wrap: "amlapio",
+      wrap: 'amlapio',
       note: '(= 17 deg., 17 mod 12 = 5)',
     ),
     _P(
       "Modwlo yw'r teclyn naturiol ar gyfer rhannadwyedd: a mod b = 0 yn "
       "golygu'n union fod b yn rhannu a. Mae dwsinol yn rhoi miniogedd "
-      "arbennig i hyn, oherwydd mae gan ddeuddeg nifer anghyffredin o "
-      "ranyddion — 1, 2, 3, 4, 6 a 12, yn erbyn dim ond 1, 2, 5, 10 ar "
-      "gyfer deg. Yn aml gellir darllen rhannadwyedd â dau, tair, pedwar neu "
-      "chwech oddi wrth yr olaf ffigurau yn ddwsinol.",
+      'arbennig i hyn, oherwydd mae gan ddeuddeg nifer anghyffredin o '
+      'ranyddion — 1, 2, 3, 4, 6 a 12, yn erbyn dim ond 1, 2, 5, 10 ar '
+      'gyfer deg. Yn aml gellir darllen rhannadwyedd â dau, tair, pedwar neu '
+      'chwech oddi wrth yr olaf ffigurau yn ddwsinol.',
     ),
-    _H("Nodiant gwyddonol mewn pwerau deuddeg"),
+    _H('Nodiant gwyddonol mewn pwerau deuddeg'),
     _P(
-      "Ysgrifennir rhifau mawr neu fach iawn yn gryno fel mantisa lluoswm "
+      'Ysgrifennir rhifau mawr neu fach iawn yn gryno fel mantisa lluoswm '
       "pŵer y sylfaen. Yn ddegol mae '3 EXP 8' yn golygu'r gwerth 3 × 10⁸. "
       "Mae'r cyfrifiannell hwn yn cario'r egwyddor drwodd yn gyson ym môn "
       "deuddeg: ym modd dwsinol nid a × 10ᵇ yw ystyr 'a EXP b' ond a × 12ᵇ. "
@@ -1033,17 +1036,17 @@ List<ManualChapter> _manualChaptersCy() => const [
       decLabel: 'Degol.',
     ),
     _P(
-      "Mae gan y pwerau hyn enwau eu hunain hyd yn oed: 12¹ = dwsin, "
+      'Mae gan y pwerau hyn enwau eu hunain hyd yn oed: 12¹ = dwsin, '
       "12² = 144 = gros, 12³ = 1728 = gros mawr. Yn ddwsinol mae'r rhain yn "
       "union yn y lleoedd crwn 10, 100, 1000. Felly mae '1 EXP 2' yn rhoi'r "
       "gwerth 100 (= 144 degol) a '1 EXP 3' y gwerth 1000 (= 1728). Ar gyfer "
       "esbonyddion cyfanrif mae'r trac union yn cyfrifo; ym modd degol mae "
-      "EXP yn cyfrif mewn pwerau deg eto.",
+      'EXP yn cyfrif mewn pwerau deg eto.',
     ),
-    _H("Modd ongl a chau"),
+    _H('Modd ongl a chau'),
     _P(
-      "Mae Set 10 hefyd yn dal DRG a Close. Mae DRG yn cylchu modd ongl "
-      "(DEG → RAD → GRD) ar gyfer y swyddogaethau trigonometrig — trafodir "
+      'Mae Set 10 hefyd yn dal DRG a Close. Mae DRG yn cylchu modd ongl '
+      '(DEG → RAD → GRD) ar gyfer y swyddogaethau trigonometrig — trafodir '
       "yn fanwl ym mhennod trigonometreg; yn y proffil 'Syml' gosodid ef "
       "drwy'r Gosodiadau. Mae Close yn plygu'r panel estyniad yn ôl i mewn, "
       "cyfatebol i'r fysell '…'. Mae'r cyn-switsh Doz/Dez wedi symud o'r "
@@ -1054,7 +1057,7 @@ List<ManualChapter> _manualChaptersCy() => const [
       "Cyrchir yr holl fysellau hyn drwy'r panel estyniad '…' (yn y proffil "
       "'Syml' mae Set 9 a 10 wedi'u cuddio). Mae n!, |x| ac 1/x yn gweithredu "
       "ôl-dreiglad — yn gyntaf y rhif, yna'r fysell; mae mod, nCr ac nPr yn "
-      "ddeuaidd (a mod b). Mae pwysiad hir ar n! yn agor y naidlen â nCr ac "
+      'ddeuaidd (a mod b). Mae pwysiad hir ar n! yn agor y naidlen â nCr ac '
       "nPr; mae'r gornel fach yn y gornel dde isaf o'r fysell yn pwyntio ato.",
     ),
     _P('Enghreifftiau wedi eu gweithio (ym modd dwsinol):'),
@@ -1080,7 +1083,7 @@ List<ManualChapter> _manualChaptersCy() => const [
     ),
     _P(
       "Gyda hynny mae'r blwch offer yn gyflawn: o'r pwysiad ffigur syml yn y "
-      "defnydd sylfaenol at cyfuniadeg, modwlo a nodiant maint-graddfa "
+      'defnydd sylfaenol at cyfuniadeg, modwlo a nodiant maint-graddfa '
       "dwsinol, mae'r cyfrifiannell yn cyfrifo'n union lle gall, ac yn onest "
       "â '≈' lle mai brasamcan yn unig sy'n bosibl.",
     ),
@@ -1098,13 +1101,13 @@ List<ManualChapter> _converterManualChaptersCy() => const [
       "Y tu ôl i'r brif gyfrifiannell mae trawsnewidydd unedau cyflawn: "
       "mae'n trosi hydoedd, pwysau, amserau, tymereddau a dwsin o "
       "gategorïau eraill rhwng y system fetrig a'r system imperial — "
-      "mewn ffigurau deuddegol neu ddegol, yn ôl eich dewis.",
+      'mewn ffigurau deuddegol neu ddegol, yn ôl eich dewis.',
     ),
-    _H("Newid yn ôl ac ymlaen"),
+    _H('Newid yn ôl ac ymlaen'),
     _P(
       "Sweipiwch i'r chwith ar y brif gyfrifiannell, ac fe "
       "ymddengys y trawsnewidydd unedau. Sweipiwch i'r dde ar y "
-      "trawsnewidydd, ac rydych yn ôl. Wrth newid, mae tri dot bach "
+      'trawsnewidydd, ac rydych yn ôl. Wrth newid, mae tri dot bach '
       "gydag enw'r dudalen yn ymddangos am ennyd ar y gwaelod — mae'r "
       "dot golau yn dangos ble'r ydych.",
     ),
@@ -1115,66 +1118,66 @@ List<ManualChapter> _converterManualChaptersCy() => const [
     ),
   ]),
   ManualChapter('Categori, rhif, uned', [
-    _P("Tri thap yw trosiad: dewis categori, teipio rhif, tapio uned."),
-    _H("Y categori"),
+    _P('Tri thap yw trosiad: dewis categori, teipio rhif, tapio uned.'),
+    _H('Y categori'),
     _P(
       "Mae'r ddwy golofn fysellau ar y dde yn dangos y categorïau (Hyd, "
-      "Pwysau, Amser, …; rhagor yn y panel estynedig \"…\"). Mae tap ar "
+      'Pwysau, Amser, …; rhagor yn y panel estynedig "…"). Mae tap ar '
       "gategori yn agor ei ysgol unedau — mae'r bysellau o amgylch y "
-      "categori ag ymyl aur bellach yn dangos ei unedau. Mae ail dap "
+      'categori ag ymyl aur bellach yn dangos ei unedau. Mae ail dap '
       "yn cau'r ysgol eto.",
     ),
-    _H("Rhif ac uned"),
+    _H('Rhif ac uned'),
     _P(
-      "Teipiwch rif ac yna bysell uned: mae \"144\" ac \"ft\" yn rhoi "
-      "144 troedfedd. Mae llinell y canlyniad yn dangos yr un maint ar "
+      'Teipiwch rif ac yna bysell uned: mae "144" ac "ft" yn rhoi '
+      '144 troedfedd. Mae llinell y canlyniad yn dangos yr un maint ar '
       "unwaith mewn uned arall, a'r gromfach gyrliog wrth ei hymyl y "
-      "gwerth yn y system arall.",
+      'gwerth yn y system arall.',
     ),
-    _H("Y fysell ="),
+    _H('Y fysell ='),
     _P(
-      "Mae pob gwasgiad ar = yn dangos uned nesaf yr ysgol — felly "
+      'Mae pob gwasgiad ar = yn dangos uned nesaf yr ysgol — felly '
       "rydych yn teithio drwy holl ffurfiau'r un maint. Yn y byd "
       "imperial, daw'r nodiant cymysg ar y diwedd, megis "
       "\"1 yd 2 ft 3 in\", cyn i'r cylch ddechrau eto.",
     ),
     _P(
-      "Os newidiwch i gategori arall, caiff y termau gorffenedig eu "
+      'Os newidiwch i gategori arall, caiff y termau gorffenedig eu '
       "taflu — ond erys rhif sydd eisoes wedi'i deipio, felly gallwch "
       "ddewis y rhif yn gyntaf ac yna'r categori.",
     ),
   ]),
   ManualChapter("Metrig, imperial a'r lliwiau", [
-    _H("Y ddwy fysell gron"),
+    _H('Y ddwy fysell gron'),
     _P(
       "I'r chwith ac i'r dde o'r fysell = eistedda \"met\" (gwyrdd) ac "
       "\"imp\" (fioled). Maent yn newid rhwng y system fetrig a'r "
-      "system imperial — ac erys y gwerth yn ffisegol yr un fath: daw "
+      'system imperial — ac erys y gwerth yn ffisegol yr un fath: daw '
       "144 ft yn 43.89 m, nid yn 144 m. Mae'r ochr weithredol yn "
-      "gwisgo cylch yn ei lliw.",
+      'gwisgo cylch yn ei lliw.',
     ),
-    _H("Y system liwiau"),
+    _H('Y system liwiau'),
     _P(
-      "Mae gwyrdd ym mhobman yn yr ap yn sefyll am fyd y deg: unedau "
-      "metrig a ffigurau degol. Mae fioled yn sefyll am fyd y deuddeg: "
-      "unedau imperial a ffigurau deuddegol. Ymddengys symbolau unedau "
-      "fel \"m\" neu \"ft\" yn lliw eu system, yr arwydd DOZ/DEZ ar y "
+      'Mae gwyrdd ym mhobman yn yr ap yn sefyll am fyd y deg: unedau '
+      'metrig a ffigurau degol. Mae fioled yn sefyll am fyd y deuddeg: '
+      'unedau imperial a ffigurau deuddegol. Ymddengys symbolau unedau '
+      'fel "m" neu "ft" yn lliw eu system, yr arwydd DOZ/DEZ ar y '
       "gwaelod ar y dde yn lliw ei fôn — ac mae'r gromfach gyrliog bob "
       "amser yn disgleirio yn lliw y byd y mae'n ei ddangos.",
     ),
-    _H("Deuddegol neu ddegol"),
+    _H('Deuddegol neu ddegol'),
     _P(
-      "Mae bôn y ffigurau yn annibynnol ar y system unedau ac yn "
+      'Mae bôn y ffigurau yn annibynnol ar y system unedau ac yn '
       "berthnasol i'r ddwy gyfrifiannell gyda'i gilydd. Newidiwch ef "
-      "dan y Gosodiadau → System rifau — hyd yn oed yng nghanol trosiad; "
-      "erys y gwerthoedd. Felly gallwch ddarllen unedau metrig yn "
-      "ddeuddegol, neu rai imperial yn ddegol.",
+      'dan y Gosodiadau → System rifau — hyd yn oed yng nghanol trosiad; '
+      'erys y gwerthoedd. Felly gallwch ddarllen unedau metrig yn '
+      'ddeuddegol, neu rai imperial yn ddegol.',
     ),
   ]),
   ManualChapter('Sawl term: + a −', [
     _P(
-      "O fewn categori gallwch gadwyno meintiau: mae \"5\" \"ft\" \"3\" "
-      "\"in\" yn rhoi 5 troedfedd plws 3 modfedd. Erys y plws yn "
+      'O fewn categori gallwch gadwyno meintiau: mae "5" "ft" "3" '
+      '"in" yn rhoi 5 troedfedd plws 3 modfedd. Erys y plws yn '
       "anweledig tra bo'r unedau'n wahanol; gydag unedau cyfartal "
       "(\"3 h + 2 h\") fe'i dangosir.",
     ),
@@ -1184,56 +1187,56 @@ List<ManualChapter> _converterManualChaptersCy() => const [
       "bob amser yn weladwy, ac mae'r fysell − yn gwisgo ffrâm aur tra "
       "bo'n barod.",
     ),
-    _H("Cywiro"),
+    _H('Cywiro'),
     _P(
-      "Tapiwch yn llinell y mewnbwn i osod y cyrchwr coch — yng "
-      "nghanol rhif neu rhwng dau derm. Ymddengys ffigurau wrth y "
+      'Tapiwch yn llinell y mewnbwn i osod y cyrchwr coch — yng '
+      'nghanol rhif neu rhwng dau derm. Ymddengys ffigurau wrth y '
       "cyrchwr; mae Del yn dileu'r cymeriad o'i flaen; os saif y "
       "cyrchwr ar ffin term, mae Del yn tynnu'r term cyfan o'i flaen. "
-      "Mae AC yn clirio popeth.",
+      'Mae AC yn clirio popeth.',
     ),
   ]),
   ManualChapter('Cyfrifo yn y mewnbwn: × ÷ ⊕ ^ √ ㏒', [
     _P(
-      "Caiff y rhif a deipiwyd fod yn gyfrifiad bach ei hun: mae "
-      "\"3 × 2\" ac yna \"ft\" yn rhoi 6 troedfedd. Gwerthusir yn llym "
+      'Caiff y rhif a deipiwyd fod yn gyfrifiad bach ei hun: mae '
+      '"3 × 2" ac yna "ft" yn rhoi 6 troedfedd. Gwerthusir yn llym '
       "o'r chwith i'r dde, wrth dapio'r uned.",
     ),
     _P(
-      "Os gwasgwch weithredydd tra bo mynegiad gorffenedig eisoes yn "
+      'Os gwasgwch weithredydd tra bo mynegiad gorffenedig eisoes yn '
       "sefyll, caiff yn gyntaf ei droi'n ffigurau golygadwy — y "
-      "cyfanswm yn yr uned a ddefnyddiwyd ddiwethaf. Felly daw "
+      'cyfanswm yn yr uned a ddefnyddiwyd ddiwethaf. Felly daw '
       "\"5 ft 3 in\" ac \"×\" yn rhif wedi'i luosi â …, a orffennwch "
-      "gyda \"2\" ac uned.",
+      'gyda "2" ac uned.',
     ),
-    _H("Y gweithredwyr arbennig"),
+    _H('Y gweithredwyr arbennig'),
     _P(
       "Gyda'r gwraidd a'r logarithm, saif y radd neu'r bôn ar y "
-      "chwith: \"2 √ 9\" yw gwraidd sgwâr 9, sef 3; \"2 ㏒ 8\" yw "
+      'chwith: "2 √ 9" yw gwraidd sgwâr 9, sef 3; "2 ㏒ 8" yw '
       "logarithm 8 i'r bôn 2, sef 3. Mae'r ⊕ yn ffurfio'r swm paralel "
       "a·b/(a+b), sy'n gyfarwydd o wrthyddion paralel.",
     ),
     _P(
       "Caiff pob segment o'r cyfrifiad gario ei bwynt degol ei hun "
       "(\"1.6 × 0.6\"). Wrth newid bôn y ffigurau, caiff holl rifau'r "
-      "cyfrifiad eu trosi fesul un.",
+      'cyfrifiad eu trosi fesul un.',
     ),
   ]),
   ManualChapter("Cof, cysonion a'r bont", [
-    _H("Y cof"),
+    _H('Y cof'),
     _P(
-      "Yn y panel estynedig \"…\" mae STO, RCL ac MC: mae STO yn "
+      'Yn y panel estynedig "…" mae STO, RCL ac MC: mae STO yn '
       "cofio rhif llinell y canlyniad — neu, os nad oes uned wedi'i "
-      "dewis eto, y mewnbwn a deipiwyd. Mae RCL yn mewnosod y gwerth a "
-      "gofiwyd eto, ac MC yn ei glirio. Os yw RCL ac MC yn llwyd, "
+      'dewis eto, y mewnbwn a deipiwyd. Mae RCL yn mewnosod y gwerth a '
+      'gofiwyd eto, ac MC yn ei glirio. Os yw RCL ac MC yn llwyd, '
       "mae'r cof yn wag.",
     ),
-    _H("Y cysonion"),
+    _H('Y cysonion'),
     _P(
       "Mae π, e, φ a √2 yn gosod eu gwerth fel ffigurau yn lle'r rhif "
-      "wrth y cyrchwr — defnyddiol ar gyfer cylcheddau a chymarebau: "
-      "mae \"3\" \"×\" \"π\" \"ft\" yn rhoi cylchedd cylch â diamedr o "
-      "3 troedfedd.",
+      'wrth y cyrchwr — defnyddiol ar gyfer cylcheddau a chymarebau: '
+      'mae "3" "×" "π" "ft" yn rhoi cylchedd cylch â diamedr o '
+      '3 troedfedd.',
     ),
     _H("Y bont i'r brif gyfrifiannell"),
     _P(
@@ -1241,12 +1244,12 @@ List<ManualChapter> _converterManualChaptersCy() => const [
       "gyfrifiannell i'r mewnbwn — cyfrifwch rywbeth yno, sweipiwch "
       "draw, a rhowch uned i'r gwerth. I'r gwrthwyneb, mae'r fysell "
       "CONV ym mhanel estynedig y brif gyfrifiannell yn cyrchu'r rhif "
-      "o linell canlyniad y trawsnewidydd unedau. Mae gwerthoedd yn "
-      "teithio fel rhif ac yn ymddangos yn awtomatig ym môn yr ochr "
-      "darged. Os nad oes dim yn y trawsnewidydd unedau ar hyn o "
-      "bryd, mae CONV yn troi at ganlyniad y gyfrifiannell gwerth; "
-      "mae pwysiad hir ar CONV hefyd yn ei gynnig yn uniongyrchol "
-      "fel VAL.",
+      'o linell canlyniad y trawsnewidydd unedau. Mae gwerthoedd yn '
+      'teithio fel rhif ac yn ymddangos yn awtomatig ym môn yr ochr '
+      'darged. Os nad oes dim yn y trawsnewidydd unedau ar hyn o '
+      'bryd, mae CONV yn troi at ganlyniad y gyfrifiannell gwerth; '
+      'mae pwysiad hir ar CONV hefyd yn ei gynnig yn uniongyrchol '
+      'fel VAL.',
     ),
   ]),
 ];
@@ -1254,24 +1257,24 @@ List<ManualChapter> _converterManualChaptersCy() => const [
 List<ManualChapter> _assetManualChaptersCy() => const [
   ManualChapter('Y drydedd gyfrifiannell', [
     _P(
-      'Y tu ôl i\'r trawsnewidydd unedau mae trydedd gyfrifiannell: y '
-      'trawsnewidydd gwerth. Mae\'n trosi pwysau metelau gwerthfawr a '
+      "Y tu ôl i'r trawsnewidydd unedau mae trydedd gyfrifiannell: y "
+      "trawsnewidydd gwerth. Mae'n trosi pwysau metelau gwerthfawr a "
       'darnau arian arianyddau yn union, yn amcangyfrif eu gwerth mewn '
-      'arian arweiniol, ac yn cymharu sut y mae\'r gwerth hwnnw wedi dal '
+      "arian arweiniol, ac yn cymharu sut y mae'r gwerth hwnnw wedi dal "
       'ei dir dros y canrifoedd.',
     ),
     _H('Yn ôl ac ymlaen'),
     _P(
-      'Sweipiwch ddwywaith i\'r chwith ar y brif gyfrifiannell — heibio '
-      'i\'r trawsnewidydd unedau — ac fe ymddengys y trawsnewidydd '
-      'gwerth. Mae sweipio i\'r dde yn eich arwain yn ôl gam wrth gam. '
-      'Mae\'r dotiau bach gydag enw\'r dudalen wrth newid yn dangos eto '
-      'ble\'r ydych; y dot golau yw\'r dudalen weithredol.',
+      "Sweipiwch ddwywaith i'r chwith ar y brif gyfrifiannell — heibio "
+      "i'r trawsnewidydd unedau — ac fe ymddengys y trawsnewidydd "
+      "gwerth. Mae sweipio i'r dde yn eich arwain yn ôl gam wrth gam. "
+      "Mae'r dotiau bach gydag enw'r dudalen wrth newid yn dangos eto "
+      "ble'r ydych; y dot golau yw'r dudalen weithredol.",
     ),
     _P(
-      'Fel y cyfrifianellau eraill, mae\'r trawsnewidydd gwerth yn cadw '
-      'ei fewnbwn wrth newid tudalen. Mae\'r olwg yr un fath â\'r '
-      'trawsnewidydd unedau — dim ond y colofnau bysellau ar y dde sy\'n '
+      "Fel y cyfrifianellau eraill, mae'r trawsnewidydd gwerth yn cadw "
+      "ei fewnbwn wrth newid tudalen. Mae'r olwg yr un fath â'r "
+      "trawsnewidydd unedau — dim ond y colofnau bysellau ar y dde sy'n "
       'arwain un lefel yn ddyfnach.',
     ),
   ]),
@@ -1279,7 +1282,7 @@ List<ManualChapter> _assetManualChaptersCy() => const [
     _P(
       'Tra bod y trawsnewidydd unedau yn adnabod dwy lefel (categori ac '
       'uned), mae gan y trawsnewidydd gwerth dair: dosbarth, math ac '
-      'uned. Rydych yn teipio drwy drosiad o\'r brig i\'r gwaelod.',
+      "uned. Rydych yn teipio drwy drosiad o'r brig i'r gwaelod.",
     ),
     _H('Y tair lefel'),
     _P(
@@ -1291,19 +1294,19 @@ List<ManualChapter> _assetManualChaptersCy() => const [
     ),
     _H('Yn ôl un lefel'),
     _P(
-      'Mae\'r dosbarth neu\'r math a ddewiswyd yn aros ar y brig yn y '
+      "Mae'r dosbarth neu'r math a ddewiswyd yn aros ar y brig yn y "
       'golofn dde — ag ymyl aur — ac yn gweithredu fel naid yn ôl: mae '
       'tap arno yn eich arwain un lefel yn uwch. Felly nid oes dim yn '
-      'neidio yn ôl ac ymlaen, ac rydych bob amser yn gweld ymhle\'r '
+      "neidio yn ôl ac ymlaen, ac rydych bob amser yn gweld ymhle'r "
       'ydych ar hyn o bryd.',
     ),
     _H('Y fysell ='),
     _P(
       'Fel yn y trawsnewidydd unedau, mae pob gwasgiad ar = yn dangos yr '
-      'un maint yn yr uned nesaf; gyda phwysau troy, daw\'r nodiant '
+      "un maint yn yr uned nesaf; gyda phwysau troy, daw'r nodiant "
       'cymysg ar y diwedd (megis „1 lb t 2 oz t 3 dwt"). Mae newid '
-      'dosbarth neu fath yn taflu\'r termau gorffenedig, ond erys rhif '
-      'sydd eisoes wedi\'i deipio.',
+      "dosbarth neu fath yn taflu'r termau gorffenedig, ond erys rhif "
+      "sydd eisoes wedi'i deipio.",
     ),
   ]),
   ManualChapter('Metrig ac imperial ar yr un pryd', [
@@ -1312,66 +1315,66 @@ List<ManualChapter> _assetManualChaptersCy() => const [
       'Nid oes gan y trawsnewidydd gwerth fysellau met/imp. Cyn gynted ag '
       'y tapiwch i mewn i fath o fetel, saif y ddwy system yno ar yr un '
       'pryd: yr unedau troy imperial (gr, dwt, oz t, lb t) mewn un '
-      'golofn, y rhai metrig (g, kg) yn y llall. Rydych yn tapio\'r un a '
-      'ddymunwch yn syml — mae\'r byd gweithredol yn dilyn yr uned y bu i '
+      "golofn, y rhai metrig (g, kg) yn y llall. Rydych yn tapio'r un a "
+      "ddymunwch yn syml — mae'r byd gweithredol yn dilyn yr uned y bu i "
       'chi ei mewnbynnu ddiwethaf.',
     ),
     _H('Y lliwiau'),
     _P(
-      'Mae\'r cod lliw yr un fath ag yn y trawsnewidydd unedau: mae '
+      "Mae'r cod lliw yr un fath ag yn y trawsnewidydd unedau: mae "
       'fioled yn sefyll am fyd y deuddeg (unedau imperial a ffigurau '
       'deuddegol), gwyrdd am fyd y deg (unedau metrig a ffigurau degol). '
-      'Mae\'r symbol uned yn gwisgo lliw ei system, mae\'r gromfach '
+      "Mae'r symbol uned yn gwisgo lliw ei system, mae'r gromfach "
       'gyrliog yn dangos yr un gwerth yn y system arall yn ei lliw '
-      'hithau, a\'r arwydd DOZ/DEZ yn lliw y bôn. Nid oes gan arianyddau '
+      "hithau, a'r arwydd DOZ/DEZ yn lliw y bôn. Nid oes gan arianyddau "
       'echel byd — erys eu symbolau yn fioled.',
     ),
     _H('Deuddegol neu ddegol'),
     _P(
-      'Newidiwch fôn y ffigurau fel gyda\'r cyfrifianellau eraill dan y '
-      'Gosodiadau → System rifau; mae\'n berthnasol i\'r tair '
-      'cyfrifiannell gyda\'i gilydd ac yn annibynnol ar y system unedau.',
+      "Newidiwch fôn y ffigurau fel gyda'r cyfrifianellau eraill dan y "
+      "Gosodiadau → System rifau; mae'n berthnasol i'r tair "
+      "cyfrifiannell gyda'i gilydd ac yn annibynnol ar y system unedau.",
     ),
   ]),
-  ManualChapter('Y cof a\'r bysellau eraill', [
+  ManualChapter("Y cof a'r bysellau eraill", [
     _H('Y cof'),
     _P(
-      'Tra na bo dosbarth wedi\'i ddewis eto, yn y chwith o\'r ddwy '
+      "Tra na bo dosbarth wedi'i ddewis eto, yn y chwith o'r ddwy "
       'golofn dde y saif y bysellau cof STO, RCL, MC ac Ans. Os dewiswch '
-      'ddosbarth, daw\'r mathau i\'w lle yno — mae\'r cof yn rhannu\'r '
-      'lle â\'r drilio. Mae STO yn cofio gwerth llinell y canlyniad, RCL '
+      "ddosbarth, daw'r mathau i'w lle yno — mae'r cof yn rhannu'r "
+      "lle â'r drilio. Mae STO yn cofio gwerth llinell y canlyniad, RCL "
       'yn ei fewnosod, MC yn ei glirio; mae Ans yn cyrchu canlyniad '
       'diwethaf y brif gyfrifiannell draw. Mae llwyd yn golygu gwag neu '
-      'ddim ar gael. I\'r cyfeiriad arall, mae bysell CONV y brif '
+      "ddim ar gael. I'r cyfeiriad arall, mae bysell CONV y brif "
       'gyfrifiannell yn cyrchu gwerth llinell y canlyniad draw (ei '
       'naidlen pwysiad hir: VAL).',
     ),
     _H('Gwerth, cyfrifo a chlirio'),
     _P(
-      'Mae\'r fysell Gwerth yn eistedd yn sefydlog yn rhes y system ac yn '
+      "Mae'r fysell Gwerth yn eistedd yn sefydlog yn rhes y system ac yn "
       'dod yn barod cyn gynted ag y saif term (gweler y bennod nesaf). '
-      'Mae\'r gweithredwyr sgalar (× ÷ ⊕ ^ √ ㏒) yn gadael i\'r rhif a '
+      "Mae'r gweithredwyr sgalar (× ÷ ⊕ ^ √ ㏒) yn gadael i'r rhif a "
       'deipiwyd fod yn gyfrifiad bach ei hun, fel yn y trawsnewidydd '
-      'unedau. Mae AC yn clirio popeth, a Del y cymeriad o\'i flaen.',
+      "unedau. Mae AC yn clirio popeth, a Del y cymeriad o'i flaen.",
     ),
   ]),
   ManualChapter('Gwerth: trosi i arian', [
     _P(
-      'Y tu hwnt i\'r trosiad pwysau union, gall y trawsnewidydd gwerth '
+      "Y tu hwnt i'r trosiad pwysau union, gall y trawsnewidydd gwerth "
       'amcangyfrif gwerth arian bras.',
     ),
     _H('Y modd gwerth'),
     _P(
       'Teipiwch faint a\'i gymryd fel uned — megis „5" a „oz t" o aur. '
-      'Bellach mae\'r fysell Gwerth yn troi\'n las. Mae tap arni yn '
+      "Bellach mae'r fysell Gwerth yn troi'n las. Mae tap arni yn "
       'trawsnewid y drilio yn ddetholiad o arianyddau targed; os tapiwch '
       'un, mae llinell y canlyniad yn dangos y gwerth gyda „≈" o\'i flaen '
       'a nodyn bach, dyddiedig oddi tano.',
     ),
     _H('Y cyfraddau'),
     _P(
-      'Mae\'r cyfraddau sylfaenol yn werthoedd cyfeiriol bras, dyddiedig. '
-      'Mae\'r fysell Cyfraddau ar y gwaelod ar y dde yn agor golygydd lle '
+      "Mae'r cyfraddau sylfaenol yn werthoedd cyfeiriol bras, dyddiedig. "
+      "Mae'r fysell Cyfraddau ar y gwaelod ar y dde yn agor golygydd lle "
       'gallwch drosysgrifo pob cyfradd; mae ailosod yn adfer y gwerthoedd '
       'adeiledig.',
     ),
@@ -1379,33 +1382,33 @@ List<ManualChapter> _assetManualChaptersCy() => const [
     _P(
       'Nid yw\'r ap yn nôl dim o\'r rhyngrwyd — mae\'r „≈" yn golygu '
       '„bras, ar sail cyfradd", byth „byw". Rydych yn cadw\'r '
-      'cyfraddau\'n gyfredol eich hun, megis yn ôl Kitco ar gyfer metelau '
-      'neu\'r ECB ar gyfer arianyddau.',
+      "cyfraddau'n gyfredol eich hun, megis yn ôl Kitco ar gyfer metelau "
+      "neu'r ECB ar gyfer arianyddau.",
     ),
   ]),
   ManualChapter('Cromlin: y gymhariaeth hanesyddol', [
     _P(
-      'Mae\'r fysell Cromlin — y cylch chwith wrth ymyl bar yr hafal — yn '
-      'disodli\'r bysellfwrdd â siart; mae\'r × ar y brig yn ei gau eto.',
+      "Mae'r fysell Cromlin — y cylch chwith wrth ymyl bar yr hafal — yn "
+      "disodli'r bysellfwrdd â siart; mae'r × ar y brig yn ei gau eto.",
     ),
     _H('Y tair rhes'),
     _P(
       'Caiff popeth ei fesur yn erbyn aur: arian mewn aur, grawn mewn '
       'aur, ac aur mewn grawn — hynny yw, gallu prynu aur mewn bwyd. '
       'Caiff pob rhes ei chyfeirio at ei gwerth hysbys hynaf; saif hwnnw '
-      'fel llinell sero drwchus yn y canol. Mae uwchlaw\'r llinell yn '
-      'golygu drytach, oddi tani\'n rhatach, y naill a\'r llall yn '
+      "fel llinell sero drwchus yn y canol. Mae uwchlaw'r llinell yn "
+      "golygu drytach, oddi tani'n rhatach, y naill a'r llall yn "
       'berthynol i aur.',
     ),
     _H('Darllen a symud'),
     _P(
-      'Mae llusgo yn symud y darlun, mae pinsio yn chwyddo, ac mae\'r '
-      'botwm ar y dde yn chwyddo\'n llwyr allan hyd at y cynfyd. Yn '
-      'ddiofyn, mae\'r gromlin yn dangos y can mlynedd diwethaf neu fwy. '
-      'Y band cysgodol o amgylch pwyntiau\'r cynfyd yw\'r amrediad '
-      'amcangyfrifedig — mae\'r cynfyd yn cynnwys cylchoedd unigol '
+      "Mae llusgo yn symud y darlun, mae pinsio yn chwyddo, ac mae'r "
+      "botwm ar y dde yn chwyddo'n llwyr allan hyd at y cynfyd. Yn "
+      "ddiofyn, mae'r gromlin yn dangos y can mlynedd diwethaf neu fwy. "
+      "Y band cysgodol o amgylch pwyntiau'r cynfyd yw'r amrediad "
+      "amcangyfrifedig — mae'r cynfyd yn cynnwys cylchoedd unigol "
       '(meintiau bras yn unig), ac ni red unrhyw linell dros fwlch. Mae '
-      'llinell y ffynonellau yn rhestru\'r set ddata.',
+      "llinell y ffynonellau yn rhestru'r set ddata.",
     ),
   ]),
 ];

@@ -1,6 +1,5 @@
+import 'package:dozenal_calc_flutter/flag_painter.dart';
 import 'package:flutter/material.dart';
-
-import 'flag_painter.dart';
 
 /// Metadata for one language the in-app picker can offer: which [Locale]
 /// it represents, a self-referential [label] (always rendered in the
@@ -12,17 +11,16 @@ import 'flag_painter.dart';
 /// follow.
 @immutable
 class LanguageOption {
-  final Locale locale;
-  final String label;
-  final CustomPainter flagPainter;
-  final Size canonicalFlagSize;
-
   const LanguageOption({
     required this.locale,
     required this.label,
     required this.flagPainter,
     required this.canonicalFlagSize,
   });
+  final Locale locale;
+  final String label;
+  final CustomPainter flagPainter;
+  final Size canonicalFlagSize;
 }
 
 /// Single source of truth for the language picker. To add a new language:

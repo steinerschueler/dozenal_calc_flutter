@@ -10,17 +10,16 @@
 
 import 'dart:math' as math;
 
+import 'package:dozenal_calc_flutter/app_theme.dart';
+import 'package:dozenal_calc_flutter/l10n/app_localizations.dart';
+import 'package:dozenal_calc_flutter/license_page.dart' show openExternalLink;
+import 'package:dozenal_calc_flutter/logic/unit_data.dart';
+import 'package:dozenal_calc_flutter/theory/chapter_image_view.dart';
+import 'package:dozenal_calc_flutter/theory/chapter_images.dart';
+import 'package:dozenal_calc_flutter/theory/unit_theory.dart';
+import 'package:dozenal_calc_flutter/unit_labels.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
-import 'app_theme.dart';
-import 'l10n/app_localizations.dart';
-import 'license_page.dart' show openExternalLink;
-import 'logic/unit_data.dart';
-import 'unit_labels.dart';
-import 'theory/chapter_image_view.dart';
-import 'theory/chapter_images.dart';
-import 'theory/unit_theory.dart';
 
 class ConversionsPage extends StatefulWidget {
   const ConversionsPage({super.key});
@@ -464,10 +463,9 @@ class _ConversionsPageState extends State<ConversionsPage> {
 /// Tight Doz/Dez toggle for the input row — a 2-pill custom row matching the
 /// dark theme better than Material's SegmentedButton.
 class _SystemToggle extends StatelessWidget {
+  const _SystemToggle({required this.selected, required this.onChanged});
   final _NumSys selected;
   final ValueChanged<_NumSys> onChanged;
-
-  const _SystemToggle({required this.selected, required this.onChanged});
 
   @override
   Widget build(BuildContext context) {
@@ -511,8 +509,8 @@ class _SystemToggle extends StatelessWidget {
 /// source list: tappable title (opens in browser) + the two-axis rating in
 /// words. Sources come from unitSources() / the dossiers in docs/research/.
 class _UnitSourceList extends StatelessWidget {
-  final List<Source> sources;
   const _UnitSourceList({required this.sources});
+  final List<Source> sources;
 
   @override
   Widget build(BuildContext context) {

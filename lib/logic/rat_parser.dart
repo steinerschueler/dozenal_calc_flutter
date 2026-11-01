@@ -13,15 +13,15 @@
 // (a EXP b → a·base^b, expanded in buildRatExpr), and n!/|x|/1÷x exact, so
 // these no longer collapse to the f64 ≈ fallback.
 
-import 'rational.dart';
+import 'package:dozenal_calc_flutter/logic/rational.dart';
 
 sealed class RatExpr {
   const RatExpr();
 }
 
 final class RatNum extends RatExpr {
-  final Rational value;
   const RatNum(this.value);
+  final Rational value;
 
   @override
   bool operator ==(Object other) => other is RatNum && other.value == value;
@@ -95,10 +95,9 @@ Rational? evalRational(List<RatExpr> exprs) {
 }
 
 class _RatParser {
+  _RatParser(this._exprs);
   final List<RatExpr> _exprs;
   int _pos = 0;
-
-  _RatParser(this._exprs);
 
   RatExpr? _peek() => _pos < _exprs.length ? _exprs[_pos] : null;
 
@@ -106,7 +105,7 @@ class _RatParser {
   Rational? _parseAddSub() {
     final initial = _parseMulDiv();
     if (initial == null) return null;
-    Rational left = initial;
+    var left = initial;
     while (true) {
       final p = _peek();
       if (p is RatAdd) {
@@ -130,7 +129,7 @@ class _RatParser {
   Rational? _parseMulDiv() {
     final initial = _parsePow();
     if (initial == null) return null;
-    Rational left = initial;
+    var left = initial;
     while (true) {
       final p = _peek();
       if (p is RatMul) {
@@ -194,7 +193,7 @@ class _RatParser {
       // anything above ~10 M bits (~1.25 MB BigInt) collapses to f64.
       // Compare in BigInt so a near-max_int exponent can't wrap the product
       // through int64 overflow and slip past the cap.
-      const int maxResultBits = 10000000;
+      const maxResultBits = 10000000;
       final baseBits = base.num.bitLength + base.den.bitLength;
       final product = BigInt.from(baseBits) * BigInt.from(expInt).abs();
       if (product > BigInt.from(maxResultBits)) return null;

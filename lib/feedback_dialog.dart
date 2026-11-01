@@ -4,17 +4,19 @@
 // mail client. Nothing leaves the device unless the user actively sends
 // the mail — no analytics, no backend, no permissions.
 
+import 'package:dozenal_calc_flutter/app_theme.dart';
+import 'package:dozenal_calc_flutter/l10n/app_localizations.dart';
+import 'package:dozenal_calc_flutter/license_page.dart' show openExternalLink;
 import 'package:flutter/material.dart';
 import 'package:package_info_plus/package_info_plus.dart';
-
-import 'app_theme.dart';
-import 'l10n/app_localizations.dart';
-import 'license_page.dart' show openExternalLink;
 
 const String _feedbackEmail = 'dozenal@weltanschauung.app';
 
 Future<void> showFeedbackDialog(BuildContext context) async {
-  await showDialog(context: context, builder: (ctx) => const _FeedbackDialog());
+  await showDialog<void>(
+    context: context,
+    builder: (ctx) => const _FeedbackDialog(),
+  );
 }
 
 class _FeedbackDialog extends StatefulWidget {

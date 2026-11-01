@@ -6,9 +6,8 @@
 
 import 'dart:math' as math;
 
+import 'package:dozenal_calc_flutter/tokens.dart';
 import 'package:flutter/material.dart';
-
-import 'tokens.dart';
 
 void paintTokenAt(
   Canvas canvas,

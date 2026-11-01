@@ -127,7 +127,7 @@ List<ProseChapter> _werteChaptersGa() => const [
             'siad gann go leor le nach mbeidh siad ar fáil gan teorainn, '
             'agus aithnítear arís iad. Is iad ór, airgead, platanam agus '
             'pallaidiam an ceathrar atá ar eolas ag an luachairgeadán.\n\n'
-            'D\'fheidhmigh rudaí eile mar airgead chomh maith — sliogáin, '
+            "D'fheidhmigh rudaí eile mar airgead chomh maith — sliogáin, "
             'salann, eallach, tobac. Ach níor choinnigh ceann ar bith díobh '
             'na ceithre airí ag an am céanna. Caithfear eallach a bheathú, '
             'leánn salann san uisce, is féidir sliogáin a bhailiú ar an '
@@ -142,7 +142,7 @@ List<ProseChapter> _werteChaptersGa() => const [
         'Tá graim óir cosúil le gach graim eile',
         'Iompraíonn an t-airgead an cúigiú hairí go háirithe: an '
             'chomhionannas, fungaibilíocht go teicniúil. Tá graim amháin '
-            'd\'ór íon chomh maith le haon ghraim eile d\'ór íon. Níl píosa '
+            "d'ór íon chomh maith le haon ghraim eile d'ór íon. Níl píosa "
             '„níos fearr" ná „níos measa" den íonacht chéanna ann, gan aon '
             'aois, gan aon mharc, gan aon nóta pearsanta. Tá an miotal íon '
             'inmhalartaithe go dtí an t-adamh.\n\n'
@@ -163,7 +163,7 @@ List<ProseChapter> _werteChaptersGa() => const [
             'meáchan agus an íonacht. An té a chuir muinín sa tiarna '
             'buailte, níorbh éigean dó meá a thuilleadh.\n\n'
             'Tháinig na chéad bhoinn ar an saol i Liodia ársa; conas a '
-            'd\'fhorbair gnó na monaíochta don ór agus don airgead ina '
+            "d'fhorbair gnó na monaíochta don ór agus don airgead ina "
             'dhiaidh sin, pléann na caibidlí „An t-ór tríd an stair" agus '
             '„An t-airgead tríd an stair" é.\n\n'
             'Ní airgead nua é an bonn, mar sin, ach seanairgead i bhfoirm '
@@ -245,7 +245,7 @@ List<ProseChapter> _werteChaptersGa() => const [
             'as seanuaigheanna chun solais glan, faoi mar a bheadh sé '
             'déanta ar an bpointe.\n\n'
             'Níl ór doshéanta go hiomlán, áfach. In uisce ríoga, meascán '
-            'd\'aigéad hidreaclórach agus d\'aigéad nítreach, leánn sé. '
+            "d'aigéad hidreaclórach agus d'aigéad nítreach, leánn sé. "
             'Deirtear níos cruinne mar sin: ní éiríonn ór doiléir agus ní '
             'ocsaídítear é — bheadh „doshéanta go hiomlán go ceimiceach" '
             'rómhór le rá.',
@@ -280,7 +280,7 @@ List<ProseChapter> _werteChaptersGa() => const [
             'coitianta cosúil le hiarann, ní oirfeadh sé mar stór luacha. '
             'Dá mbeadh sé chomh tearc nach bhfeicfeadh ach beagán daoine '
             'riamh é, ní oirfeadh sé mar airgead.\n\n'
-            'Cé mhéad óir a d\'eastóscaigh an cine daonna le linn na '
+            "Cé mhéad óir a d'eastóscaigh an cine daonna le linn na "
             'staire, ní féidir é sin a mheas ach. De réir uimhir ordóige a '
             'luaitear go minic, oireann gach ór a eastóscadh riamh le '
             'chéile i gciúb le ciumhais de bhreis is fiche méadar. Is '
@@ -326,7 +326,7 @@ List<ProseChapter> _werteChaptersGa() => const [
         'Bhí an t-ór ar cheann de na chéad mhiotail ar oibrigh daoine '
             'leo. Faightear go minic é ina fhoirm íon sa nádúr, mar '
             'chnapanna nó mar chalóga sna haibhneacha, agus ní gá é a leá '
-            'as mianach ar dtús. D\'fhéadfaí é a phiocadh suas díreach agus '
+            "as mianach ar dtús. D'fhéadfaí é a phiocadh suas díreach agus "
             'é a chasúireacht.\n\n'
             'Is as na huaigheanna ag Varna ar an Muir Dhubh a thagann an '
             't-ór próiseáilte is sine ar a bhfuil eolas againn, timpeall '
@@ -338,7 +338,7 @@ List<ProseChapter> _werteChaptersGa() => const [
       ProseSection(
         'Na chéad mhoinn óir: an Lydia agus Kroisos',
         'Le fada ní raibh san ór ach seodra agus barraí, ní airgead '
-            'miontaithe. D\'athraigh sé sin sa tseanLydia, sa Tuirc mar atá '
+            "miontaithe. D'athraigh sé sin sa tseanLydia, sa Tuirc mar atá "
             'inniu. Ann sin a miontaíodh boinn ar dtús as electrum, meascán '
             'nádúrtha óir agus airgid.\n\n'
             'Meastar gurb iad boinn an Rí Kroisos ón Lydia na chéad mhoinn '
@@ -355,7 +355,7 @@ List<ProseChapter> _werteChaptersGa() => const [
             'Impireacht Rómhánach an Oirthir, ón mBiosáint amach, go '
             'suntasach cobhsaí ar feadh roinnt céadta bliain, sular '
             'díluacháladh é san Mheánaois dhéanach.\n\n'
-            'B\'éacht annamh é airgead a choinnigh a chaighdeán íonachta '
+            "B'éacht annamh é airgead a choinnigh a chaighdeán íonachta "
             'chomh fada sin. Glacadh leis an solidus mar airgead trádála '
             'iontaofa i leath na Meánmhuirí. Maireann a ainm sa bhfocal '
             '„Sold" agus sa bhonn Iodálach „soldo".',
@@ -365,7 +365,7 @@ List<ProseChapter> _werteChaptersGa() => const [
         'Sa naoú haois déag chuir fionnachtana móra fíor-aistir ar bun. '
             'I gCalifornia, san Astráil agus ag an Klondike chuaigh na '
             'céadta míle amach chun ór a ní as aibhneacha agus as sléibhte. '
-            'Bhunaigh na rabharta óir seo cathracha agus d\'athraigh '
+            "Bhunaigh na rabharta óir seo cathracha agus d'athraigh "
             'tíortha iomlána.\n\n'
             'Dhaingnigh an méid óir nua a ról mar airgead an domhain ag an '
             'am céanna. Cheangail níos mó agus níos mó stát a gcuid airgid '
@@ -381,7 +381,7 @@ List<ProseChapter> _werteChaptersGa() => const [
             'Céim ar chéim scaoileadh an t-ancaire seo, agus i 1971 tháinig '
             'deireadh iomlán le hinmhalartacht an dollair Mheiriceánaigh ar '
             'ór. Ó shin níl aon mhór-airgead cumhdaithe ag ór a thuilleadh. '
-            'Conas a d\'oibrigh an caighdeán óir go mion, tá sé sin sa '
+            "Conas a d'oibrigh an caighdeán óir go mion, tá sé sin sa "
             'chaibidil féin „An caighdeán óir agus a dheireadh"; níl '
             'tábhacht anseo ach leis an snáithe fada ón gcéad bhonn go dtí '
             'a dheireadh.',
@@ -428,7 +428,7 @@ List<ProseChapter> _werteChaptersGa() => const [
             'Mhaisigh sé teampaill agus uaigheanna agus bhí sé ceaptha na '
             'mairbh a thionlacan isteach sa bheatha shíoraí. Mhúnlaigh na '
             'samhlaíochtaí seo conas a bhain na hÉigiptigh ór amach agus '
-            'conas a d\'úsáid siad é.',
+            "conas a d'úsáid siad é.",
       ),
       ProseSection(
         'An Mhéaspotáim agus an Neasoirthear',
@@ -543,7 +543,7 @@ List<ProseChapter> _werteChaptersGa() => const [
             'é i gcás éigeandála. Mar sin ceanglaíonn an t-ór an ócáid '
             'fhéiltiúil le réamhchúram fuarchúiseach.\n\n'
             'Mar an gcéanna ba mhinic an t-ór an t-airgead deireanach don '
-            'ghátar. I gcogaí agus ar an teitheadh d\'fhéadfaí ór beag '
+            "ghátar. I gcogaí agus ar an teitheadh d'fhéadfaí ór beag "
             'luachmhar a thabhairt leat agus a mhalartú in aon áit nach '
             'raibh luach ar bith ag an airgead páipéir a thuilleadh. '
             'Baineann an iontaofacht seo i ré na géarchéime le clú an óir.',
@@ -597,7 +597,7 @@ List<ProseChapter> _werteChaptersGa() => const [
         'A1',
       ),
       Source(
-        'The Goldsmiths\' Company — Hallmarking',
+        "The Goldsmiths' Company — Hallmarking",
         'https://www.thegoldsmiths.co.uk/company/london-assay-office/hallmarking/',
         'R2',
         'A2',
@@ -638,7 +638,7 @@ List<ProseChapter> _werteChaptersGa() => const [
       ),
       ProseSection(
         'An mheánaois agus an luath-nua-aois',
-        'Sa mheánaois agus san luath-nua-aois d\'fhan an cóimheas i '
+        "Sa mheánaois agus san luath-nua-aois d'fhan an cóimheas i "
             'bhfad i gcóngar a deich go sé déag le haon. Leag tiarnaí an '
             'mhionairgid síos é ina n-orduithe, ach níor chloígh an margadh '
             'i gcónaí leis.\n\n'
@@ -654,7 +654,7 @@ List<ProseChapter> _werteChaptersGa() => const [
             'amach go fairsing. Tar éis an t-airgead a bheith '
             'dí-mhiontaithe agus gan aon mhiotal ag tacú leis an airgead a '
             'thuilleadh, ba mhiotal tionsclaíoch é an t-airgead go príomha, '
-            'd\'fhan an t-ór ina stór luacha. Sa réimse sin luíonn an '
+            "d'fhan an t-ór ina stór luacha. Sa réimse sin luíonn an "
             'cóimheas ó shin go minic áit éigin idir caoga agus nócha le '
             'haon.\n\n'
             'Is ord méide garbh é an réimse seo, ní luach laethúil cruinn. '
@@ -717,10 +717,10 @@ List<ProseChapter> _werteChaptersGa() => const [
             'taobh mar airgead san am céanna. Démhiotalachas a thugtar air '
             'sin. Le go rithfeadh an dá cheann mar bhoinn, leag stáit síos '
             'cóimheas seasta eatarthu — sé déag le haon, mar shampla.\n\n'
-            'Nuair a d\'imigh praghas saor an mhargaidh ón luach mionairgid '
+            "Nuair a d'imigh praghas saor an mhargaidh ón luach mionairgid "
             'seasta sin, tharla an méid seo: an miotal a bhí gannmheasta sa '
             'bhonn, bhí sé níos luachmhaire mar amhmhiotal. Choinnigh na '
-            'daoine siar é nó leáigh siad é, agus sa chúrsaíocht d\'fhan an '
+            "daoine siar é nó leáigh siad é, agus sa chúrsaíocht d'fhan an "
             'ceann a bhí rómheasta. Sin dlí Gresham — díbríonn an '
             'drochairgead an t-airgead maith. Léirigh sé é féin mar riail '
             'ordóige faoi rátaí mionairgid seasta.',
@@ -735,8 +735,8 @@ List<ProseChapter> _werteChaptersGa() => const [
             'Daingníodh an dlí agus fuair sé an t-ainm „Crime of 1873" níos '
             'déanaí ón ghluaiseacht „Free Silver". Cibé an raibh comhcheilg '
             'chomhfhiosach in aghaidh an airgid taobh thiar de, chonaic na '
-            'comhaimsireacha go héagsúil é: na daoine seo coup d\'état '
-            'ciúin, na daoine eile céim theicniúil d\'fhorbairt a bhí ar '
+            "comhaimsireacha go héagsúil é: na daoine seo coup d'état "
+            "ciúin, na daoine eile céim theicniúil d'fhorbairt a bhí ar "
             'siúl ar aon nós.',
       ),
       ProseSection(
@@ -746,7 +746,7 @@ List<ProseChapter> _werteChaptersGa() => const [
             'ghrianghrafadóireacht, sa leictreachas agus níos déanaí sa '
             'leictreonaic. Bhraith a phraghas dá réir sin níos mó agus níos '
             'mó ar sholáthar agus éileamh na teicneolaíochta.\n\n'
-            'D\'fhan an t-ór, ar an taobh eile, ar an gcéad dul síos ina '
+            "D'fhan an t-ór, ar an taobh eile, ar an gcéad dul síos ina "
             'stór luacha agus ina chúlchiste de chuid na mbanc ceannais. '
             'Cad a mheastar mar airgead agus cad mar ábhar, múnlaíonn sé '
             'sin an praghas. Tá na róil seo, atá ag imeacht óna chéile, ar '
@@ -760,7 +760,7 @@ List<ProseChapter> _werteChaptersGa() => const [
             'mheastacháin. Eastóscaítear níos mó airgid ná óir freisin '
             'bliain i ndiaidh bliana. Is oird mhéide gheolaíocha gharbha '
             'iad na huimhreacha seo, ní luachanna seasta.\n\n'
-            'D\'fhéadfá a cheapadh go leagann an fhlúirse léi féin amach an '
+            "D'fhéadfá a cheapadh go leagann an fhlúirse léi féin amach an "
             'cóimheas airgid. Níl sé chomh simplí sin. Braitheann praghas '
             'miotail freisin ar a dheacra atá sé a fháil, ar a bhfuil sé ag '
             'teastáil agus ar an ról a imríonn sé i gcúrsaí airgid. Níl san '
@@ -769,7 +769,7 @@ List<ProseChapter> _werteChaptersGa() => const [
       ),
       ProseSection(
         'Roinnt cúiseanna san am céanna',
-        'Ní mhíníonn aon chúis aonair an t-aistriú. D\'oibrigh dlíthe '
+        "Ní mhíníonn aon chúis aonair an t-aistriú. D'oibrigh dlíthe "
             'an mhionairgid, dlí Gresham, ról nua an airgid sa tionscal, '
             'fionnachtana agus eastóscadh le chéile. Is oird mhéide iad na '
             'huimhreacha a luadh — rátaí mionairgid, eastóscadh, '
@@ -801,7 +801,7 @@ List<ProseChapter> _werteChaptersGa() => const [
         'A1',
       ),
       Source(
-        'Gresham\'s law — Wikipedia',
+        "Gresham's law — Wikipedia",
         'https://en.wikipedia.org/wiki/Gresham%27s_law',
         'R2',
         'A1',
@@ -859,7 +859,7 @@ List<ProseChapter> _werteChaptersGa() => const [
         'Is tomhas áisiúil é an cóimheas chun an t-ór agus an t-airgead '
             'a chur i gcomparáid, agus is píosa de stair an gheilleagair é. '
             'Ní dlí nádúir folaithe é ná treoir don todhchaí.\n\n'
-            'Deir roinnt daoine go mbrúitear margadh an airgid síos d\'aon '
+            "Deir roinnt daoine go mbrúitear margadh an airgid síos d'aon "
             'turas; feiceann daoine eile ann ach gnáthimirt an tsoláthair '
             'agus an éilimh. Imíonn cóimheasa seasta idir páipéar agus '
             'miotal fisiciúil, mar a luaitear uaireanta iad, óna chéile go '
@@ -875,7 +875,7 @@ List<ProseChapter> _werteChaptersGa() => const [
         'A1',
       ),
       Source(
-        'Abundance of elements in Earth\'s crust — Wikipedia',
+        "Abundance of elements in Earth's crust — Wikipedia",
         'https://en.wikipedia.org/wiki/Abundance_of_elements_in_Earth%27s_crust',
         'R2',
         'A1',
@@ -895,7 +895,7 @@ List<ProseChapter> _werteChaptersGa() => const [
         'Miotal an phobail, ní miotal na ríthe',
         'Ba é an t-ór miotal na ríthe agus na dtaiscí. Ba é an '
             't-airgead miotal an airgid laethúil. Iad siúd a cheannaigh '
-            'agus a dhíol sa ghnáthshaol, d\'íoc siad in airgead den chuid '
+            "agus a dhíol sa ghnáthshaol, d'íoc siad in airgead den chuid "
             'is mó tríd na mílaoise, ní in ór.\n\n'
             'Tá cúis shimplí leis sin: tá an t-airgead níos gainne ná '
             'gnáthmhiotail, ach níos flúirsí ná an t-ór. Bhí go leor de ann '
@@ -935,7 +935,7 @@ List<ProseChapter> _werteChaptersGa() => const [
             'cabhlach leis freisin. Níos déanaí sholáthair Meiriceá na '
             'Spáinne méideanna ollmhóra — go háirithe sliabh Potosí san '
             'Bholaiv mar atá inniu.\n\n'
-            'D\'athraigh na tuilte airgid seo an domhan: shil an t-airgead '
+            "D'athraigh na tuilte airgid seo an domhan: shil an t-airgead "
             'Meiriceánach trí Eoraip go dtí an tSín agus mhúnlaigh sé '
             'trádáil na gcéadta bliain ar fad. Níl méideanna eastóscthe '
             'Laurion agus Potosí ar fáil ach mar mheastacháin, agus tá '
@@ -1015,7 +1015,7 @@ List<ProseChapter> _werteChaptersGa() => const [
       ProseSection(
         'Frithmhiocróbach agus sa leigheas',
         'Oibríonn airgead in aghaidh frídíní. Go luath cheana chuir '
-            'daoine airgead in uisce nó d\'úsáid siad soithí airgid chun é '
+            "daoine airgead in uisce nó d'úsáid siad soithí airgid chun é "
             'a choinneáil úr. Inniu úsáideann an leigheas an éifeacht seo '
             'go marcáilte: mar shampla i mbrataí créachta agus i bhfeolú a '
             'chuireann cosc ar fhás baictéar.\n\n'
@@ -1293,7 +1293,7 @@ List<ProseChapter> _werteChaptersGa() => const [
         'An „Silver Squeeze" 2021',
         'Ag tús 2021 ghlaoigh infheisteoirí ar líonraí sóisialta '
             'airgead a cheannach le chéile agus „squeeze" a spreagadh ar an '
-            'gcaoi sin — i gcomhthéacs eachtra GameStop. D\'ardaigh praghas '
+            "gcaoi sin — i gcomhthéacs eachtra GameStop. D'ardaigh praghas "
             'an airgid go gairid.\n\n'
             'Níor tháinig ganntanas marthanach as sin. Chonaic cuid acu ann '
             'an cruthúnas go bhfuil na stórais líonta níos laige ná mar a '
@@ -1369,7 +1369,7 @@ List<ProseChapter> _werteChaptersGa() => const [
             'ciondáil lae, blúire den mharthanas.\n\n'
             'Déanann an buaine seo den arbhar slat tomhais níos fearr ná '
             'aon airgeadra. Díluacháiltear boinn, fuair impireachtaí bás, '
-            'tháinig agus d\'imigh airgead páipéir — d\'fhan an t-ocras mar '
+            "tháinig agus d'imigh airgead páipéir — d'fhan an t-ocras mar "
             'an gcéanna. Insíonn slat tomhais a cheanglaítear le riachtanas '
             'daonna do-athraithe níos lú bréag ná slat a chrochtar ar '
             'rialtas.\n\n'
@@ -1395,7 +1395,7 @@ List<ProseChapter> _werteChaptersGa() => const [
             'an uair sin. Idir na pointí sin bhí na céadta bliain le cúrsaí '
             'an-difriúla.\n\n'
             'Is é an rud iontach ná go bhfuil ceannphointí stráice chomh '
-            'fada sin chomh gar dá chéile. Thar dhá mhílaois d\'fhan '
+            "fada sin chomh gar dá chéile. Thar dhá mhílaois d'fhan "
             'cumhacht cheannaigh an óir in arbhar aráin san ord méide garbh '
             'céanna — rud nach féidir a rá faoi airgeadra ar bith beagnach.',
         illustrationId: 'werte/purchasing-power',
@@ -1539,7 +1539,7 @@ List<ProseChapter> _werteChaptersGa() => const [
             'mheas an campa airgid chrua gur briseadh focail nó fiú '
             'gadaíocht a bhí ann, mheas daoine eile gur dheireadh ordúil é '
             'ar cheangal nár sheasamh a thuilleadh ar aon nós. Sceith níos '
-            'mó dollar as an tír ná mar a bhí d\'ór sa daingean — ba é sin '
+            "mó dollar as an tír ná mar a bhí d'ór sa daingean — ba é sin "
             'an brú a bhí taobh thiar de. Is fíoracha dlíthiúla stairiúla '
             'iad na luachanna 20,67 agus 35,00 dollar in aghaidh an unsa, '
             'ní praghsanna an lae inniu.',
@@ -1614,7 +1614,7 @@ List<ProseChapter> _werteChaptersGa() => const [
       ProseSection(
         'Na díospóireachtaí athdhúchasaithe',
         'Arís agus arís eile thug tíortha cuid den ór a bhí á stóráil '
-            'thar lear ar ais abhaile. D\'aistrigh an Deutsche Bundesbank, '
+            "thar lear ar ais abhaile. D'aistrigh an Deutsche Bundesbank, "
             'mar shampla, cion dá chuid stoc ar ais go Frankfurt agus thug '
             'sé cuntas poiblí air sin.\n\n'
             'Lena chois na haistrithe sin tá an t-amhras ag dul thart nach '
@@ -1626,7 +1626,7 @@ List<ProseChapter> _werteChaptersGa() => const [
       ProseSection(
         'Cén tír a choinníonn cé mhéad',
         'Cén tír a choinníonn cé mhéad óir agus i gcén t-ord, níl sé '
-            'sin anseo d\'aon ghnó — athraíonn figiúirí mar sin agus '
+            "sin anseo d'aon ghnó — athraíonn figiúirí mar sin agus "
             'éiríonn siad as dáta. Is faoi na fáthanna buana atá sé anseo: '
             'muinín, cúlchiste géarchéime, gan cliseadh ó '
             'chontrapháirtí.\n\n'
@@ -1639,7 +1639,7 @@ List<ProseChapter> _werteChaptersGa() => const [
     ],
     sources: [
       Source(
-        'Deutsche Bundesbank — Germany\'s gold reserves',
+        "Deutsche Bundesbank — Germany's gold reserves",
         'https://www.bundesbank.de/en/tasks/topics/germany-s-gold',
         'R1',
         'A2',
@@ -1699,7 +1699,7 @@ List<ProseChapter> _werteChaptersGa() => const [
             'sháraigh sé go mór é. Níl aon chomhthreomhaireacht iontaofa '
             'leis na praghsanna ó bhliain go bliain.\n\n'
             'Braitheann an „cuan sábháilte" féin ar an gcás. I roinnt '
-            'géarchéimeanna d\'ardaigh an t-ór agus scaireanna ag titim. '
+            "géarchéimeanna d'ardaigh an t-ór agus scaireanna ag titim. "
             'Ach i scaoll faoi airgead tirim dhíol go leor a gcuid óir '
             'freisin chun teacht ar leachtacht — ansin thit sé in éineacht '
             'leo.',
@@ -1726,7 +1726,7 @@ List<ProseChapter> _werteChaptersGa() => const [
             'acu den dá ionchas a chuntasaíonn, socraíonn sin an tréimhse a '
             'bhfiafraítear fúithi.\n\n'
             'Níl figiúirí seasta toraidh, comhghaolta ná cion „ceart" óir '
-            'sa rachmas anseo d\'aon ghnó — braitheann siad ar an tréimhse '
+            "sa rachmas anseo d'aon ghnó — braitheann siad ar an tréimhse "
             'agus ar an gcás. Aon duine a fhógraíonn trádáil an óir, mar '
             'shampla cumainn tionscail, is páirtí é ina chúis féin.',
       ),
@@ -1927,7 +1927,7 @@ List<ProseChapter> _werteChaptersGa() => const [
             'roinnt tíortha de chuid na nAindéas chun tosaigh — rud a '
             'oireann don fhíric go mbaintear é den chuid is mó in éineacht '
             'le miotail eile. Níl méideanna bliantúla cruinne luaite anseo '
-            'd\'aon turas: athraíonn siad i gcónaí. Baineann sé le hord '
+            "d'aon turas: athraíonn siad i gcónaí. Baineann sé le hord "
             'méide agus le hordlathas, ní le figiúirí seasta.',
       ),
       ProseSection(
@@ -2102,7 +2102,7 @@ List<ProseChapter> _werteChaptersGa() => const [
       ),
       ProseSection(
         'An mol Eilvéiseach: scaglanna agus saorstórais chustaim',
-        'Téann cuid iontach mór d\'ór an domhain tríd an Eilvéis. Tá '
+        "Téann cuid iontach mór d'ór an domhain tríd an Eilvéis. Tá "
             'roinnt de na scaglanna is mó suite ansin, scaglanna a leánn '
             'amhór agus seanór go barraí caighdeánaithe — go méideanna níos '
             'lú freisin, mar a bhíonn éileamh orthu san Áise.\n\n'
@@ -2161,7 +2161,7 @@ List<ProseChapter> _werteChaptersGa() => const [
         'A2',
       ),
       Source(
-        'Deutsche Bundesbank — Germany\'s gold',
+        "Deutsche Bundesbank — Germany's gold",
         'https://www.bundesbank.de/en/tasks/topics/germany-s-gold',
         'R1',
         'A2',
@@ -2216,7 +2216,7 @@ List<ProseChapter> _werteChaptersGa() => const [
         'Geall an hidrigine: cealla breosla agus leictrealaisithe',
         'Tá platanam i gcealla breosla agus i ngléasanna a scoilteann '
             'uisce go hidrigin. Má bhraitheann an t-iompar lá éigin níos mó '
-            'ar hidrigin, d\'fhéadfadh sin éileamh nua mór a chruthú.\n\n'
+            "ar hidrigin, d'fhéadfadh sin éileamh nua mór a chruthú.\n\n"
             'Tá sé ar oscailt cé acu agus chomh tapa is a thiocfaidh '
             'geilleagar na hidrigine — agus mar sin freisin cé chomh mór is '
             'a bheadh an t-éileamh breise ar phlatanam.',
@@ -2288,7 +2288,7 @@ List<ProseChapter> _werteChaptersGa() => const [
             'docht. Má tá an soláthar airgid slabhraithe leis an ór, ní '
             'féidir le rialtas freasaíocht a dhéanamh i ngéarchéim. Sin '
             'díreach a chuireann a lán daoine i leith dhoimhneacht na '
-            'géarchéime eacnamaíche móire timpeall 1930 — d\'fhan an '
+            "géarchéime eacnamaíche móire timpeall 1930 — d'fhan an "
             't-airgead gann nuair ab éigean dó leathnú.\n\n'
             'Leis sin claonann córas atá ceangailte leis an ór i dtreo '
             'dífhuilteachta: má fhásann an geilleagar níos tapúla ná an '
@@ -2300,7 +2300,7 @@ List<ProseChapter> _werteChaptersGa() => const [
         'Cén fáth nár fhill aon tír mhór',
         'In ainneoin na n-abhcóidí go léir, níor fhill aon tír mhór ar '
             'an gcaighdeán óir. Má fhiafraítear de na saineolaithe '
-            'eacnamaíochta, diúltaíonn an tromlach d\'fhilleadh.\n\n'
+            "eacnamaíochta, diúltaíonn an tromlach d'fhilleadh.\n\n"
             'Is é an chúis phraiticiúil an tsolúbthacht: is mian leis na '
             'stáit reatha a soláthar airgid a stiúradh chun géarchéimeanna '
             'a mhaolú. Cúngaíonn ceangal óir an spás sin.',
@@ -2389,7 +2389,7 @@ List<ProseChapter> _werteChaptersGa() => const [
       ProseSection(
         'Inláimhsithe in aghaidh fíordhigiteach',
         'Is ábhar é an t-ór ar féidir é a mheá, a thástáil agus a '
-            'thógáil i do lámh — sin an fáth a oireann sé d\'aonaid troy an '
+            "thógáil i do lámh — sin an fáth a oireann sé d'aonaid troy an "
             'Werterechner. Níl aon chorp ag Bitcoin; is iontráil é i gclár '
             'dáilte.\n\n'
             'Tá dhá thaobh ar an dá rud. Caithfear ór a stóráil agus a '
@@ -2484,7 +2484,7 @@ List<ProseChapter> _werteChaptersGa() => const [
             'íseal go luach ard. Tá an banda leathan, mar tá praghsanna '
             'ársa neamhrialta, difriúil ó réigiún go réigiún agus nach '
             'bhfuil ar eolas ach mar oird mhéide.\n\n'
-            'Tá sé d\'aon ghnó nach ritheann aon líne thar na bearnaí. Idir '
+            "Tá sé d'aon ghnó nach ritheann aon líne thar na bearnaí. Idir "
             'pointe Bablónach agus pointe Rómhánach luíonn na céadta bliain '
             'gan uimhir iontaofa. Chuirfeadh líne leanúnach cúrsa i gcéill '
             'nach bhfuil ar eolas ag éinne. Tá an tsraith nua-aimseartha, '
@@ -2587,7 +2587,7 @@ List<ProseChapter> _werteChaptersGa() => const [
             'sin i mbunúsanna na teoirice.\n\n'
             'Is tarraingteach an smaoineamh mar sin féin: oireann slat '
             'tomhais ar féidir í a thrian agus a cheathrú go réidh go maith '
-            'd\'airgead a chaithfear a roinnt. Ba rogha chliste a bhí in a '
+            "d'airgead a chaithfear a roinnt. Ba rogha chliste a bhí in a "
             'dó dhéag san airgead, faoi mar a bhí sa tomhas.',
       ),
       ProseSection(

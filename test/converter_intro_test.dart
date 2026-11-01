@@ -3,9 +3,8 @@
 // each non-German language is genuinely translated (not a German fallback), and
 // an unknown locale falls back to German.
 
-import 'package:flutter_test/flutter_test.dart';
-
 import 'package:dozenal_calc_flutter/theory/unit_theory.dart';
+import 'package:flutter_test/flutter_test.dart';
 
 const _allTags = [
   'de',

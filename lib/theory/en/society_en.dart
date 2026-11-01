@@ -36,7 +36,7 @@ List<ProseChapter> _societyChaptersEn() => const [
       ),
       ProseSection(
         'The Societies Take Shape',
-        'Out of the responses to Andrews\' article grew a circle of '
+        "Out of the responses to Andrews' article grew a circle of "
             'correspondents, and from that, in 1944, the "Duodecimal Society of '
             'America." It was Ralph "Whiskers" Beard who jokingly gave it the '
             'name; the seed money came from George Terry. Later it was renamed the '
@@ -92,8 +92,8 @@ List<ProseChapter> _societyChaptersEn() => const [
             'one for eleven. Which ones they should be has never been settled in a '
             'uniform way; even the American society prescribes no fixed '
             'notation.\n\n'
-            'There are several variants: Pitman\'s rotated two and three (↊ and '
-            '↋), Andrews\' italic X and rounded E, a sextile and a double cross '
+            "There are several variants: Pitman's rotated two and three (↊ and "
+            "↋), Andrews' italic X and rounded E, a sextile and a double cross "
             '(inspired by telephone keys), the glyphs of the type designer '
             'Dwiggins — and simply the letters A and B from the world of '
             'computing.',
@@ -120,7 +120,7 @@ List<ProseChapter> _societyChaptersEn() => const [
             'twelve "fingers" would have invented two new digits — pronounced '
             '"dek" for ten and "el" for eleven. It was considered too hard for '
             'grade-school children and aired less often than the other episodes, '
-            'yet it stuck in many people\'s memory.',
+            "yet it stuck in many people's memory.",
       ),
     ],
     sources: [
@@ -283,7 +283,7 @@ List<ProseChapter> _societyChaptersEn() => const [
         'A1',
       ),
       Source(
-        'Dozenal RPN Calculator — Eddie\'s Math and Calculator Blog',
+        "Dozenal RPN Calculator — Eddie's Math and Calculator Blog",
         'http://edspi31415.blogspot.com/2026/02/dozenal-rpn-calculator-app-for-android.html',
         'R3',
         'A1',
@@ -316,15 +316,15 @@ List<ProseChapter> _societyChaptersEn() => const [
     ],
   ),
   ProseChapter(
-    'Paul Rapoport\'s Dozenal Calculator',
+    "Paul Rapoport's Dozenal Calculator",
     [
       ProseSection(
         'A Calculator in the Browser',
-        'Paul Rapoport\'s Dozenal Calculator is a scientific calculator that runs directly in your web browser — free of charge and with no installation. It computes in base twelve and can display decimal at any time as well; the number base can be switched freely, and several independent registers are available. A detailed manual is included as a PDF.',
+        "Paul Rapoport's Dozenal Calculator is a scientific calculator that runs directly in your web browser — free of charge and with no installation. It computes in base twelve and can display decimal at any time as well; the number base can be switched freely, and several independent registers are available. A detailed manual is included as a PDF.",
       ),
       ProseSection(
         'Strong in Number Theory',
-        'Its number theory is especially rich — fitting for a base that is prized precisely for its divisibility. The calculator finds the greatest common divisor and the least common multiple, lists all divisors of a number, and breaks it down into its prime factors (optionally with multiplicity). Beyond that come the sum of divisors, the number of divisors, and Euler\'s totient (φ) function — the count of smaller numbers that are coprime to it.',
+        "Its number theory is especially rich — fitting for a base that is prized precisely for its divisibility. The calculator finds the greatest common divisor and the least common multiple, lists all divisors of a number, and breaks it down into its prime factors (optionally with multiplicity). Beyond that come the sum of divisors, the number of divisors, and Euler's totient (φ) function — the count of smaller numbers that are coprime to it.",
       ),
       ProseSection(
         'The Full Scientific Toolkit',

@@ -12,32 +12,31 @@
 // can interleave prose with any number of custom illustrations — the shared
 // helpers _H / _P / _Pre and the illustration widgets below build them.
 
+import 'package:dozenal_calc_flutter/app_theme.dart';
+import 'package:dozenal_calc_flutter/glyph_painter.dart';
+import 'package:dozenal_calc_flutter/manual/manual_illustrations.dart';
 import 'package:flutter/material.dart';
 
-import '../app_theme.dart';
-import '../glyph_painter.dart';
-import 'manual_illustrations.dart';
-
+part 'ar/manual_ar.dart';
+part 'cy/manual_cy.dart';
 part 'de/manual_de.dart';
 part 'en/manual_en.dart';
-part 'fr/manual_fr.dart';
 part 'es/manual_es.dart';
-part 'it/manual_it.dart';
 part 'fa/manual_fa.dart';
-part 'ru/manual_ru.dart';
+part 'fr/manual_fr.dart';
 part 'ga/manual_ga.dart';
 part 'hi/manual_hi.dart';
+part 'it/manual_it.dart';
+part 'ja/manual_ja.dart';
+part 'ru/manual_ru.dart';
 part 'zh/manual_zh.dart';
 part 'zh_Hant/manual_zh_Hant.dart';
-part 'cy/manual_cy.dart';
-part 'ja/manual_ja.dart';
-part 'ar/manual_ar.dart';
 
 /// One manual chapter: a [title] and its body widgets.
 class ManualChapter {
+  const ManualChapter(this.title, this.body);
   final String title;
   final List<Widget> body;
-  const ManualChapter(this.title, this.body);
 }
 
 /// The manual chapters in [langTag] (BCP-47). Per-chapter German fallback: a
@@ -144,8 +143,8 @@ List<ManualChapter> _ownAssetManualChapters(String langTag) {
 // ---------------------------------------------------------------------------
 
 class _H extends StatelessWidget {
-  final String text;
   const _H(this.text);
+  final String text;
 
   @override
   Widget build(BuildContext context) => Padding(
@@ -162,8 +161,8 @@ class _H extends StatelessWidget {
 }
 
 class _P extends StatelessWidget {
-  final String text;
   const _P(this.text);
+  final String text;
 
   @override
   Widget build(BuildContext context) => Padding(
@@ -181,8 +180,8 @@ class _P extends StatelessWidget {
 }
 
 class _Pre extends StatelessWidget {
-  final String text;
   const _Pre(this.text);
+  final String text;
 
   @override
   Widget build(BuildContext context) => Padding(

@@ -2,10 +2,10 @@
 // can be unit-tested in isolation and to keep the orchestrator focused on
 // dispatch + calculation rather than string formatting. No Flutter imports.
 
-import '../tokens.dart';
-import 'dozenal_converter.dart';
-import 'dozenal_digit.dart';
-import 'rational.dart';
+import 'package:dozenal_calc_flutter/logic/dozenal_converter.dart';
+import 'package:dozenal_calc_flutter/logic/dozenal_digit.dart';
+import 'package:dozenal_calc_flutter/logic/rational.dart';
+import 'package:dozenal_calc_flutter/tokens.dart';
 
 /// Fractional-digit budget for the compact cross-base reference strings.
 const int _crossFracDigits = 6;

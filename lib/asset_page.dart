@@ -6,25 +6,24 @@
 // standalone route wrapper for widget tests / preview. Design:
 // docs/asset-converter.md.
 
+import 'package:dozenal_calc_flutter/app_layout.dart';
+import 'package:dozenal_calc_flutter/app_theme.dart';
+import 'package:dozenal_calc_flutter/asset_keypad.dart';
+import 'package:dozenal_calc_flutter/asset_labels.dart';
+import 'package:dozenal_calc_flutter/asset_state.dart';
+import 'package:dozenal_calc_flutter/converter_display.dart';
+import 'package:dozenal_calc_flutter/l10n/app_localizations.dart';
+import 'package:dozenal_calc_flutter/logic/price_history.dart';
+import 'package:dozenal_calc_flutter/logic/unit_data.dart';
+import 'package:dozenal_calc_flutter/price_chart.dart';
+import 'package:dozenal_calc_flutter/price_sources_page.dart';
+import 'package:dozenal_calc_flutter/rates_page.dart';
 import 'package:flutter/material.dart';
-
-import 'app_layout.dart';
-import 'app_theme.dart';
-import 'asset_keypad.dart';
-import 'asset_labels.dart';
-import 'asset_state.dart';
-import 'converter_display.dart';
-import 'l10n/app_localizations.dart';
-import 'logic/price_history.dart';
-import 'logic/unit_data.dart';
-import 'price_chart.dart';
-import 'price_sources_page.dart';
-import 'rates_page.dart';
 
 /// Embeddable asset-converter content: display + keypad, padded like the main
 /// calculator body. Expects Scaffold/SafeArea/Directionality(ltr) from its host.
 class AssetBody extends StatelessWidget {
-  const AssetBody({super.key, required this.state});
+  const AssetBody({required this.state, super.key});
 
   final AssetState state;
 
@@ -96,7 +95,7 @@ class AssetBody extends StatelessWidget {
                               eraReconstructedLabel: l.priceEraAnchor,
                               onClose: state.toggleChart,
                               onSourcesTap: () => Navigator.of(ctx).push(
-                                MaterialPageRoute(
+                                MaterialPageRoute<void>(
                                   builder: (_) => const PriceSourcesPage(),
                                 ),
                               ),
@@ -112,7 +111,7 @@ class AssetBody extends StatelessWidget {
                               onRatesTap: state.rates == null
                                   ? null
                                   : () => Navigator.of(ctx).push(
-                                      MaterialPageRoute(
+                                      MaterialPageRoute<void>(
                                         builder: (_) =>
                                             RatesPage(store: state.rates!),
                                       ),

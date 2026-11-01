@@ -13,11 +13,10 @@
 import 'dart:io';
 import 'dart:ui' as ui;
 
+import 'package:dozenal_calc_flutter/glyph_painter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-
-import 'package:dozenal_calc_flutter/glyph_painter.dart';
 
 const String _fontFamily = 'FeatureLiberation';
 
@@ -33,8 +32,8 @@ void main() {
   test('generate feature graphic', () async {
     await _loadFont();
 
-    const double w = 1024.0;
-    const double h = 500.0;
+    const w = 1024.0;
+    const h = 500.0;
 
     final recorder = ui.PictureRecorder();
     final canvas = Canvas(recorder, const Rect.fromLTWH(0, 0, w, h));
@@ -75,11 +74,11 @@ void main() {
     // 12 dozenal glyphs in a horizontal row, centred mid-height. Each
     // composite digit needs ~4q vertical room (= cellSize). The single-
     // arrow anchors only need 2q. We size so that composites fit.
-    const double glyphCellSize = 50.0;
-    const double glyphGap = 22.0;
-    final totalGlyphRowWidth = 12 * glyphCellSize + 11 * glyphGap;
-    final glyphRowStartX = (w - totalGlyphRowWidth) / 2 + glyphCellSize / 2;
-    final glyphRowY = h * 0.55;
+    const glyphCellSize = 50.0;
+    const glyphGap = 22.0;
+    const totalGlyphRowWidth = 12 * glyphCellSize + 11 * glyphGap;
+    const glyphRowStartX = (w - totalGlyphRowWidth) / 2 + glyphCellSize / 2;
+    const glyphRowY = h * 0.55;
     for (var i = 0; i < 12; i++) {
       paintDozenalDigitAt(
         canvas,

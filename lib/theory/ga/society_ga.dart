@@ -38,7 +38,7 @@ List<ProseChapter> _societyChaptersGa() => const [
       ),
       ProseSection(
         'Tagann na cumainn chun cinn',
-        'As na litreacha mar fhreagra ar alt Andrews d\'fhás ciorcal '
+        "As na litreacha mar fhreagra ar alt Andrews d'fhás ciorcal "
             'comhfhreagrais agus as sin in 1944 an „Duodecimal Society of '
             'America". Thug Ralph „Whiskers" Beard an t-ainm uirthi mar mhagadh; '
             'bhronn George Terry an caipiteal tosaigh. Níos déanaí athainmníodh í '
@@ -102,11 +102,11 @@ List<ProseChapter> _societyChaptersGa() => const [
       ),
       ProseSection(
         'Pitman, Unicode agus an t-athrú 2026',
-        'D\'athraigh an cumann Meiriceánach a chuid comharthaí arís agus arís '
+        "D'athraigh an cumann Meiriceánach a chuid comharthaí arís agus arís "
             'eile: séisteal agus crois dhúbailte go dtí thart ar 2008, ansin '
             'glifeanna Dwiggins, ó 2015 digití Pitman. In 2015 ghlac an caighdeán '
             'Unicode comharthaí Pitman isteach go hoifigiúil freisin.\n\n'
-            'Go luath in 2026 d\'aistrigh an cumann a chuid leathanach gréasáin '
+            "Go luath in 2026 d'aistrigh an cumann a chuid leathanach gréasáin "
             'go dtí na litreacha A agus B — ní toisc go raibh sé ag tabhairt suas '
             'Pitman, ach toisc nach dtaispeántar na carachtair speisialta go '
             'hiontaofa fós ar a lán brabhsálaithe agus fón póca. Sa Bhulaitín '
@@ -124,7 +124,7 @@ List<ProseChapter> _societyChaptersGa() => const [
             'bheadh dhá dhigit nua cumtha ag duine le dhá „mhéar" déag — ráite '
             '„dek" do Dheich agus „el" do Aon Déag. Measadh é róchrua do pháistí '
             'bunscoile agus craoladh é níos annaimhe ná na heipeasóidí eile, ach '
-            'd\'fhan sé i gcuimhne a lán daoine.',
+            "d'fhan sé i gcuimhne a lán daoine.",
       ),
     ],
     sources: [
@@ -293,7 +293,7 @@ List<ProseChapter> _societyChaptersGa() => const [
         'A1',
       ),
       Source(
-        'Dozenal RPN Calculator — Eddie\'s Math and Calculator Blog',
+        "Dozenal RPN Calculator — Eddie's Math and Calculator Blog",
         'http://edspi31415.blogspot.com/2026/02/dozenal-rpn-calculator-app-for-android.html',
         'R3',
         'A1',
@@ -305,7 +305,7 @@ List<ProseChapter> _societyChaptersGa() => const [
     [
       ProseSection(
         'Aip don bhonn a dó dhéag',
-        'Is áireamhán don iPhone é Dozecal a oibríonn go dúchasach sa bhonn a dó dhéag. D\'fhoilsigh an forbróir neamhspleách Johan Kovacs é in 2020; tá an aip saor in aisce. Is é an cuspóir follasach atá aici úsáid an bhoinn a dó dhéag sa mhatamaitic agus san eolaíocht a chur chun cinn.\n\nDéantar an áireamh sa mhód dóisíneach nó sa mhód deachúlach, de réir mar is rogha leat. Agus tú ag aistriú idir an dá mhód, déantar an luach atá ar taispeáint a thiontú go huathoibríoch. Oibríonn na feidhmeanna triantánaíochta le céimeanna mar aonad tomhais.',
+        "Is áireamhán don iPhone é Dozecal a oibríonn go dúchasach sa bhonn a dó dhéag. D'fhoilsigh an forbróir neamhspleách Johan Kovacs é in 2020; tá an aip saor in aisce. Is é an cuspóir follasach atá aici úsáid an bhoinn a dó dhéag sa mhatamaitic agus san eolaíocht a chur chun cinn.\n\nDéantar an áireamh sa mhód dóisíneach nó sa mhód deachúlach, de réir mar is rogha leat. Agus tú ag aistriú idir an dá mhód, déantar an luach atá ar taispeáint a thiontú go huathoibríoch. Oibríonn na feidhmeanna triantánaíochta le céimeanna mar aonad tomhais.",
       ),
       ProseSection(
         'Nodaireacht Pholannach Inbhéartaithe',
@@ -346,7 +346,7 @@ List<ProseChapter> _societyChaptersGa() => const [
       ),
       ProseSection(
         'Isteach san innealtóireacht leictreach',
-        'Is neamhghnách d\'áireamhán dozenach an méid a shíneann sé isteach san fhisic fheidhmeach: tá raonta cainníochta dá chuid féin aige don choisíocht leictreach (impedance), don chainníocht leictreach (lucht), don photaisiúl leictreach (voltas) agus don tsruth leictreach. Leis sin is féidir an innealtóireacht leictreach a ríomh i mbonn a dó dhéag freisin.',
+        "Is neamhghnách d'áireamhán dozenach an méid a shíneann sé isteach san fhisic fheidhmeach: tá raonta cainníochta dá chuid féin aige don choisíocht leictreach (impedance), don chainníocht leictreach (lucht), don photaisiúl leictreach (voltas) agus don tsruth leictreach. Leis sin is féidir an innealtóireacht leictreach a ríomh i mbonn a dó dhéag freisin.",
       ),
     ],
     sources: [

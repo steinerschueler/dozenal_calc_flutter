@@ -32,12 +32,6 @@ part 'zh_Hant/recommendations_zh_Hant.dart';
 /// One recommended calculator: its [name], a short [tag] (license · genre),
 /// a one/two-sentence [blurb], [pros]/[cons] bullet lists, and a primary [url].
 class RecCalc {
-  final String name;
-  final String tag;
-  final String blurb;
-  final List<String> pros;
-  final List<String> cons;
-  final String url;
   const RecCalc(
     this.name, {
     required this.tag,
@@ -46,21 +40,27 @@ class RecCalc {
     required this.cons,
     required this.url,
   });
+  final String name;
+  final String tag;
+  final String blurb;
+  final List<String> pros;
+  final List<String> cons;
+  final String url;
 }
 
 /// One platform chapter: a [title], a short [intro], its [calcs], and a closing
 /// [verdict] line.
 class RecChapter {
-  final String title;
-  final String intro;
-  final List<RecCalc> calcs;
-  final String verdict;
   const RecChapter(
     this.title, {
     required this.intro,
     required this.calcs,
     required this.verdict,
   });
+  final String title;
+  final String intro;
+  final List<RecCalc> calcs;
+  final String verdict;
 }
 
 /// The recommendation chapters in [langTag] (BCP-47). Script-aware: zh-Hant

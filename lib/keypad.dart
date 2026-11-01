@@ -23,18 +23,18 @@
 
 import 'dart:math' as math;
 
+import 'package:dozenal_calc_flutter/app_layout.dart';
+import 'package:dozenal_calc_flutter/app_theme.dart';
+import 'package:dozenal_calc_flutter/calc_prefs.dart'
+    show KeypadMode, KeypadProfile;
+import 'package:dozenal_calc_flutter/glyph_painter.dart';
+import 'package:dozenal_calc_flutter/haptics.dart';
+import 'package:dozenal_calc_flutter/keypad_parts.dart';
+import 'package:dozenal_calc_flutter/l10n/app_localizations.dart';
+import 'package:dozenal_calc_flutter/logic/glyph_style.dart';
+import 'package:dozenal_calc_flutter/tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
-import 'app_layout.dart';
-import 'app_theme.dart';
-import 'calc_prefs.dart' show KeypadMode, KeypadProfile;
-import 'glyph_painter.dart';
-import 'haptics.dart';
-import 'keypad_parts.dart';
-import 'l10n/app_localizations.dart';
-import 'logic/glyph_style.dart';
-import 'tokens.dart';
 
 // Button colors (formerly file-level egui consts) live in AppColors
 // (lib/app_theme.dart): digit/digitPressed/digitDisabled, op/opPressed,
@@ -56,6 +56,20 @@ typedef DisabledPredicate = bool Function(CalcToken token);
 // ---------------------------------------------------------------------------
 
 class Keypad extends StatelessWidget {
+  const Keypad({
+    required this.onTap,
+    super.key,
+    this.isArmed,
+    this.isSelected,
+    this.isDisabled,
+    this.onInfoTap,
+    this.onHelpTap,
+    this.overlayOpen = false,
+    this.overlayPage = 0,
+    this.onOverlayPageChanged,
+    this.keypadMode = KeypadMode.overlay,
+    this.keypadProfile = KeypadProfile.full,
+  });
   final TokenTapHandler onTap;
   final ArmedPredicate? isArmed;
   final SelectedPredicate? isSelected;
@@ -81,21 +95,6 @@ class Keypad extends StatelessWidget {
   /// unaffected.
   final KeypadMode keypadMode;
   final KeypadProfile keypadProfile;
-
-  const Keypad({
-    super.key,
-    required this.onTap,
-    this.isArmed,
-    this.isSelected,
-    this.isDisabled,
-    this.onInfoTap,
-    this.onHelpTap,
-    this.overlayOpen = false,
-    this.overlayPage = 0,
-    this.onOverlayPageChanged,
-    this.keypadMode = KeypadMode.overlay,
-    this.keypadProfile = KeypadProfile.full,
-  });
 
   @override
   Widget build(BuildContext context) {
@@ -249,6 +248,19 @@ const double _kPageArrowMargin = 6.0;
 // ---------------------------------------------------------------------------
 
 class _HochKeypad extends StatelessWidget {
+  const _HochKeypad({
+    required this.onTap,
+    required this.overlayOpen,
+    required this.overlayPage,
+    required this.onOverlayPageChanged,
+    required this.mode,
+    required this.profile,
+    this.isArmed,
+    this.isSelected,
+    this.isDisabled,
+    this.onInfoTap,
+    this.onHelpTap,
+  });
   final TokenTapHandler onTap;
   final ArmedPredicate? isArmed;
   final SelectedPredicate? isSelected;
@@ -260,20 +272,6 @@ class _HochKeypad extends StatelessWidget {
   final ValueChanged<int>? onOverlayPageChanged;
   final KeypadMode mode;
   final KeypadProfile profile;
-
-  const _HochKeypad({
-    required this.onTap,
-    this.isArmed,
-    this.isSelected,
-    this.isDisabled,
-    this.onInfoTap,
-    this.onHelpTap,
-    required this.overlayOpen,
-    required this.overlayPage,
-    required this.onOverlayPageChanged,
-    required this.mode,
-    required this.profile,
-  });
 
   @override
   Widget build(BuildContext context) {
@@ -482,16 +480,6 @@ class _HochKeypad extends StatelessWidget {
 /// main op-grid panel (Sets 1-4 + system row) and the overlay panel
 /// (Sets 6-9 + Set 10 mode row).
 class _MiddleSection extends StatelessWidget {
-  final bool overlayOpen;
-  final int overlayPage;
-  final ValueChanged<int>? onOverlayPageChanged;
-  final bool tight;
-  final bool fixedHeights;
-  final TokenTapHandler onTap;
-  final ArmedPredicate? isArmed;
-  final SelectedPredicate? isSelected;
-  final DisabledPredicate? isDisabled;
-
   const _MiddleSection({
     required this.overlayOpen,
     required this.overlayPage,
@@ -503,6 +491,15 @@ class _MiddleSection extends StatelessWidget {
     this.isSelected,
     this.isDisabled,
   });
+  final bool overlayOpen;
+  final int overlayPage;
+  final ValueChanged<int>? onOverlayPageChanged;
+  final bool tight;
+  final bool fixedHeights;
+  final TokenTapHandler onTap;
+  final ArmedPredicate? isArmed;
+  final SelectedPredicate? isSelected;
+  final DisabledPredicate? isDisabled;
 
   @override
   Widget build(BuildContext context) {
@@ -536,22 +533,21 @@ class _MiddleSection extends StatelessWidget {
 }
 
 class _MainOpsPanel extends StatelessWidget {
+  const _MainOpsPanel({
+    required this.tight,
+    required this.fixedHeights,
+    required this.onTap,
+    super.key,
+    this.isArmed,
+    this.isSelected,
+    this.isDisabled,
+  });
   final bool tight;
   final bool fixedHeights;
   final TokenTapHandler onTap;
   final ArmedPredicate? isArmed;
   final SelectedPredicate? isSelected;
   final DisabledPredicate? isDisabled;
-
-  const _MainOpsPanel({
-    super.key,
-    required this.tight,
-    required this.fixedHeights,
-    required this.onTap,
-    this.isArmed,
-    this.isSelected,
-    this.isDisabled,
-  });
 
   @override
   Widget build(BuildContext context) {
@@ -569,6 +565,17 @@ class _MainOpsPanel extends StatelessWidget {
 }
 
 class _OverlayPanel extends StatelessWidget {
+  const _OverlayPanel({
+    required this.tight,
+    required this.fixedHeights,
+    required this.page,
+    required this.onPageChanged,
+    required this.onTap,
+    super.key,
+    this.isArmed,
+    this.isSelected,
+    this.isDisabled,
+  });
   final bool tight;
   final bool fixedHeights;
   final int page;
@@ -577,18 +584,6 @@ class _OverlayPanel extends StatelessWidget {
   final ArmedPredicate? isArmed;
   final SelectedPredicate? isSelected;
   final DisabledPredicate? isDisabled;
-
-  const _OverlayPanel({
-    super.key,
-    required this.tight,
-    required this.fixedHeights,
-    required this.page,
-    required this.onPageChanged,
-    required this.onTap,
-    this.isArmed,
-    this.isSelected,
-    this.isDisabled,
-  });
 
   void _go(int p) => onPageChanged?.call(p);
 
@@ -660,14 +655,14 @@ class _OverlayPanel extends StatelessWidget {
 /// pages and signals that a second page exists next to the current one.
 /// Used by the Hoch overlay (OLL/OLR) and the Breit third group.
 class _PageArrow extends StatelessWidget {
-  final bool pointLeft;
-  final VoidCallback onTap;
-  final String label;
   const _PageArrow({
     required this.pointLeft,
     required this.onTap,
     required this.label,
   });
+  final bool pointLeft;
+  final VoidCallback onTap;
+  final String label;
 
   @override
   Widget build(BuildContext context) {
@@ -705,9 +700,9 @@ class _PageArrow extends StatelessWidget {
 /// to label the extended sets. Rendered only while the overlay is open, so the
 /// closed keypad — the Play-Store screenshot — is unaffected.
 class _OverlayHeader extends StatelessWidget {
+  const _OverlayHeader({required this.title, required this.tight});
   final String title;
   final bool tight;
-  const _OverlayHeader({required this.title, required this.tight});
 
   @override
   Widget build(BuildContext context) {
@@ -735,17 +730,6 @@ class _OverlayHeader extends StatelessWidget {
 
 /// AnimatedSwitcher children have identical structure.
 class _RowsPanel extends StatelessWidget {
-  // Nullable cells: a null slot renders as an empty gap (used to pad the
-  // function-key page where the last row isn't full).
-  final List<List<CalcToken?>> opRows;
-  final List<CalcToken?> bottomRow;
-  final bool tight;
-  final bool fixedHeights;
-  final TokenTapHandler onTap;
-  final ArmedPredicate? isArmed;
-  final SelectedPredicate? isSelected;
-  final DisabledPredicate? isDisabled;
-
   const _RowsPanel({
     required this.opRows,
     required this.bottomRow,
@@ -756,6 +740,16 @@ class _RowsPanel extends StatelessWidget {
     this.isSelected,
     this.isDisabled,
   });
+  // Nullable cells: a null slot renders as an empty gap (used to pad the
+  // function-key page where the last row isn't full).
+  final List<List<CalcToken?>> opRows;
+  final List<CalcToken?> bottomRow;
+  final bool tight;
+  final bool fixedHeights;
+  final TokenTapHandler onTap;
+  final ArmedPredicate? isArmed;
+  final SelectedPredicate? isSelected;
+  final DisabledPredicate? isDisabled;
 
   @override
   Widget build(BuildContext context) {
@@ -813,6 +807,18 @@ class _RowsPanel extends StatelessWidget {
 // ---------------------------------------------------------------------------
 
 class _BreitKeypad extends StatelessWidget {
+  const _BreitKeypad({
+    required this.onTap,
+    required this.page,
+    required this.onPageChanged,
+    required this.mode,
+    required this.profile,
+    this.isArmed,
+    this.isSelected,
+    this.isDisabled,
+    this.onInfoTap,
+    this.onHelpTap,
+  });
   final TokenTapHandler onTap;
   final ArmedPredicate? isArmed;
   final SelectedPredicate? isSelected;
@@ -829,19 +835,6 @@ class _BreitKeypad extends StatelessWidget {
   final ValueChanged<int>? onPageChanged;
   final KeypadMode mode;
   final KeypadProfile profile;
-
-  const _BreitKeypad({
-    required this.onTap,
-    this.isArmed,
-    this.isSelected,
-    this.isDisabled,
-    this.onInfoTap,
-    this.onHelpTap,
-    required this.page,
-    required this.onPageChanged,
-    required this.mode,
-    required this.profile,
-  });
 
   @override
   Widget build(BuildContext context) {
@@ -1194,15 +1187,14 @@ class _BreitKeypad extends StatelessWidget {
 // ---------------------------------------------------------------------------
 
 class _DigitButton extends StatelessWidget {
-  final DozenalDigit digit;
-  final VoidCallback onTap;
-  final bool disabled;
-
   const _DigitButton({
     required this.digit,
     required this.onTap,
     this.disabled = false,
   });
+  final DozenalDigit digit;
+  final VoidCallback onTap;
+  final bool disabled;
 
   @override
   Widget build(BuildContext context) {
@@ -1240,6 +1232,15 @@ class _DigitButton extends StatelessWidget {
 }
 
 class _TokenButton extends StatefulWidget {
+  const _TokenButton({
+    required this.token,
+    required this.onTap,
+    this.onTokenTap,
+    this.armed = false,
+    this.selected = false,
+    this.disabled = false,
+    this.isOptionDisabled,
+  });
   final CalcToken token;
   final VoidCallback onTap;
 
@@ -1260,16 +1261,6 @@ class _TokenButton extends StatefulWidget {
   /// while the asset calculator holds nothing) — the same "grey = empty"
   /// affordance the keys themselves follow. Null keeps every option live.
   final DisabledPredicate? isOptionDisabled;
-
-  const _TokenButton({
-    required this.token,
-    required this.onTap,
-    this.onTokenTap,
-    this.armed = false,
-    this.selected = false,
-    this.disabled = false,
-    this.isOptionDisabled,
-  });
 
   @override
   State<_TokenButton> createState() => _TokenButtonState();
@@ -1512,6 +1503,12 @@ class _TokenButtonState extends State<_TokenButton> {
 /// painter and palette as a real key, tappable for the release-then-tap
 /// mode, highlighted while the slide gesture hovers it.
 class _PopupOption extends StatelessWidget {
+  const _PopupOption({
+    required this.token,
+    required this.highlighted,
+    required this.onTap,
+    this.disabled = false,
+  });
   final CalcToken token;
   final bool highlighted;
   final VoidCallback onTap;
@@ -1519,13 +1516,6 @@ class _PopupOption extends StatelessWidget {
   /// Greyed and inert (same "grey = nothing to pull" affordance as the
   /// keys, e.g. VAL while the asset calculator holds no result).
   final bool disabled;
-
-  const _PopupOption({
-    required this.token,
-    required this.highlighted,
-    required this.onTap,
-    this.disabled = false,
-  });
 
   @override
   Widget build(BuildContext context) {
@@ -1566,9 +1556,8 @@ class _PopupOption extends StatelessWidget {
 /// host (same discoverability idea as the "…" corner glyphs on smartphone
 /// keyboards).
 class _CornerMarkPainter extends CustomPainter {
-  final Color color;
-
   _CornerMarkPainter({required this.color});
+  final Color color;
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -1673,10 +1662,9 @@ class _ArmedDot extends StatelessWidget {
 }
 
 class _EqualsBar extends StatelessWidget {
+  const _EqualsBar({required this.onTap, required this.normalColor});
   final VoidCallback onTap;
   final Color normalColor;
-
-  const _EqualsBar({required this.onTap, required this.normalColor});
 
   @override
   Widget build(BuildContext context) {
@@ -1697,17 +1685,16 @@ class _EqualsBar extends StatelessWidget {
 /// intro. Side buttons are hidden (placeholder) when their callback is null.
 /// Sizes itself to the parent's height; no internal SizedBox.
 class _EqualsRow extends StatelessWidget {
-  final double sideGap;
-  final VoidCallback onEquals;
-  final VoidCallback? onInfoTap;
-  final VoidCallback? onHelpTap;
-
   const _EqualsRow({
     required this.sideGap,
     required this.onEquals,
     this.onInfoTap,
     this.onHelpTap,
   });
+  final double sideGap;
+  final VoidCallback onEquals;
+  final VoidCallback? onInfoTap;
+  final VoidCallback? onHelpTap;
 
   @override
   Widget build(BuildContext context) {
@@ -1746,17 +1733,16 @@ class _EqualsRow extends StatelessWidget {
 }
 
 class _RoundIconButton extends StatelessWidget {
-  final double size;
-  final IconData icon;
-  final String? tooltip;
-  final VoidCallback? onPressed;
-
   const _RoundIconButton({
     required this.size,
     required this.icon,
     this.tooltip,
     this.onPressed,
   });
+  final double size;
+  final IconData icon;
+  final String? tooltip;
+  final VoidCallback? onPressed;
 
   @override
   Widget build(BuildContext context) {

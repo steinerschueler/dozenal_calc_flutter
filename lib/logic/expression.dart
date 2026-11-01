@@ -12,11 +12,11 @@
 
 import 'dart:math' as math;
 
-import '../tokens.dart';
-import 'dozenal_converter.dart';
-import 'dozenal_digit.dart';
-import 'rat_parser.dart';
-import 'rational.dart';
+import 'package:dozenal_calc_flutter/logic/dozenal_converter.dart';
+import 'package:dozenal_calc_flutter/logic/dozenal_digit.dart';
+import 'package:dozenal_calc_flutter/logic/rat_parser.dart';
+import 'package:dozenal_calc_flutter/logic/rational.dart';
+import 'package:dozenal_calc_flutter/tokens.dart';
 
 /// Maximum number of period digits rendered with an overline. Periods longer
 /// than this are truncated and signalled with the State-C raised-dots suffix.
@@ -693,6 +693,12 @@ String buildMevalString(List<CalcToken> expanded, {int base = 12}) {
 // ---------------------------------------------------------------------------
 
 class PeriodMeta {
+  const PeriodMeta({
+    required this.start,
+    required this.len,
+    required this.capped,
+  });
+
   /// Index in result_buffer where the period begins, or null if no period.
   final int? start;
 
@@ -701,12 +707,6 @@ class PeriodMeta {
 
   /// True when the true period exceeds maxPeriodDisplay and was truncated.
   final bool capped;
-
-  const PeriodMeta({
-    required this.start,
-    required this.len,
-    required this.capped,
-  });
 }
 
 ({List<CalcToken> buf, PeriodMeta meta}) formatRationalResult(
@@ -821,15 +821,15 @@ enum _FTokKind {
 }
 
 class _FTok {
+  const _FTok(this.kind, this.text);
   final _FTokKind kind;
   final String text;
-  const _FTok(this.kind, this.text);
 }
 
 class _F64Lexer {
+  _F64Lexer(this.src);
   final String src;
   int pos = 0;
-  _F64Lexer(this.src);
 
   void _skipWs() {
     while (pos < src.length && _isWs(src.codeUnitAt(pos))) {
@@ -914,6 +914,7 @@ class _F64Lexer {
 }
 
 class _F64Parser {
+  _F64Parser(this.toks, this.angleMode);
   final List<_FTok> toks;
   final AngleMode angleMode;
   int pos = 0;
@@ -922,8 +923,6 @@ class _F64Parser {
   /// zero divisor. Lets the caller tell a true division-by-zero (→ DIV BY
   /// ZERO) apart from a magnitude overflow (→ OVERFLOW); both surface as ±∞.
   bool divByZero = false;
-
-  _F64Parser(this.toks, this.angleMode);
 
   _FTok? _peek() => pos < toks.length ? toks[pos] : null;
 

@@ -1,10 +1,10 @@
 // Behaviour of ConverterState (compound input) + the base_num helpers.
 // Spec: docs/unit-converter.md §4 / §4a / §7
 
-import 'package:flutter_test/flutter_test.dart';
 import 'package:dozenal_calc_flutter/converter_state.dart';
 import 'package:dozenal_calc_flutter/logic/base_num.dart';
 import 'package:dozenal_calc_flutter/logic/unit_data.dart';
+import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   group('base_num', () {

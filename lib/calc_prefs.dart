@@ -5,10 +5,9 @@
 // keys — keep their choice across restarts. Mirrors the GlyphStyleNotifier /
 // HapticsNotifier shape: a ChangeNotifier behind an InheritedNotifier.
 
+import 'package:dozenal_calc_flutter/tokens.dart' show AngleMode, NumeralSystem;
 import 'package:flutter/widgets.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
-import 'tokens.dart' show AngleMode, NumeralSystem;
 
 /// How the Hoch keypad reaches the extended sets (Sets 6-10 + function keys).
 enum KeypadMode {
@@ -154,9 +153,9 @@ class CalcPrefsNotifier extends ChangeNotifier {
 
 class CalcPrefsScope extends InheritedNotifier<CalcPrefsNotifier> {
   const CalcPrefsScope({
-    super.key,
     required CalcPrefsNotifier super.notifier,
     required super.child,
+    super.key,
   });
 
   static CalcPrefsNotifier of(BuildContext context) {

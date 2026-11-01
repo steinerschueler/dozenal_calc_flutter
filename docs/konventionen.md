@@ -31,7 +31,7 @@ Aus dem früheren Gesamtdokument übernommen. Verweise wie «oben» oder «siehe
   beibehalten — sie sind der Lookup-Schlüssel für Verhaltens-Querverweise.
 - **Lints:** `analysis_options.yaml` nutzt `very_good_analysis` in fester Version (CC-01, CC-04). Die Zeilengrenze von 80 Zeichen ist abgeschaltet, siehe [ADR 0002](decisions/0002-keine-zeilengrenze-80.md). Der Altbestand wird
   Datei für Datei bereinigt: `tool/analyze_changed.py` lässt Fehler nirgends und Warnungen und Lint-Befunde in geänderten
-  Dateien nicht durch (CC-41). Die CI prüft dasselbe, dazu `dart format`.
+  Dateien nicht durch (CC-41). Die CI prüft dasselbe, dazu `dart format`. Ein Commit mit der Zeile `Lint-Bulk: <Grund>` zählt nicht als Änderung. Sie ist nur für reine Sammelkorrekturen gedacht, die zweite Prüfung bestätigt das. Der Hook kennt die Nachricht beim Commit noch nicht, darum braucht ein solcher Commit `SKIP=dart-analyze-changed`. Gemergt wird mit Merge-Commit, nicht per Squash, sonst geht die Zeile verloren.
 
 ## Umgebungs-Hinweise
 

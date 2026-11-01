@@ -6,21 +6,21 @@ List<ProseChapter> _societyChaptersIt() => const [
     [
       ProseSection(
         'Singoli precursori',
-        'L\'idea di calcolare in dodici anziché in dieci è antica. A lungo, però, '
+        "L'idea di calcolare in dodici anziché in dieci è antica. A lungo, però, "
             'ci furono solo singoli sostenitori, non un movimento. Già nel XVIII '
             'secolo viene citato il naturalista Buffon — la fonte precisa, '
-            'tuttavia, è incerta e passa da un\'opera di consultazione '
-            'all\'altra.\n\n'
-            'Diventa più concreto nel XIX secolo. L\'inventore della stenografia '
+            "tuttavia, è incerta e passa da un'opera di consultazione "
+            "all'altra.\n\n"
+            "Diventa più concreto nel XIX secolo. L'inventore della stenografia "
             'Isaac Pitman, a partire dal 1857, si fece promotore del dodici e '
-            'propose simboli propri per il dieci e l\'undici. Il filosofo Herbert '
+            "propose simboli propri per il dieci e l'undici. Il filosofo Herbert "
             'Spencer sostenne questa causa nel 1896, espressamente contro il '
             'sistema metrico.',
       ),
       ProseSection(
         'Andrews e «New Numbers»',
         'A dare concretezza alla cosa fu un americano: Frank Emerson Andrews. Nel '
-            '1934 uscì il suo saggio «An Excursion in Numbers» sull\'Atlantic '
+            "1934 uscì il suo saggio «An Excursion in Numbers» sull'Atlantic "
             'Monthly — una rivista che, per sua stessa ammissione, non aveva mai '
             'pubblicato matematica prima di allora e che corredò il testo, in '
             'mezzo alla pagina, di un avviso per i lettori restii alla '
@@ -28,12 +28,12 @@ List<ProseChapter> _societyChaptersIt() => const [
             'Nel 1935 seguì il suo libro «New Numbers», il primo del suo genere '
             'negli Stati Uniti. Il suo argomento era semplice: il dodici è '
             'divisibile per 2, 3, 4 e 6, il dieci solo per 2 e 5. Andrews era però '
-            'realista — riteneva improbabile un\'effettiva conversione, contro la '
-            '«tenace forza dell\'abitudine».',
+            "realista — riteneva improbabile un'effettiva conversione, contro la "
+            "«tenace forza dell'abitudine».",
       ),
       ProseSection(
         'Nascono le società',
-        'Dalle lettere giunte in risposta all\'articolo di Andrews nacque una '
+        "Dalle lettere giunte in risposta all'articolo di Andrews nacque una "
             'cerchia di corrispondenti e da questa, nel 1944, la «Duodecimal '
             'Society of America». Il nome glielo diede scherzosamente Ralph '
             '«Whiskers» Beard; il capitale iniziale lo donò George Terry. Più '
@@ -81,12 +81,12 @@ List<ProseChapter> _societyChaptersIt() => const [
     ],
   ),
   ProseChapter(
-    'Nuove cifre per il dieci e l\'undici',
+    "Nuove cifre per il dieci e l'undici",
     [
       ProseSection(
         'Il problema dei simboli',
         'Chi calcola in dodici ha bisogno di due cifre aggiuntive — per il dieci '
-            'e per l\'undici. Quali debbano essere non è chiarito in modo unitario '
+            "e per l'undici. Quali debbano essere non è chiarito in modo unitario "
             'ancora oggi; persino la società americana non prescrive una notazione '
             'fissa.\n\n'
             'Esistono diverse varianti: il due e il tre rovesciati di Pitman (↊ e '
@@ -101,7 +101,7 @@ List<ProseChapter> _societyChaptersIt() => const [
             'cancelletto fino al 2008 circa, poi i glifi di Dwiggins, dal 2015 le '
             'cifre di Pitman. Nel 2015 anche lo standard Unicode accolse '
             'ufficialmente i simboli di Pitman.\n\n'
-            'All\'inizio del 2026 la società convertì i propri siti web alle '
+            "All'inizio del 2026 la società convertì i propri siti web alle "
             'lettere A e B — non perché rinunciasse a Pitman, ma perché i caratteri '
             'speciali su molti browser e telefoni non vengono ancora visualizzati '
             'in modo affidabile. Nel bollettino stampato le cifre di Pitman '
@@ -116,7 +116,7 @@ List<ProseChapter> _societyChaptersIt() => const [
             'nel 1973.\n\n'
             'In essa un amichevole extraterrestre con dodici dita dei piedi mostra '
             'come qualcuno con dodici «dita» avrebbe inventato due nuove cifre — '
-            'pronunciate «dek» per il dieci ed «el» per l\'undici. Era ritenuta '
+            "pronunciate «dek» per il dieci ed «el» per l'undici. Era ritenuta "
             'troppo difficile per i bambini delle elementari e veniva trasmessa più '
             'di rado degli altri episodi, ma rimase impressa nella memoria di '
             'molti.',
@@ -175,7 +175,7 @@ List<ProseChapter> _societyChaptersIt() => const [
             'Accanto a ciò esiste una denominazione sistematica, sviluppata nella '
             'comunità online: radici lessicali fisse per le cifre (un, bi, tri … '
             'dec, lev) più desinenze per le potenze del dodici — «-qua» verso '
-            'l\'alto, «-cia» verso il basso. Bello in tutto questo: «uncia» è '
+            "l'alto, «-cia» verso il basso. Bello in tutto questo: «uncia» è "
             'esattamente un dodicesimo — la stessa parola latina da cui sono nati '
             '«pollice» (inch) e «oncia».',
       ),
@@ -247,7 +247,7 @@ List<ProseChapter> _societyChaptersIt() => const [
       ProseSection(
         'Perché il mondo resta comunque decimale',
         'Che il dodici non si affermi non dipende quasi affatto dalla matematica — '
-            'questa è dalla sua parte. Dipende dall\'abitudine: il sistema decimale '
+            "questa è dalla sua parte. Dipende dall'abitudine: il sistema decimale "
             'è radicato nella lingua, nella scuola, nel diritto e nella tecnica, e '
             'una conversione sarebbe enormemente onerosa. Persino il ben più '
             'piccolo passaggio degli USA al sistema metrico fallì per questo '
@@ -286,7 +286,7 @@ List<ProseChapter> _societyChaptersIt() => const [
         'A1',
       ),
       Source(
-        'Dozenal RPN Calculator — Eddie\'s Math and Calculator Blog',
+        "Dozenal RPN Calculator — Eddie's Math and Calculator Blog",
         'http://edspi31415.blogspot.com/2026/02/dozenal-rpn-calculator-app-for-android.html',
         'R3',
         'A1',
@@ -297,16 +297,16 @@ List<ProseChapter> _societyChaptersIt() => const [
     'Dozecal — una calcolatrice dozenale',
     [
       ProseSection(
-        'Un\'app per la base dodici',
-        'Dozecal è una calcolatrice per iPhone che calcola nativamente in base dodici. È stata pubblicata nel 2020 dallo sviluppatore indipendente Johan Kovacs; l\'app è gratuita. Il suo obiettivo dichiarato è promuovere l\'uso della base dodici nella matematica e nelle scienze.\n\nIl calcolo avviene a scelta in modalità duodecimale o decimale. Quando si passa dall\'una all\'altra, il valore visualizzato viene convertito automaticamente. Le funzioni trigonometriche operano con i gradi come unità di misura.',
+        "Un'app per la base dodici",
+        "Dozecal è una calcolatrice per iPhone che calcola nativamente in base dodici. È stata pubblicata nel 2020 dallo sviluppatore indipendente Johan Kovacs; l'app è gratuita. Il suo obiettivo dichiarato è promuovere l'uso della base dodici nella matematica e nelle scienze.\n\nIl calcolo avviene a scelta in modalità duodecimale o decimale. Quando si passa dall'una all'altra, il valore visualizzato viene convertito automaticamente. Le funzioni trigonometriche operano con i gradi come unità di misura.",
       ),
       ProseSection(
         'Notazione polacca inversa',
-        'Una particolarità di Dozecal è l\'inserimento in notazione polacca inversa (RPN). Invece di «3 + 4 =» si digita «3 4 +» — prima i due numeri, poi l\'operazione di calcolo. All\'inizio risulta insolito, ma fa del tutto a meno delle parentesi ed è stato a lungo diffuso su molte calcolatrici scientifiche (per esempio quelle della Hewlett-Packard).',
+        "Una particolarità di Dozecal è l'inserimento in notazione polacca inversa (RPN). Invece di «3 + 4 =» si digita «3 4 +» — prima i due numeri, poi l'operazione di calcolo. All'inizio risulta insolito, ma fa del tutto a meno delle parentesi ed è stato a lungo diffuso su molte calcolatrici scientifiche (per esempio quelle della Hewlett-Packard).",
       ),
       ProseSection(
         'Parte del panorama degli strumenti dozenali',
-        'Dozecal non è realizzata da un\'associazione, bensì da una singola persona; nella sua descrizione rimanda alla Dozenal Society of America per ulteriori informazioni sulla base dodici. In questo modo appartiene al piccolo ma vivace panorama degli strumenti dozenali — accanto a questa app, ai materiali TGM e ad altre calcolatrici.',
+        "Dozecal non è realizzata da un'associazione, bensì da una singola persona; nella sua descrizione rimanda alla Dozenal Society of America per ulteriori informazioni sulla base dodici. In questo modo appartiene al piccolo ma vivace panorama degli strumenti dozenali — accanto a questa app, ai materiali TGM e ad altre calcolatrici.",
       ),
     ],
     sources: [
@@ -330,16 +330,16 @@ List<ProseChapter> _societyChaptersIt() => const [
         'Particolarmente ricca è la teoria dei numeri, cosa che si addice bene a una base apprezzata proprio per la sua divisibilità. La calcolatrice trova il massimo comune divisore e il minimo comune multiplo, elenca tutti i divisori di un numero e lo scompone in fattori primi (a scelta con la loro molteplicità). A ciò si aggiungono la somma dei divisori, il numero dei divisori e la funzione φ di Eulero, ovvero la quantità di numeri minori che sono coprimi con esso.',
       ),
       ProseSection(
-        'L\'intera cassetta degli attrezzi scientifica',
-        'Anche per il resto la cassetta degli attrezzi è completa: quadrato e radice quadrata, potenze e radici arbitrarie, la funzione esponenziale e i logaritmi — il logaritmo naturale così come le basi due e dieci e un logaritmo a base arbitraria. Vi sono inoltre le funzioni trigonometriche e iperboliche con le loro inverse, la combinatoria (combinazioni e permutazioni, anche con ripetizione), la statistica di base (media e deviazione standard), il fattoriale, una funzione percentuale, la funzione Gamma e l\'unità immaginaria i.',
+        "L'intera cassetta degli attrezzi scientifica",
+        "Anche per il resto la cassetta degli attrezzi è completa: quadrato e radice quadrata, potenze e radici arbitrarie, la funzione esponenziale e i logaritmi — il logaritmo naturale così come le basi due e dieci e un logaritmo a base arbitraria. Vi sono inoltre le funzioni trigonometriche e iperboliche con le loro inverse, la combinatoria (combinazioni e permutazioni, anche con ripetizione), la statistica di base (media e deviazione standard), il fattoriale, una funzione percentuale, la funzione Gamma e l'unità immaginaria i.",
       ),
       ProseSection(
         'Moltissime grandezze',
         'Oltre al puro calcolo, il programma copre decine di grandezze fisiche e le converte le une nelle altre: tempo e ora del giorno, frequenza, velocità, lunghezza, area, volume secco e volume liquido, massa, forza, pressione, energia, potenza, temperatura e angolo. Sono incluse anche le unità di tempo dozenali.',
       ),
       ProseSection(
-        'Fino all\'elettrotecnica',
-        'Insolito per una calcolatrice dozenale è quanto si spinga nella fisica applicata: dispone di propri ambiti di grandezza per l\'impedenza elettrica, la quantità elettrica (carica), il potenziale elettrico (tensione) e la corrente elettrica. In questo modo si può eseguire in base dodici anche il calcolo dell\'elettrotecnica.',
+        "Fino all'elettrotecnica",
+        "Insolito per una calcolatrice dozenale è quanto si spinga nella fisica applicata: dispone di propri ambiti di grandezza per l'impedenza elettrica, la quantità elettrica (carica), il potenziale elettrico (tensione) e la corrente elettrica. In questo modo si può eseguire in base dodici anche il calcolo dell'elettrotecnica.",
       ),
     ],
     sources: [

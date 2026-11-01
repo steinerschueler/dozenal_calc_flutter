@@ -3,8 +3,8 @@
 // Per PORTING.md, the only collapse causes that survive the port are
 // non-rational tokens and division by zero.
 
-import 'dozenal_converter.dart';
-import 'dozenal_digit.dart';
+import 'package:dozenal_calc_flutter/logic/dozenal_converter.dart';
+import 'package:dozenal_calc_flutter/logic/dozenal_digit.dart';
 
 /// Decomposition of a rational number into its dozenal expansion.
 /// `period` is empty iff the expansion is finite.
@@ -16,18 +16,7 @@ typedef DozenalPeriodic = ({
 
 /// Exact rational number. Invariants: `den > 0`, always reduced.
 class Rational {
-  final BigInt num;
-  final BigInt den;
-
   const Rational._raw(this.num, this.den);
-
-  /// Reduced constructor. Returns null on `den == 0`. Mirrors Rust `Rational::new`.
-  static Rational? tryNew(BigInt num, BigInt den) {
-    if (den == BigInt.zero) return null;
-    final g = num.gcd(den);
-    final sign = den.isNegative ? -BigInt.one : BigInt.one;
-    return Rational._raw(sign * (num ~/ g), sign * (den ~/ g));
-  }
 
   /// Convenience constructor for integer literals (tests, common cases).
   /// Throws ArgumentError on `den == 0`.
@@ -37,6 +26,16 @@ class Rational {
       throw ArgumentError('denominator must be non-zero');
     }
     return r;
+  }
+  final BigInt num;
+  final BigInt den;
+
+  /// Reduced constructor. Returns null on `den == 0`. Mirrors Rust `Rational::new`.
+  static Rational? tryNew(BigInt num, BigInt den) {
+    if (den == BigInt.zero) return null;
+    final g = num.gcd(den);
+    final sign = den.isNegative ? -BigInt.one : BigInt.one;
+    return Rational._raw(sign * (num ~/ g), sign * (den ~/ g));
   }
 
   static final Rational zero = Rational._raw(BigInt.zero, BigInt.one);

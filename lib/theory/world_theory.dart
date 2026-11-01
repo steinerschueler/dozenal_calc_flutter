@@ -12,7 +12,7 @@
 // translation; honest about caveats (a pyritohedron is NOT a platonic
 // dodecahedron).
 
-import 'prose_chapter.dart';
+import 'package:dozenal_calc_flutter/theory/prose_chapter.dart';
 
 part 'de/world_de.dart';
 part 'en/world_en.dart';

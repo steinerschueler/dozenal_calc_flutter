@@ -1,33 +1,38 @@
 // Unit tests for the pure result-presentation helpers extracted from
 // DozenalCalcState into logic/result_format.dart.
 
-import 'package:flutter_test/flutter_test.dart';
-
 import 'package:dozenal_calc_flutter/logic/dozenal_digit.dart';
 import 'package:dozenal_calc_flutter/logic/rational.dart';
 import 'package:dozenal_calc_flutter/logic/result_format.dart';
 import 'package:dozenal_calc_flutter/tokens.dart';
+import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   group('resultBufferToString', () {
     test('single ten digit renders as A', () {
-      expect(resultBufferToString([Digit(DozenalDigit.d10)]), equals('A'));
+      expect(
+        resultBufferToString([const Digit(DozenalDigit.d10)]),
+        equals('A'),
+      );
     });
 
     test('negate + digits + decimal', () {
       expect(
         resultBufferToString([
           const Negate(),
-          Digit(DozenalDigit.d1),
+          const Digit(DozenalDigit.d1),
           const Decimal(),
-          Digit(DozenalDigit.d6),
+          const Digit(DozenalDigit.d6),
         ]),
         equals('-1.6'),
       );
     });
 
     test('eleven renders as B', () {
-      expect(resultBufferToString([Digit(DozenalDigit.d11)]), equals('B'));
+      expect(
+        resultBufferToString([const Digit(DozenalDigit.d11)]),
+        equals('B'),
+      );
     });
   });
 

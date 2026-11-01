@@ -1,3 +1,6 @@
+// Prose wraps inside words and CJK has no spaces, so this lint almost only reports false positives.
+// ignore_for_file: missing_whitespace_between_adjacent_strings
+
 part of '../grundlagen_theory.dart';
 
 List<ProseChapter> _grundlagenChaptersZhHant() => const [

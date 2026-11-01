@@ -42,12 +42,6 @@ enum UnitCategory {
 /// `a` is the factor to the category base (SI for most categories). `world`
 /// decides whether the unit shows in the Doz (imperial) or Dez (metric) ladder.
 class Unit {
-  final String symbol;
-  final UnitWorld world;
-  final double a;
-  final double b;
-  final bool inverse;
-
   const Unit(
     this.symbol,
     this.world,
@@ -55,6 +49,11 @@ class Unit {
     this.b = 0,
     this.inverse = false,
   });
+  final String symbol;
+  final UnitWorld world;
+  final double a;
+  final double b;
+  final bool inverse;
 
   double toBase(double v) => inverse ? a / v : a * v + b;
   double fromBase(double base) => inverse ? a / base : (base - b) / a;
@@ -63,6 +62,14 @@ class Unit {
 /// A category definition: its ordered units (both worlds interleaved) plus
 /// flags for the two structural specialities.
 class CategoryDef {
+  const CategoryDef({
+    required this.category,
+    required this.label,
+    required this.units,
+    this.singleWorld = false,
+    this.breakdown = const [],
+    this.affine = false,
+  });
   final UnitCategory category;
 
   /// English key used as the keypad label and the l10n lookup key.
@@ -84,15 +91,6 @@ class CategoryDef {
   /// Affine category (temperature): values cannot be summed, so it stays
   /// single-term (each magnitude tap replaces the term) and has no breakdown.
   final bool affine;
-
-  const CategoryDef({
-    required this.category,
-    required this.label,
-    required this.units,
-    this.singleWorld = false,
-    this.breakdown = const [],
-    this.affine = false,
-  });
 
   bool get hasBreakdown => breakdown.isNotEmpty;
 
