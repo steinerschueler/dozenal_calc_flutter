@@ -17,3 +17,4 @@ linter:
   rules:
     public_member_api_docs: false
     avoid_catches_without_on_clauses: true
+    lines_longer_than_80_chars: false # see docs/decisions/0002
