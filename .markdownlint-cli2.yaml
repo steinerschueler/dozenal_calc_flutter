@@ -7,7 +7,7 @@ config:
   MD026: false # headings like "Die Zahl 12!" need their punctuation
   MD029: false # numbered rows carry real numbers with prose in between
   MD036: false # older research notes use bold lines as labels
-  MD060: false # npf tables use the compact |---| form
+  MD060: false # tables use the compact |---| form
 ignores:
   - legal/**
   - store/**

@@ -46,7 +46,7 @@ Test-Routing (für gezielte Edits):
 - `converter_keypad_layout_test.dart` — Umrechner-Layout über Seitenverhältnisse.
 - `asset_convert_test.dart` + `asset_state_test.dart` — Werterechner (dritte
   Pager-Seite, Edelmetalle/Währungen): exakte Metall-/Währungsfaktoren bzw.
-  Klasse→Gattung→Einheit-Drilldown, `=`-Zyklus, Basis, Wertmodus,
+  Wertklasse→Gattung→Einheit-Drilldown, `=`-Zyklus, Basis, Wertmodus,
   Resultat-Brücke (`insertCalcAns`/`ansForBridge` inkl. Wertmodus). Dazu
   `asset_keypad_layout_test.dart` (Höhen-Regime × Drill-Ebenen ×
   Seitenverhältnisse + Tile-Tap-Drilldown). `calc_pager_test.dart` deckt
@@ -88,14 +88,17 @@ Test-Routing (für gezielte Edits):
 - `network_boundary_test.dart` — kein Netzwerk-Code, keine Internet-Berechtigung.
 - `web_bootstrap_test.dart` — der Web-Build lädt CanvasKit und Schriften von der
   eigenen Seite.
-- `analyze_changed_hook_test.dart` — der Pre-commit-Hook `tool/analyze_changed.py`.
+- `architecture_test.dart` — `lib/domain/` importiert weder Flutter noch IO (ARC-05).
+- `coverage_gate_test.dart` — `tool/coverage_gate.dart` zählt nur Dateien ohne
+  Oberfläche und lässt weniger als 70 % nicht durch (CC-22).
 - `watch_parity_test.dart` — Dart-Hälfte des Watch-Paritäts-Netzes:
   replayed `test/fixtures/watch_parity_fixtures.json` gegen `evalF64`;
   Swift-Gegenstück `watch/Tests/CalculatorParityTests.swift` (nur mit
   Xcode; Scope = Schnittmenge beider Auswerter).
 
 CI (`.github/workflows/ci.yml`) ist auf Flutter 3.47.9 stable festgenagelt
-und führt `pub get --enforce-lockfile`, `dart format`, `tool/analyze_changed.py` und `test` aus. Das Flutter-SDK selbst pinnt transitive Abhängigkeiten (etwa `cli_util`, `test_api`, `xml`) auf Versionen, die `pub outdated` flaggt — das ist
+und führt `pub get --enforce-lockfile`, `dart format`, `flutter analyze`, `test --coverage` und
+`tool/coverage_gate.dart` aus. Das Flutter-SDK selbst pinnt transitive Abhängigkeiten (etwa `cli_util`, `test_api`, `xml`) auf Versionen, die `pub outdated` flaggt — das ist
 erwartet, kein Bug. Nach jedem Flutter-Minor-Stable-Release erneut prüfen.
 
 ## Manuelles Testen auf physischem Gerät

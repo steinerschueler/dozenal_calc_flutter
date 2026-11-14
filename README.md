@@ -52,8 +52,9 @@ Der Web-Build lädt alles von der eigenen Seite, Besucher kontaktieren keine Goo
 
 ## Entwicklung
 
-- Prüfbefehl: `pre-commit run --all-files`. Lint-Befunde blockieren nur in geänderten Dateien (`tool/analyze_changed.py`).
-- Tests: `pre-commit run --all-files --hook-stage pre-push`
+- Prüfbefehl: `pre-commit run --all-files`
+- Tests: `pre-commit run --all-files --hook-stage pre-push`, danach prüft `tool/coverage_gate.dart` die Testabdeckung
+  der Dateien ohne Oberfläche (mindestens 70 %).
 - Flutter-Version: dieselbe wie in `.github/workflows/ci.yml`, weil das SDK transitive Pakete pinnt.
 
 `flutter pub get` meldet transitive Abhängigkeiten (etwa `cli_util`, `test_api`, `xml`) mit

@@ -1,15 +1,23 @@
 # Dozenal Calc
 
 Flutter-Port eines Rust- und egui-Wissenschaftsrechners, der in Basis 12 rechnet. Der Rust-Prototyp bleibt die
-Entwicklungs-Sandbox unter <https://github.com/Bawdyness/dozenal_calc>. Paket- und GitHub-Name bleiben, bis das npf-Backlog (A-067) sie ändert.
+Entwicklungs-Sandbox unter <https://github.com/Bawdyness/dozenal_calc>. Paket- und GitHub-Name heissen noch
+`dozenal_calc_flutter` und werden später an den Ordnernamen angeglichen (STR-21).
 
 ## Prüfen
 
 - Vor «erledigt»: `pre-commit run --all-files` und `pre-commit run --all-files --hook-stage pre-push`, Ergebnis nennen.
-- `flutter analyze` listet Tausende alter Lint-Befunde und ist kein Prüfbefehl mehr. `tool/analyze_changed.py` blockiert
-  Lint-Befunde nur in geänderten Dateien (CC-41). Wer eine Datei ändert, behebt ihre Befunde, die CI prüft das auch.
+- `flutter analyze` läuft ohne Befunde, der Prüfbefehl und die CI lassen keinen neuen durch (CC-02).
+- Vor dem Push prüft `tool/coverage_gate.dart` die Abdeckung der Dateien ohne Oberfläche: mindestens 70 % (CC-22).
 - Einzeln: `flutter test test/rational_test.dart`, `flutter test --plain-name "parses 1/7"`.
 - Welche Testdatei zu welchem Bereich gehört: [docs/entwicklung.md](docs/entwicklung.md).
+
+## Ausnahmen
+
+- Eszett in App-Texten (DOK-62): [ADR 0001](docs/decisions/0001-eszett-in-app-texten.md).
+- Keine Lint-Grenze von 80 Zeichen (CC-01): [ADR 0002](docs/decisions/0002-keine-zeilengrenze-80.md).
+- ruff und mypy prüfen `tool/screenshots/` erst, wenn die Store-Screenshots neu gestaltet werden (CC-02). Die Skripte
+  steuern Emulatoren und lassen sich ohne sie nicht ausprobieren.
 
 ## Zuerst lesen
 
@@ -79,7 +87,7 @@ Entwicklungs-Sandbox unter <https://github.com/Bawdyness/dozenal_calc>. Paket- u
 - Die Rechner wechseln nur über die Taste rechts vom Gleichbalken: Beim Wischen liess ein leicht bewegter Finger die
   Seite rutschen und verschluckte den Tipp. Das Menü liegt links davon, das Intro als Eintrag im Menü.
 - Der Umrechner wertet Skalar-Operatoren links nach rechts aus und kennt keinen Operatorvorrang.
-- Die Pending-Zahl überlebt den Kategorie- und Klassenwechsel, committete Terme nicht.
+- Die Pending-Zahl überlebt den Wechsel von Kategorie und Wertklasse, committete Terme nicht.
 - Painter tragen `final AppColors colors`, `shouldRepaint` vergleicht es. Ohne `ThemeScope` gilt `AppColors.dark`.
 - Bewusst unabhängig vom Theme: Intro, Flaggen, `legal/*.html`, Polygon-Akzente, roter Caret, `AppRefCard`-Button.
 - Grün bedeutet Zehner-Welt, Violett Zwölfer-Welt. Das Op-Blau gehört den Funktions-Glyphen, Gold bleibt sparsam.
