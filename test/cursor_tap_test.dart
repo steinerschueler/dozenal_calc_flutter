@@ -13,10 +13,10 @@ import 'package:flutter_test/flutter_test.dart';
 void main() {
   group('state.moveCursorTo', () {
     test('positions, clamps, and clears result focus', () {
-      final s = DozenalCalcState();
-      s.handleClick(const Digit(DozenalDigit.d1));
-      s.handleClick(const Digit(DozenalDigit.d2));
-      s.handleClick(const Digit(DozenalDigit.d3));
+      final s = DozenalCalcState()
+        ..handleClick(const Digit(DozenalDigit.d1))
+        ..handleClick(const Digit(DozenalDigit.d2))
+        ..handleClick(const Digit(DozenalDigit.d3));
       expect(s.cursorPos, 3);
       expect(s.inputBuffer.length, 3);
 

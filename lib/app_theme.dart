@@ -14,7 +14,7 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 /// The user's theme choice. `system` follows the OS brightness (fed into
-/// [ThemeNotifier.platformBrightness] by the app root's
+/// `ThemeNotifier.platformBrightness` by the app root's
 /// didChangePlatformBrightness observer).
 enum ThemeSetting { dark, light, system }
 

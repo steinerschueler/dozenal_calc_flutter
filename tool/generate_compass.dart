@@ -48,21 +48,21 @@ void main() {
 
     // Subtle dashed-ish clock-face circle (a continuous stroke is fine for
     // a marketing asset; the visual cue is "compass / clock").
-    canvas.drawCircle(
-      const Offset(cx, cy),
-      outerR,
-      Paint()
-        ..color = const Color(0xFF6E6E6E)
-        ..style = PaintingStyle.stroke
-        ..strokeWidth = size * 0.0035,
-    );
-
-    // Center dot.
-    canvas.drawCircle(
-      const Offset(cx, cy),
-      size * 0.012,
-      Paint()..color = const Color(0xFF6E6E6E),
-    );
+    canvas
+      ..drawCircle(
+        const Offset(cx, cy),
+        outerR,
+        Paint()
+          ..color = const Color(0xFF6E6E6E)
+          ..style = PaintingStyle.stroke
+          ..strokeWidth = size * 0.0035,
+      )
+      // Center dot.
+      ..drawCircle(
+        const Offset(cx, cy),
+        size * 0.012,
+        Paint()..color = const Color(0xFF6E6E6E),
+      );
 
     // Anchor placements: each entry is (digit, clock-hour, label-text).
     // 1 o'clock = 30° from 12 (clockwise); use math angle = -60° from +x axis.
@@ -129,6 +129,7 @@ void main() {
     final out = File('assets/compass.png');
     await out.parent.create(recursive: true);
     await out.writeAsBytes(bytes);
+    // Generator script run via flutter test; stdout is its only report channel.
     // ignore: avoid_print
     print('Wrote ${out.path} (${bytes.length} bytes)');
   });

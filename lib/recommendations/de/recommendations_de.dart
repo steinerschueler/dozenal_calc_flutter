@@ -163,8 +163,7 @@ List<RecChapter> _recChaptersDe() => const [
         ],
         cons: [
           'Bezug vor allem über F-Droid oder Direkt-Build',
-          'Projekt verweigert Googles Entwickler-Verifikation — reguläre '
-              'Installierbarkeit künftig ungewiss (über F-Droid unkritisch)',
+          'Projekt verweigert Googles Entwickler-Verifikation — reguläre Installierbarkeit künftig ungewiss (über F-Droid unkritisch)',
           'Höhere Einstiegshürde als ein simpler Rechner',
         ],
         url: 'https://f-droid.org/packages/com.jherkenhoff.qalculate/',

@@ -22,8 +22,9 @@ Widget _keypad(double height, {bool overlayOpen = false, bool active = false}) {
   final state = ConverterState();
   if (overlayOpen) state.toggleOverlay();
   if (active) {
-    state.inputDigit(1);
-    state.tapCategory(UnitCategory.dist); // 7 magnitudes → fills both columns
+    state
+      ..inputDigit(1)
+      ..tapCategory(UnitCategory.dist); // 7 magnitudes → fills both columns
   }
   return MaterialApp(
     home: Scaffold(

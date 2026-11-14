@@ -6,6 +6,8 @@
 // All rates route through the snapshot's pivot currency. Every rate-based
 // value is "≈" (rates are approximate + dated), never exact.
 
+import 'dart:async';
+
 import 'package:dozenal_calc_flutter/logic/rate_data.dart';
 import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -64,27 +66,27 @@ class RateStore extends ChangeNotifier {
     if (key == pivot) return;
     if (!value.isFinite || value <= 0) return;
     _curOverride[key] = value;
-    _prefs?.setDouble('$_curPrefix$key', value);
+    unawaited(_prefs?.setDouble('$_curPrefix$key', value));
     notifyListeners();
   }
 
   void setMetalOverride(String key, double value) {
     if (!value.isFinite || value <= 0) return;
     _metOverride[key] = value;
-    _prefs?.setDouble('$_metPrefix$key', value);
+    unawaited(_prefs?.setDouble('$_metPrefix$key', value));
     notifyListeners();
   }
 
   void clearCurrencyOverride(String key) {
     if (_curOverride.remove(key) != null) {
-      _prefs?.remove('$_curPrefix$key');
+      unawaited(_prefs?.remove('$_curPrefix$key'));
       notifyListeners();
     }
   }
 
   void clearMetalOverride(String key) {
     if (_metOverride.remove(key) != null) {
-      _prefs?.remove('$_metPrefix$key');
+      unawaited(_prefs?.remove('$_metPrefix$key'));
       notifyListeners();
     }
   }
@@ -92,10 +94,10 @@ class RateStore extends ChangeNotifier {
   void clearAll() {
     if (!hasAnyOverride) return;
     for (final k in _curOverride.keys) {
-      _prefs?.remove('$_curPrefix$k');
+      unawaited(_prefs?.remove('$_curPrefix$k'));
     }
     for (final k in _metOverride.keys) {
-      _prefs?.remove('$_metPrefix$k');
+      unawaited(_prefs?.remove('$_metPrefix$k'));
     }
     _curOverride.clear();
     _metOverride.clear();

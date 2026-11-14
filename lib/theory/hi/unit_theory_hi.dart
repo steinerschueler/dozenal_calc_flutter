@@ -762,7 +762,13 @@ List<UnitTheorySection> _unitTheoryHi(UnitCategory cat) {
         ),
       ];
     // सभी आठ सिद्धांत-क्षेत्र अब हिंदी में उपलब्ध हैं।
-    default:
+    case UnitCategory.press:
+    case UnitCategory.force:
+    case UnitCategory.work:
+    case UnitCategory.power:
+    case UnitCategory.cook:
+    case UnitCategory.liquid:
+    case UnitCategory.moment:
       return const [];
   }
 }
@@ -1122,7 +1128,13 @@ List<Source> _unitSourcesHi(UnitCategory cat) {
           'A1',
         ),
       ];
-    default:
+    case UnitCategory.press:
+    case UnitCategory.force:
+    case UnitCategory.work:
+    case UnitCategory.power:
+    case UnitCategory.cook:
+    case UnitCategory.liquid:
+    case UnitCategory.moment:
       return const [];
   }
 }

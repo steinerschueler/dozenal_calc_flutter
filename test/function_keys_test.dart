@@ -43,8 +43,7 @@ void main() {
 
   group('state — memory accumulator', () {
     test('M+ / M− accumulate exactly; Rcl recalls', () {
-      final s = DozenalCalcState();
-      s
+      final s = DozenalCalcState()
         ..handleClick(d(5))
         ..handleClick(const Equals())
         ..handleClick(const MemPlus()) // mem = 5
@@ -65,8 +64,7 @@ void main() {
     test('M+ after = is transparent: answer-chaining survives (audit M1)', () {
       // `2 + 3 = M+ × 4 =` must chain off the answer (5 × 4 = 20), exactly
       // like STO does — M+/M− insert nothing and must stay transparent.
-      final s = DozenalCalcState();
-      s
+      final s = DozenalCalcState()
         ..handleClick(d(2))
         ..handleClick(const Add())
         ..handleClick(d(3))
@@ -79,8 +77,7 @@ void main() {
       expect(s.resultText, '18'); // 20 decimal = 18 dozenal
 
       // Parity check: the identical sequence with STO already worked.
-      final s2 = DozenalCalcState();
-      s2
+      final s2 = DozenalCalcState()
         ..handleClick(d(2))
         ..handleClick(const Add())
         ..handleClick(d(3))
@@ -95,23 +92,20 @@ void main() {
 
   group('state — x² and ±', () {
     test('x² squares the preceding value (5² = 21 dozenal)', () {
-      final s = DozenalCalcState();
-      s
+      final s = DozenalCalcState()
         ..handleClick(d(5))
         ..handleClick(const Square())
         ..handleClick(const Equals());
       expect(s.resultText, '21'); // 25 decimal = 21 dozenal
     });
     test('± toggles the sign of the current literal', () {
-      final s = DozenalCalcState();
-      s
+      final s = DozenalCalcState()
         ..handleClick(d(5))
         ..handleClick(const PlusMinus())
         ..handleClick(const Equals());
       expect(s.resultText, '-5');
       // Pressing ± again removes the unary minus.
-      final s2 = DozenalCalcState();
-      s2
+      final s2 = DozenalCalcState()
         ..handleClick(d(5))
         ..handleClick(const PlusMinus())
         ..handleClick(const PlusMinus())
@@ -122,8 +116,7 @@ void main() {
 
   group('state — log₁₂, nCr, scientific notation', () {
     test('log₁₂(10₁₂ = twelve) = 1', () {
-      final s = DozenalCalcState();
-      s
+      final s = DozenalCalcState()
         ..handleClick(const Log12())
         ..handleClick(d(1))
         ..handleClick(d(0)) // "10" dozenal = twelve
@@ -131,8 +124,7 @@ void main() {
       expect(s.resultText, '1');
     });
     test('5 nCr 2 = A (ten) dozenal', () {
-      final s = DozenalCalcState();
-      s
+      final s = DozenalCalcState()
         ..handleClick(d(5))
         ..handleClick(const NCr())
         ..handleClick(d(2))
@@ -140,8 +132,7 @@ void main() {
       expect(s.resultText, 'A'); // 10 decimal = A dozenal
     });
     test('5 EXP 2 in dozenal = 5·12² = 500 dozenal', () {
-      final s = DozenalCalcState();
-      s
+      final s = DozenalCalcState()
         ..handleClick(d(5))
         ..handleClick(const Sci())
         ..handleClick(d(2))
@@ -250,9 +241,7 @@ void main() {
   group('state — exact (no ≈) for rational operations', () {
     DozenalCalcState run(List<CalcToken> tokens) {
       final s = DozenalCalcState();
-      for (final t in tokens) {
-        s.handleClick(t);
-      }
+      tokens.forEach(s.handleClick);
       s.handleClick(const Equals());
       return s;
     }

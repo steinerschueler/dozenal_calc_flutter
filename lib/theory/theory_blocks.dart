@@ -26,7 +26,7 @@ class TheoryChapterRef {
   final List<Source> sources;
 
   /// Stable, language-neutral id used to look up a chapter image
-  /// ([theoryImageFor]). Null for chapters without an image slot.
+  /// (`theoryImageFor`). Null for chapters without an image slot.
   final String? imageId;
 }
 

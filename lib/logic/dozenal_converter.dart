@@ -41,14 +41,14 @@ class DozenalConverter {
 
   /// Non-negative BigInt → digits in the given [base]. Exact at any magnitude.
   static List<DozenalDigit> fromBigInt(BigInt value, {int base = 12}) {
-    if (value.isNegative) value = -value;
-    if (value == BigInt.zero) return [DozenalDigit.d0];
+    var remaining = value.isNegative ? -value : value;
+    if (remaining == BigInt.zero) return [DozenalDigit.d0];
     final b = BigInt.from(base);
     final digits = <DozenalDigit>[];
-    while (value > BigInt.zero) {
-      final rem = (value % b).toInt();
+    while (remaining > BigInt.zero) {
+      final rem = (remaining % b).toInt();
       digits.add(DozenalDigit.values[rem]);
-      value = value ~/ b;
+      remaining = remaining ~/ b;
     }
     return digits.reversed.toList();
   }
@@ -77,19 +77,20 @@ class DozenalConverter {
     int precision, {
     int base = 12,
   }) {
+    var residual = frac;
     final digits = <DozenalDigit>[];
     final b = base.toDouble();
     for (var i = 0; i < precision; i++) {
-      frac *= b;
+      residual *= b;
       // Clamp dVal to [0, base-1]: floor-with-epsilon can overshoot to `base`
       // when frac is just under 1.0, which would yield a silently-dropped
       // digit via DozenalDigit.fromValue returning null.
-      var dVal = (frac + fracEpsilon).floor();
+      var dVal = (residual + fracEpsilon).floor();
       if (dVal >= base) dVal = base - 1;
       if (dVal < 0) dVal = 0;
       digits.add(DozenalDigit.values[dVal]);
-      frac -= dVal;
-      if (frac.abs() < fracEpsilon) break;
+      residual -= dVal;
+      if (residual.abs() < fracEpsilon) break;
     }
     return digits;
   }

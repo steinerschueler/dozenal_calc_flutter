@@ -79,8 +79,9 @@ void paintDozenalDigitAt(
       _leftHalf(canvas, paint, top, q);
       canvas.drawCircle(bot, q, paint);
     case DozenalDigit.d8:
-      canvas.drawCircle(top, q, paint);
-      canvas.drawCircle(bot, q, paint);
+      canvas
+        ..drawCircle(top, q, paint)
+        ..drawCircle(bot, q, paint);
     case DozenalDigit.d9:
       canvas.drawCircle(top, q, paint);
       _rightHalf(canvas, paint, bot, q);
@@ -99,8 +100,9 @@ void _arrow(
   Offset wing2Off,
 ) {
   final tip = c + tipOff;
-  canvas.drawLine(tip, c + wing1Off, paint);
-  canvas.drawLine(tip, c + wing2Off, paint);
+  canvas
+    ..drawLine(tip, c + wing1Off, paint)
+    ..drawLine(tip, c + wing2Off, paint);
 }
 
 void _rightHalf(Canvas canvas, Paint paint, Offset center, double radius) {

@@ -11,11 +11,11 @@ Im Design des Einheitenrechners,
 aber mit **drei** Hierarchien statt zwei:
 
 ```text
-Klasse (AssetClass)  →  Gattung (AssetGenus)  →  Einheit (Unit)
-Edelmetall           →  Gold/Silber/Platin/   →  gr · dwt · oz t · lb t
-                        Palladium                · g · kg
-Währung              →  USD/EUR/GBP/JPY/CHF/  →  $/¢ · €/ct · £/sh/d/p · ¥ · …
-                        CAD/AUD
+Wertklasse (AssetClass)  →  Gattung (AssetGenus)  →  Einheit (Unit)
+Edelmetall               →  Gold/Silber/Platin/   →  gr · dwt · oz t · lb t
+                            Palladium                · g · kg
+Währung                  →  USD/EUR/GBP/JPY/CHF/  →  $/¢ · €/ct · £/sh/d/p · ¥ · …
+                            CAD/AUD
 ```
 
 Hintergrund, Recherche, Lizenz- und Store-Befunde sowie die abgelehnten
@@ -71,7 +71,7 @@ ist 9,71 % schwerer als avdp oz, aber das troy-Pfund ist **leichter** —
 **Währung — exakte Stückelungen (Basis = Haupteinheit, `singleWorld`):** GBP
 £/sh/d/p mit £sd-Breakdown (12 d = 1 sh, 240 d = 1 £ — nativ dozenal); USD/EUR/
 CHF/CAD/AUD mit 1/100-Untereinheit; JPY ohne Untereinheit. Symbole ASCII/Latin-1
-(monospace-display-sicher), auf **sieben** Währungen begrenzt, damit Klasse +
+(monospace-display-sicher), auf **sieben** Währungen begrenzt, damit Wertklasse +
 Gattungen in die acht Drill-Zellen des Keypads passen. Cross-Währungs-Faktoren
 in v1 leer (Phase 2).
 
@@ -89,7 +89,7 @@ Terme, Skalar-Operatoren, Edit-Cursor, `=`-Zyklus, `setBase`). Stellt
 `topLine`/`resultLine` als **`ConverterLine`** bereit → Display wiederverwendbar.
 Zusätzlich: Drill-down `drillLevel` (`classes`/`genera`/`units`/
 `valueTargets`) über
-`tapClass`/`tapGenus`/`tapMagnitude` (Tipp auf aktive Klasse/Gattung = eine Ebene
+`tapClass`/`tapGenus`/`tapMagnitude` (Tipp auf aktive Wertklasse/Gattung = eine Ebene
 zurück). **Kein `setWorld`:** die Arbeits-Welt folgt der committeten
 Einheit (`tapMagnitude` setzt `_world = unit.world`); `worldToggleEnabled`
 steuert nur noch den Farbton der Einheitensymbole im Display (Währungen

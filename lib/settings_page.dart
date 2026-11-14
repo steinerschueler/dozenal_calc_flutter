@@ -10,6 +10,8 @@
 // standalone); the theme row reads ThemeScope the same way (Dunkel/Hell/
 // System, persisted via ThemeNotifier).
 
+import 'dart:async';
+
 import 'package:dozenal_calc_flutter/app_theme.dart';
 import 'package:dozenal_calc_flutter/calc_prefs.dart';
 import 'package:dozenal_calc_flutter/calc_scope.dart';
@@ -246,7 +248,10 @@ class _HapticsRow extends StatelessWidget {
         l.infoListHapticsTitle,
         style: TextStyle(fontSize: 14, color: t.textPrimary),
       ),
-      trailing: Switch(value: notifier.enabled, onChanged: notifier.setEnabled),
+      trailing: Switch(
+        value: notifier.enabled,
+        onChanged: (v) => unawaited(notifier.setEnabled(value: v)),
+      ),
     );
   }
 }

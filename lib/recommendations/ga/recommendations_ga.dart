@@ -163,9 +163,7 @@ List<RecChapter> _recChaptersGa() => const [
         ],
         cons: [
           'Faightear é go príomha trí F-Droid nó tógáil dhíreach',
-          'Diúltaíonn an tionscadal fíorú forbróra Google — níl sé cinnte '
-              'go mbeidh sé in-suiteáilte trí chainéil ghnátha sa todhchaí '
-              '(ní fadhb trí F-Droid)',
+          'Diúltaíonn an tionscadal fíorú forbróra Google — níl sé cinnte go mbeidh sé in-suiteáilte trí chainéil ghnátha sa todhchaí (ní fadhb trí F-Droid)',
           'Bacainn iontrála níos airde ná áireamhán simplí',
         ],
         url: 'https://f-droid.org/packages/com.jherkenhoff.qalculate/',

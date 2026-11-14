@@ -1,29 +1,30 @@
 # Glossar
 
 Ordnet die deutschen Fachbegriffe den Bezeichnern im Code zu (DOK-63). Gibt es zu einem Begriff einen Bezeichner, heisst
-er im ganzen Projekt so (CC-52).
+er im ganzen Projekt so (CC-52). Die Spalte «nicht verwenden» nennt Wörter, die mit einem anderen Begriff verwechselt
+werden.
 
-| Begriff | Bezeichner | Bedeutung |
-|---|---|---|
-| Hauptrechner | `DozenalCalcState` | Erster Rechner, rechnet in Basis 12 oder 10 |
-| Einheitenrechner, Umrechner | `ConverterState` | Zweiter Rechner: Masseinheiten |
-| Werterechner | `AssetState` | Dritter Rechner: Edelmetalle und Währungen, im Code heisst der Bereich `asset` |
-| Klasse | `AssetClass` | Oberste Ebene im Werterechner: Edelmetall oder Währung |
-| Gattung | `AssetGenus` | Zweite Ebene im Werterechner, etwa Gold oder GBP |
-| Kategorie | `UnitCategory` | Grösse im Einheitenrechner, etwa Länge oder Fläche |
-| Einheitensystem, Welt | `UnitWorld` | Imperial (Zwölfer-Welt) oder metrisch (Zehner-Welt) |
-| Zahlbasis | `activeBase` | Basis 12 oder 10, gilt für alle Rechner |
-| Ziffer | `DozenalDigit` | Eine der zwölf Ziffern |
-| Exakte Schiene | `Rational` | Rechnen mit Brüchen, bewahrt Perioden |
-| Zerlegung | `breakdown` | Wert als gemischte Einheiten, etwa Fuss und Zoll |
-| Resultat-Brücke | `ansForBridge`, `insertCalcAns` | Trägt Ergebnisse zwischen den Rechnern |
-| Brücken-Tasten | `ConvAns`, `AssetAns` | CONV und VAL im Hauptrechner |
-| Speicher | `memStore` | Register des Werterechners, die anderen Rechner haben ein eigenes |
-| Wertmodus | `valueTargets` | Drill-Ebene mit der Wahl der Zielwährung |
-| Kursspeicher | `RateStore` | Grobe Kurse samt eigenen Änderungen |
-| Preiskurve | `PriceSeries` | Historische Reihe im Diagramm |
-| Epoche | `ChartEpoch` | Zeitraum des Diagramms: Antike, Mittelalter, Neuzeit, Heute |
-| Page-Peek | `_PagePeekOverlay` | Kurze Anzeige, auf welcher Rechner-Seite man steht |
-| Tastenmodus | `KeypadMode` | Overlay oder Scrollen |
-| Tastenprofil | `KeypadProfile` | Alle oder Einfach |
-| Ziffernstil | `GlyphStyle` | Dozenal-Glyphen oder A und B |
+| Begriff | Bedeutung | Bezeichner | nicht verwenden |
+|---|---|---|---|
+| Hauptrechner | Erster Rechner, rechnet in Basis 12 oder 10 | `DozenalCalcState` | |
+| Einheitenrechner, Umrechner | Zweiter Rechner: Masseinheiten | `ConverterState` | |
+| Werterechner | Dritter Rechner: Edelmetalle und Währungen, im Code heisst der Bereich `asset` | `AssetState` | |
+| Wertklasse | Oberste Ebene im Werterechner: Edelmetall oder Währung | `AssetClass` | Klasse |
+| Gattung | Zweite Ebene im Werterechner, etwa Gold oder GBP | `AssetGenus` | |
+| Kategorie | Grösse im Einheitenrechner, etwa Länge oder Fläche | `UnitCategory` | |
+| Einheitensystem, Welt | Imperial (Zwölfer-Welt) oder metrisch (Zehner-Welt) | `UnitWorld` | |
+| Zahlbasis | Basis 12 oder 10, gilt für alle Rechner | `activeBase` | |
+| Ziffer | Eine der zwölf Ziffern | `DozenalDigit` | |
+| Exakte Schiene | Rechnen mit Brüchen, bewahrt Perioden | `Rational` | |
+| Zerlegung | Wert als gemischte Einheiten, etwa Fuss und Zoll | `breakdown` | |
+| Resultat-Brücke | Trägt Ergebnisse zwischen den Rechnern | `ansForBridge`, `insertCalcAns` | |
+| Brücken-Tasten | CONV und VAL im Hauptrechner | `ConvAns`, `AssetAns` | |
+| Speicher | Register des Werterechners, die anderen Rechner haben ein eigenes | `memStore` | |
+| Wertmodus | Drill-Ebene mit der Wahl der Zielwährung | `valueTargets` | |
+| Kursspeicher | Grobe Kurse samt eigenen Änderungen | `RateStore` | |
+| Preiskurve | Historische Reihe im Diagramm | `PriceSeries` | |
+| Epoche | Zeitraum des Diagramms: Antike, Mittelalter, Neuzeit, Heute | `ChartEpoch` | |
+| Page-Peek | Kurze Anzeige, auf welcher Rechner-Seite man steht | `_PagePeekOverlay` | |
+| Tastenmodus | Overlay oder Scrollen | `KeypadMode` | |
+| Tastenprofil | Alle oder Einfach | `KeypadProfile` | |
+| Ziffernstil | Dozenal-Glyphen oder A und B | `GlyphStyle` | |

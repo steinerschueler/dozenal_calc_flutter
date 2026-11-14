@@ -170,9 +170,7 @@ List<RecChapter> _recChaptersEs() => const [
         ],
         cons: [
           'Se obtiene principalmente a través de F-Droid o compilación directa',
-          'El proyecto rechaza la verificación de desarrollador de Google — '
-              'la instalabilidad por canales habituales es incierta en el '
-              'futuro (irrelevante a través de F-Droid)',
+          'El proyecto rechaza la verificación de desarrollador de Google — la instalabilidad por canales habituales es incierta en el futuro (irrelevante a través de F-Droid)',
           'Mayor barrera de entrada que una calculadora simple',
         ],
         url: 'https://f-droid.org/packages/com.jherkenhoff.qalculate/',

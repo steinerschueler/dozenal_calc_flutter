@@ -25,7 +25,7 @@ class LanguageOption {
 
 /// Single source of truth for the language picker. To add a new language:
 ///   1. Create `lib/l10n/app_<code>.arb` and let `flutter gen-l10n` run.
-///   2. Add a flag painter to [flag_painter.dart].
+///   2. Add a flag painter to `flag_painter.dart`.
 ///   3. Add the theory/manual prose `part of`-files for the code and register
 ///      them in their dispatchers (grundlagen_theory.dart, …, manual.dart).
 ///   4. Append one [LanguageOption] entry here.

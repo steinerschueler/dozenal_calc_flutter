@@ -16,15 +16,13 @@ class GermanFlagPainter extends CustomPainter {
     final w = size.width;
     final h = size.height;
     final stripeH = h / 3;
-    canvas.drawRect(Rect.fromLTWH(0, 0, w, stripeH), Paint()..color = _black);
-    canvas.drawRect(
-      Rect.fromLTWH(0, stripeH, w, stripeH),
-      Paint()..color = _red,
-    );
-    canvas.drawRect(
-      Rect.fromLTWH(0, stripeH * 2, w, stripeH),
-      Paint()..color = _gold,
-    );
+    canvas
+      ..drawRect(Rect.fromLTWH(0, 0, w, stripeH), Paint()..color = _black)
+      ..drawRect(Rect.fromLTWH(0, stripeH, w, stripeH), Paint()..color = _red)
+      ..drawRect(
+        Rect.fromLTWH(0, stripeH * 2, w, stripeH),
+        Paint()..color = _gold,
+      );
   }
 
   @override
@@ -49,15 +47,13 @@ class _VerticalTribandPainter extends CustomPainter {
     final w = size.width;
     final h = size.height;
     final stripeW = w / 3;
-    canvas.drawRect(Rect.fromLTWH(0, 0, stripeW, h), Paint()..color = left);
-    canvas.drawRect(
-      Rect.fromLTWH(stripeW, 0, stripeW, h),
-      Paint()..color = middle,
-    );
-    canvas.drawRect(
-      Rect.fromLTWH(stripeW * 2, 0, stripeW, h),
-      Paint()..color = right,
-    );
+    canvas
+      ..drawRect(Rect.fromLTWH(0, 0, stripeW, h), Paint()..color = left)
+      ..drawRect(Rect.fromLTWH(stripeW, 0, stripeW, h), Paint()..color = middle)
+      ..drawRect(
+        Rect.fromLTWH(stripeW * 2, 0, stripeW, h),
+        Paint()..color = right,
+      );
   }
 
   @override
@@ -184,15 +180,13 @@ class IndianFlagPainter extends CustomPainter {
     final h = size.height;
     final stripeH = h / 3;
 
-    canvas.drawRect(Rect.fromLTWH(0, 0, w, stripeH), Paint()..color = _saffron);
-    canvas.drawRect(
-      Rect.fromLTWH(0, stripeH, w, stripeH),
-      Paint()..color = _white,
-    );
-    canvas.drawRect(
-      Rect.fromLTWH(0, stripeH * 2, w, stripeH),
-      Paint()..color = _green,
-    );
+    canvas
+      ..drawRect(Rect.fromLTWH(0, 0, w, stripeH), Paint()..color = _saffron)
+      ..drawRect(Rect.fromLTWH(0, stripeH, w, stripeH), Paint()..color = _white)
+      ..drawRect(
+        Rect.fromLTWH(0, stripeH * 2, w, stripeH),
+        Paint()..color = _green,
+      );
 
     // Ashoka Chakra — centred in the white band, fits with a thin
     // breathing margin above/below.
@@ -205,23 +199,24 @@ class IndianFlagPainter extends CustomPainter {
       ..style = PaintingStyle.stroke
       ..strokeWidth = stripeH * 0.045;
 
-    canvas.drawCircle(Offset(cx, cy), r, navy);
-
-    // 24 spokes, every 15°.
-    canvas.save();
-    canvas.translate(cx, cy);
+    canvas
+      ..drawCircle(Offset(cx, cy), r, navy)
+      // 24 spokes, every 15°.
+      ..save()
+      ..translate(cx, cy);
     final spokeStroke = Paint()
       ..color = _navy
       ..style = PaintingStyle.stroke
       ..strokeWidth = stripeH * 0.03;
     for (var i = 0; i < 24; i++) {
-      canvas.drawLine(Offset(r * 0.15, 0), Offset(r * 0.92, 0), spokeStroke);
-      canvas.rotate(math.pi / 12);
+      canvas
+        ..drawLine(Offset(r * 0.15, 0), Offset(r * 0.92, 0), spokeStroke)
+        ..rotate(math.pi / 12);
     }
-    canvas.restore();
-
-    // Small navy hub at the centre.
-    canvas.drawCircle(Offset(cx, cy), r * 0.13, Paint()..color = _navy);
+    canvas
+      ..restore()
+      // Small navy hub at the centre.
+      ..drawCircle(Offset(cx, cy), r * 0.13, Paint()..color = _navy);
   }
 
   @override
@@ -243,15 +238,13 @@ class RussianFlagPainter extends CustomPainter {
     final w = size.width;
     final h = size.height;
     final stripeH = h / 3;
-    canvas.drawRect(Rect.fromLTWH(0, 0, w, stripeH), Paint()..color = _white);
-    canvas.drawRect(
-      Rect.fromLTWH(0, stripeH, w, stripeH),
-      Paint()..color = _blue,
-    );
-    canvas.drawRect(
-      Rect.fromLTWH(0, stripeH * 2, w, stripeH),
-      Paint()..color = _red,
-    );
+    canvas
+      ..drawRect(Rect.fromLTWH(0, 0, w, stripeH), Paint()..color = _white)
+      ..drawRect(Rect.fromLTWH(0, stripeH, w, stripeH), Paint()..color = _blue)
+      ..drawRect(
+        Rect.fromLTWH(0, stripeH * 2, w, stripeH),
+        Paint()..color = _red,
+      );
   }
 
   @override
@@ -281,15 +274,13 @@ class IranianFlagPainter extends CustomPainter {
     final h = size.height;
     final stripeH = h / 3;
 
-    canvas.drawRect(Rect.fromLTWH(0, 0, w, stripeH), Paint()..color = _green);
-    canvas.drawRect(
-      Rect.fromLTWH(0, stripeH, w, stripeH),
-      Paint()..color = _white,
-    );
-    canvas.drawRect(
-      Rect.fromLTWH(0, stripeH * 2, w, stripeH),
-      Paint()..color = _red,
-    );
+    canvas
+      ..drawRect(Rect.fromLTWH(0, 0, w, stripeH), Paint()..color = _green)
+      ..drawRect(Rect.fromLTWH(0, stripeH, w, stripeH), Paint()..color = _white)
+      ..drawRect(
+        Rect.fromLTWH(0, stripeH * 2, w, stripeH),
+        Paint()..color = _red,
+      );
 
     // Central emblem — stylised tulip silhouette inscribed in the white
     // band. Bounded so a thin breathing margin remains above/below.
@@ -353,12 +344,10 @@ class SpanishFlagPainter extends CustomPainter {
     final h = size.height;
     // 1:2:1 split — red, yellow, red.
     final unit = h / 4;
-    canvas.drawRect(Rect.fromLTWH(0, 0, w, unit), Paint()..color = _red);
-    canvas.drawRect(
-      Rect.fromLTWH(0, unit, w, unit * 2),
-      Paint()..color = _yellow,
-    );
-    canvas.drawRect(Rect.fromLTWH(0, unit * 3, w, unit), Paint()..color = _red);
+    canvas
+      ..drawRect(Rect.fromLTWH(0, 0, w, unit), Paint()..color = _red)
+      ..drawRect(Rect.fromLTWH(0, unit, w, unit * 2), Paint()..color = _yellow)
+      ..drawRect(Rect.fromLTWH(0, unit * 3, w, unit), Paint()..color = _red);
   }
 
   @override
@@ -394,9 +383,10 @@ class HongKongFlagPainter extends CustomPainter {
     final petalLen = r;
     final petalWidth = r * 0.50;
     for (var i = 0; i < 5; i++) {
-      canvas.save();
-      canvas.translate(cx, cy);
-      canvas.rotate(i * (2 * math.pi / 5) - math.pi / 2);
+      canvas
+        ..save()
+        ..translate(cx, cy)
+        ..rotate(i * (2 * math.pi / 5) - math.pi / 2);
 
       final petal = Path()
         ..moveTo(0, 0)
@@ -477,15 +467,13 @@ class EgyptianFlagPainter extends CustomPainter {
     final w = size.width;
     final h = size.height;
     final stripeH = h / 3;
-    canvas.drawRect(Rect.fromLTWH(0, 0, w, stripeH), Paint()..color = _red);
-    canvas.drawRect(
-      Rect.fromLTWH(0, stripeH, w, stripeH),
-      Paint()..color = _white,
-    );
-    canvas.drawRect(
-      Rect.fromLTWH(0, stripeH * 2, w, stripeH),
-      Paint()..color = _black,
-    );
+    canvas
+      ..drawRect(Rect.fromLTWH(0, 0, w, stripeH), Paint()..color = _red)
+      ..drawRect(Rect.fromLTWH(0, stripeH, w, stripeH), Paint()..color = _white)
+      ..drawRect(
+        Rect.fromLTWH(0, stripeH * 2, w, stripeH),
+        Paint()..color = _black,
+      );
 
     // Eagle bounding box: 35 % of flag width, 80 % of white-stripe
     // height, centred on the white stripe.
@@ -504,14 +492,14 @@ class EgyptianFlagPainter extends CustomPainter {
     // Wings — two thin lozenges flanking the body, drooping outward.
     final leftWing = Path()
       ..moveTo(x(0.50), y(0.35))
-      ..quadraticBezierTo(x(0.20), y(0.30), x(0.00), y(0.55))
+      ..quadraticBezierTo(x(0.20), y(0.30), x(0), y(0.55))
       ..quadraticBezierTo(x(0.20), y(0.45), x(0.45), y(0.55))
       ..close();
     canvas.drawPath(leftWing, gold);
 
     final rightWing = Path()
       ..moveTo(x(0.50), y(0.35))
-      ..quadraticBezierTo(x(0.80), y(0.30), x(1.00), y(0.55))
+      ..quadraticBezierTo(x(0.80), y(0.30), x(1), y(0.55))
       ..quadraticBezierTo(x(0.80), y(0.45), x(0.55), y(0.55))
       ..close();
     canvas.drawPath(rightWing, gold);
@@ -523,17 +511,17 @@ class EgyptianFlagPainter extends CustomPainter {
       ..lineTo(x(0.45), y(0.70))
       ..quadraticBezierTo(x(0.40), y(0.45), x(0.50), y(0.25))
       ..close();
-    canvas.drawPath(body, gold);
-
-    // Head — small disc above the body.
-    canvas.drawCircle(Offset(x(0.50), y(0.20)), eH * 0.08, gold);
+    canvas
+      ..drawPath(body, gold)
+      // Head — small disc above the body.
+      ..drawCircle(Offset(x(0.50), y(0.20)), eH * 0.08, gold);
 
     // Tail — fanned trapezoid below the body.
     final tail = Path()
       ..moveTo(x(0.42), y(0.70))
       ..lineTo(x(0.58), y(0.70))
-      ..lineTo(x(0.63), y(1.00))
-      ..lineTo(x(0.37), y(1.00))
+      ..lineTo(x(0.63), y(1))
+      ..lineTo(x(0.37), y(1))
       ..close();
     canvas.drawPath(tail, gold);
   }
@@ -557,12 +545,13 @@ class JapaneseFlagPainter extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     final w = size.width;
     final h = size.height;
-    canvas.drawRect(Rect.fromLTWH(0, 0, w, h), Paint()..color = _white);
-    canvas.drawCircle(
-      Offset(w / 2, h / 2),
-      h * 0.3, // diameter = 3/5 of height → radius = 3/10
-      Paint()..color = _red,
-    );
+    canvas
+      ..drawRect(Rect.fromLTWH(0, 0, w, h), Paint()..color = _white)
+      ..drawCircle(
+        Offset(w / 2, h / 2),
+        h * 0.3, // diameter = 3/5 of height → radius = 3/10
+        Paint()..color = _red,
+      );
   }
 
   @override
@@ -590,8 +579,9 @@ class WelshFlagPainter extends CustomPainter {
     final w = size.width;
     final h = size.height;
     final halfH = h / 2;
-    canvas.drawRect(Rect.fromLTWH(0, 0, w, halfH), Paint()..color = _white);
-    canvas.drawRect(Rect.fromLTWH(0, halfH, w, halfH), Paint()..color = _green);
+    canvas
+      ..drawRect(Rect.fromLTWH(0, 0, w, halfH), Paint()..color = _white)
+      ..drawRect(Rect.fromLTWH(0, halfH, w, halfH), Paint()..color = _green);
 
     // Dragon bounding box: 70 % of flag width, 55 % of flag height,
     // centred horizontally, vertically straddling the white/green
@@ -612,14 +602,14 @@ class WelshFlagPainter extends CustomPainter {
     // raised foreleg, and back to the head.
     final dragon = Path()
       // Snout (leftmost) and head
-      ..moveTo(x(0.00), y(0.42))
+      ..moveTo(x(0), y(0.42))
       ..quadraticBezierTo(x(0.04), y(0.30), x(0.14), y(0.30))
       // Back of skull, neck rising into the back hump
       ..cubicTo(x(0.22), y(0.20), x(0.30), y(0.10), x(0.42), y(0.12))
       // Back / wing hump
       ..cubicTo(x(0.58), y(0.05), x(0.70), y(0.18), x(0.78), y(0.30))
       // Upper edge of tail base
-      ..cubicTo(x(0.88), y(0.32), x(0.98), y(0.18), x(1.00), y(0.32))
+      ..cubicTo(x(0.88), y(0.32), x(0.98), y(0.18), x(1), y(0.32))
       // Tail tip curling back inward
       ..cubicTo(x(0.96), y(0.48), x(0.82), y(0.46), x(0.78), y(0.50))
       // Tail underside back toward the body
@@ -635,14 +625,14 @@ class WelshFlagPainter extends CustomPainter {
       // Raised foreleg / paw arching up in front of chest
       ..cubicTo(x(0.18), y(0.62), x(0.10), y(0.52), x(0.14), y(0.44))
       ..close();
-    canvas.drawPath(dragon, red);
-
-    // Single small white eye dot to anchor the head against the body.
-    canvas.drawCircle(
-      Offset(x(0.10), y(0.36)),
-      dH * 0.025,
-      Paint()..color = _white,
-    );
+    canvas
+      ..drawPath(dragon, red)
+      // Single small white eye dot to anchor the head against the body.
+      ..drawCircle(
+        Offset(x(0.10), y(0.36)),
+        dH * 0.025,
+        Paint()..color = _white,
+      );
   }
 
   @override
@@ -666,41 +656,44 @@ class UnionJackPainter extends CustomPainter {
     final h = size.height;
     final rect = Rect.fromLTWH(0, 0, w, h);
 
-    canvas.drawRect(rect, Paint()..color = _blue);
-
-    // Saltires — clipped so the strokes don't overshoot the corners when
-    // the line tip extends past the geometric endpoint.
-    canvas.save();
-    canvas.clipRect(rect);
+    canvas
+      ..drawRect(rect, Paint()..color = _blue)
+      // Saltires — clipped so the strokes don't overshoot the corners when
+      // the line tip extends past the geometric endpoint.
+      ..save()
+      ..clipRect(rect);
 
     final whiteSaltire = Paint()
       ..color = _white
       ..strokeWidth = h * 0.21
       ..style = PaintingStyle.stroke;
-    canvas.drawLine(Offset.zero, Offset(w, h), whiteSaltire);
-    canvas.drawLine(Offset(w, 0), Offset(0, h), whiteSaltire);
+    canvas
+      ..drawLine(Offset.zero, Offset(w, h), whiteSaltire)
+      ..drawLine(Offset(w, 0), Offset(0, h), whiteSaltire);
 
     final redSaltire = Paint()
       ..color = _red
       ..strokeWidth = h * 0.07
       ..style = PaintingStyle.stroke;
-    canvas.drawLine(Offset.zero, Offset(w, h), redSaltire);
-    canvas.drawLine(Offset(w, 0), Offset(0, h), redSaltire);
-
-    canvas.restore();
+    canvas
+      ..drawLine(Offset.zero, Offset(w, h), redSaltire)
+      ..drawLine(Offset(w, 0), Offset(0, h), redSaltire)
+      ..restore();
 
     // St-George cross — white fimbriation under a narrower red bar.
     final whiteCross = Paint()..color = _white;
     final whiteW = h * 0.33;
     final hMid = w / 2;
     final vMid = h / 2;
-    canvas.drawRect(Rect.fromLTWH(hMid - whiteW / 2, 0, whiteW, h), whiteCross);
-    canvas.drawRect(Rect.fromLTWH(0, vMid - whiteW / 2, w, whiteW), whiteCross);
+    canvas
+      ..drawRect(Rect.fromLTWH(hMid - whiteW / 2, 0, whiteW, h), whiteCross)
+      ..drawRect(Rect.fromLTWH(0, vMid - whiteW / 2, w, whiteW), whiteCross);
 
     final redCross = Paint()..color = _red;
     final redW = h * 0.21;
-    canvas.drawRect(Rect.fromLTWH(hMid - redW / 2, 0, redW, h), redCross);
-    canvas.drawRect(Rect.fromLTWH(0, vMid - redW / 2, w, redW), redCross);
+    canvas
+      ..drawRect(Rect.fromLTWH(hMid - redW / 2, 0, redW, h), redCross)
+      ..drawRect(Rect.fromLTWH(0, vMid - redW / 2, w, redW), redCross);
   }
 
   @override

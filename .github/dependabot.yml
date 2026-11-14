@@ -1,4 +1,4 @@
-# npf SEC-11: Versions-Updates erst nach 7 Tagen Wartefrist.
+# SEC-11: Versions-Updates erst nach 7 Tagen Wartefrist.
 version: 2
 updates:
   - package-ecosystem: pub

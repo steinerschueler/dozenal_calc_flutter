@@ -279,8 +279,8 @@ void main() {
         ..handleClick(const ExpTopRight())
         ..handleClick(dd(8))
         ..handleClick(dd(0))
-        ..handleClick(dd(0)); // 800 doz = 1152 dec
-      s.handleClick(const Equals());
+        ..handleClick(dd(0)) // 800 doz = 1152 dec
+        ..handleClick(const Equals());
       expect(s.errorMsg, isNull);
       expect(s.lastAns, isNotNull, reason: 'must keep the exact value');
       // 2^1152 starts with "2411…" in dozenal. Exact computation IS the
@@ -299,8 +299,8 @@ void main() {
         ..handleClick(dd(5))
         ..handleClick(dd(7))
         ..handleClick(dd(6))
-        ..handleClick(dd(0)); // 125760 doz ≈ 300000 dec
-      s.handleClick(const Equals());
+        ..handleClick(dd(0)) // 125760 doz ≈ 300000 dec
+        ..handleClick(const Equals());
       // OVERFLOW (not a huge exact expansion) is itself the proof that the
       // magnitude bound dropped this to the f64 fallback at once — that
       // outcome is the real anti-freeze guarantee, so no flaky wall-clock

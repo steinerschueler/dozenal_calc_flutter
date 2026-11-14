@@ -36,23 +36,22 @@ void main() {
     const h = 500.0;
 
     final recorder = ui.PictureRecorder();
-    final canvas = Canvas(recorder, const Rect.fromLTWH(0, 0, w, h));
-
-    // Background: dark with a subtle radial highlight at centre.
-    canvas.drawRect(
-      const Rect.fromLTWH(0, 0, w, h),
-      Paint()..color = const Color(0xFF161616),
-    );
-    canvas.drawRect(
-      const Rect.fromLTWH(0, 0, w, h),
-      Paint()
-        ..shader = ui.Gradient.radial(
-          const Offset(w / 2, h * 0.45),
-          w * 0.55,
-          [const Color(0xFF2E2E2E), const Color(0xFF161616)],
-          [0.0, 1.0],
-        ),
-    );
+    final canvas = Canvas(recorder, const Rect.fromLTWH(0, 0, w, h))
+      // Background: dark with a subtle radial highlight at centre.
+      ..drawRect(
+        const Rect.fromLTWH(0, 0, w, h),
+        Paint()..color = const Color(0xFF161616),
+      )
+      ..drawRect(
+        const Rect.fromLTWH(0, 0, w, h),
+        Paint()
+          ..shader = ui.Gradient.radial(
+            const Offset(w / 2, h * 0.45),
+            w * 0.55,
+            [const Color(0xFF2E2E2E), const Color(0xFF161616)],
+            [0.0, 1.0],
+          ),
+      );
 
     // Wordmark "Dozenal Calc" — top-centre, large heavy weight.
     final wordmark = TextPainter(
@@ -63,8 +62,8 @@ void main() {
           fontSize: 90,
           fontFamily: _fontFamily,
           fontWeight: FontWeight.w900,
-          letterSpacing: 2.0,
-          height: 1.0,
+          letterSpacing: 2,
+          height: 1,
         ),
       ),
       textDirection: TextDirection.ltr,
@@ -103,7 +102,7 @@ void main() {
           fontFamily: _fontFamily,
           fontWeight: FontWeight.w400,
           letterSpacing: 1.5,
-          height: 1.0,
+          height: 1,
         ),
       ),
       textDirection: TextDirection.ltr,
@@ -118,6 +117,7 @@ void main() {
     final out = File('assets/feature_graphic.png');
     await out.parent.create(recursive: true);
     await out.writeAsBytes(bytes);
+    // Generator script run via flutter test; stdout is its only report channel.
     // ignore: avoid_print
     print('Wrote ${out.path} (${bytes.length} bytes, $w×$h)');
   });

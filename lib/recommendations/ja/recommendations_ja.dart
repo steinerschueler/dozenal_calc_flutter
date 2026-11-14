@@ -149,8 +149,7 @@ List<RecChapter> _recChaptersJa() => const [
         ],
         cons: [
           '主にF-Droidまたは直接ビルドで入手',
-          'プロジェクトがGoogleの開発者認証を拒否しているため、通常チャネルでの'
-              '将来の入手可否は不確か（F-Droid経由なら問題なし）',
+          'プロジェクトがGoogleの開発者認証を拒否しているため、通常チャネルでの将来の入手可否は不確か（F-Droid経由なら問題なし）',
           '単純な電卓より入門の敷居が高い',
         ],
         url: 'https://f-droid.org/packages/com.jherkenhoff.qalculate/',

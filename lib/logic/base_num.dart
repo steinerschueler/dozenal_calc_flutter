@@ -191,10 +191,11 @@ String formatBaseNum(double value, int base, {int fracDigits = 6}) {
     }
     final fs = fb.toString().replaceAll(RegExp(r'0+$'), '');
     if (fs.isNotEmpty) {
-      sb.write('.');
-      sb.write(fs);
+      sb
+        ..write('.')
+        ..write(fs);
     }
   }
 
-  return neg ? '-${sb.toString()}' : sb.toString();
+  return neg ? '-$sb' : sb.toString();
 }

@@ -97,7 +97,7 @@ String _trim(String s) => s.contains('.')
 
 // ════════════════════════════ dispatch ══════════════════════════════════════
 
-/// Resolve a [ProseSection.illustrationId] to its inline figure, or null.
+/// Resolve a `ProseSection.illustrationId` to its inline figure, or null.
 Widget? inlineTheoryIllustration(String? id) {
   switch (id) {
     case 'werte/money-functions':
@@ -357,8 +357,9 @@ class _PriceFigurePainter extends CustomPainter {
       size: 10,
     );
 
-    canvas.save();
-    canvas.clipRect(r);
+    canvas
+      ..save()
+      ..clipRect(r);
 
     final banded = series.points.where((p) => p.hasBand).toList();
     if (banded.length >= 2) {
@@ -411,11 +412,11 @@ class _PriceFigurePainter extends CustomPainter {
         case Era.modern:
           canvas.drawCircle(at, 2.4, Paint()..color = colors.accentGold);
         case Era.sparse:
-          canvas.drawCircle(at, 3.0, Paint()..color = colors.textSecondary);
+          canvas.drawCircle(at, 3, Paint()..color = colors.textSecondary);
         case Era.reconstructed:
           canvas.drawCircle(
             at,
-            4.0,
+            4,
             Paint()
               ..color = colors.textMuted
               ..style = PaintingStyle.stroke
@@ -512,7 +513,7 @@ class _BarChartPainter extends CustomPainter {
     final labelW = size.width * 0.34;
     final barLeft = labelW + 8;
     final barMaxW = (size.width - barLeft - 6).clamp(10.0, double.infinity);
-    final maxV = bars.fold(0.0, (m, b) => b.value > m ? b.value : m);
+    final maxV = bars.fold<double>(0, (m, b) => b.value > m ? b.value : m);
     final rows = bars.length;
     final rowH = (size.height - topPad) / rows;
 
@@ -576,7 +577,7 @@ class _DensityFigure extends StatelessWidget {
       _BarDatum('Gold', 19.3, '19,3', _gold),
       _BarDatum('Blei', 11.3, '11,3', _slate),
       _BarDatum('Eisen', 7.9, '7,9', _copper),
-      _BarDatum('Wasser', 1.0, '1,0', _blue),
+      _BarDatum('Wasser', 1, '1,0', _blue),
     ],
     note:
         'Gold zählt zu den dichtesten Stoffen des Alltags — dichter als Blei.',
@@ -666,14 +667,15 @@ class _TroyLadderPainter extends CustomPainter {
       final rect = Rect.fromLTWH(left, cy - boxH / 2, boxW, boxH);
       final accent = isLast ? highlight : colors.illusLine;
       final rr = RRect.fromRectAndRadius(rect, const Radius.circular(6));
-      canvas.drawRRect(rr, Paint()..color = accent.withValues(alpha: 0.10));
-      canvas.drawRRect(
-        rr,
-        Paint()
-          ..color = accent
-          ..style = PaintingStyle.stroke
-          ..strokeWidth = isLast ? 2.0 : 1.4,
-      );
+      canvas
+        ..drawRRect(rr, Paint()..color = accent.withValues(alpha: 0.10))
+        ..drawRRect(
+          rr,
+          Paint()
+            ..color = accent
+            ..style = PaintingStyle.stroke
+            ..strokeWidth = isLast ? 2.0 : 1.4,
+        );
       final lp = _layout(
         _nodes[i],
         isLast ? highlight : colors.textPrimary,
@@ -690,21 +692,22 @@ class _TroyLadderPainter extends CustomPainter {
         final ax1 = left + boxW + gap - 3;
         final isDoz = i == n - 2;
         final col = isDoz ? highlight : colors.illusFaint;
-        canvas.drawLine(
-          Offset(ax0, cy),
-          Offset(ax1 - 4, cy),
-          Paint()
-            ..color = col
-            ..strokeWidth = isDoz ? 2.0 : 1.4,
-        );
-        canvas.drawPath(
-          Path()
-            ..moveTo(ax1, cy)
-            ..lineTo(ax1 - 6, cy - 4)
-            ..lineTo(ax1 - 6, cy + 4)
-            ..close(),
-          Paint()..color = col,
-        );
+        canvas
+          ..drawLine(
+            Offset(ax0, cy),
+            Offset(ax1 - 4, cy),
+            Paint()
+              ..color = col
+              ..strokeWidth = isDoz ? 2.0 : 1.4,
+          )
+          ..drawPath(
+            Path()
+              ..moveTo(ax1, cy)
+              ..lineTo(ax1 - 6, cy - 4)
+              ..lineTo(ax1 - 6, cy + 4)
+              ..close(),
+            Paint()..color = col,
+          );
         final sp = _layout(
           _steps[i],
           col,
@@ -766,17 +769,15 @@ class _MoneyFunctionsPainter extends CustomPainter {
       final left = i * (boxW + gap);
       final rect = Rect.fromLTWH(left, boxTop, boxW, boxH);
       final rr = RRect.fromRectAndRadius(rect, const Radius.circular(8));
-      canvas.drawRRect(
-        rr,
-        Paint()..color = _accents[i].withValues(alpha: 0.10),
-      );
-      canvas.drawRRect(
-        rr,
-        Paint()
-          ..color = _accents[i].withValues(alpha: 0.9)
-          ..style = PaintingStyle.stroke
-          ..strokeWidth = 1.4,
-      );
+      canvas
+        ..drawRRect(rr, Paint()..color = _accents[i].withValues(alpha: 0.10))
+        ..drawRRect(
+          rr,
+          Paint()
+            ..color = _accents[i].withValues(alpha: 0.9)
+            ..style = PaintingStyle.stroke
+            ..strokeWidth = 1.4,
+        );
       _glyph(canvas, i, rect);
       _text(
         canvas,
@@ -803,21 +804,22 @@ class _MoneyFunctionsPainter extends CustomPainter {
       ..strokeJoin = StrokeJoin.round;
     if (i == 0) {
       // ↔ medium of exchange
-      canvas.drawLine(Offset(cx - s, cy), Offset(cx + s, cy), p);
-      canvas.drawPath(
-        Path()
-          ..moveTo(cx - s + 7, cy - 6)
-          ..lineTo(cx - s, cy)
-          ..lineTo(cx - s + 7, cy + 6),
-        p,
-      );
-      canvas.drawPath(
-        Path()
-          ..moveTo(cx + s - 7, cy - 6)
-          ..lineTo(cx + s, cy)
-          ..lineTo(cx + s - 7, cy + 6),
-        p,
-      );
+      canvas
+        ..drawLine(Offset(cx - s, cy), Offset(cx + s, cy), p)
+        ..drawPath(
+          Path()
+            ..moveTo(cx - s + 7, cy - 6)
+            ..lineTo(cx - s, cy)
+            ..lineTo(cx - s + 7, cy + 6),
+          p,
+        )
+        ..drawPath(
+          Path()
+            ..moveTo(cx + s - 7, cy - 6)
+            ..lineTo(cx + s, cy)
+            ..lineTo(cx + s - 7, cy + 6),
+          p,
+        );
     } else if (i == 1) {
       // ruler / unit of account
       final rr = Rect.fromCenter(
@@ -836,19 +838,20 @@ class _MoneyFunctionsPainter extends CustomPainter {
       }
     } else {
       // vault / store of value
-      canvas.drawRRect(
-        RRect.fromRectAndRadius(
-          Rect.fromCenter(
-            center: Offset(cx, cy),
-            width: s * 1.8,
-            height: s * 1.8,
+      canvas
+        ..drawRRect(
+          RRect.fromRectAndRadius(
+            Rect.fromCenter(
+              center: Offset(cx, cy),
+              width: s * 1.8,
+              height: s * 1.8,
+            ),
+            const Radius.circular(4),
           ),
-          const Radius.circular(4),
-        ),
-        p,
-      );
-      canvas.drawCircle(Offset(cx, cy), s * 0.42, p);
-      canvas.drawLine(Offset(cx, cy), Offset(cx + s * 0.42, cy - s * 0.42), p);
+          p,
+        )
+        ..drawCircle(Offset(cx, cy), s * 0.42, p)
+        ..drawLine(Offset(cx, cy), Offset(cx + s * 0.42, cy - s * 0.42), p);
     }
   }
 
@@ -893,35 +896,37 @@ class _TimelinePainter extends CustomPainter {
     final axisY = size.height * 0.5;
     final left = size.width * 0.04;
     final right = size.width * 0.96;
-    canvas.drawLine(
-      Offset(left, axisY),
-      Offset(right, axisY),
-      Paint()
-        ..color = colors.illusLine
-        ..strokeWidth = 1.6,
-    );
-    canvas.drawPath(
-      Path()
-        ..moveTo(right, axisY)
-        ..lineTo(right - 7, axisY - 5)
-        ..lineTo(right - 7, axisY + 5)
-        ..close(),
-      Paint()..color = colors.illusLine,
-    );
+    canvas
+      ..drawLine(
+        Offset(left, axisY),
+        Offset(right, axisY),
+        Paint()
+          ..color = colors.illusLine
+          ..strokeWidth = 1.6,
+      )
+      ..drawPath(
+        Path()
+          ..moveTo(right, axisY)
+          ..lineTo(right - 7, axisY - 5)
+          ..lineTo(right - 7, axisY + 5)
+          ..close(),
+        Paint()..color = colors.illusLine,
+      );
 
     double xOf(int y) => left + (y - _y0) / (_y1 - _y0) * (right - left);
     for (var i = 0; i < _events.length; i++) {
       final e = _events[i];
       final x = xOf(e.$1);
       final col = _accents[i];
-      canvas.drawCircle(Offset(x, axisY), 4, Paint()..color = col);
-      canvas.drawLine(
-        Offset(x, axisY - (e.$3 ? 6 : 0)),
-        Offset(x, axisY + (e.$3 ? 0 : 6)),
-        Paint()
-          ..color = col
-          ..strokeWidth = 1.2,
-      );
+      canvas
+        ..drawCircle(Offset(x, axisY), 4, Paint()..color = col)
+        ..drawLine(
+          Offset(x, axisY - (e.$3 ? 6 : 0)),
+          Offset(x, axisY + (e.$3 ? 0 : 6)),
+          Paint()
+            ..color = col
+            ..strokeWidth = 1.2,
+        );
 
       final yearTp = _layout(
         '${e.$1}',
@@ -1007,14 +1012,15 @@ class _AllocatedPainter extends CustomPainter {
     for (var i = 0; i < n; i++) {
       final r = Rect.fromLTWH(barX, areaTop + i * (bh + vgap), barW, bh);
       final rr = RRect.fromRectAndRadius(r, const Radius.circular(3));
-      canvas.drawRRect(rr, Paint()..color = _gold.withValues(alpha: 0.85));
-      canvas.drawRRect(
-        rr,
-        Paint()
-          ..color = _gold
-          ..style = PaintingStyle.stroke
-          ..strokeWidth = 1.2,
-      );
+      canvas
+        ..drawRRect(rr, Paint()..color = _gold.withValues(alpha: 0.85))
+        ..drawRRect(
+          rr,
+          Paint()
+            ..color = _gold
+            ..style = PaintingStyle.stroke
+            ..strokeWidth = 1.2,
+        );
     }
     _text(
       canvas,
@@ -1027,7 +1033,8 @@ class _AllocatedPainter extends CustomPainter {
     );
 
     // Right: 3×3 hollow paper claims.
-    const cols = 3, rowsC = 3;
+    const cols = 3;
+    const rowsC = 3;
     final claimsLeft = size.width * 0.50;
     final claimsRight = size.width * 0.96;
     final cw = (claimsRight - claimsLeft) / cols;
@@ -1124,8 +1131,9 @@ class _InflationHorizonPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final r = Rect.fromLTWH(8, 8, size.width - 16, size.height - 16);
-    canvas.save();
-    canvas.clipRect(r);
+    canvas
+      ..save()
+      ..clipRect(r);
     final midY = r.center.dy;
     canvas.drawLine(
       Offset(r.left, midY),
@@ -1152,24 +1160,25 @@ class _InflationHorizonPainter extends CustomPainter {
       final shortY = longY + r.height * osc * 0.9;
       i == 0 ? shortPath.moveTo(x, shortY) : shortPath.lineTo(x, shortY);
     }
-    canvas.drawPath(
-      shortPath,
-      Paint()
-        ..color = colors.textSecondary
-        ..strokeWidth = 1.2
-        ..style = PaintingStyle.stroke
-        ..strokeJoin = StrokeJoin.round,
-    );
-    canvas.drawPath(
-      longPath,
-      Paint()
-        ..color = colors.accentGold
-        ..strokeWidth = 2.4
-        ..style = PaintingStyle.stroke
-        ..strokeJoin = StrokeJoin.round
-        ..strokeCap = StrokeCap.round,
-    );
-    canvas.restore();
+    canvas
+      ..drawPath(
+        shortPath,
+        Paint()
+          ..color = colors.textSecondary
+          ..strokeWidth = 1.2
+          ..style = PaintingStyle.stroke
+          ..strokeJoin = StrokeJoin.round,
+      )
+      ..drawPath(
+        longPath,
+        Paint()
+          ..color = colors.accentGold
+          ..strokeWidth = 2.4
+          ..style = PaintingStyle.stroke
+          ..strokeJoin = StrokeJoin.round
+          ..strokeCap = StrokeCap.round,
+      )
+      ..restore();
   }
 
   @override
@@ -1259,8 +1268,9 @@ class _CatalystPainter extends CustomPainter {
     final block = Rect.fromLTWH(blockLeft, cy - blockH / 2, blockW, blockH);
 
     // Honeycomb interior.
-    canvas.save();
-    canvas.clipRRect(RRect.fromRectAndRadius(block, const Radius.circular(6)));
+    canvas
+      ..save()
+      ..clipRRect(RRect.fromRectAndRadius(block, const Radius.circular(6)));
     final hexR = blockH * 0.13;
     final dx = hexR * 1.732;
     final hexPaint = Paint()
@@ -1276,14 +1286,15 @@ class _CatalystPainter extends CustomPainter {
         _hex(canvas, Offset(block.left + off + col * dx, yy), hexR, hexPaint);
       }
     }
-    canvas.restore();
-    canvas.drawRRect(
-      RRect.fromRectAndRadius(block, const Radius.circular(6)),
-      Paint()
-        ..color = _purple
-        ..style = PaintingStyle.stroke
-        ..strokeWidth = 1.4,
-    );
+    canvas
+      ..restore()
+      ..drawRRect(
+        RRect.fromRectAndRadius(block, const Radius.circular(6)),
+        Paint()
+          ..color = _purple
+          ..style = PaintingStyle.stroke
+          ..strokeWidth = 1.4,
+      );
     _text(
       canvas,
       'Pt / Pd',
@@ -1298,48 +1309,43 @@ class _CatalystPainter extends CustomPainter {
     final flow = Paint()
       ..color = colors.illusFaint
       ..strokeWidth = 1.6;
-    canvas.drawLine(
-      Offset(size.width * 0.24, cy),
-      Offset(blockLeft - 3, cy),
-      flow,
-    );
-    canvas.drawPath(
-      Path()
-        ..moveTo(blockLeft - 3, cy)
-        ..lineTo(blockLeft - 10, cy - 4)
-        ..lineTo(blockLeft - 10, cy + 4)
-        ..close(),
-      Paint()..color = colors.illusFaint,
-    );
+    canvas
+      ..drawLine(Offset(size.width * 0.24, cy), Offset(blockLeft - 3, cy), flow)
+      ..drawPath(
+        Path()
+          ..moveTo(blockLeft - 3, cy)
+          ..lineTo(blockLeft - 10, cy - 4)
+          ..lineTo(blockLeft - 10, cy + 4)
+          ..close(),
+        Paint()..color = colors.illusFaint,
+      );
     final outStart = blockLeft + blockW + 3;
-    canvas.drawLine(
-      Offset(outStart, cy),
-      Offset(size.width * 0.97 - 3, cy),
-      flow,
-    );
-    canvas.drawPath(
-      Path()
-        ..moveTo(size.width * 0.97, cy)
-        ..lineTo(size.width * 0.97 - 7, cy - 4)
-        ..lineTo(size.width * 0.97 - 7, cy + 4)
-        ..close(),
-      Paint()..color = colors.illusFaint,
-    );
+    canvas
+      ..drawLine(Offset(outStart, cy), Offset(size.width * 0.97 - 3, cy), flow)
+      ..drawPath(
+        Path()
+          ..moveTo(size.width * 0.97, cy)
+          ..lineTo(size.width * 0.97 - 7, cy - 4)
+          ..lineTo(size.width * 0.97 - 7, cy + 4)
+          ..close(),
+        Paint()..color = colors.illusFaint,
+      );
 
     // Dirty cluster (left) and cleaner cluster (right).
     final dark = Paint()..color = colors.textSecondary;
     final faint = Paint()..color = colors.textMuted.withValues(alpha: 0.5);
     for (final o in _cluster) {
-      canvas.drawCircle(
-        Offset(size.width * 0.03 + o.dx * size.width, cy + blockH * o.dy),
-        2.6,
-        dark,
-      );
-      canvas.drawCircle(
-        Offset(outStart + 8 + o.dx * size.width, cy + blockH * o.dy),
-        2.0,
-        faint,
-      );
+      canvas
+        ..drawCircle(
+          Offset(size.width * 0.03 + o.dx * size.width, cy + blockH * o.dy),
+          2.6,
+          dark,
+        )
+        ..drawCircle(
+          Offset(outStart + 8 + o.dx * size.width, cy + blockH * o.dy),
+          2,
+          faint,
+        );
     }
     _text(
       canvas,

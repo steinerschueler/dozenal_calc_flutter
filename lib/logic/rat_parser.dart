@@ -14,11 +14,13 @@
 // these no longer collapse to the f64 ≈ fallback.
 
 import 'package:dozenal_calc_flutter/logic/rational.dart';
+import 'package:meta/meta.dart';
 
 sealed class RatExpr {
   const RatExpr();
 }
 
+@immutable
 final class RatNum extends RatExpr {
   const RatNum(this.value);
   final Rational value;

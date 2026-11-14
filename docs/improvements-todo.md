@@ -79,14 +79,24 @@ Erst, wenn der Werterechner bereit ist und das Design des Rechnerwechsels fertig
 
 - [ ] `build18-release-notes.txt` entfernen: Laut [release-workflow.md](release-workflow.md) bleibt nur die aktuellste
       Fassung liegen.
-- [ ] **`tool/analyze_changed.py` robuster machen.** Die git-Aufrufe lesen noch mit der Standard-Kodierung des Systems,
-      unter Windows also nicht UTF-8. Fehlt `git` oder `origin/main`, endet das Skript mit einem Traceback statt mit einer
-      Meldung. Heute ohne Wirkung: Alle Dart-Dateien haben ASCII-Namen, und CI und Hooks haben `git`.
-- [ ] **Hook-Tests brauchen `python3` und `git`.** `test/analyze_changed_hook_test.dart` scheitert ohne die beiden mit
-      einer Meldung, die nichts mit dem Hook zu tun hat. CI und Pre-Push haben beide, ein klarer Hinweis fehlt trotzdem.
-- [ ] **Lint-Altlast abbauen.** `flutter analyze` meldet Tausende alte Befunde, geprüft werden nur geänderte Dateien
-      (CC-41).
-- [ ] **Paket- und GitHub-Name ändern**, wenn das npf-Backlog (A-067) so weit ist.
+- [ ] **Paket- und GitHub-Name** an den Ordnernamen angleichen (STR-21). Vorher klären, ob die Anbindung an Zenodo
+      die Umbenennung übersteht.
+- [ ] **Screenshot-Skripte prüfen lassen.** `tool/screenshots/*.py` haben rund 140 Befunde von ruff und 160 von mypy
+      und sind darum vom pre-commit ausgenommen (CC-02). Bereinigen, wenn die Store-Screenshots neu gestaltet werden,
+      dann `files:` der Python-Hooks in `.pre-commit-config.yaml` auf `^tool/.*\.py$` erweitern.
+- [ ] **Abdeckungsprüfung schärfen** (`tool/coverage_gate.dart`, CC-22). Heute ohne Wirkung, gefunden in der zweiten
+      Prüfung:
+  - «sinkt nicht» prüfen: einen Ausgangswert speichern, heute gilt nur die Schwelle von 70 %.
+  - Eine Datei, die kein Test lädt, fehlt in lcov und zählt nicht. Heute sind das nur die Teile von
+    `lib/unit_descriptions/`, reine Daten ohne ausführbare Zeilen.
+  - Eine `part of`-Datei nach den Imports ihrer Bibliothek einstufen. Heute zählen die Teile von `lib/manual/` als
+    «ohne Oberfläche», 42 Zeilen, alle abgedeckt.
+  - Ein veraltetes `coverage/lcov.info` erkennen, wenn die Prüfung allein läuft. pre-push und CI testen vorher alles.
+  - Kaputte Zeilen in lcov mit einer Meldung statt einem Stacktrace ablehnen. Die Prüfung sperrt schon heute.
+- [ ] **Architekturtest schärfen** (`test/architecture_test.dart`, ARC-05), bevor `lib/domain/` entsteht: bedingte
+      Imports ganz prüfen, `dart:isolate` und `dart:js_interop` verbieten, `domain/../` im Paketpfad auflösen.
+- [ ] **`flutter_lints` entfernen.** Das Paket ist unbenutzt, `analysis_options.yaml` bindet very_good_analysis ein.
+      Der Kommentar in `pubspec.yaml` behauptet das Gegenteil.
 
 ### Kürzlich erledigt
 

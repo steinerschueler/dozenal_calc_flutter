@@ -831,7 +831,13 @@ List<UnitTheorySection> _unitTheoryCy(UnitCategory cat) {
         ),
       ];
     // Mae pob un o\'r naw maes theori bellach ar gael yn Gymraeg.
-    default:
+    case UnitCategory.press:
+    case UnitCategory.force:
+    case UnitCategory.work:
+    case UnitCategory.power:
+    case UnitCategory.cook:
+    case UnitCategory.liquid:
+    case UnitCategory.moment:
       return const [];
   }
 }
@@ -1191,7 +1197,13 @@ List<Source> _unitSourcesCy(UnitCategory cat) {
           'A1',
         ),
       ];
-    default:
+    case UnitCategory.press:
+    case UnitCategory.force:
+    case UnitCategory.work:
+    case UnitCategory.power:
+    case UnitCategory.cook:
+    case UnitCategory.liquid:
+    case UnitCategory.moment:
       return const [];
   }
 }

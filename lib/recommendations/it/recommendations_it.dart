@@ -165,9 +165,7 @@ List<RecChapter> _recChaptersIt() => const [
         ],
         cons: [
           'Ottenibile principalmente tramite F-Droid o build diretta',
-          'Il progetto rifiuta la verifica sviluppatore di Google — la '
-              'installabilità futura tramite canali ordinari è incerta '
-              '(non è un problema via F-Droid)',
+          'Il progetto rifiuta la verifica sviluppatore di Google — la installabilità futura tramite canali ordinari è incerta (non è un problema via F-Droid)',
           'Soglia d’ingresso più alta rispetto a una calcolatrice semplice',
         ],
         url: 'https://f-droid.org/packages/com.jherkenhoff.qalculate/',

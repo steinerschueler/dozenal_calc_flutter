@@ -30,6 +30,8 @@ flowchart TB
 ```
 
 Die Schichten nach ARC-02 und ARC-04 entstehen nach ARC-30 bei grösseren Änderungen, nicht in einer Massenaktion.
+Ab der ersten Datei in `lib/domain/` prüft `test/architecture_test.dart`, dass sie weder Flutter noch IO noch äussere
+Schichten importiert (ARC-05).
 
 ## Daten
 

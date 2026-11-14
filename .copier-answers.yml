@@ -1,0 +1,12 @@
+# Von copier verwaltet, nicht von Hand ändern.
+_commit: v0.4.0
+_src_path: git+npf-sync:npf_vorlage.git
+art: app
+fachbegriff: Hauptrechner
+fachbegriff_bedeutung: Erster Rechner, rechnet in Basis 12 oder 10
+groesse: gross
+klasse: oeffentlich
+personendaten: keine
+projektname: ens_dozenal_calc
+sprache: dart
+zweck: Wissenschaftsrechner, der in Basis 12 rechnet

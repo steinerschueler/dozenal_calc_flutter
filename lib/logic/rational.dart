@@ -5,6 +5,7 @@
 
 import 'package:dozenal_calc_flutter/logic/dozenal_converter.dart';
 import 'package:dozenal_calc_flutter/logic/dozenal_digit.dart';
+import 'package:meta/meta.dart';
 
 /// Decomposition of a rational number into its dozenal expansion.
 /// `period` is empty iff the expansion is finite.
@@ -15,6 +16,7 @@ typedef DozenalPeriodic = ({
 });
 
 /// Exact rational number. Invariants: `den > 0`, always reduced.
+@immutable
 class Rational {
   const Rational._raw(this.num, this.den);
 
@@ -115,7 +117,7 @@ class Rational {
   Rational? reciprocal() => num == BigInt.zero ? null : tryNew(den, num);
 
   /// Largest factorial argument expanded on the exact track. Beyond this the
-  /// result is far past [maxResultDigits] anyway, so [factorial] collapses to
+  /// result is far past `maxResultDigits` anyway, so `factorial` collapses to
   /// the f64 fallback instead of spending a long BigInt loop on a value that
   /// would only be rendered truncated.
   static const int factorialCap = 3000;

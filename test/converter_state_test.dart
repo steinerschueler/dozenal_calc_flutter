@@ -20,7 +20,7 @@ void main() {
       expect(formatBaseNum(196, 12), '144');
       expect(formatBaseNum(1.5, 12), '1.6');
       expect(formatBaseNum(10, 12), 'A');
-      expect(formatBaseNum(2.0, 12), '2');
+      expect(formatBaseNum(2, 12), '2');
     });
 
     test('scalar entries fold left to right and tolerate dangling ops', () {
@@ -63,8 +63,9 @@ void main() {
 
     test('A/B disabled in base 10', () {
       // Base is decoupled from the unit system: only setBase(10) gates A/B.
-      final s = ConverterState()..setBase(10);
-      s.inputDigit(10); // 'A'
+      final s = ConverterState()
+        ..setBase(10)
+        ..inputDigit(10); // 'A'
       expect(s.topLine.number, '0');
       expect(s.isDigitEnabled(10), isFalse);
       expect(s.isDigitEnabled(9), isTrue);
@@ -73,8 +74,9 @@ void main() {
 
   group('single term', () {
     test('commit shows expression, bracket, and total in that unit', () {
-      final s = ConverterState()..setWorld(UnitWorld.metric);
-      s.tapCategory(UnitCategory.dist);
+      final s = ConverterState()
+        ..setWorld(UnitWorld.metric)
+        ..tapCategory(UnitCategory.dist);
       type(s, '100');
       s.tapMagnitude(mag(s, 'm'));
       expect(s.termCount, 1);
@@ -132,9 +134,10 @@ void main() {
       type(s, '37');
       s.del(); // drop '7'
       expect(s.topLine.number, '5 ft 3');
-      s.del(); // drop '3' → pending empty
-      // The last term reopens for editing: its digit goes, the unit lingers.
-      s.del(); // "5 ft" → unit "ft" with no digits left
+      s
+        ..del() // drop '3' → pending empty
+        // The last term reopens for editing: its digit goes, the unit lingers.
+        ..del(); // "5 ft" → unit "ft" with no digits left
       expect(s.termCount, 0); // not a committed term while editing …
       expect(s.inputUnit?.symbol, 'ft'); // … but the unit is still shown
       expect(s.topLine.number, 'ft');
@@ -216,8 +219,9 @@ void main() {
       final s = distState();
       type(s, '5');
       s.tapMagnitude(mag(s, 'ft'));
-      s.del(); // reopen → "ft" held
-      s.tapCategory(UnitCategory.weight);
+      s
+        ..del() // reopen → "ft" held
+        ..tapCategory(UnitCategory.weight);
       expect(s.inputUnit, isNull);
       expect(s.topLine.number, '0');
     });
@@ -257,8 +261,9 @@ void main() {
     });
 
     test('metric world offers no breakdown view', () {
-      final s = ConverterState()..setWorld(UnitWorld.metric);
-      s.tapCategory(UnitCategory.dist);
+      final s = ConverterState()
+        ..setWorld(UnitWorld.metric)
+        ..tapCategory(UnitCategory.dist);
       type(s, '5');
       s.tapMagnitude(mag(s, 'm'));
       for (var i = 0; i < 8; i++) {
@@ -285,8 +290,9 @@ void main() {
     });
 
     test('temperature stays single-term and converts the point', () {
-      final s = ConverterState()..setWorld(UnitWorld.metric);
-      s.tapCategory(UnitCategory.temp);
+      final s = ConverterState()
+        ..setWorld(UnitWorld.metric)
+        ..tapCategory(UnitCategory.temp);
       type(s, '100');
       s.tapMagnitude(mag(s, '°C'));
       type(s, '50');
@@ -310,8 +316,9 @@ void main() {
 
   group('time base-swap bracket', () {
     test('11 h shows {11 h} in the other base', () {
-      final s = ConverterState()..tapCategory(UnitCategory.time);
-      s.inputDigit(11); // 'B' in base 12
+      final s = ConverterState()
+        ..tapCategory(UnitCategory.time)
+        ..inputDigit(11); // 'B' in base 12
       s.tapMagnitude(mag(s, 'h'));
       expect(s.topLine.number, 'B h');
       expect(s.topLine.bracket, '11 h');
@@ -323,8 +330,9 @@ void main() {
       final s = distState();
       type(s, '13'); // pending "13", caret at 2
       expect(s.inputCursor, 2);
-      s.moveInputCaret(1);
-      s.inputDigit(2); // insert '2' at index 1 → "123"
+      s
+        ..moveInputCaret(1)
+        ..inputDigit(2); // insert '2' at index 1 → "123"
       expect(s.pendingInput, '123');
       expect(s.inputCursor, 2);
     });
@@ -348,8 +356,9 @@ void main() {
       s.tapMagnitude(mag(s, 'ft'));
       type(s, '3');
       s.tapMagnitude(mag(s, 'in'));
-      s.moveCursorToTermBoundary(1); // between ft and in
-      s.del(); // removes the term before the boundary (5 ft)
+      s
+        ..moveCursorToTermBoundary(1) // between ft and in
+        ..del(); // removes the term before the boundary (5 ft)
       expect(s.termCount, 1);
       expect(s.topLine.number, '3 in');
     });
@@ -367,8 +376,9 @@ void main() {
         type(s, '3');
         s.tapMagnitude(mag(s, 'in')); // "5 ft − 3 in"
         expect(s.totalSi, closeTo(5 * 0.3048 - 3 * 0.0254, 1e-9));
-        s.moveCursorToTermBoundary(1); // between ft and in
-        s.del(); // removes "5 ft"
+        s
+          ..moveCursorToTermBoundary(1) // between ft and in
+          ..del(); // removes "5 ft"
         expect(s.termCount, 1);
         expect(s.topLine.number, '3 in'); // not "−3 in"
         expect(s.totalSi, closeTo(3 * 0.0254, 1e-9)); // positive
@@ -379,8 +389,7 @@ void main() {
     test('an intentionally negative leading term is preserved', () {
       // The fix must not break a deliberately negative head term (armed −
       // before the first commit): "−5 ft" stays negative.
-      final s = distState();
-      s.setSubtract(true);
+      final s = distState()..setSubtract(true);
       type(s, '5');
       s.tapMagnitude(mag(s, 'ft')); // "−5 ft"
       expect(s.totalSi, closeTo(-5 * 0.3048, 1e-9));
@@ -472,16 +481,18 @@ void main() {
     });
 
     test('guards: no leading, doubled, or empty-state operators', () {
-      final s = distState();
-      s.inputScalarOp(kScalarTimes); // nothing at all → silent no-op
+      final s = distState()
+        ..inputScalarOp(kScalarTimes); // nothing at all → silent no-op
       expect(s.pendingInput, isEmpty);
       expect(s.termCount, 0);
       type(s, '3');
-      s.inputScalarOp(kScalarTimes);
-      s.inputScalarOp(kScalarDivide); // doubled → no-op
+      s
+        ..inputScalarOp(kScalarTimes)
+        ..inputScalarOp(kScalarDivide); // doubled → no-op
       expect(s.pendingInput, '3×');
-      s.moveInputCaret(0);
-      s.inputScalarOp(kScalarTimes); // would lead → no-op
+      s
+        ..moveInputCaret(0)
+        ..inputScalarOp(kScalarTimes); // would lead → no-op
       expect(s.pendingInput, '3×');
     });
 
@@ -490,8 +501,9 @@ void main() {
       type(s, '1');
       s.inputDecimal();
       type(s, '6'); // 1.6
-      s.inputScalarOp(kScalarTimes);
-      s.inputDecimal(); // segment start → seeds "0."
+      s
+        ..inputScalarOp(kScalarTimes)
+        ..inputDecimal(); // segment start → seeds "0."
       type(s, '6');
       expect(s.pendingInput, '1.6×0.6');
       s.inputDecimal(); // second dot in the same segment → no-op
@@ -549,8 +561,9 @@ void main() {
       s.memStore();
       expect(s.memoryAvailable, isTrue);
 
-      s.allClear();
-      s.tapCategory(UnitCategory.dist); // memory survives AC + category
+      s
+        ..allClear()
+        ..tapCategory(UnitCategory.dist); // memory survives AC + category
       expect(s.memoryAvailable, isTrue);
       s.memRecall();
       expect(s.pendingInput, '13');
@@ -563,9 +576,10 @@ void main() {
       final s = distState();
       type(s, '2');
       s.tapMagnitude(mag(s, 'ft'));
-      s.memStore(); // M = 2
-      s.inputScalarOp(kScalarTimes); // collapse → "2×"
-      s.memRecall();
+      s
+        ..memStore() // M = 2
+        ..inputScalarOp(kScalarTimes) // collapse → "2×"
+        ..memRecall();
       expect(s.pendingInput, '2×2');
       s.tapMagnitude(mag(s, 'ft'));
       expect(s.resultLine!.number, '4');
@@ -574,13 +588,14 @@ void main() {
 
   group('constants (Set 7)', () {
     test('insert into / replace the caret segment in the active base', () {
-      final s = distState();
-      s.insertValueEntry(1.5); // stand-in for a constant tap
+      final s = distState()
+        ..insertValueEntry(1.5); // stand-in for a constant tap
       expect(s.pendingInput, '1.6'); // base 12
-      s.insertValueEntry(2.0); // replaces the segment, never splices
+      s.insertValueEntry(2); // replaces the segment, never splices
       expect(s.pendingInput, '2');
-      s.inputScalarOp(kScalarTimes);
-      s.insertValueEntry(1.5); // empty second segment → plain insert
+      s
+        ..inputScalarOp(kScalarTimes)
+        ..insertValueEntry(1.5); // empty second segment → plain insert
       expect(s.pendingInput, '2×1.6');
       s.tapMagnitude(mag(s, 'ft'));
       expect(s.resultLine!.number, '3'); // 2 × 1.5
@@ -591,13 +606,15 @@ void main() {
       type(s, '3');
       s.inputScalarOp(kScalarPower);
       type(s, '2');
-      s.moveInputCaret(2); // caret in the exponent segment of "3^2"
-      s.insertValueEntry(-2.0); // 3^(−2) not representable → no-op
+      s
+        ..moveInputCaret(2) // caret in the exponent segment of "3^2"
+        ..insertValueEntry(-2); // 3^(−2) not representable → no-op
       expect(s.pendingInput, '3^2');
-      s.allClear();
-      s.tapCategory(UnitCategory.dist);
+      s
+        ..allClear()
+        ..tapCategory(UnitCategory.dist);
       type(s, '4'); // single segment = whole entry → replace + arm −
-      s.insertValueEntry(-2.0);
+      s.insertValueEntry(-2);
       expect(s.pendingInput, '2');
       expect(s.subtractArmed, isTrue);
     });
@@ -615,37 +632,41 @@ void main() {
     test('base 10 formats the pulled answer in decimal digits', () {
       final s = ConverterState()
         ..setBase(10)
-        ..calcAnsProvider = () => 15.0;
-      s.insertCalcAns();
+        ..calcAnsProvider = (() => 15.0)
+        ..insertCalcAns();
       expect(s.pendingInput, '15');
     });
 
     test('the world switch alone does NOT change the digit base', () {
       final s = ConverterState()
         ..setWorld(UnitWorld.metric)
-        ..calcAnsProvider = () => 15.0;
-      s.insertCalcAns();
+        ..calcAnsProvider = (() => 15.0)
+        ..insertCalcAns();
       expect(s.base, 12); // decoupled: metric units, dozenal digits
       expect(s.pendingInput, '13');
     });
 
     test('replaces the caret segment — composes, never splices', () {
-      final s = ConverterState()..calcAnsProvider = () => 7.0;
-      s.inputDigit(4);
+      final s = ConverterState()
+        ..calcAnsProvider = (() => 7.0)
+        ..inputDigit(4);
       expect(s.calcAnsAvailable, isTrue); // value keys always act
       s.insertCalcAns();
       expect(s.pendingInput, '7'); // replaced the typed segment
-      s.inputScalarOp(kScalarTimes); // "7×" → empty second segment
-      s.insertCalcAns();
+      s
+        ..inputScalarOp(kScalarTimes) // "7×" → empty second segment
+        ..insertCalcAns();
       expect(s.pendingInput, '7×7'); // composes with the entry
-      s.moveInputCaret(0);
-      s.insertCalcAns(); // caret in first segment → replaces only it
+      s
+        ..moveInputCaret(0)
+        ..insertCalcAns(); // caret in first segment → replaces only it
       expect(s.pendingInput, '7×7');
     });
 
     test('a negative answer arms − and converts to a negative term', () {
-      final s = distState()..calcAnsProvider = () => -2.0;
-      s.insertCalcAns();
+      final s = distState()
+        ..calcAnsProvider = (() => -2.0)
+        ..insertCalcAns();
       expect(s.pendingInput, '2');
       expect(s.subtractArmed, isTrue);
       s.tapMagnitude(mag(s, 'ft'));
@@ -661,17 +682,18 @@ void main() {
     });
 
     test('the pending number survives a category switch', () {
-      final s = ConverterState();
-      s.inputDigit(5); // type first …
-      s.tapCategory(UnitCategory.dist); // … then choose the category
+      final s = ConverterState()
+        ..inputDigit(5) // type first …
+        ..tapCategory(UnitCategory.dist); // … then choose the category
       expect(s.pendingInput, '5');
       s.tapMagnitude(mag(s, 'ft'));
       expect(s.termCount, 1);
       expect(s.topLine.number, '5 ft');
       // Switching to another category drops the committed terms (their units
       // are meaningless there) but keeps a freshly typed number.
-      s.inputDigit(3);
-      s.tapCategory(UnitCategory.weight);
+      s
+        ..inputDigit(3)
+        ..tapCategory(UnitCategory.weight);
       expect(s.termCount, 0);
       expect(s.pendingInput, '3');
     });
@@ -737,8 +759,9 @@ void main() {
       // Now the bracket shows the imperial partner → Twelve world.
       expect(s.resultLine!.bracketTenWorld, isFalse);
       // Time category: the bracket shows the other BASE instead.
-      final t = ConverterState()..tapCategory(UnitCategory.time);
-      t.inputDigit(2);
+      final t = ConverterState()
+        ..tapCategory(UnitCategory.time)
+        ..inputDigit(2);
       t.tapMagnitude(t.magnitudeUnits.firstWhere((u) => u.symbol == 'h'));
       expect(t.topLine.bracketTenWorld, isTrue); // base 12 → other is ten
       t.setBase(10);

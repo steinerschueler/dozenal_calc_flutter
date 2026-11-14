@@ -39,8 +39,8 @@ Widget _app() => MaterialApp(
 
 Future<void> _shoot(GlobalKey key, String name) async {
   final boundary =
-      key.currentContext!.findRenderObject() as RenderRepaintBoundary;
-  final image = await boundary.toImage(pixelRatio: 2.0);
+      key.currentContext!.findRenderObject()! as RenderRepaintBoundary;
+  final image = await boundary.toImage(pixelRatio: 2);
   final bytes = await image.toByteData(format: ui.ImageByteFormat.png);
   final dir = Directory('tool/preview')..createSync(recursive: true);
   File(
