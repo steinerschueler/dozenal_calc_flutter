@@ -166,9 +166,7 @@ List<RecChapter> _recChaptersEn() => const [
         ],
         cons: [
           'Obtained mainly via F-Droid or a direct build',
-          "The project declines Google's developer verification — future "
-              'installability through regular channels is uncertain (not an '
-              'issue via F-Droid)',
+          "The project declines Google's developer verification — future installability through regular channels is uncertain (not an issue via F-Droid)",
           'Higher entry barrier than a simple calculator',
         ],
         url: 'https://f-droid.org/packages/com.jherkenhoff.qalculate/',

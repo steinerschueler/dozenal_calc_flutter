@@ -31,7 +31,7 @@ class Chapter4Illustration extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           AspectRatio(
-            aspectRatio: 1.0,
+            aspectRatio: 1,
             child: CustomPaint(painter: Chapter4Painter(colors: t)),
           ),
           const SizedBox(height: 8),
@@ -110,14 +110,15 @@ class Chapter4Painter extends CustomPainter {
         path.lineTo(verts[idx[i]].dx, verts[idx[i]].dy);
       }
       path.close();
-      canvas.drawPath(path, Paint()..color = fill);
-      canvas.drawPath(
-        path,
-        Paint()
-          ..color = stroke
-          ..style = PaintingStyle.stroke
-          ..strokeWidth = 1.5,
-      );
+      canvas
+        ..drawPath(path, Paint()..color = fill)
+        ..drawPath(
+          path,
+          Paint()
+            ..color = stroke
+            ..style = PaintingStyle.stroke
+            ..strokeWidth = 1.5,
+        );
     }
 
     // Hexagon (purple)
@@ -185,7 +186,7 @@ class Chapter5Illustration extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           AspectRatio(
-            aspectRatio: 1.0,
+            aspectRatio: 1,
             child: CustomPaint(painter: Chapter5Painter(colors: t)),
           ),
           const SizedBox(height: 8),
@@ -259,7 +260,7 @@ class Chapter5Painter extends CustomPainter {
 
     // All vertex dots (subtle)
     for (final v in verts) {
-      canvas.drawCircle(v, 2.0, Paint()..color = colors.illusDot);
+      canvas.drawCircle(v, 2, Paint()..color = colors.illusDot);
     }
 
     // 6 diagonal types
@@ -276,7 +277,7 @@ class Chapter5Painter extends CustomPainter {
 
     // Highlight involved vertices
     for (final i in [0, 1, 3, 5, 6]) {
-      canvas.drawCircle(verts[i], 4.0, Paint()..color = colors.textPrimary);
+      canvas.drawCircle(verts[i], 4, Paint()..color = colors.textPrimary);
     }
   }
 
@@ -301,7 +302,7 @@ class ParkettierungIllustration extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 12),
       child: AspectRatio(
-        aspectRatio: 1.0,
+        aspectRatio: 1,
         child: CustomPaint(
           painter: ParkettierungPainter(colors: AppColors.of(context)),
         ),
@@ -340,8 +341,9 @@ class ParkettierungPainter extends CustomPainter {
         path.lineTo(p[i].dx, p[i].dy);
       }
       path.close();
-      canvas.drawPath(path, fill);
-      canvas.drawPath(path, stroke);
+      canvas
+        ..drawPath(path, fill)
+        ..drawPath(path, stroke);
     }
 
     // Ring: squares on even edges, hexagons on odd edges (6 of each).
@@ -380,14 +382,15 @@ class ParkettierungPainter extends CustomPainter {
       dod.lineTo(verts[i].dx, verts[i].dy);
     }
     dod.close();
-    canvas.drawPath(dod, Paint()..color = colors.illusLine.withAlpha(0x14));
-    canvas.drawPath(
-      dod,
-      Paint()
-        ..color = colors.illusLine
-        ..style = PaintingStyle.stroke
-        ..strokeWidth = 2.0,
-    );
+    canvas
+      ..drawPath(dod, Paint()..color = colors.illusLine.withAlpha(0x14))
+      ..drawPath(
+        dod,
+        Paint()
+          ..color = colors.illusLine
+          ..style = PaintingStyle.stroke
+          ..strokeWidth = 2.0,
+      );
 
     // Vertex dots where the 4.6.12 configuration meets.
     for (final v in verts) {

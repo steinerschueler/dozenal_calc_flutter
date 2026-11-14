@@ -47,7 +47,18 @@ Unit? bracketPartner(UnitCategory category, Unit unit) {
     case UnitCategory.count:
       // Plain total: the other world's base unit (factor 1).
       return _baseUnitOf(def, other);
-    default:
+    case UnitCategory.dist:
+    case UnitCategory.area:
+    case UnitCategory.space:
+    case UnitCategory.weight:
+    case UnitCategory.angle:
+    case UnitCategory.press:
+    case UnitCategory.force:
+    case UnitCategory.work:
+    case UnitCategory.power:
+    case UnitCategory.cook:
+    case UnitCategory.liquid:
+    case UnitCategory.moment:
       return _nearestByMagnitude(def, other, unit);
   }
 }

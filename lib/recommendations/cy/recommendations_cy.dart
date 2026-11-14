@@ -168,9 +168,7 @@ List<RecChapter> _recChaptersCy() => const [
         ],
         cons: [
           'Wedi’i gael yn bennaf trwy F-Droid neu adeiladiad uniongyrchol',
-          'Mae’r prosiect yn gwrthod dilysu datblygwr Google — mae hyfywedd '
-              'gosodiad yn y dyfodol trwy sianelau arferol yn ansicr (nid yn '
-              'broblem trwy F-Droid)',
+          'Mae’r prosiect yn gwrthod dilysu datblygwr Google — mae hyfywedd gosodiad yn y dyfodol trwy sianelau arferol yn ansicr (nid yn broblem trwy F-Droid)',
           'Rhwystr mynediad uwch na chyfrifiannell syml',
         ],
         url: 'https://f-droid.org/packages/com.jherkenhoff.qalculate/',

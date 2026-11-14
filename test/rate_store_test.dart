@@ -39,8 +39,9 @@ void main() {
   test('overrides win over the snapshot and notify', () {
     final s = RateStore();
     var notified = 0;
-    s.addListener(() => notified++);
-    s.setMetalOverride('gold', 3000);
+    s
+      ..addListener(() => notified++)
+      ..setMetalOverride('gold', 3000);
     expect(s.metalSpot('gold'), 3000);
     expect(s.hasMetalOverride('gold'), isTrue);
     expect(s.snapshotMetalSpot('gold'), 2350); // snapshot still readable
@@ -51,9 +52,9 @@ void main() {
   });
 
   test('invalid overrides are rejected', () {
-    final s = RateStore();
-    s.setCurrencyOverride('eur', -1);
-    s.setCurrencyOverride('eur', double.nan);
+    final s = RateStore()
+      ..setCurrencyOverride('eur', -1)
+      ..setCurrencyOverride('eur', double.nan);
     expect(s.hasCurrencyOverride('eur'), isFalse);
   });
 
@@ -67,8 +68,9 @@ void main() {
   test('overrides persist across a reload', () async {
     final s1 = RateStore();
     await s1.load();
-    s1.setMetalOverride('gold', 2800);
-    s1.setCurrencyOverride('eur', 0.90);
+    s1
+      ..setMetalOverride('gold', 2800)
+      ..setCurrencyOverride('eur', 0.90);
 
     final s2 = RateStore();
     await s2.load();

@@ -8,7 +8,7 @@ void main() {
   group('DozenalConverter', () {
     test('test_conversion: 14 dec → [D1, D2]; [D1, D4] → 16 dec', () {
       expect(
-        DozenalConverter.fromDecimal(14.0),
+        DozenalConverter.fromDecimal(14),
         equals([DozenalDigit.d1, DozenalDigit.d2]),
       );
       expect(

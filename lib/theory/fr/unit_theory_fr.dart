@@ -888,7 +888,13 @@ List<UnitTheorySection> _unitTheoryFr(UnitCategory cat) {
         ),
       ];
     // Les huit domaines de théorie sont désormais présents en français.
-    default:
+    case UnitCategory.press:
+    case UnitCategory.force:
+    case UnitCategory.work:
+    case UnitCategory.power:
+    case UnitCategory.cook:
+    case UnitCategory.liquid:
+    case UnitCategory.moment:
       return const [];
   }
 }
@@ -1248,7 +1254,13 @@ List<Source> _unitSourcesFr(UnitCategory cat) {
           'A1',
         ),
       ];
-    default:
+    case UnitCategory.press:
+    case UnitCategory.force:
+    case UnitCategory.work:
+    case UnitCategory.power:
+    case UnitCategory.cook:
+    case UnitCategory.liquid:
+    case UnitCategory.moment:
       return const [];
   }
 }

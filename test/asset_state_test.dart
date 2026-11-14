@@ -37,32 +37,36 @@ void main() {
     });
 
     test('tapping the active class header steps back to classes', () {
-      s.tapClass(AssetClass.metal);
-      s.tapClass(AssetClass.metal);
+      s
+        ..tapClass(AssetClass.metal)
+        ..tapClass(AssetClass.metal);
       expect(s.drillLevel, AssetDrillLevel.classes);
     });
 
     test('tapping the active genus header collapses to genera', () {
-      s.tapClass(AssetClass.metal);
-      s.tapGenus(gold());
-      s.tapGenus(gold());
+      s
+        ..tapClass(AssetClass.metal)
+        ..tapGenus(gold())
+        ..tapGenus(gold());
       expect(s.drillLevel, AssetDrillLevel.genera);
     });
 
     test('pending number survives a class switch (it is unit-less)', () {
-      s.tapClass(AssetClass.metal);
-      s.inputDigit(5);
-      s.tapClass(AssetClass.currency);
+      s
+        ..tapClass(AssetClass.metal)
+        ..inputDigit(5)
+        ..tapClass(AssetClass.currency);
       expect(s.pendingInput, '5');
     });
   });
 
   group('commit + equals cycle', () {
     test('commit one troy oz, = walks the ladder', () {
-      s.tapClass(AssetClass.metal);
-      s.tapGenus(gold());
-      s.inputDigit(1);
-      s.tapMagnitude(unit(gold(), 'oz t'));
+      s
+        ..tapClass(AssetClass.metal)
+        ..tapGenus(gold())
+        ..inputDigit(1)
+        ..tapMagnitude(unit(gold(), 'oz t'));
       expect(s.termCount, 1);
       expect(s.hasResult, isTrue);
 
@@ -72,11 +76,12 @@ void main() {
     });
 
     test('grams view of one troy oz shows 31.something (base 10)', () {
-      s.setBase(10);
-      s.tapClass(AssetClass.metal);
-      s.tapGenus(gold());
-      s.inputDigit(1);
-      s.tapMagnitude(unit(gold(), 'oz t'));
+      s
+        ..setBase(10)
+        ..tapClass(AssetClass.metal)
+        ..tapGenus(gold())
+        ..inputDigit(1)
+        ..tapMagnitude(unit(gold(), 'oz t'));
       // All units (Troy + metric) are on the ladder at once — cycle = until the
       // gram unit shows.
       var guard = 0;
@@ -90,34 +95,39 @@ void main() {
 
   group('world (derived from the committed unit)', () {
     test('committing a unit sets the working world to its system', () {
-      s.tapClass(AssetClass.metal);
-      s.tapGenus(gold());
+      s
+        ..tapClass(AssetClass.metal)
+        ..tapGenus(gold());
       expect(s.worldToggleEnabled, isTrue); // a metal has a met/imp axis
-      s.inputDigit(2);
-      s.tapMagnitude(unit(gold(), 'g')); // commit in grams
+      s
+        ..inputDigit(2)
+        ..tapMagnitude(unit(gold(), 'g')); // commit in grams
       expect(s.world, UnitWorld.metric); // world follows the committed unit
-      s.allClear();
-      s.tapClass(AssetClass.metal);
-      s.tapGenus(gold());
-      s.inputDigit(2);
-      s.tapMagnitude(unit(gold(), 'oz t')); // commit in Troy
+      s
+        ..allClear()
+        ..tapClass(AssetClass.metal)
+        ..tapGenus(gold())
+        ..inputDigit(2)
+        ..tapMagnitude(unit(gold(), 'oz t')); // commit in Troy
       expect(s.world, UnitWorld.imperial);
     });
 
     test('currencies are single-world (no met/imp axis)', () {
-      s.tapClass(AssetClass.currency);
-      s.tapGenus(gbp());
+      s
+        ..tapClass(AssetClass.currency)
+        ..tapGenus(gbp());
       expect(s.worldToggleEnabled, isFalse);
     });
   });
 
   group('currency denominations + base bracket', () {
     test('GBP £1, = cycles to shillings/pence and breakdown', () {
-      s.setBase(10);
-      s.tapClass(AssetClass.currency);
-      s.tapGenus(gbp());
-      s.inputDigit(1);
-      s.tapMagnitude(unit(gbp(), '£'));
+      s
+        ..setBase(10)
+        ..tapClass(AssetClass.currency)
+        ..tapGenus(gbp())
+        ..inputDigit(1)
+        ..tapMagnitude(unit(gbp(), '£'));
       // cycle to the shilling view
       var guard = 0;
       while (s.resultLine!.unit != 'sh' && guard++ < 12) {
@@ -127,10 +137,11 @@ void main() {
     });
 
     test('single-world bracket shows the other numeral base', () {
-      s.tapClass(AssetClass.currency);
-      s.tapGenus(gbp());
-      s.inputDigit(2);
-      s.tapMagnitude(unit(gbp(), '£'));
+      s
+        ..tapClass(AssetClass.currency)
+        ..tapGenus(gbp())
+        ..inputDigit(2)
+        ..tapMagnitude(unit(gbp(), '£'));
       // base 12 → bracket shows base 10
       expect(s.topLine.bracket, isNotNull);
       expect(s.topLine.bracketTenWorld, isTrue);
@@ -139,11 +150,12 @@ void main() {
 
   group('base switch', () {
     test('pending number reformats value-preservingly', () {
-      s.tapClass(AssetClass.metal);
-      s.tapGenus(gold());
-      s.inputDigit(1);
-      s.inputDigit(0); // "10" in base 12 = twelve
-      s.setBase(10);
+      s
+        ..tapClass(AssetClass.metal)
+        ..tapGenus(gold())
+        ..inputDigit(1)
+        ..inputDigit(0) // "10" in base 12 = twelve
+        ..setBase(10);
       expect(s.pendingInput, '12'); // twelve rendered in base 10
     });
   });
@@ -153,19 +165,21 @@ void main() {
         generaOf(AssetClass.currency).firstWhere((g) => g.key == 'usd');
 
     void commitGoldOzt() {
-      s.setBase(10);
-      s.rates = RateStore();
-      s.tapClass(AssetClass.metal);
-      s.tapGenus(gold());
-      s.inputDigit(1);
-      s.tapMagnitude(unit(gold(), 'oz t'));
+      s
+        ..setBase(10)
+        ..rates = RateStore()
+        ..tapClass(AssetClass.metal)
+        ..tapGenus(gold())
+        ..inputDigit(1)
+        ..tapMagnitude(unit(gold(), 'oz t'));
     }
 
     test('value key is inert without a rate store', () {
-      s.tapClass(AssetClass.metal);
-      s.tapGenus(gold());
-      s.inputDigit(1);
-      s.tapMagnitude(unit(gold(), 'oz t'));
+      s
+        ..tapClass(AssetClass.metal)
+        ..tapGenus(gold())
+        ..inputDigit(1)
+        ..tapMagnitude(unit(gold(), 'oz t'));
       expect(s.canEnterValueMode, isFalse); // no rates injected
       s.enterValueMode();
       expect(s.valueMode, isFalse);
@@ -186,16 +200,17 @@ void main() {
     });
 
     test('currency cross-conversion: 100 USD → EUR', () {
-      s.setBase(10);
-      s.rates = RateStore();
-      s.tapClass(AssetClass.currency);
-      s.tapGenus(usd());
-      s.inputDigit(1);
-      s.inputDigit(0);
-      s.inputDigit(0);
-      s.tapMagnitude(unit(usd(), r'$'));
-      s.enterValueMode();
-      s.setValueTarget('eur');
+      s
+        ..setBase(10)
+        ..rates = RateStore()
+        ..tapClass(AssetClass.currency)
+        ..tapGenus(usd())
+        ..inputDigit(1)
+        ..inputDigit(0)
+        ..inputDigit(0)
+        ..tapMagnitude(unit(usd(), r'$'))
+        ..enterValueMode()
+        ..setValueTarget('eur');
       expect(s.valueLine!.number, '92'); // 100 USD × 0.92
     });
 
@@ -210,61 +225,67 @@ void main() {
 
     test('toggle off returns to the exact ladder', () {
       commitGoldOzt();
-      s.enterValueMode();
-      s.toggleValueMode();
+      s
+        ..enterValueMode()
+        ..toggleValueMode();
       expect(s.valueMode, isFalse);
     });
 
     void commit100Usd() {
-      s.setBase(10);
-      s.rates = RateStore();
-      s.tapClass(AssetClass.currency);
-      s.tapGenus(usd());
-      s.inputDigit(1);
-      s.inputDigit(0);
-      s.inputDigit(0);
-      s.tapMagnitude(unit(usd(), r'$'));
+      s
+        ..setBase(10)
+        ..rates = RateStore()
+        ..tapClass(AssetClass.currency)
+        ..tapGenus(usd())
+        ..inputDigit(1)
+        ..inputDigit(0)
+        ..inputDigit(0)
+        ..tapMagnitude(unit(usd(), r'$'));
     }
 
     test('setValueTarget refuses the source currency (no self-conversion)', () {
       commit100Usd();
-      s.enterValueMode();
-      s.setValueTarget('usd'); // the source — must be refused
+      s
+        ..enterValueMode()
+        ..setValueTarget('usd'); // the source — must be refused
       expect(s.valueTarget, isNot('usd'));
     });
 
     test('re-entering value mode re-validates a stale source target', () {
-      s.setBase(10);
-      s.rates = RateStore();
-      // First a gold quantity valued in USD.
-      s.tapClass(AssetClass.metal);
-      s.tapGenus(gold());
-      s.inputDigit(1);
-      s.tapMagnitude(unit(gold(), 'oz t'));
-      s.enterValueMode();
-      s.setValueTarget('usd');
-      s.exitValueMode();
-      // Switch to a USD source — the 'usd' target is now stale (== source).
-      s.tapClass(AssetClass.currency);
-      s.tapGenus(usd());
-      s.inputDigit(1);
-      s.tapMagnitude(unit(usd(), r'$'));
-      s.enterValueMode();
+      s
+        ..setBase(10)
+        ..rates = RateStore()
+        // First a gold quantity valued in USD.
+        ..tapClass(AssetClass.metal)
+        ..tapGenus(gold())
+        ..inputDigit(1)
+        ..tapMagnitude(unit(gold(), 'oz t'))
+        ..enterValueMode()
+        ..setValueTarget('usd')
+        ..exitValueMode()
+        // Switch to a USD source — the 'usd' target is now stale (== source).
+        ..tapClass(AssetClass.currency)
+        ..tapGenus(usd())
+        ..inputDigit(1)
+        ..tapMagnitude(unit(usd(), r'$'))
+        ..enterValueMode();
       expect(s.valueTarget, isNot('usd')); // re-validated off the source
     });
 
     test('= is inert in value mode (no hidden ladder cycling)', () {
       commitGoldOzt();
-      s.enterValueMode();
-      s.equals();
+      s
+        ..enterValueMode()
+        ..equals();
       expect(s.valueMode, isTrue);
     });
 
     test('the bridge carries the shown ≈ value in value mode', () {
       commitGoldOzt(); // 1 oz t gold, base 10, snapshot rates injected
       expect(s.ansForBridge, closeTo(1.0, 1e-9)); // ladder view: 1 oz t
-      s.enterValueMode();
-      s.setValueTarget('usd');
+      s
+        ..enterValueMode()
+        ..setValueTarget('usd');
       // The result line shows "≈ 2350 $" — the bridge must deliver that,
       // not the hidden ladder quantity.
       expect(s.ansForBridge, closeTo(2350.0, 1e-6));
@@ -272,11 +293,12 @@ void main() {
   });
 
   test('AC resets the whole drill-down', () {
-    s.tapClass(AssetClass.metal);
-    s.tapGenus(gold());
-    s.inputDigit(3);
-    s.tapMagnitude(unit(gold(), 'oz t'));
-    s.allClear();
+    s
+      ..tapClass(AssetClass.metal)
+      ..tapGenus(gold())
+      ..inputDigit(3)
+      ..tapMagnitude(unit(gold(), 'oz t'))
+      ..allClear();
     expect(s.drillLevel, AssetDrillLevel.classes);
     expect(s.termCount, 0);
     expect(s.pendingInput, '');
@@ -292,32 +314,36 @@ void main() {
     });
 
     test('insertCalcAns sets the pending number in the active base', () {
-      s.calcAnsProvider = () => 15.0;
-      s.insertCalcAns();
+      s
+        ..calcAnsProvider = (() => 15.0)
+        ..insertCalcAns();
       expect(s.pendingInput, '13'); // 15 decimal = 13 in base 12
     });
 
     test('insertCalcAns formats in base 10 after setBase(10)', () {
-      s.setBase(10);
-      s.calcAnsProvider = () => 15.0;
-      s.insertCalcAns();
+      s
+        ..setBase(10)
+        ..calcAnsProvider = (() => 15.0)
+        ..insertCalcAns();
       expect(s.pendingInput, '15');
     });
 
     test('negative answer arms the subtract gap, digits stay unsigned', () {
-      s.calcAnsProvider = () => -2.0;
-      s.insertCalcAns();
+      s
+        ..calcAnsProvider = (() => -2.0)
+        ..insertCalcAns();
       expect(s.pendingInput, '2');
       expect(s.subtractArmed, isTrue);
     });
 
     test('ansForBridge offers the committed result-line value', () {
       expect(s.ansForBridge, isNull); // nothing committed yet
-      s.tapClass(AssetClass.metal);
-      s.tapGenus(gold());
-      s.inputDigit(1);
-      s.inputDigit(3);
-      s.tapMagnitude(unit(gold(), 'oz t'));
+      s
+        ..tapClass(AssetClass.metal)
+        ..tapGenus(gold())
+        ..inputDigit(1)
+        ..inputDigit(3)
+        ..tapMagnitude(unit(gold(), 'oz t'));
       // 13 (doz) oz t = 15 decimal — the bridge travels as a plain double.
       expect(s.ansForBridge, closeTo(15.0, 1e-9));
     });

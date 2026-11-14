@@ -92,8 +92,8 @@ void _syncListings() {
       continue;
     }
 
-    final outDir = Directory('$_playListingsDir/${entry.value}');
-    outDir.createSync(recursive: true);
+    final outDir = Directory('$_playListingsDir/${entry.value}')
+      ..createSync(recursive: true);
     File('${outDir.path}/title.txt').writeAsStringSync(title);
     File('${outDir.path}/short-description.txt').writeAsStringSync(short);
     File('${outDir.path}/full-description.txt').writeAsStringSync(long);
@@ -133,8 +133,8 @@ void _syncReleaseNotes() {
   for (final match in blockRe.allMatches(content)) {
     final tag = match.group(1)!;
     final body = match.group(2)!.trim();
-    final outDir = Directory('$_playReleaseNotesDir/$tag');
-    outDir.createSync(recursive: true);
+    final outDir = Directory('$_playReleaseNotesDir/$tag')
+      ..createSync(recursive: true);
     File('${outDir.path}/default.txt').writeAsStringSync(body);
     stdout.writeln('notes   → ${tag.padRight(6)}  len=${body.length}');
     n++;

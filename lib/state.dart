@@ -19,7 +19,7 @@ import 'package:dozenal_calc_flutter/tokens.dart';
 import 'package:flutter/foundation.dart';
 
 /// One past calculation kept on the session history tape (#1). Stores enough
-/// to re-render the expression + result faithfully (via [TwoLineDisplay]) and
+/// to re-render the expression + result faithfully (via `TwoLineDisplay`) and
 /// to recall the value like `Ans` — the exact [ans] when the rational track
 /// held, else the formatted [result] tokens.
 class HistoryEntry {
@@ -59,7 +59,7 @@ class DozenalCalcState extends ChangeNotifier {
   Rational? memoryRational;
 
   Rational? lastAns;
-  double lastResultF64 = 0.0;
+  double lastResultF64 = 0;
 
   /// Session history tape (#1): past calculations, newest last, capped at 30.
   /// Survives AC (tape character); not persisted across app restarts.
@@ -169,7 +169,7 @@ class DozenalCalcState extends ChangeNotifier {
   /// the arrow keys, preserves any error message as context.
   void moveCursorTo(int pos) {
     final clamped = pos.clamp(0, inputBuffer.length);
-    if (resultFieldActive == false && cursorPos == clamped) return;
+    if (!resultFieldActive && cursorPos == clamped) return;
     resultFieldActive = false;
     cursorPos = clamped;
     notifyListeners();
@@ -364,9 +364,7 @@ class DozenalCalcState extends ChangeNotifier {
         if (memoryRational != null) {
           _insertAtCursor(RatLit(memoryRational!, label: 'M'));
         } else {
-          for (final m in memory) {
-            _insertAtCursor(m);
-          }
+          memory.forEach(_insertAtCursor);
         }
       }
       overlayOpen = false;
@@ -382,9 +380,7 @@ class DozenalCalcState extends ChangeNotifier {
       if (lastAns != null) {
         _insertAtCursor(RatLit(lastAns!));
       } else {
-        for (final m in resultBuffer) {
-          _insertAtCursor(m);
-        }
+        resultBuffer.forEach(_insertAtCursor);
       }
       overlayOpen = false;
       return;
@@ -818,9 +814,7 @@ class DozenalCalcState extends ChangeNotifier {
     if (e.ans != null) {
       _insertAtCursor(RatLit(e.ans!));
     } else {
-      for (final m in e.result) {
-        _insertAtCursor(m);
-      }
+      e.result.forEach(_insertAtCursor);
     }
     notifyListeners();
   }

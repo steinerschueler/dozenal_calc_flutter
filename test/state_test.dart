@@ -261,8 +261,7 @@ void main() {
     });
 
     test('overlay constants insert + close overlay', () {
-      final s = DozenalCalcState();
-      s.handleClick(const Expand());
+      final s = DozenalCalcState()..handleClick(const Expand());
       expect(s.overlayOpen, isTrue);
       s.handleClick(const ConstPi());
       expect(s.overlayOpen, isFalse);
@@ -321,17 +320,18 @@ void main() {
     });
 
     test('Sinh double-tap toggles to ArSinh + closes overlay', () {
-      final s = DozenalCalcState();
-      s.handleClick(const Expand());
-      s.handleClick(const Sinh());
+      final s = DozenalCalcState()
+        ..handleClick(const Expand())
+        ..handleClick(const Sinh());
       expect(s.overlayOpen, isFalse);
       // Auto-paired: [Sinh, )] — the function token leads, the cursor sits
       // before the trailing close paren.
       expect(s.inputBuffer.first, isA<Sinh>());
       expect(s.inputBuffer.last, isA<ParenClose>());
 
-      s.handleClick(const Expand());
-      s.handleClick(const Sinh());
+      s
+        ..handleClick(const Expand())
+        ..handleClick(const Sinh());
       expect(
         s.inputBuffer.first,
         isA<ArSinh>(),
@@ -342,8 +342,9 @@ void main() {
     test('notifyListeners fires once per click', () {
       final s = DozenalCalcState();
       var count = 0;
-      s.addListener(() => count++);
-      s.handleClick(const Digit(DozenalDigit.d1));
+      s
+        ..addListener(() => count++)
+        ..handleClick(const Digit(DozenalDigit.d1));
       expect(count, equals(1));
       s.handleClick(const Add());
       expect(count, equals(2));
@@ -369,8 +370,7 @@ void main() {
     });
 
     test('Dez switches active base to 10, Doz back to 12', () {
-      final s = DozenalCalcState();
-      s.handleClick(const Dez());
+      final s = DozenalCalcState()..handleClick(const Dez());
       expect(s.numeralSystem, equals(NumeralSystem.dez));
       expect(s.activeBase, equals(10));
       s.handleClick(const Doz());
@@ -381,22 +381,24 @@ void main() {
     test(
       'Dez mode evaluates 1+2 as decimal 3 (same as doz for small ints)',
       () {
-        final s = DozenalCalcState()..handleClick(const Dez());
-        s.handleClick(const Digit(DozenalDigit.d1));
-        s.handleClick(const Add());
-        s.handleClick(const Digit(DozenalDigit.d2));
-        s.handleClick(const Equals());
+        final s = DozenalCalcState()
+          ..handleClick(const Dez())
+          ..handleClick(const Digit(DozenalDigit.d1))
+          ..handleClick(const Add())
+          ..handleClick(const Digit(DozenalDigit.d2))
+          ..handleClick(const Equals());
         expect(s.errorMsg, isNull);
         expect(s.resultBuffer, equals([const Digit(DozenalDigit.d3)]));
       },
     );
 
     test('Dez mode: 9+1 = 10 (rendered as 1,0 in base 10)', () {
-      final s = DozenalCalcState()..handleClick(const Dez());
-      s.handleClick(const Digit(DozenalDigit.d9));
-      s.handleClick(const Add());
-      s.handleClick(const Digit(DozenalDigit.d1));
-      s.handleClick(const Equals());
+      final s = DozenalCalcState()
+        ..handleClick(const Dez())
+        ..handleClick(const Digit(DozenalDigit.d9))
+        ..handleClick(const Add())
+        ..handleClick(const Digit(DozenalDigit.d1))
+        ..handleClick(const Equals());
       expect(s.errorMsg, isNull);
       // In base 10, 10 = [1, 0]; in base 12 it would have been [A].
       expect(
@@ -406,10 +408,10 @@ void main() {
     });
 
     test('Doz→Dez switch converts buffer: doz 1,0 (=12) becomes dez 1,2', () {
-      final s = DozenalCalcState();
-      s.handleClick(const Digit(DozenalDigit.d1));
-      s.handleClick(const Digit(DozenalDigit.d0));
-      s.handleClick(const Dez());
+      final s = DozenalCalcState()
+        ..handleClick(const Digit(DozenalDigit.d1))
+        ..handleClick(const Digit(DozenalDigit.d0))
+        ..handleClick(const Dez());
       expect(
         s.inputBuffer,
         equals([const Digit(DozenalDigit.d1), const Digit(DozenalDigit.d2)]),
@@ -418,10 +420,11 @@ void main() {
     });
 
     test('Dez→Doz switch converts buffer: dez 1,2 (=12) becomes doz 1,0', () {
-      final s = DozenalCalcState()..handleClick(const Dez());
-      s.handleClick(const Digit(DozenalDigit.d1));
-      s.handleClick(const Digit(DozenalDigit.d2));
-      s.handleClick(const Doz());
+      final s = DozenalCalcState()
+        ..handleClick(const Dez())
+        ..handleClick(const Digit(DozenalDigit.d1))
+        ..handleClick(const Digit(DozenalDigit.d2))
+        ..handleClick(const Doz());
       expect(
         s.inputBuffer,
         equals([const Digit(DozenalDigit.d1), const Digit(DozenalDigit.d0)]),
@@ -430,11 +433,11 @@ void main() {
     });
 
     test('round-trip: doz "23" → dez → doz preserves digits', () {
-      final s = DozenalCalcState();
-      s.handleClick(const Digit(DozenalDigit.d2));
-      s.handleClick(const Digit(DozenalDigit.d3));
-      s.handleClick(const Dez());
-      s.handleClick(const Doz());
+      final s = DozenalCalcState()
+        ..handleClick(const Digit(DozenalDigit.d2))
+        ..handleClick(const Digit(DozenalDigit.d3))
+        ..handleClick(const Dez())
+        ..handleClick(const Doz());
       expect(
         s.inputBuffer,
         equals([const Digit(DozenalDigit.d2), const Digit(DozenalDigit.d3)]),
@@ -443,13 +446,13 @@ void main() {
 
     test('mode-switch preserves operators between literals', () {
       // doz "10 + 11" (= 12 + 13 dec) → dez "12 + 13"
-      final s = DozenalCalcState();
-      s.handleClick(const Digit(DozenalDigit.d1));
-      s.handleClick(const Digit(DozenalDigit.d0));
-      s.handleClick(const Add());
-      s.handleClick(const Digit(DozenalDigit.d1));
-      s.handleClick(const Digit(DozenalDigit.d1));
-      s.handleClick(const Dez());
+      final s = DozenalCalcState()
+        ..handleClick(const Digit(DozenalDigit.d1))
+        ..handleClick(const Digit(DozenalDigit.d0))
+        ..handleClick(const Add())
+        ..handleClick(const Digit(DozenalDigit.d1))
+        ..handleClick(const Digit(DozenalDigit.d1))
+        ..handleClick(const Dez());
       expect(
         s.inputBuffer,
         equals([
@@ -466,11 +469,11 @@ void main() {
       // 5 + 5 = A (ten) in dozenal. Switching to decimal must re-render the
       // result as "10" — not leave the dozenal A-glyph under the DEZ badge
       // until the next "=".
-      final s = DozenalCalcState();
-      s.handleClick(const Digit(DozenalDigit.d5));
-      s.handleClick(const Add());
-      s.handleClick(const Digit(DozenalDigit.d5));
-      s.handleClick(const Equals());
+      final s = DozenalCalcState()
+        ..handleClick(const Digit(DozenalDigit.d5))
+        ..handleClick(const Add())
+        ..handleClick(const Digit(DozenalDigit.d5))
+        ..handleClick(const Equals());
       expect(
         s.resultBuffer,
         equals([const Digit(DozenalDigit.d10)]),
@@ -485,11 +488,12 @@ void main() {
     });
 
     test('Dez→Doz reformats the result line back', () {
-      final s = DozenalCalcState()..handleClick(const Dez());
-      s.handleClick(const Digit(DozenalDigit.d5));
-      s.handleClick(const Add());
-      s.handleClick(const Digit(DozenalDigit.d5));
-      s.handleClick(const Equals());
+      final s = DozenalCalcState()
+        ..handleClick(const Dez())
+        ..handleClick(const Digit(DozenalDigit.d5))
+        ..handleClick(const Add())
+        ..handleClick(const Digit(DozenalDigit.d5))
+        ..handleClick(const Equals());
       expect(
         s.resultBuffer,
         equals([const Digit(DozenalDigit.d1), const Digit(DozenalDigit.d0)]),
@@ -506,11 +510,11 @@ void main() {
     test(
       'base switch recomputes periodicity (doz 1/3 finite → dez periodic)',
       () {
-        final s = DozenalCalcState();
-        s.handleClick(const Digit(DozenalDigit.d1));
-        s.handleClick(const Div());
-        s.handleClick(const Digit(DozenalDigit.d3));
-        s.handleClick(const Equals());
+        final s = DozenalCalcState()
+          ..handleClick(const Digit(DozenalDigit.d1))
+          ..handleClick(const Div())
+          ..handleClick(const Digit(DozenalDigit.d3))
+          ..handleClick(const Equals());
         // doz: 1/3 = 0.4 exactly (3 divides twelve) — no period.
         expect(s.resultPeriodStart, isNull);
         expect(
@@ -540,10 +544,10 @@ void main() {
       // sin collapses the rational track → f64 fallback with a non-zero value
       // stashed in lastResultF64. AC clears the screen to 0, but the reformat
       // on a base switch must not pull that stale f64 back onto the display.
-      final s = DozenalCalcState();
-      s.handleClick(const Sin());
-      s.handleClick(const Digit(DozenalDigit.d3));
-      s.handleClick(const Equals());
+      final s = DozenalCalcState()
+        ..handleClick(const Sin())
+        ..handleClick(const Digit(DozenalDigit.d3))
+        ..handleClick(const Equals());
       expect(
         s.isF64Fallback,
         isTrue,
@@ -560,48 +564,49 @@ void main() {
     });
 
     test('resultCrossBracket shows the decimal of a dozenal result', () {
-      final s = DozenalCalcState();
-      s.handleClick(const Digit(DozenalDigit.d5));
-      s.handleClick(const Add());
-      s.handleClick(const Digit(DozenalDigit.d5));
-      s.handleClick(const Equals()); // A (ten)
+      final s = DozenalCalcState()
+        ..handleClick(const Digit(DozenalDigit.d5))
+        ..handleClick(const Add())
+        ..handleClick(const Digit(DozenalDigit.d5))
+        ..handleClick(const Equals()); // A (ten)
       expect(s.resultCrossBracket, equals('10'));
     });
 
     test('resultCrossBracket shows the dozenal of a decimal result', () {
-      final s = DozenalCalcState()..handleClick(const Dez());
-      s.handleClick(const Digit(DozenalDigit.d9));
-      s.handleClick(const Add());
-      s.handleClick(const Digit(DozenalDigit.d1));
-      s.handleClick(const Equals()); // 10 decimal = A dozenal
+      final s = DozenalCalcState()
+        ..handleClick(const Dez())
+        ..handleClick(const Digit(DozenalDigit.d9))
+        ..handleClick(const Add())
+        ..handleClick(const Digit(DozenalDigit.d1))
+        ..handleClick(const Equals()); // 10 decimal = A dozenal
       expect(s.resultCrossBracket, equals('A'));
     });
 
     test('resultCrossBracket is null when both systems render alike', () {
-      final s = DozenalCalcState();
-      s.handleClick(const Digit(DozenalDigit.d2));
-      s.handleClick(const Add());
-      s.handleClick(const Digit(DozenalDigit.d3));
-      s.handleClick(const Equals()); // 5 in both bases
+      final s = DozenalCalcState()
+        ..handleClick(const Digit(DozenalDigit.d2))
+        ..handleClick(const Add())
+        ..handleClick(const Digit(DozenalDigit.d3))
+        ..handleClick(const Equals()); // 5 in both bases
       expect(s.resultCrossBracket, isNull);
     });
 
     test('resultCrossBracket gives the periodic decimal of doz 1/3', () {
-      final s = DozenalCalcState();
-      s.handleClick(const Digit(DozenalDigit.d1));
-      s.handleClick(const Div());
-      s.handleClick(const Digit(DozenalDigit.d3));
-      s.handleClick(const Equals()); // 0.4 doz = 1/3
+      final s = DozenalCalcState()
+        ..handleClick(const Digit(DozenalDigit.d1))
+        ..handleClick(const Div())
+        ..handleClick(const Digit(DozenalDigit.d3))
+        ..handleClick(const Equals()); // 0.4 doz = 1/3
       expect(s.resultCrossBracket, equals('0.333333…'));
     });
 
     test('resultCrossBracket is null after AC (no live result)', () {
-      final s = DozenalCalcState();
-      s.handleClick(const Digit(DozenalDigit.d5));
-      s.handleClick(const Add());
-      s.handleClick(const Digit(DozenalDigit.d5));
-      s.handleClick(const Equals());
-      s.handleClick(const Ac());
+      final s = DozenalCalcState()
+        ..handleClick(const Digit(DozenalDigit.d5))
+        ..handleClick(const Add())
+        ..handleClick(const Digit(DozenalDigit.d5))
+        ..handleClick(const Equals())
+        ..handleClick(const Ac());
       expect(s.resultCrossBracket, isNull);
     });
 
@@ -652,8 +657,9 @@ void main() {
         reason: 'error must invalidate the previous lastAns',
       );
 
-      s.handleClick(const Ac());
-      s.handleClick(const Ans());
+      s
+        ..handleClick(const Ac())
+        ..handleClick(const Ans());
       // The pre-error 5 must NOT come back. After AC + Ans the buffer
       // either is empty or holds the post-AC zero, but never RatLit(5).
       for (final t in s.inputBuffer) {
@@ -845,17 +851,17 @@ void main() {
         ..handleClick(const Digit(DozenalDigit.d5))
         ..handleClick(const Equals()) // lastAns = 5
         ..handleClick(const Sto()) // memoryRational = 5
-        ..handleClick(const Ac()); // clear input buffer before recalling
-
-      s.handleClick(const Rcl());
+        ..handleClick(const Ac()) // clear input buffer before recalling
+        ..handleClick(const Rcl());
       expect(s.inputBuffer.length, equals(1));
       final rclToken = s.inputBuffer.first;
       expect(rclToken, isA<RatLit>());
       expect((rclToken as RatLit).label, equals('M'));
 
       // Ans path: fresh expression with the same value but the Ans label.
-      s.handleClick(const Ac());
-      s.handleClick(const Ans());
+      s
+        ..handleClick(const Ac())
+        ..handleClick(const Ans());
       final ansToken = s.inputBuffer.first as RatLit;
       expect(ansToken.label, equals('Ans'));
       expect(ansToken.value, equals(rclToken.value));
@@ -899,9 +905,9 @@ void main() {
     });
 
     test('Expand always opens the overlay on the first page', () {
-      final s = DozenalCalcState();
-      s.setOverlayPage(1); // e.g. paged in Breit, then rotated to portrait
-      s.handleClick(const Expand());
+      final s = DozenalCalcState()
+        ..setOverlayPage(1) // e.g. paged in Breit, then rotated to portrait
+        ..handleClick(const Expand());
       expect(s.overlayOpen, isTrue);
       expect(s.overlayPage, 0);
     });
@@ -1020,23 +1026,26 @@ void main() {
     Digit dg(int v) => Digit(DozenalDigit.values[v]);
 
     test('inserts the converter value as digits in the active base', () {
-      final s = DozenalCalcState()..convAnsProvider = () => 15.0;
-      s.handleClick(const ConvAns());
+      final s = DozenalCalcState()
+        ..convAnsProvider = (() => 15.0)
+        ..handleClick(const ConvAns());
       // 15 (decimal) = 13 in base 12.
       expect(s.inputBuffer, [dg(1), dg(3)]);
       expect(s.cursorPos, 2);
     });
 
     test('fractional value inserts digits + decimal point', () {
-      final s = DozenalCalcState()..convAnsProvider = () => 1.5;
-      s.handleClick(const ConvAns());
+      final s = DozenalCalcState()
+        ..convAnsProvider = (() => 1.5)
+        ..handleClick(const ConvAns());
       // 1.5 (decimal) = 1.6 in base 12.
       expect(s.inputBuffer, [dg(1), const Decimal(), dg(6)]);
     });
 
     test('negative value inserts a unary minus (Sub), not Negate', () {
-      final s = DozenalCalcState()..convAnsProvider = () => -3.0;
-      s.handleClick(const ConvAns());
+      final s = DozenalCalcState()
+        ..convAnsProvider = (() => -3.0)
+        ..handleClick(const ConvAns());
       expect(s.inputBuffer, [const Sub(), dg(3)]);
       // …and evaluates on the exact track (no ≈ fallback).
       s.handleClick(const Equals());
@@ -1048,8 +1057,8 @@ void main() {
     test('Dez mode formats the value in base 10', () {
       final s = DozenalCalcState()
         ..handleClick(const Dez())
-        ..convAnsProvider = () => 15.0;
-      s.handleClick(const ConvAns());
+        ..convAnsProvider = (() => 15.0)
+        ..handleClick(const ConvAns());
       expect(s.inputBuffer, [dg(1), dg(5)]);
     });
 
@@ -1068,8 +1077,8 @@ void main() {
         ..handleClick(const Add())
         ..handleClick(dg(2))
         ..handleClick(const Equals())
-        ..convAnsProvider = () => 5.0;
-      s.handleClick(const ConvAns());
+        ..convAnsProvider = (() => 5.0)
+        ..handleClick(const ConvAns());
       expect(s.inputBuffer, [dg(5)]);
     });
 
@@ -1082,9 +1091,9 @@ void main() {
         ..handleClick(const Mul())
         ..handleClick(dg(3))
         ..handleClick(const Equals())
-        ..convAnsProvider = () => 15.0;
-      s.handleClick(const Expand());
-      s.handleClick(const ConvAns());
+        ..convAnsProvider = (() => 15.0)
+        ..handleClick(const Expand())
+        ..handleClick(const ConvAns());
       expect(s.inputBuffer, [dg(1), dg(3)]);
     });
 
@@ -1094,8 +1103,8 @@ void main() {
         ..handleClick(const Mul())
         ..handleClick(dg(3))
         ..handleClick(const Equals())
-        ..handleClick(const Expand());
-      s.handleClick(dg(7));
+        ..handleClick(const Expand())
+        ..handleClick(dg(7));
       expect(s.inputBuffer, [dg(7)]);
     });
 
@@ -1106,8 +1115,9 @@ void main() {
         ..handleClick(dg(0))
         ..handleClick(const Equals());
       expect(s.errorMsg, isNotNull);
-      s.convAnsProvider = () => 5.0;
-      s.handleClick(const ConvAns());
+      s
+        ..convAnsProvider = (() => 5.0)
+        ..handleClick(const ConvAns());
       expect(s.errorMsg, isNotNull); // still blocked
       expect(s.inputBuffer, [dg(1), const Div(), dg(0)]); // untouched
     });
@@ -1130,16 +1140,18 @@ void main() {
     Digit dg(int v) => Digit(DozenalDigit.values[v]);
 
     test('VAL inserts the asset value as digits in the active base', () {
-      final s = DozenalCalcState()..assetAnsProvider = () => 15.0;
-      s.handleClick(const AssetAns());
+      final s = DozenalCalcState()
+        ..assetAnsProvider = (() => 15.0)
+        ..handleClick(const AssetAns());
       // 15 (decimal) = 13 in base 12.
       expect(s.inputBuffer, [dg(1), dg(3)]);
       expect(s.cursorPos, 2);
     });
 
     test('negative asset value inserts a unary minus (Sub)', () {
-      final s = DozenalCalcState()..assetAnsProvider = () => -3.0;
-      s.handleClick(const AssetAns());
+      final s = DozenalCalcState()
+        ..assetAnsProvider = (() => -3.0)
+        ..handleClick(const AssetAns());
       expect(s.inputBuffer, [const Sub(), dg(3)]);
     });
 
@@ -1151,32 +1163,33 @@ void main() {
     });
 
     test('CONV prefers the converter when both hold a result', () {
-      final s = DozenalCalcState();
-      s.convAnsProvider = () => 5.0;
-      s.assetAnsProvider = () => 7.0;
-      s.handleClick(const ConvAns());
+      final s = DozenalCalcState()
+        ..convAnsProvider = (() => 5.0)
+        ..assetAnsProvider = (() => 7.0)
+        ..handleClick(const ConvAns());
       expect(s.inputBuffer, [dg(5)]);
     });
 
     test('VAL pulls the asset value even when both hold a result', () {
-      final s = DozenalCalcState();
-      s.convAnsProvider = () => 5.0;
-      s.assetAnsProvider = () => 7.0;
-      s.handleClick(const AssetAns());
+      final s = DozenalCalcState()
+        ..convAnsProvider = (() => 5.0)
+        ..assetAnsProvider = (() => 7.0)
+        ..handleClick(const AssetAns());
       expect(s.inputBuffer, [dg(7)]);
     });
 
     test('VAL is asset-exclusive: no fallback to the converter', () {
-      final s = DozenalCalcState()..convAnsProvider = () => 5.0;
-      s.handleClick(const AssetAns());
+      final s = DozenalCalcState()
+        ..convAnsProvider = (() => 5.0)
+        ..handleClick(const AssetAns());
       expect(s.inputBuffer, isEmpty); // nothing over there → no-op
     });
 
     test('Dez mode formats the asset value in base 10', () {
       final s = DozenalCalcState()
         ..handleClick(const Dez())
-        ..assetAnsProvider = () => 15.0;
-      s.handleClick(const AssetAns());
+        ..assetAnsProvider = (() => 15.0)
+        ..handleClick(const AssetAns());
       expect(s.inputBuffer, [dg(1), dg(5)]);
     });
 
@@ -1189,9 +1202,8 @@ void main() {
         ..handleClick(dg(2))
         ..handleClick(const Add())
         ..handleClick(dg(2))
-        ..handleClick(const Equals());
-      s.handleClick(const AssetAns()); // no provider → nothing pulled
-      s
+        ..handleClick(const Equals())
+        ..handleClick(const AssetAns()) // no provider → nothing pulled
         ..handleClick(const Mul())
         ..handleClick(dg(2))
         ..handleClick(const Equals());
@@ -1206,8 +1218,9 @@ void main() {
         ..handleClick(dg(0))
         ..handleClick(const Equals());
       expect(s.errorMsg, isNotNull);
-      s.assetAnsProvider = () => 5.0;
-      s.handleClick(const AssetAns());
+      s
+        ..assetAnsProvider = (() => 5.0)
+        ..handleClick(const AssetAns());
       expect(s.errorMsg, isNotNull); // still blocked
       expect(s.inputBuffer, [dg(1), const Div(), dg(0)]); // untouched
     });

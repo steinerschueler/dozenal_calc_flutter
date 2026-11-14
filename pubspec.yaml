@@ -34,21 +34,12 @@ dependencies:
     sdk: flutter
 
   flutter_markdown_plus: ^1.0.12
+  meta: ^1.19.0
+  package_info_plus: ^8.0.2
   shared_preferences: ^2.5.6
   url_launcher: ^6.3.3
-  package_info_plus: ^8.0.2
 
 dev_dependencies:
-  flutter_test:
-    sdk: flutter
-
-  # The "flutter_lints" package below contains a set of recommended lints to
-  # encourage good coding practices. The lint set provided by the package is
-  # activated in the `analysis_options.yaml` file located at the root of your
-  # package. See that file for information about deactivating specific lint
-  # rules and activating additional ones.
-  flutter_lints: ^6.0.0
-
   # Launcher-icon and splash-screen generators. The source PNG at
   # assets/icon.png is produced by tool/generate_icon.dart
   # (`flutter test tool/generate_icon.dart`).
@@ -57,7 +48,17 @@ dev_dependencies:
   #   dart run flutter_launcher_icons
   #   dart run flutter_native_splash:create
   flutter_launcher_icons: ^0.14.0
+
+  # The "flutter_lints" package below contains a set of recommended lints to
+  # encourage good coding practices. The lint set provided by the package is
+  # activated in the `analysis_options.yaml` file located at the root of your
+  # package. See that file for information about deactivating specific lint
+  # rules and activating additional ones.
+  flutter_lints: ^6.0.0
+
   flutter_native_splash: ^2.4.0
+  flutter_test:
+    sdk: flutter
   msix: ^3.18.0
   very_good_analysis: 11.0.0
 

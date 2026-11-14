@@ -37,25 +37,28 @@ Widget _keypad(double height, {_Drill drill = _Drill.classes}) {
     case _Drill.metalGenera:
       state.tapClass(AssetClass.metal);
     case _Drill.metalUnits:
-      state.tapClass(AssetClass.metal);
-      state.inputDigit(1);
-      // Troy units (gr/dwt/oz t/lb t) fill Set 3, metric (g/kg) sits under the
-      // breadcrumb in Set 4 — both systems shown at once.
-      state.tapGenus(metal);
+      state
+        ..tapClass(AssetClass.metal)
+        ..inputDigit(1)
+        // Troy units (gr/dwt/oz t/lb t) fill Set 3, metric (g/kg) sits under the
+        // breadcrumb in Set 4 — both systems shown at once.
+        ..tapGenus(metal);
     case _Drill.currencyGenera:
       state.tapClass(AssetClass.currency); // 7 genera: Set 3 + breadcrumb Set 4
     case _Drill.currencyUnits:
-      state.tapClass(AssetClass.currency);
-      state.inputDigit(1);
-      state.tapGenus(gbp); // £/sh/d/p
+      state
+        ..tapClass(AssetClass.currency)
+        ..inputDigit(1)
+        ..tapGenus(gbp); // £/sh/d/p
     case _Drill.valueTargets:
       // Value mode: the drill area becomes a currency target picker.
-      state.rates = RateStore();
-      state.tapClass(AssetClass.metal);
-      state.inputDigit(1);
-      state.tapGenus(metal);
-      state.tapMagnitude(metal.unitBySymbol('oz t')!);
-      state.enterValueMode();
+      state
+        ..rates = RateStore()
+        ..tapClass(AssetClass.metal)
+        ..inputDigit(1)
+        ..tapGenus(metal)
+        ..tapMagnitude(metal.unitBySymbol('oz t')!)
+        ..enterValueMode();
   }
   return MaterialApp(
     home: Scaffold(

@@ -34,19 +34,17 @@ void main() {
 
     const size = 1024.0;
     final recorder = ui.PictureRecorder();
-    final canvas = Canvas(recorder, const Rect.fromLTWH(0, 0, size, size));
-
-    // Solid background — matches app theme.
-    canvas.drawRect(
-      const Rect.fromLTWH(0, 0, size, size),
-      Paint()..color = const Color(0xFF1F1F1F),
-    );
-
-    // Rotate the whole calculator by a small angle around the icon centre.
-    canvas.save();
-    canvas.translate(size / 2, size / 2);
-    canvas.rotate(-0.10); // ≈ -5.7°, counter-clockwise tilt
-    canvas.translate(-size / 2, -size / 2);
+    final canvas = Canvas(recorder, const Rect.fromLTWH(0, 0, size, size))
+      // Solid background — matches app theme.
+      ..drawRect(
+        const Rect.fromLTWH(0, 0, size, size),
+        Paint()..color = const Color(0xFF1F1F1F),
+      )
+      // Rotate the whole calculator by a small angle around the icon centre.
+      ..save()
+      ..translate(size / 2, size / 2)
+      ..rotate(-0.10) // ≈ -5.7°, counter-clockwise tilt
+      ..translate(-size / 2, -size / 2);
 
     // Calculator body bounds within the rotated frame.
     const bodyRect = Rect.fromLTRB(
@@ -58,40 +56,38 @@ void main() {
     const bodyRadius = Radius.circular(size * 0.07);
 
     // 1. Soft drop shadow: a blurred dark rounded rect behind everything.
-    canvas.drawRRect(
-      RRect.fromRectAndRadius(
-        bodyRect.shift(const Offset(size * 0.018, size * 0.030)),
-        bodyRadius,
-      ),
-      Paint()
-        ..color = const Color(0x80000000)
-        ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 22),
-    );
-
-    // 2. Thickness ledge: a darker duplicate offset south-east, suggesting
-    //    the calculator has physical depth (3D from above).
-    canvas.drawRRect(
-      RRect.fromRectAndRadius(
-        bodyRect.shift(const Offset(size * 0.010, size * 0.014)),
-        bodyRadius,
-      ),
-      Paint()..color = const Color(0xFF161616),
-    );
-
-    // 3. Main body.
-    canvas.drawRRect(
-      RRect.fromRectAndRadius(bodyRect, bodyRadius),
-      Paint()..color = const Color(0xFF2E2E2E),
-    );
-
-    // 4. Edge highlight (light from upper-left).
-    canvas.drawRRect(
-      RRect.fromRectAndRadius(bodyRect, bodyRadius),
-      Paint()
-        ..color = const Color(0xFF555555)
-        ..style = PaintingStyle.stroke
-        ..strokeWidth = size * 0.005,
-    );
+    canvas
+      ..drawRRect(
+        RRect.fromRectAndRadius(
+          bodyRect.shift(const Offset(size * 0.018, size * 0.030)),
+          bodyRadius,
+        ),
+        Paint()
+          ..color = const Color(0x80000000)
+          ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 22),
+      )
+      // 2. Thickness ledge: a darker duplicate offset south-east, suggesting
+      //    the calculator has physical depth (3D from above).
+      ..drawRRect(
+        RRect.fromRectAndRadius(
+          bodyRect.shift(const Offset(size * 0.010, size * 0.014)),
+          bodyRadius,
+        ),
+        Paint()..color = const Color(0xFF161616),
+      )
+      // 3. Main body.
+      ..drawRRect(
+        RRect.fromRectAndRadius(bodyRect, bodyRadius),
+        Paint()..color = const Color(0xFF2E2E2E),
+      )
+      // 4. Edge highlight (light from upper-left).
+      ..drawRRect(
+        RRect.fromRectAndRadius(bodyRect, bodyRadius),
+        Paint()
+          ..color = const Color(0xFF555555)
+          ..style = PaintingStyle.stroke
+          ..strokeWidth = size * 0.005,
+      );
 
     // 5. Display: dark inset rect.
     const dispRect = Rect.fromLTRB(
@@ -100,18 +96,19 @@ void main() {
       size * 0.81,
       size * 0.51,
     );
-    canvas.drawRRect(
-      RRect.fromRectAndRadius(dispRect, const Radius.circular(size * 0.025)),
-      Paint()..color = const Color(0xFF0A0F12),
-    );
-    // Subtle inner highlight on display top edge — adds depth.
-    canvas.drawRRect(
-      RRect.fromRectAndRadius(dispRect, const Radius.circular(size * 0.025)),
-      Paint()
-        ..color = const Color(0xFF1A2128)
-        ..style = PaintingStyle.stroke
-        ..strokeWidth = size * 0.0025,
-    );
+    canvas
+      ..drawRRect(
+        RRect.fromRectAndRadius(dispRect, const Radius.circular(size * 0.025)),
+        Paint()..color = const Color(0xFF0A0F12),
+      )
+      // Subtle inner highlight on display top edge — adds depth.
+      ..drawRRect(
+        RRect.fromRectAndRadius(dispRect, const Radius.circular(size * 0.025)),
+        Paint()
+          ..color = const Color(0xFF1A2128)
+          ..style = PaintingStyle.stroke
+          ..strokeWidth = size * 0.0025,
+      );
 
     // 6. "BASIS" text.
     final basisTp = TextPainter(
@@ -144,7 +141,7 @@ void main() {
           fontSize: size * 0.22,
           fontFamily: _iconFontFamily,
           fontWeight: FontWeight.w900,
-          height: 1.0,
+          height: 1,
         ),
       ),
       textDirection: TextDirection.ltr,
@@ -180,20 +177,21 @@ void main() {
           btnH,
         );
         // Tiny shadow under each button for subtle depth.
-        canvas.drawRRect(
-          RRect.fromRectAndRadius(
-            btnRect.shift(const Offset(0, size * 0.003)),
-            btnRadius,
-          ),
-          Paint()..color = const Color(0xFF1A1A1A),
-        );
-        canvas.drawRRect(
-          RRect.fromRectAndRadius(btnRect, btnRadius),
-          Paint()
-            ..color = isEquals
-                ? const Color(0xFFFF8E2A) // Apple-Calculator-ish orange
-                : const Color(0xFF4C4C4C),
-        );
+        canvas
+          ..drawRRect(
+            RRect.fromRectAndRadius(
+              btnRect.shift(const Offset(0, size * 0.003)),
+              btnRadius,
+            ),
+            Paint()..color = const Color(0xFF1A1A1A),
+          )
+          ..drawRRect(
+            RRect.fromRectAndRadius(btnRect, btnRadius),
+            Paint()
+              ..color = isEquals
+                  ? const Color(0xFFFF8E2A) // Apple-Calculator-ish orange
+                  : const Color(0xFF4C4C4C),
+          );
 
         // Equals "=" symbol drawn as two horizontal bars.
         if (isEquals) {
@@ -204,16 +202,17 @@ void main() {
             ..color = Colors.white
             ..strokeWidth = btnRect.height * 0.11
             ..strokeCap = StrokeCap.round;
-          canvas.drawLine(
-            Offset(eqCenter.dx - eqHalfW, eqCenter.dy - eqGap),
-            Offset(eqCenter.dx + eqHalfW, eqCenter.dy - eqGap),
-            eqStroke,
-          );
-          canvas.drawLine(
-            Offset(eqCenter.dx - eqHalfW, eqCenter.dy + eqGap),
-            Offset(eqCenter.dx + eqHalfW, eqCenter.dy + eqGap),
-            eqStroke,
-          );
+          canvas
+            ..drawLine(
+              Offset(eqCenter.dx - eqHalfW, eqCenter.dy - eqGap),
+              Offset(eqCenter.dx + eqHalfW, eqCenter.dy - eqGap),
+              eqStroke,
+            )
+            ..drawLine(
+              Offset(eqCenter.dx - eqHalfW, eqCenter.dy + eqGap),
+              Offset(eqCenter.dx + eqHalfW, eqCenter.dy + eqGap),
+              eqStroke,
+            );
         }
       }
     }
@@ -228,6 +227,7 @@ void main() {
     final out = File('assets/icon.png');
     await out.parent.create(recursive: true);
     await out.writeAsBytes(bytes);
+    // Generator script run via flutter test; stdout is its only report channel.
     // ignore: avoid_print
     print('Wrote ${out.path} (${bytes.length} bytes)');
   });

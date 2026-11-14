@@ -1,4 +1,4 @@
-// Privacy boundary (npf ARC-10, ARC-11): the app opens no connections itself.
+// Privacy boundary (ARC-10, ARC-11): the app opens no connections itself.
 // A hit here means a new network target, which needs npf.toml and the privacy
 // policy to change in the same commit.
 
@@ -20,6 +20,8 @@ const _allowedRuntimePackages = {
   'flutter',
   'flutter_localizations',
   'flutter_markdown_plus',
+  // Annotations such as @immutable only, no runtime code (Dart team).
+  'meta',
   'shared_preferences',
   'url_launcher',
   'package_info_plus',

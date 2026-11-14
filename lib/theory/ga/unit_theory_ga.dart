@@ -824,7 +824,13 @@ List<UnitTheorySection> _unitTheoryGa(UnitCategory cat) {
         ),
       ];
     // Tá na hocht réimse theoirice ar fáil i nGaeilge anois.
-    default:
+    case UnitCategory.press:
+    case UnitCategory.force:
+    case UnitCategory.work:
+    case UnitCategory.power:
+    case UnitCategory.cook:
+    case UnitCategory.liquid:
+    case UnitCategory.moment:
       return const [];
   }
 }
@@ -1184,7 +1190,13 @@ List<Source> _unitSourcesGa(UnitCategory cat) {
           'A1',
         ),
       ];
-    default:
+    case UnitCategory.press:
+    case UnitCategory.force:
+    case UnitCategory.work:
+    case UnitCategory.power:
+    case UnitCategory.cook:
+    case UnitCategory.liquid:
+    case UnitCategory.moment:
       return const [];
   }
 }

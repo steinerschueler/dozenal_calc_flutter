@@ -352,7 +352,13 @@ class _ConversionsPageState extends State<ConversionsPage> {
         return _currencyRows();
       case UnitCategory.temp:
         return _tempRows();
-      default:
+      case UnitCategory.press:
+      case UnitCategory.force:
+      case UnitCategory.work:
+      case UnitCategory.power:
+      case UnitCategory.cook:
+      case UnitCategory.liquid:
+      case UnitCategory.moment:
         return const [];
     }
   }

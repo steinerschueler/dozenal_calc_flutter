@@ -6,7 +6,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 const String _kLocaleKey = 'locale_v1';
 
 /// Holds the user's locale override (null = follow OS locale) and persists
-/// it across launches. Kept separate from [DozenalCalcState] because
+/// it across launches. Kept separate from `DozenalCalcState` because
 /// calculator logic and language preference are independent concerns.
 class LocaleNotifier extends ChangeNotifier {
   Locale? _override;

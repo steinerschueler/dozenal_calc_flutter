@@ -53,7 +53,8 @@ class _FeedbackDialogState extends State<_FeedbackDialog> {
         ? l.feedbackNoAnswer
         : _changeCtrl.text.trim();
     final body =
-        '''${l.feedbackMailSubject}
+        '''
+${l.feedbackMailSubject}
 
 ${l.feedbackRatingLabel}: $ratingStr
 

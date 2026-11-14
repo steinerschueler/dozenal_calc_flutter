@@ -804,7 +804,13 @@ List<UnitTheorySection> _unitTheoryRu(UnitCategory cat) {
         ),
       ];
     // Все восемь областей теории теперь имеются на русском.
-    default:
+    case UnitCategory.press:
+    case UnitCategory.force:
+    case UnitCategory.work:
+    case UnitCategory.power:
+    case UnitCategory.cook:
+    case UnitCategory.liquid:
+    case UnitCategory.moment:
       return const [];
   }
 }
@@ -1164,7 +1170,13 @@ List<Source> _unitSourcesRu(UnitCategory cat) {
           'A1',
         ),
       ];
-    default:
+    case UnitCategory.press:
+    case UnitCategory.force:
+    case UnitCategory.work:
+    case UnitCategory.power:
+    case UnitCategory.cook:
+    case UnitCategory.liquid:
+    case UnitCategory.moment:
       return const [];
   }
 }

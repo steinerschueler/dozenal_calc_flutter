@@ -23,7 +23,7 @@ class HapticsNotifier extends ChangeNotifier {
     notifyListeners();
   }
 
-  Future<void> setEnabled(bool value) async {
+  Future<void> setEnabled({required bool value}) async {
     if (value == _enabled) return;
     _enabled = value;
     final prefs = await SharedPreferences.getInstance();

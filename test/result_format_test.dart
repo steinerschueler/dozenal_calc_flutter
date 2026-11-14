@@ -73,7 +73,7 @@ void main() {
     });
 
     test('whole number has no fractional tail', () {
-      expect(compactF64String(7.0, 12), equals('7'));
+      expect(compactF64String(7, 12), equals('7'));
     });
 
     test('near-integer noise snaps onto the integer (tan 45°)', () {

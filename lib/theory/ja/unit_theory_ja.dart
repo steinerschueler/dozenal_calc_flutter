@@ -729,7 +729,13 @@ List<UnitTheorySection> _unitTheoryJa(UnitCategory cat) {
               '読むべきものだ。',
         ),
       ];
-    default:
+    case UnitCategory.press:
+    case UnitCategory.force:
+    case UnitCategory.work:
+    case UnitCategory.power:
+    case UnitCategory.cook:
+    case UnitCategory.liquid:
+    case UnitCategory.moment:
       return const [];
   }
 }
@@ -1087,7 +1093,13 @@ List<Source> _unitSourcesJa(UnitCategory cat) {
           'A1',
         ),
       ];
-    default:
+    case UnitCategory.press:
+    case UnitCategory.force:
+    case UnitCategory.work:
+    case UnitCategory.power:
+    case UnitCategory.cook:
+    case UnitCategory.liquid:
+    case UnitCategory.moment:
       return const [];
   }
 }

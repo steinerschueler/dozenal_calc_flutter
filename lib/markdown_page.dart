@@ -3,6 +3,8 @@
 // scaffolding verbatim — keeping the style decisions in one place means a
 // future tweak to typography or link colour only touches this file.
 
+import 'dart:async';
+
 import 'package:dozenal_calc_flutter/app_theme.dart';
 import 'package:dozenal_calc_flutter/license_page.dart' show openExternalLink;
 import 'package:flutter/material.dart';
@@ -61,7 +63,7 @@ class _MarkdownAssetPageState extends State<MarkdownAssetPage> {
               data: snap.data ?? '',
               padding: const EdgeInsets.fromLTRB(16, 12, 16, 24),
               onTapLink: (text, href, title) {
-                if (href != null) openExternalLink(context, href);
+                if (href != null) unawaited(openExternalLink(context, href));
               },
               styleSheet: MarkdownStyleSheet(
                 h1: TextStyle(

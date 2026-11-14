@@ -132,9 +132,10 @@ List<RatExpr>? buildRatExpr(List<CalcToken> tokens, {int base = 12}) {
       // exact: emit `× base ^` and let the following exponent tokens parse as
       // the power's right operand (a negative exponent via a leading Sub works
       // because RatPow recurses through unary minus).
-      exprs.add(const RatMul());
-      exprs.add(RatNum(Rational.tryNew(BigInt.from(base), BigInt.one)!));
-      exprs.add(const RatPow());
+      exprs
+        ..add(const RatMul())
+        ..add(RatNum(Rational.tryNew(BigInt.from(base), BigInt.one)!))
+        ..add(const RatPow());
       i++;
     } else if (t is Factorial) {
       exprs.add(const RatFact());
@@ -659,9 +660,10 @@ String buildMevalString(List<CalcToken> expanded, {int base = 12}) {
       if (token is Sci) {
         // a Sci b  →  a * base^b  (×10ⁿ in decimal, ×12ⁿ in dozenal). `^`
         // binds tighter than `*`, so this is a·(base^b) without extra parens.
-        tokensStr.add('*');
-        tokensStr.add('$base');
-        tokensStr.add('^');
+        tokensStr
+          ..add('*')
+          ..add('$base')
+          ..add('^');
       } else if (token is RatLit) {
         tokensStr.add(token.value.toDouble().toString());
       } else {
@@ -679,13 +681,14 @@ String buildMevalString(List<CalcToken> expanded, {int base = 12}) {
 
   resolveCustomOperators(tokensStr);
 
-  var mathString = tokensStr.join(' ');
+  final mathString = tokensStr.join(' ');
   final openCount = '('.allMatches(mathString).length;
   final closeCount = ')'.allMatches(mathString).length;
+  final buffer = StringBuffer(mathString);
   for (var i = 0; i < openCount - closeCount; i++) {
-    mathString += ')';
+    buffer.write(')');
   }
-  return mathString;
+  return buffer.toString();
 }
 
 // ---------------------------------------------------------------------------
@@ -1107,8 +1110,8 @@ class _F64Parser {
   static double _tanh(double x) {
     // Saturate explicitly: beyond |x| ≈ 20 the result rounds to ±1 anyway,
     // and beyond ~709 math.exp overflows to ∞, yielding (∞-0)/(∞+0) = NaN.
-    if (x > 20.0) return 1.0;
-    if (x < -20.0) return -1.0;
+    if (x > 20.0) return 1;
+    if (x < -20.0) return -1;
     final ex = math.exp(x);
     final emx = math.exp(-x);
     return (ex - emx) / (ex + emx);
@@ -1132,8 +1135,8 @@ class _F64Parser {
   }
 }
 
-/// Result of an f64 evaluation: the [value] (null on syntax error) plus a
-/// [divByZero] flag that distinguishes a true division-by-zero (1/0, recip(0),
+/// Result of an f64 evaluation: the `value` (null on syntax error) plus a
+/// `divByZero` flag that distinguishes a true division-by-zero (1/0, recip(0),
 /// cot/coth at a pole) from a magnitude overflow — both yield ±∞ otherwise.
 typedef F64Eval = ({double? value, bool divByZero});
 

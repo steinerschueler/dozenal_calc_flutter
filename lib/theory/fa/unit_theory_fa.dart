@@ -750,7 +750,13 @@ List<UnitTheorySection> _unitTheoryFa(UnitCategory cat) {
         ),
       ];
     // همهٔ هشت حوزهٔ نظری اکنون موجودند.
-    default:
+    case UnitCategory.press:
+    case UnitCategory.force:
+    case UnitCategory.work:
+    case UnitCategory.power:
+    case UnitCategory.cook:
+    case UnitCategory.liquid:
+    case UnitCategory.moment:
       return const [];
   }
 }
@@ -1110,7 +1116,13 @@ List<Source> _unitSourcesFa(UnitCategory cat) {
           'A1',
         ),
       ];
-    default:
+    case UnitCategory.press:
+    case UnitCategory.force:
+    case UnitCategory.work:
+    case UnitCategory.power:
+    case UnitCategory.cook:
+    case UnitCategory.liquid:
+    case UnitCategory.moment:
       return const [];
   }
 }

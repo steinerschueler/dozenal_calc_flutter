@@ -199,7 +199,7 @@ class BreitColumnLayout {
       chars * keyFontCharacterWidth * font + keyLabelSideSpace,
     );
     double totalAt(double font) =>
-        columnChars.fold(0, (sum, chars) => sum + widthAt(chars, font));
+        columnChars.fold<double>(0, (sum, chars) => sum + widthAt(chars, font));
 
     var font =
         buttonHeight * keyBaseLabelShare * keyLabelBoost * keyCharacterScale;

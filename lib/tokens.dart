@@ -9,6 +9,7 @@
 
 import 'package:dozenal_calc_flutter/logic/dozenal_digit.dart';
 import 'package:dozenal_calc_flutter/logic/rational.dart';
+import 'package:meta/meta.dart';
 
 // ---------------------------------------------------------------------------
 // CalcToken
@@ -20,6 +21,7 @@ sealed class CalcToken {
 
 // --- Main keypad ---
 
+@immutable
 final class Digit extends CalcToken {
   const Digit(this.value);
   final DozenalDigit value;
@@ -142,6 +144,7 @@ final class Negate extends CalcToken {
 /// without precision loss. The [label] is the display token used on the
 /// input line (default 'Ans'; RCL passes 'M' so the user can tell a
 /// recalled value from the last result).
+@immutable
 final class RatLit extends CalcToken {
   const RatLit(this.value, {this.label = 'Ans'});
   final Rational value;
@@ -394,6 +397,7 @@ final class InfoList extends InfoState {
   const InfoList();
 }
 
+@immutable
 final class InfoChapter extends InfoState {
   const InfoChapter(this.index);
   final int index;

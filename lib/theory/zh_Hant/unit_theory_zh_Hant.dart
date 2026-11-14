@@ -823,7 +823,13 @@ List<UnitTheorySection> _unitTheoryZhHant(UnitCategory cat) {
         ),
       ];
     // Alle acht Theorie-Bereiche sind nun auf Deutsch vorhanden.
-    default:
+    case UnitCategory.press:
+    case UnitCategory.force:
+    case UnitCategory.work:
+    case UnitCategory.power:
+    case UnitCategory.cook:
+    case UnitCategory.liquid:
+    case UnitCategory.moment:
       return const [];
   }
 }
@@ -1183,7 +1189,13 @@ List<Source> _unitSourcesZhHant(UnitCategory cat) {
           'A1',
         ),
       ];
-    default:
+    case UnitCategory.press:
+    case UnitCategory.force:
+    case UnitCategory.work:
+    case UnitCategory.power:
+    case UnitCategory.cook:
+    case UnitCategory.liquid:
+    case UnitCategory.moment:
       return const [];
   }
 }

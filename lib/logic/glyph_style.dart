@@ -11,7 +11,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 /// How digits are rendered (display and keypad have independent prefs).
 enum GlyphStyle {
   /// Custom glyph system: twelve stylised symbols painted by
-  /// [paintDozenalDigitAt]. Unique-to-this-app visual identity; opt-in.
+  /// `paintDozenalDigitAt`. Unique-to-this-app visual identity; opt-in.
   custom,
 
   /// Conventional Hindu-Arabic digits 0..9 plus Pitman/Dwiggins

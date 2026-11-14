@@ -25,19 +25,20 @@ void _text(
   FontStyle style = FontStyle.normal,
   FontWeight weight = FontWeight.w400,
 }) {
-  final tp = TextPainter(
-    text: TextSpan(
-      text: s,
-      style: TextStyle(
-        color: color,
-        fontSize: size,
-        fontStyle: style,
-        fontWeight: weight,
+  TextPainter(
+      text: TextSpan(
+        text: s,
+        style: TextStyle(
+          color: color,
+          fontSize: size,
+          fontStyle: style,
+          fontWeight: weight,
+        ),
       ),
-    ),
-    textDirection: TextDirection.ltr,
-  )..layout();
-  tp.paint(canvas, topLeft);
+      textDirection: TextDirection.ltr,
+    )
+    ..layout()
+    ..paint(canvas, topLeft);
 }
 
 void _dashedLine(
@@ -66,8 +67,8 @@ void _dashedLine(
 double _cosh(double x) => (math.exp(x) + math.exp(-x)) / 2.0;
 double _sinh(double x) => (math.exp(x) - math.exp(-x)) / 2.0;
 double _tanh(double x) {
-  if (x > 20.0) return 1.0;
-  if (x < -20.0) return -1.0;
+  if (x > 20.0) return 1;
+  if (x < -20.0) return -1;
   final ex = math.exp(x);
   final emx = math.exp(-x);
   return (ex - emx) / (ex + emx);
@@ -143,15 +144,16 @@ class _PowerTrianglePainter extends CustomPainter {
     const r = 17.0;
 
     void node(Offset o, String letter, String role) {
-      canvas.drawCircle(o, r, Paint()..color = c.cardFill);
-      canvas.drawCircle(
-        o,
-        r,
-        Paint()
-          ..color = c.illusLine
-          ..style = PaintingStyle.stroke
-          ..strokeWidth = 1.5,
-      );
+      canvas
+        ..drawCircle(o, r, Paint()..color = c.cardFill)
+        ..drawCircle(
+          o,
+          r,
+          Paint()
+            ..color = c.illusLine
+            ..style = PaintingStyle.stroke
+            ..strokeWidth = 1.5,
+        );
       _text(canvas, letter, o - const Offset(4.5, 9), c.textPrimary, size: 16);
       _text(
         canvas,
@@ -268,8 +270,9 @@ class _ExpCurvePainter extends CustomPainter {
     final axis = Paint()
       ..color = c.illusLine
       ..strokeWidth = 1.5;
-    canvas.drawLine(px(xMin, 0), px(xMax, 0), axis); // x-axis
-    canvas.drawLine(px(0, yMin), px(0, yMax), axis); // y-axis
+    canvas
+      ..drawLine(px(xMin, 0), px(xMax, 0), axis) // x-axis
+      ..drawLine(px(0, yMin), px(0, yMax), axis); // y-axis
     _text(
       canvas,
       'x',
@@ -319,7 +322,7 @@ class _ExpCurvePainter extends CustomPainter {
     ];
     for (final p in pts) {
       final o = px((p[0] as int).toDouble(), (p[1] as int).toDouble());
-      canvas.drawCircle(o, 3.0, Paint()..color = c.textPrimary);
+      canvas.drawCircle(o, 3, Paint()..color = c.textPrimary);
       _text(canvas, p[2] as String, o + const Offset(4, -12), c.textSecondary);
     }
 
@@ -410,7 +413,7 @@ class _ReflectionFigure extends StatelessWidget {
   Widget build(BuildContext context) => Padding(
     padding: const EdgeInsets.symmetric(vertical: 12),
     child: AspectRatio(
-      aspectRatio: 1.0,
+      aspectRatio: 1,
       child: CustomPaint(
         painter: _ReflectionPainter(
           AppColors.of(context),
@@ -472,8 +475,9 @@ class _ReflectionPainter extends CustomPainter {
     final axis = Paint()
       ..color = c.illusLine
       ..strokeWidth = 1.4;
-    canvas.drawLine(px(lo, 0), px(hi, 0), axis);
-    canvas.drawLine(px(0, lo), px(0, hi), axis);
+    canvas
+      ..drawLine(px(lo, 0), px(hi, 0), axis)
+      ..drawLine(px(0, lo), px(0, hi), axis);
 
     // diagonal y = x (dashed)
     _dashedLine(
@@ -544,8 +548,9 @@ class _ReflectionPainter extends CustomPainter {
         on: 3,
         off: 3,
       );
-      canvas.drawCircle(a, 2.6, Paint()..color = c.textPrimary);
-      canvas.drawCircle(b, 2.6, Paint()..color = c.textPrimary);
+      canvas
+        ..drawCircle(a, 2.6, Paint()..color = c.textPrimary)
+        ..drawCircle(b, 2.6, Paint()..color = c.textPrimary);
     }
 
     // curve labels near their ends
@@ -602,26 +607,26 @@ class _ParallelCircuitPainter extends CustomPainter {
     const rightX = 0.80;
 
     // top & bottom rails
-    canvas.drawLine(o(leftX, topY), o(rightX, topY), wire);
-    canvas.drawLine(o(leftX, botY), o(rightX, botY), wire);
-
-    // battery on the left edge (gap in the left rail, two plates)
-    canvas.drawLine(o(leftX, topY), o(leftX, 0.45), wire);
-    canvas.drawLine(o(leftX, 0.55), o(leftX, botY), wire);
-    canvas.drawLine(
-      o(0.13, 0.45),
-      o(0.23, 0.45),
-      Paint()
-        ..color = _teal
-        ..strokeWidth = 2.4,
-    ); // long plate (+)
-    canvas.drawLine(
-      o(0.15, 0.55),
-      o(0.21, 0.55),
-      Paint()
-        ..color = c.textMuted
-        ..strokeWidth = 1.2,
-    ); // short plate (−)
+    canvas
+      ..drawLine(o(leftX, topY), o(rightX, topY), wire)
+      ..drawLine(o(leftX, botY), o(rightX, botY), wire)
+      // battery on the left edge (gap in the left rail, two plates)
+      ..drawLine(o(leftX, topY), o(leftX, 0.45), wire)
+      ..drawLine(o(leftX, 0.55), o(leftX, botY), wire)
+      ..drawLine(
+        o(0.13, 0.45),
+        o(0.23, 0.45),
+        Paint()
+          ..color = _teal
+          ..strokeWidth = 2.4,
+      ) // long plate (+)
+      ..drawLine(
+        o(0.15, 0.55),
+        o(0.21, 0.55),
+        Paint()
+          ..color = c.textMuted
+          ..strokeWidth = 1.2,
+      ); // short plate (−)
     _text(
       canvas,
       '+',
@@ -638,8 +643,9 @@ class _ParallelCircuitPainter extends CustomPainter {
       const rBot = 0.58;
       const rw = 0.05;
       // lead wires
-      canvas.drawLine(o(cx, topY), o(cx, rTop), wire);
-      canvas.drawLine(o(cx, rBot), o(cx, botY), wire);
+      canvas
+        ..drawLine(o(cx, topY), o(cx, rTop), wire)
+        ..drawLine(o(cx, rBot), o(cx, botY), wire);
       // body
       final rect = Rect.fromLTRB(
         (cx - rw) * w,
@@ -647,17 +653,18 @@ class _ParallelCircuitPainter extends CustomPainter {
         (cx + rw) * w,
         rBot * h,
       );
-      canvas.drawRect(rect, Paint()..color = c.cardFill);
-      canvas.drawRect(
-        rect,
-        Paint()
-          ..color = c.illusLine
-          ..style = PaintingStyle.stroke
-          ..strokeWidth = 1.8,
-      );
-      // node dots on the rails
-      canvas.drawCircle(o(cx, topY), 2.6, Paint()..color = c.textPrimary);
-      canvas.drawCircle(o(cx, botY), 2.6, Paint()..color = c.textPrimary);
+      canvas
+        ..drawRect(rect, Paint()..color = c.cardFill)
+        ..drawRect(
+          rect,
+          Paint()
+            ..color = c.illusLine
+            ..style = PaintingStyle.stroke
+            ..strokeWidth = 1.8,
+        )
+        // node dots on the rails
+        ..drawCircle(o(cx, topY), 2.6, Paint()..color = c.textPrimary)
+        ..drawCircle(o(cx, botY), 2.6, Paint()..color = c.textPrimary);
       _text(canvas, label, o(labelX, 0.46), c.textSecondary, size: 12);
     }
 
@@ -729,14 +736,15 @@ class _ParallelBarPainter extends CustomPainter {
         left * w + len,
         yc * h + 0.06 * h,
       );
-      canvas.drawRect(rect, Paint()..color = stroke.withAlpha(0x33));
-      canvas.drawRect(
-        rect,
-        Paint()
-          ..color = stroke
-          ..style = PaintingStyle.stroke
-          ..strokeWidth = 1.6,
-      );
+      canvas
+        ..drawRect(rect, Paint()..color = stroke.withAlpha(0x33))
+        ..drawRect(
+          rect,
+          Paint()
+            ..color = stroke
+            ..style = PaintingStyle.stroke
+            ..strokeWidth = 1.6,
+        );
       _text(
         canvas,
         name,
@@ -818,32 +826,33 @@ class _UnitCirclePainter extends CustomPainter {
     final axis = Paint()
       ..color = c.illusLine
       ..strokeWidth = 1.5;
-    canvas.drawLine(px(-1.25, 0), px(1.25, 0), axis);
-    canvas.drawLine(px(0, -1.25), px(0, 1.25), axis);
+    canvas
+      ..drawLine(px(-1.25, 0), px(1.25, 0), axis)
+      ..drawLine(px(0, -1.25), px(0, 1.25), axis);
     _text(canvas, 'x', px(1.25, 0) + const Offset(2, -6), c.textMuted);
     _text(canvas, 'y', px(0, 1.25) + const Offset(5, -4), c.textMuted);
 
     final rPx = px(1, 0).dx - o.dx;
-    canvas.drawCircle(
-      o,
-      rPx,
-      Paint()
-        ..color = c.illusLine
-        ..style = PaintingStyle.stroke
-        ..strokeWidth = 1.5,
-    );
-
-    // angle arc
-    canvas.drawArc(
-      Rect.fromCircle(center: o, radius: rPx * 0.22),
-      0,
-      -th,
-      false,
-      Paint()
-        ..color = c.illusFaint
-        ..style = PaintingStyle.stroke
-        ..strokeWidth = 1.4,
-    );
+    canvas
+      ..drawCircle(
+        o,
+        rPx,
+        Paint()
+          ..color = c.illusLine
+          ..style = PaintingStyle.stroke
+          ..strokeWidth = 1.5,
+      )
+      // angle arc
+      ..drawArc(
+        Rect.fromCircle(center: o, radius: rPx * 0.22),
+        0,
+        -th,
+        false,
+        Paint()
+          ..color = c.illusFaint
+          ..style = PaintingStyle.stroke
+          ..strokeWidth = 1.4,
+      );
     _text(canvas, 'θ', px(0.22, 0.12), c.textMuted, size: 11);
 
     // cos projection (x), teal
@@ -965,9 +974,10 @@ class _RightTrianglePainter extends CustomPainter {
       ..color = c.illusLine
       ..strokeWidth = 1.8
       ..strokeCap = StrokeCap.round;
-    canvas.drawLine(a, b, side);
-    canvas.drawLine(b, cc, side);
-    canvas.drawLine(cc, a, side);
+    canvas
+      ..drawLine(a, b, side)
+      ..drawLine(b, cc, side)
+      ..drawLine(cc, a, side);
 
     // right-angle marker at a
     final sq = Path()
@@ -1099,8 +1109,9 @@ class _SineWavePainter extends CustomPainter {
     final axis = Paint()
       ..color = c.illusLine
       ..strokeWidth = 1.5;
-    canvas.drawLine(px(-0.2, 0), px(6.6, 0), axis);
-    canvas.drawLine(px(0, -1.45), px(0, 1.45), axis);
+    canvas
+      ..drawLine(px(-0.2, 0), px(6.6, 0), axis)
+      ..drawLine(px(0, -1.45), px(0, 1.45), axis);
 
     // x ticks at the quarter angles
     final ticks = <(double, String)>[
@@ -1145,23 +1156,24 @@ class _SineWavePainter extends CustomPainter {
       return path;
     }
 
-    canvas.drawPath(
-      curve(math.cos),
-      Paint()
-        ..color = _purple.withAlpha(0x99)
-        ..style = PaintingStyle.stroke
-        ..strokeWidth = 1.2
-        ..strokeJoin = StrokeJoin.round,
-    );
-    canvas.drawPath(
-      curve(math.sin),
-      Paint()
-        ..color = _teal
-        ..style = PaintingStyle.stroke
-        ..strokeWidth = 2.2
-        ..strokeJoin = StrokeJoin.round
-        ..strokeCap = StrokeCap.round,
-    );
+    canvas
+      ..drawPath(
+        curve(math.cos),
+        Paint()
+          ..color = _purple.withAlpha(0x99)
+          ..style = PaintingStyle.stroke
+          ..strokeWidth = 1.2
+          ..strokeJoin = StrokeJoin.round,
+      )
+      ..drawPath(
+        curve(math.sin),
+        Paint()
+          ..color = _teal
+          ..style = PaintingStyle.stroke
+          ..strokeWidth = 2.2
+          ..strokeJoin = StrokeJoin.round
+          ..strokeCap = StrokeCap.round,
+      );
     _text(canvas, 'sin', px(twoPi, 0) + const Offset(3, -10), _teal);
     _text(
       canvas,
@@ -1172,12 +1184,9 @@ class _SineWavePainter extends CustomPainter {
     );
 
     // peaks
-    canvas.drawCircle(px(math.pi / 2, 1), 3.0, Paint()..color = c.textPrimary);
-    canvas.drawCircle(
-      px(3 * math.pi / 2, -1),
-      3.0,
-      Paint()..color = c.textPrimary,
-    );
+    canvas
+      ..drawCircle(px(math.pi / 2, 1), 3, Paint()..color = c.textPrimary)
+      ..drawCircle(px(3 * math.pi / 2, -1), 3, Paint()..color = c.textPrimary);
   }
 
   @override
@@ -1313,17 +1322,18 @@ class _MemoryFlowPainter extends CustomPainter {
 
     // --- Boxes (fill then border) drawn over the arrow ends.
     boxes.forEach((id, r) {
-      canvas.drawRRect(
-        RRect.fromRectAndRadius(r, const Radius.circular(6)),
-        Paint()..color = c.cardFill,
-      );
-      canvas.drawRRect(
-        RRect.fromRectAndRadius(r, const Radius.circular(6)),
-        Paint()
-          ..color = c.illusLine
-          ..style = PaintingStyle.stroke
-          ..strokeWidth = 1.5,
-      );
+      canvas
+        ..drawRRect(
+          RRect.fromRectAndRadius(r, const Radius.circular(6)),
+          Paint()..color = c.cardFill,
+        )
+        ..drawRRect(
+          RRect.fromRectAndRadius(r, const Radius.circular(6)),
+          Paint()
+            ..color = c.illusLine
+            ..style = PaintingStyle.stroke
+            ..strokeWidth = 1.5,
+        );
     });
 
     // --- Box labels.
@@ -1363,16 +1373,17 @@ class _MemoryFlowPainter extends CustomPainter {
       ..color = c.textMuted
       ..strokeWidth = 1.4
       ..strokeCap = StrokeCap.round;
-    canvas.drawLine(
-      mc + const Offset(-3.5, -3.5),
-      mc + const Offset(3.5, 3.5),
-      mcPaint,
-    );
-    canvas.drawLine(
-      mc + const Offset(3.5, -3.5),
-      mc + const Offset(-3.5, 3.5),
-      mcPaint,
-    );
+    canvas
+      ..drawLine(
+        mc + const Offset(-3.5, -3.5),
+        mc + const Offset(3.5, 3.5),
+        mcPaint,
+      )
+      ..drawLine(
+        mc + const Offset(3.5, -3.5),
+        mc + const Offset(-3.5, 3.5),
+        mcPaint,
+      );
     _text(canvas, 'MC', mc + const Offset(6, -5), c.textMuted, size: 8.5);
   }
 
@@ -1465,17 +1476,18 @@ class _HistoryBandPainter extends CustomPainter {
       final rr = RRect.fromRectAndRadius(r, const Radius.circular(5));
       final isNew = i == 0;
       final isOld = i == entries.length - 1;
-      canvas.drawRRect(
-        rr,
-        Paint()..color = isNew ? _teal.withAlpha(0x18) : c.cardFill,
-      );
-      canvas.drawRRect(
-        rr,
-        Paint()
-          ..color = isNew ? _teal : (isOld ? c.illusFaint : c.illusLine)
-          ..style = PaintingStyle.stroke
-          ..strokeWidth = 1.2,
-      );
+      canvas
+        ..drawRRect(
+          rr,
+          Paint()..color = isNew ? _teal.withAlpha(0x18) : c.cardFill,
+        )
+        ..drawRRect(
+          rr,
+          Paint()
+            ..color = isNew ? _teal : (isOld ? c.illusFaint : c.illusLine)
+            ..style = PaintingStyle.stroke
+            ..strokeWidth = 1.2,
+        );
       _text(
         canvas,
         entries[i].$2,
@@ -1518,24 +1530,25 @@ class _HistoryBandPainter extends CustomPainter {
 
     // --- Small input field with a red caret (where the value lands).
     final inp = Rect.fromLTWH(w * 0.89, h * 0.40, w * 0.09, h * 0.09);
-    canvas.drawRRect(
-      RRect.fromRectAndRadius(inp, const Radius.circular(3)),
-      Paint()..color = c.cardFill,
-    );
-    canvas.drawRRect(
-      RRect.fromRectAndRadius(inp, const Radius.circular(3)),
-      Paint()
-        ..color = _blue
-        ..style = PaintingStyle.stroke
-        ..strokeWidth = 1.2,
-    );
-    canvas.drawLine(
-      Offset(inp.center.dx, inp.top + 4),
-      Offset(inp.center.dx, inp.bottom - 4),
-      Paint()
-        ..color = const Color(0xFFFF3B30)
-        ..strokeWidth = 1.5,
-    );
+    canvas
+      ..drawRRect(
+        RRect.fromRectAndRadius(inp, const Radius.circular(3)),
+        Paint()..color = c.cardFill,
+      )
+      ..drawRRect(
+        RRect.fromRectAndRadius(inp, const Radius.circular(3)),
+        Paint()
+          ..color = _blue
+          ..style = PaintingStyle.stroke
+          ..strokeWidth = 1.2,
+      )
+      ..drawLine(
+        Offset(inp.center.dx, inp.top + 4),
+        Offset(inp.center.dx, inp.bottom - 4),
+        Paint()
+          ..color = const Color(0xFFFF3B30)
+          ..strokeWidth = 1.5,
+      );
   }
 
   void straight(Canvas canvas, Offset from, Offset to, Color color) {
@@ -1647,8 +1660,9 @@ class _UnitHyperbolaPainter extends CustomPainter {
       ..strokeWidth = 1.5;
     final xEnd = px(xMax, 0);
     final yEnd = px(0, yMax);
-    canvas.drawLine(px(xMin, 0), xEnd, axis);
-    canvas.drawLine(px(0, yMin), yEnd, axis);
+    canvas
+      ..drawLine(px(xMin, 0), xEnd, axis)
+      ..drawLine(px(0, yMin), yEnd, axis);
     _arrowHead(canvas, xEnd, const Offset(1, 0), c.illusLine, len: 7, halfW: 3);
     _arrowHead(
       canvas,
@@ -1715,19 +1729,19 @@ class _UnitHyperbolaPainter extends CustomPainter {
     final tick = Paint()
       ..color = c.illusLine
       ..strokeWidth = 1.0;
-    canvas.drawLine(
-      px(ct, 0) - const Offset(0, 3),
-      px(ct, 0) + const Offset(0, 3),
-      tick,
-    );
-    canvas.drawLine(
-      px(0, st) - const Offset(3, 0),
-      px(0, st) + const Offset(3, 0),
-      tick,
-    );
-
-    // (7) Point P.
-    canvas.drawCircle(px(ct, st), 3.5, Paint()..color = c.textPrimary);
+    canvas
+      ..drawLine(
+        px(ct, 0) - const Offset(0, 3),
+        px(ct, 0) + const Offset(0, 3),
+        tick,
+      )
+      ..drawLine(
+        px(0, st) - const Offset(3, 0),
+        px(0, st) + const Offset(3, 0),
+        tick,
+      )
+      // (7) Point P.
+      ..drawCircle(px(ct, st), 3.5, Paint()..color = c.textPrimary);
     _text(canvas, 'P', px(ct, st) + const Offset(5, -14), c.textSecondary);
 
     // (8) Projection labels.
@@ -1831,33 +1845,34 @@ class _HyperbolicCurvesPainter extends CustomPainter {
     final ap = Paint()
       ..color = c.illusFaint
       ..strokeWidth = 1.0;
-    _dashedLine(canvas, px(xMin, 1.0), px(xMax, 1.0), ap, on: 6);
-    _dashedLine(canvas, px(xMin, -1.0), px(xMax, -1.0), ap, on: 6);
+    _dashedLine(canvas, px(xMin, 1), px(xMax, 1), ap, on: 6);
+    _dashedLine(canvas, px(xMin, -1), px(xMax, -1), ap, on: 6);
     _text(
       canvas,
       '1',
-      px(xMin, 1.0) + const Offset(-10, -7),
+      px(xMin, 1) + const Offset(-10, -7),
       c.textFaint,
       size: 9,
     );
     _text(
       canvas,
       '−1',
-      px(xMin, -1.0) + const Offset(-14, -7),
+      px(xMin, -1) + const Offset(-14, -7),
       c.textFaint,
       size: 9,
     );
 
     // (2) Curves, clipped to the plot rect.
-    canvas.save();
-    canvas.clipRect(
-      Rect.fromLTRB(
-        plot.left - 1,
-        plot.top - 1,
-        plot.right + 1,
-        plot.bottom + 1,
-      ),
-    );
+    canvas
+      ..save()
+      ..clipRect(
+        Rect.fromLTRB(
+          plot.left - 1,
+          plot.top - 1,
+          plot.right + 1,
+          plot.bottom + 1,
+        ),
+      );
     drawCurve(_cosh, _purple);
     drawCurve(_sinh, _teal);
     drawCurve(_tanh, _blue);
@@ -1869,8 +1884,9 @@ class _HyperbolicCurvesPainter extends CustomPainter {
       ..strokeWidth = 1.5;
     final xEnd = px(xMax, 0);
     final yEnd = px(0, yMax);
-    canvas.drawLine(px(xMin, 0), xEnd, axis);
-    canvas.drawLine(px(0, yMin), yEnd, axis);
+    canvas
+      ..drawLine(px(xMin, 0), xEnd, axis)
+      ..drawLine(px(0, yMin), yEnd, axis);
     _arrowHead(canvas, xEnd, const Offset(1, 0), c.illusLine, len: 7, halfW: 3);
     _arrowHead(
       canvas,
@@ -1903,7 +1919,7 @@ class _HyperbolicCurvesPainter extends CustomPainter {
     }
 
     // (4) cosh minimum (0,1).
-    canvas.drawCircle(px(0, 1), 3.0, Paint()..color = _purple);
+    canvas.drawCircle(px(0, 1), 3, Paint()..color = _purple);
     _text(canvas, '(0, 1)', px(0, 1) + const Offset(5, -14), _purple, size: 9);
 
     // (5) Curve labels.
@@ -1995,16 +2011,17 @@ class _CatenaryPainter extends CustomPainter {
       ..color = c.illusLine
       ..strokeWidth = 2.5
       ..strokeCap = StrokeCap.round;
-    canvas.drawLine(lp, Offset(lp.dx, plot.bottom), pole);
-    canvas.drawLine(rp, Offset(rp.dx, plot.bottom), pole);
-    canvas.drawRect(
-      Rect.fromCenter(center: lp, width: 8, height: 4),
-      Paint()..color = c.illusLine,
-    );
-    canvas.drawRect(
-      Rect.fromCenter(center: rp, width: 8, height: 4),
-      Paint()..color = c.illusLine,
-    );
+    canvas
+      ..drawLine(lp, Offset(lp.dx, plot.bottom), pole)
+      ..drawLine(rp, Offset(rp.dx, plot.bottom), pole)
+      ..drawRect(
+        Rect.fromCenter(center: lp, width: 8, height: 4),
+        Paint()..color = c.illusLine,
+      )
+      ..drawRect(
+        Rect.fromCenter(center: rp, width: 8, height: 4),
+        Paint()..color = c.illusLine,
+      );
 
     // (2) Parabola y = 0.5x²+1 (thin, faint) — stays below the catenary.
     final parPath = Path();
@@ -2059,32 +2076,32 @@ class _CatenaryPainter extends CustomPainter {
         catPath.lineTo(p.dx, p.dy);
       }
     }
-    canvas.drawPath(
-      catPath,
-      Paint()
-        ..color = _teal
-        ..style = PaintingStyle.stroke
-        ..strokeWidth = 2.2
-        ..strokeJoin = StrokeJoin.round
-        ..strokeCap = StrokeCap.round,
-    );
-
-    // (4) Lowest point (0,1).
-    canvas.drawCircle(px(0, 1), 3.0, Paint()..color = _teal);
+    canvas
+      ..drawPath(
+        catPath,
+        Paint()
+          ..color = _teal
+          ..style = PaintingStyle.stroke
+          ..strokeWidth = 2.2
+          ..strokeJoin = StrokeJoin.round
+          ..strokeCap = StrokeCap.round,
+      )
+      // (4) Lowest point (0,1).
+      ..drawCircle(px(0, 1), 3, Paint()..color = _teal);
     _text(canvas, '(0, 1)', px(0, 1) + const Offset(5, -14), _teal, size: 9);
 
     // (5) Suspension points.
-    canvas.drawCircle(lp, 3.5, Paint()..color = c.textPrimary);
-    canvas.drawCircle(rp, 3.5, Paint()..color = c.textPrimary);
-
-    // (6) Ground reference line.
-    canvas.drawLine(
-      Offset(plot.left, plot.bottom),
-      Offset(plot.right, plot.bottom),
-      Paint()
-        ..color = c.hairline
-        ..strokeWidth = 0.8,
-    );
+    canvas
+      ..drawCircle(lp, 3.5, Paint()..color = c.textPrimary)
+      ..drawCircle(rp, 3.5, Paint()..color = c.textPrimary)
+      // (6) Ground reference line.
+      ..drawLine(
+        Offset(plot.left, plot.bottom),
+        Offset(plot.right, plot.bottom),
+        Paint()
+          ..color = c.hairline
+          ..strokeWidth = 0.8,
+      );
 
     // (7) Title.
     _text(
@@ -2181,15 +2198,16 @@ class _PascalTrianglePainter extends CustomPainter {
       for (var k = 0; k <= n; k++) {
         if (n == 5 && k == 2) continue; // highlighted, drawn later
         final o = cell(n, k);
-        canvas.drawCircle(o, 10, Paint()..color = c.cardFill);
-        canvas.drawCircle(
-          o,
-          10,
-          Paint()
-            ..color = c.illusFaint
-            ..style = PaintingStyle.stroke
-            ..strokeWidth = 1.0,
-        );
+        canvas
+          ..drawCircle(o, 10, Paint()..color = c.cardFill)
+          ..drawCircle(
+            o,
+            10,
+            Paint()
+              ..color = c.illusFaint
+              ..style = PaintingStyle.stroke
+              ..strokeWidth = 1.0,
+          );
         final lbl = _rows[n][k];
         _text(
           canvas,
@@ -2210,8 +2228,9 @@ class _PascalTrianglePainter extends CustomPainter {
       ..color = c.illusFaint
       ..strokeWidth = 1.0
       ..strokeCap = StrokeCap.round;
-    canvas.drawLine(parent1, child, faint);
-    canvas.drawLine(parent2, child, faint);
+    canvas
+      ..drawLine(parent1, child, faint)
+      ..drawLine(parent2, child, faint);
     _text(
       canvas,
       '4 + 6 = A',
@@ -2223,15 +2242,16 @@ class _PascalTrianglePainter extends CustomPainter {
 
     // 3. Highlighted entry (5 nCr 2 = A).
     final hCell = cell(5, 2);
-    canvas.drawCircle(hCell, 12, Paint()..color = const Color(0x2D0F6E56));
-    canvas.drawCircle(
-      hCell,
-      12,
-      Paint()
-        ..color = _teal
-        ..style = PaintingStyle.stroke
-        ..strokeWidth = 1.8,
-    );
+    canvas
+      ..drawCircle(hCell, 12, Paint()..color = const Color(0x2D0F6E56))
+      ..drawCircle(
+        hCell,
+        12,
+        Paint()
+          ..color = _teal
+          ..style = PaintingStyle.stroke
+          ..strokeWidth = 1.8,
+      );
     _text(
       canvas,
       'A',
@@ -2296,7 +2316,7 @@ class ModuloClockFigure extends StatelessWidget {
   Widget build(BuildContext context) => Padding(
     padding: const EdgeInsets.symmetric(vertical: 12),
     child: AspectRatio(
-      aspectRatio: 1.0,
+      aspectRatio: 1,
       child: CustomPaint(
         painter: _ModuloClockPainter(AppColors.of(context), title, wrap, note),
       ),
@@ -2373,10 +2393,10 @@ class _ModuloClockPainter extends CustomPainter {
     }
 
     // 3. Highlighted result dot at position 5.
-    canvas.drawCircle(onRing(5.0, r * 0.90), 8, Paint()..color = _teal);
+    canvas.drawCircle(onRing(5, r * 0.90), 8, Paint()..color = _teal);
 
     // 4. Hand (centre → position 5).
-    final tip = onRing(5.0, r * 0.78);
+    final tip = onRing(5, r * 0.78);
     final u = (tip - center) / (tip - center).distance;
     canvas.drawLine(
       center + const Offset(0, 4),
@@ -2386,7 +2406,7 @@ class _ModuloClockPainter extends CustomPainter {
         ..strokeWidth = 2.5
         ..strokeCap = StrokeCap.round,
     );
-    _arrowHead(canvas, tip, u, _teal, len: 7, halfW: 3.0);
+    _arrowHead(canvas, tip, u, _teal, len: 7, halfW: 3);
     canvas.drawCircle(center, 4.5, Paint()..color = c.textSecondary);
 
     // 5. Wrap arc over the top (≈B → 0 → ≈1).
@@ -2415,7 +2435,7 @@ class _ModuloClockPainter extends CustomPainter {
       Offset(-math.sin(arcEnd), math.cos(arcEnd)),
       _orange,
       len: 7,
-      halfW: 3.0,
+      halfW: 3,
     );
     _text(
       canvas,
@@ -2551,7 +2571,7 @@ class _DozenalPowersScalePainter extends CustomPainter {
       Offset(x1 + 4, yAxis),
       const Offset(1, 0),
       c.illusLine,
-      halfW: 3.0,
+      halfW: 3,
     );
 
     for (var i = 0; i < 5; i++) {
@@ -2635,14 +2655,15 @@ class _DozenalPowersScalePainter extends CustomPainter {
       h * 0.84,
       const Radius.circular(4),
     );
-    canvas.drawRRect(btn, Paint()..color = c.cardFill);
-    canvas.drawRRect(
-      btn,
-      Paint()
-        ..color = c.illusFaint
-        ..style = PaintingStyle.stroke
-        ..strokeWidth = 1.0,
-    );
+    canvas
+      ..drawRRect(btn, Paint()..color = c.cardFill)
+      ..drawRRect(
+        btn,
+        Paint()
+          ..color = c.illusFaint
+          ..style = PaintingStyle.stroke
+          ..strokeWidth = 1.0,
+      );
     _text(
       canvas,
       'EXP',
@@ -2750,14 +2771,15 @@ class _KeyGlyphsPainter extends CustomPainter {
     for (var i = 0; i < n; i++) {
       final r = Rect.fromLTWH(x, top, cell, cell);
       final rr = RRect.fromRectAndRadius(r, const Radius.circular(8));
-      canvas.drawRRect(rr, Paint()..color = c.cardFill);
-      canvas.drawRRect(
-        rr,
-        Paint()
-          ..color = c.keyBorder
-          ..style = PaintingStyle.stroke
-          ..strokeWidth = 1.2,
-      );
+      canvas
+        ..drawRRect(rr, Paint()..color = c.cardFill)
+        ..drawRRect(
+          rr,
+          Paint()
+            ..color = c.keyBorder
+            ..style = PaintingStyle.stroke
+            ..strokeWidth = 1.2,
+        );
       // The real keypad glyph, inset within the key cell.
       paintTokenAt(
         canvas,
