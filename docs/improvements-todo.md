@@ -84,6 +84,19 @@ Erst, wenn der Werterechner bereit ist und das Design des Rechnerwechsels fertig
 - [ ] **Screenshot-Skripte prüfen lassen.** `tool/screenshots/*.py` haben rund 140 Befunde von ruff und 160 von mypy
       und sind darum vom pre-commit ausgenommen (CC-02). Bereinigen, wenn die Store-Screenshots neu gestaltet werden,
       dann `files:` der Python-Hooks in `.pre-commit-config.yaml` auf `^tool/.*\.py$` erweitern.
+- [ ] **Abdeckungsprüfung schärfen** (`tool/coverage_gate.dart`, CC-22). Heute ohne Wirkung, gefunden in der zweiten
+      Prüfung:
+  - «sinkt nicht» prüfen: einen Ausgangswert speichern, heute gilt nur die Schwelle von 70 %.
+  - Eine Datei, die kein Test lädt, fehlt in lcov und zählt nicht. Heute sind das nur die Teile von
+    `lib/unit_descriptions/`, reine Daten ohne ausführbare Zeilen.
+  - Eine `part of`-Datei nach den Imports ihrer Bibliothek einstufen. Heute zählen die Teile von `lib/manual/` als
+    «ohne Oberfläche», 42 Zeilen, alle abgedeckt.
+  - Ein veraltetes `coverage/lcov.info` erkennen, wenn die Prüfung allein läuft. pre-push und CI testen vorher alles.
+  - Kaputte Zeilen in lcov mit einer Meldung statt einem Stacktrace ablehnen. Die Prüfung sperrt schon heute.
+- [ ] **Architekturtest schärfen** (`test/architecture_test.dart`, ARC-05), bevor `lib/domain/` entsteht: bedingte
+      Imports ganz prüfen, `dart:isolate` und `dart:js_interop` verbieten, `domain/../` im Paketpfad auflösen.
+- [ ] **`flutter_lints` entfernen.** Das Paket ist unbenutzt, `analysis_options.yaml` bindet very_good_analysis ein.
+      Der Kommentar in `pubspec.yaml` behauptet das Gegenteil.
 
 ### Kürzlich erledigt
 
